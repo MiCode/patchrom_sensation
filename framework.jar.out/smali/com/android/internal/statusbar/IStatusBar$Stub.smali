@@ -527,7 +527,6 @@
 
     .line 176
     .local v0, _arg0:I
-    invoke-virtual {p0, v0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->glow(I)V
 
     goto/16 :goto_0
 

@@ -469,7 +469,6 @@
 
     .line 137
     .local v2, _arg0:I
-    invoke-virtual {p0, v2}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->glow(I)V
 
     .line 138
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V

@@ -287,24 +287,21 @@
     .line 376
     .end local v3           #intent:Landroid/content/Intent;
     :cond_6
+    iget-object v6, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
+
+    invoke-virtual {v6}, Landroid/widget/QuickContactBadge;->getContext()Landroid/content/Context;
+
+    move-result-object v6
+
     iget-object v7, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
 
     iget-object v8, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
 
-    #getter for: Landroid/widget/QuickContactBadge;->mContactEmail:Ljava/lang/String;
-    invoke-static {v8}, Landroid/widget/QuickContactBadge;->access$200(Landroid/widget/QuickContactBadge;)Ljava/lang/String;
+    iget-object v8, v8, Landroid/widget/QuickContactBadge;->mExcludeMimes:[Ljava/lang/String;
 
-    move-result-object v8
+    const/4 v9, 0x3
 
-    iget-object v9, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
-
-    #getter for: Landroid/widget/QuickContactBadge;->mContactPhone:Ljava/lang/String;
-    invoke-static {v9}, Landroid/widget/QuickContactBadge;->access$300(Landroid/widget/QuickContactBadge;)Ljava/lang/String;
-
-    move-result-object v9
-
-    #calls: Landroid/widget/QuickContactBadge;->trigger(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V
-    invoke-static {v7, v5, v8, v9}, Landroid/widget/QuickContactBadge;->access$400(Landroid/widget/QuickContactBadge;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v6, v7, v2, v9, v8}, Landroid/provider/ContactsContract$QuickContact;->showQuickContact(Landroid/content/Context;Landroid/view/View;Landroid/net/Uri;I[Ljava/lang/String;)V
 
     goto/16 :goto_1
 

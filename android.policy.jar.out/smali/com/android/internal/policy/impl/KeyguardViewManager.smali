@@ -897,7 +897,7 @@
 
     .line 152
     :cond_2
-    const v4, 0x10000900
+    const v4, 0x10100900
 
     .line 155
     sget-boolean v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->HtcLiveWallpaperFlag:Z

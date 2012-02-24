@@ -8,7 +8,7 @@
 
 .field private static final ADN:I = 0x1
 
-.field private static final DBG:Z = false
+.field static final DBG:Z = false
 
 .field private static final DELETE_RAW_CONTACT_WHERE:Ljava/lang/String; = "sourceid=? AND account_name=\'SIM\' AND account_type=\'com.anddroid.contacts.sim\'"
 
@@ -32,7 +32,7 @@
 
 .field private static final TAG:Ljava/lang/String; = "IccProvider"
 
-.field private static final URL_MATCHER:Landroid/content/UriMatcher;
+.field static final URL_MATCHER:Landroid/content/UriMatcher;
 
 .field static VERIZON_WPHONE_CONFIG:Z
 
@@ -1160,7 +1160,7 @@
     goto :goto_1
 .end method
 
-.method private log(Ljava/lang/String;)V
+.method log(Ljava/lang/String;)V
     .locals 3
     .parameter "msg"
 

@@ -260,7 +260,6 @@
     if-eqz v1, :cond_0
 
     .line 166
-    invoke-interface {v1, p1}, Lcom/android/internal/statusbar/IStatusBarService;->glow(I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 

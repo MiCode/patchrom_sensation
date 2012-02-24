@@ -11442,6 +11442,8 @@
 
     .line 3922
     :cond_3
+    invoke-static {v1}, Landroid/app/MiuiThemeHelper;->handleExtraConfigurationChanges(I)V
+
     iget-object v10, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
     if-eqz v10, :cond_4
@@ -13268,8 +13270,9 @@
 
     move-result-object v9
 
-    invoke-direct {v6, v0, v4, v9, p2}, Landroid/content/res/Resources;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)V
+    invoke-static {v0, v4, v9, p2}, Landroid/content/res/MiuiClassFactory;->newResources(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)Landroid/content/res/Resources;
 
+    move-result-object v6
     .line 1656
     .restart local v6       #r:Landroid/content/res/Resources;
     iget-object v10, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;

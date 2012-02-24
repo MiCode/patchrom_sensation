@@ -22,6 +22,9 @@
     }
 .end annotation
 
+.field static final TRANSACTION_getFreeAdn:I = 0x5
+
+.field static final TRANSACTION_getAdnCapacity:I = 0x6
 
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.telephony.IIccPhoneBook"
@@ -388,6 +391,15 @@
     .line 122
     invoke-virtual {p3, v9}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
+    invoke-virtual {p0}, Lcom/android/internal/telephony/IIccPhoneBook$Stub;->getFreeAdn()I
+
+    move-result v7
+
+    .local v7, _result:I
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    invoke-virtual {p3, v7}, Landroid/os/Parcel;->writeInt(I)V
+    
     .line 123
     const/4 v0, 0x1
 
@@ -454,6 +466,15 @@
 
     invoke-virtual {v7, p3, v0}, Lcom/android/internal/telephony/ADNErrorType;->writeToParcel(Landroid/os/Parcel;I)V
 
+    invoke-virtual {p0}, Lcom/android/internal/telephony/IIccPhoneBook$Stub;->getAdnCapacity()I
+
+    move-result v7
+
+    .restart local v7       #_result:I
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    invoke-virtual {p3, v7}, Landroid/os/Parcel;->writeInt(I)V
+    
     .line 147
     :goto_3
     const/4 v0, 0x1
@@ -700,12 +721,10 @@
     :goto_7
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 220
     const/4 v0, 0x1
 
     goto/16 :goto_0
 
-    .line 219
     :cond_6
     const/4 v0, 0x0
 

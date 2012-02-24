@@ -830,7 +830,7 @@
     return v5
 .end method
 
-.method private static patternToHash(Ljava/util/List;)[B
+.method protected static patternToHash(Ljava/util/List;)[B
     .locals 9
     .parameter
     .annotation system Ldalvik/annotation/Signature;

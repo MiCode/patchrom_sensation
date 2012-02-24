@@ -4342,6 +4342,12 @@
     <public type="color" name="tertiary_text_holo_light" id="0x01060077" />
     <public type="color" name="zzz_primary_text_dark_1" id="0x01060078" />
     <public type="color" name="zzz_secondary_text_dark_1" id="0x01060079" />
+    <public type="color" name="menu_text_color" id="0x0106007a" />
+    <public type="color" name="tab_text_color" id="0x0106007b" />
+    <public type="color" name="tab_pressed_text_color" id="0x0106007c" />
+    <public type="color" name="edit_text_color" id="0x0106007d" />
+    <public type="color" name="list_separator_foreground_holo_light" id="0x0106007e" />
+    <public type="color" name="listseparator_text_holo_light" id="0x0106007f" />
     <public type="array" name="emailAddressTypes" id="0x01070000" />
     <public type="array" name="imProtocols" id="0x01070001" />
     <public type="array" name="organizationTypes" id="0x01070002" />
@@ -6469,6 +6475,7 @@
     <public type="drawable" name="stat_sys_battery_charge_animfull" id="0x0108080e" />
     <public type="drawable" name="battery_low_battery" id="0x0108080f" />
     <public type="drawable" name="stat_sys_battery_1" id="0x01080810" />
+    <public type="drawable" name="tab_bg" id="0x01080811" />
     <public type="drawable" name="unlock_default" id="0x010805d3" />
     <public type="drawable" name="unlock_halo" id="0x010805d4" />
     <public type="drawable" name="unlock_ring" id="0x010805d5" />

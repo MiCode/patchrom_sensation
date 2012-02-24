@@ -205,7 +205,7 @@
     return-void
 .end method
 
-.method private constructor <init>()V
+.method constructor <init>()V
     .locals 3
 
     .prologue
@@ -880,9 +880,6 @@
     .restart local v0       #attrs:Landroid/content/res/TypedArray;
     :cond_1
     :try_start_1
-    new-instance v0, Landroid/content/res/TypedArray;
-
-    .end local v0           #attrs:Landroid/content/res/TypedArray;
     mul-int/lit8 v2, p1, 0x6
 
     new-array v2, v2, [I
@@ -891,8 +888,11 @@
 
     new-array v4, v4, [I
 
-    invoke-direct {v0, p0, v2, v4, p1}, Landroid/content/res/TypedArray;-><init>(Landroid/content/res/Resources;[I[II)V
+    invoke-static {p0, v2, v4, p1}, Landroid/content/res/MiuiClassFactory;->newTypedArray(Landroid/content/res/Resources;[I[II)Landroid/content/res/TypedArray;
 
+    move-result-object v0
+
+    .end local v0           #attrs:Landroid/content/res/TypedArray; 
     monitor-exit v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -949,36 +949,27 @@
     .locals 3
 
     .prologue
-    .line 235
     sget-object v2, Landroid/content/res/Resources;->mSync:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 236
     :try_start_0
     sget-object v0, Landroid/content/res/Resources;->mSystem:Landroid/content/res/Resources;
 
-    .line 237
     .local v0, ret:Landroid/content/res/Resources;
     if-nez v0, :cond_0
 
-    .line 238
-    new-instance v0, Landroid/content/res/Resources;
+    invoke-static {}, Landroid/content/res/MiuiClassFactory;->newResources()Landroid/content/res/Resources;
 
-    .end local v0           #ret:Landroid/content/res/Resources;
-    invoke-direct {v0}, Landroid/content/res/Resources;-><init>()V
+    move-result-object v0
 
-    .line 239
-    .restart local v0       #ret:Landroid/content/res/Resources;
     sput-object v0, Landroid/content/res/Resources;->mSystem:Landroid/content/res/Resources;
 
-    .line 242
     :cond_0
     monitor-exit v2
 
     return-object v0
 
-    .line 243
     :catchall_0
     move-exception v1
 
@@ -4343,6 +4334,12 @@
     .end local v6           #e:Ljava/lang/Exception;
     .end local v12           #rnf:Landroid/content/res/Resources$NotFoundException;
     :cond_a
+    invoke-virtual/range {p0 .. p2}, Landroid/content/res/Resources;->loadOverlayDrawable(Landroid/util/TypedValue;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    if-nez v3, :cond_3
+
     :try_start_1
     move-object/from16 v0, p0
 
@@ -5069,6 +5066,20 @@
     goto :goto_5
 .end method
 
+.method loadOverlayDrawable(Landroid/util/TypedValue;I)Landroid/graphics/drawable/Drawable;
+    .locals 1
+    .parameter "value"
+    .parameter "id"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method loadXmlResourceParser(ILjava/lang/String;)Landroid/content/res/XmlResourceParser;
     .locals 5
     .parameter "id"
@@ -5451,7 +5462,7 @@
     throw v7
 .end method
 
-.method public final newTheme()Landroid/content/res/Resources$Theme;
+.method public newTheme()Landroid/content/res/Resources$Theme;
     .locals 1
 
     .prologue
@@ -6400,9 +6411,15 @@
     .line 1545
     invoke-static/range {v21 .. v21}, Landroid/content/pm/ActivityInfo;->activityInfoConfigToNative(I)I
 
-    move-result v21
+    move-result v2
 
     .line 1547
+    const/high16 v3, -0x8000
+
+    and-int v3, v3, v21
+
+    or-int v21, v2, v3
+
     :cond_5
     move-object/from16 v0, p0
 
