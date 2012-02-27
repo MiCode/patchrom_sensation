@@ -9,7 +9,7 @@ local-zip-file     := sensation_4.5.4.zip
 local-out-zip-file := MIUI_sensation_ics.zip
 
 # All apps from original ZIP, but has smali files chanded
-#local-modified-apps := LogsProvider Phone MediaProvider Settings
+local-modified-apps := Phone
 
 # All apks from MIUI
 local-miui-apps     := AntiSpam Backup BugReport CloudService MiuiCompass Contacts DeskClock FileExplorer \
