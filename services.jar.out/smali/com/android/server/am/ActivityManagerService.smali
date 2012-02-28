@@ -77294,7 +77294,7 @@
     .line 14087
     and-int/lit8 v2, v22, 0x4
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_10
 
     .line 14088
     const/4 v7, 0x0
