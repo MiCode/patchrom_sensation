@@ -9,13 +9,13 @@ local-zip-file     := sensation_4.5.4.zip
 local-out-zip-file := MIUI_sensation_ics.zip
 
 # All apps from original ZIP, but has smali files chanded
-local-modified-apps := Phone TelephonyProvider
+local-modified-apps := Rosie
 
 # All apks from MIUI
 local-miui-apps     := AntiSpam Backup BugReport CloudService MiuiCompass Contacts DeskClock FileExplorer \
 	MiuiHome MiuiSystemUI Mms Monitor Notes PackageInstaller QuickSearchBox SoundRecorder SuperMarket \
 	ThemeManager Updater ContactsProvider DownloadProvider DownloadProviderUi TelocationProvider \
-	Music
+	Music Settings
 
 # All apps need to be removed from original ZIP file
 local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FMRadioWidget HtcDialer com.htc.FriendStream3DWidget \
