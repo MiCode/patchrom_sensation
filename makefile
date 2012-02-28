@@ -49,8 +49,6 @@ local-zip-misc:
 #	@echo Add google apks
 #	cp other/apk/* $(ZIP_DIR)/system/app/
 	@echo Upate widget.jar
-	cp -r widget.jar.out $(TMP_DIR)/widget.jar.out
-	$(APKTOOL) b  $(TMP_DIR)/widget.jar.out $(TMP_DIR)/widget.jar
 	rm $(ZIP_DIR)/system/framework/widget.jar
 	cp $(TMP_DIR)/widget.jar $(ZIP_DIR)/system/framework/widget.jar
 	@echo Replace build.prop

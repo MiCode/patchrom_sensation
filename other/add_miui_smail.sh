@@ -33,4 +33,6 @@ then
 	$APKTOOL b ".build/framework-miui" ".build/framework-miui.jar"
 	mkdir -p ".build/ZIP/system/framework"
 	cp ".build/framework-miui.jar" ".build/ZIP/system/framework/framework-miui.jar"
+	cp -r "widget.jar.out" ".build/widget.jar.out"
+	$APKTOOL b  ".build/widget.jar.out" ".build/widget.jar"
 fi
