@@ -46,7 +46,6 @@
             <intent-filter>
                 <action android:name="com.htc.launcher.action.OPEN_LAUNCHER_BAR_FOLDER" />
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.MONKEY" />
                 <category android:name="com.htc.launcher.intent.category.SEARCH" />
