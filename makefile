@@ -13,10 +13,10 @@ local-modified-apps := Rosie Phone TelephonyProvider
 
 local-modified-jars := HTCExtension
 
-local-miui-modified-apps := ThemeManager
+local-miui-modified-apps := ThemeManager Mms
 # All apks from MIUI
 local-miui-apps     := AntiSpam Backup BugReport CloudService MiuiCompass Contacts DeskClock FileExplorer \
-	MiuiHome MiuiSystemUI Mms Monitor Notes PackageInstaller QuickSearchBox SoundRecorder SuperMarket \
+	MiuiHome MiuiSystemUI Monitor Notes PackageInstaller QuickSearchBox SoundRecorder SuperMarket \
 	Updater ContactsProvider DownloadProvider DownloadProviderUi TelocationProvider \
 	Music Settings Provision
 
