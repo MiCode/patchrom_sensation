@@ -13,11 +13,11 @@ local-modified-apps := Rosie Phone TelephonyProvider
 
 local-modified-jars := HTCExtension
 
-local-modified-apps := ThemeManager
+local-miui-modified-apps := ThemeManager
 # All apks from MIUI
 local-miui-apps     := AntiSpam Backup BugReport CloudService MiuiCompass Contacts DeskClock FileExplorer \
 	MiuiHome MiuiSystemUI Mms Monitor Notes PackageInstaller QuickSearchBox SoundRecorder SuperMarket \
-	ThemeManager Updater ContactsProvider DownloadProvider DownloadProviderUi TelocationProvider \
+	Updater ContactsProvider DownloadProvider DownloadProviderUi TelocationProvider \
 	Music Settings Provision
 
 # All apps need to be removed from original ZIP file
