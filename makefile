@@ -46,7 +46,7 @@ local-after-zip:= local-test
 include $(PORT_BUILD)/porting.mk
 
 # To define any local-target
-local-zip-misc:
+local-zip-misc: add-lbesec-miui
 	@echo Update boot image
 	cp other/boot.img $(ZIP_DIR)/boot.img
 
