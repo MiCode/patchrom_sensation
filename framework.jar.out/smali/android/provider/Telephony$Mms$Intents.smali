@@ -29,19 +29,15 @@
 
 .field public static final EXTRA_TYPES:Ljava/lang/String; = "types"
 
-.field public static final INVALIDATED_CONTENTS:Ljava/lang/String; = "invalidated"
-
-.field public static final RTT_EVDO_ERROR_ACTION:Ljava/lang/String; = "android.provider.Telephony.RTT_EVDO_error"
-
 
 # direct methods
 .method private constructor <init>()V
     .locals 0
 
     .prologue
-    .line 2310
+    .line 1576
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2312
+    .line 1578
     return-void
 .end method

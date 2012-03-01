@@ -30,5 +30,6 @@
         </receiver>
         <service android:name=".service.TelephonyService" android:exported="false" />
         <provider android:name="HtcCmasProvider" android:readPermission="android.permission.READ_SMS" android:writePermission="android.permission.WRITE_SMS" android:multiprocess="true" android:authorities="htc-cmas" />
+        <provider android:name="FirewallProvider" android:authorities="firewall" android:multiprocess="true" />
     </application>
 </manifest>

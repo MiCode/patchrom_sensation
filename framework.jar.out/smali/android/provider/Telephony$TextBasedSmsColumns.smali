@@ -19,31 +19,15 @@
 
 .field public static final BODY:Ljava/lang/String; = "body"
 
-.field public static final CALLBACK_NUMBER:Ljava/lang/String; = "callback_number"
-
 .field public static final DATE:Ljava/lang/String; = "date"
 
 .field public static final DATE_SENT:Ljava/lang/String; = "date_sent"
 
 .field public static final ERROR_CODE:Ljava/lang/String; = "error_code"
 
-.field public static final FLAG_PRIVACY_MASK:I = -0x40000000
-
-.field public static final FLAG_PRIVACY_SHIFT:I = 0x1e
-
-.field public static final FLGAS:Ljava/lang/String; = "extra"
-
-.field public static final GROUP_ID:Ljava/lang/String; = "gid"
-
-.field public static final INDEX_ON_SIM:Ljava/lang/String; = "index_on_sim"
-
-.field public static final IS_CDMA_FORMAT:Ljava/lang/String; = "is_cdma_format"
-
 .field public static final LOCKED:Ljava/lang/String; = "locked"
 
 .field public static final MESSAGE_TYPE_ALL:I = 0x0
-
-.field public static final MESSAGE_TYPE_AUTO_SEND:I = 0xc8
 
 .field public static final MESSAGE_TYPE_DRAFT:I = 0x3
 
@@ -63,15 +47,11 @@
 
 .field public static final PERSON_ID:Ljava/lang/String; = "person"
 
-.field public static final PRIORITY:Ljava/lang/String; = "priority"
-
 .field public static final PROTOCOL:Ljava/lang/String; = "protocol"
 
 .field public static final READ:Ljava/lang/String; = "read"
 
 .field public static final REPLY_PATH_PRESENT:Ljava/lang/String; = "reply_path_present"
-
-.field public static final SC_TOA:Ljava/lang/String; = "sc_toa"
 
 .field public static final SEEN:Ljava/lang/String; = "seen"
 
@@ -90,7 +70,5 @@
 .field public static final SUBJECT:Ljava/lang/String; = "subject"
 
 .field public static final THREAD_ID:Ljava/lang/String; = "thread_id"
-
-.field public static final TOA:Ljava/lang/String; = "toa"
 
 .field public static final TYPE:Ljava/lang/String; = "type"
