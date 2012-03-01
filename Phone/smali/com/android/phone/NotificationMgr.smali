@@ -213,10 +213,6 @@
 
     const/16 v3, 0x8
 
-    const-string v4, "city_id"
-
-    aput-object v4, v0, v3
-
     :goto_1
     sput-object v0, Lcom/android/phone/NotificationMgr;->CALL_LOG_PROJECTION:[Ljava/lang/String;
 
@@ -7038,7 +7034,6 @@
 
     move-object v6, v2
 
-    invoke-virtual/range {v0 .. v7}, Lcom/android/phone/NotificationMgr$QueryHandler;->startQuery(ILjava/lang/Object;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V
 
     .line 354
     iget-object v0, p0, Lcom/android/phone/NotificationMgr;->mPhone:Lcom/android/internal/telephony/Phone;

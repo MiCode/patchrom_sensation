@@ -575,7 +575,7 @@
     move-result v4
 
     if-nez v4, :cond_6
-
+    goto :cond_6
     .line 453
     const-string v4, "city_id"
 

@@ -107,6 +107,7 @@
 
     if-eqz v1, :cond_3
 
+    goto :goto_0
     .line 523
     const-string v1, "city_id"
 
