@@ -16994,54 +16994,6 @@
     goto :goto_0
 .end method
 
-.method private static handleUnknownPeople(Landroid/net/Uri;Landroid/content/Intent;)V
-    .locals 3
-    .parameter "uri"
-    .parameter "intent"
-
-    .prologue
-    invoke-virtual {p0}, Landroid/net/Uri;->getEncodedAuthority()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "com.android.contacts"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p0}, Landroid/net/Uri;->getEncodedPath()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "unknown"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p0}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
-
-    move-result-object v0
-
-    .local v0, number:Ljava/lang/String;
-    const-string v1, "vnd.android.cursor.item/calls"
-
-    invoke-virtual {p1, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
-
-    const-string v1, "number"
-
-    invoke-virtual {p1, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .end local v0           #number:Ljava/lang/String;
-    :cond_0
-    return-void
-.end method
-
 .method private viewAllPeople()V
     .locals 2
 
