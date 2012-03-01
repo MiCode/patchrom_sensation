@@ -1224,9 +1224,9 @@
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mVmConfig:Lcom/android/internal/telephony/gsm/VoiceMailConstants;
 
     .line 424
-    new-instance v1, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;
+    new-instance v1, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;
 
-    invoke-direct {v1}, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;-><init>()V
+    invoke-direct {v1}, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;-><init>()V
 
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mSpnOverride:Lcom/android/internal/telephony/gsm/SpnOverride;
 
