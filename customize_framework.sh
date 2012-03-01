@@ -5,7 +5,8 @@
 #
 
 APKTOOL=$PORT_ROOT/tools/apktool
-
+ZIP_FILE=sensation_4.5.4.zip
+ 
 if [ $2 = "out/framework" ];then
 	rm -rf "out/framework/smali/android/widget"
 	mkdir -p "out/framework-miui/smali"
@@ -16,6 +17,22 @@ if [ $2 = "out/framework" ];then
 	$APKTOOL b "out/framework-miui" "out/framework-miui.jar"
 	mkdir -p "out/ZIP/system/framework"
 	cp "out/framework-miui.jar" "out/ZIP/system/framework/framework-miui.jar"
+
+	unzip $ZIP_FILE "system/framework/widget.jar" -d "out/"
+	$APKTOOL d -f "out/system/framework/widget.jar" "out/widget.jar.out"
+	rm "out/system/framework/widget.jar"
+
+	for file in `find "$1/smali/android/widget" -name "*.smali"`
+	do
+        	newfile=${file/$1/"out/widget.jar.out"}
+        	if [ ! -f "$newfile" ]
+        	then
+        	        mkdir -p `dirname $newfile`
+        	        echo "add widget smali from miui: $file"
+        	        cp $file $newfile
+       		fi
+	done
+	$APKTOOL b  "out/widget.jar.out" "out/widget.jar"
 elif [ $2 = "out/android.policy" ];then
     curdir=`pwd`
     cd overlay/android.policy.jar.out

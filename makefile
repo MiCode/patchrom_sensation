@@ -11,7 +11,7 @@ local-zip-file     := sensation_4.5.4.zip
 # All apps from original ZIP, but has smali files chanded
 local-modified-apps := Rosie Phone TelephonyProvider
 
-local-modified-jars := widget
+local-modified-jars := HTCExtension
 
 # All apks from MIUI
 local-miui-apps     := AntiSpam Backup BugReport CloudService MiuiCompass Contacts DeskClock FileExplorer \
@@ -27,7 +27,7 @@ local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FM
 	HtcFacebook HtcFacebookChat HtcFacebookChatWidget HtcFeedback HtcLaputa HtcLaputaInstaller HtcLocationsWidget3d \
 	HtcNavigateWidget3d HtcTwitter IdleScreen_Stock JETCET_PRINT JETCET_PRINT_Resources Maps MyHTC MyReportAgent \
 	MyShelf_Widget MySketcher picasapryramid PolarisOffice SoundHound_Freemium Stock Talk teeter TripWidget3D Twitter \
-	VoiceSearch YouTube HtcListen \
+	VoiceSearch YouTube \
 	dice_ml TaskManager Tweaks HtcStore HtcStoreWidget MyTask HtcSoundRecorder HtcLockScreen \
 	TrimIt htccontactwidgets3D  htcbookmarkwidget3d \
 	Idlescreen_Base  idlescreen_photo idlescreen_shortcut \
