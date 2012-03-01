@@ -5,11 +5,13 @@
 # The original zip file, MUST be specified by each product
 local-zip-file     := sensation_4.5.4.zip
 
-# The output zip file of MIUI rom, the default is porting_miui.zip if not specified
-local-out-zip-file := MIUI_sensation_ics.zip
+# The output zip file of MIUI rom, the default is update.zip if not specified
+# local-out-zip-file :=
 
 # All apps from original ZIP, but has smali files chanded
 local-modified-apps := Rosie
+
+local-modified-jars := widget
 
 # All apks from MIUI
 local-miui-apps     := AntiSpam Backup BugReport CloudService MiuiCompass Contacts DeskClock FileExplorer \
@@ -45,20 +47,8 @@ include $(PORT_BUILD)/porting.mk
 
 # To define any local-target
 local-zip-misc:
-#	cp other/com.google.android.maps.jar $(ZIP_DIR)/system/framework/
-#	@echo Add google apks
-#	cp other/apk/* $(ZIP_DIR)/system/app/
-	@echo Upate widget.jar
-	rm $(ZIP_DIR)/system/framework/widget.jar
-	cp $(TMP_DIR)/widget.jar $(ZIP_DIR)/system/framework/widget.jar
-	@echo Replace build.prop
-	cp other/build.prop $(ZIP_DIR)/system/build.prop
 	@echo Update boot image
 	cp other/boot.img $(ZIP_DIR)/boot.img
-	@echo Replace updater-script
-	cp other/updater-script $(ZIP_DIR)/META-INF/com/google/android/updater-script
-	@echo Add invoke-as
-	cp other/invoke-as $(ZIP_DIR)/system/xbin/invoke-as
 
 local-test:
 #	rm -f $(local-out-zip-file)
