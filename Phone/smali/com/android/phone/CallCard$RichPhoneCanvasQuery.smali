@@ -192,6 +192,9 @@
 
     .prologue
     .line 2988
+    
+    return-void
+    
     monitor-enter p0
 
     .line 2989

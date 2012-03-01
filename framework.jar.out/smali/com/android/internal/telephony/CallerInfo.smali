@@ -458,6 +458,12 @@
     .prologue
     const/4 v2, 0x0
 
+    new-instance v1, Lcom/android/internal/telephony/CallerInfo;
+
+    invoke-direct {v1}, Lcom/android/internal/telephony/CallerInfo;-><init>()V
+
+    return-object v1
+
     .line 384
     new-instance v0, Ljava/lang/StringBuilder;
 
