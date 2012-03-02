@@ -56,5 +56,5 @@ local-test:
 #	cp .build/$(local-out-zip-file) .
 	@echo push $(OUT_ZIP) to phone sdcard
 	adb shell mount sdcard
-	adb shell rm -f /sdcard/update.zip
-	adb push out/update.zip /sdcard/update.zip
+	adb shell rm -f /sdcard/update_miui.zip
+	adb push out/update_miui.zip /sdcard/update_miui.zip
