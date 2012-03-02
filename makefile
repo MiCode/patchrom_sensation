@@ -13,10 +13,10 @@ local-modified-apps := Rosie Phone TelephonyProvider
 
 local-modified-jars := HTCExtension
 
-local-miui-modified-apps := ThemeManager Mms
+local-miui-modified-apps := ThemeManager Mms MiuiHome
 # All apks from MIUI
 local-miui-apps     := AntiSpam Backup BugReport CloudService MiuiCompass Contacts DeskClock FileExplorer \
-	MiuiHome MiuiSystemUI Monitor Notes PackageInstaller QuickSearchBox SoundRecorder SuperMarket \
+	MiuiSystemUI Monitor Notes PackageInstaller QuickSearchBox SoundRecorder SuperMarket \
 	Updater ContactsProvider DownloadProvider DownloadProviderUi TelocationProvider \
 	Music Settings Provision
 
@@ -56,5 +56,5 @@ local-test:
 #	cp .build/$(local-out-zip-file) .
 	@echo push $(OUT_ZIP) to phone sdcard
 	adb shell mount sdcard
-	adb shell rm -f /sdcard/$(local-out-zip-file)
-	adb push $(OUT_ZIP) /sdcard/$(local-out-zip-file)
+	adb shell rm -f /sdcard/update.zip
+	adb push out/update.zip /sdcard/update.zip
