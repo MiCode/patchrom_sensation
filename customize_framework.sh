@@ -34,6 +34,8 @@ if [ $2 = "out/framework" ];then
        		fi
 	done
 	$APKTOOL b  "out/widget.jar.out" "out/widget.jar"
+	cp "out/widget.jar" "out/ZIP/system/framework/widget.jar"
+
 elif [ $2 = "out/android.policy" ];then
     curdir=`pwd`
     cd overlay/android.policy.jar.out
