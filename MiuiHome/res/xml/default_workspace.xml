@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites
+  xmlns:launcher="http://schemas.android.com/apk/res/com.miui.home">
+    <default launcher:screen="2" />
+    <folder launcher:screen="1" launcher:x="2" launcher:y="3" launcher:title="com.miui.home:string/default_folder_title_tools" />
+    <folder launcher:screen="2" launcher:x="2" launcher:y="1" launcher:title="com.miui.home:string/default_folder_title_recommend" />
+    <search launcher:screen="0" launcher:x="0" launcher:y="0" />
+    <clock launcher:screen="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.android.camera.Camera" launcher:packageName="com.android.camera" launcher:screen="1" launcher:x="0" launcher:y="2" />
+    <favorite launcher:className="com.android.gallery3d.app.Gallery" launcher:packageName="com.android.gallery3d" launcher:screen="1" launcher:x="1" launcher:y="2" />
+    <favorite launcher:className="com.miui.player.ui.MusicBrowserActivity" launcher:packageName="com.miui.player" launcher:screen="1" launcher:x="2" launcher:y="2" />
+    <favorite launcher:className="com.android.thememanager.ThemeResourceTabActivity" launcher:packageName="com.android.thememanager" launcher:screen="1" launcher:x="3" launcher:y="2" />
+    <favorite launcher:className="com.android.settings.Settings" launcher:packageName="com.android.settings" launcher:screen="1" launcher:x="0" launcher:y="3" />
+    <favorite launcher:className="com.miui.supermarket.MainTabActivity" launcher:packageName="com.miui.supermarket" launcher:screen="1" launcher:x="1" launcher:y="3" />
+    <favorite launcher:className="com.android.deskclock.DeskClock" launcher:packageName="com.android.deskclock" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.android.calculator2.Calculator" launcher:packageName="com.android.calculator2" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.android.soundrecorder.SoundRecorder" launcher:packageName="com.android.soundrecorder" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="net.cactii.flash2.MainActivity" launcher:packageName="net.cactii.flash2" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.miui.fmradio.FMRadioMain" launcher:packageName="com.miui.fmradio" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.miui.compass.CompassActivity" launcher:packageName="com.miui.compass" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.android.monitor.MainActivity" launcher:packageName="com.android.monitor" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.miui.backup.BackupActivity" launcher:packageName="com.miui.backup" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.miui.antispam.firewall.FirewallTab" launcher:packageName="com.miui.antispam" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.miui.uac.Su" launcher:packageName="com.miui.uac" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.android.providers.downloads.ui.DownloadList" launcher:packageName="com.android.providers.downloads.ui" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.android.stk.StkLauncherActivity" launcher:packageName="com.android.stk" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.miui.cit.CitLauncherActivity" launcher:packageName="com.miui.cit" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.sohu.inputmethod.sogouoem.SogouIMESettings" launcher:packageName="com.sohu.inputmethod.sogouoem" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.xiaomi.channel.ui.ChannelLauncherActivity" launcher:packageName="com.xiaomi.channel" launcher:screen="1" launcher:x="3" launcher:y="3" />
+    <favorite launcher:className="com.android.calendar.AllInOneActivity" launcher:packageName="com.android.calendar" launcher:screen="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.miui.notes.ui.NotesListActivity" launcher:packageName="com.miui.notes" launcher:screen="2" launcher:x="1" launcher:y="0" />
+    <favorite launcher:className="com.android.email.activity.Welcome" launcher:packageName="com.android.email" launcher:screen="2" launcher:x="2" launcher:y="0" />
+    <favorite launcher:className="com.android.updater.MainActivity" launcher:packageName="com.android.updater" launcher:screen="2" launcher:x="3" launcher:y="0" />
+    <favorite launcher:className="com.google.android.maps.MapsActivity" launcher:packageName="com.google.android.apps.maps" launcher:screen="2" launcher:x="0" launcher:y="1" />
+    <favorite launcher:className="com.android.fileexplorer.FileExplorerTabActivity" launcher:packageName="com.android.fileexplorer" launcher:screen="2" launcher:x="1" launcher:y="1" />
+    <favorite launcher:className="com.UCMobile.main.UCMobile" launcher:packageName="com.UCMobile" launcher:container="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.letao.activity.SplashActivity" launcher:packageName="com.letao.activity" launcher:container="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.geili.vancl.activity.SplashActivity" launcher:packageName="com.geili.vancl" launcher:container="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.duokan.reader.MainActivity" launcher:packageName="com.duokan.reader" launcher:container="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.youku.phone.ActivityWelcome" launcher:packageName="com.youku.phone" launcher:container="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.sina.weibo.SplashActivity" launcher:packageName="com.sina.weibo" launcher:container="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.tencent.mobileqq.activity.SplashActivity" launcher:packageName="com.tencent.mobileqq" launcher:container="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="cn.wps.moffice.documentmanager.PreStartActivity" launcher:packageName="cn.wps.moffice" launcher:container="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="cn.com.tc.assistant.act.ZActLogo" launcher:packageName="cn.com.tc.assistant" launcher:container="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.duowan.mobile.im.IMMainActivity" launcher:packageName="com.duowan.mobile" launcher:container="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="cn.wps.livespace.TabController" launcher:packageName="cn.wps.livespace" launcher:container="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.cootek.smartinputv5.Guide" launcher:packageName="com.cootek.smartinputv5" launcher:container="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.baidu.input.ConfigActivity" launcher:packageName="com.baidu.input" launcher:container="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.sohu.inputmethod.sogou.SogouIMESettings" launcher:packageName="com.sohu.inputmethod.sogou" launcher:container="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.android.contacts.TwelveKeyDialer" launcher:packageName="com.android.contacts" launcher:container="-101" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.android.contacts.activities.PeopleActivity" launcher:packageName="com.android.contacts" launcher:container="-101" launcher:x="1" launcher:y="0" />
+    <favorite launcher:className="com.android.browser.BrowserActivity" launcher:packageName="com.android.browser" launcher:container="-101" launcher:x="2" launcher:y="0" />
+    <favorite launcher:className="com.android.mms.ui.MmsTabActivity" launcher:packageName="com.android.mms" launcher:container="-101" launcher:x="3" launcher:y="0" />
+</favorites>
