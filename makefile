@@ -9,11 +9,11 @@ local-zip-file     := sensation_4.5.4.zip
 # local-out-zip-file :=
 
 # All apps from original ZIP, but has smali files chanded
-local-modified-apps := Rosie Phone TelephonyProvider
+local-modified-apps := Rosie Phone
 
 local-modified-jars := HTCExtension
 
-local-miui-modified-apps := ThemeManager Mms MiuiHome
+local-miui-modified-apps := ThemeManager Mms MiuiHome TelephonyProvider
 # All apks from MIUI
 local-miui-apps     := AntiSpam Backup BugReport CloudService MiuiCompass Contacts DeskClock FileExplorer \
 	MiuiSystemUI Monitor Notes PackageInstaller QuickSearchBox SoundRecorder SuperMarket \
@@ -56,5 +56,5 @@ local-test:
 #	cp .build/$(local-out-zip-file) .
 	@echo push $(OUT_ZIP) to phone sdcard
 	adb shell mount sdcard
-	adb shell rm -f /sdcard/update_miui.zip
-	adb push out/update_miui.zip /sdcard/update_miui.zip
+	adb shell rm -f /sdcard/update.zip
+	adb push out/update.zip /sdcard/update.zip
