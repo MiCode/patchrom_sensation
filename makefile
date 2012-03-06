@@ -15,10 +15,7 @@ local-modified-jars := HTCExtension
 
 local-miui-modified-apps := ThemeManager Mms MiuiHome TelephonyProvider
 # All apks from MIUI
-local-miui-apps     := AntiSpam Backup BugReport CloudService MiuiCompass Contacts DeskClock FileExplorer \
-	MiuiSystemUI Monitor Notes PackageInstaller QuickSearchBox SoundRecorder SuperMarket \
-	Updater ContactsProvider DownloadProvider DownloadProviderUi TelocationProvider \
-	Music Settings Provision
+local-miui-removed-apps  := Phone MediaProvider 
 
 # All apps need to be removed from original ZIP file
 local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FMRadioWidget HtcDialer com.htc.FriendStream3DWidget \
@@ -33,7 +30,7 @@ local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FM
 	TrimIt htccontactwidgets3D  htcbookmarkwidget3d \
 	Idlescreen_Base  idlescreen_photo idlescreen_shortcut \
 	Weather IdleScreen_Weather HtcWeather3DWidget HtcWeatherWallpaper WeatherLiveWallpaper WeatherVideo \
-	HTCSetupWizard SetupWizard Superuser
+	HTCSetupWizard SetupWizard Superuser Mail Calendar CalendarProvider
 # To include the local targets before and after zip the final ZIP file, 
 # and the local-targets should:
 # (1) be defined after including porting.mk if using any global variable(see porting.mk)
