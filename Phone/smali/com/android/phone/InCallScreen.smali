@@ -22190,6 +22190,7 @@
 
     .line 1079
     :cond_3
+
     invoke-static {}, Lcom/android/phone/PhoneApp;->getInstance()Lcom/android/phone/PhoneApp;
 
     move-result-object v0
@@ -26088,6 +26089,14 @@
     .line 1337
     :cond_0
     invoke-super {p0}, Landroid/app/Activity;->onResume()V
+
+    invoke-virtual {p0}, Lcom/android/phone/InCallScreen;->getWindow()Landroid/view/Window;
+
+    move-result-object v5
+
+    const/high16 v6, 0x8
+
+    invoke-virtual {v5, v6}, Landroid/view/Window;->addFlags(I)V
 
     .line 1340
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->enableTmoWifiIms()Z
