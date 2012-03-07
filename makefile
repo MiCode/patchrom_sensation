@@ -52,7 +52,8 @@ include $(PORT_BUILD)/porting.mk
 local-zip-misc: add-lbesec-miui
 	@echo Update boot image
 	cp other/boot.img $(ZIP_DIR)/boot.img
-
+	@echo add tel location
+	cp other/CallerLocation.apk $(ZIP_DIR)/system/app/CallerLocation.apk
 local-test:
 #	rm -f $(local-out-zip-file)
 #	cp .build/$(local-out-zip-file) .
