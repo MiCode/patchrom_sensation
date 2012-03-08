@@ -8,7 +8,6 @@ if [ `basename $1` = "drawable-hdpi" ];then
 	for file in `find "$1"`
 	do
 		newfile=`basename $file`
-		
 		newfile1=`echo $newfile | sed -e "s/^/zhtc_/"`
 		targetfile="$2/drawable-hdpi/$newfile1"
         	if [ -f $targetfile ]
@@ -30,5 +29,6 @@ if [ `basename $1` = "drawable-hdpi" ];then
 	       	fi
 
 	done
+	rm -r "$2/drawable-hdpi/default_wallpaper.jpg"
 fi
 
