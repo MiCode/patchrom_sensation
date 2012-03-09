@@ -13,9 +13,9 @@ local-modified-apps := Rosie Phone
 
 local-modified-jars := HTCExtension
 
-local-miui-modified-apps := ThemeManager Mms MiuiHome TelephonyProvider
+local-miui-modified-apps := ThemeManager Mms MiuiHome TelephonyProvider MiuiSystemUI
 # All apks from MIUI
-local-miui-removed-apps  := Phone MediaProvider Gallery
+local-miui-removed-apps  := Phone MediaProvider
 
 # All apps need to be removed from original ZIP file
 local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FMRadioWidget HtcDialer com.htc.FriendStream3DWidget \
