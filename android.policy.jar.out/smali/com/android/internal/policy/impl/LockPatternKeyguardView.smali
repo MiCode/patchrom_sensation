@@ -113,7 +113,7 @@
 
 .field volatile mScreenOn:Z
 
-.field private mShowLockBeforeUnlock:Z
+.field mShowLockBeforeUnlock:Z
 
 .field private mTransportControlView:Lcom/android/internal/widget/TransportControlView;
 
