@@ -4849,8 +4849,6 @@
 
     iget v2, p0, Lcom/android/phone/CallCard;->mTextColorCallTypeSip:I
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
-
     .line 2442
     :goto_1
     return-void
@@ -4868,8 +4866,6 @@
     iget-object v1, p0, Lcom/android/phone/CallCard;->mPhoneNumber:Landroid/widget/TextView;
 
     iget v2, p0, Lcom/android/phone/CallCard;->mTextColorConnected:I
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     goto :goto_1
 .end method

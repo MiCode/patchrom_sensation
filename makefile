@@ -54,6 +54,12 @@ local-zip-misc: add-lbesec-miui
 	cp other/boot.img $(ZIP_DIR)/boot.img
 	@echo add tel location
 	cp other/CallerLocation.apk $(ZIP_DIR)/system/app/CallerLocation.apk
+	@echo Update htc resources
+	rm $(ZIP_DIR)/system/framework/com.htc.resources.apk
+	cp -r com.htc.resources $(TMP_DIR)/
+	$(APKTOOL) b $(TMP_DIR)/com.htc.resources $(TMP_DIR)/com.htc.resources.apk
+	cp $(TMP_DIR)/com.htc.resources.apk $(ZIP_DIR)/system/framework/com.htc.resources.apk
+
 local-test:
 #	rm -f $(local-out-zip-file)
 #	cp .build/$(local-out-zip-file) .
