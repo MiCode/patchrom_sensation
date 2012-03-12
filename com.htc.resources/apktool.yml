@@ -1,0 +1,6 @@
+version: 1.4.3
+apkFileName: com.htc.resources.apk
+isFrameworkApk: true
+usesFramework:
+  ids:
+  - 1
