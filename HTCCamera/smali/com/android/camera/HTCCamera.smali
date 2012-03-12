@@ -28836,7 +28836,7 @@
     .line 10827
     .end local v0           #action:Ljava/lang/String;
     :cond_0
-    const-string v0, "com.htc.album.action.VIEW_PHOTO_FROM_CAMERA"
+    const-string v0, "com.android.camera.action.REVIEW"
 
     .restart local v0       #action:Ljava/lang/String;
     goto :goto_0
