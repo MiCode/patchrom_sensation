@@ -21,16 +21,16 @@ local-miui-removed-apps  := Phone MediaProvider
 local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FMRadioWidget HtcDialer com.htc.FriendStream3DWidget \
 	com.htc.MusicWidget com.htc.Sync3DWidget com.htc.Task3DWidget com.htc.TrendsWidget com.htc.Twitter3DWidget \
 	com.htc.htcmsgwidgets3d com.htc.idlescreen_SN DCSStock EReader Facebook Flickr FriendStream FusionStockWidget \
-	GenieWidget GoogleBackupTransport GoogleFeedback GooglePartnerSetup GoogleQuickSearchBox GSD HtcConnectedMedia \
+	GenieWidget GoogleFeedback GoogleQuickSearchBox GSD HtcConnectedMedia \
 	HtcFacebook HtcFacebookChat HtcFacebookChatWidget HtcFeedback HtcLaputa HtcLaputaInstaller HtcLocationsWidget3d \
-	HtcNavigateWidget3d HtcTwitter IdleScreen_Stock JETCET_PRINT JETCET_PRINT_Resources Maps MyHTC MyReportAgent \
-	MyShelf_Widget MySketcher picasapryramid PolarisOffice SoundHound_Freemium Stock Talk teeter TripWidget3D Twitter \
-	VoiceSearch YouTube \
+	HtcNavigateWidget3d HtcTwitter IdleScreen_Stock JETCET_PRINT JETCET_PRINT_Resources MyHTC MyReportAgent \
+	MyShelf_Widget MySketcher picasapryramid PolarisOffice SoundHound_Freemium Stock teeter TripWidget3D Twitter \
+	YouTube Flashlight\
 	dice_ml TaskManager Tweaks HtcStore HtcStoreWidget MyTask HtcSoundRecorder HtcLockScreen \
 	TrimIt htccontactwidgets3D  htcbookmarkwidget3d \
 	Idlescreen_Base  idlescreen_photo idlescreen_shortcut \
 	Weather IdleScreen_Weather HtcWeather3DWidget HtcWeatherWallpaper WeatherLiveWallpaper WeatherVideo \
-	HTCSetupWizard SetupWizard Superuser Mail Calendar CalendarProvider HomePersonalize DockMode WifiRouter \
+	HTCSetupWizard SetupWizard Superuser Mail HomePersonalize DockMode WifiRouter \
 	Videos WorldClock HtcClock3DWidget HtcCalculatorWidget htccalendarwidgets3d htcmailwidgets3d htcsettingwidgets \
 	BlueSky WeatherSyncProvider WeatherProvider VpnDialogs VisualizationWallpapers UserDictionaryProvider \
 	MagicSmokeWallpapers Mode10Wallpapers Burgundy FaceLock HtcCompressViewer HtcAutoRotateWidget HtcDataRoamingWidget\
