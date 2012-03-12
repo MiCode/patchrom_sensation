@@ -35,7 +35,8 @@ local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FM
 	BlueSky WeatherSyncProvider WeatherProvider VpnDialogs VisualizationWallpapers UserDictionaryProvider \
 	MagicSmokeWallpapers Mode10Wallpapers Burgundy FaceLock HtcCompressViewer HtcAutoRotateWidget HtcDataRoamingWidget\
 	HtcDataStripWidget HtcImageWallpaper HTCLivewallpaperStreak HtcProfileWidget HtcPowerStripWidget HtcPhotoWidget \
-	HtcRingtoneWidget HtcRingtoneTrimmer HtcScreenBrightnessWidget HtcScreenTimeoutWidget HTCAlbum Galaxy4 com.htc.SN Tweaks dice_ml
+	HtcRingtoneWidget HtcRingtoneTrimmer HtcScreenBrightnessWidget HtcScreenTimeoutWidget HTCAlbum Galaxy4 com.htc.SN Tweaks dice_ml \
+	HTCSync PCSC
 # To include the local targets before and after zip the final ZIP file, 
 # and the local-targets should:
 # (1) be defined after including porting.mk if using any global variable(see porting.mk)
