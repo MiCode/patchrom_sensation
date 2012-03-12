@@ -6,7 +6,7 @@
     <search launcher:screen="0" launcher:x="0" launcher:y="0" />
     <clock launcher:screen="1" launcher:x="0" launcher:y="0" />
     <favorite launcher:className="com.android.camera.CameraEntry" launcher:packageName="com.android.camera" launcher:screen="1" launcher:x="0" launcher:y="2" />
-    <favorite launcher:className="com.htc.album.AlbumMain.ActivityMainDropList" launcher:packageName="com.htc.album" launcher:screen="1" launcher:x="1" launcher:y="2" />
+    <favorite launcher:className="com.android.gallery3d.app.Gallery" launcher:packageName="com.android.gallery3d" launcher:screen="1" launcher:x="1" launcher:y="2" />
     <favorite launcher:className="com.miui.player.ui.MusicBrowserActivity" launcher:packageName="com.miui.player" launcher:screen="1" launcher:x="2" launcher:y="2" />
     <favorite launcher:className="com.android.thememanager.ThemeResourceTabActivity" launcher:packageName="com.android.thememanager" launcher:screen="1" launcher:x="3" launcher:y="2" />
     <favorite launcher:className="com.android.settings.Settings" launcher:packageName="com.android.settings" launcher:screen="1" launcher:x="0" launcher:y="3" />
@@ -14,7 +14,7 @@
     <favorite launcher:className="com.android.deskclock.DeskClock" launcher:packageName="com.android.deskclock" launcher:container="1" launcher:x="0" launcher:y="0" />
     <favorite launcher:className="com.android.calculator2.Calculator" launcher:packageName="com.android.calculator2" launcher:container="1" launcher:x="0" launcher:y="0" />
     <favorite launcher:className="com.android.soundrecorder.SoundRecorder" launcher:packageName="com.android.soundrecorder" launcher:container="1" launcher:x="0" launcher:y="0" />
-    <favorite launcher:className="com.htc.flashlight.FlashlightActivity" launcher:packageName="com.htc.flashlight" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.android.systemui.TorchActivity" launcher:packageName="com.android.systemui" launcher:container="1" launcher:x="0" launcher:y="0" />
     <favorite launcher:className="com.htc.fm.FMRadio" launcher:packageName="com.htc.fm" launcher:container="1" launcher:x="0" launcher:y="0" />
     <favorite launcher:className="com.miui.compass.CompassActivity" launcher:packageName="com.miui.compass" launcher:container="1" launcher:x="0" launcher:y="0" />
     <favorite launcher:className="com.android.monitor.MainActivity" launcher:packageName="com.android.monitor" launcher:container="1" launcher:x="0" launcher:y="0" />
