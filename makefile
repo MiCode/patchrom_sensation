@@ -52,6 +52,8 @@ include $(PORT_BUILD)/porting.mk
 local-zip-misc: add-lbesec-miui
 	@echo Update boot image
 	cp other/boot.img $(ZIP_DIR)/boot.img
+	@echo add tel location
+	cp other/CallerLocation.apk $(ZIP_DIR)/system/app/CallerLocation.apk
 	@echo Update htc resources
 	rm $(ZIP_DIR)/system/framework/com.htc.resources.apk
 	cp -r com.htc.resources $(TMP_DIR)/
