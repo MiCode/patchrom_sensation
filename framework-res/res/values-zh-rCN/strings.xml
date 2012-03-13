@@ -484,8 +484,8 @@
     <string name="permdesc_camera">允许应用程序使用相机拍摄照片和视频。这样，应用程序可随时收集进入相机镜头中的图像。</string>
     <string name="permlab_brick">永久禁用手机</string>
     <string name="permdesc_brick">允许应用程序永久禁用整个手机，这是很危险的。</string>
-    <string name="permlab_reboot">强制手机重新引导</string>
-    <string name="permdesc_reboot">允许应用程序强制手机重新引导。</string>
+    <string name="permlab_reboot">强制手机重新启动</string>
+    <string name="permdesc_reboot">允许应用程序强制手机重新启动。</string>
     <string name="permlab_mount_unmount_filesystems">装载和卸载文件系统</string>
     <string name="permdesc_mount_unmount_filesystems">允许应用程序装载和卸载文件系统以进行可移动存储。</string>
     <string name="permlab_mount_format_filesystems">格式化外部存储设备</string>
@@ -780,7 +780,7 @@
     <string name="factorytest_failed">出厂测试失败</string>
     <string name="factorytest_not_system">只有在 /system/app 中安装的包支持 FACTORY_TEST 操作。</string>
     <string name="factorytest_no_action">未发现支持 FACTORY_TEST 操作的包。</string>
-    <string name="factorytest_reboot">重新引导</string>
+    <string name="factorytest_reboot">重新启动</string>
     <string name="js_dialog_title">“%s”处的页面表明：</string>
     <string name="js_dialog_title_default">JavaScript</string>
     <string name="js_dialog_before_unload">"是否从该页面导航至它处？
