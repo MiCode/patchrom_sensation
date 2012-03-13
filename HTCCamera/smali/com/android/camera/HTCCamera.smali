@@ -28836,7 +28836,7 @@
     .line 10827
     .end local v0           #action:Ljava/lang/String;
     :cond_0
-    const-string v0, "com.android.camera.action.REVIEW"
+    const-string v0, "android.intent.action.VIEW"
 
     .restart local v0       #action:Ljava/lang/String;
     goto :goto_0

@@ -190,7 +190,7 @@
     .line 3318
     new-instance v1, Landroid/content/Intent;
 
-    const-string v2, "com.android.camera.action.REVIEW"
+    const-string v2, "android.intent.action.VIEW"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
