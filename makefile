@@ -65,7 +65,12 @@ local-zip-misc: add-lbesec-miui
 	cp -r com.htc.resources $(TMP_DIR)/
 	$(APKTOOL) b $(TMP_DIR)/com.htc.resources $(TMP_DIR)/com.htc.resources.apk
 	cp $(TMP_DIR)/com.htc.resources.apk $(ZIP_DIR)/system/framework/com.htc.resources.apk
-
+	@echo update default theme icons
+	mv $(ZIP_DIR)/system/media/theme/default/icons $(TMP_DIR)/icons.zip
+	$(UNZIP) $(TMP_DIR)/icons.zip -d $(TMP_DIR)/default_theme_icons
+	cp other/default_theme_icons/* $(TMP_DIR)/default_theme_icons
+	$(ZIP) -j $(ZIP_DIR)/system/media/theme/default/icons.zip $(TMP_DIR)/default_theme_icons/*
+	mv $(ZIP_DIR)/system/media/theme/default/icons.zip $(ZIP_DIR)/system/media/theme/default/icons
 local-test:
 #	rm -f $(local-out-zip-file)
 #	cp .build/$(local-out-zip-file) .
