@@ -9,13 +9,13 @@ local-zip-file     := sensation_4.5.4.zip
 # local-out-zip-file :=
 
 # All apps from original ZIP, but has smali files chanded
-local-modified-apps := Rosie Phone HTCCamera
+local-modified-apps := Phone HTCCamera
 
 local-modified-jars := HTCExtension
 
 local-miui-modified-apps := ThemeManager Mms MiuiHome TelephonyProvider MiuiSystemUI
 # All apks from MIUI
-local-miui-removed-apps  := Phone 
+local-miui-removed-apps  := Phone MediaProvider
 
 # All apps need to be removed from original ZIP file
 local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FMRadioWidget HtcDialer com.htc.FriendStream3DWidget \
@@ -38,7 +38,8 @@ local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FM
 	HtcRingtoneWidget HtcRingtoneTrimmer HtcScreenBrightnessWidget HtcScreenTimeoutWidget HTCAlbum Galaxy4 com.htc.SN Tweaks dice_ml \
 	HTCSync PCSC HtcSoundSetDownloadManager \
 	HTCMediaAutoUploadSetting HtcBackgroundDataWidget HtcStreamPlayer HtcVideoPlayer HtcPowerSaverWidget HtcPainterView HtcMusicEnhancer \
-	HtcMessageUploader HtcMessageProvider HtcLocationService HtcMediaCacheService HtcDLNAMiddleLayer HtcDMC HoloSpiralWallpaper MediaUploader
+	HtcMessageUploader HtcMessageProvider HtcLocationService HtcMediaCacheService HtcDLNAMiddleLayer HtcDMC HoloSpiralWallpaper MediaUploader \
+	HtcSettingsProvider Rosie
 # To include the local targets before and after zip the final ZIP file, 
 # and the local-targets should:
 # (1) be defined after including porting.mk if using any global variable(see porting.mk)
