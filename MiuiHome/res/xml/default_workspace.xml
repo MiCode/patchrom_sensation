@@ -6,7 +6,7 @@
     <search launcher:screen="0" launcher:x="0" launcher:y="0" />
     <clock launcher:screen="1" launcher:x="0" launcher:y="0" />
     <favorite launcher:className="com.android.camera.CameraEntry" launcher:packageName="com.android.camera" launcher:screen="1" launcher:x="0" launcher:y="2" />
-    <favorite launcher:className="com.android.gallery3d.app.Gallery" launcher:packageName="com.android.gallery3d" launcher:screen="1" launcher:x="1" launcher:y="2" />
+    <favorite launcher:className="com.miui.gallery.app.Gallery" launcher:packageName="com.miui.gallery" launcher:screen="1" launcher:x="1" launcher:y="2" />
     <favorite launcher:className="com.miui.player.ui.MusicBrowserActivity" launcher:packageName="com.miui.player" launcher:screen="1" launcher:x="2" launcher:y="2" />
     <favorite launcher:className="com.android.thememanager.ThemeResourceTabActivity" launcher:packageName="com.android.thememanager" launcher:screen="1" launcher:x="3" launcher:y="2" />
     <favorite launcher:className="com.android.settings.Settings" launcher:packageName="com.android.settings" launcher:screen="1" launcher:x="0" launcher:y="3" />
