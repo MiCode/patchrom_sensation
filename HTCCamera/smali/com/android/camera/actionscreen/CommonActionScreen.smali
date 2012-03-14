@@ -882,8 +882,6 @@
 
     const-string v4, "com.htc.video.ViewVideo"
 
-    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
     .line 483
     const-string v3, "landscape"
 
