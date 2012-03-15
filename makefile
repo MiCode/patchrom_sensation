@@ -32,7 +32,7 @@ local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FM
 	Weather IdleScreen_Weather HtcWeather3DWidget HtcWeatherWallpaper WeatherLiveWallpaper WeatherVideo \
 	HTCSetupWizard SetupWizard Superuser Mail HomePersonalize DockMode WifiRouter \
 	Videos WorldClock HtcClock3DWidget HtcCalculatorWidget htccalendarwidgets3d htcmailwidgets3d htcsettingwidgets \
-	BlueSky WeatherSyncProvider WeatherProvider VpnDialogs VisualizationWallpapers UserDictionaryProvider \
+	BlueSky WeatherSyncProvider WeatherProvider VpnDialogs VisualizationWallpapers \
 	MagicSmokeWallpapers Mode10Wallpapers Burgundy FaceLock HtcCompressViewer HtcAutoRotateWidget HtcDataRoamingWidget\
 	HtcDataStripWidget HtcImageWallpaper HTCLivewallpaperStreak HtcProfileWidget HtcPowerStripWidget HtcPhotoWidget \
 	HtcRingtoneWidget HtcRingtoneTrimmer HtcScreenBrightnessWidget HtcScreenTimeoutWidget HTCAlbum Galaxy4 com.htc.SN Tweaks dice_ml \
