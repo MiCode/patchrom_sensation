@@ -1,9 +1,16 @@
 .class public abstract Lcom/google/android/mms/util/AbstractCache;
-.super Ljava/util/LinkedHashMap;
+.super Ljava/lang/Object;
 .source "AbstractCache.java"
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/android/mms/util/AbstractCache$1;,
+        Lcom/google/android/mms/util/AbstractCache$CacheEntry;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<K:",
@@ -11,8 +18,7 @@
         "V:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/util/LinkedHashMap",
-        "<TK;TV;>;"
+        "Ljava/lang/Object;"
     }
 .end annotation
 
@@ -20,17 +26,24 @@
 # static fields
 .field private static final DEBUG:Z = false
 
-.field private static final DEFAULT_CACHE_SIZE:I = 0x32
-
 .field private static final LOCAL_LOGV:Z = false
+
+.field private static final MAX_CACHED_ITEMS:I = 0x1f4
 
 .field private static final TAG:Ljava/lang/String; = "AbstractCache"
 
-.field private static final serialVersionUID:J = -0x5651925f887dda58L
-
 
 # instance fields
-.field private mCacheSize:I
+.field private final mCacheMap:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap",
+            "<TK;",
+            "Lcom/google/android/mms/util/AbstractCache$CacheEntry",
+            "<TV;>;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -38,107 +51,24 @@
     .locals 1
 
     .prologue
-    .line 132
+    .line 33
     .local p0, this:Lcom/google/android/mms/util/AbstractCache;,"Lcom/google/android/mms/util/AbstractCache<TK;TV;>;"
-    const/16 v0, 0x32
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Lcom/google/android/mms/util/AbstractCache;-><init>(I)V
+    .line 34
+    new-instance v0, Ljava/util/HashMap;
 
-    .line 133
-    return-void
-.end method
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-.method protected constructor <init>(I)V
-    .locals 3
-    .parameter "cacheSize"
+    iput-object v0, p0, Lcom/google/android/mms/util/AbstractCache;->mCacheMap:Ljava/util/HashMap;
 
-    .prologue
-    .line 136
-    .local p0, this:Lcom/google/android/mms/util/AbstractCache;,"Lcom/google/android/mms/util/AbstractCache<TK;TV;>;"
-    const/16 v0, 0xa
-
-    const/high16 v1, 0x3f80
-
-    const/4 v2, 0x1
-
-    invoke-direct {p0, v0, v1, v2}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
-
-    .line 137
-    iput p1, p0, Lcom/google/android/mms/util/AbstractCache;->mCacheSize:I
-
-    .line 138
+    .line 35
     return-void
 .end method
 
 
 # virtual methods
-.method public declared-synchronized get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-    .parameter "key"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Object;",
-            ")TV;"
-        }
-    .end annotation
-
-    .prologue
-    .line 155
-    .local p0, this:Lcom/google/android/mms/util/AbstractCache;,"Lcom/google/android/mms/util/AbstractCache<TK;TV;>;"
-    monitor-enter p0
-
-    :try_start_0
-    invoke-super {p0, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-object v0
-
-    .line 161
-    .local v0, ret:Ljava/lang/Object;,"TV;"
-    monitor-exit p0
-
-    return-object v0
-
-    .line 155
-    .end local v0           #ret:Ljava/lang/Object;,"TV;"
-    :catchall_0
-    move-exception v1
-
-    monitor-exit p0
-
-    throw v1
-.end method
-
-.method public declared-synchronized getCachedItemCount()I
-    .locals 1
-
-    .prologue
-    .line 191
-    .local p0, this:Lcom/google/android/mms/util/AbstractCache;,"Lcom/google/android/mms/util/AbstractCache<TK;TV;>;"
-    monitor-enter p0
-
-    :try_start_0
-    invoke-super {p0}, Ljava/util/LinkedHashMap;->size()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v0
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized invalidate(Ljava/lang/Object;)Ljava/lang/Object;
+.method public get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -148,127 +78,164 @@
     .end annotation
 
     .prologue
-    .line 174
+    .line 69
     .local p0, this:Lcom/google/android/mms/util/AbstractCache;,"Lcom/google/android/mms/util/AbstractCache<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
-    monitor-enter p0
+    if-eqz p1, :cond_0
 
-    :try_start_0
-    invoke-virtual {p0, p1}, Lcom/google/android/mms/util/AbstractCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .line 70
+    iget-object v1, p0, Lcom/google/android/mms/util/AbstractCache;->mCacheMap:Ljava/util/HashMap;
+
+    invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 180
-    .local v0, ret:Ljava/lang/Object;,"TV;"
-    monitor-exit p0
+    check-cast v0, Lcom/google/android/mms/util/AbstractCache$CacheEntry;
 
-    return-object v0
+    .line 71
+    .local v0, cacheEntry:Lcom/google/android/mms/util/AbstractCache$CacheEntry;,"Lcom/google/android/mms/util/AbstractCache$CacheEntry<TV;>;"
+    if-eqz v0, :cond_0
 
-    .line 174
-    .end local v0           #ret:Ljava/lang/Object;,"TV;"
-    :catchall_0
-    move-exception v1
+    .line 72
+    iget v1, v0, Lcom/google/android/mms/util/AbstractCache$CacheEntry;->hit:I
 
-    monitor-exit p0
+    add-int/lit8 v1, v1, 0x1
 
-    throw v1
+    iput v1, v0, Lcom/google/android/mms/util/AbstractCache$CacheEntry;->hit:I
+
+    .line 76
+    iget-object v1, v0, Lcom/google/android/mms/util/AbstractCache$CacheEntry;->value:Ljava/lang/Object;
+
+    .line 79
+    .end local v0           #cacheEntry:Lcom/google/android/mms/util/AbstractCache$CacheEntry;,"Lcom/google/android/mms/util/AbstractCache$CacheEntry<TV;>;"
+    :goto_0
+    return-object v1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_0
 .end method
 
-.method public declared-synchronized invalidateAll()V
-    .locals 1
-
-    .prologue
-    .line 187
-    .local p0, this:Lcom/google/android/mms/util/AbstractCache;,"Lcom/google/android/mms/util/AbstractCache<TK;TV;>;"
-    monitor-enter p0
-
-    :try_start_0
-    invoke-super {p0}, Ljava/util/LinkedHashMap;->clear()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 188
-    monitor-exit p0
-
-    return-void
-
-    .line 187
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .parameter
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;TV;)TV;"
-        }
-    .end annotation
-
-    .prologue
-    .line 146
-    .local p0, this:Lcom/google/android/mms/util/AbstractCache;,"Lcom/google/android/mms/util/AbstractCache<TK;TV;>;"
-    .local p1, key:Ljava/lang/Object;,"TK;"
-    .local p2, value:Ljava/lang/Object;,"TV;"
-    monitor-enter p0
-
-    :try_start_0
-    invoke-super {p0, p1, p2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-object v0
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method protected removeEldestEntry(Ljava/util/Map$Entry;)Z
+.method public purge(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Ljava/util/Map$Entry",
-            "<TK;TV;>;)Z"
+            "(TK;)TV;"
         }
     .end annotation
 
     .prologue
-    .line 166
+    .line 87
     .local p0, this:Lcom/google/android/mms/util/AbstractCache;,"Lcom/google/android/mms/util/AbstractCache<TK;TV;>;"
-    .local p1, eldest:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
-    invoke-super {p0}, Ljava/util/LinkedHashMap;->size()I
+    .local p1, key:Ljava/lang/Object;,"TK;"
+    iget-object v1, p0, Lcom/google/android/mms/util/AbstractCache;->mCacheMap:Ljava/util/HashMap;
+
+    invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/mms/util/AbstractCache$CacheEntry;
+
+    .line 93
+    .local v0, v:Lcom/google/android/mms/util/AbstractCache$CacheEntry;,"Lcom/google/android/mms/util/AbstractCache$CacheEntry<TV;>;"
+    if-eqz v0, :cond_0
+
+    iget-object v1, v0, Lcom/google/android/mms/util/AbstractCache$CacheEntry;->value:Ljava/lang/Object;
+
+    :goto_0
+    return-object v1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
+.method public purgeAll()V
+    .locals 1
+
+    .prologue
+    .line 101
+    .local p0, this:Lcom/google/android/mms/util/AbstractCache;,"Lcom/google/android/mms/util/AbstractCache<TK;TV;>;"
+    iget-object v0, p0, Lcom/google/android/mms/util/AbstractCache;->mCacheMap:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+
+    .line 102
+    return-void
+.end method
+
+.method public put(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 4
+    .parameter
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TK;TV;)Z"
+        }
+    .end annotation
+
+    .prologue
+    .local p0, this:Lcom/google/android/mms/util/AbstractCache;,"Lcom/google/android/mms/util/AbstractCache<TK;TV;>;"
+    .local p1, key:Ljava/lang/Object;,"TK;"
+    .local p2, value:Ljava/lang/Object;,"TV;"
+    const/4 v1, 0x0
+
+    .line 42
+    iget-object v2, p0, Lcom/google/android/mms/util/AbstractCache;->mCacheMap:Ljava/util/HashMap;
+
+    invoke-virtual {v2}, Ljava/util/HashMap;->size()I
+
+    move-result v2
+
+    const/16 v3, 0x1f4
+
+    if-lt v2, v3, :cond_1
+
+    .line 61
+    :cond_0
+    :goto_0
+    return v1
+
+    .line 51
+    :cond_1
+    if-eqz p1, :cond_0
+
+    .line 52
+    new-instance v0, Lcom/google/android/mms/util/AbstractCache$CacheEntry;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcom/google/android/mms/util/AbstractCache$CacheEntry;-><init>(Lcom/google/android/mms/util/AbstractCache$1;)V
+
+    .line 53
+    .local v0, cacheEntry:Lcom/google/android/mms/util/AbstractCache$CacheEntry;,"Lcom/google/android/mms/util/AbstractCache$CacheEntry<TV;>;"
+    iput-object p2, v0, Lcom/google/android/mms/util/AbstractCache$CacheEntry;->value:Ljava/lang/Object;
+
+    .line 54
+    iget-object v1, p0, Lcom/google/android/mms/util/AbstractCache;->mCacheMap:Ljava/util/HashMap;
+
+    invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 59
+    const/4 v1, 0x1
+
+    goto :goto_0
+.end method
+
+.method public size()I
+    .locals 1
+
+    .prologue
+    .line 105
+    .local p0, this:Lcom/google/android/mms/util/AbstractCache;,"Lcom/google/android/mms/util/AbstractCache<TK;TV;>;"
+    iget-object v0, p0, Lcom/google/android/mms/util/AbstractCache;->mCacheMap:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
 
     move-result v0
 
-    iget v1, p0, Lcom/google/android/mms/util/AbstractCache;->mCacheSize:I
-
-    if-le v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
     return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method

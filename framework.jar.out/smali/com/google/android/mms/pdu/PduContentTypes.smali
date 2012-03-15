@@ -187,37 +187,37 @@
 
     const/16 v1, 0x1c
 
-    const-string/jumbo v2, "image/*"
+    const-string v2, "image/*"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1d
 
-    const-string/jumbo v2, "image/gif"
+    const-string v2, "image/gif"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1e
 
-    const-string/jumbo v2, "image/jpeg"
+    const-string v2, "image/jpeg"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1f
 
-    const-string/jumbo v2, "image/tiff"
+    const-string v2, "image/tiff"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x20
 
-    const-string/jumbo v2, "image/png"
+    const-string v2, "image/png"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x21
 
-    const-string/jumbo v2, "image/vnd.wap.wbmp"
+    const-string v2, "image/vnd.wap.wbmp"
 
     aput-object v2, v0, v1
 

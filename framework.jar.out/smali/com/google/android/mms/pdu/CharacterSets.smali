@@ -149,55 +149,55 @@
 
     const/4 v3, 0x2
 
-    const-string/jumbo v4, "iso-8859-1"
+    const-string v4, "iso-8859-1"
 
     aput-object v4, v2, v3
 
     const/4 v3, 0x3
 
-    const-string/jumbo v4, "iso-8859-2"
+    const-string v4, "iso-8859-2"
 
     aput-object v4, v2, v3
 
     const/4 v3, 0x4
 
-    const-string/jumbo v4, "iso-8859-3"
+    const-string v4, "iso-8859-3"
 
     aput-object v4, v2, v3
 
     const/4 v3, 0x5
 
-    const-string/jumbo v4, "iso-8859-4"
+    const-string v4, "iso-8859-4"
 
     aput-object v4, v2, v3
 
     const/4 v3, 0x6
 
-    const-string/jumbo v4, "iso-8859-5"
+    const-string v4, "iso-8859-5"
 
     aput-object v4, v2, v3
 
     const/4 v3, 0x7
 
-    const-string/jumbo v4, "iso-8859-6"
+    const-string v4, "iso-8859-6"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x8
 
-    const-string/jumbo v4, "iso-8859-7"
+    const-string v4, "iso-8859-7"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x9
 
-    const-string/jumbo v4, "iso-8859-8"
+    const-string v4, "iso-8859-8"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xa
 
-    const-string/jumbo v4, "iso-8859-9"
+    const-string v4, "iso-8859-9"
 
     aput-object v4, v2, v3
 
@@ -221,7 +221,7 @@
 
     const/16 v3, 0xe
 
-    const-string/jumbo v4, "iso-10646-ucs-2"
+    const-string v4, "iso-10646-ucs-2"
 
     aput-object v4, v2, v3
 
