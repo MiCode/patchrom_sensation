@@ -19,7 +19,6 @@
     <favorite launcher:className="com.miui.compass.CompassActivity" launcher:packageName="com.miui.compass" launcher:container="1" launcher:x="0" launcher:y="0" />
     <favorite launcher:className="com.android.monitor.MainActivity" launcher:packageName="com.android.monitor" launcher:container="1" launcher:x="0" launcher:y="0" />
     <favorite launcher:className="com.miui.backup.BackupActivity" launcher:packageName="com.miui.backup" launcher:container="1" launcher:x="0" launcher:y="0" />
-    <favorite launcher:className="com.miui.antispam.firewall.FirewallTab" launcher:packageName="com.miui.antispam" launcher:container="1" launcher:x="0" launcher:y="0" />
     <favorite launcher:className="com.miui.uac.Su" launcher:packageName="com.miui.uac" launcher:container="1" launcher:x="0" launcher:y="0" />
     <favorite launcher:className="com.android.providers.downloads.ui.DownloadList" launcher:packageName="com.android.providers.downloads.ui" launcher:container="1" launcher:x="0" launcher:y="0" />
     <favorite launcher:className="com.android.stk.StkLauncherActivity" launcher:packageName="com.android.stk" launcher:container="1" launcher:x="0" launcher:y="0" />
