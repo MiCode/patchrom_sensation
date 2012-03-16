@@ -39,7 +39,7 @@ local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FM
 	HTCSync PCSC HtcSoundSetDownloadManager \
 	HTCMediaAutoUploadSetting HtcBackgroundDataWidget HtcStreamPlayer HtcVideoPlayer HtcPowerSaverWidget HtcPainterView HtcMusicEnhancer \
 	HtcMessageUploader HtcMessageProvider HtcLocationService HtcMediaCacheService HtcDLNAMiddleLayer HtcDMC HoloSpiralWallpaper MediaUploader \
-	HtcSettingsProvider Rosie
+	HtcSettingsProvider Rosie fusion
 # To include the local targets before and after zip the final ZIP file, 
 # and the local-targets should:
 # (1) be defined after including porting.mk if using any global variable(see porting.mk)
@@ -71,6 +71,10 @@ local-zip-misc: add-lbesec-miui
 	cp other/default_theme_icons/* $(TMP_DIR)/default_theme_icons
 	$(ZIP) -j $(ZIP_DIR)/system/media/theme/default/icons.zip $(TMP_DIR)/default_theme_icons/*
 	mv $(ZIP_DIR)/system/media/theme/default/icons.zip $(ZIP_DIR)/system/media/theme/default/icons
+	@echo update default lock wallpaper
+	cp other/lock_wallpaper $(ZIP_DIR)/system/media/theme/default/lock_wallpaper
+	@echo CID default xml
+	cp other/default.xml $(ZIP_DIR)/system/customize/CID/default.xml
 local-test:
 #	rm -f $(local-out-zip-file)
 #	cp .build/$(local-out-zip-file) .
