@@ -93,7 +93,7 @@
     iput-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mLoadingText:Ljava/lang/String;
 
     .line 170
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -115,7 +115,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     return-object v0
 .end method
@@ -126,7 +126,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -137,7 +137,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -148,7 +148,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -159,7 +159,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -170,7 +170,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -181,7 +181,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     return-object v0
 .end method
@@ -192,7 +192,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -203,7 +203,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -214,7 +214,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -225,7 +225,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -236,7 +236,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     return-object v0
 .end method
@@ -248,12 +248,12 @@
 
     .prologue
     .line 176
-    iget-object v9, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v9, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     if-eqz v9, :cond_3
 
     .line 178
-    iget-object v9, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v9, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v9}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -261,14 +261,14 @@
 
     .line 180
     .local v4, mContext:Landroid/app/Activity;
-    iget-object v9, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v9, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     instance-of v9, v9, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
     if-eqz v9, :cond_0
 
     .line 182
-    iget-object v9, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v9, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v9, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
@@ -304,7 +304,7 @@
 
     .line 187
     .local v5, nPosition:I
-    iget-object v9, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v9, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     invoke-virtual {v9}, Landroid/widget/BaseAdapter;->getCount()I
 
@@ -320,7 +320,7 @@
     iput v5, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mPhotoPos:I
 
     .line 192
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
@@ -346,11 +346,11 @@
     invoke-virtual {v0, v9, v10, v11}, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->setTemplateLayout(ILcom/htc/opensense/album/SocialNetworkManager/NotifyLiveImageState$ImageDecoder;Lcom/htc/opensense/album/SocialNetworkManager/NotifyLiveImageState$ImageDownloadedListener;)V
 
     .line 198
-    iget-object v9, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v9, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v9, Lcom/htc/opensense/widget/HtcGridView2;
 
-    iget-object v10, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v10, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     invoke-virtual {v9, v10}, Lcom/htc/opensense/widget/HtcGridView2;->setAdapter(Landroid/widget/BaseAdapter;)V
 
@@ -391,7 +391,7 @@
     iput v9, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mPhotoPos:I
 
     .line 209
-    iget-object v9, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v9, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v9, Lcom/htc/opensense/widget/HtcGridView2;
 
@@ -514,7 +514,7 @@
     if-eqz p1, :cond_0
 
     .line 579
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v0, Lcom/htc/opensense/widget/HtcGridView2;
 
@@ -528,10 +528,10 @@
 
     move-result v0
 
-    iput v0, p1, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
+    iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     .line 580
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v0, Lcom/htc/opensense/widget/HtcGridView2;
 
@@ -569,12 +569,12 @@
 
     .prologue
     .line 251
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     if-eqz v2, :cond_0
 
     .line 252
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v2, Lcom/htc/opensense/widget/HtcGridView2;
 
@@ -584,7 +584,7 @@
 
     .line 254
     :cond_0
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v2}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -627,7 +627,7 @@
     .line 258
     new-instance v0, Lcom/htc/opensense/widget/HtcGridView2;
 
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v2}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -725,7 +725,7 @@
 
     .prologue
     .line 510
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     if-nez v2, :cond_0
 
@@ -746,7 +746,7 @@
 
     .line 516
     .local v1, titleBar:Lcom/htc/opensense/album/ControlTitleBar;
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v2}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentTitleBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -848,7 +848,7 @@
     const/4 v4, 0x0
 
     .line 434
-    iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v5, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     if-nez v5, :cond_0
 
@@ -872,7 +872,7 @@
     new-instance v3, Lcom/htc/opensense/widget/GalleryImageView;
 
     .end local v3           #view:Lcom/htc/opensense/widget/GalleryImageView;
-    iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v5, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v5}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -903,7 +903,7 @@
 
     .line 445
     :cond_1
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v1, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
@@ -917,7 +917,7 @@
 
     .line 448
     .local v0, aPhoto:Lcom/htc/opensense/album/SocialNetworkManager/WrapperPhoto;
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v4, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v4}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -975,7 +975,7 @@
 
     .line 538
     :sswitch_0
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -987,7 +987,7 @@
 
     .line 541
     :sswitch_1
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1103,7 +1103,7 @@
     if-eqz v0, :cond_0
 
     .line 490
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v0, Lcom/htc/opensense/widget/HtcGridView2;
 
@@ -1135,7 +1135,7 @@
     new-instance v0, Lcom/htc/app/HtcProgressDialog;
 
     .end local v0           #dialog:Lcom/htc/app/HtcProgressDialog;
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v1}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1174,7 +1174,7 @@
     invoke-super {p0, p1}, Lcom/htc/opensense/album/ViewTemplateBase;->onEnter(Landroid/os/Bundle;)V
 
     .line 393
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v3, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v3, Lcom/htc/opensense/widget/HtcGridView2;
 
@@ -1184,7 +1184,7 @@
     invoke-virtual {p0}, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->onUpdateCommandBar()V
 
     .line 397
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v3, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v3}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1248,7 +1248,7 @@
 
     .prologue
     .line 424
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v1}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1370,12 +1370,12 @@
     invoke-virtual {p0}, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->onUpdateViewTitle()V
 
     .line 564
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->refreshControlBars()V
 
     .line 565
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     invoke-virtual {v0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
@@ -1401,7 +1401,7 @@
 
     .line 467
     :cond_0
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v1}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1467,12 +1467,12 @@
 
     .prologue
     .line 234
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     if-eqz v1, :cond_0
 
     .line 236
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v1, Lcom/htc/opensense/widget/HtcGridView2;
 
@@ -1483,7 +1483,7 @@
     iput v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mPhotoPos:I
 
     .line 238
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v1, Lcom/htc/opensense/widget/HtcGridView2;
 
@@ -1518,7 +1518,7 @@
     invoke-static {v1, v2}, Lcom/htc/opensense/album/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 241
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 

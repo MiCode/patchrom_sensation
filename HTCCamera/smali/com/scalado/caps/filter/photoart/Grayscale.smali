@@ -15,7 +15,7 @@
     invoke-direct {p0, p1, v2}, Lcom/scalado/caps/Filter;-><init>(Lcom/scalado/caps/Session;Z)V
 
     .line 22
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Grayscale;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -27,7 +27,7 @@
 
     .line 23
     .local v0, error:I
-    iput-boolean v2, p0, Lcom/scalado/caps/filter/photoart/Grayscale;->isSet:Z
+    iput-boolean v2, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 24
     invoke-virtual {p0, v2}, Lcom/scalado/caps/filter/photoart/Grayscale;->setHasActiveFilter(Z)V

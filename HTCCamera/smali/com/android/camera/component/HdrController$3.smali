@@ -30,12 +30,12 @@
     .parameter
 
     .prologue
-    .line 213
+    .line 214
     iput-object p1, p0, Lcom/android/camera/component/HdrController$3;->this$0:Lcom/android/camera/component/HdrController;
 
     iput-object p2, p0, Lcom/android/camera/component/HdrController$3;->val$cameraThread:Lcom/android/camera/CameraThread;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,7 +48,7 @@
     .parameter "camera"
 
     .prologue
-    .line 216
+    .line 217
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
@@ -57,11 +57,11 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 219
+    .line 220
     :goto_0
     return-void
 
-    .line 218
+    .line 219
     :cond_0
     iget-object v0, p0, Lcom/android/camera/component/HdrController$3;->val$cameraThread:Lcom/android/camera/CameraThread;
 

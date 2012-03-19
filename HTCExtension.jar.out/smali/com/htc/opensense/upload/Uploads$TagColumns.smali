@@ -63,7 +63,7 @@
 
     .prologue
     .line 346
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -310,7 +310,7 @@
 
     move-result-object v1
 
-    iput-object v1, v0, Lcom/htc/opensense/social/data/FaceTag;->id:Ljava/lang/String;
+    iput-object v1, v0, Lcom/htc/opensense/social/data/Attachment;->id:Ljava/lang/String;
 
     .line 378
     const-string v1, "tag_user"

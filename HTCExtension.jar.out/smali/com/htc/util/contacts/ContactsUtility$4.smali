@@ -35,7 +35,7 @@
 
     iput-wide p2, p0, Lcom/htc/util/contacts/ContactsUtility$4;->val$lContactId:J
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -61,14 +61,15 @@
 
     .line 1558
     .local v10, bMyContactIds:Landroid/os/Bundle;
-    if-nez v10, :cond_0
+    if-nez v10, :cond_1
 
     .line 1739
+    :cond_0
     :goto_0
     return-void
 
     .line 1559
-    :cond_0
+    :cond_1
     const-string v2, "contact_id"
 
     const-wide/16 v3, 0x0
@@ -93,26 +94,15 @@
 
     cmp-long v2, v2, v30
 
-    if-gez v2, :cond_1
+    if-gez v2, :cond_0
 
     const-wide/16 v2, 0x0
 
     cmp-long v2, v2, v32
 
-    if-ltz v2, :cond_2
-
-    .line 1562
-    :cond_1
-    const-string v2, "ContactsUtility"
-
-    const-string v3, "importToMyContact (0 >= lMyContactId || 0 >= lMyRawContactId) return"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
+    if-gez v2, :cond_0
 
     .line 1592
-    :cond_2
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/htc/util/contacts/ContactsUtility$4;->val$context:Landroid/content/Context;
@@ -124,35 +114,8 @@
 
     move-result-object v20
 
-    .line 1593
-    .local v20, entitiesMy:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/Entity;>;"
-    const-string v2, "ContactsUtility"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "importToMyContact entitiesMy.size(): "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual/range {v20 .. v20}, Ljava/util/ArrayList;->size()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1595
+    .local v20, entitiesMy:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/Entity;>;"
     invoke-static {}, Lcom/htc/util/contacts/ContactsUtility;->queryEditableAccount()Ljava/util/ArrayList;
 
     move-result-object v17
@@ -281,7 +244,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_3
 
     .line 1614
     invoke-interface/range {v29 .. v29}, Landroid/content/EntityIterator;->next()Ljava/lang/Object;
@@ -301,7 +264,7 @@
     :catchall_0
     move-exception v2
 
-    if-eqz v29, :cond_3
+    if-eqz v29, :cond_2
 
     .line 1618
     invoke-interface/range {v29 .. v29}, Landroid/content/EntityIterator;->close()V
@@ -309,13 +272,13 @@
     .line 1619
     const/16 v29, 0x0
 
-    :cond_3
+    :cond_2
     throw v2
 
     .line 1617
     .restart local v44       #sbSelection:Ljava/lang/StringBuilder;
-    :cond_4
-    if-eqz v29, :cond_5
+    :cond_3
+    if-eqz v29, :cond_4
 
     .line 1618
     invoke-interface/range {v29 .. v29}, Landroid/content/EntityIterator;->close()V
@@ -324,7 +287,7 @@
     const/16 v29, 0x0
 
     .line 1623
-    :cond_5
+    :cond_4
     sget-object v2, Landroid/provider/ContactsContract$Profile;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v3, "data"
@@ -353,12 +316,12 @@
 
     move-result-object v25
 
-    :cond_6
+    :cond_5
     invoke-interface/range {v25 .. v25}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_f
 
     invoke-interface/range {v25 .. v25}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -386,33 +349,8 @@
 
     move-result-wide v41
 
-    .line 1631
-    .local v41, rawContactId:J
-    const-string v2, "ContactsUtility"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "importToMyContact rawContactId: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    move-wide/from16 v0, v41
-
-    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1632
+    .local v41, rawContactId:J
     invoke-virtual/range {v21 .. v21}, Landroid/content/Entity;->getSubValues()Ljava/util/ArrayList;
 
     move-result-object v2
@@ -421,13 +359,13 @@
 
     move-result-object v26
 
-    :cond_7
+    :cond_6
     :goto_2
     invoke-interface/range {v26 .. v26}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_5
 
     invoke-interface/range {v26 .. v26}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -455,32 +393,7 @@
 
     .line 1637
     .local v35, mimetype:Ljava/lang/String;
-    if-eqz v35, :cond_7
-
-    .line 1638
-    const-string v2, "ContactsUtility"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "importToMyContact mimetype: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    move-object/from16 v0, v35
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    if-eqz v35, :cond_6
 
     .line 1639
     const/16 v38, 0x0
@@ -497,7 +410,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_7
 
     const-string v2, "vnd.android.cursor.item/email_v2"
 
@@ -507,7 +420,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_7
 
     const-string v2, "vnd.android.cursor.item/contact_event"
 
@@ -517,7 +430,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_7
 
     const-string v2, "vnd.android.cursor.item/im"
 
@@ -527,7 +440,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_7
 
     const-string v2, "vnd.android.cursor.item/postal-address_v2"
 
@@ -537,7 +450,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_7
 
     const-string v2, "vnd.android.cursor.item/organization"
 
@@ -547,7 +460,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_7
 
     const-string v2, "vnd.android.cursor.item/note"
 
@@ -557,7 +470,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_7
 
     const-string v2, "vnd.android.cursor.item/nickname"
 
@@ -567,7 +480,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_7
 
     const-string v2, "vnd.android.cursor.item/website"
 
@@ -577,10 +490,10 @@
 
     move-result v2
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_8
 
     .line 1652
-    :cond_8
+    :cond_7
     move-object/from16 v0, v20
 
     move-object/from16 v1, v23
@@ -589,7 +502,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_7
+    if-nez v2, :cond_6
 
     .line 1655
     invoke-static/range {v23 .. v23}, Lcom/htc/util/contacts/ContactsUtility;->getMimeTypeContentValues(Landroid/content/ContentValues;)Landroid/content/ContentValues;
@@ -598,7 +511,7 @@
 
     .line 1656
     .local v34, mimeTypeValues:Landroid/content/ContentValues;
-    if-eqz v34, :cond_7
+    if-eqz v34, :cond_6
 
     .line 1657
     const-string v2, "raw_contact_id"
@@ -637,7 +550,7 @@
 
     .line 1663
     .end local v34           #mimeTypeValues:Landroid/content/ContentValues;
-    :cond_9
+    :cond_8
     const-string v2, "vnd.android.cursor.item/photo"
 
     move-object/from16 v0, v35
@@ -646,7 +559,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_9
 
     .line 1664
     move-object/from16 v0, v20
@@ -657,7 +570,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_7
+    if-nez v2, :cond_6
 
     .line 1665
     invoke-static/range {v23 .. v23}, Lcom/htc/util/contacts/ContactsUtility;->getMimeTypeContentValues(Landroid/content/ContentValues;)Landroid/content/ContentValues;
@@ -666,7 +579,7 @@
 
     .line 1666
     .restart local v34       #mimeTypeValues:Landroid/content/ContentValues;
-    if-eqz v34, :cond_7
+    if-eqz v34, :cond_6
 
     .line 1667
     const-string v2, "raw_contact_id"
@@ -705,7 +618,7 @@
 
     .line 1674
     .end local v34           #mimeTypeValues:Landroid/content/ContentValues;
-    :cond_a
+    :cond_9
     const-string v2, "vnd.android.cursor.item/name"
 
     move-object/from16 v0, v35
@@ -714,7 +627,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_6
 
     .line 1675
     invoke-static/range {v23 .. v23}, Lcom/htc/util/contacts/ContactsUtility;->getMimeTypeContentValues(Landroid/content/ContentValues;)Landroid/content/ContentValues;
@@ -731,7 +644,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_a
 
     .line 1677
     const-string v2, "raw_contact_id"
@@ -769,7 +682,7 @@
     goto/16 :goto_2
 
     .line 1683
-    :cond_b
+    :cond_a
     const/16 v22, 0x0
 
     .line 1684
@@ -779,12 +692,12 @@
     move-result-object v27
 
     .local v27, i$:Ljava/util/Iterator;
-    :cond_c
+    :cond_b
     invoke-interface/range {v27 .. v27}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_c
 
     invoke-interface/range {v27 .. v27}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -794,7 +707,7 @@
 
     .line 1685
     .local v16, e:Landroid/content/Entity;
-    if-eqz v16, :cond_c
+    if-eqz v16, :cond_b
 
     .line 1686
     invoke-virtual/range {v16 .. v16}, Landroid/content/Entity;->getEntityValues()Landroid/content/ContentValues;
@@ -837,19 +750,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_b
 
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_b
 
     invoke-static {v14}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_b
 
     .line 1691
     move-object/from16 v22, v16
@@ -860,7 +773,7 @@
     .end local v14           #dataSet:Ljava/lang/String;
     .end local v16           #e:Landroid/content/Entity;
     .end local v37           #myValues:Landroid/content/ContentValues;
-    :cond_d
+    :cond_c
     invoke-virtual/range {v22 .. v22}, Landroid/content/Entity;->getSubValues()Ljava/util/ArrayList;
 
     move-result-object v2
@@ -869,13 +782,13 @@
 
     move-result-object v27
 
-    :cond_e
+    :cond_d
     :goto_3
     invoke-interface/range {v27 .. v27}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_6
 
     invoke-interface/range {v27 .. v27}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -903,7 +816,7 @@
 
     .line 1699
     .local v36, mimetypeMy:Ljava/lang/String;
-    if-eqz v36, :cond_e
+    if-eqz v36, :cond_d
 
     .line 1700
     const-string v2, "vnd.android.cursor.item/name"
@@ -914,7 +827,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_d
 
     .line 1701
     const-string v2, "data1"
@@ -931,7 +844,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_d
 
     .line 1703
     const-string v2, "_id"
@@ -942,7 +855,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_e
 
     const-string v2, "_id"
 
@@ -963,7 +876,7 @@
 
     cmp-long v2, v2, v12
 
-    if-gez v2, :cond_e
+    if-gez v2, :cond_d
 
     .line 1705
     invoke-static/range {v40 .. v40}, Landroid/content/ContentProviderOperation;->newUpdate(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
@@ -1014,7 +927,7 @@
 
     .line 1703
     .end local v12           #dataId:J
-    :cond_f
+    :cond_e
     const-wide/16 v12, -0x1
 
     goto :goto_4
@@ -1033,7 +946,7 @@
     .end local v41           #rawContactId:J
     .end local v45           #subValue:Landroid/content/Entity$NamedContentValues;
     .end local v46           #subValueMy:Landroid/content/Entity$NamedContentValues;
-    :cond_10
+    :cond_f
     :try_start_1
     move-object/from16 v0, p0
 
@@ -1051,33 +964,8 @@
 
     move-result-object v43
 
-    .line 1731
-    .local v43, results:[Landroid/content/ContentProviderResult;
-    const-string v2, "ContactsUtility"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "importToMyContact results: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    move-object/from16 v0, v43
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1732
+    .local v43, results:[Landroid/content/ContentProviderResult;
     new-instance v28, Landroid/content/Intent;
 
     const-string v2, "com.htc.intent.action.MY_CONTACT_CHANGE"

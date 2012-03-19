@@ -43,7 +43,7 @@
     .line 907
     iput-object p1, p0, Lcom/htc/widget/DeckControlSPAdapter$SBitmapCache;->this$0:Lcom/htc/widget/DeckControlSPAdapter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 908
     if-lez p2, :cond_0

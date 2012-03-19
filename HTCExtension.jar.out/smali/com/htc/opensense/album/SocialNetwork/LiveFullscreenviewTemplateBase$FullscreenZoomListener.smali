@@ -30,7 +30,7 @@
     .line 669
     iput-object p1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase$FullscreenZoomListener;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -50,7 +50,7 @@
     .local v0, bResult:Z
     iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase$FullscreenZoomListener;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
     invoke-static {v3}, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->access$1900(Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;)Lcom/htc/opensense/album/DisplayManagerInterface;
 
     move-result-object v3
@@ -75,7 +75,7 @@
     :cond_0
     iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase$FullscreenZoomListener;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
     invoke-static {v3}, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->access$2000(Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;)Lcom/htc/opensense/album/DisplayManagerInterface;
 
     move-result-object v3
@@ -93,7 +93,7 @@
     .line 731
     iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase$FullscreenZoomListener;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
     invoke-static {v3}, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->access$2100(Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;)Landroid/view/View;
 
     move-result-object v3
@@ -106,7 +106,7 @@
 
     iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase$FullscreenZoomListener;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
     invoke-static {v4}, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->access$2200(Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;)Lcom/htc/opensense/album/DisplayManagerInterface;
 
     move-result-object v4
@@ -157,7 +157,7 @@
     .line 690
     iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase$FullscreenZoomListener;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
     invoke-static {v2}, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->access$1700(Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;)Landroid/view/View;
 
     move-result-object v2
@@ -172,7 +172,7 @@
     .local v1, pos:I
     iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase$FullscreenZoomListener;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
     invoke-static {v2}, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->access$1800(Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;)Landroid/widget/BaseAdapter;
 
     move-result-object v2

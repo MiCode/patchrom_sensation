@@ -126,7 +126,7 @@
     const/4 v5, 0x0
 
     .line 341
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 157
     new-instance v3, Landroid/graphics/Rect;
@@ -903,10 +903,10 @@
     .local v3, left_right:I
     const/4 v6, 0x0
 
-    invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 810
-    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v5}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v4
 
@@ -941,7 +941,7 @@
     .line 818
     const/4 v6, 0x4
 
-    invoke-virtual {v2, v6}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 819
     return-void

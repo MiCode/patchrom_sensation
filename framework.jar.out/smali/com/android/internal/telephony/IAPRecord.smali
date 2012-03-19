@@ -19,7 +19,7 @@
 
     .prologue
     .line 278
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 280
     return-void
@@ -32,7 +32,7 @@
 
     .prologue
     .line 286
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 287
     iput p1, p0, Lcom/android/internal/telephony/IAPRecord;->mRecordNumber:I

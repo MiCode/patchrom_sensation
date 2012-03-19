@@ -31,7 +31,7 @@
 
     .prologue
     .line 766
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 767
     iput-object p1, p0, Lcom/scalado/camera/FeatureCameraFactory$AutoFocusCallbackAdapter;->mCallback:Lcom/scalado/camera/Camera$AutoFocusCallback;

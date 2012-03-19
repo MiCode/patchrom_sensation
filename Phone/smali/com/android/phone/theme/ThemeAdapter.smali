@@ -6,7 +6,7 @@
 # static fields
 .field private static final ANDROID:Ljava/lang/String; = "android"
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final HTC_FREAMWORK:Ljava/lang/String; = "com.htc"
 
@@ -74,7 +74,7 @@
 
     .prologue
     .line 35
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -96,7 +96,7 @@
 .end method
 
 .method public static getIdentifier(Ljava/lang/String;Ljava/lang/String;I)I
-    .locals 8
+    .locals 6
     .parameter "name"
     .parameter "defType"
     .parameter "defRes"
@@ -144,29 +144,6 @@
 
     .line 70
     if-eqz v3, :cond_3
-
-    .line 71
-    const-string v5, "ThemeAdapter"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, " - defPackage is "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 75
     .end local v1           #defPackage:Ljava/lang/String;
@@ -224,7 +201,7 @@
 .end method
 
 .method public static isSkinPackageChanged()Z
-    .locals 5
+    .locals 4
 
     .prologue
     const/4 v1, 0x0
@@ -256,31 +233,6 @@
     move-result v2
 
     if-eqz v2, :cond_0
-
-    .line 86
-    const-string v2, "ThemeAdapter"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "isSkinPackageChanged(): sSkinPackageName = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    sget-object v4, Lcom/android/phone/theme/ThemeAdapter;->sSkinPackageName:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 87
     sput-object v0, Lcom/android/phone/theme/ThemeAdapter;->sSkinPackageName:Ljava/lang/String;

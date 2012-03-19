@@ -16,7 +16,7 @@
     invoke-direct {p0, p1}, Lcom/htc/opensense/social/data/Person;-><init>(Ljava/lang/String;)V
 
     .line 21
-    iput-object p2, p0, Lcom/htc/opensense/album/plugin/PersonData;->fullname:Ljava/lang/String;
+    iput-object p2, p0, Lcom/htc/opensense/social/data/Person;->fullname:Ljava/lang/String;
 
     .line 22
     invoke-virtual {p0}, Lcom/htc/opensense/album/plugin/PersonData;->getProfile()Lcom/htc/opensense/social/data/Profile;

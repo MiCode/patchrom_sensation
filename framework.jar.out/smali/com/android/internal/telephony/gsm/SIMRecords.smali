@@ -1187,7 +1187,7 @@
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mMsisdnRecordList:Ljava/util/ArrayList;
 
     .line 415
-    iput-object p2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iput-object p2, p0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     .line 416
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/gsm/SIMRecords;->SIMRecords_init(Lcom/android/internal/telephony/PhoneBase;)V
@@ -1208,88 +1208,75 @@
     .line 420
     new-instance v1, Lcom/android/internal/telephony/AdnRecordCache;
 
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v1, v2, v3}, Lcom/android/internal/telephony/AdnRecordCache;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
-    iput-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
+    iput-object v1, p0, Lcom/android/internal/telephony/IccRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
 
-    .line 423
     new-instance v1, Lcom/android/internal/telephony/gsm/VoiceMailConstants;
 
     invoke-direct {v1}, Lcom/android/internal/telephony/gsm/VoiceMailConstants;-><init>()V
 
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mVmConfig:Lcom/android/internal/telephony/gsm/VoiceMailConstants;
 
-    .line 424
     new-instance v1, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;
 
     invoke-direct {v1}, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;-><init>()V
 
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mSpnOverride:Lcom/android/internal/telephony/gsm/SpnOverride;
 
-    .line 426
-    iput-boolean v5, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsRequested:Z
+    iput-boolean v5, p0, Lcom/android/internal/telephony/IccRecords;->recordsRequested:Z
 
-    .line 429
-    iput v5, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v5, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
-    .line 431
     iget-object v1, p1, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v2, 0x1
 
     invoke-interface {v1, p0, v2, v4}, Lcom/android/internal/telephony/CommandsInterface;->registerForSIMReady(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 432
     iget-object v1, p1, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v2, 0x2
 
     invoke-interface {v1, p0, v2, v4}, Lcom/android/internal/telephony/CommandsInterface;->registerForOffOrNotAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 434
     iget-object v1, p1, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v2, 0x15
 
     invoke-interface {v1, p0, v2, v4}, Lcom/android/internal/telephony/CommandsInterface;->setOnSmsOnSim(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 435
     iget-object v1, p1, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v2, 0x1f
 
     invoke-interface {v1, p0, v2, v4}, Lcom/android/internal/telephony/CommandsInterface;->registerForIccRefresh(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 438
     iget-object v1, p1, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v2, 0x6d
 
     invoke-interface {v1, p0, v2, v4}, Lcom/android/internal/telephony/CommandsInterface;->registerPBReadyNotify(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 442
     iget-object v1, p1, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v2, 0x70
 
     invoke-interface {v1, p0, v2, v4}, Lcom/android/internal/telephony/CommandsInterface;->registerForSIMSWAPStatus(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 445
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v2, "gsm.sim.types"
 
     invoke-virtual {v1, v2, v4}, Lcom/android/internal/telephony/PhoneBase;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 448
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/SIMRecords;->onRadioOffOrNotAvailable()V
 
-    .line 453
-    const-string/jumbo v1, "ro.cid"
+    const-string v1, "ro.cid"
 
     const-string v2, "11111111"
 
@@ -1340,7 +1327,7 @@
 
     .line 457
     :cond_0
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v2, "26201"
 
@@ -1390,7 +1377,7 @@
     if-eqz v1, :cond_4
 
     .line 460
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v2, "26202"
 
@@ -1409,7 +1396,7 @@
     if-eqz v1, :cond_1
 
     .line 463
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v2, "26207"
 
@@ -1488,7 +1475,7 @@
 
     .line 3678
     :cond_0
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
@@ -1542,7 +1529,7 @@
 
     .prologue
     .line 2901
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
@@ -1562,10 +1549,10 @@
 
     move-result v1
 
-    iput v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->countVoiceMessages:I
+    iput v1, p0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
 
     .line 2905
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v1, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -1580,7 +1567,7 @@
 
     .prologue
     .line 3571
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
@@ -1592,7 +1579,7 @@
 
     .line 3572
     .local v0, sp:Landroid/content/SharedPreferences;
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string/jumbo v1, "network_selection_key"
 
@@ -1650,7 +1637,7 @@
     :pswitch_0
     const/4 v1, 0x0
 
-    iput-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
 
     .line 3398
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/SIMRecords;->getIccFileHandler()Lcom/android/internal/telephony/IccFileHandler;
@@ -1666,11 +1653,11 @@
     invoke-virtual {v1, v2, v3}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 3401
-    iget v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3403
     sget-object v1, Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;->READ_SPN_3GPP:Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;
@@ -1715,7 +1702,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
 
     .line 3411
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1728,7 +1715,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1753,11 +1740,11 @@
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/gsm/SIMRecords;->log(Ljava/lang/String;)V
 
     .line 3413
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v2, "gsm.sim.operator.alpha"
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
 
     invoke-virtual {v1, v2, v3}, Lcom/android/internal/telephony/PhoneBase;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1784,11 +1771,11 @@
     invoke-virtual {v1, v2, v3}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 3422
-    iget v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3424
     sget-object v1, Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;->READ_SPN_CPHS:Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;
@@ -1829,7 +1816,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
 
     .line 3437
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1842,7 +1829,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1855,11 +1842,11 @@
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/gsm/SIMRecords;->log(Ljava/lang/String;)V
 
     .line 3438
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v2, "gsm.sim.operator.alpha"
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
 
     invoke-virtual {v1, v2, v3}, Lcom/android/internal/telephony/PhoneBase;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1886,11 +1873,11 @@
     invoke-virtual {v1, v2, v3}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 3447
-    iget v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3449
     sget-object v1, Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;->READ_SPN_SHORT_CPHS:Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;
@@ -1926,7 +1913,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
 
     .line 3458
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1939,7 +1926,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1952,11 +1939,11 @@
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/gsm/SIMRecords;->log(Ljava/lang/String;)V
 
     .line 3459
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v2, "gsm.sim.operator.alpha"
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
 
     invoke-virtual {v1, v2, v3}, Lcom/android/internal/telephony/PhoneBase;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -2091,7 +2078,7 @@
 
     if-eqz v5, :cond_2
 
-    iget-object v5, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v5, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v5}, Lcom/android/internal/telephony/PhoneBase;->queryManualselectionStatus()Z
 
@@ -2106,7 +2093,7 @@
     if-eqz v0, :cond_0
 
     .line 3634
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const/4 v5, 0x0
 
@@ -2157,7 +2144,7 @@
     sparse-switch p1, :sswitch_data_0
 
     .line 2700
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/AdnRecordCache;->reset()V
 
@@ -2205,18 +2192,18 @@
 
     .line 2635
     :sswitch_0
-    iget v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 2638
     new-instance v1, Lcom/android/internal/telephony/AdnRecordLoader;
 
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v1, v2, v3}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -2224,7 +2211,7 @@
 
     const/16 v3, 0x6fc8
 
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mailboxIndex:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->mailboxIndex:I
 
     const/4 v5, 0x6
 
@@ -2238,18 +2225,18 @@
 
     .line 2643
     :sswitch_1
-    iget v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 2646
     new-instance v1, Lcom/android/internal/telephony/AdnRecordLoader;
 
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v1, v2, v3}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -2267,11 +2254,11 @@
 
     .line 2651
     :sswitch_2
-    iget v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 2652
     const-string v1, "GSM"
@@ -2313,7 +2300,7 @@
 
     .line 2667
     :cond_0
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneBase;->getIccCard()Lcom/android/internal/telephony/IccCard;
 
@@ -2334,9 +2321,9 @@
     .line 2671
     new-instance v1, Lcom/android/internal/telephony/AdnRecordLoader;
 
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v1, v2, v3}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -2354,9 +2341,9 @@
     :cond_1
     new-instance v1, Lcom/android/internal/telephony/AdnRecordLoader;
 
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v1, v2, v3}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -2371,7 +2358,7 @@
     .line 2682
     .end local v0           #card:Lcom/android/internal/telephony/IccCard;
     :cond_2
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v1, v1, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -2392,7 +2379,7 @@
     invoke-direct {p0, v1, v6}, Lcom/android/internal/telephony/gsm/SIMRecords;->dropSimPbkEntries(Ljava/lang/String;I)V
 
     .line 2693
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/AdnRecordCache;->reset()V
 
@@ -2422,7 +2409,7 @@
 
     .prologue
     .line 2876
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
@@ -2485,7 +2472,7 @@
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2888
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v5, "gsm.sim.change"
 
@@ -2517,7 +2504,7 @@
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2892
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v5, "gsm.sim.change"
 
@@ -2591,7 +2578,7 @@
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/gsm/SIMRecords;->log(Ljava/lang/String;)V
 
     .line 2739
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/AdnRecordCache;->reset()V
 
@@ -2610,7 +2597,7 @@
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/gsm/SIMRecords;->log(Ljava/lang/String;)V
 
     .line 2745
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v2, v2, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -2619,7 +2606,7 @@
     invoke-interface {v2, v4, v3}, Lcom/android/internal/telephony/CommandsInterface;->setRadioPower(ZLandroid/os/Message;)V
 
     .line 2753
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/AdnRecordCache;->reset()V
 
@@ -2639,7 +2626,7 @@
 
     .line 2758
     .local v0, broadcast:Landroid/content/Intent;
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
@@ -2731,7 +2718,7 @@
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/gsm/SmsMessage;->setIndexOnIcc(I)V
 
     .line 2798
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v3, v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -2852,7 +2839,7 @@
 
     .line 2852
     .local v3, message:Lcom/android/internal/telephony/gsm/SmsMessage;
-    iget-object v6, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v6, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v6, v6, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -3364,7 +3351,7 @@
 
     .line 1226
     .local v0, country:Ljava/lang/String;
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const/4 v3, 0x1
 
@@ -3395,7 +3382,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
 
@@ -3453,7 +3440,7 @@
     if-lez v3, :cond_1
 
     .line 1211
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
@@ -3502,17 +3489,17 @@
     .line 3008
     const-string v3, "1416"
 
-    iput-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNumSBM_home:Ljava/lang/String;
+    iput-object v3, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNumSBM_home:Ljava/lang/String;
 
     .line 3009
     const-string v3, "+819066514170"
 
-    iput-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNumSBM_roam:Ljava/lang/String;
+    iput-object v3, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNumSBM_roam:Ljava/lang/String;
 
     .line 3010
     const/4 v3, 0x1
 
-    iput-boolean v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->isVoiceMailFixed:Z
+    iput-boolean v3, p0, Lcom/android/internal/telephony/IccRecords;->isVoiceMailFixed:Z
 
     .line 3050
     :cond_0
@@ -3521,14 +3508,14 @@
 
     .line 3024
     :cond_1
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v3, v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
     if-eqz v3, :cond_0
 
     .line 3025
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -3537,7 +3524,7 @@
     if-eqz v3, :cond_0
 
     .line 3026
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -3547,7 +3534,7 @@
 
     .line 3027
     .local v0, changed:Z
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -3580,7 +3567,7 @@
 
     move-result-object v4
 
-    iget-object v5, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
 
     invoke-virtual {v3, v4, v5}, Lcom/android/internal/telephony/gsm/VoiceMailConstants;->getVoiceMailNumber(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -3595,14 +3582,14 @@
     if-nez v3, :cond_2
 
     .line 3033
-    iput-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     .line 3034
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Lcom/android/internal/telephony/gsm/GSMPhone;->storeVoiceMailNumber(Ljava/lang/String;)V
 
@@ -3625,7 +3612,7 @@
 
     move-result-object v3
 
-    iput-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iput-object v3, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     .line 3037
     iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mVmConfig:Lcom/android/internal/telephony/gsm/VoiceMailConstants;
@@ -3634,14 +3621,14 @@
 
     move-result-object v3
 
-    iput-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailTag:Ljava/lang/String;
+    iput-object v3, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailTag:Ljava/lang/String;
 
     .line 3038
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Lcom/android/internal/telephony/gsm/GSMPhone;->storeVoiceMailNumber(Ljava/lang/String;)V
 
@@ -3650,13 +3637,13 @@
     .line 3041
     .end local v2           #vmNumber:Ljava/lang/String;
     :cond_3
-    iput-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     goto :goto_0
 
     .line 3044
     :cond_4
-    iput-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     goto :goto_0
 .end method
@@ -3666,7 +3653,7 @@
 
     .prologue
     .line 2909
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
@@ -3686,7 +3673,7 @@
     .local v1, spEditor:Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v2, "mwi_status_key"
 
-    iget v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->countVoiceMessages:I
+    iget v3, p0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
 
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
@@ -3724,7 +3711,7 @@
 
     .line 3724
     .local v0, cphspreferred:Z
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v2, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -3738,7 +3725,7 @@
 
     if-nez v2, :cond_2
 
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v2, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -3793,7 +3780,7 @@
     .line 3760
     :cond_1
     :goto_2
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v2, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -3962,7 +3949,7 @@
 
     .prologue
     .line 2775
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mSMS:Lcom/android/internal/telephony/SMSDispatcher;
 
@@ -3980,42 +3967,42 @@
     const/4 v1, 0x0
 
     .line 482
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForSIMReady(Landroid/os/Handler;)V
 
     .line 483
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForOffOrNotAvailable(Landroid/os/Handler;)V
 
     .line 484
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForIccRefresh(Landroid/os/Handler;)V
 
     .line 486
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterPBReadyNotify(Landroid/os/Handler;)V
 
     .line 487
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p0}, Lcom/android/internal/telephony/CommandsInterface;->unSetOnSmsOnSim(Landroid/os/Handler;)V
 
     .line 488
-    iput-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
+    iput-object v1, p0, Lcom/android/internal/telephony/IccRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
 
     .line 489
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mVmConfig:Lcom/android/internal/telephony/gsm/VoiceMailConstants;
@@ -4042,7 +4029,7 @@
     const/4 v8, 0x1
 
     .line 3071
-    iput-boolean v8, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsRequested:Z
+    iput-boolean v8, p0, Lcom/android/internal/telephony/IccRecords;->recordsRequested:Z
 
     .line 3074
     const/4 v4, 0x2
@@ -4068,7 +4055,7 @@
 
     move-result-object v5
 
-    iget v6, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v6, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -4114,7 +4101,7 @@
 
     .line 3092
     .local v3, simTypes:Lcom/android/internal/telephony/CommandsInterface$SimTypes;
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/PhoneBase;->getIccCard()Lcom/android/internal/telephony/IccCard;
 
@@ -4165,11 +4152,11 @@
     invoke-virtual {v1, v4, v5}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 3110
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3115
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->isIccCardProxyEnabled()Z
@@ -4179,7 +4166,7 @@
     if-eqz v4, :cond_a
 
     .line 3116
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v4, v4, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -4195,11 +4182,11 @@
 
     .line 3121
     :goto_2
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3130
     iget-boolean v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIsFileUpdated:Z
@@ -4223,11 +4210,11 @@
     invoke-virtual {v1, v4, v5}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 3147
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3149
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->CT_CONFIG()Z
@@ -4244,7 +4231,7 @@
 
     .line 3150
     :cond_2
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const/16 v5, 0x26
 
@@ -4255,11 +4242,11 @@
     invoke-virtual {v4, v5}, Lcom/android/internal/telephony/PhoneBase;->getHtcSimTypes(Landroid/os/Message;)V
 
     .line 3151
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3165
     :cond_3
@@ -4277,7 +4264,7 @@
 
     .line 3167
     :cond_4
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/PhoneBase;->getIccCard()Lcom/android/internal/telephony/IccCard;
 
@@ -4298,9 +4285,9 @@
     .line 3171
     new-instance v4, Lcom/android/internal/telephony/AdnRecordLoader;
 
-    iget-object v5, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v5, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
-    iget-object v6, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v6, p0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v4, v5, v6}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -4318,11 +4305,11 @@
 
     .line 3181
     :goto_4
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3191
     .end local v0           #card:Lcom/android/internal/telephony/IccCard;
@@ -4338,23 +4325,23 @@
     invoke-virtual {v1, v4, v5}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 3192
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3196
-    iput v10, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mailboxIndex:I
+    iput v10, p0, Lcom/android/internal/telephony/IccRecords;->mailboxIndex:I
 
     .line 3197
-    iput-object v9, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iput-object v9, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     .line 3198
-    iput-object v9, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailTag:Ljava/lang/String;
+    iput-object v9, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailTag:Ljava/lang/String;
 
     .line 3203
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v4, v4, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -4372,11 +4359,11 @@
     invoke-virtual {v1, v4, v8, v5}, Lcom/android/internal/telephony/IccFileHandler;->loadEFLinearFixed(IILandroid/os/Message;)V
 
     .line 3205
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3209
     :cond_5
@@ -4391,14 +4378,14 @@
     invoke-virtual {v1, v4, v5}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 3210
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3213
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v4, v4, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -4416,11 +4403,11 @@
     invoke-virtual {v1, v4, v8, v5}, Lcom/android/internal/telephony/IccFileHandler;->loadEFLinearFixed(IILandroid/os/Message;)V
 
     .line 3216
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3223
     const/16 v4, 0x6f11
@@ -4434,11 +4421,11 @@
     invoke-virtual {v1, v4, v5}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 3226
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3230
     const/16 v4, 0x6fcb
@@ -4452,11 +4439,11 @@
     invoke-virtual {v1, v4, v8, v5}, Lcom/android/internal/telephony/IccFileHandler;->loadEFLinearFixed(IILandroid/os/Message;)V
 
     .line 3231
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3232
     const/16 v4, 0x6f13
@@ -4470,11 +4457,11 @@
     invoke-virtual {v1, v4, v5}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 3233
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3236
     invoke-direct {p0, v8, v9}, Lcom/android/internal/telephony/gsm/SIMRecords;->getSpnFsm(ZLandroid/os/AsyncResult;)V
@@ -4491,11 +4478,11 @@
     invoke-virtual {v1, v4, v5}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 3239
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3243
     :cond_6
@@ -4510,11 +4497,11 @@
     invoke-virtual {v1, v4, v8, v5}, Lcom/android/internal/telephony/IccFileHandler;->loadEFLinearFixed(IILandroid/os/Message;)V
 
     .line 3244
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3246
     const/16 v4, 0x6f38
@@ -4528,14 +4515,14 @@
     invoke-virtual {v1, v4, v5}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 3247
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3250
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v4, v4, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -4553,11 +4540,11 @@
     invoke-virtual {v1, v4, v5}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 3252
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3254
     const/16 v4, 0x6f15
@@ -4571,11 +4558,11 @@
     invoke-virtual {v1, v4, v5}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 3255
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3265
     const/16 v4, 0x6f45
@@ -4589,11 +4576,11 @@
     invoke-virtual {v1, v4, v5}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 3266
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 3283
     :cond_7
@@ -4611,7 +4598,7 @@
     .end local v0           #card:Lcom/android/internal/telephony/IccCard;
     .end local v3           #simTypes:Lcom/android/internal/telephony/CommandsInterface$SimTypes;
     :cond_9
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v4, v4, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -4625,7 +4612,7 @@
 
     .line 3118
     :cond_a
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v4, v4, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -4652,7 +4639,7 @@
     if-nez v4, :cond_1
 
     .line 3138
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v4, v4, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -4665,11 +4652,11 @@
     invoke-interface {v4, v5}, Lcom/android/internal/telephony/CommandsInterface;->requestCheckFDNStatus(Landroid/os/Message;)V
 
     .line 3139
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v4, v4, 0x1
 
-    iput v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v4, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     goto/16 :goto_3
 
@@ -4678,9 +4665,9 @@
     :cond_c
     new-instance v4, Lcom/android/internal/telephony/AdnRecordLoader;
 
-    iget-object v5, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v5, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
-    iget-object v6, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v6, p0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v4, v5, v6}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -4701,7 +4688,7 @@
     .line 3185
     .end local v0           #card:Lcom/android/internal/telephony/IccCard;
     :cond_d
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v4, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v4, v4, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -4738,7 +4725,7 @@
     const/4 v1, 0x0
 
     .line 854
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
@@ -4856,7 +4843,7 @@
 
     .line 3323
     :cond_5
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
 
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -4954,7 +4941,7 @@
 
     .prologue
     .line 612
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdnTag:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->msisdnTag:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -4964,7 +4951,7 @@
 
     .prologue
     .line 559
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -4990,7 +4977,7 @@
     const/4 v1, 0x1
 
     .line 3796
-    iget-boolean v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsRequested:Z
+    iget-boolean v3, p0, Lcom/android/internal/telephony/IccRecords;->recordsRequested:Z
 
     if-eqz v3, :cond_0
 
@@ -5074,13 +5061,13 @@
 
     .line 1178
     :cond_0
-    iget v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v2, p0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v3, -0x1
 
     if-eq v2, v3, :cond_1
 
-    iget v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v2, p0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-nez v2, :cond_2
 
@@ -5096,14 +5083,14 @@
 
     .line 1183
     :cond_2
-    iget v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v1, p0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v1, :cond_3
 
     .line 1186
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->imsi:Ljava/lang/String;
 
-    iget v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v2, p0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     add-int/lit8 v2, v2, 0x3
 
@@ -5159,7 +5146,7 @@
 
     .line 3693
     .local v0, message:Landroid/os/Message;
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v1, v1, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -5188,7 +5175,7 @@
     const/4 v1, 0x0
 
     .line 828
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
@@ -5268,7 +5255,7 @@
     const/4 v1, 0x0
 
     .line 844
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
@@ -5317,7 +5304,7 @@
 
     .prologue
     .line 716
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
@@ -5365,7 +5352,7 @@
 
     .line 729
     :cond_0
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailTag:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailTag:Ljava/lang/String;
 
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -5382,7 +5369,7 @@
     .line 729
     .restart local v0       #aplhaTag:Ljava/lang/String;
     :cond_2
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailTag:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailTag:Ljava/lang/String;
 
     goto :goto_0
 .end method
@@ -5414,7 +5401,7 @@
     if-eqz v1, :cond_2
 
     .line 620
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v1, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -5443,7 +5430,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNumSBM_roam:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNumSBM_roam:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5456,7 +5443,7 @@
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 622
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNumSBM_roam:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNumSBM_roam:Ljava/lang/String;
 
     .line 635
     .end local v0           #operator:Ljava/lang/String;
@@ -5478,7 +5465,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNumSBM_home:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNumSBM_home:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5491,7 +5478,7 @@
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 625
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNumSBM_home:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNumSBM_home:Ljava/lang/String;
 
     goto :goto_0
 
@@ -5518,7 +5505,7 @@
 
     .line 635
     :cond_2
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     goto :goto_0
 .end method
@@ -6017,7 +6004,7 @@
     .line 1344
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
@@ -6033,13 +6020,13 @@
     :cond_e
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v3, :cond_f
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v5, 0x2
 
@@ -6112,7 +6099,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1361
     .end local v13           #arr$:[Ljava/lang/String;
@@ -6123,7 +6110,7 @@
     :cond_10
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Ljava/lang/RuntimeException; {:try_start_4 .. :try_end_4} :catch_0
@@ -6228,7 +6215,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
     .catch Ljava/lang/NumberFormatException; {:try_start_5 .. :try_end_5} :catch_1
@@ -6241,7 +6228,7 @@
     :try_start_6
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v3, v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -6250,13 +6237,13 @@
     .line 1391
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v3, :cond_13
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v5, -0x1
 
@@ -6265,7 +6252,7 @@
     .line 1393
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
@@ -6275,7 +6262,7 @@
 
     move-object/from16 v0, p0
 
-    iget v7, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v7, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     add-int/lit8 v7, v7, 0x3
 
@@ -6289,7 +6276,7 @@
     :cond_13
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getIccCard()Lcom/android/internal/telephony/IccCard;
 
@@ -6346,7 +6333,7 @@
     .line 1412
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -6442,7 +6429,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
     .catch Ljava/lang/NumberFormatException; {:try_start_7 .. :try_end_7} :catch_1
@@ -6462,7 +6449,7 @@
     :try_start_8
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1384
     const-string v3, "GSM"
@@ -6487,7 +6474,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
     .catch Ljava/lang/NumberFormatException; {:try_start_9 .. :try_end_9} :catch_1
@@ -6501,7 +6488,7 @@
     :try_start_a
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v3, v3, Lcom/android/internal/telephony/cdma/CDMAPhone;
 
@@ -6509,7 +6496,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v3, Lcom/android/internal/telephony/cdma/CDMAPhone;
 
@@ -6524,7 +6511,7 @@
     .line 1430
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getIccCard()Lcom/android/internal/telephony/IccCard;
 
@@ -6612,7 +6599,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mailboxIndex:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mailboxIndex:I
 
     .line 1457
     const/16 v32, 0x1
@@ -6621,13 +6608,13 @@
     :cond_19
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v3, v3, 0x1
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 1471
     if-eqz v32, :cond_1b
@@ -6635,7 +6622,7 @@
     .line 1474
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mailboxIndex:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mailboxIndex:I
 
     if-lez v3, :cond_1a
 
@@ -6644,11 +6631,11 @@
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v5, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
-    iget-object v6, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v6, v0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v3, v5, v6}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -6658,7 +6645,7 @@
 
     move-object/from16 v0, p0
 
-    iget v7, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mailboxIndex:I
+    iget v7, v0, Lcom/android/internal/telephony/IccRecords;->mailboxIndex:I
 
     const/4 v8, 0x6
 
@@ -6678,18 +6665,18 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mailboxIndex:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mailboxIndex:I
 
     .line 1484
     new-instance v3, Lcom/android/internal/telephony/AdnRecordLoader;
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v5, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
-    iget-object v6, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v6, v0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v3, v5, v6}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -6717,11 +6704,11 @@
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v5, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
-    iget-object v6, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v6, v0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v3, v5, v6}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -6752,14 +6739,14 @@
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     .line 1508
     const/4 v3, 0x0
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailTag:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->voiceMailTag:Ljava/lang/String;
 
     .line 1509
     const/16 v31, 0x1
@@ -6825,29 +6812,29 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mailboxIndex:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mailboxIndex:I
 
     .line 1528
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v3, v3, 0x1
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 1531
     new-instance v3, Lcom/android/internal/telephony/AdnRecordLoader;
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v5, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
-    iget-object v6, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v6, v0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v3, v5, v6}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -6940,36 +6927,36 @@
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     .line 1549
     const-string v3, ""
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailTag:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->voiceMailTag:Ljava/lang/String;
 
     .line 1554
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v3, v3, 0x1
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 1557
     new-instance v3, Lcom/android/internal/telephony/AdnRecordLoader;
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v5, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
-    iget-object v6, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v6, v0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v3, v5, v6}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -7005,7 +6992,7 @@
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     .line 1566
     invoke-virtual {v4}, Lcom/android/internal/telephony/AdnRecord;->getAlphaTag()Ljava/lang/String;
@@ -7014,7 +7001,7 @@
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailTag:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->voiceMailTag:Ljava/lang/String;
 
     goto/16 :goto_1
 
@@ -7161,7 +7148,7 @@
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdnTag:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->msisdnTag:Ljava/lang/String;
 
     .line 1608
     .end local v41           #name:[B
@@ -7172,12 +7159,12 @@
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     .line 1610
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     if-eqz v3, :cond_22
 
@@ -7196,7 +7183,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v6, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iget-object v6, v0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7211,7 +7198,7 @@
     .line 1612
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     invoke-static {v3}, Lcom/android/internal/telephony/HtcIsimData;->SetGSM_MSISDN(Ljava/lang/String;)V
 
@@ -7234,14 +7221,14 @@
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdnTag:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->msisdnTag:Ljava/lang/String;
 
     .line 1616
     const/4 v3, 0x0
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     goto :goto_8
 
@@ -7360,7 +7347,7 @@
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     .line 1655
     invoke-virtual {v11}, Lcom/android/internal/telephony/AdnRecord;->getAlphaTag()Ljava/lang/String;
@@ -7369,7 +7356,7 @@
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdnTag:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->msisdnTag:Ljava/lang/String;
 
     .line 1661
     .end local v11           #adn_msisdn:Lcom/android/internal/telephony/AdnRecord;
@@ -7378,7 +7365,7 @@
     :cond_25
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     if-eqz v3, :cond_26
 
@@ -7412,7 +7399,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v6, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iget-object v6, v0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7427,7 +7414,7 @@
     .line 1666
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v3, v3, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -7452,7 +7439,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v6, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iget-object v6, v0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7469,7 +7456,7 @@
     :cond_26
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdnTag:Ljava/lang/String;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->msisdnTag:Ljava/lang/String;
 
     if-eqz v3, :cond_2
 
@@ -7488,7 +7475,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v6, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdnTag:Ljava/lang/String;
+    iget-object v6, v0, Lcom/android/internal/telephony/IccRecords;->msisdnTag:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7588,7 +7575,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v6, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iget-object v6, v0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7603,7 +7590,7 @@
     .line 1695
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v3, v3, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -7616,7 +7603,7 @@
     .line 1697
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     invoke-static {v3}, Lcom/android/internal/telephony/HtcIsimData;->SetGSM_MSISDN(Ljava/lang/String;)V
 
@@ -7635,7 +7622,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v6, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iget-object v6, v0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7757,7 +7744,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->countVoiceMessages:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
 
     .line 1736
     if-eqz v55, :cond_2a
@@ -7772,7 +7759,7 @@
     .line 1738
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->countVoiceMessages:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
 
     const/16 v5, 0xff
 
@@ -7783,14 +7770,14 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->countVoiceMessages:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
 
     .line 1748
     :cond_2a
     :goto_b
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->notifyMessageWaitingIndicator()V
 
@@ -7808,7 +7795,7 @@
     :cond_2c
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->countVoiceMessages:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
 
     if-nez v3, :cond_2a
 
@@ -7817,7 +7804,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->countVoiceMessages:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
 
     goto :goto_b
 
@@ -7894,14 +7881,14 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->countVoiceMessages:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
 
     .line 1780
     :cond_2e
     :goto_c
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->notifyMessageWaitingIndicator()V
 
@@ -7920,7 +7907,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->countVoiceMessages:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
 
     goto :goto_c
 
@@ -7971,7 +7958,7 @@
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->iccid:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->iccid:Ljava/lang/String;
 
     .line 1796
     const-string v3, "GSM"
@@ -7988,7 +7975,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v6, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->iccid:Ljava/lang/String;
+    iget-object v6, v0, Lcom/android/internal/telephony/IccRecords;->iccid:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -8136,7 +8123,7 @@
     .line 1817
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v5, "gsm.cdma.uim.id"
 
@@ -8228,7 +8215,7 @@
     :try_start_c
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v5, -0x1
 
@@ -8236,13 +8223,13 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v3, :cond_32
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v5, 0x2
 
@@ -8315,7 +8302,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1871
     .end local v13           #arr$:[Ljava/lang/String;
@@ -8326,13 +8313,13 @@
     :cond_33
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v3, :cond_34
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v5, -0x1
 
@@ -8447,7 +8434,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_0
     .catch Ljava/lang/NumberFormatException; {:try_start_d .. :try_end_d} :catch_3
@@ -8466,14 +8453,14 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v3, :cond_37
 
     .line 1908
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v3, v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -8482,7 +8469,7 @@
     .line 1909
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
@@ -8492,7 +8479,7 @@
 
     move-object/from16 v0, p0
 
-    iget v7, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v7, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     add-int/lit8 v7, v7, 0x3
 
@@ -8513,7 +8500,7 @@
     .line 1920
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
@@ -8622,7 +8609,7 @@
     :try_start_10
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v5, -0x1
 
@@ -8630,13 +8617,13 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v3, :cond_39
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v5, 0x2
 
@@ -8709,7 +8696,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1871
     .end local v13           #arr$:[Ljava/lang/String;
@@ -8720,13 +8707,13 @@
     :cond_3a
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v3, :cond_3b
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v5, -0x1
 
@@ -8841,7 +8828,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
     :try_end_11
     .catchall {:try_start_11 .. :try_end_11} :catchall_0
     .catch Ljava/lang/NumberFormatException; {:try_start_11 .. :try_end_11} :catch_4
@@ -8860,14 +8847,14 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v3, :cond_3e
 
     .line 1908
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v3, v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -8876,7 +8863,7 @@
     .line 1909
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
@@ -8886,7 +8873,7 @@
 
     move-object/from16 v0, p0
 
-    iget v7, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v7, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     add-int/lit8 v7, v7, 0x3
 
@@ -8907,7 +8894,7 @@
     .line 1920
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
@@ -9001,7 +8988,7 @@
     :try_start_14
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v5, -0x1
 
@@ -9009,13 +8996,13 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v3, :cond_40
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v5, 0x2
 
@@ -9088,7 +9075,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1871
     .end local v13           #arr$:[Ljava/lang/String;
@@ -9099,13 +9086,13 @@
     :cond_41
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v3, :cond_42
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v5, -0x1
 
@@ -9220,7 +9207,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
     :try_end_15
     .catchall {:try_start_15 .. :try_end_15} :catchall_0
     .catch Ljava/lang/NumberFormatException; {:try_start_15 .. :try_end_15} :catch_5
@@ -9239,14 +9226,14 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v3, :cond_45
 
     .line 1908
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v3, v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -9255,7 +9242,7 @@
     .line 1909
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
@@ -9265,7 +9252,7 @@
 
     move-object/from16 v0, p0
 
-    iget v7, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v7, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     add-int/lit8 v7, v7, 0x3
 
@@ -9286,7 +9273,7 @@
     .line 1920
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
@@ -9357,12 +9344,12 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1856
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/16 v5, 0xf
 
@@ -9373,7 +9360,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
     :try_end_17
     .catchall {:try_start_17 .. :try_end_17} :catchall_1
 
@@ -9382,7 +9369,7 @@
     :try_start_18
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v5, -0x1
 
@@ -9390,13 +9377,13 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v3, :cond_49
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v5, 0x2
 
@@ -9469,7 +9456,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1871
     .end local v13           #arr$:[Ljava/lang/String;
@@ -9480,13 +9467,13 @@
     :cond_4a
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v3, :cond_4b
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v5, -0x1
 
@@ -9601,7 +9588,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
     :try_end_19
     .catchall {:try_start_19 .. :try_end_19} :catchall_0
     .catch Ljava/lang/NumberFormatException; {:try_start_19 .. :try_end_19} :catch_6
@@ -9620,14 +9607,14 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v3, :cond_4e
 
     .line 1908
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v3, v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -9636,7 +9623,7 @@
     .line 1909
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
@@ -9646,7 +9633,7 @@
 
     move-object/from16 v0, p0
 
-    iget v7, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v7, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     add-int/lit8 v7, v7, 0x3
 
@@ -9667,7 +9654,7 @@
     .line 1920
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
@@ -9726,7 +9713,7 @@
 
     move-object/from16 v0, p0
 
-    iget v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v5, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v6, -0x1
 
@@ -9734,13 +9721,13 @@
 
     move-object/from16 v0, p0
 
-    iget v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v5, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v5, :cond_4f
 
     move-object/from16 v0, p0
 
-    iget v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v5, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v6, 0x2
 
@@ -9813,7 +9800,7 @@
 
     move-object/from16 v0, p0
 
-    iput v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v5, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1871
     .end local v13           #arr$:[Ljava/lang/String;
@@ -9824,13 +9811,13 @@
     :cond_50
     move-object/from16 v0, p0
 
-    iget v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v5, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v5, :cond_51
 
     move-object/from16 v0, p0
 
-    iget v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v5, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     const/4 v6, -0x1
 
@@ -9945,7 +9932,7 @@
 
     move-object/from16 v0, p0
 
-    iput v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v5, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
     :try_end_1b
     .catchall {:try_start_1b .. :try_end_1b} :catchall_0
     .catch Ljava/lang/NumberFormatException; {:try_start_1b .. :try_end_1b} :catch_2
@@ -9964,14 +9951,14 @@
 
     move-object/from16 v0, p0
 
-    iget v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v5, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     if-eqz v5, :cond_54
 
     .line 1908
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v5, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v5, v5, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -9980,7 +9967,7 @@
     .line 1909
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v5, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
@@ -9990,7 +9977,7 @@
 
     move-object/from16 v0, p0
 
-    iget v8, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iget v8, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     add-int/lit8 v8, v8, 0x3
 
@@ -10011,7 +9998,7 @@
     .line 1920
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v5, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
@@ -10961,7 +10948,7 @@
     .local v40, mid:Ljava/lang/String;
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v5, "gsm.sim.cbmi.channel"
 
@@ -10972,7 +10959,7 @@
     .line 2118
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v5, "gsm.cb.max.channel"
 
@@ -11381,7 +11368,7 @@
     :cond_65
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v5, "gsm.cb.lp"
 
@@ -11392,7 +11379,7 @@
     .line 2201
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
@@ -11611,7 +11598,7 @@
     :goto_21
     move-object/from16 v0, p0
 
-    iput-boolean v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mEPSMMI:Z
+    iput-boolean v3, v0, Lcom/android/internal/telephony/IccRecords;->mEPSMMI:Z
 
     .line 2249
     :cond_69
@@ -11626,7 +11613,7 @@
     .line 2252
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getIccCard()Lcom/android/internal/telephony/IccCard;
 
@@ -11683,7 +11670,7 @@
     :goto_22
     move-object/from16 v0, p0
 
-    iput-boolean v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIsFdnEnabled:Z
+    iput-boolean v3, v0, Lcom/android/internal/telephony/IccRecords;->mIsFdnEnabled:Z
 
     .line 2262
     :cond_6b
@@ -11724,13 +11711,13 @@
     .line 2265
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v3, v3, 0x1
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 2288
     .end local v25           #iccFh:Lcom/android/internal/telephony/IccFileHandler;
@@ -11836,7 +11823,7 @@
     :goto_24
     move-object/from16 v0, p0
 
-    iput-boolean v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIsFdnEnabled:Z
+    iput-boolean v3, v0, Lcom/android/internal/telephony/IccRecords;->mIsFdnEnabled:Z
 
     .line 2275
     :cond_71
@@ -11877,13 +11864,13 @@
     .line 2278
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v3, v0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v3, v3, 0x1
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     goto :goto_23
 
@@ -11998,20 +11985,20 @@
     .line 2322
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->newVoiceMailNum:Ljava/lang/String;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->newVoiceMailNum:Ljava/lang/String;
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     .line 2323
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->newVoiceMailTag:Ljava/lang/String;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->newVoiceMailTag:Ljava/lang/String;
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailTag:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->voiceMailTag:Ljava/lang/String;
 
     .line 2326
     :cond_75
@@ -12026,11 +12013,11 @@
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailTag:Ljava/lang/String;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->voiceMailTag:Ljava/lang/String;
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iget-object v5, v0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     invoke-direct {v4, v3, v5}, Lcom/android/internal/telephony/AdnRecord;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -12088,11 +12075,11 @@
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v5, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v0, p0
 
-    iget-object v6, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v6, v0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v3, v5, v6}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -12169,20 +12156,20 @@
     .line 2366
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->newVoiceMailNum:Ljava/lang/String;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->newVoiceMailNum:Ljava/lang/String;
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     .line 2367
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->newVoiceMailTag:Ljava/lang/String;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->newVoiceMailTag:Ljava/lang/String;
 
     move-object/from16 v0, p0
 
-    iput-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailTag:Ljava/lang/String;
+    iput-object v3, v0, Lcom/android/internal/telephony/IccRecords;->voiceMailTag:Ljava/lang/String;
 
     .line 2372
     :goto_25
@@ -12484,7 +12471,7 @@
     .line 2427
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v3, v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -12493,7 +12480,7 @@
     .line 2428
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const/4 v5, 0x0
 
@@ -12511,7 +12498,7 @@
     .line 2432
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const/4 v5, 0x0
 
@@ -12546,7 +12533,7 @@
     .local v48, simTypes:Lcom/android/internal/telephony/CommandsInterface$SimTypes;
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v5, "gsm.sim.types"
 
@@ -12671,7 +12658,7 @@
     .line 2467
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
@@ -12769,7 +12756,7 @@
     .line 2497
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v3, v3, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -12794,7 +12781,7 @@
     .line 2504
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -12853,7 +12840,7 @@
     .line 2515
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/AdnRecordCache;->reset()V
 
@@ -12871,7 +12858,7 @@
     .line 2523
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v3, v3, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -12908,7 +12895,7 @@
     .local v29, intent:Landroid/content/Intent;
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
@@ -12938,7 +12925,7 @@
 
     move-object/from16 v0, p0
 
-    iput-boolean v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mEUTRAN_excpetion:Z
+    iput-boolean v3, v0, Lcom/android/internal/telephony/IccRecords;->mEUTRAN_excpetion:Z
 
     .line 2544
     iget-object v3, v12, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
@@ -12989,7 +12976,7 @@
 
     move-object/from16 v0, p0
 
-    iput-boolean v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mEUTRAN:Z
+    iput-boolean v3, v0, Lcom/android/internal/telephony/IccRecords;->mEUTRAN:Z
 
     goto/16 :goto_1
 
@@ -13006,7 +12993,7 @@
 
     move-object/from16 v0, p0
 
-    iput-boolean v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mEUTRAN:Z
+    iput-boolean v3, v0, Lcom/android/internal/telephony/IccRecords;->mEUTRAN:Z
 
     goto/16 :goto_1
 
@@ -13027,7 +13014,7 @@
 
     move-object/from16 v0, p0
 
-    iput-boolean v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mEUTRAN_excpetion:Z
+    iput-boolean v3, v0, Lcom/android/internal/telephony/IccRecords;->mEUTRAN_excpetion:Z
 
     .line 2562
     const-string v3, "GSM"
@@ -13302,7 +13289,7 @@
 
     move-object/from16 v0, p0
 
-    iput v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v5, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1899
     const-string v5, "GSM"
@@ -13323,7 +13310,7 @@
 
     move-object/from16 v0, p0
 
-    iput v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v5, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1893
     const-string v5, "GSM"
@@ -13359,7 +13346,7 @@
 
     move-object/from16 v0, p0
 
-    iput v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v5, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     goto/16 :goto_19
 
@@ -13371,7 +13358,7 @@
 
     move-object/from16 v0, p0
 
-    iput v5, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v5, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
     :try_end_1d
     .catchall {:try_start_1d .. :try_end_1d} :catchall_0
     .catch Ljava/lang/NumberFormatException; {:try_start_1d .. :try_end_1d} :catch_2
@@ -13405,7 +13392,7 @@
     :try_start_1e
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1899
     const-string v3, "GSM"
@@ -13426,7 +13413,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1893
     const-string v3, "GSM"
@@ -13462,7 +13449,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     goto/16 :goto_f
 
@@ -13474,7 +13461,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
     :try_end_1f
     .catchall {:try_start_1f .. :try_end_1f} :catchall_0
     .catch Ljava/lang/NumberFormatException; {:try_start_1f .. :try_end_1f} :catch_3
@@ -13506,7 +13493,7 @@
     :try_start_20
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1899
     const-string v3, "GSM"
@@ -13527,7 +13514,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1893
     const-string v3, "GSM"
@@ -13563,7 +13550,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     goto/16 :goto_12
 
@@ -13575,7 +13562,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
     :try_end_21
     .catchall {:try_start_21 .. :try_end_21} :catchall_0
     .catch Ljava/lang/NumberFormatException; {:try_start_21 .. :try_end_21} :catch_4
@@ -13607,7 +13594,7 @@
     :try_start_22
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1899
     const-string v3, "GSM"
@@ -13628,7 +13615,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1893
     const-string v3, "GSM"
@@ -13664,7 +13651,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     goto/16 :goto_15
 
@@ -13676,7 +13663,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
     :try_end_23
     .catchall {:try_start_23 .. :try_end_23} :catchall_0
     .catch Ljava/lang/NumberFormatException; {:try_start_23 .. :try_end_23} :catch_5
@@ -13708,7 +13695,7 @@
     :try_start_24
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1899
     const-string v3, "GSM"
@@ -13729,7 +13716,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 1893
     const-string v3, "GSM"
@@ -13765,7 +13752,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     goto/16 :goto_17
 
@@ -13777,7 +13764,7 @@
 
     move-object/from16 v0, p0
 
-    iput v3, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v3, v0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
     :try_end_25
     .catchall {:try_start_25 .. :try_end_25} :catchall_0
     .catch Ljava/lang/NumberFormatException; {:try_start_25 .. :try_end_25} :catch_6
@@ -13981,7 +13968,7 @@
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2945
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v3, v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -14002,14 +13989,14 @@
 
     .line 2957
     .local v2, operator:Ljava/lang/String;
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/gsm/GSMPhone;->initUSSDExcludeNumbers()V
 
     .line 2962
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v4, "gsm.sim.operator.numeric"
 
@@ -14021,7 +14008,7 @@
     if-eqz v3, :cond_2
 
     .line 2965
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v4, "gsm.sim.operator.iso-country"
 
@@ -14062,7 +14049,7 @@
     if-nez v3, :cond_3
 
     .line 2977
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsLoadedRegistrants:Landroid/os/RegistrantList;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->recordsLoadedRegistrants:Landroid/os/RegistrantList;
 
     new-instance v4, Landroid/os/AsyncResult;
 
@@ -14071,7 +14058,7 @@
     invoke-virtual {v3, v4}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
     .line 2980
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getIccCard()Lcom/android/internal/telephony/IccCard;
 
@@ -14100,12 +14087,12 @@
     .line 2983
     .end local v2           #operator:Ljava/lang/String;
     :cond_3
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     if-eqz v3, :cond_1
 
     .line 2984
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/IccFileHandler;->getIccCardAppId()Ljava/lang/String;
 
@@ -14113,7 +14100,7 @@
 
     .line 2985
     .local v0, appId:Ljava/lang/String;
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v3, v3, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -14174,19 +14161,19 @@
     iput-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->imsi:Ljava/lang/String;
 
     .line 500
-    iput-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     .line 501
-    iput-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     .line 502
-    iput v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->countVoiceMessages:I
+    iput v3, p0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
 
     .line 503
-    iput v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mncLength:I
+    iput v0, p0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
     .line 504
-    iput-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->iccid:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/internal/telephony/IccRecords;->iccid:Ljava/lang/String;
 
     .line 506
     iput v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spnDisplayCondition:I
@@ -14210,40 +14197,40 @@
     iput v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mOperatorNameSource:I
 
     .line 516
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/AdnRecordCache;->reset()V
 
     .line 518
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v1, "gsm.sim.operator.numeric"
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/PhoneBase;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 519
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v1, "gsm.sim.operator.alpha"
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/PhoneBase;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 520
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v1, "gsm.sim.operator.iso-country"
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/PhoneBase;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 523
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     const-string v1, "gsm.sim.cbmi.channel"
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/PhoneBase;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 528
-    iput-boolean v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsRequested:Z
+    iput-boolean v3, p0, Lcom/android/internal/telephony/IccRecords;->recordsRequested:Z
 
     .line 530
     const/4 v0, 0x1
@@ -14270,25 +14257,25 @@
 
     .prologue
     .line 2919
-    iget v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v0, v0, -0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     .line 2921
-    iget v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     if-nez v0, :cond_2
 
-    iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsRequested:Z
+    iget-boolean v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsRequested:Z
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_2
 
     .line 2924
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     instance-of v0, v0, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -14313,7 +14300,7 @@
 
     .line 2935
     :cond_2
-    iget v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     if-gez v0, :cond_1
 
@@ -14327,7 +14314,7 @@
     .line 2937
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsToLoad:I
+    iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     goto :goto_0
 .end method
@@ -14370,7 +14357,7 @@
     if-nez v0, :cond_0
 
     .line 3059
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneBase;->getIccCard()Lcom/android/internal/telephony/IccCard;
 
@@ -14402,7 +14389,7 @@
     const/4 v4, 0x1
 
     .line 1103
-    iget-boolean v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->recordsRequested:Z
+    iget-boolean v3, p0, Lcom/android/internal/telephony/IccRecords;->recordsRequested:Z
 
     if-eqz v3, :cond_6
 
@@ -14423,7 +14410,7 @@
 
     if-nez v3, :cond_5
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->checkTestIcc()Z
 
@@ -14435,7 +14422,7 @@
 
     if-nez v3, :cond_5
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getServiceState()Landroid/telephony/ServiceState;
 
@@ -14450,7 +14437,7 @@
     if-eq v3, v6, :cond_5
 
     .line 1107
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
@@ -14499,7 +14486,7 @@
 
     .line 1120
     .local v1, noCfuQuery:Z
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -14514,7 +14501,7 @@
     if-nez v3, :cond_3
 
     .line 1121
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -14585,7 +14572,7 @@
     iput-boolean v5, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->disableCfuIcon:Z
 
     .line 1147
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -14628,7 +14615,7 @@
     iput-boolean v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->disableCfuIcon:Z
 
     .line 1096
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v0, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -14780,7 +14767,7 @@
 
     .line 1022
     :cond_2
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v0, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -15039,10 +15026,10 @@
     const/4 v4, 0x1
 
     .line 585
-    iput-object p2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iput-object p2, p0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     .line 586
-    iput-object p1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdnTag:Ljava/lang/String;
+    iput-object p1, p0, Lcom/android/internal/telephony/IccRecords;->msisdnTag:Ljava/lang/String;
 
     .line 588
     new-instance v0, Ljava/lang/StringBuilder;
@@ -15055,7 +15042,7 @@
 
     move-result-object v0
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdnTag:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->msisdnTag:Ljava/lang/String;
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -15082,15 +15069,15 @@
     .line 591
     new-instance v1, Lcom/android/internal/telephony/AdnRecord;
 
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdnTag:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->msisdnTag:Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->msisdn:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->msisdn:Ljava/lang/String;
 
     invoke-direct {v1, v0, v3}, Lcom/android/internal/telephony/AdnRecord;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 594
     .local v1, adn:Lcom/android/internal/telephony/AdnRecord;
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneBase;->getIccCard()Lcom/android/internal/telephony/IccCard;
 
@@ -15111,9 +15098,9 @@
     .line 598
     new-instance v0, Lcom/android/internal/telephony/AdnRecordLoader;
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
-    iget-object v6, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v6, p0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v0, v3, v6}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -15133,9 +15120,9 @@
     :cond_0
     new-instance v0, Lcom/android/internal/telephony/AdnRecordLoader;
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
-    iget-object v6, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v6, p0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v0, v3, v6}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -15178,7 +15165,7 @@
 
     .line 3700
     .local v0, message:Landroid/os/Message;
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v1, v1, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -15209,7 +15196,7 @@
     iput-boolean p2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->callForwardingEnabled:Z
 
     .line 874
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneBase;->notifyCallForwardingIndicator()V
 
@@ -15433,7 +15420,7 @@
 
     .line 939
     :cond_2
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v0, Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -15686,7 +15673,7 @@
     const/4 v5, 0x0
 
     .line 664
-    iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->isVoiceMailFixed:Z
+    iget-boolean v0, p0, Lcom/android/internal/telephony/IccRecords;->isVoiceMailFixed:Z
 
     if-eqz v0, :cond_0
 
@@ -15712,29 +15699,29 @@
 
     .line 671
     :cond_0
-    iput-object p2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->newVoiceMailNum:Ljava/lang/String;
+    iput-object p2, p0, Lcom/android/internal/telephony/IccRecords;->newVoiceMailNum:Ljava/lang/String;
 
     .line 677
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailTag:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailTag:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->newVoiceMailTag:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/internal/telephony/IccRecords;->newVoiceMailTag:Ljava/lang/String;
 
     .line 680
     new-instance v1, Lcom/android/internal/telephony/AdnRecord;
 
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->newVoiceMailTag:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->newVoiceMailTag:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->newVoiceMailNum:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->newVoiceMailNum:Ljava/lang/String;
 
     invoke-direct {v1, v0, v2}, Lcom/android/internal/telephony/AdnRecord;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 682
     .local v1, adn:Lcom/android/internal/telephony/AdnRecord;
-    iget v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mailboxIndex:I
+    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->mailboxIndex:I
 
     if-eqz v0, :cond_1
 
-    iget v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mailboxIndex:I
+    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->mailboxIndex:I
 
     const/16 v2, 0xff
 
@@ -15743,9 +15730,9 @@
     .line 685
     new-instance v0, Lcom/android/internal/telephony/AdnRecordLoader;
 
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v0, v2, v3}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -15753,7 +15740,7 @@
 
     const/16 v3, 0x6fc8
 
-    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mailboxIndex:I
+    iget v4, p0, Lcom/android/internal/telephony/IccRecords;->mailboxIndex:I
 
     const/16 v6, 0x14
 
@@ -15776,9 +15763,9 @@
     .line 693
     new-instance v0, Lcom/android/internal/telephony/AdnRecordLoader;
 
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->mIccFileHandler:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v0, v2, v3}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/IccFileHandler;)V
 
@@ -15800,7 +15787,7 @@
 
     .line 702
     :cond_2
-    iput-object p2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->voiceMailNum:Ljava/lang/String;
+    iput-object p2, p0, Lcom/android/internal/telephony/IccRecords;->voiceMailNum:Ljava/lang/String;
 
     .line 705
     invoke-static {p3}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;)Landroid/os/AsyncResult;
@@ -15848,10 +15835,10 @@
     .line 760
     :cond_1
     :goto_1
-    iput p2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->countVoiceMessages:I
+    iput p2, p0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
 
     .line 762
-    iget-object v2, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->notifyMessageWaitingIndicator()V
 
@@ -15874,7 +15861,7 @@
 
     and-int/lit16 v4, v4, 0xfe
 
-    iget v5, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->countVoiceMessages:I
+    iget v5, p0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
 
     if-nez v5, :cond_5
 
@@ -15951,7 +15938,7 @@
 
     and-int/lit16 v3, v0, 0xf0
 
-    iget v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->countVoiceMessages:I
+    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
 
     if-nez v0, :cond_8
 

@@ -34,7 +34,7 @@
 
     .prologue
     .line 93
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 94
     const/4 v0, 0x0
@@ -114,19 +114,12 @@
 .end method
 
 .method public isDifferentImageRequest(Lcom/android/internal/telephony/Connection;)Z
-    .locals 4
+    .locals 3
     .parameter "connection"
 
     .prologue
     .line 113
     if-nez p1, :cond_1
-
-    .line 114
-    const-string v2, "ContactsAsyncHelper"
-
-    const-string v3, "isDifferentImageRequest: connection is null"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 115
     iget-object v2, p0, Lcom/htc/util/calendar/ContactsAsyncHelper$ImageTracker;->mCurrentCallerInfo:Lcom/android/internal/telephony/CallerInfo;

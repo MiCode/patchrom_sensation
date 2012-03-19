@@ -504,7 +504,7 @@
 
     sput v0, Lcom/android/camera/DisplayDevice;->WHEEL_ROTATE_PADDING:I
 
-    .line 428
+    .line 429
     :goto_1
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
@@ -512,23 +512,23 @@
 
     if-ne v0, v1, :cond_d
 
-    .line 429
+    .line 430
     sget-object v0, Lcom/android/camera/DisplayDevice$CaptureButton;->ActionKey:Lcom/android/camera/DisplayDevice$CaptureButton;
 
     sput-object v0, Lcom/android/camera/DisplayDevice;->CAPTURE_BUTTON:Lcom/android/camera/DisplayDevice$CaptureButton;
 
-    .line 456
+    .line 458
     :goto_2
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     if-ne v0, v4, :cond_10
 
-    .line 457
+    .line 459
     sget-object v0, Lcom/android/camera/DisplayDevice$CustomMMS;->ATT:Lcom/android/camera/DisplayDevice$CustomMMS;
 
     sput-object v0, Lcom/android/camera/DisplayDevice;->CUSTOM_MMS:Lcom/android/camera/DisplayDevice$CustomMMS;
 
-    .line 477
+    .line 479
     :goto_3
     sget v0, Lcom/android/camera/DisplayDevice;->SCREEN_WIDTH:I
 
@@ -536,24 +536,24 @@
 
     sput v0, Lcom/android/camera/DisplayDevice;->SCREEN_CENTER_X:I
 
-    .line 478
+    .line 480
     sget v0, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
 
     div-int/lit8 v0, v0, 0x2
 
     sput v0, Lcom/android/camera/DisplayDevice;->SCREEN_CENTER_Y:I
 
-    .line 489
+    .line 491
     const/4 v0, -0x1
 
     sput v0, Lcom/android/camera/DisplayDevice;->FOCUS_WIDTH:I
 
-    .line 511
+    .line 513
     const/4 v0, -0x1
 
     sput v0, Lcom/android/camera/DisplayDevice;->FOCUS_HEIGHT:I
 
-    .line 533
+    .line 535
     const/4 v0, -0x1
 
     sput v0, Lcom/android/camera/DisplayDevice;->TIMER_BASE_RECORDING_PORTRAIT:I
@@ -951,6 +951,12 @@
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
+    const/16 v1, 0xdc
+
+    if-eq v0, v1, :cond_8
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
     const/16 v1, 0x88
 
     if-eq v0, v1, :cond_8
@@ -973,117 +979,117 @@
 
     if-ne v0, v1, :cond_9
 
-    .line 297
+    .line 298
     :cond_8
     sget-object v0, Lcom/android/camera/DisplayDevice$Resolution;->QHD:Lcom/android/camera/DisplayDevice$Resolution;
 
     sput-object v0, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
 
-    .line 298
+    .line 299
     sget-object v0, Lcom/android/camera/DisplayDevice$ScreenRatio;->Ratio_16_9:Lcom/android/camera/DisplayDevice$ScreenRatio;
 
     sput-object v0, Lcom/android/camera/DisplayDevice;->SCREEN_RATIO:Lcom/android/camera/DisplayDevice$ScreenRatio;
 
-    .line 299
+    .line 300
     const/16 v0, 0x3c0
 
     sput v0, Lcom/android/camera/DisplayDevice;->SCREEN_WIDTH:I
 
-    .line 300
+    .line 301
     const/16 v0, 0x220
 
     sput v0, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
 
-    .line 301
+    .line 302
     const/16 v0, 0x3c0
 
     sput v0, Lcom/android/camera/DisplayDevice;->DEFALULT_CAMERA_PREVIEW_WITDH_FOR_3X:I
 
-    .line 302
+    .line 303
     const/16 v0, 0x220
 
     sput v0, Lcom/android/camera/DisplayDevice;->DEFALULT_CAMERA_PREVIEW_HEIGHT_FOR_3X:I
 
-    .line 304
+    .line 305
     const/16 v0, 0x280
 
     sput v0, Lcom/android/camera/DisplayDevice;->CAMERA_PREVIEW_WIDTH_FOR_4x3:I
 
-    .line 305
+    .line 306
     sput v3, Lcom/android/camera/DisplayDevice;->CAMERA_PREVIEW_HEIGHT_FOR_4x3:I
 
-    .line 306
+    .line 307
     const/16 v0, 0x110
 
     sput v0, Lcom/android/camera/DisplayDevice;->CAMERA_PREVIEW_SIZE_FOR_CONTACT:I
 
-    .line 309
+    .line 310
     const/16 v0, 0x500
 
     sput v0, Lcom/android/camera/DisplayDevice;->DEFALULT_CAMERA_PREVIEW_WITDH_FOR_3X_2ND:I
 
-    .line 310
+    .line 311
     sput v6, Lcom/android/camera/DisplayDevice;->DEFALULT_CAMERA_PREVIEW_HEIGHT_FOR_3X_2ND:I
 
-    .line 312
+    .line 313
     const/16 v0, 0x4c
 
     sput v0, Lcom/android/camera/DisplayDevice;->BUTTON_SIZE:I
 
-    .line 314
+    .line 315
     const/4 v0, -0x2
 
     sput v0, Lcom/android/camera/DisplayDevice;->DIALOG_HEIGHT:I
 
-    .line 315
+    .line 316
     sput v3, Lcom/android/camera/DisplayDevice;->DIALOG_WIDTH:I
 
-    .line 316
+    .line 317
     const/16 v0, 0xa
 
     sput v0, Lcom/android/camera/DisplayDevice;->REMAINING_TEXT_PADDING:I
 
-    .line 317
+    .line 318
     const/16 v0, 0x64
 
     sput v0, Lcom/android/camera/DisplayDevice;->REMAINING_TEXT_MARGIN:I
 
-    .line 320
+    .line 321
     const/4 v0, 0x3
 
     sput v0, Lcom/android/camera/DisplayDevice;->WHEEL_VSIBLE_AREA_PADDING:I
 
-    .line 321
+    .line 322
     const/4 v0, 0x4
 
     sput v0, Lcom/android/camera/DisplayDevice;->MARKER_HEIGHT:I
 
-    .line 322
+    .line 323
     sput v4, Lcom/android/camera/DisplayDevice;->WHEEL_BOUNCING_PADDING:I
 
-    .line 325
+    .line 326
     const/16 v0, 0xd0
 
     sput v0, Lcom/android/camera/DisplayDevice;->HINT_TOP_PADDING:I
 
-    .line 326
+    .line 327
     const/16 v0, 0x46
 
     sput v0, Lcom/android/camera/DisplayDevice;->HINT_LANDSCAPE_LEFT_PADDING:I
 
-    .line 327
+    .line 328
     const/16 v0, 0x30
 
     sput v0, Lcom/android/camera/DisplayDevice;->HINT_PORTRAIT_LEFT_PADDING:I
 
-    .line 331
+    .line 332
     const/4 v0, 0x6
 
     sput v0, Lcom/android/camera/DisplayDevice;->WHEEL_ROTATE_PADDING:I
 
     goto/16 :goto_1
 
-    .line 335
+    .line 336
     :cond_9
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
@@ -1091,139 +1097,139 @@
 
     if-ne v0, v1, :cond_a
 
-    .line 337
+    .line 338
     sget-object v0, Lcom/android/camera/DisplayDevice$Resolution;->HD:Lcom/android/camera/DisplayDevice$Resolution;
 
     sput-object v0, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
 
-    .line 338
+    .line 339
     sget-object v0, Lcom/android/camera/DisplayDevice$ScreenRatio;->Ratio_16_9:Lcom/android/camera/DisplayDevice$ScreenRatio;
 
     sput-object v0, Lcom/android/camera/DisplayDevice;->SCREEN_RATIO:Lcom/android/camera/DisplayDevice$ScreenRatio;
 
-    .line 339
+    .line 340
     const/16 v0, 0x500
 
     sput v0, Lcom/android/camera/DisplayDevice;->SCREEN_WIDTH:I
 
-    .line 340
+    .line 341
     sput v6, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
 
-    .line 341
+    .line 342
     const/16 v0, 0x500
 
     sput v0, Lcom/android/camera/DisplayDevice;->DEFALULT_CAMERA_PREVIEW_WITDH_FOR_3X:I
 
-    .line 342
+    .line 343
     sput v6, Lcom/android/camera/DisplayDevice;->DEFALULT_CAMERA_PREVIEW_HEIGHT_FOR_3X:I
 
-    .line 344
+    .line 345
     const/16 v0, 0x280
 
     sput v0, Lcom/android/camera/DisplayDevice;->CAMERA_PREVIEW_WIDTH_FOR_4x3:I
 
-    .line 345
+    .line 346
     sput v3, Lcom/android/camera/DisplayDevice;->CAMERA_PREVIEW_HEIGHT_FOR_4x3:I
 
-    .line 346
+    .line 347
     const/16 v0, 0x110
 
     sput v0, Lcom/android/camera/DisplayDevice;->CAMERA_PREVIEW_SIZE_FOR_CONTACT:I
 
-    .line 349
+    .line 350
     const/16 v0, 0x500
 
     sput v0, Lcom/android/camera/DisplayDevice;->DEFALULT_CAMERA_PREVIEW_WITDH_FOR_3X_2ND:I
 
-    .line 350
+    .line 351
     sput v6, Lcom/android/camera/DisplayDevice;->DEFALULT_CAMERA_PREVIEW_HEIGHT_FOR_3X_2ND:I
 
-    .line 352
+    .line 353
     const/16 v0, 0x4c
 
     sput v0, Lcom/android/camera/DisplayDevice;->BUTTON_SIZE:I
 
-    .line 354
+    .line 355
     const/4 v0, -0x2
 
     sput v0, Lcom/android/camera/DisplayDevice;->DIALOG_HEIGHT:I
 
-    .line 355
+    .line 356
     sput v3, Lcom/android/camera/DisplayDevice;->DIALOG_WIDTH:I
 
-    .line 356
+    .line 357
     const/16 v0, 0xa
 
     sput v0, Lcom/android/camera/DisplayDevice;->REMAINING_TEXT_PADDING:I
 
-    .line 357
+    .line 358
     const/16 v0, 0x64
 
     sput v0, Lcom/android/camera/DisplayDevice;->REMAINING_TEXT_MARGIN:I
 
-    .line 360
+    .line 361
     const/4 v0, 0x3
 
     sput v0, Lcom/android/camera/DisplayDevice;->WHEEL_VSIBLE_AREA_PADDING:I
 
-    .line 361
+    .line 362
     const/4 v0, 0x4
 
     sput v0, Lcom/android/camera/DisplayDevice;->MARKER_HEIGHT:I
 
-    .line 362
+    .line 363
     sput v4, Lcom/android/camera/DisplayDevice;->WHEEL_BOUNCING_PADDING:I
 
-    .line 365
+    .line 366
     const/16 v0, 0xd0
 
     sput v0, Lcom/android/camera/DisplayDevice;->HINT_TOP_PADDING:I
 
-    .line 366
+    .line 367
     const/16 v0, 0x46
 
     sput v0, Lcom/android/camera/DisplayDevice;->HINT_LANDSCAPE_LEFT_PADDING:I
 
-    .line 367
+    .line 368
     const/16 v0, 0x30
 
     sput v0, Lcom/android/camera/DisplayDevice;->HINT_PORTRAIT_LEFT_PADDING:I
 
-    .line 371
+    .line 372
     const/4 v0, 0x6
 
     sput v0, Lcom/android/camera/DisplayDevice;->WHEEL_ROTATE_PADDING:I
 
     goto/16 :goto_1
 
-    .line 378
+    .line 379
     :cond_a
     sget-object v0, Lcom/android/camera/DisplayDevice$Resolution;->WVGA:Lcom/android/camera/DisplayDevice$Resolution;
 
     sput-object v0, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
 
-    .line 379
+    .line 380
     sget-object v0, Lcom/android/camera/DisplayDevice$ScreenRatio;->Ratio_5_3:Lcom/android/camera/DisplayDevice$ScreenRatio;
 
     sput-object v0, Lcom/android/camera/DisplayDevice;->SCREEN_RATIO:Lcom/android/camera/DisplayDevice$ScreenRatio;
 
-    .line 380
+    .line 381
     const/16 v0, 0x320
 
     sput v0, Lcom/android/camera/DisplayDevice;->SCREEN_WIDTH:I
 
-    .line 381
+    .line 382
     sput v3, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
 
-    .line 382
+    .line 383
     const/16 v0, 0x320
 
     sput v0, Lcom/android/camera/DisplayDevice;->DEFALULT_CAMERA_PREVIEW_WITDH_FOR_3X:I
 
-    .line 383
+    .line 384
     sput v3, Lcom/android/camera/DisplayDevice;->DEFALULT_CAMERA_PREVIEW_HEIGHT_FOR_3X:I
 
-    .line 386
+    .line 387
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x30
@@ -1236,103 +1242,103 @@
 
     if-ne v0, v1, :cond_c
 
-    .line 389
+    .line 390
     :cond_b
     sget-object v0, Lcom/android/camera/DisplayDevice$ScreenRatio;->Ratio_16_9:Lcom/android/camera/DisplayDevice$ScreenRatio;
 
     sput-object v0, Lcom/android/camera/DisplayDevice;->SCREEN_RATIO:Lcom/android/camera/DisplayDevice$ScreenRatio;
 
-    .line 390
+    .line 391
     const/16 v0, 0x500
 
     sput v0, Lcom/android/camera/DisplayDevice;->DEFALULT_CAMERA_PREVIEW_WITDH_FOR_3X:I
 
-    .line 391
+    .line 392
     sput v6, Lcom/android/camera/DisplayDevice;->DEFALULT_CAMERA_PREVIEW_HEIGHT_FOR_3X:I
 
-    .line 395
+    .line 396
     :cond_c
     const/16 v0, 0x280
 
     sput v0, Lcom/android/camera/DisplayDevice;->DEFALULT_CAMERA_PREVIEW_WITDH_FOR_3X_2ND:I
 
-    .line 396
+    .line 397
     const/16 v0, 0x180
 
     sput v0, Lcom/android/camera/DisplayDevice;->DEFALULT_CAMERA_PREVIEW_HEIGHT_FOR_3X_2ND:I
 
-    .line 398
+    .line 399
     const/16 v0, 0x280
 
     sput v0, Lcom/android/camera/DisplayDevice;->CAMERA_PREVIEW_WIDTH_FOR_4x3:I
 
-    .line 399
+    .line 400
     sput v3, Lcom/android/camera/DisplayDevice;->CAMERA_PREVIEW_HEIGHT_FOR_4x3:I
 
-    .line 400
+    .line 401
     const/16 v0, 0x110
 
     sput v0, Lcom/android/camera/DisplayDevice;->CAMERA_PREVIEW_SIZE_FOR_CONTACT:I
 
-    .line 402
+    .line 403
     const/16 v0, 0x4c
 
     sput v0, Lcom/android/camera/DisplayDevice;->BUTTON_SIZE:I
 
-    .line 404
+    .line 405
     const/4 v0, -0x2
 
     sput v0, Lcom/android/camera/DisplayDevice;->DIALOG_HEIGHT:I
 
-    .line 405
+    .line 406
     sput v3, Lcom/android/camera/DisplayDevice;->DIALOG_WIDTH:I
 
-    .line 406
+    .line 407
     const/16 v0, 0xa
 
     sput v0, Lcom/android/camera/DisplayDevice;->REMAINING_TEXT_PADDING:I
 
-    .line 407
+    .line 408
     const/16 v0, 0x64
 
     sput v0, Lcom/android/camera/DisplayDevice;->REMAINING_TEXT_MARGIN:I
 
-    .line 410
+    .line 411
     const/4 v0, 0x3
 
     sput v0, Lcom/android/camera/DisplayDevice;->WHEEL_VSIBLE_AREA_PADDING:I
 
-    .line 411
+    .line 412
     const/4 v0, 0x4
 
     sput v0, Lcom/android/camera/DisplayDevice;->MARKER_HEIGHT:I
 
-    .line 412
+    .line 413
     sput v4, Lcom/android/camera/DisplayDevice;->WHEEL_BOUNCING_PADDING:I
 
-    .line 415
+    .line 416
     const/16 v0, 0xd0
 
     sput v0, Lcom/android/camera/DisplayDevice;->HINT_TOP_PADDING:I
 
-    .line 416
+    .line 417
     const/16 v0, 0x46
 
     sput v0, Lcom/android/camera/DisplayDevice;->HINT_LANDSCAPE_LEFT_PADDING:I
 
-    .line 417
+    .line 418
     const/16 v0, 0x30
 
     sput v0, Lcom/android/camera/DisplayDevice;->HINT_PORTRAIT_LEFT_PADDING:I
 
-    .line 421
+    .line 422
     const/4 v0, 0x6
 
     sput v0, Lcom/android/camera/DisplayDevice;->WHEEL_ROTATE_PADDING:I
 
     goto/16 :goto_1
 
-    .line 430
+    .line 431
     :cond_d
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
@@ -1384,6 +1390,12 @@
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
+    const/16 v1, 0xdc
+
+    if-eq v0, v1, :cond_e
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
     const/16 v1, 0x88
 
     if-eq v0, v1, :cond_e
@@ -1400,7 +1412,7 @@
 
     if-ne v0, v1, :cond_f
 
-    .line 442
+    .line 444
     :cond_e
     sget-object v0, Lcom/android/camera/DisplayDevice$CaptureButton;->HWKey:Lcom/android/camera/DisplayDevice$CaptureButton;
 
@@ -1408,7 +1420,7 @@
 
     goto/16 :goto_2
 
-    .line 444
+    .line 446
     :cond_f
     sget-object v0, Lcom/android/camera/DisplayDevice$CaptureButton;->Other:Lcom/android/camera/DisplayDevice$CaptureButton;
 
@@ -1416,7 +1428,7 @@
 
     goto/16 :goto_2
 
-    .line 458
+    .line 460
     :cond_10
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
@@ -1424,14 +1436,14 @@
 
     if-ne v0, v1, :cond_11
 
-    .line 459
+    .line 461
     sget-object v0, Lcom/android/camera/DisplayDevice$CustomMMS;->Sprint:Lcom/android/camera/DisplayDevice$CustomMMS;
 
     sput-object v0, Lcom/android/camera/DisplayDevice;->CUSTOM_MMS:Lcom/android/camera/DisplayDevice$CustomMMS;
 
     goto/16 :goto_3
 
-    .line 460
+    .line 462
     :cond_11
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
@@ -1439,14 +1451,14 @@
 
     if-ne v0, v1, :cond_12
 
-    .line 461
+    .line 463
     sget-object v0, Lcom/android/camera/DisplayDevice$CustomMMS;->Verizon:Lcom/android/camera/DisplayDevice$CustomMMS;
 
     sput-object v0, Lcom/android/camera/DisplayDevice;->CUSTOM_MMS:Lcom/android/camera/DisplayDevice$CustomMMS;
 
     goto/16 :goto_3
 
-    .line 463
+    .line 465
     :cond_12
     sget-object v0, Lcom/android/camera/DisplayDevice$CustomMMS;->Default:Lcom/android/camera/DisplayDevice$CustomMMS;
 
@@ -1460,7 +1472,7 @@
 
     .prologue
     .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -1469,7 +1481,7 @@
     .locals 2
 
     .prologue
-    .line 1151
+    .line 1160
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x28
@@ -1488,11 +1500,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1154
+    .line 1163
     :cond_0
     const/4 v0, 0x1
 
-    .line 1156
+    .line 1165
     :goto_0
     return v0
 
@@ -1506,7 +1518,7 @@
     .locals 2
 
     .prologue
-    .line 1212
+    .line 1221
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0x94
@@ -1519,11 +1531,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1214
+    .line 1223
     :cond_0
     const/4 v0, 0x0
 
-    .line 1216
+    .line 1225
     :goto_0
     return v0
 
@@ -1537,7 +1549,7 @@
     .locals 2
 
     .prologue
-    .line 1048
+    .line 1053
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x28
@@ -1568,11 +1580,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1053
+    .line 1058
     :cond_0
     const/4 v0, 0x1
 
-    .line 1055
+    .line 1060
     :goto_0
     return v0
 
@@ -1586,7 +1598,7 @@
     .locals 2
 
     .prologue
-    .line 1039
+    .line 1044
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x28
@@ -1605,11 +1617,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1042
+    .line 1047
     :cond_0
     const/4 v0, 0x1
 
-    .line 1044
+    .line 1049
     :goto_0
     return v0
 
@@ -1623,7 +1635,7 @@
     .locals 1
 
     .prologue
-    .line 633
+    .line 635
     const/4 v0, 0x1
 
     return v0
@@ -1633,17 +1645,17 @@
     .locals 2
 
     .prologue
-    .line 1274
+    .line 1283
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0xa8
 
     if-ne v0, v1, :cond_0
 
-    .line 1275
+    .line 1284
     const/4 v0, 0x1
 
-    .line 1277
+    .line 1286
     :goto_0
     return v0
 
@@ -1657,7 +1669,7 @@
     .locals 1
 
     .prologue
-    .line 799
+    .line 802
     const/4 v0, 0x1
 
     return v0
@@ -1667,7 +1679,7 @@
     .locals 1
 
     .prologue
-    .line 795
+    .line 798
     const/4 v0, 0x1
 
     return v0
@@ -1677,7 +1689,7 @@
     .locals 2
 
     .prologue
-    .line 764
+    .line 767
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0xd1
@@ -1714,11 +1726,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 770
+    .line 773
     :cond_0
     const/4 v0, 0x1
 
-    .line 772
+    .line 775
     :goto_0
     return v0
 
@@ -1732,7 +1744,7 @@
     .locals 2
 
     .prologue
-    .line 776
+    .line 779
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0x94
@@ -1781,11 +1793,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 784
+    .line 787
     :cond_0
     const/4 v0, 0x1
 
-    .line 786
+    .line 789
     :goto_0
     return v0
 
@@ -1800,12 +1812,12 @@
     .parameter "context"
 
     .prologue
-    .line 515
+    .line 517
     sget v1, Lcom/android/camera/DisplayDevice;->FOCUS_HEIGHT:I
 
     if-gez v1, :cond_0
 
-    .line 517
+    .line 519
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -1816,7 +1828,7 @@
 
     move-result-object v0
 
-    .line 518
+    .line 520
     .local v0, image:Landroid/graphics/drawable/Drawable;
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
@@ -1824,14 +1836,14 @@
 
     sput v1, Lcom/android/camera/DisplayDevice;->FOCUS_WIDTH:I
 
-    .line 519
+    .line 521
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v1
 
     sput v1, Lcom/android/camera/DisplayDevice;->FOCUS_HEIGHT:I
 
-    .line 523
+    .line 525
     .end local v0           #image:Landroid/graphics/drawable/Drawable;
     :cond_0
     sget v1, Lcom/android/camera/DisplayDevice;->FOCUS_HEIGHT:I
@@ -1844,12 +1856,12 @@
     .parameter "context"
 
     .prologue
-    .line 493
+    .line 495
     sget v1, Lcom/android/camera/DisplayDevice;->FOCUS_WIDTH:I
 
     if-gez v1, :cond_0
 
-    .line 495
+    .line 497
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -1860,7 +1872,7 @@
 
     move-result-object v0
 
-    .line 496
+    .line 498
     .local v0, image:Landroid/graphics/drawable/Drawable;
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
@@ -1868,14 +1880,14 @@
 
     sput v1, Lcom/android/camera/DisplayDevice;->FOCUS_WIDTH:I
 
-    .line 497
+    .line 499
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v1
 
     sput v1, Lcom/android/camera/DisplayDevice;->FOCUS_HEIGHT:I
 
-    .line 501
+    .line 503
     .end local v0           #image:Landroid/graphics/drawable/Drawable;
     :cond_0
     sget v1, Lcom/android/camera/DisplayDevice;->FOCUS_WIDTH:I
@@ -1889,12 +1901,12 @@
     .parameter "orientation"
 
     .prologue
-    .line 537
+    .line 539
     sget v1, Lcom/android/camera/DisplayDevice;->TIMER_BASE_RECORDING_PORTRAIT:I
 
     if-gez v1, :cond_0
 
-    .line 539
+    .line 541
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -1905,7 +1917,7 @@
 
     move-result-object v0
 
-    .line 540
+    .line 542
     .local v0, image:Landroid/graphics/drawable/Drawable;
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
@@ -1913,7 +1925,7 @@
 
     sput v1, Lcom/android/camera/DisplayDevice;->TIMER_BASE_RECORDING_PORTRAIT:I
 
-    .line 545
+    .line 547
     .end local v0           #image:Landroid/graphics/drawable/Drawable;
     :cond_0
     if-eqz p1, :cond_1
@@ -1922,11 +1934,11 @@
 
     if-ne p1, v1, :cond_2
 
-    .line 546
+    .line 548
     :cond_1
     sget v1, Lcom/android/camera/DisplayDevice;->TIMER_BASE_RECORDING_PORTRAIT:I
 
-    .line 547
+    .line 549
     :goto_0
     return v1
 
@@ -1942,17 +1954,17 @@
     .locals 2
 
     .prologue
-    .line 622
+    .line 624
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x8
 
     if-ne v0, v1, :cond_0
 
-    .line 623
+    .line 625
     const/4 v0, 0x0
 
-    .line 625
+    .line 627
     :goto_0
     return v0
 
@@ -1966,7 +1978,7 @@
     .locals 2
 
     .prologue
-    .line 756
+    .line 759
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0x71
@@ -1979,10 +1991,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 758
+    .line 761
     const/4 v0, 0x1
 
-    .line 760
+    .line 763
     :goto_0
     return v0
 
@@ -1998,24 +2010,24 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 939
+    .line 944
     invoke-static {}, Lcom/android/camera/DisplayDevice;->support1080p()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 940
+    .line 945
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v2, 0xd0
 
     if-ne v1, v2, :cond_0
 
-    .line 941
+    .line 946
     const/4 v0, 0x1
 
-    .line 945
+    .line 950
     :cond_0
     return v0
 .end method
@@ -2026,19 +2038,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 924
+    .line 929
     invoke-static {}, Lcom/android/camera/DisplayDevice;->support720p()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 935
+    .line 940
     :cond_0
     :goto_0
     return v0
 
-    .line 927
+    .line 932
     :cond_1
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
@@ -2083,7 +2095,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 933
+    .line 938
     :cond_3
     const/4 v0, 0x1
 
@@ -2094,17 +2106,17 @@
     .locals 2
 
     .prologue
-    .line 1003
+    .line 1008
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0xc
 
     if-ne v0, v1, :cond_0
 
-    .line 1004
+    .line 1009
     const/4 v0, 0x1
 
-    .line 1006
+    .line 1011
     :goto_0
     return v0
 
@@ -2118,7 +2130,7 @@
     .locals 2
 
     .prologue
-    .line 1015
+    .line 1020
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x61
@@ -2143,11 +2155,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1019
+    .line 1024
     :cond_0
     const/4 v0, 0x1
 
-    .line 1021
+    .line 1026
     :goto_0
     return v0
 
@@ -2161,7 +2173,7 @@
     .locals 1
 
     .prologue
-    .line 1010
+    .line 1015
     const/4 v0, 0x1
 
     return v0
@@ -2171,17 +2183,17 @@
     .locals 2
 
     .prologue
-    .line 587
+    .line 589
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x1c
 
     if-ne v0, v1, :cond_0
 
-    .line 588
+    .line 590
     const/4 v0, 0x1
 
-    .line 590
+    .line 592
     :goto_0
     return v0
 
@@ -2195,7 +2207,7 @@
     .locals 1
 
     .prologue
-    .line 964
+    .line 969
     const/4 v0, 0x1
 
     return v0
@@ -2205,17 +2217,17 @@
     .locals 2
 
     .prologue
-    .line 1298
+    .line 1307
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0xd2
 
     if-ne v0, v1, :cond_0
 
-    .line 1299
+    .line 1308
     const/4 v0, 0x0
 
-    .line 1301
+    .line 1310
     :goto_0
     return v0
 
@@ -2229,7 +2241,7 @@
     .locals 2
 
     .prologue
-    .line 1087
+    .line 1092
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x28
@@ -2248,11 +2260,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1090
+    .line 1095
     :cond_0
     const/4 v0, 0x1
 
-    .line 1092
+    .line 1097
     :goto_0
     return v0
 
@@ -2266,17 +2278,17 @@
     .locals 2
 
     .prologue
-    .line 553
+    .line 555
     sget-object v0, Lcom/android/camera/DisplayDevice;->SCREEN_RATIO:Lcom/android/camera/DisplayDevice$ScreenRatio;
 
     sget-object v1, Lcom/android/camera/DisplayDevice$ScreenRatio;->Ratio_4_3:Lcom/android/camera/DisplayDevice$ScreenRatio;
 
     if-ne v0, v1, :cond_0
 
-    .line 554
+    .line 556
     const/4 v0, 0x0
 
-    .line 556
+    .line 558
     :goto_0
     return v0
 
@@ -2290,17 +2302,17 @@
     .locals 2
 
     .prologue
-    .line 1290
+    .line 1299
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_LANGUAGE_flag:S
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 1291
+    .line 1300
     const/4 v0, 0x1
 
-    .line 1293
+    .line 1302
     :goto_0
     return v0
 
@@ -2314,7 +2326,7 @@
     .locals 2
 
     .prologue
-    .line 1223
+    .line 1232
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x10
@@ -2349,17 +2361,17 @@
     .locals 1
 
     .prologue
-    .line 916
+    .line 921
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportQCT7x27()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 917
+    .line 922
     const/4 v0, 0x1
 
-    .line 919
+    .line 924
     :goto_0
     return v0
 
@@ -2373,17 +2385,17 @@
     .locals 2
 
     .prologue
-    .line 749
+    .line 752
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0xd1
 
     if-ne v0, v1, :cond_0
 
-    .line 750
+    .line 753
     const/4 v0, 0x1
 
-    .line 752
+    .line 755
     :goto_0
     return v0
 
@@ -2397,7 +2409,7 @@
     .locals 2
 
     .prologue
-    .line 713
+    .line 715
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x10
@@ -2410,11 +2422,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 715
+    .line 717
     :cond_0
     const/4 v0, 0x1
 
-    .line 717
+    .line 719
     :goto_0
     return v0
 
@@ -2428,7 +2440,7 @@
     .locals 1
 
     .prologue
-    .line 983
+    .line 988
     const/4 v0, 0x1
 
     return v0
@@ -2438,17 +2450,17 @@
     .locals 2
 
     .prologue
-    .line 704
+    .line 706
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x8
 
     if-ne v0, v1, :cond_0
 
-    .line 705
+    .line 707
     const/4 v0, 0x1
 
-    .line 707
+    .line 709
     :goto_0
     return v0
 
@@ -2462,7 +2474,7 @@
     .locals 2
 
     .prologue
-    .line 723
+    .line 725
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x50
@@ -2507,15 +2519,21 @@
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
+    const/16 v1, 0xdc
+
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
     const/16 v1, 0x1c
 
     if-ne v0, v1, :cond_1
 
-    .line 731
+    .line 734
     :cond_0
     const/4 v0, 0x0
 
-    .line 733
+    .line 736
     :goto_0
     return v0
 
@@ -2529,7 +2547,7 @@
     .locals 2
 
     .prologue
-    .line 885
+    .line 889
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x7b
@@ -2574,6 +2592,12 @@
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
+    const/16 v1, 0xdc
+
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
     const/16 v1, 0x1c
 
     if-eq v0, v1, :cond_0
@@ -2590,11 +2614,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 895
+    .line 900
     :cond_0
     const/4 v0, 0x1
 
-    .line 897
+    .line 902
     :goto_0
     return v0
 
@@ -2608,7 +2632,7 @@
     .locals 1
 
     .prologue
-    .line 1035
+    .line 1040
     const/4 v0, 0x1
 
     return v0
@@ -2618,17 +2642,17 @@
     .locals 1
 
     .prologue
-    .line 1060
+    .line 1065
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportSpecific2ndCamera()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1061
+    .line 1066
     const/4 v0, 0x0
 
-    .line 1063
+    .line 1068
     :goto_0
     return v0
 
@@ -2642,7 +2666,7 @@
     .locals 2
 
     .prologue
-    .line 1067
+    .line 1072
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0xad
@@ -2655,11 +2679,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1069
+    .line 1074
     :cond_0
     const/4 v0, 0x1
 
-    .line 1071
+    .line 1076
     :goto_0
     return v0
 
@@ -2673,17 +2697,17 @@
     .locals 2
 
     .prologue
-    .line 1265
+    .line 1274
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x89
 
     if-ne v0, v1, :cond_0
 
-    .line 1267
+    .line 1276
     const/4 v0, 0x1
 
-    .line 1269
+    .line 1278
     :goto_0
     return v0
 
@@ -2697,7 +2721,7 @@
     .locals 1
 
     .prologue
-    .line 1167
+    .line 1176
     const/4 v0, 0x1
 
     return v0
@@ -2707,7 +2731,7 @@
     .locals 2
 
     .prologue
-    .line 1097
+    .line 1102
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x7c
@@ -2734,6 +2758,12 @@
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
+    const/16 v1, 0xdc
+
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
     const/16 v1, 0xab
 
     if-eq v0, v1, :cond_0
@@ -2744,11 +2774,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1103
+    .line 1109
     :cond_0
     const/4 v0, 0x1
 
-    .line 1105
+    .line 1111
     :goto_0
     return v0
 
@@ -2762,7 +2792,7 @@
     .locals 2
 
     .prologue
-    .line 1109
+    .line 1115
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x95
@@ -2779,13 +2809,19 @@
 
     const/16 v1, 0x97
 
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    const/16 v1, 0xdc
+
     if-ne v0, v1, :cond_1
 
-    .line 1112
+    .line 1119
     :cond_0
     const/4 v0, 0x1
 
-    .line 1114
+    .line 1121
     :goto_0
     return v0
 
@@ -2799,7 +2835,7 @@
     .locals 1
 
     .prologue
-    .line 902
+    .line 907
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportQCT8x50()Z
 
     move-result v0
@@ -2818,11 +2854,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 903
+    .line 908
     :cond_0
     const/4 v0, 0x1
 
-    .line 905
+    .line 910
     :goto_0
     return v0
 
@@ -2836,7 +2872,7 @@
     .locals 2
 
     .prologue
-    .line 1075
+    .line 1080
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0xad
@@ -2867,11 +2903,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1080
+    .line 1085
     :cond_0
     const/4 v0, 0x1
 
-    .line 1082
+    .line 1087
     :goto_0
     return v0
 
@@ -2885,17 +2921,17 @@
     .locals 1
 
     .prologue
-    .line 1173
+    .line 1182
     invoke-static {}, Lcom/android/camera/DisplayDevice;->ishtcChina()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1174
+    .line 1183
     const/4 v0, 0x0
 
-    .line 1176
+    .line 1185
     :goto_0
     return v0
 
@@ -2911,14 +2947,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1186
+    .line 1195
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportAutoUpload()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1190
+    .line 1199
     :cond_0
     return v1
 .end method
@@ -2927,17 +2963,17 @@
     .locals 2
 
     .prologue
-    .line 1281
+    .line 1290
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x89
 
     if-ne v0, v1, :cond_0
 
-    .line 1283
+    .line 1292
     const/4 v0, 0x1
 
-    .line 1285
+    .line 1294
     :goto_0
     return v0
 
@@ -2951,17 +2987,17 @@
     .locals 2
 
     .prologue
-    .line 1118
+    .line 1125
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x88
 
     if-ne v0, v1, :cond_0
 
-    .line 1119
+    .line 1126
     const/4 v0, 0x1
 
-    .line 1121
+    .line 1128
     :goto_0
     return v0
 
@@ -2977,14 +3013,14 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 995
+    .line 1000
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v2, 0x10
 
     if-ne v1, v2, :cond_1
 
-    .line 997
+    .line 1002
     :cond_0
     :goto_0
     return v0
@@ -3005,7 +3041,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 964
     const/4 v0, 0x1
 
     return v0
@@ -3015,7 +3051,7 @@
     .locals 2
 
     .prologue
-    .line 1251
+    .line 1260
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x3e
@@ -3064,11 +3100,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1259
+    .line 1268
     :cond_0
     const/4 v0, 0x1
 
-    .line 1261
+    .line 1270
     :goto_0
     return v0
 
@@ -3082,7 +3118,7 @@
     .locals 2
 
     .prologue
-    .line 611
+    .line 613
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x9
@@ -3107,11 +3143,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 615
+    .line 617
     :cond_0
     const/4 v0, 0x0
 
-    .line 617
+    .line 619
     :goto_0
     return v0
 
@@ -3125,7 +3161,7 @@
     .locals 1
 
     .prologue
-    .line 909
+    .line 914
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportQCT8x50()Z
 
     move-result v0
@@ -3138,11 +3174,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 910
+    .line 915
     :cond_0
     const/4 v0, 0x1
 
-    .line 912
+    .line 917
     :goto_0
     return v0
 
@@ -3156,7 +3192,7 @@
     .locals 2
 
     .prologue
-    .line 739
+    .line 742
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x42
@@ -3179,11 +3215,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 742
+    .line 745
     :cond_0
     const/4 v0, 0x1
 
-    .line 744
+    .line 747
     :goto_0
     return v0
 
@@ -3197,17 +3233,17 @@
     .locals 2
 
     .prologue
-    .line 1204
+    .line 1213
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x62
 
     if-ne v0, v1, :cond_0
 
-    .line 1205
+    .line 1214
     const/4 v0, 0x0
 
-    .line 1207
+    .line 1216
     :goto_0
     return v0
 
@@ -3221,7 +3257,7 @@
     .locals 2
 
     .prologue
-    .line 1195
+    .line 1204
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x10
@@ -3234,11 +3270,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1197
+    .line 1206
     :cond_0
     const/4 v0, 0x1
 
-    .line 1199
+    .line 1208
     :goto_0
     return v0
 
@@ -3252,7 +3288,7 @@
     .locals 2
 
     .prologue
-    .line 695
+    .line 697
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x90
@@ -3265,11 +3301,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 697
+    .line 699
     :cond_0
     const/4 v0, 0x0
 
-    .line 699
+    .line 701
     :goto_0
     return v0
 
@@ -3283,7 +3319,7 @@
     .locals 2
 
     .prologue
-    .line 949
+    .line 954
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x40
@@ -3296,11 +3332,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 953
+    .line 958
     :cond_0
     const/4 v0, 0x1
 
-    .line 955
+    .line 960
     :goto_0
     return v0
 
@@ -3314,17 +3350,17 @@
     .locals 2
 
     .prologue
-    .line 988
+    .line 993
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x10
 
     if-ne v0, v1, :cond_0
 
-    .line 989
+    .line 994
     const/4 v0, 0x0
 
-    .line 991
+    .line 996
     :goto_0
     return v0
 
@@ -3338,7 +3374,7 @@
     .locals 2
 
     .prologue
-    .line 1025
+    .line 1030
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x28
@@ -3351,10 +3387,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 1028
+    .line 1033
     const/4 v0, 0x0
 
-    .line 1031
+    .line 1036
     :goto_0
     return v0
 
@@ -3368,7 +3404,7 @@
     .locals 1
 
     .prologue
-    .line 1237
+    .line 1246
     const/4 v0, 0x1
 
     return v0
@@ -3378,7 +3414,7 @@
     .locals 2
 
     .prologue
-    .line 804
+    .line 807
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x39
@@ -3397,11 +3433,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 807
+    .line 810
     :cond_0
     const/4 v0, 0x1
 
-    .line 809
+    .line 812
     :goto_0
     return v0
 
@@ -3415,7 +3451,7 @@
     .locals 2
 
     .prologue
-    .line 813
+    .line 816
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x8
@@ -3440,11 +3476,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 817
+    .line 820
     :cond_0
     const/4 v0, 0x1
 
-    .line 819
+    .line 822
     :goto_0
     return v0
 
@@ -3458,7 +3494,7 @@
     .locals 2
 
     .prologue
-    .line 859
+    .line 862
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x62
@@ -3477,11 +3513,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 862
+    .line 865
     :cond_0
     const/4 v0, 0x1
 
-    .line 864
+    .line 867
     :goto_0
     return v0
 
@@ -3495,7 +3531,7 @@
     .locals 2
 
     .prologue
-    .line 835
+    .line 838
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0xa8
@@ -3596,11 +3632,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 852
+    .line 855
     :cond_0
     const/4 v0, 0x1
 
-    .line 854
+    .line 857
     :goto_0
     return v0
 
@@ -3614,7 +3650,7 @@
     .locals 2
 
     .prologue
-    .line 825
+    .line 828
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x9
@@ -3639,11 +3675,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 829
+    .line 832
     :cond_0
     const/4 v0, 0x1
 
-    .line 831
+    .line 834
     :goto_0
     return v0
 
@@ -3657,7 +3693,7 @@
     .locals 2
 
     .prologue
-    .line 869
+    .line 872
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x7b
@@ -3702,6 +3738,12 @@
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
+    const/16 v1, 0xdc
+
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
     const/16 v1, 0x1c
 
     if-eq v0, v1, :cond_0
@@ -3718,11 +3760,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 879
+    .line 883
     :cond_0
     const/4 v0, 0x1
 
-    .line 881
+    .line 885
     :goto_0
     return v0
 
@@ -3736,7 +3778,7 @@
     .locals 1
 
     .prologue
-    .line 638
+    .line 640
     const/4 v0, 0x1
 
     return v0
@@ -3746,7 +3788,7 @@
     .locals 1
 
     .prologue
-    .line 643
+    .line 645
     const/4 v0, 0x1
 
     return v0
@@ -3756,7 +3798,7 @@
     .locals 1
 
     .prologue
-    .line 561
+    .line 563
     const/4 v0, 0x1
 
     return v0
@@ -3766,17 +3808,17 @@
     .locals 2
 
     .prologue
-    .line 594
+    .line 596
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x8
 
     if-ne v0, v1, :cond_0
 
-    .line 595
+    .line 597
     const/4 v0, 0x0
 
-    .line 597
+    .line 599
     :goto_0
     return v0
 
@@ -3790,7 +3832,7 @@
     .locals 2
 
     .prologue
-    .line 1126
+    .line 1133
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x7c
@@ -3817,6 +3859,12 @@
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
+    const/16 v1, 0xdc
+
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
     const/16 v1, 0xab
 
     if-eq v0, v1, :cond_0
@@ -3827,11 +3875,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1132
+    .line 1140
     :cond_0
     const/4 v0, 0x1
 
-    .line 1134
+    .line 1142
     :goto_0
     return v0
 
@@ -3845,7 +3893,7 @@
     .locals 2
 
     .prologue
-    .line 1139
+    .line 1147
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x7c
@@ -3872,6 +3920,12 @@
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
+    const/16 v1, 0xdc
+
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
     const/16 v1, 0xab
 
     if-eq v0, v1, :cond_0
@@ -3882,11 +3936,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1145
+    .line 1154
     :cond_0
     const/4 v0, 0x1
 
-    .line 1147
+    .line 1156
     :goto_0
     return v0
 
@@ -3896,11 +3950,21 @@
     goto :goto_0
 .end method
 
+.method public static supportShowWhenLock()Z
+    .locals 1
+
+    .prologue
+    .line 1313
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
 .method public static supportSpecific2ndCamera()Z
     .locals 2
 
     .prologue
-    .line 648
+    .line 650
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x30
@@ -3961,11 +4025,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 659
+    .line 661
     :cond_0
     const/4 v0, 0x1
 
-    .line 661
+    .line 663
     :goto_0
     return v0
 
@@ -3979,17 +4043,17 @@
     .locals 2
 
     .prologue
-    .line 1161
+    .line 1170
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x61
 
     if-ne v0, v1, :cond_0
 
-    .line 1162
+    .line 1171
     const/4 v0, 0x0
 
-    .line 1163
+    .line 1172
     :goto_0
     return v0
 
@@ -4005,19 +4069,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 677
+    .line 679
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportSecondCamera()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 683
+    .line 685
     :cond_0
     :goto_0
     return v0
 
-    .line 680
+    .line 682
     :cond_1
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
@@ -4025,7 +4089,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 681
+    .line 683
     const/4 v0, 0x1
 
     goto :goto_0
@@ -4035,7 +4099,7 @@
     .locals 1
 
     .prologue
-    .line 606
+    .line 608
     const/4 v0, 0x0
 
     return v0
@@ -4045,7 +4109,7 @@
     .locals 1
 
     .prologue
-    .line 582
+    .line 584
     const/4 v0, 0x0
 
     return v0
@@ -4055,7 +4119,7 @@
     .locals 2
 
     .prologue
-    .line 687
+    .line 689
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x30
@@ -4068,11 +4132,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 689
+    .line 691
     :cond_0
     const/4 v0, 0x1
 
-    .line 691
+    .line 693
     :goto_0
     return v0
 
@@ -4086,7 +4150,7 @@
     .locals 1
 
     .prologue
-    .line 1247
+    .line 1256
     const/4 v0, 0x0
 
     return v0
@@ -4096,7 +4160,7 @@
     .locals 2
 
     .prologue
-    .line 665
+    .line 667
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x30
@@ -4133,11 +4197,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 671
+    .line 673
     :cond_0
     const/4 v0, 0x0
 
-    .line 673
+    .line 675
     :goto_0
     return v0
 

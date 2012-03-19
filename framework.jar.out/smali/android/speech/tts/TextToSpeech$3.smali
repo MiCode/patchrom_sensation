@@ -55,7 +55,7 @@
 
     iput-object p4, p0, Landroid/speech/tts/TextToSpeech$3;->val$params:Ljava/util/HashMap;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

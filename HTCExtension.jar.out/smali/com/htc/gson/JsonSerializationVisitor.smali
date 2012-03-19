@@ -55,7 +55,7 @@
     .prologue
     .line 42
     .local p3, serializers:Lcom/htc/gson/ParameterizedTypeHandlerMap;,"Lcom/htc/gson/ParameterizedTypeHandlerMap<Lcom/htc/gson/JsonSerializer<*>;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
     iput-object p1, p0, Lcom/htc/gson/JsonSerializationVisitor;->factory:Lcom/htc/gson/ObjectNavigatorFactory;

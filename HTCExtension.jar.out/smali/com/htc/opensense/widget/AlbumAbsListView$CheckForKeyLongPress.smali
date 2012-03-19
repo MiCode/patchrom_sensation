@@ -68,18 +68,18 @@
 
     iget-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView$CheckForKeyLongPress;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget v3, v3, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v3, v3, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     if-ltz v3, :cond_1
 
     .line 1665
     iget-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView$CheckForKeyLongPress;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget v3, v3, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v3, v3, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView$CheckForKeyLongPress;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget v4, v4, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v4, v4, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int v1, v3, v4
 
@@ -95,7 +95,7 @@
     .local v2, v:Landroid/view/View;
     iget-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView$CheckForKeyLongPress;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget-boolean v3, v3, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataChanged:Z
+    iget-boolean v3, v3, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     if-nez v3, :cond_2
 
@@ -115,11 +115,11 @@
 
     iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView$CheckForKeyLongPress;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget v4, v4, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v4, v4, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     iget-object v5, p0, Lcom/htc/opensense/widget/AlbumAbsListView$CheckForKeyLongPress;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget-wide v5, v5, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedRowId:J
+    iget-wide v5, v5, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedRowId:J
 
     #calls: Lcom/htc/opensense/widget/AlbumAbsListView;->performLongPress(Landroid/view/View;IJ)Z
     invoke-static {v3, v2, v4, v5, v6}, Lcom/htc/opensense/widget/AlbumAbsListView;->access$500(Lcom/htc/opensense/widget/AlbumAbsListView;Landroid/view/View;IJ)Z

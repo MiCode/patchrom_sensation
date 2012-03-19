@@ -1185,27 +1185,8 @@
 
     sub-int v3, v0, v1
 
-    .line 2269
-    :goto_2
-    const-string v0, "HtcGridView2"
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const-string v2, "onSingleTapUp: delta="
-
-    aput-object v2, v1, v9
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    aput-object v2, v1, v8
-
-    invoke-static {v0, v1}, Lcom/htc/opensense/album/util/Log;->i2(Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 2271
+    :goto_2
     iget-object v0, p0, Lcom/htc/opensense/widget/HtcGridView2$GridViewGesture$1;->this$1:Lcom/htc/opensense/widget/HtcGridView2$GridViewGesture;
 
     const/4 v4, 0x0

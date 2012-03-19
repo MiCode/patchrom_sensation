@@ -27,10 +27,10 @@
     .parameter "ctx"
 
     .prologue
-    .line 1276
+    .line 1251
     iput-object p1, p0, Lcom/android/server/HtcPowerSaver$ReduceFrameRate;->this$0:Lcom/android/server/HtcPowerSaver;
 
-    .line 1277
+    .line 1252
     const-string v2, "ReduceFrameRate"
 
     const-string v3, "powersaver_reduce_frame_rate"
@@ -45,10 +45,10 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/server/HtcPowerSaver$Feature;-><init>(Lcom/android/server/HtcPowerSaver;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;)V
 
-    .line 1278
+    .line 1253
     iput-object p2, p0, Lcom/android/server/HtcPowerSaver$ReduceFrameRate;->mContext:Landroid/content/Context;
 
-    .line 1279
+    .line 1254
     return-void
 .end method
 
@@ -58,14 +58,14 @@
     .locals 2
 
     .prologue
-    .line 1289
-    iget-object v0, p0, Lcom/android/server/HtcPowerSaver$ReduceFrameRate;->TAG:Ljava/lang/String;
+    .line 1264
+    const-string v0, "HtcPowerSaver"
 
     const-string v1, "applyPowerSaverSettings: do nothing"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1290
+    .line 1265
     const/4 v0, 0x0
 
     return v0
@@ -75,14 +75,14 @@
     .locals 2
 
     .prologue
-    .line 1295
-    iget-object v0, p0, Lcom/android/server/HtcPowerSaver$ReduceFrameRate;->TAG:Ljava/lang/String;
+    .line 1270
+    const-string v0, "HtcPowerSaver"
 
     const-string v1, "restoreSystemSettings: do nothing"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1296
+    .line 1271
     const/4 v0, 0x0
 
     return v0
@@ -92,14 +92,14 @@
     .locals 2
 
     .prologue
-    .line 1283
-    iget-object v0, p0, Lcom/android/server/HtcPowerSaver$ReduceFrameRate;->TAG:Ljava/lang/String;
+    .line 1258
+    const-string v0, "HtcPowerSaver"
 
-    const-string v1, "restoreSystemSettings: do nothing"
+    const-string v1, "saveSystemSettings: do nothing"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1284
+    .line 1259
     const/4 v0, 0x0
 
     return v0

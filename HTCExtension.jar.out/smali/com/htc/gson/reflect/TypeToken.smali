@@ -41,7 +41,7 @@
     .prologue
     .line 66
     .local p0, this:Lcom/htc/gson/reflect/TypeToken;,"Lcom/htc/gson/reflect/TypeToken<TT;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 67
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -74,7 +74,7 @@
     .prologue
     .line 75
     .local p0, this:Lcom/htc/gson/reflect/TypeToken;,"Lcom/htc/gson/reflect/TypeToken<TT;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 76
     const-string v0, "type"

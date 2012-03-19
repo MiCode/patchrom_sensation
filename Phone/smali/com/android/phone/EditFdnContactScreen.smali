@@ -1115,7 +1115,7 @@
 
     .line 318
     :cond_3
-    const v0, 0x7f08008a
+    const v0, 0x7f08008b
 
     invoke-virtual {p0, v0}, Lcom/android/phone/EditFdnContactScreen;->findViewById(I)Landroid/view/View;
 
@@ -1157,7 +1157,7 @@
     iput-object v0, p0, Lcom/android/phone/EditFdnContactScreen;->mPinFieldContainer:Landroid/widget/LinearLayout;
 
     .line 327
-    const v0, 0x7f08008b
+    const v0, 0x7f08008a
 
     invoke-virtual {p0, v0}, Lcom/android/phone/EditFdnContactScreen;->findViewById(I)Landroid/view/View;
 

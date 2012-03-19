@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 128
+    .line 134
     new-instance v0, Lcom/android/camera/IntentManager$RequestMode;
 
     const-string v1, "Main"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
-    .line 129
+    .line 135
     new-instance v0, Lcom/android/camera/IntentManager$RequestMode;
 
     const-string v1, "Camera"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/android/camera/IntentManager$RequestMode;->Camera:Lcom/android/camera/IntentManager$RequestMode;
 
-    .line 130
+    .line 136
     new-instance v0, Lcom/android/camera/IntentManager$RequestMode;
 
     const-string v1, "Video"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/android/camera/IntentManager$RequestMode;->Video:Lcom/android/camera/IntentManager$RequestMode;
 
-    .line 127
+    .line 133
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/camera/IntentManager$RequestMode;
@@ -104,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 127
+    .line 133
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -115,7 +115,7 @@
     .parameter "name"
 
     .prologue
-    .line 127
+    .line 133
     const-class v0, Lcom/android/camera/IntentManager$RequestMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -131,7 +131,7 @@
     .locals 1
 
     .prologue
-    .line 127
+    .line 133
     sget-object v0, Lcom/android/camera/IntentManager$RequestMode;->$VALUES:[Lcom/android/camera/IntentManager$RequestMode;
 
     invoke-virtual {v0}, [Lcom/android/camera/IntentManager$RequestMode;->clone()Ljava/lang/Object;

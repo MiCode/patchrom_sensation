@@ -40,7 +40,7 @@
     .line 301
     iput-object p1, p0, Lcom/htc/net/usbnet/UsbnetController$UsbnetLock;->this$0:Lcom/htc/net/usbnet/UsbnetController;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 302
     iput-object p2, p0, Lcom/htc/net/usbnet/UsbnetController$UsbnetLock;->mTag:Ljava/lang/String;

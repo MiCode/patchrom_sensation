@@ -62,7 +62,7 @@
     .local v0, msgName:Ljava/lang/String;
     iget-object v2, p0, Lcom/android/camera/component/AsyncCameraThreadComponent$1;->this$0:Lcom/android/camera/component/AsyncCameraThreadComponent;
 
-    #getter for: Lcom/android/camera/component/AsyncCameraThreadComponent;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v2}, Lcom/android/camera/component/AsyncCameraThreadComponent;->access$000(Lcom/android/camera/component/AsyncCameraThreadComponent;)Ljava/lang/String;
 
     move-result-object v2
@@ -118,7 +118,7 @@
     .line 54
     iget-object v2, p0, Lcom/android/camera/component/AsyncCameraThreadComponent$1;->this$0:Lcom/android/camera/component/AsyncCameraThreadComponent;
 
-    #getter for: Lcom/android/camera/component/AsyncCameraThreadComponent;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v2}, Lcom/android/camera/component/AsyncCameraThreadComponent;->access$100(Lcom/android/camera/component/AsyncCameraThreadComponent;)Ljava/lang/String;
 
     move-result-object v2
@@ -154,7 +154,7 @@
 
     .line 47
     :cond_0
-    iget-object v2, p0, Lcom/android/camera/component/AsyncCameraThreadComponent$1;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/WorkerThread;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -207,7 +207,7 @@
 
     .line 72
     :cond_0
-    iget-object v1, p0, Lcom/android/camera/component/AsyncCameraThreadComponent$1;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/WorkerThread;->TAG:Ljava/lang/String;
 
     const-string v2, "Cannot notify component because there is no handler"
 

@@ -52,7 +52,7 @@
     .line 1118
     iput-object p1, p0, Lcom/android/phone/SimUnlockScreen$TouchInput;->this$0:Lcom/android/phone/SimUnlockScreen;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1131
     const v0, 0x2020189

@@ -13,7 +13,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final ERROR_OCCURED:Ljava/lang/String; = "com.htc.soundrecorder.erroroccured"
 
@@ -70,7 +70,7 @@
 
 .field private static final VALUE_TYPE_AUDIO_ANY:Ljava/lang/String; = "AUDIO_ANY"
 
-.field private static final VDEBUG:Z = true
+.field private static final VDEBUG:Z
 
 .field private static isMediaMounted:Z
 
@@ -160,7 +160,7 @@
     .line 136
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/android/phone/util/VoiceRecorderHelper;->LOCK:Ljava/lang/Object;
 
@@ -186,11 +186,6 @@
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/phone/util/VoiceRecorderHelper;->mServiceState:I
-
-    .line 165
-    const-string v0, "constructor"
-
-    invoke-static {v0}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
 
     .line 167
     if-eqz p1, :cond_0
@@ -219,18 +214,7 @@
     return-void
 .end method
 
-.method static synthetic access$100(Ljava/lang/String;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 56
-    invoke-static {p0}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method static synthetic access$200(Lcom/android/phone/util/VoiceRecorderHelper;)Z
+.method static synthetic access$100(Lcom/android/phone/util/VoiceRecorderHelper;)Z
     .locals 1
     .parameter "x0"
 
@@ -241,7 +225,7 @@
     return v0
 .end method
 
-.method static synthetic access$300(Lcom/android/phone/util/VoiceRecorderHelper;)Lcom/android/internal/telephony/CallManager;
+.method static synthetic access$200(Lcom/android/phone/util/VoiceRecorderHelper;)Lcom/android/internal/telephony/CallManager;
     .locals 1
     .parameter "x0"
 
@@ -252,7 +236,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$400(Lcom/android/phone/util/VoiceRecorderHelper;ZLcom/android/internal/telephony/Call;)V
+.method static synthetic access$300(Lcom/android/phone/util/VoiceRecorderHelper;ZLcom/android/internal/telephony/Call;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -265,7 +249,7 @@
     return-void
 .end method
 
-.method static synthetic access$500(Lcom/android/phone/util/VoiceRecorderHelper;)I
+.method static synthetic access$400(Lcom/android/phone/util/VoiceRecorderHelper;)I
     .locals 1
     .parameter "x0"
 
@@ -276,7 +260,7 @@
     return v0
 .end method
 
-.method static synthetic access$600(Lcom/android/phone/util/VoiceRecorderHelper;Lcom/android/internal/telephony/CallManager;)V
+.method static synthetic access$500(Lcom/android/phone/util/VoiceRecorderHelper;Lcom/android/internal/telephony/CallManager;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -288,6 +272,17 @@
     return-void
 .end method
 
+.method static synthetic access$600(Ljava/lang/String;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 56
+    invoke-static {p0}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
+
+    return-void
+.end method
+
 .method private static appendCallerName(Lcom/android/internal/telephony/Call;Ljava/lang/StringBuilder;)V
     .locals 6
     .parameter "call"
@@ -295,11 +290,6 @@
 
     .prologue
     const/4 v5, 0x0
-
-    .line 294
-    const-string v3, "appendCallerName"
-
-    invoke-static {v3}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
 
     .line 295
     if-eqz p0, :cond_0
@@ -316,11 +306,6 @@
     move-result v3
 
     if-eqz v3, :cond_1
-
-    .line 299
-    const-string v3, "conference"
-
-    invoke-static {v3}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
 
     .line 301
     sget-object v3, Lcom/android/phone/util/VoiceRecorderHelper;->mResources:Landroid/content/res/Resources;
@@ -423,11 +408,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 324
-    const-string v0, "private"
-
-    invoke-static {v0}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
     .line 326
     sget-object v0, Lcom/android/phone/util/VoiceRecorderHelper;->mResources:Landroid/content/res/Resources;
 
@@ -470,13 +450,8 @@
 
     if-eqz v0, :cond_2
 
-    .line 334
-    :cond_1
-    const-string v0, "emergency"
-
-    invoke-static {v0}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
     .line 335
+    :cond_1
     sget-object v0, Lcom/android/phone/util/VoiceRecorderHelper;->mResources:Landroid/content/res/Resources;
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -503,11 +478,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 339
-    const-string v0, "voicemail"
-
-    invoke-static {v0}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
     .line 340
     sget-object v0, Lcom/android/phone/util/VoiceRecorderHelper;->mResources:Landroid/content/res/Resources;
 
@@ -521,56 +491,14 @@
 
     goto :goto_0
 
-    .line 343
-    :cond_3
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "unknown: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
     .line 344
+    :cond_3
     invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 348
-    :cond_4
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "known people: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
     .line 349
+    :cond_4
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
@@ -769,20 +697,8 @@
     .parameter "context"
 
     .prologue
-    .line 218
-    const-string v0, "destroy instance"
-
-    invoke-static {v0}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
     .line 220
     if-nez p0, :cond_1
-
-    .line 222
-    const-string v0, "VoiceRecorderHelper"
-
-    const-string v1, "no context given"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 235
     :cond_0
@@ -833,7 +749,7 @@
 .end method
 
 .method public static getIncallRecordingFileName(Lcom/android/internal/telephony/CallManager;)Ljava/lang/String;
-    .locals 4
+    .locals 3
     .parameter "cm"
 
     .prologue
@@ -873,71 +789,20 @@
 
     move-result-object v1
 
-    .line 289
+    .line 290
     .end local v0           #builder:Ljava/lang/StringBuilder;
     :cond_0
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "getIncallRecordingFileName: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
-    .line 290
     return-object v1
 .end method
 
 .method public static getInstance()Lcom/android/phone/util/VoiceRecorderHelper;
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 179
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "getInstance: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/android/phone/util/VoiceRecorderHelper;->mInstance:Lcom/android/phone/util/VoiceRecorderHelper;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
     .line 182
     sget-object v0, Lcom/android/phone/util/VoiceRecorderHelper;->mInstance:Lcom/android/phone/util/VoiceRecorderHelper;
 
     if-nez v0, :cond_0
-
-    .line 183
-    const-string v0, "VoiceRecorderHelper"
-
-    const-string v1, "should not be access by this way"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 187
     :cond_0
@@ -952,11 +817,6 @@
     .parameter "cm"
 
     .prologue
-    .line 198
-    const-string v0, "getInstance by context, phone"
-
-    invoke-static {v0}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
     .line 201
     sget-object v0, Lcom/android/phone/util/VoiceRecorderHelper;->mInstance:Lcom/android/phone/util/VoiceRecorderHelper;
 
@@ -1136,11 +996,6 @@
     .parameter "r"
 
     .prologue
-    .line 661
-    const-string v0, "on disconnected"
-
-    invoke-static {v0}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
     .line 663
     iget-object v0, p0, Lcom/android/phone/util/VoiceRecorderHelper;->mCM:Lcom/android/internal/telephony/CallManager;
 
@@ -1181,11 +1036,6 @@
     .parameter "r"
 
     .prologue
-    .line 645
-    const-string v0, "on phone status change: "
-
-    invoke-static {v0}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
     .line 647
     invoke-direct {p0}, Lcom/android/phone/util/VoiceRecorderHelper;->updateReceiverState()V
 
@@ -1271,11 +1121,6 @@
 
     const/4 v2, 0x0
 
-    .line 684
-    const-string v0, "registerPhoneListener"
-
-    invoke-static {v0}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
     .line 685
     iget-boolean v0, p0, Lcom/android/phone/util/VoiceRecorderHelper;->mIsPhoneListenerRegistered:Z
 
@@ -1322,22 +1167,10 @@
     .locals 4
 
     .prologue
-    .line 550
-    const-string v2, "registerReceiver"
-
-    invoke-static {v2}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
     .line 552
     iget-object v2, p0, Lcom/android/phone/util/VoiceRecorderHelper;->mReceiver:Lcom/android/phone/util/VoiceRecorderHelper$RecorderReceiver;
 
     if-eqz v2, :cond_1
-
-    .line 553
-    const-string v2, "VoiceRecorderHelper"
-
-    const-string v3, "duplicate register receiver request"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 569
     :cond_0
@@ -1416,11 +1249,6 @@
     .parameter "cm"
 
     .prologue
-    .line 406
-    const-string v2, "start recorder"
-
-    invoke-static {v2}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
     .line 407
     invoke-static {p1}, Lcom/android/phone/util/VoiceRecorderHelper;->getIncallRecordingFileName(Lcom/android/internal/telephony/CallManager;)Ljava/lang/String;
 
@@ -1458,27 +1286,6 @@
     iget-object v2, p0, Lcom/android/phone/util/VoiceRecorderHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
-
-    .line 419
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "file name: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
 
     .line 420
     return-void
@@ -1563,11 +1370,6 @@
     .locals 2
 
     .prologue
-    .line 697
-    const-string v0, "unregisterPhoneListener"
-
-    invoke-static {v0}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
     .line 698
     iget-boolean v0, p0, Lcom/android/phone/util/VoiceRecorderHelper;->mIsPhoneListenerRegistered:Z
 
@@ -1609,25 +1411,13 @@
 .end method
 
 .method private unregisterReceiver()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 572
-    const-string v1, "unregisterReceiver"
-
-    invoke-static {v1}, Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-
     .line 574
     iget-object v1, p0, Lcom/android/phone/util/VoiceRecorderHelper;->mReceiver:Lcom/android/phone/util/VoiceRecorderHelper$RecorderReceiver;
 
     if-nez v1, :cond_0
-
-    .line 575
-    const-string v1, "VoiceRecorderHelper"
-
-    const-string v2, "duplicate unregister receiver request"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 584
     :goto_0

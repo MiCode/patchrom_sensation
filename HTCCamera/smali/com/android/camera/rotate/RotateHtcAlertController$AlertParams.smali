@@ -121,7 +121,7 @@
     const/4 v2, 0x1
 
     .line 1012
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 951
     iput v1, p0, Lcom/android/camera/rotate/RotateHtcAlertController$AlertParams;->mIconId:I

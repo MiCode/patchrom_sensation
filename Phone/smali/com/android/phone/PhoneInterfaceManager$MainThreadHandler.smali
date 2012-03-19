@@ -540,53 +540,8 @@
 
     move-result v6
 
-    .line 412
-    :goto_2
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/phone/PhoneInterfaceManager$MainThreadHandler;->this$0:Lcom/android/phone/PhoneInterfaceManager;
-
-    move-object/from16 v19, v0
-
-    new-instance v18, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v20, "CMD_END_CALL: "
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    if-eqz v6, :cond_6
-
-    const-string v18, "hung up!"
-
-    :goto_3
-    move-object/from16 v0, v20
-
-    move-object/from16 v1, v18
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    move-object/from16 v0, v19
-
-    move-object/from16 v1, v18
-
-    #calls: Lcom/android/phone/PhoneInterfaceManager;->log(Ljava/lang/String;)V
-    invoke-static {v0, v1}, Lcom/android/phone/PhoneInterfaceManager;->access$400(Lcom/android/phone/PhoneInterfaceManager;Ljava/lang/String;)V
-
     .line 413
+    :goto_2
     invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v18
@@ -671,12 +626,6 @@
 
     throw v18
 
-    .line 412
-    :cond_6
-    const-string v18, "no call to hang up"
-
-    goto :goto_3
-
     .line 422
     .end local v6           #hungUp:Z
     .end local v13           #phoneType:I
@@ -720,7 +669,7 @@
 
     move/from16 v0, v18
 
-    if-ne v12, v0, :cond_9
+    if-ne v12, v0, :cond_6
 
     .line 434
     move-object/from16 v0, p0
@@ -771,7 +720,7 @@
 
     .line 436
     .local v8, isCallWaiting:Z
-    :goto_4
+    :goto_3
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/phone/PhoneInterfaceManager$MainThreadHandler;->this$0:Lcom/android/phone/PhoneInterfaceManager;
@@ -795,54 +744,10 @@
 
     const/4 v9, 0x1
 
-    .line 446
-    .end local v8           #isCallWaiting:Z
-    :goto_5
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/phone/PhoneInterfaceManager$MainThreadHandler;->this$0:Lcom/android/phone/PhoneInterfaceManager;
-
-    move-object/from16 v19, v0
-
-    new-instance v18, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v20, "CMD_HTC_CDMA_END_CALL: "
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    if-eqz v5, :cond_a
-
-    const-string v18, "hung up!"
-
-    :goto_6
-    move-object/from16 v0, v20
-
-    move-object/from16 v1, v18
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    move-object/from16 v0, v19
-
-    move-object/from16 v1, v18
-
-    #calls: Lcom/android/phone/PhoneInterfaceManager;->log(Ljava/lang/String;)V
-    invoke-static {v0, v1}, Lcom/android/phone/PhoneInterfaceManager;->access$400(Lcom/android/phone/PhoneInterfaceManager;Ljava/lang/String;)V
-
     .line 447
+    .end local v8           #isCallWaiting:Z
+    :cond_6
+    :goto_4
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v18
@@ -927,56 +832,17 @@
     :cond_7
     const/4 v8, 0x0
 
-    goto/16 :goto_4
+    goto :goto_3
 
     .line 437
     .restart local v8       #isCallWaiting:Z
     :cond_8
     const/4 v9, 0x0
 
-    goto :goto_5
-
-    .line 443
-    .end local v8           #isCallWaiting:Z
-    :cond_9
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/phone/PhoneInterfaceManager$MainThreadHandler;->this$0:Lcom/android/phone/PhoneInterfaceManager;
-
-    move-object/from16 v18, v0
-
-    new-instance v19, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v20, "Unexpected phone type: "
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    #calls: Lcom/android/phone/PhoneInterfaceManager;->log(Ljava/lang/String;)V
-    invoke-static/range {v18 .. v19}, Lcom/android/phone/PhoneInterfaceManager;->access$400(Lcom/android/phone/PhoneInterfaceManager;Ljava/lang/String;)V
-
-    goto/16 :goto_5
-
-    .line 446
-    :cond_a
-    const-string v18, "no call to hang up"
-
-    goto/16 :goto_6
+    goto :goto_4
 
     .line 451
+    .end local v8           #isCallWaiting:Z
     :catchall_5
     move-exception v18
 
@@ -1022,14 +888,14 @@
     monitor-enter v19
 
     .line 467
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_9
 
     :try_start_7
     iget-object v0, v2, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     move-object/from16 v18, v0
 
-    if-nez v18, :cond_b
+    if-nez v18, :cond_9
 
     .line 469
     move-object/from16 v0, p0
@@ -1051,10 +917,10 @@
     move-object/from16 v1, v18
 
     #setter for: Lcom/android/phone/PhoneInterfaceManager;->mCSIMResult:[Ljava/lang/String;
-    invoke-static {v0, v1}, Lcom/android/phone/PhoneInterfaceManager;->access$502(Lcom/android/phone/PhoneInterfaceManager;[Ljava/lang/String;)[Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/android/phone/PhoneInterfaceManager;->access$402(Lcom/android/phone/PhoneInterfaceManager;[Ljava/lang/String;)[Ljava/lang/String;
 
     .line 472
-    :cond_b
+    :cond_9
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/phone/PhoneInterfaceManager$MainThreadHandler;->this$0:Lcom/android/phone/PhoneInterfaceManager;
@@ -1092,7 +958,7 @@
     move-object/from16 v18, v0
 
     #getter for: Lcom/android/phone/PhoneInterfaceManager;->mSignatureLock:Ljava/lang/Object;
-    invoke-static/range {v18 .. v18}, Lcom/android/phone/PhoneInterfaceManager;->access$600(Lcom/android/phone/PhoneInterfaceManager;)Ljava/lang/Object;
+    invoke-static/range {v18 .. v18}, Lcom/android/phone/PhoneInterfaceManager;->access$500(Lcom/android/phone/PhoneInterfaceManager;)Ljava/lang/Object;
 
     move-result-object v19
 
@@ -1135,7 +1001,7 @@
     const-string v22, "com.android.phone"
 
     #calls: Lcom/android/phone/PhoneInterfaceManager;->getPackageSignatures(Landroid/content/pm/PackageManager;Ljava/lang/String;)[Landroid/content/pm/Signature;
-    invoke-static/range {v20 .. v22}, Lcom/android/phone/PhoneInterfaceManager;->access$800(Lcom/android/phone/PhoneInterfaceManager;Landroid/content/pm/PackageManager;Ljava/lang/String;)[Landroid/content/pm/Signature;
+    invoke-static/range {v20 .. v22}, Lcom/android/phone/PhoneInterfaceManager;->access$700(Lcom/android/phone/PhoneInterfaceManager;Landroid/content/pm/PackageManager;Ljava/lang/String;)[Landroid/content/pm/Signature;
 
     move-result-object v20
 
@@ -1144,7 +1010,7 @@
     move-object/from16 v1, v20
 
     #setter for: Lcom/android/phone/PhoneInterfaceManager;->mPlatformSignature:[Landroid/content/pm/Signature;
-    invoke-static {v0, v1}, Lcom/android/phone/PhoneInterfaceManager;->access$702(Lcom/android/phone/PhoneInterfaceManager;[Landroid/content/pm/Signature;)[Landroid/content/pm/Signature;
+    invoke-static {v0, v1}, Lcom/android/phone/PhoneInterfaceManager;->access$602(Lcom/android/phone/PhoneInterfaceManager;[Landroid/content/pm/Signature;)[Landroid/content/pm/Signature;
 
     .line 484
     move-object/from16 v0, p0
@@ -1182,7 +1048,7 @@
     const-string v22, "com.android.providers.contacts"
 
     #calls: Lcom/android/phone/PhoneInterfaceManager;->getPackageSignatures(Landroid/content/pm/PackageManager;Ljava/lang/String;)[Landroid/content/pm/Signature;
-    invoke-static/range {v20 .. v22}, Lcom/android/phone/PhoneInterfaceManager;->access$800(Lcom/android/phone/PhoneInterfaceManager;Landroid/content/pm/PackageManager;Ljava/lang/String;)[Landroid/content/pm/Signature;
+    invoke-static/range {v20 .. v22}, Lcom/android/phone/PhoneInterfaceManager;->access$700(Lcom/android/phone/PhoneInterfaceManager;Landroid/content/pm/PackageManager;Ljava/lang/String;)[Landroid/content/pm/Signature;
 
     move-result-object v20
 
@@ -1191,7 +1057,7 @@
     move-object/from16 v1, v20
 
     #setter for: Lcom/android/phone/PhoneInterfaceManager;->mShareSignature:[Landroid/content/pm/Signature;
-    invoke-static {v0, v1}, Lcom/android/phone/PhoneInterfaceManager;->access$902(Lcom/android/phone/PhoneInterfaceManager;[Landroid/content/pm/Signature;)[Landroid/content/pm/Signature;
+    invoke-static {v0, v1}, Lcom/android/phone/PhoneInterfaceManager;->access$802(Lcom/android/phone/PhoneInterfaceManager;[Landroid/content/pm/Signature;)[Landroid/content/pm/Signature;
 
     .line 486
     move-object/from16 v0, p0
@@ -1201,7 +1067,7 @@
     move-object/from16 v18, v0
 
     #getter for: Lcom/android/phone/PhoneInterfaceManager;->mSignatureLock:Ljava/lang/Object;
-    invoke-static/range {v18 .. v18}, Lcom/android/phone/PhoneInterfaceManager;->access$600(Lcom/android/phone/PhoneInterfaceManager;)Ljava/lang/Object;
+    invoke-static/range {v18 .. v18}, Lcom/android/phone/PhoneInterfaceManager;->access$500(Lcom/android/phone/PhoneInterfaceManager;)Ljava/lang/Object;
 
     move-result-object v18
 
@@ -1320,7 +1186,7 @@
 
     move-object/from16 v18, v0
 
-    if-nez v18, :cond_c
+    if-nez v18, :cond_a
 
     .line 506
     iget-object v0, v2, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
@@ -1334,12 +1200,12 @@
     iput-object v0, v14, Lcom/android/phone/PhoneInterfaceManager$MainThreadRequest;->result:Ljava/lang/Object;
 
     .line 508
-    :cond_c
+    :cond_a
     iget-object v0, v14, Lcom/android/phone/PhoneInterfaceManager$MainThreadRequest;->result:Ljava/lang/Object;
 
     move-object/from16 v18, v0
 
-    if-nez v18, :cond_d
+    if-nez v18, :cond_b
 
     .line 509
     new-instance v18, Ljava/lang/String;
@@ -1353,7 +1219,7 @@
     iput-object v0, v14, Lcom/android/phone/PhoneInterfaceManager$MainThreadRequest;->result:Ljava/lang/Object;
 
     .line 512
-    :cond_d
+    :cond_b
     monitor-enter v14
 
     .line 513
@@ -1563,7 +1429,7 @@
 
     move-object/from16 v18, v0
 
-    if-nez v18, :cond_e
+    if-nez v18, :cond_c
 
     .line 541
     iget-object v0, v2, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
@@ -1579,7 +1445,7 @@
     aget v16, v18, v19
 
     .line 543
-    :cond_e
+    :cond_c
     new-instance v18, Ljava/lang/Integer;
 
     move-object/from16 v0, v18
@@ -1710,11 +1576,11 @@
 
     move-object/from16 v18, v0
 
-    if-nez v18, :cond_f
+    if-nez v18, :cond_d
 
     sget-object v18, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    :goto_7
+    :goto_5
     move-object/from16 v0, v18
 
     iput-object v0, v14, Lcom/android/phone/PhoneInterfaceManager$MainThreadRequest;->result:Ljava/lang/Object;
@@ -1741,10 +1607,10 @@
     throw v18
 
     .line 564
-    :cond_f
+    :cond_d
     sget-object v18, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    goto :goto_7
+    goto :goto_5
 
     .line 574
     .end local v2           #ar:Landroid/os/AsyncResult;
@@ -1830,11 +1696,11 @@
 
     move-object/from16 v18, v0
 
-    if-nez v18, :cond_10
+    if-nez v18, :cond_e
 
     sget-object v18, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    :goto_8
+    :goto_6
     move-object/from16 v0, v18
 
     iput-object v0, v14, Lcom/android/phone/PhoneInterfaceManager$MainThreadRequest;->result:Ljava/lang/Object;
@@ -1861,10 +1727,10 @@
     throw v18
 
     .line 583
-    :cond_10
+    :cond_e
     sget-object v18, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    goto :goto_8
+    goto :goto_6
 
     .line 590
     .end local v2           #ar:Landroid/os/AsyncResult;
@@ -1934,7 +1800,7 @@
 
     move-object/from16 v18, v0
 
-    if-nez v18, :cond_11
+    if-nez v18, :cond_f
 
     .line 599
     iget-object v0, v2, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
@@ -1950,7 +1816,7 @@
     aget v16, v18, v19
 
     .line 601
-    :cond_11
+    :cond_f
     new-instance v18, Ljava/lang/Integer;
 
     move-object/from16 v0, v18
@@ -2053,7 +1919,7 @@
 
     move-object/from16 v18, v0
 
-    if-nez v18, :cond_12
+    if-nez v18, :cond_10
 
     .line 618
     iget-object v0, v2, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
@@ -2069,7 +1935,7 @@
     aget v4, v18, v19
 
     .line 620
-    :cond_12
+    :cond_10
     new-instance v18, Ljava/lang/Integer;
 
     move-object/from16 v0, v18
@@ -2170,7 +2036,7 @@
 
     move-object/from16 v18, v0
 
-    if-nez v18, :cond_13
+    if-nez v18, :cond_11
 
     .line 637
     iget-object v0, v2, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
@@ -2186,7 +2052,7 @@
     aget v3, v18, v19
 
     .line 639
-    :cond_13
+    :cond_11
     new-instance v18, Ljava/lang/Integer;
 
     move-object/from16 v0, v18
@@ -2257,7 +2123,7 @@
     const-string v19, "send CW REG request"
 
     #calls: Lcom/android/phone/PhoneInterfaceManager;->log(Ljava/lang/String;)V
-    invoke-static/range {v18 .. v19}, Lcom/android/phone/PhoneInterfaceManager;->access$400(Lcom/android/phone/PhoneInterfaceManager;Ljava/lang/String;)V
+    invoke-static/range {v18 .. v19}, Lcom/android/phone/PhoneInterfaceManager;->access$900(Lcom/android/phone/PhoneInterfaceManager;Ljava/lang/String;)V
 
     .line 660
     move-object/from16 v0, p1
@@ -2320,7 +2186,7 @@
     const-string v19, "get CW REG response"
 
     #calls: Lcom/android/phone/PhoneInterfaceManager;->log(Ljava/lang/String;)V
-    invoke-static/range {v18 .. v19}, Lcom/android/phone/PhoneInterfaceManager;->access$400(Lcom/android/phone/PhoneInterfaceManager;Ljava/lang/String;)V
+    invoke-static/range {v18 .. v19}, Lcom/android/phone/PhoneInterfaceManager;->access$900(Lcom/android/phone/PhoneInterfaceManager;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -2335,7 +2201,7 @@
     const-string v19, "send CW DREG request"
 
     #calls: Lcom/android/phone/PhoneInterfaceManager;->log(Ljava/lang/String;)V
-    invoke-static/range {v18 .. v19}, Lcom/android/phone/PhoneInterfaceManager;->access$400(Lcom/android/phone/PhoneInterfaceManager;Ljava/lang/String;)V
+    invoke-static/range {v18 .. v19}, Lcom/android/phone/PhoneInterfaceManager;->access$900(Lcom/android/phone/PhoneInterfaceManager;Ljava/lang/String;)V
 
     .line 679
     move-object/from16 v0, p1
@@ -2398,7 +2264,7 @@
     const-string v19, "get CW DREG response"
 
     #calls: Lcom/android/phone/PhoneInterfaceManager;->log(Ljava/lang/String;)V
-    invoke-static/range {v18 .. v19}, Lcom/android/phone/PhoneInterfaceManager;->access$400(Lcom/android/phone/PhoneInterfaceManager;Ljava/lang/String;)V
+    invoke-static/range {v18 .. v19}, Lcom/android/phone/PhoneInterfaceManager;->access$900(Lcom/android/phone/PhoneInterfaceManager;Ljava/lang/String;)V
 
     goto/16 :goto_0
 

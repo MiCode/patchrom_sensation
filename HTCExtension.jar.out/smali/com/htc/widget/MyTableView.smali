@@ -211,7 +211,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/htc/widget/MyTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     const/4 v1, 0x0
 

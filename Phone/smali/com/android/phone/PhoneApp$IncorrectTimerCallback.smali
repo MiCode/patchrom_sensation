@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 5648
+    .line 5651
     iput-object p1, p0, Lcom/android/phone/PhoneApp$IncorrectTimerCallback;->this$0:Lcom/android/phone/PhoneApp;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 5648
+    .line 5651
     invoke-direct {p0, p1}, Lcom/android/phone/PhoneApp$IncorrectTimerCallback;-><init>(Lcom/android/phone/PhoneApp;)V
 
     return-void
@@ -57,21 +57,21 @@
 
     const/4 v4, 0x1
 
-    .line 5650
+    .line 5653
     invoke-static {}, Lcom/android/phone/PhoneApp;->access$400()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 5651
+    .line 5654
     const-string v1, "PhoneApp"
 
     const-string v2, "..time out..(IncorrectTimerCallback)"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5655
+    .line 5658
     :cond_0
     invoke-static {}, Lcom/android/phone/PhoneApp;->access$400()Z
 
@@ -79,7 +79,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 5656
+    .line 5659
     const-string v1, "PhoneApp"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -108,7 +108,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5659
+    .line 5662
     :cond_1
     iget-object v1, p0, Lcom/android/phone/PhoneApp$IncorrectTimerCallback;->this$0:Lcom/android/phone/PhoneApp;
 
@@ -122,7 +122,7 @@
 
     move-result v0
 
-    .line 5662
+    .line 5665
     .local v0, settingsNetworkMode:I
     invoke-static {}, Lcom/android/phone/PhoneApp;->access$400()Z
 
@@ -130,7 +130,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 5663
+    .line 5666
     const-string v1, "PhoneApp"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -153,7 +153,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5669
+    .line 5672
     :cond_2
     iget-object v1, p0, Lcom/android/phone/PhoneApp$IncorrectTimerCallback;->this$0:Lcom/android/phone/PhoneApp;
 
@@ -188,7 +188,7 @@
 
     if-eq v0, v5, :cond_4
 
-    .line 5675
+    .line 5678
     :try_start_0
     iget-object v1, p0, Lcom/android/phone/PhoneApp$IncorrectTimerCallback;->this$0:Lcom/android/phone/PhoneApp;
 
@@ -197,7 +197,7 @@
     #setter for: Lcom/android/phone/PhoneApp;->isFromTimer:Z
     invoke-static {v1, v2}, Lcom/android/phone/PhoneApp;->access$1902(Lcom/android/phone/PhoneApp;Z)Z
 
-    .line 5676
+    .line 5679
     iget-object v1, p0, Lcom/android/phone/PhoneApp$IncorrectTimerCallback;->this$0:Lcom/android/phone/PhoneApp;
 
     #getter for: Lcom/android/phone/PhoneApp;->mNetworkListQueryService:Lcom/android/phone/INetworkQueryService;
@@ -214,14 +214,14 @@
 
     invoke-interface {v1, v2}, Lcom/android/phone/INetworkQueryService;->startNetworkQuery(Lcom/android/phone/INetworkQueryServiceCallback;)V
 
-    .line 5677
+    .line 5680
     invoke-static {}, Lcom/android/phone/PhoneApp;->access$400()Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    .line 5678
+    .line 5681
     const-string v1, "PhoneApp"
 
     const-string v2, "start query network list (IncorrectTimerCallback)"
@@ -230,12 +230,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5689
+    .line 5692
     :cond_3
     :goto_0
     return-void
 
-    .line 5683
+    .line 5686
     :cond_4
     invoke-static {}, Lcom/android/phone/PhoneApp;->access$400()Z
 
@@ -243,7 +243,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 5684
+    .line 5687
     const-string v1, "PhoneApp"
 
     const-string v2, "already full service, don\'t issue +COPS? again (IncorrectTimerCallback)"
@@ -252,7 +252,7 @@
 
     goto :goto_0
 
-    .line 5679
+    .line 5682
     :catch_0
     move-exception v1
 

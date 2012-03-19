@@ -738,9 +738,9 @@
     move-result v3
 
     .line 2249
-    iget v5, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mLastZoomCenterX:F
+    iget v5, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mLastZoomCenterX:F
 
-    iget v6, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mLastZoomCenterY:F
+    iget v6, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mLastZoomCenterY:F
 
     invoke-virtual {p0, v3, v5, v6, v2}, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->smartZoom(FFFF)V
 
@@ -890,11 +890,11 @@
 
     .line 1639
     :cond_4
-    iget-object v1, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mThumbBitmap:Landroid/graphics/Bitmap;
+    iget-object v1, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mThumbBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v1, :cond_5
 
-    iget-object v1, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mThumbBitmap:Landroid/graphics/Bitmap;
+    iget-object v1, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mThumbBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->isRecycled()Z
 
@@ -1162,7 +1162,7 @@
     .line 2738
     :cond_0
     :goto_0
-    iget-object v8, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mSuppMatrix:Landroid/graphics/Matrix;
+    iget-object v8, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mSuppMatrix:Landroid/graphics/Matrix;
 
     div-int/lit8 v9, v2, 0x2
 
@@ -1281,11 +1281,11 @@
 
     .line 2751
     .local v3, nextSale:F
-    iget-object v8, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mSuppMatrix:Landroid/graphics/Matrix;
+    iget-object v8, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mSuppMatrix:Landroid/graphics/Matrix;
 
-    iget v9, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mLastZoomCenterX:F
+    iget v9, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mLastZoomCenterX:F
 
-    iget v10, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mLastZoomCenterY:F
+    iget v10, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mLastZoomCenterY:F
 
     invoke-virtual {v8, v0, v0, v9, v10}, Landroid/graphics/Matrix;->postScale(FFFF)Z
 
@@ -1330,7 +1330,7 @@
 
     new-array v6, v6, [F
 
-    iget-object v7, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v7, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     invoke-virtual {v7}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -1340,7 +1340,7 @@
 
     aput v7, v6, v10
 
-    iget-object v7, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v7, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     invoke-virtual {v7}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -2646,7 +2646,7 @@
     invoke-direct {p0, v2}, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->changeDrawMode(I)V
 
     .line 2426
-    iget-object v4, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v4, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -2660,7 +2660,7 @@
 
     if-le v4, v5, :cond_2
 
-    iget-object v4, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v4, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -2785,7 +2785,7 @@
     .line 1051
     new-instance v0, Landroid/view/GestureDetector;
 
-    iget-object v1, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mGestureListener:Landroid/view/GestureDetector$OnGestureListener;
 
@@ -2803,7 +2803,7 @@
     .line 1053
     new-instance v0, Landroid/view/ScaleGestureDetector;
 
-    iget-object v1, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1, p0}, Landroid/view/ScaleGestureDetector;-><init>(Landroid/content/Context;Landroid/view/ScaleGestureDetector$OnScaleGestureListener;)V
 
@@ -2899,11 +2899,11 @@
 
     .line 2326
     :cond_0
-    iget-object v1, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mFullBitmap:Landroid/graphics/Bitmap;
+    iget-object v1, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mFullBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mFullBitmap:Landroid/graphics/Bitmap;
+    iget-object v1, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mFullBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->isRecycled()Z
 
@@ -3061,7 +3061,7 @@
 
     if-eqz v7, :cond_3
 
-    iget-object v7, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mThumbBitmap:Landroid/graphics/Bitmap;
+    iget-object v7, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mThumbBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v7, :cond_3
 
@@ -3089,7 +3089,7 @@
 
     move-result v7
 
-    iput v7, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBaseMinZoom:F
+    iput v7, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBaseMinZoom:F
 
     goto :goto_0
 
@@ -3124,12 +3124,12 @@
 
     if-eqz v7, :cond_5
 
-    iget-object v7, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mThumbBitmap:Landroid/graphics/Bitmap;
+    iget-object v7, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mThumbBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v7, :cond_5
 
     .line 2365
-    iget v7, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriW:I
+    iget v7, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriW:I
 
     int-to-float v7, v7
 
@@ -3137,7 +3137,7 @@
 
     .line 2366
     .restart local v5       #rw:F
-    iget v7, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriH:I
+    iget v7, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriH:I
 
     int-to-float v7, v7
 
@@ -3158,7 +3158,7 @@
     if-gez v7, :cond_4
 
     .line 2370
-    iget v7, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriW:I
+    iget v7, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriW:I
 
     int-to-float v7, v7
 
@@ -3172,7 +3172,7 @@
 
     .line 2371
     .local v1, dw:I
-    iget v7, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriH:I
+    iget v7, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriH:I
 
     int-to-float v7, v7
 
@@ -3200,7 +3200,7 @@
 
     move-result v7
 
-    iput v7, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBaseMinZoom:F
+    iput v7, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBaseMinZoom:F
 
     .line 2375
     const-string v7, "FullScreen"
@@ -3217,7 +3217,7 @@
 
     const/4 v9, 0x1
 
-    iget v10, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriW:I
+    iget v10, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriW:I
 
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -3233,7 +3233,7 @@
 
     const/4 v9, 0x3
 
-    iget v10, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriH:I
+    iget v10, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriH:I
 
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -3277,7 +3277,7 @@
 
     const/16 v9, 0x9
 
-    iget v10, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBaseMinZoom:F
+    iget v10, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBaseMinZoom:F
 
     invoke-static {v10}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -3293,14 +3293,14 @@
     .end local v0           #dh:I
     .end local v1           #dw:I
     :cond_4
-    iget v7, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriW:I
+    iget v7, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriW:I
 
     int-to-float v7, v7
 
     div-float v5, v7, p3
 
     .line 2380
-    iget v7, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriH:I
+    iget v7, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriH:I
 
     int-to-float v7, v7
 
@@ -3311,7 +3311,7 @@
 
     move-result v7
 
-    iput v7, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBaseMinZoom:F
+    iput v7, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBaseMinZoom:F
 
     .line 2382
     const-string v7, "FullScreen"
@@ -3328,7 +3328,7 @@
 
     const/4 v9, 0x1
 
-    iget v10, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriW:I
+    iget v10, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriW:I
 
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -3344,7 +3344,7 @@
 
     const/4 v9, 0x3
 
-    iget v10, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriH:I
+    iget v10, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriH:I
 
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -3388,7 +3388,7 @@
 
     const/16 v9, 0x9
 
-    iget v10, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBaseMinZoom:F
+    iget v10, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBaseMinZoom:F
 
     invoke-static {v10}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -3449,7 +3449,7 @@
 
     if-eq v3, v4, :cond_0
 
-    iget-object v3, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v3, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     if-eqz v3, :cond_0
 
@@ -3457,11 +3457,11 @@
 
     if-nez v3, :cond_0
 
-    iget-object v3, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v3, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     if-eqz v3, :cond_2
 
-    iget-object v3, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v3, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->isRecycled()Z
 
@@ -3893,14 +3893,14 @@
     iput-object v3, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mMimeType:Ljava/lang/String;
 
     .line 1178
-    iget v3, v1, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriH:I
+    iget v3, v1, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriH:I
 
-    iput v3, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriH:I
+    iput v3, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriH:I
 
     .line 1179
-    iget v3, v1, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriW:I
+    iget v3, v1, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriW:I
 
-    iput v3, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriW:I
+    iput v3, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriW:I
 
     .line 1180
     iget-object v3, v1, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mFileName:Ljava/lang/String;
@@ -5400,7 +5400,7 @@
     .line 1775
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v0, v0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     move-object/from16 v47, v0
 
@@ -5408,7 +5408,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v0, v0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     move-object/from16 v47, v0
 
@@ -5429,7 +5429,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v0, v0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     move-object/from16 v49, v0
 
@@ -5456,7 +5456,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v0, v0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     move-object/from16 v49, v0
 
@@ -7501,7 +7501,7 @@
     :cond_34
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v0, v0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     move-object/from16 v47, v0
 
@@ -9047,7 +9047,7 @@
     const/4 v5, 0x0
 
     .line 2640
-    iget-object v0, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     .line 2641
     .local v0, bitmap:Landroid/graphics/Bitmap;
@@ -9203,11 +9203,11 @@
 
     .line 2669
     :cond_2
-    iget-object v0, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->isRecycled()Z
 
@@ -9248,9 +9248,9 @@
 
     .line 2682
     :cond_4
-    iget-object v0, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
-    iget-object v1, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mDisplayMatrix:Landroid/graphics/Matrix;
+    iget-object v1, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mDisplayMatrix:Landroid/graphics/Matrix;
 
     invoke-direct {p0, p1, v0, v1}, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->drawZoomImgDirectlyByMatrix(Landroid/graphics/Canvas;Landroid/graphics/Bitmap;Landroid/graphics/Matrix;)Z
 
@@ -9489,7 +9489,7 @@
     const/4 v12, 0x0
 
     .line 1317
-    iget-object v10, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v10, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     if-nez v10, :cond_1
 
@@ -9524,7 +9524,7 @@
     .local v8, tl:[F
     new-array v1, v11, [F
 
-    iget-object v10, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v10, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     invoke-virtual {v10}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -9534,7 +9534,7 @@
 
     aput v10, v1, v12
 
-    iget-object v10, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v10, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     invoke-virtual {v10}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -9782,10 +9782,10 @@
     iput-object v2, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mMimeType:Ljava/lang/String;
 
     .line 1134
-    iput v1, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriH:I
+    iput v1, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriH:I
 
     .line 1135
-    iput v1, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriW:I
+    iput v1, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriW:I
 
     .line 1136
     iput-object v2, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mFileName:Ljava/lang/String;
@@ -9996,7 +9996,7 @@
     .line 1020
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mHQLoaded:Z
+    iput-boolean v0, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mHQLoaded:Z
 
     .line 1021
     return-void
@@ -10018,27 +10018,27 @@
     if-eqz v0, :cond_1
 
     .line 1113
-    iget-object v0, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mThumbBitmap:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mThumbBitmap:Landroid/graphics/Bitmap;
 
     if-eq v0, p1, :cond_0
 
-    iget-object v0, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mThumbBitmap:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mThumbBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
 
     .line 1114
-    iget-object v0, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mThumbBitmap:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mThumbBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
     .line 1115
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mThumbBitmap:Landroid/graphics/Bitmap;
+    iput-object v0, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mThumbBitmap:Landroid/graphics/Bitmap;
 
     .line 1117
     :cond_0
-    iput-object p1, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mThumbBitmap:Landroid/graphics/Bitmap;
+    iput-object p1, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mThumbBitmap:Landroid/graphics/Bitmap;
 
     .line 1120
     :cond_1
@@ -10054,7 +10054,7 @@
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->name:Ljava/lang/String;
+    iget-object v0, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->name:Ljava/lang/String;
 
     const-string v1, "image2"
 
@@ -10094,10 +10094,10 @@
     iput-object p1, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mMimeType:Ljava/lang/String;
 
     .line 1283
-    iput p3, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriW:I
+    iput p3, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriW:I
 
     .line 1284
-    iput p4, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapOriH:I
+    iput p4, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapOriH:I
 
     .line 1285
     iput-boolean p6, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mbExif:Z
@@ -10158,7 +10158,7 @@
     if-eqz v1, :cond_0
 
     .line 1295
-    iget-object v1, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/htc/opensense/widget/ImageViewTouchBase;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mFilePath:Ljava/lang/String;
 

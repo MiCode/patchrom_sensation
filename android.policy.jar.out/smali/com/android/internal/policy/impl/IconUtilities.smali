@@ -75,7 +75,7 @@
     const/4 v6, -0x1
 
     .line 69
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
     iput v6, p0, Lcom/android/internal/policy/impl/IconUtilities;->mIconWidth:I

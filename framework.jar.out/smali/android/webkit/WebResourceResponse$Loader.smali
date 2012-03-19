@@ -37,7 +37,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/webkit/WebResourceResponse$Loader;->mDataStream:Ljava/io/InputStream;
+    iput-object v0, p0, Landroid/webkit/StreamLoader;->mDataStream:Ljava/io/InputStream;
 
     .line 34
     return-void
@@ -81,9 +81,9 @@
     const/4 v3, 0x1
 
     .line 37
-    iget-object v1, p0, Landroid/webkit/WebResourceResponse$Loader;->mLoadListener:Landroid/webkit/LoadListener;
+    iget-object v1, p0, Landroid/webkit/StreamLoader;->mLoadListener:Landroid/webkit/LoadListener;
 
-    iget-object v0, p0, Landroid/webkit/WebResourceResponse$Loader;->mDataStream:Ljava/io/InputStream;
+    iget-object v0, p0, Landroid/webkit/StreamLoader;->mDataStream:Ljava/io/InputStream;
 
     if-eqz v0, :cond_0
 

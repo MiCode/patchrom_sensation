@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 3866
+    .line 3872
     iput-object p1, p0, Landroid/media/AudioService$MediaButtonBroadcastReceiver;->this$0:Landroid/media/AudioService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 3866
+    .line 3872
     invoke-direct {p0, p1}, Landroid/media/AudioService$MediaButtonBroadcastReceiver;-><init>(Landroid/media/AudioService;)V
 
     return-void
@@ -52,12 +52,12 @@
     .parameter "intent"
 
     .prologue
-    .line 3869
+    .line 3875
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3870
+    .line 3876
     .local v0, action:Ljava/lang/String;
     const-string v5, "android.intent.action.MEDIA_BUTTON"
 
@@ -67,12 +67,12 @@
 
     if-nez v5, :cond_1
 
-    .line 3906
+    .line 3912
     :cond_0
     :goto_0
     return-void
 
-    .line 3873
+    .line 3879
     :cond_1
     const-string v5, "android.intent.extra.KEY_EVENT"
 
@@ -82,23 +82,23 @@
 
     check-cast v2, Landroid/view/KeyEvent;
 
-    .line 3874
+    .line 3880
     .local v2, event:Landroid/view/KeyEvent;
     if-eqz v2, :cond_0
 
-    .line 3878
-    invoke-static {}, Landroid/media/AudioService;->access$7700()Ljava/lang/Object;
+    .line 3884
+    invoke-static {}, Landroid/media/AudioService;->access$7800()Ljava/lang/Object;
 
     move-result-object v6
 
     monitor-enter v6
 
-    .line 3879
+    .line 3885
     :try_start_0
     iget-object v5, p0, Landroid/media/AudioService$MediaButtonBroadcastReceiver;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mIsRinging:Z
-    invoke-static {v5}, Landroid/media/AudioService;->access$7800(Landroid/media/AudioService;)Z
+    invoke-static {v5}, Landroid/media/AudioService;->access$7900(Landroid/media/AudioService;)Z
 
     move-result v5
 
@@ -134,13 +134,13 @@
 
     if-ne v5, v7, :cond_3
 
-    .line 3882
+    .line 3888
     :cond_2
     monitor-exit v6
 
     goto :goto_0
 
-    .line 3884
+    .line 3890
     :catchall_0
     move-exception v5
 
@@ -156,22 +156,22 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 3885
+    .line 3891
     iget-object v5, p0, Landroid/media/AudioService$MediaButtonBroadcastReceiver;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mRCStack:Ljava/util/Stack;
-    invoke-static {v5}, Landroid/media/AudioService;->access$8100(Landroid/media/AudioService;)Ljava/util/Stack;
+    invoke-static {v5}, Landroid/media/AudioService;->access$8200(Landroid/media/AudioService;)Ljava/util/Stack;
 
     move-result-object v6
 
     monitor-enter v6
 
-    .line 3886
+    .line 3892
     :try_start_2
     iget-object v5, p0, Landroid/media/AudioService$MediaButtonBroadcastReceiver;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mRCStack:Ljava/util/Stack;
-    invoke-static {v5}, Landroid/media/AudioService;->access$8100(Landroid/media/AudioService;)Ljava/util/Stack;
+    invoke-static {v5}, Landroid/media/AudioService;->access$8200(Landroid/media/AudioService;)Ljava/util/Stack;
 
     move-result-object v5
 
@@ -181,37 +181,37 @@
 
     if-nez v5, :cond_4
 
-    .line 3888
+    .line 3894
     new-instance v4, Landroid/content/Intent;
 
     const-string v5, "android.intent.action.MEDIA_BUTTON"
 
     invoke-direct {v4, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3889
+    .line 3895
     .local v4, targetedIntent:Landroid/content/Intent;
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v3
 
-    .line 3890
+    .line 3896
     .local v3, extras:Landroid/os/Bundle;
     if-eqz v3, :cond_4
 
-    .line 3891
+    .line 3897
     invoke-virtual {v4, v3}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 3893
+    .line 3899
     invoke-virtual {p0}, Landroid/media/AudioService$MediaButtonBroadcastReceiver;->abortBroadcast()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 3897
+    .line 3903
     :try_start_3
     iget-object v5, p0, Landroid/media/AudioService$MediaButtonBroadcastReceiver;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mRCStack:Ljava/util/Stack;
-    invoke-static {v5}, Landroid/media/AudioService;->access$8100(Landroid/media/AudioService;)Ljava/util/Stack;
+    invoke-static {v5}, Landroid/media/AudioService;->access$8200(Landroid/media/AudioService;)Ljava/util/Stack;
 
     move-result-object v5
 
@@ -230,7 +230,7 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
     .catch Landroid/app/PendingIntent$CanceledException; {:try_start_3 .. :try_end_3} :catch_0
 
-    .line 3904
+    .line 3910
     .end local v3           #extras:Landroid/os/Bundle;
     .end local v4           #targetedIntent:Landroid/content/Intent;
     :cond_4
@@ -249,13 +249,13 @@
 
     throw v5
 
-    .line 3898
+    .line 3904
     .restart local v3       #extras:Landroid/os/Bundle;
     .restart local v4       #targetedIntent:Landroid/content/Intent;
     :catch_0
     move-exception v1
 
-    .line 3899
+    .line 3905
     .local v1, e:Landroid/app/PendingIntent$CanceledException;
     :try_start_5
     const-string v5, "AudioService"
@@ -273,7 +273,7 @@
     iget-object v8, p0, Landroid/media/AudioService$MediaButtonBroadcastReceiver;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mRCStack:Ljava/util/Stack;
-    invoke-static {v8}, Landroid/media/AudioService;->access$8100(Landroid/media/AudioService;)Ljava/util/Stack;
+    invoke-static {v8}, Landroid/media/AudioService;->access$8200(Landroid/media/AudioService;)Ljava/util/Stack;
 
     move-result-object v8
 
@@ -291,7 +291,7 @@
 
     invoke-static {v5, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3900
+    .line 3906
     invoke-virtual {v1}, Landroid/app/PendingIntent$CanceledException;->printStackTrace()V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1

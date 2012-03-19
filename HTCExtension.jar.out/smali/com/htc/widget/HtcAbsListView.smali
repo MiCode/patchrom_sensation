@@ -1167,7 +1167,7 @@
 
     .line 995
     :cond_1
-    iget v3, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v3, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     if-eq v0, v3, :cond_2
 
@@ -1669,13 +1669,6 @@
 
     iput v1, p0, Lcom/htc/widget/HtcAbsListView;->mDensityScale:F
 
-    .line 670
-    invoke-static {}, Lcom/htc/profileflag/ProfileConfig;->getStrictModePolicySet()I
-
-    move-result v1
-
-    iput v1, p0, Lcom/htc/widget/HtcAbsListView;->mStrictModePolicy:I
-
     .line 672
     invoke-static {}, Lcom/htc/profileflag/ProfileConfig;->getProfileLogFps()I
 
@@ -1794,12 +1787,12 @@
 
     .line 2312
     .local v6, handled:Z
-    iget-object v0, p0, Lcom/htc/widget/HtcAbsListView;->mOnItemLongClickListener:Lcom/htc/widget/HtcAdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Lcom/htc/widget/HtcAdapterView;->mOnItemLongClickListener:Lcom/htc/widget/HtcAdapterView$OnItemLongClickListener;
 
     if-eqz v0, :cond_0
 
     .line 2313
-    iget-object v0, p0, Lcom/htc/widget/HtcAbsListView;->mOnItemLongClickListener:Lcom/htc/widget/HtcAdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Lcom/htc/widget/HtcAdapterView;->mOnItemLongClickListener:Lcom/htc/widget/HtcAdapterView$OnItemLongClickListener;
 
     move-object v1, p0
 
@@ -2040,7 +2033,7 @@
 
     .line 2987
     .local v2, count:I
-    iget v3, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     .line 2988
     .local v3, firstPosition:I
@@ -2363,7 +2356,7 @@
     const/4 v7, 0x0
 
     .line 1594
-    iget v2, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v2, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     .line 1595
     .local v2, firstPosition:I
@@ -2426,7 +2419,7 @@
 
     .line 1606
     :cond_1
-    iget v1, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v1, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     .line 1607
     .local v1, count:I
@@ -2489,7 +2482,7 @@
 
     if-eqz v0, :cond_0
 
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     mul-int/lit8 v0, v0, 0x64
 
@@ -2503,7 +2496,7 @@
     return v0
 
     :cond_0
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     goto :goto_0
 .end method
@@ -2625,7 +2618,7 @@
     const/4 v7, 0x0
 
     .line 1488
-    iget v2, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v2, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     .line 1489
     .local v2, firstPosition:I
@@ -2686,7 +2679,7 @@
 
     div-float/2addr v9, v10
 
-    iget v10, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v10, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     int-to-float v10, v10
 
@@ -2714,7 +2707,7 @@
 
     .line 1501
     :cond_1
-    iget v1, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v1, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     .line 1502
     .local v1, count:I
@@ -2778,7 +2771,7 @@
     if-eqz v1, :cond_0
 
     .line 1519
-    iget v1, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v1, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     mul-int/lit8 v1, v1, 0x64
 
@@ -2796,7 +2789,7 @@
     .line 1521
     .end local v0           #result:I
     :cond_0
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     .restart local v0       #result:I
     goto :goto_0
@@ -2912,11 +2905,11 @@
 
     add-int/2addr v6, v4
 
-    iget v7, p0, Lcom/htc/widget/HtcAbsListView;->mRight:I
+    iget v7, p0, Lcom/htc/widget/HtcAdapterView;->mRight:I
 
     add-int/2addr v7, v3
 
-    iget v8, p0, Lcom/htc/widget/HtcAbsListView;->mLeft:I
+    iget v8, p0, Lcom/htc/widget/HtcAdapterView;->mLeft:I
 
     sub-int/2addr v7, v8
 
@@ -2924,11 +2917,11 @@
 
     sub-int/2addr v7, v8
 
-    iget v8, p0, Lcom/htc/widget/HtcAbsListView;->mBottom:I
+    iget v8, p0, Lcom/htc/widget/HtcAdapterView;->mBottom:I
 
     add-int/2addr v8, v4
 
-    iget v9, p0, Lcom/htc/widget/HtcAbsListView;->mTop:I
+    iget v9, p0, Lcom/htc/widget/HtcAdapterView;->mTop:I
 
     sub-int/2addr v8, v9
 
@@ -3099,7 +3092,7 @@
     .local v1, motionRow:I
     if-ne v1, v2, :cond_0
 
-    iget v2, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v2, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     add-int/2addr v2, v0
 
@@ -3202,13 +3195,13 @@
     .line 1550
     .restart local v2       #fadeEdge:F
     :cond_1
-    iget v5, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     add-int/2addr v5, v1
 
     add-int/lit8 v5, v5, -0x1
 
-    iget v6, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v6, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     add-int/lit8 v6, v6, -0x1
 
@@ -3600,7 +3593,7 @@
     .line 1632
     .restart local v1       #fadeEdge:F
     :cond_1
-    iget v4, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v4, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     if-lez v4, :cond_2
 
@@ -3754,13 +3747,13 @@
     .line 1649
     .restart local v1       #fadeEdge:F
     :cond_1
-    iget v5, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     add-int/2addr v5, v0
 
     add-int/lit8 v5, v5, -0x1
 
-    iget v6, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v6, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     add-int/lit8 v6, v6, -0x1
 
@@ -3835,18 +3828,18 @@
 
     .prologue
     .line 1754
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     if-lez v0, :cond_0
 
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     if-ltz v0, :cond_0
 
     .line 1755
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
-    iget v1, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     sub-int/2addr v0, v1
 
@@ -3962,7 +3955,7 @@
     .line 1533
     .restart local v1       #fadeEdge:F
     :cond_1
-    iget v4, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v4, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     if-lez v4, :cond_2
 
@@ -4035,19 +4028,19 @@
     const/4 v7, 0x0
 
     .line 3933
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     .line 3934
     .local v0, count:I
     if-lez v0, :cond_c
 
     .line 3941
-    iget-boolean v5, p0, Lcom/htc/widget/HtcAbsListView;->mNeedSync:Z
+    iget-boolean v5, p0, Lcom/htc/widget/HtcAdapterView;->mNeedSync:Z
 
     if-eqz v5, :cond_3
 
     .line 3943
-    iput-boolean v7, p0, Lcom/htc/widget/HtcAbsListView;->mNeedSync:Z
+    iput-boolean v7, p0, Lcom/htc/widget/HtcAdapterView;->mNeedSync:Z
 
     .line 3945
     iget v5, p0, Lcom/htc/widget/HtcAbsListView;->mTranscriptMode:I
@@ -4058,7 +4051,7 @@
 
     if-ne v5, v4, :cond_2
 
-    iget v5, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     invoke-virtual {p0}, Lcom/htc/widget/HtcAbsListView;->getChildCount()I
 
@@ -4066,7 +4059,7 @@
 
     add-int/2addr v5, v6
 
-    iget v6, p0, Lcom/htc/widget/HtcAbsListView;->mOldItemCount:I
+    iget v6, p0, Lcom/htc/widget/HtcAdapterView;->mOldItemCount:I
 
     if-lt v5, v6, :cond_2
 
@@ -4083,7 +4076,7 @@
 
     .line 3953
     :cond_2
-    iget v5, p0, Lcom/htc/widget/HtcAbsListView;->mSyncMode:I
+    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mSyncMode:I
 
     packed-switch v5, :pswitch_data_0
 
@@ -4143,7 +4136,7 @@
     iput v8, p0, Lcom/htc/widget/HtcAbsListView;->mLayoutMode:I
 
     .line 3961
-    iget v4, p0, Lcom/htc/widget/HtcAbsListView;->mSyncPosition:I
+    iget v4, p0, Lcom/htc/widget/HtcAdapterView;->mSyncPosition:I
 
     invoke-static {v7, v4}, Ljava/lang/Math;->max(II)I
 
@@ -4155,7 +4148,7 @@
 
     move-result v4
 
-    iput v4, p0, Lcom/htc/widget/HtcAbsListView;->mSyncPosition:I
+    iput v4, p0, Lcom/htc/widget/HtcAdapterView;->mSyncPosition:I
 
     goto :goto_0
 
@@ -4179,10 +4172,10 @@
     if-ne v3, v2, :cond_3
 
     .line 3973
-    iput v2, p0, Lcom/htc/widget/HtcAbsListView;->mSyncPosition:I
+    iput v2, p0, Lcom/htc/widget/HtcAdapterView;->mSyncPosition:I
 
     .line 3975
-    iget-wide v4, p0, Lcom/htc/widget/HtcAbsListView;->mSyncHeight:J
+    iget-wide v4, p0, Lcom/htc/widget/HtcAdapterView;->mSyncHeight:J
 
     invoke-virtual {p0}, Lcom/htc/widget/HtcAbsListView;->getHeight()I
 
@@ -4216,7 +4209,7 @@
     iput v8, p0, Lcom/htc/widget/HtcAbsListView;->mLayoutMode:I
 
     .line 3995
-    iget v4, p0, Lcom/htc/widget/HtcAbsListView;->mSyncPosition:I
+    iget v4, p0, Lcom/htc/widget/HtcAdapterView;->mSyncPosition:I
 
     invoke-static {v7, v4}, Ljava/lang/Math;->max(II)I
 
@@ -4228,7 +4221,7 @@
 
     move-result v4
 
-    iput v4, p0, Lcom/htc/widget/HtcAbsListView;->mSyncPosition:I
+    iput v4, p0, Lcom/htc/widget/HtcAdapterView;->mSyncPosition:I
 
     .line 3996
     iget-boolean v4, p0, Lcom/htc/widget/HtcAbsListView;->mOverScrollCheck:Z
@@ -4245,7 +4238,7 @@
     if-lez v1, :cond_8
 
     .line 3999
-    iget v4, p0, Lcom/htc/widget/HtcAbsListView;->mSyncPosition:I
+    iget v4, p0, Lcom/htc/widget/HtcAdapterView;->mSyncPosition:I
 
     div-int/lit8 v5, v1, 0x2
 
@@ -4257,37 +4250,37 @@
 
     mul-int/2addr v4, v1
 
-    iput v4, p0, Lcom/htc/widget/HtcAbsListView;->mSyncPosition:I
+    iput v4, p0, Lcom/htc/widget/HtcAdapterView;->mSyncPosition:I
 
     .line 4001
     :cond_8
-    iget v4, p0, Lcom/htc/widget/HtcAbsListView;->mSyncPosition:I
+    iget v4, p0, Lcom/htc/widget/HtcAdapterView;->mSyncPosition:I
 
     if-lt v4, v0, :cond_1
 
     .line 4002
     :goto_2
-    iget v4, p0, Lcom/htc/widget/HtcAbsListView;->mSyncPosition:I
+    iget v4, p0, Lcom/htc/widget/HtcAdapterView;->mSyncPosition:I
 
     if-lt v4, v0, :cond_9
 
     .line 4003
-    iget v4, p0, Lcom/htc/widget/HtcAbsListView;->mSyncPosition:I
+    iget v4, p0, Lcom/htc/widget/HtcAdapterView;->mSyncPosition:I
 
     sub-int/2addr v4, v1
 
-    iput v4, p0, Lcom/htc/widget/HtcAbsListView;->mSyncPosition:I
+    iput v4, p0, Lcom/htc/widget/HtcAdapterView;->mSyncPosition:I
 
     goto :goto_2
 
     .line 4005
     :cond_9
-    iget v4, p0, Lcom/htc/widget/HtcAbsListView;->mSyncPosition:I
+    iget v4, p0, Lcom/htc/widget/HtcAdapterView;->mSyncPosition:I
 
     if-gez v4, :cond_1
 
     .line 4006
-    iput v7, p0, Lcom/htc/widget/HtcAbsListView;->mSyncPosition:I
+    iput v7, p0, Lcom/htc/widget/HtcAdapterView;->mSyncPosition:I
 
     goto/16 :goto_0
 
@@ -4328,23 +4321,23 @@
     iput v4, p0, Lcom/htc/widget/HtcAbsListView;->mLayoutMode:I
 
     .line 4053
-    iput v9, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iput v9, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     .line 4054
     const-wide/high16 v4, -0x8000
 
-    iput-wide v4, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedRowId:J
+    iput-wide v4, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedRowId:J
 
     .line 4055
-    iput v9, p0, Lcom/htc/widget/HtcAbsListView;->mNextSelectedPosition:I
+    iput v9, p0, Lcom/htc/widget/HtcAdapterView;->mNextSelectedPosition:I
 
     .line 4056
     const-wide/high16 v4, -0x8000
 
-    iput-wide v4, p0, Lcom/htc/widget/HtcAbsListView;->mNextSelectedRowId:J
+    iput-wide v4, p0, Lcom/htc/widget/HtcAdapterView;->mNextSelectedRowId:J
 
     .line 4057
-    iput-boolean v7, p0, Lcom/htc/widget/HtcAbsListView;->mNeedSync:Z
+    iput-boolean v7, p0, Lcom/htc/widget/HtcAdapterView;->mNeedSync:Z
 
     .line 4058
     invoke-virtual {p0}, Lcom/htc/widget/HtcAbsListView;->checkSelectionChanged()V
@@ -4378,7 +4371,7 @@
     const/4 v2, -0x1
 
     .line 3739
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     if-eq v0, v2, :cond_2
 
@@ -4390,24 +4383,24 @@
     if-eq v0, v1, :cond_0
 
     .line 3741
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     iput v0, p0, Lcom/htc/widget/HtcAbsListView;->mResurrectToPosition:I
 
     .line 3743
     :cond_0
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mNextSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mNextSelectedPosition:I
 
     if-ltz v0, :cond_1
 
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mNextSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mNextSelectedPosition:I
 
-    iget v1, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     if-eq v0, v1, :cond_1
 
     .line 3744
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mNextSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mNextSelectedPosition:I
 
     iput v0, p0, Lcom/htc/widget/HtcAbsListView;->mResurrectToPosition:I
 
@@ -4440,7 +4433,7 @@
     .line 3807
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/htc/widget/HtcAbsListView;->mDataChanged:Z
+    iput-boolean v0, p0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     .line 3808
     invoke-virtual {p0}, Lcom/htc/widget/HtcAbsListView;->rememberSyncState()V
@@ -4467,13 +4460,13 @@
     .line 1103
     iget-object v0, p0, Lcom/htc/widget/HtcAbsListView;->mFastScroller:Lcom/htc/widget/HtcFastScroller;
 
-    iget v1, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     invoke-virtual {p0}, Lcom/htc/widget/HtcAbsListView;->getChildCount()I
 
     move-result v2
 
-    iget v3, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v3, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     invoke-virtual {v0, p0, v1, v2, v3}, Lcom/htc/widget/HtcFastScroller;->onScroll(Lcom/htc/widget/HtcAbsListView;III)V
 
@@ -4486,13 +4479,13 @@
     .line 1106
     iget-object v0, p0, Lcom/htc/widget/HtcAbsListView;->mOnScrollListener:Lcom/htc/widget/HtcAbsListView$OnScrollListener;
 
-    iget v1, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     invoke-virtual {p0}, Lcom/htc/widget/HtcAbsListView;->getChildCount()I
 
     move-result v2
 
-    iget v3, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v3, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     invoke-interface {v0, p0, v1, v2, v3}, Lcom/htc/widget/HtcAbsListView$OnScrollListener;->onScroll(Lcom/htc/widget/HtcAbsListView;III)V
 
@@ -4688,9 +4681,9 @@
     if-nez v5, :cond_0
 
     .line 2040
-    iget v5, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
-    iget v6, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v6, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     sub-int/2addr v5, v6
 
@@ -4753,7 +4746,7 @@
     :goto_1
     if-eqz v1, :cond_0
 
-    iget-boolean v5, p0, Lcom/htc/widget/HtcAbsListView;->mDataChanged:Z
+    iget-boolean v5, p0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     if-nez v5, :cond_0
 
@@ -5497,7 +5490,7 @@
 
     .prologue
     .line 4420
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     if-gez v0, :cond_0
 
@@ -5579,7 +5572,7 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     if-gez v0, :cond_1
 
@@ -5751,7 +5744,7 @@
     if-ltz v2, :cond_3
 
     .line 2916
-    iget v10, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v10, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     sub-int v10, v2, v10
 
@@ -5935,7 +5928,7 @@
 
     if-eqz v2, :cond_0
 
-    iget v2, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     if-ltz v2, :cond_0
 
@@ -5943,7 +5936,7 @@
 
     if-eqz v2, :cond_0
 
-    iget v2, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     iget-object v3, p0, Lcom/htc/widget/HtcAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
@@ -5954,9 +5947,9 @@
     if-ge v2, v3, :cond_0
 
     .line 2371
-    iget v2, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
-    iget v3, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     sub-int/2addr v2, v3
 
@@ -5969,9 +5962,9 @@
     if-eqz v0, :cond_2
 
     .line 2373
-    iget v2, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
-    iget-wide v3, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedRowId:J
+    iget-wide v3, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedRowId:J
 
     invoke-virtual {p0, v0, v2, v3, v4}, Lcom/htc/widget/HtcAbsListView;->performItemClick(Landroid/view/View;IJ)Z
 
@@ -6009,7 +6002,7 @@
     .line 1681
     const/4 v2, 0x1
 
-    iput-boolean v2, p0, Lcom/htc/widget/HtcAbsListView;->mInLayout:Z
+    iput-boolean v2, p0, Lcom/htc/widget/HtcAdapterView;->mInLayout:Z
 
     .line 1682
     if-eqz p1, :cond_1
@@ -6054,7 +6047,7 @@
     .line 1691
     const/4 v2, 0x0
 
-    iput-boolean v2, p0, Lcom/htc/widget/HtcAbsListView;->mInLayout:Z
+    iput-boolean v2, p0, Lcom/htc/widget/HtcAdapterView;->mInLayout:Z
 
     .line 1692
     return-void
@@ -6144,14 +6137,14 @@
     invoke-super {p0, v1}, Lcom/htc/widget/HtcAdapterView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     .line 1349
-    iput-boolean v3, p0, Lcom/htc/widget/HtcAbsListView;->mDataChanged:Z
+    iput-boolean v3, p0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     .line 1351
     iget v1, v0, Lcom/htc/widget/HtcAbsListView$SavedState;->height:I
 
     int-to-long v1, v1
 
-    iput-wide v1, p0, Lcom/htc/widget/HtcAbsListView;->mSyncHeight:J
+    iput-wide v1, p0, Lcom/htc/widget/HtcAdapterView;->mSyncHeight:J
 
     .line 1353
     iget-wide v1, v0, Lcom/htc/widget/HtcAbsListView$SavedState;->selectedId:J
@@ -6161,27 +6154,27 @@
     if-ltz v1, :cond_1
 
     .line 1354
-    iput-boolean v3, p0, Lcom/htc/widget/HtcAbsListView;->mNeedSync:Z
+    iput-boolean v3, p0, Lcom/htc/widget/HtcAdapterView;->mNeedSync:Z
 
     .line 1355
     iget-wide v1, v0, Lcom/htc/widget/HtcAbsListView$SavedState;->selectedId:J
 
-    iput-wide v1, p0, Lcom/htc/widget/HtcAbsListView;->mSyncRowId:J
+    iput-wide v1, p0, Lcom/htc/widget/HtcAdapterView;->mSyncRowId:J
 
     .line 1356
     iget v1, v0, Lcom/htc/widget/HtcAbsListView$SavedState;->position:I
 
-    iput v1, p0, Lcom/htc/widget/HtcAbsListView;->mSyncPosition:I
+    iput v1, p0, Lcom/htc/widget/HtcAdapterView;->mSyncPosition:I
 
     .line 1357
     iget v1, v0, Lcom/htc/widget/HtcAbsListView$SavedState;->viewTop:I
 
-    iput v1, p0, Lcom/htc/widget/HtcAbsListView;->mSpecificTop:I
+    iput v1, p0, Lcom/htc/widget/HtcAdapterView;->mSpecificTop:I
 
     .line 1358
     const/4 v1, 0x0
 
-    iput v1, p0, Lcom/htc/widget/HtcAbsListView;->mSyncMode:I
+    iput v1, p0, Lcom/htc/widget/HtcAdapterView;->mSyncMode:I
 
     .line 1370
     :cond_0
@@ -6211,25 +6204,25 @@
     invoke-virtual {p0, v4}, Lcom/htc/widget/HtcAbsListView;->setNextSelectedPositionInt(I)V
 
     .line 1363
-    iput-boolean v3, p0, Lcom/htc/widget/HtcAbsListView;->mNeedSync:Z
+    iput-boolean v3, p0, Lcom/htc/widget/HtcAdapterView;->mNeedSync:Z
 
     .line 1364
     iget-wide v1, v0, Lcom/htc/widget/HtcAbsListView$SavedState;->firstId:J
 
-    iput-wide v1, p0, Lcom/htc/widget/HtcAbsListView;->mSyncRowId:J
+    iput-wide v1, p0, Lcom/htc/widget/HtcAdapterView;->mSyncRowId:J
 
     .line 1365
     iget v1, v0, Lcom/htc/widget/HtcAbsListView$SavedState;->position:I
 
-    iput v1, p0, Lcom/htc/widget/HtcAbsListView;->mSyncPosition:I
+    iput v1, p0, Lcom/htc/widget/HtcAdapterView;->mSyncPosition:I
 
     .line 1366
     iget v1, v0, Lcom/htc/widget/HtcAbsListView$SavedState;->viewTop:I
 
-    iput v1, p0, Lcom/htc/widget/HtcAbsListView;->mSpecificTop:I
+    iput v1, p0, Lcom/htc/widget/HtcAdapterView;->mSpecificTop:I
 
     .line 1367
-    iput v3, p0, Lcom/htc/widget/HtcAbsListView;->mSyncMode:I
+    iput v3, p0, Lcom/htc/widget/HtcAdapterView;->mSyncMode:I
 
     goto :goto_0
 .end method
@@ -6374,14 +6367,14 @@
     iput v8, v4, Lcom/htc/widget/HtcAbsListView$SavedState;->viewTop:I
 
     .line 1321
-    iget v8, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v8, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     iput v8, v4, Lcom/htc/widget/HtcAbsListView$SavedState;->position:I
 
     .line 1322
     iget-object v8, p0, Lcom/htc/widget/HtcAbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
-    iget v9, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v9, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     invoke-interface {v8, v9}, Landroid/widget/ListAdapter;->getItemId(I)J
 
@@ -6447,7 +6440,7 @@
     .line 1930
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/htc/widget/HtcAbsListView;->mDataChanged:Z
+    iput-boolean v0, p0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     .line 1931
     invoke-virtual {p0}, Lcom/htc/widget/HtcAbsListView;->rememberSyncState()V
@@ -6783,7 +6776,7 @@
     .local v15, motionPosition:I
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/htc/widget/HtcAbsListView;->mDataChanged:Z
+    iget-boolean v0, v0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     move/from16 v23, v0
 
@@ -6887,7 +6880,7 @@
     .line 2617
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     move/from16 v23, v0
 
@@ -7179,7 +7172,7 @@
     .line 2671
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     move/from16 v23, v0
 
@@ -7383,7 +7376,7 @@
     .restart local v15       #motionPosition:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     move/from16 v23, v0
 
@@ -7588,7 +7581,7 @@
     .line 2737
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/htc/widget/HtcAbsListView;->mDataChanged:Z
+    iget-boolean v0, v0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     move/from16 v23, v0
 
@@ -7809,7 +7802,7 @@
     :cond_1f
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/htc/widget/HtcAbsListView;->mDataChanged:Z
+    iget-boolean v0, v0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     move/from16 v23, v0
 
@@ -7865,7 +7858,7 @@
     .line 2779
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     move/from16 v23, v0
 
@@ -7905,7 +7898,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     move/from16 v23, v0
 
@@ -7913,7 +7906,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     move/from16 v24, v0
 
@@ -8148,7 +8141,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     move/from16 v24, v0
 
@@ -8306,7 +8299,7 @@
     .line 2871
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     move/from16 v23, v0
 
@@ -8509,7 +8502,7 @@
     if-ne v0, v2, :cond_2
 
     .line 2183
-    iget v1, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     iput v1, p0, Lcom/htc/widget/HtcAbsListView;->mResurrectToPosition:I
 
@@ -8703,7 +8696,7 @@
     .end local v5           #newValue:Z
     :cond_2
     :goto_3
-    iput-boolean v8, p0, Lcom/htc/widget/HtcAbsListView;->mDataChanged:Z
+    iput-boolean v8, p0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     .line 923
     invoke-virtual {p0}, Lcom/htc/widget/HtcAbsListView;->rememberSyncState()V
@@ -8921,7 +8914,7 @@
     if-eqz v4, :cond_1
 
     .line 2411
-    iget v4, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v4, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     add-int/2addr v4, v3
 
@@ -9148,7 +9141,7 @@
 
     .prologue
     .line 3761
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     .line 3762
     .local v0, position:I
@@ -9166,7 +9159,7 @@
     move-result v0
 
     .line 3766
-    iget v1, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v1, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     add-int/lit8 v1, v1, -0x1
 
@@ -9398,11 +9391,11 @@
 
     .prologue
     .line 1435
-    iget-boolean v0, p0, Lcom/htc/widget/HtcAbsListView;->mBlockLayoutRequests:Z
+    iget-boolean v0, p0, Lcom/htc/widget/HtcAdapterView;->mBlockLayoutRequests:Z
 
     if-nez v0, :cond_0
 
-    iget-boolean v0, p0, Lcom/htc/widget/HtcAbsListView;->mInLayout:Z
+    iget-boolean v0, p0, Lcom/htc/widget/HtcAdapterView;->mInLayout:Z
 
     if-nez v0, :cond_0
 
@@ -9451,21 +9444,21 @@
     invoke-virtual {p0}, Lcom/htc/widget/HtcAbsListView;->removeAllViewsInLayout()V
 
     .line 1445
-    iput v2, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iput v2, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     .line 1446
-    iput-boolean v2, p0, Lcom/htc/widget/HtcAbsListView;->mDataChanged:Z
+    iput-boolean v2, p0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     .line 1447
-    iput-boolean v2, p0, Lcom/htc/widget/HtcAbsListView;->mNeedSync:Z
+    iput-boolean v2, p0, Lcom/htc/widget/HtcAdapterView;->mNeedSync:Z
 
     .line 1448
-    iput v3, p0, Lcom/htc/widget/HtcAbsListView;->mOldSelectedPosition:I
+    iput v3, p0, Lcom/htc/widget/HtcAdapterView;->mOldSelectedPosition:I
 
     .line 1449
     const-wide/high16 v0, -0x8000
 
-    iput-wide v0, p0, Lcom/htc/widget/HtcAbsListView;->mOldSelectedRowId:J
+    iput-wide v0, p0, Lcom/htc/widget/HtcAdapterView;->mOldSelectedRowId:J
 
     .line 1450
     invoke-virtual {p0, v3}, Lcom/htc/widget/HtcAbsListView;->setSelectedPositionInt(I)V
@@ -9569,13 +9562,13 @@
     .line 3839
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mBottom:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mBottom:I
 
     move/from16 v17, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mTop:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mTop:I
 
     move/from16 v18, v0
 
@@ -9604,7 +9597,7 @@
     .line 3841
     move-object/from16 v0, p0
 
-    iget v7, v0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v7, v0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     .line 3842
     .local v7, firstPosition:I
@@ -9633,7 +9626,7 @@
     .local v12, selectedPos:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     move/from16 v17, v0
 
@@ -9710,7 +9703,7 @@
     .line 3915
     move-object/from16 v0, p0
 
-    iput v13, v0, Lcom/htc/widget/HtcAbsListView;->mSpecificTop:I
+    iput v13, v0, Lcom/htc/widget/HtcAdapterView;->mSpecificTop:I
 
     .line 3916
     move-object/from16 v0, p0
@@ -9879,7 +9872,7 @@
     :cond_8
     move-object/from16 v0, p0
 
-    iget v9, v0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v9, v0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     .line 3887
     .local v9, itemCount:I
@@ -10809,16 +10802,16 @@
     .end local v6           #oldValue:Z
     :cond_6
     :goto_3
-    iget-boolean v0, p0, Lcom/htc/widget/HtcAbsListView;->mInLayout:Z
+    iget-boolean v0, p0, Lcom/htc/widget/HtcAdapterView;->mInLayout:Z
 
     if-nez v0, :cond_0
 
-    iget-boolean v0, p0, Lcom/htc/widget/HtcAbsListView;->mBlockLayoutRequests:Z
+    iget-boolean v0, p0, Lcom/htc/widget/HtcAdapterView;->mBlockLayoutRequests:Z
 
     if-nez v0, :cond_0
 
     .line 872
-    iput-boolean v8, p0, Lcom/htc/widget/HtcAbsListView;->mDataChanged:Z
+    iput-boolean v8, p0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     .line 873
     invoke-virtual {p0}, Lcom/htc/widget/HtcAbsListView;->rememberSyncState()V
@@ -11271,12 +11264,12 @@
 
     .line 2338
     .local v6, handled:Z
-    iget-object v0, p0, Lcom/htc/widget/HtcAbsListView;->mOnItemLongClickListener:Lcom/htc/widget/HtcAdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Lcom/htc/widget/HtcAdapterView;->mOnItemLongClickListener:Lcom/htc/widget/HtcAdapterView$OnItemLongClickListener;
 
     if-eqz v0, :cond_0
 
     .line 2339
-    iget-object v0, p0, Lcom/htc/widget/HtcAbsListView;->mOnItemLongClickListener:Lcom/htc/widget/HtcAdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Lcom/htc/widget/HtcAdapterView;->mOnItemLongClickListener:Lcom/htc/widget/HtcAdapterView$OnItemLongClickListener;
 
     move-object v1, p0
 
@@ -11291,7 +11284,7 @@
     if-nez v6, :cond_1
 
     .line 2343
-    iget v0, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v0, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     sub-int v0, v3, v0
 
@@ -11485,7 +11478,7 @@
     .line 2496
     iget v5, p0, Lcom/htc/widget/HtcAbsListView;->mMotionPosition:I
 
-    iget v6, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v6, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     sub-int/2addr v5, v6
 
@@ -11708,7 +11701,7 @@
     :goto_2
     move-object/from16 v0, p0
 
-    iget v11, v0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v11, v0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     .line 3581
     .local v11, firstPosition:I
@@ -11788,7 +11781,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     move/from16 v30, v0
 
@@ -11866,7 +11859,7 @@
     .local v14, headerViewsCount:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     move/from16 v29, v0
 
@@ -12002,7 +11995,7 @@
 
     move-object/from16 v1, p0
 
-    iput-boolean v0, v1, Lcom/htc/widget/HtcAbsListView;->mBlockLayoutRequests:Z
+    iput-boolean v0, v1, Lcom/htc/widget/HtcAdapterView;->mBlockLayoutRequests:Z
 
     .line 3677
     if-lez v8, :cond_9
@@ -12028,7 +12021,7 @@
     .line 3683
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     move/from16 v29, v0
 
@@ -12038,7 +12031,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iput v0, v1, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     .line 3686
     :cond_a
@@ -12071,7 +12064,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     move/from16 v29, v0
 
@@ -12086,13 +12079,13 @@
     .line 3694
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     move/from16 v29, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     move/from16 v30, v0
 
@@ -12132,7 +12125,7 @@
 
     move-object/from16 v1, p0
 
-    iput-boolean v0, v1, Lcom/htc/widget/HtcAbsListView;->mBlockLayoutRequests:Z
+    iput-boolean v0, v1, Lcom/htc/widget/HtcAdapterView;->mBlockLayoutRequests:Z
 
     .line 3702
     invoke-virtual/range {p0 .. p0}, Lcom/htc/widget/HtcAbsListView;->invokeOnItemScrollListener()V
@@ -12250,7 +12243,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     move/from16 v29, v0
 
@@ -12456,7 +12449,7 @@
     if-eqz v6, :cond_1
 
     .line 1721
-    iget v6, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v6, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     if-lez v6, :cond_4
 
@@ -12526,11 +12519,11 @@
 
     .line 1739
     .local v3, count:I
-    iget v6, p0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v6, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     add-int/2addr v6, v3
 
-    iget v8, p0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v8, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     if-ge v6, v8, :cond_7
 
@@ -12556,7 +12549,7 @@
 
     move-result v6
 
-    iget v8, p0, Lcom/htc/widget/HtcAbsListView;->mBottom:I
+    iget v8, p0, Lcom/htc/widget/HtcAdapterView;->mBottom:I
 
     iget-object v9, p0, Lcom/htc/widget/HtcAbsListView;->mListPadding:Landroid/graphics/Rect;
 

@@ -61,9 +61,9 @@
 
     .prologue
     .line 54
-    iget-object v0, p0, Lcom/htc/painting/engine/Request$LoadStrokeGroupRequest;->mHost:Lcom/htc/painting/engine/HtcPainting;
+    iget-object v0, p0, Lcom/htc/painting/engine/Request$PaintingRequest;->mHost:Lcom/htc/painting/engine/HtcPainting;
 
-    iget-object v1, p0, Lcom/htc/painting/engine/Request$LoadStrokeGroupRequest;->mGroupIds:[I
+    iget-object v1, p0, Lcom/htc/painting/engine/Request$PaintingRequest;->mGroupIds:[I
 
     iget-object v2, p0, Lcom/htc/painting/engine/Request$LoadStrokeGroupRequest;->mViewPorts:[Lcom/htc/painting/engine/ViewPort;
 

@@ -34,7 +34,7 @@
     .line 2297
     iput-object p1, p0, Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 2298
     new-instance v0, Lcom/htc/widget/HtcScroller;
@@ -106,7 +106,7 @@
     :cond_0
     iget-object v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget v8, v8, Lcom/htc/opensense/widget/AlbumAbsListView;->mItemCount:I
+    iget v8, v8, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-eqz v8, :cond_1
 
@@ -155,7 +155,7 @@
 
     iget-object v9, p0, Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget v9, v9, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v9, v9, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     iput v9, v8, Lcom/htc/opensense/widget/AlbumAbsListView;->mMotionPosition:I
 
@@ -225,7 +225,7 @@
 
     iget-object v10, p0, Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget v10, v10, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v10, v10, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int/2addr v9, v10
 
@@ -282,7 +282,7 @@
 
     iget-object v9, p0, Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget v9, v9, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v9, v9, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int/2addr v9, v5
 

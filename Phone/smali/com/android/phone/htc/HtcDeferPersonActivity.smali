@@ -18,7 +18,7 @@
 # static fields
 .field private static final CONTACT_DATA_QUERY_CONDITION:Ljava/lang/String; = "contact_id = %d AND (mimetype=\'vnd.android.cursor.item/photo\' OR mimetype=\'vnd.android.cursor.item/phone_v2\' OR mimetype=\'vnd.android.cursor.item/name\')"
 
-.field protected static final DEBUG:Z = true
+.field protected static final DEBUG:Z = false
 
 .field protected static final DIALOG_ID_BASE:I = 0x32
 
@@ -319,6 +319,7 @@
     invoke-interface {p1}, Landroid/database/Cursor;->close()V
 
     .line 215
+    :goto_1
     if-eqz v9, :cond_3
 
     .line 216
@@ -422,7 +423,7 @@
 
     goto :goto_0
 
-    .line 209
+    .line 211
     .end local v0           #appContext:Landroid/content/Context;
     .end local v1           #idIdx:I
     .end local v2           #mimeIdx:I
@@ -430,17 +431,17 @@
     .end local v6           #photoBitmap:Landroid/graphics/Bitmap;
     .end local v7           #photoId:J
     :cond_7
-    new-instance v10, Ljava/lang/IllegalArgumentException;
+    const-string v10, "HtcPersonActivity"
 
     const-string v11, "handleOnqueryComplete: no cursor"
 
-    invoke-direct {v10, v11}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-static {v10, v11}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    throw v10
+    goto :goto_1
 .end method
 
 .method protected static isViewValid(Landroid/view/View;Ljava/lang/String;)Z
-    .locals 3
+    .locals 5
     .parameter "view"
     .parameter "viewName"
 
@@ -455,14 +456,24 @@
     .line 403
     const/4 v0, 0x0
 
-    .line 405
-    new-instance v1, Ljava/lang/IllegalStateException;
+    .line 407
+    const-string v1, "HtcPersonActivity"
 
-    const-string v2, "no dismiss btn!"
+    const-string v2, "view %s is null"
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    const/4 v3, 0x1
 
-    throw v1
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    aput-object p1, v3, v4
+
+    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 411
     :cond_0
@@ -470,16 +481,9 @@
 .end method
 
 .method private onNumberClick()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 430
-    const-string v0, "HtcPersonActivity"
-
-    const-string v1, "onNumberClick"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 431
     const/4 v0, 0x1
 
@@ -809,7 +813,7 @@
 .end method
 
 .method protected onCreateDialog(ILandroid/os/Bundle;)Landroid/app/Dialog;
-    .locals 4
+    .locals 1
     .parameter "id"
     .parameter "args"
 
@@ -821,31 +825,8 @@
     .local v0, result:Landroid/app/Dialog;
     packed-switch p1, :pswitch_data_0
 
-    .line 151
-    :goto_0
-    const-string v1, "HtcPersonActivity"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "onCreateDialog: unknown dialog id: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 155
+    :goto_0
     if-eqz v0, :cond_0
 
     .line 158

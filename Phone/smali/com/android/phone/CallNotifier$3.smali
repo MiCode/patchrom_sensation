@@ -149,7 +149,7 @@
     iget-object v4, p0, Lcom/android/phone/CallNotifier$3;->this$0:Lcom/android/phone/CallNotifier;
 
     #getter for: Lcom/android/phone/CallNotifier;->mCM:Lcom/android/internal/telephony/CallManager;
-    invoke-static {v4}, Lcom/android/phone/CallNotifier;->access$500(Lcom/android/phone/CallNotifier;)Lcom/android/internal/telephony/CallManager;
+    invoke-static {v4}, Lcom/android/phone/CallNotifier;->access$400(Lcom/android/phone/CallNotifier;)Lcom/android/internal/telephony/CallManager;
 
     move-result-object v4
 
@@ -189,7 +189,7 @@
     iget-object v4, p0, Lcom/android/phone/CallNotifier$3;->this$0:Lcom/android/phone/CallNotifier;
 
     #getter for: Lcom/android/phone/CallNotifier;->mCM:Lcom/android/internal/telephony/CallManager;
-    invoke-static {v4}, Lcom/android/phone/CallNotifier;->access$500(Lcom/android/phone/CallNotifier;)Lcom/android/internal/telephony/CallManager;
+    invoke-static {v4}, Lcom/android/phone/CallNotifier;->access$400(Lcom/android/phone/CallNotifier;)Lcom/android/internal/telephony/CallManager;
 
     move-result-object v4
 
@@ -225,31 +225,8 @@
 
     move-result v3
 
-    .line 3484
-    .local v3, speakerOn:Z
-    const-string v4, "CallNotifier"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "PS_CALL_AUDIO_STATE_CHANGE: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 3486
+    .local v3, speakerOn:Z
     invoke-static {v3}, Lcom/android/phone/PhoneUtils;->setPsSpeakerOn(Z)V
 
     .line 3487
@@ -267,5 +244,5 @@
 
     invoke-virtual {v4, v5}, Lcom/android/phone/PhoneApp;->updateProximitySensorMode(Lcom/android/internal/telephony/Phone$State;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 .end method

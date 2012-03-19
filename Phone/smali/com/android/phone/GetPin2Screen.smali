@@ -300,7 +300,7 @@
     .end local v1           #pin2Retry:Ljava/lang/String;
     .end local v2           #sb:Ljava/lang/StringBuilder;
     :cond_2
-    const v3, 0x7f08008a
+    const v3, 0x7f08008b
 
     invoke-virtual {p0, v3}, Lcom/android/phone/GetPin2Screen;->findViewById(I)Landroid/view/View;
 
@@ -331,7 +331,7 @@
 
     .line 143
     :cond_3
-    const v3, 0x7f08008b
+    const v3, 0x7f08008a
 
     invoke-virtual {p0, v3}, Lcom/android/phone/GetPin2Screen;->findViewById(I)Landroid/view/View;
 

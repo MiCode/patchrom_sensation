@@ -163,7 +163,7 @@
     .line 81
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/content/res/Resources;->mSync:Ljava/lang/Object;
 
@@ -214,7 +214,7 @@
     const/4 v1, 0x0
 
     .line 2447
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 105
     new-instance v0, Landroid/util/TypedValue;
@@ -364,7 +364,7 @@
     const/4 v1, 0x4
 
     .line 220
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 105
     new-instance v0, Landroid/util/TypedValue;
@@ -6408,12 +6408,10 @@
 
     move-result v21
 
-    .line 1545
     invoke-static/range {v21 .. v21}, Landroid/content/pm/ActivityInfo;->activityInfoConfigToNative(I)I
 
     move-result v2
 
-    .line 1547
     const/high16 v3, -0x8000
 
     and-int v3, v3, v21

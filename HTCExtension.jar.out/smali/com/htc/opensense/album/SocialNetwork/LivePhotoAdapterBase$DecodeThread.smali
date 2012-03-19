@@ -415,7 +415,7 @@
 
     iget-object v1, v0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase$DecodeThread;->this$0:Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    #getter for: Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
     invoke-static {v1}, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->access$400(Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -525,7 +525,7 @@
 
     iget-object v1, v0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase$DecodeThread;->this$0:Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    #getter for: Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
     invoke-static {v1}, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->access$000(Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -566,7 +566,7 @@
 
     iget-object v1, v0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase$DecodeThread;->this$0:Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    #getter for: Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
     invoke-static {v1}, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->access$100(Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -813,7 +813,7 @@
 
     iget-object v1, v0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase$DecodeThread;->this$0:Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    #getter for: Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
     invoke-static {v1}, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->access$300(Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;)Ljava/util/ArrayList;
 
     move-result-object v1

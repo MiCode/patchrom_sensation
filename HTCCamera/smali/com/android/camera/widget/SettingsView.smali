@@ -1143,7 +1143,7 @@
 
     .line 342
     .local v0, LayoutParam:Landroid/widget/LinearLayout$LayoutParams;
-    iput p1, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+    iput p1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 343
     iget-object v1, p0, Lcom/android/camera/widget/SettingsView;->mSubMenu:Landroid/widget/LinearLayout;

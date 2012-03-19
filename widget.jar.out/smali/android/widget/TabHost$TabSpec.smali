@@ -34,7 +34,7 @@
     .line 432
     iput-object p1, p0, Landroid/widget/TabHost$TabSpec;->this$0:Landroid/widget/TabHost;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 433
     iput-object p2, p0, Landroid/widget/TabHost$TabSpec;->mTag:Ljava/lang/String;

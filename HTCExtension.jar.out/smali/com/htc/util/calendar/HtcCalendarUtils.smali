@@ -71,7 +71,7 @@
 
 .field public static final SENSE_30:I = 0x5
 
-.field private static final localLOGV:Z = true
+.field private static final localLOGV:Z
 
 
 # direct methods
@@ -216,7 +216,7 @@
 
     .prologue
     .line 21
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -992,67 +992,8 @@
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 275
-    .local v7, appointmentList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;>;"
-    const-string v1, "HtcCalendarUtils"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Query Today\'s Events begin time:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v15, v3}, Landroid/text/format/Time;->normalize(Z)J
-
-    move-result-wide v5
-
-    invoke-virtual {v2, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", end time:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const/4 v3, 0x1
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v3}, Landroid/text/format/Time;->normalize(Z)J
-
-    move-result-wide v5
-
-    invoke-virtual {v2, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", calendar_id : "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 280
+    .local v7, appointmentList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;>;"
     sget-object v1, Landroid/provider/CalendarContract$Instances;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -1416,7 +1357,7 @@
 .end method
 
 .method private static query(Landroid/content/Context;Landroid/text/format/Time;Ljava/util/ArrayList;)Ljava/util/ArrayList;
-    .locals 13
+    .locals 12
     .parameter "context"
     .parameter "begin"
     .parameter
@@ -1440,7 +1381,7 @@
     .local p2, selectedList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     const/4 v1, 0x0
 
-    const/4 v12, 0x1
+    const/4 v2, 0x1
 
     .line 799
     move-object v10, p1
@@ -1481,14 +1422,14 @@
 
     .line 807
     .local v6, builder:Landroid/net/Uri$Builder;
-    invoke-virtual {v10, v12}, Landroid/text/format/Time;->normalize(Z)J
+    invoke-virtual {v10, v2}, Landroid/text/format/Time;->normalize(Z)J
 
     move-result-wide v0
 
     invoke-static {v6, v0, v1}, Landroid/content/ContentUris;->appendId(Landroid/net/Uri$Builder;J)Landroid/net/Uri$Builder;
 
     .line 808
-    invoke-virtual {v11, v12}, Landroid/text/format/Time;->normalize(Z)J
+    invoke-virtual {v11, v2}, Landroid/text/format/Time;->normalize(Z)J
 
     move-result-wide v0
 
@@ -1516,7 +1457,7 @@
 
     move-result v0
 
-    if-ne v0, v12, :cond_0
+    if-ne v0, v2, :cond_0
 
     const/4 v0, 0x0
 
@@ -1541,86 +1482,8 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 830
-    :goto_1
-    const-string v0, "HtcCalendarUtils"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Query Today\'s Events begin time:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v10, v12}, Landroid/text/format/Time;->normalize(Z)J
-
-    move-result-wide v4
-
-    invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", end time:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v11, v12}, Landroid/text/format/Time;->normalize(Z)J
-
-    move-result-wide v4
-
-    invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", selection : "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 831
-    const-string v0, "HtcCalendarUtils"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "uri : "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v6}, Landroid/net/Uri$Builder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 833
+    :goto_1
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -1723,7 +1586,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 825
     .end local v9           #i$:Ljava/util/Iterator;
@@ -1740,7 +1603,7 @@
     :cond_2
     const-string v3, "visible=1"
 
-    goto/16 :goto_1
+    goto :goto_1
 .end method
 
 .method private static queryDayEvents(Landroid/database/Cursor;Landroid/text/format/Time;Lcom/htc/util/calendar/HtcCalendarUtils$EventCategory;Z)Ljava/util/ArrayList;
@@ -2716,7 +2579,7 @@
 
     move/from16 v0, v20
 
-    if-ge v9, v0, :cond_1b
+    if-ge v9, v0, :cond_1a
 
     .line 486
     invoke-virtual {v4, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2744,162 +2607,15 @@
 
     invoke-virtual {v8, v0, v1}, Landroid/text/format/Time;->set(J)V
 
-    .line 490
-    const-string v21, "HtcCalendarUtils"
-
-    new-instance v20, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v22, "Is today\'s event:"
-
-    move-object/from16 v0, v20
-
-    move-object/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    iget-object v0, v5, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->category_:Lcom/htc/util/calendar/HtcCalendarUtils$EventCategory;
-
-    move-object/from16 v20, v0
-
-    sget-object v23, Lcom/htc/util/calendar/HtcCalendarUtils$EventCategory;->EN_TODAY:Lcom/htc/util/calendar/HtcCalendarUtils$EventCategory;
-
-    move-object/from16 v0, v20
-
-    move-object/from16 v1, v23
-
-    if-ne v0, v1, :cond_5
-
-    const/16 v20, 0x1
-
-    :goto_3
-    move-object/from16 v0, v22
-
-    move/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v20
-
-    move-object/from16 v0, v21
-
-    move-object/from16 v1, v20
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 491
-    const-string v20, "HtcCalendarUtils"
-
-    new-instance v21, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v21 .. v21}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v22, "Event title:"
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    iget-object v0, v5, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->title_:Ljava/lang/String;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, ", start time:"
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    iget v0, v7, Landroid/text/format/Time;->hour:I
-
-    move/from16 v22, v0
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, ":"
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    iget v0, v7, Landroid/text/format/Time;->minute:I
-
-    move/from16 v22, v0
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, ", end time:"
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    iget v0, v8, Landroid/text/format/Time;->hour:I
-
-    move/from16 v22, v0
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, ":"
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    iget v0, v8, Landroid/text/format/Time;->minute:I
-
-    move/from16 v22, v0
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, ", monthday:"
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    iget v0, v7, Landroid/text/format/Time;->monthDay:I
-
-    move/from16 v22, v0
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v21
-
-    invoke-static/range {v20 .. v21}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 504
-    if-eqz v10, :cond_9
+    if-eqz v10, :cond_8
 
     .line 505
     iget-boolean v0, v5, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->allday_:Z
 
     move/from16 v20, v0
 
-    if-eqz v20, :cond_6
+    if-eqz v20, :cond_5
 
     .line 506
     const/16 v20, -0x1
@@ -2914,7 +2630,7 @@
 
     move-result v20
 
-    if-eqz v20, :cond_6
+    if-eqz v20, :cond_5
 
     .line 507
     :cond_2
@@ -2928,10 +2644,10 @@
 
     .line 485
     :cond_3
-    :goto_4
+    :goto_3
     add-int/lit8 v9, v9, 0x1
 
-    goto/16 :goto_2
+    goto :goto_2
 
     .line 454
     .end local v5           #e:Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;
@@ -2948,7 +2664,7 @@
 
     goto/16 :goto_1
 
-    .line 490
+    .line 516
     .restart local v5       #e:Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;
     .restart local v6       #e_:Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;
     .restart local v7       #eventBegin:Landroid/text/format/Time;
@@ -2959,13 +2675,7 @@
     .restart local v16       #startingEventIdx:I
     .restart local v19       #tnow:Landroid/text/format/Time;
     :cond_5
-    const/16 v20, 0x0
-
-    goto/16 :goto_3
-
-    .line 516
-    :cond_6
-    if-nez v6, :cond_7
+    if-nez v6, :cond_6
 
     .line 517
     move/from16 v16, v9
@@ -2974,17 +2684,17 @@
     move-object v6, v5
 
     .line 519
-    goto :goto_4
+    goto :goto_3
 
     .line 521
-    :cond_7
-    if-eqz v6, :cond_8
+    :cond_6
+    if-eqz v6, :cond_7
 
     iget-boolean v0, v6, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->allday_:Z
 
     move/from16 v20, v0
 
-    if-eqz v20, :cond_8
+    if-eqz v20, :cond_7
 
     .line 522
     new-instance v17, Landroid/text/format/Time;
@@ -3082,12 +2792,12 @@
     move-object v6, v5
 
     .line 531
-    goto :goto_4
+    goto :goto_3
 
     .line 534
     .end local v17           #t1:Landroid/text/format/Time;
     .end local v18           #t2:Landroid/text/format/Time;
-    :cond_8
+    :cond_7
     iget-wide v0, v5, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->begin_:J
 
     move-wide/from16 v20, v0
@@ -3107,15 +2817,15 @@
     move-object v6, v5
 
     .line 537
-    goto/16 :goto_4
+    goto :goto_3
 
     .line 542
-    :cond_9
+    :cond_8
     iget-boolean v0, v5, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->allday_:Z
 
     move/from16 v20, v0
 
-    if-eqz v20, :cond_b
+    if-eqz v20, :cond_a
 
     .line 543
     const/16 v20, 0x0
@@ -3188,13 +2898,6 @@
     .line 552
     invoke-virtual {v4, v9, v5}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 556
-    const-string v20, "HtcCalendarUtils"
-
-    const-string v21, "All day is the starting event"
-
-    invoke-static/range {v20 .. v21}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 560
     const/16 v20, -0x1
 
@@ -3202,16 +2905,16 @@
 
     move/from16 v1, v20
 
-    if-eq v0, v1, :cond_a
+    if-eq v0, v1, :cond_9
 
     invoke-virtual {v13, v15}, Landroid/text/format/Time;->after(Landroid/text/format/Time;)Z
 
     move-result v20
 
-    if-eqz v20, :cond_b
+    if-eqz v20, :cond_a
 
     .line 562
-    :cond_a
+    :cond_9
     if-nez v6, :cond_3
 
     .line 563
@@ -3220,10 +2923,10 @@
     .line 564
     move-object v6, v5
 
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     .line 575
-    :cond_b
+    :cond_a
     iget v0, v13, Landroid/text/format/Time;->hour:I
 
     move/from16 v20, v0
@@ -3236,7 +2939,7 @@
 
     move/from16 v1, v21
 
-    if-lt v0, v1, :cond_11
+    if-lt v0, v1, :cond_10
 
     iget v0, v13, Landroid/text/format/Time;->hour:I
 
@@ -3250,17 +2953,10 @@
 
     move/from16 v1, v21
 
-    if-gt v0, v1, :cond_11
-
-    .line 577
-    const-string v20, "HtcCalendarUtils"
-
-    const-string v21, "starting event"
-
-    invoke-static/range {v20 .. v21}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    if-gt v0, v1, :cond_10
 
     .line 580
-    if-eqz v6, :cond_f
+    if-eqz v6, :cond_e
 
     .line 581
     iget-wide v0, v6, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->ehour_:J
@@ -3279,7 +2975,7 @@
 
     cmp-long v20, v20, v22
 
-    if-nez v20, :cond_c
+    if-nez v20, :cond_b
 
     iget-wide v0, v6, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->eminutes_:J
 
@@ -3297,9 +2993,9 @@
 
     cmp-long v20, v20, v22
 
-    if-gez v20, :cond_d
+    if-gez v20, :cond_c
 
-    :cond_c
+    :cond_b
     iget v0, v13, Landroid/text/format/Time;->hour:I
 
     move/from16 v20, v0
@@ -3316,7 +3012,7 @@
 
     cmp-long v20, v20, v22
 
-    if-gtz v20, :cond_e
+    if-gtz v20, :cond_d
 
     iget v0, v13, Landroid/text/format/Time;->hour:I
 
@@ -3334,27 +3030,27 @@
 
     cmp-long v20, v20, v22
 
-    if-nez v20, :cond_e
+    if-nez v20, :cond_d
 
     .line 583
-    :cond_d
+    :cond_c
     const/4 v11, -0x1
 
     .line 584
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     .line 586
-    :cond_e
+    :cond_d
     move/from16 v16, v9
 
     .line 587
     move-object v6, v5
 
     .line 588
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     .line 591
-    :cond_f
+    :cond_e
     iget v0, v13, Landroid/text/format/Time;->hour:I
 
     move/from16 v20, v0
@@ -3367,7 +3063,7 @@
 
     move/from16 v1, v21
 
-    if-ge v0, v1, :cond_10
+    if-ge v0, v1, :cond_f
 
     iget v0, v13, Landroid/text/format/Time;->hour:I
 
@@ -3384,17 +3080,17 @@
     if-gt v0, v1, :cond_3
 
     .line 592
-    :cond_10
+    :cond_f
     move/from16 v16, v9
 
     .line 593
     move-object v6, v5
 
     .line 594
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     .line 597
-    :cond_11
+    :cond_10
     iget v0, v13, Landroid/text/format/Time;->hour:I
 
     move/from16 v20, v0
@@ -3407,10 +3103,10 @@
 
     move/from16 v1, v21
 
-    if-gt v0, v1, :cond_17
+    if-gt v0, v1, :cond_16
 
     .line 598
-    if-eqz v6, :cond_15
+    if-eqz v6, :cond_14
 
     .line 599
     iget-wide v0, v6, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->ehour_:J
@@ -3421,7 +3117,7 @@
 
     cmp-long v20, v20, v22
 
-    if-nez v20, :cond_12
+    if-nez v20, :cond_11
 
     .line 600
     const-wide/16 v20, 0x0
@@ -3431,12 +3127,12 @@
     iput-wide v0, v6, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->ehour_:J
 
     .line 601
-    :cond_12
+    :cond_11
     iget-boolean v0, v6, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->allday_:Z
 
     move/from16 v20, v0
 
-    if-eqz v20, :cond_14
+    if-eqz v20, :cond_13
 
     .line 603
     iget-object v0, v6, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->category_:Lcom/htc/util/calendar/HtcCalendarUtils$EventCategory;
@@ -3449,7 +3145,7 @@
 
     move-object/from16 v1, v21
 
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_12
 
     .line 605
     iget-wide v0, v6, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->begin_:J
@@ -3468,7 +3164,7 @@
 
     cmp-long v20, v20, v22
 
-    if-gez v20, :cond_14
+    if-gez v20, :cond_13
 
     .line 606
     move/from16 v16, v9
@@ -3477,10 +3173,10 @@
     move-object v6, v5
 
     .line 608
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     .line 611
-    :cond_13
+    :cond_12
     iget-wide v0, v6, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->begin_:J
 
     move-wide/from16 v20, v0
@@ -3495,7 +3191,7 @@
 
     cmp-long v20, v20, v22
 
-    if-lez v20, :cond_14
+    if-lez v20, :cond_13
 
     .line 612
     move/from16 v16, v9
@@ -3504,10 +3200,10 @@
     move-object v6, v5
 
     .line 614
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     .line 619
-    :cond_14
+    :cond_13
     iget v0, v13, Landroid/text/format/Time;->hour:I
 
     move/from16 v20, v0
@@ -3567,10 +3263,10 @@
     move-object v6, v5
 
     .line 624
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     .line 629
-    :cond_15
+    :cond_14
     iget v0, v13, Landroid/text/format/Time;->minute:I
 
     move/from16 v20, v0
@@ -3583,7 +3279,7 @@
 
     move/from16 v1, v21
 
-    if-le v0, v1, :cond_16
+    if-le v0, v1, :cond_15
 
     iget v0, v13, Landroid/text/format/Time;->hour:I
 
@@ -3597,38 +3293,31 @@
 
     move/from16 v1, v21
 
-    if-le v0, v1, :cond_16
+    if-le v0, v1, :cond_15
 
     .line 630
     const/16 v16, -0x1
 
     .line 631
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     .line 633
-    :cond_16
+    :cond_15
     move/from16 v16, v9
 
     .line 634
     move-object v6, v5
 
     .line 635
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     .line 638
-    :cond_17
+    :cond_16
     invoke-virtual {v13, v8}, Landroid/text/format/Time;->after(Landroid/text/format/Time;)Z
 
     move-result v20
 
-    if-eqz v20, :cond_19
-
-    .line 640
-    const-string v20, "HtcCalendarUtils"
-
-    const-string v21, "Ending event"
-
-    invoke-static/range {v20 .. v21}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    if-eqz v20, :cond_18
 
     .line 644
     const/16 v20, -0x1
@@ -3637,7 +3326,7 @@
 
     move/from16 v1, v20
 
-    if-eq v0, v1, :cond_18
+    if-eq v0, v1, :cond_17
 
     invoke-virtual {v13, v15}, Landroid/text/format/Time;->after(Landroid/text/format/Time;)Z
 
@@ -3646,29 +3335,22 @@
     if-eqz v20, :cond_3
 
     .line 645
-    :cond_18
+    :cond_17
     move/from16 v16, v9
 
     .line 646
     move-object v6, v5
 
     .line 647
-    goto/16 :goto_4
-
-    .line 651
-    :cond_19
-    const-string v20, "HtcCalendarUtils"
-
-    const-string v21, "not starting event"
-
-    invoke-static/range {v20 .. v21}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    goto/16 :goto_3
 
     .line 655
+    :cond_18
     const/16 v20, -0x1
 
     move/from16 v0, v20
 
-    if-eq v11, v0, :cond_1a
+    if-eq v11, v0, :cond_19
 
     invoke-virtual {v7, v15}, Landroid/text/format/Time;->before(Landroid/text/format/Time;)Z
 
@@ -3677,18 +3359,18 @@
     if-eqz v20, :cond_3
 
     .line 656
-    :cond_1a
+    :cond_19
     move v11, v9
 
     .line 657
     invoke-virtual {v12, v7}, Landroid/text/format/Time;->set(Landroid/text/format/Time;)V
 
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     .line 663
     .end local v5           #e:Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;
-    :cond_1b
-    if-ltz v16, :cond_1e
+    :cond_1a
+    if-ltz v16, :cond_1d
 
     .line 664
     move/from16 v0, v16
@@ -3714,7 +3396,7 @@
     invoke-virtual {v8, v0, v1}, Landroid/text/format/Time;->set(J)V
 
     .line 672
-    if-eqz v3, :cond_1c
+    if-eqz v3, :cond_1b
 
     .line 673
     const/16 v20, 0x0
@@ -3731,87 +3413,12 @@
     iput v0, v8, Landroid/text/format/Time;->minute:I
 
     .line 676
-    :cond_1c
+    :cond_1b
     const/16 v20, 0x1
 
     move/from16 v0, v20
 
     iput v0, v8, Landroid/text/format/Time;->second:I
-
-    .line 679
-    const-string v20, "HtcCalendarUtils"
-
-    new-instance v21, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v21 .. v21}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v22, "##schedular query event on  "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    iget v0, v8, Landroid/text/format/Time;->monthDay:I
-
-    move/from16 v22, v0
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, "day  "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    iget v0, v8, Landroid/text/format/Time;->hour:I
-
-    move/from16 v22, v0
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, "hour  "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    iget v0, v8, Landroid/text/format/Time;->minute:I
-
-    move/from16 v22, v0
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, "min "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    iget v0, v8, Landroid/text/format/Time;->second:I
-
-    move/from16 v22, v0
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, "sec "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v21
-
-    invoke-static/range {v20 .. v21}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 684
     const/16 v20, 0x0
@@ -3826,14 +3433,14 @@
 
     .line 721
     .end local v3           #allDay:Z
-    :goto_5
-    if-eqz v4, :cond_1d
+    :goto_4
+    if-eqz v4, :cond_1c
 
     .line 722
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
     .line 724
-    :cond_1d
+    :cond_1c
     const/4 v4, 0x0
 
     .line 726
@@ -3841,8 +3448,8 @@
 
     .line 686
     .end local v5           #e:Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;
-    :cond_1e
-    if-ltz v11, :cond_20
+    :cond_1d
+    if-ltz v11, :cond_1f
 
     .line 687
     invoke-virtual {v4, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3866,7 +3473,7 @@
 
     .line 694
     .restart local v3       #allDay:Z
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_1e
 
     .line 695
     const/16 v20, 0x0
@@ -3883,87 +3490,12 @@
     iput v0, v7, Landroid/text/format/Time;->minute:I
 
     .line 698
-    :cond_1f
+    :cond_1e
     const/16 v20, 0x3b
 
     move/from16 v0, v20
 
     iput v0, v7, Landroid/text/format/Time;->second:I
-
-    .line 701
-    const-string v20, "HtcCalendarUtils"
-
-    new-instance v21, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v21 .. v21}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v22, "@@schedular query event on  "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    iget v0, v7, Landroid/text/format/Time;->monthDay:I
-
-    move/from16 v22, v0
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, "day  "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    iget v0, v7, Landroid/text/format/Time;->hour:I
-
-    move/from16 v22, v0
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, "hour  "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    iget v0, v7, Landroid/text/format/Time;->minute:I
-
-    move/from16 v22, v0
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, "min "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    iget v0, v8, Landroid/text/format/Time;->second:I
-
-    move/from16 v22, v0
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, "sec "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v21
-
-    invoke-static/range {v20 .. v21}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 706
     const/16 v20, 0x0
@@ -3976,19 +3508,12 @@
 
     invoke-static/range {v20 .. v21}, Lcom/htc/util/calendar/HtcCalendarUtils;->schedularNextEvent(J)V
 
-    goto/16 :goto_5
-
-    .line 714
-    .end local v3           #allDay:Z
-    .end local v5           #e:Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;
-    :cond_20
-    const-string v20, "HtcCalendarUtils"
-
-    const-string v21, "no event, schedular query event on tomorrow  "
-
-    invoke-static/range {v20 .. v21}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    goto :goto_4
 
     .line 717
+    .end local v3           #allDay:Z
+    .end local v5           #e:Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;
+    :cond_1f
     const-wide/16 v20, -0x1
 
     invoke-static/range {v20 .. v21}, Lcom/htc/util/calendar/HtcCalendarUtils;->schedularNextEvent(J)V
@@ -3997,7 +3522,7 @@
     const/4 v5, 0x0
 
     .restart local v5       #e:Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;
-    goto/16 :goto_5
+    goto :goto_4
 .end method
 
 .method public static final queryTodayOnly(Landroid/content/Context;Ljava/util/ArrayList;)Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;
@@ -4237,44 +3762,9 @@
 
     move-result-wide p0
 
-    .line 363
+    .line 367
     :cond_0
     :goto_0
-    invoke-virtual {v0, p0, p1}, Landroid/text/format/Time;->set(J)V
-
-    .line 364
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v3}, Landroid/text/format/Time;->normalize(Z)J
-
-    .line 365
-    const-string v3, "HtcCalendarUtils"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "using alarm to schedule at "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v0}, Landroid/text/format/Time;->format2445()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 367
     return-void
 
     .line 356
@@ -4412,55 +3902,6 @@
     .line 749
     move-object v3, v4
 
-    .line 751
-    const-string v9, "HtcCalendarUtils"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v11, "currentEvent : "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    iget-object v11, v3, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->title_:Ljava/lang/String;
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, ", begin : "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    iget-wide v11, v3, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->begin_:J
-
-    invoke-virtual {v10, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, ", end : "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    iget-wide v11, v3, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->end_:J
-
-    invoke-virtual {v10, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 774
     :cond_3
     :goto_1
@@ -4500,13 +3941,6 @@
 
     if-gtz v9, :cond_6
 
-    .line 784
-    const-string v9, "HtcCalendarUtils"
-
-    const-string v10, "currentEvent, nextEvent is within 2 Hours!"
-
-    invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 786
     invoke-virtual {v8, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -4517,7 +3951,7 @@
     .line 792
     invoke-virtual {v8, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 756
     .end local v8           #temp:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;>;"
@@ -4528,55 +3962,6 @@
     .line 757
     move-object v6, v4
 
-    .line 759
-    const-string v9, "HtcCalendarUtils"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v11, "nextEvent : "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    iget-object v11, v6, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->title_:Ljava/lang/String;
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, ", begin : "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    iget-wide v11, v6, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->begin_:J
-
-    invoke-virtual {v10, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, ", end : "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    iget-wide v11, v6, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->end_:J
-
-    invoke-virtual {v10, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     goto :goto_1
 
     .line 765
@@ -4586,54 +3971,5 @@
     .line 766
     move-object v6, v4
 
-    .line 768
-    const-string v9, "HtcCalendarUtils"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v11, "allDayEvent : "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    iget-object v11, v6, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->title_:Ljava/lang/String;
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, ", begin : "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    iget-wide v11, v6, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->begin_:J
-
-    invoke-virtual {v10, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, ", end : "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    iget-wide v11, v6, Lcom/htc/util/calendar/HtcCalendarUtils$Appointment;->end_:J
-
-    invoke-virtual {v10, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_1
+    goto :goto_1
 .end method

@@ -23,7 +23,7 @@
 
     .prologue
     .line 17
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 22
     const/4 v0, 0x0
@@ -57,7 +57,7 @@
 .end method
 
 .method private prepareSelectionWindow(Landroid/view/View;)V
-    .locals 3
+    .locals 2
     .parameter "view"
 
     .prologue
@@ -102,13 +102,6 @@
     iget-object v1, p0, Lcom/htc/quickselection/HtcQuickAction;->mCurrentView:Landroid/view/View;
 
     if-eq v1, p1, :cond_2
-
-    .line 75
-    const-string v1, "HtcTextSelection"
-
-    const-string v2, "prepareSelectionWindow::dismiss QuickAction because parent view changed"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 76
     sget-object v1, Lcom/htc/quickselection/HtcQuickAction;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;

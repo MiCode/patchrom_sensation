@@ -65,7 +65,7 @@
     .parameter "defStyle"
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     .line 29
     invoke-direct {p0, p1, p2, p3}, Lcom/htc/preference/HtcCheckBoxPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
@@ -83,12 +83,12 @@
     iput-object v0, p0, Lcom/android/phone/CdmaDDTMCheckBoxPreference;->mHandler:Lcom/android/phone/CdmaDDTMCheckBoxPreference$MyHandler;
 
     .line 43
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/android/phone/CdmaDDTMCheckBoxPreference;->DDTM_OFF:I
+    iput v2, p0, Lcom/android/phone/CdmaDDTMCheckBoxPreference;->DDTM_OFF:I
 
     .line 44
-    iput v2, p0, Lcom/android/phone/CdmaDDTMCheckBoxPreference;->DDTM_ON:I
+    const/4 v0, 0x1
+
+    iput v0, p0, Lcom/android/phone/CdmaDDTMCheckBoxPreference;->DDTM_ON:I
 
     .line 31
     invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->getDefaultPhone()Lcom/android/internal/telephony/Phone;

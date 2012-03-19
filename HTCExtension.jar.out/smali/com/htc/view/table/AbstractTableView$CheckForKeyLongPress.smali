@@ -68,18 +68,18 @@
 
     iget-object v3, p0, Lcom/htc/view/table/AbstractTableView$CheckForKeyLongPress;->this$0:Lcom/htc/view/table/AbstractTableView;
 
-    iget v3, v3, Lcom/htc/view/table/AbstractTableView;->mSelectedPosition:I
+    iget v3, v3, Lcom/htc/view/table/AbstractAdapterView;->mSelectedPosition:I
 
     if-ltz v3, :cond_1
 
     .line 1308
     iget-object v3, p0, Lcom/htc/view/table/AbstractTableView$CheckForKeyLongPress;->this$0:Lcom/htc/view/table/AbstractTableView;
 
-    iget v3, v3, Lcom/htc/view/table/AbstractTableView;->mSelectedPosition:I
+    iget v3, v3, Lcom/htc/view/table/AbstractAdapterView;->mSelectedPosition:I
 
     iget-object v4, p0, Lcom/htc/view/table/AbstractTableView$CheckForKeyLongPress;->this$0:Lcom/htc/view/table/AbstractTableView;
 
-    iget v4, v4, Lcom/htc/view/table/AbstractTableView;->mFirstPosition:I
+    iget v4, v4, Lcom/htc/view/table/AbstractAdapterView;->mFirstPosition:I
 
     sub-int v1, v3, v4
 
@@ -95,7 +95,7 @@
     .local v2, v:Landroid/view/View;
     iget-object v3, p0, Lcom/htc/view/table/AbstractTableView$CheckForKeyLongPress;->this$0:Lcom/htc/view/table/AbstractTableView;
 
-    iget-boolean v3, v3, Lcom/htc/view/table/AbstractTableView;->mDataChanged:Z
+    iget-boolean v3, v3, Lcom/htc/view/table/AbstractAdapterView;->mDataChanged:Z
 
     if-nez v3, :cond_2
 
@@ -115,11 +115,11 @@
 
     iget-object v4, p0, Lcom/htc/view/table/AbstractTableView$CheckForKeyLongPress;->this$0:Lcom/htc/view/table/AbstractTableView;
 
-    iget v4, v4, Lcom/htc/view/table/AbstractTableView;->mSelectedPosition:I
+    iget v4, v4, Lcom/htc/view/table/AbstractAdapterView;->mSelectedPosition:I
 
     iget-object v5, p0, Lcom/htc/view/table/AbstractTableView$CheckForKeyLongPress;->this$0:Lcom/htc/view/table/AbstractTableView;
 
-    iget-wide v5, v5, Lcom/htc/view/table/AbstractTableView;->mSelectedRowId:J
+    iget-wide v5, v5, Lcom/htc/view/table/AbstractAdapterView;->mSelectedRowId:J
 
     #calls: Lcom/htc/view/table/AbstractTableView;->performLongPress(Landroid/view/View;IJ)Z
     invoke-static {v3, v2, v4, v5, v6}, Lcom/htc/view/table/AbstractTableView;->access$500(Lcom/htc/view/table/AbstractTableView;Landroid/view/View;IJ)Z

@@ -30,7 +30,7 @@
     .line 79
     iput-object p1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase$GridImageDownloadedHandler;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -61,7 +61,7 @@
     .local v0, activity:Landroid/app/Activity;
     iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase$GridImageDownloadedHandler;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
     invoke-static {v2}, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->access$000(Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;)Lcom/htc/opensense/album/DisplayManagerInterface;
 
     move-result-object v2

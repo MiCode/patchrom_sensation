@@ -36,7 +36,7 @@
     .line 2670
     iput-object p1, p0, Lcom/htc/widget/HtcAbsListView2$FlingRunnable;->this$0:Lcom/htc/widget/HtcAbsListView2;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 2671
     new-instance v0, Lcom/htc/widget/HtcScroller;
@@ -103,7 +103,7 @@
     :cond_0
     iget-object v9, p0, Lcom/htc/widget/HtcAbsListView2$FlingRunnable;->this$0:Lcom/htc/widget/HtcAbsListView2;
 
-    iget v9, v9, Lcom/htc/widget/HtcAbsListView2;->mItemCount:I
+    iget v9, v9, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     if-eqz v9, :cond_1
 
@@ -168,7 +168,7 @@
 
     iget-object v10, p0, Lcom/htc/widget/HtcAbsListView2$FlingRunnable;->this$0:Lcom/htc/widget/HtcAbsListView2;
 
-    iget v10, v10, Lcom/htc/widget/HtcAbsListView2;->mFirstPosition:I
+    iget v10, v10, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     iput v10, v9, Lcom/htc/widget/HtcAbsListView2;->mMotionPosition:I
 
@@ -247,7 +247,7 @@
 
     iget-object v11, p0, Lcom/htc/widget/HtcAbsListView2$FlingRunnable;->this$0:Lcom/htc/widget/HtcAbsListView2;
 
-    iget v11, v11, Lcom/htc/widget/HtcAbsListView2;->mFirstPosition:I
+    iget v11, v11, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     sub-int/2addr v10, v11
 
@@ -379,7 +379,7 @@
 
     iget-object v10, p0, Lcom/htc/widget/HtcAbsListView2$FlingRunnable;->this$0:Lcom/htc/widget/HtcAbsListView2;
 
-    iget v10, v10, Lcom/htc/widget/HtcAbsListView2;->mFirstPosition:I
+    iget v10, v10, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     add-int/2addr v10, v5
 

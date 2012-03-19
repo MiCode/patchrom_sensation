@@ -314,12 +314,12 @@
     .line 92
     iget-object v1, p0, Lcom/htc/opensense/album/AlbumCommandBar;->params:Landroid/widget/LinearLayout$LayoutParams;
 
-    iput v5, v1, Landroid/widget/LinearLayout$LayoutParams;->width:I
+    iput v5, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 93
     iget-object v1, p0, Lcom/htc/opensense/album/AlbumCommandBar;->params:Landroid/widget/LinearLayout$LayoutParams;
 
-    iput v4, v1, Landroid/widget/LinearLayout$LayoutParams;->height:I
+    iput v4, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 95
     invoke-virtual {p0}, Lcom/htc/opensense/album/AlbumCommandBar;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -330,10 +330,10 @@
 
     .line 96
     .local v0, rlp:Landroid/widget/RelativeLayout$LayoutParams;
-    iput v5, v0, Landroid/widget/RelativeLayout$LayoutParams;->width:I
+    iput v5, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 97
-    iput v4, v0, Landroid/widget/RelativeLayout$LayoutParams;->height:I
+    iput v4, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 98
     invoke-virtual {v0, v7, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
@@ -363,7 +363,7 @@
     :cond_2
     iget-object v1, p0, Lcom/htc/opensense/album/AlbumCommandBar;->params:Landroid/widget/LinearLayout$LayoutParams;
 
-    iput v4, v1, Landroid/widget/LinearLayout$LayoutParams;->width:I
+    iput v4, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 109
     iget-object v1, p0, Lcom/htc/opensense/album/AlbumCommandBar;->params:Landroid/widget/LinearLayout$LayoutParams;
@@ -378,7 +378,7 @@
 
     move-result v2
 
-    iput v2, v1, Landroid/widget/LinearLayout$LayoutParams;->height:I
+    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 112
     invoke-virtual {p0}, Lcom/htc/opensense/album/AlbumCommandBar;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -389,10 +389,10 @@
 
     .line 113
     .restart local v0       #rlp:Landroid/widget/RelativeLayout$LayoutParams;
-    iput v4, v0, Landroid/widget/RelativeLayout$LayoutParams;->width:I
+    iput v4, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 114
-    iput v5, v0, Landroid/widget/RelativeLayout$LayoutParams;->height:I
+    iput v5, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 115
     invoke-virtual {v0, v7, v6}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V

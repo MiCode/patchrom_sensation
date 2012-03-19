@@ -112,7 +112,7 @@
 
     .prologue
     .line 275
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 279
     new-instance v0, Landroid/view/Surface$CompatibleCanvas;
@@ -133,7 +133,7 @@
 
     .prologue
     .line 48
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 52
     new-instance v0, Landroid/view/Surface$CompatibleCanvas;
@@ -162,7 +162,7 @@
 
     .prologue
     .line 282
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 283
     invoke-direct {p0, p1}, Landroid/view/Surface;->init(Landroid/os/Parcel;)V
@@ -205,7 +205,7 @@
 
     .prologue
     .line 250
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 254
     new-instance v0, Landroid/view/Surface$CompatibleCanvas;
@@ -259,7 +259,7 @@
 
     .prologue
     .line 261
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 265
     new-instance v0, Landroid/view/Surface$CompatibleCanvas;

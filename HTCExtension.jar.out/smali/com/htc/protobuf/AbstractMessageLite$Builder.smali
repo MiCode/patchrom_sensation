@@ -40,7 +40,7 @@
     .prologue
     .line 93
     .local p0, this:Lcom/htc/protobuf/AbstractMessageLite$Builder;,"Lcom/htc/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 222
     return-void

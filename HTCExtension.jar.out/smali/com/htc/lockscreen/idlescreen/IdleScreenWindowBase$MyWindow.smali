@@ -34,7 +34,7 @@
     .parameter
 
     .prologue
-    .line 392
+    .line 402
     iput-object p1, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MyWindow;->this$0:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;
 
     invoke-direct {p0}, Lcom/android/internal/view/BaseIWindow;-><init>()V
@@ -49,10 +49,10 @@
     .parameter "visible"
 
     .prologue
-    .line 441
+    .line 451
     iget-object v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MyWindow;->this$0:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;
 
-    iget-object v0, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+    iget-object v0, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
 
     invoke-virtual {v0}, Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;->isPreview()Z
 
@@ -60,14 +60,14 @@
 
     if-nez v0, :cond_0
 
-    .line 442
+    .line 452
     iget-object v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MyWindow;->this$0:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;
 
-    iget-object v0, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+    iget-object v0, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
 
     invoke-virtual {v0, p1}, Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;->reportWindowVisible(Z)V
 
-    .line 449
+    .line 459
     :cond_0
     return-void
 .end method
@@ -79,7 +79,7 @@
     .parameter "callWhenDone"
 
     .prologue
-    .line 418
+    .line 428
     const/4 v0, 0x0
 
     return v0
@@ -95,28 +95,28 @@
     .parameter "newConfig"
 
     .prologue
-    .line 424
+    .line 434
     iput p1, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MyWindow;->mWidth:I
 
-    .line 425
+    .line 435
     iput p2, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MyWindow;->mHeight:I
 
-    .line 426
+    .line 436
     iput-object p3, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MyWindow;->mCoveredInsets:Landroid/graphics/Rect;
 
-    .line 427
+    .line 437
     iput-object p4, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MyWindow;->mVisibleInsets:Landroid/graphics/Rect;
 
-    .line 428
+    .line 438
     iput-object p6, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MyWindow;->mConfig:Landroid/content/res/Configuration;
 
-    .line 429
+    .line 439
     iget-object v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MyWindow;->this$0:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;
 
-    iget-object v0, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+    iget-object v0, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
 
     invoke-virtual {v0, p5}, Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;->reportWindowResized(Z)V
 
-    .line 435
+    .line 445
     return-void
 .end method

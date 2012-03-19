@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final HTC_DEBUG:Z = true
+.field public static final HTC_DEBUG:Z = false
 
 .field private static final PERF_KEY_CORRUPT_COUNT:Ljava/lang/String; = "pref_key_corrupt_count"
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 16
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

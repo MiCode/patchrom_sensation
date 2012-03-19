@@ -25,7 +25,7 @@
 
     .prologue
     .line 78
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 711
     return-void
@@ -574,7 +574,7 @@
     .local p2, elementType:Ljava/lang/Object;,"TE;"
     new-instance v1, Ljava/lang/Object;
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v1 .. v1}, Ljava/lang/Object;-><init>()V
 
     .line 406
     .local v1, retObj:Ljava/lang/Object;,"TT;"
@@ -1102,7 +1102,7 @@
     .line 212
     new-instance v10, Ljava/lang/Object;
 
-    invoke-direct {v10}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v10 .. v10}, Ljava/lang/Object;-><init>()V
 
     .line 214
     .local v10, retval:Ljava/lang/Object;

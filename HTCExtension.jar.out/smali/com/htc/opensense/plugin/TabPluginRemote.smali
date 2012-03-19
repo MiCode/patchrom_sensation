@@ -30,11 +30,11 @@
     iput-boolean v0, p0, Lcom/htc/opensense/plugin/TabPluginRemote;->mFromOutside:Z
 
     .line 16
-    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginRemote;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
+    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginWrapper;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginRemote;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
+    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginWrapper;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
 
     instance-of v0, v0, Lcom/htc/opensense/album/plugin/TabPluginBase;
 
@@ -68,7 +68,7 @@
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginRemote;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
+    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginWrapper;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
 
     check-cast v0, Lcom/htc/opensense/album/plugin/TabPluginBase;
 
@@ -95,7 +95,7 @@
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginRemote;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
+    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginWrapper;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
 
     check-cast v0, Lcom/htc/opensense/album/plugin/TabPluginBase;
 
@@ -122,7 +122,7 @@
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginRemote;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
+    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginWrapper;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
 
     check-cast v0, Lcom/htc/opensense/album/plugin/TabPluginBase;
 
@@ -149,7 +149,7 @@
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginRemote;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
+    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginWrapper;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
 
     check-cast v0, Lcom/htc/opensense/album/plugin/TabPluginBase;
 
@@ -176,7 +176,7 @@
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginRemote;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
+    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginWrapper;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
 
     check-cast v0, Lcom/htc/opensense/album/plugin/TabPluginBase;
 
@@ -203,7 +203,7 @@
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginRemote;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
+    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginWrapper;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
 
     check-cast v0, Lcom/htc/opensense/album/plugin/TabPluginBase;
 
@@ -230,7 +230,7 @@
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginRemote;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
+    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginWrapper;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
 
     check-cast v0, Lcom/htc/opensense/album/plugin/TabPluginBase;
 
@@ -257,7 +257,7 @@
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginRemote;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
+    iget-object v0, p0, Lcom/htc/opensense/plugin/TabPluginWrapper;->mPlugin:Lcom/htc/opensense/plugin/TabPlugin;
 
     check-cast v0, Lcom/htc/opensense/album/plugin/TabPluginBase;
 

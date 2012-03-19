@@ -34,7 +34,7 @@
 
     .prologue
     .line 12
-    iget-object v0, p0, Lcom/android/camera/component/HandShakeController;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -56,7 +56,7 @@
 
     .prologue
     .line 12
-    iget-object v0, p0, Lcom/android/camera/component/HandShakeController;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method

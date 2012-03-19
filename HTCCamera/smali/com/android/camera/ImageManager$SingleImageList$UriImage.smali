@@ -436,7 +436,7 @@
     :try_start_1
     iget-object v3, p0, Lcom/android/camera/ImageManager$SingleImageList$UriImage;->this$1:Lcom/android/camera/ImageManager$SingleImageList;
 
-    iget-object v3, v3, Lcom/android/camera/ImageManager$SingleImageList;->mBaseUri:Landroid/net/Uri;
+    iget-object v3, v3, Lcom/android/camera/ImageManager$BaseImageList;->mBaseUri:Landroid/net/Uri;
 
     iget-object v4, p0, Lcom/android/camera/ImageManager$SingleImageList$UriImage;->this$1:Lcom/android/camera/ImageManager$SingleImageList;
 

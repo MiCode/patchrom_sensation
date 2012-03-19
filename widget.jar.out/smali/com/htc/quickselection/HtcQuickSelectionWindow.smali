@@ -25,7 +25,7 @@
 
 .field private static ICON_SIZE:I = 0x0
 
-.field private static final LOCAL_DEBUG:Z = true
+.field private static final LOCAL_DEBUG:Z = false
 
 .field static final LOGD:Z = false
 

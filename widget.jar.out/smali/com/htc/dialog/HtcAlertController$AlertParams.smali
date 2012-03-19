@@ -121,7 +121,7 @@
     const/4 v3, 0x1
 
     .line 1016
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 955
     iput v2, p0, Lcom/htc/dialog/HtcAlertController$AlertParams;->mIconId:I

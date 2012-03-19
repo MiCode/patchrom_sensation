@@ -3,7 +3,7 @@
 #
 
 # The original zip file, MUST be specified by each product
-local-zip-file     := sensation_4.5.4.zip
+local-zip-file     := sensation_3.32.zip
 
 # The output zip file of MIUI rom, the default is update.zip if not specified
 # local-out-zip-file :=
@@ -61,8 +61,9 @@ local-zip-misc: add-lbesec-miui
 	@echo add tel location
 	cp other/CallerLocation.apk $(ZIP_DIR)/system/app/CallerLocation.apk
 	@echo Update htc resources
+	$(APKTOOL) d -f $(ZIP_DIR)/system/framework/com.htc.resources.apk $(TMP_DIR)/com.htc.resources
 	rm $(ZIP_DIR)/system/framework/com.htc.resources.apk
-	cp -r com.htc.resources $(TMP_DIR)/
+	cp other/com.htc.resources/res/drawable-hdpi/* $(TMP_DIR)/com.htc.resources/res/drawable-hdpi
 	$(APKTOOL) b $(TMP_DIR)/com.htc.resources $(TMP_DIR)/com.htc.resources.apk
 	cp $(TMP_DIR)/com.htc.resources.apk $(ZIP_DIR)/system/framework/com.htc.resources.apk
 	@echo update default theme icons

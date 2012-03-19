@@ -32,8 +32,8 @@
     .locals 0
 
     .prologue
-    .line 492
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 506
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,7 +45,7 @@
     .parameter "source"
 
     .prologue
-    .line 495
+    .line 509
     new-instance v0, Lcom/htc/text/util/HtcLinkify$LinkSpec;
 
     invoke-direct {v0, p1}, Lcom/htc/text/util/HtcLinkify$LinkSpec;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 492
+    .line 506
     invoke-virtual {p0, p1}, Lcom/htc/text/util/HtcLinkify$LinkSpec$1;->createFromParcel(Landroid/os/Parcel;)Lcom/htc/text/util/HtcLinkify$LinkSpec;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .parameter "size"
 
     .prologue
-    .line 499
+    .line 513
     new-array v0, p1, [Lcom/htc/text/util/HtcLinkify$LinkSpec;
 
     return-object v0
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 492
+    .line 506
     invoke-virtual {p0, p1}, Lcom/htc/text/util/HtcLinkify$LinkSpec$1;->newArray(I)[Lcom/htc/text/util/HtcLinkify$LinkSpec;
 
     move-result-object v0

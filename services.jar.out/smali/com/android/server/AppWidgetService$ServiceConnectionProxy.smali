@@ -54,7 +54,7 @@
     .prologue
     .line 128
     .local p1, key:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Integer;Landroid/content/Intent$FilterComparison;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 129
     iput-object p1, p0, Lcom/android/server/AppWidgetService$ServiceConnectionProxy;->mKey:Landroid/util/Pair;

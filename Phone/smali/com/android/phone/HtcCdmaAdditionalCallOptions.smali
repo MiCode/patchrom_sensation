@@ -34,29 +34,29 @@
     .locals 2
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    const/4 v0, 0x1
+    const/4 v1, 0x0
 
     .line 17
     invoke-direct {p0}, Lcom/htc/preference/HtcPreferenceActivity;-><init>()V
 
     .line 20
-    iput-boolean v0, p0, Lcom/android/phone/HtcCdmaAdditionalCallOptions;->DBG:Z
+    iput-boolean v1, p0, Lcom/android/phone/HtcCdmaAdditionalCallOptions;->DBG:Z
 
     .line 24
-    iput-object v1, p0, Lcom/android/phone/HtcCdmaAdditionalCallOptions;->mCWButton:Lcom/htc/preference/HtcListPreference;
+    iput-object v0, p0, Lcom/android/phone/HtcCdmaAdditionalCallOptions;->mCWButton:Lcom/htc/preference/HtcListPreference;
 
     .line 26
-    iput-object v1, p0, Lcom/android/phone/HtcCdmaAdditionalCallOptions;->mContext:Landroid/content/Context;
+    iput-object v0, p0, Lcom/android/phone/HtcCdmaAdditionalCallOptions;->mContext:Landroid/content/Context;
 
     .line 60
+    const/4 v0, 0x1
+
     iput v0, p0, Lcom/android/phone/HtcCdmaAdditionalCallOptions;->CALL_WAITING_ENABLE:I
 
     .line 61
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/android/phone/HtcCdmaAdditionalCallOptions;->CALL_WAITING_DISABLE:I
+    iput v1, p0, Lcom/android/phone/HtcCdmaAdditionalCallOptions;->CALL_WAITING_DISABLE:I
 
     return-void
 .end method

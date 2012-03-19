@@ -268,7 +268,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-boolean v0, p0, Landroid/content/CursorLoader;->mContentChanged:Z
+    iget-boolean v0, p0, Landroid/content/Loader;->mContentChanged:Z
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Z)V
 

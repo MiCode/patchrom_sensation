@@ -20,7 +20,7 @@
 
 .field protected static final DATA_TYPE_FDN:I = 0x2
 
-.field protected static final DBG:Z = true
+.field protected static final DBG:Z = false
 
 .field protected static final DELETE_TOKEN:I = 0x3
 
@@ -177,27 +177,6 @@
     .parameter "flag"
 
     .prologue
-    .line 306
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "displayProgress: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/android/phone/ADNList;->log(Ljava/lang/String;)V
-
     .line 307
     iget-object v1, p0, Lcom/android/phone/ADNList;->mEmptyText:Landroid/widget/TextView;
 
@@ -249,13 +228,8 @@
 
     move-result-object v2
 
-    .line 200
-    .local v2, uri:Landroid/net/Uri;
-    const-string v0, "query: starting an async query"
-
-    invoke-virtual {p0, v0}, Lcom/android/phone/ADNList;->log(Ljava/lang/String;)V
-
     .line 202
+    .local v2, uri:Landroid/net/Uri;
     iget-object v0, p0, Lcom/android/phone/ADNList;->mQueryHandler:Lcom/android/phone/ADNList$QueryHandler;
 
     const/4 v1, 0x0

@@ -32,7 +32,7 @@
 
     .prologue
     .line 762
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,7 +46,7 @@
 
     .prologue
     .line 763
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 764
     iput p1, p0, Landroid/webkit/WebViewCore$CursorData;->mFrame:I

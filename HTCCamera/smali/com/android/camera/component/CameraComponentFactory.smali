@@ -267,7 +267,7 @@
 
     .prologue
     .line 67
-    iget-object v8, p0, Lcom/android/camera/component/CameraComponentFactory;->TAG:Ljava/lang/String;
+    iget-object v8, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v9, "createAllSupportedComponents() - start"
 
@@ -387,7 +387,7 @@
     .line 95
     .local v3, ex:Ljava/lang/Exception;
     :try_start_2
-    iget-object v8, p0, Lcom/android/camera/component/CameraComponentFactory;->TAG:Ljava/lang/String;
+    iget-object v8, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v10, Ljava/lang/StringBuilder;
 
@@ -440,7 +440,7 @@
     if-nez v8, :cond_2
 
     .line 103
-    iget-object v8, p0, Lcom/android/camera/component/CameraComponentFactory;->TAG:Ljava/lang/String;
+    iget-object v8, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v10, Ljava/lang/StringBuilder;
 
@@ -535,7 +535,7 @@
     sub-long v6, v8, v6
 
     .line 118
-    iget-object v8, p0, Lcom/android/camera/component/CameraComponentFactory;->TAG:Ljava/lang/String;
+    iget-object v8, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v9, Ljava/lang/StringBuilder;
 

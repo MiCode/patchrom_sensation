@@ -245,11 +245,11 @@
 
     .line 188
     .local v2, right:I
-    iget v5, p0, Landroid/widget/CheckedTextView;->mPaddingRight:I
+    iget v5, p0, Landroid/widget/TextView;->mPaddingRight:I
 
     sub-int v5, v2, v5
 
-    iget v6, p0, Landroid/widget/CheckedTextView;->mPaddingRight:I
+    iget v6, p0, Landroid/widget/TextView;->mPaddingRight:I
 
     sub-int v6, v2, v6
 
@@ -360,7 +360,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/widget/CheckedTextView;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
 
     const v2, 0x1040486
 
@@ -380,7 +380,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/widget/CheckedTextView;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
 
     const v2, 0x1040487
 
@@ -418,7 +418,7 @@
     :goto_0
     iget-boolean v3, p0, Landroid/widget/CheckedTextView;->mNeedRequestlayout:Z
 
-    iget v1, p0, Landroid/widget/CheckedTextView;->mPaddingRight:I
+    iget v1, p0, Landroid/widget/TextView;->mPaddingRight:I
 
     if-eq v1, v0, :cond_2
 
@@ -430,7 +430,7 @@
     iput-boolean v1, p0, Landroid/widget/CheckedTextView;->mNeedRequestlayout:Z
 
     .line 154
-    iput v0, p0, Landroid/widget/CheckedTextView;->mPaddingRight:I
+    iput v0, p0, Landroid/widget/TextView;->mPaddingRight:I
 
     .line 155
     iget-boolean v1, p0, Landroid/widget/CheckedTextView;->mNeedRequestlayout:Z
@@ -650,7 +650,7 @@
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 164
-    iget v0, p0, Landroid/widget/CheckedTextView;->mPaddingRight:I
+    iget v0, p0, Landroid/widget/TextView;->mPaddingRight:I
 
     iput v0, p0, Landroid/widget/CheckedTextView;->mBasePadding:I
 

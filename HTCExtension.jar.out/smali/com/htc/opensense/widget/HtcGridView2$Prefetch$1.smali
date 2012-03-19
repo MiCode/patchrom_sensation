@@ -30,7 +30,7 @@
     .line 4000
     iput-object p1, p0, Lcom/htc/opensense/widget/HtcGridView2$Prefetch$1;->this$0:Lcom/htc/opensense/widget/HtcGridView2$Prefetch;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

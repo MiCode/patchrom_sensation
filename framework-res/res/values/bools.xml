@@ -13,7 +13,7 @@
     <bool name="config_closeDialogWhenTouchOutside">true</bool>
     <bool name="config_wifi_dual_band_support">false</bool>
     <bool name="config_wifi_p2p_support">false</bool>
-    <bool name="config_wifi_background_scan_support">false</bool>
+    <bool name="config_wifi_background_scan_support">true</bool>
     <bool name="config_bypass_keyguard_if_slider_open">true</bool>
     <bool name="config_automatic_brightness_available">true</bool>
     <bool name="config_annoy_dianne">true</bool>

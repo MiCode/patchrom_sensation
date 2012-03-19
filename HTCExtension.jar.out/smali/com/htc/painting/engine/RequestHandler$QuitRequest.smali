@@ -33,7 +33,7 @@
     .line 76
     iput-object p1, p0, Lcom/htc/painting/engine/RequestHandler$QuitRequest;->this$0:Lcom/htc/painting/engine/RequestHandler;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 77
     iput-object p2, p0, Lcom/htc/painting/engine/RequestHandler$QuitRequest;->mHandler:Landroid/os/Handler;

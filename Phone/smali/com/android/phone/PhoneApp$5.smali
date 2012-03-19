@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 6026
+    .line 6032
     iput-object p1, p0, Lcom/android/phone/PhoneApp$5;->this$0:Lcom/android/phone/PhoneApp;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -38,14 +38,14 @@
 
 # virtual methods
 .method public run()V
-    .locals 8
+    .locals 9
 
     .prologue
     const/4 v2, 0x0
 
     const/4 v1, 0x1
 
-    .line 6028
+    .line 6034
     const-string v0, "com.android.mms"
 
     invoke-static {v0}, Lcom/android/phone/util/CbsUtils;->checkPackageInstalled(Ljava/lang/String;)Z
@@ -54,21 +54,25 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 6029
+    .line 6037
+    :try_start_0
     invoke-static {}, Lcom/android/phone/util/CbsUtils;->queryCmasSupportStatus()V
 
-    .line 6030
+    .line 6038
     invoke-static {}, Lcom/android/phone/util/CbsUtils;->initializeDefaultChList()V
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 6034
+    .line 6047
     :cond_0
+    :goto_0
     const-string v0, "PhoneApp"
 
     const-string v3, "phone init, start to query, CB db"
 
     invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6035
+    .line 6048
     iget-object v0, p0, Lcom/android/phone/PhoneApp$5;->this$0:Lcom/android/phone/PhoneApp;
 
     #getter for: Lcom/android/phone/PhoneApp;->mCbQueryHandler:Lcom/android/phone/PhoneApp$CbQueryHandler;
@@ -111,6 +115,40 @@
 
     invoke-virtual/range {v0 .. v7}, Lcom/android/phone/PhoneApp$CbQueryHandler;->startQuery(ILjava/lang/Object;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6038
+    .line 6051
     return-void
+
+    .line 6039
+    :catch_0
+    move-exception v8
+
+    .line 6040
+    .local v8, e:Ljava/lang/IllegalArgumentException;
+    const-string v0, "PhoneApp"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Exception: CbsUtils.queryCmasSupport/initializeDefaultChList,"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v8}, Ljava/lang/IllegalArgumentException;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method

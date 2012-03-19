@@ -50,7 +50,7 @@
 
     .prologue
     .line 54
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 55
     if-eqz p1, :cond_0
@@ -94,7 +94,7 @@
 
     .prologue
     .line 40
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 41
     iput-object p1, p0, Landroid/net/ProxyProperties;->mHost:Ljava/lang/String;
@@ -118,7 +118,7 @@
 
     .prologue
     .line 46
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
     iput-object p1, p0, Landroid/net/ProxyProperties;->mHost:Ljava/lang/String;

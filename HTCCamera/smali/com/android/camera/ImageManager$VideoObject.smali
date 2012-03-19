@@ -199,7 +199,7 @@
     .prologue
     .line 4315
     :try_start_0
-    iget-object v2, p0, Lcom/android/camera/ImageManager$VideoObject;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v2, p0, Lcom/android/camera/ImageManager$BaseImage;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {p0}, Lcom/android/camera/ImageManager$VideoObject;->fullSizeImageUri()Landroid/net/Uri;
 
@@ -231,7 +231,7 @@
 
     .prologue
     .line 4327
-    iget-wide v0, p0, Lcom/android/camera/ImageManager$VideoObject;->mId:J
+    iget-wide v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mId:J
 
     return-wide v0
 .end method
@@ -241,7 +241,7 @@
 
     .prologue
     .line 4331
-    iget-object v0, p0, Lcom/android/camera/ImageManager$VideoObject;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
 
     check-cast v0, Lcom/android/camera/ImageManager$VideoList;
 
@@ -259,7 +259,7 @@
 
     .prologue
     .line 4296
-    iget-object v0, p0, Lcom/android/camera/ImageManager$VideoObject;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
 
     check-cast v0, Lcom/android/camera/ImageManager$VideoList;
 
@@ -409,7 +409,7 @@
 
     .prologue
     .line 4335
-    iget-object v0, p0, Lcom/android/camera/ImageManager$VideoObject;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
 
     check-cast v0, Lcom/android/camera/ImageManager$VideoList;
 
@@ -427,7 +427,7 @@
 
     .prologue
     .line 4451
-    iget-object v0, p0, Lcom/android/camera/ImageManager$VideoObject;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
 
     check-cast v0, Lcom/android/camera/ImageManager$VideoList;
 
@@ -455,7 +455,7 @@
 
     .prologue
     .line 4354
-    iget-object v0, p0, Lcom/android/camera/ImageManager$VideoObject;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
 
     check-cast v0, Lcom/android/camera/ImageManager$VideoList;
 
@@ -605,7 +605,7 @@
 
     .prologue
     .line 4397
-    iget-wide v0, p0, Lcom/android/camera/ImageManager$VideoObject;->mId:J
+    iget-wide v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mId:J
 
     return-wide v0
 .end method
@@ -665,7 +665,7 @@
 
     move-result-object v1
 
-    iget-wide v2, p0, Lcom/android/camera/ImageManager$VideoObject;->mId:J
+    iget-wide v2, p0, Lcom/android/camera/ImageManager$BaseImage;->mId:J
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 

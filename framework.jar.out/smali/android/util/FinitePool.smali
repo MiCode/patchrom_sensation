@@ -64,7 +64,7 @@
     .line 47
     .local p0, this:Landroid/util/FinitePool;,"Landroid/util/FinitePool<TT;>;"
     .local p1, manager:Landroid/util/PoolableManager;,"Landroid/util/PoolableManager<TT;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 48
     iput-object p1, p0, Landroid/util/FinitePool;->mManager:Landroid/util/PoolableManager;
@@ -99,7 +99,7 @@
     .line 53
     .local p0, this:Landroid/util/FinitePool;,"Landroid/util/FinitePool<TT;>;"
     .local p1, manager:Landroid/util/PoolableManager;,"Landroid/util/PoolableManager<TT;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
     if-gtz p2, :cond_0

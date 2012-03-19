@@ -32,8 +32,8 @@
     .locals 0
 
     .prologue
-    .line 247
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 305
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,7 +45,7 @@
     .parameter "parcel"
 
     .prologue
-    .line 249
+    .line 307
     new-instance v0, Lcom/htc/lockscreen/ntf/HtcLSNotification;
 
     invoke-direct {v0, p1}, Lcom/htc/lockscreen/ntf/HtcLSNotification;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 247
+    .line 305
     invoke-virtual {p0, p1}, Lcom/htc/lockscreen/ntf/HtcLSNotification$1;->createFromParcel(Landroid/os/Parcel;)Lcom/htc/lockscreen/ntf/HtcLSNotification;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .parameter "size"
 
     .prologue
-    .line 253
+    .line 311
     new-array v0, p1, [Lcom/htc/lockscreen/ntf/HtcLSNotification;
 
     return-object v0
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 247
+    .line 305
     invoke-virtual {p0, p1}, Lcom/htc/lockscreen/ntf/HtcLSNotification$1;->newArray(I)[Lcom/htc/lockscreen/ntf/HtcLSNotification;
 
     move-result-object v0

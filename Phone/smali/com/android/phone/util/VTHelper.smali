@@ -27,7 +27,7 @@
 
     .prologue
     .line 45
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 154
     return-void
@@ -78,7 +78,7 @@
 .end method
 
 .method public static getVTCall(Lcom/android/internal/telephony/CallManager;)Lcom/android/internal/telephony/Call;
-    .locals 5
+    .locals 4
     .parameter "cm"
 
     .prologue
@@ -115,13 +115,6 @@
 
     if-nez v3, :cond_0
 
-    .line 288
-    const-string v3, "VTHelper"
-
-    const-string v4, "getVTCall: ringing call"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 307
     .end local v2           #ringing:Lcom/android/internal/telephony/Call;
     :goto_0
@@ -144,13 +137,6 @@
 
     if-nez v3, :cond_1
 
-    .line 295
-    const-string v3, "VTHelper"
-
-    const-string v4, "getVTCall: foreground call"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     move-object v2, v1
 
     .line 296
@@ -172,27 +158,13 @@
 
     if-nez v3, :cond_2
 
-    .line 302
-    const-string v3, "VTHelper"
-
-    const-string v4, "getVTCall: background call"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     move-object v2, v0
 
     .line 303
     goto :goto_0
 
-    .line 306
-    :cond_2
-    const-string v3, "VTHelper"
-
-    const-string v4, "getVTCall: no active video call"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 307
+    :cond_2
     const/4 v2, 0x0
 
     goto :goto_0

@@ -382,7 +382,7 @@
     const/4 v2, 0x0
 
     .local v2, i:I
-    iget-object v4, p0, Lcom/htc/util/mail/mimemessage/MimeMultipart;->mParts:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/mail/mimemessage/Multipart;->mParts:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
@@ -393,7 +393,7 @@
     if-ge v2, v1, :cond_1
 
     .line 88
-    iget-object v4, p0, Lcom/htc/util/mail/mimemessage/MimeMultipart;->mParts:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/mail/mimemessage/Multipart;->mParts:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 

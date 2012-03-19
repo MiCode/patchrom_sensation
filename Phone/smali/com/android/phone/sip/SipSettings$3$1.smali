@@ -35,7 +35,7 @@
 
     iput-boolean p2, p0, Lcom/android/phone/sip/SipSettings$3$1;->val$enabled:Z
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

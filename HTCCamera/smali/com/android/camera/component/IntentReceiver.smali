@@ -69,7 +69,7 @@
     packed-switch p4, :pswitch_data_0
 
     .line 77
-    iget-object v2, p0, Lcom/android/camera/component/IntentReceiver;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -137,7 +137,7 @@
     packed-switch p5, :pswitch_data_1
 
     .line 110
-    iget-object v2, p0, Lcom/android/camera/component/IntentReceiver;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -196,7 +196,7 @@
     .line 70
     .end local v1           #eventName:Ljava/lang/String;
     :pswitch_2
-    iget-object v2, p0, Lcom/android/camera/component/IntentReceiver;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v3, "Intent receiver will be registered when activity is pausing"
 
@@ -220,7 +220,7 @@
 
     .line 96
     :pswitch_4
-    iget-object v2, p0, Lcom/android/camera/component/IntentReceiver;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v3, "Intent receiver will be unregistered when activity is resuming"
 
@@ -246,7 +246,7 @@
 
     .line 100
     :pswitch_5
-    iget-object v2, p0, Lcom/android/camera/component/IntentReceiver;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v3, "Intent receiver will be unregistered when preview is started"
 
@@ -297,7 +297,7 @@
 
     .prologue
     .line 14
-    iget-object v0, p0, Lcom/android/camera/component/IntentReceiver;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -308,7 +308,7 @@
 
     .prologue
     .line 14
-    iget-object v0, p0, Lcom/android/camera/component/IntentReceiver;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method

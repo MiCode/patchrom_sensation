@@ -56,7 +56,7 @@
     iput-boolean v2, p0, Lcom/scalado/caps/filter/photoart/ColorSwap;->swapLuminance:Z
 
     .line 36
-    iget-object v0, p0, Lcom/scalado/caps/filter/photoart/ColorSwap;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -211,7 +211,7 @@
 
     .prologue
     .line 149
-    iget-object v0, p0, Lcom/scalado/caps/filter/photoart/ColorSwap;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -233,7 +233,7 @@
 
     .prologue
     .line 70
-    iget-boolean v0, p0, Lcom/scalado/caps/filter/photoart/ColorSwap;->isCommitted:Z
+    iget-boolean v0, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v0, :cond_0
 
@@ -262,7 +262,7 @@
 
     .line 77
     :cond_2
-    iget-object v0, p0, Lcom/scalado/caps/filter/photoart/ColorSwap;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -288,7 +288,7 @@
     .local v7, error:I
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/scalado/caps/filter/photoart/ColorSwap;->isSet:Z
+    iput-boolean v0, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 80
     iput-object p1, p0, Lcom/scalado/caps/filter/photoart/ColorSwap;->srcColor:Lcom/scalado/base/Color;

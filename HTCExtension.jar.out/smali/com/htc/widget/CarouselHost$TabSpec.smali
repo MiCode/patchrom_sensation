@@ -34,7 +34,7 @@
     .line 728
     iput-object p1, p0, Lcom/htc/widget/CarouselHost$TabSpec;->this$0:Lcom/htc/widget/CarouselHost;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 729
     iput-object p2, p0, Lcom/htc/widget/CarouselHost$TabSpec;->mTag:Ljava/lang/String;

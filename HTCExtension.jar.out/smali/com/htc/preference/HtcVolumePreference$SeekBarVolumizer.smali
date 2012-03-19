@@ -109,7 +109,7 @@
     .line 420
     iput-object p1, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->this$0:Lcom/htc/preference/HtcVolumePreference;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 264
     const/4 v1, 0x0
@@ -764,17 +764,17 @@
     .locals 1
 
     .prologue
-    .line 589
+    .line 598
     iget-object v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->this$0:Lcom/htc/preference/HtcVolumePreference;
 
     invoke-virtual {v0, p0}, Lcom/htc/preference/HtcVolumePreference;->onSampleStarting(Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;)V
 
-    .line 590
+    .line 599
     iget-object v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mRingtone:Landroid/media/Ringtone;
 
     invoke-virtual {v0}, Landroid/media/Ringtone;->play()V
 
-    .line 591
+    .line 600
     return-void
 .end method
 
@@ -785,15 +785,15 @@
     .parameter "amount"
 
     .prologue
-    .line 610
+    .line 619
     invoke-direct {p0}, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->requestAudioFocus()V
 
-    .line 612
+    .line 621
     iget-object v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mSeekBar:Landroid/widget/SeekBar;
 
     invoke-virtual {v0, p1}, Landroid/widget/SeekBar;->incrementProgressBy(I)V
 
-    .line 614
+    .line 623
     iget-object v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mSeekBar:Landroid/widget/SeekBar;
 
     invoke-virtual {v0}, Landroid/widget/SeekBar;->getProgress()I
@@ -802,7 +802,7 @@
 
     invoke-virtual {p0, v0}, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->updateSlientSetting(I)V
 
-    .line 616
+    .line 625
     iget-object v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mRingtone:Landroid/media/Ringtone;
 
     if-eqz v0, :cond_0
@@ -815,10 +815,10 @@
 
     if-nez v0, :cond_0
 
-    .line 617
+    .line 626
     invoke-direct {p0}, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->sample()V
 
-    .line 619
+    .line 628
     :cond_0
     iget-object v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mSeekBar:Landroid/widget/SeekBar;
 
@@ -828,12 +828,12 @@
 
     invoke-virtual {p0, v0}, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->postSetVolume(I)V
 
-    .line 620
+    .line 629
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mVolumeBeforeMute:I
 
-    .line 621
+    .line 630
     return-void
 .end method
 
@@ -841,7 +841,7 @@
     .locals 1
 
     .prologue
-    .line 600
+    .line 609
     iget-object v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mSeekBar:Landroid/widget/SeekBar;
 
     return-object v0
@@ -855,34 +855,34 @@
 
     const/4 v2, -0x1
 
-    .line 624
+    .line 633
     iget v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mVolumeBeforeMute:I
 
     if-eq v0, v2, :cond_0
 
-    .line 625
+    .line 634
     iget-object v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mSeekBar:Landroid/widget/SeekBar;
 
     iget v1, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mVolumeBeforeMute:I
 
     invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->setProgress(I)V
 
-    .line 626
+    .line 635
     invoke-direct {p0}, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->sample()V
 
-    .line 627
+    .line 636
     iget v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mVolumeBeforeMute:I
 
     invoke-virtual {p0, v0}, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->postSetVolume(I)V
 
-    .line 628
+    .line 637
     iput v2, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mVolumeBeforeMute:I
 
-    .line 635
+    .line 644
     :goto_0
     return-void
 
-    .line 630
+    .line 639
     :cond_0
     iget-object v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mSeekBar:Landroid/widget/SeekBar;
 
@@ -892,15 +892,15 @@
 
     iput v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mVolumeBeforeMute:I
 
-    .line 631
+    .line 640
     iget-object v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mSeekBar:Landroid/widget/SeekBar;
 
     invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->setProgress(I)V
 
-    .line 632
+    .line 641
     invoke-virtual {p0}, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->stopSample()V
 
-    .line 633
+    .line 642
     invoke-virtual {p0, v1}, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->postSetVolume(I)V
 
     goto :goto_0
@@ -988,30 +988,30 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 645
+    .line 654
     iget v0, p1, Lcom/htc/preference/HtcVolumePreference$VolumeStore;->volume:I
 
     if-eq v0, v1, :cond_0
 
-    .line 646
+    .line 655
     iget v0, p1, Lcom/htc/preference/HtcVolumePreference$VolumeStore;->originalVolume:I
 
     iput v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mOriginalStreamVolume:I
 
-    .line 647
+    .line 656
     iget v0, p1, Lcom/htc/preference/HtcVolumePreference$VolumeStore;->volume:I
 
     iput v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mLastProgress:I
 
-    .line 648
+    .line 657
     iget v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mLastProgress:I
 
     invoke-virtual {p0, v0}, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->postSetVolume(I)V
 
-    .line 653
+    .line 662
     iput v1, p1, Lcom/htc/preference/HtcVolumePreference$VolumeStore;->volume:I
 
-    .line 655
+    .line 664
     :cond_0
     return-void
 .end method
@@ -1021,22 +1021,22 @@
     .parameter "volumeStore"
 
     .prologue
-    .line 637
+    .line 646
     iget v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mLastProgress:I
 
     if-ltz v0, :cond_0
 
-    .line 638
+    .line 647
     iget v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mLastProgress:I
 
     iput v0, p1, Lcom/htc/preference/HtcVolumePreference$VolumeStore;->volume:I
 
-    .line 639
+    .line 648
     iget v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mOriginalStreamVolume:I
 
     iput v0, p1, Lcom/htc/preference/HtcVolumePreference$VolumeStore;->originalVolume:I
 
-    .line 641
+    .line 650
     :cond_0
     return-void
 .end method
@@ -1207,25 +1207,66 @@
     .locals 4
 
     .prologue
+    const/4 v2, 0x5
+
+    const/4 v3, 0x0
+
     .line 584
+    iget v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->sStreamType:I
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_0
+
+    iget v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->sStreamType:I
+
+    if-ne v0, v2, :cond_2
+
+    iget-object v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->this$0:Lcom/htc/preference/HtcVolumePreference;
+
+    #getter for: Lcom/htc/preference/HtcVolumePreference;->mVoiceCapable:Z
+    invoke-static {v0}, Lcom/htc/preference/HtcVolumePreference;->access$1100(Lcom/htc/preference/HtcVolumePreference;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    .line 586
+    :cond_0
     iget v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mLastProgress:I
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 585
+    .line 587
     iget-object v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mAudioManager:Landroid/media/AudioManager;
 
     iget v1, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->sStreamType:I
 
     iget v2, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mLastProgress:I
 
-    const/4 v3, 0x0
+    invoke-virtual {v0, v1, v2, v3}, Landroid/media/AudioManager;->setStreamVolume(III)V
+
+    .line 595
+    :cond_1
+    :goto_0
+    return-void
+
+    .line 589
+    :cond_2
+    iget v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->sStreamType:I
+
+    if-eq v0, v2, :cond_1
+
+    .line 590
+    iget-object v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mAudioManager:Landroid/media/AudioManager;
+
+    iget v1, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->sStreamType:I
+
+    iget v2, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mLastProgress:I
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/media/AudioManager;->setStreamVolume(III)V
 
-    .line 586
-    :cond_0
-    return-void
+    goto :goto_0
 .end method
 
 .method public stop()V
@@ -1271,17 +1312,17 @@
     .locals 1
 
     .prologue
-    .line 594
+    .line 603
     iget-object v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mRingtone:Landroid/media/Ringtone;
 
     if-eqz v0, :cond_0
 
-    .line 595
+    .line 604
     iget-object v0, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mRingtone:Landroid/media/Ringtone;
 
     invoke-virtual {v0}, Landroid/media/Ringtone;->stop()V
 
-    .line 597
+    .line 606
     :cond_0
     return-void
 .end method
@@ -1295,10 +1336,10 @@
 
     const/4 v6, 0x2
 
-    .line 659
+    .line 668
     const/4 v0, 0x3
 
-    .line 662
+    .line 671
     .local v0, RINGER_MODE_OUTDOOR:I
     invoke-static {}, Lcom/htc/preference/HtcVolumePreference;->access$1000()Z
 
@@ -1306,7 +1347,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 663
+    .line 672
     iget-object v3, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->LOG_TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1341,7 +1382,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 666
+    .line 675
     :cond_0
     iget v3, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->sStreamType:I
 
@@ -1367,12 +1408,12 @@
 
     if-eqz v3, :cond_3
 
-    .line 731
+    .line 740
     :cond_2
     :goto_0
     return-void
 
-    .line 668
+    .line 677
     :cond_3
     iget-object v3, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mAudioManager:Landroid/media/AudioManager;
 
@@ -1380,28 +1421,28 @@
 
     move-result v1
 
-    .line 671
+    .line 680
     .local v1, currentSlientSetting:I
     packed-switch v1, :pswitch_data_0
 
     goto :goto_0
 
-    .line 692
+    .line 701
     :pswitch_0
     if-lez p1, :cond_5
 
-    .line 697
+    .line 706
     iget-object v3, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mAudioManager:Landroid/media/AudioManager;
 
     invoke-virtual {v3, v6}, Landroid/media/AudioManager;->setRingerMode(I)V
 
     goto :goto_0
 
-    .line 673
+    .line 682
     :pswitch_1
     if-nez p1, :cond_4
 
-    .line 678
+    .line 687
     iget-object v3, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mAudioManager:Landroid/media/AudioManager;
 
     const/4 v4, 0x0
@@ -1410,7 +1451,7 @@
 
     goto :goto_0
 
-    .line 682
+    .line 691
     :cond_4
     sget-short v3, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
@@ -1428,26 +1469,26 @@
 
     if-lt p1, v3, :cond_2
 
-    .line 686
+    .line 695
     iget-object v3, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mAudioManager:Landroid/media/AudioManager;
 
     invoke-virtual {v3, v7}, Landroid/media/AudioManager;->setRingerMode(I)V
 
     goto :goto_0
 
-    .line 700
+    .line 709
     :cond_5
     new-instance v2, Landroid/os/Vibrator;
 
     invoke-direct {v2}, Landroid/os/Vibrator;-><init>()V
 
-    .line 701
+    .line 710
     .local v2, vibrator:Landroid/os/Vibrator;
     const-wide/16 v3, 0x12c
 
     invoke-virtual {v2, v3, v4}, Landroid/os/Vibrator;->vibrate(J)V
 
-    .line 706
+    .line 715
     iget-object v3, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mAudioManager:Landroid/media/AudioManager;
 
     const/4 v4, 0x1
@@ -1456,19 +1497,19 @@
 
     goto :goto_0
 
-    .line 710
+    .line 719
     .end local v2           #vibrator:Landroid/os/Vibrator;
     :pswitch_2
     if-lez p1, :cond_2
 
-    .line 715
+    .line 724
     iget-object v3, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mAudioManager:Landroid/media/AudioManager;
 
     invoke-virtual {v3, v6}, Landroid/media/AudioManager;->setRingerMode(I)V
 
     goto :goto_0
 
-    .line 721
+    .line 730
     :pswitch_3
     iget-object v3, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mAudioManager:Landroid/media/AudioManager;
 
@@ -1480,14 +1521,14 @@
 
     if-ge p1, v3, :cond_2
 
-    .line 724
+    .line 733
     iget-object v3, p0, Lcom/htc/preference/HtcVolumePreference$SeekBarVolumizer;->mAudioManager:Landroid/media/AudioManager;
 
     invoke-virtual {v3, v6}, Landroid/media/AudioManager;->setRingerMode(I)V
 
     goto :goto_0
 
-    .line 671
+    .line 680
     nop
 
     :pswitch_data_0

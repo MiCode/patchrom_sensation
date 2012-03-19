@@ -40,7 +40,7 @@
     .line 429
     iput-object p1, p0, Lcom/htc/widget/MoreExpandableHtcListView$RresetFooterHeightRunnable;->this$0:Lcom/htc/widget/MoreExpandableHtcListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 433
     const/4 v0, 0x0

@@ -46,36 +46,36 @@
     .parameter "selection"
 
     .prologue
-    .line 10446
+    .line 10465
     iput-object p1, p0, Landroid/webkit/WebView$InvokeListBox;->this$0:Landroid/webkit/WebView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 10447
+    .line 10466
     iput p4, p0, Landroid/webkit/WebView$InvokeListBox;->mSelection:I
 
-    .line 10448
+    .line 10467
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Landroid/webkit/WebView$InvokeListBox;->mMultiple:Z
 
-    .line 10450
+    .line 10469
     array-length v1, p2
 
-    .line 10451
+    .line 10470
     .local v1, length:I
     new-array v2, v1, [Landroid/webkit/WebView$InvokeListBox$Container;
 
     iput-object v2, p0, Landroid/webkit/WebView$InvokeListBox;->mContainers:[Landroid/webkit/WebView$InvokeListBox$Container;
 
-    .line 10452
+    .line 10471
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 10453
+    .line 10472
     iget-object v2, p0, Landroid/webkit/WebView$InvokeListBox;->mContainers:[Landroid/webkit/WebView$InvokeListBox$Container;
 
     new-instance v3, Landroid/webkit/WebView$InvokeListBox$Container;
@@ -86,7 +86,7 @@
 
     aput-object v3, v2, v0
 
-    .line 10454
+    .line 10473
     iget-object v2, p0, Landroid/webkit/WebView$InvokeListBox;->mContainers:[Landroid/webkit/WebView$InvokeListBox$Container;
 
     aget-object v2, v2, v0
@@ -95,7 +95,7 @@
 
     iput-object v3, v2, Landroid/webkit/WebView$InvokeListBox$Container;->mString:Ljava/lang/String;
 
-    .line 10455
+    .line 10474
     iget-object v2, p0, Landroid/webkit/WebView$InvokeListBox;->mContainers:[Landroid/webkit/WebView$InvokeListBox$Container;
 
     aget-object v2, v2, v0
@@ -104,19 +104,19 @@
 
     iput v3, v2, Landroid/webkit/WebView$InvokeListBox$Container;->mEnabled:I
 
-    .line 10456
+    .line 10475
     iget-object v2, p0, Landroid/webkit/WebView$InvokeListBox;->mContainers:[Landroid/webkit/WebView$InvokeListBox$Container;
 
     aget-object v2, v2, v0
 
     iput v0, v2, Landroid/webkit/WebView$InvokeListBox$Container;->mId:I
 
-    .line 10452
+    .line 10471
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 10458
+    .line 10477
     :cond_0
     return-void
 .end method
@@ -130,7 +130,7 @@
     .parameter "x4"
 
     .prologue
-    .line 10294
+    .line 10313
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/webkit/WebView$InvokeListBox;-><init>(Landroid/webkit/WebView;[Ljava/lang/String;[II)V
 
     return-void
@@ -144,36 +144,36 @@
     .parameter "selected"
 
     .prologue
-    .line 10432
+    .line 10451
     iput-object p1, p0, Landroid/webkit/WebView$InvokeListBox;->this$0:Landroid/webkit/WebView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 10433
+    .line 10452
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Landroid/webkit/WebView$InvokeListBox;->mMultiple:Z
 
-    .line 10434
+    .line 10453
     iput-object p4, p0, Landroid/webkit/WebView$InvokeListBox;->mSelectedArray:[I
 
-    .line 10436
+    .line 10455
     array-length v1, p2
 
-    .line 10437
+    .line 10456
     .local v1, length:I
     new-array v2, v1, [Landroid/webkit/WebView$InvokeListBox$Container;
 
     iput-object v2, p0, Landroid/webkit/WebView$InvokeListBox;->mContainers:[Landroid/webkit/WebView$InvokeListBox$Container;
 
-    .line 10438
+    .line 10457
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 10439
+    .line 10458
     iget-object v2, p0, Landroid/webkit/WebView$InvokeListBox;->mContainers:[Landroid/webkit/WebView$InvokeListBox$Container;
 
     new-instance v3, Landroid/webkit/WebView$InvokeListBox$Container;
@@ -184,7 +184,7 @@
 
     aput-object v3, v2, v0
 
-    .line 10440
+    .line 10459
     iget-object v2, p0, Landroid/webkit/WebView$InvokeListBox;->mContainers:[Landroid/webkit/WebView$InvokeListBox$Container;
 
     aget-object v2, v2, v0
@@ -193,7 +193,7 @@
 
     iput-object v3, v2, Landroid/webkit/WebView$InvokeListBox$Container;->mString:Ljava/lang/String;
 
-    .line 10441
+    .line 10460
     iget-object v2, p0, Landroid/webkit/WebView$InvokeListBox;->mContainers:[Landroid/webkit/WebView$InvokeListBox$Container;
 
     aget-object v2, v2, v0
@@ -202,19 +202,19 @@
 
     iput v3, v2, Landroid/webkit/WebView$InvokeListBox$Container;->mEnabled:I
 
-    .line 10442
+    .line 10461
     iget-object v2, p0, Landroid/webkit/WebView$InvokeListBox;->mContainers:[Landroid/webkit/WebView$InvokeListBox$Container;
 
     aget-object v2, v2, v0
 
     iput v0, v2, Landroid/webkit/WebView$InvokeListBox$Container;->mId:I
 
-    .line 10438
+    .line 10457
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 10444
+    .line 10463
     :cond_0
     return-void
 .end method
@@ -228,7 +228,7 @@
     .parameter "x4"
 
     .prologue
-    .line 10294
+    .line 10313
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/webkit/WebView$InvokeListBox;-><init>(Landroid/webkit/WebView;[Ljava/lang/String;[I[I)V
 
     return-void
@@ -239,7 +239,7 @@
     .parameter "x0"
 
     .prologue
-    .line 10294
+    .line 10313
     iget-boolean v0, p0, Landroid/webkit/WebView$InvokeListBox;->mMultiple:Z
 
     return v0
@@ -250,7 +250,7 @@
     .parameter "x0"
 
     .prologue
-    .line 10294
+    .line 10313
     iget-object v0, p0, Landroid/webkit/WebView$InvokeListBox;->mContainers:[Landroid/webkit/WebView$InvokeListBox$Container;
 
     return-object v0
@@ -264,7 +264,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 10505
+    .line 10524
     iget-object v1, p0, Landroid/webkit/WebView$InvokeListBox;->this$0:Landroid/webkit/WebView;
 
     #getter for: Landroid/webkit/WebView;->mContext:Landroid/content/Context;
@@ -286,17 +286,17 @@
 
     check-cast v4, Landroid/widget/ListView;
 
-    .line 10510
+    .line 10529
     .local v4, listView:Landroid/widget/ListView;
     new-instance v5, Landroid/webkit/WebView$InvokeListBox$MyArrayListAdapter;
 
     invoke-direct {v5, p0}, Landroid/webkit/WebView$InvokeListBox$MyArrayListAdapter;-><init>(Landroid/webkit/WebView$InvokeListBox;)V
 
-    .line 10513
+    .line 10532
     .local v5, adapter:Landroid/webkit/WebView$InvokeListBox$MyArrayListAdapter;
     const/4 v7, 0x0
 
-    .line 10514
+    .line 10533
     .local v7, ctx:Landroid/content/Context;
     iget-object v1, p0, Landroid/webkit/WebView$InvokeListBox;->this$0:Landroid/webkit/WebView;
 
@@ -304,14 +304,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 10515
+    .line 10534
     iget-object v1, p0, Landroid/webkit/WebView$InvokeListBox;->this$0:Landroid/webkit/WebView;
 
     iget-object v1, v1, Landroid/webkit/WebView;->ownerActivityContext:Ljava/lang/ref/WeakReference;
 
     if-eqz v1, :cond_0
 
-    .line 10516
+    .line 10535
     iget-object v1, p0, Landroid/webkit/WebView$InvokeListBox;->this$0:Landroid/webkit/WebView;
 
     iget-object v1, v1, Landroid/webkit/WebView;->ownerActivityContext:Ljava/lang/ref/WeakReference;
@@ -323,12 +323,12 @@
     .end local v7           #ctx:Landroid/content/Context;
     check-cast v7, Landroid/content/Context;
 
-    .line 10518
+    .line 10537
     .restart local v7       #ctx:Landroid/content/Context;
     :cond_0
     if-nez v7, :cond_1
 
-    .line 10519
+    .line 10538
     iget-object v1, p0, Landroid/webkit/WebView$InvokeListBox;->this$0:Landroid/webkit/WebView;
 
     #getter for: Landroid/webkit/WebView;->mContext:Landroid/content/Context;
@@ -336,7 +336,7 @@
 
     move-result-object v7
 
-    .line 10523
+    .line 10542
     :cond_1
     new-instance v1, Lcom/htc/dialog/HtcAlertDialog$Builder;
 
@@ -354,13 +354,13 @@
 
     move-result-object v6
 
-    .line 10529
+    .line 10548
     .local v6, b:Lcom/htc/dialog/HtcAlertDialog$Builder;
     iget-boolean v1, p0, Landroid/webkit/WebView$InvokeListBox;->mMultiple:Z
 
     if-eqz v1, :cond_2
 
-    .line 10530
+    .line 10549
     const v1, 0x104000a
 
     new-instance v3, Landroid/webkit/WebView$InvokeListBox$1;
@@ -369,7 +369,7 @@
 
     invoke-virtual {v6, v1, v3}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/htc/dialog/HtcAlertDialog$Builder;
 
-    .line 10537
+    .line 10556
     const/high16 v1, 0x104
 
     new-instance v3, Landroid/webkit/WebView$InvokeListBox$2;
@@ -378,7 +378,7 @@
 
     invoke-virtual {v6, v1, v3}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/htc/dialog/HtcAlertDialog$Builder;
 
-    .line 10544
+    .line 10563
     :cond_2
     iget-object v1, p0, Landroid/webkit/WebView$InvokeListBox;->this$0:Landroid/webkit/WebView;
 
@@ -389,13 +389,13 @@
     #setter for: Landroid/webkit/WebView;->mListBoxDialog:Lcom/htc/dialog/HtcAlertDialog;
     invoke-static {v1, v3}, Landroid/webkit/WebView;->access$11402(Landroid/webkit/WebView;Lcom/htc/dialog/HtcAlertDialog;)Lcom/htc/dialog/HtcAlertDialog;
 
-    .line 10545
+    .line 10564
     invoke-virtual {v4, v5}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 10546
+    .line 10565
     invoke-virtual {v4, v2}, Landroid/widget/ListView;->setFocusableInTouchMode(Z)V
 
-    .line 10553
+    .line 10572
     iget-boolean v1, p0, Landroid/webkit/WebView$InvokeListBox;->mMultiple:Z
 
     if-nez v1, :cond_3
@@ -405,22 +405,22 @@
     :goto_0
     invoke-virtual {v4, v1}, Landroid/widget/ListView;->setTextFilterEnabled(Z)V
 
-    .line 10554
+    .line 10573
     iget-boolean v1, p0, Landroid/webkit/WebView$InvokeListBox;->mMultiple:Z
 
     if-eqz v1, :cond_4
 
-    .line 10555
+    .line 10574
     const/4 v1, 0x2
 
     invoke-virtual {v4, v1}, Landroid/widget/ListView;->setChoiceMode(I)V
 
-    .line 10556
+    .line 10575
     iget-object v1, p0, Landroid/webkit/WebView$InvokeListBox;->mSelectedArray:[I
 
     array-length v9, v1
 
-    .line 10557
+    .line 10576
     .local v9, length:I
     const/4 v8, 0x0
 
@@ -428,19 +428,19 @@
     :goto_1
     if-ge v8, v9, :cond_5
 
-    .line 10558
+    .line 10577
     iget-object v1, p0, Landroid/webkit/WebView$InvokeListBox;->mSelectedArray:[I
 
     aget v1, v1, v8
 
     invoke-virtual {v4, v1, v2}, Landroid/widget/ListView;->setItemChecked(IZ)V
 
-    .line 10557
+    .line 10576
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_1
 
-    .line 10553
+    .line 10572
     .end local v8           #i:I
     .end local v9           #length:I
     :cond_3
@@ -448,7 +448,7 @@
 
     goto :goto_0
 
-    .line 10561
+    .line 10580
     :cond_4
     new-instance v1, Landroid/webkit/WebView$InvokeListBox$3;
 
@@ -456,27 +456,27 @@
 
     invoke-virtual {v4, v1}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 10572
+    .line 10591
     iget v1, p0, Landroid/webkit/WebView$InvokeListBox;->mSelection:I
 
     const/4 v3, -0x1
 
     if-eq v1, v3, :cond_5
 
-    .line 10573
+    .line 10592
     iget v1, p0, Landroid/webkit/WebView$InvokeListBox;->mSelection:I
 
     invoke-virtual {v4, v1}, Landroid/widget/ListView;->setSelection(I)V
 
-    .line 10574
+    .line 10593
     invoke-virtual {v4, v2}, Landroid/widget/ListView;->setChoiceMode(I)V
 
-    .line 10575
+    .line 10594
     iget v1, p0, Landroid/webkit/WebView$InvokeListBox;->mSelection:I
 
     invoke-virtual {v4, v1, v2}, Landroid/widget/ListView;->setItemChecked(IZ)V
 
-    .line 10576
+    .line 10595
     new-instance v0, Landroid/webkit/WebView$InvokeListBox$SingleDataSetObserver;
 
     iget v1, p0, Landroid/webkit/WebView$InvokeListBox;->mSelection:I
@@ -489,11 +489,11 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/webkit/WebView$InvokeListBox$SingleDataSetObserver;-><init>(Landroid/webkit/WebView$InvokeListBox;JLandroid/widget/ListView;Landroid/widget/Adapter;)V
 
-    .line 10578
+    .line 10597
     .local v0, observer:Landroid/database/DataSetObserver;
     invoke-virtual {v5, v0}, Landroid/webkit/WebView$InvokeListBox$MyArrayListAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
-    .line 10581
+    .line 10600
     .end local v0           #observer:Landroid/database/DataSetObserver;
     :cond_5
     iget-object v1, p0, Landroid/webkit/WebView$InvokeListBox;->this$0:Landroid/webkit/WebView;
@@ -509,7 +509,7 @@
 
     invoke-virtual {v1, v2}, Lcom/htc/dialog/HtcAlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
-    .line 10588
+    .line 10607
     iget-object v1, p0, Landroid/webkit/WebView$InvokeListBox;->this$0:Landroid/webkit/WebView;
 
     #getter for: Landroid/webkit/WebView;->mListBoxDialog:Lcom/htc/dialog/HtcAlertDialog;
@@ -519,6 +519,6 @@
 
     invoke-virtual {v1}, Lcom/htc/dialog/HtcAlertDialog;->show()V
 
-    .line 10589
+    .line 10608
     return-void
 .end method

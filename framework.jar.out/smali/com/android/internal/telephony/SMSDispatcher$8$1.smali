@@ -30,7 +30,7 @@
     .line 2795
     iput-object p1, p0, Lcom/android/internal/telephony/SMSDispatcher$8$1;->this$1:Lcom/android/internal/telephony/SMSDispatcher$8;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

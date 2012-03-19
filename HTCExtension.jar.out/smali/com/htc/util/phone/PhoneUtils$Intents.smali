@@ -31,7 +31,7 @@
     .line 52
     iput-object p1, p0, Lcom/htc/util/phone/PhoneUtils$Intents;->this$0:Lcom/htc/util/phone/PhoneUtils;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

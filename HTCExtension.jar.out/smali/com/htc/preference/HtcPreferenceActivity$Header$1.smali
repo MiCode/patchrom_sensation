@@ -32,8 +32,8 @@
     .locals 0
 
     .prologue
-    .line 547
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 548
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,7 +45,7 @@
     .parameter "source"
 
     .prologue
-    .line 549
+    .line 550
     new-instance v0, Lcom/htc/preference/HtcPreferenceActivity$Header;
 
     invoke-direct {v0, p1}, Lcom/htc/preference/HtcPreferenceActivity$Header;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 547
+    .line 548
     invoke-virtual {p0, p1}, Lcom/htc/preference/HtcPreferenceActivity$Header$1;->createFromParcel(Landroid/os/Parcel;)Lcom/htc/preference/HtcPreferenceActivity$Header;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .parameter "size"
 
     .prologue
-    .line 552
+    .line 553
     new-array v0, p1, [Lcom/htc/preference/HtcPreferenceActivity$Header;
 
     return-object v0
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 547
+    .line 548
     invoke-virtual {p0, p1}, Lcom/htc/preference/HtcPreferenceActivity$Header$1;->newArray(I)[Lcom/htc/preference/HtcPreferenceActivity$Header;
 
     move-result-object v0

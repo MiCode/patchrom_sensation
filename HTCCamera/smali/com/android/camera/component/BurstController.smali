@@ -160,7 +160,7 @@
 
     .prologue
     .line 38
-    iget-object v0, p0, Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -236,7 +236,7 @@
 
     .prologue
     .line 38
-    iget-object v0, p0, Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -270,7 +270,7 @@
 
     .prologue
     .line 38
-    iget-object v0, p0, Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -305,7 +305,7 @@
 
     .prologue
     .line 38
-    iget-object v0, p0, Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -338,7 +338,7 @@
 
     .prologue
     .line 38
-    iget-object v0, p0, Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -360,7 +360,7 @@
 
     .prologue
     .line 38
-    iget-object v0, p0, Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -371,7 +371,7 @@
 
     .prologue
     .line 38
-    iget-object v0, p0, Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -392,7 +392,7 @@
 
     .prologue
     .line 38
-    iget-object v0, p0, Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -403,29 +403,29 @@
     .parameter "camera"
 
     .prologue
-    .line 431
-    iget-object v0, p0, Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    .line 432
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "createPostviewImage start"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 436
+    .line 437
     :try_start_0
     invoke-virtual/range {p2 .. p2}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
 
     move-result-object v11
 
-    .line 437
+    .line 438
     .local v11, parameters:Landroid/hardware/Camera$Parameters;
     if-nez v11, :cond_0
 
-    .line 469
+    .line 470
     .end local v11           #parameters:Landroid/hardware/Camera$Parameters;
     :goto_0
     return-void
 
-    .line 440
+    .line 441
     .restart local v11       #parameters:Landroid/hardware/Camera$Parameters;
     :cond_0
     const-string v0, "postview-size"
@@ -434,7 +434,7 @@
 
     move-result-object v12
 
-    .line 441
+    .line 442
     .local v12, str:Ljava/lang/String;
     const/16 v0, 0x78
 
@@ -442,7 +442,7 @@
 
     move-result v9
 
-    .line 442
+    .line 443
     .local v9, nIndex:I
     const/4 v0, 0x0
 
@@ -450,13 +450,13 @@
 
     move-result-object v13
 
-    .line 443
+    .line 444
     .local v13, strTmp:Ljava/lang/String;
     invoke-static {v13}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v10
 
-    .line 444
+    .line 445
     .local v10, nWidth:I
     add-int/lit8 v0, v9, 0x1
 
@@ -464,12 +464,12 @@
 
     move-result-object v13
 
-    .line 445
+    .line 446
     invoke-static {v13}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v8
 
-    .line 447
+    .line 448
     .local v8, nHeight:I
     sget-object v0, Lcom/scalado/base/Image$Config;->YVU_420SP:Lcom/scalado/base/Image$Config;
 
@@ -481,7 +481,7 @@
 
     move-result-object v7
 
-    .line 449
+    .line 450
     .local v7, image:Lcom/scalado/base/Image;
     iget-object v0, p0, Lcom/android/camera/component/BurstController;->m_postviewData:[[B
 
@@ -489,7 +489,7 @@
 
     aput-object v1, v0, p1
 
-    .line 453
+    .line 454
     iget-object v0, p0, Lcom/android/camera/component/BurstController;->m_BurstUI:Lcom/android/camera/component/BurstUI;
 
     invoke-virtual {v0}, Lcom/android/camera/component/BurstUI;->getBurstReviewWidth()I
@@ -524,7 +524,7 @@
 
     move-result-object v5
 
-    .line 454
+    .line 455
     .local v5, bitmap:Landroid/graphics/Bitmap;
     new-instance v0, Lcom/scalado/caps/Session;
 
@@ -540,7 +540,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 463
+    .line 464
     .end local v7           #image:Lcom/scalado/base/Image;
     .end local v8           #nHeight:I
     .end local v9           #nIndex:I
@@ -561,21 +561,21 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/camera/component/BurstController;->sendMessage(Lcom/android/camera/component/Component;IIILjava/lang/Object;)Z
 
-    .line 465
+    .line 466
     iget v0, p0, Lcom/android/camera/component/BurstController;->m_CaptureCount:I
 
     if-lt p1, v0, :cond_1
 
-    .line 466
+    .line 467
     iget-object v0, p0, Lcom/android/camera/component/BurstController;->m_BurstUI:Lcom/android/camera/component/BurstUI;
 
     const/4 v1, 0x3
 
     invoke-virtual {p0, v0, v1}, Lcom/android/camera/component/BurstController;->sendMessage(Lcom/android/camera/component/Component;I)Z
 
-    .line 468
+    .line 469
     :cond_1
-    iget-object v0, p0, Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "createPostviewImage end"
 
@@ -583,14 +583,14 @@
 
     goto :goto_0
 
-    .line 456
+    .line 457
     .end local v5           #bitmap:Landroid/graphics/Bitmap;
     :catch_0
     move-exception v6
 
-    .line 458
+    .line 459
     .local v6, ex:Ljava/lang/Exception;
-    iget-object v0, p0, Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -618,7 +618,7 @@
 
     invoke-static {v0, v1, v6}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 459
+    .line 460
     const/4 v5, 0x0
 
     .restart local v5       #bitmap:Landroid/graphics/Bitmap;
@@ -686,6 +686,12 @@
 
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
+    const/16 v2, 0xdc
+
+    if-eq v1, v2, :cond_0
+
+    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
     const/16 v2, 0x7d
 
     if-eq v1, v2, :cond_0
@@ -699,7 +705,7 @@
     .locals 2
 
     .prologue
-    .line 248
+    .line 249
     invoke-virtual {p0}, Lcom/android/camera/component/BurstController;->getCameraThread()Lcom/android/camera/CameraThread;
 
     move-result-object v1
@@ -708,13 +714,13 @@
 
     move-result-object v0
 
-    .line 249
+    .line 250
     .local v0, components:Lcom/android/camera/component/ComponentManager;
     iget-object v1, p0, Lcom/android/camera/component/BurstController;->m_ColorEffectController:Lcom/android/camera/effect/ColorEffectController;
 
     if-nez v1, :cond_0
 
-    .line 250
+    .line 251
     const-string v1, "Color Effect Controller"
 
     invoke-virtual {v0, v1}, Lcom/android/camera/component/ComponentManager;->getComponent(Ljava/lang/String;)Lcom/android/camera/component/Component;
@@ -725,13 +731,13 @@
 
     iput-object v1, p0, Lcom/android/camera/component/BurstController;->m_ColorEffectController:Lcom/android/camera/effect/ColorEffectController;
 
-    .line 251
+    .line 252
     :cond_0
     iget-object v1, p0, Lcom/android/camera/component/BurstController;->m_GpuEffectController:Lcom/android/camera/effect/GpuEffectController;
 
     if-nez v1, :cond_1
 
-    .line 252
+    .line 253
     const-string v1, "GPU Effect Controller"
 
     invoke-virtual {v0, v1}, Lcom/android/camera/component/ComponentManager;->getComponent(Ljava/lang/String;)Lcom/android/camera/component/Component;
@@ -742,13 +748,13 @@
 
     iput-object v1, p0, Lcom/android/camera/component/BurstController;->m_GpuEffectController:Lcom/android/camera/effect/GpuEffectController;
 
-    .line 253
+    .line 254
     :cond_1
     iget-object v1, p0, Lcom/android/camera/component/BurstController;->m_SceneController:Lcom/android/camera/effect/SceneController;
 
     if-nez v1, :cond_2
 
-    .line 254
+    .line 255
     const-string v1, "Scene Controller"
 
     invoke-virtual {v0, v1}, Lcom/android/camera/component/ComponentManager;->getComponent(Ljava/lang/String;)Lcom/android/camera/component/Component;
@@ -759,7 +765,7 @@
 
     iput-object v1, p0, Lcom/android/camera/component/BurstController;->m_SceneController:Lcom/android/camera/effect/SceneController;
 
-    .line 255
+    .line 256
     :cond_2
     return-void
 .end method
@@ -769,20 +775,20 @@
     .parameter "instanceID"
 
     .prologue
-    .line 262
+    .line 263
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/camera/component/BurstController;->m_IsBurstModeEntered:Z
 
-    .line 263
+    .line 264
     iput-wide p1, p0, Lcom/android/camera/component/BurstController;->m_InstanceID:J
 
-    .line 264
+    .line 265
     invoke-virtual {p0}, Lcom/android/camera/component/BurstController;->getCameraThread()Lcom/android/camera/CameraThread;
 
     move-result-object v0
 
-    .line 265
+    .line 266
     .local v0, cameraThread:Lcom/android/camera/CameraThread;
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->isTakingPicture()Z
 
@@ -790,49 +796,49 @@
 
     if-nez v1, :cond_2
 
-    .line 268
+    .line 269
     invoke-virtual {v0, p0}, Lcom/android/camera/CameraThread;->setCaptureHandler(Lcom/android/camera/ICaptureHandler;)V
 
-    .line 271
+    .line 272
     invoke-direct {p0}, Lcom/android/camera/component/BurstController;->linkToOtherControllers()V
 
-    .line 272
+    .line 273
     iget-object v1, p0, Lcom/android/camera/component/BurstController;->m_ColorEffectController:Lcom/android/camera/effect/ColorEffectController;
 
     if-eqz v1, :cond_0
 
-    .line 273
+    .line 274
     iget-object v1, p0, Lcom/android/camera/component/BurstController;->m_ColorEffectController:Lcom/android/camera/effect/ColorEffectController;
 
     const-string v2, "none"
 
     invoke-virtual {v1, v2}, Lcom/android/camera/effect/ColorEffectController;->setColorEffect(Ljava/lang/String;)V
 
-    .line 274
+    .line 275
     :cond_0
     iget-object v1, p0, Lcom/android/camera/component/BurstController;->m_GpuEffectController:Lcom/android/camera/effect/GpuEffectController;
 
     if-eqz v1, :cond_1
 
-    .line 275
+    .line 276
     iget-object v1, p0, Lcom/android/camera/component/BurstController;->m_GpuEffectController:Lcom/android/camera/effect/GpuEffectController;
 
     invoke-virtual {v1}, Lcom/android/camera/effect/GpuEffectController;->clearEffect()V
 
-    .line 278
+    .line 279
     :cond_1
     iget-object v1, p0, Lcom/android/camera/component/BurstController;->m_SceneController:Lcom/android/camera/effect/SceneController;
 
     if-eqz v1, :cond_2
 
-    .line 279
+    .line 280
     iget-object v1, p0, Lcom/android/camera/component/BurstController;->m_SceneController:Lcom/android/camera/effect/SceneController;
 
     const-string v2, "action"
 
     invoke-virtual {v1, v2}, Lcom/android/camera/effect/SceneController;->setScene(Ljava/lang/String;)V
 
-    .line 281
+    .line 282
     :cond_2
     return-void
 .end method
@@ -841,12 +847,12 @@
     .locals 4
 
     .prologue
-    .line 288
+    .line 289
     invoke-virtual {p0}, Lcom/android/camera/component/BurstController;->getCameraThread()Lcom/android/camera/CameraThread;
 
     move-result-object v1
 
-    .line 289
+    .line 290
     .local v1, cameraThread:Lcom/android/camera/CameraThread;
     invoke-virtual {v1}, Lcom/android/camera/CameraThread;->isTakingPicture()Z
 
@@ -854,54 +860,54 @@
 
     if-nez v2, :cond_1
 
-    .line 292
+    .line 293
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraThread;->setCaptureHandler(Lcom/android/camera/ICaptureHandler;)V
 
-    .line 295
+    .line 296
     invoke-virtual {v1}, Lcom/android/camera/CameraThread;->getCameraController()Lcom/android/camera/CameraController;
 
     move-result-object v0
 
-    .line 296
+    .line 297
     .local v0, cameraController:Lcom/android/camera/CameraController;
     if-eqz v0, :cond_0
 
-    .line 298
+    .line 299
     const-string v2, "picture-count"
 
     const/4 v3, 0x1
 
     invoke-virtual {v0, v2, v3}, Lcom/android/camera/CameraController;->setCameraParameter(Ljava/lang/String;I)V
 
-    .line 299
+    .line 300
     invoke-virtual {v0}, Lcom/android/camera/CameraController;->doSetCameraParameters()V
 
-    .line 303
+    .line 304
     :cond_0
     invoke-direct {p0}, Lcom/android/camera/component/BurstController;->linkToOtherControllers()V
 
-    .line 304
+    .line 305
     iget-object v2, p0, Lcom/android/camera/component/BurstController;->m_SceneController:Lcom/android/camera/effect/SceneController;
 
     if-eqz v2, :cond_1
 
-    .line 305
+    .line 306
     iget-object v2, p0, Lcom/android/camera/component/BurstController;->m_SceneController:Lcom/android/camera/effect/SceneController;
 
     const-string v3, "auto"
 
     invoke-virtual {v2, v3}, Lcom/android/camera/effect/SceneController;->setScene(Ljava/lang/String;)V
 
-    .line 307
+    .line 308
     .end local v0           #cameraController:Lcom/android/camera/CameraController;
     :cond_1
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/android/camera/component/BurstController;->m_IsBurstModeEntered:Z
 
-    .line 308
+    .line 309
     return-void
 .end method
 
@@ -987,10 +993,10 @@
     .parameter "ui"
 
     .prologue
-    .line 240
+    .line 241
     iput-object p1, p0, Lcom/android/camera/component/BurstController;->m_BurstUI:Lcom/android/camera/component/BurstUI;
 
-    .line 241
+    .line 242
     return-void
 .end method
 
@@ -1002,12 +1008,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 316
+    .line 317
     invoke-virtual {p1}, Lcom/android/camera/CameraThread;->getCameraController()Lcom/android/camera/CameraController;
 
     move-result-object v7
 
-    .line 317
+    .line 318
     .local v7, cameraController:Lcom/android/camera/CameraController;
     const-string v0, "capture-mode"
 
@@ -1015,27 +1021,27 @@
 
     invoke-virtual {v7, v0, v1}, Lcom/android/camera/CameraController;->setCameraParameter(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 318
+    .line 319
     const-string v0, "picture-count"
 
     iget v1, p0, Lcom/android/camera/component/BurstController;->m_CaptureCount:I
 
     invoke-virtual {v7, v0, v1}, Lcom/android/camera/CameraController;->setCameraParameter(Ljava/lang/String;I)V
 
-    .line 319
+    .line 320
     invoke-virtual {v7}, Lcom/android/camera/CameraController;->doSetCameraParameters()V
 
-    .line 320
+    .line 321
     iput v3, p0, Lcom/android/camera/component/BurstController;->m_CurrentCaptureIndex:I
 
-    .line 323
+    .line 324
     iget-object v0, p0, Lcom/android/camera/component/BurstController;->m_BurstUI:Lcom/android/camera/component/BurstUI;
 
     invoke-virtual {v0}, Lcom/android/camera/component/BurstUI;->getCameraActivity()Lcom/android/camera/HTCCamera;
 
     move-result-object v6
 
-    .line 324
+    .line 325
     .local v6, cameraActivity:Lcom/android/camera/HTCCamera;
     const v0, 0x7f060001
 
@@ -1043,16 +1049,16 @@
 
     move-result-object v8
 
-    .line 325
+    .line 326
     .local v8, mediaPlayer:Landroid/media/MediaPlayer;
     invoke-virtual {v6}, Lcom/android/camera/HTCCamera;->requestAudioFocus()V
 
-    .line 330
+    .line 331
     iget-object v0, p0, Lcom/android/camera/component/BurstController;->m_StoredPictureUris:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 333
+    .line 334
     iget-object v1, p0, Lcom/android/camera/component/BurstController;->m_BurstUI:Lcom/android/camera/component/BurstUI;
 
     const/4 v2, 0x1
@@ -1069,7 +1075,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/camera/component/BurstController;->sendMessage(Lcom/android/camera/component/Component;IIILjava/lang/Object;)Z
 
-    .line 336
+    .line 337
     new-instance v0, Lcom/android/camera/component/BurstController$3;
 
     invoke-direct {v0, p0}, Lcom/android/camera/component/BurstController$3;-><init>(Lcom/android/camera/component/BurstController;)V
@@ -1088,7 +1094,7 @@
 
     invoke-virtual {p2, v0, v1, v2, v3}, Landroid/hardware/Camera;->takePicture(Landroid/hardware/Camera$ShutterCallback;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;)V
 
-    .line 418
+    .line 419
     return-void
 .end method
 
@@ -1106,17 +1112,17 @@
     .end annotation
 
     .prologue
-    .line 421
+    .line 422
     .local p1, imageUri:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/net/Uri;>;"
     iget-object v0, p0, Lcom/android/camera/component/BurstController;->m_StoredPictureUris:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
-    .line 428
+    .line 429
     :goto_0
     return-void
 
-    .line 424
+    .line 425
     :cond_0
     iput-object p1, p0, Lcom/android/camera/component/BurstController;->m_StoredPictureUris:Ljava/util/ArrayList;
 

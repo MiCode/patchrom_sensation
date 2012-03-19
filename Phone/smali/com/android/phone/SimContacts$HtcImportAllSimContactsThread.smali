@@ -136,17 +136,10 @@
     .prologue
     const/4 v7, -0x1
 
-    .line 478
-    const-string v4, "SimContacts"
-
-    const-string v5, "start import all"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 480
     iget-object v4, p0, Lcom/android/phone/SimContacts$HtcImportAllSimContactsThread;->this$0:Lcom/android/phone/SimContacts;
 
-    iget-object v4, v4, Lcom/android/phone/SimContacts;->mCursor:Landroid/database/Cursor;
+    iget-object v4, v4, Lcom/android/phone/ADNList;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v4, v7}, Landroid/database/Cursor;->moveToPosition(I)Z
 
@@ -183,7 +176,7 @@
     :cond_0
     iget-object v4, p0, Lcom/android/phone/SimContacts$HtcImportAllSimContactsThread;->this$0:Lcom/android/phone/SimContacts;
 
-    iget-object v4, v4, Lcom/android/phone/SimContacts;->mCursor:Landroid/database/Cursor;
+    iget-object v4, v4, Lcom/android/phone/ADNList;->mCursor:Landroid/database/Cursor;
 
     iget-object v5, p0, Lcom/android/phone/SimContacts$HtcImportAllSimContactsThread;->this$0:Lcom/android/phone/SimContacts;
 
@@ -269,13 +262,6 @@
     move-result-object v4
 
     invoke-virtual {v4}, Lcom/htc/app/HtcProgressDialog;->dismiss()V
-
-    .line 504
-    const-string v4, "SimContacts"
-
-    const-string v5, "end import all"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 505
     iget-object v4, p0, Lcom/android/phone/SimContacts$HtcImportAllSimContactsThread;->this$0:Lcom/android/phone/SimContacts;

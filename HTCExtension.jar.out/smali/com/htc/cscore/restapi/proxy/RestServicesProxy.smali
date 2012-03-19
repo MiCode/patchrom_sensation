@@ -728,7 +728,7 @@
 
     new-array v8, v8, [Ljava/lang/Object;
 
-    iget-object v9, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v9, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v9, v8, v11
 
@@ -749,7 +749,7 @@
 
     .line 486
     .local v4, paramObj:Ljava/lang/String;
-    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -867,7 +867,7 @@
 
     new-array v8, v8, [Ljava/lang/Object;
 
-    iget-object v9, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v9, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v9, v8, v11
 
@@ -888,7 +888,7 @@
 
     .line 534
     .local v4, paramObj:Ljava/lang/String;
-    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1075,7 +1075,7 @@
 
     const/4 v10, 0x0
 
-    iget-object v11, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v11, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v11, v9, v10
 
@@ -1142,7 +1142,7 @@
 
     .line 511
     .local v5, paramObj:Ljava/lang/String;
-    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -1383,7 +1383,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iput-object v1, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     .line 205
     .end local v0           #prefixWithProtocol:Z
@@ -1477,7 +1477,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iput-object v1, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     goto :goto_2
 
@@ -1985,7 +1985,7 @@
 
     new-array v6, v8, [Ljava/lang/Object;
 
-    iget-object v7, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v7, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v7, v6, v9
 
@@ -2022,7 +2022,7 @@
     invoke-virtual {v5, v6, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     .line 774
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -2138,7 +2138,7 @@
 
     new-array v8, v10, [Ljava/lang/Object;
 
-    iget-object v9, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v9, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v9, v8, v11
 
@@ -2153,7 +2153,7 @@
 
     .line 624
     .local v4, paramObj:Ljava/lang/String;
-    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -2282,7 +2282,7 @@
 
     new-array v8, v8, [Ljava/lang/Object;
 
-    iget-object v9, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v9, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v9, v8, v11
 
@@ -2303,7 +2303,7 @@
 
     .line 796
     .local v4, paramObj:Ljava/lang/String;
-    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -2407,7 +2407,7 @@
 
     new-array v8, v10, [Ljava/lang/Object;
 
-    iget-object v9, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v9, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v9, v8, v11
 
@@ -2422,7 +2422,7 @@
 
     .line 563
     .local v4, paramObj:Ljava/lang/String;
-    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -3293,7 +3293,7 @@
 
     new-array v7, v9, [Ljava/lang/Object;
 
-    iget-object v8, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v8, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v8, v7, v10
 
@@ -3308,7 +3308,7 @@
 
     .line 894
     .local v4, paramObj:Ljava/lang/String;
-    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -3402,7 +3402,7 @@
 
     new-array v7, v7, [Ljava/lang/Object;
 
-    iget-object v8, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v8, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v8, v7, v10
 
@@ -3419,7 +3419,7 @@
 
     .line 862
     .local v3, paramObj:Ljava/lang/String;
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -3527,7 +3527,7 @@
 
     new-array v8, v8, [Ljava/lang/Object;
 
-    iget-object v9, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v9, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v9, v8, v11
 
@@ -3548,7 +3548,7 @@
 
     .line 828
     .local v4, paramObj:Ljava/lang/String;
-    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -3653,7 +3653,7 @@
 
     new-array v9, v11, [Ljava/lang/Object;
 
-    iget-object v10, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v10, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v10, v9, v12
 
@@ -3690,7 +3690,7 @@
     invoke-virtual {v8, v9, v10}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     .line 654
-    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -3887,7 +3887,7 @@
 
     new-array v9, v11, [Ljava/lang/Object;
 
-    iget-object v10, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v10, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v10, v9, v12
 
@@ -3924,7 +3924,7 @@
     invoke-virtual {v8, v9, v10}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     .line 599
-    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -4032,7 +4032,7 @@
 
     new-array v6, v8, [Ljava/lang/Object;
 
-    iget-object v7, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v7, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v7, v6, v9
 
@@ -4128,7 +4128,7 @@
 
     new-array v6, v8, [Ljava/lang/Object;
 
-    iget-object v7, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v7, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v7, v6, v9
 
@@ -4165,7 +4165,7 @@
     invoke-virtual {v5, v6, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     .line 704
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -4228,7 +4228,7 @@
 
     new-array v6, v8, [Ljava/lang/Object;
 
-    iget-object v7, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v7, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v7, v6, v9
 
@@ -4265,7 +4265,7 @@
     invoke-virtual {v5, v6, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     .line 725
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -4331,7 +4331,7 @@
 
     new-array v5, v5, [Ljava/lang/Object;
 
-    iget-object v6, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v6, v5, v8
 
@@ -4415,7 +4415,7 @@
 
     new-array v5, v7, [Ljava/lang/Object;
 
-    iget-object v6, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy;->ServerUrl:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/cscore/restapi/proxy/ClientRestApi;->ServerUrl:Ljava/lang/String;
 
     aput-object v6, v5, v8
 

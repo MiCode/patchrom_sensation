@@ -69,7 +69,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/widget/RadioButton;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
 
     const v2, 0x1040486
 
@@ -89,7 +89,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/widget/RadioButton;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
 
     const v2, 0x1040487
 

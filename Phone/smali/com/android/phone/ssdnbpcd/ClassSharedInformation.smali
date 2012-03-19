@@ -58,23 +58,12 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 1
 
     .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
     .line 18
-    const-string v2, "ro.debuggable.nbpcd"
+    const/4 v0, 0x0
 
-    invoke-static {v2, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v2
-
-    if-ne v2, v0, :cond_0
-
-    :goto_0
     sput-boolean v0, Lcom/android/phone/ssdnbpcd/ClassSharedInformation;->DBG:Z
 
     .line 21
@@ -114,12 +103,6 @@
     sput-object v0, Lcom/android/phone/ssdnbpcd/ClassSharedInformation;->CONTENT_URI_NON_US_IDD_TABLE:Landroid/net/Uri;
 
     return-void
-
-    :cond_0
-    move v0, v1
-
-    .line 18
-    goto :goto_0
 .end method
 
 .method constructor <init>()V
@@ -127,7 +110,7 @@
 
     .prologue
     .line 15
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

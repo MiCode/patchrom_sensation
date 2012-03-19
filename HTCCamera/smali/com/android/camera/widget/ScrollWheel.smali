@@ -234,7 +234,7 @@
 
     .prologue
     .line 238
-    iget v1, p0, Lcom/android/camera/widget/ScrollWheel;->mScrollX:I
+    iget v1, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mScrollX:I
 
     sget v2, Lcom/android/camera/widget/ScrollWheel;->WHEEL_BOUNCING_PADDING:I
 
@@ -286,7 +286,7 @@
 
     if-ne p1, v1, :cond_1
 
-    iget v0, p0, Lcom/android/camera/widget/ScrollWheel;->mScrollX:I
+    iget v0, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mScrollX:I
 
     .line 337
     .local v0, finalX:I
@@ -296,7 +296,7 @@
     if-ge v0, v1, :cond_2
 
     .line 338
-    iget v1, p0, Lcom/android/camera/widget/ScrollWheel;->mScrollY:I
+    iget v1, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mScrollY:I
 
     sget v2, Lcom/android/camera/widget/ScrollWheel;->WHEEL_BOUNCING_PADDING:I
 
@@ -310,7 +310,7 @@
     .line 334
     .end local v0           #finalX:I
     :cond_1
-    iget-object v1, p0, Lcom/android/camera/widget/ScrollWheel;->mScroller:Lcom/android/camera/widget/ScrollWheelScroller;
+    iget-object v1, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mScroller:Lcom/android/camera/widget/ScrollWheelScroller;
 
     invoke-virtual {v1}, Lcom/android/camera/widget/ScrollWheelScroller;->getFinalX()I
 
@@ -330,7 +330,7 @@
     if-le v0, v1, :cond_0
 
     .line 340
-    iget v1, p0, Lcom/android/camera/widget/ScrollWheel;->mScrollY:I
+    iget v1, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mScrollY:I
 
     sget v2, Lcom/android/camera/widget/ScrollWheel;->WHEEL_BOUNCING_PADDING:I
 
@@ -399,7 +399,7 @@
 
     sub-int/2addr v1, v2
 
-    iget v2, p0, Lcom/android/camera/widget/ScrollWheel;->mPaddingTop:I
+    iget v2, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mPaddingTop:I
 
     sget v3, Lcom/android/camera/widget/ScrollWheel;->WHEEL_PADDING:I
 
@@ -407,7 +407,7 @@
 
     sub-int/2addr v3, v4
 
-    iget v4, p0, Lcom/android/camera/widget/ScrollWheel;->mPaddingBottom:I
+    iget v4, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mPaddingBottom:I
 
     invoke-virtual {p0, v1, v2, v3, v4}, Lcom/android/camera/widget/ScrollWheel;->setPadding(IIII)V
 
@@ -526,9 +526,9 @@
     invoke-virtual {v2, v0}, Landroid/graphics/Matrix;->getValues([F)V
 
     .line 189
-    iget v2, p0, Lcom/android/camera/widget/ScrollWheel;->mScrollX:I
+    iget v2, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mScrollX:I
 
-    iget v3, p0, Lcom/android/camera/widget/ScrollWheel;->mPaddingTop:I
+    iget v3, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mPaddingTop:I
 
     add-int/2addr v2, v3
 
@@ -1103,7 +1103,7 @@
     if-lez p3, :cond_2
 
     .line 131
-    iget v1, p0, Lcom/android/camera/widget/ScrollWheel;->mScrollY:I
+    iget v1, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mScrollY:I
 
     invoke-virtual {p0, v0, v1, p3}, Lcom/android/camera/widget/ScrollWheel;->smoothScrollTo(III)V
 
@@ -1115,7 +1115,7 @@
 
     .line 133
     :cond_2
-    iget v1, p0, Lcom/android/camera/widget/ScrollWheel;->mScrollY:I
+    iget v1, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mScrollY:I
 
     invoke-virtual {p0, v0, v1}, Lcom/android/camera/widget/ScrollWheel;->smoothScrollTo(II)V
 
@@ -1123,7 +1123,7 @@
 
     .line 136
     :cond_3
-    iget v1, p0, Lcom/android/camera/widget/ScrollWheel;->mScrollY:I
+    iget v1, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mScrollY:I
 
     invoke-virtual {p0, v0, v1}, Lcom/android/camera/widget/ScrollWheel;->scrollTo(II)V
 

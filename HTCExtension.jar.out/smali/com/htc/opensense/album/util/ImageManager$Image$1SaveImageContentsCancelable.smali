@@ -140,11 +140,11 @@
     .line 2766
     iget-object v8, p0, Lcom/htc/opensense/album/util/ImageManager$Image$1SaveImageContentsCancelable;->this$1:Lcom/htc/opensense/album/util/ImageManager$Image;
 
-    iget-object v8, v8, Lcom/htc/opensense/album/util/ImageManager$Image;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v8, v8, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     iget-object v9, p0, Lcom/htc/opensense/album/util/ImageManager$Image$1SaveImageContentsCancelable;->this$1:Lcom/htc/opensense/album/util/ImageManager$Image;
 
-    iget-wide v9, v9, Lcom/htc/opensense/album/util/ImageManager$Image;->mId:J
+    iget-wide v9, v9, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mId:J
 
     invoke-virtual {v8, v9, v10}, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->contentUri(J)Landroid/net/Uri;
 
@@ -328,7 +328,7 @@
     .line 2864
     iget-object v8, p0, Lcom/htc/opensense/album/util/ImageManager$Image$1SaveImageContentsCancelable;->this$1:Lcom/htc/opensense/album/util/ImageManager$Image;
 
-    iget-object v8, v8, Lcom/htc/opensense/album/util/ImageManager$Image;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v8, v8, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-static {v8, v5}, Lcom/htc/opensense/album/util/ImageManager;->forceSync(Landroid/content/ContentResolver;Landroid/net/Uri;)V
 

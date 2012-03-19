@@ -222,7 +222,7 @@
     const/4 v8, 0x0
 
     .line 462
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 79
     new-instance v5, Landroid/net/wifi/WifiConfiguration$EnterpriseField;
@@ -527,7 +527,7 @@
     const/4 v3, 0x0
 
     .line 653
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 79
     new-instance v1, Landroid/net/wifi/WifiConfiguration$EnterpriseField;

@@ -33,7 +33,7 @@
     .line 1334
     iput-object p1, p0, Lcom/htc/widget/HtcReorderListView$DisableItemAdapter;->this$0:Lcom/htc/widget/HtcReorderListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1335
     iput-object p2, p0, Lcom/htc/widget/HtcReorderListView$DisableItemAdapter;->mWrappedAdapter:Landroid/widget/ListAdapter;

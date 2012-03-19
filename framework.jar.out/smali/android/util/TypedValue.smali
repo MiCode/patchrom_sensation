@@ -190,7 +190,7 @@
 
     .prologue
     .line 23
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 174
     const/4 v0, -0x1

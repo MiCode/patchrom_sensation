@@ -8,7 +8,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 #the value of this static final field might be set in the static constructor
 .field public static final KEYCODE_CANCEL:I = 0x0
@@ -169,7 +169,7 @@
 .end method
 
 .method public static getIconFromPackage(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
-    .locals 6
+    .locals 5
     .parameter "context"
     .parameter "pkg"
     .parameter "resName"
@@ -183,52 +183,48 @@
     :try_start_0
     invoke-static {p0, p1}, Lcom/htc/lockscreen/keyboard/HtcPinKeyboard;->prepareContext(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 147
-    .local v3, pkgContext:Landroid/content/Context;
-    if-eqz v3, :cond_0
+    .local v2, pkgContext:Landroid/content/Context;
+    if-eqz v2, :cond_0
 
     .line 148
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v5, "drawable"
+    const-string v4, "drawable"
 
-    invoke-virtual {v4, p2, v5, p1}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v3, p2, v4, p1}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v2
+    move-result v1
 
     .line 149
-    .local v2, id:I
-    if-lez v2, :cond_0
+    .local v1, id:I
+    if-lez v1, :cond_0
 
     .line 150
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v3, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
     .line 158
-    .end local v2           #id:I
-    .end local v3           #pkgContext:Landroid/content/Context;
+    .end local v1           #id:I
+    .end local v2           #pkgContext:Landroid/content/Context;
     :cond_0
     :goto_0
     return-object v0
 
     .line 154
     :catch_0
-    move-exception v1
-
-    .line 156
-    .local v1, e:Ljava/lang/Exception;
-    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+    move-exception v3
 
     goto :goto_0
 .end method
@@ -574,113 +570,78 @@
 .end method
 
 .method public static retrieveLayoutFromLockScreen(Landroid/content/Context;Ljava/lang/String;)Landroid/view/View;
-    .locals 10
+    .locals 8
     .parameter "context"
     .parameter "resName"
 
     .prologue
-    .line 341
-    const-string v7, "HtcPinKeyboard"
-
-    const-string v8, "retrieveLayoutFromLockScreen"
-
-    invoke-static {v7, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 343
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
     .line 344
-    .local v6, view:Landroid/view/View;
-    const-string v3, "com.htc.lockscreen"
+    .local v5, view:Landroid/view/View;
+    const-string v2, "com.htc.lockscreen"
 
     .line 347
-    .local v3, packageName:Ljava/lang/String;
+    .local v2, packageName:Ljava/lang/String;
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 348
-    .local v4, pm:Landroid/content/pm/PackageManager;
-    const-string v7, "com.htc.lockscreen"
+    .local v3, pm:Landroid/content/pm/PackageManager;
+    const-string v6, "com.htc.lockscreen"
 
-    invoke-virtual {v4, v7}, Landroid/content/pm/PackageManager;->getResourcesForApplication(Ljava/lang/String;)Landroid/content/res/Resources;
+    invoke-virtual {v3, v6}, Landroid/content/pm/PackageManager;->getResourcesForApplication(Ljava/lang/String;)Landroid/content/res/Resources;
 
-    move-result-object v5
+    move-result-object v4
 
     .line 349
-    .local v5, res:Landroid/content/res/Resources;
-    const-string v7, "com.htc.lockscreen"
+    .local v4, res:Landroid/content/res/Resources;
+    const-string v6, "com.htc.lockscreen"
 
-    const/4 v8, 0x2
+    const/4 v7, 0x2
 
-    invoke-virtual {p0, v7, v8}, Landroid/content/Context;->createPackageContext(Ljava/lang/String;I)Landroid/content/Context;
-
-    move-result-object v7
-
-    invoke-static {v7}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object v2
-
-    .line 351
-    .local v2, inflater:Landroid/view/LayoutInflater;
-    const-string v7, "layout"
-
-    const-string v8, "com.htc.lockscreen"
-
-    invoke-virtual {v5, p1, v7, v8}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-
-    .line 352
-    .local v1, id:I
-    const/4 v7, 0x0
-
-    invoke-virtual {v2, v1, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p0, v6, v7}, Landroid/content/Context;->createPackageContext(Ljava/lang/String;I)Landroid/content/Context;
 
     move-result-object v6
 
+    invoke-static {v6}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object v1
+
+    .line 351
+    .local v1, inflater:Landroid/view/LayoutInflater;
+    const-string v6, "layout"
+
+    const-string v7, "com.htc.lockscreen"
+
+    invoke-virtual {v4, p1, v6, v7}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    .line 352
+    .local v0, id:I
+    const/4 v6, 0x0
+
+    invoke-virtual {v1, v0, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v5
+
     .line 359
-    .end local v1           #id:I
-    .end local v2           #inflater:Landroid/view/LayoutInflater;
-    .end local v4           #pm:Landroid/content/pm/PackageManager;
-    .end local v5           #res:Landroid/content/res/Resources;
+    .end local v0           #id:I
+    .end local v1           #inflater:Landroid/view/LayoutInflater;
+    .end local v3           #pm:Landroid/content/pm/PackageManager;
+    .end local v4           #res:Landroid/content/res/Resources;
     :goto_0
-    return-object v6
+    return-object v5
 
     .line 353
     :catch_0
-    move-exception v0
-
-    .line 355
-    .local v0, e:Ljava/lang/Exception;
-    const-string v7, "HtcPinKeyboard"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "retrieveLayoutFromLockScreen e:"
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    move-exception v6
 
     goto :goto_0
 .end method
@@ -1216,7 +1177,7 @@
 .end method
 
 .method public setButtomBackground(Landroid/view/View;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .locals 9
+    .locals 8
     .parameter "view"
     .parameter "outer"
     .parameter "press"
@@ -1237,9 +1198,9 @@
     .line 167
     .local v3, c:Ljava/lang/Class;
     :try_start_0
-    const-string v7, "com.htc.widget.HtcRimButton"
+    const-string v6, "com.htc.widget.HtcRimButton"
 
-    invoke-static {v7}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-static {v6}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v3
 
@@ -1247,94 +1208,89 @@
     if-eqz v3, :cond_0
 
     .line 169
-    iget-object v7, p0, Lcom/htc/lockscreen/keyboard/HtcPinKeyboard;->mOk:Landroid/view/View;
+    iget-object v6, p0, Lcom/htc/lockscreen/keyboard/HtcPinKeyboard;->mOk:Landroid/view/View;
 
-    invoke-virtual {v3, v7}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v6}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v6
 
-    if-eqz v7, :cond_0
+    if-eqz v6, :cond_0
 
     .line 170
-    const/4 v7, 0x3
+    const/4 v6, 0x3
 
-    new-array v6, v7, [Ljava/lang/Class;
+    new-array v5, v6, [Ljava/lang/Class;
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    const-class v8, Landroid/graphics/drawable/Drawable;
+    const-class v7, Landroid/graphics/drawable/Drawable;
 
-    aput-object v8, v6, v7
+    aput-object v7, v5, v6
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    const-class v8, Landroid/graphics/drawable/Drawable;
+    const-class v7, Landroid/graphics/drawable/Drawable;
 
-    aput-object v8, v6, v7
+    aput-object v7, v5, v6
 
-    const/4 v7, 0x2
+    const/4 v6, 0x2
 
-    const-class v8, Landroid/graphics/drawable/Drawable;
+    const-class v7, Landroid/graphics/drawable/Drawable;
 
-    aput-object v8, v6, v7
+    aput-object v7, v5, v6
 
     .line 171
-    .local v6, paramTypes:[Ljava/lang/Class;,"[Ljava/lang/Class<*>;"
-    const-string v7, "setButtonBackgroundDrawable"
+    .local v5, paramTypes:[Ljava/lang/Class;,"[Ljava/lang/Class<*>;"
+    const-string v6, "setButtonBackgroundDrawable"
 
-    invoke-virtual {v3, v7, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v3, v6, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    move-result-object v5
+    move-result-object v4
 
     .line 172
-    .local v5, m:Ljava/lang/reflect/Method;
-    const/4 v7, 0x3
+    .local v4, m:Ljava/lang/reflect/Method;
+    const/4 v6, 0x3
 
-    new-array v2, v7, [Ljava/lang/Object;
+    new-array v2, v6, [Ljava/lang/Object;
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    aput-object p2, v2, v7
+    aput-object p2, v2, v6
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    aput-object p3, v2, v7
+    aput-object p3, v2, v6
 
-    const/4 v7, 0x2
+    const/4 v6, 0x2
 
-    aput-object p4, v2, v7
+    aput-object p4, v2, v6
 
     .line 173
     .local v2, args:[Ljava/lang/Object;
-    iget-object v7, p0, Lcom/htc/lockscreen/keyboard/HtcPinKeyboard;->mOk:Landroid/view/View;
+    iget-object v6, p0, Lcom/htc/lockscreen/keyboard/HtcPinKeyboard;->mOk:Landroid/view/View;
 
-    invoke-virtual {v5, v7, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 184
     .end local v2           #args:[Ljava/lang/Object;
-    .end local v5           #m:Ljava/lang/reflect/Method;
-    .end local v6           #paramTypes:[Ljava/lang/Class;,"[Ljava/lang/Class<*>;"
+    .end local v4           #m:Ljava/lang/reflect/Method;
+    .end local v5           #paramTypes:[Ljava/lang/Class;,"[Ljava/lang/Class<*>;"
     :cond_0
     :goto_0
     return-void
 
     .line 180
     :catch_0
-    move-exception v4
-
-    .line 182
-    .local v4, e:Ljava/lang/Exception;
-    invoke-virtual {v4}, Ljava/lang/Exception;->printStackTrace()V
+    move-exception v6
 
     goto :goto_0
 
     .line 177
-    .end local v4           #e:Ljava/lang/Exception;
     :catch_1
-    move-exception v7
+    move-exception v6
 
     goto :goto_0
 .end method

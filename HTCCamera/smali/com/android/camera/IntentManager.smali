@@ -31,6 +31,8 @@
 
 .field private static final KEY_DISABLE_TIMEOUT:Ljava/lang/String; = "htc_disable_timeout"
 
+.field private static final KEY_LOCKSCREEN_START_ACTIVITY_TYPE:Ljava/lang/String; = "lockscreen_start_activity"
+
 .field private static final MAIL_REQUEST:Ljava/lang/String; = "mail"
 
 .field public static final MMS_IS_WIDESCREEN_DEFAULT:Z = false
@@ -60,6 +62,12 @@
 .field public static final SETTING_KEY_REQUEST_NAME:Ljava/lang/String; = "request_name"
 
 .field private static final SQUARE_REQUEST:Ljava/lang/String; = "captureSquare"
+
+.field public static final START_ACTIVITY_HOTKEY:I = 0x2
+
+.field public static final START_ACTIVITY_SHORTCUT:I = 0x1
+
+.field public static final START_ACTIVITY_UNKNOWN:I = 0x0
 
 .field public static final START_CAMCORDER:Ljava/lang/String; = "com.android.camera.CamcorderEntry"
 
@@ -95,6 +103,8 @@
 # instance fields
 .field private mCameraThread:Lcom/android/camera/CameraThread;
 
+.field private mCameralaunchedBy:I
+
 .field private mHTCCamera:Lcom/android/camera/HTCCamera;
 
 .field private mIsCamcorder:Z
@@ -116,29 +126,29 @@
     .line 75
     sput-boolean v2, Lcom/android/camera/IntentManager;->mIsHighVideoQuality:Z
 
-    .line 81
+    .line 87
     const/4 v0, -0x1
 
     sput v0, Lcom/android/camera/IntentManager;->mMMS_maximum_size:I
 
-    .line 83
+    .line 89
     const-wide/16 v0, 0x0
 
     sput-wide v0, Lcom/android/camera/IntentManager;->mVideo_maximum_size:J
 
-    .line 87
+    .line 93
     sput-boolean v2, Lcom/android/camera/IntentManager;->mMMS_isWideScreen:Z
 
-    .line 89
+    .line 95
     sput-boolean v2, Lcom/android/camera/IntentManager;->mMMS_isVideoQVGA:Z
 
-    .line 114
+    .line 120
     sput-object v3, Lcom/android/camera/IntentManager;->mSaveUri:Landroid/net/Uri;
 
-    .line 116
+    .line 122
     sput-object v3, Lcom/android/camera/IntentManager;->mCropValue:Ljava/lang/String;
 
-    .line 118
+    .line 124
     sput-boolean v2, Lcom/android/camera/IntentManager;->mHasExtraVideoQuality:Z
 
     return-void
@@ -152,37 +162,40 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 151
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 121
     const/4 v0, 0x0
 
+    .line 157
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+
+    .line 83
+    iput v0, p0, Lcom/android/camera/IntentManager;->mCameralaunchedBy:I
+
+    .line 127
     iput-boolean v0, p0, Lcom/android/camera/IntentManager;->mIsCamcorder:Z
 
-    .line 143
+    .line 149
     sget-object v0, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
     iput-object v0, p0, Lcom/android/camera/IntentManager;->mRequestMode:Lcom/android/camera/IntentManager$RequestMode;
 
-    .line 145
+    .line 151
     sget-object v0, Lcom/android/camera/IntentManager$RequestName;->Unknown_General:Lcom/android/camera/IntentManager$RequestName;
 
     iput-object v0, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 147
+    .line 153
     iput-object v1, p0, Lcom/android/camera/IntentManager;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
-    .line 149
+    .line 155
     iput-object v1, p0, Lcom/android/camera/IntentManager;->mCameraThread:Lcom/android/camera/CameraThread;
 
-    .line 152
+    .line 158
     iput-object p1, p0, Lcom/android/camera/IntentManager;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
-    .line 153
+    .line 159
     iput-object p2, p0, Lcom/android/camera/IntentManager;->mCameraThread:Lcom/android/camera/CameraThread;
 
-    .line 154
+    .line 160
     return-void
 .end method
 
@@ -190,210 +203,265 @@
     .locals 1
 
     .prologue
-    .line 375
+    .line 393
     sget-boolean v0, Lcom/android/camera/IntentManager;->mIsHighVideoQuality:Z
 
     return v0
 .end method
 
 .method private checkExtras(Landroid/os/Bundle;)V
-    .locals 9
+    .locals 11
     .parameter "extras"
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    const v8, 0x1d4c0
+    const v10, 0x1d4c0
 
-    const/4 v4, 0x1
+    const/4 v9, 0x2
 
-    const/4 v5, 0x0
+    const/4 v5, 0x1
 
-    .line 164
+    const/4 v6, 0x0
+
+    .line 170
     if-nez p1, :cond_0
 
-    .line 165
-    sput-object v3, Lcom/android/camera/IntentManager;->mSaveUri:Landroid/net/Uri;
+    .line 171
+    sput-object v4, Lcom/android/camera/IntentManager;->mSaveUri:Landroid/net/Uri;
 
-    .line 166
-    sput-object v3, Lcom/android/camera/IntentManager;->mCropValue:Ljava/lang/String;
+    .line 172
+    sput-object v4, Lcom/android/camera/IntentManager;->mCropValue:Ljava/lang/String;
 
-    .line 167
-    iget-object v3, p0, Lcom/android/camera/IntentManager;->mHTCCamera:Lcom/android/camera/HTCCamera;
+    .line 173
+    iget-object v4, p0, Lcom/android/camera/IntentManager;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
-    iput v8, v3, Lcom/android/camera/HTCCamera;->SCREEN_DELAY:I
+    iput v10, v4, Lcom/android/camera/HTCCamera;->SCREEN_DELAY:I
 
-    .line 168
-    const-string v3, "IntentManager"
+    .line 174
+    const-string v4, "IntentManager"
 
-    const-string v4, "extras == null"
+    const-string v5, "extras == null"
 
-    invoke-static {v3, v4}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 202
+    .line 220
     :goto_0
     return-void
 
-    .line 172
+    .line 178
     :cond_0
-    const-string v3, "output"
+    const-string v4, "output"
 
-    invoke-virtual {p1, v3}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+    invoke-virtual {p1, v4}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Landroid/net/Uri;
+    check-cast v4, Landroid/net/Uri;
 
-    sput-object v3, Lcom/android/camera/IntentManager;->mSaveUri:Landroid/net/Uri;
+    sput-object v4, Lcom/android/camera/IntentManager;->mSaveUri:Landroid/net/Uri;
 
-    .line 173
-    const-string v3, "crop"
+    .line 179
+    const-string v4, "crop"
 
-    invoke-virtual {p1, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v4}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    sput-object v3, Lcom/android/camera/IntentManager;->mCropValue:Ljava/lang/String;
+    sput-object v4, Lcom/android/camera/IntentManager;->mCropValue:Ljava/lang/String;
 
-    .line 175
-    const-string v3, "android.intent.extra.sizeLimit"
+    .line 181
+    const-string v4, "android.intent.extra.sizeLimit"
 
-    invoke-virtual {p1, v3, v5}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {p1, v4, v6}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
-    move-result v3
+    move-result v4
 
-    int-to-long v6, v3
+    int-to-long v7, v4
 
-    sput-wide v6, Lcom/android/camera/IntentManager;->mVideo_maximum_size:J
+    sput-wide v7, Lcom/android/camera/IntentManager;->mVideo_maximum_size:J
 
-    .line 176
-    const-string v3, "android.intent.extra.videoQuality"
+    .line 182
+    const-string v4, "android.intent.extra.videoQuality"
 
-    invoke-virtual {p1, v3, v5}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {p1, v4, v6}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
     move-result v1
 
-    .line 177
+    .line 183
     .local v1, extraVideoQuality:I
     if-lez v1, :cond_2
 
-    move v3, v4
+    move v4, v5
 
     :goto_1
-    sput-boolean v3, Lcom/android/camera/IntentManager;->mIsHighVideoQuality:Z
+    sput-boolean v4, Lcom/android/camera/IntentManager;->mIsHighVideoQuality:Z
 
-    .line 179
-    iget-object v3, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
+    .line 185
+    iget-object v4, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
 
-    sget-object v6, Lcom/android/camera/IntentManager$RequestName;->Square:Lcom/android/camera/IntentManager$RequestName;
+    sget-object v7, Lcom/android/camera/IntentManager$RequestName;->Square:Lcom/android/camera/IntentManager$RequestName;
 
-    invoke-virtual {v3, v6}, Lcom/android/camera/IntentManager$RequestName;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v7}, Lcom/android/camera/IntentManager$RequestName;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_1
-
-    .line 180
-    const-string v3, "output-length"
-
-    invoke-virtual {p1, v3}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    .line 182
-    const-string v3, "output-length"
-
-    invoke-virtual {p1, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    .line 184
-    .local v2, len:I
-    const-string v3, "IntentManager"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Has extras \'output-length\' = "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v3, v6}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
+    if-eqz v4, :cond_1
 
     .line 186
-    if-lez v2, :cond_3
+    const-string v4, "output-length"
 
-    .line 187
-    sput v2, Lcom/android/camera/DisplayDevice;->CAMERA_PIC_SIZE_FOR_SQUARE:I
+    invoke-virtual {p1, v4}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
-    .line 195
-    .end local v2           #len:I
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    .line 188
+    const-string v4, "output-length"
+
+    invoke-virtual {p1, v4}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v3
+
+    .line 190
+    .local v3, len:I
+    const-string v4, "IntentManager"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "Has extras \'output-length\' = "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v4, v7}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 192
+    if-lez v3, :cond_3
+
+    .line 193
+    sput v3, Lcom/android/camera/DisplayDevice;->CAMERA_PIC_SIZE_FOR_SQUARE:I
+
+    .line 201
+    .end local v3           #len:I
     :cond_1
     :goto_2
-    const-string v3, "htc_disable_timeout"
+    const-string v4, "htc_disable_timeout"
 
-    invoke-virtual {p1, v3, v5}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {p1, v4, v6}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    .line 196
+    .line 202
     .local v0, disable:Z
-    if-ne v0, v4, :cond_4
+    if-ne v0, v5, :cond_4
 
-    .line 197
-    iget-object v3, p0, Lcom/android/camera/IntentManager;->mHTCCamera:Lcom/android/camera/HTCCamera;
+    .line 203
+    iget-object v4, p0, Lcom/android/camera/IntentManager;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
-    const v4, 0x7fffffff
+    const v7, 0x7fffffff
 
-    iput v4, v3, Lcom/android/camera/HTCCamera;->SCREEN_DELAY:I
+    iput v7, v4, Lcom/android/camera/HTCCamera;->SCREEN_DELAY:I
 
-    .line 198
-    const-string v3, "IntentManager"
+    .line 204
+    const-string v4, "IntentManager"
 
-    const-string v4, "disable screen timeout !!!"
+    const-string v7, "disable screen timeout !!!"
 
-    invoke-static {v3, v4}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v7}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    .line 209
+    :goto_3
+    const-string v4, "lockscreen_start_activity"
+
+    invoke-virtual {p1, v4}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    .line 210
+    .local v2, iLaunchedBy:I
+    if-ne v5, v2, :cond_5
+
+    .line 211
+    iput v5, p0, Lcom/android/camera/IntentManager;->mCameralaunchedBy:I
+
+    .line 212
+    const-string v4, "IntentManager"
+
+    const-string v5, "extras: camera lauched by START_ACTIVITY_SHORTCUT"
+
+    invoke-static {v4, v5}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_0
 
     .end local v0           #disable:Z
+    .end local v2           #iLaunchedBy:I
     :cond_2
-    move v3, v5
+    move v4, v6
 
-    .line 177
+    .line 183
     goto :goto_1
 
-    .line 189
-    .restart local v2       #len:I
+    .line 195
+    .restart local v3       #len:I
     :cond_3
-    sget v3, Lcom/android/camera/DisplayDevice;->CAMERA_PREVIEW_SIZE_FOR_CONTACT:I
+    sget v4, Lcom/android/camera/DisplayDevice;->CAMERA_PREVIEW_SIZE_FOR_CONTACT:I
 
-    sput v3, Lcom/android/camera/DisplayDevice;->CAMERA_PIC_SIZE_FOR_SQUARE:I
+    sput v4, Lcom/android/camera/DisplayDevice;->CAMERA_PIC_SIZE_FOR_SQUARE:I
 
     goto :goto_2
 
-    .line 200
-    .end local v2           #len:I
+    .line 206
+    .end local v3           #len:I
     .restart local v0       #disable:Z
     :cond_4
-    iget-object v3, p0, Lcom/android/camera/IntentManager;->mHTCCamera:Lcom/android/camera/HTCCamera;
+    iget-object v4, p0, Lcom/android/camera/IntentManager;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
-    iput v8, v3, Lcom/android/camera/HTCCamera;->SCREEN_DELAY:I
+    iput v10, v4, Lcom/android/camera/HTCCamera;->SCREEN_DELAY:I
 
-    goto :goto_0
+    goto :goto_3
+
+    .line 213
+    .restart local v2       #iLaunchedBy:I
+    :cond_5
+    if-ne v9, v2, :cond_6
+
+    .line 214
+    iput v9, p0, Lcom/android/camera/IntentManager;->mCameralaunchedBy:I
+
+    .line 215
+    const-string v4, "IntentManager"
+
+    const-string v5, "extras: camera lauched by START_ACTIVITY_HOTKEY"
+
+    invoke-static {v4, v5}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    .line 217
+    :cond_6
+    iput v6, p0, Lcom/android/camera/IntentManager;->mCameralaunchedBy:I
+
+    .line 218
+    const-string v4, "IntentManager"
+
+    const-string v5, "extras: camera lauched by other type!!"
+
+    invoke-static {v4, v5}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_0
 .end method
 
 .method private determineStartMode()V
@@ -404,28 +472,28 @@
 
     const/4 v3, 0x0
 
-    .line 328
+    .line 346
     iget-object v1, p0, Lcom/android/camera/IntentManager;->mRequestMode:Lcom/android/camera/IntentManager$RequestMode;
 
     sget-object v2, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
     if-ne v1, v2, :cond_1
 
-    .line 329
+    .line 347
     iget-boolean v1, p0, Lcom/android/camera/IntentManager;->mIsCamcorder:Z
 
     if-nez v1, :cond_0
 
-    .line 330
+    .line 348
     iget-object v1, p0, Lcom/android/camera/IntentManager;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iput v3, v1, Lcom/android/camera/CameraThread;->mMode:I
 
-    .line 348
+    .line 366
     :goto_0
     return-void
 
-    .line 332
+    .line 350
     :cond_0
     iget-object v1, p0, Lcom/android/camera/IntentManager;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -433,7 +501,7 @@
 
     goto :goto_0
 
-    .line 334
+    .line 352
     :cond_1
     iget-object v1, p0, Lcom/android/camera/IntentManager;->mRequestMode:Lcom/android/camera/IntentManager$RequestMode;
 
@@ -441,14 +509,14 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 335
+    .line 353
     iget-object v1, p0, Lcom/android/camera/IntentManager;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iput v3, v1, Lcom/android/camera/CameraThread;->mMode:I
 
     goto :goto_0
 
-    .line 336
+    .line 354
     :cond_2
     iget-object v1, p0, Lcom/android/camera/IntentManager;->mRequestMode:Lcom/android/camera/IntentManager$RequestMode;
 
@@ -456,14 +524,14 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 337
+    .line 355
     iget-object v1, p0, Lcom/android/camera/IntentManager;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iput v4, v1, Lcom/android/camera/CameraThread;->mMode:I
 
     goto :goto_0
 
-    .line 339
+    .line 357
     :cond_3
     iget-object v1, p0, Lcom/android/camera/IntentManager;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -473,7 +541,7 @@
 
     move-result-object v0
 
-    .line 341
+    .line 359
     .local v0, mode:Ljava/lang/String;
     if-eqz v0, :cond_4
 
@@ -489,7 +557,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 343
+    .line 361
     :cond_4
     iget-object v1, p0, Lcom/android/camera/IntentManager;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -497,7 +565,7 @@
 
     goto :goto_0
 
-    .line 345
+    .line 363
     :cond_5
     iget-object v1, p0, Lcom/android/camera/IntentManager;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -510,7 +578,7 @@
     .locals 1
 
     .prologue
-    .line 385
+    .line 403
     sget-object v0, Lcom/android/camera/IntentManager;->mCropValue:Ljava/lang/String;
 
     return-object v0
@@ -520,7 +588,7 @@
     .locals 1
 
     .prologue
-    .line 351
+    .line 369
     sget v0, Lcom/android/camera/IntentManager;->mMMS_maximum_size:I
 
     return v0
@@ -530,7 +598,7 @@
     .locals 1
 
     .prologue
-    .line 367
+    .line 385
     sget-boolean v0, Lcom/android/camera/IntentManager;->mMMS_isVideoQVGA:Z
 
     return v0
@@ -540,7 +608,7 @@
     .locals 1
 
     .prologue
-    .line 359
+    .line 377
     sget-boolean v0, Lcom/android/camera/IntentManager;->mMMS_isWideScreen:Z
 
     return v0
@@ -550,7 +618,7 @@
     .locals 1
 
     .prologue
-    .line 382
+    .line 400
     sget-object v0, Lcom/android/camera/IntentManager;->mSaveUri:Landroid/net/Uri;
 
     return-object v0
@@ -560,7 +628,7 @@
     .locals 2
 
     .prologue
-    .line 371
+    .line 389
     sget-wide v0, Lcom/android/camera/IntentManager;->mVideo_maximum_size:J
 
     return-wide v0
@@ -570,7 +638,7 @@
     .locals 1
 
     .prologue
-    .line 388
+    .line 406
     sget-boolean v0, Lcom/android/camera/IntentManager;->mHasExtraVideoQuality:Z
 
     return v0
@@ -581,10 +649,10 @@
     .parameter "isQVGA"
 
     .prologue
-    .line 363
+    .line 381
     sput-boolean p0, Lcom/android/camera/IntentManager;->mMMS_isVideoQVGA:Z
 
-    .line 364
+    .line 382
     return-void
 .end method
 
@@ -593,10 +661,10 @@
     .parameter "isWide"
 
     .prologue
-    .line 355
+    .line 373
     sput-boolean p0, Lcom/android/camera/IntentManager;->mMMS_isWideScreen:Z
 
-    .line 356
+    .line 374
     return-void
 .end method
 
@@ -611,33 +679,33 @@
 
     const/4 v6, 0x0
 
-    .line 210
+    .line 228
     if-nez p1, :cond_0
 
-    .line 211
+    .line 229
     const-string v3, "IntentManager"
 
     const-string v4, "intent = null!!"
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 324
+    .line 342
     :goto_0
     return-void
 
-    .line 215
+    .line 233
     :cond_0
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 216
+    .line 234
     .local v0, action:Ljava/lang/String;
     if-nez v0, :cond_1
 
     const-string v0, ""
 
-    .line 218
+    .line 236
     :cond_1
     const-string v3, "android.media.action.IMAGE_CAPTURE"
 
@@ -647,19 +715,19 @@
 
     if-eqz v3, :cond_2
 
-    .line 219
+    .line 237
     sget-object v3, Lcom/android/camera/IntentManager$RequestMode;->Camera:Lcom/android/camera/IntentManager$RequestMode;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestMode:Lcom/android/camera/IntentManager$RequestMode;
 
-    .line 220
+    .line 238
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestMode = RequestMode.Camera"
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 259
+    .line 277
     :goto_1
     const-string v3, "RequestedFrom"
 
@@ -667,23 +735,23 @@
 
     move-result-object v2
 
-    .line 260
+    .line 278
     .local v2, request:Ljava/lang/String;
     if-nez v2, :cond_c
 
-    .line 261
+    .line 279
     iget-object v3, p0, Lcom/android/camera/IntentManager;->mRequestMode:Lcom/android/camera/IntentManager$RequestMode;
 
     sget-object v4, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
     if-ne v3, v4, :cond_a
 
-    .line 262
+    .line 280
     sget-object v3, Lcom/android/camera/IntentManager$RequestName;->Unknown_General:Lcom/android/camera/IntentManager$RequestName;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 263
+    .line 281
     const-string v3, "IntentManager"
 
     const-string v4, "request name = null - RequestName.Unknown_General"
@@ -692,7 +760,7 @@
 
     goto :goto_0
 
-    .line 221
+    .line 239
     .end local v2           #request:Ljava/lang/String;
     :cond_2
     const-string v3, "android.media.action.VIDEO_CAPTURE"
@@ -703,12 +771,12 @@
 
     if-eqz v3, :cond_3
 
-    .line 222
+    .line 240
     sget-object v3, Lcom/android/camera/IntentManager$RequestMode;->Video:Lcom/android/camera/IntentManager$RequestMode;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestMode:Lcom/android/camera/IntentManager$RequestMode;
 
-    .line 223
+    .line 241
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestMode = RequestMode.Video"
@@ -717,7 +785,7 @@
 
     goto :goto_1
 
-    .line 224
+    .line 242
     :cond_3
     const-string v3, "android.media.action.STILL_IMAGE_CAMERA"
 
@@ -727,15 +795,15 @@
 
     if-eqz v3, :cond_4
 
-    .line 225
+    .line 243
     sget-object v3, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestMode:Lcom/android/camera/IntentManager$RequestMode;
 
-    .line 226
+    .line 244
     iput-boolean v6, p0, Lcom/android/camera/IntentManager;->mIsCamcorder:Z
 
-    .line 227
+    .line 245
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestMode = RequestMode.Main, from action STILL_IMAGE_CAMERA"
@@ -744,7 +812,7 @@
 
     goto :goto_1
 
-    .line 228
+    .line 246
     :cond_4
     const-string v3, "android.media.action.VIDEO_CAMERA"
 
@@ -754,15 +822,15 @@
 
     if-eqz v3, :cond_5
 
-    .line 229
+    .line 247
     sget-object v3, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestMode:Lcom/android/camera/IntentManager$RequestMode;
 
-    .line 230
+    .line 248
     iput-boolean v7, p0, Lcom/android/camera/IntentManager;->mIsCamcorder:Z
 
-    .line 231
+    .line 249
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestMode = RequestMode.Main, from action VIDEO_CAMERA"
@@ -771,7 +839,7 @@
 
     goto :goto_1
 
-    .line 232
+    .line 250
     :cond_5
     const-string v3, "from_camera"
 
@@ -781,15 +849,15 @@
 
     if-eqz v3, :cond_6
 
-    .line 233
+    .line 251
     sget-object v3, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestMode:Lcom/android/camera/IntentManager$RequestMode;
 
-    .line 234
+    .line 252
     iput-boolean v6, p0, Lcom/android/camera/IntentManager;->mIsCamcorder:Z
 
-    .line 235
+    .line 253
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestMode = RequestMode.Main, from Camera"
@@ -798,7 +866,7 @@
 
     goto :goto_1
 
-    .line 236
+    .line 254
     :cond_6
     const-string v3, "from_camcorder"
 
@@ -808,15 +876,15 @@
 
     if-eqz v3, :cond_7
 
-    .line 237
+    .line 255
     sget-object v3, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestMode:Lcom/android/camera/IntentManager$RequestMode;
 
-    .line 238
+    .line 256
     iput-boolean v7, p0, Lcom/android/camera/IntentManager;->mIsCamcorder:Z
 
-    .line 239
+    .line 257
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestMode = RequestMode.Main, from Camcorder"
@@ -825,13 +893,13 @@
 
     goto/16 :goto_1
 
-    .line 241
+    .line 259
     :cond_7
     sget-object v3, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestMode:Lcom/android/camera/IntentManager$RequestMode;
 
-    .line 242
+    .line 260
     invoke-virtual {p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v3
@@ -840,7 +908,7 @@
 
     move-result-object v1
 
-    .line 243
+    .line 261
     .local v1, componentName:Ljava/lang/String;
     const-string v3, "IntentManager"
 
@@ -864,7 +932,7 @@
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 245
+    .line 263
     const-string v3, "com.android.camera.CameraEntry"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -873,10 +941,10 @@
 
     if-eqz v3, :cond_8
 
-    .line 246
+    .line 264
     iput-boolean v6, p0, Lcom/android/camera/IntentManager;->mIsCamcorder:Z
 
-    .line 247
+    .line 265
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestMode = RequestMode.Main, from Camera"
@@ -885,7 +953,7 @@
 
     goto/16 :goto_1
 
-    .line 248
+    .line 266
     :cond_8
     const-string v3, "com.android.camera.CamcorderEntry"
 
@@ -895,10 +963,10 @@
 
     if-eqz v3, :cond_9
 
-    .line 249
+    .line 267
     iput-boolean v7, p0, Lcom/android/camera/IntentManager;->mIsCamcorder:Z
 
-    .line 250
+    .line 268
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestMode = RequestMode.Main, from Camcorder"
@@ -907,11 +975,11 @@
 
     goto/16 :goto_1
 
-    .line 252
+    .line 270
     :cond_9
     iput-boolean v6, p0, Lcom/android/camera/IntentManager;->mIsCamcorder:Z
 
-    .line 253
+    .line 271
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestMode = RequestMode.Main, from unknown"
@@ -920,7 +988,7 @@
 
     goto/16 :goto_1
 
-    .line 265
+    .line 283
     .end local v1           #componentName:Ljava/lang/String;
     .restart local v2       #request:Ljava/lang/String;
     :cond_a
@@ -928,7 +996,7 @@
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 267
+    .line 285
     const-string v3, "android.intent.extra.videoQuality"
 
     invoke-virtual {p1, v3}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
@@ -937,10 +1005,10 @@
 
     if-eqz v3, :cond_b
 
-    .line 268
+    .line 286
     sput-boolean v7, Lcom/android/camera/IntentManager;->mHasExtraVideoQuality:Z
 
-    .line 271
+    .line 289
     :goto_2
     const-string v3, "IntentManager"
 
@@ -950,13 +1018,13 @@
 
     goto/16 :goto_0
 
-    .line 270
+    .line 288
     :cond_b
     sput-boolean v6, Lcom/android/camera/IntentManager;->mHasExtraVideoQuality:Z
 
     goto :goto_2
 
-    .line 273
+    .line 291
     :cond_c
     const-string v3, ""
 
@@ -966,19 +1034,19 @@
 
     if-eqz v3, :cond_e
 
-    .line 274
+    .line 292
     iget-object v3, p0, Lcom/android/camera/IntentManager;->mRequestMode:Lcom/android/camera/IntentManager$RequestMode;
 
     sget-object v4, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
     if-ne v3, v4, :cond_d
 
-    .line 275
+    .line 293
     sget-object v3, Lcom/android/camera/IntentManager$RequestName;->Unknown_General:Lcom/android/camera/IntentManager$RequestName;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 276
+    .line 294
     const-string v3, "IntentManager"
 
     const-string v4, "no request name - RequestName.Unknown_General"
@@ -987,13 +1055,13 @@
 
     goto/16 :goto_0
 
-    .line 278
+    .line 296
     :cond_d
     sget-object v3, Lcom/android/camera/IntentManager$RequestName;->Unknown_Service:Lcom/android/camera/IntentManager$RequestName;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 279
+    .line 297
     const-string v3, "IntentManager"
 
     const-string v4, "no request name - RequestName.Unknown_Service"
@@ -1002,7 +1070,7 @@
 
     goto/16 :goto_0
 
-    .line 281
+    .line 299
     :cond_e
     const-string v3, "mms"
 
@@ -1012,12 +1080,12 @@
 
     if-eqz v3, :cond_10
 
-    .line 282
+    .line 300
     sget-object v3, Lcom/android/camera/IntentManager$RequestName;->Mms:Lcom/android/camera/IntentManager$RequestName;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 283
+    .line 301
     const-string v3, "maxfilesize"
 
     const/4 v4, -0x1
@@ -1028,7 +1096,7 @@
 
     sput v3, Lcom/android/camera/IntentManager;->mMMS_maximum_size:I
 
-    .line 284
+    .line 302
     const-string v3, "IntentManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1053,27 +1121,27 @@
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 285
+    .line 303
     sput-boolean v6, Lcom/android/camera/IntentManager;->mMMS_isWideScreen:Z
 
-    .line 286
+    .line 304
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestName = RequestName.Mms, default image ratio is 4:3, 640*480"
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 287
+    .line 305
     sget-object v3, Lcom/android/camera/DisplayDevice;->CUSTOM_MMS:Lcom/android/camera/DisplayDevice$CustomMMS;
 
     sget-object v4, Lcom/android/camera/DisplayDevice$CustomMMS;->Verizon:Lcom/android/camera/DisplayDevice$CustomMMS;
 
     if-ne v3, v4, :cond_f
 
-    .line 288
+    .line 306
     sput-boolean v7, Lcom/android/camera/IntentManager;->mMMS_isVideoQVGA:Z
 
-    .line 289
+    .line 307
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestName = RequestName.Mms, video is QVGA for custom request"
@@ -1082,13 +1150,13 @@
 
     goto/16 :goto_0
 
-    .line 291
+    .line 309
     :cond_f
     sput-boolean v6, Lcom/android/camera/IntentManager;->mMMS_isVideoQVGA:Z
 
     goto/16 :goto_0
 
-    .line 294
+    .line 312
     :cond_10
     const-string v3, "CU"
 
@@ -1098,21 +1166,21 @@
 
     if-eqz v3, :cond_11
 
-    .line 296
+    .line 314
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestName = RequestName.CU"
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 297
+    .line 315
     sget-object v3, Lcom/android/camera/IntentManager$RequestName;->CU:Lcom/android/camera/IntentManager$RequestName;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
 
     goto/16 :goto_0
 
-    .line 299
+    .line 317
     :cond_11
     const-string v3, "album"
 
@@ -1122,12 +1190,12 @@
 
     if-eqz v3, :cond_12
 
-    .line 300
+    .line 318
     sget-object v3, Lcom/android/camera/IntentManager$RequestName;->Album:Lcom/android/camera/IntentManager$RequestName;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 301
+    .line 319
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestName = RequestName.Album"
@@ -1136,7 +1204,7 @@
 
     goto/16 :goto_0
 
-    .line 302
+    .line 320
     :cond_12
     const-string v3, "contacts"
 
@@ -1146,12 +1214,12 @@
 
     if-eqz v3, :cond_13
 
-    .line 303
+    .line 321
     sget-object v3, Lcom/android/camera/IntentManager$RequestName;->Contacts:Lcom/android/camera/IntentManager$RequestName;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 304
+    .line 322
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestName = RequestName.Contacts"
@@ -1160,7 +1228,7 @@
 
     goto/16 :goto_0
 
-    .line 305
+    .line 323
     :cond_13
     const-string v3, "mail"
 
@@ -1170,12 +1238,12 @@
 
     if-eqz v3, :cond_14
 
-    .line 306
+    .line 324
     sget-object v3, Lcom/android/camera/IntentManager$RequestName;->Mail:Lcom/android/camera/IntentManager$RequestName;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 307
+    .line 325
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestName = RequestName.Mail"
@@ -1184,7 +1252,7 @@
 
     goto/16 :goto_0
 
-    .line 308
+    .line 326
     :cond_14
     const-string v3, "captureSquare"
 
@@ -1194,12 +1262,12 @@
 
     if-eqz v3, :cond_15
 
-    .line 309
+    .line 327
     sget-object v3, Lcom/android/camera/IntentManager$RequestName;->Square:Lcom/android/camera/IntentManager$RequestName;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 310
+    .line 328
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestName = RequestName.Square"
@@ -1208,7 +1276,7 @@
 
     goto/16 :goto_0
 
-    .line 311
+    .line 329
     :cond_15
     const-string v3, "notes"
 
@@ -1218,12 +1286,12 @@
 
     if-eqz v3, :cond_16
 
-    .line 312
+    .line 330
     sget-object v3, Lcom/android/camera/IntentManager$RequestName;->Notes:Lcom/android/camera/IntentManager$RequestName;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 313
+    .line 331
     const-string v3, "IntentManager"
 
     const-string v4, "mRequestName = RequestName.Notes"
@@ -1232,7 +1300,7 @@
 
     goto/16 :goto_0
 
-    .line 315
+    .line 333
     :cond_16
     iget-object v3, p0, Lcom/android/camera/IntentManager;->mRequestMode:Lcom/android/camera/IntentManager$RequestMode;
 
@@ -1240,12 +1308,12 @@
 
     if-ne v3, v4, :cond_17
 
-    .line 316
+    .line 334
     sget-object v3, Lcom/android/camera/IntentManager$RequestName;->Unknown_General:Lcom/android/camera/IntentManager$RequestName;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 317
+    .line 335
     const-string v3, "IntentManager"
 
     const-string v4, "other request name - RequestName.Unknown_General"
@@ -1254,13 +1322,13 @@
 
     goto/16 :goto_0
 
-    .line 319
+    .line 337
     :cond_17
     sget-object v3, Lcom/android/camera/IntentManager$RequestName;->Unknown_Service:Lcom/android/camera/IntentManager$RequestName;
 
     iput-object v3, p0, Lcom/android/camera/IntentManager;->mRequestName:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 320
+    .line 338
     const-string v3, "IntentManager"
 
     const-string v4, "other request name - RequestName.Unknown_Service"
@@ -1270,25 +1338,35 @@
     goto/16 :goto_0
 .end method
 
+.method public getLaunchedby()I
+    .locals 1
+
+    .prologue
+    .line 409
+    iget v0, p0, Lcom/android/camera/IntentManager;->mCameralaunchedBy:I
+
+    return v0
+.end method
+
 .method public initManager(Landroid/content/Intent;)V
     .locals 1
     .parameter "intent"
 
     .prologue
-    .line 157
+    .line 163
     invoke-virtual {p0, p1}, Lcom/android/camera/IntentManager;->checkIntent(Landroid/content/Intent;)V
 
-    .line 158
+    .line 164
     invoke-virtual {p1}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/android/camera/IntentManager;->checkExtras(Landroid/os/Bundle;)V
 
-    .line 159
+    .line 165
     invoke-direct {p0}, Lcom/android/camera/IntentManager;->determineStartMode()V
 
-    .line 160
+    .line 166
     return-void
 .end method
 
@@ -1296,7 +1374,7 @@
     .locals 1
 
     .prologue
-    .line 379
+    .line 397
     iget-boolean v0, p0, Lcom/android/camera/IntentManager;->mIsCamcorder:Z
 
     return v0
@@ -1308,12 +1386,32 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 205
+    .line 223
     iput-object v0, p0, Lcom/android/camera/IntentManager;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
-    .line 206
+    .line 224
     iput-object v0, p0, Lcom/android/camera/IntentManager;->mCameraThread:Lcom/android/camera/CameraThread;
 
-    .line 207
+    .line 225
+    return-void
+.end method
+
+.method public resetLaunchedby()V
+    .locals 2
+
+    .prologue
+    .line 412
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/android/camera/IntentManager;->mCameralaunchedBy:I
+
+    .line 413
+    const-string v0, "IntentManager"
+
+    const-string v1, "extras: resetLaunchedby camera START_ACTIVITY_UNKNOWN"
+
+    invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 414
     return-void
 .end method

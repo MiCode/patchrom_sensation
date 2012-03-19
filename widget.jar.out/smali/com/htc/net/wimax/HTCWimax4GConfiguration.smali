@@ -98,7 +98,7 @@
 
     .prologue
     .line 51
-    iget-object v0, p0, Lcom/htc/net/wimax/HTCWimax4GConfiguration;->password:Ljava/lang/String;
+    iget-object v0, p0, Lcom/htc/net/wimax/Wimax4GConfiguration;->password:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -108,7 +108,7 @@
 
     .prologue
     .line 59
-    iget-object v0, p0, Lcom/htc/net/wimax/HTCWimax4GConfiguration;->username:Ljava/lang/String;
+    iget-object v0, p0, Lcom/htc/net/wimax/Wimax4GConfiguration;->username:Ljava/lang/String;
 
     return-object v0
 .end method

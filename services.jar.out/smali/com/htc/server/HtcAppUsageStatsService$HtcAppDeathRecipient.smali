@@ -33,7 +33,7 @@
     .line 136
     iput-object p1, p0, Lcom/htc/server/HtcAppUsageStatsService$HtcAppDeathRecipient;->this$0:Lcom/htc/server/HtcAppUsageStatsService;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 137
     iput-object p2, p0, Lcom/htc/server/HtcAppUsageStatsService$HtcAppDeathRecipient;->observer:Landroid/os/IBinder;

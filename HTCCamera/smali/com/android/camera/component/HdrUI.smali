@@ -328,7 +328,7 @@
     if-nez v0, :cond_0
 
     .line 297
-    iget-object v1, p0, Lcom/android/camera/component/HdrUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "eventManager == null"
 
@@ -656,7 +656,7 @@
     if-eqz v0, :cond_0
 
     .line 143
-    iget-object v0, p0, Lcom/android/camera/component/HdrUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Re-enter HDR mode"
 
@@ -704,7 +704,7 @@
     if-nez v0, :cond_0
 
     .line 166
-    iget-object v0, p0, Lcom/android/camera/component/HdrUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Re-exit HDR mode"
 

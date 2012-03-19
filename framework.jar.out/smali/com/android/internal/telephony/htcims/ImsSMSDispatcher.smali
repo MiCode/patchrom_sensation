@@ -48,7 +48,7 @@
 
     const/4 v10, 0x2
 
-    iget-object v11, p0, Lcom/android/internal/telephony/htcims/ImsSMSDispatcher;->mWapPush:Lcom/android/internal/telephony/WapPushOverSms;
+    iget-object v11, p0, Lcom/android/internal/telephony/SMSDispatcher;->mWapPush:Lcom/android/internal/telephony/WapPushOverSms;
 
     move-object v7, p1
 
@@ -65,7 +65,7 @@
 
     const/4 v10, 0x1
 
-    iget-object v11, p0, Lcom/android/internal/telephony/htcims/ImsSMSDispatcher;->mWapPush:Lcom/android/internal/telephony/WapPushOverSms;
+    iget-object v11, p0, Lcom/android/internal/telephony/SMSDispatcher;->mWapPush:Lcom/android/internal/telephony/WapPushOverSms;
 
     move-object v7, p1
 
@@ -78,7 +78,7 @@
     iput-object v6, p0, Lcom/android/internal/telephony/htcims/ImsSMSDispatcher;->mGsmDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
     .line 93
-    iget-object v0, p0, Lcom/android/internal/telephony/htcims/ImsSMSDispatcher;->mCm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher;->mCm:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0x1e
 
@@ -237,12 +237,12 @@
 
     .prologue
     .line 256
-    iget-object v0, p0, Lcom/android/internal/telephony/htcims/ImsSMSDispatcher;->mCm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher;->mCm:Lcom/android/internal/telephony/CommandsInterface;
 
     if-eqz v0, :cond_0
 
     .line 257
-    iget-object v0, p0, Lcom/android/internal/telephony/htcims/ImsSMSDispatcher;->mCm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher;->mCm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-direct {p0, p2}, Lcom/android/internal/telephony/htcims/ImsSMSDispatcher;->resultToCause(I)I
 
@@ -355,7 +355,7 @@
 
     .prologue
     .line 98
-    iget-object v0, p0, Lcom/android/internal/telephony/htcims/ImsSMSDispatcher;->mCm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher;->mCm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForImsNetworkStateChanged(Landroid/os/Handler;)V
 
@@ -463,7 +463,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "handleMessage: "
+    const-string v2, "handleMessage: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -495,7 +495,7 @@
 
     .line 302
     :sswitch_0
-    iget-object v1, p0, Lcom/android/internal/telephony/htcims/ImsSMSDispatcher;->mCm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v1, p0, Lcom/android/internal/telephony/SMSDispatcher;->mCm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/htcims/ImsSMSDispatcher;->obtainMessage(I)Landroid/os/Message;
 
@@ -510,7 +510,7 @@
 
     .line 306
     :sswitch_1
-    iget-object v1, p0, Lcom/android/internal/telephony/htcims/ImsSMSDispatcher;->mCm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v1, p0, Lcom/android/internal/telephony/SMSDispatcher;->mCm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/htcims/ImsSMSDispatcher;->obtainMessage(I)Landroid/os/Message;
 
@@ -548,8 +548,6 @@
     goto :goto_0
 
     .line 300
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0xc -> :sswitch_0

@@ -123,9 +123,7 @@
 
     invoke-virtual {p0, v2, v3, v4}, Lcom/android/server/am/AppErrorDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
-    .line 68
 
-    .line 69
     const/4 v2, -0x2
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -250,7 +248,7 @@
 
     new-array v3, v6, [Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v4
 

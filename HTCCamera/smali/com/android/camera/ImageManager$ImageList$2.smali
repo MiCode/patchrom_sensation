@@ -73,7 +73,7 @@
 
     iget-object v2, p0, Lcom/android/camera/ImageManager$ImageList$2;->this$1:Lcom/android/camera/ImageManager$ImageList;
 
-    iget-boolean v2, v2, Lcom/android/camera/ImageManager$ImageList;->mCursorDeactivated:Z
+    iget-boolean v2, v2, Lcom/android/camera/ImageManager$BaseImageList;->mCursorDeactivated:Z
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 

@@ -30,7 +30,7 @@
     .line 2435
     iput-object p1, p0, Lcom/htc/widget/HtcAbsListView$CheckForTap;->this$0:Lcom/htc/widget/HtcAbsListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -66,7 +66,7 @@
 
     iget-object v6, p0, Lcom/htc/widget/HtcAbsListView$CheckForTap;->this$0:Lcom/htc/widget/HtcAbsListView;
 
-    iget v6, v6, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v6, v6, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     sub-int/2addr v5, v6
 
@@ -94,7 +94,7 @@
     .line 2443
     iget-object v4, p0, Lcom/htc/widget/HtcAbsListView$CheckForTap;->this$0:Lcom/htc/widget/HtcAbsListView;
 
-    iget-boolean v4, v4, Lcom/htc/widget/HtcAbsListView;->mDataChanged:Z
+    iget-boolean v4, v4, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     if-nez v4, :cond_5
 

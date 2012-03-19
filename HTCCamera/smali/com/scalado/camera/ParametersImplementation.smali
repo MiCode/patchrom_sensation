@@ -68,7 +68,7 @@
     if-eqz v1, :cond_1
 
     .line 115
-    iget-object v1, p0, Lcom/scalado/camera/ParametersImplementation;->mParameters:Landroid/hardware/Camera$Parameters;
+    iget-object v1, p0, Lcom/scalado/camera/ParametersBase;->mParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v2, "capture-burst-interval"
 
@@ -109,7 +109,7 @@
 
     .prologue
     .line 86
-    iget-object v1, p0, Lcom/scalado/camera/ParametersImplementation;->mParameters:Landroid/hardware/Camera$Parameters;
+    iget-object v1, p0, Lcom/scalado/camera/ParametersBase;->mParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v2, "capture-burst-retroactive"
 
@@ -148,7 +148,7 @@
     if-le v2, v1, :cond_1
 
     .line 57
-    iget-object v2, p0, Lcom/scalado/camera/ParametersImplementation;->mParameters:Landroid/hardware/Camera$Parameters;
+    iget-object v2, p0, Lcom/scalado/camera/ParametersBase;->mParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v3, "capture-burst-total"
 
@@ -203,7 +203,7 @@
     if-eqz v4, :cond_2
 
     .line 140
-    iget-object v4, p0, Lcom/scalado/camera/ParametersImplementation;->mParameters:Landroid/hardware/Camera$Parameters;
+    iget-object v4, p0, Lcom/scalado/camera/ParametersBase;->mParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v5, "capture-burst-exposures"
 
@@ -296,7 +296,7 @@
 
     .prologue
     .line 103
-    iget-object v1, p0, Lcom/scalado/camera/ParametersImplementation;->mParameters:Landroid/hardware/Camera$Parameters;
+    iget-object v1, p0, Lcom/scalado/camera/ParametersBase;->mParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v2, "capture-burst-retroactive-values"
 
@@ -328,7 +328,7 @@
 
     .prologue
     .line 75
-    iget-object v1, p0, Lcom/scalado/camera/ParametersImplementation;->mParameters:Landroid/hardware/Camera$Parameters;
+    iget-object v1, p0, Lcom/scalado/camera/ParametersBase;->mParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v2, "capture-burst-total-values"
 
@@ -395,7 +395,7 @@
     const/4 v1, 0x0
 
     .line 133
-    iget-object v2, p0, Lcom/scalado/camera/ParametersImplementation;->mParameters:Landroid/hardware/Camera$Parameters;
+    iget-object v2, p0, Lcom/scalado/camera/ParametersBase;->mParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v3, "capture-burst-interval-values"
 
@@ -428,7 +428,7 @@
 
     .prologue
     .line 182
-    iget-object v1, p0, Lcom/scalado/camera/ParametersImplementation;->mParameters:Landroid/hardware/Camera$Parameters;
+    iget-object v1, p0, Lcom/scalado/camera/ParametersBase;->mParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v2, "capture-burst-exposures-values"
 

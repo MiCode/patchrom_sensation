@@ -139,7 +139,7 @@
 
     .prologue
     .line 84
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 83
     const/4 v0, 0x0
@@ -782,13 +782,6 @@
 
     if-nez v2, :cond_2
 
-    .line 112
-    const-string v2, "HtcTextSelection"
-
-    const-string v3, "prepareSelectionWindow::dismiss Magnifier because parent view changed"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 113
     sget-object v2, Lcom/htc/textselection/HtcTextSelectionManager;->mMagnifier:Lcom/htc/textselection/Magnifier;
 
@@ -800,7 +793,7 @@
 .end method
 
 .method private prepareSelectionWindow(Landroid/view/View;)V
-    .locals 3
+    .locals 2
     .parameter "view"
 
     .prologue
@@ -848,13 +841,6 @@
     iget-object v1, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
 
     if-eq v1, p1, :cond_2
-
-    .line 128
-    const-string v1, "HtcTextSelection"
-
-    const-string v2, "prepareSelectionWindow::dismiss QuickAction because parent view changed"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 129
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;

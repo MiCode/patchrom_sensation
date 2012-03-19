@@ -33,7 +33,7 @@
     .line 315
     iput-object p1, p0, Lcom/android/phone/CallFeaturesSetting$VoiceMailProvider;->this$0:Lcom/android/phone/CallFeaturesSetting;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 316
     iput-object p2, p0, Lcom/android/phone/CallFeaturesSetting$VoiceMailProvider;->name:Ljava/lang/String;

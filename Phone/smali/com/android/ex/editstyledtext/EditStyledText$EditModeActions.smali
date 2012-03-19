@@ -138,7 +138,7 @@
     .line 2823
     iput-object p1, p0, Lcom/android/ex/editstyledtext/EditStyledText$EditModeActions;->this$0:Lcom/android/ex/editstyledtext/EditStyledText;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 2793
     iput v1, p0, Lcom/android/ex/editstyledtext/EditStyledText$EditModeActions;->mMode:I

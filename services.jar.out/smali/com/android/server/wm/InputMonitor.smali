@@ -44,7 +44,7 @@
     const/4 v1, 0x0
 
     .line 64
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 40
     iput-boolean v0, p0, Lcom/android/server/wm/InputMonitor;->mInputDispatchEnabled:Z
@@ -67,7 +67,7 @@
     .line 61
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wm/InputMonitor;->mInputDevicesReadyMonitor:Ljava/lang/Object;
 
@@ -416,7 +416,7 @@
 
     move-result-object v4
 
-    iget-object v5, v1, Lcom/android/server/wm/AppWindowToken;->stringName:Ljava/lang/String;
+    iget-object v5, v1, Lcom/android/server/wm/WindowToken;->stringName:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1349,7 +1349,7 @@
 
     move-object/from16 v0, v17
 
-    iget-boolean v0, v0, Lcom/android/server/wm/AppWindowToken;->paused:Z
+    iget-boolean v0, v0, Lcom/android/server/wm/WindowToken;->paused:Z
 
     move/from16 v17, v0
 

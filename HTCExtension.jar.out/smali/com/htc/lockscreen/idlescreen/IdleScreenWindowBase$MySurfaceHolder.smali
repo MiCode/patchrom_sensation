@@ -24,13 +24,13 @@
     .parameter
 
     .prologue
-    .line 359
+    .line 369
     iput-object p1, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;->this$0:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;
 
-    .line 360
+    .line 370
     invoke-direct {p0}, Lcom/android/internal/view/BaseSurfaceHolder;-><init>()V
 
-    .line 361
+    .line 371
     return-void
 .end method
 
@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 382
+    .line 392
     const/4 v0, 0x0
 
     return v0
@@ -50,7 +50,7 @@
     .locals 1
 
     .prologue
-    .line 365
+    .line 375
     iget-object v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;->this$0:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;
 
     #getter for: Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mDrawingAllowed:Z
@@ -65,14 +65,14 @@
     .locals 1
 
     .prologue
-    .line 371
+    .line 381
     iget-object v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;->this$0:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;
 
-    iget-object v0, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+    iget-object v0, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
 
     invoke-virtual {v0}, Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;->requestUpdateSurface()V
 
-    .line 372
+    .line 382
     return-void
 .end method
 
@@ -80,7 +80,7 @@
     .locals 0
 
     .prologue
-    .line 378
+    .line 388
     return-void
 .end method
 
@@ -89,6 +89,6 @@
     .parameter "bKeep"
 
     .prologue
-    .line 388
+    .line 398
     return-void
 .end method

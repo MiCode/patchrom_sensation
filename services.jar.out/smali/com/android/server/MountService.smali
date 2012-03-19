@@ -8445,7 +8445,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v6}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Lcom/android/server/MountService$MountObbAction;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -10949,7 +10949,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v6}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Lcom/android/server/MountService$UnmountObbAction;->toString()Ljava/lang/String;
 
     move-result-object v4
 

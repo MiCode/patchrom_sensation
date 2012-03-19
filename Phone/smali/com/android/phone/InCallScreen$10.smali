@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/android/phone/InCallScreen$10;->val$c:Lcom/android/internal/telephony/Connection;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,14 +48,6 @@
     .parameter "whichButton"
 
     .prologue
-    .line 3974
-    iget-object v1, p0, Lcom/android/phone/InCallScreen$10;->this$0:Lcom/android/phone/InCallScreen;
-
-    const-string v2, "handle WILD_PROMPT_CHAR_ENTERED, proceed..."
-
-    #calls: Lcom/android/phone/InCallScreen;->log(Ljava/lang/String;)V
-    invoke-static {v1, v2}, Lcom/android/phone/InCallScreen;->access$200(Lcom/android/phone/InCallScreen;Ljava/lang/String;)V
-
     .line 3975
     const/4 v0, 0x0
 

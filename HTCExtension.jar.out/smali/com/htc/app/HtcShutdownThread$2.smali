@@ -30,7 +30,7 @@
     .line 172
     iput-object p1, p0, Lcom/htc/app/HtcShutdownThread$2;->val$context:Landroid/content/Context;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -38,71 +38,47 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 5
+    .locals 2
     .parameter "dialog"
     .parameter "which"
 
     .prologue
     .line 176
-    sget-boolean v2, Lcom/htc/htcjavaflag/HtcBuildFlag;->HtcCIQFlag:Z
+    sget-boolean v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->HtcCIQFlag:Z
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     .line 178
     :try_start_0
-    new-instance v1, Landroid/content/Intent;
+    new-instance v0, Landroid/content/Intent;
 
-    const-string v2, "com.android.internal.policy.impl.SHUTDOWN_CIQ"
+    const-string v1, "com.android.internal.policy.impl.SHUTDOWN_CIQ"
 
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 179
-    .local v1, intent:Landroid/content/Intent;
-    iget-object v2, p0, Lcom/htc/app/HtcShutdownThread$2;->val$context:Landroid/content/Context;
+    .local v0, intent:Landroid/content/Intent;
+    iget-object v1, p0, Lcom/htc/app/HtcShutdownThread$2;->val$context:Landroid/content/Context;
 
-    invoke-virtual {v2, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+    invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 185
-    .end local v1           #intent:Landroid/content/Intent;
+    .end local v0           #intent:Landroid/content/Intent;
     :cond_0
     :goto_0
-    iget-object v2, p0, Lcom/htc/app/HtcShutdownThread$2;->val$context:Landroid/content/Context;
+    iget-object v1, p0, Lcom/htc/app/HtcShutdownThread$2;->val$context:Landroid/content/Context;
 
     #calls: Lcom/htc/app/HtcShutdownThread;->beginShutdownSequence(Landroid/content/Context;)V
-    invoke-static {v2}, Lcom/htc/app/HtcShutdownThread;->access$100(Landroid/content/Context;)V
+    invoke-static {v1}, Lcom/htc/app/HtcShutdownThread;->access$100(Landroid/content/Context;)V
 
     .line 186
     return-void
 
     .line 180
     :catch_0
-    move-exception v0
-
-    .line 182
-    .local v0, ex:Ljava/lang/Exception;
-    const-string v2, "HtcShutdownThread"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Send system shutdown intext fail! Exception: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    move-exception v1
 
     goto :goto_0
 .end method

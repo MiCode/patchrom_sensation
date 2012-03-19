@@ -84,7 +84,7 @@
 
     .prologue
     .line 19
-    iget-object v0, p0, Lcom/android/camera/component/NewMediaBroadcaster;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -95,7 +95,7 @@
 
     .prologue
     .line 19
-    iget-object v0, p0, Lcom/android/camera/component/NewMediaBroadcaster;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -190,17 +190,8 @@
 
     invoke-direct {p0, v0, v2}, Lcom/android/camera/component/NewMediaBroadcaster;->broadcastIntent(Landroid/net/Uri;Lcom/android/camera/component/NewMediaBroadcaster$MEDIATYPE;)V
 
-    .line 164
-    :goto_1
-    iget-object v2, p0, Lcom/android/camera/component/NewMediaBroadcaster;->TAG:Ljava/lang/String;
-
-    invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
-
     .line 165
+    :goto_1
     iget-object v2, p0, Lcom/android/camera/component/NewMediaBroadcaster;->eventArgs:[Lcom/android/camera/MediaEvent;
 
     const/4 v3, 0x0
@@ -279,7 +270,7 @@
     if-nez v1, :cond_0
 
     .line 41
-    iget-object v6, p0, Lcom/android/camera/component/NewMediaBroadcaster;->TAG:Ljava/lang/String;
+    iget-object v6, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v7, "cameraThreadHandler == null"
 

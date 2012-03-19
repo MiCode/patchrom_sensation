@@ -86,7 +86,7 @@
     if-eqz v2, :cond_0
 
     .line 3108
-    iget-object v2, p0, Lcom/android/camera/ImageManager$DrmImageList$DrmImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
+    iget-object v2, p0, Lcom/android/camera/ImageManager$BaseImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
 
     invoke-virtual {v2}, Lcom/android/camera/ImageManager$BaseImageList;->indexData()I
 
@@ -160,7 +160,7 @@
     if-eqz v6, :cond_0
 
     .line 3136
-    iget-object v6, p0, Lcom/android/camera/ImageManager$DrmImageList$DrmImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
+    iget-object v6, p0, Lcom/android/camera/ImageManager$BaseImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
 
     invoke-virtual {v6}, Lcom/android/camera/ImageManager$BaseImageList;->indexMimeType()I
 
@@ -371,7 +371,7 @@
     if-eqz v2, :cond_0
 
     .line 3119
-    iget-object v2, p0, Lcom/android/camera/ImageManager$DrmImageList$DrmImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
+    iget-object v2, p0, Lcom/android/camera/ImageManager$BaseImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
 
     invoke-virtual {v2}, Lcom/android/camera/ImageManager$BaseImageList;->indexTitle()I
 

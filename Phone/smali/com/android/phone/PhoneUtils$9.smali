@@ -23,7 +23,7 @@
 
     .prologue
     .line 2410
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -31,21 +31,15 @@
 
 # virtual methods
 .method public onQueryComplete(ILjava/lang/Object;Lcom/android/internal/telephony/CallerInfo;)V
-    .locals 7
+    .locals 6
     .parameter "token"
     .parameter "cookie"
     .parameter "ci"
 
     .prologue
-    .line 2417
-    const-string v5, "query complete, updating connection.userdata"
-
-    #calls: Lcom/android/phone/PhoneUtils;->log(Ljava/lang/String;)V
-    invoke-static {v5}, Lcom/android/phone/PhoneUtils;->access$000(Ljava/lang/String;)V
-
+    .line 2418
     move-object v2, p2
 
-    .line 2418
     check-cast v2, Lcom/android/internal/telephony/Connection;
 
     .local v2, conn:Lcom/android/internal/telephony/Connection;
@@ -76,31 +70,9 @@
     .end local v4           #o:Ljava/lang/Object;
     iget-object v1, v4, Lcom/android/phone/PhoneUtils$CallerInfoToken;->currentInfo:Lcom/android/internal/telephony/CallerInfo;
 
-    .line 2436
+    .line 2437
     :cond_0
     :goto_0
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "- onQueryComplete: CallerInfo:"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    #calls: Lcom/android/phone/PhoneUtils;->log(Ljava/lang/String;)V
-    invoke-static {v5}, Lcom/android/phone/PhoneUtils;->access$000(Ljava/lang/String;)V
-
-    .line 2437
     iget-boolean v5, p3, Lcom/android/internal/telephony/CallerInfo;->contactExists:Z
 
     if-nez v5, :cond_1
@@ -130,37 +102,9 @@
 
     iput v5, p3, Lcom/android/internal/telephony/CallerInfo;->numberPresentation:I
 
-    .line 2479
+    .line 2480
     :cond_2
     :goto_1
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "==> Stashing CallerInfo "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, " into the connection..."
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    #calls: Lcom/android/phone/PhoneUtils;->log(Ljava/lang/String;)V
-    invoke-static {v5}, Lcom/android/phone/PhoneUtils;->access$000(Ljava/lang/String;)V
-
-    .line 2480
     invoke-virtual {v2, p3}, Lcom/android/internal/telephony/Connection;->setUserData(Ljava/lang/Object;)V
 
     .line 2483

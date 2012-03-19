@@ -65,7 +65,7 @@
     .line 201
     iput-object p1, p0, Lcom/htc/sunny/SPresentation$AnimationInfo;->this$0:Lcom/htc/sunny/SPresentation;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 202
     iput v0, p0, Lcom/htc/sunny/SPresentation$AnimationInfo;->nInFrame:I

@@ -40,7 +40,7 @@
 
     .prologue
     .line 314
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 327
     invoke-static {}, Ljava/text/Collator;->getInstance()Ljava/text/Collator;
@@ -77,7 +77,7 @@
 
     iget-object v2, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v0, v2, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v0, v2, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     .line 321
     :cond_0
@@ -93,7 +93,7 @@
 
     iget-object v2, p2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v1, v2, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v1, v2, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     .line 324
     :cond_1

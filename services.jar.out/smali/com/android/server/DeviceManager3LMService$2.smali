@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1395
+    .line 1431
     iput-object p1, p0, Lcom/android/server/DeviceManager3LMService$2;->this$0:Lcom/android/server/DeviceManager3LMService;
 
     iput-object p2, p0, Lcom/android/server/DeviceManager3LMService$2;->val$nfc:Landroid/nfc/NfcAdapter;
@@ -43,11 +43,11 @@
     .locals 1
 
     .prologue
-    .line 1398
+    .line 1434
     iget-object v0, p0, Lcom/android/server/DeviceManager3LMService$2;->val$nfc:Landroid/nfc/NfcAdapter;
 
     invoke-virtual {v0}, Landroid/nfc/NfcAdapter;->disable()Z
 
-    .line 1399
+    .line 1435
     return-void
 .end method

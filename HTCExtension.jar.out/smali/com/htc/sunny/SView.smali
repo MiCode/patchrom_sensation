@@ -132,7 +132,7 @@
     const/4 v1, 0x0
 
     .line 125
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 39
     iput-object v2, p0, Lcom/htc/sunny/SView;->mParentView:Lcom/htc/sunny/SView;
@@ -319,7 +319,7 @@
     const/4 v1, 0x0
 
     .line 135
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 39
     iput-object v2, p0, Lcom/htc/sunny/SView;->mParentView:Lcom/htc/sunny/SView;

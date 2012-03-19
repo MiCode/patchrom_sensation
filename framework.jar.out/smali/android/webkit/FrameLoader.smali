@@ -90,7 +90,7 @@
     const/4 v4, 0x0
 
     .line 59
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 60
     sget-boolean v0, Landroid/webkit/FrameLoader;->$assertionsDisabled:Z

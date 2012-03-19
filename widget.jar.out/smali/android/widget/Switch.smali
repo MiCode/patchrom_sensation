@@ -1583,7 +1583,7 @@
     if-eqz v1, :cond_0
 
     .line 372
-    iget-object v1, p0, Landroid/widget/Switch;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
 
     const v2, 0x1040488
 
@@ -1621,7 +1621,7 @@
     if-eqz v1, :cond_2
 
     .line 378
-    iget-object v1, p0, Landroid/widget/Switch;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
 
     const v2, 0x1040489
 

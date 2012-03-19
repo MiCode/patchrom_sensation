@@ -33,7 +33,7 @@
     .line 1355
     iput-object p1, p0, Landroid/hardware/Camera$Size;->this$0:Landroid/hardware/Camera;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1356
     iput p2, p0, Landroid/hardware/Camera$Size;->width:I

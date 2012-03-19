@@ -47,7 +47,7 @@
 
     .prologue
     .line 145
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 69
     const/16 v0, 0x1388
@@ -96,14 +96,14 @@
     .locals 3
 
     .prologue
-    .line 387
+    .line 388
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.server.HTCcheckin.CHECKIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 388
+    .line 389
     .local v0, intent:Landroid/content/Intent;
     const-string/jumbo v1, "intentSource"
 
@@ -111,14 +111,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 389
+    .line 390
     iget-object v1, p0, Lcom/android/internal/telephony/WapPushOverSms;->mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
     const-string v2, "android.permission.RECEIVE_WAP_PUSH"
 
     invoke-virtual {v1, v0, v2}, Lcom/android/internal/telephony/SMSDispatcher;->dispatch(Landroid/content/Intent;Ljava/lang/String;)V
 
-    .line 390
+    .line 391
     return-void
 .end method
 
@@ -145,33 +145,6 @@
     .parameter "Oriaddr"
 
     .prologue
-    .line 177
-    const-string v21, "WAP PUSH"
-
-    new-instance v22, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v22 .. v22}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v23, "Rx: "
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    invoke-static/range {p1 .. p1}, Lcom/android/internal/telephony/IccUtils;->bytesToHexString([B)Ljava/lang/String;
-
-    move-result-object v23
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v22
-
-    invoke-static/range {v21 .. v22}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 179
     const/4 v11, 0x0
 
@@ -282,7 +255,7 @@
     .line 209
     const/16 v21, 0x2
 
-    .line 334
+    .line 335
     :goto_0
     return v21
 
@@ -886,6 +859,13 @@
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
     .line 327
+    const-string/jumbo v21, "headerLength"
+
+    move-object/from16 v0, v21
+
+    invoke-virtual {v13, v0, v9}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 328
     const-string v21, "contentTypeParameters"
 
     move-object/from16 v0, p0
@@ -904,7 +884,7 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 329
+    .line 330
     if-eqz p2, :cond_d
 
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->length()I
@@ -913,7 +893,7 @@
 
     if-lez v21, :cond_d
 
-    .line 330
+    .line 331
     const-string v21, "OriAddr"
 
     move-object/from16 v0, v21
@@ -922,7 +902,7 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 332
+    .line 333
     :cond_d
     move-object/from16 v0, p0
 
@@ -936,7 +916,7 @@
 
     invoke-virtual {v0, v13, v1}, Lcom/android/internal/telephony/SMSDispatcher;->dispatch(Landroid/content/Intent;Ljava/lang/String;)V
 
-    .line 334
+    .line 335
     const/16 v21, -0x1
 
     goto/16 :goto_0

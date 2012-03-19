@@ -175,29 +175,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 4
 
     .prologue
-    const/4 v4, 0x3
-
     .line 1518
     const/4 v0, 0x0
 
     sput-object v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$Secure;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    .line 1526
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0, v4}, Ljava/util/HashSet;-><init>(I)V
-
-    sput-object v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$Secure;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    .line 1528
-    sget-object v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$Secure;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    const-string v1, "assisted_gps_enabled"
-
-    invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 2239
     sget-object v0, Lcom/htc/wrap/android/provider/Settings$Secure;->SETTINGS_TO_BACKUP:[Ljava/lang/String;
@@ -224,9 +208,11 @@
 
     aput-object v3, v1, v2
 
-    const-string v2, "wifi_country_code"
+    const/4 v2, 0x3
 
-    aput-object v2, v1, v4
+    const-string v3, "wifi_country_code"
+
+    aput-object v3, v1, v2
 
     const/4 v2, 0x4
 
@@ -361,7 +347,7 @@
     aput-object v3, v1, v2
 
     #calls: Lcom/htc/wrap/android/provider/HtcWrapSettings;->combineStringArrays([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
-    invoke-static {v0, v1}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$200([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$100([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
@@ -714,71 +700,13 @@
 .end method
 
 .method public static putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
-    .locals 2
+    .locals 1
     .parameter "resolver"
     .parameter "name"
     .parameter "value"
 
     .prologue
-    .line 1548
-    sget-object v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$Secure;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 1549
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "name: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    #calls: Lcom/htc/wrap/android/provider/HtcWrapSettings;->Log(Ljava/lang/String;)V
-    invoke-static {v0}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$000(Ljava/lang/String;)V
-
-    .line 1550
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "value: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    #calls: Lcom/htc/wrap/android/provider/HtcWrapSettings;->Log(Ljava/lang/String;)V
-    invoke-static {v0}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$000(Ljava/lang/String;)V
-
-    .line 1551
-    #calls: Lcom/htc/wrap/android/provider/HtcWrapSettings;->traceCallingStack()V
-    invoke-static {}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$100()V
-
     .line 1556
-    :cond_0
     invoke-static {p0, p1, p2}, Lcom/htc/wrap/android/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
@@ -1037,10 +965,6 @@
     .parameter "enabled"
 
     .prologue
-    .line 1575
-    #calls: Lcom/htc/wrap/android/provider/HtcWrapSettings;->traceCallingStack()V
-    invoke-static {}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$100()V
-
     .line 1579
     invoke-static {p0, p1, p2}, Lcom/htc/wrap/android/provider/Settings$Secure;->setLocationProviderEnabled(Landroid/content/ContentResolver;Ljava/lang/String;Z)V
 

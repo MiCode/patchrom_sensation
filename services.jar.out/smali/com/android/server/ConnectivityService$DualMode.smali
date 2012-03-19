@@ -100,7 +100,7 @@
     return-void
 .end method
 
-.method static synthetic access$3700(Lcom/android/server/ConnectivityService$DualMode;Landroid/os/Message;)V
+.method static synthetic access$3600(Lcom/android/server/ConnectivityService$DualMode;Landroid/os/Message;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -287,7 +287,7 @@
     iget-object v3, p0, Lcom/android/server/ConnectivityService$DualMode;->this$0:Lcom/android/server/ConnectivityService;
 
     #calls: Lcom/android/server/ConnectivityService;->notifyActiveNetworkUpdate()V
-    invoke-static {v3}, Lcom/android/server/ConnectivityService;->access$3900(Lcom/android/server/ConnectivityService;)V
+    invoke-static {v3}, Lcom/android/server/ConnectivityService;->access$3800(Lcom/android/server/ConnectivityService;)V
 
     .line 5300
     const-string v3, "ConnectivityService"
@@ -417,7 +417,7 @@
     iget-object v3, p0, Lcom/android/server/ConnectivityService$DualMode;->this$0:Lcom/android/server/ConnectivityService;
 
     #calls: Lcom/android/server/ConnectivityService;->sendConnectedBroadcast(Landroid/net/NetworkInfo;)V
-    invoke-static {v3, p1}, Lcom/android/server/ConnectivityService;->access$4000(Lcom/android/server/ConnectivityService;Landroid/net/NetworkInfo;)V
+    invoke-static {v3, p1}, Lcom/android/server/ConnectivityService;->access$3900(Lcom/android/server/ConnectivityService;Landroid/net/NetworkInfo;)V
 
     .line 5320
     :cond_2

@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 6
+    .locals 5
     .parameter "context"
     .parameter "intent"
 
@@ -121,87 +121,8 @@
 
     move-result-object v1
 
-    .line 61
-    .local v1, ss:Landroid/telephony/ServiceState;
-    const-string v3, "HtcCtCustomize"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Service from "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/android/phone/HtcCtCustomize$1;->this$0:Lcom/android/phone/HtcCtCustomize;
-
-    #getter for: Lcom/android/phone/HtcCtCustomize;->mObj:Lcom/android/phone/HtcCtCustomize$CustomizeObj;
-    invoke-static {v5}, Lcom/android/phone/HtcCtCustomize;->access$000(Lcom/android/phone/HtcCtCustomize;)Lcom/android/phone/HtcCtCustomize$CustomizeObj;
-
-    move-result-object v5
-
-    iget-object v5, v5, Lcom/android/phone/HtcCtCustomize$CustomizeObj;->inService:Ljava/lang/Boolean;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "/"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/android/phone/HtcCtCustomize$1;->this$0:Lcom/android/phone/HtcCtCustomize;
-
-    #getter for: Lcom/android/phone/HtcCtCustomize;->mObj:Lcom/android/phone/HtcCtCustomize$CustomizeObj;
-    invoke-static {v5}, Lcom/android/phone/HtcCtCustomize;->access$000(Lcom/android/phone/HtcCtCustomize;)Lcom/android/phone/HtcCtCustomize$CustomizeObj;
-
-    move-result-object v5
-
-    iget-boolean v5, v5, Lcom/android/phone/HtcCtCustomize$CustomizeObj;->isRoaming:Z
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, " to "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v1}, Landroid/telephony/ServiceState;->getState()I
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "/"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v1}, Landroid/telephony/ServiceState;->getRoaming()Z
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 64
+    .local v1, ss:Landroid/telephony/ServiceState;
     invoke-virtual {v1}, Landroid/telephony/ServiceState;->getState()I
 
     move-result v3
@@ -281,7 +202,7 @@
     move v0, v2
 
     .line 56
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 66
     .restart local v0       #inRoamingService:Z
@@ -316,8 +237,6 @@
     goto :goto_1
 
     .line 64
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1

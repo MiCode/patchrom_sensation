@@ -180,7 +180,7 @@
 
     .prologue
     .line 287
-    iget-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isCommitted:Z
+    iget-boolean v0, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v0, :cond_0
 
@@ -241,7 +241,7 @@
     .line 299
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isSet:Z
+    iput-boolean v0, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 300
     return-void
@@ -256,7 +256,7 @@
 
     .prologue
     .line 370
-    iget-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isCommitted:Z
+    iget-boolean v0, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v0, :cond_0
 
@@ -315,7 +315,7 @@
     .line 382
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isSet:Z
+    iput-boolean v0, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 383
     return-void
@@ -330,7 +330,7 @@
 
     .prologue
     .line 320
-    iget-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isCommitted:Z
+    iget-boolean v0, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v0, :cond_0
 
@@ -403,7 +403,7 @@
     .line 334
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isSet:Z
+    iput-boolean v0, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 335
     return-void
@@ -418,7 +418,7 @@
 
     .prologue
     .line 346
-    iget-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isCommitted:Z
+    iget-boolean v0, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v0, :cond_0
 
@@ -477,7 +477,7 @@
     .line 358
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isSet:Z
+    iput-boolean v0, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 359
     return-void
@@ -573,7 +573,7 @@
 
     .prologue
     .line 401
-    iget-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isCommitted:Z
+    iget-boolean v0, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v0, :cond_0
 
@@ -652,7 +652,7 @@
 
     .prologue
     .line 186
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isCommitted:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v1, :cond_0
 
@@ -667,7 +667,7 @@
 
     .line 189
     :cond_0
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isSet:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     if-nez v1, :cond_1
 
@@ -733,7 +733,7 @@
 
     .prologue
     .line 260
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isCommitted:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v1, :cond_0
 
@@ -781,7 +781,7 @@
 
     .prologue
     .line 134
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isCommitted:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v1, :cond_0
 
@@ -796,7 +796,7 @@
 
     .line 137
     :cond_0
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isSet:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     if-nez v1, :cond_1
 
@@ -838,7 +838,7 @@
 
     .prologue
     .line 158
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isCommitted:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v1, :cond_0
 
@@ -853,7 +853,7 @@
 
     .line 161
     :cond_0
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Scribble;->isSet:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     if-nez v1, :cond_1
 

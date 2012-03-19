@@ -81,8 +81,8 @@
     <dimen name="zoom_bar_container_height">74.0px</dimen>
     <dimen name="zoom_bar_width">463.0px</dimen>
     <dimen name="zoom_bar_height">14.0px</dimen>
-    <dimen name="zoom_bar_padding_left">18.0px</dimen>
-    <dimen name="zoom_bar_padding_right">18.0px</dimen>
+    <dimen name="zoom_bar_padding_left">32.0px</dimen>
+    <dimen name="zoom_bar_padding_right">32.0px</dimen>
     <dimen name="zoom_bar_margin_left">8.0px</dimen>
     <dimen name="zoom_bar_margin_right">8.0px</dimen>
     <dimen name="zoom_button_extend_margin">40.0px</dimen>

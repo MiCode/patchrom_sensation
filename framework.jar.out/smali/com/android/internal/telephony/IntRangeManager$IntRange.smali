@@ -45,7 +45,7 @@
     .line 66
     iput-object p1, p0, Lcom/android/internal/telephony/IntRangeManager$IntRange;->this$0:Lcom/android/internal/telephony/IntRangeManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 67
     iput p2, p0, Lcom/android/internal/telephony/IntRangeManager$IntRange;->startId:I
@@ -84,7 +84,7 @@
     .line 77
     iput-object p1, p0, Lcom/android/internal/telephony/IntRangeManager$IntRange;->this$0:Lcom/android/internal/telephony/IntRangeManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 78
     iget v0, p2, Lcom/android/internal/telephony/IntRangeManager$ClientRange;->startId:I
@@ -124,7 +124,7 @@
     .line 94
     iput-object p1, p0, Lcom/android/internal/telephony/IntRangeManager$IntRange;->this$0:Lcom/android/internal/telephony/IntRangeManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 95
     iget v1, p2, Lcom/android/internal/telephony/IntRangeManager$IntRange;->startId:I

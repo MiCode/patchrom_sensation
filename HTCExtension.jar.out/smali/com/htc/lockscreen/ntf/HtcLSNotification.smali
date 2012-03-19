@@ -44,11 +44,17 @@
 
 .field private mIcon:I
 
+.field private mLargeIconPackage:Ljava/lang/String;
+
+.field private mLargeIconRes:I
+
 .field private mLocation:Ljava/lang/String;
 
 .field private mPriority:I
 
 .field private mRingPendingIntent:Landroid/app/PendingIntent;
+
+.field private mSubTitle:Ljava/lang/String;
 
 .field private mTitle:Ljava/lang/String;
 
@@ -60,7 +66,7 @@
     .locals 1
 
     .prologue
-    .line 247
+    .line 305
     new-instance v0, Lcom/htc/lockscreen/ntf/HtcLSNotification$1;
 
     invoke-direct {v0}, Lcom/htc/lockscreen/ntf/HtcLSNotification$1;-><init>()V
@@ -74,37 +80,42 @@
     .locals 2
 
     .prologue
-    .line 31
+    .line 34
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     invoke-direct {p0, v0, v1}, Lcom/htc/lockscreen/ntf/HtcLSNotification;-><init>(J)V
 
-    .line 32
+    .line 35
     return-void
 .end method
 
 .method public constructor <init>(J)V
-    .locals 2
+    .locals 3
     .parameter "when"
 
     .prologue
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    .line 34
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 37
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+
+    .line 16
+    iput v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mIcon:I
 
     .line 17
-    iput v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mIcon:I
+    iput v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mPriority:I
 
     .line 18
-    iput v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mPriority:I
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mTitle:Ljava/lang/String;
 
     .line 19
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mTitle:Ljava/lang/String;
+    iput-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mSubTitle:Ljava/lang/String;
 
     .line 20
     const-string v0, ""
@@ -138,10 +149,18 @@
 
     iput-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mButtons:[Lcom/htc/lockscreen/ntf/HtcLSNotification$Button;
 
-    .line 35
+    .line 30
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconPackage:Ljava/lang/String;
+
+    .line 31
+    iput v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconRes:I
+
+    .line 38
     iput-wide p1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mWhen:J
 
-    .line 36
+    .line 39
     return-void
 .end method
 
@@ -151,14 +170,14 @@
     .parameter "id"
 
     .prologue
-    .line 39
+    .line 42
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     invoke-direct {p0, v0, v1}, Lcom/htc/lockscreen/ntf/HtcLSNotification;-><init>(J)V
 
-    .line 40
+    .line 43
     return-void
 .end method
 
@@ -171,19 +190,24 @@
 
     const/4 v4, 0x0
 
-    .line 42
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 45
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 17
+    .line 16
     iput v4, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mIcon:I
 
-    .line 18
+    .line 17
     iput v4, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mPriority:I
+
+    .line 18
+    const-string v2, ""
+
+    iput-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mTitle:Ljava/lang/String;
 
     .line 19
     const-string v2, ""
 
-    iput-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mTitle:Ljava/lang/String;
+    iput-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mSubTitle:Ljava/lang/String;
 
     .line 20
     const-string v2, ""
@@ -217,63 +241,78 @@
 
     iput-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mButtons:[Lcom/htc/lockscreen/ntf/HtcLSNotification$Button;
 
-    .line 43
+    .line 30
+    const-string v2, ""
+
+    iput-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconPackage:Ljava/lang/String;
+
+    .line 31
+    iput v4, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconRes:I
+
+    .line 46
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
     iput v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mPriority:I
 
-    .line 44
+    .line 47
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
     iput v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mIcon:I
 
-    .line 45
+    .line 48
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mTitle:Ljava/lang/String;
 
-    .line 46
+    .line 49
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mSubTitle:Ljava/lang/String;
+
+    .line 51
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mDescript:Ljava/lang/String;
 
-    .line 47
+    .line 52
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mContent:Ljava/lang/String;
 
-    .line 48
+    .line 53
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mFrom:Ljava/lang/String;
 
-    .line 49
+    .line 54
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLocation:Ljava/lang/String;
 
-    .line 51
+    .line 56
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v5
 
     iput-wide v5, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mWhen:J
 
-    .line 52
+    .line 58
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -282,12 +321,12 @@
 
     move v0, v3
 
-    .line 53
+    .line 59
     .local v0, exist:Z
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 54
+    .line 60
     sget-object v2, Landroid/graphics/Bitmap;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v2, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -298,22 +337,36 @@
 
     iput-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 57
+    .line 62
     :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconPackage:Ljava/lang/String;
+
+    .line 63
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    iput v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconRes:I
+
+    .line 65
     invoke-static {p1}, Lcom/htc/lockscreen/ntf/HtcLSNotification;->PendingIntentFromParcel(Landroid/os/Parcel;)Landroid/app/PendingIntent;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mDropPendingIntent:Landroid/app/PendingIntent;
 
-    .line 58
+    .line 66
     invoke-static {p1}, Lcom/htc/lockscreen/ntf/HtcLSNotification;->PendingIntentFromParcel(Landroid/os/Parcel;)Landroid/app/PendingIntent;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mRingPendingIntent:Landroid/app/PendingIntent;
 
-    .line 59
+    .line 67
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -324,7 +377,7 @@
 
     if-ge v1, v2, :cond_4
 
-    .line 60
+    .line 68
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -333,11 +386,11 @@
 
     move v0, v3
 
-    .line 61
+    .line 69
     :goto_2
     if-eqz v0, :cond_1
 
-    .line 62
+    .line 70
     iget-object v5, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mButtons:[Lcom/htc/lockscreen/ntf/HtcLSNotification$Button;
 
     sget-object v2, Lcom/htc/lockscreen/ntf/HtcLSNotification$Button;->CREATOR:Landroid/os/Parcelable$Creator;
@@ -350,7 +403,7 @@
 
     aput-object v2, v5, v1
 
-    .line 59
+    .line 67
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
@@ -361,7 +414,7 @@
     :cond_2
     move v0, v4
 
-    .line 52
+    .line 58
     goto :goto_0
 
     .restart local v0       #exist:Z
@@ -369,10 +422,10 @@
     :cond_3
     move v0, v4
 
-    .line 60
+    .line 68
     goto :goto_2
 
-    .line 65
+    .line 73
     :cond_4
     return-void
 .end method
@@ -384,10 +437,10 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 102
+    .line 114
     const/4 v1, 0x0
 
-    .line 103
+    .line 115
     .local v1, intnet:Landroid/app/PendingIntent;
     invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
@@ -395,12 +448,12 @@
 
     if-ne v2, v0, :cond_1
 
-    .line 104
+    .line 116
     .local v0, exist:Z
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 105
+    .line 117
     sget-object v2, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v2, p0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -410,12 +463,12 @@
     .end local v1           #intnet:Landroid/app/PendingIntent;
     check-cast v1, Landroid/app/PendingIntent;
 
-    .line 107
+    .line 119
     .restart local v1       #intnet:Landroid/app/PendingIntent;
     :cond_0
     return-object v1
 
-    .line 103
+    .line 115
     .end local v0           #exist:Z
     :cond_1
     const/4 v0, 0x0
@@ -428,7 +481,7 @@
     .parameter "x0"
 
     .prologue
-    .line 15
+    .line 14
     invoke-static {p0}, Lcom/htc/lockscreen/ntf/HtcLSNotification;->PendingIntentFromParcel(Landroid/os/Parcel;)Landroid/app/PendingIntent;
 
     move-result-object v0
@@ -443,10 +496,83 @@
     .parameter "x2"
 
     .prologue
-    .line 15
+    .line 14
     invoke-static {p0, p1, p2}, Lcom/htc/lockscreen/ntf/HtcLSNotification;->parcelable2Parcel(Landroid/os/Parcelable;Landroid/os/Parcel;I)V
 
     return-void
+.end method
+
+.method static synthetic access$200(Landroid/content/Context;Ljava/lang/String;I)Landroid/graphics/drawable/Drawable;
+    .locals 1
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+
+    .prologue
+    .line 14
+    invoke-static {p0, p1, p2}, Lcom/htc/lockscreen/ntf/HtcLSNotification;->getIconFromPackage(Landroid/content/Context;Ljava/lang/String;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private static getIconFromPackage(Landroid/content/Context;Ljava/lang/String;I)Landroid/graphics/drawable/Drawable;
+    .locals 4
+    .parameter "context"
+    .parameter "pkg"
+    .parameter "iconId"
+
+    .prologue
+    .line 503
+    if-gtz p2, :cond_1
+
+    .line 504
+    const/4 v0, 0x0
+
+    .line 516
+    :cond_0
+    :goto_0
+    return-object v0
+
+    .line 506
+    :cond_1
+    const/4 v0, 0x0
+
+    .line 508
+    .local v0, drawable:Landroid/graphics/drawable/Drawable;
+    :try_start_0
+    invoke-static {p0, p1}, Lcom/htc/lockscreen/ntf/HtcLSNotification;->prepareContext(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Context;
+
+    move-result-object v2
+
+    .line 509
+    .local v2, pkgContext:Landroid/content/Context;
+    if-eqz v2, :cond_0
+
+    .line 510
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 513
+    .end local v2           #pkgContext:Landroid/content/Context;
+    :catch_0
+    move-exception v1
+
+    .line 514
+    .local v1, e:Ljava/lang/Exception;
+    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_0
 .end method
 
 .method private static parcelable2Parcel(Landroid/os/Parcelable;Landroid/os/Parcel;I)V
@@ -456,27 +582,74 @@
     .parameter "flags"
 
     .prologue
-    .line 111
+    .line 123
     if-eqz p0, :cond_0
 
-    .line 112
+    .line 124
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 113
+    .line 125
     invoke-interface {p0, p1, p2}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 118
+    .line 130
     :goto_0
     return-void
 
-    .line 116
+    .line 128
     :cond_0
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    goto :goto_0
+.end method
+
+.method private static prepareContext(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Context;
+    .locals 3
+    .parameter "context"
+    .parameter "packageName"
+
+    .prologue
+    .line 490
+    if-eqz p1, :cond_0
+
+    .line 492
+    const/4 v2, 0x4
+
+    :try_start_0
+    invoke-virtual {p0, p1, v2}, Landroid/content/Context;->createPackageContext(Ljava/lang/String;I)Landroid/content/Context;
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    .line 499
+    .local v0, c:Landroid/content/Context;
+    :goto_0
+    return-object v0
+
+    .line 493
+    .end local v0           #c:Landroid/content/Context;
+    :catch_0
+    move-exception v1
+
+    .line 494
+    .local v1, e:Landroid/content/pm/PackageManager$NameNotFoundException;
+    move-object v0, p0
+
+    .line 495
+    .restart local v0       #c:Landroid/content/Context;
+    goto :goto_0
+
+    .line 497
+    .end local v0           #c:Landroid/content/Context;
+    .end local v1           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
+    :cond_0
+    move-object v0, p0
+
+    .restart local v0       #c:Landroid/content/Context;
     goto :goto_0
 .end method
 
@@ -486,7 +659,7 @@
     .locals 1
 
     .prologue
-    .line 212
+    .line 237
     const/4 v0, 0x0
 
     return v0
@@ -497,7 +670,7 @@
     .parameter "index"
 
     .prologue
-    .line 244
+    .line 302
     iget-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mButtons:[Lcom/htc/lockscreen/ntf/HtcLSNotification$Button;
 
     aget-object v0, v0, p1
@@ -509,7 +682,7 @@
     .locals 1
 
     .prologue
-    .line 164
+    .line 189
     iget-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mContent:Ljava/lang/String;
 
     return-object v0
@@ -519,7 +692,7 @@
     .locals 1
 
     .prologue
-    .line 151
+    .line 176
     iget-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mDescript:Ljava/lang/String;
 
     return-object v0
@@ -529,7 +702,7 @@
     .locals 1
 
     .prologue
-    .line 228
+    .line 286
     iget-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mDropPendingIntent:Landroid/app/PendingIntent;
 
     return-object v0
@@ -539,7 +712,7 @@
     .locals 1
 
     .prologue
-    .line 190
+    .line 215
     iget-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mFrom:Ljava/lang/String;
 
     return-object v0
@@ -549,7 +722,7 @@
     .locals 1
 
     .prologue
-    .line 198
+    .line 223
     iget v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mIcon:I
 
     return v0
@@ -559,17 +732,94 @@
     .locals 1
 
     .prologue
-    .line 220
+    .line 267
     iget-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mBitmap:Landroid/graphics/Bitmap;
 
     return-object v0
+.end method
+
+.method public getLargeIconDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
+    .locals 3
+    .parameter "context"
+
+    .prologue
+    .line 271
+    const/4 v0, 0x0
+
+    .line 272
+    .local v0, btn:Landroid/graphics/drawable/Drawable;
+    iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconPackage:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconRes:I
+
+    if-lez v1, :cond_0
+
+    .line 273
+    iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconPackage:Ljava/lang/String;
+
+    iget v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconRes:I
+
+    invoke-static {p1, v1, v2}, Lcom/htc/lockscreen/ntf/HtcLSNotification;->getIconFromPackage(Landroid/content/Context;Ljava/lang/String;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    .line 275
+    :cond_0
+    if-nez v0, :cond_1
+
+    iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mBitmap:Landroid/graphics/Bitmap;
+
+    if-eqz v1, :cond_1
+
+    .line 276
+    new-instance v0, Landroid/graphics/drawable/BitmapDrawable;
+
+    .end local v0           #btn:Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mBitmap:Landroid/graphics/Bitmap;
+
+    invoke-direct {v0, v1, v2}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
+
+    .line 278
+    .restart local v0       #btn:Landroid/graphics/drawable/Drawable;
+    :cond_1
+    return-object v0
+.end method
+
+.method public getLargeIconPackage()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 259
+    iget-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconPackage:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getLargeIconResId()I
+    .locals 1
+
+    .prologue
+    .line 263
+    iget v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconRes:I
+
+    return v0
 .end method
 
 .method public getLocation()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 177
+    .line 202
     iget-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLocation:Ljava/lang/String;
 
     return-object v0
@@ -579,7 +829,7 @@
     .locals 1
 
     .prologue
-    .line 202
+    .line 227
     iget v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mPriority:I
 
     return v0
@@ -589,8 +839,18 @@
     .locals 1
 
     .prologue
-    .line 236
+    .line 294
     iget-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mRingPendingIntent:Landroid/app/PendingIntent;
+
+    return-object v0
+.end method
+
+.method public getSubTitle()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 163
+    iget-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mSubTitle:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -599,7 +859,7 @@
     .locals 1
 
     .prologue
-    .line 138
+    .line 150
     iget-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mTitle:Ljava/lang/String;
 
     return-object v0
@@ -609,7 +869,7 @@
     .locals 2
 
     .prologue
-    .line 125
+    .line 137
     iget-wide v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mWhen:J
 
     return-wide v0
@@ -621,12 +881,12 @@
     .parameter "index"
 
     .prologue
-    .line 240
+    .line 298
     iget-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mButtons:[Lcom/htc/lockscreen/ntf/HtcLSNotification$Button;
 
     aput-object p1, v0, p2
 
-    .line 241
+    .line 299
     return-void
 .end method
 
@@ -635,17 +895,17 @@
     .parameter "content"
 
     .prologue
-    .line 155
+    .line 180
     if-eqz p1, :cond_0
 
-    .line 156
+    .line 181
     iput-object p1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mContent:Ljava/lang/String;
 
-    .line 161
+    .line 186
     :goto_0
     return-void
 
-    .line 159
+    .line 184
     :cond_0
     const-string v0, ""
 
@@ -659,17 +919,17 @@
     .parameter "descript"
 
     .prologue
-    .line 142
+    .line 167
     if-eqz p1, :cond_0
 
-    .line 143
+    .line 168
     iput-object p1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mDescript:Ljava/lang/String;
 
-    .line 148
+    .line 173
     :goto_0
     return-void
 
-    .line 146
+    .line 171
     :cond_0
     const-string v0, ""
 
@@ -683,10 +943,10 @@
     .parameter "intent"
 
     .prologue
-    .line 224
+    .line 282
     iput-object p1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mDropPendingIntent:Landroid/app/PendingIntent;
 
-    .line 225
+    .line 283
     return-void
 .end method
 
@@ -695,17 +955,17 @@
     .parameter "from"
 
     .prologue
-    .line 168
+    .line 193
     if-eqz p1, :cond_0
 
-    .line 169
+    .line 194
     iput-object p1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mFrom:Ljava/lang/String;
 
-    .line 174
+    .line 199
     :goto_0
     return-void
 
-    .line 172
+    .line 197
     :cond_0
     const-string v0, ""
 
@@ -719,23 +979,77 @@
     .parameter "icon"
 
     .prologue
-    .line 194
+    .line 219
     iput p1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mIcon:I
 
-    .line 195
+    .line 220
     return-void
 .end method
 
 .method public setLargeIcon(Landroid/graphics/Bitmap;)V
-    .locals 0
+    .locals 1
     .parameter "bitmap"
 
     .prologue
-    .line 216
+    .line 241
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconPackage:Ljava/lang/String;
+
+    .line 242
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconRes:I
+
+    .line 243
     iput-object p1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 217
+    .line 244
     return-void
+.end method
+
+.method public setLargeIcon(Ljava/lang/String;I)V
+    .locals 1
+    .parameter "packageName"
+    .parameter "resId"
+
+    .prologue
+    .line 247
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mBitmap:Landroid/graphics/Bitmap;
+
+    .line 248
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    if-lez p2, :cond_0
+
+    .line 249
+    iput-object p1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconPackage:Ljava/lang/String;
+
+    .line 250
+    iput p2, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconRes:I
+
+    .line 256
+    :goto_0
+    return-void
+
+    .line 253
+    :cond_0
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconPackage:Ljava/lang/String;
+
+    .line 254
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconRes:I
+
+    goto :goto_0
 .end method
 
 .method public setLocation(Ljava/lang/String;)V
@@ -743,19 +1057,19 @@
     .parameter "location"
 
     .prologue
-    .line 181
+    .line 206
     iget-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLocation:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 182
+    .line 207
     iput-object p1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLocation:Ljava/lang/String;
 
-    .line 187
+    .line 212
     :goto_0
     return-void
 
-    .line 185
+    .line 210
     :cond_0
     const-string v0, ""
 
@@ -769,10 +1083,10 @@
     .parameter "priority"
 
     .prologue
-    .line 206
+    .line 231
     iput p1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mPriority:I
 
-    .line 207
+    .line 232
     return-void
 .end method
 
@@ -781,11 +1095,35 @@
     .parameter "intent"
 
     .prologue
-    .line 232
+    .line 290
     iput-object p1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mRingPendingIntent:Landroid/app/PendingIntent;
 
-    .line 233
+    .line 291
     return-void
+.end method
+
+.method public setSubTitle(Ljava/lang/String;)V
+    .locals 1
+    .parameter "title"
+
+    .prologue
+    .line 154
+    if-eqz p1, :cond_0
+
+    .line 155
+    iput-object p1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mSubTitle:Ljava/lang/String;
+
+    .line 160
+    :goto_0
+    return-void
+
+    .line 158
+    :cond_0
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mSubTitle:Ljava/lang/String;
+
+    goto :goto_0
 .end method
 
 .method public setTitle(Ljava/lang/String;)V
@@ -793,17 +1131,17 @@
     .parameter "title"
 
     .prologue
-    .line 129
+    .line 141
     if-eqz p1, :cond_0
 
-    .line 130
+    .line 142
     iput-object p1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mTitle:Ljava/lang/String;
 
-    .line 135
+    .line 147
     :goto_0
     return-void
 
-    .line 133
+    .line 145
     :cond_0
     const-string v0, ""
 
@@ -817,10 +1155,10 @@
     .parameter "when"
 
     .prologue
-    .line 121
+    .line 133
     iput-wide p1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mWhen:J
 
-    .line 122
+    .line 134
     return-void
 .end method
 
@@ -834,71 +1172,86 @@
 
     const/4 v3, 0x0
 
-    .line 69
+    .line 77
     iget v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mPriority:I
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 70
+    .line 78
     iget v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mIcon:I
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 72
+    .line 80
     iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mTitle:Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 73
+    .line 81
+    iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mSubTitle:Ljava/lang/String;
+
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 83
     iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mDescript:Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 74
+    .line 84
     iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mContent:Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 75
+    .line 85
     iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mFrom:Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 76
+    .line 86
     iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLocation:Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 77
+    .line 87
     iget-wide v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mWhen:J
 
     invoke-virtual {p1, v1, v2}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 79
+    .line 89
     iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v1, :cond_0
 
-    .line 80
+    .line 90
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 81
+    .line 91
     iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v1, p1, p2}, Landroid/graphics/Bitmap;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 87
+    .line 96
     :goto_0
+    iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconPackage:Ljava/lang/String;
+
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 97
+    iget v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mLargeIconRes:I
+
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 99
     iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mDropPendingIntent:Landroid/app/PendingIntent;
 
     invoke-static {v1, p1, p2}, Lcom/htc/lockscreen/ntf/HtcLSNotification;->parcelable2Parcel(Landroid/os/Parcelable;Landroid/os/Parcel;I)V
 
-    .line 88
+    .line 100
     iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mRingPendingIntent:Landroid/app/PendingIntent;
 
     invoke-static {v1, p1, p2}, Lcom/htc/lockscreen/ntf/HtcLSNotification;->parcelable2Parcel(Landroid/os/Parcelable;Landroid/os/Parcel;I)V
 
-    .line 90
+    .line 102
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -909,44 +1262,44 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 91
+    .line 103
     iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mButtons:[Lcom/htc/lockscreen/ntf/HtcLSNotification$Button;
 
     aget-object v1, v1, v0
 
     if-eqz v1, :cond_1
 
-    .line 92
+    .line 104
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 93
+    .line 105
     iget-object v1, p0, Lcom/htc/lockscreen/ntf/HtcLSNotification;->mButtons:[Lcom/htc/lockscreen/ntf/HtcLSNotification$Button;
 
     aget-object v1, v1, v0
 
     invoke-virtual {v1, p1, p2}, Lcom/htc/lockscreen/ntf/HtcLSNotification$Button;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 90
+    .line 102
     :goto_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 84
+    .line 94
     .end local v0           #i:I
     :cond_0
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_0
 
-    .line 96
+    .line 108
     .restart local v0       #i:I
     :cond_1
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_2
 
-    .line 99
+    .line 111
     :cond_2
     return-void
 .end method

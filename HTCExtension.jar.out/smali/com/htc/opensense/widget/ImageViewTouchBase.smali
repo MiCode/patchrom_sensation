@@ -1430,7 +1430,7 @@
     .line 525
     const-wide/16 v10, 0xfa
 
-    invoke-virtual {v0, v10, v11}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v10, v11}, Landroid/view/animation/TranslateAnimation;->setDuration(J)V
 
     .line 526
     invoke-virtual {p0, v0}, Lcom/htc/opensense/widget/ImageViewTouchBase;->setAnimation(Landroid/view/animation/Animation;)V

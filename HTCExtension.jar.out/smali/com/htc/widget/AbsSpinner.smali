@@ -734,7 +734,7 @@
 
     .prologue
     .line 373
-    iget v0, p0, Lcom/htc/widget/AbsSpinner;->mItemCount:I
+    iget v0, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     return v0
 .end method
@@ -936,18 +936,18 @@
 
     .prologue
     .line 346
-    iget v0, p0, Lcom/htc/widget/AbsSpinner;->mItemCount:I
+    iget v0, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     if-lez v0, :cond_0
 
-    iget v0, p0, Lcom/htc/widget/AbsSpinner;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     if-ltz v0, :cond_0
 
     .line 347
-    iget v0, p0, Lcom/htc/widget/AbsSpinner;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
-    iget v1, p0, Lcom/htc/widget/AbsSpinner;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v0, v1
 
@@ -997,13 +997,13 @@
     .line 582
     iget-object v0, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
-    iget v1, p0, Lcom/htc/widget/AbsSpinner;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     invoke-virtual {p0}, Lcom/htc/widget/AbsSpinner;->getChildCount()I
 
     move-result v2
 
-    iget v3, p0, Lcom/htc/widget/AbsSpinner;->mItemCount:I
+    iget v3, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     invoke-virtual {v0, p0, v1, v2, v3}, Lcom/htc/widget/FastScroller;->onScroll(Lcom/htc/widget/AbsSpinner;III)V
 
@@ -1213,7 +1213,7 @@
     iput v8, v9, Landroid/graphics/Rect;->bottom:I
 
     .line 214
-    iget-boolean v8, p0, Lcom/htc/widget/AbsSpinner;->mDataChanged:Z
+    iget-boolean v8, p0, Lcom/htc/widget/AdapterView;->mDataChanged:Z
 
     if-eqz v8, :cond_0
 
@@ -1533,25 +1533,25 @@
     if-ltz v1, :cond_0
 
     .line 471
-    iput-boolean v5, p0, Lcom/htc/widget/AbsSpinner;->mDataChanged:Z
+    iput-boolean v5, p0, Lcom/htc/widget/AdapterView;->mDataChanged:Z
 
     .line 472
-    iput-boolean v5, p0, Lcom/htc/widget/AbsSpinner;->mNeedSync:Z
+    iput-boolean v5, p0, Lcom/htc/widget/AdapterView;->mNeedSync:Z
 
     .line 473
     iget-wide v1, v0, Lcom/htc/widget/AbsSpinner$SavedState;->selectedId:J
 
-    iput-wide v1, p0, Lcom/htc/widget/AbsSpinner;->mSyncRowId:J
+    iput-wide v1, p0, Lcom/htc/widget/AdapterView;->mSyncRowId:J
 
     .line 474
     iget v1, v0, Lcom/htc/widget/AbsSpinner$SavedState;->position:I
 
-    iput v1, p0, Lcom/htc/widget/AbsSpinner;->mSyncPosition:I
+    iput v1, p0, Lcom/htc/widget/AdapterView;->mSyncPosition:I
 
     .line 475
     const/4 v1, 0x0
 
-    iput v1, p0, Lcom/htc/widget/AbsSpinner;->mSyncMode:I
+    iput v1, p0, Lcom/htc/widget/AdapterView;->mSyncMode:I
 
     .line 476
     invoke-virtual {p0}, Lcom/htc/widget/AbsSpinner;->requestLayout()V
@@ -1704,7 +1704,7 @@
     if-eqz v4, :cond_1
 
     .line 397
-    iget v4, p0, Lcom/htc/widget/AbsSpinner;->mFirstPosition:I
+    iget v4, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     add-int/2addr v4, v3
 
@@ -1743,7 +1743,7 @@
 
     .line 297
     .local v4, recycleBin:Lcom/htc/widget/AbsSpinner$RecycleBin;
-    iget v3, p0, Lcom/htc/widget/AbsSpinner;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     .line 300
     .local v3, position:I
@@ -1804,21 +1804,21 @@
     const/4 v2, -0x1
 
     .line 179
-    iput-boolean v0, p0, Lcom/htc/widget/AbsSpinner;->mDataChanged:Z
+    iput-boolean v0, p0, Lcom/htc/widget/AdapterView;->mDataChanged:Z
 
     .line 180
-    iput-boolean v0, p0, Lcom/htc/widget/AbsSpinner;->mNeedSync:Z
+    iput-boolean v0, p0, Lcom/htc/widget/AdapterView;->mNeedSync:Z
 
     .line 182
     invoke-virtual {p0}, Lcom/htc/widget/AbsSpinner;->removeAllViewsInLayout()V
 
     .line 183
-    iput v2, p0, Lcom/htc/widget/AbsSpinner;->mOldSelectedPosition:I
+    iput v2, p0, Lcom/htc/widget/AdapterView;->mOldSelectedPosition:I
 
     .line 184
     const-wide/high16 v0, -0x8000
 
-    iput-wide v0, p0, Lcom/htc/widget/AbsSpinner;->mOldSelectedRowId:J
+    iput-wide v0, p0, Lcom/htc/widget/AdapterView;->mOldSelectedRowId:J
 
     .line 186
     invoke-virtual {p0, v2}, Lcom/htc/widget/AbsSpinner;->setSelectedPositionInt(I)V
@@ -1885,12 +1885,12 @@
     iput-object p1, p0, Lcom/htc/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     .line 144
-    iput v0, p0, Lcom/htc/widget/AbsSpinner;->mOldSelectedPosition:I
+    iput v0, p0, Lcom/htc/widget/AdapterView;->mOldSelectedPosition:I
 
     .line 145
     const-wide/high16 v1, -0x8000
 
-    iput-wide v1, p0, Lcom/htc/widget/AbsSpinner;->mOldSelectedRowId:J
+    iput-wide v1, p0, Lcom/htc/widget/AdapterView;->mOldSelectedRowId:J
 
     .line 147
     iget-object v1, p0, Lcom/htc/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
@@ -1898,9 +1898,9 @@
     if-eqz v1, :cond_4
 
     .line 148
-    iget v1, p0, Lcom/htc/widget/AbsSpinner;->mItemCount:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
-    iput v1, p0, Lcom/htc/widget/AbsSpinner;->mOldItemCount:I
+    iput v1, p0, Lcom/htc/widget/AdapterView;->mOldItemCount:I
 
     .line 149
     iget-object v1, p0, Lcom/htc/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
@@ -1909,7 +1909,7 @@
 
     move-result v1
 
-    iput v1, p0, Lcom/htc/widget/AbsSpinner;->mItemCount:I
+    iput v1, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     .line 150
     invoke-virtual {p0}, Lcom/htc/widget/AbsSpinner;->checkFocus()V
@@ -1929,7 +1929,7 @@
     invoke-interface {v1, v2}, Landroid/widget/SpinnerAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
     .line 155
-    iget v1, p0, Lcom/htc/widget/AbsSpinner;->mItemCount:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     if-lez v1, :cond_2
 
@@ -1944,7 +1944,7 @@
     invoke-virtual {p0, v0}, Lcom/htc/widget/AbsSpinner;->setNextSelectedPositionInt(I)V
 
     .line 160
-    iget v1, p0, Lcom/htc/widget/AbsSpinner;->mItemCount:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     if-nez v1, :cond_3
 
@@ -2131,11 +2131,11 @@
     .line 312
     if-eqz p2, :cond_0
 
-    iget v1, p0, Lcom/htc/widget/AbsSpinner;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     if-gt v1, p1, :cond_0
 
-    iget v1, p0, Lcom/htc/widget/AbsSpinner;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     invoke-virtual {p0}, Lcom/htc/widget/AbsSpinner;->getChildCount()I
 
@@ -2172,7 +2172,7 @@
 
     .prologue
     .line 333
-    iget v1, p0, Lcom/htc/widget/AbsSpinner;->mOldSelectedPosition:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mOldSelectedPosition:I
 
     if-eq p1, v1, :cond_0
 
@@ -2182,7 +2182,7 @@
     iput-boolean v1, p0, Lcom/htc/widget/AbsSpinner;->mBlockLayoutRequests:Z
 
     .line 335
-    iget v1, p0, Lcom/htc/widget/AbsSpinner;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     sub-int v0, p1, v1
 

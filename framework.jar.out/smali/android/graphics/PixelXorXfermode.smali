@@ -17,7 +17,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/PixelXorXfermode;->native_instance:I
+    iput v0, p0, Landroid/graphics/Xfermode;->native_instance:I
 
     .line 29
     return-void

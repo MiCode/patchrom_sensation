@@ -132,7 +132,7 @@
 
     .prologue
     .line 84
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 7912
     return-void
@@ -159,16 +159,6 @@
     .prologue
     .line 84
     invoke-static {p0}, Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method static synthetic access$100()V
-    .locals 0
-
-    .prologue
-    .line 84
-    invoke-static {}, Landroid/provider/Settings;->traceCallingStack()V
 
     return-void
 .end method
@@ -429,155 +419,9 @@
 .end method
 
 .method private static traceCallingStack()V
-    .locals 8
+    .locals 0
 
     .prologue
-    .line 8119
-    const-wide/16 v4, 0x0
-
-    .local v4, startTime:J
-    const-wide/16 v2, 0x0
-
-    .line 8121
-    .local v2, endTime:J
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v4
-
-    .line 8123
-    const-string v6, ">> traceCallingStack()"
-
-    invoke-static {v6}, Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-
-    .line 8124
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Process.myPid(): "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-static {}, Landroid/os/Process;->myPid()I
-
-    move-result v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6}, Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-
-    .line 8125
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Process.myTid(): "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-static {}, Landroid/os/Process;->myTid()I
-
-    move-result v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6}, Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-
-    .line 8126
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Process.myUid(): "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-static {}, Landroid/os/Process;->myUid()I
-
-    move-result v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6}, Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-
-    .line 8127
-    const-string v6, "\n"
-
-    invoke-static {v6}, Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-
-    .line 8174
-    const-string v6, "\n"
-
-    invoke-static {v6}, Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-
-    .line 8175
-    invoke-static {}, Ljava/lang/Thread;->dumpStack()V
-
-    .line 8176
-    const-string v6, "\n"
-
-    invoke-static {v6}, Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-
-    .line 8178
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v2
-
-    .line 8179
-    sub-long v0, v2, v4
-
-    .line 8180
-    .local v0, elapsedTime:J
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "<< traceCallingStack(): "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, "(ms)"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6}, Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-
-    .line 8181
+    .line 8116
     return-void
 .end method

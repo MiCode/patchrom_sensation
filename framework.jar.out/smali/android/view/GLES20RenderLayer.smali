@@ -39,10 +39,10 @@
 
     move-result v3
 
-    iput v3, p0, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iput v3, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     .line 38
-    iget v3, p0, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iget v3, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     if-eqz v3, :cond_1
 
@@ -59,7 +59,7 @@
     .line 42
     new-instance v3, Landroid/view/GLES20Canvas;
 
-    iget v4, p0, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iget v4, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     if-nez p3, :cond_0
 
@@ -71,11 +71,11 @@
     .line 43
     new-instance v1, Landroid/view/GLES20Layer$Finalizer;
 
-    iget v2, p0, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iget v2, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     invoke-direct {v1, v2}, Landroid/view/GLES20Layer$Finalizer;-><init>(I)V
 
-    iput-object v1, p0, Landroid/view/GLES20RenderLayer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
+    iput-object v1, p0, Landroid/view/GLES20Layer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
 
     .line 48
     :goto_1
@@ -92,7 +92,7 @@
     iput-object v4, p0, Landroid/view/GLES20RenderLayer;->mCanvas:Landroid/view/GLES20Canvas;
 
     .line 46
-    iput-object v4, p0, Landroid/view/GLES20RenderLayer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
+    iput-object v4, p0, Landroid/view/GLES20Layer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
 
     goto :goto_1
 .end method
@@ -135,7 +135,7 @@
 
     .prologue
     .line 52
-    iget v0, p0, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     if-eqz v0, :cond_0
 
@@ -182,10 +182,10 @@
 
     .line 59
     :cond_1
-    iput p1, p0, Landroid/view/GLES20RenderLayer;->mWidth:I
+    iput p1, p0, Landroid/view/HardwareLayer;->mWidth:I
 
     .line 60
-    iput p2, p0, Landroid/view/GLES20RenderLayer;->mHeight:I
+    iput p2, p0, Landroid/view/HardwareLayer;->mHeight:I
 
     .line 62
     iget v1, p0, Landroid/view/GLES20RenderLayer;->mLayerWidth:I
@@ -204,7 +204,7 @@
 
     .line 65
     .local v0, layerInfo:[I
-    iget v1, p0, Landroid/view/GLES20RenderLayer;->mLayer:I
+    iget v1, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     invoke-static {v1, p1, p2, v0}, Landroid/view/GLES20Canvas;->nResizeLayer(III[I)V
 

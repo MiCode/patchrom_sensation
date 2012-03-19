@@ -33,7 +33,7 @@
     .line 192
     iput-object p1, p0, Landroid/database/MatrixCursor$RowBuilder;->this$0:Landroid/database/MatrixCursor;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 193
     iput p2, p0, Landroid/database/MatrixCursor$RowBuilder;->index:I

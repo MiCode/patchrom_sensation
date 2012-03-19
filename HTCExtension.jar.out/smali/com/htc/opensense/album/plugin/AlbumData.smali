@@ -28,25 +28,25 @@
     iput-object v0, p0, Lcom/htc/opensense/album/plugin/AlbumData;->mPid:Ljava/lang/String;
 
     .line 22
-    iput-object p1, p0, Lcom/htc/opensense/album/plugin/AlbumData;->albumId:Ljava/lang/String;
+    iput-object p1, p0, Lcom/htc/opensense/social/data/Album;->albumId:Ljava/lang/String;
 
     .line 23
-    iput p3, p0, Lcom/htc/opensense/album/plugin/AlbumData;->count:I
+    iput p3, p0, Lcom/htc/opensense/social/data/Album;->count:I
 
     .line 24
     iput-object p2, p0, Lcom/htc/opensense/album/plugin/AlbumData;->mPid:Ljava/lang/String;
 
     .line 25
-    iput-object p4, p0, Lcom/htc/opensense/album/plugin/AlbumData;->name:Ljava/lang/String;
+    iput-object p4, p0, Lcom/htc/opensense/social/data/Album;->name:Ljava/lang/String;
 
     .line 26
-    iput-object p5, p0, Lcom/htc/opensense/album/plugin/AlbumData;->coverUrl:Ljava/lang/String;
+    iput-object p5, p0, Lcom/htc/opensense/social/data/Album;->coverUrl:Ljava/lang/String;
 
     .line 27
-    iput-object p6, p0, Lcom/htc/opensense/album/plugin/AlbumData;->webLink:Ljava/lang/String;
+    iput-object p6, p0, Lcom/htc/opensense/social/data/Album;->webLink:Ljava/lang/String;
 
     .line 28
-    iput-wide p7, p0, Lcom/htc/opensense/album/plugin/AlbumData;->createTime:J
+    iput-wide p7, p0, Lcom/htc/opensense/social/data/Album;->createTime:J
 
     .line 29
     return-void

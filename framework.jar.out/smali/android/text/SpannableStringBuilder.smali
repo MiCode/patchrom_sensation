@@ -101,7 +101,7 @@
     const/4 v10, 0x0
 
     .line 50
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1255
     sget-object v9, Landroid/text/SpannableStringBuilder;->NO_FILTERS:[Landroid/text/InputFilter;

@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 5857
+    .line 5860
     iput-object p1, p0, Lcom/android/phone/PhoneApp$4;->this$0:Lcom/android/phone/PhoneApp;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,6 +43,6 @@
     .parameter "which"
 
     .prologue
-    .line 5859
+    .line 5862
     return-void
 .end method

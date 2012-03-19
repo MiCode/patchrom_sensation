@@ -25,7 +25,7 @@
 
     .prologue
     .line 48
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 49
     invoke-interface {p1}, Ljava/io/DataInput;->readInt()I
@@ -139,7 +139,7 @@
 
     .prologue
     .line 33
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 34
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;

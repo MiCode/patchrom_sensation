@@ -55,7 +55,7 @@
     .line 117
     .local p0, this:Lcom/android/internal/util/Predicates$NotPredicate;,"Lcom/android/internal/util/Predicates$NotPredicate<TT;>;"
     .local p1, predicate:Lcom/android/internal/util/Predicate;,"Lcom/android/internal/util/Predicate<-TT;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 118
     iput-object p1, p0, Lcom/android/internal/util/Predicates$NotPredicate;->predicate:Lcom/android/internal/util/Predicate;

@@ -28,7 +28,7 @@
 
     .prologue
     .line 133
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 134
     iput-object p1, p0, Lcom/android/phone/nbpcd/NBPCDUtility$MenuButtonListener;->mWindow:Landroid/view/Window;

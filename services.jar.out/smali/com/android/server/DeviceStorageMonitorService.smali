@@ -2249,7 +2249,7 @@
     invoke-virtual {v3, v6, v4}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 
     .line 585
-    :goto_0
+    :cond_0
     iget-object v6, p0, Lcom/android/server/DeviceStorageMonitorService;->mContext:Landroid/content/Context;
 
     iget-object v7, p0, Lcom/android/server/DeviceStorageMonitorService;->mStorageLowIntent:Landroid/content/Intent;
@@ -2258,16 +2258,6 @@
 
     .line 586
     return-void
-
-    .line 583
-    :cond_0
-    const-string v6, "DeviceStorageMonitorService"
-
-    const-string v7, "Not to issue Low Memory Notification, due to LMW app will do it"
-
-    invoke-static {v6, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
 .end method
 
 .method private final sendSmsStorageNotification()V

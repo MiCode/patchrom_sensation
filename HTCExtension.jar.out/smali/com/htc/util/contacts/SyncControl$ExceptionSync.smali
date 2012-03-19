@@ -46,7 +46,7 @@
     return v0
 
     :cond_0
-    iget-object v0, p0, Lcom/htc/util/contacts/SyncControl$ExceptionSync;->account:Landroid/accounts/Account;
+    iget-object v0, p0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->account:Landroid/accounts/Account;
 
     invoke-virtual {p1, v0}, Landroid/accounts/Account;->equals(Ljava/lang/Object;)Z
 
@@ -71,7 +71,7 @@
     return v0
 
     :cond_0
-    iget-object v0, p0, Lcom/htc/util/contacts/SyncControl$ExceptionSync;->account:Landroid/accounts/Account;
+    iget-object v0, p0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->account:Landroid/accounts/Account;
 
     iget-object v0, v0, Landroid/accounts/Account;->type:Ljava/lang/String;
 
@@ -98,7 +98,7 @@
     return v0
 
     :cond_0
-    iget-object v0, p0, Lcom/htc/util/contacts/SyncControl$ExceptionSync;->authority:Ljava/lang/String;
+    iget-object v0, p0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->authority:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -139,7 +139,7 @@
 
     .line 220
     .local v0, other:Lcom/htc/util/contacts/SyncControl$SyncUnit;
-    iget-object v3, p0, Lcom/htc/util/contacts/SyncControl$ExceptionSync;->authority:Ljava/lang/String;
+    iget-object v3, p0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->authority:Ljava/lang/String;
 
     iget-object v4, v0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->authority:Ljava/lang/String;
 
@@ -149,7 +149,7 @@
 
     if-eqz v3, :cond_2
 
-    iget-object v3, p0, Lcom/htc/util/contacts/SyncControl$ExceptionSync;->account:Landroid/accounts/Account;
+    iget-object v3, p0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->account:Landroid/accounts/Account;
 
     iget-object v4, v0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->account:Landroid/accounts/Account;
 
@@ -160,7 +160,7 @@
     if-nez v3, :cond_3
 
     :cond_2
-    iget-object v3, p0, Lcom/htc/util/contacts/SyncControl$ExceptionSync;->authority:Ljava/lang/String;
+    iget-object v3, p0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->authority:Ljava/lang/String;
 
     iget-object v4, v0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->authority:Ljava/lang/String;
 
@@ -170,7 +170,7 @@
 
     if-nez v3, :cond_3
 
-    iget-object v3, p0, Lcom/htc/util/contacts/SyncControl$ExceptionSync;->account:Landroid/accounts/Account;
+    iget-object v3, p0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->account:Landroid/accounts/Account;
 
     iget-object v3, v3, Landroid/accounts/Account;->type:Ljava/lang/String;
 
@@ -205,7 +205,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/htc/util/contacts/SyncControl$ExceptionSync;->account:Landroid/accounts/Account;
+    iget-object v1, p0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->account:Landroid/accounts/Account;
 
     iget-object v1, v1, Landroid/accounts/Account;->name:Ljava/lang/String;
 
@@ -219,7 +219,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/htc/util/contacts/SyncControl$ExceptionSync;->account:Landroid/accounts/Account;
+    iget-object v1, p0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->account:Landroid/accounts/Account;
 
     iget-object v1, v1, Landroid/accounts/Account;->type:Ljava/lang/String;
 
@@ -233,7 +233,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/htc/util/contacts/SyncControl$ExceptionSync;->authority:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->authority:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

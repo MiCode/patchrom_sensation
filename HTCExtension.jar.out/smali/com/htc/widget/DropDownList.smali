@@ -418,7 +418,7 @@
     .line 1183
     const v1, 0x2020212
 
-    invoke-virtual {v11, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v11, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -431,7 +431,7 @@
     .line 1185
     const v1, 0x2020211
 
-    invoke-virtual {v11, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v11, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v13
 
@@ -466,14 +466,14 @@
 
     move-object/from16 v0, v18
 
-    invoke-virtual {v13, v1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v13, v1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 1191
-    invoke-virtual {v13}, Landroid/view/ViewGroup;->getPaddingTop()I
+    invoke-virtual {v13}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result v1
 
-    invoke-virtual {v13}, Landroid/view/ViewGroup;->getPaddingBottom()I
+    invoke-virtual {v13}, Landroid/widget/FrameLayout;->getPaddingBottom()I
 
     move-result v2
 
@@ -505,7 +505,7 @@
     invoke-virtual {v1, v0, v15}, Landroid/widget/ImageView;->measure(II)V
 
     .line 1198
-    invoke-virtual {v13}, Landroid/view/ViewGroup;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v13}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v14
 
@@ -513,19 +513,19 @@
 
     .line 1199
     .local v14, frameParams:Landroid/widget/FrameLayout$LayoutParams;
-    iget v1, v14, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+    iget v1, v14, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     iget v2, v14, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     add-int/2addr v1, v2
 
-    invoke-virtual {v13}, Landroid/view/ViewGroup;->getPaddingTop()I
+    invoke-virtual {v13}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result v2
 
     add-int/2addr v1, v2
 
-    invoke-virtual {v13}, Landroid/view/ViewGroup;->getPaddingBottom()I
+    invoke-virtual {v13}, Landroid/widget/FrameLayout;->getPaddingBottom()I
 
     move-result v2
 
@@ -697,7 +697,7 @@
 
     move-result v1
 
-    iget v2, v7, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+    iget v2, v7, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     add-int/2addr v1, v2
 

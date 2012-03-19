@@ -69,7 +69,7 @@
 
     .prologue
     .line 118
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 119
     if-ltz p6, :cond_0

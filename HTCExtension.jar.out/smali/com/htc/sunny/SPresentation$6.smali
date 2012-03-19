@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/htc/sunny/SPresentation$6;->val$adapter:Lcom/htc/sunny/SPresentationAdapterBase;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

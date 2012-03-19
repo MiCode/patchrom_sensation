@@ -31,7 +31,7 @@
 
     .prologue
     .line 17
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 19
     new-instance v0, Lcom/android/phone/ssdnbpcd/SystemInfo;

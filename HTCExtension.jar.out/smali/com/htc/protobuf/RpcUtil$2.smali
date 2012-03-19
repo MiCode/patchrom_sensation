@@ -40,7 +40,7 @@
     .line 108
     iput-object p1, p0, Lcom/htc/protobuf/RpcUtil$2;->val$originalCallback:Lcom/htc/protobuf/RpcCallback;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 109
     const/4 v0, 0x0

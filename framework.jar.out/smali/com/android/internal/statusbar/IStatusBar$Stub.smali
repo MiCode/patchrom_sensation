@@ -492,45 +492,37 @@
     :cond_4
     move v0, v4
 
-    .line 159
     goto :goto_5
 
     .restart local v0       #_arg0:Z
     :cond_5
     move v1, v4
 
-    .line 161
     goto :goto_6
 
-    .line 167
     .end local v0           #_arg0:Z
     :sswitch_d
     const-string v4, "com.android.internal.statusbar.IStatusBar"
 
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 168
     invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->toggleRecentApps()V
 
     goto/16 :goto_0
 
-    .line 173
     :sswitch_e
     const-string v4, "com.android.internal.statusbar.IStatusBar"
 
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 175
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 176
     .local v0, _arg0:I
 
     goto/16 :goto_0
 
-    .line 39
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

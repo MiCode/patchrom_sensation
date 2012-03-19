@@ -30,7 +30,7 @@
     .line 131
     iput-object p1, p0, Lcom/android/camera/component/ThumbnailController$5;->this$0:Lcom/android/camera/component/ThumbnailController;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -90,7 +90,7 @@
     .line 137
     iget-object v0, p0, Lcom/android/camera/component/ThumbnailController$5;->this$0:Lcom/android/camera/component/ThumbnailController;
 
-    #getter for: Lcom/android/camera/component/ThumbnailController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/ThumbnailController;->access$600(Lcom/android/camera/component/ThumbnailController;)Ljava/lang/String;
 
     move-result-object v0

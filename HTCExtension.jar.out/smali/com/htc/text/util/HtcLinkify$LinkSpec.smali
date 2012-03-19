@@ -55,7 +55,7 @@
     .locals 1
 
     .prologue
-    .line 492
+    .line 506
     new-instance v0, Lcom/htc/text/util/HtcLinkify$LinkSpec$1;
 
     invoke-direct {v0}, Lcom/htc/text/util/HtcLinkify$LinkSpec$1;-><init>()V
@@ -69,10 +69,10 @@
     .locals 0
 
     .prologue
-    .line 484
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 498
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 485
+    .line 499
     return-void
 .end method
 
@@ -81,26 +81,26 @@
     .parameter "source"
 
     .prologue
-    .line 515
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 529
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 516
+    .line 530
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 517
+    .line 531
     .local v0, isUrlNull:I
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 518
+    .line 532
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/htc/text/util/HtcLinkify$LinkSpec;->url:Ljava/lang/String;
 
-    .line 522
+    .line 536
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -108,17 +108,17 @@
 
     iput v1, p0, Lcom/htc/text/util/HtcLinkify$LinkSpec;->start:I
 
-    .line 523
+    .line 537
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Lcom/htc/text/util/HtcLinkify$LinkSpec;->end:I
 
-    .line 524
+    .line 538
     return-void
 
-    .line 520
+    .line 534
     :cond_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -136,7 +136,7 @@
     .parameter "another"
 
     .prologue
-    .line 527
+    .line 541
     iget v0, p0, Lcom/htc/text/util/HtcLinkify$LinkSpec;->start:I
 
     iget v1, p1, Lcom/htc/text/util/HtcLinkify$LinkSpec;->start:I
@@ -151,7 +151,7 @@
     .parameter "x0"
 
     .prologue
-    .line 477
+    .line 491
     check-cast p1, Lcom/htc/text/util/HtcLinkify$LinkSpec;
 
     .end local p1
@@ -166,7 +166,7 @@
     .locals 1
 
     .prologue
-    .line 489
+    .line 503
     const/4 v0, 0x0
 
     return v0
@@ -178,37 +178,37 @@
     .parameter "flags"
 
     .prologue
-    .line 505
+    .line 519
     iget-object v0, p0, Lcom/htc/text/util/HtcLinkify$LinkSpec;->url:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
-    .line 506
+    .line 520
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 511
+    .line 525
     :goto_0
     iget v0, p0, Lcom/htc/text/util/HtcLinkify$LinkSpec;->start:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 512
+    .line 526
     iget v0, p0, Lcom/htc/text/util/HtcLinkify$LinkSpec;->end:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 513
+    .line 527
     return-void
 
-    .line 508
+    .line 522
     :cond_0
     const/4 v0, 0x2
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 509
+    .line 523
     iget-object v0, p0, Lcom/htc/text/util/HtcLinkify$LinkSpec;->url:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V

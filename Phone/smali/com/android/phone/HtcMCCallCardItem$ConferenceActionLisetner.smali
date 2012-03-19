@@ -45,7 +45,7 @@
     .line 567
     iput-object p1, p0, Lcom/android/phone/HtcMCCallCardItem$ConferenceActionLisetner;->this$0:Lcom/android/phone/HtcMCCallCardItem;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 568
     const/4 v0, 0x3

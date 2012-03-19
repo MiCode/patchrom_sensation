@@ -58,7 +58,7 @@
     .line 3349
     iput-object p1, p0, Lcom/htc/opensense/widget/AlbumAbsListView$RecycleBin;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 3363
     const/4 v0, 0x0

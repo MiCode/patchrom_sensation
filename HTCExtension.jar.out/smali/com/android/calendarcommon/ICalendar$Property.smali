@@ -57,7 +57,7 @@
 
     .prologue
     .line 245
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 237
     new-instance v0, Ljava/util/LinkedHashMap;
@@ -80,7 +80,7 @@
 
     .prologue
     .line 254
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 237
     new-instance v0, Ljava/util/LinkedHashMap;

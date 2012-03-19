@@ -17,7 +17,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final TAG:Ljava/lang/String; = "HtcCallBarringCheckBoxPreference"
 
@@ -137,19 +137,7 @@
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/android/phone/HtcCallBarringEditPreference;Ljava/lang/String;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 45
-    invoke-direct {p0, p1}, Lcom/android/phone/HtcCallBarringEditPreference;->log(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method static synthetic access$200(Lcom/android/phone/HtcCallBarringEditPreference;)I
+.method static synthetic access$100(Lcom/android/phone/HtcCallBarringEditPreference;)I
     .locals 1
     .parameter "x0"
 
@@ -160,7 +148,7 @@
     return v0
 .end method
 
-.method static synthetic access$202(Lcom/android/phone/HtcCallBarringEditPreference;I)I
+.method static synthetic access$102(Lcom/android/phone/HtcCallBarringEditPreference;I)I
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -172,7 +160,7 @@
     return p1
 .end method
 
-.method static synthetic access$212(Lcom/android/phone/HtcCallBarringEditPreference;I)I
+.method static synthetic access$112(Lcom/android/phone/HtcCallBarringEditPreference;I)I
     .locals 1
     .parameter "x0"
     .parameter "x1"
@@ -188,7 +176,7 @@
     return v0
 .end method
 
-.method static synthetic access$300(Lcom/android/phone/HtcCallBarringEditPreference;)I
+.method static synthetic access$200(Lcom/android/phone/HtcCallBarringEditPreference;)I
     .locals 1
     .parameter "x0"
 
@@ -197,6 +185,18 @@
     iget v0, p0, Lcom/android/phone/HtcCallBarringEditPreference;->mFacility:I
 
     return v0
+.end method
+
+.method static synthetic access$300(Lcom/android/phone/HtcCallBarringEditPreference;Ljava/lang/String;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 45
+    invoke-direct {p0, p1}, Lcom/android/phone/HtcCallBarringEditPreference;->log(Ljava/lang/String;)V
+
+    return-void
 .end method
 
 .method static synthetic access$400(Lcom/android/phone/HtcCallBarringEditPreference;)Lcom/android/phone/HtcCallBarringEditPreference$Parrent;
@@ -238,51 +238,18 @@
 .end method
 
 .method private setEnabled(II)V
-    .locals 2
+    .locals 1
     .parameter "reason"
     .parameter "isEnabled"
 
     .prologue
-    .line 167
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "setEnabled. mFacility: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/android/phone/HtcCallBarringEditPreference;->mFacility:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ". new state: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/android/phone/HtcCallBarringEditPreference;->log(Ljava/lang/String;)V
-
     .line 168
     iget v0, p0, Lcom/android/phone/HtcCallBarringEditPreference;->mFacility:I
 
-    if-ne v0, p1, :cond_1
+    if-ne v0, p1, :cond_0
 
     .line 169
-    if-lez p2, :cond_0
+    if-lez p2, :cond_1
 
     .line 170
     const v0, 0x7f0e007f
@@ -295,11 +262,12 @@
     iput-boolean v0, p0, Lcom/android/phone/HtcCallBarringEditPreference;->mEnabled:Z
 
     .line 179
+    :cond_0
     :goto_0
     return-void
 
     .line 173
-    :cond_0
+    :cond_1
     const v0, 0x7f0e007e
 
     invoke-virtual {p0, v0}, Lcom/android/phone/HtcCallBarringEditPreference;->setSummary(I)V
@@ -310,41 +278,17 @@
     iput-boolean v0, p0, Lcom/android/phone/HtcCallBarringEditPreference;->mEnabled:Z
 
     goto :goto_0
-
-    .line 177
-    :cond_1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "reason does not the same as mFacility: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/android/phone/HtcCallBarringEditPreference;->log(Ljava/lang/String;)V
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
 .method init(Lcom/android/phone/TimeConsumingPreferenceListener;Z)V
-    .locals 3
+    .locals 2
     .parameter "listener"
     .parameter "skipReading"
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
     .line 100
     iput-object p1, p0, Lcom/android/phone/HtcCallBarringEditPreference;->tcpListener:Lcom/android/phone/TimeConsumingPreferenceListener;
@@ -352,31 +296,8 @@
     .line 101
     if-nez p2, :cond_0
 
-    .line 102
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "load facility: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/android/phone/HtcCallBarringEditPreference;->mFacility:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/android/phone/HtcCallBarringEditPreference;->log(Ljava/lang/String;)V
-
     .line 104
-    invoke-virtual {p0, v2}, Lcom/android/phone/HtcCallBarringEditPreference;->queryCB(Z)V
+    invoke-virtual {p0, v1}, Lcom/android/phone/HtcCallBarringEditPreference;->queryCB(Z)V
 
     .line 106
     iget-object v0, p0, Lcom/android/phone/HtcCallBarringEditPreference;->tcpListener:Lcom/android/phone/TimeConsumingPreferenceListener;
@@ -386,7 +307,7 @@
     .line 107
     iget-object v0, p0, Lcom/android/phone/HtcCallBarringEditPreference;->tcpListener:Lcom/android/phone/TimeConsumingPreferenceListener;
 
-    invoke-interface {v0, p0, v2}, Lcom/android/phone/TimeConsumingPreferenceListener;->onStarted(Lcom/htc/preference/HtcPreference;Z)V
+    invoke-interface {v0, p0, v1}, Lcom/android/phone/TimeConsumingPreferenceListener;->onStarted(Lcom/htc/preference/HtcPreference;Z)V
 
     .line 110
     :cond_0
@@ -528,27 +449,6 @@
 
     .prologue
     const/4 v3, 0x1
-
-    .line 136
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "updateCB: stat:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/phone/HtcCallBarringEditPreference;->log(Ljava/lang/String;)V
 
     .line 137
     iget-object v1, p0, Lcom/android/phone/HtcCallBarringEditPreference;->mHandler:Lcom/android/phone/HtcCallBarringEditPreference$CBHandler;

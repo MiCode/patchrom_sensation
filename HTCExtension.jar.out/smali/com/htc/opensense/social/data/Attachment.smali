@@ -246,7 +246,7 @@
     if-ne v3, v9, :cond_1
 
     .line 129
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -260,7 +260,7 @@
 
     .line 146
     :goto_1
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -281,7 +281,7 @@
     if-ne v3, v9, :cond_2
 
     .line 132
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -342,7 +342,7 @@
     if-ne v3, v9, :cond_3
 
     .line 134
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -398,7 +398,7 @@
     if-ne v3, v9, :cond_4
 
     .line 136
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -419,7 +419,7 @@
     if-ne v3, v9, :cond_5
 
     .line 138
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -440,7 +440,7 @@
     if-ne v3, v9, :cond_6
 
     .line 140
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -461,7 +461,7 @@
     if-ne v3, v9, :cond_7
 
     .line 142
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -599,7 +599,7 @@
     if-ne v3, v9, :cond_1
 
     .line 77
-    iget-object v10, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v10, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -627,7 +627,7 @@
     if-ne v3, v9, :cond_2
 
     .line 79
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -662,7 +662,7 @@
     if-ne v3, v9, :cond_3
 
     .line 81
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -683,7 +683,7 @@
     if-ne v3, v9, :cond_4
 
     .line 83
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -704,7 +704,7 @@
     if-ne v3, v9, :cond_5
 
     .line 85
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -725,7 +725,7 @@
     if-ne v3, v9, :cond_6
 
     .line 87
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -746,7 +746,7 @@
     if-ne v3, v9, :cond_7
 
     .line 89
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -767,7 +767,7 @@
     if-ne v3, v9, :cond_8
 
     .line 91
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -833,7 +833,7 @@
     if-ne v3, v9, :cond_a
 
     .line 99
-    iget-object v9, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v9, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-interface {v6}, Lcom/htc/opensense/social/data/Attachment$Key;->value()Ljava/lang/String;
 
@@ -908,7 +908,7 @@
     invoke-virtual {p0}, Lcom/htc/opensense/social/data/Attachment;->putExtraInfo()V
 
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/social/data/Attachment;->extra:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/htc/opensense/social/data/Extra;->extra:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 

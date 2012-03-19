@@ -116,7 +116,7 @@
 
     .line 33
     :cond_0
-    iget-object v0, p0, Lcom/android/camera/effect/HdrScene;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Cannot link to HDR UI"
 
@@ -148,7 +148,7 @@
 
     .line 45
     :cond_0
-    iget-object v0, p0, Lcom/android/camera/effect/HdrScene;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Cannot link to HDR UI"
 

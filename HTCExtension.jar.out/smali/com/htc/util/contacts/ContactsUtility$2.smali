@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/htc/util/contacts/ContactsUtility$2;->val$context:Landroid/content/Context;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -145,26 +145,15 @@
 
     cmp-long v32, v32, v20
 
-    if-gez v32, :cond_2
+    if-gez v32, :cond_0
 
     const-wide/16 v32, 0x0
 
     cmp-long v32, v32, v22
 
-    if-ltz v32, :cond_3
-
-    .line 1350
-    :cond_2
-    const-string v32, "ContactsUtility"
-
-    const-string v33, "importCsAccountInfoToMyContact (0 >= lMyContactId || 0 >= lMyRawContactId) return"
-
-    invoke-static/range {v32 .. v33}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
+    if-gez v32, :cond_0
 
     .line 1369
-    :cond_3
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/htc/util/contacts/ContactsUtility$2;->val$context:Landroid/content/Context;
@@ -191,12 +180,12 @@
     move-result-object v15
 
     .local v15, i$:Ljava/util/Iterator;
-    :cond_4
+    :cond_2
     invoke-interface {v15}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v32
 
-    if-eqz v32, :cond_5
+    if-eqz v32, :cond_3
 
     invoke-interface {v15}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -206,7 +195,7 @@
 
     .line 1372
     .local v10, e:Landroid/content/Entity;
-    if-eqz v10, :cond_4
+    if-eqz v10, :cond_2
 
     .line 1373
     invoke-virtual {v10}, Landroid/content/Entity;->getEntityValues()Landroid/content/ContentValues;
@@ -255,19 +244,19 @@
 
     move-result v32
 
-    if-eqz v32, :cond_4
+    if-eqz v32, :cond_2
 
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v32
 
-    if-eqz v32, :cond_4
+    if-eqz v32, :cond_2
 
     invoke-static {v9}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v32
 
-    if-eqz v32, :cond_4
+    if-eqz v32, :cond_2
 
     .line 1378
     move-object v14, v10
@@ -278,12 +267,12 @@
     .end local v9           #dataSet:Ljava/lang/String;
     .end local v10           #e:Landroid/content/Entity;
     .end local v28           #myValues:Landroid/content/ContentValues;
-    :cond_5
+    :cond_3
     invoke-static {v11}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v32
 
-    if-nez v32, :cond_8
+    if-nez v32, :cond_6
 
     .line 1386
     const-string v32, "vnd.android.cursor.item/email_v2"
@@ -326,12 +315,12 @@
 
     move-result-object v15
 
-    :cond_6
+    :cond_4
     invoke-interface {v15}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v32
 
-    if-eqz v32, :cond_7
+    if-eqz v32, :cond_5
 
     invoke-interface {v15}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -353,7 +342,7 @@
 
     move-result v32
 
-    if-eqz v32, :cond_6
+    if-eqz v32, :cond_4
 
     .line 1393
     const-wide/high16 v32, 0x400c
@@ -362,41 +351,16 @@
 
     move-result v32
 
-    if-eqz v32, :cond_c
+    if-eqz v32, :cond_a
 
     .line 1394
     const/4 v6, 0x1
 
-    .line 1412
-    .end local v31           #v:Landroid/content/ContentValues;
-    :cond_7
-    :goto_1
-    const-string v32, "ContactsUtility"
-
-    new-instance v33, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v33 .. v33}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v34, "importCsAccountInfoToMyContact email bDuplicate: "
-
-    invoke-virtual/range {v33 .. v34}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v33
-
-    move-object/from16 v0, v33
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v33
-
-    invoke-virtual/range {v33 .. v33}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v33
-
-    invoke-static/range {v32 .. v33}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1413
-    if-nez v6, :cond_8
+    .end local v31           #v:Landroid/content/ContentValues;
+    :cond_5
+    :goto_1
+    if-nez v6, :cond_6
 
     .line 1414
     new-instance v12, Landroid/content/ContentValues;
@@ -442,7 +406,7 @@
 
     move-result v32
 
-    if-eqz v32, :cond_e
+    if-eqz v32, :cond_c
 
     .line 1424
     :goto_2
@@ -468,7 +432,7 @@
 
     .line 1425
     .local v30, uriResult:Landroid/net/Uri;
-    if-eqz v30, :cond_8
+    if-eqz v30, :cond_6
 
     .line 1426
     const/16 v16, 0x1
@@ -480,12 +444,12 @@
     .end local v24           #lSocialnetworkType:J
     .end local v26           #myEmailContentValues:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentValues;>;"
     .end local v30           #uriResult:Landroid/net/Uri;
-    :cond_8
+    :cond_6
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v32
 
-    if-nez v32, :cond_b
+    if-nez v32, :cond_9
 
     .line 1433
     const-string v32, "vnd.android.cursor.item/phone_v2"
@@ -528,12 +492,12 @@
 
     move-result-object v15
 
-    :cond_9
+    :cond_7
     invoke-interface {v15}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v32
 
-    if-eqz v32, :cond_a
+    if-eqz v32, :cond_8
 
     invoke-interface {v15}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -555,7 +519,7 @@
 
     move-result v32
 
-    if-eqz v32, :cond_9
+    if-eqz v32, :cond_7
 
     .line 1440
     const-wide/high16 v32, 0x400c
@@ -564,41 +528,16 @@
 
     move-result v32
 
-    if-eqz v32, :cond_f
+    if-eqz v32, :cond_d
 
     .line 1441
     const/4 v6, 0x1
 
-    .line 1459
-    .end local v31           #v:Landroid/content/ContentValues;
-    :cond_a
-    :goto_3
-    const-string v32, "ContactsUtility"
-
-    new-instance v33, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v33 .. v33}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v34, "importCsAccountInfoToMyContact phone bDuplicate: "
-
-    invoke-virtual/range {v33 .. v34}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v33
-
-    move-object/from16 v0, v33
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v33
-
-    invoke-virtual/range {v33 .. v33}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v33
-
-    invoke-static/range {v32 .. v33}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1460
-    if-nez v6, :cond_b
+    .end local v31           #v:Landroid/content/ContentValues;
+    :cond_8
+    :goto_3
+    if-nez v6, :cond_9
 
     .line 1461
     new-instance v29, Landroid/content/ContentValues;
@@ -685,7 +624,7 @@
 
     .line 1467
     .restart local v30       #uriResult:Landroid/net/Uri;
-    if-eqz v30, :cond_b
+    if-eqz v30, :cond_9
 
     .line 1468
     const/16 v16, 0x1
@@ -697,7 +636,7 @@
     .end local v27           #myPhoneContentValues:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentValues;>;"
     .end local v29           #phoneValues:Landroid/content/ContentValues;
     .end local v30           #uriResult:Landroid/net/Uri;
-    :cond_b
+    :cond_9
     if-eqz v16, :cond_0
 
     .line 1474
@@ -734,7 +673,7 @@
     .restart local v24       #lSocialnetworkType:J
     .restart local v26       #myEmailContentValues:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentValues;>;"
     .restart local v31       #v:Landroid/content/ContentValues;
-    :cond_c
+    :cond_a
     const-string v32, "data7"
 
     invoke-virtual/range {v31 .. v32}, Landroid/content/ContentValues;->getAsLong(Ljava/lang/String;)Ljava/lang/Long;
@@ -743,7 +682,7 @@
 
     .line 1398
     .local v3, LSocialnetworkType:Ljava/lang/Long;
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_b
 
     .line 1399
     invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
@@ -756,14 +695,14 @@
 
     cmp-long v32, v32, v24
 
-    if-nez v32, :cond_6
+    if-nez v32, :cond_4
 
     .line 1404
     const-wide/16 v32, 0x0
 
     cmp-long v32, v32, v17
 
-    if-nez v32, :cond_6
+    if-nez v32, :cond_4
 
     .line 1405
     const/4 v6, 0x1
@@ -772,7 +711,7 @@
     goto/16 :goto_1
 
     .line 1401
-    :cond_d
+    :cond_b
     const-wide/16 v24, 0x0
 
     goto :goto_4
@@ -781,7 +720,7 @@
     .end local v3           #LSocialnetworkType:Ljava/lang/Long;
     .end local v31           #v:Landroid/content/ContentValues;
     .restart local v12       #emailValues:Landroid/content/ContentValues;
-    :cond_e
+    :cond_c
     const-string v32, "data7"
 
     move-object/from16 v0, p0
@@ -817,7 +756,7 @@
     .end local v26           #myEmailContentValues:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentValues;>;"
     .restart local v27       #myPhoneContentValues:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentValues;>;"
     .restart local v31       #v:Landroid/content/ContentValues;
-    :cond_f
+    :cond_d
     const-string v32, "data8"
 
     invoke-virtual/range {v31 .. v32}, Landroid/content/ContentValues;->getAsLong(Ljava/lang/String;)Ljava/lang/Long;
@@ -826,7 +765,7 @@
 
     .line 1445
     .restart local v3       #LSocialnetworkType:Ljava/lang/Long;
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_e
 
     .line 1446
     invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
@@ -839,14 +778,14 @@
 
     cmp-long v32, v32, v24
 
-    if-nez v32, :cond_9
+    if-nez v32, :cond_7
 
     .line 1451
     const-wide/16 v32, 0x0
 
     cmp-long v32, v32, v17
 
-    if-nez v32, :cond_9
+    if-nez v32, :cond_7
 
     .line 1452
     const/4 v6, 0x1
@@ -855,7 +794,7 @@
     goto/16 :goto_3
 
     .line 1448
-    :cond_10
+    :cond_e
     const-wide/16 v24, 0x0
 
     goto :goto_5

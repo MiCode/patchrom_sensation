@@ -55,9 +55,9 @@
 
     .line 46
     .local v6, result:Ljava/nio/ByteBuffer;
-    iget-object v2, p0, Landroid/net/dhcp/DhcpDeclinePacket;->mClientIp:Ljava/net/InetAddress;
+    iget-object v2, p0, Landroid/net/dhcp/DhcpPacket;->mClientIp:Ljava/net/InetAddress;
 
-    iget-object v3, p0, Landroid/net/dhcp/DhcpDeclinePacket;->mYourIp:Ljava/net/InetAddress;
+    iget-object v3, p0, Landroid/net/dhcp/DhcpPacket;->mYourIp:Ljava/net/InetAddress;
 
     const/4 v7, 0x1
 
@@ -86,9 +86,9 @@
 
     .prologue
     .line 63
-    iget-object v0, p0, Landroid/net/dhcp/DhcpDeclinePacket;->mClientMac:[B
+    iget-object v0, p0, Landroid/net/dhcp/DhcpPacket;->mClientMac:[B
 
-    iget-object v1, p0, Landroid/net/dhcp/DhcpDeclinePacket;->mRequestedIp:Ljava/net/InetAddress;
+    iget-object v1, p0, Landroid/net/dhcp/DhcpPacket;->mRequestedIp:Ljava/net/InetAddress;
 
     invoke-interface {p1, v0, v1}, Landroid/net/dhcp/DhcpStateMachine;->onDeclineReceived([BLjava/net/InetAddress;)V
 

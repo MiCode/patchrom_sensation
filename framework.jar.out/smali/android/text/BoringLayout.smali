@@ -1006,11 +1006,11 @@
     .line 186
     move-object/from16 v0, p7
 
-    iget v2, v0, Landroid/text/BoringLayout$Metrics;->bottom:I
+    iget v2, v0, Landroid/graphics/Paint$FontMetricsInt;->bottom:I
 
     move-object/from16 v0, p7
 
-    iget v3, v0, Landroid/text/BoringLayout$Metrics;->top:I
+    iget v3, v0, Landroid/graphics/Paint$FontMetricsInt;->top:I
 
     sub-int v10, v2, v3
 
@@ -1053,7 +1053,7 @@
     .line 198
     move-object/from16 v0, p7
 
-    iget v2, v0, Landroid/text/BoringLayout$Metrics;->top:I
+    iget v2, v0, Landroid/graphics/Paint$FontMetricsInt;->top:I
 
     add-int/2addr v2, v10
 
@@ -1079,11 +1079,11 @@
     .line 219
     move-object/from16 v0, p7
 
-    iget v2, v0, Landroid/text/BoringLayout$Metrics;->top:I
+    iget v2, v0, Landroid/graphics/Paint$FontMetricsInt;->top:I
 
     move-object/from16 v0, p7
 
-    iget v3, v0, Landroid/text/BoringLayout$Metrics;->ascent:I
+    iget v3, v0, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
 
     sub-int/2addr v2, v3
 
@@ -1092,11 +1092,11 @@
     .line 220
     move-object/from16 v0, p7
 
-    iget v2, v0, Landroid/text/BoringLayout$Metrics;->bottom:I
+    iget v2, v0, Landroid/graphics/Paint$FontMetricsInt;->bottom:I
 
     move-object/from16 v0, p7
 
-    iget v3, v0, Landroid/text/BoringLayout$Metrics;->descent:I
+    iget v3, v0, Landroid/graphics/Paint$FontMetricsInt;->descent:I
 
     sub-int/2addr v2, v3
 
@@ -1119,11 +1119,11 @@
     :cond_4
     move-object/from16 v0, p7
 
-    iget v2, v0, Landroid/text/BoringLayout$Metrics;->descent:I
+    iget v2, v0, Landroid/graphics/Paint$FontMetricsInt;->descent:I
 
     move-object/from16 v0, p7
 
-    iget v3, v0, Landroid/text/BoringLayout$Metrics;->ascent:I
+    iget v3, v0, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
 
     sub-int v10, v2, v3
 
@@ -1134,7 +1134,7 @@
     :cond_5
     move-object/from16 v0, p7
 
-    iget v2, v0, Landroid/text/BoringLayout$Metrics;->ascent:I
+    iget v2, v0, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
 
     add-int/2addr v2, v10
 

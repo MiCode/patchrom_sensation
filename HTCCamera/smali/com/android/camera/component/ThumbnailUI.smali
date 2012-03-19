@@ -409,7 +409,7 @@
 
     .line 216
     :cond_0
-    iget-object v0, p0, Lcom/android/camera/component/ThumbnailUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "No thumbnail controller to create thumbnail image"
 

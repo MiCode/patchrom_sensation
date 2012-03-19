@@ -35,7 +35,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/EmbossMaskFilter;->native_instance:I
+    iput v0, p0, Landroid/graphics/MaskFilter;->native_instance:I
 
     .line 34
     return-void

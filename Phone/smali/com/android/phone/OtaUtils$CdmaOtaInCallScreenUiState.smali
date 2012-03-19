@@ -30,7 +30,7 @@
 
     .prologue
     .line 1252
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1253
     const-string v0, "CdmaOtaInCallScreenState: constructor init to UNDEFINED"

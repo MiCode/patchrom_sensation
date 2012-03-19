@@ -33,7 +33,7 @@
     .line 3966
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$PassHeadsetKey;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 3967
     iput-object p2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$PassHeadsetKey;->mKeyEvent:Landroid/view/KeyEvent;

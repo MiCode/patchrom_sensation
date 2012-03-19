@@ -545,10 +545,10 @@
     .line 62
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mCancel:Z
+    iput-boolean v0, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mCancel:Z
 
     .line 63
-    iget-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
+    iget-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
 
     invoke-interface {v0}, Lorg/apache/http/client/methods/AbortableHttpRequest;->abort()V
 
@@ -584,7 +584,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mDownloadUri:Ljava/lang/String;
+    iget-object v2, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mDownloadUri:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -602,7 +602,7 @@
     .line 40
     new-instance v0, Lorg/apache/http/client/methods/HttpGet;
 
-    iget-object v1, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mDownloadUri:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mDownloadUri:Ljava/lang/String;
 
     invoke-direct {v0, v1}, Lorg/apache/http/client/methods/HttpGet;-><init>(Ljava/lang/String;)V
 
@@ -611,10 +611,10 @@
     .line 41
     iget-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mHttpGet:Lorg/apache/http/client/methods/HttpGet;
 
-    iput-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
+    iput-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
 
     .line 42
-    iput-boolean v3, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mCancel:Z
+    iput-boolean v3, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mCancel:Z
 
     .line 43
     iput-boolean v3, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mTokenAuth:Z
@@ -650,7 +650,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mDownloadUri:Ljava/lang/String;
+    iget-object v2, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mDownloadUri:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -668,7 +668,7 @@
     .line 53
     new-instance v0, Lorg/apache/http/client/methods/HttpGet;
 
-    iget-object v1, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mDownloadUri:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mDownloadUri:Ljava/lang/String;
 
     invoke-direct {v0, v1}, Lorg/apache/http/client/methods/HttpGet;-><init>(Ljava/lang/String;)V
 
@@ -684,12 +684,12 @@
     .line 55
     iget-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mHttpGet:Lorg/apache/http/client/methods/HttpGet;
 
-    iput-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
+    iput-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
 
     .line 56
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mCancel:Z
+    iput-boolean v0, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mCancel:Z
 
     .line 57
     iput-object p3, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mToken:Ljava/lang/String;
@@ -718,7 +718,7 @@
     .local v3, list:Ljava/util/List;,"Ljava/util/List<Lcom/htc/socialnetwork/tmo/engine/livegallery/LiveGalleryPhoto;>;"
     :goto_0
     :try_start_0
-    iget-boolean v8, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mCancel:Z
+    iget-boolean v8, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mCancel:Z
 
     if-eqz v8, :cond_0
 
@@ -733,7 +733,7 @@
 
     .line 75
     :cond_0
-    iget-object v8, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mHttpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
+    iget-object v8, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mHttpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
 
     iget-object v9, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mHttpGet:Lorg/apache/http/client/methods/HttpGet;
 
@@ -853,7 +853,7 @@
     .end local v6           #out:Ljava/io/ByteArrayOutputStream;
     .end local v7           #status:I
     :goto_1
-    iget-object v8, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mHttpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
+    iget-object v8, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mHttpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
 
     invoke-virtual {v8}, Lorg/apache/http/impl/client/DefaultHttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
@@ -897,7 +897,7 @@
     :cond_2
     iget-object v8, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mHttpGet:Lorg/apache/http/client/methods/HttpGet;
 
-    iput-object v8, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
+    iput-object v8, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
@@ -943,7 +943,7 @@
     invoke-static {v8, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 117
-    iget-boolean v8, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mCancel:Z
+    iget-boolean v8, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mCancel:Z
 
     if-eqz v8, :cond_5
 
@@ -1015,7 +1015,7 @@
     invoke-static {v8, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 126
-    iget-boolean v8, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoListDownloadThread;->mCancel:Z
+    iget-boolean v8, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mCancel:Z
 
     if-eqz v8, :cond_6
 

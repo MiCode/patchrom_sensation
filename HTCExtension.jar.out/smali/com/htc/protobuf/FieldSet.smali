@@ -61,7 +61,7 @@
     .prologue
     .line 73
     .local p0, this:Lcom/htc/protobuf/FieldSet;,"Lcom/htc/protobuf/FieldSet<TFieldDescriptorType;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 79
     new-instance v0, Ljava/util/TreeMap;
@@ -81,7 +81,7 @@
     .prologue
     .line 86
     .local p0, this:Lcom/htc/protobuf/FieldSet;,"Lcom/htc/protobuf/FieldSet<TFieldDescriptorType;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 87
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;

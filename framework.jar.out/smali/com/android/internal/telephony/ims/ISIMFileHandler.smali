@@ -26,15 +26,15 @@
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/IccFileHandler;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
 
     .line 44
-    iget-object v0, p0, Lcom/android/internal/telephony/ims/ISIMFileHandler;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iput-object v0, p0, Lcom/android/internal/telephony/ims/ISIMFileHandler;->mPhone:Lcom/android/internal/telephony/Phone;
 
     .line 45
-    iput p2, p0, Lcom/android/internal/telephony/ims/ISIMFileHandler;->mSlotId:I
+    iput p2, p0, Lcom/android/internal/telephony/IccFileHandler;->mSlotId:I
 
     .line 46
-    iput-object p3, p0, Lcom/android/internal/telephony/ims/ISIMFileHandler;->mAppId:Ljava/lang/String;
+    iput-object p3, p0, Lcom/android/internal/telephony/IccFileHandler;->mAppId:Ljava/lang/String;
 
     .line 47
     sput-object p3, Lcom/android/internal/telephony/HtcIsimData;->mAid:Ljava/lang/String;

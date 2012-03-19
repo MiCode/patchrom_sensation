@@ -229,7 +229,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v1, p0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

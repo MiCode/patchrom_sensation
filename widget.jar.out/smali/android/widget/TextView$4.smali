@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 9883
+    .line 9911
     iput-object p1, p0, Landroid/widget/TextView$4;->this$0:Landroid/widget/TextView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,18 @@
     .locals 2
 
     .prologue
-    .line 9885
+    .line 9913
+    iget-object v0, p0, Landroid/widget/TextView$4;->this$0:Landroid/widget/TextView;
+
+    iget-object v0, v0, Landroid/widget/TextView;->mSelectionManager:Lcom/htc/textselection/HtcTextSelectionManager;
+
+    invoke-virtual {v0}, Lcom/htc/textselection/HtcTextSelectionManager;->isPasteWindow()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 9914
     iget-object v0, p0, Landroid/widget/TextView$4;->this$0:Landroid/widget/TextView;
 
     iget-object v0, v0, Landroid/widget/TextView;->mSelectionManager:Lcom/htc/textselection/HtcTextSelectionManager;
@@ -50,6 +61,7 @@
 
     invoke-virtual {v0, v1}, Lcom/htc/textselection/HtcTextSelectionManager;->dismissQuickAction(Z)V
 
-    .line 9886
+    .line 9915
+    :cond_0
     return-void
 .end method

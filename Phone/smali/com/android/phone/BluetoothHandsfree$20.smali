@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3524
+    .line 3568
     iput-object p1, p0, Lcom/android/phone/BluetoothHandsfree$20;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     iput-object p2, p0, Lcom/android/phone/BluetoothHandsfree$20;->val$phone:Lcom/android/internal/telephony/Phone;
@@ -45,18 +45,18 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 3527
+    .line 3571
     const-string v4, "Bluetooth HS/HF"
 
     const-string v5, "+CLCC"
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3528
+    .line 3572
     iget-object v4, p0, Lcom/android/phone/BluetoothHandsfree$20;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #getter for: Lcom/android/phone/BluetoothHandsfree;->mFakeCall:I
-    invoke-static {v4}, Lcom/android/phone/BluetoothHandsfree;->access$1700(Lcom/android/phone/BluetoothHandsfree;)I
+    invoke-static {v4}, Lcom/android/phone/BluetoothHandsfree;->access$1600(Lcom/android/phone/BluetoothHandsfree;)I
 
     move-result v4
 
@@ -65,13 +65,13 @@
     iget-object v4, p0, Lcom/android/phone/BluetoothHandsfree$20;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #getter for: Lcom/android/phone/BluetoothHandsfree;->mFakeCallsetup:I
-    invoke-static {v4}, Lcom/android/phone/BluetoothHandsfree;->access$1400(Lcom/android/phone/BluetoothHandsfree;)I
+    invoke-static {v4}, Lcom/android/phone/BluetoothHandsfree;->access$1300(Lcom/android/phone/BluetoothHandsfree;)I
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 3529
+    .line 3573
     :cond_0
     const-string v4, "Bluetooth HS/HF"
 
@@ -79,12 +79,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3530
+    .line 3574
     new-instance v3, Landroid/bluetooth/AtCommandResult;
 
     invoke-direct {v3, v6}, Landroid/bluetooth/AtCommandResult;-><init>(I)V
 
-    .line 3531
+    .line 3575
     .local v3, result:Landroid/bluetooth/AtCommandResult;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -99,7 +99,7 @@
     iget-object v5, p0, Lcom/android/phone/BluetoothHandsfree$20;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #getter for: Lcom/android/phone/BluetoothHandsfree;->mFakeCallsetup:I
-    invoke-static {v5}, Lcom/android/phone/BluetoothHandsfree;->access$1400(Lcom/android/phone/BluetoothHandsfree;)I
+    invoke-static {v5}, Lcom/android/phone/BluetoothHandsfree;->access$1300(Lcom/android/phone/BluetoothHandsfree;)I
 
     move-result v5
 
@@ -119,12 +119,12 @@
 
     invoke-virtual {v3, v4}, Landroid/bluetooth/AtCommandResult;->addResponse(Ljava/lang/String;)V
 
-    .line 3556
+    .line 3600
     .end local v3           #result:Landroid/bluetooth/AtCommandResult;
     :goto_0
     return-object v3
 
-    .line 3535
+    .line 3579
     :cond_1
     iget-object v4, p0, Lcom/android/phone/BluetoothHandsfree$20;->val$phone:Lcom/android/internal/telephony/Phone;
 
@@ -132,7 +132,7 @@
 
     move-result v2
 
-    .line 3538
+    .line 3582
     .local v2, phoneType:I
     iget-object v4, p0, Lcom/android/phone/BluetoothHandsfree$20;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
@@ -143,34 +143,34 @@
 
     if-eqz v4, :cond_3
 
-    .line 3539
+    .line 3583
     iget-object v4, p0, Lcom/android/phone/BluetoothHandsfree$20;->val$phone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v4}, Lcom/android/internal/telephony/Phone;->getLine1Number()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3540
+    .line 3584
     .local v1, number:Ljava/lang/String;
     new-instance v3, Landroid/bluetooth/AtCommandResult;
 
     invoke-direct {v3, v6}, Landroid/bluetooth/AtCommandResult;-><init>(I)V
 
-    .line 3542
+    .line 3586
     .restart local v3       #result:Landroid/bluetooth/AtCommandResult;
     if-nez v1, :cond_2
 
-    .line 3543
+    .line 3587
     const-string v0, "+CLCC: 1,0,0,0,0,\"\",0"
 
-    .line 3550
+    .line 3594
     .local v0, args:Ljava/lang/String;
     :goto_1
     invoke-virtual {v3, v0}, Landroid/bluetooth/AtCommandResult;->addResponse(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 3547
+    .line 3591
     .end local v0           #args:Ljava/lang/String;
     :cond_2
     new-instance v4, Ljava/lang/StringBuilder;
@@ -208,7 +208,7 @@
     .restart local v0       #args:Ljava/lang/String;
     goto :goto_1
 
-    .line 3553
+    .line 3597
     .end local v0           #args:Ljava/lang/String;
     .end local v1           #number:Ljava/lang/String;
     .end local v3           #result:Landroid/bluetooth/AtCommandResult;
@@ -217,7 +217,7 @@
 
     if-ne v2, v4, :cond_4
 
-    .line 3554
+    .line 3598
     iget-object v4, p0, Lcom/android/phone/BluetoothHandsfree$20;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #calls: Lcom/android/phone/BluetoothHandsfree;->cdmaGetClccResult()Landroid/bluetooth/AtCommandResult;
@@ -227,13 +227,13 @@
 
     goto :goto_0
 
-    .line 3555
+    .line 3599
     :cond_4
     const/4 v4, 0x1
 
     if-ne v2, v4, :cond_5
 
-    .line 3556
+    .line 3600
     iget-object v4, p0, Lcom/android/phone/BluetoothHandsfree$20;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #calls: Lcom/android/phone/BluetoothHandsfree;->gsmGetClccResult()Landroid/bluetooth/AtCommandResult;
@@ -243,7 +243,7 @@
 
     goto :goto_0
 
-    .line 3558
+    .line 3602
     :cond_5
     new-instance v4, Ljava/lang/IllegalStateException;
 

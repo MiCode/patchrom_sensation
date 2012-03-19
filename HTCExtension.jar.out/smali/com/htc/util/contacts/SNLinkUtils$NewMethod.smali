@@ -42,7 +42,7 @@
 
     .prologue
     .line 490
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -211,24 +211,14 @@
     .local v1, dataListSize:I
     const/16 v6, 0x14
 
-    if-le v1, v6, :cond_5
-
-    .line 693
-    const-string v6, "SNLinkUtils"
-
-    const-string v7, "link infomation exceed the limit so that don\'t add it."
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
+    if-gt v1, v6, :cond_0
 
     .line 697
-    :cond_5
     const/4 v4, 0x0
 
     .local v4, i:I
     :goto_2
-    if-ge v4, v1, :cond_7
+    if-ge v4, v1, :cond_6
 
     .line 698
     invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -247,7 +237,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_6
+    if-eqz v6, :cond_5
 
     iget-object v6, v2, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->friendOf:Ljava/lang/String;
 
@@ -257,7 +247,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_6
+    if-eqz v6, :cond_5
 
     iget-object v6, v2, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->SNType:Ljava/lang/String;
 
@@ -270,14 +260,14 @@
     if-nez v6, :cond_0
 
     .line 697
-    :cond_6
+    :cond_5
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
 
     .line 705
     .end local v2           #dataTmp:Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;
-    :cond_7
+    :cond_6
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 706

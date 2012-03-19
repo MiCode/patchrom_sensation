@@ -54,7 +54,7 @@
 
     .prologue
     .line 27
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -534,7 +534,7 @@
 
     .line 334
     .local v24, plugin:Lcom/htc/opensense/plugin/TabPlugin;
-    invoke-virtual/range {v24 .. v24}, Lcom/htc/opensense/plugin/TabPlugin;->getActivityIntent()Landroid/content/Intent;
+    invoke-virtual/range {v24 .. v24}, Lcom/htc/opensense/plugin/TabPluginWrapper;->getActivityIntent()Landroid/content/Intent;
 
     move-result-object v5
 
@@ -542,7 +542,7 @@
     .local v5, activityIntent:Landroid/content/Intent;
     if-eqz v5, :cond_0
 
-    invoke-virtual/range {v24 .. v24}, Lcom/htc/opensense/plugin/TabPlugin;->getDrawableSet()[Landroid/graphics/drawable/Drawable;
+    invoke-virtual/range {v24 .. v24}, Lcom/htc/opensense/plugin/TabPluginWrapper;->getDrawableSet()[Landroid/graphics/drawable/Drawable;
 
     move-result-object v29
 
@@ -574,7 +574,7 @@
     .restart local v5       #activityIntent:Landroid/content/Intent;
     .restart local v24       #plugin:Lcom/htc/opensense/plugin/TabPlugin;
     :cond_1
-    invoke-virtual/range {v24 .. v24}, Lcom/htc/opensense/plugin/TabPlugin;->getTabName()Ljava/lang/String;
+    invoke-virtual/range {v24 .. v24}, Lcom/htc/opensense/plugin/TabPluginWrapper;->getTabName()Ljava/lang/String;
 
     move-result-object v22
 
@@ -587,7 +587,7 @@
 
     .line 347
     :cond_2
-    invoke-virtual/range {v24 .. v24}, Lcom/htc/opensense/plugin/TabPlugin;->getDrawableSet()[Landroid/graphics/drawable/Drawable;
+    invoke-virtual/range {v24 .. v24}, Lcom/htc/opensense/plugin/TabPluginWrapper;->getDrawableSet()[Landroid/graphics/drawable/Drawable;
 
     move-result-object v13
 
@@ -1704,13 +1704,13 @@
 
     .line 177
     .local v10, plugin:Lcom/htc/opensense/plugin/TabPlugin;
-    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPlugin;->getDrawableSet()[Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPluginWrapper;->getDrawableSet()[Landroid/graphics/drawable/Drawable;
 
     move-result-object v12
 
     if-eqz v12, :cond_0
 
-    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPlugin;->getDrawableSet()[Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPluginWrapper;->getDrawableSet()[Landroid/graphics/drawable/Drawable;
 
     move-result-object v12
 
@@ -1721,13 +1721,13 @@
     if-ge v12, v13, :cond_1
 
     :cond_0
-    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPlugin;->getDrawableResSet()[I
+    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPluginWrapper;->getDrawableResSet()[I
 
     move-result-object v12
 
     if-eqz v12, :cond_2
 
-    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPlugin;->getDrawableResSet()[I
+    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPluginWrapper;->getDrawableResSet()[I
 
     move-result-object v12
 
@@ -1738,13 +1738,13 @@
     if-lt v12, v13, :cond_2
 
     :cond_1
-    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPlugin;->getActivityIntent()Landroid/content/Intent;
+    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPluginWrapper;->getActivityIntent()Landroid/content/Intent;
 
     move-result-object v12
 
     if-eqz v12, :cond_2
 
-    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPlugin;->getTabTag()Ljava/lang/String;
+    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPluginWrapper;->getTabTag()Ljava/lang/String;
 
     move-result-object v12
 
@@ -1792,13 +1792,13 @@
     .line 185
     .restart local v10       #plugin:Lcom/htc/opensense/plugin/TabPlugin;
     :cond_3
-    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPlugin;->getActivityIntent()Landroid/content/Intent;
+    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPluginWrapper;->getActivityIntent()Landroid/content/Intent;
 
     move-result-object v12
 
     const-string v13, "PluginTabTag"
 
-    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPlugin;->getTabTag()Ljava/lang/String;
+    invoke-virtual {v10}, Lcom/htc/opensense/plugin/TabPluginWrapper;->getTabTag()Ljava/lang/String;
 
     move-result-object v14
 

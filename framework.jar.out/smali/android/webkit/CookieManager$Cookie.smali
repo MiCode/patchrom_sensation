@@ -50,7 +50,7 @@
 
     .prologue
     .line 146
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 147
     return-void
@@ -63,7 +63,7 @@
 
     .prologue
     .line 149
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 150
     iput-object p1, p0, Landroid/webkit/CookieManager$Cookie;->domain:Ljava/lang/String;

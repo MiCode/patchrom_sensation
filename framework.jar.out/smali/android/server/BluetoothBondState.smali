@@ -129,7 +129,7 @@
 
     .prologue
     .line 84
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 58
     new-instance v1, Ljava/util/HashMap;
@@ -319,13 +319,13 @@
     if-eqz v3, :cond_0
 
     :try_start_1
-    invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
+    throw v3
 
     .line 371
     :cond_0
     if-eqz v6, :cond_1
 
-    invoke-virtual {v6}, Ljava/io/FileOutputStream;->close()V
+    throw v6
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 

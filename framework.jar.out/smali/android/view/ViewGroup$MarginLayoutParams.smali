@@ -237,14 +237,14 @@
     iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
 
     .line 5489
-    iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
+    iget v0, p1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 5490
-    iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iget v0, p1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 5492
     iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I

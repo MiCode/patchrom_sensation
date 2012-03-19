@@ -37,7 +37,7 @@
     const/4 v2, 0x0
 
     .line 399
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 400
     sget-object v1, Lcom/android/internal/R$styleable;->SearchableActionKey:[I
@@ -132,7 +132,7 @@
 
     .prologue
     .line 430
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 431
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I

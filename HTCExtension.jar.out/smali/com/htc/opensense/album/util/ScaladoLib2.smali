@@ -147,7 +147,7 @@
 
     .prologue
     .line 155
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 156
     invoke-virtual {p0}, Lcom/htc/opensense/album/util/ScaladoLib2;->nativeBegin()V

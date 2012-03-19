@@ -405,7 +405,7 @@
 
     .prologue
     .line 50
-    iget v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingRight:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingRight:I
 
     return v0
 .end method
@@ -416,7 +416,7 @@
 
     .prologue
     .line 50
-    iget v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingLeft:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingLeft:I
 
     return v0
 .end method
@@ -504,7 +504,7 @@
 
     .prologue
     .line 50
-    iget v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingLeft:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingLeft:I
 
     return v0
 .end method
@@ -515,7 +515,7 @@
 
     .prologue
     .line 50
-    iget v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingRight:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingRight:I
 
     return v0
 .end method
@@ -586,7 +586,7 @@
     .restart local v1       #childHeight:I
     .restart local v2       #childTop:I
     :sswitch_0
-    iget-object v4, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v2, v4, Landroid/graphics/Rect;->top:I
 
@@ -595,13 +595,13 @@
 
     .line 1026
     :sswitch_1
-    iget-object v4, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->bottom:I
 
     sub-int v4, v3, v4
 
-    iget-object v5, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->top:I
 
@@ -611,7 +611,7 @@
 
     .line 1028
     .local v0, availableSpace:I
-    iget-object v4, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->top:I
 
@@ -625,7 +625,7 @@
     .line 1031
     .end local v0           #availableSpace:I
     :sswitch_2
-    iget-object v4, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->bottom:I
 
@@ -656,7 +656,7 @@
 
     .line 592
     .local v6, numChildren:I
-    iget v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 593
     .local v2, firstPosition:I
@@ -671,7 +671,7 @@
     if-eqz p1, :cond_3
 
     .line 597
-    iget v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingLeft:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingLeft:I
 
     .line 598
     .local v3, galleryLeft:I
@@ -704,11 +704,11 @@
     if-eqz p1, :cond_1
 
     .line 624
-    iget v8, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int/2addr v8, v1
 
-    iput v8, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iput v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 626
     :cond_1
@@ -734,7 +734,7 @@
 
     move-result v8
 
-    iget v9, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingRight:I
+    iget v9, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingRight:I
 
     sub-int v4, v8, v9
 
@@ -783,12 +783,12 @@
 
     .line 1391
     .local v6, handled:Z
-    iget-object v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mOnItemLongClickListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOnItemLongClickListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemLongClickListener;
 
     if-eqz v0, :cond_0
 
     .line 1393
-    iget-object v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mOnItemLongClickListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOnItemLongClickListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemLongClickListener;
 
     iget-object v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mDownTouchView:Landroid/view/View;
 
@@ -901,7 +901,7 @@
 
     .line 795
     .local v3, itemSpacing:I
-    iget v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingLeft:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingLeft:I
 
     .line 798
     .local v2, galleryLeft:I
@@ -914,7 +914,7 @@
     if-eqz v4, :cond_1
 
     .line 803
-    iget v5, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int/lit8 v0, v5, -0x1
 
@@ -934,7 +934,7 @@
     if-ltz v0, :cond_0
 
     .line 816
-    iget v5, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     sub-int v5, v0, v5
 
@@ -957,13 +957,13 @@
 
     .line 811
     .restart local v0       #curPosition:I
-    iget v5, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mRight:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mRight:I
 
-    iget v6, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mLeft:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mLeft:I
 
     sub-int/2addr v5, v6
 
-    iget v6, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingRight:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingRight:I
 
     sub-int v1, v5, v6
 
@@ -977,7 +977,7 @@
 
     .line 820
     :cond_2
-    iput v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iput v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 823
     invoke-virtual {v4}, Landroid/view/View;->getLeft()I
@@ -1003,13 +1003,13 @@
 
     .line 830
     .local v3, itemSpacing:I
-    iget v7, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mRight:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mRight:I
 
-    iget v8, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mLeft:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mLeft:I
 
     sub-int/2addr v7, v8
 
-    iget v8, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingRight:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingRight:I
 
     sub-int v2, v7, v8
 
@@ -1021,7 +1021,7 @@
 
     .line 832
     .local v4, numChildren:I
-    iget v5, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mItemCount:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     .line 835
     .local v5, numItems:I
@@ -1036,7 +1036,7 @@
     if-eqz v6, :cond_1
 
     .line 840
-    iget v7, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int v1, v7, v4
 
@@ -1056,7 +1056,7 @@
     if-ge v1, v5, :cond_0
 
     .line 852
-    iget v7, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     sub-int v7, v1, v7
 
@@ -1075,15 +1075,15 @@
     .end local v0           #curLeftEdge:I
     .end local v1           #curPosition:I
     :cond_1
-    iget v7, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mItemCount:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v1, v7, -0x1
 
     .restart local v1       #curPosition:I
-    iput v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iput v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 847
-    iget v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingLeft:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingLeft:I
 
     .line 848
     .restart local v0       #curLeftEdge:I
@@ -1114,17 +1114,17 @@
 
     move-result v0
 
-    iget v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingLeft:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingLeft:I
 
     sub-int/2addr v0, v1
 
-    iget v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingRight:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingRight:I
 
     sub-int/2addr v0, v1
 
     div-int/lit8 v0, v0, 0x2
 
-    iget v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingLeft:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingLeft:I
 
     add-int/2addr v0, v1
 
@@ -1229,12 +1229,12 @@
 
     .line 654
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mOnItemSelectedListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemSelectedListener;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOnItemSelectedListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemSelectedListener;
 
     if-eqz v0, :cond_1
 
     .line 655
-    iget-object v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mOnItemSelectedListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemSelectedListener;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOnItemSelectedListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemSelectedListener;
 
     const/4 v1, 0x1
 
@@ -1372,11 +1372,11 @@
     .local v2, display:Landroid/view/Display;
     if-eqz p3, :cond_2
 
-    iget-object v4, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-eqz v4, :cond_2
 
-    iget-object v4, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     invoke-interface {v4}, Landroid/widget/SpinnerAdapter;->getCount()I
 
@@ -1514,13 +1514,13 @@
     .line 705
     .end local v0           #child:Landroid/view/View;
     :cond_3
-    iget v8, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int v5, v8, v6
 
     .line 707
     .local v5, newPos:I
-    iget v8, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     if-eq v5, v8, :cond_0
 
@@ -1634,19 +1634,19 @@
     invoke-virtual {p1, v8}, Landroid/view/View;->setSelected(Z)V
 
     .line 980
-    iget v8, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mHeightMeasureSpec:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mHeightMeasureSpec:I
 
-    iget-object v9, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->top:I
 
-    iget-object v10, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->bottom:I
 
     add-int/2addr v9, v10
 
-    iget v10, v6, Lcom/htc/opensense/widget/HtcFilmstripView$LayoutParams;->height:I
+    iget v10, v6, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-static {v8, v9, v10}, Landroid/view/ViewGroup;->getChildMeasureSpec(III)I
 
@@ -1654,19 +1654,19 @@
 
     .line 982
     .local v1, childHeightSpec:I
-    iget v8, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mWidthMeasureSpec:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mWidthMeasureSpec:I
 
-    iget-object v9, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->left:I
 
-    iget-object v10, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->right:I
 
     add-int/2addr v9, v10
 
-    iget v10, v6, Lcom/htc/opensense/widget/HtcFilmstripView$LayoutParams;->width:I
+    iget v10, v6, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     invoke-static {v8, v9, v10}, Landroid/view/ViewGroup;->getChildMeasureSpec(III)I
 
@@ -1764,9 +1764,9 @@
 
     .line 1544
     .local v1, oldSelectedChild:Landroid/view/View;
-    iget v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iget v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int/2addr v2, v3
 
@@ -1954,7 +1954,7 @@
 
     .prologue
     .line 380
-    iget v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     return v0
 .end method
@@ -1964,7 +1964,7 @@
 
     .prologue
     .line 389
-    iget v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mItemCount:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     return v0
 .end method
@@ -2062,9 +2062,9 @@
 
     .prologue
     .line 1595
-    iget v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iget v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int v0, v1, v2
 
@@ -2184,12 +2184,12 @@
     :cond_0
     if-nez v0, :cond_1
 
-    iget-object v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-eqz v2, :cond_1
 
     .line 940
-    iget-object v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     const/4 v3, 0x0
 
@@ -2243,14 +2243,14 @@
     .line 493
     if-eqz p1, :cond_1
 
-    iget v6, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mItemCount:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v3, v6, -0x1
 
     .line 494
     .local v3, extremeItemPosition:I
     :goto_0
-    iget v6, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int v6, v3, v6
 
@@ -2384,14 +2384,14 @@
     :cond_6
     if-eqz p1, :cond_7
 
-    iget v6, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mItemCount:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v3, v6, -0x1
 
     .line 526
     .restart local v3       #extremeItemPosition:I
     :goto_2
-    iget v6, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int v6, v3, v6
 
@@ -2527,25 +2527,25 @@
     const/4 v7, 0x0
 
     .line 727
-    iget-object v5, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v0, v5, Landroid/graphics/Rect;->left:I
 
     .line 728
     .local v0, childrenLeft:I
-    iget v5, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mRight:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mRight:I
 
-    iget v6, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mLeft:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mLeft:I
 
     sub-int/2addr v5, v6
 
-    iget-object v6, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v6, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v5, v6
 
-    iget-object v6, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v6, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->right:I
 
@@ -2553,7 +2553,7 @@
 
     .line 730
     .local v1, childrenWidth:I
-    iget-boolean v5, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mDataChanged:Z
+    iget-boolean v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     if-eqz v5, :cond_0
 
@@ -2562,7 +2562,7 @@
 
     .line 735
     :cond_0
-    iget v5, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mItemCount:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-nez v5, :cond_2
 
@@ -2576,12 +2576,12 @@
 
     .line 741
     :cond_2
-    iget v5, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mNextSelectedPosition:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNextSelectedPosition:I
 
     if-ltz v5, :cond_3
 
     .line 742
-    iget v5, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mNextSelectedPosition:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNextSelectedPosition:I
 
     invoke-virtual {p0, v5}, Lcom/htc/opensense/widget/HtcFilmstripView;->setSelectedPositionInt(I)V
 
@@ -2599,12 +2599,12 @@
     iput v7, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mLeftMost:I
 
     .line 766
-    iget v5, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iput v5, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iput v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 767
-    iget v5, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     const/4 v6, 0x1
 
@@ -2654,13 +2654,13 @@
     invoke-virtual {p0}, Lcom/htc/opensense/widget/HtcFilmstripView;->checkSelectionChanged()V
 
     .line 786
-    iput-boolean v7, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mDataChanged:Z
+    iput-boolean v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     .line 787
-    iput-boolean v7, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mNeedSync:Z
+    iput-boolean v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNeedSync:Z
 
     .line 788
-    iget v5, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     invoke-virtual {p0, v5}, Lcom/htc/opensense/widget/HtcFilmstripView;->setNextSelectedPositionInt(I)V
 
@@ -2679,7 +2679,7 @@
     const/4 v2, 0x1
 
     .line 1499
-    iget-object v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-nez v3, :cond_1
 
@@ -2690,7 +2690,7 @@
 
     .line 1502
     :cond_1
-    iget-object v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     invoke-interface {v3}, Landroid/widget/SpinnerAdapter;->getCount()I
 
@@ -2700,16 +2700,16 @@
     .local v0, count:I
     if-lez v0, :cond_0
 
-    iget v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     add-int/lit8 v4, v0, -0x1
 
     if-ge v3, v4, :cond_0
 
     .line 1505
-    iget v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iget v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int/2addr v1, v3
 
@@ -2732,7 +2732,7 @@
     const/4 v1, 0x0
 
     .line 1485
-    iget-object v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-nez v3, :cond_1
 
@@ -2743,7 +2743,7 @@
 
     .line 1488
     :cond_1
-    iget-object v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     invoke-interface {v3}, Landroid/widget/SpinnerAdapter;->getCount()I
 
@@ -2753,14 +2753,14 @@
     .local v0, count:I
     if-lez v0, :cond_0
 
-    iget v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     if-lez v3, :cond_0
 
     .line 1491
-    iget v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iget v4, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iget v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int/2addr v3, v4
 
@@ -2866,7 +2866,7 @@
     .line 1232
     iget v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mDownTouchPosition:I
 
-    iget v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int/2addr v0, v1
 
@@ -3122,7 +3122,7 @@
     if-eqz v2, :cond_0
 
     .line 1458
-    iget v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mItemCount:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-lez v2, :cond_0
 
@@ -3145,9 +3145,9 @@
     invoke-virtual {p0, v2, v3, v4}, Lcom/htc/opensense/widget/HtcFilmstripView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 1467
-    iget v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iget v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int v1, v2, v3
 
@@ -3161,16 +3161,16 @@
     .local v0, child:Landroid/view/View;
     if-eqz v0, :cond_0
 
-    iget-object v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-eqz v2, :cond_0
 
     .line 1470
-    iget v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iget-object v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
-    iget v4, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     invoke-interface {v3, v4}, Landroid/widget/SpinnerAdapter;->getItemId(I)J
 
@@ -3216,13 +3216,13 @@
     .line 439
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mInLayout:Z
+    iput-boolean v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mInLayout:Z
 
     .line 440
     invoke-virtual {p0, v1, v1}, Lcom/htc/opensense/widget/HtcFilmstripView;->layout(IZ)V
 
     .line 441
-    iput-boolean v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mInLayout:Z
+    iput-boolean v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mInLayout:Z
 
     .line 442
     return-void
@@ -3452,7 +3452,7 @@
 
     .line 1086
     :cond_0
-    iget-object v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-nez v1, :cond_1
 
@@ -3474,7 +3474,7 @@
     .line 1093
     iget v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mDownTouchPosition:I
 
-    iget v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int/2addr v1, v2
 
@@ -3491,7 +3491,7 @@
 
     iget v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mDownTouchPosition:I
 
-    iget v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     if-ne v0, v1, :cond_3
 
@@ -3501,7 +3501,7 @@
 
     iget v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mDownTouchPosition:I
 
-    iget-object v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     iget v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mDownTouchPosition:I
 
@@ -3605,7 +3605,7 @@
 
     if-ne v0, v1, :cond_1
 
-    iget-object v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-eqz v0, :cond_1
 
@@ -3614,7 +3614,7 @@
 
     iget v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mDownTouchPosition:I
 
-    iget-object v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     iget v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mDownTouchPosition:I
 
@@ -3861,14 +3861,14 @@
 
     if-eqz v2, :cond_0
 
-    iget v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     if-ltz v2, :cond_0
 
     .line 1379
-    iget v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iget v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int v0, v2, v3
 
@@ -3880,9 +3880,9 @@
 
     .line 1381
     .local v1, v:Landroid/view/View;
-    iget v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iget-wide v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mSelectedRowId:J
+    iget-wide v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedRowId:J
 
     invoke-direct {p0, v1, v2, v3, v4}, Lcom/htc/opensense/widget/HtcFilmstripView;->dispatchLongPress(Landroid/view/View;IJ)Z
 
@@ -3914,7 +3914,7 @@
     .local v2, longPressPosition:I
     if-ltz v2, :cond_0
 
-    iget-object v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-nez v3, :cond_1
 
@@ -3928,7 +3928,7 @@
 
     .line 1368
     :cond_1
-    iget-object v3, p0, Lcom/htc/opensense/widget/HtcFilmstripView;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     invoke-interface {v3, v2}, Landroid/widget/SpinnerAdapter;->getItemId(I)J
 

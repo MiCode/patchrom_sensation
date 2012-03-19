@@ -78,7 +78,7 @@
     const/4 v2, 0x1
 
     .line 37
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Moonlight;->isCommitted:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v1, :cond_0
 
@@ -111,12 +111,12 @@
 
     .line 44
     :cond_2
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Moonlight;->isSet:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     if-eqz v1, :cond_3
 
     .line 46
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Moonlight;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -127,11 +127,11 @@
     .line 47
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Moonlight;->isSet:Z
+    iput-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 49
     :cond_3
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Moonlight;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -143,7 +143,7 @@
 
     .line 50
     .local v0, error:I
-    iput-boolean v2, p0, Lcom/scalado/caps/filter/photoart/Moonlight;->isSet:Z
+    iput-boolean v2, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 51
     iput p1, p0, Lcom/scalado/caps/filter/photoart/Moonlight;->hourOfDay:I

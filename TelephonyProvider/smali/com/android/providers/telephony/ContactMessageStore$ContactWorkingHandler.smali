@@ -58,15 +58,8 @@
     :pswitch_0
     return-void
 
-    .line 1420
-    :pswitch_1
-    const-string v3, "ContactMessageStore"
-
-    const-string v4, "MSG_UPDATE_CONTACTS_TABLE >>"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1421
+    :pswitch_1
     iget-object v3, p0, Lcom/android/providers/telephony/ContactMessageStore$ContactWorkingHandler;->this$0:Lcom/android/providers/telephony/ContactMessageStore;
 
     #getter for: Lcom/android/providers/telephony/ContactMessageStore;->mHandler:Landroid/os/Handler;
@@ -85,14 +78,6 @@
     .catch Landroid/database/sqlite/SQLiteDatabaseCorruptException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 1429
-    :goto_1
-    const-string v3, "ContactMessageStore"
-
-    const-string v4, "MSG_UPDATE_CONTACTS_TABLE <<"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     goto :goto_0
 
     .line 1424
@@ -103,7 +88,7 @@
     .local v0, e:Landroid/database/sqlite/SQLiteDatabaseCorruptException;
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabaseCorruptException;->printStackTrace()V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 1426
     .end local v0           #e:Landroid/database/sqlite/SQLiteDatabaseCorruptException;
@@ -114,7 +99,7 @@
     .local v0, e:Landroid/database/sqlite/SQLiteException;
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteException;->printStackTrace()V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 1432
     .end local v0           #e:Landroid/database/sqlite/SQLiteException;
@@ -399,7 +384,7 @@
     invoke-virtual {v3, p1, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     .line 1471
-    :goto_2
+    :goto_1
     const-string v3, "ContactMessageStore"
 
     const-string v4, "MSG_CHECK_DELETION <<"
@@ -421,7 +406,7 @@
 
     invoke-virtual {v3, p1, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    goto :goto_2
+    goto :goto_1
 
     .line 1418
     nop

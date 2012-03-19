@@ -32,7 +32,7 @@
     .line 96
     iput-object p1, p0, Lcom/android/phone/NetworkModeSelectionActivity$1;->this$0:Lcom/android/phone/NetworkModeSelectionActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 97
     const/4 v0, -0x1

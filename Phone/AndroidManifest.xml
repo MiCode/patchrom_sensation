@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:sharedUserId="android.uid.phone" android:versionCode="305273668" android:versionName="3.5.2211292712.273668" android:sharedUserLabel="@string/dialerIconLabel" package="com.android.phone" coreApp="true"
+<manifest android:sharedUserId="android.uid.phone" android:versionCode="305307792" android:versionName="3.5.2212272454.307792" android:sharedUserLabel="@string/dialerIconLabel" package="com.android.phone" coreApp="true"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <original-package android:name="com.android.phone" />
     <protected-broadcast android:name="android.intent.action.SERVICE_STATE" />

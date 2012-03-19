@@ -119,7 +119,7 @@
 
 .field public static final DBG:Z = false
 
-.field public static final DEBUG:Z = true
+.field public static final DEBUG:Z = false
 
 .field public static final DEFAULT_SCREEN_TIMEOUT_VALUE:I = 0xea60
 
@@ -1371,7 +1371,7 @@
 
     .prologue
     .line 29
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

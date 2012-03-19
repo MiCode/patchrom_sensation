@@ -1155,9 +1155,9 @@
     .local v1, src:Landroid/widget/FrameLayout$LayoutParams;
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    iget v2, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
+    iget v2, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    iget v3, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
+    iget v3, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     iget v4, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
@@ -1182,9 +1182,9 @@
     .local v1, src:Landroid/widget/LinearLayout$LayoutParams;
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
-    iget v2, v1, Landroid/widget/LinearLayout$LayoutParams;->width:I
+    iget v2, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    iget v3, v1, Landroid/widget/LinearLayout$LayoutParams;->height:I
+    iget v3, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     iget v4, v1, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
@@ -1214,9 +1214,9 @@
     .local v3, src:Landroid/widget/RelativeLayout$LayoutParams;
     new-instance v1, Landroid/widget/RelativeLayout$LayoutParams;
 
-    iget v4, v3, Landroid/widget/RelativeLayout$LayoutParams;->width:I
+    iget v4, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    iget v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->height:I
+    iget v5, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-direct {v1, v4, v5}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
 

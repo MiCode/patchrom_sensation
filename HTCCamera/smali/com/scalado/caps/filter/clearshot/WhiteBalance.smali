@@ -148,7 +148,7 @@
     const/16 v1, 0xff
 
     .line 85
-    iget-boolean v0, p0, Lcom/scalado/caps/filter/clearshot/WhiteBalance;->isCommitted:Z
+    iget-boolean v0, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v0, :cond_0
 
@@ -191,12 +191,12 @@
 
     .line 93
     :cond_2
-    iget-boolean v0, p0, Lcom/scalado/caps/filter/clearshot/WhiteBalance;->isSet:Z
+    iget-boolean v0, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     if-eqz v0, :cond_3
 
     .line 94
-    iget-object v0, p0, Lcom/scalado/caps/filter/clearshot/WhiteBalance;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -207,11 +207,11 @@
     .line 95
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/scalado/caps/filter/clearshot/WhiteBalance;->isSet:Z
+    iput-boolean v0, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 98
     :cond_3
-    iget-object v0, p0, Lcom/scalado/caps/filter/clearshot/WhiteBalance;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -235,7 +235,7 @@
     .local v6, error:I
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/scalado/caps/filter/clearshot/WhiteBalance;->isSet:Z
+    iput-boolean v0, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 101
     iput-object p1, p0, Lcom/scalado/caps/filter/clearshot/WhiteBalance;->mode:Lcom/scalado/caps/filter/clearshot/WhiteBalance$Mode;

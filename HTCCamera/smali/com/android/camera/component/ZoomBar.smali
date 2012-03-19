@@ -39,7 +39,7 @@
     .parameter "cameraActivity"
 
     .prologue
-    .line 110
+    .line 112
     const-string v0, "Zoom Bar"
 
     const/4 v1, 0x1
@@ -48,49 +48,49 @@
 
     invoke-direct {p0, v0, v1, p1, v2}, Lcom/android/camera/component/UIComponent;-><init>(Ljava/lang/String;ZLcom/android/camera/HTCCamera;I)V
 
-    .line 43
+    .line 45
     new-instance v0, Lcom/android/camera/component/ZoomBar$1;
 
     invoke-direct {v0, p0}, Lcom/android/camera/component/ZoomBar$1;-><init>(Lcom/android/camera/component/ZoomBar;)V
 
     iput-object v0, p0, Lcom/android/camera/component/ZoomBar;->m_HideZoomBarEventHandler:Lcom/android/camera/IEventHandler;
 
-    .line 50
+    .line 52
     new-instance v0, Lcom/android/camera/component/ZoomBar$2;
 
     invoke-direct {v0, p0}, Lcom/android/camera/component/ZoomBar$2;-><init>(Lcom/android/camera/component/ZoomBar;)V
 
     iput-object v0, p0, Lcom/android/camera/component/ZoomBar;->m_KeyDownEventHandler:Lcom/android/camera/IEventHandler;
 
-    .line 70
+    .line 72
     new-instance v0, Lcom/android/camera/component/ZoomBar$3;
 
     invoke-direct {v0, p0}, Lcom/android/camera/component/ZoomBar$3;-><init>(Lcom/android/camera/component/ZoomBar;)V
 
     iput-object v0, p0, Lcom/android/camera/component/ZoomBar;->m_RecordingTimeChangedEventHandler:Lcom/android/camera/IEventHandler;
 
-    .line 79
+    .line 81
     new-instance v0, Lcom/android/camera/component/ZoomBar$4;
 
     invoke-direct {v0, p0}, Lcom/android/camera/component/ZoomBar$4;-><init>(Lcom/android/camera/component/ZoomBar;)V
 
     iput-object v0, p0, Lcom/android/camera/component/ZoomBar;->m_ShowZoomBarEventHandler:Lcom/android/camera/IEventHandler;
 
-    .line 86
+    .line 88
     new-instance v0, Lcom/android/camera/component/ZoomBar$5;
 
     invoke-direct {v0, p0}, Lcom/android/camera/component/ZoomBar$5;-><init>(Lcom/android/camera/component/ZoomBar;)V
 
     iput-object v0, p0, Lcom/android/camera/component/ZoomBar;->m_StopRecordingEventHandler:Lcom/android/camera/IEventHandler;
 
-    .line 93
+    .line 95
     new-instance v0, Lcom/android/camera/component/ZoomBar$6;
 
     invoke-direct {v0, p0}, Lcom/android/camera/component/ZoomBar$6;-><init>(Lcom/android/camera/component/ZoomBar;)V
 
     iput-object v0, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomLockChangedEventHandler:Lcom/android/camera/IEventHandler;
 
-    .line 111
+    .line 113
     return-void
 .end method
 
@@ -99,7 +99,7 @@
     .parameter "x0"
 
     .prologue
-    .line 23
+    .line 25
     invoke-direct {p0}, Lcom/android/camera/component/ZoomBar;->hideZoomBar()V
 
     return-void
@@ -110,7 +110,7 @@
     .parameter "x0"
 
     .prologue
-    .line 23
+    .line 25
     invoke-direct {p0}, Lcom/android/camera/component/ZoomBar;->showZoomBar()V
 
     return-void
@@ -121,7 +121,7 @@
     .parameter "x0"
 
     .prologue
-    .line 23
+    .line 25
     iget-object v0, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBarContainer:Landroid/view/View;
 
     return-object v0
@@ -132,7 +132,7 @@
     .parameter "x0"
 
     .prologue
-    .line 23
+    .line 25
     iget-object v0, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBar:Landroid/widget/SeekBar;
 
     return-object v0
@@ -143,7 +143,7 @@
     .parameter "x0"
 
     .prologue
-    .line 23
+    .line 25
     iget-boolean v0, p0, Lcom/android/camera/component/ZoomBar;->m_IsUpdatingZoom:Z
 
     return v0
@@ -155,7 +155,7 @@
     .parameter "x1"
 
     .prologue
-    .line 23
+    .line 25
     iput-boolean p1, p0, Lcom/android/camera/component/ZoomBar;->m_IsUpdatingZoom:Z
 
     return p1
@@ -166,12 +166,34 @@
     .parameter "x0"
 
     .prologue
-    .line 23
+    .line 25
     invoke-direct {p0}, Lcom/android/camera/component/ZoomBar;->cancelAutoFocus()Z
 
     move-result v0
 
     return v0
+.end method
+
+.method static synthetic access$600(Lcom/android/camera/component/ZoomBar;)Landroid/view/View;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 25
+    iget-object v0, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomInView:Landroid/view/View;
+
+    return-object v0
+.end method
+
+.method static synthetic access$700(Lcom/android/camera/component/ZoomBar;)Landroid/view/View;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 25
+    iget-object v0, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomOutView:Landroid/view/View;
+
+    return-object v0
 .end method
 
 .method private cancelAutoFocus()Z
@@ -182,12 +204,12 @@
 
     const/4 v2, 0x0
 
-    .line 118
+    .line 120
     invoke-virtual {p0}, Lcom/android/camera/component/ZoomBar;->getCameraActivity()Lcom/android/camera/HTCCamera;
 
     move-result-object v0
 
-    .line 119
+    .line 121
     .local v0, cameraActivity:Lcom/android/camera/HTCCamera;
     invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->getFocusingState()I
 
@@ -197,12 +219,12 @@
 
     move v1, v2
 
-    .line 131
+    .line 133
     :goto_0
     :pswitch_0
     return v1
 
-    .line 124
+    .line 126
     :pswitch_1
     invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->cancelAutoFocus()Z
 
@@ -210,7 +232,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 126
+    .line 128
     invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->unblockCaptureUI()V
 
     goto :goto_0
@@ -218,10 +240,10 @@
     :cond_0
     move v1, v2
 
-    .line 129
+    .line 131
     goto :goto_0
 
-    .line 119
+    .line 121
     nop
 
     :pswitch_data_0
@@ -237,23 +259,23 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 178
+    .line 180
     iget-object v0, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBarContainer:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 179
+    .line 181
     iget-object v0, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBarContainer:Landroid/view/View;
 
     invoke-virtual {p0, v0, v1, v1}, Lcom/android/camera/component/ZoomBar;->showUI(Landroid/view/View;ZZ)V
 
-    .line 180
+    .line 182
     :cond_0
     const/4 v0, 0x2
 
     invoke-virtual {p0, v0}, Lcom/android/camera/component/ZoomBar;->removeMessages(I)V
 
-    .line 181
+    .line 183
     return-void
 .end method
 
@@ -263,18 +285,18 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 268
+    .line 280
     invoke-virtual {p0}, Lcom/android/camera/component/ZoomBar;->getCameraActivity()Lcom/android/camera/HTCCamera;
 
     move-result-object v0
 
-    .line 269
+    .line 281
     .local v0, cameraActivity:Lcom/android/camera/HTCCamera;
     invoke-virtual {p0}, Lcom/android/camera/component/ZoomBar;->getCameraThread()Lcom/android/camera/CameraThread;
 
     move-result-object v1
 
-    .line 272
+    .line 284
     .local v1, cameraThread:Lcom/android/camera/CameraThread;
     invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->isPaused()Z
 
@@ -288,12 +310,12 @@
 
     if-nez v2, :cond_1
 
-    .line 297
+    .line 309
     :cond_0
     :goto_0
     return-void
 
-    .line 276
+    .line 288
     :cond_1
     iget-object v2, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBarContainer:Landroid/view/View;
 
@@ -313,36 +335,36 @@
 
     if-nez v2, :cond_0
 
-    .line 280
+    .line 292
     invoke-virtual {v1}, Lcom/android/camera/CameraThread;->is2ndCamera()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 284
+    .line 296
     invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->getFaceNumber()I
 
     move-result v2
 
     if-gtz v2, :cond_0
 
-    .line 288
+    .line 300
     invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->isZoomLocked()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 292
+    .line 304
     invoke-direct {p0}, Lcom/android/camera/component/ZoomBar;->syncFromCurrentZoom()V
 
-    .line 295
+    .line 307
     iget-object v2, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBarContainer:Landroid/view/View;
 
     invoke-virtual {p0, v2, v3, v3}, Lcom/android/camera/component/ZoomBar;->showUI(Landroid/view/View;ZZ)V
 
-    .line 296
+    .line 308
     const/4 v2, 0x2
 
     invoke-virtual {p0, v2}, Lcom/android/camera/component/ZoomBar;->removeMessages(I)V
@@ -354,29 +376,29 @@
     .locals 2
 
     .prologue
-    .line 304
+    .line 316
     iget-object v0, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBar:Landroid/widget/SeekBar;
 
     if-eqz v0, :cond_0
 
-    .line 306
+    .line 318
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/camera/component/ZoomBar;->m_IsUpdatingZoom:Z
 
-    .line 307
+    .line 319
     iget-object v0, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBar:Landroid/widget/SeekBar;
 
     sget v1, Lcom/android/camera/HTCCameraAdvanceSetting;->mZoomValue:I
 
     invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->setProgress(I)V
 
-    .line 308
+    .line 320
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/camera/component/ZoomBar;->m_IsUpdatingZoom:Z
 
-    .line 310
+    .line 322
     :cond_0
     return-void
 .end method
@@ -388,31 +410,31 @@
     .parameter "msg"
 
     .prologue
-    .line 141
+    .line 143
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 168
+    .line 170
     invoke-super {p0, p1}, Lcom/android/camera/component/UIComponent;->handleMessage(Landroid/os/Message;)V
 
-    .line 171
+    .line 173
     :cond_0
     :goto_0
     return-void
 
-    .line 144
+    .line 146
     :pswitch_0
     iget-object v1, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBar:Landroid/widget/SeekBar;
 
     if-eqz v1, :cond_0
 
-    .line 147
+    .line 149
     invoke-virtual {p0}, Lcom/android/camera/component/ZoomBar;->getCameraActivity()Lcom/android/camera/HTCCamera;
 
     move-result-object v0
 
-    .line 148
+    .line 150
     .local v0, cameraActivity:Lcom/android/camera/HTCCamera;
     invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->isIdleOrPaused()Z
 
@@ -455,7 +477,7 @@
 
     if-nez v1, :cond_0
 
-    .line 156
+    .line 158
     iget-object v1, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBarContainer:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
@@ -464,12 +486,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 157
+    .line 159
     invoke-direct {p0}, Lcom/android/camera/component/ZoomBar;->showZoomBar()V
 
     goto :goto_0
 
-    .line 159
+    .line 161
     :cond_2
     iget-object v1, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBar:Landroid/widget/SeekBar;
 
@@ -487,14 +509,14 @@
 
     goto :goto_0
 
-    .line 164
+    .line 166
     .end local v0           #cameraActivity:Lcom/android/camera/HTCCamera;
     :pswitch_1
     invoke-direct {p0}, Lcom/android/camera/component/ZoomBar;->showZoomBar()V
 
     goto :goto_0
 
-    .line 141
+    .line 143
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -508,15 +530,15 @@
     .prologue
     const/4 v5, 0x3
 
-    .line 190
+    .line 192
     invoke-super {p0}, Lcom/android/camera/component/UIComponent;->initializeOverride()V
 
-    .line 193
+    .line 195
     invoke-virtual {p0}, Lcom/android/camera/component/ZoomBar;->getBaseLayout()Landroid/view/View;
 
     move-result-object v0
 
-    .line 194
+    .line 196
     .local v0, baseLayout:Landroid/view/View;
     const v3, 0x7f0801ae
 
@@ -526,7 +548,7 @@
 
     iput-object v3, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBarContainer:Landroid/view/View;
 
-    .line 195
+    .line 197
     iget-object v3, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBarContainer:Landroid/view/View;
 
     const v4, 0x7f0801b0
@@ -539,7 +561,7 @@
 
     iput-object v3, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBar:Landroid/widget/SeekBar;
 
-    .line 196
+    .line 198
     iget-object v3, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBarContainer:Landroid/view/View;
 
     const v4, 0x7f0801af
@@ -550,7 +572,7 @@
 
     iput-object v3, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomInView:Landroid/view/View;
 
-    .line 197
+    .line 199
     iget-object v3, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBarContainer:Landroid/view/View;
 
     const v4, 0x7f0801b1
@@ -561,7 +583,7 @@
 
     iput-object v3, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomOutView:Landroid/view/View;
 
-    .line 200
+    .line 202
     iget-object v3, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBarContainer:Landroid/view/View;
 
     const v4, 0x7f0801b2
@@ -572,18 +594,18 @@
 
     check-cast v2, Lcom/android/camera/rotate/RotateRelativeLayout;
 
-    .line 201
+    .line 203
     .local v2, zoomBarReceiver:Lcom/android/camera/rotate/RotateRelativeLayout;
     invoke-virtual {v2, v5}, Lcom/android/camera/rotate/RotateRelativeLayout;->setOrientation(I)V
 
-    .line 202
+    .line 204
     new-instance v3, Lcom/android/camera/component/ZoomBar$7;
 
     invoke-direct {v3, p0}, Lcom/android/camera/component/ZoomBar$7;-><init>(Lcom/android/camera/component/ZoomBar;)V
 
     invoke-virtual {v2, v3}, Lcom/android/camera/rotate/RotateRelativeLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 216
+    .line 218
     iget-object v3, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBar:Landroid/widget/SeekBar;
 
     invoke-virtual {v3}, Landroid/widget/SeekBar;->getParent()Landroid/view/ViewParent;
@@ -594,7 +616,7 @@
 
     invoke-virtual {v3, v5}, Lcom/android/camera/rotate/RotateRelativeLayout;->setOrientation(I)V
 
-    .line 217
+    .line 219
     iget-object v3, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBar:Landroid/widget/SeekBar;
 
     new-instance v4, Landroid/graphics/drawable/ColorDrawable;
@@ -605,7 +627,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/SeekBar;->setProgressDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 218
+    .line 220
     iget-object v3, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBar:Landroid/widget/SeekBar;
 
     invoke-virtual {p0}, Lcom/android/camera/component/ZoomBar;->getCameraThread()Lcom/android/camera/CameraThread;
@@ -618,7 +640,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/SeekBar;->setMax(I)V
 
-    .line 219
+    .line 221
     iget-object v3, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomBar:Landroid/widget/SeekBar;
 
     new-instance v4, Lcom/android/camera/component/ZoomBar$8;
@@ -627,7 +649,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/SeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
 
-    .line 248
+    .line 250
     invoke-virtual {p0}, Lcom/android/camera/component/ZoomBar;->getCameraActivity()Lcom/android/camera/HTCCamera;
 
     move-result-object v3
@@ -636,7 +658,7 @@
 
     move-result-object v1
 
-    .line 249
+    .line 251
     .local v1, eventManager:Lcom/android/camera/EventManager;
     const-string v3, "CaptureUI.Closed"
 
@@ -644,76 +666,85 @@
 
     invoke-virtual {v1, v3, v4}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 250
+    .line 252
     const-string v3, "CaptureUI.Open"
 
     iget-object v4, p0, Lcom/android/camera/component/ZoomBar;->m_ShowZoomBarEventHandler:Lcom/android/camera/IEventHandler;
 
     invoke-virtual {v1, v3, v4}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 251
+    .line 253
     const-string v3, "Key.Down"
 
     iget-object v4, p0, Lcom/android/camera/component/ZoomBar;->m_KeyDownEventHandler:Lcom/android/camera/IEventHandler;
 
     invoke-virtual {v1, v3, v4}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 252
+    .line 254
     const-string v3, "Menu.Closed"
 
     iget-object v4, p0, Lcom/android/camera/component/ZoomBar;->m_ShowZoomBarEventHandler:Lcom/android/camera/IEventHandler;
 
     invoke-virtual {v1, v3, v4}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 253
+    .line 255
     const-string v3, "Menu.Opening"
 
     iget-object v4, p0, Lcom/android/camera/component/ZoomBar;->m_HideZoomBarEventHandler:Lcom/android/camera/IEventHandler;
 
     invoke-virtual {v1, v3, v4}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 254
+    .line 256
     const-string v3, "CameraActivity.PreviewStarted"
 
     iget-object v4, p0, Lcom/android/camera/component/ZoomBar;->m_ShowZoomBarEventHandler:Lcom/android/camera/IEventHandler;
 
     invoke-virtual {v1, v3, v4}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 255
+    .line 257
     const-string v3, "Recording.TimeChanged"
 
     iget-object v4, p0, Lcom/android/camera/component/ZoomBar;->m_RecordingTimeChangedEventHandler:Lcom/android/camera/IEventHandler;
 
     invoke-virtual {v1, v3, v4}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 256
+    .line 258
     const-string v3, "Camera.Restart"
 
     iget-object v4, p0, Lcom/android/camera/component/ZoomBar;->m_HideZoomBarEventHandler:Lcom/android/camera/IEventHandler;
 
     invoke-virtual {v1, v3, v4}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 257
+    .line 259
+    const-string v3, "CameraActivity.RotateChanged"
+
+    new-instance v4, Lcom/android/camera/component/ZoomBar$9;
+
+    invoke-direct {v4, p0}, Lcom/android/camera/component/ZoomBar$9;-><init>(Lcom/android/camera/component/ZoomBar;)V
+
+    invoke-virtual {v1, v3, v4}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
+
+    .line 269
     const-string v3, "Mode.Switched"
 
     iget-object v4, p0, Lcom/android/camera/component/ZoomBar;->m_HideZoomBarEventHandler:Lcom/android/camera/IEventHandler;
 
     invoke-virtual {v1, v3, v4}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 258
+    .line 270
     const-string v3, "Recording.Stopping"
 
     iget-object v4, p0, Lcom/android/camera/component/ZoomBar;->m_StopRecordingEventHandler:Lcom/android/camera/IEventHandler;
 
     invoke-virtual {v1, v3, v4}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 259
+    .line 271
     const-string v3, "Zoom.LockedStateChanged"
 
     iget-object v4, p0, Lcom/android/camera/component/ZoomBar;->m_ZoomLockChangedEventHandler:Lcom/android/camera/IEventHandler;
 
     invoke-virtual {v1, v3, v4}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 260
+    .line 272
     return-void
 .end method

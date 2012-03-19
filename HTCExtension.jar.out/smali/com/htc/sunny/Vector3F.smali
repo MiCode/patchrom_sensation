@@ -17,7 +17,7 @@
 
     .prologue
     .line 32
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 33
     invoke-virtual {p0}, Lcom/htc/sunny/Vector3F;->reset()V
@@ -34,7 +34,7 @@
 
     .prologue
     .line 36
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 37
     iput p1, p0, Lcom/htc/sunny/Vector3F;->mX:F

@@ -344,7 +344,7 @@
 
     .prologue
     .line 46
-    iget v0, p0, Lcom/htc/widget/Gallery;->mPaddingLeft:I
+    iget v0, p0, Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
 
     return v0
 .end method
@@ -355,7 +355,7 @@
 
     .prologue
     .line 46
-    iget v0, p0, Lcom/htc/widget/Gallery;->mPaddingRight:I
+    iget v0, p0, Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
 
     return v0
 .end method
@@ -366,7 +366,7 @@
 
     .prologue
     .line 46
-    iget v0, p0, Lcom/htc/widget/Gallery;->mPaddingRight:I
+    iget v0, p0, Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
 
     return v0
 .end method
@@ -377,7 +377,7 @@
 
     .prologue
     .line 46
-    iget v0, p0, Lcom/htc/widget/Gallery;->mPaddingLeft:I
+    iget v0, p0, Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
 
     return v0
 .end method
@@ -443,7 +443,7 @@
     .restart local v1       #childHeight:I
     .restart local v2       #childTop:I
     :sswitch_0
-    iget-object v4, p0, Lcom/htc/widget/Gallery;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v2, v4, Landroid/graphics/Rect;->top:I
 
@@ -452,13 +452,13 @@
 
     .line 1004
     :sswitch_1
-    iget-object v4, p0, Lcom/htc/widget/Gallery;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->bottom:I
 
     sub-int v4, v3, v4
 
-    iget-object v5, p0, Lcom/htc/widget/Gallery;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->top:I
 
@@ -468,7 +468,7 @@
 
     .line 1006
     .local v0, availableSpace:I
-    iget-object v4, p0, Lcom/htc/widget/Gallery;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->top:I
 
@@ -482,7 +482,7 @@
     .line 1009
     .end local v0           #availableSpace:I
     :sswitch_2
-    iget-object v4, p0, Lcom/htc/widget/Gallery;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->bottom:I
 
@@ -515,7 +515,7 @@
 
     .line 576
     .local v6, numChildren:I
-    iget v2, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v2, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     .line 577
     .local v2, firstPosition:I
@@ -530,7 +530,7 @@
     if-eqz p1, :cond_3
 
     .line 581
-    iget v3, p0, Lcom/htc/widget/Gallery;->mPaddingLeft:I
+    iget v3, p0, Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
 
     .line 582
     .local v3, galleryLeft:I
@@ -570,11 +570,11 @@
     iput v8, p0, Lcom/htc/widget/Gallery;->mDetachCounter:I
 
     .line 610
-    iget v8, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v8, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     add-int/2addr v8, v1
 
-    iput v8, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iput v8, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     .line 612
     :cond_1
@@ -587,7 +587,7 @@
     add-int/lit8 v1, v1, 0x1
 
     .line 589
-    iget-object v8, p0, Lcom/htc/widget/Gallery;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
+    iget-object v8, p0, Lcom/htc/widget/AbsSpinner;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
 
     add-int v9, v2, v5
 
@@ -607,7 +607,7 @@
 
     move-result v8
 
-    iget v9, p0, Lcom/htc/widget/Gallery;->mPaddingRight:I
+    iget v9, p0, Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
 
     sub-int v4, v8, v9
 
@@ -639,7 +639,7 @@
     add-int/lit8 v1, v1, 0x1
 
     .line 601
-    iget-object v8, p0, Lcom/htc/widget/Gallery;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
+    iget-object v8, p0, Lcom/htc/widget/AbsSpinner;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
 
     add-int v9, v2, v5
 
@@ -663,12 +663,12 @@
 
     .line 1262
     .local v6, handled:Z
-    iget-object v0, p0, Lcom/htc/widget/Gallery;->mOnItemLongClickListener:Lcom/htc/widget/AdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Lcom/htc/widget/AdapterView;->mOnItemLongClickListener:Lcom/htc/widget/AdapterView$OnItemLongClickListener;
 
     if-eqz v0, :cond_0
 
     .line 1263
-    iget-object v0, p0, Lcom/htc/widget/Gallery;->mOnItemLongClickListener:Lcom/htc/widget/AdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Lcom/htc/widget/AdapterView;->mOnItemLongClickListener:Lcom/htc/widget/AdapterView$OnItemLongClickListener;
 
     iget-object v2, p0, Lcom/htc/widget/Gallery;->mDownTouchView:Landroid/view/View;
 
@@ -798,7 +798,7 @@
 
     .line 779
     .local v4, itemSpacing:I
-    iget v3, p0, Lcom/htc/widget/Gallery;->mPaddingLeft:I
+    iget v3, p0, Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
 
     .line 782
     .local v3, galleryLeft:I
@@ -811,7 +811,7 @@
     if-eqz v5, :cond_1
 
     .line 787
-    iget v6, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v6, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     add-int/lit8 v0, v6, -0x1
 
@@ -831,7 +831,7 @@
     if-ltz v0, :cond_2
 
     .line 797
-    iget v6, p0, Lcom/htc/widget/Gallery;->mSelectedPosition:I
+    iget v6, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     sub-int v6, v0, v6
 
@@ -840,7 +840,7 @@
     move-result-object v5
 
     .line 801
-    iput v0, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iput v0, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     .line 804
     invoke-virtual {v5}, Landroid/view/View;->getLeft()I
@@ -862,13 +862,13 @@
 
     .line 792
     .restart local v0       #curPosition:I
-    iget v6, p0, Lcom/htc/widget/Gallery;->mRight:I
+    iget v6, p0, Lcom/htc/widget/AdapterView;->mRight:I
 
-    iget v7, p0, Lcom/htc/widget/Gallery;->mLeft:I
+    iget v7, p0, Lcom/htc/widget/AdapterView;->mLeft:I
 
     sub-int/2addr v6, v7
 
-    iget v7, p0, Lcom/htc/widget/Gallery;->mPaddingRight:I
+    iget v7, p0, Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
 
     sub-int v1, v6, v7
 
@@ -896,13 +896,13 @@
 
     .line 811
     .local v3, itemSpacing:I
-    iget v7, p0, Lcom/htc/widget/Gallery;->mRight:I
+    iget v7, p0, Lcom/htc/widget/AdapterView;->mRight:I
 
-    iget v8, p0, Lcom/htc/widget/Gallery;->mLeft:I
+    iget v8, p0, Lcom/htc/widget/AdapterView;->mLeft:I
 
     sub-int/2addr v7, v8
 
-    iget v8, p0, Lcom/htc/widget/Gallery;->mPaddingRight:I
+    iget v8, p0, Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
 
     sub-int v2, v7, v8
 
@@ -914,7 +914,7 @@
 
     .line 813
     .local v4, numChildren:I
-    iget v5, p0, Lcom/htc/widget/Gallery;->mItemCount:I
+    iget v5, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     .line 816
     .local v5, numItems:I
@@ -929,7 +929,7 @@
     if-eqz v6, :cond_0
 
     .line 821
-    iget v7, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v7, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     add-int v1, v7, v4
 
@@ -949,7 +949,7 @@
     if-ge v1, v5, :cond_1
 
     .line 830
-    iget v7, p0, Lcom/htc/widget/Gallery;->mSelectedPosition:I
+    iget v7, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     sub-int v7, v1, v7
 
@@ -973,15 +973,15 @@
     .end local v0           #curLeftEdge:I
     .end local v1           #curPosition:I
     :cond_0
-    iget v7, p0, Lcom/htc/widget/Gallery;->mItemCount:I
+    iget v7, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     add-int/lit8 v1, v7, -0x1
 
     .restart local v1       #curPosition:I
-    iput v1, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iput v1, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     .line 825
-    iget v0, p0, Lcom/htc/widget/Gallery;->mPaddingLeft:I
+    iget v0, p0, Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
 
     .line 826
     .restart local v0       #curLeftEdge:I
@@ -999,7 +999,7 @@
 
     .prologue
     .line 541
-    iget v0, p0, Lcom/htc/widget/Gallery;->mPaddingLeft:I
+    iget v0, p0, Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
 
     return v0
 .end method
@@ -1026,11 +1026,11 @@
 
     move-result v0
 
-    iget v1, p0, Lcom/htc/widget/Gallery;->mPaddingLeft:I
+    iget v1, p0, Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
 
     sub-int/2addr v0, v1
 
-    iget v1, p0, Lcom/htc/widget/Gallery;->mPaddingRight:I
+    iget v1, p0, Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
 
     sub-int/2addr v0, v1
 
@@ -1059,12 +1059,12 @@
 
     .prologue
     .line 900
-    iget-boolean v3, p0, Lcom/htc/widget/Gallery;->mDataChanged:Z
+    iget-boolean v3, p0, Lcom/htc/widget/AdapterView;->mDataChanged:Z
 
     if-nez v3, :cond_0
 
     .line 901
-    iget-object v3, p0, Lcom/htc/widget/Gallery;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
+    iget-object v3, p0, Lcom/htc/widget/AbsSpinner;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
 
     invoke-virtual {v3, p1}, Lcom/htc/widget/AbsSpinner$RecycleBin;->get(I)Landroid/view/View;
 
@@ -1122,7 +1122,7 @@
     .line 922
     .end local v1           #child:Landroid/view/View;
     :cond_0
-    iget-object v3, p0, Lcom/htc/widget/Gallery;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v3, p0, Lcom/htc/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     const/4 v4, 0x0
 
@@ -1186,12 +1186,12 @@
 
     .prologue
     .line 527
-    iget v2, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v2, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr p1, v2
 
     .line 528
-    iget v2, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v2, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr p2, v2
 
@@ -1256,11 +1256,11 @@
 
     .prologue
     .line 840
-    iget-object v1, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v1, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v1, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v1}, Lcom/htc/widget/FastScroller;->isEditorMode()Z
 
@@ -1269,7 +1269,7 @@
     if-nez v1, :cond_0
 
     .line 841
-    iget-object v1, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v1, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     const/4 v2, 0x1
 
@@ -1503,19 +1503,19 @@
     invoke-virtual {p1, v8}, Landroid/view/View;->setSelected(Z)V
 
     .line 960
-    iget v8, p0, Lcom/htc/widget/Gallery;->mHeightMeasureSpec:I
+    iget v8, p0, Lcom/htc/widget/AbsSpinner;->mHeightMeasureSpec:I
 
-    iget-object v9, p0, Lcom/htc/widget/Gallery;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->top:I
 
-    iget-object v10, p0, Lcom/htc/widget/Gallery;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->bottom:I
 
     add-int/2addr v9, v10
 
-    iget v10, v6, Lcom/htc/widget/Gallery$LayoutParams;->height:I
+    iget v10, v6, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-static {v8, v9, v10}, Landroid/view/ViewGroup;->getChildMeasureSpec(III)I
 
@@ -1523,19 +1523,19 @@
 
     .line 962
     .local v1, childHeightSpec:I
-    iget v8, p0, Lcom/htc/widget/Gallery;->mWidthMeasureSpec:I
+    iget v8, p0, Lcom/htc/widget/AbsSpinner;->mWidthMeasureSpec:I
 
-    iget-object v9, p0, Lcom/htc/widget/Gallery;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->left:I
 
-    iget-object v10, p0, Lcom/htc/widget/Gallery;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->right:I
 
     add-int/2addr v9, v10
 
-    iget v10, v6, Lcom/htc/widget/Gallery$LayoutParams;->width:I
+    iget v10, v6, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     invoke-static {v8, v9, v10}, Landroid/view/ViewGroup;->getChildMeasureSpec(III)I
 
@@ -1632,9 +1632,9 @@
 
     .line 1295
     .local v1, oldSelectedChild:Landroid/view/View;
-    iget v2, p0, Lcom/htc/widget/Gallery;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
-    iget v3, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v2, v3
 
@@ -1693,11 +1693,11 @@
 
     .prologue
     .line 875
-    iget-object v0, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v0, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v0, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v0}, Lcom/htc/widget/FastScroller;->isEditorMode()Z
 
@@ -1706,7 +1706,7 @@
     if-nez v0, :cond_0
 
     .line 876
-    iget-object v0, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v0, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/FastScroller;->calibrateThumb(I)V
 
@@ -1752,7 +1752,7 @@
 
     .prologue
     .line 296
-    iget v0, p0, Lcom/htc/widget/Gallery;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     return v0
 .end method
@@ -1762,7 +1762,7 @@
 
     .prologue
     .line 302
-    iget v0, p0, Lcom/htc/widget/Gallery;->mItemCount:I
+    iget v0, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     return v0
 .end method
@@ -2015,14 +2015,14 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    iget v6, p0, Lcom/htc/widget/Gallery;->mItemCount:I
+    iget v6, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     add-int/lit8 v3, v6, -0x1
 
     .line 470
     .local v3, extremeItemPosition:I
     :goto_1
-    iget v6, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v6, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int v6, v3, v6
 
@@ -2129,7 +2129,7 @@
 
     move-result v6
 
-    iget v7, p0, Lcom/htc/widget/Gallery;->mHighBorder:I
+    iget v7, p0, Lcom/htc/widget/AbsSpinner;->mHighBorder:I
 
     sub-int v4, v6, v7
 
@@ -2143,7 +2143,7 @@
 
     move-result v6
 
-    iget v7, p0, Lcom/htc/widget/Gallery;->mLowBorder:I
+    iget v7, p0, Lcom/htc/widget/AbsSpinner;->mLowBorder:I
 
     add-int v4, v6, v7
 
@@ -2182,11 +2182,11 @@
     if-ne v6, v7, :cond_1
 
     .line 668
-    iget-object v6, p0, Lcom/htc/widget/Gallery;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v6, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->left:I
 
-    iget v7, p0, Lcom/htc/widget/Gallery;->mLowBorder:I
+    iget v7, p0, Lcom/htc/widget/AbsSpinner;->mLowBorder:I
 
     add-int v0, v6, v7
 
@@ -2202,7 +2202,7 @@
 
     .line 673
     .local v5, width:I
-    iput v0, p0, Lcom/htc/widget/Gallery;->mFirstItemX:I
+    iput v0, p0, Lcom/htc/widget/AbsSpinner;->mFirstItemX:I
 
     .line 675
     if-eqz v1, :cond_3
@@ -2224,7 +2224,7 @@
 
     move-result v6
 
-    iput v6, p0, Lcom/htc/widget/Gallery;->mFirstItemX:I
+    iput v6, p0, Lcom/htc/widget/AbsSpinner;->mFirstItemX:I
 
     .line 680
     invoke-virtual {v1}, Landroid/view/View;->getWidth()I
@@ -2239,33 +2239,33 @@
     if-eqz v6, :cond_0
 
     .line 685
-    iget v6, p0, Lcom/htc/widget/Gallery;->mFirstItemX:I
+    iget v6, p0, Lcom/htc/widget/AbsSpinner;->mFirstItemX:I
 
     add-int/2addr v6, v5
 
-    iput v6, p0, Lcom/htc/widget/Gallery;->mFirstItemX:I
+    iput v6, p0, Lcom/htc/widget/AbsSpinner;->mFirstItemX:I
 
     .line 693
     .end local v2           #info:Lcom/htc/widget/TaskInfo;
     :cond_0
     :goto_0
-    iget v6, p0, Lcom/htc/widget/Gallery;->mFirstItemX:I
+    iget v6, p0, Lcom/htc/widget/AbsSpinner;->mFirstItemX:I
 
     if-le v6, v0, :cond_1
 
     .line 696
-    iget v6, p0, Lcom/htc/widget/Gallery;->mFirstItemX:I
+    iget v6, p0, Lcom/htc/widget/AbsSpinner;->mFirstItemX:I
 
     sub-int/2addr v6, v5
 
-    iput v6, p0, Lcom/htc/widget/Gallery;->mFirstItemX:I
+    iput v6, p0, Lcom/htc/widget/AbsSpinner;->mFirstItemX:I
 
     .line 700
     .end local v0           #childrenLeft:I
     .end local v1           #firstChild:Landroid/view/View;
     .end local v5           #width:I
     :cond_1
-    iget-boolean v6, p0, Lcom/htc/widget/Gallery;->mDataChanged:Z
+    iget-boolean v6, p0, Lcom/htc/widget/AdapterView;->mDataChanged:Z
 
     if-eqz v6, :cond_2
 
@@ -2274,7 +2274,7 @@
 
     .line 705
     :cond_2
-    iget v6, p0, Lcom/htc/widget/Gallery;->mItemCount:I
+    iget v6, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     if-nez v6, :cond_4
 
@@ -2299,12 +2299,12 @@
     .end local v1           #firstChild:Landroid/view/View;
     .end local v5           #width:I
     :cond_4
-    iget v6, p0, Lcom/htc/widget/Gallery;->mNextSelectedPosition:I
+    iget v6, p0, Lcom/htc/widget/AdapterView;->mNextSelectedPosition:I
 
     if-ltz v6, :cond_5
 
     .line 712
-    iget v6, p0, Lcom/htc/widget/Gallery;->mNextSelectedPosition:I
+    iget v6, p0, Lcom/htc/widget/AdapterView;->mNextSelectedPosition:I
 
     invoke-virtual {p0, v6}, Lcom/htc/widget/Gallery;->setSelectedPositionInt(I)V
 
@@ -2322,7 +2322,7 @@
     iput v9, p0, Lcom/htc/widget/Gallery;->mLeftMost:I
 
     .line 729
-    iget-object v6, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v6, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     if-eqz v6, :cond_7
 
@@ -2338,24 +2338,24 @@
 
     .line 730
     :cond_6
-    iget-object v6, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v6, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v6}, Lcom/htc/widget/FastScroller;->getFirstVisiblePosition()I
 
     move-result v6
 
-    iput v6, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iput v6, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     .line 731
-    iget-object v6, p0, Lcom/htc/widget/Gallery;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v6, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->left:I
 
-    iget v7, p0, Lcom/htc/widget/Gallery;->mLowBorder:I
+    iget v7, p0, Lcom/htc/widget/AbsSpinner;->mLowBorder:I
 
     add-int/2addr v6, v7
 
-    iget-object v7, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v7, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v7}, Lcom/htc/widget/FastScroller;->getFirstVisibleOffset()I
 
@@ -2363,18 +2363,18 @@
 
     add-int/2addr v6, v7
 
-    iput v6, p0, Lcom/htc/widget/Gallery;->mFirstItemX:I
+    iput v6, p0, Lcom/htc/widget/AbsSpinner;->mFirstItemX:I
 
     .line 732
     iput-boolean v9, p0, Lcom/htc/widget/Gallery;->mLayoutLikeActivityMode:Z
 
     .line 741
     :cond_7
-    iget v6, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v6, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
-    iget v7, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v7, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
-    iget v8, p0, Lcom/htc/widget/Gallery;->mSelectedPosition:I
+    iget v8, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     sub-int/2addr v7, v8
 
@@ -2386,7 +2386,7 @@
 
     .line 744
     .local v3, sel:Landroid/view/View;
-    iget v4, p0, Lcom/htc/widget/Gallery;->mFirstItemX:I
+    iget v4, p0, Lcom/htc/widget/AbsSpinner;->mFirstItemX:I
 
     .line 745
     .local v4, selectedOffset:I
@@ -2402,17 +2402,17 @@
     invoke-direct {p0}, Lcom/htc/widget/Gallery;->putGalleryThumb()V
 
     .line 752
-    iget-object v6, p0, Lcom/htc/widget/Gallery;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
+    iget-object v6, p0, Lcom/htc/widget/AbsSpinner;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
 
     invoke-virtual {v6}, Lcom/htc/widget/AbsSpinner$RecycleBin;->clear()V
 
     .line 753
-    iget-object v6, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v6, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     if-eqz v6, :cond_8
 
     .line 754
-    iget-object v6, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v6, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v6}, Lcom/htc/widget/FastScroller;->clearCache()V
 
@@ -2424,13 +2424,13 @@
     invoke-virtual {p0}, Lcom/htc/widget/Gallery;->checkSelectionChanged()V
 
     .line 762
-    iput-boolean v9, p0, Lcom/htc/widget/Gallery;->mDataChanged:Z
+    iput-boolean v9, p0, Lcom/htc/widget/AdapterView;->mDataChanged:Z
 
     .line 763
-    iput-boolean v9, p0, Lcom/htc/widget/Gallery;->mNeedSync:Z
+    iput-boolean v9, p0, Lcom/htc/widget/AdapterView;->mNeedSync:Z
 
     .line 764
-    iget v6, p0, Lcom/htc/widget/Gallery;->mSelectedPosition:I
+    iget v6, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     invoke-virtual {p0, v6}, Lcom/htc/widget/Gallery;->setNextSelectedPositionInt(I)V
 
@@ -2516,7 +2516,7 @@
     :cond_0
     iget v0, p0, Lcom/htc/widget/Gallery;->mDownTouchPosition:I
 
-    iget v1, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v0, v1
 
@@ -2550,17 +2550,17 @@
 
     .prologue
     .line 1563
-    iget-object v0, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v0, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     if-eqz v0, :cond_0
 
     .line 1564
-    iget-object v0, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v0, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/FastScroller;->setCurrentThumb(I)V
 
     .line 1565
-    iget-object v0, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v0, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v0}, Lcom/htc/widget/FastScroller;->showThumb()V
 
@@ -2574,12 +2574,12 @@
 
     .prologue
     .line 1572
-    iget-object v0, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v0, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     if-eqz v0, :cond_0
 
     .line 1573
-    iget-object v0, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v0, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v0}, Lcom/htc/widget/FastScroller;->closeThumb()V
 
@@ -2673,13 +2673,13 @@
     .line 356
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/htc/widget/Gallery;->mInLayout:Z
+    iput-boolean v0, p0, Lcom/htc/widget/AdapterView;->mInLayout:Z
 
     .line 357
     invoke-virtual {p0, v1, v1}, Lcom/htc/widget/Gallery;->layout(IZ)V
 
     .line 358
-    iput-boolean v1, p0, Lcom/htc/widget/Gallery;->mInLayout:Z
+    iput-boolean v1, p0, Lcom/htc/widget/AdapterView;->mInLayout:Z
 
     .line 359
     return-void
@@ -2813,7 +2813,7 @@
     .line 1045
     iget v0, p0, Lcom/htc/widget/Gallery;->mDownTouchPosition:I
 
-    iget v1, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v0, v1
 
@@ -2826,7 +2826,7 @@
 
     iget v0, p0, Lcom/htc/widget/Gallery;->mDownTouchPosition:I
 
-    iget v1, p0, Lcom/htc/widget/Gallery;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     if-ne v0, v1, :cond_1
 
@@ -2836,7 +2836,7 @@
 
     iget v1, p0, Lcom/htc/widget/Gallery;->mDownTouchPosition:I
 
-    iget-object v2, p0, Lcom/htc/widget/Gallery;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v2, p0, Lcom/htc/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     iget v3, p0, Lcom/htc/widget/Gallery;->mDownTouchPosition:I
 
@@ -2868,12 +2868,12 @@
     const/4 v3, 0x1
 
     .line 1017
-    iget-object v4, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v4, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     if-eqz v4, :cond_1
 
     .line 1018
-    iget-object v4, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v4, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v4, p1}, Lcom/htc/widget/FastScroller;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -3046,7 +3046,7 @@
 
     .line 382
     .local v1, itemWidth:I
-    iget v3, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     mul-int/2addr v3, v1
 
@@ -3056,11 +3056,11 @@
 
     sub-int/2addr v3, v4
 
-    iget v4, p0, Lcom/htc/widget/Gallery;->mPaddingLeft:I
+    iget v4, p0, Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
 
     add-int/2addr v3, v4
 
-    iget-object v4, p0, Lcom/htc/widget/Gallery;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v4, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v4}, Lcom/htc/widget/FastScroller;->getOffset()I
 
@@ -3162,12 +3162,12 @@
     .line 1621
     if-eqz p1, :cond_0
 
-    iget-object v1, p0, Lcom/htc/widget/Gallery;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v1, p0, Lcom/htc/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-eqz v1, :cond_0
 
     .line 1622
-    iget-object v1, p0, Lcom/htc/widget/Gallery;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v1, p0, Lcom/htc/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     invoke-interface {v1}, Landroid/widget/SpinnerAdapter;->getCount()I
 
@@ -3220,7 +3220,7 @@
 
     .prologue
     .line 1356
-    iget-object v3, p0, Lcom/htc/widget/Gallery;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v3, p0, Lcom/htc/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-nez v3, :cond_0
 
@@ -3230,7 +3230,7 @@
 
     .line 1359
     :cond_0
-    iget v3, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int v1, v3, p1
 
@@ -3331,19 +3331,19 @@
     .line 856
     .restart local v5       #lp:Lcom/htc/widget/Gallery$LayoutParams;
     :cond_0
-    iget v6, p0, Lcom/htc/widget/Gallery;->mHeightMeasureSpec:I
+    iget v6, p0, Lcom/htc/widget/AbsSpinner;->mHeightMeasureSpec:I
 
-    iget-object v7, p0, Lcom/htc/widget/Gallery;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v7, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v7, v7, Landroid/graphics/Rect;->top:I
 
-    iget-object v8, p0, Lcom/htc/widget/Gallery;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v8, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v8, v8, Landroid/graphics/Rect;->bottom:I
 
     add-int/2addr v7, v8
 
-    iget v8, v5, Lcom/htc/widget/Gallery$LayoutParams;->height:I
+    iget v8, v5, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-static {v6, v7, v8}, Landroid/view/ViewGroup;->getChildMeasureSpec(III)I
 
@@ -3351,19 +3351,19 @@
 
     .line 858
     .local v1, childHeightSpec:I
-    iget v6, p0, Lcom/htc/widget/Gallery;->mWidthMeasureSpec:I
+    iget v6, p0, Lcom/htc/widget/AbsSpinner;->mWidthMeasureSpec:I
 
-    iget-object v7, p0, Lcom/htc/widget/Gallery;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v7, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v7, v7, Landroid/graphics/Rect;->left:I
 
-    iget-object v8, p0, Lcom/htc/widget/Gallery;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v8, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v8, v8, Landroid/graphics/Rect;->right:I
 
     add-int/2addr v7, v8
 
-    iget v8, v5, Lcom/htc/widget/Gallery$LayoutParams;->width:I
+    iget v8, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     invoke-static {v6, v7, v8}, Landroid/view/ViewGroup;->getChildMeasureSpec(III)I
 
@@ -3422,14 +3422,14 @@
 
     if-eqz v2, :cond_0
 
-    iget v2, p0, Lcom/htc/widget/Gallery;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     if-ltz v2, :cond_0
 
     .line 1251
-    iget v2, p0, Lcom/htc/widget/Gallery;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
-    iget v3, p0, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int v0, v2, v3
 
@@ -3441,9 +3441,9 @@
 
     .line 1253
     .local v1, v:Landroid/view/View;
-    iget v2, p0, Lcom/htc/widget/Gallery;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
-    iget-wide v3, p0, Lcom/htc/widget/Gallery;->mSelectedRowId:J
+    iget-wide v3, p0, Lcom/htc/widget/AdapterView;->mSelectedRowId:J
 
     invoke-direct {p0, v1, v2, v3, v4}, Lcom/htc/widget/Gallery;->dispatchLongPress(Landroid/view/View;IJ)Z
 
@@ -3484,7 +3484,7 @@
 
     .line 1243
     :cond_0
-    iget-object v3, p0, Lcom/htc/widget/Gallery;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v3, p0, Lcom/htc/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     invoke-interface {v3, v2}, Landroid/widget/SpinnerAdapter;->getItemId(I)J
 
@@ -3577,7 +3577,7 @@
 
     .line 419
     :goto_2
-    iget-object v2, p0, Lcom/htc/widget/Gallery;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
+    iget-object v2, p0, Lcom/htc/widget/AbsSpinner;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
 
     invoke-virtual {v2}, Lcom/htc/widget/AbsSpinner$RecycleBin;->clear()V
 
@@ -3678,7 +3678,7 @@
     invoke-direct {p0}, Lcom/htc/widget/Gallery;->putGalleryThumb()V
 
     .line 459
-    iget-object v2, p0, Lcom/htc/widget/Gallery;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
+    iget-object v2, p0, Lcom/htc/widget/AbsSpinner;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
 
     invoke-virtual {v2}, Lcom/htc/widget/AbsSpinner$RecycleBin;->clear()V
 

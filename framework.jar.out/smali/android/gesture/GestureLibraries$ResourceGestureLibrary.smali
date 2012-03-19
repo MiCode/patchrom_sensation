@@ -100,7 +100,7 @@
     .line 132
     .local v2, in:Ljava/io/InputStream;
     :try_start_0
-    iget-object v4, p0, Landroid/gesture/GestureLibraries$ResourceGestureLibrary;->mStore:Landroid/gesture/GestureStore;
+    iget-object v4, p0, Landroid/gesture/GestureLibrary;->mStore:Landroid/gesture/GestureStore;
 
     const/4 v5, 0x1
 

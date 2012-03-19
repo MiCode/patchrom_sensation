@@ -154,7 +154,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/opensense/social/Album;->data:Landroid/os/Bundle;
+    iput-object v0, p0, Lcom/htc/opensense/social/Core;->data:Landroid/os/Bundle;
 
     .line 50
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
@@ -169,7 +169,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/opensense/social/Album;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iput-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     .line 53
     return-void
@@ -188,7 +188,7 @@
 
     .prologue
     .line 168
-    iget-object v0, p0, Lcom/htc/opensense/social/Album;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     const-string v1, "album"
 
@@ -210,7 +210,7 @@
 
     .prologue
     .line 172
-    iget-object v0, p0, Lcom/htc/opensense/social/Album;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     iget-object v1, p0, Lcom/htc/opensense/social/Album;->id:Ljava/lang/String;
 
@@ -244,7 +244,7 @@
 
     .prologue
     .line 177
-    iget-object v0, p0, Lcom/htc/opensense/social/Album;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     move-object v1, p0
 
@@ -273,7 +273,7 @@
 
     .prologue
     .line 164
-    iget-object v0, p0, Lcom/htc/opensense/social/Album;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     const-string v1, "album"
 
@@ -367,7 +367,7 @@
 
     .prologue
     .line 160
-    iget-object v0, p0, Lcom/htc/opensense/social/Album;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     const/4 v1, 0x0
 
@@ -619,12 +619,12 @@
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
     .line 74
-    iget-object v0, p0, Lcom/htc/opensense/social/Album;->data:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->data:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
     .line 75
-    iget-object v0, p0, Lcom/htc/opensense/social/Album;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     invoke-static {v0}, Lcom/htc/opensense/social/ISocialInterfaceProxy$_ServiceInvocationHandler;->unwrap(Lcom/htc/opensense/social/ISocialInterfaceProxy;)Lcom/htc/opensense/social/ISocialService;
 

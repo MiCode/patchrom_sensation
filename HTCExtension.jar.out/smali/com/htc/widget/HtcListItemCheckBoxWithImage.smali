@@ -465,7 +465,7 @@
 
     .prologue
     .line 96
-    iget-boolean v0, p0, Lcom/htc/widget/HtcListItemCheckBoxWithImage;->mIsRevert:Z
+    iget-boolean v0, p0, Lcom/htc/widget/HtcListItemComponent;->mIsRevert:Z
 
     if-eqz v0, :cond_0
 

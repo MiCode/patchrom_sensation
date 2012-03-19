@@ -806,7 +806,7 @@
 
     .line 193
     .restart local v0       #params:Landroid/widget/RelativeLayout$LayoutParams;
-    iput p1, v0, Landroid/widget/RelativeLayout$LayoutParams;->width:I
+    iput p1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 194
     iget-object v1, p0, Lcom/htc/widget/HtcPhotoButton;->mLayout:Landroid/widget/RelativeLayout;

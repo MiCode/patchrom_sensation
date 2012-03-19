@@ -344,41 +344,9 @@
 
     move-result v10
 
-    if-eqz v10, :cond_e
-
-    .line 195
-    const-string v10, "OutgoingCallReceiver"
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v12, "Cannot modify outgoing call to emergency number "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    const-string v12, "."
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v10, v11}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_0
+    if-nez v10, :cond_1
 
     .line 200
-    :cond_e
     const-string v10, "android.phone.extra.ORIGINAL_URI"
 
     invoke-virtual {p2, v10}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -387,7 +355,7 @@
 
     .line 202
     .local v7, originalUri:Ljava/lang/String;
-    if-nez v7, :cond_f
+    if-nez v7, :cond_e
 
     .line 203
     const-string v10, "OutgoingCallReceiver"
@@ -399,7 +367,7 @@
     goto/16 :goto_0
 
     .line 207
-    :cond_f
+    :cond_e
     invoke-static {v7}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v9
@@ -410,7 +378,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_10
+    if-eqz v10, :cond_f
 
     const-string v10, "OutgoingCallReceiver"
 
@@ -419,7 +387,7 @@
     invoke-static {v10, v11}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 211
-    :cond_10
+    :cond_f
     iget-object v10, p0, Lcom/android/phone/OutgoingCallBroadcaster$OutgoingCallReceiver;->this$0:Lcom/android/phone/OutgoingCallBroadcaster;
 
     #calls: Lcom/android/phone/OutgoingCallBroadcaster;->startSipCallOptionHandler(Landroid/content/Context;Landroid/content/Intent;Landroid/net/Uri;Ljava/lang/String;)V

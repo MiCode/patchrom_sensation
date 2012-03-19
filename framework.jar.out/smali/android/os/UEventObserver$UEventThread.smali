@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public addObserver(Ljava/lang/String;Landroid/os/UEventObserver;)V
-    .locals 4
+    .locals 2
     .parameter "match"
     .parameter "observer"
 
@@ -61,33 +61,8 @@
 
     monitor-enter v1
 
-    .line 142
-    :try_start_0
-    invoke-static {}, Landroid/os/UEventObserver;->access$100()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "@#@ register UEvent:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 144
+    :try_start_0
     iget-object v0, p0, Landroid/os/UEventObserver$UEventThread;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -115,7 +90,7 @@
 .end method
 
 .method public removeObserver(Landroid/os/UEventObserver;)V
-    .locals 6
+    .locals 5
     .parameter "observer"
 
     .prologue
@@ -161,37 +136,6 @@
 
     if-ne v2, p1, :cond_1
 
-    .line 157
-    invoke-static {}, Landroid/os/UEventObserver;->access$100()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "@#@ unregister UEvent:"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Landroid/os/UEventObserver$UEventThread;->mObservers:Ljava/util/ArrayList;
-
-    invoke-virtual {v5, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 159
     iget-object v2, p0, Landroid/os/UEventObserver$UEventThread;->mObservers:Ljava/util/ArrayList;
 
@@ -236,7 +180,7 @@
 .end method
 
 .method public run()V
-    .locals 9
+    .locals 8
 
     .prologue
     .line 102
@@ -248,26 +192,18 @@
 
     new-array v0, v5, [B
 
-    .line 108
-    .local v0, buffer:[B
-    :goto_0
-    invoke-static {}, Landroid/os/UEventObserver;->access$100()Ljava/lang/String;
-
-    move-result-object v5
-
-    const-string v6, "@# >> wait for event:"
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 110
+    .local v0, buffer:[B
+    :cond_0
+    :goto_0
     #calls: Landroid/os/UEventObserver;->next_event([B)I
-    invoke-static {v0}, Landroid/os/UEventObserver;->access$200([B)I
+    invoke-static {v0}, Landroid/os/UEventObserver;->access$100([B)I
 
     move-result v3
 
     .line 111
     .local v3, len:I
-    if-lez v3, :cond_2
+    if-lez v3, :cond_0
 
     .line 112
     new-instance v1, Ljava/lang/String;
@@ -276,33 +212,8 @@
 
     invoke-direct {v1, v0, v5, v3}, Ljava/lang/String;-><init>([BII)V
 
-    .line 114
-    .local v1, bufferStr:Ljava/lang/String;
-    invoke-static {}, Landroid/os/UEventObserver;->access$100()Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "@# << next event:"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 116
+    .local v1, bufferStr:Ljava/lang/String;
     iget-object v6, p0, Landroid/os/UEventObserver$UEventThread;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v6
@@ -319,7 +230,7 @@
 
     move-result v5
 
-    if-ge v2, v5, :cond_1
+    if-ge v2, v5, :cond_2
 
     .line 120
     iget-object v5, p0, Landroid/os/UEventObserver$UEventThread;->mObservers:Ljava/util/ArrayList;
@@ -338,32 +249,7 @@
 
     const/4 v7, -0x1
 
-    if-eq v5, v7, :cond_0
-
-    .line 122
-    invoke-static {}, Landroid/os/UEventObserver;->access$100()Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "@## >> onEvent:"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v5, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    if-eq v5, v7, :cond_1
 
     .line 124
     iget-object v5, p0, Landroid/os/UEventObserver$UEventThread;->mObservers:Ljava/util/ArrayList;
@@ -382,43 +268,18 @@
 
     invoke-virtual {v5, v7}, Landroid/os/UEventObserver;->onUEvent(Landroid/os/UEventObserver$UEvent;)V
 
-    .line 127
-    invoke-static {}, Landroid/os/UEventObserver;->access$100()Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "@## << onEvent:"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v5, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 117
-    :cond_0
+    :cond_1
     add-int/lit8 v2, v2, 0x2
 
     goto :goto_1
 
     .line 131
     .end local v4           #s:Ljava/lang/String;
-    :cond_1
+    :cond_2
     monitor-exit v6
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :catchall_0
     move-exception v5
@@ -428,18 +289,4 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v5
-
-    .line 134
-    .end local v1           #bufferStr:Ljava/lang/String;
-    .end local v2           #i:I
-    :cond_2
-    invoke-static {}, Landroid/os/UEventObserver;->access$100()Ljava/lang/String;
-
-    move-result-object v5
-
-    const-string v6, "@# << buffer len < 0"
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_0
 .end method

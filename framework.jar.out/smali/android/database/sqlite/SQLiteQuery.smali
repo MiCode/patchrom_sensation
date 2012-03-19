@@ -23,7 +23,7 @@
     const/4 v1, 0x0
 
     .line 67
-    iget-object v0, p2, Landroid/database/sqlite/SQLiteQuery;->mSql:Ljava/lang/String;
+    iget-object v0, p2, Landroid/database/sqlite/SQLiteProgram;->mSql:Ljava/lang/String;
 
     invoke-direct {p0, p1, v0}, Landroid/database/sqlite/SQLiteProgram;-><init>(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
 
@@ -34,9 +34,9 @@
     iput-boolean v1, p0, Landroid/database/sqlite/SQLiteQuery;->mClosed:Z
 
     .line 68
-    iget-object v0, p2, Landroid/database/sqlite/SQLiteQuery;->mBindArgs:Ljava/util/HashMap;
+    iget-object v0, p2, Landroid/database/sqlite/SQLiteProgram;->mBindArgs:Ljava/util/HashMap;
 
-    iput-object v0, p0, Landroid/database/sqlite/SQLiteQuery;->mBindArgs:Ljava/util/HashMap;
+    iput-object v0, p0, Landroid/database/sqlite/SQLiteProgram;->mBindArgs:Ljava/util/HashMap;
 
     .line 69
     iget v0, p2, Landroid/database/sqlite/SQLiteQuery;->mOffsetIndex:I
@@ -112,7 +112,7 @@
 
     .line 133
     :try_start_0
-    iget v0, p0, Landroid/database/sqlite/SQLiteQuery;->nStatement:I
+    iget v0, p0, Landroid/database/sqlite/SQLiteProgram;->nStatement:I
 
     invoke-static {v0}, Landroid/database/sqlite/SQLiteQuery;->nativeColumnCount(I)I
     :try_end_0
@@ -145,7 +145,7 @@
 
     .line 149
     :try_start_0
-    iget v0, p0, Landroid/database/sqlite/SQLiteQuery;->nStatement:I
+    iget v0, p0, Landroid/database/sqlite/SQLiteProgram;->nStatement:I
 
     invoke-static {v0, p1}, Landroid/database/sqlite/SQLiteQuery;->nativeColumnName(II)Ljava/lang/String;
     :try_end_0
@@ -174,9 +174,9 @@
 
     .prologue
     .line 79
-    iget-object v7, p0, Landroid/database/sqlite/SQLiteQuery;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+    iget-object v7, p0, Landroid/database/sqlite/SQLiteProgram;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    iget-object v8, p0, Landroid/database/sqlite/SQLiteQuery;->mSql:Ljava/lang/String;
+    iget-object v8, p0, Landroid/database/sqlite/SQLiteProgram;->mSql:Ljava/lang/String;
 
     invoke-virtual {v7, v8}, Landroid/database/sqlite/SQLiteDatabase;->lock(Ljava/lang/String;)V
 
@@ -203,9 +203,9 @@
 
     .line 86
     .local v4, startPos:I
-    iget v7, p0, Landroid/database/sqlite/SQLiteQuery;->nHandle:I
+    iget v7, p0, Landroid/database/sqlite/SQLiteProgram;->nHandle:I
 
-    iget v8, p0, Landroid/database/sqlite/SQLiteQuery;->nStatement:I
+    iget v8, p0, Landroid/database/sqlite/SQLiteProgram;->nStatement:I
 
     iget v9, p1, Landroid/database/CursorWindow;->mWindowPtr:I
 
@@ -315,7 +315,7 @@
 
     move-result-object v7
 
-    iget-object v9, p0, Landroid/database/sqlite/SQLiteQuery;->mSql:Ljava/lang/String;
+    iget-object v9, p0, Landroid/database/sqlite/SQLiteProgram;->mSql:Ljava/lang/String;
 
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -333,13 +333,13 @@
 
     move-result-object v9
 
-    iget-object v7, p0, Landroid/database/sqlite/SQLiteQuery;->mBindArgs:Ljava/util/HashMap;
+    iget-object v7, p0, Landroid/database/sqlite/SQLiteProgram;->mBindArgs:Ljava/util/HashMap;
 
     if-eqz v7, :cond_1
 
     const-string v7, ", "
 
-    iget-object v10, p0, Landroid/database/sqlite/SQLiteQuery;->mBindArgs:Ljava/util/HashMap;
+    iget-object v10, p0, Landroid/database/sqlite/SQLiteProgram;->mBindArgs:Ljava/util/HashMap;
 
     invoke-virtual {v10}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -369,9 +369,9 @@
     .line 103
     .end local v1           #elapsed:J
     :cond_0
-    iget-object v7, p0, Landroid/database/sqlite/SQLiteQuery;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+    iget-object v7, p0, Landroid/database/sqlite/SQLiteProgram;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    iget-object v8, p0, Landroid/database/sqlite/SQLiteQuery;->mSql:Ljava/lang/String;
+    iget-object v8, p0, Landroid/database/sqlite/SQLiteProgram;->mSql:Ljava/lang/String;
 
     invoke-virtual {v7, v8, v5, v6}, Landroid/database/sqlite/SQLiteDatabase;->logTimeStat(Ljava/lang/String;J)V
     :try_end_1
@@ -390,7 +390,7 @@
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteQuery;->releaseReference()V
 
     .line 119
-    iget-object v7, p0, Landroid/database/sqlite/SQLiteQuery;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+    iget-object v7, p0, Landroid/database/sqlite/SQLiteProgram;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
     .end local v3           #numRows:I
     .end local v4           #startPos:I
@@ -436,7 +436,7 @@
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteQuery;->releaseReference()V
 
     .line 119
-    iget-object v7, p0, Landroid/database/sqlite/SQLiteQuery;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+    iget-object v7, p0, Landroid/database/sqlite/SQLiteProgram;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
     goto :goto_1
 
@@ -448,7 +448,7 @@
     .line 109
     .local v0, e:Landroid/database/sqlite/SQLiteDatabaseCorruptException;
     :try_start_5
-    iget-object v7, p0, Landroid/database/sqlite/SQLiteQuery;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+    iget-object v7, p0, Landroid/database/sqlite/SQLiteProgram;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
     invoke-virtual {v7}, Landroid/database/sqlite/SQLiteDatabase;->onCorruption()V
 
@@ -476,7 +476,7 @@
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteQuery;->releaseReference()V
 
     .line 119
-    iget-object v8, p0, Landroid/database/sqlite/SQLiteQuery;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+    iget-object v8, p0, Landroid/database/sqlite/SQLiteProgram;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
     invoke-virtual {v8}, Landroid/database/sqlite/SQLiteDatabase;->unlock()V
 
@@ -516,7 +516,7 @@
 
     move-result-object v8
 
-    iget-object v9, p0, Landroid/database/sqlite/SQLiteQuery;->mSql:Ljava/lang/String;
+    iget-object v9, p0, Landroid/database/sqlite/SQLiteProgram;->mSql:Ljava/lang/String;
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -575,7 +575,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/database/sqlite/SQLiteQuery;->mSql:Ljava/lang/String;
+    iget-object v1, p0, Landroid/database/sqlite/SQLiteProgram;->mSql:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

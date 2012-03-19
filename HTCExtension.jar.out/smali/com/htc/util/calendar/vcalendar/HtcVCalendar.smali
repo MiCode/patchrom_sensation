@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final EVENT_PROJECTION:[Ljava/lang/String; = null
 
@@ -157,7 +157,7 @@
 
     .prologue
     .line 27
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 24
     const-string v0, ""
@@ -174,19 +174,11 @@
 .end method
 
 .method private static Debug(Ljava/lang/String;)V
-    .locals 1
+    .locals 0
     .parameter "s"
 
     .prologue
-    .line 33
-    if-eqz p0, :cond_0
-
-    const-string v0, "HtcVCalendar"
-
-    invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 35
-    :cond_0
     return-void
 .end method
 

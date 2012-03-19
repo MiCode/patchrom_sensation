@@ -559,7 +559,7 @@
 
     .prologue
     .line 52
-    iget-object v0, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -2052,7 +2052,7 @@
 
     add-int/2addr v2, v3
 
-    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->width:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 1156
     iget-object v2, p0, Lcom/android/camera/component/PanoramaUI;->m_Thumbs:[Landroid/widget/ImageView;
@@ -2069,7 +2069,7 @@
 
     add-int/2addr v2, v3
 
-    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->height:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 1157
     iget-object v2, p0, Lcom/android/camera/component/PanoramaUI;->m_ThumbBar:Landroid/view/View;
@@ -2337,7 +2337,7 @@
     if-eq v3, p1, :cond_1
 
     .line 1259
-    iget-object v3, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -2413,7 +2413,7 @@
     if-eqz v3, :cond_2
 
     .line 1278
-    iget-object v3, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "Camera is paused or idle, stop capturing panorama picture"
 
@@ -2939,7 +2939,7 @@
 
     .line 1459
     :cond_4
-    iget-object v1, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "Camera is paused or idle, will not show processing dialog"
 
@@ -3461,10 +3461,10 @@
 
     .line 1698
     :pswitch_0
-    iput v6, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
+    iput v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     .line 1699
-    iput v4, v0, Landroid/widget/RelativeLayout$LayoutParams;->rightMargin:I
+    iput v4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     .line 1700
     invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
@@ -3478,10 +3478,10 @@
 
     .line 1707
     :pswitch_1
-    iput v6, v0, Landroid/widget/RelativeLayout$LayoutParams;->bottomMargin:I
+    iput v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     .line 1708
-    iput v4, v0, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
+    iput v4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     .line 1709
     const/16 v2, 0xc
@@ -3816,7 +3816,7 @@
     :goto_1
     mul-int v2, p1, v1
 
-    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
+    iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     .line 1857
     iget-object v2, p0, Lcom/android/camera/component/PanoramaUI;->m_ThumbnailHighlightFrame:Landroid/view/View;
@@ -4083,7 +4083,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     .line 1928
-    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->width:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     goto :goto_1
 
@@ -4094,7 +4094,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     .line 1932
-    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->width:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     goto :goto_1
 
@@ -4105,7 +4105,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     .line 1936
-    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->height:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     goto :goto_1
 
@@ -4116,7 +4116,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     .line 1940
-    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->height:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     goto :goto_1
 
@@ -4240,7 +4240,7 @@
     const/4 v3, 0x1
 
     .line 568
-    iget-object v1, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "enterPanoramaMode() - start"
 
@@ -4293,14 +4293,14 @@
     iput-boolean v4, p0, Lcom/android/camera/component/PanoramaUI;->m_IsRestartingPreviewNeeded:Z
 
     .line 586
-    iget-object v1, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "Waiting for re-starting preview"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 587
-    iget-object v1, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "enterPanoramaMode() - end"
 
@@ -4312,7 +4312,7 @@
 
     .line 579
     :cond_1
-    iget-object v1, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "Cannot link to panorama controller"
 
@@ -4362,7 +4362,7 @@
     invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->disableSelfTimer()V
 
     .line 612
-    iget-object v1, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "enterPanoramaMode() - end"
 
@@ -4378,7 +4378,7 @@
     const/4 v3, 0x0
 
     .line 620
-    iget-object v1, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "exitPanoramaMode() - start"
 
@@ -4390,7 +4390,7 @@
     if-nez v1, :cond_0
 
     .line 625
-    iget-object v1, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "Re-exit panorama mode"
 
@@ -4505,7 +4505,7 @@
     invoke-virtual {p0}, Lcom/android/camera/component/PanoramaUI;->collapseContentLayout()V
 
     .line 678
-    iget-object v1, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "exitPanoramaMode() - end"
 
@@ -4515,7 +4515,7 @@
 
     .line 665
     :cond_5
-    iget-object v1, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "Cannot exit panorama mode because there is no panorama controller"
 
@@ -4938,7 +4938,7 @@
 
     .prologue
     .line 1554
-    iget-object v4, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -5058,7 +5058,7 @@
 
     .prologue
     .line 1585
-    iget-object v1, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -5163,7 +5163,7 @@
 
     .line 1806
     :cond_1
-    iget-object v0, p0, Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Cannot stop capturing because there is no panorama controller"
 

@@ -40,7 +40,7 @@
 
     iput-wide p4, p0, Lcom/htc/util/contacts/ContactsUtility$3;->val$lContactId:J
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -139,13 +139,6 @@
     .local v6, c:Landroid/database/Cursor;
     if-nez v6, :cond_0
 
-    .line 1522
-    const-string v0, "ContactsUtility"
-
-    const-string v1, "importToMyContact null == c return;"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1540
     :goto_0
     return-void
@@ -154,49 +147,15 @@
     :cond_0
     if-eqz v6, :cond_2
 
-    .line 1527
-    :try_start_0
-    const-string v0, "ContactsUtility"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "importToMyContact c.getCount(): "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-interface {v6}, Landroid/database/Cursor;->getCount()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1528
+    :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->getCount()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v0
 
     if-gtz v0, :cond_1
-
-    .line 1529
-    const-string v0, "ContactsUtility"
-
-    const-string v1, "importToMyContact 0 >= c.getCount() return;"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1533
     invoke-interface {v6}, Landroid/database/Cursor;->close()V

@@ -39,7 +39,7 @@
     .line 3172
     iput-object p1, p0, Lcom/htc/view/table/AbstractTableView$SelectionPadding;->this$0:Lcom/htc/view/table/AbstractTableView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 3173
     iput-boolean v0, p0, Lcom/htc/view/table/AbstractTableView$SelectionPadding;->lock:Z

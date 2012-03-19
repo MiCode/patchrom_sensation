@@ -159,7 +159,7 @@
     const/4 v1, 0x0
 
     .line 130
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 131
     sget-object v0, Lcom/htc/net/FourG/FourGInfo$LINK_STATE_REASON;->LINK_ST_REASON_FAILURE_UNKNOWN_CAUSE:Lcom/htc/net/FourG/FourGInfo$LINK_STATE_REASON;
@@ -206,7 +206,7 @@
 
     .prologue
     .line 430
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 431
     invoke-virtual {p0, p1}, Lcom/htc/net/FourG/FourGInfo;->readFromParcel(Landroid/os/Parcel;)V
@@ -223,7 +223,7 @@
     const/4 v1, 0x0
 
     .line 117
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 118
     iput-object p1, p0, Lcom/htc/net/FourG/FourGInfo;->linkStateReason:Lcom/htc/net/FourG/FourGInfo$LINK_STATE_REASON;

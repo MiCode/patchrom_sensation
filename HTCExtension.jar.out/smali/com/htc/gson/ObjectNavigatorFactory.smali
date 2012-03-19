@@ -17,7 +17,7 @@
 
     .prologue
     .line 41
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 42
     invoke-static {p2}, Lcom/htc/gson/Preconditions;->checkNotNull(Ljava/lang/Object;)V

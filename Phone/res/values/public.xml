@@ -553,8 +553,8 @@
     <public type="id" name="puk_code" id="0x7f080075" />
     <public type="id" name="puk_submit" id="0x7f080076" />
     <public type="id" name="btn" id="0x7f080077" />
-    <public type="id" name="cmd_bar_btn_1" id="0x7f080078" />
-    <public type="id" name="cmd_bar_btn_2" id="0x7f080079" />
+    <public type="id" name="cmd_bar_btn_2" id="0x7f080078" />
+    <public type="id" name="cmd_bar_btn_1" id="0x7f080079" />
     <public type="id" name="alertingLayout" id="0x7f08007a" />
     <public type="id" name="handle" id="0x7f08007b" />
     <public type="id" name="endSkypeResumeCS" id="0x7f08007c" />
@@ -571,8 +571,8 @@
     <public type="id" name="fdn_name" id="0x7f080087" />
     <public type="id" name="fdn_number" id="0x7f080088" />
     <public type="id" name="footer" id="0x7f080089" />
-    <public type="id" name="button1" id="0x7f08008a" />
-    <public type="id" name="button2" id="0x7f08008b" />
+    <public type="id" name="button2" id="0x7f08008a" />
+    <public type="id" name="button1" id="0x7f08008b" />
     <public type="id" name="mcc_mnc_text" id="0x7f08008c" />
     <public type="id" name="editor" id="0x7f08008d" />
     <public type="id" name="keypad" id="0x7f08008e" />

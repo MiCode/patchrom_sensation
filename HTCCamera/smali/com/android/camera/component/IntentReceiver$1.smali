@@ -46,7 +46,7 @@
     .line 34
     iget-object v0, p0, Lcom/android/camera/component/IntentReceiver$1;->this$0:Lcom/android/camera/component/IntentReceiver;
 
-    #getter for: Lcom/android/camera/component/IntentReceiver;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/IntentReceiver;->access$000(Lcom/android/camera/component/IntentReceiver;)Ljava/lang/String;
 
     move-result-object v0
@@ -88,7 +88,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/camera/component/IntentReceiver$1;->this$0:Lcom/android/camera/component/IntentReceiver;
 
-    #getter for: Lcom/android/camera/component/IntentReceiver;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/IntentReceiver;->access$100(Lcom/android/camera/component/IntentReceiver;)Ljava/lang/String;
 
     move-result-object v0

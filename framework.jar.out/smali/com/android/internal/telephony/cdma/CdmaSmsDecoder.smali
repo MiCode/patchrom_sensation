@@ -1131,7 +1131,7 @@
     const/4 v1, 0x0
 
     .line 559
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 50
     iput v1, p0, Lcom/android/internal/telephony/cdma/CdmaSmsDecoder;->BODY_EMPTY:I
@@ -8663,12 +8663,12 @@
 
     invoke-direct {v1, v2}, Ljava/lang/String;-><init>([B)V
 
-    iput-object v1, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->address:Ljava/lang/String;
+    iput-object v1, v0, Lcom/android/internal/telephony/SmsAddress;->address:Ljava/lang/String;
 
     .line 2446
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaSmsDecoder;->TransportParam_destAddr:[B
 
-    iput-object v1, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iput-object v1, v0, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     goto :goto_0
 .end method
@@ -8872,12 +8872,12 @@
 
     invoke-direct {v1, v2}, Ljava/lang/String;-><init>([B)V
 
-    iput-object v1, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->address:Ljava/lang/String;
+    iput-object v1, v0, Lcom/android/internal/telephony/SmsAddress;->address:Ljava/lang/String;
 
     .line 2399
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaSmsDecoder;->TransportParam_fromAddr:[B
 
-    iput-object v1, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iput-object v1, v0, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     .line 2401
     iget-byte v1, p0, Lcom/android/internal/telephony/cdma/CdmaSmsDecoder;->TransportParam_fromAddrDigitMode:B
@@ -8896,7 +8896,7 @@
 
     move-result v1
 
-    iput v1, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->ton:I
+    iput v1, v0, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
     .line 2404
     iget-byte v1, p0, Lcom/android/internal/telephony/cdma/CdmaSmsDecoder;->TransportParam_fromAddrPlan:B

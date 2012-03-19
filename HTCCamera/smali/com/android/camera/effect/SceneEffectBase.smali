@@ -148,7 +148,7 @@
 
     .line 37
     :cond_0
-    iget-object v0, p0, Lcom/android/camera/effect/SceneEffectBase;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Cannot find scene controller"
 
@@ -203,7 +203,7 @@
     if-nez v2, :cond_4
 
     .line 70
-    iget-object v3, p0, Lcom/android/camera/effect/SceneEffectBase;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "Cannot get scene supported list"
 

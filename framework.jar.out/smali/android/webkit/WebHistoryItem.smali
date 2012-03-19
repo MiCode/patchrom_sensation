@@ -48,7 +48,7 @@
 
     .prologue
     .line 58
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 59
     const-class v1, Landroid/webkit/WebHistoryItem;
@@ -88,7 +88,7 @@
 
     .prologue
     .line 80
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 81
     iget-object v0, p1, Landroid/webkit/WebHistoryItem;->mUrl:Ljava/lang/String;
@@ -125,7 +125,7 @@
 
     .prologue
     .line 68
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 69
     const/4 v0, 0x0

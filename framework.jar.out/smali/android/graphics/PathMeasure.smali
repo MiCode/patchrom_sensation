@@ -21,7 +21,7 @@
     const/4 v0, 0x0
 
     .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 31
     invoke-static {v0, v0}, Landroid/graphics/PathMeasure;->native_create(IZ)I
@@ -41,7 +41,7 @@
 
     .prologue
     .line 48
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 51
     if-eqz p1, :cond_0

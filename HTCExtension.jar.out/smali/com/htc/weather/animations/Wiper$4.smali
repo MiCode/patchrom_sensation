@@ -47,7 +47,7 @@
 
     iget-object v1, p0, Lcom/htc/weather/animations/Wiper$4;->this$0:Lcom/htc/weather/animations/Wiper;
 
-    iget-object v1, v1, Lcom/htc/weather/animations/Wiper;->mContext:Landroid/content/Context;
+    iget-object v1, v1, Lcom/htc/weather/animations/WeatherAnimationData;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
@@ -67,7 +67,7 @@
     .line 300
     iget-object v1, p0, Lcom/htc/weather/animations/Wiper$4;->this$0:Lcom/htc/weather/animations/Wiper;
 
-    iget-object v1, v1, Lcom/htc/weather/animations/Wiper;->mContext:Landroid/content/Context;
+    iget-object v1, v1, Lcom/htc/weather/animations/WeatherAnimationData;->mContext:Landroid/content/Context;
 
     const v2, 0x2080663
 
@@ -110,7 +110,7 @@
 
     iget-object v5, p0, Lcom/htc/weather/animations/Wiper$4;->this$0:Lcom/htc/weather/animations/Wiper;
 
-    iget v5, v5, Lcom/htc/weather/animations/Wiper;->alpha_:F
+    iget v5, v5, Lcom/htc/weather/animations/WeatherAnimationData;->alpha_:F
 
     mul-float/2addr v5, v7
 
@@ -120,7 +120,7 @@
 
     iget-object v6, p0, Lcom/htc/weather/animations/Wiper$4;->this$0:Lcom/htc/weather/animations/Wiper;
 
-    iget v6, v6, Lcom/htc/weather/animations/Wiper;->alpha_:F
+    iget v6, v6, Lcom/htc/weather/animations/WeatherAnimationData;->alpha_:F
 
     mul-float/2addr v6, v9
 
@@ -130,7 +130,7 @@
 
     iget-object v6, p0, Lcom/htc/weather/animations/Wiper$4;->this$0:Lcom/htc/weather/animations/Wiper;
 
-    iget v6, v6, Lcom/htc/weather/animations/Wiper;->alpha_:F
+    iget v6, v6, Lcom/htc/weather/animations/WeatherAnimationData;->alpha_:F
 
     mul-float/2addr v6, v9
 
@@ -140,7 +140,7 @@
 
     iget-object v6, p0, Lcom/htc/weather/animations/Wiper$4;->this$0:Lcom/htc/weather/animations/Wiper;
 
-    iget v6, v6, Lcom/htc/weather/animations/Wiper;->alpha_:F
+    iget v6, v6, Lcom/htc/weather/animations/WeatherAnimationData;->alpha_:F
 
     mul-float/2addr v6, v8
 
@@ -150,7 +150,7 @@
 
     iget-object v6, p0, Lcom/htc/weather/animations/Wiper$4;->this$0:Lcom/htc/weather/animations/Wiper;
 
-    iget v6, v6, Lcom/htc/weather/animations/Wiper;->alpha_:F
+    iget v6, v6, Lcom/htc/weather/animations/WeatherAnimationData;->alpha_:F
 
     mul-float/2addr v6, v8
 
@@ -166,7 +166,7 @@
 
     iget-object v5, p0, Lcom/htc/weather/animations/Wiper$4;->this$0:Lcom/htc/weather/animations/Wiper;
 
-    iget v5, v5, Lcom/htc/weather/animations/Wiper;->alpha_:F
+    iget v5, v5, Lcom/htc/weather/animations/WeatherAnimationData;->alpha_:F
 
     mul-float/2addr v5, v9
 
@@ -176,7 +176,7 @@
 
     iget-object v6, p0, Lcom/htc/weather/animations/Wiper$4;->this$0:Lcom/htc/weather/animations/Wiper;
 
-    iget v6, v6, Lcom/htc/weather/animations/Wiper;->alpha_:F
+    iget v6, v6, Lcom/htc/weather/animations/WeatherAnimationData;->alpha_:F
 
     mul-float/2addr v6, v9
 
@@ -186,7 +186,7 @@
 
     iget-object v6, p0, Lcom/htc/weather/animations/Wiper$4;->this$0:Lcom/htc/weather/animations/Wiper;
 
-    iget v6, v6, Lcom/htc/weather/animations/Wiper;->alpha_:F
+    iget v6, v6, Lcom/htc/weather/animations/WeatherAnimationData;->alpha_:F
 
     mul-float/2addr v6, v8
 
@@ -196,7 +196,7 @@
 
     iget-object v6, p0, Lcom/htc/weather/animations/Wiper$4;->this$0:Lcom/htc/weather/animations/Wiper;
 
-    iget v6, v6, Lcom/htc/weather/animations/Wiper;->alpha_:F
+    iget v6, v6, Lcom/htc/weather/animations/WeatherAnimationData;->alpha_:F
 
     mul-float/2addr v6, v8
 
@@ -272,7 +272,7 @@
 
     iget-object v2, p0, Lcom/htc/weather/animations/Wiper$4;->this$0:Lcom/htc/weather/animations/Wiper;
 
-    iget-wide v6, v2, Lcom/htc/weather/animations/Wiper;->delay_:J
+    iget-wide v6, v2, Lcom/htc/weather/animations/WeatherAnimationData;->delay_:J
 
     const-wide/16 v9, 0x21
 

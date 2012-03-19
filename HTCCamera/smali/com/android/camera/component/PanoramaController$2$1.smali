@@ -40,7 +40,7 @@
 
     iput-object p3, p0, Lcom/android/camera/component/PanoramaController$2$1;->val$activity:Lcom/android/camera/HTCCamera;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -61,7 +61,7 @@
 
     iget-object v1, v1, Lcom/android/camera/component/PanoramaController$2;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/PanoramaController;->access$700(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v1
@@ -178,7 +178,7 @@
 
     iget-object v1, v1, Lcom/android/camera/component/PanoramaController$2;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/PanoramaController;->access$800(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v1

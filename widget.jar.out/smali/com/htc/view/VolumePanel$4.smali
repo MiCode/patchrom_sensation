@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 724
+    .line 729
     iput-object p1, p0, Lcom/htc/view/VolumePanel$4;->this$0:Lcom/htc/view/VolumePanel;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,12 +42,12 @@
     .prologue
     const/4 v3, 0x6
 
-    .line 727
+    .line 732
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 729
+    .line 734
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.media.RINGER_MODE_CHANGED"
 
@@ -57,12 +57,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 730
+    .line 735
     iget-object v1, p0, Lcom/htc/view/VolumePanel$4;->this$0:Lcom/htc/view/VolumePanel;
 
     invoke-virtual {v1, v3}, Lcom/htc/view/VolumePanel;->removeMessages(I)V
 
-    .line 731
+    .line 736
     iget-object v1, p0, Lcom/htc/view/VolumePanel$4;->this$0:Lcom/htc/view/VolumePanel;
 
     iget-object v2, p0, Lcom/htc/view/VolumePanel$4;->this$0:Lcom/htc/view/VolumePanel;
@@ -73,7 +73,7 @@
 
     invoke-virtual {v1, v2}, Lcom/htc/view/VolumePanel;->sendMessage(Landroid/os/Message;)Z
 
-    .line 733
+    .line 738
     :cond_0
     return-void
 .end method

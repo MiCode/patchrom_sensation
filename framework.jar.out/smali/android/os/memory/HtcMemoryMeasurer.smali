@@ -13,7 +13,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z
 
 .field private static final TAG:Ljava/lang/String;
 
@@ -53,7 +53,7 @@
 
     .prologue
     .line 183
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 169
     new-instance v0, Landroid/os/memory/HtcMemoryMeasurer$1;
@@ -188,12 +188,12 @@
 
     add-long/2addr v4, v6
 
-    iput-wide v4, v2, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->availMem:J
+    iput-wide v4, v2, Landroid/app/ActivityManager$MemoryInfo;->availMem:J
 
     .line 221
     iget-wide v4, v2, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->totalMem:J
 
-    iget-wide v6, v2, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->availMem:J
+    iget-wide v6, v2, Landroid/app/ActivityManager$MemoryInfo;->availMem:J
 
     sub-long/2addr v4, v6
 
@@ -218,29 +218,10 @@
     .local v3, memInfo:Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;
     move-object v2, v3
 
-    .line 230
+    .line 235
     .end local v3           #memInfo:Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;
     .restart local v2       #memInfo:Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;
     :cond_0
-    const-string v4, "Before counting the background process memory in:"
-
-    invoke-static {v4}, Landroid/os/memory/HtcMemoryMeasurer;->Log(Ljava/lang/String;)V
-
-    .line 231
-    invoke-virtual {v2}, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Landroid/os/memory/HtcMemoryMeasurer;->Log(Ljava/lang/String;)V
-
-    .line 232
-    invoke-virtual {v2, v0}, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->toString(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Landroid/os/memory/HtcMemoryMeasurer;->Log(Ljava/lang/String;)V
-
-    .line 235
     iget-object v4, p0, Landroid/os/memory/HtcMemoryMeasurer;->mState:Landroid/os/memory/RunningState;
 
     iget-object v5, v4, Landroid/os/memory/RunningState;->mLock:Ljava/lang/Object;
@@ -249,16 +230,16 @@
 
     .line 239
     :try_start_0
-    iget-wide v6, v2, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->availMem:J
+    iget-wide v6, v2, Landroid/app/ActivityManager$MemoryInfo;->availMem:J
 
-    iget-wide v8, v2, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->secondaryServerThreshold:J
+    iget-wide v8, v2, Landroid/app/ActivityManager$MemoryInfo;->secondaryServerThreshold:J
 
     sub-long/2addr v6, v8
 
-    iput-wide v6, v2, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->availMem:J
+    iput-wide v6, v2, Landroid/app/ActivityManager$MemoryInfo;->availMem:J
 
     .line 241
-    iget-wide v6, v2, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->availMem:J
+    iget-wide v6, v2, Landroid/app/ActivityManager$MemoryInfo;->availMem:J
 
     cmp-long v4, v6, v10
 
@@ -267,11 +248,11 @@
     .line 242
     const-wide/16 v6, 0x0
 
-    iput-wide v6, v2, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->availMem:J
+    iput-wide v6, v2, Landroid/app/ActivityManager$MemoryInfo;->availMem:J
 
     .line 244
     :cond_1
-    iget-wide v6, v2, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->availMem:J
+    iget-wide v6, v2, Landroid/app/ActivityManager$MemoryInfo;->availMem:J
 
     iget-object v4, p0, Landroid/os/memory/HtcMemoryMeasurer;->mState:Landroid/os/memory/RunningState;
 
@@ -279,165 +260,21 @@
 
     add-long/2addr v6, v8
 
-    iput-wide v6, v2, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->availMem:J
+    iput-wide v6, v2, Landroid/app/ActivityManager$MemoryInfo;->availMem:J
 
     .line 245
     iget-wide v6, v2, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->totalMem:J
 
-    iget-wide v8, v2, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->availMem:J
+    iget-wide v8, v2, Landroid/app/ActivityManager$MemoryInfo;->availMem:J
 
     sub-long/2addr v6, v8
 
     iput-wide v6, v2, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->usedMem:J
 
-    .line 248
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "mState.mForegroundProcessMemory: "
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v6, p0, Landroid/os/memory/HtcMemoryMeasurer;->mState:Landroid/os/memory/RunningState;
-
-    iget-wide v6, v6, Landroid/os/memory/RunningState;->mForegroundProcessMemory:J
-
-    invoke-virtual {v4, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Landroid/os/memory/HtcMemoryMeasurer;->Log(Ljava/lang/String;)V
-
-    .line 250
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "mState.mBackgroundProcessMemory: "
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v6, p0, Landroid/os/memory/HtcMemoryMeasurer;->mState:Landroid/os/memory/RunningState;
-
-    iget-wide v6, v6, Landroid/os/memory/RunningState;->mBackgroundProcessMemory:J
-
-    invoke-virtual {v4, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Landroid/os/memory/HtcMemoryMeasurer;->Log(Ljava/lang/String;)V
-
-    .line 252
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "mState.mNumBackgroundProcesses: "
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v6, p0, Landroid/os/memory/HtcMemoryMeasurer;->mState:Landroid/os/memory/RunningState;
-
-    iget v6, v6, Landroid/os/memory/RunningState;->mNumBackgroundProcesses:I
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Landroid/os/memory/HtcMemoryMeasurer;->Log(Ljava/lang/String;)V
-
-    .line 254
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "mState.mNumForegroundProcesses: "
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v6, p0, Landroid/os/memory/HtcMemoryMeasurer;->mState:Landroid/os/memory/RunningState;
-
-    iget v6, v6, Landroid/os/memory/RunningState;->mNumForegroundProcesses:I
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Landroid/os/memory/HtcMemoryMeasurer;->Log(Ljava/lang/String;)V
-
-    .line 256
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "mState.mNumServiceProcesses: "
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v6, p0, Landroid/os/memory/HtcMemoryMeasurer;->mState:Landroid/os/memory/RunningState;
-
-    iget v6, v6, Landroid/os/memory/RunningState;->mNumServiceProcesses:I
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Landroid/os/memory/HtcMemoryMeasurer;->Log(Ljava/lang/String;)V
-
     .line 259
     monitor-exit v5
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 262
-    const-string v4, "After counting the background process memory in:"
-
-    invoke-static {v4}, Landroid/os/memory/HtcMemoryMeasurer;->Log(Ljava/lang/String;)V
-
-    .line 263
-    invoke-virtual {v2}, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Landroid/os/memory/HtcMemoryMeasurer;->Log(Ljava/lang/String;)V
-
-    .line 264
-    invoke-virtual {v2, v0}, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->toString(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Landroid/os/memory/HtcMemoryMeasurer;->Log(Ljava/lang/String;)V
 
     .line 267
     iget-object v4, p0, Landroid/os/memory/HtcMemoryMeasurer;->mMeasurementListener:Landroid/os/memory/HtcMemoryMeasurer$MeasurementListener;

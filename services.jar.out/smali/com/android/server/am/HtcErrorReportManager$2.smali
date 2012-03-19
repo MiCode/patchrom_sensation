@@ -139,7 +139,7 @@
     invoke-direct {v15, v4}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_6
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_4
 
     .line 233
     .end local v14           #fos:Ljava/io/FileOutputStream;
@@ -165,7 +165,7 @@
     invoke-direct {v13, v0}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 237
     .end local v12           #fileWriter:Ljava/io/OutputStreamWriter;
@@ -753,7 +753,7 @@
     aput-object v13, v8, v2
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_5
 
     .line 291
     :try_start_3
@@ -775,8 +775,8 @@
     invoke-virtual {v13}, Ljava/io/OutputStreamWriter;->flush()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_3 .. :try_end_3} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_3 .. :try_end_3} :catch_7
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_5
 
     .line 300
     .end local v8           #arguList:[Ljava/lang/Object;
@@ -791,7 +791,7 @@
     invoke-virtual {v13}, Ljava/io/OutputStreamWriter;->close()V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_5
 
     .line 302
     const/4 v12, 0x0
@@ -833,7 +833,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_e
 
     .line 311
     move-object/from16 v0, p0
@@ -846,16 +846,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_c
 
     invoke-static {}, Landroid/os/Process;->isDumpStateExist()Z
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
 
     move-result v2
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_c
 
     .line 329
     if-eqz v12, :cond_8
@@ -877,7 +877,7 @@
     .line 332
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
     :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_7
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_6
 
     :cond_9
     :goto_3
@@ -908,99 +908,13 @@
 
     goto/16 :goto_0
 
-    .line 294
-    .restart local v8       #arguList:[Ljava/lang/Object;
-    .restart local v9       #arguTypes:[Ljava/lang/Class;,"[Ljava/lang/Class<*>;"
-    .restart local v10       #c:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
-    :catch_0
-    move-exception v11
-
-    .line 296
-    .local v11, e:Ljava/lang/NoSuchMethodException;
-    :try_start_7
-    const-string v2, "ActivityManager"
-
-    const-string v3, "Can\'t get method from HtcFeedback"
-
-    invoke-static {v2, v3, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_2
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_1
-
-    goto :goto_1
-
-    .line 325
-    .end local v8           #arguList:[Ljava/lang/Object;
-    .end local v9           #arguTypes:[Ljava/lang/Class;,"[Ljava/lang/Class<*>;"
-    .end local v10           #c:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
-    .end local v11           #e:Ljava/lang/NoSuchMethodException;
-    .end local v16           #lines:I
-    .end local v19           #setting:Ljava/lang/String;
-    :catch_1
-    move-exception v11
-
-    move-object v14, v15
-
-    .end local v15           #fos:Ljava/io/FileOutputStream;
-    .restart local v14       #fos:Ljava/io/FileOutputStream;
-    move-object v12, v13
-
-    .line 326
-    .end local v13           #fileWriter:Ljava/io/OutputStreamWriter;
-    .end local v18           #os:Ljava/io/OutputStream;
-    .local v11, e:Ljava/lang/Exception;
-    .restart local v12       #fileWriter:Ljava/io/OutputStreamWriter;
-    :goto_5
-    :try_start_8
-    const-string v2, "ActivityManager"
-
-    const-string v3, "Error in dumping error information"
-
-    invoke-static {v2, v3, v11}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_1
-
-    .line 329
-    if-eqz v12, :cond_c
-
-    .line 330
-    :try_start_9
-    invoke-virtual {v12}, Ljava/io/OutputStreamWriter;->close()V
-
-    .line 331
-    :cond_c
-    if-eqz v4, :cond_a
-
-    invoke-virtual {v4}, Ljava/io/File;->exists()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_a
-
-    .line 332
-    invoke-virtual {v4}, Ljava/io/File;->delete()Z
-    :try_end_9
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_2
-
-    goto :goto_4
-
-    .line 333
-    :catch_2
-    move-exception v2
-
-    goto :goto_4
-
     .line 314
-    .end local v11           #e:Ljava/lang/Exception;
-    .end local v14           #fos:Ljava/io/FileOutputStream;
+    .end local v13           #fileWriter:Ljava/io/OutputStreamWriter;
     .restart local v6       #entryStartTime:J
     .restart local v10       #c:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
-    .restart local v15       #fos:Ljava/io/FileOutputStream;
-    .restart local v16       #lines:I
-    .restart local v18       #os:Ljava/io/OutputStream;
-    .restart local v19       #setting:Ljava/lang/String;
-    :cond_d
-    :try_start_a
+    .restart local v12       #fileWriter:Ljava/io/OutputStreamWriter;
+    :cond_c
+    :try_start_7
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/am/HtcErrorReportManager$2;->val$eventType:Ljava/lang/String;
@@ -1011,16 +925,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_d
 
     invoke-static {}, Landroid/os/Debug;->isDebuggerConnected()Z
 
     move-result v2
 
-    if-nez v2, :cond_f
+    if-nez v2, :cond_e
 
     .line 315
-    :cond_e
+    :cond_d
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/am/HtcErrorReportManager$2;->val$crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
@@ -1034,7 +948,7 @@
 
     iget-object v2, v2, Landroid/app/ApplicationErrorReport$CrashInfo;->hprofFileName:Ljava/lang/String;
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_11
 
     .line 317
     move-object/from16 v0, p0
@@ -1111,35 +1025,35 @@
 
     #calls: Lcom/android/server/am/HtcErrorReportManager;->createLogEntry(Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {v2, v3, v5}, Lcom/android/server/am/HtcErrorReportManager;->access$400(Lcom/android/server/am/HtcErrorReportManager;Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_a
-    .catchall {:try_start_a .. :try_end_a} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_3
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_0
 
     .line 329
-    :cond_f
-    :goto_6
-    if-eqz v12, :cond_10
+    :cond_e
+    :goto_5
+    if-eqz v12, :cond_f
 
     .line 330
-    :try_start_b
+    :try_start_8
     invoke-virtual {v12}, Ljava/io/OutputStreamWriter;->close()V
 
     .line 331
-    :cond_10
-    if-eqz v4, :cond_11
+    :cond_f
+    if-eqz v4, :cond_10
 
     invoke-virtual {v4}, Ljava/io/File;->exists()Z
 
     move-result v2
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_10
 
     .line 332
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
-    :try_end_b
-    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_b} :catch_4
+    :try_end_8
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_2
 
-    :cond_11
+    :cond_10
     move-object v14, v15
 
     .line 334
@@ -1150,8 +1064,8 @@
     .line 319
     .end local v14           #fos:Ljava/io/FileOutputStream;
     .restart local v15       #fos:Ljava/io/FileOutputStream;
-    :cond_12
-    :try_start_c
+    :cond_11
+    :try_start_9
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/am/HtcErrorReportManager$2;->this$0:Lcom/android/server/am/HtcErrorReportManager;
@@ -1200,31 +1114,78 @@
 
     #calls: Lcom/android/server/am/HtcErrorReportManager;->createLogEntry(Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {v2, v3, v5}, Lcom/android/server/am/HtcErrorReportManager;->access$400(Lcom/android/server/am/HtcErrorReportManager;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_0
 
-    goto :goto_6
+    goto :goto_5
 
     .line 325
     .end local v6           #entryStartTime:J
     .end local v10           #c:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     .end local v16           #lines:I
     .end local v19           #setting:Ljava/lang/String;
-    :catch_3
+    :catch_0
     move-exception v11
 
     move-object v14, v15
 
+    .line 326
     .end local v15           #fos:Ljava/io/FileOutputStream;
+    .end local v18           #os:Ljava/io/OutputStream;
+    .local v11, e:Ljava/lang/Exception;
     .restart local v14       #fos:Ljava/io/FileOutputStream;
-    goto/16 :goto_5
+    :goto_6
+    :try_start_a
+    const-string v2, "ActivityManager"
+
+    const-string v3, "Error in dumping error information"
+
+    invoke-static {v2, v3, v11}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_1
+
+    .line 329
+    if-eqz v12, :cond_12
+
+    .line 330
+    :try_start_b
+    invoke-virtual {v12}, Ljava/io/OutputStreamWriter;->close()V
+
+    .line 331
+    :cond_12
+    if-eqz v4, :cond_a
+
+    invoke-virtual {v4}, Ljava/io/File;->exists()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_a
+
+    .line 332
+    invoke-virtual {v4}, Ljava/io/File;->delete()Z
+    :try_end_b
+    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_b} :catch_1
+
+    goto/16 :goto_4
+
+    .line 333
+    :catch_1
+    move-exception v2
+
+    goto/16 :goto_4
 
     .line 322
+    .end local v11           #e:Ljava/lang/Exception;
     .end local v14           #fos:Ljava/io/FileOutputStream;
     .restart local v6       #entryStartTime:J
     .restart local v10       #c:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     .restart local v15       #fos:Ljava/io/FileOutputStream;
     .restart local v16       #lines:I
+    .restart local v18       #os:Ljava/io/OutputStream;
     .restart local v19       #setting:Ljava/lang/String;
     :cond_13
+    :try_start_c
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/am/HtcErrorReportManager$2;->this$0:Lcom/android/server/am/HtcErrorReportManager;
@@ -1275,9 +1236,9 @@
     invoke-static {v2, v3, v5}, Lcom/android/server/am/HtcErrorReportManager;->access$400(Lcom/android/server/am/HtcErrorReportManager;Ljava/lang/String;Ljava/lang/String;)V
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_0
 
-    goto :goto_6
+    goto/16 :goto_5
 
     .line 328
     .end local v6           #entryStartTime:J
@@ -1313,7 +1274,7 @@
     .line 332
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
     :try_end_d
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_d} :catch_5
+    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_d} :catch_3
 
     .line 334
     :cond_15
@@ -1328,7 +1289,7 @@
     .restart local v16       #lines:I
     .restart local v18       #os:Ljava/io/OutputStream;
     .restart local v19       #setting:Ljava/lang/String;
-    :catch_4
+    :catch_2
     move-exception v2
 
     move-object v14, v15
@@ -1344,7 +1305,7 @@
     .end local v16           #lines:I
     .end local v18           #os:Ljava/io/OutputStream;
     .end local v19           #setting:Ljava/lang/String;
-    :catch_5
+    :catch_3
     move-exception v3
 
     goto :goto_8
@@ -1375,10 +1336,28 @@
 
     .line 325
     .end local v18           #os:Ljava/io/OutputStream;
-    :catch_6
+    :catch_4
     move-exception v11
 
-    goto/16 :goto_5
+    goto :goto_6
+
+    .end local v12           #fileWriter:Ljava/io/OutputStreamWriter;
+    .end local v14           #fos:Ljava/io/FileOutputStream;
+    .restart local v13       #fileWriter:Ljava/io/OutputStreamWriter;
+    .restart local v15       #fos:Ljava/io/FileOutputStream;
+    .restart local v18       #os:Ljava/io/OutputStream;
+    :catch_5
+    move-exception v11
+
+    move-object v14, v15
+
+    .end local v15           #fos:Ljava/io/FileOutputStream;
+    .restart local v14       #fos:Ljava/io/FileOutputStream;
+    move-object v12, v13
+
+    .end local v13           #fileWriter:Ljava/io/OutputStreamWriter;
+    .restart local v12       #fileWriter:Ljava/io/OutputStreamWriter;
+    goto :goto_6
 
     .line 333
     .end local v14           #fos:Ljava/io/FileOutputStream;
@@ -1386,16 +1365,25 @@
     .restart local v10       #c:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     .restart local v15       #fos:Ljava/io/FileOutputStream;
     .restart local v16       #lines:I
-    .restart local v18       #os:Ljava/io/OutputStream;
     .restart local v19       #setting:Ljava/lang/String;
-    :catch_7
+    :catch_6
     move-exception v2
 
     goto/16 :goto_3
 
+    .line 294
     .end local v6           #entryStartTime:J
     .end local v12           #fileWriter:Ljava/io/OutputStreamWriter;
+    .restart local v8       #arguList:[Ljava/lang/Object;
+    .restart local v9       #arguTypes:[Ljava/lang/Class;,"[Ljava/lang/Class<*>;"
     .restart local v13       #fileWriter:Ljava/io/OutputStreamWriter;
+    :catch_7
+    move-exception v2
+
+    goto/16 :goto_1
+
+    .end local v8           #arguList:[Ljava/lang/Object;
+    .end local v9           #arguTypes:[Ljava/lang/Class;,"[Ljava/lang/Class<*>;"
     :cond_16
     move-object v12, v13
 

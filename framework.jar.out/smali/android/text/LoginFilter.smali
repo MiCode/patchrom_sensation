@@ -26,7 +26,7 @@
 
     .prologue
     .line 36
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 37
     const/4 v0, 0x0
@@ -43,7 +43,7 @@
 
     .prologue
     .line 29
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
     iput-boolean p1, p0, Landroid/text/LoginFilter;->mAppendInvalid:Z

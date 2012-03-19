@@ -58,7 +58,7 @@
     if-nez v2, :cond_0
 
     .line 4460
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideo;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmMedia;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0}, Lcom/htc/opensense/album/util/ImageManager$DrmVideo;->fullSizeImageUri()Landroid/net/Uri;
 
@@ -287,7 +287,7 @@
     if-eqz v2, :cond_1
 
     .line 4433
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideo;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v2, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;
 
@@ -359,7 +359,7 @@
     if-eqz v2, :cond_1
 
     .line 4421
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideo;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v2, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;
 
@@ -431,7 +431,7 @@
     if-eqz v2, :cond_1
 
     .line 4396
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideo;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v2, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;
 
@@ -468,7 +468,7 @@
 
     .prologue
     .line 4443
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideo;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v1, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;
 
@@ -511,7 +511,7 @@
     invoke-interface {v0, v1}, Landroid/database/Cursor;->moveToPosition(I)Z
 
     .line 4448
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideo;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v1, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;
 
@@ -578,7 +578,7 @@
     if-eqz v2, :cond_1
 
     .line 4384
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideo;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v2, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;
 
@@ -650,7 +650,7 @@
     if-eqz v2, :cond_1
 
     .line 4408
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideo;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->indexMimeType()I
 

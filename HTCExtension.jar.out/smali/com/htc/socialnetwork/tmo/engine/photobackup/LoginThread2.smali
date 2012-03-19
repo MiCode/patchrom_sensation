@@ -157,12 +157,12 @@
     .line 62
     iget-object v5, p0, Lcom/htc/socialnetwork/tmo/engine/photobackup/LoginThread2;->mHttpGet:Lorg/apache/http/client/methods/HttpGet;
 
-    iput-object v5, p0, Lcom/htc/socialnetwork/tmo/engine/photobackup/LoginThread2;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
+    iput-object v5, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
 
     .line 63
     const/4 v5, 0x0
 
-    iput-boolean v5, p0, Lcom/htc/socialnetwork/tmo/engine/photobackup/LoginThread2;->mCancel:Z
+    iput-boolean v5, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mCancel:Z
 
     .line 64
     return-void
@@ -177,10 +177,10 @@
     .line 67
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/htc/socialnetwork/tmo/engine/photobackup/LoginThread2;->mCancel:Z
+    iput-boolean v0, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mCancel:Z
 
     .line 68
-    iget-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/photobackup/LoginThread2;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
+    iget-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
 
     invoke-interface {v0}, Lorg/apache/http/client/methods/AbortableHttpRequest;->abort()V
 
@@ -194,7 +194,7 @@
     .prologue
     .line 75
     :try_start_0
-    iget-boolean v4, p0, Lcom/htc/socialnetwork/tmo/engine/photobackup/LoginThread2;->mCancel:Z
+    iget-boolean v4, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mCancel:Z
 
     if-eqz v4, :cond_0
 
@@ -209,7 +209,7 @@
 
     .line 80
     :cond_0
-    iget-object v4, p0, Lcom/htc/socialnetwork/tmo/engine/photobackup/LoginThread2;->mHttpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
+    iget-object v4, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mHttpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
 
     iget-object v5, p0, Lcom/htc/socialnetwork/tmo/engine/photobackup/LoginThread2;->mHttpGet:Lorg/apache/http/client/methods/HttpGet;
 
@@ -303,7 +303,7 @@
     .end local v2           #status:I
     .end local v3           #token:Ljava/lang/String;
     :goto_0
-    iget-object v4, p0, Lcom/htc/socialnetwork/tmo/engine/photobackup/LoginThread2;->mHttpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
+    iget-object v4, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mHttpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
 
     invoke-virtual {v4}, Lorg/apache/http/impl/client/DefaultHttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
@@ -371,7 +371,7 @@
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 105
-    iget-boolean v4, p0, Lcom/htc/socialnetwork/tmo/engine/photobackup/LoginThread2;->mCancel:Z
+    iget-boolean v4, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mCancel:Z
 
     if-eqz v4, :cond_3
 

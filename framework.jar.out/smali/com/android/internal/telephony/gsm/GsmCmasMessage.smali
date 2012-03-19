@@ -52,7 +52,7 @@
     .line 51
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->cmasFormat:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->cmasFormat:I
 
     .line 52
     return-void
@@ -248,127 +248,127 @@
 
     .line 82
     :pswitch_0
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->cmasType:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     goto :goto_0
 
     .line 85
     :pswitch_1
-    iput v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->cmasType:I
+    iput v2, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     .line 86
-    iput v1, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->severity:I
+    iput v1, p0, Landroid/telephony/HtcCmasMessage;->severity:I
 
     .line 87
-    iput v1, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->urgency:I
+    iput v1, p0, Landroid/telephony/HtcCmasMessage;->urgency:I
 
     .line 88
-    iput v1, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->certainty:I
+    iput v1, p0, Landroid/telephony/HtcCmasMessage;->certainty:I
 
     goto :goto_0
 
     .line 91
     :pswitch_2
-    iput v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->cmasType:I
+    iput v2, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     .line 92
-    iput v1, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->severity:I
+    iput v1, p0, Landroid/telephony/HtcCmasMessage;->severity:I
 
     .line 93
-    iput v1, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->urgency:I
+    iput v1, p0, Landroid/telephony/HtcCmasMessage;->urgency:I
 
     .line 94
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->certainty:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->certainty:I
 
     goto :goto_0
 
     .line 97
     :pswitch_3
-    iput v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->cmasType:I
+    iput v2, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     .line 98
-    iput v1, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->severity:I
+    iput v1, p0, Landroid/telephony/HtcCmasMessage;->severity:I
 
     .line 99
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->urgency:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->urgency:I
 
     .line 100
-    iput v1, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->certainty:I
+    iput v1, p0, Landroid/telephony/HtcCmasMessage;->certainty:I
 
     goto :goto_0
 
     .line 103
     :pswitch_4
-    iput v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->cmasType:I
+    iput v2, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     .line 104
-    iput v1, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->severity:I
+    iput v1, p0, Landroid/telephony/HtcCmasMessage;->severity:I
 
     .line 105
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->urgency:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->urgency:I
 
     .line 106
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->certainty:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->certainty:I
 
     goto :goto_0
 
     .line 109
     :pswitch_5
-    iput v3, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->cmasType:I
+    iput v3, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     .line 110
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->severity:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->severity:I
 
     .line 111
-    iput v1, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->urgency:I
+    iput v1, p0, Landroid/telephony/HtcCmasMessage;->urgency:I
 
     .line 112
-    iput v1, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->certainty:I
+    iput v1, p0, Landroid/telephony/HtcCmasMessage;->certainty:I
 
     goto :goto_0
 
     .line 115
     :pswitch_6
-    iput v3, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->cmasType:I
+    iput v3, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     .line 116
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->severity:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->severity:I
 
     .line 117
-    iput v1, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->urgency:I
+    iput v1, p0, Landroid/telephony/HtcCmasMessage;->urgency:I
 
     .line 118
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->certainty:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->certainty:I
 
     goto :goto_0
 
     .line 121
     :pswitch_7
-    iput v3, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->cmasType:I
+    iput v3, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     .line 122
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->severity:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->severity:I
 
     .line 123
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->urgency:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->urgency:I
 
     .line 124
-    iput v1, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->certainty:I
+    iput v1, p0, Landroid/telephony/HtcCmasMessage;->certainty:I
 
     goto :goto_0
 
     .line 127
     :pswitch_8
-    iput v3, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->cmasType:I
+    iput v3, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     .line 128
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->severity:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->severity:I
 
     .line 129
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->urgency:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->urgency:I
 
     .line 130
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->certainty:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->certainty:I
 
     goto :goto_0
 
@@ -376,7 +376,7 @@
     :pswitch_9
     const/4 v0, 0x4
 
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->cmasType:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     goto :goto_0
 
@@ -384,7 +384,7 @@
     :pswitch_a
     const/4 v0, 0x5
 
-    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->cmasType:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     goto :goto_0
 
@@ -450,69 +450,69 @@
     .line 60
     const/4 v2, 0x1
 
-    iput v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->cmasFormat:I
+    iput v2, p0, Landroid/telephony/HtcCmasMessage;->cmasFormat:I
 
     .line 61
-    iput-object p1, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->mPdu:[B
+    iput-object p1, p0, Landroid/telephony/HtcCmasMessage;->mPdu:[B
 
     .line 62
     iget v2, v0, Lcom/android/internal/telephony/gsm/CBMessage;->sn:I
 
-    iput v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->sn:I
+    iput v2, p0, Landroid/telephony/HtcCmasMessage;->sn:I
 
     .line 63
     iget v2, v0, Lcom/android/internal/telephony/gsm/CBMessage;->gs:I
 
-    iput v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->gs:I
+    iput v2, p0, Landroid/telephony/HtcCmasMessage;->gs:I
 
     .line 64
     iget v2, v0, Lcom/android/internal/telephony/gsm/CBMessage;->msg_id:I
 
-    iput v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->msgId:I
+    iput v2, p0, Landroid/telephony/HtcCmasMessage;->msgId:I
 
     .line 65
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/CBMessage;->getMessageClass()Landroid/telephony/SmsMessage$MessageClass;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->messageClass:Landroid/telephony/SmsMessage$MessageClass;
+    iput-object v2, p0, Landroid/telephony/HtcCmasMessage;->messageClass:Landroid/telephony/SmsMessage$MessageClass;
 
     .line 66
     iget v2, v0, Lcom/android/internal/telephony/gsm/CBMessage;->page:I
 
-    iput v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->pageSeg:I
+    iput v2, p0, Landroid/telephony/HtcCmasMessage;->pageSeg:I
 
     .line 67
     iget v2, v0, Lcom/android/internal/telephony/gsm/CBMessage;->pages:I
 
-    iput v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->pageCount:I
+    iput v2, p0, Landroid/telephony/HtcCmasMessage;->pageCount:I
 
     .line 68
     iget v2, v0, Lcom/android/internal/telephony/gsm/CBMessage;->mEncodingType:I
 
-    iput v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->charSetEncoding:I
+    iput v2, p0, Landroid/telephony/HtcCmasMessage;->charSetEncoding:I
 
     .line 69
     iget-boolean v2, v0, Lcom/android/internal/telephony/gsm/CBMessage;->mEncodingTypeSet:Z
 
-    iput-boolean v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->charSetEncodingSet:Z
+    iput-boolean v2, p0, Landroid/telephony/HtcCmasMessage;->charSetEncodingSet:Z
 
     .line 70
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/CBMessage;->getUserData()[B
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->alertText:[B
+    iput-object v2, p0, Landroid/telephony/HtcCmasMessage;->alertText:[B
 
     .line 71
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/CBMessage;->getMessageBody()Ljava/lang/String;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->alertTextStr:Ljava/lang/String;
+    iput-object v2, p0, Landroid/telephony/HtcCmasMessage;->alertTextStr:Ljava/lang/String;
 
     .line 72
-    iget v2, p0, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->msgId:I
+    iget v2, p0, Landroid/telephony/HtcCmasMessage;->msgId:I
 
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/gsm/GsmCmasMessage;->setCmasType(I)V
     :try_end_0

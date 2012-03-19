@@ -92,7 +92,7 @@
     .prologue
     .line 108
     .local p0, this:Lcom/htc/preference/HtcGenericInflater;,"Lcom/htc/preference/HtcGenericInflater<TT;TP;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 45
     const/4 v0, 0x0
@@ -131,7 +131,7 @@
     .line 120
     .local p0, this:Lcom/htc/preference/HtcGenericInflater;,"Lcom/htc/preference/HtcGenericInflater<TT;TP;>;"
     .local p1, original:Lcom/htc/preference/HtcGenericInflater;,"Lcom/htc/preference/HtcGenericInflater<TT;TP;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 45
     const/4 v0, 0x0

@@ -238,8 +238,8 @@ Dies kann ein paar Minuten dauern."</string>
     <string name="htc_preferred_network_global_mode">Global-Modus</string>
     <string name="htc_preferred_network_cdma_evdo_aut_mode">CDMA-Modus</string>
     <string name="htc_preferred_network_gsm_wcdma_aut_mode">GSM/UMTS-Modus</string>
-    <string name="htc_preferred_network_lte_mode">LTE Mode</string>
-    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM / UMTS / LTE Mode</string>
+    <string name="htc_preferred_network_lte_mode">LTE-Modus</string>
+    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM / UMTS / LTE Modus</string>
     <string name="title_gsm_preferred_network_options">GSM/UMTS-Modus</string>
     <string name="btn_Menu_Edit">Bearbeiten</string>
     <string name="btn_Menu_Set_Done">Fertig</string>

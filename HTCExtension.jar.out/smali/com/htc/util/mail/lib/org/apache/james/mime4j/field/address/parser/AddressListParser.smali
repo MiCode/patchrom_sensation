@@ -96,7 +96,7 @@
     const/4 v3, 0x0
 
     .line 772
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 20
     new-instance v1, Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
@@ -238,7 +238,7 @@
     const/4 v5, 0x0
 
     .line 727
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 20
     new-instance v2, Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
@@ -401,7 +401,7 @@
     const/4 v3, 0x0
 
     .line 751
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 20
     new-instance v1, Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
@@ -3869,7 +3869,7 @@
 
     move-result-object v0
 
-    iput-object v0, p1, Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/SimpleNode;->lastToken:Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/Token;
+    iput-object v0, p1, Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/BaseNode;->lastToken:Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/Token;
 
     .line 53
     return-void
@@ -3890,7 +3890,7 @@
 
     move-result-object v0
 
-    iput-object v0, p1, Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/SimpleNode;->firstToken:Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/Token;
+    iput-object v0, p1, Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/BaseNode;->firstToken:Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/Token;
 
     .line 49
     return-void

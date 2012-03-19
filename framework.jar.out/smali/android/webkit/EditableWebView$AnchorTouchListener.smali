@@ -39,12 +39,12 @@
     .parameter
 
     .prologue
-    .line 911
+    .line 984
     iput-object p1, p0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 917
+    .line 990
     new-instance v0, Landroid/graphics/Point;
 
     invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
@@ -58,7 +58,7 @@
     .locals 7
 
     .prologue
-    .line 920
+    .line 993
     iget-object v3, p0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
 
     #getter for: Landroid/webkit/EditableWebView;->mText:Landroid/text/Editable;
@@ -70,7 +70,7 @@
 
     move-result v0
 
-    .line 921
+    .line 994
     .local v0, current:I
     if-ltz v0, :cond_0
 
@@ -87,10 +87,10 @@
 
     if-ne v0, v3, :cond_0
 
-    .line 922
+    .line 995
     add-int/lit8 v0, v0, -0x1
 
-    .line 924
+    .line 997
     :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -102,31 +102,8 @@
 
     sub-long v1, v3, v5
 
-    .line 926
+    .line 1001
     .local v1, timeDiff:J
-    const-string v3, "EditableWebView"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "[EditableWebView::doAutoExtend] >> timeDiff="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 928
     if-ltz v0, :cond_1
 
     const-wide/16 v3, 0xc8
@@ -187,12 +164,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 935
+    .line 1008
     instance-of v2, p1, Landroid/view/ViewGroup;
 
     if-eqz v2, :cond_0
 
-    .line 936
+    .line 1009
     check-cast p1, Landroid/view/ViewGroup;
 
     .end local p1
@@ -202,17 +179,17 @@
 
     move-result-object v0
 
-    .line 938
+    .line 1011
     .local v0, child:Landroid/view/View;
     if-nez v0, :cond_1
 
-    .line 947
+    .line 1020
     .end local v0           #child:Landroid/view/View;
     :cond_0
     :goto_0
     return-object v1
 
-    .line 939
+    .line 1012
     .restart local v0       #child:Landroid/view/View;
     :cond_1
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -223,7 +200,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 940
+    .line 1013
     iget-object v1, p0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
 
     iget-object v1, v1, Landroid/webkit/EditableWebView;->mQuickSelect:Landroid/webkit/WebView$QuickSelectAbs;
@@ -232,7 +209,7 @@
 
     goto :goto_0
 
-    .line 941
+    .line 1014
     :cond_2
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -242,7 +219,7 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 942
+    .line 1015
     iget-object v1, p0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
 
     iget-object v1, v1, Landroid/webkit/EditableWebView;->mQuickSelect:Landroid/webkit/WebView$QuickSelectAbs;
@@ -260,7 +237,7 @@
     .parameter "ev"
 
     .prologue
-    .line 953
+    .line 1026
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -274,7 +251,7 @@
     #setter for: Landroid/webkit/EditableWebView;->mTouchingAnchor:Lcom/htc/textselection/SelectionAnchor;
     invoke-static/range {v25 .. v26}, Landroid/webkit/EditableWebView;->access$1202(Landroid/webkit/EditableWebView;Lcom/htc/textselection/SelectionAnchor;)Lcom/htc/textselection/SelectionAnchor;
 
-    .line 954
+    .line 1027
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -288,14 +265,14 @@
 
     if-nez v25, :cond_0
 
-    .line 955
+    .line 1028
     const/16 v25, 0x0
 
-    .line 1127
+    .line 1200
     :goto_0
     return v25
 
-    .line 956
+    .line 1029
     :cond_0
     move-object/from16 v0, p0
 
@@ -334,14 +311,14 @@
 
     const/4 v13, 0x1
 
-    .line 959
+    .line 1032
     .local v13, isPriorAnchor:Z
     :goto_1
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v4
 
-    .line 960
+    .line 1033
     .local v4, action:I
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getEdgeFlags()I
 
@@ -353,7 +330,7 @@
 
     const/4 v12, 0x1
 
-    .line 961
+    .line 1034
     .local v12, isPressedByPen:Z
     :goto_2
     move-object/from16 v0, p0
@@ -375,7 +352,7 @@
 
     move-result-object v17
 
-    .line 964
+    .line 1037
     .local v17, p:Landroid/graphics/PointF;
     move-object/from16 v0, p0
 
@@ -388,7 +365,7 @@
 
     move-result-object v16
 
-    .line 965
+    .line 1038
     .local v16, onScreenOffset:[I
     move-object/from16 v0, p0
 
@@ -402,7 +379,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/EditableWebView;->getLocationOnScreen([I)V
 
-    .line 966
+    .line 1039
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -418,7 +395,7 @@
 
     move-result-object v15
 
-    .line 969
+    .line 1042
     .local v15, offset:Landroid/graphics/PointF;
     move-object/from16 v0, p0
 
@@ -439,19 +416,19 @@
 
     move-result-object v19
 
-    .line 970
+    .line 1043
     .local v19, rect:Landroid/graphics/Rect;
     invoke-virtual/range {v19 .. v19}, Landroid/graphics/Rect;->width()I
 
     move-result v7
 
-    .line 971
+    .line 1044
     .local v7, caretWidth:I
     invoke-virtual/range {v19 .. v19}, Landroid/graphics/Rect;->height()I
 
     move-result v6
 
-    .line 972
+    .line 1045
     .local v6, caretHeight:I
     move-object/from16 v0, p0
 
@@ -468,17 +445,17 @@
 
     move-result-object v19
 
-    .line 974
+    .line 1047
     packed-switch v4, :pswitch_data_0
 
-    .line 1127
+    .line 1200
     :cond_1
     :goto_4
     const/16 v25, 0x1
 
     goto/16 :goto_0
 
-    .line 956
+    .line 1029
     .end local v4           #action:I
     .end local v6           #caretHeight:I
     .end local v7           #caretWidth:I
@@ -493,7 +470,7 @@
 
     goto :goto_1
 
-    .line 960
+    .line 1033
     .restart local v4       #action:I
     .restart local v13       #isPriorAnchor:Z
     :cond_3
@@ -501,7 +478,7 @@
 
     goto :goto_2
 
-    .line 969
+    .line 1042
     .restart local v12       #isPressedByPen:Z
     .restart local v15       #offset:Landroid/graphics/PointF;
     .restart local v16       #onScreenOffset:[I
@@ -511,7 +488,7 @@
 
     goto :goto_3
 
-    .line 977
+    .line 1050
     .restart local v6       #caretHeight:I
     .restart local v7       #caretWidth:I
     .restart local v19       #rect:Landroid/graphics/Rect;
@@ -531,7 +508,7 @@
 
     invoke-virtual/range {v25 .. v26}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 979
+    .line 1052
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -547,7 +524,7 @@
 
     invoke-virtual/range {v25 .. v26}, Landroid/webkit/WebViewCore;->removeMessages(I)V
 
-    .line 981
+    .line 1054
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -568,7 +545,7 @@
 
     invoke-virtual/range {v25 .. v26}, Landroid/webkit/WebView$AutoScrollerWrapper;->findScrollableView(Landroid/webkit/WebView;)V
 
-    .line 982
+    .line 1055
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -584,7 +561,7 @@
 
     invoke-virtual {v0, v13}, Landroid/webkit/WebViewCore;->modifySelection(Z)V
 
-    .line 984
+    .line 1057
     move-object/from16 v0, v17
 
     iget v0, v0, Landroid/graphics/PointF;->x:F
@@ -603,7 +580,7 @@
 
     iput v0, v1, Landroid/webkit/EditableWebView$AnchorTouchListener;->mDownX:I
 
-    .line 985
+    .line 1058
     move-object/from16 v0, v17
 
     iget v0, v0, Landroid/graphics/PointF;->y:F
@@ -622,7 +599,7 @@
 
     iput v0, v1, Landroid/webkit/EditableWebView$AnchorTouchListener;->mDownY:I
 
-    .line 986
+    .line 1059
     const/16 v25, 0x0
 
     move/from16 v0, v25
@@ -631,7 +608,7 @@
 
     iput-boolean v0, v1, Landroid/webkit/EditableWebView$AnchorTouchListener;->mConfirmMove:Z
 
-    .line 987
+    .line 1060
     sget v25, Lcom/htc/textselection/SelectionAnchor;->ANCHOR_OFFSET:I
 
     shl-int/lit8 v25, v25, 0x1
@@ -640,10 +617,10 @@
 
     if-gt v7, v0, :cond_6
 
-    .line 988
+    .line 1061
     if-eqz v13, :cond_5
 
-    .line 989
+    .line 1062
     move-object/from16 v0, v19
 
     iget v0, v0, Landroid/graphics/Rect;->left:I
@@ -699,7 +676,7 @@
 
     iput v0, v15, Landroid/graphics/PointF;->x:F
 
-    .line 999
+    .line 1072
     :goto_5
     sget v25, Lcom/htc/textselection/SelectionAnchor;->ANCHOR_OFFSET:I
 
@@ -709,7 +686,7 @@
 
     if-gt v6, v0, :cond_8
 
-    .line 1000
+    .line 1073
     move-object/from16 v0, v19
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
@@ -775,7 +752,7 @@
 
     iput v0, v15, Landroid/graphics/PointF;->y:F
 
-    .line 1007
+    .line 1080
     :goto_6
     move-object/from16 v0, p0
 
@@ -803,7 +780,7 @@
 
     iput v0, v1, Landroid/graphics/Point;->x:I
 
-    .line 1008
+    .line 1081
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->touchOffset:Landroid/graphics/Point;
@@ -912,7 +889,7 @@
 
     iput v0, v1, Landroid/graphics/Point;->y:I
 
-    .line 1011
+    .line 1084
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -929,7 +906,7 @@
 
     invoke-virtual/range {v25 .. v26}, Landroid/webkit/WebView$QuickSelectAbs;->hideQuickActions(Z)V
 
-    .line 1012
+    .line 1085
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -940,7 +917,7 @@
 
     goto/16 :goto_4
 
-    .line 991
+    .line 1064
     :cond_5
     move-object/from16 v0, v19
 
@@ -999,11 +976,11 @@
 
     goto/16 :goto_5
 
-    .line 994
+    .line 1067
     :cond_6
     if-eqz v13, :cond_7
 
-    .line 995
+    .line 1068
     move-object/from16 v0, v19
 
     iget v0, v0, Landroid/graphics/Rect;->left:I
@@ -1065,7 +1042,7 @@
 
     goto/16 :goto_5
 
-    .line 997
+    .line 1070
     :cond_7
     move-object/from16 v0, v19
 
@@ -1128,11 +1105,11 @@
 
     goto/16 :goto_5
 
-    .line 1002
+    .line 1075
     :cond_8
     if-eqz v13, :cond_9
 
-    .line 1003
+    .line 1076
     move-object/from16 v0, v19
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
@@ -1194,7 +1171,7 @@
 
     goto/16 :goto_6
 
-    .line 1005
+    .line 1078
     :cond_9
     move-object/from16 v0, v19
 
@@ -1257,7 +1234,7 @@
 
     goto/16 :goto_6
 
-    .line 1008
+    .line 1081
     :cond_a
     move-object/from16 v0, v19
 
@@ -1267,7 +1244,7 @@
 
     goto/16 :goto_7
 
-    .line 1016
+    .line 1089
     :pswitch_1
     move-object/from16 v0, p0
 
@@ -1277,7 +1254,7 @@
 
     if-nez v25, :cond_b
 
-    .line 1017
+    .line 1090
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->mDownX:I
@@ -1298,7 +1275,7 @@
 
     sub-int v9, v25, v26
 
-    .line 1018
+    .line 1091
     .local v9, dx:I
     move-object/from16 v0, p0
 
@@ -1320,7 +1297,7 @@
 
     sub-int v10, v25, v26
 
-    .line 1019
+    .line 1092
     .local v10, dy:I
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getEventTime()J
 
@@ -1346,7 +1323,7 @@
 
     if-ltz v25, :cond_e
 
-    .line 1020
+    .line 1093
     const/16 v25, 0x1
 
     move/from16 v0, v25
@@ -1355,7 +1332,7 @@
 
     iput-boolean v0, v1, Landroid/webkit/EditableWebView$AnchorTouchListener;->mConfirmMove:Z
 
-    .line 1024
+    .line 1097
     .end local v9           #dx:I
     .end local v10           #dy:I
     :cond_b
@@ -1368,7 +1345,7 @@
 
     if-eqz v25, :cond_1
 
-    .line 1025
+    .line 1098
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -1391,7 +1368,7 @@
 
     invoke-virtual/range {v25 .. v27}, Landroid/webkit/WebView$AutoScrollerWrapper;->doAutoSCroll(FF)Z
 
-    .line 1026
+    .line 1099
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -1417,7 +1394,7 @@
     #calls: Landroid/webkit/EditableWebView;->horizontalEdgeAdjustment(ILandroid/graphics/PointF;)V
     invoke-static {v0, v1, v15}, Landroid/webkit/EditableWebView;->access$2400(Landroid/webkit/EditableWebView;ILandroid/graphics/PointF;)V
 
-    .line 1028
+    .line 1101
     move-object/from16 v0, v17
 
     iget v0, v0, Landroid/graphics/PointF;->x:F
@@ -1467,7 +1444,7 @@
 
     iput v0, v1, Landroid/graphics/PointF;->x:F
 
-    .line 1029
+    .line 1102
     move-object/from16 v0, v17
 
     iget v0, v0, Landroid/graphics/PointF;->y:F
@@ -1517,7 +1494,7 @@
 
     iput v0, v1, Landroid/graphics/PointF;->y:F
 
-    .line 1031
+    .line 1104
     invoke-virtual/range {v19 .. v19}, Landroid/graphics/Rect;->height()I
 
     move-result v25
@@ -1532,7 +1509,7 @@
 
     mul-float v5, v25, v26
 
-    .line 1033
+    .line 1106
     .local v5, buffer:F
     move-object/from16 v0, p0
 
@@ -1556,7 +1533,7 @@
 
     if-le v0, v1, :cond_c
 
-    .line 1034
+    .line 1107
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -1573,7 +1550,7 @@
 
     int-to-float v5, v0
 
-    .line 1035
+    .line 1108
     :cond_c
     move-object/from16 v0, v17
 
@@ -1621,7 +1598,7 @@
 
     if-ltz v25, :cond_f
 
-    .line 1036
+    .line 1109
     move-object/from16 v0, v17
 
     iget v0, v0, Landroid/graphics/PointF;->y:F
@@ -1636,7 +1613,7 @@
 
     iput v0, v1, Landroid/graphics/PointF;->y:F
 
-    .line 1043
+    .line 1116
     :cond_d
     :goto_9
     move-object/from16 v0, p0
@@ -1665,7 +1642,7 @@
 
     const/16 v20, 0x1
 
-    .line 1044
+    .line 1117
     .local v20, selection:Z
     :goto_a
     move-object/from16 v0, p0
@@ -1733,10 +1710,10 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/webkit/WebViewCore;->doSelection(IIZ)V
 
-    .line 1045
+    .line 1118
     if-nez v12, :cond_1
 
-    .line 1046
+    .line 1119
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -1757,7 +1734,7 @@
 
     iput-boolean v0, v1, Landroid/webkit/WebView$QuickSelectAbs;->showMagnifier:Z
 
-    .line 1047
+    .line 1120
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -1810,7 +1787,7 @@
 
     goto/16 :goto_4
 
-    .line 1021
+    .line 1094
     .end local v5           #buffer:F
     .end local v20           #selection:Z
     .restart local v9       #dx:I
@@ -1850,7 +1827,7 @@
 
     if-lt v0, v1, :cond_b
 
-    .line 1022
+    .line 1095
     const/16 v25, 0x1
 
     move/from16 v0, v25
@@ -1861,7 +1838,7 @@
 
     goto/16 :goto_8
 
-    .line 1037
+    .line 1110
     .end local v9           #dx:I
     .end local v10           #dy:I
     .restart local v5       #buffer:F
@@ -1912,7 +1889,7 @@
 
     if-gtz v25, :cond_d
 
-    .line 1038
+    .line 1111
     move-object/from16 v0, v17
 
     iget v0, v0, Landroid/graphics/PointF;->y:F
@@ -1929,13 +1906,13 @@
 
     goto/16 :goto_9
 
-    .line 1043
+    .line 1116
     :cond_10
     const/16 v20, 0x0
 
     goto/16 :goto_a
 
-    .line 1054
+    .line 1127
     .end local v5           #buffer:F
     :pswitch_2
     move-object/from16 v0, p0
@@ -1952,10 +1929,10 @@
 
     invoke-virtual/range {v25 .. v25}, Landroid/webkit/WebView$AutoScrollerWrapper;->stopScroll()V
 
-    .line 1055
+    .line 1128
     if-nez v12, :cond_11
 
-    .line 1056
+    .line 1129
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -1976,7 +1953,7 @@
 
     iput-boolean v0, v1, Landroid/webkit/WebView$QuickSelectAbs;->showMagnifier:Z
 
-    .line 1057
+    .line 1130
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -1997,7 +1974,7 @@
 
     invoke-virtual/range {v25 .. v25}, Landroid/webkit/MagnifyView;->dismiss()V
 
-    .line 1059
+    .line 1132
     :cond_11
     move-object/from16 v0, p0
 
@@ -2023,7 +2000,7 @@
 
     if-ne v0, v1, :cond_13
 
-    .line 1061
+    .line 1134
     const/16 v25, 0x1
 
     move/from16 v0, v25
@@ -2075,7 +2052,7 @@
 
     if-gez v25, :cond_12
 
-    .line 1071
+    .line 1144
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -2089,7 +2066,7 @@
 
     if-eqz v25, :cond_12
 
-    .line 1072
+    .line 1145
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -2109,7 +2086,7 @@
 
     iput-boolean v0, v1, Landroid/webkit/EditableWebView$SingleTapQuickActions;->checkTimeout:Z
 
-    .line 1073
+    .line 1146
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -2118,7 +2095,7 @@
 
     invoke-virtual/range {v25 .. v25}, Landroid/webkit/EditableWebView;->showSingleTapQuickActions()V
 
-    .line 1074
+    .line 1147
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -2136,7 +2113,7 @@
 
     invoke-virtual/range {v25 .. v28}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 1077
+    .line 1150
     :cond_12
     move-object/from16 v0, p0
 
@@ -2161,33 +2138,33 @@
 
     invoke-virtual/range {v25 .. v28}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 1078
+    .line 1151
     const/16 v25, 0x1
 
     goto/16 :goto_0
 
-    .line 1083
+    .line 1156
     :cond_13
     invoke-direct/range {p0 .. p0}, Landroid/webkit/EditableWebView$AnchorTouchListener;->doAutoExtend()Z
 
     move-result v25
 
-    if-eqz v25, :cond_15
+    if-eqz v25, :cond_14
 
-    .line 1084
+    .line 1157
     const/16 v23, -0x1
 
-    .line 1085
+    .line 1158
     .local v23, target:I
     const/4 v8, -0x1
 
-    .line 1087
+    .line 1160
     .local v8, curr:I
     new-instance v22, Landroid/graphics/Point;
 
     invoke-direct/range {v22 .. v22}, Landroid/graphics/Point;-><init>()V
 
-    .line 1088
+    .line 1161
     .local v22, start_end:Landroid/graphics/Point;
     move-object/from16 v0, p0
 
@@ -2218,7 +2195,7 @@
 
     move/from16 v25, v0
 
-    if-eqz v25, :cond_17
+    if-eqz v25, :cond_16
 
     move-object/from16 v0, p0
 
@@ -2243,16 +2220,16 @@
 
     move-object/from16 v1, v25
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_17
 
     const/4 v14, 0x1
 
-    .line 1090
+    .line 1163
     .local v14, moveEndAnchor:Z
     :goto_c
-    if-eqz v14, :cond_19
+    if-eqz v14, :cond_18
 
-    .line 1091
+    .line 1164
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -2264,7 +2241,7 @@
 
     move-result v8
 
-    .line 1093
+    .line 1166
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -2300,20 +2277,20 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/webkit/HTCWebCore;->nativeGetWordRange(IILandroid/graphics/Point;)V
 
-    .line 1094
+    .line 1167
     move-object/from16 v0, v22
 
     iget v0, v0, Landroid/graphics/Point;->y:I
 
     move/from16 v23, v0
 
-    .line 1102
+    .line 1175
     :goto_d
     move/from16 v0, v23
 
     if-eq v8, v0, :cond_14
 
-    .line 1103
+    .line 1176
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -2335,113 +2312,17 @@
 
     invoke-virtual {v0, v1, v8, v2}, Landroid/webkit/WebViewCore;->sendMessage(III)V
 
-    .line 1108
-    :cond_14
-    const-string v25, "EditableWebView"
-
-    new-instance v26, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v26 .. v26}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v27, "[EditableWebView::onTouch] >> start="
-
-    invoke-virtual/range {v26 .. v27}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v26
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
-
-    move-object/from16 v27, v0
-
-    #getter for: Landroid/webkit/EditableWebView;->mStartIndex:I
-    invoke-static/range {v27 .. v27}, Landroid/webkit/EditableWebView;->access$2900(Landroid/webkit/EditableWebView;)I
-
-    move-result v27
-
-    invoke-virtual/range {v26 .. v27}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v26
-
-    const-string v27, " end="
-
-    invoke-virtual/range {v26 .. v27}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v26
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
-
-    move-object/from16 v27, v0
-
-    #getter for: Landroid/webkit/EditableWebView;->mEndIndex:I
-    invoke-static/range {v27 .. v27}, Landroid/webkit/EditableWebView;->access$2700(Landroid/webkit/EditableWebView;)I
-
-    move-result v27
-
-    invoke-virtual/range {v26 .. v27}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v26
-
-    const-string v27, " target="
-
-    invoke-virtual/range {v26 .. v27}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v26
-
-    move-object/from16 v0, v26
-
-    move/from16 v1, v23
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v26
-
-    const-string v27, " moveEndAnchor="
-
-    invoke-virtual/range {v26 .. v27}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v26
-
-    move-object/from16 v0, v26
-
-    invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v26
-
-    const-string v27, " start_end="
-
-    invoke-virtual/range {v26 .. v27}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v26
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v26
-
-    invoke-virtual/range {v26 .. v26}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v26
-
-    invoke-static/range {v25 .. v26}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1115
+    .line 1188
     .end local v8           #curr:I
     .end local v14           #moveEndAnchor:Z
     .end local v22           #start_end:Landroid/graphics/Point;
     .end local v23           #target:I
-    :cond_15
+    :cond_14
     new-instance v18, Landroid/graphics/Rect;
 
     invoke-direct/range {v18 .. v18}, Landroid/graphics/Rect;-><init>()V
 
-    .line 1116
+    .line 1189
     .local v18, r:Landroid/graphics/Rect;
     move-object/from16 v0, p0
 
@@ -2451,19 +2332,13 @@
 
     move-object/from16 v0, v25
 
-    iget-object v0, v0, Landroid/webkit/EditableWebView;->mHTCWebCore:Landroid/webkit/HTCWebCore;
-
-    move-object/from16 v25, v0
-
-    move-object/from16 v0, v25
-
     move-object/from16 v1, v18
 
-    invoke-virtual {v0, v1}, Landroid/webkit/HTCWebCore;->nativeGetVSbound(Landroid/graphics/Rect;)I
+    invoke-virtual {v0, v1}, Landroid/webkit/EditableWebView;->getVSbound(Landroid/graphics/Rect;)I
 
     move-result v24
 
-    .line 1117
+    .line 1190
     .local v24, type:I
     const/16 v25, 0x1
 
@@ -2471,9 +2346,9 @@
 
     move/from16 v1, v25
 
-    if-le v0, v1, :cond_16
+    if-le v0, v1, :cond_15
 
-    .line 1118
+    .line 1191
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -2486,7 +2361,7 @@
 
     move-result-object v21
 
-    .line 1119
+    .line 1192
     .local v21, start:Landroid/graphics/Rect;
     move-object/from16 v0, p0
 
@@ -2500,7 +2375,7 @@
 
     move-result-object v11
 
-    .line 1120
+    .line 1193
     .local v11, end:Landroid/graphics/Rect;
     move-object/from16 v0, p0
 
@@ -2522,7 +2397,7 @@
 
     iput-boolean v0, v1, Landroid/webkit/WebView$QuickSelectAbs;->acrossFlag:Z
 
-    .line 1121
+    .line 1194
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -2545,7 +2420,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/webkit/WebView$QuickSelectAbs;->showQuickActions(Landroid/graphics/Rect;I)V
 
-    .line 1122
+    .line 1195
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -2564,10 +2439,10 @@
 
     invoke-virtual {v0, v1, v11}, Landroid/webkit/WebView$QuickSelectAbs;->showAnchors(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
 
-    .line 1124
+    .line 1197
     .end local v11           #end:Landroid/graphics/Rect;
     .end local v21           #start:Landroid/graphics/Rect;
-    :cond_16
+    :cond_15
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -2581,13 +2456,13 @@
 
     goto/16 :goto_4
 
-    .line 1088
+    .line 1161
     .end local v18           #r:Landroid/graphics/Rect;
     .end local v24           #type:I
     .restart local v8       #curr:I
     .restart local v22       #start_end:Landroid/graphics/Point;
     .restart local v23       #target:I
-    :cond_17
+    :cond_16
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -2608,14 +2483,14 @@
 
     goto/16 :goto_b
 
-    :cond_18
+    :cond_17
     const/4 v14, 0x0
 
     goto/16 :goto_c
 
-    .line 1096
+    .line 1169
     .restart local v14       #moveEndAnchor:Z
-    :cond_19
+    :cond_18
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -2627,7 +2502,7 @@
 
     move-result v8
 
-    .line 1098
+    .line 1171
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$AnchorTouchListener;->this$0:Landroid/webkit/EditableWebView;
@@ -2659,7 +2534,7 @@
 
     invoke-virtual {v0, v1, v8, v2}, Landroid/webkit/HTCWebCore;->nativeGetWordRange(IILandroid/graphics/Point;)V
 
-    .line 1099
+    .line 1172
     move-object/from16 v0, v22
 
     iget v0, v0, Landroid/graphics/Point;->x:I
@@ -2668,7 +2543,7 @@
 
     goto/16 :goto_d
 
-    .line 974
+    .line 1047
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

@@ -232,7 +232,7 @@
     const/16 v3, 0x2b
 
     .line 104
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 105
     new-instance v0, Lcom/android/internal/telephony/gsm/SmsCbHeader;

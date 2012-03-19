@@ -36,7 +36,7 @@
 
     .prologue
     .line 327
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 323
     new-instance v0, Lcom/htc/server/HtcDeviceInfoManager$VoiceAppUsage$AppMap;

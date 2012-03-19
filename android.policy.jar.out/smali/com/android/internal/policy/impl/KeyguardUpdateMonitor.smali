@@ -239,13 +239,13 @@
     .line 168
     iput-boolean v6, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mNeedToShowAnimation:Z
 
-    .line 1052
+    .line 1055
     iput v6, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mKeyboardFlyHeight:I
 
-    .line 1073
+    .line 1076
     iput v6, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mUnlockExtraType:I
 
-    .line 1083
+    .line 1086
     iput-boolean v6, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mNeedToWaitFirstFrame:Z
 
     .line 267
@@ -1521,17 +1521,17 @@
     .locals 2
 
     .prologue
-    .line 951
+    .line 954
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mFailedAttempts:I
 
-    .line 953
+    .line 956
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mAvailableTimeStamp:J
 
-    .line 955
+    .line 958
     return-void
 .end method
 
@@ -1539,7 +1539,7 @@
     .locals 2
 
     .prologue
-    .line 975
+    .line 978
     iget-wide v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mAvailableTimeStamp:J
 
     return-wide v0
@@ -1549,7 +1549,7 @@
     .locals 1
 
     .prologue
-    .line 917
+    .line 920
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mBatteryStatus:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$BatteryStatus;
 
     iget v0, v0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$BatteryStatus;->level:I
@@ -1561,7 +1561,7 @@
     .locals 1
 
     .prologue
-    .line 993
+    .line 996
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mDeviceLock:Z
 
     return v0
@@ -1571,28 +1571,28 @@
     .locals 2
 
     .prologue
-    .line 998
+    .line 1001
     const/4 v0, 0x0
 
-    .line 1000
+    .line 1003
     .local v0, type:I
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mCSLockState:Z
 
     if-eqz v1, :cond_0
 
-    .line 1001
+    .line 1004
     or-int/lit8 v0, v0, 0x1
 
-    .line 1004
+    .line 1007
     :cond_0
     iget v1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mDMLockState:I
 
     if-lez v1, :cond_1
 
-    .line 1005
+    .line 1008
     or-int/lit8 v0, v0, 0x2
 
-    .line 1008
+    .line 1011
     :cond_1
     return v0
 .end method
@@ -1601,7 +1601,7 @@
     .locals 1
 
     .prologue
-    .line 947
+    .line 950
     iget v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mFailedAttempts:I
 
     return v0
@@ -1625,14 +1625,14 @@
 
     const/4 v2, 0x0
 
-    .line 1048
+    .line 1051
     iget v3, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mKeyboardFlyHeight:I
 
     if-lez v3, :cond_0
 
     move v0, v1
 
-    .line 1049
+    .line 1052
     .local v0, fly:Z
     :goto_0
     iget v3, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mKeyboardFlyHeight:I
@@ -1646,14 +1646,14 @@
     :cond_0
     move v0, v2
 
-    .line 1048
+    .line 1051
     goto :goto_0
 
     .restart local v0       #fly:Z
     :cond_1
     move v1, v2
 
-    .line 1049
+    .line 1052
     goto :goto_1
 .end method
 
@@ -1661,7 +1661,7 @@
     .locals 1
 
     .prologue
-    .line 1069
+    .line 1072
     iget v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mKeyboardFlyHeight:I
 
     return v0
@@ -1671,7 +1671,7 @@
     .locals 1
 
     .prologue
-    .line 926
+    .line 929
     iget v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mServiceStatus:I
 
     return v0
@@ -1691,7 +1691,7 @@
     .locals 1
 
     .prologue
-    .line 1021
+    .line 1024
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mPasswordTimeout:Z
 
     return v0
@@ -1701,7 +1701,7 @@
     .locals 1
 
     .prologue
-    .line 966
+    .line 969
     iget v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mPhoneState:I
 
     return v0
@@ -1711,7 +1711,7 @@
     .locals 1
 
     .prologue
-    .line 1012
+    .line 1015
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mDMPinEnable:Z
 
     return v0
@@ -1721,7 +1721,7 @@
     .locals 1
 
     .prologue
-    .line 987
+    .line 990
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mShowing:Z
 
     return v0
@@ -1741,7 +1741,7 @@
     .locals 1
 
     .prologue
-    .line 931
+    .line 934
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mTelephonyPlmn:Ljava/lang/CharSequence;
 
     return-object v0
@@ -1751,7 +1751,7 @@
     .locals 1
 
     .prologue
-    .line 935
+    .line 938
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mTelephonySpn:Ljava/lang/CharSequence;
 
     return-object v0
@@ -1761,7 +1761,7 @@
     .locals 1
 
     .prologue
-    .line 1079
+    .line 1082
     iget v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mUnlockExtraType:I
 
     return v0
@@ -1966,7 +1966,7 @@
     .locals 1
 
     .prologue
-    .line 962
+    .line 965
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mClockVisible:Z
 
     return v0
@@ -1976,7 +1976,7 @@
     .locals 2
 
     .prologue
-    .line 912
+    .line 915
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mBatteryStatus:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$BatteryStatus;
 
     iget v0, v0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$BatteryStatus;->status:I
@@ -2009,7 +2009,7 @@
     .locals 1
 
     .prologue
-    .line 908
+    .line 911
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mBatteryStatus:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$BatteryStatus;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->isPluggedIn(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$BatteryStatus;)Z
@@ -2023,7 +2023,7 @@
     .locals 1
 
     .prologue
-    .line 943
+    .line 946
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mDeviceProvisioned:Z
 
     return v0
@@ -2033,24 +2033,24 @@
     .locals 2
 
     .prologue
-    .line 899
+    .line 902
     invoke-static {}, Landroid/app/ActivityManagerNative;->isSystemReady()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 900
+    .line 903
     const-string v0, "KeyguardUpdateMonitor"
 
     const-string v1, "System is not ready"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 901
+    .line 904
     const/4 v0, 0x0
 
-    .line 904
+    .line 907
     :goto_0
     return v0
 
@@ -2064,10 +2064,10 @@
     .locals 1
 
     .prologue
-    .line 1028
+    .line 1031
     monitor-enter p0
 
-    .line 1029
+    .line 1032
     :try_start_0
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mNeedToShowAnimation:Z
 
@@ -2075,7 +2075,7 @@
 
     return v0
 
-    .line 1030
+    .line 1033
     :catchall_0
     move-exception v0
 
@@ -2090,17 +2090,17 @@
     .locals 2
 
     .prologue
-    .line 1094
+    .line 1097
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0xd9
 
     if-ne v0, v1, :cond_0
 
-    .line 1095
+    .line 1098
     const/4 v0, 0x1
 
-    .line 1097
+    .line 1100
     :goto_0
     return v0
 
@@ -2114,7 +2114,7 @@
     .locals 1
 
     .prologue
-    .line 1089
+    .line 1092
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mNeedToWaitFirstFrame:Z
 
     return v0
@@ -2284,10 +2284,10 @@
     .parameter "timeStamp"
 
     .prologue
-    .line 971
+    .line 974
     iput-wide p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mAvailableTimeStamp:J
 
-    .line 972
+    .line 975
     return-void
 .end method
 
@@ -2318,14 +2318,14 @@
     .locals 1
 
     .prologue
-    .line 958
+    .line 961
     iget v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mFailedAttempts:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mFailedAttempts:I
 
-    .line 959
+    .line 962
     return-void
 .end method
 
@@ -2333,17 +2333,17 @@
     .locals 1
 
     .prologue
-    .line 893
+    .line 896
     sget-object v0, Lcom/android/internal/telephony/IccCard$State;->ABSENT:Lcom/android/internal/telephony/IccCard$State;
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mSimState:Lcom/android/internal/telephony/IccCard$State;
 
-    .line 894
+    .line 897
     return-void
 .end method
 
 .method public reportSimUnlocked()V
-    .locals 2
+    .locals 3
 
     .prologue
     .line 887
@@ -2360,44 +2360,34 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->handleSimStateChange(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$SimArgs;)V
 
-    .line 889
+    .line 890
+    iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
+
+    iget-object v1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
+
+    const/16 v2, 0x12f
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    .line 892
     return-void
 .end method
 
 .method public setKeyboardFly(I)V
-    .locals 4
+    .locals 3
     .parameter "height"
 
     .prologue
-    .line 1055
-    const-string v1, "KeyguardUpdateMonitor"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "setKeyboardFly height:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1056
+    .line 1059
     const/4 v1, -0x1
 
     if-ne p1, v1, :cond_0
 
-    .line 1057
+    .line 1060
     iget-object v1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2410,25 +2400,25 @@
 
     move-result v0
 
-    .line 1058
+    .line 1061
     .local v0, fly:I
     iput v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mKeyboardFlyHeight:I
 
-    .line 1066
+    .line 1069
     .end local v0           #fly:I
     :goto_0
     return-void
 
-    .line 1060
+    .line 1063
     :cond_0
     if-lez p1, :cond_1
 
-    .line 1061
+    .line 1064
     iput p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mKeyboardFlyHeight:I
 
     goto :goto_0
 
-    .line 1064
+    .line 1067
     :cond_1
     const/4 v1, 0x0
 
@@ -2442,21 +2432,21 @@
     .parameter "bFly"
 
     .prologue
-    .line 1040
+    .line 1043
     const/4 v0, 0x0
 
-    .line 1041
+    .line 1044
     .local v0, height:I
     if-eqz p1, :cond_0
 
-    .line 1042
+    .line 1045
     const/4 v0, -0x1
 
-    .line 1044
+    .line 1047
     :cond_0
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->setKeyboardFly(I)V
 
-    .line 1045
+    .line 1048
     return-void
 .end method
 
@@ -2465,10 +2455,10 @@
     .parameter "timeout"
 
     .prologue
-    .line 1017
+    .line 1020
     iput-boolean p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mPasswordTimeout:Z
 
-    .line 1018
+    .line 1021
     return-void
 .end method
 
@@ -2477,20 +2467,20 @@
     .parameter "bShow"
 
     .prologue
-    .line 1034
+    .line 1037
     monitor-enter p0
 
-    .line 1035
+    .line 1038
     :try_start_0
     iput-boolean p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mNeedToShowAnimation:Z
 
-    .line 1036
+    .line 1039
     monitor-exit p0
 
-    .line 1037
+    .line 1040
     return-void
 
-    .line 1036
+    .line 1039
     :catchall_0
     move-exception v0
 
@@ -2506,10 +2496,10 @@
     .parameter "show"
 
     .prologue
-    .line 982
+    .line 985
     iput-boolean p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mShowing:Z
 
-    .line 983
+    .line 986
     return-void
 .end method
 
@@ -2518,10 +2508,10 @@
     .parameter "type"
 
     .prologue
-    .line 1075
+    .line 1078
     iput p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mUnlockExtraType:I
 
-    .line 1076
+    .line 1079
     return-void
 .end method
 
@@ -2530,10 +2520,10 @@
     .parameter "wait"
 
     .prologue
-    .line 1085
+    .line 1088
     iput-boolean p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mNeedToWaitFirstFrame:Z
 
-    .line 1086
+    .line 1089
     return-void
 .end method
 
@@ -2541,7 +2531,7 @@
     .locals 1
 
     .prologue
-    .line 921
+    .line 924
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mBatteryStatus:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$BatteryStatus;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->isPluggedIn(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$BatteryStatus;)Z

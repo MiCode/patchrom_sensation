@@ -94,29 +94,29 @@
     .line 469
     iget-object v4, p0, Landroid/os/memory/RunningState$MergedItem;->mProcess:Landroid/os/memory/RunningState$ProcessItem;
 
-    iget-object v4, v4, Landroid/os/memory/RunningState$ProcessItem;->mPackageInfo:Landroid/content/pm/PackageItemInfo;
+    iget-object v4, v4, Landroid/os/memory/RunningState$BaseItem;->mPackageInfo:Landroid/content/pm/PackageItemInfo;
 
-    iput-object v4, p0, Landroid/os/memory/RunningState$MergedItem;->mPackageInfo:Landroid/content/pm/PackageItemInfo;
+    iput-object v4, p0, Landroid/os/memory/RunningState$BaseItem;->mPackageInfo:Landroid/content/pm/PackageItemInfo;
 
     .line 470
     iget-object v4, p0, Landroid/os/memory/RunningState$MergedItem;->mProcess:Landroid/os/memory/RunningState$ProcessItem;
 
-    iget-object v4, v4, Landroid/os/memory/RunningState$ProcessItem;->mDisplayLabel:Ljava/lang/CharSequence;
+    iget-object v4, v4, Landroid/os/memory/RunningState$BaseItem;->mDisplayLabel:Ljava/lang/CharSequence;
 
-    iput-object v4, p0, Landroid/os/memory/RunningState$MergedItem;->mDisplayLabel:Ljava/lang/CharSequence;
+    iput-object v4, p0, Landroid/os/memory/RunningState$BaseItem;->mDisplayLabel:Ljava/lang/CharSequence;
 
     .line 471
     iget-object v4, p0, Landroid/os/memory/RunningState$MergedItem;->mProcess:Landroid/os/memory/RunningState$ProcessItem;
 
-    iget-object v4, v4, Landroid/os/memory/RunningState$ProcessItem;->mLabel:Ljava/lang/String;
+    iget-object v4, v4, Landroid/os/memory/RunningState$BaseItem;->mLabel:Ljava/lang/String;
 
-    iput-object v4, p0, Landroid/os/memory/RunningState$MergedItem;->mLabel:Ljava/lang/String;
+    iput-object v4, p0, Landroid/os/memory/RunningState$BaseItem;->mLabel:Ljava/lang/String;
 
     .line 472
-    iput-boolean p2, p0, Landroid/os/memory/RunningState$MergedItem;->mBackground:Z
+    iput-boolean p2, p0, Landroid/os/memory/RunningState$BaseItem;->mBackground:Z
 
     .line 474
-    iget-boolean v4, p0, Landroid/os/memory/RunningState$MergedItem;->mBackground:Z
+    iget-boolean v4, p0, Landroid/os/memory/RunningState$BaseItem;->mBackground:Z
 
     if-nez v4, :cond_1
 
@@ -173,7 +173,7 @@
     :goto_1
     const-wide/16 v4, -0x1
 
-    iput-wide v4, p0, Landroid/os/memory/RunningState$MergedItem;->mActiveSince:J
+    iput-wide v4, p0, Landroid/os/memory/RunningState$BaseItem;->mActiveSince:J
 
     .line 494
     const/4 v0, 0x0
@@ -199,7 +199,7 @@
 
     .line 496
     .local v3, si:Landroid/os/memory/RunningState$ServiceItem;
-    iget-wide v4, v3, Landroid/os/memory/RunningState$ServiceItem;->mActiveSince:J
+    iget-wide v4, v3, Landroid/os/memory/RunningState$BaseItem;->mActiveSince:J
 
     const-wide/16 v7, 0x0
 
@@ -207,18 +207,18 @@
 
     if-ltz v4, :cond_2
 
-    iget-wide v4, p0, Landroid/os/memory/RunningState$MergedItem;->mActiveSince:J
+    iget-wide v4, p0, Landroid/os/memory/RunningState$BaseItem;->mActiveSince:J
 
-    iget-wide v7, v3, Landroid/os/memory/RunningState$ServiceItem;->mActiveSince:J
+    iget-wide v7, v3, Landroid/os/memory/RunningState$BaseItem;->mActiveSince:J
 
     cmp-long v4, v4, v7
 
     if-gez v4, :cond_2
 
     .line 497
-    iget-wide v4, v3, Landroid/os/memory/RunningState$ServiceItem;->mActiveSince:J
+    iget-wide v4, v3, Landroid/os/memory/RunningState$BaseItem;->mActiveSince:J
 
-    iput-wide v4, p0, Landroid/os/memory/RunningState$MergedItem;->mActiveSince:J
+    iput-wide v4, p0, Landroid/os/memory/RunningState$BaseItem;->mActiveSince:J
 
     .line 494
     :cond_2
@@ -260,9 +260,9 @@
     .line 505
     iget-object v2, p0, Landroid/os/memory/RunningState$MergedItem;->mProcess:Landroid/os/memory/RunningState$ProcessItem;
 
-    iget-wide v2, v2, Landroid/os/memory/RunningState$ProcessItem;->mSize:J
+    iget-wide v2, v2, Landroid/os/memory/RunningState$BaseItem;->mSize:J
 
-    iput-wide v2, p0, Landroid/os/memory/RunningState$MergedItem;->mSize:J
+    iput-wide v2, p0, Landroid/os/memory/RunningState$BaseItem;->mSize:J
 
     .line 506
     const/4 v0, 0x0
@@ -278,7 +278,7 @@
     if-ge v0, v2, :cond_0
 
     .line 507
-    iget-wide v3, p0, Landroid/os/memory/RunningState$MergedItem;->mSize:J
+    iget-wide v3, p0, Landroid/os/memory/RunningState$BaseItem;->mSize:J
 
     iget-object v2, p0, Landroid/os/memory/RunningState$MergedItem;->mOtherProcesses:Ljava/util/ArrayList;
 
@@ -288,11 +288,11 @@
 
     check-cast v2, Landroid/os/memory/RunningState$ProcessItem;
 
-    iget-wide v5, v2, Landroid/os/memory/RunningState$ProcessItem;->mSize:J
+    iget-wide v5, v2, Landroid/os/memory/RunningState$BaseItem;->mSize:J
 
     add-long v2, v3, v5
 
-    iput-wide v2, p0, Landroid/os/memory/RunningState$MergedItem;->mSize:J
+    iput-wide v2, p0, Landroid/os/memory/RunningState$BaseItem;->mSize:J
 
     .line 506
     add-int/lit8 v0, v0, 0x1
@@ -301,7 +301,7 @@
 
     .line 510
     :cond_0
-    iget-wide v2, p0, Landroid/os/memory/RunningState$MergedItem;->mSize:J
+    iget-wide v2, p0, Landroid/os/memory/RunningState$BaseItem;->mSize:J
 
     invoke-static {p1, v2, v3}, Landroid/text/format/Formatter;->formatShortFileSize(Landroid/content/Context;J)Ljava/lang/String;
 
@@ -309,7 +309,7 @@
 
     .line 512
     .local v1, sizeStr:Ljava/lang/String;
-    iget-object v2, p0, Landroid/os/memory/RunningState$MergedItem;->mSizeStr:Ljava/lang/String;
+    iget-object v2, p0, Landroid/os/memory/RunningState$BaseItem;->mSizeStr:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -318,7 +318,7 @@
     if-nez v2, :cond_1
 
     .line 513
-    iput-object v1, p0, Landroid/os/memory/RunningState$MergedItem;->mSizeStr:Ljava/lang/String;
+    iput-object v1, p0, Landroid/os/memory/RunningState$BaseItem;->mSizeStr:Ljava/lang/String;
 
     .line 519
     :cond_1

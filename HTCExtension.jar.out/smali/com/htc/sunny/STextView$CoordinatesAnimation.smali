@@ -104,13 +104,13 @@
     if-ne v0, v1, :cond_0
 
     .line 91
-    iget-wide v0, p0, Lcom/htc/sunny/STextView$CoordinatesAnimation;->mCurrentTime:J
+    iget-wide v0, p0, Lcom/htc/sunny/SAnimationController;->mCurrentTime:J
 
-    iget-wide v2, p0, Lcom/htc/sunny/STextView$CoordinatesAnimation;->mStartTime:J
+    iget-wide v2, p0, Lcom/htc/sunny/SAnimationController;->mStartTime:J
 
     sub-long/2addr v0, v2
 
-    iget-wide v2, p0, Lcom/htc/sunny/STextView$CoordinatesAnimation;->mDelayTime:J
+    iget-wide v2, p0, Lcom/htc/sunny/SAnimationController;->mDelayTime:J
 
     cmp-long v0, v0, v2
 
@@ -123,7 +123,7 @@
 
     .line 94
     :cond_1
-    iget-wide v0, p0, Lcom/htc/sunny/STextView$CoordinatesAnimation;->mOffset:J
+    iget-wide v0, p0, Lcom/htc/sunny/SAnimationController;->mOffset:J
 
     long-to-float v0, v0
 
@@ -135,7 +135,7 @@
 
     sub-float/2addr v2, v3
 
-    iget-wide v3, p0, Lcom/htc/sunny/STextView$CoordinatesAnimation;->mTotalTime:J
+    iget-wide v3, p0, Lcom/htc/sunny/SAnimationController;->mTotalTime:J
 
     long-to-float v3, v3
 
@@ -146,7 +146,7 @@
     iput v0, p0, Lcom/htc/sunny/STextView$CoordinatesAnimation;->mCurrentL:F
 
     .line 95
-    iget-wide v0, p0, Lcom/htc/sunny/STextView$CoordinatesAnimation;->mOffset:J
+    iget-wide v0, p0, Lcom/htc/sunny/SAnimationController;->mOffset:J
 
     long-to-float v0, v0
 
@@ -158,7 +158,7 @@
 
     sub-float/2addr v2, v3
 
-    iget-wide v3, p0, Lcom/htc/sunny/STextView$CoordinatesAnimation;->mTotalTime:J
+    iget-wide v3, p0, Lcom/htc/sunny/SAnimationController;->mTotalTime:J
 
     long-to-float v3, v3
 
@@ -169,7 +169,7 @@
     iput v0, p0, Lcom/htc/sunny/STextView$CoordinatesAnimation;->mCurrentT:F
 
     .line 96
-    iget-wide v0, p0, Lcom/htc/sunny/STextView$CoordinatesAnimation;->mOffset:J
+    iget-wide v0, p0, Lcom/htc/sunny/SAnimationController;->mOffset:J
 
     long-to-float v0, v0
 
@@ -181,7 +181,7 @@
 
     sub-float/2addr v2, v3
 
-    iget-wide v3, p0, Lcom/htc/sunny/STextView$CoordinatesAnimation;->mTotalTime:J
+    iget-wide v3, p0, Lcom/htc/sunny/SAnimationController;->mTotalTime:J
 
     long-to-float v3, v3
 
@@ -192,7 +192,7 @@
     iput v0, p0, Lcom/htc/sunny/STextView$CoordinatesAnimation;->mCurrentR:F
 
     .line 97
-    iget-wide v0, p0, Lcom/htc/sunny/STextView$CoordinatesAnimation;->mOffset:J
+    iget-wide v0, p0, Lcom/htc/sunny/SAnimationController;->mOffset:J
 
     long-to-float v0, v0
 
@@ -204,7 +204,7 @@
 
     sub-float/2addr v2, v3
 
-    iget-wide v3, p0, Lcom/htc/sunny/STextView$CoordinatesAnimation;->mTotalTime:J
+    iget-wide v3, p0, Lcom/htc/sunny/SAnimationController;->mTotalTime:J
 
     long-to-float v3, v3
 

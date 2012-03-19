@@ -45,7 +45,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/htc/util/contacts/SyncControl$PendingSync;->account:Landroid/accounts/Account;
+    iget-object v1, p0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->account:Landroid/accounts/Account;
 
     iget-object v1, v1, Landroid/accounts/Account;->name:Ljava/lang/String;
 
@@ -59,7 +59,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/htc/util/contacts/SyncControl$PendingSync;->account:Landroid/accounts/Account;
+    iget-object v1, p0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->account:Landroid/accounts/Account;
 
     iget-object v1, v1, Landroid/accounts/Account;->type:Ljava/lang/String;
 
@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/htc/util/contacts/SyncControl$PendingSync;->authority:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/util/contacts/SyncControl$SyncUnit;->authority:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

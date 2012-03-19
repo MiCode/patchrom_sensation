@@ -47,7 +47,7 @@
 
     .prologue
     .line 2479
-    invoke-static {}, Lcom/android/phone/CallNotifier;->access$900()Z
+    invoke-static {}, Lcom/android/phone/CallNotifier;->access$800()Z
 
     move-result v0
 
@@ -82,7 +82,7 @@
     move-result-object v1
 
     #calls: Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-    invoke-static {v0, v1}, Lcom/android/phone/CallNotifier;->access$400(Lcom/android/phone/CallNotifier;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/phone/CallNotifier;->access$900(Lcom/android/phone/CallNotifier;Ljava/lang/String;)V
 
     .line 2481
     :cond_0

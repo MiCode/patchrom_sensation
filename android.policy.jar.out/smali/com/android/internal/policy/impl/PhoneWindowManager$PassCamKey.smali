@@ -33,7 +33,7 @@
     .line 3196
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$PassCamKey;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 3197
     iput-object p2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$PassCamKey;->mKeyEvent:Landroid/view/KeyEvent;

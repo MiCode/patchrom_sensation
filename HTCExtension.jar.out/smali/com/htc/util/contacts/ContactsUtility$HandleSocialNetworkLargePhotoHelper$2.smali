@@ -40,7 +40,7 @@
 
     iput-object p4, p0, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper$2;->val$sourceId:Ljava/lang/String;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,16 +48,9 @@
 
 # virtual methods
 .method public onBinderDied()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 2575
-    const-string v0, "ContactsUtility"
-
-    const-string v1, "doDownloadOriginalFacebookLargePhoto onBinderDied"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2576
     return-void
 .end method
@@ -67,13 +60,6 @@
     .parameter "service"
 
     .prologue
-    .line 2545
-    const-string v5, "ContactsUtility"
-
-    const-string v6, "doDownloadOriginalFacebookLargePhoto onConnected"
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2546
     move-object v4, p1
 

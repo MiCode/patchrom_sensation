@@ -123,7 +123,7 @@
 
     .prologue
     .line 121
-    iget-object v0, p0, Lcom/scalado/caps/filter/photoart/Rotation;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -142,7 +142,7 @@
 
     .prologue
     .line 78
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Rotation;->isCommitted:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v1, :cond_0
 
@@ -181,7 +181,7 @@
 
     .line 86
     :cond_2
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Rotation;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -197,7 +197,7 @@
     .local v0, error:I
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Rotation;->isSet:Z
+    iput-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 89
     iput p1, p0, Lcom/scalado/caps/filter/photoart/Rotation;->angle:F

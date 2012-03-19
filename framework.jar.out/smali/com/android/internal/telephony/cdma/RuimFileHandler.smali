@@ -19,10 +19,10 @@
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/IccFileHandler;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
 
     .line 55
-    iput p2, p0, Lcom/android/internal/telephony/cdma/RuimFileHandler;->mSlotId:I
+    iput p2, p0, Lcom/android/internal/telephony/IccFileHandler;->mSlotId:I
 
     .line 56
-    iput-object p3, p0, Lcom/android/internal/telephony/cdma/RuimFileHandler;->mAppId:Ljava/lang/String;
+    iput-object p3, p0, Lcom/android/internal/telephony/IccFileHandler;->mAppId:Ljava/lang/String;
 
     .line 57
     return-void
@@ -180,7 +180,7 @@
     if-eqz v1, :cond_0
 
     .line 79
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimFileHandler;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccFileHandler;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v1, v1, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -212,7 +212,7 @@
 
     .line 83
     :cond_0
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimFileHandler;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccFileHandler;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v2, v1, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 

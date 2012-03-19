@@ -98,7 +98,7 @@
 
     .prologue
     .line 1577
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1598
     new-instance v6, Ljava/util/HashMap;

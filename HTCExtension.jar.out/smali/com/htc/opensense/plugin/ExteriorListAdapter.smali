@@ -45,7 +45,7 @@
     const/4 v1, 0x0
 
     .line 164
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 134
     new-instance v0, Landroid/database/DataSetObservable;

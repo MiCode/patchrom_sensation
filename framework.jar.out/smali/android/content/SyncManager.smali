@@ -32,7 +32,7 @@
 
 .field private static final HANDLE_SYNC_ALARM_WAKE_LOCK:Ljava/lang/String; = "SyncManagerHandleSyncAlarm"
 
-.field private static final HTC_DEBUG:Z = true
+.field private static final HTC_DEBUG:Z = false
 
 .field private static final INITIALIZATION_UNBIND_DELAY_MS:I = 0x1388
 
@@ -215,7 +215,7 @@
     .line 174
     new-instance v3, Ljava/lang/Object;
 
-    invoke-direct {v3}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v3 .. v3}, Ljava/lang/Object;-><init>()V
 
     sput-object v3, Landroid/content/SyncManager;->postOnAccountObjectLock:Ljava/lang/Object;
 
@@ -257,7 +257,7 @@
     const/4 v5, 0x0
 
     .line 339
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 140
     sget-object v2, Landroid/content/SyncManager;->INITIAL_ACCOUNTS_ARRAY:[Landroid/accounts/Account;
@@ -3624,13 +3624,6 @@
     .parameter "accounts"
 
     .prologue
-    .line 176
-    const-string v2, "SyncManager"
-
-    const-string/jumbo v3, "postOnAccountupdate()"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 177
     sget-object v3, Landroid/content/SyncManager;->postOnAccountObjectLock:Ljava/lang/Object;
 
@@ -4010,13 +4003,6 @@
     .parameter "postOnAccountUpdateAction"
 
     .prologue
-    .line 280
-    const-string v0, "SyncManager"
-
-    const-string v1, "addPostOnAccountUpdate()"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 281
     sget-object v1, Landroid/content/SyncManager;->postOnAccountObjectLock:Ljava/lang/Object;
 
@@ -7288,7 +7274,7 @@
 .end method
 
 .method public scheduleSyncOperation(Landroid/content/SyncOperation;)V
-    .locals 4
+    .locals 3
     .parameter "syncOperation"
 
     .prologue
@@ -7314,34 +7300,11 @@
     .line 863
     if-eqz v0, :cond_0
 
-    .line 866
-    const-string v1, "SyncManager"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "scheduleSyncOperation: enqueued "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 868
     invoke-direct {p0}, Landroid/content/SyncManager;->sendCheckAlarmsMessage()V
 
     .line 876
-    :goto_0
+    :cond_0
     return-void
 
     .line 861
@@ -7355,31 +7318,4 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
-
-    .line 872
-    .restart local v0       #queueChanged:Z
-    :cond_0
-    const-string v1, "SyncManager"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "scheduleSyncOperation: dropping duplicate sync operation "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
 .end method

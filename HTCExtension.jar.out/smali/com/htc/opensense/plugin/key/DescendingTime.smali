@@ -35,7 +35,7 @@
     .line 22
     iget-wide v0, p1, Lcom/htc/opensense/plugin/key/Time;->mTime:J
 
-    iget-wide v2, p0, Lcom/htc/opensense/plugin/key/DescendingTime;->mTime:J
+    iget-wide v2, p0, Lcom/htc/opensense/plugin/key/Time;->mTime:J
 
     sub-long/2addr v0, v2
 

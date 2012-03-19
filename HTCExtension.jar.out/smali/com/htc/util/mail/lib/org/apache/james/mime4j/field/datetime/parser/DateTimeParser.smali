@@ -70,7 +70,7 @@
     const/4 v2, -0x1
 
     .line 470
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 414
     new-array v1, v3, [I
@@ -150,7 +150,7 @@
     const/4 v5, -0x1
 
     .line 431
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 414
     new-array v2, v6, [I
@@ -251,7 +251,7 @@
     const/4 v3, -0x1
 
     .line 452
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 414
     new-array v1, v4, [I

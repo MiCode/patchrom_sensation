@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 321
+    .line 343
     iput-object p1, p0, Lcom/android/phone/BluetoothHeadsetService$3;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,31 +39,31 @@
     .parameter "msg"
 
     .prologue
-    .line 324
+    .line 346
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 330
+    .line 352
     :goto_0
     return-void
 
-    .line 326
+    .line 348
     :pswitch_0
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/bluetooth/BluetoothDevice;
 
-    .line 327
+    .line 349
     .local v0, device:Landroid/bluetooth/BluetoothDevice;
     iget-object v1, p0, Lcom/android/phone/BluetoothHeadsetService$3;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
     #calls: Lcom/android/phone/BluetoothHeadsetService;->getSdpRecordsAndConnect(Landroid/bluetooth/BluetoothDevice;)V
-    invoke-static {v1, v0}, Lcom/android/phone/BluetoothHeadsetService;->access$1500(Lcom/android/phone/BluetoothHeadsetService;Landroid/bluetooth/BluetoothDevice;)V
+    invoke-static {v1, v0}, Lcom/android/phone/BluetoothHeadsetService;->access$1600(Lcom/android/phone/BluetoothHeadsetService;Landroid/bluetooth/BluetoothDevice;)V
 
     goto :goto_0
 
-    .line 324
+    .line 346
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

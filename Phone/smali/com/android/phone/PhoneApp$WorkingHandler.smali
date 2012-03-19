@@ -25,13 +25,13 @@
     .parameter "looper"
 
     .prologue
-    .line 5214
+    .line 5217
     iput-object p1, p0, Lcom/android/phone/PhoneApp$WorkingHandler;->this$0:Lcom/android/phone/PhoneApp;
 
-    .line 5215
+    .line 5218
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 5216
+    .line 5219
     return-void
 .end method
 
@@ -46,16 +46,16 @@
 
     const/16 v11, 0x63
 
-    .line 5221
+    .line 5224
     iget v8, p1, Landroid/os/Message;->what:I
 
     sparse-switch v8, :sswitch_data_0
 
-    .line 5273
+    .line 5276
     :goto_0
     return-void
 
-    .line 5223
+    .line 5226
     :sswitch_0
     const-string v8, "PhoneApp"
 
@@ -63,14 +63,14 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5225
+    .line 5228
     new-instance v6, Landroid/content/Intent;
 
     const-string v8, "android.intent.action.NEW_OUTGOING_CALL"
 
     invoke-direct {v6, v8}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 5227
+    .line 5230
     .local v6, intent:Landroid/content/Intent;
     iget-object v8, p0, Lcom/android/phone/PhoneApp$WorkingHandler;->this$0:Lcom/android/phone/PhoneApp;
 
@@ -83,13 +83,13 @@
 
     move-result-object v4
 
-    .line 5232
+    .line 5235
     .local v4, broadcastReceivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     invoke-interface {v4}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 5234
+    .line 5237
     .local v0, N1:I
     const-string v8, "PhoneApp"
 
@@ -113,7 +113,7 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5236
+    .line 5239
     iget-object v8, p0, Lcom/android/phone/PhoneApp$WorkingHandler;->this$0:Lcom/android/phone/PhoneApp;
 
     #getter for: Lcom/android/phone/PhoneApp;->mPackageManager:Landroid/content/pm/PackageManager;
@@ -125,13 +125,13 @@
 
     move-result-object v3
 
-    .line 5241
+    .line 5244
     .local v3, activities:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v1
 
-    .line 5243
+    .line 5246
     .local v1, N2:I
     const-string v8, "PhoneApp"
 
@@ -155,7 +155,7 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5245
+    .line 5248
     iget-object v8, p0, Lcom/android/phone/PhoneApp$WorkingHandler;->this$0:Lcom/android/phone/PhoneApp;
 
     #getter for: Lcom/android/phone/PhoneApp;->mPackageManager:Landroid/content/pm/PackageManager;
@@ -167,13 +167,13 @@
 
     move-result-object v7
 
-    .line 5250
+    .line 5253
     .local v7, services:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     invoke-interface {v7}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 5252
+    .line 5255
     .local v2, N3:I
     const-string v8, "PhoneApp"
 
@@ -197,14 +197,14 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5254
+    .line 5257
     add-int v8, v0, v1
 
     add-int/2addr v8, v2
 
     if-lez v8, :cond_0
 
-    .line 5255
+    .line 5258
     iget-object v8, p0, Lcom/android/phone/PhoneApp$WorkingHandler;->this$0:Lcom/android/phone/PhoneApp;
 
     const/4 v9, 0x1
@@ -213,7 +213,7 @@
 
     goto/16 :goto_0
 
-    .line 5257
+    .line 5260
     :cond_0
     iget-object v8, p0, Lcom/android/phone/PhoneApp$WorkingHandler;->this$0:Lcom/android/phone/PhoneApp;
 
@@ -221,7 +221,7 @@
 
     goto/16 :goto_0
 
-    .line 5263
+    .line 5266
     .end local v0           #N1:I
     .end local v1           #N2:I
     .end local v2           #N3:I
@@ -236,7 +236,7 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5265
+    .line 5268
     :try_start_0
     iget-object v8, p0, Lcom/android/phone/PhoneApp$WorkingHandler;->this$0:Lcom/android/phone/PhoneApp;
 
@@ -253,11 +253,11 @@
 
     goto/16 :goto_0
 
-    .line 5266
+    .line 5269
     :catch_0
     move-exception v5
 
-    .line 5267
+    .line 5270
     .local v5, e:Landroid/os/RemoteException;
     const-string v8, "PhoneApp"
 
@@ -283,7 +283,7 @@
 
     goto/16 :goto_0
 
-    .line 5221
+    .line 5224
     nop
 
     :sswitch_data_0

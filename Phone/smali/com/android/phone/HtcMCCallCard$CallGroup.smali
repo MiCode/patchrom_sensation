@@ -55,7 +55,7 @@
     .line 366
     iput-object p1, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->this$0:Lcom/android/phone/HtcMCCallCard;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 364
     const/4 v0, 0x0
@@ -88,7 +88,7 @@
     .line 373
     iput-object p1, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->this$0:Lcom/android/phone/HtcMCCallCard;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 364
     const/4 v0, 0x0
@@ -162,23 +162,15 @@
 .end method
 
 .method private updateScreen(Z)V
-    .locals 8
+    .locals 7
     .parameter "isMultiple"
 
     .prologue
-    const/16 v7, 0x8
+    const/16 v6, 0x8
 
     const/4 v3, 0x1
 
     const/4 v4, 0x0
-
-    .line 418
-    iget-object v2, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->this$0:Lcom/android/phone/HtcMCCallCard;
-
-    const-string v5, "update call group"
-
-    #calls: Lcom/android/phone/HtcMCCallCard;->log(Ljava/lang/String;)V
-    invoke-static {v2, v5}, Lcom/android/phone/HtcMCCallCard;->access$400(Lcom/android/phone/HtcMCCallCard;Ljava/lang/String;)V
 
     .line 421
     iget-object v2, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->mCall:Lcom/android/internal/telephony/Call;
@@ -192,68 +184,8 @@
     :goto_0
     return-void
 
-    .line 427
-    :cond_0
-    iget-object v2, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->this$0:Lcom/android/phone/HtcMCCallCard;
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "call : "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget-object v6, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->mCall:Lcom/android/internal/telephony/Call;
-
-    invoke-virtual {v6}, Ljava/lang/Object;->hashCode()I
-
-    move-result v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    #calls: Lcom/android/phone/HtcMCCallCard;->log(Ljava/lang/String;)V
-    invoke-static {v2, v5}, Lcom/android/phone/HtcMCCallCard;->access$400(Lcom/android/phone/HtcMCCallCard;Ljava/lang/String;)V
-
-    .line 431
-    iget-object v2, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->this$0:Lcom/android/phone/HtcMCCallCard;
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "call state: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget-object v6, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->mCall:Lcom/android/internal/telephony/Call;
-
-    invoke-virtual {v6}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    #calls: Lcom/android/phone/HtcMCCallCard;->log(Ljava/lang/String;)V
-    invoke-static {v2, v5}, Lcom/android/phone/HtcMCCallCard;->access$400(Lcom/android/phone/HtcMCCallCard;Ljava/lang/String;)V
-
     .line 434
+    :cond_0
     iget-object v2, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->mCall:Lcom/android/internal/telephony/Call;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
@@ -269,32 +201,8 @@
     .line 435
     invoke-virtual {p0, v4}, Lcom/android/phone/HtcMCCallCard$CallGroup;->setVisibility(I)V
 
-    .line 441
-    :goto_1
-    iget-object v2, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->this$0:Lcom/android/phone/HtcMCCallCard;
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "isMultipe: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    #calls: Lcom/android/phone/HtcMCCallCard;->log(Ljava/lang/String;)V
-    invoke-static {v2, v5}, Lcom/android/phone/HtcMCCallCard;->access$400(Lcom/android/phone/HtcMCCallCard;Ljava/lang/String;)V
-
     .line 444
+    :goto_1
     if-eqz p1, :cond_6
 
     .line 446
@@ -392,7 +300,7 @@
     :goto_5
     invoke-virtual {p0, v3}, Lcom/android/phone/HtcMCCallCard$CallGroup;->updateCallList(Z)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 437
     :cond_1
@@ -441,7 +349,7 @@
     .line 470
     iget-object v2, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->mTitleElapsed:Landroid/widget/TextView;
 
-    invoke-virtual {v2, v7}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v2, v6}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 471
     const v1, 0x7f0200d1
@@ -468,7 +376,7 @@
     .line 476
     iget-object v2, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->mTitleLayout:Landroid/view/ViewGroup;
 
-    invoke-virtual {v2, v7}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-virtual {v2, v6}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     goto :goto_4
 
@@ -821,37 +729,9 @@
 .end method
 
 .method reset()V
-    .locals 5
+    .locals 3
 
     .prologue
-    .line 573
-    iget-object v2, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->this$0:Lcom/android/phone/HtcMCCallCard;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "reset call group: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    #calls: Lcom/android/phone/HtcMCCallCard;->log(Ljava/lang/String;)V
-    invoke-static {v2, v3}, Lcom/android/phone/HtcMCCallCard;->access$400(Lcom/android/phone/HtcMCCallCard;Ljava/lang/String;)V
-
     .line 575
     iget-object v2, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->mListLayout:Landroid/view/ViewGroup;
 
@@ -975,47 +855,23 @@
 .end method
 
 .method updateCallList(Z)V
-    .locals 13
+    .locals 12
     .parameter "canSeparate"
 
     .prologue
-    const/4 v12, 0x0
+    const/4 v11, 0x0
 
-    const/4 v11, 0x5
+    const/4 v10, 0x5
 
     const/4 v7, 0x1
 
     const/4 v8, 0x0
 
-    .line 485
-    iget-object v6, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->this$0:Lcom/android/phone/HtcMCCallCard;
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "update call list, can separate: "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    #calls: Lcom/android/phone/HtcMCCallCard;->log(Ljava/lang/String;)V
-    invoke-static {v6, v9}, Lcom/android/phone/HtcMCCallCard;->access$400(Lcom/android/phone/HtcMCCallCard;Ljava/lang/String;)V
-
     .line 489
     iget-object v6, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->this$0:Lcom/android/phone/HtcMCCallCard;
 
     #calls: Lcom/android/phone/HtcMCCallCard;->onlyCdmaCalls()Z
-    invoke-static {v6}, Lcom/android/phone/HtcMCCallCard;->access$500(Lcom/android/phone/HtcMCCallCard;)Z
+    invoke-static {v6}, Lcom/android/phone/HtcMCCallCard;->access$400(Lcom/android/phone/HtcMCCallCard;)Z
 
     move-result v6
 
@@ -1044,20 +900,20 @@
     iget-object v6, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->this$0:Lcom/android/phone/HtcMCCallCard;
 
     #calls: Lcom/android/phone/HtcMCCallCard;->setListItemBottomRoundVisible(Landroid/view/View;Z)V
-    invoke-static {v6, v4, v7}, Lcom/android/phone/HtcMCCallCard;->access$600(Lcom/android/phone/HtcMCCallCard;Landroid/view/View;Z)V
+    invoke-static {v6, v4, v7}, Lcom/android/phone/HtcMCCallCard;->access$500(Lcom/android/phone/HtcMCCallCard;Landroid/view/View;Z)V
 
     .line 494
     iget-object v6, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->this$0:Lcom/android/phone/HtcMCCallCard;
 
     #calls: Lcom/android/phone/HtcMCCallCard;->setListItemDividerVisible(Landroid/view/View;Z)V
-    invoke-static {v6, v4, v8}, Lcom/android/phone/HtcMCCallCard;->access$700(Lcom/android/phone/HtcMCCallCard;Landroid/view/View;Z)V
+    invoke-static {v6, v4, v8}, Lcom/android/phone/HtcMCCallCard;->access$600(Lcom/android/phone/HtcMCCallCard;Landroid/view/View;Z)V
 
     .line 495
     const/4 v2, 0x1
 
     .local v2, index:I
     :goto_0
-    if-ge v2, v11, :cond_1
+    if-ge v2, v10, :cond_1
 
     .line 496
     iget-object v6, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->mList:Ljava/util/ArrayList;
@@ -1071,7 +927,7 @@
 
     .line 497
     .restart local v4       #item:Lcom/android/phone/HtcMCCallCardItem;
-    invoke-virtual {v4, v12, v8, v8}, Lcom/android/phone/HtcMCCallCardItem;->updateByConnection(Lcom/android/internal/telephony/Connection;ZZ)V
+    invoke-virtual {v4, v11, v8, v8}, Lcom/android/phone/HtcMCCallCardItem;->updateByConnection(Lcom/android/internal/telephony/Connection;ZZ)V
 
     .line 495
     add-int/lit8 v2, v2, 0x1
@@ -1096,7 +952,7 @@
     .line 505
     .local v1, connections:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/telephony/Connection;>;"
     #calls: Lcom/android/phone/HtcMCCallCard;->getAliveCount(Ljava/util/List;)I
-    invoke-static {v1}, Lcom/android/phone/HtcMCCallCard;->access$800(Ljava/util/List;)I
+    invoke-static {v1}, Lcom/android/phone/HtcMCCallCard;->access$700(Ljava/util/List;)I
 
     move-result v0
 
@@ -1121,30 +977,6 @@
     iget-object v6, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->mListLayout:Landroid/view/ViewGroup;
 
     invoke-virtual {v6, v8}, Landroid/view/ViewGroup;->setVisibility(I)V
-
-    .line 515
-    iget-object v6, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->this$0:Lcom/android/phone/HtcMCCallCard;
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "connection count:  "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    #calls: Lcom/android/phone/HtcMCCallCard;->log(Ljava/lang/String;)V
-    invoke-static {v6, v9}, Lcom/android/phone/HtcMCCallCard;->access$400(Lcom/android/phone/HtcMCCallCard;Ljava/lang/String;)V
 
     .line 517
     if-le v0, v7, :cond_4
@@ -1212,7 +1044,7 @@
     iget-object v6, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->this$0:Lcom/android/phone/HtcMCCallCard;
 
     #calls: Lcom/android/phone/HtcMCCallCard;->setListItemBottomRoundVisible(Landroid/view/View;Z)V
-    invoke-static {v6, v4, v5}, Lcom/android/phone/HtcMCCallCard;->access$600(Lcom/android/phone/HtcMCCallCard;Landroid/view/View;Z)V
+    invoke-static {v6, v4, v5}, Lcom/android/phone/HtcMCCallCard;->access$500(Lcom/android/phone/HtcMCCallCard;Landroid/view/View;Z)V
 
     .line 528
     iget-object v9, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->this$0:Lcom/android/phone/HtcMCCallCard;
@@ -1223,7 +1055,7 @@
 
     :goto_5
     #calls: Lcom/android/phone/HtcMCCallCard;->setListItemDividerVisible(Landroid/view/View;Z)V
-    invoke-static {v9, v4, v6}, Lcom/android/phone/HtcMCCallCard;->access$700(Lcom/android/phone/HtcMCCallCard;Landroid/view/View;Z)V
+    invoke-static {v9, v4, v6}, Lcom/android/phone/HtcMCCallCard;->access$600(Lcom/android/phone/HtcMCCallCard;Landroid/view/View;Z)V
 
     .line 520
     .end local v5           #visible:Z
@@ -1261,7 +1093,7 @@
     .end local v5           #visible:Z
     :cond_7
     :goto_6
-    if-ge v2, v11, :cond_1
+    if-ge v2, v10, :cond_1
 
     .line 534
     iget-object v6, p0, Lcom/android/phone/HtcMCCallCard$CallGroup;->mList:Ljava/util/ArrayList;
@@ -1275,7 +1107,7 @@
 
     .line 535
     .restart local v4       #item:Lcom/android/phone/HtcMCCallCardItem;
-    invoke-virtual {v4, v12, v8, v8}, Lcom/android/phone/HtcMCCallCardItem;->updateByConnection(Lcom/android/internal/telephony/Connection;ZZ)V
+    invoke-virtual {v4, v11, v8, v8}, Lcom/android/phone/HtcMCCallCardItem;->updateByConnection(Lcom/android/internal/telephony/Connection;ZZ)V
 
     .line 533
     add-int/lit8 v2, v2, 0x1

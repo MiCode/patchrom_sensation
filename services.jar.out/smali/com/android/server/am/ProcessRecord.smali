@@ -312,74 +312,74 @@
 
     const/16 v6, -0x64
 
-    const/4 v2, 0x1
+    const/4 v5, 0x1
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     .line 299
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 57
-    new-instance v4, Ljava/util/HashSet;
+    new-instance v2, Ljava/util/HashSet;
 
-    invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v4, p0, Lcom/android/server/am/ProcessRecord;->pkgList:Ljava/util/HashSet;
+    iput-object v2, p0, Lcom/android/server/am/ProcessRecord;->pkgList:Ljava/util/HashSet;
 
     .line 115
-    new-instance v4, Ljava/util/ArrayList;
+    new-instance v2, Ljava/util/ArrayList;
 
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v4, p0, Lcom/android/server/am/ProcessRecord;->activities:Ljava/util/ArrayList;
+    iput-object v2, p0, Lcom/android/server/am/ProcessRecord;->activities:Ljava/util/ArrayList;
 
     .line 117
-    new-instance v4, Ljava/util/HashSet;
+    new-instance v2, Ljava/util/HashSet;
 
-    invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v4, p0, Lcom/android/server/am/ProcessRecord;->services:Ljava/util/HashSet;
+    iput-object v2, p0, Lcom/android/server/am/ProcessRecord;->services:Ljava/util/HashSet;
 
     .line 119
-    new-instance v4, Ljava/util/HashSet;
+    new-instance v2, Ljava/util/HashSet;
 
-    invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v4, p0, Lcom/android/server/am/ProcessRecord;->executingServices:Ljava/util/HashSet;
+    iput-object v2, p0, Lcom/android/server/am/ProcessRecord;->executingServices:Ljava/util/HashSet;
 
     .line 122
-    new-instance v4, Ljava/util/HashSet;
+    new-instance v2, Ljava/util/HashSet;
 
-    invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v4, p0, Lcom/android/server/am/ProcessRecord;->connections:Ljava/util/HashSet;
+    iput-object v2, p0, Lcom/android/server/am/ProcessRecord;->connections:Ljava/util/HashSet;
 
     .line 125
-    new-instance v4, Ljava/util/HashSet;
+    new-instance v2, Ljava/util/HashSet;
 
-    invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v4, p0, Lcom/android/server/am/ProcessRecord;->receivers:Ljava/util/HashSet;
+    iput-object v2, p0, Lcom/android/server/am/ProcessRecord;->receivers:Ljava/util/HashSet;
 
     .line 127
-    new-instance v4, Ljava/util/HashMap;
+    new-instance v2, Ljava/util/HashMap;
 
-    invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v4, p0, Lcom/android/server/am/ProcessRecord;->pubProviders:Ljava/util/HashMap;
+    iput-object v2, p0, Lcom/android/server/am/ProcessRecord;->pubProviders:Ljava/util/HashMap;
 
     .line 130
-    new-instance v4, Ljava/util/HashMap;
+    new-instance v2, Ljava/util/HashMap;
 
-    invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v4, p0, Lcom/android/server/am/ProcessRecord;->conProviders:Ljava/util/HashMap;
+    iput-object v2, p0, Lcom/android/server/am/ProcessRecord;->conProviders:Ljava/util/HashMap;
 
     .line 158
-    iput-boolean v3, p0, Lcom/android/server/am/ProcessRecord;->isDirty:Z
+    iput-boolean v4, p0, Lcom/android/server/am/ProcessRecord;->isDirty:Z
 
     .line 159
-    iput-boolean v3, p0, Lcom/android/server/am/ProcessRecord;->mContainIMEService:Z
+    iput-boolean v4, p0, Lcom/android/server/am/ProcessRecord;->mContainIMEService:Z
 
     .line 165
     iput-wide v7, p0, Lcom/android/server/am/ProcessRecord;->errorOccurTime:J
@@ -397,24 +397,24 @@
     iput-object p4, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 303
-    iget-object v4, p0, Lcom/android/server/am/ProcessRecord;->pkgList:Ljava/util/HashSet;
+    iget-object v2, p0, Lcom/android/server/am/ProcessRecord;->pkgList:Ljava/util/HashSet;
 
-    iget-object v5, p3, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v3, p3, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
-    invoke-virtual {v4, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 304
     iput-object p2, p0, Lcom/android/server/am/ProcessRecord;->thread:Landroid/app/IApplicationThread;
 
     .line 305
-    const/16 v4, 0xf
+    const/16 v2, 0xf
 
-    iput v4, p0, Lcom/android/server/am/ProcessRecord;->maxAdj:I
+    iput v2, p0, Lcom/android/server/am/ProcessRecord;->maxAdj:I
 
     .line 306
-    sget v4, Lcom/android/server/am/ProcessList;->HIDDEN_APP_MIN_ADJ:I
+    sget v2, Lcom/android/server/am/ProcessList;->HIDDEN_APP_MIN_ADJ:I
 
-    iput v4, p0, Lcom/android/server/am/ProcessRecord;->hiddenAdj:I
+    iput v2, p0, Lcom/android/server/am/ProcessRecord;->hiddenAdj:I
 
     .line 307
     iput v6, p0, Lcom/android/server/am/ProcessRecord;->setRawAdj:I
@@ -427,149 +427,137 @@
     iput v6, p0, Lcom/android/server/am/ProcessRecord;->curAdj:I
 
     .line 309
-    iput-boolean v3, p0, Lcom/android/server/am/ProcessRecord;->persistent:Z
+    iput-boolean v4, p0, Lcom/android/server/am/ProcessRecord;->persistent:Z
 
     .line 310
-    iput-boolean v3, p0, Lcom/android/server/am/ProcessRecord;->removed:Z
+    iput-boolean v4, p0, Lcom/android/server/am/ProcessRecord;->removed:Z
 
     .line 313
-    iget-object v4, p0, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+    iget-object v2, p0, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
-    iget-boolean v4, v4, Landroid/content/pm/ApplicationInfo;->isDirty:Z
+    iget-boolean v2, v2, Landroid/content/pm/ApplicationInfo;->isDirty:Z
 
-    iput-boolean v4, p0, Lcom/android/server/am/ProcessRecord;->isDirty:Z
+    iput-boolean v2, p0, Lcom/android/server/am/ProcessRecord;->isDirty:Z
 
     .line 315
-    iget-object v4, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
-    const-string v5, "com.android.phone"
+    const-string v3, "com.android.phone"
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     .line 318
     .local v0, isPhoneProcess:Z
-    iget-object v4, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
-    const-string v5, "com.htc.launcher"
+    const-string v3, "com.htc.launcher"
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v2
 
-    iput-boolean v4, p0, Lcom/android/server/am/ProcessRecord;->isRosieProcess:Z
+    iput-boolean v2, p0, Lcom/android/server/am/ProcessRecord;->isRosieProcess:Z
 
     .line 320
     if-nez v0, :cond_0
 
-    iget-object v4, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
-    const-string v5, "com.htc.WeatherWallpaper"
+    const-string v3, "com.htc.WeatherWallpaper"
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v2
 
-    if-eqz v4, :cond_2
+    if-eqz v2, :cond_3
 
     .line 322
     :cond_0
-    iput-boolean v2, p0, Lcom/android/server/am/ProcessRecord;->mNeedForegroundSchedulingPolicy:Z
+    iput-boolean v5, p0, Lcom/android/server/am/ProcessRecord;->mNeedForegroundSchedulingPolicy:Z
 
     .line 327
     :goto_0
-    sget-object v4, Lcom/android/server/am/ProcessRecord;->htcImportantProcesses:Ljava/util/ArrayList;
+    sget-object v2, Lcom/android/server/am/ProcessRecord;->htcImportantProcesses:Ljava/util/ArrayList;
 
-    iget-object v5, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v2
 
-    if-eqz v4, :cond_3
-
-    .line 329
-    const-string v4, "ActivityManager"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Process "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget-object v6, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, " is htc important process"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    if-eqz v2, :cond_4
 
     .line 331
-    iput-boolean v2, p0, Lcom/android/server/am/ProcessRecord;->isHtcImportantProcess:Z
+    iput-boolean v5, p0, Lcom/android/server/am/ProcessRecord;->isHtcImportantProcess:Z
 
     .line 337
     :goto_1
-    iget-object v4, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
-    const-string v5, "android.process.acore"
+    const-string v3, "android.process.acore"
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v2
 
-    if-eqz v4, :cond_4
+    if-eqz v2, :cond_5
 
     .line 338
-    iput-boolean v2, p0, Lcom/android/server/am/ProcessRecord;->mIsAcoreProcess:Z
+    iput-boolean v5, p0, Lcom/android/server/am/ProcessRecord;->mIsAcoreProcess:Z
 
     .line 345
     :goto_2
     const/4 v1, 0x0
 
-    .line 346
+    .line 357
     .local v1, nHtcHideBgAnr:I
-    invoke-static {}, Lcom/htc/profileflag/ProfileConfig;->getProfileHideBgAnr()I
+    const/16 v2, 0x7b
 
-    move-result v1
+    sget-short v3, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    if-eqz v1, :cond_7
+    if-eq v2, v3, :cond_1
 
-    .line 347
-    if-nez v0, :cond_1
+    const/16 v2, 0x3e
 
-    iget-object v4, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+    sget-short v3, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    const-string v5, "com.htc.launcher"
+    if-eq v2, v3, :cond_1
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const/16 v2, 0x8a
 
-    move-result v4
+    sget-short v3, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    if-nez v4, :cond_1
+    if-eq v2, v3, :cond_1
 
-    iget-boolean v4, p0, Lcom/android/server/am/ProcessRecord;->mIsAcoreProcess:Z
+    const/16 v2, 0xad
 
-    if-eqz v4, :cond_5
+    sget-short v3, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    .line 350
+    if-ne v2, v3, :cond_7
+
+    .line 364
     :cond_1
-    iput-boolean v2, p0, Lcom/android/server/am/ProcessRecord;->mShouldNotSwallowANR:Z
+    if-nez v0, :cond_2
+
+    iget-object v2, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    const-string v3, "com.htc.launcher"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    iget-boolean v2, p0, Lcom/android/server/am/ProcessRecord;->mIsAcoreProcess:Z
+
+    if-eqz v2, :cond_6
+
+    .line 367
+    :cond_2
+    iput-boolean v5, p0, Lcom/android/server/am/ProcessRecord;->mShouldNotSwallowANR:Z
 
     .line 384
     :goto_3
@@ -577,127 +565,57 @@
 
     .line 324
     .end local v1           #nHtcHideBgAnr:I
-    :cond_2
-    iput-boolean v3, p0, Lcom/android/server/am/ProcessRecord;->mNeedForegroundSchedulingPolicy:Z
+    :cond_3
+    iput-boolean v4, p0, Lcom/android/server/am/ProcessRecord;->mNeedForegroundSchedulingPolicy:Z
 
     goto :goto_0
 
     .line 334
-    :cond_3
-    iput-boolean v3, p0, Lcom/android/server/am/ProcessRecord;->isHtcImportantProcess:Z
+    :cond_4
+    iput-boolean v4, p0, Lcom/android/server/am/ProcessRecord;->isHtcImportantProcess:Z
 
     goto :goto_1
 
     .line 340
-    :cond_4
-    iput-boolean v3, p0, Lcom/android/server/am/ProcessRecord;->mIsAcoreProcess:Z
+    :cond_5
+    iput-boolean v4, p0, Lcom/android/server/am/ProcessRecord;->mIsAcoreProcess:Z
 
     goto :goto_2
 
-    .line 353
-    .restart local v1       #nHtcHideBgAnr:I
-    :cond_5
-    const-string v4, "ProcessRecord"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Configured nHtcHideBgAnr = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 355
-    if-gez v1, :cond_6
-
-    :goto_4
-    iput-boolean v2, p0, Lcom/android/server/am/ProcessRecord;->mShouldNotSwallowANR:Z
-
-    goto :goto_3
-
-    :cond_6
-    move v2, v3
-
-    goto :goto_4
-
-    .line 357
-    :cond_7
-    const/16 v4, 0x7b
-
-    sget-short v5, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
-
-    if-eq v4, v5, :cond_8
-
-    const/16 v4, 0x3e
-
-    sget-short v5, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
-
-    if-eq v4, v5, :cond_8
-
-    const/16 v4, 0x8a
-
-    sget-short v5, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
-
-    if-eq v4, v5, :cond_8
-
-    const/16 v4, 0xad
-
-    sget-short v5, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
-
-    if-ne v4, v5, :cond_b
-
-    .line 362
-    :cond_8
-    const-string v4, "ProcessRecord"
-
-    const-string v5, "For pyramid, holiday, runnymede, vigor, no swallow background ANR"
-
-    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 364
-    if-nez v0, :cond_9
-
-    iget-object v4, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
-
-    const-string v5, "com.htc.launcher"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_9
-
-    iget-boolean v4, p0, Lcom/android/server/am/ProcessRecord;->mIsAcoreProcess:Z
-
-    if-eqz v4, :cond_a
-
-    .line 367
-    :cond_9
-    iput-boolean v2, p0, Lcom/android/server/am/ProcessRecord;->mShouldNotSwallowANR:Z
-
-    goto :goto_3
-
     .line 369
-    :cond_a
-    iput-boolean v3, p0, Lcom/android/server/am/ProcessRecord;->mShouldNotSwallowANR:Z
+    .restart local v1       #nHtcHideBgAnr:I
+    :cond_6
+    iput-boolean v4, p0, Lcom/android/server/am/ProcessRecord;->mShouldNotSwallowANR:Z
 
     goto :goto_3
 
-    .line 373
-    :cond_b
-    iput-boolean v2, p0, Lcom/android/server/am/ProcessRecord;->mShouldNotSwallowANR:Z
+    .line 374
+    :cond_7
+    if-nez v0, :cond_8
+
+    iget-object v2, p0, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    const-string v3, "com.htc.launcher"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_8
+
+    iget-boolean v2, p0, Lcom/android/server/am/ProcessRecord;->mIsAcoreProcess:Z
+
+    if-eqz v2, :cond_9
+
+    .line 377
+    :cond_8
+    iput-boolean v5, p0, Lcom/android/server/am/ProcessRecord;->mShouldNotSwallowANR:Z
+
+    goto :goto_3
+
+    .line 379
+    :cond_9
+    iput-boolean v4, p0, Lcom/android/server/am/ProcessRecord;->mShouldNotSwallowANR:Z
 
     goto :goto_3
 .end method

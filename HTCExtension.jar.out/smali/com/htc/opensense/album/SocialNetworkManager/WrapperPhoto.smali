@@ -94,7 +94,7 @@
     const/4 v2, 0x0
 
     .line 40
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 23
     iput-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/WrapperPhoto;->mID:Ljava/lang/String;
@@ -160,7 +160,7 @@
     const/4 v2, 0x0
 
     .line 198
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 23
     iput-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/WrapperPhoto;->mID:Ljava/lang/String;
@@ -229,7 +229,7 @@
     const/4 v2, 0x0
 
     .line 43
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 23
     iput-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/WrapperPhoto;->mID:Ljava/lang/String;
@@ -306,7 +306,7 @@
     const/4 v2, 0x0
 
     .line 48
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 23
     iput-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/WrapperPhoto;->mID:Ljava/lang/String;

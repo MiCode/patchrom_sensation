@@ -171,7 +171,7 @@
 
     .line 101
     :cond_1
-    iget-object v3, p0, Lcom/android/camera/effect/GpuEffectController;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "No camera controller in setEffect()"
 
@@ -237,7 +237,7 @@
 
     .line 116
     :cond_0
-    iget-object v1, p0, Lcom/android/camera/effect/GpuEffectController;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "No camera controller in setEffectParameters()"
 

@@ -74,7 +74,7 @@
     const/4 v1, 0x0
 
     .line 59
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 60
     iput p1, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAttributes:I
@@ -121,7 +121,7 @@
 
     .prologue
     .line 80
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 81
     if-nez p2, :cond_0
@@ -169,7 +169,7 @@
     const/4 v0, 0x1
 
     .line 93
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 94
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I

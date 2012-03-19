@@ -1813,7 +1813,7 @@
     const/4 v1, 0x0
 
     .local v1, i:I
-    invoke-virtual {v4}, Lcom/htc/preference/HtcPreferenceGroup;->getPreferenceCount()I
+    invoke-virtual {v4}, Lcom/htc/preference/HtcPreferenceScreen;->getPreferenceCount()I
 
     move-result v2
 
@@ -1822,7 +1822,7 @@
     if-ge v1, v2, :cond_1
 
     .line 202
-    invoke-virtual {v4, v1}, Lcom/htc/preference/HtcPreferenceGroup;->getPreference(I)Lcom/htc/preference/HtcPreference;
+    invoke-virtual {v4, v1}, Lcom/htc/preference/HtcPreferenceScreen;->getPreference(I)Lcom/htc/preference/HtcPreference;
 
     move-result-object v5
 
@@ -1869,7 +1869,7 @@
     .line 208
     const v5, 0x7f0e0441
 
-    invoke-virtual {v4, v5}, Lcom/htc/preference/HtcPreferenceGroup;->setTitle(I)V
+    invoke-virtual {v4, v5}, Lcom/htc/preference/HtcPreferenceScreen;->setTitle(I)V
 
     .line 220
     :goto_2

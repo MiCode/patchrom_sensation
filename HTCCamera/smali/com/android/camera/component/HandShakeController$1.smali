@@ -30,7 +30,7 @@
     .line 52
     iput-object p1, p0, Lcom/android/camera/component/HandShakeController$1;->this$0:Lcom/android/camera/component/HandShakeController;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -57,7 +57,7 @@
     .line 58
     iget-object v1, p0, Lcom/android/camera/component/HandShakeController$1;->this$0:Lcom/android/camera/component/HandShakeController;
 
-    #getter for: Lcom/android/camera/component/HandShakeController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/HandShakeController;->access$000(Lcom/android/camera/component/HandShakeController;)Ljava/lang/String;
 
     move-result-object v1
@@ -86,7 +86,7 @@
     .line 63
     iget-object v1, p0, Lcom/android/camera/component/HandShakeController$1;->this$0:Lcom/android/camera/component/HandShakeController;
 
-    #getter for: Lcom/android/camera/component/HandShakeController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/HandShakeController;->access$200(Lcom/android/camera/component/HandShakeController;)Ljava/lang/String;
 
     move-result-object v1

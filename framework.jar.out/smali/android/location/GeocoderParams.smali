@@ -45,7 +45,7 @@
 
     .prologue
     .line 40
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 41
     return-void
@@ -58,7 +58,7 @@
 
     .prologue
     .line 48
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 49
     iput-object p2, p0, Landroid/location/GeocoderParams;->mLocale:Ljava/util/Locale;

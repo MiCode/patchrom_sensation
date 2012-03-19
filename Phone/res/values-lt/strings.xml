@@ -238,8 +238,8 @@ Tai gali užtrukti keletą minučių."</string>
     <string name="htc_preferred_network_global_mode">Visuotinis režimas</string>
     <string name="htc_preferred_network_cdma_evdo_aut_mode">CDMA režimas</string>
     <string name="htc_preferred_network_gsm_wcdma_aut_mode">GSM / UMTS režimas</string>
-    <string name="htc_preferred_network_lte_mode">LTE Mode</string>
-    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM / UMTS / LTE Mode</string>
+    <string name="htc_preferred_network_lte_mode">LTE režimas</string>
+    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM/UMTS/LTE režimas</string>
     <string name="title_gsm_preferred_network_options">GSM / UMTS režimas</string>
     <string name="btn_Menu_Edit">Redaguoti</string>
     <string name="btn_Menu_Set_Done">Atlikta</string>

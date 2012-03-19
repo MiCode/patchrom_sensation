@@ -556,7 +556,7 @@
 
     .line 592
     .local v0, AlbumMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Integer;>;"
-    iget-object v10, p0, Lcom/htc/socialnetwork/facebook/FacebookClient;->mDataHelper:Lcom/htc/socialnetwork/SocialNetworkDataHelper;
+    iget-object v10, p0, Lcom/htc/socialnetwork/SocialNetworkClient;->mDataHelper:Lcom/htc/socialnetwork/SocialNetworkDataHelper;
 
     invoke-virtual {v10}, Lcom/htc/socialnetwork/SocialNetworkDataHelper;->getActiveUserId()Ljava/lang/String;
 
@@ -711,7 +711,7 @@
     .line 696
     iget-object v0, p0, Lcom/htc/socialnetwork/facebook/FacebookClient;->facebookInterface:Lcom/htc/socialnetwork/facebook/SimpleFacebookInterface;
 
-    iget-object v1, p0, Lcom/htc/socialnetwork/facebook/FacebookClient;->mSecret:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/socialnetwork/SocialNetworkClient;->mSecret:Ljava/lang/String;
 
     invoke-virtual {p0}, Lcom/htc/socialnetwork/facebook/FacebookClient;->getDataHelper()Lcom/htc/socialnetwork/SocialNetworkDataHelper;
 
@@ -3272,7 +3272,7 @@
     .line 414
     const-string v4, "api_key"
 
-    iget-object v5, p0, Lcom/htc/socialnetwork/facebook/FacebookClient;->mApi_key:Ljava/lang/String;
+    iget-object v5, p0, Lcom/htc/socialnetwork/SocialNetworkClient;->mApi_key:Ljava/lang/String;
 
     invoke-virtual {v2, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -3681,7 +3681,7 @@
 
     .line 483
     :sswitch_2
-    iget-object v12, p0, Lcom/htc/socialnetwork/facebook/FacebookClient;->mDataHelper:Lcom/htc/socialnetwork/SocialNetworkDataHelper;
+    iget-object v12, p0, Lcom/htc/socialnetwork/SocialNetworkClient;->mDataHelper:Lcom/htc/socialnetwork/SocialNetworkDataHelper;
 
     invoke-virtual {v12}, Lcom/htc/socialnetwork/SocialNetworkDataHelper;->removeActiveAccount()Z
 
@@ -3831,7 +3831,7 @@
     .prologue
     .line 524
     :try_start_0
-    iget-object v2, p0, Lcom/htc/socialnetwork/facebook/FacebookClient;->mDataHelper:Lcom/htc/socialnetwork/SocialNetworkDataHelper;
+    iget-object v2, p0, Lcom/htc/socialnetwork/SocialNetworkClient;->mDataHelper:Lcom/htc/socialnetwork/SocialNetworkDataHelper;
 
     invoke-virtual {v2}, Lcom/htc/socialnetwork/SocialNetworkDataHelper;->getSessionToken()Ljava/lang/String;
 

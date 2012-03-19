@@ -139,7 +139,7 @@
 
     .prologue
     .line 62
-    iget-object v1, p0, Landroid/widget/DigitalClock;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 

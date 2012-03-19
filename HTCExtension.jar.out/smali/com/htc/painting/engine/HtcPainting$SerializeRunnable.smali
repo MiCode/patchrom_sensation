@@ -43,7 +43,7 @@
     .line 148
     iput-object p1, p0, Lcom/htc/painting/engine/HtcPainting$SerializeRunnable;->this$0:Lcom/htc/painting/engine/HtcPainting;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 150
     const/4 v0, 0x0

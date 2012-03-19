@@ -43,7 +43,7 @@
     const/4 v1, 0x0
 
     .line 38
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 39
     const/4 v0, 0x2
@@ -68,7 +68,7 @@
     const/4 v0, 0x0
 
     .line 44
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 45
     iput p1, p0, Landroid/text/style/BulletSpan;->mGapWidth:I
@@ -90,7 +90,7 @@
 
     .prologue
     .line 50
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 51
     iput p1, p0, Landroid/text/style/BulletSpan;->mGapWidth:I
@@ -113,7 +113,7 @@
 
     .prologue
     .line 56
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 57
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I

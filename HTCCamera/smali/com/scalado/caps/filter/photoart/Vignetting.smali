@@ -23,7 +23,7 @@
     invoke-direct {p0, p1, v1}, Lcom/scalado/caps/Filter;-><init>(Lcom/scalado/caps/Session;Z)V
 
     .line 27
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Vignetting;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -88,7 +88,7 @@
 
     .prologue
     .line 103
-    iget-object v0, p0, Lcom/scalado/caps/filter/photoart/Vignetting;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -112,7 +112,7 @@
     const/high16 v4, 0x3f80
 
     .line 62
-    iget-boolean v2, p0, Lcom/scalado/caps/filter/photoart/Vignetting;->isCommitted:Z
+    iget-boolean v2, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v2, :cond_0
 
@@ -127,7 +127,7 @@
 
     .line 66
     :cond_0
-    iget-object v2, p0, Lcom/scalado/caps/filter/photoart/Vignetting;->session:Lcom/scalado/caps/Session;
+    iget-object v2, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v2}, Lcom/scalado/caps/Session;->getViewport()Lcom/scalado/base/Rect;
 
@@ -424,7 +424,7 @@
 
     .line 87
     :cond_b
-    iget-object v2, p0, Lcom/scalado/caps/filter/photoart/Vignetting;->session:Lcom/scalado/caps/Session;
+    iget-object v2, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v2}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -438,7 +438,7 @@
     .local v0, error:I
     const/4 v2, 0x1
 
-    iput-boolean v2, p0, Lcom/scalado/caps/filter/photoart/Vignetting;->isSet:Z
+    iput-boolean v2, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 89
     iput-object p1, p0, Lcom/scalado/caps/filter/photoart/Vignetting;->region:Lcom/scalado/base/Rect;

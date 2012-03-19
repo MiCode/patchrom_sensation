@@ -72,7 +72,7 @@
     .line 469
     iput-object p1, p0, Lcom/htc/customization/FrameworkCustomization$FrameworkXmlContentHandler$TagNode;->this$1:Lcom/htc/customization/FrameworkCustomization$FrameworkXmlContentHandler;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 470
     new-instance v0, Ljava/util/HashMap;

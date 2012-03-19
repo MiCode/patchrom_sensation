@@ -58,7 +58,7 @@
     const/4 v0, 0x0
 
     .line 17
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 9
     iput v1, p0, Lcom/htc/clientprofileservice/SncdataEntry;->id:I
@@ -100,7 +100,7 @@
     const/4 v0, 0x0
 
     .line 35
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 9
     iput v1, p0, Lcom/htc/clientprofileservice/SncdataEntry;->id:I
@@ -152,7 +152,7 @@
     const/4 v0, 0x0
 
     .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 9
     iput v1, p0, Lcom/htc/clientprofileservice/SncdataEntry;->id:I
@@ -189,7 +189,7 @@
     const/4 v0, 0x0
 
     .line 21
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 9
     iput v1, p0, Lcom/htc/clientprofileservice/SncdataEntry;->id:I

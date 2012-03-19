@@ -31,10 +31,10 @@
     .parameter "ctx"
 
     .prologue
-    .line 821
+    .line 827
     iput-object p1, p0, Lcom/android/server/HtcPowerSaver$Animations;->this$0:Lcom/android/server/HtcPowerSaver;
 
-    .line 822
+    .line 828
     const-string v2, "Animations"
 
     const-string v3, "powersaver_onscreen_animation"
@@ -49,28 +49,28 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/server/HtcPowerSaver$Feature;-><init>(Lcom/android/server/HtcPowerSaver;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;)V
 
-    .line 816
+    .line 822
     const-string v0, "psaver_normal_animation_0"
 
     iput-object v0, p0, Lcom/android/server/HtcPowerSaver$Animations;->KEY_N_ANIMATION0:Ljava/lang/String;
 
-    .line 817
+    .line 823
     const-string v0, "psaver_normal_animation_1"
 
     iput-object v0, p0, Lcom/android/server/HtcPowerSaver$Animations;->KEY_N_ANIMATION1:Ljava/lang/String;
 
-    .line 823
+    .line 829
     iput-object p2, p0, Lcom/android/server/HtcPowerSaver$Animations;->mContext:Landroid/content/Context;
 
-    .line 824
+    .line 830
     return-void
 .end method
 
 .method private getSysSettings()[F
-    .locals 5
+    .locals 6
 
     .prologue
-    .line 828
+    .line 833
     const-string v3, "window"
 
     invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -81,22 +81,22 @@
 
     move-result-object v2
 
-    .line 829
+    .line 834
     .local v2, mWindowManager:Landroid/view/IWindowManager;
     if-nez v2, :cond_0
 
-    .line 831
-    iget-object v3, p0, Lcom/android/server/HtcPowerSaver$Animations;->TAG:Ljava/lang/String;
+    .line 835
+    const-string v3, "HtcPowerSaver"
 
-    const-string v4, "error at IWindowManager"
+    const-string v4, "getSysSettings: error at IWindowManager"
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 834
+    .line 838
     :cond_0
     const/4 v0, 0x0
 
-    .line 837
+    .line 840
     .local v0, AnimationScales:[F
     :try_start_0
     invoke-interface {v2}, Landroid/view/IWindowManager;->getAnimationScales()[F
@@ -105,17 +105,37 @@
 
     move-result-object v0
 
-    .line 841
+    .line 844
     :goto_0
     return-object v0
 
-    .line 838
+    .line 841
     :catch_0
     move-exception v1
 
-    .line 839
+    .line 842
     .local v1, e:Landroid/os/RemoteException;
-    invoke-virtual {v1}, Landroid/os/RemoteException;->printStackTrace()V
+    const-string v3, "HtcPowerSaver"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "getSysSettings: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method
@@ -125,7 +145,7 @@
     .parameter "animation"
 
     .prologue
-    .line 846
+    .line 848
     const-string v2, "window"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -136,12 +156,12 @@
 
     move-result-object v1
 
-    .line 847
+    .line 849
     .local v1, mWindowManager:Landroid/view/IWindowManager;
     if-nez v1, :cond_0
 
-    .line 849
-    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Animations;->TAG:Ljava/lang/String;
+    .line 850
+    const-string v2, "HtcPowerSaver"
 
     const-string v3, "Get Window Manager Servcie fail."
 
@@ -157,7 +177,7 @@
     invoke-interface {v1, p1}, Landroid/view/IWindowManager;->setAnimationScales([F)V
 
     .line 855
-    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Animations;->TAG:Ljava/lang/String;
+    const-string v2, "HtcPowerSaver"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -207,7 +227,27 @@
 
     .line 857
     .local v0, e:Landroid/os/RemoteException;
-    invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
+    const-string v2, "HtcPowerSaver"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "setSysSettings: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method
@@ -218,30 +258,30 @@
     .locals 3
 
     .prologue
-    .line 878
+    .line 879
     const/4 v1, 0x2
 
     new-array v0, v1, [F
 
     fill-array-data v0, :array_0
 
-    .line 879
+    .line 880
     .local v0, mAnimationScales:[F
     invoke-direct {p0, v0}, Lcom/android/server/HtcPowerSaver$Animations;->setSysSettings([F)V
 
-    .line 880
-    iget-object v1, p0, Lcom/android/server/HtcPowerSaver$Animations;->TAG:Ljava/lang/String;
+    .line 881
+    const-string v1, "HtcPowerSaver"
 
     const-string v2, "applyPowerSaverSettings."
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 881
+    .line 882
     const/4 v1, 0x0
 
     return v1
 
-    .line 878
+    .line 879
     :array_0
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -257,21 +297,24 @@
 
     const/4 v4, 0x0
 
-    .line 886
-    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Animations;->mContext:Landroid/content/Context;
+    .line 887
+    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Animations;->this$0:Lcom/android/server/HtcPowerSaver;
 
-    invoke-virtual {p0, v2}, Lcom/android/server/HtcPowerSaver$Animations;->getSettingsSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    iget-object v3, p0, Lcom/android/server/HtcPowerSaver$Animations;->mContext:Landroid/content/Context;
+
+    #calls: Lcom/android/server/HtcPowerSaver;->getSettingsSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-static {v2, v3}, Lcom/android/server/HtcPowerSaver;->access$400(Lcom/android/server/HtcPowerSaver;Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
 
-    .line 887
+    .line 888
     .local v1, sp:Landroid/content/SharedPreferences;
     if-nez v1, :cond_0
 
     .line 889
-    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Animations;->TAG:Ljava/lang/String;
+    const-string v2, "HtcPowerSaver"
 
-    const-string v3, "Get SharedPreferences fail."
+    const-string v3, "restoreSystemSettings: Get SharedPreferences fail."
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -330,9 +373,12 @@
     const/4 v5, 0x0
 
     .line 863
-    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Animations;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Animations;->this$0:Lcom/android/server/HtcPowerSaver;
 
-    invoke-virtual {p0, v2}, Lcom/android/server/HtcPowerSaver$Animations;->getSettingsSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    iget-object v3, p0, Lcom/android/server/HtcPowerSaver$Animations;->mContext:Landroid/content/Context;
+
+    #calls: Lcom/android/server/HtcPowerSaver;->getSettingsSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-static {v2, v3}, Lcom/android/server/HtcPowerSaver;->access$400(Lcom/android/server/HtcPowerSaver;Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
 
@@ -340,24 +386,24 @@
     .local v1, sp:Landroid/content/SharedPreferences;
     if-nez v1, :cond_0
 
-    .line 866
-    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Animations;->TAG:Ljava/lang/String;
+    .line 865
+    const-string v2, "HtcPowerSaver"
 
-    const-string v3, "Get SharedPreferences fail."
+    const-string v3, "saveSystemSettings: Get SharedPreferences fail."
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 873
+    .line 874
     :goto_0
     return v5
 
-    .line 869
+    .line 868
     :cond_0
     invoke-direct {p0}, Lcom/android/server/HtcPowerSaver$Animations;->getSysSettings()[F
 
     move-result-object v0
 
-    .line 870
+    .line 869
     .local v0, animation:[F
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -373,7 +419,7 @@
 
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 871
+    .line 870
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v2
@@ -388,8 +434,8 @@
 
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 872
-    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Animations;->TAG:Ljava/lang/String;
+    .line 871
+    const-string v2, "HtcPowerSaver"
 
     new-instance v3, Ljava/lang/StringBuilder;
 

@@ -1670,12 +1670,12 @@
 
     .prologue
     .line 2242
-    iget-object v6, p0, Lcom/htc/widget/MoreExpandableHtcListView;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/htc/widget/HtcAbsListView;->mContext:Landroid/content/Context;
 
     if-eqz v6, :cond_0
 
     .line 2243
-    iget-object v6, p0, Lcom/htc/widget/MoreExpandableHtcListView;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/htc/widget/HtcAbsListView;->mContext:Landroid/content/Context;
 
     const-string v7, "window"
 
@@ -3003,7 +3003,7 @@
 
     aget v2, v0, v1
 
-    iget-object v3, p0, Lcom/htc/widget/MoreExpandableHtcListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v3, p0, Lcom/htc/widget/HtcAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v3, v3, Landroid/graphics/Rect;->top:I
 

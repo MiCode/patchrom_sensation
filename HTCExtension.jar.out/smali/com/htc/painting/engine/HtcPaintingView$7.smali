@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/htc/painting/engine/HtcPaintingView$7;->val$callback:Lcom/htc/painting/engine/IPaintingCallBack$IActionCallback;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -12,7 +12,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final MAX_CALLERS_IN_CONFERENCE:I = 0x5
 
@@ -75,19 +75,7 @@
     return-void
 .end method
 
-.method static synthetic access$400(Lcom/android/phone/HtcMCCallCard;Ljava/lang/String;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 52
-    invoke-direct {p0, p1}, Lcom/android/phone/HtcMCCallCard;->log(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method static synthetic access$500(Lcom/android/phone/HtcMCCallCard;)Z
+.method static synthetic access$400(Lcom/android/phone/HtcMCCallCard;)Z
     .locals 1
     .parameter "x0"
 
@@ -100,7 +88,7 @@
     return v0
 .end method
 
-.method static synthetic access$600(Lcom/android/phone/HtcMCCallCard;Landroid/view/View;Z)V
+.method static synthetic access$500(Lcom/android/phone/HtcMCCallCard;Landroid/view/View;Z)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -113,7 +101,7 @@
     return-void
 .end method
 
-.method static synthetic access$700(Lcom/android/phone/HtcMCCallCard;Landroid/view/View;Z)V
+.method static synthetic access$600(Lcom/android/phone/HtcMCCallCard;Landroid/view/View;Z)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -126,7 +114,7 @@
     return-void
 .end method
 
-.method static synthetic access$800(Ljava/util/List;)I
+.method static synthetic access$700(Ljava/util/List;)I
     .locals 1
     .parameter "x0"
 

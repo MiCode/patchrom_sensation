@@ -65,7 +65,7 @@
     .line 295
     iput-object p1, p0, Landroid/media/MediaInfo$MediaTag;->this$0:Landroid/media/MediaInfo;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 296
     iput-object p2, p0, Landroid/media/MediaInfo$MediaTag;->mTitle:Ljava/lang/String;
@@ -97,7 +97,7 @@
     .line 302
     iput-object p1, p0, Landroid/media/MediaInfo$MediaTag;->this$0:Landroid/media/MediaInfo;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 303
     iput-object p2, p0, Landroid/media/MediaInfo$MediaTag;->mTitle:Ljava/lang/String;

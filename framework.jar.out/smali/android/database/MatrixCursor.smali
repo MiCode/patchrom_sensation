@@ -295,7 +295,7 @@
 
     .line 69
     :cond_1
-    iget v0, p0, Landroid/database/MatrixCursor;->mPos:I
+    iget v0, p0, Landroid/database/AbstractCursor;->mPos:I
 
     if-gez v0, :cond_2
 
@@ -310,7 +310,7 @@
 
     .line 72
     :cond_2
-    iget v0, p0, Landroid/database/MatrixCursor;->mPos:I
+    iget v0, p0, Landroid/database/AbstractCursor;->mPos:I
 
     iget v1, p0, Landroid/database/MatrixCursor;->rowCount:I
 
@@ -329,7 +329,7 @@
     :cond_3
     iget-object v0, p0, Landroid/database/MatrixCursor;->data:[Ljava/lang/Object;
 
-    iget v1, p0, Landroid/database/MatrixCursor;->mPos:I
+    iget v1, p0, Landroid/database/AbstractCursor;->mPos:I
 
     iget v2, p0, Landroid/database/MatrixCursor;->columnCount:I
 

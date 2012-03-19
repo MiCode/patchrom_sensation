@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 3204
+    .line 3248
     iput-object p1, p0, Lcom/android/phone/BluetoothHandsfree$9;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     invoke-direct {p0}, Landroid/bluetooth/AtCommandHandler;-><init>()V
@@ -45,14 +45,14 @@
 
     const/4 v5, 0x1
 
-    .line 3207
+    .line 3251
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
 
     if-lez v2, :cond_6
 
-    .line 3208
+    .line 3252
     invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v2
@@ -61,7 +61,7 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 3211
+    .line 3255
     const-string v2, ">9999"
 
     invoke-virtual {p1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -70,16 +70,16 @@
 
     if-eqz v2, :cond_0
 
-    .line 3212
+    .line 3256
     new-instance v2, Landroid/bluetooth/AtCommandResult;
 
     invoke-direct {v2, v5}, Landroid/bluetooth/AtCommandResult;-><init>(I)V
 
-    .line 3245
+    .line 3289
     :goto_0
     return-object v2
 
-    .line 3215
+    .line 3259
     :cond_0
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -93,7 +93,7 @@
 
     if-ne v2, v6, :cond_1
 
-    .line 3216
+    .line 3260
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -104,15 +104,15 @@
 
     move-result-object p1
 
-    .line 3218
+    .line 3262
     :cond_1
-    invoke-static {}, Lcom/android/phone/BluetoothHandsfree;->access$3800()Z
+    invoke-static {}, Lcom/android/phone/BluetoothHandsfree;->access$3700()Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 3219
+    .line 3263
     const-string v2, "Bluetooth HS/HF"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -139,7 +139,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3223
+    .line 3267
     :goto_1
     invoke-virtual {p1, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -149,7 +149,7 @@
 
     move-result v1
 
-    .line 3224
+    .line 3268
     .local v1, location:I
     iget-object v2, p0, Lcom/android/phone/BluetoothHandsfree$9;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
@@ -160,7 +160,7 @@
 
     goto :goto_0
 
-    .line 3221
+    .line 3265
     .end local v1           #location:I
     :cond_2
     const-string v2, "Bluetooth HS/HF"
@@ -171,13 +171,13 @@
 
     goto :goto_1
 
-    .line 3227
+    .line 3271
     :cond_3
     iget-object v2, p0, Lcom/android/phone/BluetoothHandsfree$9;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     invoke-virtual {v2}, Lcom/android/phone/BluetoothHandsfree;->terminateScoUsingVirtualVoiceCall()Z
 
-    .line 3229
+    .line 3273
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -190,7 +190,7 @@
 
     if-ne v2, v6, :cond_4
 
-    .line 3230
+    .line 3274
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -205,7 +205,7 @@
 
     move-result-object p1
 
-    .line 3233
+    .line 3277
     :cond_4
     invoke-static {}, Lcom/android/phone/PhoneApp;->getInstance()Lcom/android/phone/PhoneApp;
 
@@ -213,7 +213,7 @@
 
     invoke-virtual {v2}, Lcom/android/phone/PhoneApp;->wakeUpScreen()V
 
-    .line 3236
+    .line 3280
     new-instance v0, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.CALL_PRIVILEGED"
@@ -228,13 +228,13 @@
 
     invoke-direct {v0, v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 3238
+    .line 3282
     .local v0, intent:Landroid/content/Intent;
     const/high16 v2, 0x1000
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 3239
+    .line 3283
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -245,17 +245,17 @@
 
     invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3240
+    .line 3284
     :cond_5
     invoke-static {v0}, Lcom/htc/util/phone/DialUtils;->callDirectly(Landroid/content/Intent;)Z
 
-    .line 3241
+    .line 3285
     iget-object v2, p0, Lcom/android/phone/BluetoothHandsfree$9;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #calls: Lcom/android/phone/BluetoothHandsfree;->expectCallStart()V
     invoke-static {v2}, Lcom/android/phone/BluetoothHandsfree;->access$8300(Lcom/android/phone/BluetoothHandsfree;)V
 
-    .line 3242
+    .line 3286
     new-instance v2, Landroid/bluetooth/AtCommandResult;
 
     const/4 v3, 0x2
@@ -264,7 +264,7 @@
 
     goto/16 :goto_0
 
-    .line 3245
+    .line 3289
     .end local v0           #intent:Landroid/content/Intent;
     :cond_6
     new-instance v2, Landroid/bluetooth/AtCommandResult;

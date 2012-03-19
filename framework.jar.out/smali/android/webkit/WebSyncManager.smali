@@ -62,7 +62,7 @@
 
     .prologue
     .line 62
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 63
     iput-object p2, p0, Landroid/webkit/WebSyncManager;->mThreadName:Ljava/lang/String;

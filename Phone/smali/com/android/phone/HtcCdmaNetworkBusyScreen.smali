@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final DIALOG_NETWORKBUSY:I = 0x1
 
@@ -175,31 +175,6 @@
 
     iput v0, p0, Lcom/android/phone/HtcCdmaNetworkBusyScreen;->busyType:I
 
-    .line 56
-    const-string v0, "HtcCdmaNetworkBusyScreen"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "OoO Received Intent with busyType ("
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/phone/HtcCdmaNetworkBusyScreen;->busyType:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 57
     iget v0, p0, Lcom/android/phone/HtcCdmaNetworkBusyScreen;->busyType:I
 
@@ -278,16 +253,9 @@
 .end method
 
 .method protected onDestroy()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 62
-    const-string v0, "HtcCdmaNetworkBusyScreen"
-
-    const-string v1, "OoO OnDestroy"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 63
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 

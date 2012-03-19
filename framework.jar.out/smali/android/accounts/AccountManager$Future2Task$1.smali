@@ -31,7 +31,7 @@
     .local p0, this:Landroid/accounts/AccountManager$Future2Task$1;,"Landroid/accounts/AccountManager$Future2Task.1;"
     iput-object p1, p0, Landroid/accounts/AccountManager$Future2Task$1;->this$1:Landroid/accounts/AccountManager$Future2Task;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

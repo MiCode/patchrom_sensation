@@ -1033,7 +1033,7 @@
 
     .line 619
     .local v0, frontParams:Landroid/widget/LinearLayout$LayoutParams;
-    iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
+    iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     .line 622
     iget-object v4, p0, Lcom/htc/widget/HeaderBarDropDown;->frontImage:Landroid/widget/ImageView;

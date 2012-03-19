@@ -36,7 +36,7 @@
     .line 646
     iput-object p1, p0, Lcom/android/phone/sip/SipEditor$AdvancedSettings;->this$0:Lcom/android/phone/sip/SipEditor;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 644
     const/4 v0, 0x0
@@ -124,7 +124,7 @@
 
     .line 687
     .local v3, pref:Lcom/htc/preference/HtcPreference;
-    invoke-virtual {v4, v3}, Lcom/htc/preference/HtcPreferenceGroup;->removePreference(Lcom/htc/preference/HtcPreference;)Z
+    invoke-virtual {v4, v3}, Lcom/htc/preference/HtcPreferenceScreen;->removePreference(Lcom/htc/preference/HtcPreference;)Z
 
     .line 686
     add-int/lit8 v1, v1, 0x1
@@ -165,7 +165,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v6, v7}, Lcom/htc/preference/HtcPreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Lcom/htc/preference/HtcPreference;
+    invoke-virtual {v6, v7}, Lcom/htc/preference/HtcPreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Lcom/htc/preference/HtcPreference;
 
     move-result-object v0
 
@@ -173,7 +173,7 @@
 
     .line 660
     .local v0, group:Lcom/htc/preference/HtcPreferenceGroup;
-    invoke-virtual {v6, v0}, Lcom/htc/preference/HtcPreferenceGroup;->removePreference(Lcom/htc/preference/HtcPreference;)Z
+    invoke-virtual {v6, v0}, Lcom/htc/preference/HtcPreferenceScreen;->removePreference(Lcom/htc/preference/HtcPreference;)Z
 
     .line 662
     invoke-virtual {v0}, Lcom/htc/preference/HtcPreferenceGroup;->getPreferenceCount()I
@@ -185,7 +185,7 @@
     iput-object v7, p0, Lcom/android/phone/sip/SipEditor$AdvancedSettings;->mPreferences:[Lcom/htc/preference/HtcPreference;
 
     .line 663
-    invoke-virtual {v6}, Lcom/htc/preference/HtcPreferenceGroup;->getPreferenceCount()I
+    invoke-virtual {v6}, Lcom/htc/preference/HtcPreferenceScreen;->getPreferenceCount()I
 
     move-result v3
 
@@ -286,7 +286,7 @@
 
     .line 677
     .local v3, pref:Lcom/htc/preference/HtcPreference;
-    invoke-virtual {v4, v3}, Lcom/htc/preference/HtcPreferenceGroup;->addPreference(Lcom/htc/preference/HtcPreference;)Z
+    invoke-virtual {v4, v3}, Lcom/htc/preference/HtcPreferenceScreen;->addPreference(Lcom/htc/preference/HtcPreference;)Z
 
     .line 678
     invoke-static {}, Lcom/android/phone/sip/SipEditor;->access$000()Ljava/lang/String;

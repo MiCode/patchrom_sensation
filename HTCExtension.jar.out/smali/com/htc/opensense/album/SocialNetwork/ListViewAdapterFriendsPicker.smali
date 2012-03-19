@@ -62,7 +62,7 @@
     invoke-virtual {p0, p3}, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->setUIHandler(Landroid/os/Handler;)V
 
     .line 39
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iput-object p2, v0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mServiceName:Ljava/lang/String;
 
@@ -148,7 +148,7 @@
 
     .line 303
     .local v1, wrapper:Lcom/htc/opensense/album/SocialNetworkManager/WrapperPerson;
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mList:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -234,7 +234,7 @@
     .line 238
     const/16 v0, 0x274c
 
-    iput v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mLastErrorState:I
+    iput v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mLastErrorState:I
 
     .line 239
     const/16 v0, 0x2728
@@ -267,10 +267,10 @@
     .line 245
     const/16 v0, 0x2761
 
-    iput v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mLastErrorState:I
+    iput v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mLastErrorState:I
 
     .line 247
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v0}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->getCachedAccountOwner()Ljava/util/List;
 
@@ -279,7 +279,7 @@
     if-eqz v0, :cond_0
 
     .line 249
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v0}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->getCachedAccountOwner()Ljava/util/List;
 
@@ -445,7 +445,7 @@
 
     .local v1, nIndex:I
     :goto_0
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mList:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -454,7 +454,7 @@
     if-le v2, v1, :cond_1
 
     .line 192
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mList:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -508,7 +508,7 @@
     const/4 v2, 0x0
 
     .line 155
-    iget v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mLastErrorState:I
+    iget v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mLastErrorState:I
 
     sparse-switch v0, :sswitch_data_0
 
@@ -527,7 +527,7 @@
 
     .line 159
     :sswitch_0
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     const/4 v1, 0x1
 
@@ -623,9 +623,9 @@
     if-ne v3, v0, :cond_0
 
     .line 149
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mPersonOp:Lcom/htc/opensense/social/PersonOp;
 
@@ -639,9 +639,9 @@
 
     .line 151
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mPersonOp:Lcom/htc/opensense/social/PersonOp;
 
@@ -663,7 +663,7 @@
 
     .line 125
     .local v7, bitmap:Landroid/graphics/Bitmap;
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mImageProvider:Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mImageProvider:Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;
 
     invoke-virtual {p3}, Lcom/htc/opensense/album/SocialNetworkManager/WrapperPerson;->getBuddyIconURL()Ljava/lang/String;
 
@@ -701,7 +701,7 @@
     invoke-static {v1, v2}, Lcom/htc/opensense/album/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 137
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mList:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
@@ -712,7 +712,7 @@
 
     .line 140
     .local v0, szUIDs:[Ljava/lang/String;
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mUserIds:Ljava/util/ArrayList;
 
@@ -725,9 +725,9 @@
     aput-object v1, v0, v3
 
     .line 142
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v1, v0}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->getPeopleOpFast([Ljava/lang/String;)Ljava/util/List;
 
@@ -760,7 +760,7 @@
     invoke-super {p0}, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->onResume()V
 
     .line 53
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v0, v0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mServiceName:Ljava/lang/String;
 
@@ -814,12 +814,12 @@
     invoke-static {v0, v1}, Lcom/htc/opensense/album/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 213
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     .line 214
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v0}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->getCachedFriendList()Ljava/util/List;
 
@@ -853,7 +853,7 @@
     .line 224
     const/16 v0, 0x4f4d
 
-    iget v1, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mUIScrollState:I
+    iget v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIScrollState:I
 
     if-ne v0, v1, :cond_0
 
@@ -912,7 +912,7 @@
     const/16 v2, 0x4f4d
 
     .line 390
-    iget v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mUIScrollState:I
+    iget v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIScrollState:I
 
     if-ne p1, v0, :cond_0
 
@@ -922,7 +922,7 @@
 
     .line 393
     :cond_0
-    iput p2, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mFirstVisibleIndex:I
+    iput p2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mFirstVisibleIndex:I
 
     .line 398
     const/4 v0, 0x1
@@ -930,18 +930,18 @@
     if-ne v0, p1, :cond_1
 
     .line 399
-    iput v4, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mUIScrollState:I
+    iput v4, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIScrollState:I
 
     .line 404
     :goto_1
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mImageProvider:Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mImageProvider:Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;
 
-    iget v1, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mUIScrollState:I
+    iget v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIScrollState:I
 
     invoke-virtual {v0, v1}, Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;->setScrollState(I)V
 
     .line 409
-    iget v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mUIScrollState:I
+    iget v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIScrollState:I
 
     if-ne v2, v0, :cond_2
 
@@ -952,7 +952,7 @@
 
     .line 401
     :cond_1
-    iput v2, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mUIScrollState:I
+    iput v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIScrollState:I
 
     goto :goto_1
 
@@ -970,12 +970,12 @@
 
     .prologue
     .line 383
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mImageProvider:Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mImageProvider:Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;
 
     if-eqz v0, :cond_0
 
     .line 384
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mImageProvider:Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mImageProvider:Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;
 
     invoke-virtual {v0, p1, p2}, Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;->setVisibleRange(II)V
 
@@ -1003,7 +1003,7 @@
     .local v0, bResult:Z
     const/16 v2, 0x4eea
 
-    iget v3, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mUIState:I
+    iget v3, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIState:I
 
     if-ne v2, v3, :cond_1
 
@@ -1014,7 +1014,7 @@
 
     .line 73
     :cond_1
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     if-eqz v2, :cond_0
 
@@ -1030,7 +1030,7 @@
 
     .line 80
     .local v1, intent:Landroid/content/Intent;
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     const-string v3, "service_name"
 
@@ -1041,7 +1041,7 @@
     iput-object v3, v2, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mServiceName:Ljava/lang/String;
 
     .line 81
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v2, v2, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mUserIds:Ljava/util/ArrayList;
 
@@ -1054,7 +1054,7 @@
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 84
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {p0}, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->getDataHandler()Landroid/os/Handler;
 
@@ -1071,7 +1071,7 @@
     if-ne v6, v2, :cond_0
 
     .line 86
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v2}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->isAccountActive()Z
 
@@ -1095,7 +1095,7 @@
 
     .line 93
     :cond_2
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v2}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->isExistingAccount()Z
 
@@ -1104,7 +1104,7 @@
     if-ne v6, v2, :cond_4
 
     .line 95
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v2}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->isAccountStatusChanged()Z
 
@@ -1138,12 +1138,12 @@
     invoke-static {v2, v3}, Lcom/htc/opensense/album/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 107
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v2}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->syncActiveAccount()V
 
     .line 108
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v2, v6, v5}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->InitConnection(ZZ)Z
 
@@ -1225,7 +1225,7 @@
     invoke-virtual {v2, v3}, Lcom/htc/opensense/album/SocialNetworkManager/WrapperPerson;->setSeparatorInfo(Lcom/htc/opensense/album/util/SeparatorTag;)V
 
     .line 366
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mList:Ljava/util/ArrayList;
+    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1241,7 +1241,7 @@
 
     move-result-object v4
 
-    iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mList:Ljava/util/ArrayList;
+    iget-object v5, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
@@ -1278,9 +1278,9 @@
 
     .prologue
     .line 342
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/ListViewAdapterFriendsPicker;->mList:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->updateFriendList(Ljava/lang/Object;)Z
 

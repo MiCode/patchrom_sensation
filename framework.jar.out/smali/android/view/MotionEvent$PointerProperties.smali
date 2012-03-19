@@ -26,7 +26,7 @@
 
     .prologue
     .line 3369
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 3370
     invoke-virtual {p0}, Landroid/view/MotionEvent$PointerProperties;->clear()V
@@ -41,7 +41,7 @@
 
     .prologue
     .line 3378
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 3379
     invoke-virtual {p0, p1}, Landroid/view/MotionEvent$PointerProperties;->copyFrom(Landroid/view/MotionEvent$PointerProperties;)V

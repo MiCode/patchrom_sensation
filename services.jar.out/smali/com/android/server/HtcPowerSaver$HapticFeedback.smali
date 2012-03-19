@@ -69,14 +69,14 @@
     .parameter "value"
 
     .prologue
-    .line 916
+    .line 915
     iget-object v1, p0, Lcom/android/server/HtcPowerSaver$HapticFeedback;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 918
+    .line 917
     .local v0, cr:Landroid/content/ContentResolver;
     const-string v1, "haptic_feedback_enabled"
 
@@ -86,8 +86,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 920
-    iget-object v1, p0, Lcom/android/server/HtcPowerSaver$HapticFeedback;->TAG:Ljava/lang/String;
+    .line 918
+    const-string v1, "HtcPowerSaver"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -109,13 +109,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 924
+    .line 922
     :goto_0
     return-void
 
-    .line 922
+    .line 920
     :cond_0
-    iget-object v1, p0, Lcom/android/server/HtcPowerSaver$HapticFeedback;->TAG:Ljava/lang/String;
+    const-string v1, "HtcPowerSaver"
 
     const-string v2, "setSysSettings: Set fail."
 
@@ -132,17 +132,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 943
+    .line 940
     invoke-direct {p0, v2}, Lcom/android/server/HtcPowerSaver$HapticFeedback;->setSysSettings(I)V
 
-    .line 944
-    iget-object v0, p0, Lcom/android/server/HtcPowerSaver$HapticFeedback;->TAG:Ljava/lang/String;
+    .line 941
+    const-string v0, "HtcPowerSaver"
 
     const-string v1, "applyPowerSaverSettings."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 945
+    .line 942
     return v2
 .end method
 
@@ -152,29 +152,32 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 950
-    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$HapticFeedback;->mContext:Landroid/content/Context;
+    .line 947
+    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$HapticFeedback;->this$0:Lcom/android/server/HtcPowerSaver;
 
-    invoke-virtual {p0, v2}, Lcom/android/server/HtcPowerSaver$HapticFeedback;->getSettingsSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    iget-object v3, p0, Lcom/android/server/HtcPowerSaver$HapticFeedback;->mContext:Landroid/content/Context;
+
+    #calls: Lcom/android/server/HtcPowerSaver;->getSettingsSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-static {v2, v3}, Lcom/android/server/HtcPowerSaver;->access$400(Lcom/android/server/HtcPowerSaver;Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
 
-    .line 951
+    .line 948
     .local v1, sp:Landroid/content/SharedPreferences;
     if-nez v1, :cond_0
 
-    .line 953
-    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$HapticFeedback;->TAG:Ljava/lang/String;
+    .line 949
+    const-string v2, "HtcPowerSaver"
 
-    const-string v3, "Get SharedPreferences fail."
+    const-string v3, "restoreSystemSettings: Get SharedPreferences fail."
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 958
+    .line 954
     :goto_0
     return v4
 
-    .line 956
+    .line 952
     :cond_0
     const-string v2, "psaver_normal_haptic_feedback"
 
@@ -184,7 +187,7 @@
 
     move-result v0
 
-    .line 957
+    .line 953
     .local v0, normalValue:I
     invoke-direct {p0, v0}, Lcom/android/server/HtcPowerSaver$HapticFeedback;->setSysSettings(I)V
 
@@ -197,37 +200,40 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 928
+    .line 926
     iget-object v3, p0, Lcom/android/server/HtcPowerSaver$HapticFeedback;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 929
+    .line 927
     .local v0, cr:Landroid/content/ContentResolver;
-    iget-object v3, p0, Lcom/android/server/HtcPowerSaver$HapticFeedback;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/server/HtcPowerSaver$HapticFeedback;->this$0:Lcom/android/server/HtcPowerSaver;
 
-    invoke-virtual {p0, v3}, Lcom/android/server/HtcPowerSaver$HapticFeedback;->getSettingsSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    iget-object v4, p0, Lcom/android/server/HtcPowerSaver$HapticFeedback;->mContext:Landroid/content/Context;
+
+    #calls: Lcom/android/server/HtcPowerSaver;->getSettingsSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-static {v3, v4}, Lcom/android/server/HtcPowerSaver;->access$400(Lcom/android/server/HtcPowerSaver;Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
 
-    .line 930
+    .line 928
     .local v1, sp:Landroid/content/SharedPreferences;
     if-nez v1, :cond_0
 
-    .line 932
-    iget-object v3, p0, Lcom/android/server/HtcPowerSaver$HapticFeedback;->TAG:Ljava/lang/String;
+    .line 929
+    const-string v3, "HtcPowerSaver"
 
-    const-string v4, "Get SharedPreferences fail."
+    const-string v4, "saveSystemSettings: Get SharedPreferences fail."
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 938
+    .line 935
     :goto_0
     return v6
 
-    .line 935
+    .line 932
     :cond_0
     const-string v3, "haptic_feedback_enabled"
 
@@ -237,7 +243,7 @@
 
     move-result v2
 
-    .line 936
+    .line 933
     .local v2, sysValue:I
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -251,8 +257,8 @@
 
     invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 937
-    iget-object v3, p0, Lcom/android/server/HtcPowerSaver$HapticFeedback;->TAG:Ljava/lang/String;
+    .line 934
+    const-string v3, "HtcPowerSaver"
 
     new-instance v4, Ljava/lang/StringBuilder;
 

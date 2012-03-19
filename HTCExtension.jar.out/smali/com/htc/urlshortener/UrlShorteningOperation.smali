@@ -246,7 +246,7 @@
 
     .prologue
     .line 97
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 102
     new-instance v0, Lcom/htc/urlshortener/UrlShorteningOperation$1;

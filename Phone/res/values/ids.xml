@@ -105,8 +105,8 @@
     <item type="id" name="puk_code">false</item>
     <item type="id" name="puk_submit">false</item>
     <item type="id" name="btn">false</item>
-    <item type="id" name="cmd_bar_btn_1">false</item>
     <item type="id" name="cmd_bar_btn_2">false</item>
+    <item type="id" name="cmd_bar_btn_1">false</item>
     <item type="id" name="alertingLayout">false</item>
     <item type="id" name="handle">false</item>
     <item type="id" name="endSkypeResumeCS">false</item>
@@ -123,8 +123,8 @@
     <item type="id" name="fdn_name">false</item>
     <item type="id" name="fdn_number">false</item>
     <item type="id" name="footer">false</item>
-    <item type="id" name="button1">false</item>
     <item type="id" name="button2">false</item>
+    <item type="id" name="button1">false</item>
     <item type="id" name="mcc_mnc_text">false</item>
     <item type="id" name="editor">false</item>
     <item type="id" name="keypad">false</item>

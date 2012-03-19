@@ -60,7 +60,7 @@
 
     const/4 v3, 0x0
 
-    .line 134
+    .line 140
     new-instance v0, Lcom/android/camera/IntentManager$RequestName;
 
     const-string v1, "Unknown_General"
@@ -85,7 +85,7 @@
 
     sput-object v0, Lcom/android/camera/IntentManager$RequestName;->Mms:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 135
+    .line 141
     new-instance v0, Lcom/android/camera/IntentManager$RequestName;
 
     const-string v1, "Album"
@@ -94,7 +94,7 @@
 
     sput-object v0, Lcom/android/camera/IntentManager$RequestName;->Album:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 136
+    .line 142
     new-instance v0, Lcom/android/camera/IntentManager$RequestName;
 
     const-string v1, "Contacts"
@@ -103,7 +103,7 @@
 
     sput-object v0, Lcom/android/camera/IntentManager$RequestName;->Contacts:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 137
+    .line 143
     new-instance v0, Lcom/android/camera/IntentManager$RequestName;
 
     const-string v1, "Mail"
@@ -114,7 +114,7 @@
 
     sput-object v0, Lcom/android/camera/IntentManager$RequestName;->Mail:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 138
+    .line 144
     new-instance v0, Lcom/android/camera/IntentManager$RequestName;
 
     const-string v1, "Notes"
@@ -125,7 +125,7 @@
 
     sput-object v0, Lcom/android/camera/IntentManager$RequestName;->Notes:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 139
+    .line 145
     new-instance v0, Lcom/android/camera/IntentManager$RequestName;
 
     const-string v1, "Square"
@@ -136,7 +136,7 @@
 
     sput-object v0, Lcom/android/camera/IntentManager$RequestName;->Square:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 140
+    .line 146
     new-instance v0, Lcom/android/camera/IntentManager$RequestName;
 
     const-string v1, "CU"
@@ -147,7 +147,7 @@
 
     sput-object v0, Lcom/android/camera/IntentManager$RequestName;->CU:Lcom/android/camera/IntentManager$RequestName;
 
-    .line 133
+    .line 139
     const/16 v0, 0x9
 
     new-array v0, v0, [Lcom/android/camera/IntentManager$RequestName;
@@ -212,7 +212,7 @@
     .end annotation
 
     .prologue
-    .line 133
+    .line 139
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -223,7 +223,7 @@
     .parameter "name"
 
     .prologue
-    .line 133
+    .line 139
     const-class v0, Lcom/android/camera/IntentManager$RequestName;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -239,7 +239,7 @@
     .locals 1
 
     .prologue
-    .line 133
+    .line 139
     sget-object v0, Lcom/android/camera/IntentManager$RequestName;->$VALUES:[Lcom/android/camera/IntentManager$RequestName;
 
     invoke-virtual {v0}, [Lcom/android/camera/IntentManager$RequestName;->clone()Ljava/lang/Object;

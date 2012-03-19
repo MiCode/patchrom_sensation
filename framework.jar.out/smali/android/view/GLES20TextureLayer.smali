@@ -29,10 +29,10 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/view/GLES20TextureLayer;->mLayer:I
+    iput v1, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     .line 36
-    iget v1, p0, Landroid/view/GLES20TextureLayer;->mLayer:I
+    iget v1, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     if-eqz v1, :cond_0
 
@@ -46,11 +46,11 @@
     .line 38
     new-instance v1, Landroid/view/GLES20Layer$Finalizer;
 
-    iget v2, p0, Landroid/view/GLES20TextureLayer;->mLayer:I
+    iget v2, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     invoke-direct {v1, v2}, Landroid/view/GLES20Layer$Finalizer;-><init>(I)V
 
-    iput-object v1, p0, Landroid/view/GLES20TextureLayer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
+    iput-object v1, p0, Landroid/view/GLES20Layer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
 
     .line 42
     :goto_0
@@ -60,7 +60,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    iput-object v1, p0, Landroid/view/GLES20TextureLayer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
+    iput-object v1, p0, Landroid/view/GLES20Layer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
 
     goto :goto_0
 .end method
@@ -118,7 +118,7 @@
 
     .prologue
     .line 46
-    iget v0, p0, Landroid/view/GLES20TextureLayer;->mLayer:I
+    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     if-eqz v0, :cond_0
 
@@ -153,7 +153,7 @@
 
     .prologue
     .line 82
-    iget v0, p0, Landroid/view/GLES20TextureLayer;->mLayer:I
+    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     iget v1, p1, Landroid/graphics/Matrix;->native_instance:I
 
@@ -185,7 +185,7 @@
     invoke-super {p0, p1, p2, p3}, Landroid/view/GLES20Layer;->update(IIZ)V
 
     .line 77
-    iget v0, p0, Landroid/view/GLES20TextureLayer;->mLayer:I
+    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     iget-object v1, p0, Landroid/view/GLES20TextureLayer;->mSurface:Landroid/graphics/SurfaceTexture;
 

@@ -44,7 +44,7 @@
 
     iget-wide v2, p0, Lcom/htc/util/mail/lib/org/apache/james/mime4j/util/PartialInputStream;->limit:J
 
-    iget-wide v4, p0, Lcom/htc/util/mail/lib/org/apache/james/mime4j/util/PartialInputStream;->position:J
+    iget-wide v4, p0, Lcom/htc/util/mail/lib/org/apache/james/mime4j/util/PositionInputStream;->position:J
 
     sub-long/2addr v2, v4
 
@@ -96,7 +96,7 @@
     .line 40
     iget-wide v0, p0, Lcom/htc/util/mail/lib/org/apache/james/mime4j/util/PartialInputStream;->limit:J
 
-    iget-wide v2, p0, Lcom/htc/util/mail/lib/org/apache/james/mime4j/util/PartialInputStream;->position:J
+    iget-wide v2, p0, Lcom/htc/util/mail/lib/org/apache/james/mime4j/util/PositionInputStream;->position:J
 
     cmp-long v0, v0, v2
 

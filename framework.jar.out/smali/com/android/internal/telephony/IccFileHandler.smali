@@ -622,7 +622,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "handleMessage() EVENT_READ_IMG_DONE efid="
+    const-string v7, "handleMessage() EVENT_READ_IMG_DONE efid="
 
     invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -807,7 +807,7 @@
     :cond_2
     const-string v3, "IccFileHandler:"
 
-    const-string/jumbo v4, "handleMessage() EVENT_READ_IMG_RECORD_DONE success!!"
+    const-string v4, "handleMessage() EVENT_READ_IMG_RECORD_DONE success!!"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -899,7 +899,7 @@
     .line 679
     const-string v3, "IccFileHandler:"
 
-    const-string/jumbo v4, "handleMessage() EVENT_READ_ICON_DONE success!!"
+    const-string v4, "handleMessage() EVENT_READ_ICON_DONE success!!"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -3182,6 +3182,8 @@
     goto/16 :goto_0
 
     .line 628
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x4 -> :sswitch_5

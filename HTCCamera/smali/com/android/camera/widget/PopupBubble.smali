@@ -35,7 +35,7 @@
     const/4 v2, -0x2
 
     .line 40
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
     iput v2, p0, Lcom/android/camera/widget/PopupBubble;->m_Height:I
@@ -347,12 +347,12 @@
     .line 148
     iget v2, p2, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    iput v2, v1, Landroid/widget/RelativeLayout$LayoutParams;->width:I
+    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 149
     iget v2, p2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    iput v2, v1, Landroid/widget/RelativeLayout$LayoutParams;->height:I
+    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 150
     instance-of v2, p2, Landroid/view/ViewGroup$MarginLayoutParams;
@@ -396,10 +396,10 @@
     .line 163
     .restart local v1       #newLayoutParams:Landroid/widget/RelativeLayout$LayoutParams;
     :cond_3
-    iput v3, v1, Landroid/widget/RelativeLayout$LayoutParams;->width:I
+    iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 164
-    iput v3, v1, Landroid/widget/RelativeLayout$LayoutParams;->height:I
+    iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     goto :goto_0
 .end method

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 465
+    .line 487
     iput-object p1, p0, Lcom/android/phone/BluetoothHeadsetService$5;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -41,17 +41,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 468
+    .line 490
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 478
+    .line 500
     :cond_0
     :goto_0
     return-void
 
-    .line 470
+    .line 492
     :pswitch_0
     iget-object v1, p0, Lcom/android/phone/BluetoothHeadsetService$5;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
@@ -62,7 +62,7 @@
 
     invoke-virtual {v1}, Lcom/android/phone/BluetoothHandsfree;->resetAtState()V
 
-    .line 471
+    .line 493
     iget-object v1, p0, Lcom/android/phone/BluetoothHeadsetService$5;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
     #getter for: Lcom/android/phone/BluetoothHeadsetService;->mBtHandsfree:Lcom/android/phone/BluetoothHandsfree;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/phone/BluetoothHandsfree;->setVirtualCallInProgress(Z)V
 
-    .line 472
+    .line 494
     iget-object v1, p0, Lcom/android/phone/BluetoothHeadsetService$5;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
     #calls: Lcom/android/phone/BluetoothHeadsetService;->getCurrentDevice()Landroid/bluetooth/BluetoothDevice;
@@ -80,19 +80,19 @@
 
     move-result-object v0
 
-    .line 473
+    .line 495
     .local v0, device:Landroid/bluetooth/BluetoothDevice;
     if-eqz v0, :cond_0
 
-    .line 474
+    .line 496
     iget-object v1, p0, Lcom/android/phone/BluetoothHeadsetService$5;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
     #calls: Lcom/android/phone/BluetoothHeadsetService;->setState(Landroid/bluetooth/BluetoothDevice;I)V
-    invoke-static {v1, v0, v2}, Lcom/android/phone/BluetoothHeadsetService;->access$2000(Lcom/android/phone/BluetoothHeadsetService;Landroid/bluetooth/BluetoothDevice;I)V
+    invoke-static {v1, v0, v2}, Lcom/android/phone/BluetoothHeadsetService;->access$2100(Lcom/android/phone/BluetoothHeadsetService;Landroid/bluetooth/BluetoothDevice;I)V
 
     goto :goto_0
 
-    .line 468
+    .line 490
     nop
 
     :pswitch_data_0

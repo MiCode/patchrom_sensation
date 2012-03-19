@@ -62,7 +62,7 @@
     .line 1628
     iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView$PerformClick;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataChanged:Z
+    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     if-eqz v0, :cond_1
 
@@ -81,7 +81,7 @@
 
     iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView$PerformClick;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mItemCount:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-lez v0, :cond_0
 

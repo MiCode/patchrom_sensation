@@ -150,7 +150,7 @@
     .line 38
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/text/format/DateUtils;->sLock:Ljava/lang/Object;
 
@@ -408,7 +408,7 @@
 
     .prologue
     .line 36
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -3157,7 +3157,7 @@
 
     .line 805
     .local v2, thenCal:Ljava/util/Calendar;
-    invoke-virtual {v2, p0, p1}, Ljava/util/Calendar;->setTimeInMillis(J)V
+    invoke-virtual {v2, p0, p1}, Ljava/util/GregorianCalendar;->setTimeInMillis(J)V
 
     .line 806
     invoke-virtual {v2}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
@@ -3172,7 +3172,7 @@
 
     .line 808
     .local v1, nowCal:Ljava/util/Calendar;
-    invoke-virtual {v1, p2, p3}, Ljava/util/Calendar;->setTimeInMillis(J)V
+    invoke-virtual {v1, p2, p3}, Ljava/util/GregorianCalendar;->setTimeInMillis(J)V
 
     .line 812
     invoke-virtual {v2, v5}, Ljava/util/Calendar;->get(I)I

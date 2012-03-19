@@ -33,7 +33,7 @@
     .line 287
     iput-object p1, p0, Lcom/htc/widget/HtcTabWidget$TabClickListener;->this$0:Lcom/htc/widget/HtcTabWidget;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 288
     iput p2, p0, Lcom/htc/widget/HtcTabWidget$TabClickListener;->mTabIndex:I

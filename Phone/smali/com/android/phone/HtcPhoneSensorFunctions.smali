@@ -25,7 +25,7 @@
 
 .field private static final PROXIMITY_THRESHOLD:F = 5.0f
 
-.field private static final VDBG:Z = true
+.field private static final VDBG:Z
 
 
 # instance fields
@@ -98,71 +98,52 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     .line 56
-    const-string v0, "ro.debuggable"
-
-    invoke-static {v0, v2}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v0
-
-    if-ne v0, v1, :cond_2
-
-    move v0, v1
-
-    :goto_0
     sput-boolean v0, Lcom/android/phone/HtcPhoneSensorFunctions;->DBG:Z
 
     .line 72
-    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    const/16 v3, 0xa8
+    const/16 v2, 0xa8
 
-    if-eq v0, v3, :cond_0
+    if-eq v1, v2, :cond_0
 
-    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    const/16 v3, 0x61
+    const/16 v2, 0x61
 
-    if-eq v0, v3, :cond_0
+    if-eq v1, v2, :cond_0
 
-    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    const/16 v3, 0x94
+    const/16 v2, 0x94
 
-    if-eq v0, v3, :cond_0
+    if-eq v1, v2, :cond_0
 
-    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    const/16 v3, 0xa9
+    const/16 v2, 0xa9
 
-    if-eq v0, v3, :cond_0
+    if-eq v1, v2, :cond_0
 
-    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    const/16 v3, 0xaa
+    const/16 v2, 0xaa
 
-    if-ne v0, v3, :cond_1
+    if-ne v1, v2, :cond_1
 
     :cond_0
-    move v2, v1
+    const/4 v0, 0x1
 
     :cond_1
-    sput-boolean v2, Lcom/android/phone/HtcPhoneSensorFunctions;->MECHANICAL_DIRTY_FIX:Z
+    sput-boolean v0, Lcom/android/phone/HtcPhoneSensorFunctions;->MECHANICAL_DIRTY_FIX:Z
 
     return-void
-
-    :cond_2
-    move v0, v2
-
-    .line 56
-    goto :goto_0
 .end method
 
 .method public constructor <init>(Lcom/android/phone/PhoneApp;Lcom/android/internal/telephony/CallManager;Lcom/android/phone/CallNotifier;)V
@@ -391,27 +372,6 @@
 
     div-double v0, v10, v12
 
-    .line 535
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v11, "angle: "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v0, v1}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-direct {p0, v10}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
     .line 537
     const-wide/high16 v10, 0x4064
 
@@ -465,29 +425,6 @@
     .line 542
     invoke-direct {p0}, Lcom/android/phone/HtcPhoneSensorFunctions;->unregisterAccelerometerListener()V
 
-    .line 543
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v11, "handleRotateToSpeakerOn Speaker: "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    iget-boolean v11, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mSpeakerStatusOn:Z
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-direct {p0, v10}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
     .line 544
     sget-object v10, Lcom/android/internal/telephony/Phone$State;->IDLE:Lcom/android/internal/telephony/Phone$State;
 
@@ -502,7 +439,7 @@
     .line 545
     invoke-virtual {p0}, Lcom/android/phone/HtcPhoneSensorFunctions;->registerProximitySensor()V
 
-    goto/16 :goto_0
+    goto :goto_0
 .end method
 
 .method private handleBePolite(FF)V
@@ -820,29 +757,6 @@
     iput v1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mAdjustedVolume:I
 
     if-lez v1, :cond_0
-
-    .line 364
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "adjusted volume: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mAdjustedVolume:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
 
     .line 365
     iget-object v1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mAudioManager:Landroid/media/AudioManager;
@@ -1210,29 +1124,6 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 405
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "adjusted volume: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mAdjustedVolume:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
     .line 406
     iget-object v0, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mAudioManager:Landroid/media/AudioManager;
 
@@ -1306,27 +1197,6 @@
     cmpg-float v3, v0, v3
 
     if-gez v3, :cond_2
-
-    .line 651
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "onSensorChanged: proximity active, distance: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {p0, v3}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
 
     .line 653
     const/4 v3, 0x1
@@ -1409,34 +1279,13 @@
     :cond_1
     return-void
 
-    .line 657
+    .line 659
     .restart local v0       #distance:F
     .restart local v1       #milliseconds:J
     :cond_2
-    :try_start_1
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "onSensorChanged: proximity inactive, distance: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {p0, v3}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
-    .line 659
     const/4 v3, 0x0
 
+    :try_start_1
     iput-boolean v3, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mProximitySensorActive:Z
 
     goto :goto_0
@@ -1507,39 +1356,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 221
-    :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "RotateToSilent face to sky. Pitch: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " Roll: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
     .line 222
+    :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mRotateToSlientStart:Z
@@ -1603,37 +1421,6 @@
     const/4 v1, 0x2
 
     if-le v0, v1, :cond_5
-
-    .line 233
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "RotateToSilent face to ground. Pitch: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " Roll: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
 
     .line 234
     iget-object v0, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mCallNotifier:Lcom/android/phone/CallNotifier;
@@ -1794,29 +1581,6 @@
     .line 296
     invoke-direct {p0}, Lcom/android/phone/HtcPhoneSensorFunctions;->registerAccelerometerListener()V
 
-    .line 297
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "handleRotateToSpeakerOn Speaker: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-boolean v2, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mSpeakerStatusOn:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
     .line 299
     :cond_5
     invoke-virtual {p0}, Lcom/android/phone/HtcPhoneSensorFunctions;->unregisterOrientationSensor()V
@@ -1825,10 +1589,10 @@
 .end method
 
 .method private isAttrPSensorNear()Z
-    .locals 14
+    .locals 13
 
     .prologue
-    const/4 v13, 0x1
+    const/4 v10, 0x1
 
     const/4 v12, 0x0
 
@@ -1960,7 +1724,7 @@
     .local v2, e:Ljava/io/IOException;
     const-string v8, "close file to cause IOException :  %s \n"
 
-    new-array v9, v13, [Ljava/lang/Object;
+    new-array v9, v10, [Ljava/lang/Object;
 
     invoke-virtual {v2}, Ljava/io/IOException;->toString()Ljava/lang/String;
 
@@ -1989,42 +1753,17 @@
     .end local v2           #e:Ljava/io/IOException;
     .end local v5           #pSensorData:Ljava/lang/String;
     :catch_1
-    move-exception v2
-
-    .line 705
-    .local v2, e:Ljava/lang/Exception;
-    :goto_1
-    :try_start_4
-    const-string v8, "Exception : %s \n"
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Ljava/lang/Object;
-
-    const/4 v10, 0x0
-
-    invoke-virtual {v2}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    aput-object v11, v9, v10
-
-    invoke-static {v8, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-direct {p0, v8}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    move-exception v8
 
     .line 707
+    :goto_1
     if-eqz v0, :cond_2
 
     .line 709
-    :try_start_5
+    :try_start_4
     invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
     goto :goto_0
 
@@ -2033,10 +1772,10 @@
     move-exception v2
 
     .line 711
-    .local v2, e:Ljava/io/IOException;
+    .restart local v2       #e:Ljava/io/IOException;
     const-string v8, "close file to cause IOException :  %s \n"
 
-    new-array v9, v13, [Ljava/lang/Object;
+    new-array v9, v10, [Ljava/lang/Object;
 
     invoke-virtual {v2}, Ljava/io/IOException;->toString()Ljava/lang/String;
 
@@ -2061,10 +1800,10 @@
     if-eqz v0, :cond_3
 
     .line 709
-    :try_start_6
+    :try_start_5
     invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
     .line 712
     :cond_3
@@ -2079,7 +1818,7 @@
     .restart local v2       #e:Ljava/io/IOException;
     const-string v9, "close file to cause IOException :  %s \n"
 
-    new-array v10, v13, [Ljava/lang/Object;
+    new-array v10, v10, [Ljava/lang/Object;
 
     invoke-virtual {v2}, Ljava/io/IOException;->toString()Ljava/lang/String;
 
@@ -2129,7 +1868,7 @@
     .end local v3           #fileReader:Ljava/io/FileReader;
     .restart local v4       #fileReader:Ljava/io/FileReader;
     :catch_4
-    move-exception v2
+    move-exception v8
 
     move-object v3, v4
 
@@ -2142,7 +1881,7 @@
     .restart local v1       #bufferReader:Ljava/io/BufferedReader;
     .restart local v4       #fileReader:Ljava/io/FileReader;
     :catch_5
-    move-exception v2
+    move-exception v8
 
     move-object v0, v1
 
@@ -2307,39 +2046,8 @@
 
     aget v1, v3, v4
 
-    .line 185
-    .local v1, roll:F
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Pitch: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ". Roll: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {p0, v3}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
     .line 186
+    .local v1, roll:F
     iget-object v3, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mCM:Lcom/android/internal/telephony/CallManager;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/CallManager;->getState()Lcom/android/internal/telephony/Phone$State;
@@ -2474,11 +2182,6 @@
 
     if-nez v0, :cond_0
 
-    .line 505
-    const-string v0, "registerAccelerometerListener()"
-
-    invoke-direct {p0, v0}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
     .line 506
     iget-object v0, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mSensorManager:Landroid/hardware/SensorManager;
 
@@ -2594,11 +2297,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 513
-    const-string v0, "unregisterAccelerometerListener()"
-
-    invoke-direct {p0, v0}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
     .line 514
     iget-object v0, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mSensorManager:Landroid/hardware/SensorManager;
 
@@ -2627,37 +2325,14 @@
 
 # virtual methods
 .method public getProximitySensorActive()Z
-    .locals 2
+    .locals 1
 
     .prologue
     .line 635
     monitor-enter p0
 
-    .line 636
-    :try_start_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "mProximitySensorActive: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mProximitySensorActive:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
     .line 637
+    :try_start_0
     iget-boolean v0, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mProximitySensorActive:Z
 
     monitor-exit p0
@@ -2701,29 +2376,6 @@
     iget-boolean v1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mIsVIP:Z
 
     if-eqz v1, :cond_1
-
-    .line 145
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "[VIP] reset original volume: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mOriginalVolume:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
 
     .line 146
     iput-boolean v3, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mIsVIP:Z
@@ -2774,29 +2426,6 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 155
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "reset original volume: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mOriginalVolume:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
     .line 156
     iget-object v1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mAudioManager:Landroid/media/AudioManager;
 
@@ -2839,11 +2468,9 @@
     :pswitch_2
     iput-boolean v3, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mAttrPSensorNear:Z
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 142
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -2904,11 +2531,6 @@
 
     if-nez v1, :cond_0
 
-    .line 428
-    const-string v1, "registerOrientationSensor"
-
-    invoke-direct {p0, v1}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
     .line 430
     invoke-virtual {p0, v2}, Lcom/android/phone/HtcPhoneSensorFunctions;->hasMessages(I)Z
 
@@ -2925,31 +2547,8 @@
 
     iput v1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mOriginalVolume:I
 
-    .line 433
-    :cond_2
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "original volume: "
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v4, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mOriginalVolume:I
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
     .line 435
+    :cond_2
     iget-object v1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mSensorManager:Landroid/hardware/SensorManager;
 
     invoke-virtual {v1, v6}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
@@ -3149,29 +2748,6 @@
 
     iput v1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mRingerMode:I
 
-    .line 461
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "mRingerMode: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mRingerMode:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
     .line 462
     iget v1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mOriginalVolume:I
 
@@ -3194,29 +2770,6 @@
     move-result v1
 
     iput v1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mOriginalVolume:I
-
-    .line 466
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "original volume after unsolo: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mOriginalVolume:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
 
     .line 469
     :cond_9
@@ -3243,29 +2796,6 @@
     iget v1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mMaxRingToneVol:I
 
     iput v1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mAdjustedVolume:I
-
-    .line 475
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "change to max volume: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mAdjustedVolume:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
 
     .line 476
     iget-object v1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mAudioManager:Landroid/media/AudioManager;
@@ -3297,7 +2827,7 @@
     move v2, v3
 
     .line 455
-    goto/16 :goto_2
+    goto :goto_2
 
     .line 478
     :cond_d
@@ -3332,27 +2862,6 @@
 
     if-ltz v0, :cond_0
 
-    .line 416
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "isVIP: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
     .line 417
     iput-boolean p1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mIsVIP:Z
 
@@ -3385,11 +2894,6 @@
     move-result v1
 
     if-eqz v1, :cond_1
-
-    .line 598
-    const-string v1, "registerProximitySensor()"
-
-    invoke-direct {p0, v1}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
 
     .line 599
     iget-object v1, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mSensorManager:Landroid/hardware/SensorManager;
@@ -3479,11 +2983,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 492
-    const-string v0, "unregisterOrientationSensor()"
-
-    invoke-direct {p0, v0}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
-
     .line 493
     iget-object v0, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mSensorManager:Landroid/hardware/SensorManager;
 
@@ -3555,11 +3054,6 @@
     iget-object v0, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mProximitySensor:Landroid/hardware/Sensor;
 
     if-eqz v0, :cond_1
-
-    .line 625
-    const-string v0, "unregisterProximitySensor()"
-
-    invoke-direct {p0, v0}, Lcom/android/phone/HtcPhoneSensorFunctions;->log(Ljava/lang/String;)V
 
     .line 626
     iget-object v0, p0, Lcom/android/phone/HtcPhoneSensorFunctions;->mSensorManager:Landroid/hardware/SensorManager;

@@ -112,7 +112,7 @@
 
     .prologue
     .line 440
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 772
     new-instance v0, Landroid/nfc/NfcAdapter$1;

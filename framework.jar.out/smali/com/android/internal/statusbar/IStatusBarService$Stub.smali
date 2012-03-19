@@ -462,23 +462,18 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 136
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 137
     .local v2, _arg0:I
 
-    .line 138
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 139
     const/4 v1, 0x1
 
     goto/16 :goto_0
 
-    .line 143
     .end local v2           #_arg0:I
     :sswitch_a
     const-string v1, "com.android.internal.statusbar.IStatusBarService"

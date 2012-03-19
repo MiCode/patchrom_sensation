@@ -403,7 +403,7 @@
 
     .prologue
     .line 42
-    iget-object v0, p0, Lcom/android/camera/effect/EffectPanelUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -777,7 +777,7 @@
 
     .line 492
     :cond_2
-    iget-object v0, p0, Lcom/android/camera/effect/EffectPanelUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "No action screen to perform action"
 
@@ -792,7 +792,7 @@
 
     .prologue
     .line 500
-    iget-object v2, p0, Lcom/android/camera/effect/EffectPanelUI;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -871,7 +871,7 @@
 
     .line 517
     .local v0, ex:Ljava/lang/Throwable;
-    iget-object v2, p0, Lcom/android/camera/effect/EffectPanelUI;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v3, "Cannot start photo enhancer"
 
@@ -901,7 +901,7 @@
 
     .prologue
     .line 531
-    iget-object v2, p0, Lcom/android/camera/effect/EffectPanelUI;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -979,7 +979,7 @@
 
     .line 542
     .local v0, ex:Ljava/lang/Throwable;
-    iget-object v2, p0, Lcom/android/camera/effect/EffectPanelUI;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v3, "Cannot start photo enhancer"
 

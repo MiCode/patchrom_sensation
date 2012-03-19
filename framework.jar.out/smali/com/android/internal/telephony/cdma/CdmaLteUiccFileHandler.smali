@@ -90,7 +90,7 @@
     if-ne p1, v0, :cond_0
 
     .line 58
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteUiccFileHandler;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 

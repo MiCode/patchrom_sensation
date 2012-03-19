@@ -66,7 +66,7 @@
 
     .prologue
     .line 61
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 62
     iput p1, p0, Lcom/android/internal/telephony/ApnSetting;->id:I
@@ -135,7 +135,7 @@
 
     .prologue
     .line 82
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 83
     iget v0, p1, Lcom/android/internal/telephony/ApnSetting;->id:I

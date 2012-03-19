@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 740
+    .line 749
     iput-object p1, p0, Lcom/htc/preference/HtcPreferenceActivity$4;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,18 +42,18 @@
     .parameter "v"
 
     .prologue
-    .line 742
+    .line 751
     iget-object v0, p0, Lcom/htc/preference/HtcPreferenceActivity$4;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Lcom/htc/preference/HtcPreferenceActivity;->setResult(I)V
 
-    .line 743
+    .line 752
     iget-object v0, p0, Lcom/htc/preference/HtcPreferenceActivity$4;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
 
     invoke-virtual {v0}, Lcom/htc/preference/HtcPreferenceActivity;->finish()V
 
-    .line 744
+    .line 753
     return-void
 .end method

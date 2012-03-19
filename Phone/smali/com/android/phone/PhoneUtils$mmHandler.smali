@@ -63,13 +63,13 @@
 
     .line 3984
     :pswitch_0
-    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$800()Lcom/htc/widget/HtcAlertDialog;
+    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$700()Lcom/htc/widget/HtcAlertDialog;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$800()Lcom/htc/widget/HtcAlertDialog;
+    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$700()Lcom/htc/widget/HtcAlertDialog;
 
     move-result-object v1
 
@@ -80,7 +80,7 @@
     if-eqz v1, :cond_0
 
     .line 3985
-    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$800()Lcom/htc/widget/HtcAlertDialog;
+    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$700()Lcom/htc/widget/HtcAlertDialog;
 
     move-result-object v1
 
@@ -89,19 +89,19 @@
     .line 3986
     const/4 v1, 0x0
 
-    invoke-static {v1}, Lcom/android/phone/PhoneUtils;->access$802(Lcom/htc/widget/HtcAlertDialog;)Lcom/htc/widget/HtcAlertDialog;
+    invoke-static {v1}, Lcom/android/phone/PhoneUtils;->access$702(Lcom/htc/widget/HtcAlertDialog;)Lcom/htc/widget/HtcAlertDialog;
 
     goto :goto_0
 
     .line 3991
     :pswitch_1
-    invoke-static {v2}, Lcom/android/phone/PhoneUtils;->access$902(Z)Z
+    invoke-static {v2}, Lcom/android/phone/PhoneUtils;->access$802(Z)Z
 
     goto :goto_0
 
     .line 3995
     :pswitch_2
-    invoke-static {v2}, Lcom/android/phone/PhoneUtils;->access$1002(Z)Z
+    invoke-static {v2}, Lcom/android/phone/PhoneUtils;->access$902(Z)Z
 
     goto :goto_0
 

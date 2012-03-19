@@ -14,7 +14,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field public static final FACEBOOK_LOGIN_MIMETYPE:Ljava/lang/String; = "com.htc.socialnetwork.facebook/login"
 
@@ -77,7 +77,7 @@
 
     .prologue
     .line 46
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
@@ -1289,47 +1289,20 @@
 .end method
 
 .method public static transferToNewFormat(Ljava/lang/String;)Ljava/lang/String;
-    .locals 19
+    .locals 17
     .parameter "oriText"
 
     .prologue
-    .line 264
-    const-string v16, "NOTE"
-
-    new-instance v17, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v18, "oriText: "
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-static/range {v16 .. v17}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 265
-    const/4 v10, 0x0
+    const/4 v9, 0x0
 
     .line 267
-    .local v10, newText:Ljava/lang/String;
+    .local v9, newText:Ljava/lang/String;
     invoke-static/range {p0 .. p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v16
+    move-result v15
 
-    if-eqz v16, :cond_1
+    if-eqz v15, :cond_1
 
     .line 322
     .end local p0
@@ -1340,386 +1313,296 @@
     .line 271
     .restart local p0
     :cond_1
-    const-string v16, "<sn>"
+    const-string v15, "<sn>"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v13
-
-    .line 272
-    .local v13, startingIndexOld:I
-    const-string v16, "</sn>"
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
-
-    move-result v6
-
-    .line 273
-    .local v6, endingIndexOld:I
-    const-string v16, "<HTCData>"
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+    invoke-virtual {v0, v15}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v12
 
-    .line 274
-    .local v12, startingIndexNew:I
-    const-string v16, "</HTCData>"
+    .line 272
+    .local v12, startingIndexOld:I
+    const-string v15, "</sn>"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
+    invoke-virtual {v0, v15}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
 
     move-result v5
 
-    .line 276
-    .local v5, endingIndexNew:I
-    if-lt v6, v13, :cond_2
-
-    if-ge v5, v12, :cond_5
-
-    .line 278
-    :cond_2
-    if-le v13, v12, :cond_4
-
-    move v9, v13
-
-    .line 279
-    .local v9, index:I
-    :goto_1
-    if-lez v9, :cond_3
-
-    .line 280
-    const/16 v16, 0x0
+    .line 273
+    .local v5, endingIndexOld:I
+    const-string v15, "<HTCData>"
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v16
+    invoke-virtual {v0, v15}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
-    invoke-virtual {v0, v1, v9}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    move-result v11
 
-    move-result-object v10
+    .line 274
+    .local v11, startingIndexNew:I
+    const-string v15, "</HTCData>"
 
-    .line 282
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v15}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
+
+    move-result v4
+
+    .line 276
+    .local v4, endingIndexNew:I
+    if-lt v5, v12, :cond_2
+
+    if-ge v4, v11, :cond_5
+
+    .line 278
+    :cond_2
+    if-le v12, v11, :cond_4
+
+    move v8, v12
+
+    .line 279
+    .local v8, index:I
+    :goto_1
+    if-lez v8, :cond_3
+
+    .line 280
+    const/4 v15, 0x0
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v15, v8}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v9
+
     :cond_3
-    const-string v16, "NOTE"
-
-    new-instance v17, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v18, "fix the note: "
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-static/range {v16 .. v17}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-object/from16 p0, v10
+    move-object/from16 p0, v9
 
     .line 283
     goto :goto_0
 
-    .end local v9           #index:I
+    .end local v8           #index:I
     :cond_4
-    move v9, v12
+    move v8, v11
 
     .line 278
     goto :goto_1
 
     .line 287
     :cond_5
-    const-string v16, "<sn>"
+    const-string v15, "<sn>"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v16
+    invoke-virtual {v0, v15}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v11
+    move-result v10
 
     .line 288
-    .local v11, startingIndex:I
-    const-string v16, "</sn>"
+    .local v10, startingIndex:I
+    const-string v15, "</sn>"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v16
+    invoke-virtual {v0, v15}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
-
-    move-result v4
+    move-result v3
 
     .line 289
-    .local v4, endingIndex:I
-    if-lt v4, v11, :cond_0
+    .local v3, endingIndex:I
+    if-lt v3, v10, :cond_0
 
-    const/16 v16, -0x1
+    const/4 v15, -0x1
 
-    move/from16 v0, v16
+    if-eq v10, v15, :cond_0
 
-    if-eq v11, v0, :cond_0
+    const/4 v15, -0x1
 
-    const/16 v16, -0x1
-
-    move/from16 v0, v16
-
-    if-eq v4, v0, :cond_0
+    if-eq v3, v15, :cond_0
 
     .line 294
-    const-string v16, "<sn>"
+    const-string v15, "<sn>"
+
+    invoke-virtual {v15}, Ljava/lang/String;->length()I
+
+    move-result v15
+
+    add-int/2addr v15, v10
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v15, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v13
+
+    .line 295
+    .local v13, subText:Ljava/lang/String;
+    new-instance v6, Ljava/util/StringTokenizer;
+
+    const-string v15, "|"
+
+    invoke-direct {v6, v13, v15}, Ljava/util/StringTokenizer;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 296
+    .local v6, idListTokens:Ljava/util/StringTokenizer;
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 297
+    .local v2, dataList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;>;"
+    :cond_6
+    :goto_2
+    invoke-virtual {v6}, Ljava/util/StringTokenizer;->hasMoreTokens()Z
+
+    move-result v15
+
+    if-eqz v15, :cond_8
+
+    .line 298
+    invoke-virtual {v6}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
+
+    move-result-object v14
+
+    .line 299
+    .local v14, token:Ljava/lang/String;
+    const-string v15, "/"
+
+    invoke-virtual {v14, v15}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 300
+    .local v7, ids:[Ljava/lang/String;
+    array-length v15, v7
+
+    const/16 v16, 0x2
+
+    move/from16 v0, v16
+
+    if-lt v15, v0, :cond_6
+
+    .line 303
+    const/4 v15, 0x0
+
+    aget-object v15, v7, v15
+
+    const-string v16, "id:"
+
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v15
+
+    if-eqz v15, :cond_6
+
+    const/4 v15, 0x1
+
+    aget-object v15, v7, v15
+
+    const-string v16, "friendof:"
+
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v15
+
+    if-eqz v15, :cond_6
+
+    .line 305
+    new-instance v1, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;
+
+    invoke-direct {v1}, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;-><init>()V
+
+    .line 306
+    .local v1, data:Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;
+    const/4 v15, 0x0
+
+    aget-object v15, v7, v15
+
+    const-string v16, "id:"
 
     invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
 
     move-result v16
 
-    add-int v16, v16, v11
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v1, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v14
-
-    .line 295
-    .local v14, subText:Ljava/lang/String;
-    new-instance v7, Ljava/util/StringTokenizer;
-
-    const-string v16, "|"
-
-    move-object/from16 v0, v16
-
-    invoke-direct {v7, v14, v0}, Ljava/util/StringTokenizer;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 296
-    .local v7, idListTokens:Ljava/util/StringTokenizer;
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-
-    .line 297
-    .local v3, dataList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;>;"
-    :cond_6
-    :goto_2
-    invoke-virtual {v7}, Ljava/util/StringTokenizer;->hasMoreTokens()Z
-
-    move-result v16
-
-    if-eqz v16, :cond_8
-
-    .line 298
-    invoke-virtual {v7}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v15
 
-    .line 299
-    .local v15, token:Ljava/lang/String;
-    const-string v16, "/"
-
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 300
-    .local v8, ids:[Ljava/lang/String;
-    array-length v0, v8
-
-    move/from16 v16, v0
-
-    const/16 v17, 0x2
-
-    move/from16 v0, v16
-
-    move/from16 v1, v17
-
-    if-lt v0, v1, :cond_6
-
-    .line 303
-    const/16 v16, 0x0
-
-    aget-object v16, v8, v16
-
-    const-string v17, "id:"
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v16
-
-    if-eqz v16, :cond_6
-
-    const/16 v16, 0x1
-
-    aget-object v16, v8, v16
-
-    const-string v17, "friendof:"
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v16
-
-    if-eqz v16, :cond_6
-
-    .line 305
-    new-instance v2, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;
-
-    invoke-direct {v2}, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;-><init>()V
-
-    .line 306
-    .local v2, data:Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;
-    const/16 v16, 0x0
-
-    aget-object v16, v8, v16
-
-    const-string v17, "id:"
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->length()I
-
-    move-result v17
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v16
-
-    move-object/from16 v0, v16
-
-    iput-object v0, v2, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->userId:Ljava/lang/String;
+    iput-object v15, v1, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->userId:Ljava/lang/String;
 
     .line 307
-    const/16 v16, 0x1
+    const/4 v15, 0x1
 
-    aget-object v16, v8, v16
+    aget-object v15, v7, v15
 
-    const-string v17, "friendof:"
+    const-string v16, "friendof:"
 
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->length()I
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
 
-    move-result v17
+    move-result v16
 
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v15
 
-    move-object/from16 v0, v16
-
-    iput-object v0, v2, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->friendOf:Ljava/lang/String;
+    iput-object v15, v1, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->friendOf:Ljava/lang/String;
 
     .line 308
-    iget-object v0, v2, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->userId:Ljava/lang/String;
+    iget-object v15, v1, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->userId:Ljava/lang/String;
 
-    move-object/from16 v16, v0
+    const-string v16, "@"
 
-    const-string v17, "@"
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    move-result v15
 
-    move-result v16
+    if-eqz v15, :cond_7
 
-    if-eqz v16, :cond_7
+    iget-object v15, v1, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->friendOf:Ljava/lang/String;
 
-    iget-object v0, v2, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->friendOf:Ljava/lang/String;
+    const-string v16, "@"
 
-    move-object/from16 v16, v0
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    const-string v17, "@"
+    move-result v15
 
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v16
-
-    if-eqz v16, :cond_7
+    if-eqz v15, :cond_7
 
     .line 309
-    const-string v16, "flickr"
+    const-string v15, "flickr"
 
-    move-object/from16 v0, v16
-
-    iput-object v0, v2, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->SNType:Ljava/lang/String;
+    iput-object v15, v1, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->SNType:Ljava/lang/String;
 
     .line 313
     :goto_3
-    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
     .line 311
     :cond_7
-    const-string v16, "facebook"
+    const-string v15, "facebook"
 
-    move-object/from16 v0, v16
-
-    iput-object v0, v2, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->SNType:Ljava/lang/String;
+    iput-object v15, v1, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->SNType:Ljava/lang/String;
 
     goto :goto_3
 
     .line 319
-    .end local v2           #data:Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;
-    .end local v8           #ids:[Ljava/lang/String;
-    .end local v15           #token:Ljava/lang/String;
+    .end local v1           #data:Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;
+    .end local v7           #ids:[Ljava/lang/String;
+    .end local v14           #token:Ljava/lang/String;
     :cond_8
-    const/16 v16, 0x0
+    const/4 v15, 0x0
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v16
+    invoke-static {v0, v2, v15}, Lcom/htc/util/contacts/SNLinkUtils$NewMethod;->setLinkData(Ljava/lang/String;Ljava/util/List;Z)Ljava/lang/String;
 
-    invoke-static {v0, v3, v1}, Lcom/htc/util/contacts/SNLinkUtils$NewMethod;->setLinkData(Ljava/lang/String;Ljava/util/List;Z)Ljava/lang/String;
+    move-result-object v9
 
-    move-result-object v10
-
-    .line 320
-    const-string v16, "NOTE"
-
-    new-instance v17, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v18, "newText: "
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-static/range {v16 .. v17}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-object/from16 p0, v10
+    move-object/from16 p0, v9
 
     .line 322
     goto/16 :goto_0

@@ -9,7 +9,7 @@
 # static fields
 .field private static final ATTENDEES_PROJECTION:[Ljava/lang/String; = null
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field public static final EXTRA_EVENT_URI:Ljava/lang/String; = "com.htc.calendar.event_uri"
 
@@ -78,7 +78,7 @@
 
     .prologue
     .line 57
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 50
     const/4 v0, 0x0
@@ -130,19 +130,11 @@
 .end method
 
 .method private Debug(Ljava/lang/String;)V
-    .locals 1
+    .locals 0
     .parameter "s"
 
     .prologue
-    .line 536
-    if-eqz p1, :cond_0
-
-    const-string v0, "HtcCalendarManager"
-
-    invoke-static {v0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 538
-    :cond_0
     return-void
 .end method
 

@@ -8,7 +8,7 @@
 
 .field public static final APTG_FWD_COMMAND_ENABLE:[Ljava/lang/String; = null
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final LOG_TAG:Ljava/lang/String; = "HtcCdmaCallForwardEditPreference"
 
@@ -181,31 +181,6 @@
 
     .line 58
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
-
-    .line 60
-    const-string v1, "HtcCdmaCallForwardEditPreference"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "OoO reason="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget v3, p0, Lcom/android/phone/HtcCdmaCallForwardEditPreference;->reason:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 62
     invoke-virtual {p0, v4}, Lcom/android/phone/HtcCdmaCallForwardEditPreference;->setToggled(Z)Lcom/android/phone/EditPhoneNumberPreference;
@@ -786,49 +761,14 @@
 .end method
 
 .method protected onDialogClosed(Z)V
-    .locals 6
+    .locals 5
     .parameter "positiveResult"
 
     .prologue
-    const/4 v5, -0x1
+    const/4 v4, -0x1
 
     .line 89
     invoke-super {p0, p1}, Lcom/android/phone/EditPhoneNumberPreference;->onDialogClosed(Z)V
-
-    .line 91
-    const-string v2, "HtcCdmaCallForwardEditPreference"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "mButtonClicked="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget v4, p0, Lcom/android/phone/HtcCdmaCallForwardEditPreference;->mButtonClicked:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", positiveResult="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 93
     iget v2, p0, Lcom/android/phone/HtcCdmaCallForwardEditPreference;->mButtonClicked:I
@@ -837,7 +777,7 @@
 
     iget v2, p0, Lcom/android/phone/HtcCdmaCallForwardEditPreference;->mButtonClicked:I
 
-    if-eq v2, v5, :cond_0
+    if-eq v2, v4, :cond_0
 
     iget v2, p0, Lcom/android/phone/HtcCdmaCallForwardEditPreference;->mButtonClicked:I
 
@@ -851,50 +791,15 @@
 
     move-result-object v1
 
-    .line 99
-    .local v1, number:Ljava/lang/String;
-    const-string v2, "HtcCdmaCallForwardEditPreference"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "reason="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget v4, p0, Lcom/android/phone/HtcCdmaCallForwardEditPreference;->reason:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", number="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 101
+    .local v1, number:Ljava/lang/String;
     const/4 v0, 0x0
 
     .line 102
     .local v0, enabled:Z
     iget v2, p0, Lcom/android/phone/HtcCdmaCallForwardEditPreference;->mButtonClicked:I
 
-    if-ne v2, v5, :cond_1
+    if-ne v2, v4, :cond_1
 
     .line 103
     const/4 v0, 0x1

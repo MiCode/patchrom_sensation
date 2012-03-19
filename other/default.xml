@@ -40,10 +40,12 @@
        </function>
       <function name="IME_sip_set">
         <set name="single">
-          <item name="total_list">Handwriting;PinYin;Stroke</item>
-          <item type="boolean" name="Handwriting">yes</item>
+          <item name="total_list">Handwriting;ZuhYin;CangJie;PinYin;Stroke;</item>
+          <item type="boolean" name="ZuhYin">yes</item>
+          <item type="boolean" name="CangJie">yes</item>
           <item type="boolean" name="PinYin">yes</item>
           <item type="boolean" name="Stroke">yes</item>
+          <item type="boolean" name="Handwriting">yes</item>
           <item type="boolean" name="defeault">PinYin</item>
         </set>
       </function>
@@ -51,7 +53,7 @@
     <module name="deviceData">
       <function>
         <set name="single">
-          <item name="device_name">HTC Sensation XE with Beats Audio</item>
+          <item name="device_name">HTC Sensation XE with Beats Audio Z715e</item>
         </set>
       </function>
     </module>
@@ -67,14 +69,13 @@
     <module name="Crash_Report">
       <function name="setting">
         <set name="single">
-          <item name="turn_off_report" type="boolean">yes</item>
-
+          <item name="turn_off_report" type="boolean">no</item>
         </set>
       </function>
     </module>
   </category>
   <BootConfiguration>
-    <BootAnimation animation="/system/media/bootanimation.zip"/>
+    <BootAnimation animation="/system/media/bootanimation.zip" audio="/system/media/bootaudio.mp3" />
   </BootConfiguration>
   <category name="SettingsProvider">
     <module name="res">

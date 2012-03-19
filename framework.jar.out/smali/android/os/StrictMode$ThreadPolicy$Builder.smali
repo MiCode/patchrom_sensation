@@ -26,7 +26,7 @@
     const/4 v0, 0x0
 
     .line 377
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 369
     iput v0, p0, Landroid/os/StrictMode$ThreadPolicy$Builder;->mMask:I
@@ -44,7 +44,7 @@
 
     .prologue
     .line 384
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 369
     const/4 v0, 0x0

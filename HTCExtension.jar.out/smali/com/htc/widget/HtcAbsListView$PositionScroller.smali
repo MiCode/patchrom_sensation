@@ -54,7 +54,7 @@
     .line 3230
     iput-object p1, p0, Lcom/htc/widget/HtcAbsListView$PositionScroller;->this$0:Lcom/htc/widget/HtcAbsListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 3231
     #getter for: Lcom/htc/widget/HtcAbsListView;->mContext:Landroid/content/Context;
@@ -103,7 +103,7 @@
 
     move-object/from16 v0, v21
 
-    iget v5, v0, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v5, v0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     .line 3329
     .local v5, firstPos:I
@@ -208,7 +208,7 @@
 
     move-object/from16 v0, v21
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     move/from16 v21, v0
 
@@ -345,7 +345,7 @@
 
     move-object/from16 v0, v22
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mItemCount:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     move/from16 v22, v0
 
@@ -849,7 +849,7 @@
     .line 3235
     iget-object v3, p0, Lcom/htc/widget/HtcAbsListView$PositionScroller;->this$0:Lcom/htc/widget/HtcAbsListView;
 
-    iget v0, v3, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v0, v3, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     .line 3236
     .local v0, firstPos:I
@@ -959,7 +959,7 @@
     :cond_1
     iget-object v7, p0, Lcom/htc/widget/HtcAbsListView$PositionScroller;->this$0:Lcom/htc/widget/HtcAbsListView;
 
-    iget v3, v7, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v3, v7, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     .line 3269
     .local v3, firstPos:I

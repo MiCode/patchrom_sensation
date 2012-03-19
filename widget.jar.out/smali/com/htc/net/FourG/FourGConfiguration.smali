@@ -57,7 +57,7 @@
     const/4 v0, -0x1
 
     .line 58
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 59
     iput v0, p0, Lcom/htc/net/FourG/FourGConfiguration;->networkId:I
@@ -80,7 +80,7 @@
 
     .prologue
     .line 105
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 106
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -113,7 +113,7 @@
 
     .prologue
     .line 64
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 65
     iget v0, p1, Lcom/htc/net/FourG/FourGConfiguration;->networkId:I

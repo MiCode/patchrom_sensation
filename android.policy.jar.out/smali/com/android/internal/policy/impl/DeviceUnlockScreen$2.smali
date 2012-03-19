@@ -30,7 +30,7 @@
     .line 80
     iput-object p1, p0, Lcom/android/internal/policy/impl/DeviceUnlockScreen$2;->this$0:Lcom/android/internal/policy/impl/DeviceUnlockScreen;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

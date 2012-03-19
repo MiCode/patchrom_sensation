@@ -127,7 +127,7 @@
     const/4 v1, -0x1
 
     .line 186
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 57
     const-string v0, "RotateHtcDialogController"

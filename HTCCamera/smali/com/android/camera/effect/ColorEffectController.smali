@@ -165,7 +165,7 @@
     if-nez v0, :cond_2
 
     .line 96
-    iget-object v1, p0, Lcom/android/camera/effect/ColorEffectController;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "There is no camera controller"
 

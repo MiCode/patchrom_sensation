@@ -67,7 +67,7 @@
     .line 264
     iput-object p1, p0, Landroid/speech/tts/AudioPlaybackHandler$ListEntry;->this$0:Landroid/speech/tts/AudioPlaybackHandler;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 265
     iput p2, p0, Landroid/speech/tts/AudioPlaybackHandler$ListEntry;->mWhat:I

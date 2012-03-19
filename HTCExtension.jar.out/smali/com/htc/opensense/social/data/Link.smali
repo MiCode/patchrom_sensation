@@ -58,7 +58,7 @@
 
     .prologue
     .line 53
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 55
     return-void
@@ -70,7 +70,7 @@
 
     .prologue
     .line 49
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 50
     invoke-virtual {p0, p1}, Lcom/htc/opensense/social/data/Link;->readFromParcel(Landroid/os/Parcel;)V

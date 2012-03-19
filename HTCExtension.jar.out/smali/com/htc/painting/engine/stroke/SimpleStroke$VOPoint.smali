@@ -45,7 +45,7 @@
 
     .prologue
     .line 500
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 501
     iput p1, p0, Lcom/htc/painting/engine/stroke/SimpleStroke$VOPoint;->x:F
@@ -66,7 +66,7 @@
 
     .prologue
     .line 506
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 507
     iget-wide v0, p1, Lcom/htc/painting/engine/stroke/SimpleStroke$VOPoint;->d:D

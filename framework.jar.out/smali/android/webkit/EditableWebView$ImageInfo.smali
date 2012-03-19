@@ -33,20 +33,20 @@
     .parameter "height"
 
     .prologue
-    .line 1320
+    .line 1393
     iput-object p1, p0, Landroid/webkit/EditableWebView$ImageInfo;->this$0:Landroid/webkit/EditableWebView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1321
+    .line 1394
     iput-object p2, p0, Landroid/webkit/EditableWebView$ImageInfo;->m_src:Ljava/lang/String;
 
-    .line 1322
+    .line 1395
     iput p3, p0, Landroid/webkit/EditableWebView$ImageInfo;->m_width:I
 
-    .line 1323
+    .line 1396
     iput p4, p0, Landroid/webkit/EditableWebView$ImageInfo;->m_height:I
 
-    .line 1324
+    .line 1397
     return-void
 .end method

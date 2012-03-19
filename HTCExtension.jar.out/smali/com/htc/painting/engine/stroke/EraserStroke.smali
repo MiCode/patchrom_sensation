@@ -258,7 +258,7 @@
     :goto_1
     move-object/from16 v0, p0
 
-    iput-boolean v2, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mIsEffective:Z
+    iput-boolean v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mIsEffective:Z
 
     .line 258
     move-object/from16 v0, p1
@@ -278,7 +278,7 @@
 
     move-object/from16 v0, p0
 
-    iput-object v2, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iput-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     .line 262
     new-instance v2, Landroid/graphics/Path;
@@ -287,7 +287,7 @@
 
     move-object/from16 v0, p0
 
-    iput-object v2, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPath:Landroid/graphics/Path;
+    iput-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPath:Landroid/graphics/Path;
 
     .line 264
     const/16 v17, 0x0
@@ -371,7 +371,7 @@
     .line 283
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPath:Landroid/graphics/Path;
+    iget-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPath:Landroid/graphics/Path;
 
     move/from16 v0, v28
 
@@ -383,7 +383,7 @@
     :goto_3
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v30, v0
 
@@ -460,7 +460,7 @@
     .line 285
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPath:Landroid/graphics/Path;
+    iget-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPath:Landroid/graphics/Path;
 
     move/from16 v0, v28
 
@@ -474,7 +474,7 @@
     :cond_3
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPath:Landroid/graphics/Path;
+    iget-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPath:Landroid/graphics/Path;
 
     add-float v3, v28, v17
 
@@ -535,7 +535,7 @@
 
     move-object/from16 v0, p0
 
-    iput-wide v2, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mCreationTime:J
+    iput-wide v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mCreationTime:J
 
     .line 305
     new-instance v19, Lcom/htc/painting/engine/StrokeProperties;
@@ -574,7 +574,7 @@
     .local v23, r:Landroid/graphics/RectF;
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPath:Landroid/graphics/Path;
+    iget-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPath:Landroid/graphics/Path;
 
     const/4 v3, 0x1
 
@@ -629,19 +629,19 @@
 
     move-object/from16 v0, p0
 
-    iput-object v2, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mRectF:Landroid/graphics/RectF;
+    iput-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mRectF:Landroid/graphics/RectF;
 
     .line 316
     move-object/from16 v0, v19
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/htc/painting/engine/stroke/EraserStroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
+    iput-object v0, v1, Lcom/htc/painting/engine/stroke/Stroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
 
     .line 317
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
+    iget-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
 
     const/4 v3, 0x1
 
@@ -664,11 +664,11 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -679,7 +679,7 @@
     .line 63
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -732,7 +732,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v22, v0
 
@@ -784,7 +784,7 @@
     :try_start_0
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v22, v0
 
@@ -803,7 +803,7 @@
     .line 102
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v22, v0
 
@@ -821,7 +821,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v22, v0
 
@@ -847,7 +847,7 @@
     .local v5, distanceX:F
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v22, v0
 
@@ -865,7 +865,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v22, v0
 
@@ -891,7 +891,7 @@
     .local v6, distanceY:F
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v22, v0
 
@@ -917,7 +917,7 @@
     .local v20, x:F
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v22, v0
 
@@ -1281,7 +1281,7 @@
     .line 143
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v22, v0
 
@@ -1301,7 +1301,7 @@
     .local v17, posX:I
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v22, v0
 
@@ -1521,11 +1521,11 @@
     add-int/lit8 v0, v0, 0x10
 
     .line 329
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -1534,7 +1534,7 @@
     if-lez v1, :cond_0
 
     .line 330
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -1556,11 +1556,11 @@
 
     .prologue
     .line 78
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -1574,7 +1574,7 @@
     iput-object p2, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mDirtyRect:Landroid/graphics/RectF;
 
     .line 80
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -1582,7 +1582,7 @@
 
     add-int/lit8 v0, v0, -0x2
 
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -1608,11 +1608,11 @@
 
     .prologue
     .line 69
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -1626,7 +1626,7 @@
     iput-object p6, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mDirtyRect:Landroid/graphics/RectF;
 
     .line 71
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -1634,7 +1634,7 @@
 
     add-int/lit8 v0, v0, -0x2
 
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -1685,7 +1685,7 @@
     .line 189
     move-object/from16 v0, p0
 
-    iget-object v13, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v13, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v13}, Ljava/util/List;->size()I
 
@@ -1717,7 +1717,7 @@
     .local v5, preT:J
     move-object/from16 v0, p0
 
-    iget-object v13, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v13, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     if-eqz v13, :cond_4
 
@@ -1728,7 +1728,7 @@
     :goto_1
     move-object/from16 v0, p0
 
-    iget-object v13, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v13, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v13}, Ljava/util/List;->size()I
 
@@ -1739,7 +1739,7 @@
     .line 200
     move-object/from16 v0, p0
 
-    iget-object v13, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v13, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v13, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1755,7 +1755,7 @@
     .local v11, x:I
     move-object/from16 v0, p0
 
-    iget-object v13, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v13, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v13, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1793,7 +1793,7 @@
     :goto_3
     move-object/from16 v0, p0
 
-    iget-object v13, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mPoints:Ljava/util/List;
+    iget-object v13, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v13, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -2013,7 +2013,7 @@
     .line 234
     move-object/from16 v0, p0
 
-    iget-object v13, v0, Lcom/htc/painting/engine/stroke/EraserStroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
+    iget-object v13, v0, Lcom/htc/painting/engine/stroke/Stroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
 
     invoke-virtual {v13}, Lcom/htc/painting/engine/StrokeProperties;->getWidth()F
 
@@ -2046,14 +2046,14 @@
 
     .prologue
     .line 168
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mRectF:Landroid/graphics/RectF;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mRectF:Landroid/graphics/RectF;
 
     if-eqz v0, :cond_0
 
     if-eqz p1, :cond_0
 
     .line 169
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/EraserStroke;->mRectF:Landroid/graphics/RectF;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mRectF:Landroid/graphics/RectF;
 
     invoke-virtual {v0, p1}, Landroid/graphics/RectF;->union(Landroid/graphics/RectF;)V
 

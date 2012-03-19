@@ -42,7 +42,7 @@
 
     .prologue
     .line 1010
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1011
     sget v0, Landroid/os/Debug$InstructionCount;->NUM_INSTR:I

@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 7627
+    .line 7663
     iput-object p1, p0, Lcom/android/camera/HTCCamera$32;->this$0:Lcom/android/camera/HTCCamera;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,7 +42,7 @@
     .parameter "arg0"
 
     .prologue
-    .line 7629
+    .line 7665
     iget-object v0, p0, Lcom/android/camera/HTCCamera$32;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mSceneSunNightLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
@@ -54,7 +54,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 7630
+    .line 7666
     return-void
 .end method
 
@@ -63,7 +63,7 @@
     .parameter "arg0"
 
     .prologue
-    .line 7631
+    .line 7667
     return-void
 .end method
 
@@ -72,6 +72,6 @@
     .parameter "arg0"
 
     .prologue
-    .line 7632
+    .line 7668
     return-void
 .end method

@@ -51,7 +51,7 @@
     .local p2, records:Ljava/util/ArrayList;,"Ljava/util/ArrayList<[B>;"
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager$PbrFile;->this$0:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 497
     new-instance v4, Ljava/util/HashMap;

@@ -125,7 +125,7 @@
 
     .prologue
     .line 19
-    iget-object v0, p0, Lcom/android/camera/actionscreen/ActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -154,7 +154,7 @@
 
     .prologue
     .line 88
-    iget-object v0, p0, Lcom/android/camera/actionscreen/ActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "close() - start"
 
@@ -168,7 +168,7 @@
     if-eq v0, v1, :cond_0
 
     .line 93
-    iget-object v0, p0, Lcom/android/camera/actionscreen/ActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Action screen is already closed"
 
@@ -214,7 +214,7 @@
 
     .line 106
     :cond_1
-    iget-object v0, p0, Lcom/android/camera/actionscreen/ActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "close() - end"
 
@@ -233,7 +233,7 @@
     const/4 v4, 0x0
 
     .line 120
-    iget-object v0, p0, Lcom/android/camera/actionscreen/ActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "completeCloseActionScreen() - start"
 
@@ -247,7 +247,7 @@
     if-eq v0, v1, :cond_0
 
     .line 125
-    iget-object v0, p0, Lcom/android/camera/actionscreen/ActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Action screen is not closing"
 
@@ -289,7 +289,7 @@
     iput v4, p0, Lcom/android/camera/actionscreen/ActionScreen;->m_CloseReason:I
 
     .line 137
-    iget-object v0, p0, Lcom/android/camera/actionscreen/ActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "completeCloseActionScreen() - end"
 
@@ -339,7 +339,7 @@
     if-nez v0, :cond_0
 
     .line 169
-    iget-object v1, p0, Lcom/android/camera/actionscreen/ActionScreen;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "eventManager == null"
 
@@ -381,7 +381,7 @@
     if-nez v0, :cond_1
 
     .line 195
-    iget-object v1, p0, Lcom/android/camera/actionscreen/ActionScreen;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "eventManager == null"
 
@@ -521,7 +521,7 @@
 
     .prologue
     .line 261
-    iget-object v0, p0, Lcom/android/camera/actionscreen/ActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "open() - start"
 
@@ -535,7 +535,7 @@
     if-eq v0, v1, :cond_0
 
     .line 266
-    iget-object v0, p0, Lcom/android/camera/actionscreen/ActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Action screen is not closed"
 
@@ -577,7 +577,7 @@
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
     .line 278
-    iget-object v0, p0, Lcom/android/camera/actionscreen/ActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "open() - end"
 
@@ -594,7 +594,7 @@
 
     .prologue
     .line 287
-    iget-object v1, p0, Lcom/android/camera/actionscreen/ActionScreen;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "prepare() - start"
 
@@ -657,7 +657,7 @@
     iput-boolean v1, p0, Lcom/android/camera/actionscreen/ActionScreen;->m_IsPrepared:Z
 
     .line 304
-    iget-object v1, p0, Lcom/android/camera/actionscreen/ActionScreen;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "prepare() - end"
 

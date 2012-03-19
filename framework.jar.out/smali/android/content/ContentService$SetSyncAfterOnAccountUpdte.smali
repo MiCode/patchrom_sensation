@@ -40,10 +40,10 @@
     invoke-direct {p0, v0}, Landroid/content/SyncManager$PostOnAccountUpdateAction;-><init>(Landroid/content/SyncManager;)V
 
     .line 320
-    iput-object p2, p0, Landroid/content/ContentService$SetSyncAfterOnAccountUpdte;->aAccount:Landroid/accounts/Account;
+    iput-object p2, p0, Landroid/content/SyncManager$PostOnAccountUpdateAction;->aAccount:Landroid/accounts/Account;
 
     .line 321
-    iput-object p3, p0, Landroid/content/ContentService$SetSyncAfterOnAccountUpdte;->aAuthority:Ljava/lang/String;
+    iput-object p3, p0, Landroid/content/SyncManager$PostOnAccountUpdateAction;->aAuthority:Ljava/lang/String;
 
     .line 322
     return-void
@@ -61,25 +61,25 @@
     invoke-super {p0}, Landroid/content/SyncManager$PostOnAccountUpdateAction;->execute()V
 
     .line 326
-    iget-object v0, p0, Landroid/content/ContentService$SetSyncAfterOnAccountUpdte;->aAccount:Landroid/accounts/Account;
+    iget-object v0, p0, Landroid/content/SyncManager$PostOnAccountUpdateAction;->aAccount:Landroid/accounts/Account;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/content/ContentService$SetSyncAfterOnAccountUpdte;->aAuthority:Ljava/lang/String;
+    iget-object v0, p0, Landroid/content/SyncManager$PostOnAccountUpdateAction;->aAuthority:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
     .line 327
-    iget-object v0, p0, Landroid/content/ContentService$SetSyncAfterOnAccountUpdte;->aAccount:Landroid/accounts/Account;
+    iget-object v0, p0, Landroid/content/SyncManager$PostOnAccountUpdateAction;->aAccount:Landroid/accounts/Account;
 
-    iget-object v1, p0, Landroid/content/ContentService$SetSyncAfterOnAccountUpdte;->aAuthority:Ljava/lang/String;
+    iget-object v1, p0, Landroid/content/SyncManager$PostOnAccountUpdateAction;->aAuthority:Ljava/lang/String;
 
     invoke-static {v0, v1, v2}, Landroid/content/ContentResolver;->setSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;Z)V
 
     .line 328
-    iget-object v0, p0, Landroid/content/ContentService$SetSyncAfterOnAccountUpdte;->aAccount:Landroid/accounts/Account;
+    iget-object v0, p0, Landroid/content/SyncManager$PostOnAccountUpdateAction;->aAccount:Landroid/accounts/Account;
 
-    iget-object v1, p0, Landroid/content/ContentService$SetSyncAfterOnAccountUpdte;->aAuthority:Ljava/lang/String;
+    iget-object v1, p0, Landroid/content/SyncManager$PostOnAccountUpdateAction;->aAuthority:Ljava/lang/String;
 
     invoke-static {v0, v1, v2}, Landroid/content/ContentResolver;->setIsSyncable(Landroid/accounts/Account;Ljava/lang/String;I)V
 

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2231
+    .line 2275
     iput-object p1, p0, Lcom/android/phone/BluetoothHandsfree$3;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,16 +39,16 @@
     .parameter "msg"
 
     .prologue
-    .line 2234
+    .line 2278
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 2247
+    .line 2291
     :goto_0
     return-void
 
-    .line 2236
+    .line 2280
     :pswitch_0
     iget-object v0, p0, Lcom/android/phone/BluetoothHandsfree$3;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
@@ -59,7 +59,7 @@
 
     monitor-enter v1
 
-    .line 2237
+    .line 2281
     :try_start_0
     iget-object v0, p0, Lcom/android/phone/BluetoothHandsfree$3;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
@@ -70,14 +70,14 @@
 
     if-nez v0, :cond_0
 
-    .line 2238
+    .line 2282
     const-string v0, "Bluetooth HS/HF"
 
     const-string v2, "mToneStopper: mToneGenerator == null"
 
     invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2244
+    .line 2288
     :goto_1
     monitor-exit v1
 
@@ -92,7 +92,7 @@
 
     throw v0
 
-    .line 2240
+    .line 2284
     :cond_0
     :try_start_1
     iget-object v0, p0, Lcom/android/phone/BluetoothHandsfree$3;->this$0:Lcom/android/phone/BluetoothHandsfree;
@@ -104,7 +104,7 @@
 
     invoke-virtual {v0}, Landroid/media/ToneGenerator;->stopTone()V
 
-    .line 2241
+    .line 2285
     iget-object v0, p0, Lcom/android/phone/BluetoothHandsfree$3;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #getter for: Lcom/android/phone/BluetoothHandsfree;->mToneGenerator:Landroid/media/ToneGenerator;
@@ -114,7 +114,7 @@
 
     invoke-virtual {v0}, Landroid/media/ToneGenerator;->release()V
 
-    .line 2242
+    .line 2286
     iget-object v0, p0, Lcom/android/phone/BluetoothHandsfree$3;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     const/4 v2, 0x0
@@ -126,7 +126,7 @@
 
     goto :goto_1
 
-    .line 2234
+    .line 2278
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

@@ -35,7 +35,7 @@
 # static fields
 .field private static final DEBUG:Z = true
 
-.field private static final HTC_DEBUG:Z = true
+.field private static final HTC_DEBUG:Z = false
 
 .field private static final LOCAL_LOGV:Z = false
 
@@ -48,7 +48,7 @@
 
     .prologue
     .line 78
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 79
     return-void

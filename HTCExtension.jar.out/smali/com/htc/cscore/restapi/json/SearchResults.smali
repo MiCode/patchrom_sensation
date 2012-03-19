@@ -42,7 +42,7 @@
     .prologue
     .line 40
     .local p0, this:Lcom/htc/cscore/restapi/json/SearchResults;,"Lcom/htc/cscore/restapi/json/SearchResults<TT;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 41
     new-instance v0, Ljava/util/ArrayList;

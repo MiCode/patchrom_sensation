@@ -34,7 +34,7 @@
 
     .prologue
     .line 2010
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 2011
     iput-object p1, p0, Landroid/net/Uri$AbstractPart;->encoded:Ljava/lang/String;

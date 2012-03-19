@@ -238,8 +238,8 @@ Może to zająć do kilkunastu minut."</string>
     <string name="htc_preferred_network_global_mode">Tryb światowy</string>
     <string name="htc_preferred_network_cdma_evdo_aut_mode">Tryb CDMA</string>
     <string name="htc_preferred_network_gsm_wcdma_aut_mode">Tryb GSM / UMTS</string>
-    <string name="htc_preferred_network_lte_mode">LTE Mode</string>
-    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM / UMTS / LTE Mode</string>
+    <string name="htc_preferred_network_lte_mode">Tryb LTE</string>
+    <string name="htc_preferred_network_gsm_umts_lte_mode">Tryb GSM/UMTS/LTE</string>
     <string name="title_gsm_preferred_network_options">Tryb GSM / UMTS</string>
     <string name="btn_Menu_Edit">Edytuj</string>
     <string name="btn_Menu_Set_Done">Gotowe</string>

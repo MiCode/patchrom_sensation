@@ -39,7 +39,7 @@
     .line 2900
     iput-object p1, p0, Lcom/android/phone/CallNotifier$EmergencyTonePlayerVibrator;->this$0:Lcom/android/phone/CallNotifier;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 2889
     iput v0, p0, Lcom/android/phone/CallNotifier$EmergencyTonePlayerVibrator;->EMG_VIBRATE_LENGTH:I
@@ -97,19 +97,11 @@
 
     const/4 v3, 0x1
 
-    .line 2907
-    iget-object v1, p0, Lcom/android/phone/CallNotifier$EmergencyTonePlayerVibrator;->this$0:Lcom/android/phone/CallNotifier;
-
-    const-string v2, "call startEmergencyToneOrVibrate."
-
-    #calls: Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-    invoke-static {v1, v2}, Lcom/android/phone/CallNotifier;->access$400(Lcom/android/phone/CallNotifier;Ljava/lang/String;)V
-
     .line 2908
     iget-object v1, p0, Lcom/android/phone/CallNotifier$EmergencyTonePlayerVibrator;->this$0:Lcom/android/phone/CallNotifier;
 
     #getter for: Lcom/android/phone/CallNotifier;->mAudioManager:Landroid/media/AudioManager;
-    invoke-static {v1}, Lcom/android/phone/CallNotifier;->access$600(Lcom/android/phone/CallNotifier;)Landroid/media/AudioManager;
+    invoke-static {v1}, Lcom/android/phone/CallNotifier;->access$500(Lcom/android/phone/CallNotifier;)Landroid/media/AudioManager;
 
     move-result-object v1
 
@@ -134,7 +126,7 @@
     iget-object v1, p0, Lcom/android/phone/CallNotifier$EmergencyTonePlayerVibrator;->this$0:Lcom/android/phone/CallNotifier;
 
     #getter for: Lcom/android/phone/CallNotifier;->mApplication:Lcom/android/phone/PhoneApp;
-    invoke-static {v1}, Lcom/android/phone/CallNotifier;->access$700(Lcom/android/phone/CallNotifier;)Lcom/android/phone/PhoneApp;
+    invoke-static {v1}, Lcom/android/phone/CallNotifier;->access$600(Lcom/android/phone/CallNotifier;)Lcom/android/phone/PhoneApp;
 
     move-result-object v1
 
@@ -153,16 +145,8 @@
     :goto_0
     return-void
 
-    .line 2921
-    :cond_1
-    iget-object v1, p0, Lcom/android/phone/CallNotifier$EmergencyTonePlayerVibrator;->this$0:Lcom/android/phone/CallNotifier;
-
-    const-string v2, "Play Emergency Tone."
-
-    #calls: Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-    invoke-static {v1, v2}, Lcom/android/phone/CallNotifier;->access$400(Lcom/android/phone/CallNotifier;Ljava/lang/String;)V
-
     .line 2924
+    :cond_1
     new-instance v1, Landroid/media/ToneGenerator;
 
     const/16 v2, 0x50
@@ -202,14 +186,6 @@
 
     if-ne v1, v4, :cond_0
 
-    .line 2931
-    iget-object v1, p0, Lcom/android/phone/CallNotifier$EmergencyTonePlayerVibrator;->this$0:Lcom/android/phone/CallNotifier;
-
-    const-string v2, "Play Emergency Vibrate."
-
-    #calls: Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-    invoke-static {v1, v2}, Lcom/android/phone/CallNotifier;->access$400(Lcom/android/phone/CallNotifier;Ljava/lang/String;)V
-
     .line 2932
     new-instance v1, Landroid/os/Vibrator;
 
@@ -244,14 +220,6 @@
     .locals 2
 
     .prologue
-    .line 2944
-    iget-object v0, p0, Lcom/android/phone/CallNotifier$EmergencyTonePlayerVibrator;->this$0:Lcom/android/phone/CallNotifier;
-
-    const-string v1, "call stopEmergencyToneOrVibrate."
-
-    #calls: Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-    invoke-static {v0, v1}, Lcom/android/phone/CallNotifier;->access$400(Lcom/android/phone/CallNotifier;Ljava/lang/String;)V
-
     .line 2946
     iget-object v0, p0, Lcom/android/phone/CallNotifier$EmergencyTonePlayerVibrator;->this$0:Lcom/android/phone/CallNotifier;
 

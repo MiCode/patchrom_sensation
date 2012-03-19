@@ -33,14 +33,14 @@
     .parameter
 
     .prologue
-    .line 1100
+    .line 1101
     iput-object p1, p0, Lcom/android/camera/component/PanoramaController$6;->this$0:Lcom/android/camera/component/PanoramaController;
 
     iput-object p2, p0, Lcom/android/camera/component/PanoramaController$6;->val$cameraThread:Lcom/android/camera/CameraThread;
 
     iput-object p3, p0, Lcom/android/camera/component/PanoramaController$6;->val$cameraController:Lcom/android/camera/CameraController;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -55,10 +55,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1103
+    .line 1104
     iget-object v0, p0, Lcom/android/camera/component/PanoramaController$6;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/PanoramaController;->access$4100(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v0
@@ -67,25 +67,25 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1106
+    .line 1107
     iget-object v0, p0, Lcom/android/camera/component/PanoramaController$6;->this$0:Lcom/android/camera/component/PanoramaController;
 
     #setter for: Lcom/android/camera/component/PanoramaController;->m_IsStitching:Z
     invoke-static {v0, v2}, Lcom/android/camera/component/PanoramaController;->access$3202(Lcom/android/camera/component/PanoramaController;Z)Z
 
-    .line 1107
+    .line 1108
     iget-object v0, p0, Lcom/android/camera/component/PanoramaController$6;->this$0:Lcom/android/camera/component/PanoramaController;
 
     #setter for: Lcom/android/camera/component/PanoramaController;->m_IsCanceling:Z
     invoke-static {v0, v2}, Lcom/android/camera/component/PanoramaController;->access$3102(Lcom/android/camera/component/PanoramaController;Z)Z
 
-    .line 1108
+    .line 1109
     iget-object v0, p0, Lcom/android/camera/component/PanoramaController$6;->this$0:Lcom/android/camera/component/PanoramaController;
 
     #calls: Lcom/android/camera/component/PanoramaController;->clearScaladoResources()V
     invoke-static {v0}, Lcom/android/camera/component/PanoramaController;->access$4200(Lcom/android/camera/component/PanoramaController;)V
 
-    .line 1111
+    .line 1112
     iget-object v0, p0, Lcom/android/camera/component/PanoramaController$6;->val$cameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->getHandler()Landroid/os/Handler;
@@ -98,6 +98,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1277
+    .line 1278
     return-void
 .end method

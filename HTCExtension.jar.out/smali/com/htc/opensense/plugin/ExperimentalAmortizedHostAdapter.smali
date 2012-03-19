@@ -63,7 +63,7 @@
     invoke-direct {p0, p1}, Lcom/htc/opensense/plugin/HostListAdapter;-><init>(Landroid/content/Context;)V
 
     .line 96
-    iget-object v0, p0, Lcom/htc/opensense/plugin/ExperimentalAmortizedHostAdapter;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/htc/opensense/plugin/HostListAdapter;->mContext:Landroid/content/Context;
 
     const-string v1, "layout_inflater"
 

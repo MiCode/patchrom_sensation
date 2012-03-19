@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 204
+    .line 207
     iput-object p1, p0, Lcom/android/camera/effect/EffectControlUI$9;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,12 +42,12 @@
     .parameter "event"
 
     .prologue
-    .line 207
+    .line 210
     iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$9;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
     #calls: Lcom/android/camera/effect/EffectControlUI;->showControls()V
     invoke-static {v0}, Lcom/android/camera/effect/EffectControlUI;->access$600(Lcom/android/camera/effect/EffectControlUI;)V
 
-    .line 208
+    .line 211
     return-void
 .end method

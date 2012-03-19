@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 257
+    .line 258
     iput-object p1, p0, Lcom/android/phone/BluetoothHandsfree$1;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .parameter "intent"
 
     .prologue
-    .line 260
+    .line 262
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 261
+    .line 263
     .local v0, action:Ljava/lang/String;
     const-string v3, "android.intent.action.SIM_STATE_CHANGED"
 
@@ -55,14 +55,14 @@
 
     if-eqz v3, :cond_1
 
-    .line 262
+    .line 264
     const-string v3, "ss"
 
     invoke-virtual {p2, v3}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 263
+    .line 265
     .local v2, stateExtra:Ljava/lang/String;
     const-string v3, "LOADED"
 
@@ -72,7 +72,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 264
+    .line 266
     iget-object v3, p0, Lcom/android/phone/BluetoothHandsfree$1;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #getter for: Lcom/android/phone/BluetoothHandsfree;->mPhonebook:Lcom/android/phone/BluetoothAtPhonebook;
@@ -82,13 +82,13 @@
 
     invoke-virtual {v3}, Lcom/android/phone/BluetoothAtPhonebook;->startQuerySim()V
 
-    .line 270
+    .line 272
     .end local v2           #stateExtra:Ljava/lang/String;
     :cond_0
     :goto_0
     return-void
 
-    .line 266
+    .line 268
     :cond_1
     const-string v3, "anddroid.intent.action.FAVORITE_CHANGE"
 
@@ -98,7 +98,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 267
+    .line 269
     const-string v3, "isSim"
 
     const/4 v4, 0x0
@@ -107,7 +107,7 @@
 
     move-result v1
 
-    .line 268
+    .line 270
     .local v1, isSim:Z
     if-eqz v1, :cond_0
 

@@ -58,7 +58,7 @@
 
     .prologue
     .line 11
-    iget-object v0, p0, Lcom/android/camera/component/AsyncCameraThreadComponent;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -69,7 +69,7 @@
 
     .prologue
     .line 11
-    iget-object v0, p0, Lcom/android/camera/component/AsyncCameraThreadComponent;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method

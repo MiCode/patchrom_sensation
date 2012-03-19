@@ -355,7 +355,7 @@
     if-lez v1, :cond_2
 
     .line 1742
-    iget-boolean v3, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-nez v3, :cond_3
 
@@ -372,7 +372,7 @@
 
     move-result v3
 
-    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->top:I
 
@@ -392,7 +392,7 @@
 
     .line 1747
     .local v2, delta:I
-    iget v3, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     if-eqz v3, :cond_0
 
@@ -442,7 +442,7 @@
 
     move-result v4
 
-    iget-object v5, p0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->bottom:I
 
@@ -464,11 +464,11 @@
 
     .line 1761
     .restart local v2       #delta:I
-    iget v3, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int/2addr v3, v1
 
-    iget v4, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-ge v3, v4, :cond_4
 
@@ -503,7 +503,7 @@
     const/4 v3, 0x1
 
     .line 1350
-    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumGridView;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
     if-nez v4, :cond_0
 
@@ -513,7 +513,7 @@
 
     .line 1354
     :cond_0
-    iget-boolean v4, p0, Lcom/htc/opensense/widget/AlbumGridView;->mDataChanged:Z
+    iget-boolean v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     if-eqz v4, :cond_1
 
@@ -535,7 +535,7 @@
     if-eq v0, v3, :cond_3
 
     .line 1362
-    iget v4, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     if-gez v4, :cond_2
 
@@ -669,11 +669,11 @@
 
     .line 1412
     :sswitch_6
-    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumGridView;->mPopup:Landroid/widget/PopupWindow;
+    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
     if-eqz v4, :cond_8
 
-    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumGridView;->mPopup:Landroid/widget/PopupWindow;
+    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mPopup:Landroid/widget/PopupWindow;
 
     invoke-virtual {v4}, Landroid/widget/PopupWindow;->isShowing()Z
 
@@ -775,7 +775,7 @@
 
     .prologue
     .line 494
-    iget v7, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int/2addr v7, p3
 
@@ -783,7 +783,7 @@
 
     .line 495
     .local v6, lastPosition:I
-    iget v7, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v7, v7, -0x1
 
@@ -806,13 +806,13 @@
 
     .line 502
     .local v4, lastBottom:I
-    iget v7, p0, Lcom/htc/opensense/widget/AlbumGridView;->mBottom:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mBottom:I
 
-    iget v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mTop:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mTop:I
 
     sub-int/2addr v7, v8
 
-    iget-object v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v8, v8, Landroid/graphics/Rect;->bottom:I
 
@@ -852,11 +852,11 @@
     .local v3, firstTop:I
     if-lez v0, :cond_3
 
-    iget v7, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     if-gtz v7, :cond_0
 
-    iget-object v7, p0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v7, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v7, v7, Landroid/graphics/Rect;->top:I
 
@@ -864,12 +864,12 @@
 
     .line 514
     :cond_0
-    iget v7, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     if-nez v7, :cond_1
 
     .line 516
-    iget-object v7, p0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v7, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v7, v7, Landroid/graphics/Rect;->top:I
 
@@ -884,14 +884,14 @@
     invoke-virtual {p0, v0}, Lcom/htc/opensense/widget/AlbumGridView;->offsetChildrenTopAndBottom(I)V
 
     .line 521
-    iget v7, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     if-lez v7, :cond_3
 
     .line 524
-    iget v7, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
-    iget-boolean v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-eqz v8, :cond_2
 
@@ -931,7 +931,7 @@
 
     .prologue
     .line 534
-    iget v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     if-nez v8, :cond_3
 
@@ -952,7 +952,7 @@
 
     .line 542
     .local v2, firstTop:I
-    iget-object v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v8, v8, Landroid/graphics/Rect;->top:I
 
@@ -970,13 +970,13 @@
 
     .line 545
     .local v6, start:I
-    iget v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mBottom:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mBottom:I
 
-    iget v9, p0, Lcom/htc/opensense/widget/AlbumGridView;->mTop:I
+    iget v9, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mTop:I
 
     sub-int/2addr v8, v9
 
-    iget-object v9, p0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->bottom:I
 
@@ -1008,7 +1008,7 @@
 
     .line 552
     .local v3, lastBottom:I
-    iget v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int/2addr v8, p3
 
@@ -1018,7 +1018,7 @@
     .local v5, lastPosition:I
     if-lez v7, :cond_3
 
-    iget v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v8, v8, -0x1
 
@@ -1028,7 +1028,7 @@
 
     .line 557
     :cond_0
-    iget v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v8, v8, -0x1
 
@@ -1048,14 +1048,14 @@
     invoke-virtual {p0, v8}, Lcom/htc/opensense/widget/AlbumGridView;->offsetChildrenTopAndBottom(I)V
 
     .line 564
-    iget v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v8, v8, -0x1
 
     if-ge v5, v8, :cond_3
 
     .line 567
-    iget-boolean v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-nez v8, :cond_2
 
@@ -1291,13 +1291,13 @@
 
     .line 196
     .local v1, selectedView:Landroid/view/View;
-    iget v3, p0, Lcom/htc/opensense/widget/AlbumGridView;->mBottom:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mBottom:I
 
-    iget v4, p0, Lcom/htc/opensense/widget/AlbumGridView;->mTop:I
+    iget v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mTop:I
 
     sub-int/2addr v3, v4
 
-    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->bottom:I
 
@@ -1308,7 +1308,7 @@
     :goto_0
     if-ge p2, v0, :cond_2
 
-    iget v3, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-ge p1, v3, :cond_2
 
@@ -1365,14 +1365,14 @@
 
     .prologue
     .line 322
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     invoke-static {p1, v1}, Ljava/lang/Math;->max(II)I
 
     move-result p1
 
     .line 323
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v1, v1, -0x1
 
@@ -1381,7 +1381,7 @@
     move-result p1
 
     .line 325
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v1, v1, -0x1
 
@@ -1389,7 +1389,7 @@
 
     .line 326
     .local v0, invertedPosition:I
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v1, v1, -0x1
 
@@ -1423,7 +1423,7 @@
 
     .line 588
     .local v2, fadingEdgeLength:I
-    iget v9, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v9, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     .line 589
     .local v9, selectedPosition:I
@@ -1439,7 +1439,7 @@
 
     .line 595
     .local v6, rowEnd:I
-    iget-boolean v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v12, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-nez v12, :cond_0
 
@@ -1467,7 +1467,7 @@
 
     .line 611
     .local v1, bottomSelectionPixel:I
-    iget-boolean v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v12, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-eqz v12, :cond_1
 
@@ -1482,7 +1482,7 @@
 
     .line 613
     .local v8, sel:Landroid/view/View;
-    iput v7, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iput v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 615
     iget-object v5, p0, Lcom/htc/opensense/widget/AlbumGridView;->mReferenceView:Landroid/view/View;
@@ -1502,7 +1502,7 @@
     .end local v8           #sel:Landroid/view/View;
     .end local v10           #topSelectionPixel:I
     :cond_0
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v12, v12, -0x1
 
@@ -1510,7 +1510,7 @@
 
     .line 600
     .local v3, invertedSelection:I
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v12, v12, -0x1
 
@@ -1553,7 +1553,7 @@
     invoke-direct {p0, v5, v10, v1}, Lcom/htc/opensense/widget/AlbumGridView;->adjustForBottomFadingEdge(Landroid/view/View;II)V
 
     .line 622
-    iget-boolean v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v12, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-nez v12, :cond_3
 
@@ -1619,20 +1619,20 @@
 
     .prologue
     .line 312
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    iput v0, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iput v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 313
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v1, v1, -0x1
 
@@ -1640,23 +1640,23 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iput v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 314
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     if-gez v0, :cond_0
 
     .line 315
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iput v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 317
     :cond_0
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     iget v2, p0, Lcom/htc/opensense/widget/AlbumGridView;->mNumColumns:I
 
@@ -1664,10 +1664,10 @@
 
     sub-int/2addr v0, v1
 
-    iput v0, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iput v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 318
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     invoke-direct {p0, v0, p1}, Lcom/htc/opensense/widget/AlbumGridView;->fillDown(II)Landroid/view/View;
 
@@ -1701,7 +1701,7 @@
 
     .line 339
     .local v7, rowEnd:I
-    iget-boolean v13, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v13, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-nez v13, :cond_0
 
@@ -1727,7 +1727,7 @@
 
     .line 351
     .local v11, topSelectionPixel:I
-    iget-boolean v13, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v13, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-eqz v13, :cond_1
 
@@ -1742,7 +1742,7 @@
 
     .line 352
     .local v9, sel:Landroid/view/View;
-    iput v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iput v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 354
     iget-object v6, p0, Lcom/htc/opensense/widget/AlbumGridView;->mReferenceView:Landroid/view/View;
@@ -1762,7 +1762,7 @@
     .end local v9           #sel:Landroid/view/View;
     .end local v11           #topSelectionPixel:I
     :cond_0
-    iget v13, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v13, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v13, v13, -0x1
 
@@ -1770,7 +1770,7 @@
 
     .line 344
     .local v3, invertedSelection:I
-    iget v13, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v13, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v13, v13, -0x1
 
@@ -1807,7 +1807,7 @@
     .restart local v6       #referenceView:Landroid/view/View;
     .restart local v9       #sel:Landroid/view/View;
     :cond_2
-    iget-boolean v13, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v13, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-nez v13, :cond_3
 
@@ -1909,7 +1909,7 @@
 
     .line 441
     .local v4, motionRowEnd:I
-    iget-boolean v10, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v10, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-nez v10, :cond_1
 
@@ -1921,7 +1921,7 @@
     .line 450
     .local v5, motionRowStart:I
     :goto_0
-    iget-boolean v10, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v10, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-eqz v10, :cond_2
 
@@ -1936,7 +1936,7 @@
 
     .line 453
     .local v8, temp:Landroid/view/View;
-    iput v5, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iput v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 455
     iget-object v7, p0, Lcom/htc/opensense/widget/AlbumGridView;->mReferenceView:Landroid/view/View;
@@ -1958,7 +1958,7 @@
     if-eqz v7, :cond_0
 
     .line 462
-    iget-boolean v10, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v10, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-nez v10, :cond_3
 
@@ -2021,7 +2021,7 @@
     .end local v7           #referenceView:Landroid/view/View;
     .end local v9           #verticalSpacing:I
     :cond_1
-    iget v10, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v10, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v10, v10, -0x1
 
@@ -2029,7 +2029,7 @@
 
     .line 446
     .local v3, invertedSelection:I
-    iget v10, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v10, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v10, v10, -0x1
 
@@ -2139,7 +2139,7 @@
 
     .line 279
     .local v1, selectedView:Landroid/view/View;
-    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v0, v3, Landroid/graphics/Rect;->top:I
 
@@ -2181,7 +2181,7 @@
 
     .line 291
     :cond_1
-    iput p1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iput p1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 293
     iget v3, p0, Lcom/htc/opensense/widget/AlbumGridView;->mNumColumns:I
@@ -2194,7 +2194,7 @@
     .line 296
     .end local v2           #temp:Landroid/view/View;
     :cond_2
-    iget-boolean v3, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-eqz v3, :cond_3
 
@@ -2205,7 +2205,7 @@
 
     move-result v3
 
-    iput v3, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iput v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 300
     :cond_3
@@ -2229,7 +2229,7 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    iget v2, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v2, v2, -0x1
 
@@ -2288,7 +2288,7 @@
 
     .line 1609
     .local v1, invertedIndex:I
-    iget-boolean v6, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v6, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-nez v6, :cond_0
 
@@ -2464,7 +2464,7 @@
 
     .line 218
     .local v10, horizontalSpacing:I
-    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v2, v0, Landroid/graphics/Rect;->left:I
 
@@ -2481,7 +2481,7 @@
 
     .line 220
     .local v4, nextLeft:I
-    iget-boolean v0, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-nez v0, :cond_5
 
@@ -2490,7 +2490,7 @@
 
     add-int v0, v0, p1
 
-    iget v2, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
 
@@ -2516,7 +2516,7 @@
 
     .line 235
     .local v11, inClick:Z
-    iget v13, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v13, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     .line 237
     .local v13, selectedPosition:I
@@ -2695,7 +2695,7 @@
     .local v5, fadingEdgeLength:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     move/from16 v16, v0
 
@@ -2721,7 +2721,7 @@
     .local v13, rowEnd:I
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     move/from16 v19, v0
 
@@ -2771,7 +2771,7 @@
     .local v4, bottomSelectionPixel:I
     move-object/from16 v0, p0
 
-    iput v14, v0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iput v14, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 778
     if-lez v12, :cond_3
@@ -2792,7 +2792,7 @@
     :goto_1
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     move/from16 v19, v0
 
@@ -2851,7 +2851,7 @@
     :cond_0
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     move/from16 v19, v0
 
@@ -2863,7 +2863,7 @@
     .local v6, invertedSelection:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     move/from16 v19, v0
 
@@ -2890,7 +2890,7 @@
     .restart local v14       #rowStart:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     move/from16 v19, v0
 
@@ -2903,7 +2903,7 @@
     .line 762
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     move/from16 v19, v0
 
@@ -2975,7 +2975,7 @@
     :goto_5
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     move/from16 v19, v0
 
@@ -3058,7 +3058,7 @@
     :goto_7
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     move/from16 v19, v0
 
@@ -3119,7 +3119,7 @@
     :cond_9
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     move/from16 v19, v0
 
@@ -3217,11 +3217,11 @@
 
     .line 391
     .local v1, count:I
-    iget v3, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int/2addr v3, v1
 
-    iget v4, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-ne v3, v4, :cond_0
 
@@ -3260,7 +3260,7 @@
 
     .prologue
     .line 379
-    iget v2, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     if-nez v2, :cond_0
 
@@ -3395,7 +3395,7 @@
     :cond_3
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/htc/opensense/widget/AlbumGridView;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v15, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
     move/from16 v0, p2
 
@@ -3447,7 +3447,7 @@
 
     const/16 v16, 0x0
 
-    iget v0, v12, Lcom/htc/opensense/widget/AlbumAbsListView$LayoutParams;->height:I
+    iget v0, v12, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     move/from16 v17, v0
 
@@ -3469,7 +3469,7 @@
 
     const/16 v16, 0x0
 
-    iget v0, v12, Lcom/htc/opensense/widget/AlbumAbsListView$LayoutParams;->width:I
+    iget v0, v12, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     move/from16 v17, v0
 
@@ -3542,7 +3542,7 @@
     :goto_8
     move-object/from16 v0, p0
 
-    iget-boolean v15, v0, Lcom/htc/opensense/widget/AlbumGridView;->mCachingStarted:Z
+    iget-boolean v15, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mCachingStarted:Z
 
     if-eqz v15, :cond_0
 
@@ -3704,7 +3704,7 @@
     const/4 v8, 0x6
 
     .line 1500
-    iget v4, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     .line 1501
     .local v4, selectedPosition:I
@@ -3716,7 +3716,7 @@
 
     .line 1508
     .local v2, moved:Z
-    iget-boolean v6, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v6, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-nez v6, :cond_2
 
@@ -3731,7 +3731,7 @@
 
     add-int/lit8 v6, v6, -0x1
 
-    iget v7, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v7, v7, -0x1
 
@@ -3767,7 +3767,7 @@
     .end local v0           #endOfRowPos:I
     .end local v5           #startOfRowPos:I
     :cond_2
-    iget v6, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v6, v6, -0x1
 
@@ -3775,7 +3775,7 @@
 
     .line 1513
     .local v1, invertedSelection:I
-    iget v6, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v6, v6, -0x1
 
@@ -3804,7 +3804,7 @@
     if-lez v5, :cond_0
 
     .line 1520
-    iput v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mLayoutMode:I
+    iput v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mLayoutMode:I
 
     .line 1521
     sub-int v6, v4, v3
@@ -3822,19 +3822,19 @@
 
     .line 1526
     :sswitch_1
-    iget v6, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v6, v6, -0x1
 
     if-ge v0, v6, :cond_0
 
     .line 1527
-    iput v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mLayoutMode:I
+    iput v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mLayoutMode:I
 
     .line 1528
     add-int v6, v4, v3
 
-    iget v7, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v7, v7, -0x1
 
@@ -3854,7 +3854,7 @@
     if-le v4, v5, :cond_0
 
     .line 1534
-    iput v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mLayoutMode:I
+    iput v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mLayoutMode:I
 
     .line 1535
     add-int/lit8 v6, v4, -0x1
@@ -3871,7 +3871,7 @@
     if-ge v4, v0, :cond_0
 
     .line 1541
-    iput v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mLayoutMode:I
+    iput v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mLayoutMode:I
 
     .line 1542
     add-int/lit8 v6, v4, 0x1
@@ -3942,7 +3942,7 @@
     iput v2, v0, Landroid/view/animation/GridLayoutAnimationController$AnimationParameters;->rowsCount:I
 
     .line 988
-    iget-boolean v2, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-nez v2, :cond_1
 
@@ -4119,7 +4119,7 @@
     const/4 v4, 0x0
 
     .line 1809
-    iget v5, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     if-ltz v5, :cond_0
 
@@ -4151,7 +4151,7 @@
     if-lez v0, :cond_0
 
     .line 1814
-    iget v5, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     iget v6, p0, Lcom/htc/opensense/widget/AlbumGridView;->mNumColumns:I
 
@@ -4189,7 +4189,7 @@
 
     .line 1825
     .local v0, numColumns:I
-    iget v2, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/2addr v2, v0
 
@@ -4250,13 +4250,13 @@
     .line 162
     .local v3, startOffset:I
     :goto_0
-    iget v5, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int v2, v5, v0
 
     .line 163
     .local v2, position:I
-    iget-boolean v5, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v5, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-eqz v5, :cond_0
 
@@ -4309,11 +4309,11 @@
     .line 171
     .restart local v3       #startOffset:I
     :goto_2
-    iget v2, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 172
     .restart local v2       #position:I
-    iget-boolean v5, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v5, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-nez v5, :cond_4
 
@@ -4377,7 +4377,7 @@
 
     .line 406
     .local v2, numColumns:I
-    iget-boolean v3, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-nez v3, :cond_1
 
@@ -4400,7 +4400,7 @@
     if-gt p1, v3, :cond_0
 
     .line 409
-    iget v3, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int/2addr v3, v1
 
@@ -4439,7 +4439,7 @@
     if-lt p1, v3, :cond_2
 
     .line 415
-    iget v3, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int/2addr v3, v1
 
@@ -4453,7 +4453,7 @@
 
     .line 420
     :cond_3
-    iget v3, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int/2addr v3, v0
 
@@ -4487,7 +4487,7 @@
     if-ne p1, v1, :cond_1
 
     .line 1477
-    iput v2, p0, Lcom/htc/opensense/widget/AlbumGridView;->mLayoutMode:I
+    iput v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mLayoutMode:I
 
     .line 1478
     const/4 v1, 0x0
@@ -4512,10 +4512,10 @@
     if-ne p1, v1, :cond_0
 
     .line 1482
-    iput v2, p0, Lcom/htc/opensense/widget/AlbumGridView;->mLayoutMode:I
+    iput v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mLayoutMode:I
 
     .line 1483
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v1, v1, -0x1
 
@@ -4547,7 +4547,7 @@
 
     .prologue
     .line 86
-    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumGridView;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -4589,7 +4589,7 @@
     const/4 v14, 0x0
 
     .line 1001
-    iget-boolean v0, p0, Lcom/htc/opensense/widget/AlbumGridView;->mBlockLayoutRequests:Z
+    iget-boolean v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mBlockLayoutRequests:Z
 
     .line 1002
     .local v0, blockLayoutRequests:Z
@@ -4598,7 +4598,7 @@
     .line 1003
     const/4 v12, 0x1
 
-    iput-boolean v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mBlockLayoutRequests:Z
+    iput-boolean v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mBlockLayoutRequests:Z
 
     .line 1007
     :cond_0
@@ -4609,7 +4609,7 @@
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumGridView;->invalidate()V
 
     .line 1011
-    iget-object v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v12, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
     if-nez v12, :cond_2
 
@@ -4625,7 +4625,7 @@
     if-nez v0, :cond_1
 
     .line 1167
-    iput-boolean v14, p0, Lcom/htc/opensense/widget/AlbumGridView;->mBlockLayoutRequests:Z
+    iput-boolean v14, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mBlockLayoutRequests:Z
 
     .line 1170
     :cond_1
@@ -4635,7 +4635,7 @@
     .line 1017
     :cond_2
     :try_start_1
-    iget-object v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v12, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v12, v12, Landroid/graphics/Rect;->top:I
 
@@ -4647,13 +4647,13 @@
 
     .line 1018
     .local v3, childrenTop:I
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mBottom:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mBottom:I
 
-    iget v13, p0, Lcom/htc/opensense/widget/AlbumGridView;->mTop:I
+    iget v13, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mTop:I
 
     sub-int/2addr v12, v13
 
-    iget-object v13, p0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v13, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v13, v13, Landroid/graphics/Rect;->bottom:I
 
@@ -4689,14 +4689,14 @@
 
     .line 1030
     .local v8, newSel:Landroid/view/View;
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mLayoutMode:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mLayoutMode:I
 
     packed-switch v12, :pswitch_data_0
 
     .line 1049
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iget v13, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v13, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int v6, v12, v13
 
@@ -4727,7 +4727,7 @@
     :cond_4
     :goto_1
     :pswitch_0
-    iget-boolean v4, p0, Lcom/htc/opensense/widget/AlbumGridView;->mDataChanged:Z
+    iget-boolean v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     .line 1060
     .local v4, dataChanged:Z
@@ -4738,7 +4738,7 @@
 
     .line 1066
     :cond_5
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-nez v12, :cond_6
 
@@ -4754,7 +4754,7 @@
     if-nez v0, :cond_1
 
     .line 1167
-    iput-boolean v14, p0, Lcom/htc/opensense/widget/AlbumGridView;->mBlockLayoutRequests:Z
+    iput-boolean v14, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mBlockLayoutRequests:Z
 
     goto :goto_0
 
@@ -4762,9 +4762,9 @@
     .end local v4           #dataChanged:Z
     :pswitch_1
     :try_start_2
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mNextSelectedPosition:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNextSelectedPosition:I
 
-    iget v13, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v13, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int v6, v12, v13
 
@@ -4784,14 +4784,14 @@
     .line 1043
     .end local v6           #index:I
     :pswitch_2
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mNextSelectedPosition:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNextSelectedPosition:I
 
     if-ltz v12, :cond_4
 
     .line 1044
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mNextSelectedPosition:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNextSelectedPosition:I
 
-    iget v13, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v13, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     sub-int v5, v12, v13
 
@@ -4800,7 +4800,7 @@
     .line 1072
     .restart local v4       #dataChanged:Z
     :cond_6
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mNextSelectedPosition:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNextSelectedPosition:I
 
     invoke-virtual {p0, v12}, Lcom/htc/opensense/widget/AlbumGridView;->setSelectedPositionInt(I)V
 
@@ -4808,7 +4808,7 @@
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumGridView;->detachAllViewsFromParent()V
 
     .line 1091
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mLayoutMode:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mLayoutMode:I
 
     packed-switch v12, :pswitch_data_1
 
@@ -4816,7 +4816,7 @@
     if-nez v1, :cond_b
 
     .line 1120
-    iget-boolean v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v12, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-nez v12, :cond_a
 
@@ -4844,26 +4844,26 @@
 
     move-result v12
 
-    iput v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedTop:I
+    iput v12, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedTop:I
 
     .line 1153
     :goto_3
     const/4 v12, 0x0
 
-    iput v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mLayoutMode:I
+    iput v12, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mLayoutMode:I
 
     .line 1154
     const/4 v12, 0x0
 
-    iput-boolean v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mDataChanged:Z
+    iput-boolean v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     .line 1155
     const/4 v12, 0x0
 
-    iput-boolean v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mNeedSync:Z
+    iput-boolean v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNeedSync:Z
 
     .line 1156
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     invoke-virtual {p0, v12}, Lcom/htc/opensense/widget/AlbumGridView;->setNextSelectedPositionInt(I)V
 
@@ -4871,7 +4871,7 @@
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumGridView;->updateScrollIndicators()V
 
     .line 1160
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-lez v12, :cond_7
 
@@ -4888,7 +4888,7 @@
     if-nez v0, :cond_1
 
     .line 1167
-    iput-boolean v14, p0, Lcom/htc/opensense/widget/AlbumGridView;->mBlockLayoutRequests:Z
+    iput-boolean v14, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mBlockLayoutRequests:Z
 
     goto/16 :goto_0
 
@@ -4927,7 +4927,7 @@
     :pswitch_4
     const/4 v12, 0x0
 
-    iput v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iput v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 1101
     invoke-direct {p0, v3}, Lcom/htc/opensense/widget/AlbumGridView;->fillFromTop(I)Landroid/view/View;
@@ -4958,7 +4958,7 @@
     if-nez v0, :cond_9
 
     .line 1167
-    iput-boolean v14, p0, Lcom/htc/opensense/widget/AlbumGridView;->mBlockLayoutRequests:Z
+    iput-boolean v14, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mBlockLayoutRequests:Z
 
     :cond_9
     throw v12
@@ -4974,7 +4974,7 @@
     .restart local v10       #oldSel:Landroid/view/View;
     :pswitch_5
     :try_start_4
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v12, v12, -0x1
 
@@ -4991,9 +4991,9 @@
     .line 1109
     .end local v11           #sel:Landroid/view/View;
     :pswitch_6
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iget v13, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSpecificTop:I
+    iget v13, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSpecificTop:I
 
     invoke-direct {p0, v12, v13}, Lcom/htc/opensense/widget/AlbumGridView;->fillSpecific(II)Landroid/view/View;
 
@@ -5006,9 +5006,9 @@
     .line 1112
     .end local v11           #sel:Landroid/view/View;
     :pswitch_7
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSyncPosition:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSyncPosition:I
 
-    iget v13, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSpecificTop:I
+    iget v13, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSpecificTop:I
 
     invoke-direct {p0, v12, v13}, Lcom/htc/opensense/widget/AlbumGridView;->fillSpecific(II)Landroid/view/View;
 
@@ -5032,7 +5032,7 @@
     .line 1124
     .end local v11           #sel:Landroid/view/View;
     :cond_a
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v7, v12, -0x1
 
@@ -5053,18 +5053,18 @@
     .end local v7           #last:I
     .end local v11           #sel:Landroid/view/View;
     :cond_b
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     if-ltz v12, :cond_d
 
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iget v13, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v13, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-ge v12, v13, :cond_d
 
     .line 1130
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     if-nez v10, :cond_c
 
@@ -5088,14 +5088,14 @@
 
     .line 1132
     :cond_d
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
-    iget v13, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v13, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-ge v12, v13, :cond_f
 
     .line 1133
-    iget v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v12, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     if-nez v9, :cond_e
 
@@ -5133,10 +5133,10 @@
     :cond_10
     const/4 v12, 0x0
 
-    iput v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedTop:I
+    iput v12, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedTop:I
 
     .line 1150
-    iget-object v12, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectorRect:Landroid/graphics/Rect;
+    iget-object v12, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectorRect:Landroid/graphics/Rect;
 
     invoke-virtual {v12}, Landroid/graphics/Rect;->setEmpty()V
     :try_end_4
@@ -5178,7 +5178,7 @@
     const/4 v1, -0x1
 
     .line 138
-    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumGridView;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
     .line 139
     .local v0, adapter:Landroid/widget/ListAdapter;
@@ -5204,7 +5204,7 @@
     :cond_2
     if-ltz p1, :cond_3
 
-    iget v2, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-lt p1, v2, :cond_1
 
@@ -5235,9 +5235,9 @@
     if-eqz p3, :cond_2
 
     .line 1562
-    iget v7, p0, Lcom/htc/opensense/widget/AlbumGridView;->mScrollX:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mScrollX:I
 
-    iget v8, p0, Lcom/htc/opensense/widget/AlbumGridView;->mScrollY:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mScrollY:I
 
     invoke-virtual {p3, v7, v8}, Landroid/graphics/Rect;->offset(II)V
 
@@ -5317,7 +5317,7 @@
     if-ltz v1, :cond_3
 
     .line 1588
-    iget v7, p0, Lcom/htc/opensense/widget/AlbumGridView;->mFirstPosition:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int/2addr v7, v1
 
@@ -5435,7 +5435,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v18, v0
 
@@ -5449,7 +5449,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v18, v0
 
@@ -5473,7 +5473,7 @@
     :cond_0
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v17, v0
 
@@ -5487,7 +5487,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v18, v0
 
@@ -5512,7 +5512,7 @@
     .local v4, childHeight:I
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
     move-object/from16 v17, v0
 
@@ -5525,12 +5525,12 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iput v0, v1, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     .line 920
     move-object/from16 v0, p0
 
-    iget v8, v0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v8, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     .line 921
     .local v8, count:I
@@ -5585,7 +5585,7 @@
     :cond_1
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
     move-object/from16 v17, v0
 
@@ -5610,7 +5610,7 @@
 
     const/16 v18, 0x0
 
-    iget v0, v14, Lcom/htc/opensense/widget/AlbumAbsListView$LayoutParams;->height:I
+    iget v0, v14, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     move/from16 v19, v0
 
@@ -5634,7 +5634,7 @@
 
     const/16 v18, 0x0
 
-    iget v0, v14, Lcom/htc/opensense/widget/AlbumAbsListView$LayoutParams;->width:I
+    iget v0, v14, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     move/from16 v19, v0
 
@@ -5662,7 +5662,7 @@
     .line 946
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v17, v0
 
@@ -5674,7 +5674,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v18, v0
 
@@ -5707,7 +5707,7 @@
     .line 951
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v17, v0
 
@@ -5719,7 +5719,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v18, v0
 
@@ -5791,7 +5791,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/htc/opensense/widget/AlbumGridView;->mWidthMeasureSpec:I
+    iput v0, v1, Lcom/htc/opensense/widget/AlbumAbsListView;->mWidthMeasureSpec:I
 
     .line 969
     return-void
@@ -5803,7 +5803,7 @@
     :cond_7
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v17, v0
 
@@ -5815,7 +5815,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     move-object/from16 v18, v0
 
@@ -5835,7 +5835,7 @@
     :cond_8
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumGridView;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
     move-object/from16 v17, v0
 
@@ -5873,7 +5873,7 @@
     if-ne p1, v2, :cond_2
 
     .line 1453
-    iget v2, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumGridView;->getChildCount()I
 
@@ -5912,11 +5912,11 @@
     if-ne p1, v2, :cond_0
 
     .line 1455
-    iget v2, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v2, v2, -0x1
 
-    iget v3, p0, Lcom/htc/opensense/widget/AlbumGridView;->mSelectedPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumGridView;->getChildCount()I
 
@@ -5970,14 +5970,14 @@
     const/4 v3, 0x0
 
     .line 96
-    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
     if-eqz v1, :cond_0
 
     .line 97
-    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
-    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumGridView;->mDataSetObserver:Lcom/htc/opensense/widget/AlbumAdapterView$AdapterDataSetObserver;
+    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataSetObserver:Lcom/htc/opensense/widget/AlbumAdapterView$AdapterDataSetObserver;
 
     invoke-virtual {v1, v2}, Landroid/widget/BaseAdapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
 
@@ -5986,39 +5986,39 @@
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumGridView;->resetList()V
 
     .line 102
-    iput-object p1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mAdapter:Landroid/widget/BaseAdapter;
+    iput-object p1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
     .line 104
     const/4 v1, -0x1
 
-    iput v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mOldSelectedPosition:I
+    iput v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOldSelectedPosition:I
 
     .line 105
     const-wide/high16 v1, -0x8000
 
-    iput-wide v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mOldSelectedRowId:J
+    iput-wide v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOldSelectedRowId:J
 
     .line 107
-    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
     if-eqz v1, :cond_2
 
     .line 108
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
-    iput v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mOldItemCount:I
+    iput v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOldItemCount:I
 
     .line 109
-    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
     invoke-virtual {v1}, Landroid/widget/BaseAdapter;->getCount()I
 
     move-result v1
 
-    iput v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iput v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     .line 110
-    iput-boolean v4, p0, Lcom/htc/opensense/widget/AlbumGridView;->mDataChanged:Z
+    iput-boolean v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     .line 111
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumGridView;->checkFocus()V
@@ -6028,22 +6028,22 @@
 
     invoke-direct {v1, p0}, Lcom/htc/opensense/widget/AlbumAdapterView$AdapterDataSetObserver;-><init>(Lcom/htc/opensense/widget/AlbumAdapterView;)V
 
-    iput-object v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mDataSetObserver:Lcom/htc/opensense/widget/AlbumAdapterView$AdapterDataSetObserver;
+    iput-object v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataSetObserver:Lcom/htc/opensense/widget/AlbumAdapterView$AdapterDataSetObserver;
 
     .line 114
-    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
-    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumGridView;->mDataSetObserver:Lcom/htc/opensense/widget/AlbumAdapterView$AdapterDataSetObserver;
+    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataSetObserver:Lcom/htc/opensense/widget/AlbumAdapterView$AdapterDataSetObserver;
 
     invoke-virtual {v1, v2}, Landroid/widget/BaseAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
     .line 119
-    iget-boolean v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mStackFromBottom:Z
+    iget-boolean v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mStackFromBottom:Z
 
     if-eqz v1, :cond_1
 
     .line 120
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mItemCount:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v1, v1, -0x1
 
@@ -6193,7 +6193,7 @@
     :goto_0
     const/4 v0, 0x2
 
-    iput v0, p0, Lcom/htc/opensense/widget/AlbumGridView;->mLayoutMode:I
+    iput v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mLayoutMode:I
 
     .line 1320
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumGridView;->requestLayout()V
@@ -6203,7 +6203,7 @@
 
     .line 1317
     :cond_0
-    iput p1, p0, Lcom/htc/opensense/widget/AlbumGridView;->mResurrectToPosition:I
+    iput p1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mResurrectToPosition:I
 
     goto :goto_0
 .end method

@@ -95,7 +95,7 @@
     .line 2154
     iget-object v1, p0, Lcom/android/server/WifiService$Multicaster;->this$0:Lcom/android/server/WifiService;
 
-    iget v3, p0, Lcom/android/server/WifiService$Multicaster;->mMode:I
+    iget v3, p0, Lcom/android/server/WifiService$DeathRecipient;->mMode:I
 
     #calls: Lcom/android/server/WifiService;->removeMulticasterLocked(II)V
     invoke-static {v1, v0, v3}, Lcom/android/server/WifiService;->access$5100(Lcom/android/server/WifiService;II)V
@@ -124,7 +124,7 @@
 
     .prologue
     .line 2164
-    iget v0, p0, Lcom/android/server/WifiService$Multicaster;->mMode:I
+    iget v0, p0, Lcom/android/server/WifiService$DeathRecipient;->mMode:I
 
     return v0
 .end method
@@ -144,7 +144,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/server/WifiService$Multicaster;->mTag:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/server/WifiService$DeathRecipient;->mTag:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -156,7 +156,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/server/WifiService$Multicaster;->mBinder:Landroid/os/IBinder;
+    iget-object v1, p0, Lcom/android/server/WifiService$DeathRecipient;->mBinder:Landroid/os/IBinder;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

@@ -33,7 +33,7 @@
     .line 38
     new-instance v1, Ljava/lang/Object;
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v1 .. v1}, Ljava/lang/Object;-><init>()V
 
     sput-object v1, Lcom/android/phone/VvmBroadcastReceiver;->mSyncObj:Ljava/lang/Object;
 

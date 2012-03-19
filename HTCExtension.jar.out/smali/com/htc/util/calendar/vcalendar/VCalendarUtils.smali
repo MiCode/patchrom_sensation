@@ -303,7 +303,7 @@
 
     .prologue
     .line 122
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 72
     const-string v0, "SU"
@@ -311,7 +311,7 @@
     iput-object v0, p0, Lcom/htc/util/calendar/vcalendar/VCalendarUtils;->WKST:Ljava/lang/String;
 
     .line 95
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/htc/util/calendar/vcalendar/VCalendarUtils;->DEBUG:Z
 
@@ -354,7 +354,7 @@
 
     .prologue
     .line 137
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 72
     const-string v0, "SU"
@@ -362,7 +362,7 @@
     iput-object v0, p0, Lcom/htc/util/calendar/vcalendar/VCalendarUtils;->WKST:Ljava/lang/String;
 
     .line 95
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/htc/util/calendar/vcalendar/VCalendarUtils;->DEBUG:Z
 
@@ -405,7 +405,7 @@
 
     .prologue
     .line 132
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 72
     const-string v0, "SU"
@@ -413,7 +413,7 @@
     iput-object v0, p0, Lcom/htc/util/calendar/vcalendar/VCalendarUtils;->WKST:Ljava/lang/String;
 
     .line 95
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/htc/util/calendar/vcalendar/VCalendarUtils;->DEBUG:Z
 
@@ -1651,15 +1651,10 @@
 .end method
 
 .method private debug(Ljava/lang/String;)V
-    .locals 1
+    .locals 0
     .parameter "msg"
 
     .prologue
-    .line 1730
-    const-string v0, "VCalendarUtils"
-
-    invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1732
     return-void
 .end method

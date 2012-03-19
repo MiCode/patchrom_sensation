@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final TAG:Ljava/lang/String; = "HtcCdmaModifier"
 
@@ -711,24 +711,17 @@
 
     .prologue
     .line 36
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 .method public static getACGServiceName(Ljava/lang/String;)Ljava/lang/String;
-    .locals 4
+    .locals 3
     .parameter "number"
 
     .prologue
     const/4 v1, 0x0
-
-    .line 397
-    const-string v2, "HtcCdmaModifier"
-
-    const-string v3, "getACGServiceName"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 399
     if-nez p0, :cond_1
@@ -856,18 +849,11 @@
 .end method
 
 .method public static getCellSouthCallerName(Ljava/lang/String;)Ljava/lang/String;
-    .locals 4
+    .locals 3
     .parameter "number"
 
     .prologue
     const/4 v1, 0x0
-
-    .line 347
-    const-string v2, "HtcCdmaModifier"
-
-    const-string v3, "getCellSouthCallerName"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 349
     if-nez p0, :cond_1
@@ -1216,7 +1202,7 @@
 .end method
 
 .method public static getMccMncByCarrierId(I)Ljava/lang/String;
-    .locals 5
+    .locals 4
     .parameter "nvValue"
 
     .prologue
@@ -1249,35 +1235,8 @@
 
     move-result-object v1
 
-    .line 582
-    .local v1, mnc:Ljava/lang/String;
-    const-string v2, "HtcCdmaModifier"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "getMccMncByCarrierId, mcc mnc:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 583
+    .local v1, mnc:Ljava/lang/String;
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1298,7 +1257,7 @@
 .end method
 
 .method public static getMncByNVvalue(Ljava/lang/String;I)Ljava/lang/String;
-    .locals 4
+    .locals 2
     .parameter "mcc"
     .parameter "nvValue"
 
@@ -1317,51 +1276,8 @@
     .line 736
     const-string v0, "00"
 
-    .line 738
-    :cond_0
-    const-string v1, "HtcCdmaModifier"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Convert mcc="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", nv="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", to mnc="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 739
+    :cond_0
     return-object v0
 
     .line 653
@@ -1540,91 +1456,91 @@
     :sswitch_1a
     const-string v0, "230"
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 709
     :sswitch_1b
     const-string v0, "280"
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 710
     :sswitch_1c
     const-string v0, "590"
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 711
     :sswitch_1d
     const-string v0, "340"
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 712
     :sswitch_1e
     const-string v0, "580"
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 714
     :sswitch_1f
     const-string v0, "92"
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 715
     :sswitch_20
     const-string v0, "310"
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 716
     :sswitch_21
     const-string v0, "410"
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 718
     :sswitch_22
     const-string v0, "010"
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 719
     :sswitch_23
     const-string v0, "100"
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 720
     :sswitch_24
     const-string v0, "420"
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 722
     :sswitch_25
     const-string v0, "450"
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 723
     :sswitch_26
     const-string v0, "360"
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 724
     :sswitch_27
     const-string v0, "350"
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 725
     :sswitch_28
     const-string v0, "960"
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 726
     :sswitch_29
@@ -1663,6 +1579,8 @@
     goto/16 :goto_0
 
     .line 651
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_9
@@ -2746,7 +2664,7 @@
 .end method
 
 .method public static overwriteCallerName(Ljava/lang/String;)Ljava/lang/String;
-    .locals 7
+    .locals 5
     .parameter "number"
 
     .prologue
@@ -2796,29 +2714,6 @@
     .line 221
     :cond_3
     if-eqz v3, :cond_1
-
-    .line 222
-    const-string v4, "HtcCdmaModifier"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "matchingTable="
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 223
     const/4 v0, 0x0

@@ -86,7 +86,7 @@
 
     .prologue
     .line 63
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Sketch;->isCommitted:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v1, :cond_0
 
@@ -101,12 +101,12 @@
 
     .line 66
     :cond_0
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Sketch;->isSet:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     if-eqz v1, :cond_1
 
     .line 67
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Sketch;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -117,11 +117,11 @@
     .line 68
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Sketch;->isSet:Z
+    iput-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 71
     :cond_1
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Sketch;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -137,7 +137,7 @@
     .local v0, error:I
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Sketch;->isSet:Z
+    iput-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 74
     iput-object p1, p0, Lcom/scalado/caps/filter/photoart/Sketch;->mode:Lcom/scalado/caps/filter/photoart/Sketch$Mode;

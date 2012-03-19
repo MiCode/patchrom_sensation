@@ -18,7 +18,7 @@
 
     .prologue
     .line 32
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 33
     const/high16 v0, 0x3f80
@@ -40,7 +40,7 @@
 
     .prologue
     .line 45
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     iput p1, p0, Landroid/view/animation/AccelerateInterpolator;->mFactor:F
@@ -67,7 +67,7 @@
 
     .prologue
     .line 50
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 51
     sget-object v1, Lcom/android/internal/R$styleable;->AccelerateInterpolator:[I

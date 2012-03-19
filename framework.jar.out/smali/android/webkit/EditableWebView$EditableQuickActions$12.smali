@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2144
+    .line 2217
     iput-object p1, p0, Landroid/webkit/EditableWebView$EditableQuickActions$12;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,14 +43,14 @@
     .parameter "which"
 
     .prologue
-    .line 2148
+    .line 2221
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$12;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_alignment:Lcom/htc/dialog/HtcAlertDialog;
 
     invoke-virtual {v0}, Lcom/htc/dialog/HtcAlertDialog;->dismiss()V
 
-    .line 2149
+    .line 2222
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$12;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
@@ -59,14 +59,14 @@
 
     iput-boolean v1, v0, Landroid/webkit/EditableWebView;->m_bRemoveSelectRangeDuringUpdateContent:Z
 
-    .line 2151
+    .line 2224
     packed-switch p2, :pswitch_data_0
 
-    .line 2164
+    .line 2237
     :goto_0
     return-void
 
-    .line 2153
+    .line 2226
     :pswitch_0
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$12;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -76,7 +76,7 @@
 
     goto :goto_0
 
-    .line 2156
+    .line 2229
     :pswitch_1
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$12;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 2159
+    .line 2232
     :pswitch_2
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$12;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -96,7 +96,7 @@
 
     goto :goto_0
 
-    .line 2151
+    .line 2224
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

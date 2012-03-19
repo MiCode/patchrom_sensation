@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 420
+    .line 426
     invoke-direct {p0}, Ljava/lang/ref/ReferenceQueue;-><init>()V
 
     return-void
@@ -55,12 +55,12 @@
     .end annotation
 
     .prologue
-    .line 424
+    .line 430
     invoke-super {p0}, Ljava/lang/ref/ReferenceQueue;->remove()Ljava/lang/ref/Reference;
 
     move-result-object v1
 
-    .line 426
+    .line 432
     .local v1, reference:Ljava/lang/ref/Reference;,"Ljava/lang/ref/Reference<+Landroid/graphics/Bitmap;>;"
     invoke-virtual {v1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
@@ -71,17 +71,17 @@
     .local v0, bitmap:Landroid/graphics/Bitmap;
     if-eqz v0, :cond_0
 
-    .line 427
+    .line 433
     const-string v2, "UrlDrawable"
 
     const-string v3, "remove and recycle"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 428
+    .line 434
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 430
+    .line 436
     :cond_0
     return-object v1
 .end method
@@ -107,7 +107,7 @@
     .end annotation
 
     .prologue
-    .line 436
+    .line 442
     monitor-enter p0
 
     :try_start_0
@@ -115,7 +115,7 @@
 
     move-result-object v1
 
-    .line 438
+    .line 444
     .local v1, reference:Ljava/lang/ref/Reference;,"Ljava/lang/ref/Reference<+Landroid/graphics/Bitmap;>;"
     invoke-virtual {v1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
@@ -126,25 +126,25 @@
     .local v0, bitmap:Landroid/graphics/Bitmap;
     if-eqz v0, :cond_0
 
-    .line 439
+    .line 445
     const-string v2, "UrlDrawable"
 
     const-string v3, "remove and recycle when timeout"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 440
+    .line 446
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 442
+    .line 448
     :cond_0
     monitor-exit p0
 
     return-object v1
 
-    .line 436
+    .line 442
     .end local v0           #bitmap:Landroid/graphics/Bitmap;
     .end local v1           #reference:Ljava/lang/ref/Reference;,"Ljava/lang/ref/Reference<+Landroid/graphics/Bitmap;>;"
     :catchall_0

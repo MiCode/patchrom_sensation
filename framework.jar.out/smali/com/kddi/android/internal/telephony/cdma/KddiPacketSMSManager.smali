@@ -268,7 +268,7 @@
     const/4 v1, 0x0
 
     .line 239
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 107
     new-instance v0, Lcom/kddi/android/internal/telephony/cdma/KddiPacketSMSManager$KddiSendState;
@@ -280,7 +280,7 @@
     .line 199
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/kddi/android/internal/telephony/cdma/KddiPacketSMSManager;->mConnectingLock:Ljava/lang/Object;
 

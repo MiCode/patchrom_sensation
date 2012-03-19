@@ -62,7 +62,7 @@
     const/4 v2, -0x1
 
     .line 170
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
     new-instance v1, Ljava/util/ArrayList;
@@ -156,7 +156,7 @@
     const/4 v5, -0x1
 
     .line 131
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
     new-instance v2, Ljava/util/ArrayList;
@@ -271,7 +271,7 @@
     const/4 v3, -0x1
 
     .line 152
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
     new-instance v1, Ljava/util/ArrayList;

@@ -261,7 +261,7 @@
 
     .prologue
     .line 28
-    iput p1, p0, Lcom/android/internal/database/SortCursor;->mPos:I
+    iput p1, p0, Landroid/database/AbstractCursor;->mPos:I
 
     return p1
 .end method
@@ -273,7 +273,7 @@
 
     .prologue
     .line 28
-    iput p1, p0, Lcom/android/internal/database/SortCursor;->mPos:I
+    iput p1, p0, Landroid/database/AbstractCursor;->mPos:I
 
     return p1
 .end method

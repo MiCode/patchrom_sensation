@@ -39,7 +39,7 @@
 
     .prologue
     .line 41
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 268
     return-void
@@ -255,14 +255,10 @@
 .end method
 
 .method public static final isLastDeferRequest(Landroid/content/Intent;)Z
-    .locals 10
+    .locals 6
     .parameter "intent"
 
     .prologue
-    const/4 v3, 0x1
-
-    const/4 v4, 0x0
-
     .line 323
     const/4 v2, 0x0
 
@@ -271,72 +267,35 @@
     if-eqz p0, :cond_0
 
     .line 325
-    const-string v5, "defer_id"
+    const-string v3, "defer_id"
 
-    const-wide/16 v6, -0x1
+    const-wide/16 v4, -0x1
 
-    invoke-virtual {p0, v5, v6, v7}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
+    invoke-virtual {p0, v3, v4, v5}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
     move-result-wide v0
 
     .line 327
     .local v0, deferId:J
-    sget-wide v5, Lcom/android/phone/util/CallDeferUtils;->mDeferId:J
+    sget-wide v3, Lcom/android/phone/util/CallDeferUtils;->mDeferId:J
 
-    cmp-long v5, v5, v0
+    cmp-long v3, v3, v0
 
-    if-nez v5, :cond_1
+    if-nez v3, :cond_1
 
-    move v2, v3
-
-    .line 330
-    :goto_0
-    const-string v5, "CallDeferUtils"
-
-    const-string v6, "deferID: %d, lastDeferId: %d, isLastDeferRequest: %b"
-
-    const/4 v7, 0x3
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v8
-
-    aput-object v8, v7, v4
-
-    sget-wide v8, Lcom/android/phone/util/CallDeferUtils;->mDeferId:J
-
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v4
-
-    aput-object v4, v7, v3
-
-    const/4 v3, 0x2
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v4
-
-    aput-object v4, v7, v3
-
-    invoke-static {v6, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v5, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v2, 0x1
 
     .line 335
     .end local v0           #deferId:J
     :cond_0
+    :goto_0
     return v2
 
+    .line 327
     .restart local v0       #deferId:J
     :cond_1
-    move v2, v4
+    const/4 v2, 0x0
 
-    .line 327
     goto :goto_0
 .end method
 
@@ -672,7 +631,7 @@
 .end method
 
 .method private static final registerDefer(Landroid/content/Intent;J)V
-    .locals 3
+    .locals 1
     .parameter "intent"
     .parameter "id"
 
@@ -687,29 +646,6 @@
     const-string v0, "defer_id"
 
     invoke-virtual {p0, v0, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
-
-    .line 343
-    const-string v0, "CallDeferUtils"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "registerDefer, deferId: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 346
     :cond_0
@@ -769,15 +705,17 @@
 
     if-nez p4, :cond_1
 
-    .line 215
+    .line 217
     :cond_0
-    new-instance v3, Ljava/lang/IllegalArgumentException;
+    const-string v3, "CallDeferUtils"
 
-    const-string v4, "argument should not be null"
+    const-string v4, "schduleDeferReminder: miss arguments..."
 
-    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    throw v3
+    .line 238
+    :goto_0
+    return v2
 
     .line 221
     :cond_1
@@ -814,21 +752,13 @@
     .line 235
     const/4 v2, 0x1
 
-    .line 238
-    return v2
+    goto :goto_0
 .end method
 
 .method private static final unregisterDefer()V
     .locals 2
 
     .prologue
-    .line 350
-    const-string v0, "CallDeferUtils"
-
-    const-string v1, "unregisterDefer"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 352
     const-wide/16 v0, 0x0
 

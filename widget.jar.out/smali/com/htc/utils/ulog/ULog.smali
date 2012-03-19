@@ -73,7 +73,7 @@
     .line 49
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/htc/utils/ulog/ULog;->sLock:Ljava/lang/Object;
 
@@ -126,7 +126,7 @@
 
     .prologue
     .line 29
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
     return-void

@@ -408,7 +408,7 @@
 
     .line 61
     :cond_0
-    const v10, 0x7f080078
+    const v10, 0x7f080079
 
     invoke-virtual {p0, v10}, Lcom/android/phone/prefernetwork/OperatorRearrangeActivity;->findViewById(I)Landroid/view/View;
 
@@ -437,7 +437,7 @@
 
     .line 68
     :cond_1
-    const v10, 0x7f080079
+    const v10, 0x7f080078
 
     invoke-virtual {p0, v10}, Lcom/android/phone/prefernetwork/OperatorRearrangeActivity;->findViewById(I)Landroid/view/View;
 

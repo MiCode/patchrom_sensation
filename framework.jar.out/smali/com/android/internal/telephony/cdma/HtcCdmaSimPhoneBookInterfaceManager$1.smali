@@ -86,7 +86,7 @@
     .line 69
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/HtcCdmaSimPhoneBookInterfaceManager$1;->this$0:Lcom/android/internal/telephony/cdma/HtcCdmaSimPhoneBookInterfaceManager;
 
-    #getter for: Lcom/android/internal/telephony/cdma/HtcCdmaSimPhoneBookInterfaceManager;->mBaseHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->mBaseHandler:Landroid/os/Handler;
     invoke-static {v0}, Lcom/android/internal/telephony/cdma/HtcCdmaSimPhoneBookInterfaceManager;->access$000(Lcom/android/internal/telephony/cdma/HtcCdmaSimPhoneBookInterfaceManager;)Landroid/os/Handler;
 
     move-result-object v0

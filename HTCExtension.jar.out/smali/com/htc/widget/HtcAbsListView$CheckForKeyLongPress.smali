@@ -68,18 +68,18 @@
 
     iget-object v3, p0, Lcom/htc/widget/HtcAbsListView$CheckForKeyLongPress;->this$0:Lcom/htc/widget/HtcAbsListView;
 
-    iget v3, v3, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v3, v3, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     if-ltz v3, :cond_1
 
     .line 2288
     iget-object v3, p0, Lcom/htc/widget/HtcAbsListView$CheckForKeyLongPress;->this$0:Lcom/htc/widget/HtcAbsListView;
 
-    iget v3, v3, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v3, v3, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     iget-object v4, p0, Lcom/htc/widget/HtcAbsListView$CheckForKeyLongPress;->this$0:Lcom/htc/widget/HtcAbsListView;
 
-    iget v4, v4, Lcom/htc/widget/HtcAbsListView;->mFirstPosition:I
+    iget v4, v4, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     sub-int v1, v3, v4
 
@@ -95,7 +95,7 @@
     .local v2, v:Landroid/view/View;
     iget-object v3, p0, Lcom/htc/widget/HtcAbsListView$CheckForKeyLongPress;->this$0:Lcom/htc/widget/HtcAbsListView;
 
-    iget-boolean v3, v3, Lcom/htc/widget/HtcAbsListView;->mDataChanged:Z
+    iget-boolean v3, v3, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     if-nez v3, :cond_2
 
@@ -115,11 +115,11 @@
 
     iget-object v4, p0, Lcom/htc/widget/HtcAbsListView$CheckForKeyLongPress;->this$0:Lcom/htc/widget/HtcAbsListView;
 
-    iget v4, v4, Lcom/htc/widget/HtcAbsListView;->mSelectedPosition:I
+    iget v4, v4, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     iget-object v5, p0, Lcom/htc/widget/HtcAbsListView$CheckForKeyLongPress;->this$0:Lcom/htc/widget/HtcAbsListView;
 
-    iget-wide v5, v5, Lcom/htc/widget/HtcAbsListView;->mSelectedRowId:J
+    iget-wide v5, v5, Lcom/htc/widget/HtcAdapterView;->mSelectedRowId:J
 
     #calls: Lcom/htc/widget/HtcAbsListView;->performLongPress(Landroid/view/View;IJ)Z
     invoke-static {v3, v2, v4, v5, v6}, Lcom/htc/widget/HtcAbsListView;->access$500(Lcom/htc/widget/HtcAbsListView;Landroid/view/View;IJ)Z

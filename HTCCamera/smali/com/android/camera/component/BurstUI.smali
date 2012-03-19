@@ -298,7 +298,7 @@
 
     .prologue
     .line 52
-    iget-object v0, p0, Lcom/android/camera/component/BurstUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -1013,14 +1013,14 @@
 
     .line 719
     .local v8, layoutParams:Landroid/view/ViewGroup$MarginLayoutParams;
-    iput v14, v8, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iput v14, v8, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 720
     invoke-virtual/range {p0 .. p0}, Lcom/android/camera/component/BurstUI;->getThumbnailItemControllerHeight()I
 
     move-result v15
 
-    iput v15, v8, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
+    iput v15, v8, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 721
     iput v13, v8, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
@@ -1161,7 +1161,7 @@
     if-nez v0, :cond_0
 
     .line 802
-    iget-object v1, p0, Lcom/android/camera/component/BurstUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "eventManager == null"
 
@@ -1544,7 +1544,7 @@
     if-eqz v0, :cond_0
 
     .line 261
-    iget-object v0, p0, Lcom/android/camera/component/BurstUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Re-enter burst mode"
 
@@ -1632,7 +1632,7 @@
     iput-boolean v3, p0, Lcom/android/camera/component/BurstUI;->m_IsRestartingPreviewNeeded:Z
 
     .line 285
-    iget-object v0, p0, Lcom/android/camera/component/BurstUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Waiting for re-starting preview"
 
@@ -1644,7 +1644,7 @@
 
     .line 272
     :cond_3
-    iget-object v0, p0, Lcom/android/camera/component/BurstUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Cannot link to controller"
 
@@ -1678,7 +1678,7 @@
     if-nez v0, :cond_0
 
     .line 305
-    iget-object v0, p0, Lcom/android/camera/component/BurstUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Re-exit burst mode"
 
@@ -2585,7 +2585,7 @@
 
     .prologue
     .line 744
-    iget-object v4, p0, Lcom/android/camera/component/BurstUI;->TAG:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -2705,7 +2705,7 @@
 
     .prologue
     .line 775
-    iget-object v1, p0, Lcom/android/camera/component/BurstUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
 

@@ -30,7 +30,7 @@
     .line 168
     iput-object p1, p0, Lcom/android/phone/GetPin2Screen$1;->this$0:Lcom/android/phone/GetPin2Screen;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -149,8 +149,8 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f08008a -> :sswitch_0
-        0x7f08008b -> :sswitch_2
+        0x7f08008a -> :sswitch_2
+        0x7f08008b -> :sswitch_0
         0x7f08009b -> :sswitch_1
     .end sparse-switch
 .end method

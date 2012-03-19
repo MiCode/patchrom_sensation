@@ -179,7 +179,7 @@
     .line 109
     check-cast v1, Lcom/htc/widget/HtcToggleButton;
 
-    iget-boolean v2, p0, Lcom/htc/preference/HtcSwitchPreference;->mChecked:Z
+    iget-boolean v2, p0, Lcom/htc/preference/HtcTwoStatePreference;->mChecked:Z
 
     invoke-virtual {v1, v2}, Lcom/htc/widget/HtcToggleButton;->setChecked(Z)V
 

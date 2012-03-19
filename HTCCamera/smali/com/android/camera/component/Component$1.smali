@@ -56,7 +56,7 @@
     .local v0, msgName:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/camera/component/Component$1;->this$0:Lcom/android/camera/component/Component;
 
-    #getter for: Lcom/android/camera/component/Component;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/Component;->access$000(Lcom/android/camera/component/Component;)Ljava/lang/String;
 
     move-result-object v1
@@ -108,7 +108,7 @@
     :goto_0
     iget-object v1, p0, Lcom/android/camera/component/Component$1;->this$0:Lcom/android/camera/component/Component;
 
-    #getter for: Lcom/android/camera/component/Component;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/Component;->access$300(Lcom/android/camera/component/Component;)Ljava/lang/String;
 
     move-result-object v1
@@ -146,7 +146,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/camera/component/Component$1;->this$0:Lcom/android/camera/component/Component;
 
-    #getter for: Lcom/android/camera/component/Component;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/Component;->access$200(Lcom/android/camera/component/Component;)Ljava/lang/String;
 
     move-result-object v1

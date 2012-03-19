@@ -34,7 +34,7 @@
     .line 220
     iput-object p1, p0, Lcom/htc/util/mail/lib/org/apache/james/mime4j/decoder/UnboundedFifoByteBuffer$1;->this$0:Lcom/htc/util/mail/lib/org/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 222
     iget-object v0, p0, Lcom/htc/util/mail/lib/org/apache/james/mime4j/decoder/UnboundedFifoByteBuffer$1;->this$0:Lcom/htc/util/mail/lib/org/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;

@@ -65,7 +65,7 @@
     if-eqz p1, :cond_0
 
     .line 23
-    iput-object p1, p0, Lcom/htc/widget/CarouselInternalActivity;->eresources:Landroid/content/res/Resources;
+    iput-object p1, p0, Lcom/htc/widget/CarouselActivity;->eresources:Landroid/content/res/Resources;
 
     .line 25
     :cond_0

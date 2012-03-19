@@ -24,7 +24,7 @@
 
     .prologue
     .line 230
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 231
     return-void
@@ -36,7 +36,7 @@
 
     .prologue
     .line 238
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 239
     new-instance v2, Ljava/util/StringTokenizer;

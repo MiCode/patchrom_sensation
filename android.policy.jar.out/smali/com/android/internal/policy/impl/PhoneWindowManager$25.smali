@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 4698
+    .line 4694
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$25;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,10 +41,10 @@
     .locals 1
 
     .prologue
-    .line 4700
+    .line 4696
     monitor-enter p0
 
-    .line 4701
+    .line 4697
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$25;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -52,13 +52,13 @@
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->setLastUserActivity()V
 
-    .line 4702
+    .line 4698
     monitor-exit p0
 
-    .line 4703
+    .line 4699
     return-void
 
-    .line 4702
+    .line 4698
     :catchall_0
     move-exception v0
 

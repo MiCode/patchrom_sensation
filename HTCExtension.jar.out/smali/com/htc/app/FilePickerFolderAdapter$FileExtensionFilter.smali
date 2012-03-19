@@ -39,7 +39,7 @@
     .line 388
     iput-object p1, p0, Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;->this$0:Lcom/htc/app/FilePickerFolderAdapter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 389
     iput-object p2, p0, Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;->mExtensionArray:[Ljava/lang/String;
@@ -63,7 +63,7 @@
     .line 383
     iput-object p1, p0, Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;->this$0:Lcom/htc/app/FilePickerFolderAdapter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 384
     iput-object p2, p0, Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;->mExtensionArray:[Ljava/lang/String;

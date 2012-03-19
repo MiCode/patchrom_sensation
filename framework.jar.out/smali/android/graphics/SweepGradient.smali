@@ -20,16 +20,16 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/SweepGradient;->native_instance:I
+    iput v0, p0, Landroid/graphics/Shader;->native_instance:I
 
     .line 58
-    iget v0, p0, Landroid/graphics/SweepGradient;->native_instance:I
+    iget v0, p0, Landroid/graphics/Shader;->native_instance:I
 
     invoke-static {v0, p1, p2, p3, p4}, Landroid/graphics/SweepGradient;->nativePostCreate2(IFFII)I
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/SweepGradient;->native_shader:I
+    iput v0, p0, Landroid/graphics/Shader;->native_shader:I
 
     .line 59
     return-void
@@ -87,16 +87,16 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/SweepGradient;->native_instance:I
+    iput v0, p0, Landroid/graphics/Shader;->native_instance:I
 
     .line 45
-    iget v0, p0, Landroid/graphics/SweepGradient;->native_instance:I
+    iget v0, p0, Landroid/graphics/Shader;->native_instance:I
 
     invoke-static {v0, p1, p2, p3, p4}, Landroid/graphics/SweepGradient;->nativePostCreate1(IFF[I[F)I
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/SweepGradient;->native_shader:I
+    iput v0, p0, Landroid/graphics/Shader;->native_shader:I
 
     .line 46
     return-void

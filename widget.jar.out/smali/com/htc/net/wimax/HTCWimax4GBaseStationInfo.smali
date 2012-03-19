@@ -624,7 +624,7 @@
 
     .prologue
     .line 194
-    iget v0, p0, Lcom/htc/net/wimax/HTCWimax4GBaseStationInfo;->cinr:I
+    iget v0, p0, Lcom/htc/net/FourG/FourGBaseStationInfo;->cinr:I
 
     return v0
 .end method
@@ -634,7 +634,7 @@
 
     .prologue
     .line 189
-    iget v0, p0, Lcom/htc/net/wimax/HTCWimax4GBaseStationInfo;->rssi:I
+    iget v0, p0, Lcom/htc/net/FourG/FourGBaseStationInfo;->rssi:I
 
     return v0
 .end method

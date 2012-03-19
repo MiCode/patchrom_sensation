@@ -68,7 +68,7 @@
     sput-object v0, Lcom/android/phone/widget/HtcLockScreenControl;->TAG:Ljava/lang/String;
 
     .line 33
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/phone/widget/HtcLockScreenControl;->openLog:Z
 

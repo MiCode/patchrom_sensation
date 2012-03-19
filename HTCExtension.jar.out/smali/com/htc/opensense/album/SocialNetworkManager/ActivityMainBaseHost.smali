@@ -442,12 +442,12 @@
 
     .line 77
     :cond_1
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/ActivityMainBaseHost;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     if-eqz v0, :cond_0
 
     .line 78
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/ActivityMainBaseHost;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;
 

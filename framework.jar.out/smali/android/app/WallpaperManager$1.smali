@@ -45,7 +45,7 @@
 
     iput p4, p0, Landroid/app/WallpaperManager$1;->val$fYOffset:F
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

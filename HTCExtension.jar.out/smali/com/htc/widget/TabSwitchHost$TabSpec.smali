@@ -34,7 +34,7 @@
     .line 854
     iput-object p1, p0, Lcom/htc/widget/TabSwitchHost$TabSpec;->this$0:Lcom/htc/widget/TabSwitchHost;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 855
     iput-object p2, p0, Lcom/htc/widget/TabSwitchHost$TabSpec;->mTag:Ljava/lang/String;

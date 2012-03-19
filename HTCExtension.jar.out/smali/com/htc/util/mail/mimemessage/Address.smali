@@ -71,7 +71,7 @@
 
     .prologue
     .line 70
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 71
     invoke-virtual {p0, p1}, Lcom/htc/util/mail/mimemessage/Address;->setAddress(Ljava/lang/String;)V
@@ -87,7 +87,7 @@
 
     .prologue
     .line 65
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 66
     invoke-virtual {p0, p1}, Lcom/htc/util/mail/mimemessage/Address;->setAddress(Ljava/lang/String;)V

@@ -46,7 +46,7 @@
     .line 44
     .local p0, this:Lcom/htc/gson/JsonDeserializerExceptionWrapper;,"Lcom/htc/gson/JsonDeserializerExceptionWrapper<TT;>;"
     .local p1, delegate:Lcom/htc/gson/JsonDeserializer;,"Lcom/htc/gson/JsonDeserializer<TT;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 45
     invoke-static {p1}, Lcom/htc/gson/Preconditions;->checkNotNull(Ljava/lang/Object;)V

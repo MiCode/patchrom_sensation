@@ -78,7 +78,7 @@
     .line 104
     const/4 v0, 0x2
 
-    iput v0, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->cmasFormat:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->cmasFormat:I
 
     .line 105
     return-void
@@ -134,7 +134,7 @@
     add-int/lit16 v7, v6, 0x76c
 
     :goto_1
-    iput v7, v5, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage$TimeStamp;->year:I
+    iput v7, v5, Landroid/text/format/Time;->year:I
 
     .line 254
     aget-byte v7, p0, v9
@@ -166,7 +166,7 @@
     :cond_4
     add-int/lit8 v7, v3, -0x1
 
-    iput v7, v5, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage$TimeStamp;->month:I
+    iput v7, v5, Landroid/text/format/Time;->month:I
 
     .line 258
     const/4 v7, 0x2
@@ -190,7 +190,7 @@
 
     .line 260
     :cond_6
-    iput v0, v5, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage$TimeStamp;->monthDay:I
+    iput v0, v5, Landroid/text/format/Time;->monthDay:I
 
     .line 262
     const/4 v7, 0x3
@@ -214,7 +214,7 @@
 
     .line 264
     :cond_8
-    iput v1, v5, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage$TimeStamp;->hour:I
+    iput v1, v5, Landroid/text/format/Time;->hour:I
 
     .line 266
     const/4 v7, 0x4
@@ -236,7 +236,7 @@
 
     .line 268
     :cond_a
-    iput v2, v5, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage$TimeStamp;->minute:I
+    iput v2, v5, Landroid/text/format/Time;->minute:I
 
     .line 270
     const/4 v7, 0x5
@@ -258,7 +258,7 @@
 
     .line 272
     :cond_c
-    iput v4, v5, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage$TimeStamp;->second:I
+    iput v4, v5, Landroid/text/format/Time;->second:I
 
     goto :goto_0
 .end method
@@ -545,7 +545,7 @@
 
     .prologue
     .line 109
-    iget-boolean v4, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->charSetEncodingSet:Z
+    iget-boolean v4, p0, Landroid/telephony/HtcCmasMessage;->charSetEncodingSet:Z
 
     if-nez v4, :cond_0
 
@@ -557,11 +557,11 @@
 
     .line 111
     :cond_0
-    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->charSetEncoding:I
+    iget v2, p0, Landroid/telephony/HtcCmasMessage;->charSetEncoding:I
 
     .line 112
     .local v2, encoding:I
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->alertText:[B
+    iget-object v1, p0, Landroid/telephony/HtcCmasMessage;->alertText:[B
 
     .line 113
     .local v1, data:[B
@@ -675,7 +675,7 @@
 
     .prologue
     .line 141
-    iget v0, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->cmasType:I
+    iget v0, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     if-nez v0, :cond_0
 
@@ -687,7 +687,7 @@
     .line 162
     :cond_0
     :goto_0
-    iget v0, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->cmasType:I
+    iget v0, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     return v0
 
@@ -695,7 +695,7 @@
     :pswitch_0
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->cmasType:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     goto :goto_0
 
@@ -703,7 +703,7 @@
     :pswitch_1
     const/4 v0, 0x2
 
-    iput v0, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->cmasType:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     goto :goto_0
 
@@ -711,7 +711,7 @@
     :pswitch_2
     const/4 v0, 0x3
 
-    iput v0, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->cmasType:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     goto :goto_0
 
@@ -719,7 +719,7 @@
     :pswitch_3
     const/4 v0, 0x4
 
-    iput v0, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->cmasType:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     goto :goto_0
 
@@ -727,7 +727,7 @@
     :pswitch_4
     const/4 v0, 0x5
 
-    iput v0, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->cmasType:I
+    iput v0, p0, Landroid/telephony/HtcCmasMessage;->cmasType:I
 
     goto :goto_0
 
@@ -812,7 +812,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->protocolVersion:I
+    iget v2, p0, Landroid/telephony/HtcCmasMessage;->protocolVersion:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -835,11 +835,11 @@
 
     move-result-object v2
 
-    iget-boolean v1, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->charSetEncodingSet:Z
+    iget-boolean v1, p0, Landroid/telephony/HtcCmasMessage;->charSetEncodingSet:Z
 
     if-eqz v1, :cond_1
 
-    iget v1, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->charSetEncoding:I
+    iget v1, p0, Landroid/telephony/HtcCmasMessage;->charSetEncoding:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -857,7 +857,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 227
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->alertText:[B
+    iget-object v1, p0, Landroid/telephony/HtcCmasMessage;->alertText:[B
 
     if-eqz v1, :cond_0
 
@@ -872,7 +872,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->alertText:[B
+    iget-object v2, p0, Landroid/telephony/HtcCmasMessage;->alertText:[B
 
     invoke-static {v2}, Lcom/android/internal/util/HexDump;->toHexString([B)Ljava/lang/String;
 
@@ -906,7 +906,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->alertTextStr:Ljava/lang/String;
+    iget-object v2, p0, Landroid/telephony/HtcCmasMessage;->alertTextStr:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -935,7 +935,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->category:I
+    iget v2, p0, Landroid/telephony/HtcCmasMessage;->category:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -958,7 +958,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->responseType:I
+    iget v2, p0, Landroid/telephony/HtcCmasMessage;->responseType:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -981,7 +981,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->severity:I
+    iget v2, p0, Landroid/telephony/HtcCmasMessage;->severity:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1004,7 +1004,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->urgency:I
+    iget v2, p0, Landroid/telephony/HtcCmasMessage;->urgency:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1027,7 +1027,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->certainty:I
+    iget v2, p0, Landroid/telephony/HtcCmasMessage;->certainty:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1050,7 +1050,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->cmasId:I
+    iget v2, p0, Landroid/telephony/HtcCmasMessage;->cmasId:I
 
     invoke-static {v2}, Lcom/android/internal/util/HexDump;->toHexString(I)Ljava/lang/String;
 
@@ -1077,7 +1077,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->alertHandling:I
+    iget v2, p0, Landroid/telephony/HtcCmasMessage;->alertHandling:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1100,7 +1100,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->language:I
+    iget v2, p0, Landroid/telephony/HtcCmasMessage;->language:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1123,7 +1123,7 @@
 
     move-result-object v1
 
-    iget-wide v2, p0, Lcom/android/internal/telephony/cdma/sms/CdmaCmasMessage;->expiredMillis:J
+    iget-wide v2, p0, Landroid/telephony/HtcCmasMessage;->expiredMillis:J
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 

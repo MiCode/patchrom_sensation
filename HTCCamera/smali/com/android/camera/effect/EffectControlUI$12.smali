@@ -3,7 +3,7 @@
 .source "EffectControlUI.java"
 
 # interfaces
-.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # annotations
@@ -27,47 +27,101 @@
     .parameter
 
     .prologue
-    .line 347
+    .line 336
     iput-object p1, p0, Lcom/android/camera/effect/EffectControlUI$12;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
-    .locals 1
-    .parameter "bar"
-    .parameter "progress"
-    .parameter "fromUser"
+.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 5
+    .parameter "view"
+    .parameter "mv"
 
     .prologue
-    .line 356
-    iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$12;->this$0:Lcom/android/camera/effect/EffectControlUI;
+    .line 339
+    iget-object v3, p0, Lcom/android/camera/effect/EffectControlUI$12;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    #calls: Lcom/android/camera/effect/EffectControlUI;->onControlBarProgressChanged(I)V
-    invoke-static {v0, p2}, Lcom/android/camera/effect/EffectControlUI;->access$1300(Lcom/android/camera/effect/EffectControlUI;I)V
+    invoke-virtual {v3}, Lcom/android/camera/effect/EffectControlUI;->getCameraActivity()Lcom/android/camera/HTCCamera;
+
+    move-result-object v0
+
+    .line 340
+    .local v0, cameraActivity:Lcom/android/camera/HTCCamera;
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v3
+
+    const/4 v4, 0x1
+
+    if-ne v3, v4, :cond_0
+
+    .line 343
+    iget-object v3, p0, Lcom/android/camera/effect/EffectControlUI$12;->this$0:Lcom/android/camera/effect/EffectControlUI;
+
+    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_EffectCircle:Lcom/android/camera/widget/EffectControlCircle;
+    invoke-static {v3}, Lcom/android/camera/effect/EffectControlUI;->access$700(Lcom/android/camera/effect/EffectControlUI;)Lcom/android/camera/widget/EffectControlCircle;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/android/camera/widget/EffectControlCircle;->getCenterPoint()Landroid/graphics/Point;
+
+    move-result-object v1
+
+    .line 345
+    .local v1, point:Landroid/graphics/Point;
+    sget v3, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
+
+    iget v4, v1, Landroid/graphics/Point;->y:I
+
+    sub-int/2addr v3, v4
+
+    iget v4, v1, Landroid/graphics/Point;->x:I
+
+    invoke-virtual {v1, v3, v4}, Landroid/graphics/Point;->set(II)V
+
+    .line 348
+    invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->getFaceNumber()I
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    .line 350
+    invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->disableTouchFocus()V
+
+    .line 351
+    iget v3, v1, Landroid/graphics/Point;->x:I
+
+    iget v4, v1, Landroid/graphics/Point;->y:I
+
+    invoke-virtual {v0, v3, v4}, Lcom/android/camera/HTCCamera;->takeFocus(II)V
+
+    .line 352
+    invoke-virtual {v0, p2}, Lcom/android/camera/HTCCamera;->handleTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result v2
+
+    .line 353
+    .local v2, result:Z
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v3}, Lcom/android/camera/HTCCamera;->enableTouchFocus(Z)V
 
     .line 357
-    return-void
-.end method
+    .end local v1           #point:Landroid/graphics/Point;
+    .end local v2           #result:Z
+    :goto_0
+    return v2
 
-.method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
-    .locals 0
-    .parameter "arg0"
+    :cond_0
+    invoke-virtual {v0, p2}, Lcom/android/camera/HTCCamera;->handleTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .prologue
-    .line 352
-    return-void
-.end method
+    move-result v2
 
-.method public onStopTrackingTouch(Landroid/widget/SeekBar;)V
-    .locals 0
-    .parameter "arg0"
-
-    .prologue
-    .line 349
-    return-void
+    goto :goto_0
 .end method

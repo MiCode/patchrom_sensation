@@ -95,7 +95,7 @@
 
     .prologue
     .line 75
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
     const/4 v0, 0x0
@@ -169,7 +169,7 @@
     const/4 v2, 0x0
 
     .line 78
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
     iput v2, p0, Lcom/htc/util/weather/WSPRequest;->type:I
@@ -276,7 +276,7 @@
 
     .prologue
     .line 60
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
     const/4 v0, 0x0

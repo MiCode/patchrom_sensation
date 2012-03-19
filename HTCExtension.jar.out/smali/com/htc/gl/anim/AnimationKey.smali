@@ -17,7 +17,7 @@
 
     .prologue
     .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 10
     iput p1, p0, Lcom/htc/gl/anim/AnimationKey;->mFrame:I
@@ -48,7 +48,7 @@
 
     .prologue
     .line 16
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 17
     iput p1, p0, Lcom/htc/gl/anim/AnimationKey;->mFrame:I
@@ -87,7 +87,7 @@
 
     .prologue
     .line 24
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
     iput p1, p0, Lcom/htc/gl/anim/AnimationKey;->mFrame:I
@@ -131,7 +131,7 @@
 
     .prologue
     .line 33
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 34
     iput p1, p0, Lcom/htc/gl/anim/AnimationKey;->mFrame:I

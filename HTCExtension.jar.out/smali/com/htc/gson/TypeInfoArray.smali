@@ -26,7 +26,7 @@
     invoke-direct {p0, p1}, Lcom/htc/gson/TypeInfo;-><init>(Ljava/lang/reflect/Type;)V
 
     .line 36
-    iget-object v0, p0, Lcom/htc/gson/TypeInfoArray;->rawClass:Ljava/lang/Class;
+    iget-object v0, p0, Lcom/htc/gson/TypeInfo;->rawClass:Ljava/lang/Class;
 
     .line 37
     .local v0, rootComponentType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
@@ -49,9 +49,9 @@
     iput-object v0, p0, Lcom/htc/gson/TypeInfoArray;->componentRawType:Ljava/lang/Class;
 
     .line 41
-    iget-object v1, p0, Lcom/htc/gson/TypeInfoArray;->actualType:Ljava/lang/reflect/Type;
+    iget-object v1, p0, Lcom/htc/gson/TypeInfo;->actualType:Ljava/lang/reflect/Type;
 
-    iget-object v2, p0, Lcom/htc/gson/TypeInfoArray;->rawClass:Ljava/lang/Class;
+    iget-object v2, p0, Lcom/htc/gson/TypeInfo;->rawClass:Ljava/lang/Class;
 
     invoke-static {v1, v2}, Lcom/htc/gson/TypeInfoArray;->extractSecondLevelType(Ljava/lang/reflect/Type;Ljava/lang/Class;)Ljava/lang/reflect/Type;
 

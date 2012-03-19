@@ -29,7 +29,7 @@
     const/4 v4, 0x2
 
     .line 92
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 94
     invoke-virtual {p1}, Ljava/lang/String;->length()I

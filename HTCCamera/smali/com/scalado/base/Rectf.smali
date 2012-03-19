@@ -21,7 +21,7 @@
     const/4 v0, 0x0
 
     .line 20
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
     iput v0, p0, Lcom/scalado/base/Rectf;->x:F
@@ -50,7 +50,7 @@
     const/4 v1, 0x0
 
     .line 35
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
     iput v1, p0, Lcom/scalado/base/Rectf;->x:F

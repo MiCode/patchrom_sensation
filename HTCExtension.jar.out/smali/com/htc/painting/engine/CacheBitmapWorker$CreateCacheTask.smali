@@ -524,7 +524,7 @@
     .local v18, tasks:Ljava/util/List;,"Ljava/util/List<Lcom/htc/painting/engine/cachebitmap/CacheTask;>;"
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/CacheBitmapWorker$CreateCacheTask;->mSubTask:Ljava/util/Vector;
+    iget-object v0, v0, Lcom/htc/painting/engine/cachebitmap/CacheTask;->mSubTask:Ljava/util/Vector;
 
     move-object/from16 v21, v0
 
@@ -532,7 +532,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/CacheBitmapWorker$CreateCacheTask;->mSubTask:Ljava/util/Vector;
+    iget-object v0, v0, Lcom/htc/painting/engine/cachebitmap/CacheTask;->mSubTask:Ljava/util/Vector;
 
     move-object/from16 v21, v0
 
@@ -545,7 +545,7 @@
     .line 541
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/CacheBitmapWorker$CreateCacheTask;->mSubTask:Ljava/util/Vector;
+    iget-object v0, v0, Lcom/htc/painting/engine/cachebitmap/CacheTask;->mSubTask:Ljava/util/Vector;
 
     move-object/from16 v22, v0
 
@@ -555,7 +555,7 @@
     :try_start_0
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/CacheBitmapWorker$CreateCacheTask;->mSubTask:Ljava/util/Vector;
+    iget-object v0, v0, Lcom/htc/painting/engine/cachebitmap/CacheTask;->mSubTask:Ljava/util/Vector;
 
     move-object/from16 v21, v0
 
@@ -563,7 +563,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/CacheBitmapWorker$CreateCacheTask;->mSubTask:Ljava/util/Vector;
+    iget-object v0, v0, Lcom/htc/painting/engine/cachebitmap/CacheTask;->mSubTask:Ljava/util/Vector;
 
     move-object/from16 v24, v0
 
@@ -1918,7 +1918,7 @@
     .line 373
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/CacheBitmapWorker$CreateCacheTask;->mListener:Lcom/htc/painting/engine/CacheBitmapWorker$OnProgressiveTaskListener;
+    iget-object v2, v0, Lcom/htc/painting/engine/cachebitmap/CacheTask;->mListener:Lcom/htc/painting/engine/CacheBitmapWorker$OnProgressiveTaskListener;
 
     move/from16 v0, v17
 
@@ -2060,7 +2060,7 @@
     .line 402
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/CacheBitmapWorker$CreateCacheTask;->mSubTask:Ljava/util/Vector;
+    iget-object v2, v0, Lcom/htc/painting/engine/cachebitmap/CacheTask;->mSubTask:Ljava/util/Vector;
     :try_end_1
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -2089,7 +2089,7 @@
     :cond_9
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/CacheBitmapWorker$CreateCacheTask;->mSubTask:Ljava/util/Vector;
+    iget-object v2, v0, Lcom/htc/painting/engine/cachebitmap/CacheTask;->mSubTask:Ljava/util/Vector;
 
     invoke-virtual {v2}, Ljava/util/Vector;->clear()V
 
@@ -2200,7 +2200,7 @@
     :try_start_2
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/CacheBitmapWorker$CreateCacheTask;->mSubTask:Ljava/util/Vector;
+    iget-object v2, v0, Lcom/htc/painting/engine/cachebitmap/CacheTask;->mSubTask:Ljava/util/Vector;
 
     invoke-virtual {v2}, Ljava/util/Vector;->size()I
 
@@ -2353,14 +2353,14 @@
     :cond_e
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/CacheBitmapWorker$CreateCacheTask;->mListener:Lcom/htc/painting/engine/CacheBitmapWorker$OnProgressiveTaskListener;
+    iget-object v2, v0, Lcom/htc/painting/engine/cachebitmap/CacheTask;->mListener:Lcom/htc/painting/engine/CacheBitmapWorker$OnProgressiveTaskListener;
 
     if-eqz v2, :cond_0
 
     .line 446
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/CacheBitmapWorker$CreateCacheTask;->mListener:Lcom/htc/painting/engine/CacheBitmapWorker$OnProgressiveTaskListener;
+    iget-object v2, v0, Lcom/htc/painting/engine/cachebitmap/CacheTask;->mListener:Lcom/htc/painting/engine/CacheBitmapWorker$OnProgressiveTaskListener;
 
     invoke-virtual/range {p0 .. p0}, Lcom/htc/painting/engine/CacheBitmapWorker$CreateCacheTask;->getRequestKey()J
 

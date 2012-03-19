@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 182
+    .line 185
     iput-object p1, p0, Lcom/android/camera/effect/EffectControlUI$7;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,7 +42,7 @@
     .parameter "event"
 
     .prologue
-    .line 186
+    .line 189
     iget-object v1, p0, Lcom/android/camera/effect/EffectControlUI$7;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
     #getter for: Lcom/android/camera/effect/EffectControlUI;->m_IsControlsNeeded:Z
@@ -65,7 +65,7 @@
 
     if-nez v1, :cond_0
 
-    .line 188
+    .line 191
     iget-object v1, p0, Lcom/android/camera/effect/EffectControlUI$7;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
     #getter for: Lcom/android/camera/effect/EffectControlUI;->m_EffectCircle:Lcom/android/camera/widget/EffectControlCircle;
@@ -77,7 +77,7 @@
 
     move-result-object v0
 
-    .line 190
+    .line 193
     .local v0, point:Landroid/graphics/Point;
     sget v1, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
 
@@ -89,13 +89,13 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Point;->set(II)V
 
-    .line 191
+    .line 194
     check-cast p1, Lcom/android/camera/QueryEvent;
 
     .end local p1
     invoke-virtual {p1, v0}, Lcom/android/camera/QueryEvent;->setResult(Ljava/lang/Object;)V
 
-    .line 193
+    .line 196
     .end local v0           #point:Landroid/graphics/Point;
     :cond_0
     return-void

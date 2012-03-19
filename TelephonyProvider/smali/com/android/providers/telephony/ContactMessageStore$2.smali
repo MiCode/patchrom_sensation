@@ -256,13 +256,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1648
-    const-string v3, "ContactMessageStore"
-
-    const-string v4, "onChange() >>"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1649
     iget-object v3, p0, Lcom/android/providers/telephony/ContactMessageStore$2;->this$0:Lcom/android/providers/telephony/ContactMessageStore;
 
@@ -298,13 +291,6 @@
 
     invoke-virtual {v3, v1, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 1652
-    const-string v3, "ContactMessageStore"
-
-    const-string v4, "onChange() <<"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     goto/16 :goto_0
 
     .line 1645
@@ -332,13 +318,6 @@
     move-result v3
 
     if-eqz v3, :cond_1
-
-    .line 1658
-    const-string v3, "ContactMessageStore"
-
-    const-string v4, "onReceive() com.android.htcdialer.CONTACT_CACHE_CHANGE >>"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1660
     const-string v3, "content://mms-sms-v2/get-ContactInfo"
@@ -395,13 +374,6 @@
     const-wide/16 v4, 0x3e8
 
     invoke-virtual {v3, v1, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    .line 1666
-    const-string v3, "ContactMessageStore"
-
-    const-string v4, "onReceive() com.android.htcdialer.CONTACT_CACHE_CHANGE <<"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_0
 .end method

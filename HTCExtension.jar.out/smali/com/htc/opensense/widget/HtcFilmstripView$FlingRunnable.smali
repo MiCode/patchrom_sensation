@@ -52,7 +52,7 @@
     .line 1666
     iput-object p1, p0, Lcom/htc/opensense/widget/HtcFilmstripView$FlingRunnable;->this$0:Lcom/htc/opensense/widget/HtcFilmstripView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1659
     iput v2, p0, Lcom/htc/opensense/widget/HtcFilmstripView$FlingRunnable;->mCurrentX:I
@@ -248,7 +248,7 @@
     :cond_0
     iget-object v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView$FlingRunnable;->this$0:Lcom/htc/opensense/widget/HtcFilmstripView;
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/HtcFilmstripView;->mOnItemSelectedListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemSelectedListener;
+    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOnItemSelectedListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemSelectedListener;
 
     if-eqz v0, :cond_1
 
@@ -257,7 +257,7 @@
     .line 1755
     iget-object v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView$FlingRunnable;->this$0:Lcom/htc/opensense/widget/HtcFilmstripView;
 
-    iget-object v0, v0, Lcom/htc/opensense/widget/HtcFilmstripView;->mOnItemSelectedListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemSelectedListener;
+    iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOnItemSelectedListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemSelectedListener;
 
     iget-object v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView$FlingRunnable;->this$0:Lcom/htc/opensense/widget/HtcFilmstripView;
 
@@ -306,7 +306,7 @@
     .line 1760
     iget-object v0, p0, Lcom/htc/opensense/widget/HtcFilmstripView$FlingRunnable;->this$0:Lcom/htc/opensense/widget/HtcFilmstripView;
 
-    iget v0, v0, Lcom/htc/opensense/widget/HtcFilmstripView;->mItemCount:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-nez v0, :cond_0
 
@@ -443,7 +443,7 @@
 
     iget-object v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView$FlingRunnable;->this$0:Lcom/htc/opensense/widget/HtcFilmstripView;
 
-    #getter for: Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingLeft:I
+    #getter for: Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingLeft:I
     invoke-static {v1}, Lcom/htc/opensense/widget/HtcFilmstripView;->access$800(Lcom/htc/opensense/widget/HtcFilmstripView;)I
 
     move-result v1
@@ -452,7 +452,7 @@
 
     iget-object v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView$FlingRunnable;->this$0:Lcom/htc/opensense/widget/HtcFilmstripView;
 
-    #getter for: Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingRight:I
+    #getter for: Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingRight:I
     invoke-static {v1}, Lcom/htc/opensense/widget/HtcFilmstripView;->access$900(Lcom/htc/opensense/widget/HtcFilmstripView;)I
 
     move-result v1
@@ -565,7 +565,7 @@
 
     iget-object v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView$FlingRunnable;->this$0:Lcom/htc/opensense/widget/HtcFilmstripView;
 
-    #getter for: Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingRight:I
+    #getter for: Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingRight:I
     invoke-static {v1}, Lcom/htc/opensense/widget/HtcFilmstripView;->access$1000(Lcom/htc/opensense/widget/HtcFilmstripView;)I
 
     move-result v1
@@ -574,7 +574,7 @@
 
     iget-object v1, p0, Lcom/htc/opensense/widget/HtcFilmstripView$FlingRunnable;->this$0:Lcom/htc/opensense/widget/HtcFilmstripView;
 
-    #getter for: Lcom/htc/opensense/widget/HtcFilmstripView;->mPaddingLeft:I
+    #getter for: Lcom/htc/opensense/widget/AlbumAbsSpinner;->mPaddingLeft:I
     invoke-static {v1}, Lcom/htc/opensense/widget/HtcFilmstripView;->access$1100(Lcom/htc/opensense/widget/HtcFilmstripView;)I
 
     move-result v1

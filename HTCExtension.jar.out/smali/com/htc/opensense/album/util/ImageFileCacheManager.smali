@@ -67,7 +67,7 @@
     const/4 v2, 0x0
 
     .line 42
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 570
     iput-boolean v3, p0, Lcom/htc/opensense/album/util/ImageFileCacheManager;->mPhoneStorageReady:Z
@@ -348,25 +348,6 @@
     .parameter "type"
 
     .prologue
-    .line 386
-    const-string v14, "FileCacheMgr"
-
-    const/4 v15, 0x2
-
-    new-array v15, v15, [Ljava/lang/Object;
-
-    const/16 v16, 0x0
-
-    const-string v17, "insert record="
-
-    aput-object v17, v15, v16
-
-    const/16 v16, 0x1
-
-    aput-object p1, v15, v16
-
-    invoke-static {v14, v15}, Lcom/htc/opensense/album/util/Log;->i2(Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 388
     const/4 v4, 0x0
 
@@ -812,13 +793,9 @@
 .end method
 
 .method private isStorageSpaceAvailable()Z
-    .locals 15
+    .locals 12
 
     .prologue
-    const/4 v8, 0x1
-
-    const/4 v9, 0x0
-
     .line 294
     const/4 v0, 0x0
 
@@ -849,143 +826,55 @@
 
     .line 301
     .local v5, nBlockSize:I
-    mul-int v10, v4, v5
+    mul-int v8, v4, v5
 
-    int-to-long v2, v10
-
-    .line 305
-    .local v2, lFreeSpace:J
-    const-string v10, "FileCacheMgr"
-
-    const/16 v11, 0xa
-
-    new-array v11, v11, [Ljava/lang/Object;
-
-    const/4 v12, 0x0
-
-    const-string v13, "[isStorageSpaceAvailable] Path = "
-
-    aput-object v13, v11, v12
-
-    const/4 v12, 0x1
-
-    aput-object v6, v11, v12
-
-    const/4 v12, 0x2
-
-    const-string v13, ", Storage threshold = "
-
-    aput-object v13, v11, v12
-
-    const/4 v12, 0x3
-
-    const-wide/32 v13, 0x100000
-
-    invoke-static {v13, v14}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v13
-
-    aput-object v13, v11, v12
-
-    const/4 v12, 0x4
-
-    const-string v13, ", AvailableBlocks = "
-
-    aput-object v13, v11, v12
-
-    const/4 v12, 0x5
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v13
-
-    aput-object v13, v11, v12
-
-    const/4 v12, 0x6
-
-    const-string v13, ", BlockSize = "
-
-    aput-object v13, v11, v12
-
-    const/4 v12, 0x7
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v13
-
-    aput-object v13, v11, v12
-
-    const/16 v12, 0x8
-
-    const-string v13, ", Free Space = "
-
-    aput-object v13, v11, v12
-
-    const/16 v12, 0x9
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v13
-
-    aput-object v13, v11, v12
-
-    invoke-static {v10, v11}, Lcom/htc/opensense/album/util/Log;->d2(Ljava/lang/String;[Ljava/lang/Object;)V
+    int-to-long v2, v8
 
     .line 310
-    sget-wide v10, Lcom/htc/opensense/album/util/ImageFileCacheManager;->MIN_SPACE_DIV_BLOCK_SIZE:D
+    .local v2, lFreeSpace:J
+    sget-wide v8, Lcom/htc/opensense/album/util/ImageFileCacheManager;->MIN_SPACE_DIV_BLOCK_SIZE:D
 
-    const-wide/16 v12, 0x0
+    const-wide/16 v10, 0x0
 
-    cmpg-double v10, v10, v12
+    cmpg-double v8, v8, v10
 
-    if-gez v10, :cond_0
+    if-gez v8, :cond_0
 
     .line 312
-    if-lez v5, :cond_2
+    if-lez v5, :cond_1
 
-    const-wide/32 v10, 0x100000
+    const-wide/32 v8, 0x100000
 
-    int-to-long v12, v5
+    int-to-long v10, v5
 
-    div-long/2addr v10, v12
+    div-long/2addr v8, v10
 
-    long-to-double v10, v10
+    long-to-double v8, v8
 
     :goto_0
-    sput-wide v10, Lcom/htc/opensense/album/util/ImageFileCacheManager;->MIN_SPACE_DIV_BLOCK_SIZE:D
+    sput-wide v8, Lcom/htc/opensense/album/util/ImageFileCacheManager;->MIN_SPACE_DIV_BLOCK_SIZE:D
 
     .line 315
     :cond_0
-    int-to-double v10, v4
+    int-to-double v8, v4
 
-    sget-wide v12, Lcom/htc/opensense/album/util/ImageFileCacheManager;->MIN_SPACE_DIV_BLOCK_SIZE:D
+    sget-wide v10, Lcom/htc/opensense/album/util/ImageFileCacheManager;->MIN_SPACE_DIV_BLOCK_SIZE:D
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    cmpl-double v10, v10, v12
+    cmpl-double v8, v8, v10
 
-    if-lez v10, :cond_3
+    if-lez v8, :cond_2
 
-    move v0, v8
+    const/4 v0, 0x1
 
-    .line 323
+    .line 326
     .end local v2           #lFreeSpace:J
     .end local v4           #nAvailableBlock:I
     .end local v5           #nBlockSize:I
     .end local v6           #path:Ljava/lang/String;
     .end local v7           #stat:Landroid/os/StatFs;
     :goto_1
-    if-nez v0, :cond_1
-
-    .line 324
-    const-string v8, "FileCacheMgr"
-
-    const-string v9, "[isStorageSpaceAvailable] Storage space is less than 1M"
-
-    invoke-static {v8, v9}, Lcom/htc/opensense/album/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 326
-    :cond_1
     return v0
 
     .line 312
@@ -994,15 +883,15 @@
     .restart local v5       #nBlockSize:I
     .restart local v6       #path:Ljava/lang/String;
     .restart local v7       #stat:Landroid/os/StatFs;
-    :cond_2
-    const-wide v10, 0x41dfffffffc00000L
+    :cond_1
+    const-wide v8, 0x41dfffffffc00000L
 
     goto :goto_0
 
-    :cond_3
-    move v0, v9
-
     .line 315
+    :cond_2
+    const/4 v0, 0x0
+
     goto :goto_1
 
     .line 317
@@ -1581,57 +1470,16 @@
 
     move-result-wide v15
 
-    .line 140
-    .local v15, t2:J
-    sub-long v4, v15, v13
-
-    const-wide/16 v6, 0x3e8
-
-    cmp-long v2, v4, v6
-
-    if-lez v2, :cond_1
-
-    .line 142
-    const-string v2, "FileCacheMgr"
-
-    const/4 v4, 0x3
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
-
-    const-string v6, "[PERFORMANCE_CHECK] File.Exists time "
-
-    aput-object v6, v4, v5
-
-    const/4 v5, 0x1
-
-    sub-long v6, v15, v13
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v6
-
-    aput-object v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const-string v6, " ms"
-
-    aput-object v6, v4, v5
-
-    invoke-static {v2, v4}, Lcom/htc/opensense/album/util/Log;->i2(Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 145
-    :cond_1
-    if-nez v11, :cond_2
+    .local v15, t2:J
+    if-nez v11, :cond_1
 
     const/4 v8, 0x0
 
     goto :goto_0
 
     .line 147
-    :cond_2
+    :cond_1
     invoke-virtual {v10}, Ljava/io/File;->length()J
 
     move-result-wide v4
@@ -1640,7 +1488,7 @@
 
     cmp-long v2, v4, v6
 
-    if-nez v2, :cond_4
+    if-nez v2, :cond_2
 
     .line 149
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -1655,54 +1503,13 @@
 
     move-result-wide v15
 
-    .line 152
-    sub-long v4, v15, v13
-
-    const-wide/16 v6, 0x3e8
-
-    cmp-long v2, v4, v6
-
-    if-lez v2, :cond_3
-
-    .line 154
-    const-string v2, "FileCacheMgr"
-
-    const/4 v4, 0x3
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
-
-    const-string v6, "[PERFORMANCE_CHECK] File.Delete time "
-
-    aput-object v6, v4, v5
-
-    const/4 v5, 0x1
-
-    sub-long v6, v15, v13
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v6
-
-    aput-object v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const-string v6, " ms"
-
-    aput-object v6, v4, v5
-
-    invoke-static {v2, v4}, Lcom/htc/opensense/album/util/Log;->i2(Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 156
-    :cond_3
     const/4 v8, 0x0
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 159
-    :cond_4
+    :cond_2
     const/4 v8, 0x0
 
     .line 162
@@ -1748,50 +1555,9 @@
 
     move-result-wide v19
 
-    .line 170
-    .local v19, t4:J
-    sub-long v4, v19, v17
-
-    const-wide/16 v6, 0x3e8
-
-    cmp-long v2, v4, v6
-
-    if-lez v2, :cond_5
-
-    .line 172
-    const-string v2, "FileCacheMgr"
-
-    const/4 v4, 0x3
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
-
-    const-string v6, "[PERFORMANCE_CHECK] decodeFile time "
-
-    aput-object v6, v4, v5
-
-    const/4 v5, 0x1
-
-    sub-long v6, v19, v17
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v6
-
-    aput-object v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const-string v6, " ms"
-
-    aput-object v6, v4, v5
-
-    invoke-static {v2, v4}, Lcom/htc/opensense/album/util/Log;->i2(Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 175
-    :cond_5
-    if-nez v8, :cond_7
+    .local v19, t4:J
+    if-nez v8, :cond_3
 
     .line 177
     const-string v2, "FileCacheMgr"
@@ -1826,53 +1592,12 @@
 
     .line 180
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v19
-
-    .line 181
-    sub-long v4, v19, v17
-
-    const-wide/16 v6, 0x3e8
-
-    cmp-long v2, v4, v6
-
-    if-lez v2, :cond_6
-
-    .line 183
-    const-string v2, "FileCacheMgr"
-
-    const/4 v4, 0x3
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
-
-    const-string v6, "[PERFORMANCE_CHECK] delete file time "
-
-    aput-object v6, v4, v5
-
-    const/4 v5, 0x1
-
-    sub-long v6, v19, v17
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v6
-
-    aput-object v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const-string v6, " ms"
-
-    aput-object v6, v4, v5
-
-    invoke-static {v2, v4}, Lcom/htc/opensense/album/util/Log;->i2(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    move-result-wide v19
+
     .line 186
-    :cond_6
     const/4 v8, 0x0
 
     .line 196
@@ -1887,13 +1612,13 @@
 
     .line 192
     .restart local v8       #bmp:Landroid/graphics/Bitmap;
-    :cond_7
+    :cond_3
     :try_start_1
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/htc/opensense/album/util/ImageFileCacheManager;->mThumbDBWorker:Lcom/htc/opensense/album/util/ImageFileCacheManager$ThumbDBWorker;
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_4
 
     .line 193
     move-object/from16 v0, p0
@@ -1925,7 +1650,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 196
-    :cond_8
+    :cond_4
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/htc/opensense/album/util/ImageFileCacheManager;->mLock:Ljava/util/concurrent/locks/ReentrantLock;
@@ -2049,57 +1774,8 @@
     .local v15, t2:J
     invoke-virtual {v11}, Ljava/io/FileOutputStream;->close()V
 
-    .line 85
-    sub-long v2, v15, v13
-
-    const-wide/16 v4, 0x3e8
-
-    cmp-long v2, v2, v4
-
-    if-lez v2, :cond_1
-
-    .line 87
-    const-string v2, "FileCacheMgr"
-
-    const/4 v3, 0x4
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    const-string v5, "[PERFORMANCE_CHECK] encode cache time "
-
-    aput-object v5, v3, v4
-
-    const/4 v4, 0x1
-
-    sub-long v5, v15, v13
-
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    const/4 v4, 0x2
-
-    const-string v5, " ms. size: "
-
-    aput-object v5, v3, v4
-
-    const/4 v4, 0x3
-
-    invoke-static/range {p4 .. p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    invoke-static {v2, v3}, Lcom/htc/opensense/album/util/Log;->i2(Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 90
-    :cond_1
-    if-eqz v8, :cond_3
+    if-eqz v8, :cond_2
 
     invoke-virtual {v10}, Ljava/io/File;->length()J
 
@@ -2109,14 +1785,14 @@
 
     cmp-long v2, v2, v4
 
-    if-lez v2, :cond_3
+    if-lez v2, :cond_2
 
     .line 95
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/htc/opensense/album/util/ImageFileCacheManager;->mThumbDBWorker:Lcom/htc/opensense/album/util/ImageFileCacheManager$ThumbDBWorker;
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_1
 
     .line 96
     move-object/from16 v0, p0
@@ -2148,7 +1824,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 112
-    :cond_2
+    :cond_1
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/htc/opensense/album/util/ImageFileCacheManager;->mLock:Ljava/util/concurrent/locks/ReentrantLock;
@@ -2158,10 +1834,10 @@
     .line 115
     const/4 v2, 0x1
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 101
-    :cond_3
+    :cond_2
     :try_start_1
     const-string v2, "FileCacheMgr"
 
@@ -2223,47 +1899,12 @@
 
     .line 104
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v15
-
-    .line 105
-    sub-long v2, v15, v13
-
-    const-wide/16 v4, 0x3e8
-
-    cmp-long v2, v2, v4
-
-    if-lez v2, :cond_4
-
-    .line 107
-    const-string v2, "FileCacheMgr"
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    const-string v5, "[PERFORMANCE_CHECK] encode delete time "
-
-    aput-object v5, v3, v4
-
-    const/4 v4, 0x1
-
-    sub-long v5, v15, v13
-
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    invoke-static {v2, v3}, Lcom/htc/opensense/album/util/Log;->i2(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    move-result-wide v15
+
     .line 109
-    :cond_4
     const/4 v2, 0x0
 
     .line 112

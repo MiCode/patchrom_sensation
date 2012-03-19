@@ -139,7 +139,7 @@
 
     .prologue
     .line 228
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 229
     iput p1, p0, Landroid/net/dhcp/DhcpPacket;->mTransId:I
@@ -254,7 +254,7 @@
 
     const/16 v3, 0x43
 
-    invoke-virtual {v1, p0, v2, v3}, Landroid/net/dhcp/DhcpPacket;->buildPacket(ISS)Ljava/nio/ByteBuffer;
+    invoke-virtual {v1, p0, v2, v3}, Landroid/net/dhcp/DhcpAckPacket;->buildPacket(ISS)Ljava/nio/ByteBuffer;
 
     move-result-object v2
 
@@ -284,7 +284,7 @@
 
     const/16 v2, 0x44
 
-    invoke-virtual {v0, p0, v1, v2}, Landroid/net/dhcp/DhcpPacket;->buildPacket(ISS)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, p0, v1, v2}, Landroid/net/dhcp/DhcpDiscoverPacket;->buildPacket(ISS)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
@@ -331,7 +331,7 @@
 
     const/16 v2, 0x43
 
-    invoke-virtual {v0, p0, v1, v2}, Landroid/net/dhcp/DhcpPacket;->buildPacket(ISS)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, p0, v1, v2}, Landroid/net/dhcp/DhcpNakPacket;->buildPacket(ISS)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
@@ -426,7 +426,7 @@
 
     const/16 v3, 0x43
 
-    invoke-virtual {v1, p0, v2, v3}, Landroid/net/dhcp/DhcpPacket;->buildPacket(ISS)Ljava/nio/ByteBuffer;
+    invoke-virtual {v1, p0, v2, v3}, Landroid/net/dhcp/DhcpOfferPacket;->buildPacket(ISS)Ljava/nio/ByteBuffer;
 
     move-result-object v2
 
@@ -469,7 +469,7 @@
 
     const/16 v3, 0x44
 
-    invoke-virtual {v0, p0, v2, v3}, Landroid/net/dhcp/DhcpPacket;->buildPacket(ISS)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, p0, v2, v3}, Landroid/net/dhcp/DhcpRequestPacket;->buildPacket(ISS)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 

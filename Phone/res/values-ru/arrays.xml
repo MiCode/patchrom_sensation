@@ -114,16 +114,16 @@
         <item>0</item>
     </string-array>
     <string-array name="world_phone_preferred_gsm_network_mode_choices_plus_lte">
-        <item>LTE only</item>
-        <item>GSM only</item>
-        <item>UMTS only</item>
-        <item>GSM/UMTS/LTE multiple</item>
+        <item>Только LTE</item>
+        <item>Только GSM</item>
+        <item>Только UMTS</item>
+        <item>Мультирежим GSM/UMTS/LTE</item>
     </string-array>
     <string-array name="world_phone_mode_of_operation_mode_choices_plus_lte">
-        <item>Global Mode</item>
-        <item>CDMA Mode</item>
-        <item>GSM/UMTS/LTE Mode</item>
-        <item>LTE Mode</item>
+        <item>Глобальный режим</item>
+        <item>Режим CDMA</item>
+        <item>Режим GSM/UMTS/LTE</item>
+        <item>Режим LTE</item>
     </string-array>
     <string-array name="world_phone_mode_of_operation_mode_values_plus_lte">
         <item>10</item>

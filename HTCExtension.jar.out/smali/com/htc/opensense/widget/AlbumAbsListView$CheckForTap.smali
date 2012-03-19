@@ -30,7 +30,7 @@
     .line 1801
     iput-object p1, p0, Lcom/htc/opensense/widget/AlbumAbsListView$CheckForTap;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -66,7 +66,7 @@
 
     iget-object v6, p0, Lcom/htc/opensense/widget/AlbumAbsListView$CheckForTap;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget v6, v6, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v6, v6, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int/2addr v5, v6
 
@@ -94,7 +94,7 @@
     .line 1809
     iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView$CheckForTap;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget-boolean v4, v4, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataChanged:Z
+    iget-boolean v4, v4, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     if-nez v4, :cond_5
 

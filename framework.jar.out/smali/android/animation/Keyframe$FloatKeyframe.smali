@@ -28,12 +28,12 @@
     invoke-direct {p0}, Landroid/animation/Keyframe;-><init>()V
 
     .line 332
-    iput p1, p0, Landroid/animation/Keyframe$FloatKeyframe;->mFraction:F
+    iput p1, p0, Landroid/animation/Keyframe;->mFraction:F
 
     .line 333
     sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    iput-object v0, p0, Landroid/animation/Keyframe$FloatKeyframe;->mValueType:Ljava/lang/Class;
+    iput-object v0, p0, Landroid/animation/Keyframe;->mValueType:Ljava/lang/Class;
 
     .line 334
     return-void
@@ -49,7 +49,7 @@
     invoke-direct {p0}, Landroid/animation/Keyframe;-><init>()V
 
     .line 325
-    iput p1, p0, Landroid/animation/Keyframe$FloatKeyframe;->mFraction:F
+    iput p1, p0, Landroid/animation/Keyframe;->mFraction:F
 
     .line 326
     iput p2, p0, Landroid/animation/Keyframe$FloatKeyframe;->mValue:F
@@ -57,12 +57,12 @@
     .line 327
     sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    iput-object v0, p0, Landroid/animation/Keyframe$FloatKeyframe;->mValueType:Ljava/lang/Class;
+    iput-object v0, p0, Landroid/animation/Keyframe;->mValueType:Ljava/lang/Class;
 
     .line 328
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/animation/Keyframe$FloatKeyframe;->mHasValue:Z
+    iput-boolean v0, p0, Landroid/animation/Keyframe;->mHasValue:Z
 
     .line 329
     return-void
@@ -179,7 +179,7 @@
     .line 347
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/animation/Keyframe$FloatKeyframe;->mHasValue:Z
+    iput-boolean v0, p0, Landroid/animation/Keyframe;->mHasValue:Z
 
     .line 349
     :cond_0

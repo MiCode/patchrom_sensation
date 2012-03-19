@@ -31,7 +31,7 @@
 
     .prologue
     .line 790
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 791
     iput-object p1, p0, Lcom/scalado/camera/FeatureCameraFactory$ErrorCallbackAdapter;->mCallback:Lcom/scalado/camera/Camera$ErrorCallback;

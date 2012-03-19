@@ -75,7 +75,7 @@
 
     .prologue
     .line 201
-    iget-object v1, p0, Lcom/android/camera/component/AutoBacklightIntentSender;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "disableAutoBacklight()"
 
@@ -122,7 +122,7 @@
     const/16 v3, 0x2711
 
     .line 182
-    iget-object v1, p0, Lcom/android/camera/component/AutoBacklightIntentSender;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "enableAutoBacklight()"
 
@@ -190,7 +190,7 @@
     if-nez v0, :cond_0
 
     .line 157
-    iget-object v1, p0, Lcom/android/camera/component/AutoBacklightIntentSender;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "eventManager == null"
 

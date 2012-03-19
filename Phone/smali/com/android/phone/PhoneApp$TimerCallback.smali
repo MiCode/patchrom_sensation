@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 5609
+    .line 5612
     iput-object p1, p0, Lcom/android/phone/PhoneApp$TimerCallback;->this$0:Lcom/android/phone/PhoneApp;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 5609
+    .line 5612
     invoke-direct {p0, p1}, Lcom/android/phone/PhoneApp$TimerCallback;-><init>(Lcom/android/phone/PhoneApp;)V
 
     return-void
@@ -57,21 +57,21 @@
 
     const/4 v5, 0x1
 
-    .line 5611
+    .line 5614
     invoke-static {}, Lcom/android/phone/PhoneApp;->access$400()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 5612
+    .line 5615
     const-string v2, "PhoneApp"
 
     const-string v3, "..time out..(TimerCallback)"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5613
+    .line 5616
     :cond_0
     iget-object v2, p0, Lcom/android/phone/PhoneApp$TimerCallback;->this$0:Lcom/android/phone/PhoneApp;
 
@@ -82,14 +82,14 @@
 
     if-ne v2, v5, :cond_4
 
-    .line 5616
+    .line 5619
     invoke-static {}, Lcom/android/phone/PhoneApp;->access$400()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 5617
+    .line 5620
     const-string v2, "PhoneApp"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -118,7 +118,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5620
+    .line 5623
     :cond_1
     iget-object v2, p0, Lcom/android/phone/PhoneApp$TimerCallback;->this$0:Lcom/android/phone/PhoneApp;
 
@@ -132,7 +132,7 @@
 
     move-result v1
 
-    .line 5624
+    .line 5627
     .local v1, settingsNetworkMode:I
     invoke-static {}, Lcom/android/phone/PhoneApp;->access$400()Z
 
@@ -140,7 +140,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 5625
+    .line 5628
     const-string v2, "PhoneApp"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -163,7 +163,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5629
+    .line 5632
     :cond_2
     iget-object v2, p0, Lcom/android/phone/PhoneApp$TimerCallback;->this$0:Lcom/android/phone/PhoneApp;
 
@@ -198,7 +198,7 @@
 
     if-eq v1, v6, :cond_3
 
-    .line 5634
+    .line 5637
     :try_start_0
     iget-object v2, p0, Lcom/android/phone/PhoneApp$TimerCallback;->this$0:Lcom/android/phone/PhoneApp;
 
@@ -216,7 +216,7 @@
 
     invoke-interface {v2, v3}, Lcom/android/phone/INetworkQueryService;->startNetworkQuery(Lcom/android/phone/INetworkQueryServiceCallback;)V
 
-    .line 5635
+    .line 5638
     iget-object v2, p0, Lcom/android/phone/PhoneApp$TimerCallback;->this$0:Lcom/android/phone/PhoneApp;
 
     const/4 v3, 0x1
@@ -224,14 +224,14 @@
     #setter for: Lcom/android/phone/PhoneApp;->isFromTimer:Z
     invoke-static {v2, v3}, Lcom/android/phone/PhoneApp;->access$1902(Lcom/android/phone/PhoneApp;Z)Z
 
-    .line 5636
+    .line 5639
     invoke-static {}, Lcom/android/phone/PhoneApp;->access$400()Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
-    .line 5637
+    .line 5640
     const-string v2, "PhoneApp"
 
     const-string v3, "start query network list (TimerCallback)"
@@ -240,13 +240,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5645
+    .line 5648
     .end local v1           #settingsNetworkMode:I
     :cond_3
     :goto_0
     return-void
 
-    .line 5641
+    .line 5644
     :cond_4
     iget-object v2, p0, Lcom/android/phone/PhoneApp$TimerCallback;->this$0:Lcom/android/phone/PhoneApp;
 
@@ -259,7 +259,7 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 5642
+    .line 5645
     iget-object v2, p0, Lcom/android/phone/PhoneApp$TimerCallback;->this$0:Lcom/android/phone/PhoneApp;
 
     iget-object v2, v2, Lcom/android/phone/PhoneApp;->mHandler:Landroid/os/Handler;
@@ -270,7 +270,7 @@
 
     move-result-object v0
 
-    .line 5643
+    .line 5646
     .local v0, msg:Landroid/os/Message;
     iget-object v2, p0, Lcom/android/phone/PhoneApp$TimerCallback;->this$0:Lcom/android/phone/PhoneApp;
 
@@ -280,7 +280,7 @@
 
     goto :goto_0
 
-    .line 5638
+    .line 5641
     .end local v0           #msg:Landroid/os/Message;
     .restart local v1       #settingsNetworkMode:I
     :catch_0

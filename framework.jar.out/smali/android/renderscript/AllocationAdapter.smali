@@ -19,7 +19,7 @@
     invoke-direct {p0, p1, p2, v0, v1}, Landroid/renderscript/Allocation;-><init>(ILandroid/renderscript/RenderScript;Landroid/renderscript/Type;I)V
 
     .line 30
-    iput-object p3, p0, Landroid/renderscript/AllocationAdapter;->mAdaptedAllocation:Landroid/renderscript/Allocation;
+    iput-object p3, p0, Landroid/renderscript/Allocation;->mAdaptedAllocation:Landroid/renderscript/Allocation;
 
     .line 31
     return-void
@@ -45,16 +45,16 @@
 
     .line 217
     .local v0, aa:Landroid/renderscript/AllocationAdapter;
-    iput-boolean v1, v0, Landroid/renderscript/AllocationAdapter;->mConstrainedLOD:Z
+    iput-boolean v1, v0, Landroid/renderscript/Allocation;->mConstrainedLOD:Z
 
     .line 218
-    iput-boolean v1, v0, Landroid/renderscript/AllocationAdapter;->mConstrainedFace:Z
+    iput-boolean v1, v0, Landroid/renderscript/Allocation;->mConstrainedFace:Z
 
     .line 219
-    iput-boolean v1, v0, Landroid/renderscript/AllocationAdapter;->mConstrainedY:Z
+    iput-boolean v1, v0, Landroid/renderscript/Allocation;->mConstrainedY:Z
 
     .line 220
-    iput-boolean v1, v0, Landroid/renderscript/AllocationAdapter;->mConstrainedZ:Z
+    iput-boolean v1, v0, Landroid/renderscript/Allocation;->mConstrainedZ:Z
 
     .line 221
     invoke-virtual {v0, v2}, Landroid/renderscript/AllocationAdapter;->initLOD(I)V
@@ -106,16 +106,16 @@
 
     .line 229
     .local v0, aa:Landroid/renderscript/AllocationAdapter;
-    iput-boolean v5, v0, Landroid/renderscript/AllocationAdapter;->mConstrainedLOD:Z
+    iput-boolean v5, v0, Landroid/renderscript/Allocation;->mConstrainedLOD:Z
 
     .line 230
-    iput-boolean v5, v0, Landroid/renderscript/AllocationAdapter;->mConstrainedFace:Z
+    iput-boolean v5, v0, Landroid/renderscript/Allocation;->mConstrainedFace:Z
 
     .line 231
-    iput-boolean v4, v0, Landroid/renderscript/AllocationAdapter;->mConstrainedY:Z
+    iput-boolean v4, v0, Landroid/renderscript/Allocation;->mConstrainedY:Z
 
     .line 232
-    iput-boolean v5, v0, Landroid/renderscript/AllocationAdapter;->mConstrainedZ:Z
+    iput-boolean v5, v0, Landroid/renderscript/Allocation;->mConstrainedZ:Z
 
     .line 233
     invoke-virtual {v0, v4}, Landroid/renderscript/AllocationAdapter;->initLOD(I)V
@@ -185,7 +185,7 @@
 
     .line 104
     :cond_0
-    iget-object v4, p0, Landroid/renderscript/AllocationAdapter;->mAdaptedAllocation:Landroid/renderscript/Allocation;
+    iget-object v4, p0, Landroid/renderscript/Allocation;->mAdaptedAllocation:Landroid/renderscript/Allocation;
 
     iget-object v4, v4, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
@@ -195,7 +195,7 @@
 
     .line 105
     .local v1, tx:I
-    iget-object v4, p0, Landroid/renderscript/AllocationAdapter;->mAdaptedAllocation:Landroid/renderscript/Allocation;
+    iget-object v4, p0, Landroid/renderscript/Allocation;->mAdaptedAllocation:Landroid/renderscript/Allocation;
 
     iget-object v4, v4, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
@@ -205,7 +205,7 @@
 
     .line 106
     .local v2, ty:I
-    iget-object v4, p0, Landroid/renderscript/AllocationAdapter;->mAdaptedAllocation:Landroid/renderscript/Allocation;
+    iget-object v4, p0, Landroid/renderscript/Allocation;->mAdaptedAllocation:Landroid/renderscript/Allocation;
 
     iget-object v4, v4, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
@@ -285,54 +285,54 @@
 
     .line 118
     :cond_5
-    iput v1, p0, Landroid/renderscript/AllocationAdapter;->mCurrentDimX:I
+    iput v1, p0, Landroid/renderscript/Allocation;->mCurrentDimX:I
 
     .line 119
-    iput v2, p0, Landroid/renderscript/AllocationAdapter;->mCurrentDimY:I
+    iput v2, p0, Landroid/renderscript/Allocation;->mCurrentDimY:I
 
     .line 120
-    iput v3, p0, Landroid/renderscript/AllocationAdapter;->mCurrentDimZ:I
+    iput v3, p0, Landroid/renderscript/Allocation;->mCurrentDimZ:I
 
     .line 121
-    iget v4, p0, Landroid/renderscript/AllocationAdapter;->mCurrentDimX:I
+    iget v4, p0, Landroid/renderscript/Allocation;->mCurrentDimX:I
 
-    iput v4, p0, Landroid/renderscript/AllocationAdapter;->mCurrentCount:I
+    iput v4, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
     .line 122
-    iget v4, p0, Landroid/renderscript/AllocationAdapter;->mCurrentDimY:I
+    iget v4, p0, Landroid/renderscript/Allocation;->mCurrentDimY:I
 
     if-le v4, v6, :cond_6
 
     .line 123
-    iget v4, p0, Landroid/renderscript/AllocationAdapter;->mCurrentCount:I
+    iget v4, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
-    iget v5, p0, Landroid/renderscript/AllocationAdapter;->mCurrentDimY:I
+    iget v5, p0, Landroid/renderscript/Allocation;->mCurrentDimY:I
 
     mul-int/2addr v4, v5
 
-    iput v4, p0, Landroid/renderscript/AllocationAdapter;->mCurrentCount:I
+    iput v4, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
     .line 125
     :cond_6
-    iget v4, p0, Landroid/renderscript/AllocationAdapter;->mCurrentDimZ:I
+    iget v4, p0, Landroid/renderscript/Allocation;->mCurrentDimZ:I
 
     if-le v4, v6, :cond_7
 
     .line 126
-    iget v4, p0, Landroid/renderscript/AllocationAdapter;->mCurrentCount:I
+    iget v4, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
-    iget v5, p0, Landroid/renderscript/AllocationAdapter;->mCurrentDimZ:I
+    iget v5, p0, Landroid/renderscript/Allocation;->mCurrentDimZ:I
 
     mul-int/2addr v4, v5
 
-    iput v4, p0, Landroid/renderscript/AllocationAdapter;->mCurrentCount:I
+    iput v4, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
     .line 128
     :cond_7
-    iput v7, p0, Landroid/renderscript/AllocationAdapter;->mSelectedY:I
+    iput v7, p0, Landroid/renderscript/Allocation;->mSelectedY:I
 
     .line 129
-    iput v7, p0, Landroid/renderscript/AllocationAdapter;->mSelectedZ:I
+    iput v7, p0, Landroid/renderscript/Allocation;->mSelectedZ:I
 
     .line 130
     return-void
@@ -395,7 +395,7 @@
 
     .prologue
     .line 159
-    iget-object v0, p0, Landroid/renderscript/AllocationAdapter;->mAdaptedAllocation:Landroid/renderscript/Allocation;
+    iget-object v0, p0, Landroid/renderscript/Allocation;->mAdaptedAllocation:Landroid/renderscript/Allocation;
 
     invoke-virtual {v0}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
 
@@ -418,7 +418,7 @@
 
     .line 162
     :cond_0
-    iget-boolean v0, p0, Landroid/renderscript/AllocationAdapter;->mConstrainedFace:Z
+    iget-boolean v0, p0, Landroid/renderscript/Allocation;->mConstrainedFace:Z
 
     if-nez v0, :cond_1
 
@@ -446,7 +446,7 @@
 
     .line 169
     :cond_2
-    iput-object p1, p0, Landroid/renderscript/AllocationAdapter;->mSelectedFace:Landroid/renderscript/Type$CubemapFace;
+    iput-object p1, p0, Landroid/renderscript/Allocation;->mSelectedFace:Landroid/renderscript/Type$CubemapFace;
 
     .line 170
     return-void
@@ -458,7 +458,7 @@
 
     .prologue
     .line 142
-    iget-object v0, p0, Landroid/renderscript/AllocationAdapter;->mAdaptedAllocation:Landroid/renderscript/Allocation;
+    iget-object v0, p0, Landroid/renderscript/Allocation;->mAdaptedAllocation:Landroid/renderscript/Allocation;
 
     invoke-virtual {v0}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
 
@@ -481,7 +481,7 @@
 
     .line 145
     :cond_0
-    iget-boolean v0, p0, Landroid/renderscript/AllocationAdapter;->mConstrainedLOD:Z
+    iget-boolean v0, p0, Landroid/renderscript/Allocation;->mConstrainedLOD:Z
 
     if-nez v0, :cond_1
 
@@ -508,7 +508,7 @@
 
     .prologue
     .line 180
-    iget-object v0, p0, Landroid/renderscript/AllocationAdapter;->mAdaptedAllocation:Landroid/renderscript/Allocation;
+    iget-object v0, p0, Landroid/renderscript/Allocation;->mAdaptedAllocation:Landroid/renderscript/Allocation;
 
     invoke-virtual {v0}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
 
@@ -531,7 +531,7 @@
 
     .line 183
     :cond_0
-    iget-object v0, p0, Landroid/renderscript/AllocationAdapter;->mAdaptedAllocation:Landroid/renderscript/Allocation;
+    iget-object v0, p0, Landroid/renderscript/Allocation;->mAdaptedAllocation:Landroid/renderscript/Allocation;
 
     invoke-virtual {v0}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
 
@@ -554,7 +554,7 @@
 
     .line 186
     :cond_1
-    iget-boolean v0, p0, Landroid/renderscript/AllocationAdapter;->mConstrainedY:Z
+    iget-boolean v0, p0, Landroid/renderscript/Allocation;->mConstrainedY:Z
 
     if-nez v0, :cond_2
 
@@ -569,7 +569,7 @@
 
     .line 190
     :cond_2
-    iput p1, p0, Landroid/renderscript/AllocationAdapter;->mSelectedY:I
+    iput p1, p0, Landroid/renderscript/Allocation;->mSelectedY:I
 
     .line 191
     return-void
@@ -581,7 +581,7 @@
 
     .prologue
     .line 201
-    iget-object v0, p0, Landroid/renderscript/AllocationAdapter;->mAdaptedAllocation:Landroid/renderscript/Allocation;
+    iget-object v0, p0, Landroid/renderscript/Allocation;->mAdaptedAllocation:Landroid/renderscript/Allocation;
 
     invoke-virtual {v0}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
 
@@ -604,7 +604,7 @@
 
     .line 204
     :cond_0
-    iget-object v0, p0, Landroid/renderscript/AllocationAdapter;->mAdaptedAllocation:Landroid/renderscript/Allocation;
+    iget-object v0, p0, Landroid/renderscript/Allocation;->mAdaptedAllocation:Landroid/renderscript/Allocation;
 
     invoke-virtual {v0}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
 
@@ -627,7 +627,7 @@
 
     .line 207
     :cond_1
-    iget-boolean v0, p0, Landroid/renderscript/AllocationAdapter;->mConstrainedZ:Z
+    iget-boolean v0, p0, Landroid/renderscript/Allocation;->mConstrainedZ:Z
 
     if-nez v0, :cond_2
 
@@ -642,7 +642,7 @@
 
     .line 211
     :cond_2
-    iput p1, p0, Landroid/renderscript/AllocationAdapter;->mSelectedZ:I
+    iput p1, p0, Landroid/renderscript/Allocation;->mSelectedZ:I
 
     .line 212
     return-void

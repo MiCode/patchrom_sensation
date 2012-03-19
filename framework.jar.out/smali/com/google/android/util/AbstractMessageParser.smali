@@ -124,7 +124,7 @@
 
     .prologue
     .line 100
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 101
     iput-object p1, p0, Lcom/google/android/util/AbstractMessageParser;->text:Ljava/lang/String;

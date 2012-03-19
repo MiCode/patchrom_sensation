@@ -238,8 +238,8 @@ Det kan ta flera minuter."</string>
     <string name="htc_preferred_network_global_mode">Globalt läge</string>
     <string name="htc_preferred_network_cdma_evdo_aut_mode">CDMA-läge</string>
     <string name="htc_preferred_network_gsm_wcdma_aut_mode">GSM/3G-läge</string>
-    <string name="htc_preferred_network_lte_mode">LTE Mode</string>
-    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM / UMTS / LTE Mode</string>
+    <string name="htc_preferred_network_lte_mode">LTE-läge</string>
+    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM/UMTS/LTE-läge</string>
     <string name="title_gsm_preferred_network_options">GSM/3G-läge</string>
     <string name="btn_Menu_Edit">Redigera</string>
     <string name="btn_Menu_Set_Done">Färdig</string>
@@ -600,7 +600,7 @@ Det medför väsentligt mycket högre kostnader."</string>
     <string name="puk_unlocked">SIM-kortets spärr har tagits bort. Låser upp telefonen…</string>
     <string name="label_ndp">PIN-kod för upplåsning av SIM-nätverk</string>
     <string name="sim_ndp_unlock_text">Lås upp</string>
-    <string name="sim_ndp_dismiss_text">Ta bort permanent</string>
+    <string name="sim_ndp_dismiss_text">Ta bort</string>
     <string name="requesting_unlock">Försöker låsa upp nätverket…</string>
     <string name="unlock_failed">Det gick inte att låsa upp nätverket.</string>
     <string name="unlock_success">Nätverket upplåst</string>
@@ -882,7 +882,7 @@ Nästa period börjar om %2$d dagar (%3$s)"</string>
     <string name="fake_phone_activity_placeCall_text">Fake Incoming Call</string>
     <string name="sim_missing_continueView_text">Fortsätt utan SIM-kort</string>
     <string name="sim_missing_msg_text">Inget SIM-kort hittades. Sätt i ett SIM-kort i telefonen.</string>
-    <string name="sim_unlock_dismiss_text">Ta bort permanent</string>
+    <string name="sim_unlock_dismiss_text">Ta bort</string>
     <string name="sim_unlock_unlock_text">Lås upp</string>
     <string name="sim_unlock_status_text">Verifierar PIN-kod…</string>
     <string name="voicemail_settings_number_label">Nummer till röstbrevlåda</string>
@@ -999,7 +999,7 @@ Försök igen eller ring kundtjänst om du vill ha fler alternativ."</string>
     <string name="progress_dialog_exiting_ecm">Avslutar läget Återuppringning vid nödsamtal</string>
     <string name="alert_dialog_yes">Ja</string>
     <string name="alert_dialog_no">Nej</string>
-    <string name="alert_dialog_dismiss">Ta bort permanent</string>
+    <string name="alert_dialog_dismiss">Ta bort</string>
     <string name="absent_num">ABSENT NUMBER</string>
     <string name="voicemail_settings">Inställningar för röstbrevlådan</string>
     <string name="voicemail_number_not_set">&lt;Har inte angetts></string>

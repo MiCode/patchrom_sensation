@@ -51,7 +51,7 @@
 
     .prologue
     .line 121
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 122
     new-instance v0, Ljava/util/HashMap;
@@ -70,7 +70,7 @@
 
     .prologue
     .line 127
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 128
     sget-object v0, Lcom/htc/protobuf/ExtensionRegistryLite;->EMPTY:Lcom/htc/protobuf/ExtensionRegistryLite;
@@ -107,7 +107,7 @@
 
     .prologue
     .line 140
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 141
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;

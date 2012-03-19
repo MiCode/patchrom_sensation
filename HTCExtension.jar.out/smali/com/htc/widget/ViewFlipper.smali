@@ -251,7 +251,7 @@
     iput-boolean v0, p0, Lcom/htc/widget/ViewFlipper;->mKeepFlipping:Z
 
     .line 61
-    iput-boolean v1, p0, Lcom/htc/widget/ViewFlipper;->mFirstTime:Z
+    iput-boolean v1, p0, Lcom/htc/widget/ViewAnimator;->mFirstTime:Z
 
     .line 62
     iget-object v0, p0, Lcom/htc/widget/ViewFlipper;->mHandler:Landroid/os/Handler;

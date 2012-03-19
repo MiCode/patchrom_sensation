@@ -41,7 +41,7 @@
     const/4 v7, 0x0
 
     .line 53
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
     iput-object p1, p0, Lcom/android/server/PreferredComponent;->mCallbacks:Lcom/android/server/PreferredComponent$Callbacks;
@@ -956,7 +956,7 @@
 
     aget-object v9, v9, v5
 
-    iget-object v10, v2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v10, v2, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -968,7 +968,7 @@
 
     aget-object v9, v9, v5
 
-    iget-object v10, v2, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v10, v2, Landroid/content/pm/ComponentInfo;->name:Ljava/lang/String;
 
     invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

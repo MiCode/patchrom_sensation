@@ -213,7 +213,7 @@
     invoke-virtual {v0, p1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 7742
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$VideoObject;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {p0}, Lcom/htc/opensense/album/util/ImageManager$VideoObject;->fullSizeImageUri()Landroid/net/Uri;
 
@@ -371,7 +371,7 @@
     .prologue
     .line 7614
     :try_start_0
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$VideoObject;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {p0}, Lcom/htc/opensense/album/util/ImageManager$VideoObject;->fullSizeImageUri()Landroid/net/Uri;
 
@@ -426,7 +426,7 @@
 
     .prologue
     .line 7627
-    iget-wide v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoObject;->mId:J
+    iget-wide v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mId:J
 
     return-wide v0
 .end method
@@ -460,7 +460,7 @@
 
     .prologue
     .line 7631
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoObject;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v0, Lcom/htc/opensense/album/util/ImageManager$VideoList;
 
@@ -490,7 +490,7 @@
 
     .prologue
     .line 7589
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoObject;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v0, Lcom/htc/opensense/album/util/ImageManager$VideoList;
 
@@ -774,7 +774,7 @@
 
     .prologue
     .line 7635
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoObject;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v0, Lcom/htc/opensense/album/util/ImageManager$VideoList;
 
@@ -816,7 +816,7 @@
 
     .prologue
     .line 7777
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoObject;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v0, Lcom/htc/opensense/album/util/ImageManager$VideoList;
 
@@ -880,7 +880,7 @@
 
     .prologue
     .line 7655
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoObject;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v0, Lcom/htc/opensense/album/util/ImageManager$VideoList;
 
@@ -1116,7 +1116,7 @@
 
     .prologue
     .line 7706
-    iget-wide v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoObject;->mId:J
+    iget-wide v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mId:J
 
     return-wide v0
 .end method
@@ -1255,7 +1255,7 @@
 
     .prologue
     .line 7731
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoObject;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v0, Lcom/htc/opensense/album/util/ImageManager$VideoList;
 
@@ -1295,7 +1295,7 @@
 
     .prologue
     .line 7735
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoObject;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v0, Lcom/htc/opensense/album/util/ImageManager$VideoList;
 
@@ -1390,7 +1390,7 @@
 
     move-result-object v1
 
-    iget-wide v2, p0, Lcom/htc/opensense/album/util/ImageManager$VideoObject;->mId:J
+    iget-wide v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mId:J
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 

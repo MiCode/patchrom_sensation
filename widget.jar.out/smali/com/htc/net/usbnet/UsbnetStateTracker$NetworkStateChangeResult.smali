@@ -28,7 +28,7 @@
 
     .prologue
     .line 702
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 703
     iput-object p1, p0, Lcom/htc/net/usbnet/UsbnetStateTracker$NetworkStateChangeResult;->state:Landroid/net/NetworkInfo$DetailedState;

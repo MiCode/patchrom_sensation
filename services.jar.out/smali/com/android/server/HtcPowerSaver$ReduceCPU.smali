@@ -29,10 +29,10 @@
     .parameter "ctx"
 
     .prologue
-    .line 1232
+    .line 1207
     iput-object p1, p0, Lcom/android/server/HtcPowerSaver$ReduceCPU;->this$0:Lcom/android/server/HtcPowerSaver;
 
-    .line 1233
+    .line 1208
     const-string v2, "ReduceCPU"
 
     const-string v3, "powersaver_reduce_CPU"
@@ -47,10 +47,10 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/server/HtcPowerSaver$Feature;-><init>(Lcom/android/server/HtcPowerSaver;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;)V
 
-    .line 1234
+    .line 1209
     iput-object p2, p0, Lcom/android/server/HtcPowerSaver$ReduceCPU;->mContext:Landroid/content/Context;
 
-    .line 1235
+    .line 1210
     const-string v0, "power"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -63,7 +63,7 @@
 
     iput-object v0, p0, Lcom/android/server/HtcPowerSaver$ReduceCPU;->mIPowerManager:Landroid/os/IPowerManager;
 
-    .line 1236
+    .line 1211
     return-void
 .end method
 
@@ -73,17 +73,17 @@
     .locals 4
 
     .prologue
-    .line 1246
-    iget-object v1, p0, Lcom/android/server/HtcPowerSaver$ReduceCPU;->TAG:Ljava/lang/String;
+    .line 1221
+    const-string v1, "HtcPowerSaver"
 
     const-string v2, "applyPowerSaverSettings"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1247
+    .line 1222
     invoke-static {}, Landroid/os/Power;->acquireCpuSingleCore()V
 
-    .line 1249
+    .line 1224
     :try_start_0
     iget-object v1, p0, Lcom/android/server/HtcPowerSaver$ReduceCPU;->mIPowerManager:Landroid/os/IPowerManager;
 
@@ -93,19 +93,19 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1253
+    .line 1228
     :goto_0
     const/4 v1, 0x0
 
     return v1
 
-    .line 1250
+    .line 1225
     :catch_0
     move-exception v0
 
-    .line 1251
+    .line 1226
     .local v0, e:Landroid/os/RemoteException;
-    iget-object v1, p0, Lcom/android/server/HtcPowerSaver$ReduceCPU;->TAG:Ljava/lang/String;
+    const-string v1, "HtcPowerSaver"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -136,17 +136,17 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1258
-    iget-object v1, p0, Lcom/android/server/HtcPowerSaver$ReduceCPU;->TAG:Ljava/lang/String;
+    .line 1233
+    const-string v1, "HtcPowerSaver"
 
     const-string v2, "restorePowerSaverSettings"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1259
+    .line 1234
     invoke-static {}, Landroid/os/Power;->releaseCpuSingleCore()V
 
-    .line 1261
+    .line 1236
     :try_start_0
     iget-object v1, p0, Lcom/android/server/HtcPowerSaver$ReduceCPU;->mIPowerManager:Landroid/os/IPowerManager;
 
@@ -156,17 +156,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1265
+    .line 1240
     :goto_0
     return v4
 
-    .line 1262
+    .line 1237
     :catch_0
     move-exception v0
 
-    .line 1263
+    .line 1238
     .local v0, e:Landroid/os/RemoteException;
-    iget-object v1, p0, Lcom/android/server/HtcPowerSaver$ReduceCPU;->TAG:Ljava/lang/String;
+    const-string v1, "HtcPowerSaver"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -195,14 +195,14 @@
     .locals 2
 
     .prologue
-    .line 1240
-    iget-object v0, p0, Lcom/android/server/HtcPowerSaver$ReduceCPU;->TAG:Ljava/lang/String;
+    .line 1215
+    const-string v0, "HtcPowerSaver"
 
-    const-string v1, "restoreSystemSettings: do nothing"
+    const-string v1, "saveSystemSettings: do nothing"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1241
+    .line 1216
     const/4 v0, 0x0
 
     return v0

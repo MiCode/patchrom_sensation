@@ -99,9 +99,9 @@
 
 .field public static final button:I = 0x7f080073
 
-.field public static final button1:I = 0x7f08008a
+.field public static final button1:I = 0x7f08008b
 
-.field public static final button2:I = 0x7f08008b
+.field public static final button2:I = 0x7f08008a
 
 .field public static final buttonLayout:I = 0x7f0800a3
 
@@ -159,9 +159,9 @@
 
 .field public static final city_id:I = 0x7f0800d8
 
-.field public static final cmd_bar_btn_1:I = 0x7f080078
+.field public static final cmd_bar_btn_1:I = 0x7f080079
 
-.field public static final cmd_bar_btn_2:I = 0x7f080079
+.field public static final cmd_bar_btn_2:I = 0x7f080078
 
 .field public static final con_call_listview:I = 0x7f0800df
 
@@ -703,8 +703,8 @@
     .locals 0
 
     .prologue
-    .line 5281
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 5353
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

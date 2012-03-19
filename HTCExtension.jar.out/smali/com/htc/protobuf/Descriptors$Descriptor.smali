@@ -52,7 +52,7 @@
 
     .prologue
     .line 557
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 558
     iput p4, p0, Lcom/htc/protobuf/Descriptors$Descriptor;->index:I

@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 9620
+    .line 9648
     iput-object p1, p0, Landroid/widget/TextView$MenuHandler;->this$0:Landroid/widget/TextView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,7 +42,7 @@
     .parameter "item"
 
     .prologue
-    .line 9622
+    .line 9650
     iget-object v0, p0, Landroid/widget/TextView$MenuHandler;->this$0:Landroid/widget/TextView;
 
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I

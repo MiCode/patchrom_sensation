@@ -51,7 +51,7 @@
     invoke-super {p0, p1}, Lcom/android/camera/actionscreen/ActionScreen;->onMediaSaveCompleted(Lcom/android/camera/MediaEvent;)V
 
     .line 51
-    iget-object v0, p0, Lcom/android/camera/actionscreen/NoUIRequestActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Media saved"
 
@@ -63,7 +63,7 @@
     if-eqz v0, :cond_0
 
     .line 54
-    iget-object v0, p0, Lcom/android/camera/actionscreen/NoUIRequestActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Media save failed"
 

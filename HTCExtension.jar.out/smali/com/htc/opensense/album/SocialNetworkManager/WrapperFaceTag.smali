@@ -56,7 +56,7 @@
 
     .prologue
     .line 154
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 22
     const/4 v0, 0x0
@@ -76,7 +76,7 @@
 
     .prologue
     .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 22
     const/4 v0, 0x0
@@ -96,7 +96,7 @@
 
     .prologue
     .line 25
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 22
     const/4 v0, 0x0
@@ -220,7 +220,7 @@
     .line 38
     iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/WrapperFaceTag;->mFaceTag:Lcom/htc/opensense/social/data/FaceTag;
 
-    iget-object v0, v1, Lcom/htc/opensense/social/data/FaceTag;->id:Ljava/lang/String;
+    iget-object v0, v1, Lcom/htc/opensense/social/data/Attachment;->id:Ljava/lang/String;
 
     .line 40
     :cond_0

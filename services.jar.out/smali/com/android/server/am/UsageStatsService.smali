@@ -181,14 +181,14 @@
     .line 247
     new-instance v4, Ljava/lang/Object;
 
-    invoke-direct {v4}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v4 .. v4}, Ljava/lang/Object;-><init>()V
 
     iput-object v4, p0, Lcom/android/server/am/UsageStatsService;->mStatsLock:Ljava/lang/Object;
 
     .line 248
     new-instance v4, Ljava/lang/Object;
 
-    invoke-direct {v4}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v4 .. v4}, Ljava/lang/Object;-><init>()V
 
     iput-object v4, p0, Lcom/android/server/am/UsageStatsService;->mFileLock:Ljava/lang/Object;
 

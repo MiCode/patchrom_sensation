@@ -493,65 +493,12 @@
 .end method
 
 .method private setManualIdPwd(Ljava/lang/String;I)V
-    .locals 9
+    .locals 8
     .parameter "value"
     .parameter "type"
 
     .prologue
-    const/16 v8, 0x10
-
-    .line 434
-    const-string v5, "HtcAdvancedSettings"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "OoO ready to Save UserName & Pwd ("
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, ","
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, "("
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, ")"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    const/16 v7, 0x10
 
     .line 437
     const/4 v3, 0x0
@@ -597,7 +544,7 @@
 
     .line 456
     .local v4, stringLength:Ljava/lang/String;
-    if-ge v2, v8, :cond_2
+    if-ge v2, v7, :cond_2
 
     .line 457
     new-instance v5, Ljava/lang/StringBuilder;
@@ -610,7 +557,7 @@
 
     move-result-object v5
 
-    invoke-static {v2, v8}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+    invoke-static {v2, v7}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
 
     move-result-object v6
 
@@ -687,7 +634,7 @@
     .line 459
     .restart local v4       #stringLength:Ljava/lang/String;
     :cond_2
-    invoke-static {v2, v8}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+    invoke-static {v2, v7}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
 
     move-result-object v4
 

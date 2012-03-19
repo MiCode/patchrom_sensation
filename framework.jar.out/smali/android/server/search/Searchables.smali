@@ -112,7 +112,7 @@
     const/4 v0, 0x0
 
     .line 72
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
     iput-object v0, p0, Landroid/server/search/Searchables;->mSearchablesMap:Ljava/util/HashMap;
@@ -332,9 +332,9 @@
     .local v1, ai:Landroid/content/pm/ActivityInfo;
     new-instance v4, Landroid/content/ComponentName;
 
-    iget-object v5, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v5, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iget-object v6, v1, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v6, v1, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v4, v5, v6}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -392,9 +392,9 @@
     .local v0, ai:Landroid/content/pm/ActivityInfo;
     new-instance v1, Landroid/content/ComponentName;
 
-    iget-object v2, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v2, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iget-object v3, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v3, v0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v1, v2, v3}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -499,7 +499,7 @@
     .line 344
     iget-object v0, p0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -649,11 +649,11 @@
     .local v2, ai:Landroid/content/pm/ActivityInfo;
     new-instance v20, Landroid/content/ComponentName;
 
-    iget-object v0, v2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v2, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v21, v0
 
-    iget-object v0, v2, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v0, v2, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v22, v0
 
@@ -963,7 +963,7 @@
 
     .line 123
     .local v4, refActivityName:Ljava/lang/String;
-    iget-object v2, v1, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
+    iget-object v2, v1, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
     .line 124
     .local v2, md:Landroid/os/Bundle;
@@ -981,9 +981,9 @@
     if-nez v4, :cond_2
 
     .line 129
-    iget-object v7, v1, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v7, v1, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v2, v7, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
+    iget-object v2, v7, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
     .line 130
     if-eqz v2, :cond_2

@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/htc/widget/DeckControl$4;->val$anlistener:Lcom/htc/sunny/SAnimationController$AnimationListener;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

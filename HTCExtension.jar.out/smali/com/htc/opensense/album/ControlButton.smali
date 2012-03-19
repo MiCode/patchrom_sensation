@@ -40,7 +40,7 @@
 
     .prologue
     .line 35
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
     const/4 v2, 0x0
@@ -123,7 +123,7 @@
     if-eqz v0, :cond_2
 
     .line 61
-    invoke-virtual {v0, p4}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v0, p4}, Landroid/widget/ImageButton;->setImageResource(I)V
 
     .line 62
     :cond_2
@@ -168,7 +168,7 @@
     const/4 v4, 0x0
 
     .line 95
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
     const/4 v2, 0x0
@@ -251,7 +251,7 @@
     if-eqz v0, :cond_2
 
     .line 120
-    invoke-virtual {v0, p4}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v0, p4}, Landroid/widget/ImageButton;->setImageResource(I)V
 
     .line 121
     :cond_2
@@ -327,7 +327,7 @@
 
     .prologue
     .line 84
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
     const/4 v1, 0x0
@@ -628,7 +628,7 @@
     .line 163
     iget v2, p0, Lcom/htc/opensense/album/ControlButton;->mSelector:I
 
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageButton;->setImageResource(I)V
 
     .line 164
     :cond_2

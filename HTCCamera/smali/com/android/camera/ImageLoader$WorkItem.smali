@@ -43,7 +43,7 @@
     .line 148
     iput-object p1, p0, Lcom/android/camera/ImageLoader$WorkItem;->this$0:Lcom/android/camera/ImageLoader;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 149
     iput-object p2, p0, Lcom/android/camera/ImageLoader$WorkItem;->mImage:Lcom/android/camera/ImageManager$IImage;

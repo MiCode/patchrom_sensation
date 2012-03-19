@@ -93,7 +93,7 @@
     const/high16 v0, 0x3f80
 
     .line 51
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 38
     iput v1, p0, Lcom/android/internal/widget/DrawableHolder;->mX:F

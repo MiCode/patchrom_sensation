@@ -42,7 +42,7 @@
     .prologue
     .line 37
     .local p0, this:Lcom/htc/opensense/social/DataOp;,"Lcom/htc/opensense/social/DataOp<TT;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 38
     iput-object p1, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;

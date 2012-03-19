@@ -70,7 +70,7 @@
 
     .prologue
     .line 75
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 76
     iput-object p1, p0, Landroid/os/storage/StorageVolume;->mPath:Ljava/lang/String;
@@ -135,7 +135,7 @@
 
     .prologue
     .line 47
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 48
     iput-object p1, p0, Landroid/os/storage/StorageVolume;->mPath:Ljava/lang/String;
@@ -180,7 +180,7 @@
 
     .prologue
     .line 61
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 62
     iput-object p1, p0, Landroid/os/storage/StorageVolume;->mPath:Ljava/lang/String;

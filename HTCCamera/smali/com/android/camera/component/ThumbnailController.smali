@@ -186,7 +186,7 @@
 
     .prologue
     .line 31
-    iget-object v0, p0, Lcom/android/camera/component/ThumbnailController;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -254,7 +254,7 @@
 
     .prologue
     .line 31
-    iget-object v0, p0, Lcom/android/camera/component/ThumbnailController;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -265,7 +265,7 @@
 
     .prologue
     .line 31
-    iget-object v0, p0, Lcom/android/camera/component/ThumbnailController;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -313,7 +313,7 @@
     .line 159
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/camera/component/ThumbnailController;->TAG:Ljava/lang/String;
+    iget-object v4, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -357,7 +357,7 @@
     .line 165
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/camera/component/ThumbnailController;->TAG:Ljava/lang/String;
+    iget-object v4, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "No ThumbnailUI compoment is linked, cannot create thumbnail image"
 
@@ -382,7 +382,7 @@
     .line 172
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/camera/component/ThumbnailController;->TAG:Ljava/lang/String;
+    iget-object v4, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "Cancel creating thumbnail image because UI is paused"
 
@@ -750,7 +750,7 @@
     :try_start_4
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/camera/component/ThumbnailController;->TAG:Ljava/lang/String;
+    iget-object v4, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -849,7 +849,7 @@
     :cond_7
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/camera/component/ThumbnailController;->TAG:Ljava/lang/String;
+    iget-object v4, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "createThumbnailImage() - end"
 
@@ -982,7 +982,7 @@
     :try_start_5
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/camera/component/ThumbnailController;->TAG:Ljava/lang/String;
+    iget-object v4, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "Exception occurred while querying image file"
 
@@ -1005,7 +1005,7 @@
     .local v20, ex:Ljava/lang/Exception;
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/camera/component/ThumbnailController;->TAG:Ljava/lang/String;
+    iget-object v4, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "Exception occurred while querying image file"
 
@@ -1047,7 +1047,7 @@
     :try_start_6
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/camera/component/ThumbnailController;->TAG:Ljava/lang/String;
+    iget-object v4, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "Exception occurred while querying video file"
 
@@ -1070,7 +1070,7 @@
     .local v20, ex:Ljava/lang/Exception;
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/camera/component/ThumbnailController;->TAG:Ljava/lang/String;
+    iget-object v4, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "Exception occurred while querying video file"
 
@@ -1229,7 +1229,7 @@
     .restart local v20       #ex:Ljava/lang/Exception;
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/camera/component/ThumbnailController;->TAG:Ljava/lang/String;
+    iget-object v4, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "Exception occurred while creating thumbnail image"
 

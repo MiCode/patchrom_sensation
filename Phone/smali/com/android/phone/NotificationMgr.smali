@@ -151,23 +151,12 @@
     const/4 v2, 0x0
 
     .line 105
-    const-string v0, "ro.debuggable"
-
-    invoke-static {v0, v2}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v0
-
-    if-ne v0, v1, :cond_0
-
-    move v0, v1
-
-    :goto_0
-    sput-boolean v0, Lcom/android/phone/NotificationMgr;->DBG:Z
+    sput-boolean v2, Lcom/android/phone/NotificationMgr;->DBG:Z
 
     .line 108
     sget-boolean v0, Lcom/htc/util/phone/CityIdInfo;->ENABLED:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     const/16 v0, 0x9
 
@@ -213,7 +202,7 @@
 
     const/16 v3, 0x8
 
-    :goto_1
+    :goto_0
     sput-object v0, Lcom/android/phone/NotificationMgr;->CALL_LOG_PROJECTION:[Ljava/lang/String;
 
     .line 142
@@ -221,53 +210,53 @@
 
     const/16 v3, 0x18
 
-    if-eq v0, v3, :cond_2
+    if-eq v0, v3, :cond_1
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v3, 0x19
 
-    if-eq v0, v3, :cond_2
+    if-eq v0, v3, :cond_1
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v3, 0x1a
 
-    if-eq v0, v3, :cond_2
+    if-eq v0, v3, :cond_1
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v3, 0x39
 
-    if-eq v0, v3, :cond_2
+    if-eq v0, v3, :cond_1
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v3, 0x3a
 
-    if-eq v0, v3, :cond_2
+    if-eq v0, v3, :cond_1
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v3, 0x3b
 
-    if-eq v0, v3, :cond_2
+    if-eq v0, v3, :cond_1
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v3, 0x60
 
-    if-eq v0, v3, :cond_2
+    if-eq v0, v3, :cond_1
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v3, 0x90
 
-    if-eq v0, v3, :cond_2
+    if-eq v0, v3, :cond_1
 
     move v0, v1
 
-    :goto_2
+    :goto_1
     sput-boolean v0, Lcom/android/phone/NotificationMgr;->SUPPORT_NOTIFICATION_END_CALL:Z
 
     .line 151
@@ -285,17 +274,17 @@
 
     const/16 v3, 0x30
 
-    if-ne v0, v3, :cond_3
+    if-ne v0, v3, :cond_2
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v3, 0x9b
 
-    if-ne v0, v3, :cond_3
+    if-ne v0, v3, :cond_2
 
     move v0, v1
 
-    :goto_3
+    :goto_2
     sput-boolean v0, Lcom/android/phone/NotificationMgr;->SUPPORT_INCALL_LEFT_STATUS:Z
 
     .line 199
@@ -307,11 +296,11 @@
 
     cmpl-float v0, v0, v3
 
-    if-ltz v0, :cond_4
+    if-ltz v0, :cond_3
 
     move v0, v1
 
-    :goto_4
+    :goto_3
     sput-boolean v0, Lcom/android/phone/NotificationMgr;->SUPPORT_INCALL_TOP_EVENT:Z
 
     .line 226
@@ -319,11 +308,11 @@
 
     const/16 v3, 0xab
 
-    if-ne v0, v3, :cond_5
+    if-ne v0, v3, :cond_4
 
     move v0, v1
 
-    :goto_5
+    :goto_4
     sput-boolean v0, Lcom/android/phone/NotificationMgr;->SUPPORT_MWI_VIBRATION:Z
 
     .line 372
@@ -341,14 +330,8 @@
 
     return-void
 
-    :cond_0
-    move v0, v2
-
-    .line 105
-    goto/16 :goto_0
-
     .line 108
-    :cond_1
+    :cond_0
     const/16 v0, 0x8
 
     new-array v0, v0, [Ljava/lang/String;
@@ -391,31 +374,31 @@
 
     aput-object v4, v0, v3
 
-    goto/16 :goto_1
+    goto/16 :goto_0
+
+    :cond_1
+    move v0, v2
+
+    .line 142
+    goto :goto_1
 
     :cond_2
     move v0, v2
 
-    .line 142
+    .line 194
     goto :goto_2
 
     :cond_3
     move v0, v2
 
-    .line 194
+    .line 199
     goto :goto_3
 
     :cond_4
     move v0, v2
 
-    .line 199
-    goto :goto_4
-
-    :cond_5
-    move v0, v2
-
     .line 226
-    goto :goto_5
+    goto :goto_4
 .end method
 
 .method constructor <init>(Landroid/content/Context;)V
@@ -428,7 +411,7 @@
     const/4 v1, 0x0
 
     .line 230
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 168
     iput v1, p0, Lcom/android/phone/NotificationMgr;->mNumberMissedCalls:I
@@ -1488,8 +1471,8 @@
     .line 2160
     packed-switch p1, :pswitch_data_0
 
-    .line 2171
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    .line 2173
+    const-string v0, "NotificationMgr"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1509,9 +1492,19 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    throw v0
+    .line 2175
+    iget-object v0, p0, Lcom/android/phone/NotificationMgr;->mStatusBarManager:Landroid/app/StatusBarManager;
+
+    const/16 v1, 0x10
+
+    invoke-virtual {v0, v1}, Landroid/app/StatusBarManager;->glow(I)V
+
+    .line 2179
+    :cond_0
+    :goto_0
+    return-void
 
     .line 2164
     :pswitch_0
@@ -1524,11 +1517,11 @@
 
     invoke-virtual {v0, p1}, Landroid/app/StatusBarManager;->glow(I)V
 
-    .line 2179
-    :cond_0
-    return-void
+    goto :goto_0
 
     .line 2160
+    nop
+
     :pswitch_data_0
     .packed-switch 0x10
         :pswitch_0

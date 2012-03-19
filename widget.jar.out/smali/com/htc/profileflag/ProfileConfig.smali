@@ -211,11 +211,9 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 7
 
     .prologue
-    const/4 v7, -0x1
-
     const/4 v5, 0x1
 
     const/4 v4, 0x0
@@ -284,21 +282,16 @@
     .line 164
     const-string v3, "profiler.performance"
 
-    invoke-static {v3, v7}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result v3
 
-    if-nez v3, :cond_7
-
-    move v3, v4
-
-    :goto_3
     sput v3, Lcom/htc/profileflag/ProfileConfig;->profile_performance:I
 
     .line 168
     const-string v3, "profiler.opencursor"
 
-    invoke-static {v3, v5}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
@@ -307,7 +300,7 @@
     .line 169
     const-string v3, "profiler.checkheap"
 
-    invoke-static {v3, v5}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
@@ -339,19 +332,19 @@
 
     const/16 v6, 0x7e
 
-    if-ne v3, v6, :cond_8
+    if-ne v3, v6, :cond_7
 
     :cond_0
     move v0, v5
 
     .line 174
     .local v0, disablefreeNativeBmpDevice:Z
-    :goto_4
-    if-eqz v0, :cond_9
+    :goto_3
+    if-eqz v0, :cond_8
 
     move v3, v4
 
-    :goto_5
+    :goto_4
     sput v3, Lcom/htc/profileflag/ProfileConfig;->profile_freeNativeBmp:I
 
     .line 176
@@ -377,7 +370,7 @@
     .line 178
     const-string v3, "profiler.checklowmemory"
 
-    invoke-static {v3, v5}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
@@ -395,7 +388,7 @@
     .line 180
     const-string v3, "profiler.KIQdebugupdown"
 
-    invoke-static {v3, v5}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
@@ -404,19 +397,21 @@
     .line 181
     const-string v3, "profiler.WMSdebugupdown"
 
-    invoke-static {v3, v5}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
     sput-boolean v3, Lcom/htc/profileflag/ProfileConfig;->profile_windowManagerService_debugUpDown:Z
 
     .line 182
-    sput v7, Lcom/htc/profileflag/ProfileConfig;->profile_launch_pid:I
+    const/4 v3, -0x1
+
+    sput v3, Lcom/htc/profileflag/ProfileConfig;->profile_launch_pid:I
 
     .line 183
     const-string v3, "debugtool.anrhistory"
 
-    invoke-static {v3, v5}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
@@ -434,7 +429,7 @@
     .line 185
     const-string v3, "profiler.hung.dumpallprocesses"
 
-    invoke-static {v3, v5}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
@@ -443,7 +438,7 @@
     .line 186
     const-string v3, "profiler.hung.dumpsysnative"
 
-    invoke-static {v3, v5}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
@@ -452,7 +447,7 @@
     .line 187
     const-string v3, "profiler.hung.dumpmedianative"
 
-    invoke-static {v3, v5}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
@@ -470,7 +465,7 @@
     .line 189
     const-string v3, "profiler.monitorthreadcpuusage"
 
-    invoke-static {v3, v5}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
@@ -501,19 +496,15 @@
 
     move-result v3
 
-    if-nez v3, :cond_1
+    if-nez v3, :cond_9
 
-    :cond_1
-    sput-boolean v5, Lcom/htc/profileflag/ProfileConfig;->profile_anr_dump_binder:Z
+    move v3, v4
+
+    :goto_5
+    sput-boolean v3, Lcom/htc/profileflag/ProfileConfig;->profile_anr_dump_binder:Z
 
     .line 193
-    const-string v3, "profiler.anr_dump_native_uid"
-
-    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v3
-
-    sput v3, Lcom/htc/profileflag/ProfileConfig;->profile_anr_dump_native_uid:I
+    sput v4, Lcom/htc/profileflag/ProfileConfig;->profile_anr_dump_native_uid:I
 
     .line 194
     const-string v3, "strictmode.policyset"
@@ -531,12 +522,10 @@
 
     move-result v3
 
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_1
 
-    move v3, v5
-
-    :goto_6
-    sput-boolean v3, Lcom/htc/profileflag/ProfileConfig;->profile_no_RotationAnimation:Z
+    :cond_1
+    sput-boolean v4, Lcom/htc/profileflag/ProfileConfig;->profile_no_RotationAnimation:Z
 
     .line 196
     const-string v3, "profiler.logfps"
@@ -595,19 +584,9 @@
     .line 216
     const-string v3, ""
 
-    sget-object v6, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_short_press_pkg:Ljava/lang/String;
+    sget-object v5, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_short_press_pkg:Ljava/lang/String;
 
-    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    const-string v3, ""
-
-    sget-object v6, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_short_press_act:Ljava/lang/String;
-
-    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -615,9 +594,19 @@
 
     const-string v3, ""
 
-    sget-object v6, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_short_press_intent_action:Ljava/lang/String;
+    sget-object v5, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_short_press_act:Ljava/lang/String;
 
-    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    const-string v3, ""
+
+    sget-object v5, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_short_press_intent_action:Ljava/lang/String;
+
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -641,51 +630,51 @@
     .line 222
     const-string v3, "ProfileConfig"
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "share key short press:get default intent - package:"
+    const-string v6, "share key short press:get default intent - package:"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    sget-object v7, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_short_press_pkg:Ljava/lang/String;
+    sget-object v6, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_short_press_pkg:Ljava/lang/String;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    const-string v7, ", activity:"
+    const-string v6, ", activity:"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    sget-object v7, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_short_press_act:Ljava/lang/String;
+    sget-object v6, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_short_press_act:Ljava/lang/String;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    const-string v7, ", action:"
+    const-string v6, ", action:"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    sget-object v7, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_short_press_intent_action:Ljava/lang/String;
+    sget-object v6, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_short_press_intent_action:Ljava/lang/String;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-static {v3, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 227
     :cond_2
@@ -718,19 +707,9 @@
     .line 232
     const-string v3, ""
 
-    sget-object v6, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_long_press_pkg:Ljava/lang/String;
+    sget-object v5, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_long_press_pkg:Ljava/lang/String;
 
-    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    const-string v3, ""
-
-    sget-object v6, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_long_press_act:Ljava/lang/String;
-
-    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -738,9 +717,19 @@
 
     const-string v3, ""
 
-    sget-object v6, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_long_press_intent_action:Ljava/lang/String;
+    sget-object v5, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_long_press_act:Ljava/lang/String;
 
-    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    const-string v3, ""
+
+    sget-object v5, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_long_press_intent_action:Ljava/lang/String;
+
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -764,51 +753,51 @@
     .line 238
     const-string v3, "ProfileConfig"
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "share key long press:get default intent - package:"
+    const-string v6, "share key long press:get default intent - package:"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    sget-object v7, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_long_press_pkg:Ljava/lang/String;
+    sget-object v6, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_long_press_pkg:Ljava/lang/String;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    const-string v7, ", activity"
+    const-string v6, ", activity"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    sget-object v7, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_long_press_act:Ljava/lang/String;
+    sget-object v6, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_long_press_act:Ljava/lang/String;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    const-string v7, ", action:"
+    const-string v6, ", action:"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    sget-object v7, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_long_press_intent_action:Ljava/lang/String;
+    sget-object v6, Lcom/htc/profileflag/ProfileConfig;->profile_framework_sharekey_long_press_intent_action:Ljava/lang/String;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-static {v3, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 243
     :cond_3
@@ -832,7 +821,7 @@
     .line 245
     const-string v3, "profiler.debug.timetick"
 
-    invoke-static {v3, v5}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
@@ -864,7 +853,7 @@
     .line 252
     const-string v3, "profiler.power"
 
-    invoke-static {v3, v5}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
@@ -873,7 +862,7 @@
     .line 253
     const-string v3, "profiler.dbg.batthistory"
 
-    invoke-static {v3, v5}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
@@ -913,42 +902,28 @@
 
     goto/16 :goto_2
 
-    .line 164
     :cond_7
-    const-string v3, "profiler.performance"
-
-    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v3
-
-    invoke-static {v3, v5}, Ljava/lang/Math;->max(II)I
-
-    move-result v3
-
-    goto/16 :goto_3
-
-    :cond_8
     move v0, v4
 
     .line 171
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     .line 174
     .restart local v0       #disablefreeNativeBmpDevice:Z
-    :cond_9
+    :cond_8
     const-string v3, "profiler.freeNativeBmp"
 
     invoke-static {v3, v5}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result v3
 
+    goto/16 :goto_4
+
+    :cond_9
+    move v3, v5
+
+    .line 192
     goto/16 :goto_5
-
-    :cond_a
-    move v3, v4
-
-    .line 195
-    goto/16 :goto_6
 .end method
 
 .method public constructor <init>()V
@@ -2611,356 +2586,14 @@
 .end method
 
 .method private static runRootCommand(Ljava/lang/String;)Z
-    .locals 10
+    .locals 1
     .parameter "command"
 
     .prologue
-    const/4 v6, 0x0
+    .line 640
+    const/4 v0, 0x0
 
-    .line 642
-    const-string v7, "ProfileConfig"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "runRootCommand: "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 643
-    const/4 v4, 0x0
-
-    .line 644
-    .local v4, process:Ljava/lang/Process;
-    const/4 v2, 0x0
-
-    .line 646
-    .local v2, output:Ljava/io/DataOutputStream;
-    :try_start_0
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
-
-    move-result-object v7
-
-    const-string v8, "su"
-
-    invoke-virtual {v7, v8}, Ljava/lang/Runtime;->exec(Ljava/lang/String;)Ljava/lang/Process;
-
-    move-result-object v4
-
-    .line 647
-    new-instance v3, Ljava/io/DataOutputStream;
-
-    invoke-virtual {v4}, Ljava/lang/Process;->getOutputStream()Ljava/io/OutputStream;
-
-    move-result-object v7
-
-    invoke-direct {v3, v7}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_6
-
-    .line 648
-    .end local v2           #output:Ljava/io/DataOutputStream;
-    .local v3, output:Ljava/io/DataOutputStream;
-    :try_start_1
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v7, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, "\n"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v3, v7}, Ljava/io/DataOutputStream;->writeBytes(Ljava/lang/String;)V
-
-    .line 649
-    const-string v7, "exit\n"
-
-    invoke-virtual {v3, v7}, Ljava/io/DataOutputStream;->writeBytes(Ljava/lang/String;)V
-
-    .line 650
-    invoke-virtual {v3}, Ljava/io/DataOutputStream;->flush()V
-
-    .line 653
-    new-instance v5, Ljava/io/BufferedReader;
-
-    new-instance v7, Ljava/io/InputStreamReader;
-
-    invoke-virtual {v4}, Ljava/lang/Process;->getInputStream()Ljava/io/InputStream;
-
-    move-result-object v8
-
-    invoke-direct {v7, v8}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
-
-    invoke-direct {v5, v7}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_2
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 656
-    .local v5, reader:Ljava/io/BufferedReader;
-    :goto_0
-    :try_start_2
-    invoke-virtual {v5}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
-
-    move-result-object v1
-
-    .local v1, line:Ljava/lang/String;
-    if-eqz v1, :cond_2
-
-    .line 657
-    const-string v7, "ProfileConfig"
-
-    invoke-static {v7, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
-
-    goto :goto_0
-
-    .line 659
-    .end local v1           #line:Ljava/lang/String;
-    :catch_0
-    move-exception v0
-
-    .line 663
-    .local v0, e:Ljava/lang/Exception;
-    :try_start_3
-    invoke-virtual {v5}, Ljava/io/BufferedReader;->close()V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_2
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
-
-    .line 672
-    if-eqz v3, :cond_0
-
-    .line 673
-    :try_start_4
-    invoke-virtual {v3}, Ljava/io/DataOutputStream;->close()V
-
-    .line 675
-    :cond_0
-    invoke-virtual {v4}, Ljava/lang/Process;->destroy()V
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_4
-
-    :goto_1
-    move-object v2, v3
-
-    .line 679
-    .end local v0           #e:Ljava/lang/Exception;
-    .end local v3           #output:Ljava/io/DataOutputStream;
-    .end local v5           #reader:Ljava/io/BufferedReader;
-    .restart local v2       #output:Ljava/io/DataOutputStream;
-    :goto_2
-    return v6
-
-    .line 663
-    .end local v2           #output:Ljava/io/DataOutputStream;
-    .restart local v3       #output:Ljava/io/DataOutputStream;
-    .restart local v5       #reader:Ljava/io/BufferedReader;
-    :catchall_0
-    move-exception v7
-
-    :try_start_5
-    invoke-virtual {v5}, Ljava/io/BufferedReader;->close()V
-
-    throw v7
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_2
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_1
-
-    .line 667
-    .end local v5           #reader:Ljava/io/BufferedReader;
-    :catch_1
-    move-exception v0
-
-    move-object v2, v3
-
-    .line 668
-    .end local v3           #output:Ljava/io/DataOutputStream;
-    .restart local v0       #e:Ljava/lang/Exception;
-    .restart local v2       #output:Ljava/io/DataOutputStream;
-    :goto_3
-    :try_start_6
-    const-string v7, "ProfileConfig"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "Unexpected error: "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
-
-    .line 672
-    if-eqz v2, :cond_1
-
-    .line 673
-    :try_start_7
-    invoke-virtual {v2}, Ljava/io/DataOutputStream;->close()V
-
-    .line 675
-    :cond_1
-    invoke-virtual {v4}, Ljava/lang/Process;->destroy()V
-    :try_end_7
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_2
-
-    goto :goto_2
-
-    .line 676
-    :catch_2
-    move-exception v7
-
-    goto :goto_2
-
-    .line 663
-    .end local v0           #e:Ljava/lang/Exception;
-    .end local v2           #output:Ljava/io/DataOutputStream;
-    .restart local v1       #line:Ljava/lang/String;
-    .restart local v3       #output:Ljava/io/DataOutputStream;
-    .restart local v5       #reader:Ljava/io/BufferedReader;
-    :cond_2
-    :try_start_8
-    invoke-virtual {v5}, Ljava/io/BufferedReader;->close()V
-
-    .line 666
-    invoke-virtual {v4}, Ljava/lang/Process;->waitFor()I
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_2
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_1
-
-    .line 672
-    if-eqz v3, :cond_3
-
-    .line 673
-    :try_start_9
-    invoke-virtual {v3}, Ljava/io/DataOutputStream;->close()V
-
-    .line 675
-    :cond_3
-    invoke-virtual {v4}, Ljava/lang/Process;->destroy()V
-    :try_end_9
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_3
-
-    .line 679
-    :goto_4
-    const/4 v6, 0x1
-
-    move-object v2, v3
-
-    .end local v3           #output:Ljava/io/DataOutputStream;
-    .restart local v2       #output:Ljava/io/DataOutputStream;
-    goto :goto_2
-
-    .line 671
-    .end local v1           #line:Ljava/lang/String;
-    .end local v5           #reader:Ljava/io/BufferedReader;
-    :catchall_1
-    move-exception v6
-
-    .line 672
-    :goto_5
-    if-eqz v2, :cond_4
-
-    .line 673
-    :try_start_a
-    invoke-virtual {v2}, Ljava/io/DataOutputStream;->close()V
-
-    .line 675
-    :cond_4
-    invoke-virtual {v4}, Ljava/lang/Process;->destroy()V
-    :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_5
-
-    .line 671
-    :goto_6
-    throw v6
-
-    .line 676
-    .end local v2           #output:Ljava/io/DataOutputStream;
-    .restart local v1       #line:Ljava/lang/String;
-    .restart local v3       #output:Ljava/io/DataOutputStream;
-    .restart local v5       #reader:Ljava/io/BufferedReader;
-    :catch_3
-    move-exception v6
-
-    goto :goto_4
-
-    .end local v1           #line:Ljava/lang/String;
-    .restart local v0       #e:Ljava/lang/Exception;
-    :catch_4
-    move-exception v7
-
-    goto :goto_1
-
-    .end local v0           #e:Ljava/lang/Exception;
-    .end local v3           #output:Ljava/io/DataOutputStream;
-    .end local v5           #reader:Ljava/io/BufferedReader;
-    .restart local v2       #output:Ljava/io/DataOutputStream;
-    :catch_5
-    move-exception v7
-
-    goto :goto_6
-
-    .line 671
-    .end local v2           #output:Ljava/io/DataOutputStream;
-    .restart local v3       #output:Ljava/io/DataOutputStream;
-    :catchall_2
-    move-exception v6
-
-    move-object v2, v3
-
-    .end local v3           #output:Ljava/io/DataOutputStream;
-    .restart local v2       #output:Ljava/io/DataOutputStream;
-    goto :goto_5
-
-    .line 667
-    :catch_6
-    move-exception v0
-
-    goto :goto_3
+    return v0
 .end method
 
 .method public static setCheckHeap(Z)V

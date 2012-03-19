@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final DIALOG_SIGNAL_FADE_ERROR:I = 0x1
 
@@ -113,34 +113,9 @@
     .line 70
     invoke-virtual {p0, v2}, Lcom/android/phone/HtcCdmaSignalFadeScreen;->showDialog(I)V
 
-    .line 74
-    :goto_0
-    const-string v0, "HtcCdmaSignalFadeScreen"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Update signal fade screen "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/phone/HtcCdmaSignalFadeScreen;->mSignalFadeErrorId:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 76
     :cond_0
+    :goto_0
     return-void
 
     .line 72
@@ -163,13 +138,6 @@
     .prologue
     .line 48
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
-
-    .line 50
-    const-string v1, "HtcCdmaSignalFadeScreen"
-
-    const-string v2, "Created"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 52
     iget-object v1, p0, Lcom/android/phone/HtcCdmaSignalFadeScreen;->mHandler:Landroid/os/Handler;
@@ -255,16 +223,9 @@
 .end method
 
 .method protected onDestroy()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 80
-    const-string v0, "HtcCdmaSignalFadeScreen"
-
-    const-string v1, "Closed"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 81
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
@@ -277,13 +238,6 @@
     .parameter "intent"
 
     .prologue
-    .line 58
-    const-string v1, "HtcCdmaSignalFadeScreen"
-
-    const-string v2, "onNewIntent"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 60
     iget-object v1, p0, Lcom/android/phone/HtcCdmaSignalFadeScreen;->mHandler:Landroid/os/Handler;
 

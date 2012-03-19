@@ -53,7 +53,7 @@
     const/4 v0, 0x0
 
     .line 18
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 12
     iput-boolean v0, p0, Lcom/htc/clientprofileservice/MyPhonebook;->nabProvisioningStatus:Z
@@ -80,7 +80,7 @@
     const/4 v0, 0x0
 
     .line 28
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 12
     iput-boolean v0, p0, Lcom/htc/clientprofileservice/MyPhonebook;->nabProvisioningStatus:Z
@@ -103,7 +103,7 @@
     const/4 v0, 0x0
 
     .line 22
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 12
     iput-boolean v0, p0, Lcom/htc/clientprofileservice/MyPhonebook;->nabProvisioningStatus:Z

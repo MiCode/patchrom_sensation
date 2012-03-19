@@ -71,7 +71,7 @@
     .local p0, this:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;,"Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork<TV;>.ServiceInfo;"
     iput-object p1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->this$0:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 44
     const-string v0, ""

@@ -30,7 +30,7 @@
     .line 226
     iput-object p1, p0, Lcom/android/camera/component/PanoramaController$3;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,7 +46,7 @@
     .line 486
     iget-object v0, p0, Lcom/android/camera/component/PanoramaController$3;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/PanoramaController;->access$3800(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .line 465
     iget-object v0, p0, Lcom/android/camera/component/PanoramaController$3;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/PanoramaController;->access$3600(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v0
@@ -177,7 +177,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/camera/component/PanoramaController$3;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/PanoramaController;->access$3700(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v0
@@ -201,7 +201,7 @@
     .line 443
     iget-object v0, p0, Lcom/android/camera/component/PanoramaController$3;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/PanoramaController;->access$3400(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v0
@@ -268,7 +268,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/camera/component/PanoramaController$3;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/PanoramaController;->access$3500(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v0
@@ -291,7 +291,7 @@
 
     iget-object v3, v0, Lcom/android/camera/component/PanoramaController$3;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v3}, Lcom/android/camera/component/PanoramaController;->access$2500(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v3
@@ -530,7 +530,7 @@
 
     iget-object v3, v0, Lcom/android/camera/component/PanoramaController$3;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v3}, Lcom/android/camera/component/PanoramaController;->access$2700(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v3
@@ -879,7 +879,7 @@
 
     iget-object v3, v0, Lcom/android/camera/component/PanoramaController$3;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v3}, Lcom/android/camera/component/PanoramaController;->access$2900(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v3
@@ -899,7 +899,7 @@
 
     iget-object v3, v0, Lcom/android/camera/component/PanoramaController$3;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v3}, Lcom/android/camera/component/PanoramaController;->access$3000(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v3
@@ -954,7 +954,7 @@
     .line 321
     iget-object v0, p0, Lcom/android/camera/component/PanoramaController$3;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/PanoramaController;->access$2200(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v0
@@ -1018,7 +1018,7 @@
     .line 303
     iget-object v0, p0, Lcom/android/camera/component/PanoramaController$3;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/PanoramaController;->access$2000(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v0
@@ -1118,7 +1118,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/camera/component/PanoramaController$3;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/PanoramaController;->access$2100(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v0
@@ -1140,7 +1140,7 @@
     .line 229
     iget-object v1, p0, Lcom/android/camera/component/PanoramaController$3;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/PanoramaController;->access$1000(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v1
@@ -1598,7 +1598,7 @@
     .line 290
     iget-object v1, p0, Lcom/android/camera/component/PanoramaController$3;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/PanoramaController;->access$1900(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v1

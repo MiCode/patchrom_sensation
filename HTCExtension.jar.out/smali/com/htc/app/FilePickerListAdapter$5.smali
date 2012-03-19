@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 890
+    .line 891
     iput-object p1, p0, Lcom/htc/app/FilePickerListAdapter$5;->this$0:Lcom/htc/app/FilePickerListAdapter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 892
+    .line 893
     iget-object v0, p0, Lcom/htc/app/FilePickerListAdapter$5;->this$0:Lcom/htc/app/FilePickerListAdapter;
 
     iget-object v1, p0, Lcom/htc/app/FilePickerListAdapter$5;->this$0:Lcom/htc/app/FilePickerListAdapter;
@@ -54,6 +54,6 @@
     #calls: Lcom/htc/app/FilePickerListAdapter;->updateHeaderViewText(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/htc/app/FilePickerListAdapter;->access$900(Lcom/htc/app/FilePickerListAdapter;Ljava/lang/String;)V
 
-    .line 893
+    .line 894
     return-void
 .end method

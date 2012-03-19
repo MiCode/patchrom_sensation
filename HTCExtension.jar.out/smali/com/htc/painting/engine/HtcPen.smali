@@ -59,7 +59,7 @@
 
     .prologue
     .line 94
-    iget-object v0, p0, Lcom/htc/painting/engine/HtcPen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v0, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v1, "_opacity_minimum"
 
@@ -75,7 +75,7 @@
 
     .prologue
     .line 82
-    iget-object v0, p0, Lcom/htc/painting/engine/HtcPen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v0, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v1, "_brush_angle_jitter"
 
@@ -102,7 +102,7 @@
     if-eqz v4, :cond_0
 
     .line 60
-    iget-object v4, p0, Lcom/htc/painting/engine/HtcPen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v4, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v5, "_app_packagename"
 
@@ -112,7 +112,7 @@
 
     .line 62
     .local v1, packageName:Ljava/lang/String;
-    iget-object v4, p0, Lcom/htc/painting/engine/HtcPen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v4, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v5, "_brush_pattern_resource_id"
 
@@ -127,7 +127,7 @@
     .line 65
     .local v0, packageContext:Landroid/content/Context;
     :try_start_0
-    iget-object v4, p0, Lcom/htc/painting/engine/HtcPen;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/htc/painting/tool/pen/Pen;->mContext:Landroid/content/Context;
 
     const/4 v5, 0x0
 
@@ -197,7 +197,7 @@
 
     .prologue
     .line 86
-    iget-object v0, p0, Lcom/htc/painting/engine/HtcPen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v0, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v1, "_brush_opacity_jitter"
 
@@ -213,7 +213,7 @@
 
     .prologue
     .line 78
-    iget-object v0, p0, Lcom/htc/painting/engine/HtcPen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v0, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v1, "_brush_size_jitter"
 
@@ -229,7 +229,7 @@
 
     .prologue
     .line 90
-    iget-object v0, p0, Lcom/htc/painting/engine/HtcPen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v0, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v1, "_brush_spacing"
 
@@ -245,7 +245,7 @@
 
     .prologue
     .line 54
-    iget-object v0, p0, Lcom/htc/painting/engine/HtcPen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v0, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v1, "_brush_have_pattern"
 

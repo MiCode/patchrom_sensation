@@ -55,7 +55,7 @@
     const/high16 v0, 0x3f80
 
     .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 10
     iput v1, p0, Lcom/htc/weather/animations/WeatherAnimationData;->shift_x_:I
@@ -104,7 +104,7 @@
     const/high16 v0, 0x3f80
 
     .line 35
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 10
     iput v1, p0, Lcom/htc/weather/animations/WeatherAnimationData;->shift_x_:I

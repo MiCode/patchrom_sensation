@@ -103,7 +103,7 @@
     const/4 v1, 0x1
 
     .line 129
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 91
     const/4 v0, 0x0
@@ -1096,7 +1096,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "handleNiNotification notificationId: "
+    const-string v2, "handleNiNotification notificationId: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

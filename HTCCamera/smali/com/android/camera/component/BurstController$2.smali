@@ -30,7 +30,7 @@
     .line 94
     iput-object p1, p0, Lcom/android/camera/component/BurstController$2;->this$0:Lcom/android/camera/component/BurstController;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -55,7 +55,7 @@
     .line 99
     iget-object v5, p0, Lcom/android/camera/component/BurstController$2;->this$0:Lcom/android/camera/component/BurstController;
 
-    #getter for: Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v5}, Lcom/android/camera/component/BurstController;->access$400(Lcom/android/camera/component/BurstController;)Ljava/lang/String;
 
     move-result-object v5

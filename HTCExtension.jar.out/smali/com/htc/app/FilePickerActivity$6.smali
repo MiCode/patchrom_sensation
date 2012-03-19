@@ -30,7 +30,7 @@
     .line 709
     iput-object p1, p0, Lcom/htc/app/FilePickerActivity$6;->this$0:Lcom/htc/app/FilePickerActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

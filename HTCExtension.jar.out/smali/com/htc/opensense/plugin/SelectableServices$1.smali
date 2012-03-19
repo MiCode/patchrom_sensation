@@ -37,10 +37,10 @@
     .parameter
 
     .prologue
-    .line 50
+    .line 52
     iput-object p1, p0, Lcom/htc/opensense/plugin/SelectableServices$1;->this$0:Lcom/htc/opensense/plugin/SelectableServices;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -53,7 +53,7 @@
     .parameter "object2"
 
     .prologue
-    .line 53
+    .line 55
     iget-object v0, p1, Lcom/htc/opensense/plugin/SelectableServices$ServiceComponent;->serviceTitle:Ljava/lang/String;
 
     iget-object v1, p2, Lcom/htc/opensense/plugin/SelectableServices$ServiceComponent;->serviceTitle:Ljava/lang/String;
@@ -71,7 +71,7 @@
     .parameter "x1"
 
     .prologue
-    .line 50
+    .line 52
     check-cast p1, Lcom/htc/opensense/plugin/SelectableServices$ServiceComponent;
 
     .end local p1

@@ -60,7 +60,7 @@
 
     .prologue
     .line 45
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -74,7 +74,7 @@
 
     .prologue
     .line 57
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 58
     iput p1, p0, Landroid/graphics/Rect;->left:I
@@ -98,7 +98,7 @@
 
     .prologue
     .line 71
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 72
     iget v0, p1, Landroid/graphics/Rect;->left:I

@@ -57,7 +57,7 @@
     iput-object v1, p0, Lcom/scalado/caps/filter/photoart/Lomo;->style:Lcom/scalado/caps/filter/photoart/Lomo$Style;
 
     .line 77
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Lomo;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -174,7 +174,7 @@
 
     .prologue
     .line 156
-    iget-object v0, p0, Lcom/scalado/caps/filter/photoart/Lomo;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -199,7 +199,7 @@
     const-wide/16 v2, 0x0
 
     .line 101
-    iget-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Lomo;->isCommitted:Z
+    iget-boolean v0, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v0, :cond_0
 
@@ -256,7 +256,7 @@
 
     .line 110
     :cond_2
-    iget-object v0, p0, Lcom/scalado/caps/filter/photoart/Lomo;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -280,7 +280,7 @@
     .local v6, error:I
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Lomo;->isSet:Z
+    iput-boolean v0, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 112
     iput p1, p0, Lcom/scalado/caps/filter/photoart/Lomo;->brightness:F

@@ -42,12 +42,12 @@
     .line 1442
     iput-object p1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList$SomewhatFairLock;->this$1:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1443
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList$SomewhatFairLock;->mSync:Ljava/lang/Object;
 

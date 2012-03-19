@@ -97,7 +97,7 @@
 
 .field private static final TONE_RELATIVE_VOLUME_SIGNALINFO:I = 0x50
 
-.field private static final VDBG:Z = true
+.field private static final VDBG:Z
 
 .field private static mAudioFocusOn:Z
 
@@ -210,38 +210,21 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 1
 
     .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 121
-    const-string v2, "ro.debuggable"
-
-    invoke-static {v2, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v2
-
-    if-ne v2, v0, :cond_0
-
-    :goto_0
     sput-boolean v0, Lcom/android/phone/CallNotifier;->DBG:Z
 
     .line 300
-    sput-boolean v1, Lcom/android/phone/CallNotifier;->mAudioFocusOn:Z
+    sput-boolean v0, Lcom/android/phone/CallNotifier;->mAudioFocusOn:Z
 
     .line 301
-    sput-boolean v1, Lcom/android/phone/CallNotifier;->mMutebyPScall:Z
+    sput-boolean v0, Lcom/android/phone/CallNotifier;->mMutebyPScall:Z
 
     return-void
-
-    :cond_0
-    move v0, v1
-
-    .line 121
-    goto :goto_0
 .end method
 
 .method public constructor <init>(Lcom/android/phone/PhoneApp;Lcom/android/internal/telephony/Phone;Lcom/android/phone/Ringer;Lcom/android/phone/BluetoothHandsfree;Lcom/android/phone/CallLogAsync;)V
@@ -269,7 +252,7 @@
     .line 180
     new-instance v3, Ljava/lang/Object;
 
-    invoke-direct {v3}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v3 .. v3}, Ljava/lang/Object;-><init>()V
 
     iput-object v3, p0, Lcom/android/phone/CallNotifier;->mCallerInfoQueryStateGuard:Ljava/lang/Object;
 
@@ -749,19 +732,7 @@
     return-void
 .end method
 
-.method static synthetic access$400(Lcom/android/phone/CallNotifier;Ljava/lang/String;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 118
-    invoke-direct {p0, p1}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method static synthetic access$500(Lcom/android/phone/CallNotifier;)Lcom/android/internal/telephony/CallManager;
+.method static synthetic access$400(Lcom/android/phone/CallNotifier;)Lcom/android/internal/telephony/CallManager;
     .locals 1
     .parameter "x0"
 
@@ -772,7 +743,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$600(Lcom/android/phone/CallNotifier;)Landroid/media/AudioManager;
+.method static synthetic access$500(Lcom/android/phone/CallNotifier;)Landroid/media/AudioManager;
     .locals 1
     .parameter "x0"
 
@@ -783,7 +754,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/android/phone/CallNotifier;)Lcom/android/phone/PhoneApp;
+.method static synthetic access$600(Lcom/android/phone/CallNotifier;)Lcom/android/phone/PhoneApp;
     .locals 1
     .parameter "x0"
 
@@ -794,7 +765,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$800(Lcom/android/phone/CallNotifier;)Lcom/android/phone/BluetoothHandsfree;
+.method static synthetic access$700(Lcom/android/phone/CallNotifier;)Lcom/android/phone/BluetoothHandsfree;
     .locals 1
     .parameter "x0"
 
@@ -805,7 +776,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$900()Z
+.method static synthetic access$800()Z
     .locals 1
 
     .prologue
@@ -813,6 +784,18 @@
     sget-boolean v0, Lcom/android/phone/CallNotifier;->DBG:Z
 
     return v0
+.end method
+
+.method static synthetic access$900(Lcom/android/phone/CallNotifier;Ljava/lang/String;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 118
+    invoke-direct {p0, p1}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
+
+    return-void
 .end method
 
 .method private broadcastRingingCallWithStatus(Landroid/content/Intent;I)V
@@ -1758,13 +1741,6 @@
 
     if-eqz v3, :cond_0
 
-    .line 3038
-    const-string v3, "CallNotifier"
-
-    const-string v4, "number is empty, use address!"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 3040
     invoke-virtual {p1}, Lcom/android/internal/telephony/Connection;->getAddress()Ljava/lang/String;
 
@@ -1858,32 +1834,11 @@
 
     move-result-object v1
 
-    .line 3056
     :cond_8
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "getLogNumber: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {p0, v3}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     move-object v3, v1
 
     .line 3057
-    goto/16 :goto_1
+    goto :goto_1
 .end method
 
 .method private getPresentation(Lcom/android/internal/telephony/Connection;Lcom/android/internal/telephony/CallerInfo;)I
@@ -2567,130 +2522,80 @@
 .end method
 
 .method private htcOnNewRingingConnection(Lcom/android/internal/telephony/Connection;)V
-    .locals 10
+    .locals 7
     .parameter "c"
 
     .prologue
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    const/4 v6, 0x1
-
-    .line 3780
-    const-string v5, "CallNotifier"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "855 onNewRingingConnection mKeyguardEnabled "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    iget-boolean v9, p0, Lcom/android/phone/CallNotifier;->mKeyguardEnabled:Z
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v5, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v5, 0x1
 
     .line 3781
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     .line 3782
-    .local v4, isRestrictedMode:Z
-    iget-boolean v5, p0, Lcom/android/phone/CallNotifier;->mKeyguardEnabled:Z
+    .local v3, isRestrictedMode:Z
+    iget-boolean v4, p0, Lcom/android/phone/CallNotifier;->mKeyguardEnabled:Z
 
-    if-ne v5, v6, :cond_0
+    if-ne v4, v5, :cond_0
 
     .line 3783
     invoke-static {}, Lcom/android/phone/PhoneApp;->getInstance()Lcom/android/phone/PhoneApp;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Lcom/android/phone/PhoneApp;->getKeyguardManager()Landroid/app/KeyguardManager;
+    invoke-virtual {v4}, Lcom/android/phone/PhoneApp;->getKeyguardManager()Landroid/app/KeyguardManager;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Landroid/app/KeyguardManager;->inKeyguardRestrictedInputMode()Z
+    invoke-virtual {v4}, Landroid/app/KeyguardManager;->inKeyguardRestrictedInputMode()Z
 
-    move-result v4
+    move-result v3
 
     .line 3785
-    sget-boolean v5, Lcom/android/phone/util/BuildUtils;->INCOMING_CALL_3D_LOCKSCREEN:Z
+    sget-boolean v4, Lcom/android/phone/util/BuildUtils;->INCOMING_CALL_3D_LOCKSCREEN:Z
 
-    if-nez v5, :cond_2
+    if-nez v4, :cond_2
 
-    if-eqz v4, :cond_2
+    if-eqz v3, :cond_2
 
-    move v5, v6
+    move v4, v5
 
     :goto_0
-    iput-boolean v5, p0, Lcom/android/phone/CallNotifier;->bInKeyguardRestrictedInputMode:Z
-
-    .line 3788
-    const-string v5, "CallNotifier"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "855 onNewRingingConnection bInKeyguardRestrictedInputMode "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    iget-boolean v9, p0, Lcom/android/phone/CallNotifier;->bInKeyguardRestrictedInputMode:Z
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v5, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    iput-boolean v4, p0, Lcom/android/phone/CallNotifier;->bInKeyguardRestrictedInputMode:Z
 
     .line 3791
-    iget-boolean v5, p0, Lcom/android/phone/CallNotifier;->bInKeyguardRestrictedInputMode:Z
+    iget-boolean v4, p0, Lcom/android/phone/CallNotifier;->bInKeyguardRestrictedInputMode:Z
 
-    invoke-virtual {p0, v5}, Lcom/android/phone/CallNotifier;->setNewRingingConnectionInKeyguardRestrictedInputMode(Z)V
+    invoke-virtual {p0, v4}, Lcom/android/phone/CallNotifier;->setNewRingingConnectionInKeyguardRestrictedInputMode(Z)V
 
     .line 3792
-    iput-boolean v7, p0, Lcom/android/phone/CallNotifier;->mKeyguardEnabled:Z
+    iput-boolean v6, p0, Lcom/android/phone/CallNotifier;->mKeyguardEnabled:Z
 
     .line 3797
     :cond_0
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 3799
-    .local v3, isCarTypeUiMode:Z
+    .local v2, isCarTypeUiMode:Z
     :try_start_0
     invoke-static {}, Lcom/android/phone/util/ConfigUtils;->isCarTypeUiMode()Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v3
+    move-result v2
 
     .line 3803
     invoke-static {}, Lcom/android/phone/PhoneApp;->getInstance()Lcom/android/phone/PhoneApp;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Lcom/android/phone/PhoneApp;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v4}, Lcom/android/phone/PhoneApp;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    invoke-virtual {v4}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v0
 
@@ -2698,74 +2603,91 @@
     .local v0, appConfig:Landroid/content/res/Configuration;
     invoke-static {v0}, Lcom/android/phone/util/ConfigUtils;->isCarTypeUiMode(Landroid/content/res/Configuration;)Z
 
-    move-result v3
+    move-result v2
 
     .line 3809
     :goto_1
     invoke-static {}, Lcom/android/phone/PhoneApp;->getInstance()Lcom/android/phone/PhoneApp;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Lcom/android/phone/PhoneApp;->isLaputaNaviForeground()Z
+    invoke-virtual {v4}, Lcom/android/phone/PhoneApp;->isLaputaNaviForeground()Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_3
+    if-eqz v4, :cond_3
 
     .line 3810
-    new-instance v2, Landroid/content/Intent;
+    new-instance v1, Landroid/content/Intent;
 
-    const-string v5, "android.intent.action.INCOMING_CALL_FOR_LAPUTA"
+    const-string v4, "android.intent.action.INCOMING_CALL_FOR_LAPUTA"
 
-    invoke-direct {v2, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 3811
-    .local v2, intent:Landroid/content/Intent;
-    iget-object v5, p0, Lcom/android/phone/CallNotifier;->mApplication:Lcom/android/phone/PhoneApp;
+    .local v1, intent:Landroid/content/Intent;
+    iget-object v4, p0, Lcom/android/phone/CallNotifier;->mApplication:Lcom/android/phone/PhoneApp;
 
-    invoke-virtual {v5, v2}, Lcom/android/phone/PhoneApp;->sendBroadcast(Landroid/content/Intent;)V
+    invoke-virtual {v4, v1}, Lcom/android/phone/PhoneApp;->sendBroadcast(Landroid/content/Intent;)V
 
     .line 3819
-    .end local v2           #intent:Landroid/content/Intent;
+    .end local v1           #intent:Landroid/content/Intent;
     :goto_2
-    sget-boolean v5, Lcom/android/phone/CallNotifier;->DBG:Z
+    sget-boolean v4, Lcom/android/phone/CallNotifier;->DBG:Z
 
-    if-eqz v5, :cond_1
+    if-eqz v4, :cond_1
 
-    const-string v5, "htcOnNewRingingConnection... set mIsRinging to true."
+    const-string v4, "htcOnNewRingingConnection... set mIsRinging to true."
 
-    invoke-direct {p0, v5}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
+    invoke-direct {p0, v4}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
 
     .line 3820
     :cond_1
-    iput-boolean v6, p0, Lcom/android/phone/CallNotifier;->mIsRinging:Z
+    iput-boolean v5, p0, Lcom/android/phone/CallNotifier;->mIsRinging:Z
 
     .line 3822
     return-void
 
     .end local v0           #appConfig:Landroid/content/res/Configuration;
-    .end local v3           #isCarTypeUiMode:Z
+    .end local v2           #isCarTypeUiMode:Z
     :cond_2
-    move v5, v7
+    move v4, v6
 
     .line 3785
     goto :goto_0
 
     .line 3800
-    .restart local v3       #isCarTypeUiMode:Z
+    .restart local v2       #isCarTypeUiMode:Z
     :catch_0
-    move-exception v1
-
-    .line 3801
-    .local v1, e:Ljava/lang/RuntimeException;
-    :try_start_1
-    const-string v5, "- ConfigUtils is not initialized by IncallScreen."
-
-    invoke-direct {p0, v5}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    move-exception v4
 
     .line 3803
+    invoke-static {}, Lcom/android/phone/PhoneApp;->getInstance()Lcom/android/phone/PhoneApp;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/android/phone/PhoneApp;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v0
+
+    .line 3805
+    .restart local v0       #appConfig:Landroid/content/res/Configuration;
+    invoke-static {v0}, Lcom/android/phone/util/ConfigUtils;->isCarTypeUiMode(Landroid/content/res/Configuration;)Z
+
+    move-result v2
+
+    .line 3806
+    goto :goto_1
+
+    .line 3803
+    .end local v0           #appConfig:Landroid/content/res/Configuration;
+    :catchall_0
+    move-exception v4
+
     invoke-static {}, Lcom/android/phone/PhoneApp;->getInstance()Lcom/android/phone/PhoneApp;
 
     move-result-object v5
@@ -2782,45 +2704,18 @@
     .restart local v0       #appConfig:Landroid/content/res/Configuration;
     invoke-static {v0}, Lcom/android/phone/util/ConfigUtils;->isCarTypeUiMode(Landroid/content/res/Configuration;)Z
 
-    move-result v3
+    move-result v2
 
     .line 3806
-    goto :goto_1
-
-    .line 3803
-    .end local v0           #appConfig:Landroid/content/res/Configuration;
-    .end local v1           #e:Ljava/lang/RuntimeException;
-    :catchall_0
-    move-exception v5
-
-    invoke-static {}, Lcom/android/phone/PhoneApp;->getInstance()Lcom/android/phone/PhoneApp;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Lcom/android/phone/PhoneApp;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v0
-
-    .line 3805
-    .restart local v0       #appConfig:Landroid/content/res/Configuration;
-    invoke-static {v0}, Lcom/android/phone/util/ConfigUtils;->isCarTypeUiMode(Landroid/content/res/Configuration;)Z
-
-    move-result v3
-
-    .line 3806
-    throw v5
+    throw v4
 
     .line 3813
     :cond_3
     invoke-virtual {p1}, Lcom/android/internal/telephony/Connection;->getAddress()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {p0, v5, v4}, Lcom/android/phone/CallNotifier;->processMTCallsWithoutQuery(Ljava/lang/String;Z)V
+    invoke-virtual {p0, v4, v3}, Lcom/android/phone/CallNotifier;->processMTCallsWithoutQuery(Ljava/lang/String;Z)V
 
     goto :goto_2
 .end method
@@ -3905,31 +3800,10 @@
 .end method
 
 .method private onCfiChanged(Z)V
-    .locals 2
+    .locals 1
     .parameter "visible"
 
     .prologue
-    .line 2036
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "onCfiChanged(): "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     .line 2037
     invoke-static {}, Lcom/android/phone/NotificationMgr;->getDefault()Lcom/android/phone/NotificationMgr;
 
@@ -4005,7 +3879,7 @@
 
     sget-object v2, Lcom/android/internal/telephony/Phone$State;->RINGING:Lcom/android/internal/telephony/Phone$State;
 
-    if-eq v1, v2, :cond_2
+    if-eq v1, v2, :cond_3
 
     .line 1021
     const-string v1, "CallNotifier"
@@ -4015,6 +3889,7 @@
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1047
+    :cond_2
     :goto_0
     return-void
 
@@ -4030,7 +3905,7 @@
     throw v1
 
     .line 1028
-    :cond_2
+    :cond_3
     iget-object v1, p0, Lcom/android/phone/CallNotifier;->mCM:Lcom/android/internal/telephony/CallManager;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/CallManager;->getFirstActiveRingingCall()Lcom/android/internal/telephony/Call;
@@ -4043,7 +3918,7 @@
 
     sget-object v2, Lcom/android/internal/telephony/Call$State;->WAITING:Lcom/android/internal/telephony/Call$State;
 
-    if-ne v1, v2, :cond_3
+    if-ne v1, v2, :cond_2
 
     .line 1029
     const-string v1, "CallNotifier"
@@ -4053,14 +3928,6 @@
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
-
-    .line 1033
-    :cond_3
-    const-string v1, "RINGING... (onCustomRingQueryComplete)"
-
-    invoke-direct {p0, v1}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
-    goto :goto_0
 .end method
 
 .method private onDisconnect(Landroid/os/AsyncResult;)V
@@ -4068,33 +3935,6 @@
     .parameter "r"
 
     .prologue
-    .line 1589
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v11, "onDisconnect()...  CallManager state: "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    iget-object v11, p0, Lcom/android/phone/CallNotifier;->mCM:Lcom/android/internal/telephony/CallManager;
-
-    invoke-virtual {v11}, Lcom/android/internal/telephony/CallManager;->getState()Lcom/android/internal/telephony/Phone$State;
-
-    move-result-object v11
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-direct {p0, v10}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     .line 1591
     const/4 v10, 0x0
 
@@ -4612,13 +4452,8 @@
 
     if-ne v2, v10, :cond_10
 
-    .line 1777
-    :cond_f
-    const-string v10, "- need to play CALL_ENDED tone!"
-
-    invoke-direct {p0, v10}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     .line 1778
+    :cond_f
     const/4 v9, 0x5
 
     .line 1779
@@ -4809,33 +4644,6 @@
 
     if-nez v10, :cond_17
 
-    .line 1874
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v11, "- starting post-disconnect tone ("
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, ")..."
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-direct {p0, v10}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     .line 1875
     new-instance v10, Lcom/android/phone/CallNotifier$InCallTonePlayer;
 
@@ -4858,7 +4666,7 @@
 
     sget-object v11, Lcom/android/internal/telephony/Phone$State;->IDLE:Lcom/android/internal/telephony/Phone$State;
 
-    if-ne v10, v11, :cond_37
+    if-ne v10, v11, :cond_1a
 
     .line 1908
     iget-boolean v10, p0, Lcom/android/phone/CallNotifier;->mKeyguardEnabled:Z
@@ -4942,7 +4750,6 @@
     .line 1950
     .end local v5           #incallScreen:Lcom/android/phone/InCallScreen;
     :cond_1a
-    :goto_8
     const/4 v10, 0x2
 
     if-ne v3, v10, :cond_1d
@@ -4989,12 +4796,12 @@
     .line 1959
     iget-boolean v10, p0, Lcom/android/phone/CallNotifier;->mIsCdmaRedialCall:Z
 
-    if-nez v10, :cond_39
+    if-nez v10, :cond_38
 
     .line 1960
     const/4 v10, 0x1
 
-    if-ne v0, v10, :cond_38
+    if-ne v0, v10, :cond_37
 
     .line 1963
     iget-object v10, p0, Lcom/android/phone/CallNotifier;->mCM:Lcom/android/internal/telephony/CallManager;
@@ -5026,7 +4833,7 @@
     .end local v2           #cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
     .end local v6           #number:Ljava/lang/String;
     :cond_1d
-    :goto_9
+    :goto_8
     sget-boolean v10, Lcom/android/phone/util/BuildUtils;->INCOMING_CALL_3D_LOCKSCREEN:Z
 
     if-eqz v10, :cond_1e
@@ -5366,30 +5173,22 @@
 
     goto/16 :goto_7
 
-    .line 1942
+    .line 1968
     .end local v5           #incallScreen:Lcom/android/phone/InCallScreen;
     :cond_37
-    const-string v10, "- phone still in use; not releasing wake locks."
+    const/4 v10, 0x0
 
-    invoke-direct {p0, v10}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
+    iput-boolean v10, p0, Lcom/android/phone/CallNotifier;->mIsCdmaRedialCall:Z
 
     goto/16 :goto_8
 
-    .line 1968
+    .line 1971
     :cond_38
     const/4 v10, 0x0
 
     iput-boolean v10, p0, Lcom/android/phone/CallNotifier;->mIsCdmaRedialCall:Z
 
-    goto/16 :goto_9
-
-    .line 1971
-    :cond_39
-    const/4 v10, 0x0
-
-    iput-boolean v10, p0, Lcom/android/phone/CallNotifier;->mIsCdmaRedialCall:Z
-
-    goto/16 :goto_9
+    goto/16 :goto_8
 .end method
 
 .method private onDisplayInfo(Landroid/os/AsyncResult;)V
@@ -5706,13 +5505,8 @@
 
     goto :goto_0
 
-    .line 727
-    :cond_6
-    const-string v5, "Holding wake lock on new incoming connection."
-
-    invoke-direct {p0, v5}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     .line 728
+    :cond_6
     iget-object v5, p0, Lcom/android/phone/CallNotifier;->mApplication:Lcom/android/phone/PhoneApp;
 
     sget-object v6, Lcom/android/phone/PhoneApp$WakeState;->PARTIAL:Lcom/android/phone/PhoneApp$WakeState;
@@ -5727,29 +5521,8 @@
 
     move-result-object v4
 
-    .line 736
-    .local v4, state:Lcom/android/internal/telephony/Call$State;
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "- connection is ringing!  state = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-direct {p0, v5}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     .line 760
+    .local v4, state:Lcom/android/internal/telephony/Call$State;
     invoke-direct {p0}, Lcom/android/phone/CallNotifier;->setupSensorsForOnNewRinging()V
 
     .line 776
@@ -5766,20 +5539,10 @@
     :goto_1
     invoke-direct {p0, v0}, Lcom/android/phone/CallNotifier;->htcOnNewRingingConnection(Lcom/android/internal/telephony/Connection;)V
 
-    .line 823
-    const-string v5, "- onNewRingingConnection() done."
-
-    invoke-direct {p0, v5}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     goto/16 :goto_0
 
-    .line 779
-    :cond_7
-    const-string v5, "- starting call waiting tone..."
-
-    invoke-direct {p0, v5}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     .line 781
+    :cond_7
     invoke-virtual {v0}, Lcom/android/internal/telephony/Connection;->getCCWT()Z
 
     move-result v5
@@ -5860,37 +5623,8 @@
 
     move-result-object v17
 
-    .line 1149
-    .local v17, state:Lcom/android/internal/telephony/Phone$State;
-    new-instance v19, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v20, "onPhoneStateChanged: state = "
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    move-object/from16 v0, v19
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v19
-
-    invoke-direct {v0, v1}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     .line 1152
+    .local v17, state:Lcom/android/internal/telephony/Phone$State;
     sget-object v19, Lcom/android/internal/telephony/Phone$State;->RINGING:Lcom/android/internal/telephony/Phone$State;
 
     move-object/from16 v0, v19
@@ -6337,17 +6071,8 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/phone/CallNotifier;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 1253
-    :goto_3
-    const-string v19, "onPhoneStateChanged: OFF HOOK"
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v19
-
-    invoke-direct {v0, v1}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     .line 1274
+    :goto_3
     const-string v19, "ro.board.platform"
 
     const/16 v20, 0x0
@@ -6652,15 +6377,6 @@
     move-result v19
 
     if-eqz v19, :cond_18
-
-    .line 1377
-    const-string v19, "onPhoneStateChanged: it is an emergency call."
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v19
-
-    invoke-direct {v0, v1}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
 
     .line 1378
     invoke-interface {v9}, Lcom/android/internal/telephony/Phone;->getForegroundCall()Lcom/android/internal/telephony/Call;
@@ -7987,11 +7703,6 @@
     .locals 3
 
     .prologue
-    .line 1985
-    const-string v0, "resetAudioStateAfterDisconnect()..."
-
-    invoke-direct {p0, v0}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     .line 1987
     iget-object v0, p0, Lcom/android/phone/CallNotifier;->mBluetoothHandsfree:Lcom/android/phone/BluetoothHandsfree;
 
@@ -8555,11 +8266,6 @@
     .local v9, info:Lcom/android/phone/PhoneUtils$CallerInfoToken;
     if-eqz v9, :cond_4
 
-    .line 2836
-    const-string v0, "showMissedCallNotification: Querying for CallerInfo on missed call..."
-
-    invoke-direct {p0, v0}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     .line 2837
     iget-boolean v0, v9, Lcom/android/phone/PhoneUtils$CallerInfoToken;->isFinal:Z
 
@@ -8782,11 +8488,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 936
-    const-string v2, "- CallerInfo already up to date, using available data"
-
-    invoke-direct {p0, v2}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     .line 937
     iget-object v2, v0, Lcom/android/phone/PhoneUtils$CallerInfoToken;->currentInfo:Lcom/android/internal/telephony/CallerInfo;
 
@@ -8809,14 +8510,9 @@
 
     throw v2
 
-    .line 939
+    .line 940
     .restart local v0       #cit:Lcom/android/phone/PhoneUtils$CallerInfoToken;
     :cond_2
-    const-string v2, "- Starting query, posting timeout message."
-
-    invoke-direct {p0, v2}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
-    .line 940
     const/16 v2, 0x64
 
     const-wide/16 v3, 0x1f4
@@ -8842,11 +8538,6 @@
     sget-object v3, Lcom/android/internal/telephony/Call$State;->WAITING:Lcom/android/internal/telephony/Call$State;
 
     if-eq v2, v3, :cond_1
-
-    .line 960
-    const-string v2, "RINGING... (request to ring arrived while query is running)"
-
-    invoke-direct {p0, v2}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
 
     goto :goto_0
 .end method
@@ -9354,7 +9045,7 @@
 
 # virtual methods
 .method public addCallLog(Lcom/android/internal/telephony/Connection;Lcom/android/internal/telephony/Connection$DisconnectCause;)V
-    .locals 20
+    .locals 19
     .parameter "c"
     .parameter "cause"
 
@@ -9424,49 +9115,6 @@
 
     iput-boolean v3, v0, Lcom/android/phone/CallNotifier;->drivingModeCallFlagged:Z
 
-    .line 3345
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v19, "- callLogType: "
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v19, ", UserData: "
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual/range {p1 .. p1}, Lcom/android/internal/telephony/Connection;->getUserData()Ljava/lang/Object;
-
-    move-result-object v19
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v3}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     .line 3348
     invoke-direct/range {p0 .. p1}, Lcom/android/phone/CallNotifier;->getCallerInfoFromConnection(Lcom/android/internal/telephony/Connection;)Lcom/android/internal/telephony/CallerInfo;
 
@@ -9482,33 +9130,8 @@
 
     move-result-object v5
 
-    .line 3353
-    .local v5, logNumber:Ljava/lang/String;
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v19, "- onDisconnect(): logNumber set to: "
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v3}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     .line 3360
+    .local v5, logNumber:Ljava/lang/String;
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -11080,11 +10703,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 1529
-    const-string v0, "CallerInfo query complete, posting missed call notification"
-
-    invoke-direct {p0, v0}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-
     .line 1532
     iget-object v0, p3, Lcom/android/internal/telephony/CallerInfo;->phoneNumber:Ljava/lang/String;
 
@@ -11135,11 +10753,6 @@
     instance-of v0, p2, Lcom/android/phone/CallNotifier;
 
     if-eqz v0, :cond_0
-
-    .line 1539
-    const-string v0, "CallerInfo query complete (for CallNotifier), updating state for incoming call.."
-
-    invoke-direct {p0, v0}, Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
 
     .line 1543
     const/16 v0, 0x64
@@ -11534,33 +11147,10 @@
 .end method
 
 .method public setNewRingingConnectionInKeyguardRestrictedInputMode(Z)V
-    .locals 3
+    .locals 0
     .parameter "b"
 
     .prologue
-    .line 3128
-    const-string v0, "CallNotifier"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "855 setNewRingingConnectionInKeyguardRestrictedInputMode "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 3130
     iput-boolean p1, p0, Lcom/android/phone/CallNotifier;->mbNewRingingConnectionInKeyguardRestrictedInputMode:Z
 

@@ -30,7 +30,7 @@
     .line 47
     iput-object p1, p0, Lcom/android/camera/actionscreen/ActionScreen$1;->this$0:Lcom/android/camera/actionscreen/ActionScreen;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -62,7 +62,7 @@
     .line 66
     iget-object v0, p0, Lcom/android/camera/actionscreen/ActionScreen$1;->this$0:Lcom/android/camera/actionscreen/ActionScreen;
 
-    #getter for: Lcom/android/camera/actionscreen/ActionScreen;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/actionscreen/ActionScreen;->access$300(Lcom/android/camera/actionscreen/ActionScreen;)Ljava/lang/String;
 
     move-result-object v0

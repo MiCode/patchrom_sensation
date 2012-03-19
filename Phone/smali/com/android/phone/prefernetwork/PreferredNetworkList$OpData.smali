@@ -33,7 +33,7 @@
     .line 56
     iput-object p1, p0, Lcom/android/phone/prefernetwork/PreferredNetworkList$OpData;->this$0:Lcom/android/phone/prefernetwork/PreferredNetworkList;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 57
     new-instance v0, Ljava/lang/String;

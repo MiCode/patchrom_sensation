@@ -384,7 +384,7 @@
     if-nez v0, :cond_0
 
     .line 142
-    iget-object v1, p0, Lcom/android/camera/component/DOTIndicatorUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "eventManager == null"
 
@@ -563,10 +563,10 @@
     :cond_0
     const/16 v1, 0x64
 
-    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
+    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     .line 356
-    iput p3, v0, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
+    iput p3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     .line 363
     :goto_0
@@ -583,12 +583,12 @@
     .line 359
     .restart local v0       #params:Landroid/widget/RelativeLayout$LayoutParams;
     :cond_2
-    iput p4, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
+    iput p4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     .line 361
     const/16 v1, 0x1ae
 
-    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
+    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     goto :goto_0
 .end method

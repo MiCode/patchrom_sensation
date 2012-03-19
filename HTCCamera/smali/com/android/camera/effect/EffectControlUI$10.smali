@@ -3,12 +3,12 @@
 .source "EffectControlUI.java"
 
 # interfaces
-.implements Lcom/android/camera/widget/EffectControlCircle$OnCenterPointChangedListener;
+.implements Lcom/android/camera/IEventHandler;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/camera/effect/EffectControlUI;->initializeUI()V
+    value = Lcom/android/camera/effect/EffectControlUI;->initializeOverride()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,88 +27,72 @@
     .parameter
 
     .prologue
-    .line 304
+    .line 291
     iput-object p1, p0, Lcom/android/camera/effect/EffectControlUI$10;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onCenterChanged(Lcom/android/camera/widget/EffectControlCircle;Landroid/graphics/Point;)V
-    .locals 1
-    .parameter "circle"
-    .parameter "center"
+.method public onEvent(Lcom/android/camera/Event;)V
+    .locals 2
+    .parameter "event"
 
     .prologue
-    .line 308
-    iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$10;->this$0:Lcom/android/camera/effect/EffectControlUI;
+    .line 295
+    check-cast p1, Lcom/android/camera/OrientationEvent;
 
-    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_ShowingInitValues:Z
-    invoke-static {v0}, Lcom/android/camera/effect/EffectControlUI;->access$100(Lcom/android/camera/effect/EffectControlUI;)Z
+    .end local p1
+    invoke-virtual {p1}, Lcom/android/camera/OrientationEvent;->getNewUIOrientation()I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    .line 296
+    .local v0, orientation:I
+    iget-object v1, p0, Lcom/android/camera/effect/EffectControlUI$10;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    .line 316
+    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_IncreaseButtonContainer:Lcom/android/camera/rotate/RotateRelativeLayout;
+    invoke-static {v1}, Lcom/android/camera/effect/EffectControlUI;->access$1500(Lcom/android/camera/effect/EffectControlUI;)Lcom/android/camera/rotate/RotateRelativeLayout;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    .line 297
+    iget-object v1, p0, Lcom/android/camera/effect/EffectControlUI$10;->this$0:Lcom/android/camera/effect/EffectControlUI;
+
+    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_IncreaseButtonContainer:Lcom/android/camera/rotate/RotateRelativeLayout;
+    invoke-static {v1}, Lcom/android/camera/effect/EffectControlUI;->access$1500(Lcom/android/camera/effect/EffectControlUI;)Lcom/android/camera/rotate/RotateRelativeLayout;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lcom/android/camera/rotate/RotateRelativeLayout;->setOrientation(I)V
+
+    .line 298
     :cond_0
-    :goto_0
-    return-void
+    iget-object v1, p0, Lcom/android/camera/effect/EffectControlUI$10;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    .line 312
+    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_DecreaseButtonContainer:Lcom/android/camera/rotate/RotateRelativeLayout;
+    invoke-static {v1}, Lcom/android/camera/effect/EffectControlUI;->access$1600(Lcom/android/camera/effect/EffectControlUI;)Lcom/android/camera/rotate/RotateRelativeLayout;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    .line 299
+    iget-object v1, p0, Lcom/android/camera/effect/EffectControlUI$10;->this$0:Lcom/android/camera/effect/EffectControlUI;
+
+    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_DecreaseButtonContainer:Lcom/android/camera/rotate/RotateRelativeLayout;
+    invoke-static {v1}, Lcom/android/camera/effect/EffectControlUI;->access$1600(Lcom/android/camera/effect/EffectControlUI;)Lcom/android/camera/rotate/RotateRelativeLayout;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lcom/android/camera/rotate/RotateRelativeLayout;->setOrientation(I)V
+
+    .line 300
     :cond_1
-    iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$10;->this$0:Lcom/android/camera/effect/EffectControlUI;
-
-    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_CurrentEffect:Lcom/android/camera/effect/EffectBase;
-    invoke-static {v0}, Lcom/android/camera/effect/EffectControlUI;->access$200(Lcom/android/camera/effect/EffectControlUI;)Lcom/android/camera/effect/EffectBase;
-
-    move-result-object v0
-
-    instance-of v0, v0, Lcom/android/camera/effect/DistortionEffect;
-
-    if-eqz v0, :cond_2
-
-    .line 313
-    iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$10;->this$0:Lcom/android/camera/effect/EffectControlUI;
-
-    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_CurrentEffect:Lcom/android/camera/effect/EffectBase;
-    invoke-static {v0}, Lcom/android/camera/effect/EffectControlUI;->access$200(Lcom/android/camera/effect/EffectControlUI;)Lcom/android/camera/effect/EffectBase;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/camera/effect/DistortionEffect;
-
-    invoke-virtual {v0, p2}, Lcom/android/camera/effect/DistortionEffect;->setCenter(Landroid/graphics/Point;)V
-
-    goto :goto_0
-
-    .line 314
-    :cond_2
-    iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$10;->this$0:Lcom/android/camera/effect/EffectControlUI;
-
-    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_CurrentEffect:Lcom/android/camera/effect/EffectBase;
-    invoke-static {v0}, Lcom/android/camera/effect/EffectControlUI;->access$200(Lcom/android/camera/effect/EffectControlUI;)Lcom/android/camera/effect/EffectBase;
-
-    move-result-object v0
-
-    instance-of v0, v0, Lcom/android/camera/effect/DepthOfFieldEffect;
-
-    if-eqz v0, :cond_0
-
-    .line 315
-    iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$10;->this$0:Lcom/android/camera/effect/EffectControlUI;
-
-    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_CurrentEffect:Lcom/android/camera/effect/EffectBase;
-    invoke-static {v0}, Lcom/android/camera/effect/EffectControlUI;->access$200(Lcom/android/camera/effect/EffectControlUI;)Lcom/android/camera/effect/EffectBase;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/camera/effect/DepthOfFieldEffect;
-
-    invoke-virtual {v0, p2}, Lcom/android/camera/effect/DepthOfFieldEffect;->setCenter(Landroid/graphics/Point;)V
-
-    goto :goto_0
+    return-void
 .end method

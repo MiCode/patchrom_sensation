@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 162
+    .line 164
     iput-object p1, p0, Lcom/android/phone/BluetoothHeadsetService$1;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,14 +39,14 @@
     .parameter "msg"
 
     .prologue
-    .line 165
+    .line 167
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/phone/BluetoothHeadsetService$1;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
     monitor-enter v15
 
-    .line 166
+    .line 168
     :try_start_0
     move-object/from16 v0, p1
 
@@ -54,11 +54,11 @@
 
     check-cast v10, Landroid/bluetooth/BluetoothAudioGateway$IncomingConnectionInfo;
 
-    .line 167
+    .line 169
     .local v10, info:Landroid/bluetooth/BluetoothAudioGateway$IncomingConnectionInfo;
     const/4 v14, 0x0
 
-    .line 168
+    .line 170
     .local v14, type:I
     move-object/from16 v0, p1
 
@@ -66,7 +66,7 @@
 
     packed-switch v2, :pswitch_data_0
 
-    .line 177
+    .line 179
     :goto_0
     const-string v2, "Bluetooth HSHFP"
 
@@ -118,10 +118,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 181
+    .line 183
     const/4 v11, 0x0
 
-    .line 183
+    .line 185
     .local v11, priority:I
     move-object/from16 v0, p0
 
@@ -134,10 +134,10 @@
 
     move-result v11
 
-    .line 184
+    .line 186
     if-gtz v11, :cond_0
 
-    .line 185
+    .line 187
     const-string v2, "Bluetooth HSHFP"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -160,7 +160,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 187
+    .line 189
     new-instance v1, Landroid/bluetooth/HeadsetBase;
 
     move-object/from16 v0, p0
@@ -191,13 +191,13 @@
 
     invoke-direct/range {v1 .. v7}, Landroid/bluetooth/HeadsetBase;-><init>(Landroid/os/PowerManager;Landroid/bluetooth/BluetoothAdapter;Landroid/bluetooth/BluetoothDevice;IILandroid/os/Handler;)V
 
-    .line 191
+    .line 193
     .local v1, headset:Landroid/bluetooth/HeadsetBase;
     invoke-virtual {v1}, Landroid/bluetooth/HeadsetBase;->disconnect()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 193
+    .line 195
     :try_start_1
     move-object/from16 v0, p0
 
@@ -221,37 +221,37 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 198
+    .line 200
     :goto_1
     :try_start_2
     monitor-exit v15
 
-    .line 256
+    .line 258
     .end local v1           #headset:Landroid/bluetooth/HeadsetBase;
     :goto_2
     return-void
 
-    .line 170
+    .line 172
     .end local v11           #priority:I
     :pswitch_0
     const/4 v14, 0x1
 
-    .line 171
+    .line 173
     goto/16 :goto_0
 
-    .line 173
+    .line 175
     :pswitch_1
     const/4 v14, 0x2
 
     goto/16 :goto_0
 
-    .line 195
+    .line 197
     .restart local v1       #headset:Landroid/bluetooth/HeadsetBase;
     .restart local v11       #priority:I
     :catch_0
     move-exception v9
 
-    .line 196
+    .line 198
     .local v9, e:Landroid/os/RemoteException;
     const-string v2, "Bluetooth HSHFP"
 
@@ -261,7 +261,7 @@
 
     goto :goto_1
 
-    .line 255
+    .line 257
     .end local v1           #headset:Landroid/bluetooth/HeadsetBase;
     .end local v9           #e:Landroid/os/RemoteException;
     .end local v10           #info:Landroid/bluetooth/BluetoothAudioGateway$IncomingConnectionInfo;
@@ -276,7 +276,7 @@
 
     throw v2
 
-    .line 202
+    .line 204
     .restart local v10       #info:Landroid/bluetooth/BluetoothAudioGateway$IncomingConnectionInfo;
     .restart local v11       #priority:I
     .restart local v14       #type:I
@@ -291,15 +291,15 @@
 
     move-result-object v8
 
-    .line 204
+    .line 206
     .local v8, device:Landroid/bluetooth/BluetoothDevice;
     const/4 v13, 0x0
 
-    .line 205
+    .line 207
     .local v13, state:I
     if-eqz v8, :cond_1
 
-    .line 206
+    .line 208
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/phone/BluetoothHeadsetService$1;->this$0:Lcom/android/phone/BluetoothHeadsetService;
@@ -320,17 +320,17 @@
 
     move-result v13
 
-    .line 209
+    .line 211
     :cond_1
     packed-switch v13, :pswitch_data_1
 
-    .line 255
+    .line 257
     :goto_3
     monitor-exit v15
 
     goto :goto_2
 
-    .line 212
+    .line 214
     :pswitch_2
     new-instance v12, Lcom/android/phone/BluetoothHeadsetService$BluetoothRemoteHeadset;
 
@@ -340,7 +340,7 @@
 
     invoke-direct {v12, v2, v14, v10}, Lcom/android/phone/BluetoothHeadsetService$BluetoothRemoteHeadset;-><init>(Lcom/android/phone/BluetoothHeadsetService;ILandroid/bluetooth/BluetoothAudioGateway$IncomingConnectionInfo;)V
 
-    .line 213
+    .line 215
     .local v12, remoteHeadset:Lcom/android/phone/BluetoothHeadsetService$BluetoothRemoteHeadset;
     move-object/from16 v0, p0
 
@@ -357,7 +357,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 216
+    .line 218
     :try_start_4
     move-object/from16 v0, p0
 
@@ -383,11 +383,11 @@
 
     goto :goto_3
 
-    .line 218
+    .line 220
     :catch_1
     move-exception v9
 
-    .line 219
+    .line 221
     .restart local v9       #e:Landroid/os/RemoteException;
     :try_start_5
     const-string v2, "Bluetooth HSHFP"
@@ -398,7 +398,7 @@
 
     goto :goto_3
 
-    .line 223
+    .line 225
     .end local v9           #e:Landroid/os/RemoteException;
     .end local v12           #remoteHeadset:Lcom/android/phone/BluetoothHeadsetService$BluetoothRemoteHeadset;
     :pswitch_3
@@ -410,7 +410,7 @@
 
     if-nez v2, :cond_2
 
-    .line 225
+    .line 227
     const-string v2, "Bluetooth HSHFP"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -445,7 +445,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 228
+    .line 230
     new-instance v1, Landroid/bluetooth/HeadsetBase;
 
     move-object/from16 v0, p0
@@ -476,13 +476,13 @@
 
     invoke-direct/range {v1 .. v7}, Landroid/bluetooth/HeadsetBase;-><init>(Landroid/os/PowerManager;Landroid/bluetooth/BluetoothAdapter;Landroid/bluetooth/BluetoothDevice;IILandroid/os/Handler;)V
 
-    .line 232
+    .line 234
     .restart local v1       #headset:Landroid/bluetooth/HeadsetBase;
     invoke-virtual {v1}, Landroid/bluetooth/HeadsetBase;->disconnect()V
 
     goto :goto_3
 
-    .line 239
+    .line 241
     .end local v1           #headset:Landroid/bluetooth/HeadsetBase;
     :cond_2
     move-object/from16 v0, p0
@@ -505,7 +505,7 @@
     #setter for: Lcom/android/phone/BluetoothHeadsetService$BluetoothRemoteHeadset;->mHeadsetType:I
     invoke-static {v2, v14}, Lcom/android/phone/BluetoothHeadsetService$BluetoothRemoteHeadset;->access$702(Lcom/android/phone/BluetoothHeadsetService$BluetoothRemoteHeadset;I)I
 
-    .line 240
+    .line 242
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/phone/BluetoothHeadsetService$1;->this$0:Lcom/android/phone/BluetoothHeadsetService;
@@ -528,7 +528,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 243
+    .line 245
     :try_start_6
     move-object/from16 v0, p0
 
@@ -554,11 +554,11 @@
 
     goto/16 :goto_3
 
-    .line 245
+    .line 247
     :catch_2
     move-exception v9
 
-    .line 246
+    .line 248
     .restart local v9       #e:Landroid/os/RemoteException;
     :try_start_7
     const-string v2, "Bluetooth HSHFP"
@@ -569,7 +569,7 @@
 
     goto/16 :goto_3
 
-    .line 250
+    .line 252
     .end local v9           #e:Landroid/os/RemoteException;
     :pswitch_4
     const-string v2, "Bluetooth HSHFP"
@@ -606,7 +606,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 252
+    .line 254
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/phone/BluetoothHeadsetService$1;->this$0:Lcom/android/phone/BluetoothHeadsetService;
@@ -618,14 +618,14 @@
 
     goto/16 :goto_3
 
-    .line 168
+    .line 170
     :pswitch_data_0
     .packed-switch 0x64
         :pswitch_0
         :pswitch_1
     .end packed-switch
 
-    .line 209
+    .line 211
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_2

@@ -8,13 +8,13 @@
 
 .field private static final BLOCKLIST_URI:Landroid/net/Uri; = null
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final EMPTY_STRING_ARRAY:[Ljava/lang/String; = null
 
 .field private static final GET_SMS_AND_MMS_FROM_STATE:Ljava/lang/String; = " ( SELECT pdu._id AS _id, addr.address AS address, pdu.read AS read, pdu.thread_id AS thread_id, pdu.date * 1000 AS date, 0 AS msg_type , pdu.sub AS sub ,pdu.sub_cs as sub_cs, -1 as sms_type, pdu.m_type as mms_type FROM addr, pdu WHERE addr.msg_id = pdu._id AND addr.address <> \'insert_address_token\' AND pdu.thread_id IS NOT NULL AND addr.type = 137 UNION ALL   SELECT sms._id AS _id, sms.address AS address, sms.read AS read, sms.thread_id as thread_id, sms.date AS date, 1 AS msg_type , sms.body as sub ,  NULL as sub_cs, sms.type as sms_type, -1 as mms_type FROM sms WHERE sms.address <> \'insert_address_token\' AND sms.thread_id IS NOT NULL ) "
 
-.field private static final HTC_DEBUG:Z = true
+.field private static final HTC_DEBUG:Z = false
 
 .field private static final ID_PROJECTION:[Ljava/lang/String; = null
 
@@ -1055,7 +1055,7 @@
 .end method
 
 .method public static Lock()V
-    .locals 6
+    .locals 5
 
     .prologue
     .line 504
@@ -1063,19 +1063,18 @@
 
     move-result v3
 
-    if-nez v3, :cond_1
+    if-nez v3, :cond_0
 
     .line 527
     .local v0, bWaiting:Z
     .local v2, pid:I
-    :cond_0
     :goto_0
     return-void
 
     .line 507
     .end local v0           #bWaiting:Z
     .end local v2           #pid:I
-    :cond_1
+    :cond_0
     const/4 v0, 0x0
 
     .line 508
@@ -1084,58 +1083,8 @@
 
     move-result v2
 
-    .line 510
-    .restart local v2       #pid:I
-    invoke-static {}, Lcom/android/providers/telephony/MmsSmsV2Provider;->getProviderLock()Ljava/util/concurrent/locks/ReentrantLock;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->isLocked()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    .line 511
-    const-string v3, "TelephonyProviderLock"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Request lock:"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ", Waiting queue: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/android/providers/telephony/MmsSmsV2Provider;->mLockQueue:Ljava/util/concurrent/LinkedBlockingQueue;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 512
-    const/4 v0, 0x1
-
     .line 516
-    :cond_2
+    .restart local v2       #pid:I
     invoke-static {}, Lcom/android/providers/telephony/MmsSmsV2Provider;->getProviderLock()Ljava/util/concurrent/locks/ReentrantLock;
 
     move-result-object v3
@@ -1154,33 +1103,6 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 524
-    :goto_1
-    if-eqz v0, :cond_0
-
-    .line 525
-    const-string v3, "TelephonyProviderLock"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Got lock:"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     goto :goto_0
 
     .line 519
@@ -1191,7 +1113,7 @@
     .local v1, e:Ljava/lang/InterruptedException;
     invoke-virtual {v1}, Ljava/lang/InterruptedException;->printStackTrace()V
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method public static Unlock()V
@@ -2306,31 +2228,6 @@
 
     if-ge v10, v0, :cond_4
 
-    .line 1934
-    const-string v20, "MmsSmsV2Provider"
-
-    new-instance v21, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v21 .. v21}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v22, "Check addresses: "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    aget-object v22, v5, v10
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v21
-
-    invoke-static/range {v20 .. v21}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1935
     const/4 v12, 0x0
 
@@ -2343,49 +2240,6 @@
     move/from16 v0, v20
 
     if-ge v12, v0, :cond_3
-
-    .line 1936
-    const-string v21, "MmsSmsV2Provider"
-
-    new-instance v20, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v22, "Check recipients: "
-
-    move-object/from16 v0, v20
-
-    move-object/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    move-object/from16 v0, p2
-
-    invoke-interface {v0, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v20
-
-    check-cast v20, Ljava/lang/String;
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v20
-
-    move-object/from16 v0, v21
-
-    move-object/from16 v1, v20
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1937
     aget-object v21, v5, v10
@@ -3793,33 +3647,6 @@
 
     .line 3352
     if-eqz v10, :cond_2
-
-    .line 3353
-    const-string v3, "MmsSmsV2Provider"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "delete SMS IDs: "
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-static {v10}, Ljava/util/Arrays;->toString([J)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 3354
     new-instance v17, Landroid/content/Intent;
@@ -6952,33 +6779,8 @@
 
     move-result-object v16
 
-    .line 2559
-    .local v16, outerQuery:Ljava/lang/String;
-    const-string v2, "MmsSmsProvider"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "getFirstLockedMessage query: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v2, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2561
+    .local v16, outerQuery:Ljava/lang/String;
     sget-object v2, Lcom/android/providers/telephony/MmsSmsV2Provider;->mOpenHelper:Landroid/database/sqlite/SQLiteOpenHelper;
 
     invoke-virtual {v2}, Landroid/database/sqlite/SQLiteOpenHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
@@ -8264,54 +8066,21 @@
 .end method
 
 .method public static declared-synchronized getThreadId(JLjava/lang/String;)J
-    .locals 12
+    .locals 11
     .parameter "contactId"
     .parameter "address"
 
     .prologue
-    .line 603
+    .line 604
     const-class v9, Lcom/android/providers/telephony/MmsSmsV2Provider;
 
     monitor-enter v9
 
-    :try_start_0
-    const-string v8, "MmsSmsV2Provider"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v11, "getThreadId> "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, ",address> "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v8, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 604
     const-wide/16 v6, 0x0
 
     .line 611
     .local v6, threadId:J
+    :try_start_0
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -8448,14 +8217,13 @@
 
     goto :goto_0
 
-    .line 603
+    .line 604
     .end local v0           #cursor:Landroid/database/Cursor;
     .end local v1           #db:Landroid/database/sqlite/SQLiteDatabase;
     .end local v2           #i:I
     .end local v3           #rawQuery:Ljava/lang/String;
     .end local v4           #recipient:Ljava/lang/String;
     .end local v5           #size:I
-    .end local v6           #threadId:J
     :catchall_0
     move-exception v8
 
@@ -11918,33 +11686,6 @@
     .line 3637
     if-eqz v11, :cond_2
 
-    .line 3638
-    const-string v4, "MmsSmsV2Provider"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "update SMS IDs: "
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-static {v11}, Ljava/util/Arrays;->toString([J)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 3639
     new-instance v21, Landroid/content/Intent;
 
@@ -12965,33 +12706,6 @@
     .line 3139
     if-eqz v16, :cond_3
 
-    .line 3140
-    const-string v4, "MmsSmsV2Provider"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "delete SMS IDs: "
-
-    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-static/range {v16 .. v16}, Ljava/util/Arrays;->toString([J)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 3141
     new-instance v29, Landroid/content/Intent;
 
@@ -13168,82 +12882,8 @@
     .local v91, uriMatch:I
     const/16 v73, 0x0
 
-    .line 912
-    .local v73, processID:I
-    const/16 v5, 0x1d
-
-    move/from16 v0, v91
-
-    if-eq v0, v5, :cond_0
-
-    .line 913
-    invoke-static {}, Landroid/os/Binder;->getCallingPid()I
-
-    move-result v73
-
-    .line 914
-    const v5, 0xcb22
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Binder:"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    move/from16 v0, v73
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, ", Query uri:"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, ", selection:"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, ", selectionArgs:"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    move-object/from16 v0, p4
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
-
     .line 919
-    :cond_0
+    .local v73, processID:I
     invoke-virtual/range {p0 .. p0}, Lcom/android/providers/telephony/MmsSmsV2Provider;->checkContactTableCreated()V
 
     .line 921
@@ -13275,7 +12915,7 @@
 
     move/from16 v0, v55
 
-    if-ne v0, v5, :cond_1
+    if-ne v0, v5, :cond_0
 
     const-string v16, "htc_category= 0"
 
@@ -13326,7 +12966,7 @@
     .line 924
     .end local v10           #SortbyDate2:I
     .end local v16           #categoryExpr:Ljava/lang/String;
-    :cond_1
+    :cond_0
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -13368,7 +13008,7 @@
     move-result-object v60
 
     .line 1417
-    :cond_2
+    :cond_1
     :goto_1
     invoke-virtual/range {p0 .. p0}, Lcom/android/providers/telephony/MmsSmsV2Provider;->getContext()Landroid/content/Context;
 
@@ -13402,7 +13042,7 @@
 
     .line 940
     .local v83, simple:Ljava/lang/String;
-    if-eqz v83, :cond_4
+    if-eqz v83, :cond_3
 
     const-string v5, "true"
 
@@ -13412,7 +13052,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_3
 
     .line 941
     const-string v5, "thread_type"
@@ -13429,7 +13069,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_3
+    if-nez v5, :cond_2
 
     .line 943
     new-instance v5, Ljava/lang/StringBuilder;
@@ -13458,7 +13098,7 @@
 
     move-result-object p3
 
-    :cond_3
+    :cond_2
     move-object/from16 v11, p0
 
     move-object/from16 v12, p2
@@ -13481,7 +13121,7 @@
 
     .line 957
     .end local v90           #threadType:Ljava/lang/String;
-    :cond_4
+    :cond_3
     move-object/from16 v0, p3
 
     move-object/from16 v1, v16
@@ -13518,7 +13158,7 @@
 
     move-result v5
 
-    if-lez v5, :cond_5
+    if-lez v5, :cond_4
 
     const/16 v23, 0x1
 
@@ -13535,7 +13175,7 @@
 
     move-result v5
 
-    if-lez v5, :cond_6
+    if-lez v5, :cond_5
 
     const/16 v24, 0x1
 
@@ -13582,14 +13222,14 @@
     .line 962
     .end local v23           #groupByDate:Z
     .end local v24           #groupByGID:Z
-    :cond_5
+    :cond_4
     const/16 v23, 0x0
 
     goto :goto_3
 
     .line 963
     .restart local v23       #groupByDate:Z
-    :cond_6
+    :cond_5
     const/16 v24, 0x0
 
     goto :goto_4
@@ -13715,13 +13355,13 @@
     move-result-object v60
 
     .line 990
-    if-eqz v60, :cond_2
+    if-eqz v60, :cond_1
 
     invoke-interface/range {v60 .. v60}, Landroid/database/Cursor;->getCount()I
 
     move-result v5
 
-    if-lez v5, :cond_2
+    if-lez v5, :cond_1
 
     .line 991
     const-wide/16 v26, 0x0
@@ -13781,7 +13421,7 @@
 
     const/4 v6, 0x1
 
-    if-ne v5, v6, :cond_7
+    if-ne v5, v6, :cond_6
 
     .line 1002
     invoke-virtual/range {p0 .. p0}, Lcom/android/providers/telephony/MmsSmsV2Provider;->getContext()Landroid/content/Context;
@@ -13808,7 +13448,7 @@
 
     .line 1003
     .local v66, mdata:Landroid/provider/Telephony$namephoto;
-    if-eqz v66, :cond_7
+    if-eqz v66, :cond_6
 
     .line 1004
     move-object/from16 v0, v66
@@ -13819,19 +13459,19 @@
 
     .line 1009
     .end local v66           #mdata:Landroid/provider/Telephony$namephoto;
-    :cond_7
+    :cond_6
     const-wide/16 v5, 0x0
 
     cmp-long v5, v30, v5
 
-    if-gtz v5, :cond_8
+    if-gtz v5, :cond_7
 
     .line 1011
     invoke-static/range {v28 .. v29}, Lcom/android/providers/telephony/ContactMessageStore;->getContactIdByHtcThreadId(J)J
 
     move-result-wide v30
 
-    :cond_8
+    :cond_7
     move-object/from16 v25, p0
 
     .line 1018
@@ -13933,7 +13573,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_9
+    if-eqz v5, :cond_8
 
     move-object/from16 v35, v65
 
@@ -13971,7 +13611,7 @@
 
     .line 1033
     .end local v35           #finalSelection:Ljava/lang/String;
-    :cond_9
+    :cond_8
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -14044,16 +13684,16 @@
 
     .line 1046
     :sswitch_9
-    if-nez p5, :cond_a
+    if-nez p5, :cond_9
 
-    if-nez p3, :cond_a
+    if-nez p3, :cond_9
 
-    if-nez p4, :cond_a
+    if-nez p4, :cond_9
 
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_a
 
     .line 1050
-    :cond_a
+    :cond_9
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     const-string v6, "do not specify sortOrder, selection, selectionArgs, or projectionwith this query"
@@ -14063,7 +13703,7 @@
     throw v5
 
     .line 1061
-    :cond_b
+    :cond_a
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -14235,7 +13875,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_d
+    if-eqz v5, :cond_c
 
     const/16 v74, -0x1
 
@@ -14246,7 +13886,7 @@
 
     move/from16 v0, v74
 
-    if-eq v0, v5, :cond_f
+    if-eq v0, v5, :cond_e
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -14275,7 +13915,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_c
+    if-nez v5, :cond_b
 
     .line 1099
     new-instance v5, Ljava/lang/StringBuilder;
@@ -14305,12 +13945,12 @@
     move-result-object v65
 
     .line 1102
-    :cond_c
+    :cond_b
     invoke-static/range {p3 .. p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_10
+    if-eqz v5, :cond_f
 
     move-object/from16 v35, v65
 
@@ -14321,7 +13961,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_11
+    if-eqz v5, :cond_10
 
     const-string v39, "due_time"
 
@@ -14334,7 +13974,7 @@
 
     const/4 v6, 0x2
 
-    if-ne v5, v6, :cond_12
+    if-ne v5, v6, :cond_11
 
     .line 1108
     const-string v33, "pending_msgs"
@@ -14358,7 +13998,7 @@
     .end local v39           #finalOrder:Ljava/lang/String;
     .end local v65           #extraSelection:Ljava/lang/String;
     .end local v74           #proto:I
-    :cond_d
+    :cond_c
     const-string v5, "sms"
 
     move-object/from16 v0, v75
@@ -14367,27 +14007,27 @@
 
     move-result v5
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_d
 
     const/16 v74, 0x0
 
     goto :goto_6
 
-    :cond_e
+    :cond_d
     const/16 v74, 0x1
 
     goto :goto_6
 
     .line 1096
     .restart local v74       #proto:I
-    :cond_f
+    :cond_e
     const-string v65, " 0=0 "
 
     goto :goto_7
 
     .line 1102
     .restart local v65       #extraSelection:Ljava/lang/String;
-    :cond_10
+    :cond_f
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -14423,7 +14063,7 @@
     goto :goto_8
 
     .restart local v35       #finalSelection:Ljava/lang/String;
-    :cond_11
+    :cond_10
     move-object/from16 v39, p5
 
     .line 1104
@@ -14431,7 +14071,7 @@
 
     .line 1112
     .restart local v39       #finalOrder:Ljava/lang/String;
-    :cond_12
+    :cond_11
     const-string v33, "pending_msgs"
 
     const/16 v34, 0x0
@@ -14641,7 +14281,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_13
+    if-eqz v5, :cond_12
 
     .line 1164
     const/4 v5, 0x0
@@ -14649,7 +14289,7 @@
     goto/16 :goto_2
 
     .line 1189
-    :cond_13
+    :cond_12
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -15296,7 +14936,7 @@
     .restart local v60       #cursor:Landroid/database/Cursor;
     sget-object v5, Lcom/android/providers/telephony/MmsSmsV2Provider;->mStore:Lcom/android/providers/telephony/ContactMessageStore;
 
-    if-eqz v5, :cond_15
+    if-eqz v5, :cond_14
 
     .line 1312
     const/4 v5, 0x1
@@ -15314,7 +14954,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_14
+    if-eqz v5, :cond_13
 
     const/4 v5, 0x1
 
@@ -15340,14 +14980,14 @@
 
     .line 1312
     .end local v80           #row:[Ljava/lang/Object;
-    :cond_14
+    :cond_13
     const/4 v5, 0x0
 
     goto :goto_a
 
     .line 1314
     .restart local v80       #row:[Ljava/lang/Object;
-    :cond_15
+    :cond_14
     const/4 v5, 0x1
 
     new-array v0, v5, [Ljava/lang/Object;
@@ -15439,14 +15079,14 @@
 
     .line 1328
     .local v54, c:Landroid/database/Cursor;
-    if-eqz v54, :cond_2
+    if-eqz v54, :cond_1
 
     .line 1329
     invoke-interface/range {v54 .. v54}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v5
 
-    if-eqz v5, :cond_16
+    if-eqz v5, :cond_15
 
     .line 1330
     const/4 v5, 0x0
@@ -15486,7 +15126,7 @@
     .line 1334
     .end local v58           #count:J
     .end local v80           #row:[Ljava/lang/Object;
-    :cond_16
+    :cond_15
     invoke-interface/range {v54 .. v54}, Landroid/database/Cursor;->close()V
 
     goto/16 :goto_1
@@ -15556,17 +15196,17 @@
 
     .line 1347
     .local v53, address:Ljava/lang/String;
-    if-eqz v53, :cond_17
+    if-eqz v53, :cond_16
 
     invoke-virtual/range {v53 .. v53}, Ljava/lang/String;->length()I
 
     move-result v5
 
-    if-lez v5, :cond_17
+    if-lez v5, :cond_16
 
     sget-object v5, Lcom/android/providers/telephony/MmsSmsV2Provider;->mStore:Lcom/android/providers/telephony/ContactMessageStore;
 
-    if-eqz v5, :cond_17
+    if-eqz v5, :cond_16
 
     .line 1348
     invoke-static/range {v53 .. v53}, Landroid/net/Uri;->decode(Ljava/lang/String;)Ljava/lang/String;
@@ -15584,7 +15224,7 @@
 
     .line 1350
     .local v61, data:Lcom/android/providers/telephony/ContactMessageStore$ContactData;
-    if-eqz v61, :cond_2
+    if-eqz v61, :cond_1
 
     .line 1351
     const/4 v5, 0x2
@@ -15628,7 +15268,7 @@
     .line 1356
     .end local v61           #data:Lcom/android/providers/telephony/ContactMessageStore$ContactData;
     .end local v80           #row:[Ljava/lang/Object;
-    :cond_17
+    :cond_16
     const-string v5, "MmsSmsV2Provider"
 
     const-string v6, "address is invalid"
@@ -15699,12 +15339,12 @@
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1368
-    if-nez v55, :cond_18
+    if-nez v55, :cond_17
 
     .line 1369
     const-string v16, "(htc_category = 0 OR htc_category = 2)"
 
-    :cond_18
+    :cond_17
     move-object/from16 v11, p0
 
     move-object/from16 v12, p2
@@ -15824,7 +15464,7 @@
 
     .line 1399
     .local v72, number:Ljava/lang/String;
-    if-eqz v72, :cond_19
+    if-eqz v72, :cond_18
 
     .line 1400
     new-instance v5, Ljava/lang/StringBuilder;
@@ -15914,7 +15554,7 @@
     goto/16 :goto_2
 
     .line 1405
-    :cond_19
+    :cond_18
     sget-object v5, Lcom/android/providers/telephony/MmsSmsV2Provider;->mOpenHelper:Landroid/database/sqlite/SQLiteOpenHelper;
 
     invoke-virtual {v5}, Landroid/database/sqlite/SQLiteOpenHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
@@ -15942,6 +15582,8 @@
     goto :goto_c
 
     .line 926
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_1

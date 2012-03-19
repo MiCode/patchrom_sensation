@@ -10,7 +10,7 @@
 
 .field private static final EVENT_QUEUE_TABLE_NAME:Ljava/lang/String; = "event_queue"
 
-.field private static final IS_DEBUG:Z = true
+.field private static final IS_DEBUG:Z = false
 
 .field private static final POLICY_APPID:Ljava/lang/String; = "appid"
 
@@ -1805,13 +1805,6 @@
     :cond_2
     :try_start_3
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-
-    .line 507
-    const-string v7, "UserBehaviorLoggingService"
-
-    const-string v8, "[BatchInsert] done"
-
-    invoke-static {v7, v8}, Lcom/htc/server/ulog/Utils;->logD(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 508
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V

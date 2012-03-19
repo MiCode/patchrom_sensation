@@ -6493,10 +6493,16 @@
 
     if-ne v3, v4, :cond_66
 
+    invoke-static {}, Lcom/android/camera/DisplayDevice;->supportShowWhenLock()Z
+
+    move-result v3
+
+    if-nez v3, :cond_66
+
     .line 2243
     const-string v3, "HTCCamera"
 
-    const-string v4, "mIsKeyguardShow = true, waiting for unlock screen"
+    const-string v4, "mIsKeyguardShow = true, && !DisplayDevice.supportShowWhenLock(), waiting for unlock screen"
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 

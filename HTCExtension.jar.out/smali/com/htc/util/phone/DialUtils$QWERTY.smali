@@ -37,7 +37,7 @@
     .line 370
     iput-object p1, p0, Lcom/htc/util/phone/DialUtils$QWERTY;->this$0:Lcom/htc/util/phone/DialUtils;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

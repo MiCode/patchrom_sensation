@@ -13,7 +13,7 @@
 
     .prologue
     .line 40
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 41
     const/4 v0, 0x0
@@ -30,7 +30,7 @@
 
     .prologue
     .line 51
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 52
     iput-boolean p1, p0, Landroid/os/ConditionVariable;->mCondition:Z

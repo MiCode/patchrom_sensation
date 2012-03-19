@@ -239,29 +239,29 @@
     iput-object v0, p0, Lcom/android/camera/ImageManager$ImageList;->mTempStorage:[B
 
     .line 2624
-    iput-object p4, p0, Lcom/android/camera/ImageManager$ImageList;->mBaseUri:Landroid/net/Uri;
+    iput-object p4, p0, Lcom/android/camera/ImageManager$BaseImageList;->mBaseUri:Landroid/net/Uri;
 
     .line 2625
-    iput-object p5, p0, Lcom/android/camera/ImageManager$ImageList;->mThumbUri:Landroid/net/Uri;
+    iput-object p5, p0, Lcom/android/camera/ImageManager$BaseImageList;->mThumbUri:Landroid/net/Uri;
 
     .line 2626
-    iput p6, p0, Lcom/android/camera/ImageManager$ImageList;->mSort:I
+    iput p6, p0, Lcom/android/camera/ImageManager$BaseImageList;->mSort:I
 
     .line 2627
-    iput-object p7, p0, Lcom/android/camera/ImageManager$ImageList;->mBucketId:Ljava/lang/String;
+    iput-object p7, p0, Lcom/android/camera/ImageManager$BaseImageList;->mBucketId:Ljava/lang/String;
 
     .line 2629
-    iput-object p3, p0, Lcom/android/camera/ImageManager$ImageList;->mContentResolver:Landroid/content/ContentResolver;
+    iput-object p3, p0, Lcom/android/camera/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
     .line 2631
     invoke-virtual {p0}, Lcom/android/camera/ImageManager$ImageList;->createCursor()Landroid/database/Cursor;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/camera/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iput-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     .line 2632
-    iget-object v0, p0, Lcom/android/camera/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     if-nez v0, :cond_0
 
@@ -278,7 +278,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/camera/ImageManager$ImageList;->mBaseUri:Landroid/net/Uri;
+    iget-object v2, p0, Lcom/android/camera/ImageManager$BaseImageList;->mBaseUri:Landroid/net/Uri;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -311,7 +311,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/camera/ImageManager$ImageList;->mBaseUri:Landroid/net/Uri;
+    iget-object v2, p0, Lcom/android/camera/ImageManager$BaseImageList;->mBaseUri:Landroid/net/Uri;
 
     invoke-virtual {v2}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
@@ -327,7 +327,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/camera/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v2, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -339,11 +339,11 @@
 
     move-result-object v2
 
-    iget-object v0, p0, Lcom/android/camera/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/camera/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
 
@@ -405,9 +405,9 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/camera/ImageManager$ImageList;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/camera/ImageManager$BaseImageList;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/camera/ImageManager$ImageList;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v2, p0, Lcom/android/camera/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v3, Lcom/android/camera/ImageManager$DataLocation;->EXTERNAL:Lcom/android/camera/ImageManager$DataLocation;
 
@@ -456,7 +456,7 @@
     .prologue
     .line 2995
     :try_start_0
-    iget-object v1, p0, Lcom/android/camera/ImageManager$ImageList;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v1, p0, Lcom/android/camera/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v2, "r"
 
@@ -496,14 +496,14 @@
 
     .line 2690
     :cond_0
-    iget-object v0, p0, Lcom/android/camera/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     iget-object v1, p0, Lcom/android/camera/ImageManager$ImageList;->mContentObserver:Landroid/database/ContentObserver;
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->registerContentObserver(Landroid/database/ContentObserver;)V
 
     .line 2691
-    iget-object v0, p0, Lcom/android/camera/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     iget-object v1, p0, Lcom/android/camera/ImageManager$ImageList;->mDataSetObserver:Landroid/database/DataSetObserver;
 
@@ -522,7 +522,7 @@
 
     .prologue
     .line 3005
-    iget v1, p0, Lcom/android/camera/ImageManager$ImageList;->mSort:I
+    iget v1, p0, Lcom/android/camera/ImageManager$BaseImageList;->mSort:I
 
     const/4 v2, 0x1
 
@@ -594,14 +594,14 @@
 
     .line 2699
     :cond_0
-    iget-object v0, p0, Lcom/android/camera/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     iget-object v1, p0, Lcom/android/camera/ImageManager$ImageList;->mContentObserver:Landroid/database/ContentObserver;
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
     .line 2700
-    iget-object v0, p0, Lcom/android/camera/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     iget-object v1, p0, Lcom/android/camera/ImageManager$ImageList;->mDataSetObserver:Landroid/database/DataSetObserver;
 
@@ -653,9 +653,9 @@
 
     .prologue
     .line 2741
-    iget-object v0, p0, Lcom/android/camera/ImageManager$ImageList;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
-    iget-object v1, p0, Lcom/android/camera/ImageManager$ImageList;->mBaseUri:Landroid/net/Uri;
+    iget-object v1, p0, Lcom/android/camera/ImageManager$BaseImageList;->mBaseUri:Landroid/net/Uri;
 
     invoke-static {}, Lcom/android/camera/ImageManager;->access$500()[Ljava/lang/String;
 
@@ -729,19 +729,19 @@
     invoke-direct {p0}, Lcom/android/camera/ImageManager$ImageList;->unregisterObservers()V
 
     .line 2717
-    iget-object v0, p0, Lcom/android/camera/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     if-eqz v0, :cond_0
 
     .line 2718
-    iget-object v0, p0, Lcom/android/camera/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     .line 2719
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/camera/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iput-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     .line 2721
     :cond_0
@@ -767,9 +767,9 @@
     const/4 v8, 0x0
 
     .line 2595
-    iget-object v0, p0, Lcom/android/camera/ImageManager$ImageList;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
-    iget-object v1, p0, Lcom/android/camera/ImageManager$ImageList;->mBaseUri:Landroid/net/Uri;
+    iget-object v1, p0, Lcom/android/camera/ImageManager$BaseImageList;->mBaseUri:Landroid/net/Uri;
 
     invoke-virtual {v1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
@@ -1021,7 +1021,7 @@
 
     iget-object v1, p0, Lcom/android/camera/ImageManager$ImageList;->this$0:Lcom/android/camera/ImageManager;
 
-    iget-object v6, p0, Lcom/android/camera/ImageManager$ImageList;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v6, p0, Lcom/android/camera/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
     move-wide v2, p1
 
@@ -1312,7 +1312,7 @@
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 2977
-    iget-object v3, p0, Lcom/android/camera/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v3, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     invoke-virtual {p0}, Lcom/android/camera/ImageManager$ImageList;->indexData()I
 
@@ -1323,7 +1323,7 @@
     move-result-object v0
 
     .line 2979
-    iget-object v3, p0, Lcom/android/camera/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v3, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     invoke-virtual {p0}, Lcom/android/camera/ImageManager$ImageList;->indexMiniThumbId()I
 
@@ -1346,7 +1346,7 @@
 
     .prologue
     .line 2729
-    iget-object v0, p0, Lcom/android/camera/ImageManager$ImageList;->mBucketId:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mBucketId:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
@@ -1361,7 +1361,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/camera/ImageManager$ImageList;->mBucketId:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ImageManager$BaseImageList;->mBucketId:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

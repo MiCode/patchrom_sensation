@@ -83,7 +83,7 @@
 
     .prologue
     .line 51
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 49
     sget v0, Lcom/android/internal/statusbar/StatusBarNotification;->PRIORITY_NORMAL:I
@@ -100,7 +100,7 @@
 
     .prologue
     .line 69
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 49
     sget v0, Lcom/android/internal/statusbar/StatusBarNotification;->PRIORITY_NORMAL:I
@@ -125,7 +125,7 @@
 
     .prologue
     .line 55
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 49
     sget v0, Lcom/android/internal/statusbar/StatusBarNotification;->PRIORITY_NORMAL:I

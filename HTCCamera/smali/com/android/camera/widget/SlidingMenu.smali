@@ -359,17 +359,17 @@
 
     move-result v2
 
-    iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 441
     :goto_1
-    iget v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iget v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     mul-int/lit8 v3, v1, 0x2
 
     add-int/2addr v2, v3
 
-    iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 442
     iget-object v2, p0, Lcom/android/camera/widget/SlidingMenu;->m_ItemBackground:Landroid/graphics/drawable/Drawable;
@@ -382,7 +382,7 @@
 
     add-int/2addr v2, v3
 
-    iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     goto :goto_0
 
@@ -394,7 +394,7 @@
 
     move-result v2
 
-    iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     goto :goto_1
 

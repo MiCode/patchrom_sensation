@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 3915
+    .line 3959
     iput-object p1, p0, Lcom/android/phone/BluetoothHandsfree$32;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     invoke-direct {p0}, Landroid/bluetooth/AtCommandHandler;-><init>()V
@@ -43,7 +43,7 @@
 
     const/4 v2, 0x0
 
-    .line 3918
+    .line 3962
     aget-object v0, p1, v2
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -56,7 +56,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3919
+    .line 3963
     iget-object v0, p0, Lcom/android/phone/BluetoothHandsfree$32;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #getter for: Lcom/android/phone/BluetoothHandsfree;->mAudioManager:Landroid/media/AudioManager;
@@ -68,16 +68,16 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setParameters(Ljava/lang/String;)V
 
-    .line 3920
+    .line 3964
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     invoke-direct {v0, v2}, Landroid/bluetooth/AtCommandResult;-><init>(I)V
 
-    .line 3925
+    .line 3969
     :goto_0
     return-object v0
 
-    .line 3921
+    .line 3965
     :cond_0
     aget-object v0, p1, v2
 
@@ -91,7 +91,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3922
+    .line 3966
     iget-object v0, p0, Lcom/android/phone/BluetoothHandsfree$32;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #getter for: Lcom/android/phone/BluetoothHandsfree;->mAudioManager:Landroid/media/AudioManager;
@@ -103,14 +103,14 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setParameters(Ljava/lang/String;)V
 
-    .line 3923
+    .line 3967
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     invoke-direct {v0, v2}, Landroid/bluetooth/AtCommandResult;-><init>(I)V
 
     goto :goto_0
 
-    .line 3925
+    .line 3969
     :cond_1
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final DIALOG_HOTSPOT_ERROR:I = 0x2
 
@@ -231,32 +231,6 @@
     .line 99
     invoke-virtual {p0, v6}, Lcom/android/phone/HtcCdmaMIPScreen;->showDialog(I)V
 
-    .line 104
-    :goto_1
-    const-string v1, "HtcCdmaMIPScreen"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Update MIP screen "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget v3, p0, Lcom/android/phone/HtcCdmaMIPScreen;->mMipErrorId:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     goto :goto_0
 
     .line 101
@@ -267,7 +241,7 @@
 
     invoke-virtual {v1, v2}, Lcom/htc/widget/HtcAlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 
@@ -312,15 +286,8 @@
     :goto_0
     return-void
 
-    .line 58
-    :cond_0
-    const-string v2, "HtcCdmaMIPScreen"
-
-    const-string v3, "Created"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 59
+    :cond_0
     iget-object v2, p0, Lcom/android/phone/HtcCdmaMIPScreen;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0}, Lcom/android/phone/HtcCdmaMIPScreen;->getIntent()Landroid/content/Intent;
@@ -453,16 +420,9 @@
 .end method
 
 .method protected onDestroy()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 110
-    const-string v0, "HtcCdmaMIPScreen"
-
-    const-string v1, "Closed"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 111
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
@@ -475,9 +435,9 @@
     .parameter "intent"
 
     .prologue
-    const/4 v2, 0x2
+    const/4 v3, 0x2
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     .line 66
     const-string v1, "com.android.phone.HtcCdmaMIPScreen.hotspot"
@@ -489,30 +449,23 @@
     if-eqz v1, :cond_0
 
     .line 68
-    invoke-virtual {p0, v3}, Lcom/android/phone/HtcCdmaMIPScreen;->removeDialog(I)V
-
-    .line 69
     invoke-virtual {p0, v2}, Lcom/android/phone/HtcCdmaMIPScreen;->removeDialog(I)V
 
+    .line 69
+    invoke-virtual {p0, v3}, Lcom/android/phone/HtcCdmaMIPScreen;->removeDialog(I)V
+
     .line 70
-    invoke-virtual {p0, v2}, Lcom/android/phone/HtcCdmaMIPScreen;->showDialog(I)V
+    invoke-virtual {p0, v3}, Lcom/android/phone/HtcCdmaMIPScreen;->showDialog(I)V
 
     .line 76
     :goto_0
     return-void
 
-    .line 73
-    :cond_0
-    const-string v1, "HtcCdmaMIPScreen"
-
-    const-string v2, "onNewIntent"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 74
+    :cond_0
     iget-object v1, p0, Lcom/android/phone/HtcCdmaMIPScreen;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {v1, v3, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v1, v2, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 

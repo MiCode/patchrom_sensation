@@ -43,7 +43,7 @@
     .line 36
     iget-object v1, p0, Lcom/android/camera/component/HwCameraSwitchButtonBase$1;->this$0:Lcom/android/camera/component/HwCameraSwitchButtonBase;
 
-    #getter for: Lcom/android/camera/component/HwCameraSwitchButtonBase;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/HwCameraSwitchButtonBase;->access$000(Lcom/android/camera/component/HwCameraSwitchButtonBase;)Ljava/lang/String;
 
     move-result-object v1
@@ -118,7 +118,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/camera/component/HwCameraSwitchButtonBase$1;->this$0:Lcom/android/camera/component/HwCameraSwitchButtonBase;
 
-    #getter for: Lcom/android/camera/component/HwCameraSwitchButtonBase;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/HwCameraSwitchButtonBase;->access$100(Lcom/android/camera/component/HwCameraSwitchButtonBase;)Ljava/lang/String;
 
     move-result-object v1
@@ -153,7 +153,7 @@
     :cond_1
     iget-object v1, p0, Lcom/android/camera/component/HwCameraSwitchButtonBase$1;->this$0:Lcom/android/camera/component/HwCameraSwitchButtonBase;
 
-    #getter for: Lcom/android/camera/component/HwCameraSwitchButtonBase;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/HwCameraSwitchButtonBase;->access$200(Lcom/android/camera/component/HwCameraSwitchButtonBase;)Ljava/lang/String;
 
     move-result-object v1
@@ -169,7 +169,7 @@
     :cond_2
     iget-object v1, p0, Lcom/android/camera/component/HwCameraSwitchButtonBase$1;->this$0:Lcom/android/camera/component/HwCameraSwitchButtonBase;
 
-    #getter for: Lcom/android/camera/component/HwCameraSwitchButtonBase;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/HwCameraSwitchButtonBase;->access$300(Lcom/android/camera/component/HwCameraSwitchButtonBase;)Ljava/lang/String;
 
     move-result-object v1

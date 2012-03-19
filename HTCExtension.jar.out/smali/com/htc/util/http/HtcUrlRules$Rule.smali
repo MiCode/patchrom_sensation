@@ -51,7 +51,7 @@
 
     .prologue
     .line 106
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 107
     const-string v0, "DEFAULT"
@@ -89,7 +89,7 @@
 
     .prologue
     .line 79
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 80
     iput-object p1, p0, Lcom/htc/util/http/HtcUrlRules$Rule;->mName:Ljava/lang/String;

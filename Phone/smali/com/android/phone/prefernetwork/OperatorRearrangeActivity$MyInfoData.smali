@@ -36,7 +36,7 @@
     .line 195
     iput-object p1, p0, Lcom/android/phone/prefernetwork/OperatorRearrangeActivity$MyInfoData;->this$0:Lcom/android/phone/prefernetwork/OperatorRearrangeActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 196
     iput-boolean p2, p0, Lcom/android/phone/prefernetwork/OperatorRearrangeActivity$MyInfoData;->mSelect:Z

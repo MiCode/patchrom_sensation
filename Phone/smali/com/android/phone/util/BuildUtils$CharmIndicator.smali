@@ -23,7 +23,7 @@
     .locals 2
 
     .prologue
-    .line 164
+    .line 162
     invoke-static {}, Lcom/htc/util/phone/ProjectUtils;->getSenseVersion()F
 
     move-result v0

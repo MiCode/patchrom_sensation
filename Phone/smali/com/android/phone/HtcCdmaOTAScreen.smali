@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final EVENT_EXIT:I = 0x2
 
@@ -123,33 +123,8 @@
 
     sparse-switch v3, :sswitch_data_0
 
-    .line 126
-    :goto_0
-    const-string v3, "HtcCdmaOTAScreen"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "OTA Id"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget v5, p0, Lcom/android/phone/HtcCdmaOTAScreen;->otaId:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 128
+    :goto_0
     iget v3, p0, Lcom/android/phone/HtcCdmaOTAScreen;->otaId:I
 
     const/16 v4, 0xf
@@ -274,7 +249,7 @@
     move-result-object v1
 
     .line 119
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 121
     :sswitch_2
@@ -284,7 +259,7 @@
 
     move-result-object v1
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 136
     :cond_1
@@ -417,13 +392,6 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 71
-    const-string v2, "HtcCdmaOTAScreen"
-
-    const-string v3, "REBOOT_ACTION!"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 72
     new-instance v0, Landroid/content/Intent;
 
@@ -476,16 +444,9 @@
 
 # virtual methods
 .method public finish()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 198
-    const-string v0, "HtcCdmaOTAScreen"
-
-    const-string v1, "finish()"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 199
     invoke-super {p0}, Landroid/app/Activity;->finish()V
 
@@ -494,35 +455,21 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 2
+    .locals 0
     .parameter "icicle"
 
     .prologue
     .line 48
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 49
-    const-string v0, "HtcCdmaOTAScreen"
-
-    const-string v1, "Created"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 51
     return-void
 .end method
 
 .method protected onDestroy()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 61
-    const-string v0, "HtcCdmaOTAScreen"
-
-    const-string v1, "Closed"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 62
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 

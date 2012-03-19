@@ -128,7 +128,7 @@
     const/high16 v0, 0x3f80
 
     .line 78
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 37
     iput v1, p0, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->mTranslationX:F

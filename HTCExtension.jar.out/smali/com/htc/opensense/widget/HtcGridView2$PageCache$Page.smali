@@ -326,78 +326,29 @@
 .end method
 
 .method initPage(III)V
-    .locals 8
+    .locals 5
     .parameter "width"
     .parameter "height"
     .parameter "pageIndex"
 
     .prologue
-    const/4 v7, 0x0
+    const/4 v4, -0x1
 
-    const/4 v6, -0x1
+    const/16 v3, 0xff
 
-    const/16 v5, 0xff
-
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
     .line 3766
     iget-boolean v0, p0, Lcom/htc/opensense/widget/HtcGridView2$PageCache$Page;->mIsInit:Z
 
-    if-ne v4, v0, :cond_0
+    if-ne v2, v0, :cond_0
 
     .line 3795
     :goto_0
     return-void
 
-    .line 3770
-    :cond_0
-    const-string v0, "HtcGridView2"
-
-    const/4 v1, 0x6
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const-string v2, "initPage pageIndex="
-
-    aput-object v2, v1, v7
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    aput-object v2, v1, v4
-
-    const/4 v2, 0x2
-
-    const-string v3, ", w="
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x4
-
-    const-string v3, ", h="
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x5
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Lcom/htc/opensense/album/util/Log;->d2(Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 3772
+    :cond_0
     iput p1, p0, Lcom/htc/opensense/widget/HtcGridView2$PageCache$Page;->w:I
 
     .line 3773
@@ -409,7 +360,7 @@
     .line 3776
     iget v0, p0, Lcom/htc/opensense/widget/HtcGridView2$PageCache$Page;->mPageIndex:I
 
-    if-ne v0, v6, :cond_1
+    if-ne v0, v4, :cond_1
 
     .line 3777
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -433,7 +384,7 @@
     .line 3787
     iget v0, p0, Lcom/htc/opensense/widget/HtcGridView2$PageCache$Page;->mPageIndex:I
 
-    if-eq v0, v6, :cond_3
+    if-eq v0, v4, :cond_3
 
     .line 3788
     iget-object v0, p0, Lcom/htc/opensense/widget/HtcGridView2$PageCache$Page;->mCanvas:Landroid/graphics/Canvas;
@@ -446,7 +397,7 @@
 
     .line 3794
     :goto_2
-    iput-boolean v4, p0, Lcom/htc/opensense/widget/HtcGridView2$PageCache$Page;->mIsInit:Z
+    iput-boolean v2, p0, Lcom/htc/opensense/widget/HtcGridView2$PageCache$Page;->mIsInit:Z
 
     goto :goto_0
 
@@ -454,7 +405,7 @@
     :cond_1
     iget-boolean v0, p0, Lcom/htc/opensense/widget/HtcGridView2$PageCache$Page;->mNativeCreae:Z
 
-    if-ne v4, v0, :cond_2
+    if-ne v2, v0, :cond_2
 
     .line 3780
     invoke-static {}, Lcom/htc/opensense/album/AlbumCommon/Constants;->getDefaultBitmapConfig()Landroid/graphics/Bitmap$Config;
@@ -485,7 +436,9 @@
     :cond_3
     iget-object v0, p0, Lcom/htc/opensense/widget/HtcGridView2$PageCache$Page;->mCanvas:Landroid/graphics/Canvas;
 
-    invoke-virtual {v0, v7, v5, v5, v5}, Landroid/graphics/Canvas;->drawARGB(IIII)V
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1, v3, v3, v3}, Landroid/graphics/Canvas;->drawARGB(IIII)V
 
     goto :goto_2
 .end method

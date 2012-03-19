@@ -133,7 +133,7 @@
 
     .prologue
     .line 85
-    iget-object v3, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByBytes;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v3, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v3}, Ljava/util/concurrent/ConcurrentHashMap;->keySet()Ljava/util/Set;
 
@@ -156,7 +156,7 @@
     if-eqz v3, :cond_1
 
     .line 89
-    iget-object v3, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByBytes;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v3, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -275,7 +275,7 @@
     const/4 v5, 0x0
 
     .line 61
-    iget-object v6, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByBytes;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v6, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v6}, Ljava/util/concurrent/ConcurrentHashMap;->size()I
 
@@ -290,7 +290,7 @@
 
     .line 63
     :cond_1
-    iget-object v6, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByBytes;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v6, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v6}, Ljava/util/concurrent/ConcurrentHashMap;->keySet()Ljava/util/Set;
 
@@ -319,7 +319,7 @@
 
     .line 68
     .local v2, key:Ljava/lang/String;
-    iget-object v6, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByBytes;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v6, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v6, v2}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -354,7 +354,7 @@
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
     .line 75
-    iget-object v5, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByBytes;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v5, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v5, v0}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 

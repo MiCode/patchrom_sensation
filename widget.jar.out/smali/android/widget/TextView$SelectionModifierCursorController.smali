@@ -47,40 +47,40 @@
     .parameter
 
     .prologue
-    .line 12379
+    .line 12453
     iput-object p1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 12373
+    .line 12447
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mPreviousTapUpTime:J
 
-    .line 12380
+    .line 12454
     invoke-virtual {p0}, Landroid/widget/TextView$SelectionModifierCursorController;->resetTouchOffsets()V
 
-    .line 12381
+    .line 12455
     return-void
 .end method
 
-.method static synthetic access$10800(Landroid/widget/TextView$SelectionModifierCursorController;)Landroid/widget/TextView$SelectionStartHandleView;
+.method static synthetic access$11000(Landroid/widget/TextView$SelectionModifierCursorController;)Landroid/widget/TextView$SelectionStartHandleView;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 12364
+    .line 12438
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
 
     return-object v0
 .end method
 
-.method static synthetic access$10900(Landroid/widget/TextView$SelectionModifierCursorController;)Landroid/widget/TextView$SelectionEndHandleView;
+.method static synthetic access$11100(Landroid/widget/TextView$SelectionModifierCursorController;)Landroid/widget/TextView$SelectionEndHandleView;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 12364
+    .line 12438
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mEndHandle:Landroid/widget/TextView$SelectionEndHandleView;
 
     return-object v0
@@ -90,33 +90,33 @@
     .locals 3
 
     .prologue
-    .line 12423
+    .line 12497
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mSelectHandleLeft:Landroid/graphics/drawable/Drawable;
-    invoke-static {v0}, Landroid/widget/TextView;->access$10000(Landroid/widget/TextView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Landroid/widget/TextView;->access$10200(Landroid/widget/TextView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 12425
+    .line 12499
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mTextSelectHandleLeftRes:I
-    invoke-static {v0}, Landroid/widget/TextView;->access$10100(Landroid/widget/TextView;)I
+    invoke-static {v0}, Landroid/widget/TextView;->access$10300(Landroid/widget/TextView;)I
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 12426
+    .line 12500
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     iget-object v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Landroid/widget/TextView;->access$10200(Landroid/widget/TextView;)Landroid/content/Context;
+    invoke-static {v1}, Landroid/widget/TextView;->access$10400(Landroid/widget/TextView;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -131,37 +131,37 @@
     move-result-object v1
 
     #setter for: Landroid/widget/TextView;->mSelectHandleLeft:Landroid/graphics/drawable/Drawable;
-    invoke-static {v0, v1}, Landroid/widget/TextView;->access$10002(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1}, Landroid/widget/TextView;->access$10202(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    .line 12433
+    .line 12507
     :cond_0
     :goto_0
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mSelectHandleRight:Landroid/graphics/drawable/Drawable;
-    invoke-static {v0}, Landroid/widget/TextView;->access$10400(Landroid/widget/TextView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Landroid/widget/TextView;->access$10600(Landroid/widget/TextView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     if-nez v0, :cond_1
 
-    .line 12435
+    .line 12509
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mTextSelectHandleRightRes:I
-    invoke-static {v0}, Landroid/widget/TextView;->access$10500(Landroid/widget/TextView;)I
+    invoke-static {v0}, Landroid/widget/TextView;->access$10700(Landroid/widget/TextView;)I
 
     move-result v0
 
     if-nez v0, :cond_3
 
-    .line 12436
+    .line 12510
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     iget-object v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Landroid/widget/TextView;->access$10600(Landroid/widget/TextView;)Landroid/content/Context;
+    invoke-static {v1}, Landroid/widget/TextView;->access$10800(Landroid/widget/TextView;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -176,21 +176,21 @@
     move-result-object v1
 
     #setter for: Landroid/widget/TextView;->mSelectHandleRight:Landroid/graphics/drawable/Drawable;
-    invoke-static {v0, v1}, Landroid/widget/TextView;->access$10402(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1}, Landroid/widget/TextView;->access$10602(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    .line 12443
+    .line 12517
     :cond_1
     :goto_1
     return-void
 
-    .line 12430
+    .line 12504
     :cond_2
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     iget-object v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Landroid/widget/TextView;->access$10300(Landroid/widget/TextView;)Landroid/content/Context;
+    invoke-static {v1}, Landroid/widget/TextView;->access$10500(Landroid/widget/TextView;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -201,7 +201,7 @@
     iget-object v2, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mTextSelectHandleLeftRes:I
-    invoke-static {v2}, Landroid/widget/TextView;->access$10100(Landroid/widget/TextView;)I
+    invoke-static {v2}, Landroid/widget/TextView;->access$10300(Landroid/widget/TextView;)I
 
     move-result v2
 
@@ -210,18 +210,18 @@
     move-result-object v1
 
     #setter for: Landroid/widget/TextView;->mSelectHandleLeft:Landroid/graphics/drawable/Drawable;
-    invoke-static {v0, v1}, Landroid/widget/TextView;->access$10002(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1}, Landroid/widget/TextView;->access$10202(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     goto :goto_0
 
-    .line 12440
+    .line 12514
     :cond_3
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     iget-object v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Landroid/widget/TextView;->access$10700(Landroid/widget/TextView;)Landroid/content/Context;
+    invoke-static {v1}, Landroid/widget/TextView;->access$10900(Landroid/widget/TextView;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -232,7 +232,7 @@
     iget-object v2, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mTextSelectHandleRightRes:I
-    invoke-static {v2}, Landroid/widget/TextView;->access$10500(Landroid/widget/TextView;)I
+    invoke-static {v2}, Landroid/widget/TextView;->access$10700(Landroid/widget/TextView;)I
 
     move-result v2
 
@@ -241,7 +241,7 @@
     move-result-object v1
 
     #setter for: Landroid/widget/TextView;->mSelectHandleRight:Landroid/graphics/drawable/Drawable;
-    invoke-static {v0, v1}, Landroid/widget/TextView;->access$10402(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1}, Landroid/widget/TextView;->access$10602(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     goto :goto_1
 .end method
@@ -250,12 +250,12 @@
     .locals 4
 
     .prologue
-    .line 12447
+    .line 12521
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
 
     if-nez v0, :cond_0
 
-    .line 12448
+    .line 12522
     new-instance v0, Landroid/widget/TextView$SelectionStartHandleView;
 
     iget-object v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
@@ -263,14 +263,14 @@
     iget-object v2, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mSelectHandleLeft:Landroid/graphics/drawable/Drawable;
-    invoke-static {v2}, Landroid/widget/TextView;->access$10000(Landroid/widget/TextView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2}, Landroid/widget/TextView;->access$10200(Landroid/widget/TextView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     iget-object v3, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mSelectHandleRight:Landroid/graphics/drawable/Drawable;
-    invoke-static {v3}, Landroid/widget/TextView;->access$10400(Landroid/widget/TextView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v3}, Landroid/widget/TextView;->access$10600(Landroid/widget/TextView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
@@ -278,26 +278,26 @@
 
     iput-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
 
-    .line 12450
+    .line 12524
     :cond_0
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mEndHandle:Landroid/widget/TextView$SelectionEndHandleView;
 
     if-nez v0, :cond_1
 
-    .line 12451
+    .line 12525
     new-instance v0, Landroid/widget/TextView$SelectionModifierCursorController$1;
 
     iget-object v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mSelectHandleRight:Landroid/graphics/drawable/Drawable;
-    invoke-static {v1}, Landroid/widget/TextView;->access$10400(Landroid/widget/TextView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v1}, Landroid/widget/TextView;->access$10600(Landroid/widget/TextView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     iget-object v2, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mSelectHandleLeft:Landroid/graphics/drawable/Drawable;
-    invoke-static {v2}, Landroid/widget/TextView;->access$10000(Landroid/widget/TextView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2}, Landroid/widget/TextView;->access$10200(Landroid/widget/TextView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -305,35 +305,35 @@
 
     iput-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mEndHandle:Landroid/widget/TextView$SelectionEndHandleView;
 
-    .line 12465
+    .line 12539
     :cond_1
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
 
     invoke-virtual {v0}, Landroid/widget/TextView$SelectionStartHandleView;->show()V
 
-    .line 12466
+    .line 12540
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mEndHandle:Landroid/widget/TextView$SelectionEndHandleView;
 
     invoke-virtual {v0}, Landroid/widget/TextView$SelectionEndHandleView;->show()V
 
-    .line 12468
+    .line 12542
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->useHtcTextSelection()Z
-    invoke-static {v0}, Landroid/widget/TextView;->access$2800(Landroid/widget/TextView;)Z
+    invoke-static {v0}, Landroid/widget/TextView;->access$2900(Landroid/widget/TextView;)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 12471
+    .line 12545
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
 
     const/16 v1, 0xc8
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView$SelectionStartHandleView;->showActionPopupWindow(I)V
 
-    .line 12472
+    .line 12546
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mEndHandle:Landroid/widget/TextView$SelectionEndHandleView;
 
     iget-object v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
@@ -344,14 +344,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView$SelectionEndHandleView;->setActionPopupWindow(Landroid/widget/TextView$ActionPopupWindow;)V
 
-    .line 12475
+    .line 12549
     :cond_2
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->hideInsertionPointCursorController()V
-    invoke-static {v0}, Landroid/widget/TextView;->access$9900(Landroid/widget/TextView;)V
+    invoke-static {v0}, Landroid/widget/TextView;->access$10100(Landroid/widget/TextView;)V
 
-    .line 12476
+    .line 12550
     return-void
 .end method
 
@@ -360,12 +360,12 @@
     .parameter "event"
 
     .prologue
-    .line 12576
+    .line 12650
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v2
 
-    .line 12577
+    .line 12651
     .local v2, pointerCount:I
     const/4 v0, 0x0
 
@@ -373,7 +373,7 @@
     :goto_0
     if-ge v0, v2, :cond_2
 
-    .line 12578
+    .line 12652
     iget-object v3, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getX(I)F
@@ -388,7 +388,7 @@
 
     move-result v1
 
-    .line 12579
+    .line 12653
     .local v1, offset:I
     iget v3, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mMinTouchOffset:I
 
@@ -396,7 +396,7 @@
 
     iput v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mMinTouchOffset:I
 
-    .line 12580
+    .line 12654
     :cond_0
     iget v3, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mMaxTouchOffset:I
 
@@ -404,13 +404,13 @@
 
     iput v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mMaxTouchOffset:I
 
-    .line 12577
+    .line 12651
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 12582
+    .line 12656
     .end local v1           #offset:I
     :cond_2
     return-void
@@ -426,10 +426,10 @@
 
     const/4 v2, 0x0
 
-    .line 12414
+    .line 12488
     invoke-virtual {p0}, Landroid/widget/TextView$SelectionModifierCursorController;->show()V
 
-    .line 12415
+    .line 12489
     iget-object v4, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     iget-object v5, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
@@ -438,7 +438,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->getLocationInWindow([I)V
 
-    .line 12416
+    .line 12490
     iget-object v4, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     iget-object v4, v4, Landroid/widget/TextView;->mTempCoords:[I
@@ -448,7 +448,7 @@
     iget-object v5, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->getPositionListener()Landroid/widget/TextView$PositionListener;
-    invoke-static {v5}, Landroid/widget/TextView;->access$3100(Landroid/widget/TextView;)Landroid/widget/TextView$PositionListener;
+    invoke-static {v5}, Landroid/widget/TextView;->access$3200(Landroid/widget/TextView;)Landroid/widget/TextView$PositionListener;
 
     move-result-object v5
 
@@ -467,7 +467,7 @@
     iget-object v5, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->getPositionListener()Landroid/widget/TextView$PositionListener;
-    invoke-static {v5}, Landroid/widget/TextView;->access$3100(Landroid/widget/TextView;)Landroid/widget/TextView$PositionListener;
+    invoke-static {v5}, Landroid/widget/TextView;->access$3200(Landroid/widget/TextView;)Landroid/widget/TextView$PositionListener;
 
     move-result-object v5
 
@@ -480,13 +480,13 @@
     :cond_0
     move v0, v3
 
-    .line 12417
+    .line 12491
     .local v0, positionHasChanged:Z
     :goto_0
     iget-object v4, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->getPositionListener()Landroid/widget/TextView$PositionListener;
-    invoke-static {v4}, Landroid/widget/TextView;->access$3100(Landroid/widget/TextView;)Landroid/widget/TextView$PositionListener;
+    invoke-static {v4}, Landroid/widget/TextView;->access$3200(Landroid/widget/TextView;)Landroid/widget/TextView$PositionListener;
 
     move-result-object v4
 
@@ -494,7 +494,7 @@
 
     move-result v1
 
-    .line 12418
+    .line 12492
     .local v1, scrollChanged:Z
     iget-object v4, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
 
@@ -512,7 +512,7 @@
 
     invoke-virtual {v4, v5, v6, v0, v1}, Landroid/widget/TextView$SelectionStartHandleView;->updatePosition(IIZZ)V
 
-    .line 12419
+    .line 12493
     iget-object v4, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mEndHandle:Landroid/widget/TextView$SelectionEndHandleView;
 
     iget-object v5, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
@@ -529,7 +529,7 @@
 
     invoke-virtual {v4, v2, v3, v0, v1}, Landroid/widget/TextView$SelectionEndHandleView;->updatePosition(IIZZ)V
 
-    .line 12420
+    .line 12494
     return-void
 
     .end local v0           #positionHasChanged:Z
@@ -537,7 +537,7 @@
     :cond_1
     move v0, v2
 
-    .line 12416
+    .line 12490
     goto :goto_0
 .end method
 
@@ -545,7 +545,7 @@
     .locals 1
 
     .prologue
-    .line 12589
+    .line 12663
     iget v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mMaxTouchOffset:I
 
     return v0
@@ -555,7 +555,7 @@
     .locals 1
 
     .prologue
-    .line 12585
+    .line 12659
     iget v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mMinTouchOffset:I
 
     return v0
@@ -567,7 +567,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 12479
+    .line 12553
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
 
     if-eqz v0, :cond_0
@@ -576,7 +576,7 @@
 
     invoke-virtual {v0}, Landroid/widget/TextView$SelectionStartHandleView;->hide()V
 
-    .line 12480
+    .line 12554
     :cond_0
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mEndHandle:Landroid/widget/TextView$SelectionEndHandleView;
 
@@ -586,28 +586,28 @@
 
     invoke-virtual {v0}, Landroid/widget/TextView$SelectionEndHandleView;->hide()V
 
-    .line 12481
+    .line 12555
     :cond_1
     iput-boolean v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mIsShowing:Z
 
-    .line 12483
+    .line 12557
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->useHtcTextSelection()Z
-    invoke-static {v0}, Landroid/widget/TextView;->access$2800(Landroid/widget/TextView;)Z
+    invoke-static {v0}, Landroid/widget/TextView;->access$2900(Landroid/widget/TextView;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 12484
+    .line 12558
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     iget-object v0, v0, Landroid/widget/TextView;->mSelectionManager:Lcom/htc/textselection/HtcTextSelectionManager;
 
     invoke-virtual {v0, v1}, Lcom/htc/textselection/HtcTextSelectionManager;->dismissQuickAction(Z)V
 
-    .line 12486
+    .line 12560
     :cond_2
     return-void
 .end method
@@ -618,7 +618,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 12385
+    .line 12459
     iget-object v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
 
     if-eqz v1, :cond_0
@@ -627,7 +627,7 @@
 
     if-nez v1, :cond_1
 
-    .line 12388
+    .line 12462
     :cond_0
     :goto_0
     return v0
@@ -635,13 +635,13 @@
     :cond_1
     iget-object v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
 
-    iget-boolean v1, v1, Landroid/widget/TextView$SelectionStartHandleView;->mPositionOnTop:Z
+    iget-boolean v1, v1, Landroid/widget/TextView$HandleView;->mPositionOnTop:Z
 
     if-nez v1, :cond_0
 
     iget-object v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mEndHandle:Landroid/widget/TextView$SelectionEndHandleView;
 
-    iget-boolean v1, v1, Landroid/widget/TextView$SelectionEndHandleView;->mPositionOnTop:Z
+    iget-boolean v1, v1, Landroid/widget/TextView$HandleView;->mPositionOnTop:Z
 
     if-nez v1, :cond_0
 
@@ -656,7 +656,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 12608
+    .line 12682
     iget-object v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
 
     if-eqz v1, :cond_0
@@ -665,7 +665,7 @@
 
     if-nez v1, :cond_1
 
-    .line 12611
+    .line 12685
     :cond_0
     :goto_0
     return v0
@@ -697,7 +697,7 @@
     .locals 1
 
     .prologue
-    .line 12600
+    .line 12674
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
 
     if-eqz v0, :cond_0
@@ -725,7 +725,7 @@
     .locals 1
 
     .prologue
-    .line 12621
+    .line 12695
     iget-boolean v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mIsShowing:Z
 
     return v0
@@ -735,18 +735,18 @@
     .locals 2
 
     .prologue
-    .line 12658
+    .line 12732
     iget-object v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
-    .line 12659
+    .line 12733
     .local v0, observer:Landroid/view/ViewTreeObserver;
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnTouchModeChangeListener(Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;)V
 
-    .line 12661
+    .line 12735
     iget-object v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
 
     if-eqz v1, :cond_0
@@ -755,7 +755,7 @@
 
     invoke-virtual {v1}, Landroid/widget/TextView$SelectionStartHandleView;->onDetached()V
 
-    .line 12662
+    .line 12736
     :cond_0
     iget-object v1, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mEndHandle:Landroid/widget/TextView$SelectionEndHandleView;
 
@@ -765,7 +765,7 @@
 
     invoke-virtual {v1}, Landroid/widget/TextView$SelectionEndHandleView;->onDetached()V
 
-    .line 12663
+    .line 12737
     :cond_1
     return-void
 .end method
@@ -779,25 +779,25 @@
 
     const/4 v1, 0x0
 
-    .line 12491
+    .line 12565
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 12570
+    .line 12644
     :cond_0
     :goto_0
     :pswitch_0
     return-void
 
-    .line 12494
+    .line 12568
     :pswitch_1
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mIsLongPressed:Z
-    invoke-static {v0}, Landroid/widget/TextView;->access$11000(Landroid/widget/TextView;)Z
+    invoke-static {v0}, Landroid/widget/TextView;->access$11200(Landroid/widget/TextView;)Z
 
     move-result v0
 
@@ -806,7 +806,7 @@
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->useHtcTextSelection()Z
-    invoke-static {v0}, Landroid/widget/TextView;->access$2800(Landroid/widget/TextView;)Z
+    invoke-static {v0}, Landroid/widget/TextView;->access$2900(Landroid/widget/TextView;)Z
 
     move-result v0
 
@@ -825,14 +825,14 @@
 
     if-lez v0, :cond_0
 
-    .line 12497
+    .line 12571
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
     float-to-int v2, v0
 
-    .line 12498
+    .line 12572
     .local v2, x:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -840,7 +840,7 @@
 
     float-to-int v3, v0
 
-    .line 12501
+    .line 12575
     .local v3, y:I
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
@@ -856,17 +856,17 @@
 
     iput v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mMinTouchOffset:I
 
-    .line 12503
+    .line 12577
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->isTextEditable()Z
-    invoke-static {v0}, Landroid/widget/TextView;->access$11100(Landroid/widget/TextView;)Z
+    invoke-static {v0}, Landroid/widget/TextView;->access$11300(Landroid/widget/TextView;)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 12505
+    .line 12579
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     iget-object v0, v0, Landroid/widget/TextView;->mSelectionManager:Lcom/htc/textselection/HtcTextSelectionManager;
@@ -881,7 +881,7 @@
 
     invoke-virtual {v0, v1, v4}, Lcom/htc/textselection/HtcTextSelectionManager;->checkAutoScroll(FF)V
 
-    .line 12519
+    .line 12593
     .end local v2           #x:I
     .end local v3           #y:I
     :cond_1
@@ -891,13 +891,13 @@
 
     move-result v2
 
-    .line 12520
+    .line 12594
     .local v2, x:F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v3
 
-    .line 12523
+    .line 12597
     .local v3, y:F
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
@@ -909,17 +909,17 @@
 
     iput v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mMinTouchOffset:I
 
-    .line 12526
+    .line 12600
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->isTextEditable()Z
-    invoke-static {v0}, Landroid/widget/TextView;->access$11100(Landroid/widget/TextView;)Z
+    invoke-static {v0}, Landroid/widget/TextView;->access$11300(Landroid/widget/TextView;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 12527
+    .line 12601
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
@@ -928,7 +928,7 @@
 
     sub-long v9, v0, v4
 
-    .line 12528
+    .line 12602
     .local v9, duration:J
     invoke-static {}, Landroid/view/ViewConfiguration;->getDoubleTapTimeout()I
 
@@ -940,18 +940,18 @@
 
     if-gtz v0, :cond_2
 
-    .line 12530
+    .line 12604
     iget v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mPreviousTapPositionX:F
 
     sub-float v6, v2, v0
 
-    .line 12531
+    .line 12605
     .local v6, deltaX:F
     iget v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mPreviousTapPositionY:F
 
     sub-float v7, v3, v0
 
-    .line 12532
+    .line 12606
     .local v7, deltaY:F
     mul-float v0, v6, v6
 
@@ -959,12 +959,12 @@
 
     add-float v8, v0, v1
 
-    .line 12533
+    .line 12607
     .local v8, distanceSquared:F
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mSquaredTouchSlopDistance:I
-    invoke-static {v0}, Landroid/widget/TextView;->access$9600(Landroid/widget/TextView;)I
+    invoke-static {v0}, Landroid/widget/TextView;->access$9800(Landroid/widget/TextView;)I
 
     move-result v0
 
@@ -974,19 +974,19 @@
 
     if-gez v0, :cond_2
 
-    .line 12534
+    .line 12608
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->startSelectionActionMode()Z
-    invoke-static {v0}, Landroid/widget/TextView;->access$11400(Landroid/widget/TextView;)Z
+    invoke-static {v0}, Landroid/widget/TextView;->access$11600(Landroid/widget/TextView;)Z
 
-    .line 12535
+    .line 12609
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #setter for: Landroid/widget/TextView;->mDiscardNextActionUp:Z
-    invoke-static {v0, v11}, Landroid/widget/TextView;->access$11502(Landroid/widget/TextView;Z)Z
+    invoke-static {v0, v11}, Landroid/widget/TextView;->access$11702(Landroid/widget/TextView;Z)Z
 
-    .line 12540
+    .line 12614
     .end local v6           #deltaX:F
     .end local v7           #deltaY:F
     .end local v8           #distanceSquared:F
@@ -994,19 +994,19 @@
     :cond_2
     iput v2, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mPreviousTapPositionX:F
 
-    .line 12541
+    .line 12615
     iput v3, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mPreviousTapPositionY:F
 
     goto/16 :goto_0
 
-    .line 12507
+    .line 12581
     .local v2, x:I
     .local v3, y:I
     :cond_3
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mTextIsSelectable:Z
-    invoke-static {v0}, Landroid/widget/TextView;->access$11200(Landroid/widget/TextView;)Z
+    invoke-static {v0}, Landroid/widget/TextView;->access$11400(Landroid/widget/TextView;)Z
 
     move-result v0
 
@@ -1015,7 +1015,7 @@
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mIsLongPressed:Z
-    invoke-static {v0}, Landroid/widget/TextView;->access$11000(Landroid/widget/TextView;)Z
+    invoke-static {v0}, Landroid/widget/TextView;->access$11200(Landroid/widget/TextView;)Z
 
     move-result v0
 
@@ -1024,13 +1024,13 @@
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->useHtcTextSelection()Z
-    invoke-static {v0}, Landroid/widget/TextView;->access$2800(Landroid/widget/TextView;)Z
+    invoke-static {v0}, Landroid/widget/TextView;->access$2900(Landroid/widget/TextView;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 12508
+    .line 12582
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mText:Ljava/lang/CharSequence;
@@ -1052,19 +1052,19 @@
 
     invoke-static {v0, v1}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
 
-    .line 12509
+    .line 12583
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->selectCurrentWord()Z
-    invoke-static {v0}, Landroid/widget/TextView;->access$11300(Landroid/widget/TextView;)Z
+    invoke-static {v0}, Landroid/widget/TextView;->access$11500(Landroid/widget/TextView;)Z
 
-    .line 12510
+    .line 12584
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #setter for: Landroid/widget/TextView;->mIsInTextSelectionMode:Z
-    invoke-static {v0, v11}, Landroid/widget/TextView;->access$9502(Landroid/widget/TextView;Z)Z
+    invoke-static {v0, v11}, Landroid/widget/TextView;->access$9602(Landroid/widget/TextView;Z)Z
 
-    .line 12511
+    .line 12585
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getSelectionController()Landroid/widget/TextView$SelectionModifierCursorController;
@@ -1073,7 +1073,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 12512
+    .line 12586
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     iget-object v1, v0, Landroid/widget/TextView;->mSelectionManager:Lcom/htc/textselection/HtcTextSelectionManager;
@@ -1091,7 +1091,7 @@
 
     invoke-virtual {v1, v4, v0}, Lcom/htc/textselection/HtcTextSelectionManager;->onStartSelect(Landroid/widget/TextView;Landroid/text/Spannable;)V
 
-    .line 12513
+    .line 12587
     :cond_4
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
@@ -1111,60 +1111,60 @@
 
     goto/16 :goto_1
 
-    .line 12546
+    .line 12620
     .end local v2           #x:I
     .end local v3           #y:I
     :pswitch_3
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->useHtcTextSelection()Z
-    invoke-static {v0}, Landroid/widget/TextView;->access$2800(Landroid/widget/TextView;)Z
+    invoke-static {v0}, Landroid/widget/TextView;->access$2900(Landroid/widget/TextView;)Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    .line 12547
+    .line 12621
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     iget-object v0, v0, Landroid/widget/TextView;->mSelectionManager:Lcom/htc/textselection/HtcTextSelectionManager;
 
     invoke-virtual {v0}, Lcom/htc/textselection/HtcTextSelectionManager;->dismissMagnifier()V
 
-    .line 12548
+    .line 12622
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     iget-object v0, v0, Landroid/widget/TextView;->mSelectionManager:Lcom/htc/textselection/HtcTextSelectionManager;
 
     invoke-virtual {v0}, Lcom/htc/textselection/HtcTextSelectionManager;->stopAutoScroll()V
 
-    .line 12550
+    .line 12624
     :cond_5
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #setter for: Landroid/widget/TextView;->mIsLongPressed:Z
-    invoke-static {v0, v1}, Landroid/widget/TextView;->access$11002(Landroid/widget/TextView;Z)Z
+    invoke-static {v0, v1}, Landroid/widget/TextView;->access$11202(Landroid/widget/TextView;Z)Z
 
-    .line 12551
+    .line 12625
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #setter for: Landroid/widget/TextView;->mDiscardNextActionUp:Z
-    invoke-static {v0, v1}, Landroid/widget/TextView;->access$11502(Landroid/widget/TextView;Z)Z
+    invoke-static {v0, v1}, Landroid/widget/TextView;->access$11702(Landroid/widget/TextView;Z)Z
 
-    .line 12552
+    .line 12626
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->disallowInterceptTouchEvent(Z)V
-    invoke-static {v0, v1}, Landroid/widget/TextView;->access$11600(Landroid/widget/TextView;Z)V
+    invoke-static {v0, v1}, Landroid/widget/TextView;->access$11800(Landroid/widget/TextView;Z)V
 
     goto/16 :goto_0
 
-    .line 12560
+    .line 12634
     :pswitch_4
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Landroid/widget/TextView;->access$11700(Landroid/widget/TextView;)Landroid/content/Context;
+    invoke-static {v0}, Landroid/widget/TextView;->access$11900(Landroid/widget/TextView;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -1180,12 +1180,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 12562
+    .line 12636
     invoke-direct {p0, p1}, Landroid/widget/TextView$SelectionModifierCursorController;->updateMinAndMaxOffsets(Landroid/view/MotionEvent;)V
 
     goto/16 :goto_0
 
-    .line 12567
+    .line 12641
     :pswitch_5
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -1195,7 +1195,7 @@
 
     goto/16 :goto_0
 
-    .line 12491
+    .line 12565
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_2
@@ -1213,13 +1213,13 @@
     .parameter "isInTouchMode"
 
     .prologue
-    .line 12651
+    .line 12725
     if-nez p1, :cond_0
 
-    .line 12652
+    .line 12726
     invoke-virtual {p0}, Landroid/widget/TextView$SelectionModifierCursorController;->hide()V
 
-    .line 12654
+    .line 12728
     :cond_0
     return-void
 .end method
@@ -1228,17 +1228,17 @@
     .locals 1
 
     .prologue
-    .line 12617
+    .line 12691
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
 
     invoke-virtual {v0}, Landroid/widget/TextView$SelectionStartHandleView;->resetDragging()V
 
-    .line 12618
+    .line 12692
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mEndHandle:Landroid/widget/TextView$SelectionEndHandleView;
 
     invoke-virtual {v0}, Landroid/widget/TextView$SelectionEndHandleView;->resetDragging()V
 
-    .line 12619
+    .line 12693
     return-void
 .end method
 
@@ -1246,14 +1246,14 @@
     .locals 1
 
     .prologue
-    .line 12593
+    .line 12667
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mMaxTouchOffset:I
 
     iput v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mMinTouchOffset:I
 
-    .line 12594
+    .line 12668
     return-void
 .end method
 
@@ -1261,7 +1261,7 @@
     .locals 1
 
     .prologue
-    .line 12393
+    .line 12467
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->isInBatchEditMode()Z
@@ -1270,24 +1270,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 12400
+    .line 12474
     :goto_0
     return-void
 
-    .line 12396
+    .line 12470
     :cond_0
     invoke-direct {p0}, Landroid/widget/TextView$SelectionModifierCursorController;->initDrawables()V
 
-    .line 12397
+    .line 12471
     invoke-direct {p0}, Landroid/widget/TextView$SelectionModifierCursorController;->initHandles()V
 
-    .line 12398
+    .line 12472
     iget-object v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->hideInsertionPointCursorController()V
-    invoke-static {v0}, Landroid/widget/TextView;->access$9900(Landroid/widget/TextView;)V
+    invoke-static {v0}, Landroid/widget/TextView;->access$10100(Landroid/widget/TextView;)V
 
-    .line 12399
+    .line 12473
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mIsShowing:Z
@@ -1301,18 +1301,18 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 12624
+    .line 12698
     invoke-virtual {p0}, Landroid/widget/TextView$SelectionModifierCursorController;->isShowing()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 12647
+    .line 12721
     :goto_0
     return-void
 
-    .line 12628
+    .line 12702
     :cond_0
     iget-object v2, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
@@ -1320,7 +1320,7 @@
 
     move-result v1
 
-    .line 12629
+    .line 12703
     .local v1, selectionStart:I
     iget-object v2, p0, Landroid/widget/TextView$SelectionModifierCursorController;->this$0:Landroid/widget/TextView;
 
@@ -1328,13 +1328,13 @@
 
     move-result v0
 
-    .line 12631
+    .line 12705
     .local v0, selectionEnd:I
     if-ltz v1, :cond_1
 
     if-gez v0, :cond_2
 
-    .line 12633
+    .line 12707
     :cond_1
     const-string v2, "TextView"
 
@@ -1342,12 +1342,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 12634
+    .line 12708
     invoke-virtual {p0}, Landroid/widget/TextView$SelectionModifierCursorController;->hide()V
 
     goto :goto_0
 
-    .line 12638
+    .line 12712
     :cond_2
     iget-object v2, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
 
@@ -1357,7 +1357,7 @@
 
     if-nez v2, :cond_4
 
-    .line 12640
+    .line 12714
     :cond_3
     const-string v2, "HtcTextSelection"
 
@@ -1367,13 +1367,13 @@
 
     goto :goto_0
 
-    .line 12644
+    .line 12718
     :cond_4
     iget-object v2, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mStartHandle:Landroid/widget/TextView$SelectionStartHandleView;
 
     invoke-virtual {v2, v1, v3}, Landroid/widget/TextView$SelectionStartHandleView;->positionAtCursorOffset(IZ)V
 
-    .line 12645
+    .line 12719
     iget-object v2, p0, Landroid/widget/TextView$SelectionModifierCursorController;->mEndHandle:Landroid/widget/TextView$SelectionEndHandleView;
 
     invoke-virtual {v2, v0, v3}, Landroid/widget/TextView$SelectionEndHandleView;->positionAtCursorOffset(IZ)V

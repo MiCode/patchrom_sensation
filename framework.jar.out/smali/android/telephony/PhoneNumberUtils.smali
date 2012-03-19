@@ -804,7 +804,7 @@
 
     .prologue
     .line 55
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 2536
     return-void
@@ -4797,39 +4797,14 @@
 .end method
 
 .method private static final getMinMatchByCID()I
-    .locals 4
+    .locals 3
 
     .prologue
     .line 3182
     const/4 v0, 0x0
 
-    .line 3184
-    .local v0, minMatch:I
-    const-string v1, "PhoneNumberUtils: "
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "cid: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    sget-object v3, Landroid/telephony/PhoneNumberUtils;->CID:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 3185
+    .local v0, minMatch:I
     sget-object v1, Landroid/telephony/PhoneNumberUtils;->CID:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -4953,31 +4928,8 @@
 
     move-result-object v2
 
-    .line 3224
-    :cond_1
-    const-string v5, "PhoneNumberUtils: "
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v7, "ro.phone.min_match: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 3225
+    :cond_1
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
@@ -8617,34 +8569,11 @@
 .end method
 
 .method public static parseGlobalPrefix(Ljava/lang/String;)Ljava/lang/String;
-    .locals 8
+    .locals 7
     .parameter "number"
 
     .prologue
-    const/4 v7, 0x5
-
-    .line 3249
-    const-string v4, "PhoneNumberUtils"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "before parseForGlobalPrefix: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v6, 0x5
 
     .line 3252
     move-object v1, p0
@@ -8698,10 +8627,10 @@
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
     .line 3262
-    if-le v0, v7, :cond_0
+    if-le v0, v6, :cond_0
 
     .line 3263
-    invoke-virtual {v3, v7, v0}, Ljava/lang/String;->subSequence(II)Ljava/lang/CharSequence;
+    invoke-virtual {v3, v6, v0}, Ljava/lang/String;->subSequence(II)Ljava/lang/CharSequence;
 
     move-result-object v4
 
@@ -8713,34 +8642,11 @@
 
     move-result-object v1
 
-    .line 3271
+    .line 3274
     .end local v0           #length:I
     .end local v2           #sb:Ljava/lang/StringBuilder;
     .end local v3           #workString:Ljava/lang/String;
     :cond_1
-    const-string v4, "PhoneNumberUtils"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "after parseForGlobalPrefix: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3274
     return-object v1
 .end method
 

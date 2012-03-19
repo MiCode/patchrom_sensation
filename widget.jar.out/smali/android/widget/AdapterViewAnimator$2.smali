@@ -30,7 +30,7 @@
     .line 725
     iput-object p1, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -94,7 +94,7 @@
     :cond_1
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
-    iget v0, v0, Landroid/widget/AdapterViewAnimator;->mOldItemCount:I
+    iget v0, v0, Landroid/widget/AdapterView;->mOldItemCount:I
 
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 

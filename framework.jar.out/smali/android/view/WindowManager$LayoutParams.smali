@@ -1139,14 +1139,14 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 1304
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 1305
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -1416,14 +1416,14 @@
     .line 1618
     const/4 v1, 0x2
 
-    iget v2, p0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v2, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     aput v2, v0, v1
 
     .line 1619
     const/4 v1, 0x3
 
-    iget v2, p0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v2, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     aput v2, v0, v1
 
@@ -1441,32 +1441,32 @@
 
     .line 1366
     .local v0, changes:I
-    iget v1, p0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v1, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    iget v2, p1, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v2, p1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     if-eq v1, v2, :cond_0
 
     .line 1367
-    iget v1, p1, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v1, p1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    iput v1, p0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 1368
     or-int/lit8 v0, v0, 0x1
 
     .line 1370
     :cond_0
-    iget v1, p0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v1, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    iget v2, p1, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v2, p1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     if-eq v1, v2, :cond_1
 
     .line 1371
-    iget v1, p1, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v1, p1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    iput v1, p0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 1372
     or-int/lit8 v0, v0, 0x1
@@ -2067,14 +2067,14 @@
 
     aget v1, v0, v1
 
-    iput v1, p0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 1632
     const/4 v1, 0x3
 
     aget v1, v0, v1
 
-    iput v1, p0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 1634
     :cond_0
@@ -2115,12 +2115,12 @@
     iput v0, p0, Landroid/view/WindowManager$LayoutParams;->y:I
 
     .line 1598
-    iget v0, p0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     if-lez v0, :cond_0
 
     .line 1599
-    iget v0, p0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     int-to-float v0, v0
 
@@ -2130,16 +2130,16 @@
 
     float-to-int v0, v0
 
-    iput v0, p0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 1601
     :cond_0
-    iget v0, p0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     if-lez v0, :cond_1
 
     .line 1602
-    iget v0, p0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     int-to-float v0, v0
 
@@ -2149,7 +2149,7 @@
 
     float-to-int v0, v0
 
-    iput v0, p0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 1604
     :cond_1
@@ -2248,7 +2248,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 1518
-    iget v1, p0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v1, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     if-ne v1, v3, :cond_10
 
@@ -2263,7 +2263,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 1520
-    iget v1, p0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v1, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     if-ne v1, v3, :cond_12
 
@@ -2612,7 +2612,7 @@
 
     .line 1518
     :cond_10
-    iget v1, p0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v1, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     if-ne v1, v5, :cond_11
 
@@ -2621,7 +2621,7 @@
     goto/16 :goto_0
 
     :cond_11
-    iget v1, p0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v1, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2631,7 +2631,7 @@
 
     .line 1520
     :cond_12
-    iget v1, p0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v1, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     if-ne v1, v5, :cond_13
 
@@ -2640,7 +2640,7 @@
     goto/16 :goto_1
 
     :cond_13
-    iget v1, p0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v1, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2656,12 +2656,12 @@
 
     .prologue
     .line 1259
-    iget v0, p0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 1260
-    iget v0, p0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 

@@ -40,7 +40,7 @@
 
     iput-object p3, p0, Lcom/htc/sunny/SGallery$3;->val$drawableRest:Landroid/graphics/drawable/Drawable;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

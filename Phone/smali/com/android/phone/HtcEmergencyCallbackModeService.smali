@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final DEFAULT_ECM_EXIT_TIMER_VALUE:I = 0x493e0
 
@@ -58,7 +58,7 @@
     const/4 v4, 0x0
 
     .line 66
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 41
     iput-object v4, p0, Lcom/android/phone/HtcEmergencyCallbackModeService;->mNotificationManager:Landroid/app/NotificationManager;
@@ -531,7 +531,7 @@
 .end method
 
 .method protected finalize()V
-    .locals 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Throwable;
@@ -539,13 +539,6 @@
     .end annotation
 
     .prologue
-    .line 102
-    const-string v0, "EmergencyCallbackModeService"
-
-    const-string v1, "on Server Destory"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 104
     return-void
 .end method

@@ -33,7 +33,7 @@
     .line 1225
     iput-object p1, p0, Lcom/android/internal/telephony/HtcTelephony$GbaBootStrapParam;->this$0:Lcom/android/internal/telephony/HtcTelephony;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1226
     iput p2, p0, Lcom/android/internal/telephony/HtcTelephony$GbaBootStrapParam;->mEfid:I

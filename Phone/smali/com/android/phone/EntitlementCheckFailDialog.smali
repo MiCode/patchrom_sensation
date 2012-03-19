@@ -17,7 +17,7 @@
 
 .field private static final DBG:Z = true
 
-.field private static final DBG_DETAIL:Z = true
+.field private static final DBG_DETAIL:Z = false
 
 .field private static final DIALOG_ID_ERROR_33:I = 0x1
 
@@ -197,51 +197,10 @@
 
 # virtual methods
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 3
+    .locals 1
     .parameter "ev"
 
     .prologue
-    .line 133
-    const-string v0, "EntitlementFail"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "dispatchTouchEvent "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/phone/EntitlementCheckFailDialog;->mDialogId:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "("
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ")"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 135
     const/4 v0, 0x1
 
@@ -249,35 +208,10 @@
 .end method
 
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .locals 3
+    .locals 1
     .parameter "newConfig"
 
     .prologue
-    .line 106
-    const-string v0, "EntitlementFail"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onConfigChange "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/phone/EntitlementCheckFailDialog;->mDialogId:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 108
     invoke-super {p0, p1}, Landroid/app/Activity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
@@ -292,7 +226,7 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 3
+    .locals 2
     .parameter "savedInstanceState"
 
     .prologue
@@ -303,13 +237,6 @@
     sget-boolean v1, Lcom/android/phone/EntitlementCheckFailDialog;->CODE_AVALIABLE:Z
 
     if-eqz v1, :cond_2
-
-    .line 44
-    const-string v1, "EntitlementFail"
-
-    const-string v2, "onCreate"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 67
     const/4 v1, 0x0
@@ -470,14 +397,14 @@
     move-result-object v0
 
     .line 165
-    invoke-virtual {v0, v5}, Landroid/app/Dialog;->setCancelable(Z)V
+    invoke-virtual {v0, v5}, Lcom/htc/widget/HtcAlertDialog;->setCancelable(Z)V
 
     .line 166
     new-instance v2, Lcom/android/phone/EntitlementCheckFailDialog$DialogCancelHandler;
 
     invoke-direct {v2, p0}, Lcom/android/phone/EntitlementCheckFailDialog$DialogCancelHandler;-><init>(Lcom/android/phone/EntitlementCheckFailDialog;)V
 
-    invoke-virtual {v0, v2}, Landroid/app/Dialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
+    invoke-virtual {v0, v2}, Lcom/htc/widget/HtcAlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
     goto :goto_0
 
@@ -528,14 +455,14 @@
     move-result-object v0
 
     .line 190
-    invoke-virtual {v0, v5}, Landroid/app/Dialog;->setCancelable(Z)V
+    invoke-virtual {v0, v5}, Lcom/htc/widget/HtcAlertDialog;->setCancelable(Z)V
 
     .line 191
     new-instance v2, Lcom/android/phone/EntitlementCheckFailDialog$DialogCancelHandler;
 
     invoke-direct {v2, p0}, Lcom/android/phone/EntitlementCheckFailDialog$DialogCancelHandler;-><init>(Lcom/android/phone/EntitlementCheckFailDialog;)V
 
-    invoke-virtual {v0, v2}, Landroid/app/Dialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
+    invoke-virtual {v0, v2}, Lcom/htc/widget/HtcAlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
     goto :goto_0
 
@@ -556,7 +483,7 @@
 .end method
 
 .method protected onDestroy()V
-    .locals 3
+    .locals 1
 
     .prologue
     .line 233
@@ -566,31 +493,6 @@
     sget-boolean v0, Lcom/android/phone/EntitlementCheckFailDialog;->CODE_AVALIABLE:Z
 
     if-eqz v0, :cond_0
-
-    .line 236
-    const-string v0, "EntitlementFail"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onDestroy "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/phone/EntitlementCheckFailDialog;->mDialogId:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 238
     iget v0, p0, Lcom/android/phone/EntitlementCheckFailDialog;->mDialogId:I
@@ -613,7 +515,7 @@
 .end method
 
 .method protected onNewIntent(Landroid/content/Intent;)V
-    .locals 4
+    .locals 3
     .parameter "intent"
 
     .prologue
@@ -639,56 +541,9 @@
     :goto_0
     return-void
 
-    .line 85
+    .line 87
     .restart local v0       #prevDialogId:I
     :cond_1
-    const-string v1, "EntitlementFail"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "onNewIntent "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " -> "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget v3, p0, Lcom/android/phone/EntitlementCheckFailDialog;->mDialogId:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", on="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-boolean v3, p0, Lcom/android/phone/EntitlementCheckFailDialog;->mDisplayed:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 87
     iget-boolean v1, p0, Lcom/android/phone/EntitlementCheckFailDialog;->mDisplayed:Z
 
     if-eqz v1, :cond_3
@@ -728,34 +583,9 @@
 .end method
 
 .method protected onPause()V
-    .locals 3
+    .locals 1
 
     .prologue
-    .line 140
-    const-string v0, "EntitlementFail"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onPause "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/phone/EntitlementCheckFailDialog;->mDialogId:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 142
     invoke-super {p0}, Landroid/app/Activity;->onPause()V
 
@@ -775,34 +605,9 @@
 .end method
 
 .method protected onResume()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 115
-    const-string v0, "EntitlementFail"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onResume "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/phone/EntitlementCheckFailDialog;->mDialogId:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 117
     invoke-super {p0}, Landroid/app/Activity;->onResume()V
 
@@ -829,51 +634,10 @@
 .end method
 
 .method public onWindowFocusChanged(Z)V
-    .locals 3
+    .locals 0
     .parameter "hasFocus"
 
     .prologue
-    .line 126
-    const-string v0, "EntitlementFail"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onWindowFocusChanged "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/phone/EntitlementCheckFailDialog;->mDialogId:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "("
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ")"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 128
     invoke-super {p0, p1}, Landroid/app/Activity;->onWindowFocusChanged(Z)V
 

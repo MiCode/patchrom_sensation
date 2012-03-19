@@ -415,7 +415,7 @@
 
     .line 4283
     :try_start_2
-    invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
+    invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
 
@@ -445,7 +445,7 @@
 
     .line 4283
     :try_start_4
-    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
+    invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
@@ -473,7 +473,7 @@
 
     .line 4283
     :try_start_5
-    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
+    invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
 

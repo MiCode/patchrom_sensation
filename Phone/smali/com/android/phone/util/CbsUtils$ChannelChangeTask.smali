@@ -43,28 +43,28 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 915
+    .line 933
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 911
+    .line 929
     iput-object v0, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbList:Ljava/lang/String;
 
-    .line 912
+    .line 930
     iput-object v0, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbNameList:Ljava/lang/String;
 
-    .line 913
+    .line 931
     iput-object v0, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbReadonlyList:Ljava/lang/String;
 
-    .line 916
+    .line 934
     iput-object p1, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbList:Ljava/lang/String;
 
-    .line 917
+    .line 935
     iput-object p2, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbNameList:Ljava/lang/String;
 
-    .line 918
+    .line 936
     iput-object p3, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbReadonlyList:Ljava/lang/String;
 
-    .line 920
+    .line 938
     return-void
 .end method
 
@@ -75,27 +75,27 @@
     .parameter "v"
 
     .prologue
-    .line 927
+    .line 945
     iget-object v7, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbList:Ljava/lang/String;
 
     if-nez v7, :cond_0
 
-    .line 928
+    .line 946
     const-string v7, ""
 
     iput-object v7, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbList:Ljava/lang/String;
 
-    .line 929
+    .line 947
     const-string v7, ""
 
     iput-object v7, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbNameList:Ljava/lang/String;
 
-    .line 930
+    .line 948
     const-string v7, ""
 
     iput-object v7, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbReadonlyList:Ljava/lang/String;
 
-    .line 932
+    .line 950
     :cond_0
     const-string v7, "CbsUtils"
 
@@ -135,7 +135,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 933
+    .line 951
     iget-object v7, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbList:Ljava/lang/String;
 
     iget-object v8, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbNameList:Ljava/lang/String;
@@ -147,7 +147,7 @@
 
     move-result-object v4
 
-    .line 934
+    .line 952
     .local v4, ret:[Ljava/lang/String;
     const/4 v7, 0x0
 
@@ -155,21 +155,21 @@
 
     iput-object v7, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbList:Ljava/lang/String;
 
-    .line 935
+    .line 953
     const/4 v7, 0x1
 
     aget-object v7, v4, v7
 
     iput-object v7, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbNameList:Ljava/lang/String;
 
-    .line 936
+    .line 954
     const/4 v7, 0x2
 
     aget-object v7, v4, v7
 
     iput-object v7, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbReadonlyList:Ljava/lang/String;
 
-    .line 937
+    .line 955
     const-string v7, "CbsUtils"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -208,7 +208,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 939
+    .line 957
     iget-object v7, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbList:Ljava/lang/String;
 
     const-string v8, ","
@@ -217,7 +217,7 @@
 
     move-result-object v3
 
-    .line 940
+    .line 958
     .local v3, newCBArray:[Ljava/lang/String;
     invoke-static {}, Lcom/android/phone/util/CbsUtils;->access$900()Ljava/lang/String;
 
@@ -229,11 +229,11 @@
 
     move-result-object v1
 
-    .line 943
+    .line 961
     .local v1, currentCBArray:[Ljava/lang/String;
     const/4 v0, 0x0
 
-    .line 944
+    .line 962
     .local v0, bredo:Z
     array-length v7, v3
 
@@ -241,10 +241,10 @@
 
     if-eq v7, v8, :cond_1
 
-    .line 946
+    .line 964
     const/4 v0, 0x1
 
-    .line 973
+    .line 991
     :goto_0
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -252,7 +252,7 @@
 
     return-object v7
 
-    .line 949
+    .line 967
     :cond_1
     const-string v7, ""
 
@@ -322,25 +322,25 @@
 
     if-eqz v7, :cond_5
 
-    .line 952
+    .line 970
     :cond_4
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 956
+    .line 974
     :cond_5
     new-instance v6, Ljava/util/TreeSet;
 
     invoke-direct {v6}, Ljava/util/TreeSet;-><init>()V
 
-    .line 957
+    .line 975
     .local v6, tsnew:Ljava/util/TreeSet;
     new-instance v5, Ljava/util/TreeSet;
 
     invoke-direct {v5}, Ljava/util/TreeSet;-><init>()V
 
-    .line 958
+    .line 976
     .local v5, tscurrent:Ljava/util/TreeSet;
     const/4 v2, 0x0
 
@@ -362,7 +362,7 @@
 
     goto :goto_1
 
-    .line 959
+    .line 977
     :cond_6
     const/4 v2, 0x0
 
@@ -383,7 +383,7 @@
 
     goto :goto_2
 
-    .line 961
+    .line 979
     :cond_7
     invoke-virtual {v6, v5}, Ljava/util/AbstractSet;->equals(Ljava/lang/Object;)Z
 
@@ -391,19 +391,19 @@
 
     if-nez v7, :cond_8
 
-    .line 962
+    .line 980
     const-string v7, "CbsUtils"
 
     const-string v8, "two string are different"
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 963
+    .line 981
     const/4 v0, 0x1
 
     goto/16 :goto_0
 
-    .line 966
+    .line 984
     :cond_8
     const-string v7, "CbsUtils"
 
@@ -453,7 +453,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 968
+    .line 986
     iget-object v7, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbList:Ljava/lang/String;
 
     iget-object v8, p0, Lcom/android/phone/util/CbsUtils$ChannelChangeTask;->cbNameList:Ljava/lang/String;
@@ -471,7 +471,7 @@
     .parameter "x0"
 
     .prologue
-    .line 910
+    .line 928
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -487,31 +487,31 @@
     .parameter "bredo"
 
     .prologue
-    .line 978
+    .line 996
     invoke-static {}, Lcom/android/phone/util/CbsUtils;->setMmsCustomizelInitiated()V
 
-    .line 979
+    .line 997
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 981
+    .line 999
     const-string v0, "CbsUtils"
 
     const-string v1, "call doCbQuery from ChannelChangeTask"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 982
+    .line 1000
     invoke-static {}, Lcom/android/phone/PhoneApp;->getInstance()Lcom/android/phone/PhoneApp;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/phone/PhoneApp;->doCbQuery()V
 
-    .line 984
+    .line 1002
     :cond_0
     return-void
 .end method
@@ -521,7 +521,7 @@
     .parameter "x0"
 
     .prologue
-    .line 910
+    .line 928
     check-cast p1, Ljava/lang/Boolean;
 
     .end local p1

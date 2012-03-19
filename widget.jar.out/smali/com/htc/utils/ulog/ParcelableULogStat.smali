@@ -54,7 +54,7 @@
     invoke-direct {p0, v4}, Lcom/htc/utils/ulog/ULogStatDecorator;-><init>(Lcom/htc/utils/ulog/ULogStat;)V
 
     .line 18
-    iget-object v3, p0, Lcom/htc/utils/ulog/ParcelableULogStat;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
+    iget-object v3, p0, Lcom/htc/utils/ulog/ULogStatDecorator;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
 
     check-cast v3, Lcom/htc/utils/ulog/ReusableULogStat;
 
@@ -263,7 +263,7 @@
     const/4 v2, 0x1
 
     .line 47
-    iget-object v3, p0, Lcom/htc/utils/ulog/ParcelableULogStat;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
+    iget-object v3, p0, Lcom/htc/utils/ulog/ULogStatDecorator;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
 
     invoke-interface {v3}, Lcom/htc/utils/ulog/ULogStat;->getAppId()Ljava/lang/String;
 
@@ -286,7 +286,7 @@
     if-ne v0, v2, :cond_0
 
     .line 50
-    iget-object v3, p0, Lcom/htc/utils/ulog/ParcelableULogStat;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
+    iget-object v3, p0, Lcom/htc/utils/ulog/ULogStatDecorator;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
 
     invoke-interface {v3}, Lcom/htc/utils/ulog/ULogStat;->getAppId()Ljava/lang/String;
 
@@ -296,7 +296,7 @@
 
     .line 52
     :cond_0
-    iget-object v3, p0, Lcom/htc/utils/ulog/ParcelableULogStat;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
+    iget-object v3, p0, Lcom/htc/utils/ulog/ULogStatDecorator;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
 
     invoke-interface {v3}, Lcom/htc/utils/ulog/ULogStat;->getCategory()Ljava/lang/String;
 
@@ -318,7 +318,7 @@
     if-ne v0, v2, :cond_1
 
     .line 55
-    iget-object v3, p0, Lcom/htc/utils/ulog/ParcelableULogStat;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
+    iget-object v3, p0, Lcom/htc/utils/ulog/ULogStatDecorator;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
 
     invoke-interface {v3}, Lcom/htc/utils/ulog/ULogStat;->getCategory()Ljava/lang/String;
 
@@ -328,7 +328,7 @@
 
     .line 57
     :cond_1
-    iget-object v3, p0, Lcom/htc/utils/ulog/ParcelableULogStat;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
+    iget-object v3, p0, Lcom/htc/utils/ulog/ULogStatDecorator;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
 
     invoke-interface {v3}, Lcom/htc/utils/ulog/ULogStat;->getCount()J
 
@@ -337,7 +337,7 @@
     invoke-virtual {p1, v3, v4}, Landroid/os/Parcel;->writeLong(J)V
 
     .line 59
-    iget-object v3, p0, Lcom/htc/utils/ulog/ParcelableULogStat;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
+    iget-object v3, p0, Lcom/htc/utils/ulog/ULogStatDecorator;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
 
     invoke-interface {v3}, Lcom/htc/utils/ulog/ULogStat;->getCounterName()Ljava/lang/String;
 
@@ -359,7 +359,7 @@
     if-ne v0, v2, :cond_2
 
     .line 62
-    iget-object v1, p0, Lcom/htc/utils/ulog/ParcelableULogStat;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
+    iget-object v1, p0, Lcom/htc/utils/ulog/ULogStatDecorator;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
 
     invoke-interface {v1}, Lcom/htc/utils/ulog/ULogStat;->getCounterName()Ljava/lang/String;
 
@@ -369,7 +369,7 @@
 
     .line 64
     :cond_2
-    iget-object v1, p0, Lcom/htc/utils/ulog/ParcelableULogStat;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
+    iget-object v1, p0, Lcom/htc/utils/ulog/ULogStatDecorator;->mULogStat:Lcom/htc/utils/ulog/ULogStat;
 
     invoke-interface {v1}, Lcom/htc/utils/ulog/ULogStat;->getTimestamp()J
 

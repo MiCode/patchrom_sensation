@@ -3,7 +3,7 @@
 .source "EffectControlUI.java"
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Lcom/android/camera/widget/EffectControlCircle$OnCenterPointChangedListener;
 
 
 # annotations
@@ -27,101 +27,88 @@
     .parameter
 
     .prologue
-    .line 319
+    .line 321
     iput-object p1, p0, Lcom/android/camera/effect/EffectControlUI$11;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 5
-    .parameter "view"
-    .parameter "mv"
+.method public onCenterChanged(Lcom/android/camera/widget/EffectControlCircle;Landroid/graphics/Point;)V
+    .locals 1
+    .parameter "circle"
+    .parameter "center"
 
     .prologue
-    .line 322
-    iget-object v3, p0, Lcom/android/camera/effect/EffectControlUI$11;->this$0:Lcom/android/camera/effect/EffectControlUI;
+    .line 325
+    iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$11;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    invoke-virtual {v3}, Lcom/android/camera/effect/EffectControlUI;->getCameraActivity()Lcom/android/camera/HTCCamera;
+    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_ShowingInitValues:Z
+    invoke-static {v0}, Lcom/android/camera/effect/EffectControlUI;->access$100(Lcom/android/camera/effect/EffectControlUI;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 333
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 329
+    :cond_1
+    iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$11;->this$0:Lcom/android/camera/effect/EffectControlUI;
+
+    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_CurrentEffect:Lcom/android/camera/effect/EffectBase;
+    invoke-static {v0}, Lcom/android/camera/effect/EffectControlUI;->access$200(Lcom/android/camera/effect/EffectControlUI;)Lcom/android/camera/effect/EffectBase;
 
     move-result-object v0
 
-    .line 323
-    .local v0, cameraActivity:Lcom/android/camera/HTCCamera;
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+    instance-of v0, v0, Lcom/android/camera/effect/DistortionEffect;
 
-    move-result v3
+    if-eqz v0, :cond_2
 
-    const/4 v4, 0x1
+    .line 330
+    iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$11;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    if-ne v3, v4, :cond_0
+    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_CurrentEffect:Lcom/android/camera/effect/EffectBase;
+    invoke-static {v0}, Lcom/android/camera/effect/EffectControlUI;->access$200(Lcom/android/camera/effect/EffectControlUI;)Lcom/android/camera/effect/EffectBase;
 
-    .line 326
-    iget-object v3, p0, Lcom/android/camera/effect/EffectControlUI$11;->this$0:Lcom/android/camera/effect/EffectControlUI;
+    move-result-object v0
 
-    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_EffectCircle:Lcom/android/camera/widget/EffectControlCircle;
-    invoke-static {v3}, Lcom/android/camera/effect/EffectControlUI;->access$700(Lcom/android/camera/effect/EffectControlUI;)Lcom/android/camera/widget/EffectControlCircle;
+    check-cast v0, Lcom/android/camera/effect/DistortionEffect;
 
-    move-result-object v3
+    invoke-virtual {v0, p2}, Lcom/android/camera/effect/DistortionEffect;->setCenter(Landroid/graphics/Point;)V
 
-    invoke-virtual {v3}, Lcom/android/camera/widget/EffectControlCircle;->getCenterPoint()Landroid/graphics/Point;
-
-    move-result-object v1
-
-    .line 328
-    .local v1, point:Landroid/graphics/Point;
-    sget v3, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
-
-    iget v4, v1, Landroid/graphics/Point;->y:I
-
-    sub-int/2addr v3, v4
-
-    iget v4, v1, Landroid/graphics/Point;->x:I
-
-    invoke-virtual {v1, v3, v4}, Landroid/graphics/Point;->set(II)V
+    goto :goto_0
 
     .line 331
-    invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->getFaceNumber()I
+    :cond_2
+    iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$11;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    move-result v3
+    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_CurrentEffect:Lcom/android/camera/effect/EffectBase;
+    invoke-static {v0}, Lcom/android/camera/effect/EffectControlUI;->access$200(Lcom/android/camera/effect/EffectControlUI;)Lcom/android/camera/effect/EffectBase;
 
-    if-nez v3, :cond_0
+    move-result-object v0
 
-    .line 333
-    invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->disableTouchFocus()V
+    instance-of v0, v0, Lcom/android/camera/effect/DepthOfFieldEffect;
 
-    .line 334
-    iget v3, v1, Landroid/graphics/Point;->x:I
+    if-eqz v0, :cond_0
 
-    iget v4, v1, Landroid/graphics/Point;->y:I
+    .line 332
+    iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$11;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    invoke-virtual {v0, v3, v4}, Lcom/android/camera/HTCCamera;->takeFocus(II)V
+    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_CurrentEffect:Lcom/android/camera/effect/EffectBase;
+    invoke-static {v0}, Lcom/android/camera/effect/EffectControlUI;->access$200(Lcom/android/camera/effect/EffectControlUI;)Lcom/android/camera/effect/EffectBase;
 
-    .line 335
-    invoke-virtual {v0, p2}, Lcom/android/camera/HTCCamera;->handleTouchEvent(Landroid/view/MotionEvent;)Z
+    move-result-object v0
 
-    move-result v2
+    check-cast v0, Lcom/android/camera/effect/DepthOfFieldEffect;
 
-    .line 336
-    .local v2, result:Z
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v3}, Lcom/android/camera/HTCCamera;->enableTouchFocus(Z)V
-
-    .line 340
-    .end local v1           #point:Landroid/graphics/Point;
-    .end local v2           #result:Z
-    :goto_0
-    return v2
-
-    :cond_0
-    invoke-virtual {v0, p2}, Lcom/android/camera/HTCCamera;->handleTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result v2
+    invoke-virtual {v0, p2}, Lcom/android/camera/effect/DepthOfFieldEffect;->setCenter(Landroid/graphics/Point;)V
 
     goto :goto_0
 .end method

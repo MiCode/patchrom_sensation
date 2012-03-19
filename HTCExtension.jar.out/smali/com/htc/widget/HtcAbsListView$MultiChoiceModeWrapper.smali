@@ -32,7 +32,7 @@
     .line 4635
     iput-object p1, p0, Lcom/htc/widget/HtcAbsListView$MultiChoiceModeWrapper;->this$0:Lcom/htc/widget/HtcAbsListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -112,7 +112,7 @@
     .line 4666
     iget-object v0, p0, Lcom/htc/widget/HtcAbsListView$MultiChoiceModeWrapper;->this$0:Lcom/htc/widget/HtcAbsListView;
 
-    iput-boolean v2, v0, Lcom/htc/widget/HtcAbsListView;->mDataChanged:Z
+    iput-boolean v2, v0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     .line 4667
     iget-object v0, p0, Lcom/htc/widget/HtcAbsListView$MultiChoiceModeWrapper;->this$0:Lcom/htc/widget/HtcAbsListView;

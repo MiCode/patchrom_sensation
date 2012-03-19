@@ -68,7 +68,7 @@
 
     iget-object v7, p0, Landroid/widget/AbsListView$CheckForLongPress;->this$0:Landroid/widget/AbsListView;
 
-    iget v7, v7, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v7, v7, Landroid/widget/AdapterView;->mFirstPosition:I
 
     sub-int v7, v5, v7
 
@@ -113,7 +113,7 @@
 
     iget-object v6, p0, Landroid/widget/AbsListView$CheckForLongPress;->this$0:Landroid/widget/AbsListView;
 
-    iget-boolean v6, v6, Landroid/widget/AbsListView;->mDataChanged:Z
+    iget-boolean v6, v6, Landroid/widget/AdapterView;->mDataChanged:Z
 
     if-nez v6, :cond_0
 

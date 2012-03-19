@@ -20,7 +20,7 @@
 
     .prologue
     .line 58
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 60
     iput-object p1, p0, Lcom/android/internal/http/multipart/ByteArrayPartSource;->fileName:Ljava/lang/String;

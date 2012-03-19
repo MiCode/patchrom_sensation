@@ -34,10 +34,10 @@
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/IccFileHandler;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
 
     .line 36
-    iput p2, p0, Lcom/android/internal/telephony/gsm/UsimFileHandler;->mSlotId:I
+    iput p2, p0, Lcom/android/internal/telephony/IccFileHandler;->mSlotId:I
 
     .line 37
-    iput-object p3, p0, Lcom/android/internal/telephony/gsm/UsimFileHandler;->mAppId:Ljava/lang/String;
+    iput-object p3, p0, Lcom/android/internal/telephony/IccFileHandler;->mAppId:Ljava/lang/String;
 
     .line 38
     return-void

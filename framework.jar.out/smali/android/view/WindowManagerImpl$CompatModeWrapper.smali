@@ -34,7 +34,7 @@
 
     .prologue
     .line 131
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 132
     instance-of v0, p1, Landroid/view/WindowManagerImpl$CompatModeWrapper;

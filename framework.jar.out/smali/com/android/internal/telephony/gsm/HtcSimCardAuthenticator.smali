@@ -1348,7 +1348,7 @@
     .line 259
     iget-object v5, p0, Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticator;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
-    iget-object v5, v5, Lcom/android/internal/telephony/gsm/GSMPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v5, v5, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
@@ -1593,7 +1593,7 @@
     .line 180
     iget-object v5, p0, Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticator;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
-    iget-object v5, v5, Lcom/android/internal/telephony/gsm/GSMPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v5, v5, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 

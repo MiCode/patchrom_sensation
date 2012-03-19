@@ -141,7 +141,7 @@
     .line 61
     .restart local v7       #controller:Lcom/android/camera/effect/GpuEffectController;
     :cond_1
-    iget-object v0, p0, Lcom/android/camera/effect/DotsEffect;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "No GPU effect controller to change dot size"
 

@@ -30,7 +30,7 @@
     .line 3219
     iput-object p1, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList$1;->this$1:Lcom/htc/opensense/album/util/ImageManager$ImageList;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

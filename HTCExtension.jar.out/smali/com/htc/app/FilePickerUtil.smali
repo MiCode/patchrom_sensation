@@ -26,8 +26,6 @@
 #the value of this static final field might be set in the static constructor
 .field static final IsSupportInternalStorage:Z = false
 
-.field private static instance:Lcom/htc/app/FilePickerUtil; = null
-
 .field private static final mExtSdcardPath:Ljava/lang/String; = "/mnt/sdcard/ext_sd"
 
 .field private static final mSdcardPath:Ljava/lang/String; = null
@@ -41,6 +39,8 @@
 .field private mContext:Landroid/content/Context;
 
 .field private mCurrentViewType:I
+
+.field private mDateFormat:Ljava/lang/String;
 
 .field private mDcfAudioList:[Ljava/lang/String;
 
@@ -57,6 +57,8 @@
 .field private mFileDate:Ljava/sql/Date;
 
 .field private mRootPath:Ljava/lang/String;
+
+.field private mTimeFormat:Ljava/lang/String;
 
 
 # direct methods
@@ -82,42 +84,35 @@
 
     sput-object v0, Lcom/htc/app/FilePickerUtil;->mSdcardPath:Ljava/lang/String;
 
-    .line 24
-    new-instance v0, Lcom/htc/app/FilePickerUtil;
-
-    invoke-direct {v0}, Lcom/htc/app/FilePickerUtil;-><init>()V
-
-    sput-object v0, Lcom/htc/app/FilePickerUtil;->instance:Lcom/htc/app/FilePickerUtil;
-
-    .line 439
+    .line 438
     invoke-static {}, Lcom/htc/app/FilePickerUtil;->checkEnabledListViewRoundedCorner()Z
 
     move-result v0
 
     sput-boolean v0, Lcom/htc/app/FilePickerUtil;->IsEnabledListViewRoundedCorner:Z
 
-    .line 457
+    .line 456
     invoke-static {}, Lcom/htc/app/FilePickerUtil;->checkEnableTopRound()Z
 
     move-result v0
 
     sput-boolean v0, Lcom/htc/app/FilePickerUtil;->IsEnableTopRound:Z
 
-    .line 476
+    .line 475
     invoke-static {}, Lcom/htc/app/FilePickerUtil;->checkEnableBottomRound()Z
 
     move-result v0
 
     sput-boolean v0, Lcom/htc/app/FilePickerUtil;->IsEnableBottomRound:Z
 
-    .line 491
+    .line 490
     invoke-static {}, Lcom/htc/app/FilePickerUtil;->checkEnabledTranparentBckground()Z
 
     move-result v0
 
     sput-boolean v0, Lcom/htc/app/FilePickerUtil;->IsEnabledTranparentBckground:Z
 
-    .line 505
+    .line 504
     invoke-static {}, Lcom/htc/app/FilePickerUtil;->shouldDrawSeperatorDivider()Z
 
     move-result v0
@@ -134,7 +129,7 @@
     const/4 v3, 0x0
 
     .line 62
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 27
     const/4 v0, 0x2
@@ -155,25 +150,25 @@
 
     iput-object v0, p0, Lcom/htc/app/FilePickerUtil;->ALLOW_FORDER:[Ljava/lang/String;
 
-    .line 339
+    .line 341
     iput-object v3, p0, Lcom/htc/app/FilePickerUtil;->mDcfAudioList:[Ljava/lang/String;
 
-    .line 340
+    .line 342
     iput-object v3, p0, Lcom/htc/app/FilePickerUtil;->mDcfVideoList:[Ljava/lang/String;
 
-    .line 341
+    .line 343
     iput-object v3, p0, Lcom/htc/app/FilePickerUtil;->mDcfImageList:[Ljava/lang/String;
 
-    .line 343
+    .line 345
     iput-object v3, p0, Lcom/htc/app/FilePickerUtil;->mDmAudioList:[Ljava/lang/String;
 
-    .line 344
+    .line 346
     iput-object v3, p0, Lcom/htc/app/FilePickerUtil;->mDmVideoList:[Ljava/lang/String;
 
-    .line 345
+    .line 347
     iput-object v3, p0, Lcom/htc/app/FilePickerUtil;->mDmImageList:[Ljava/lang/String;
 
-    .line 382
+    .line 384
     new-instance v0, Ljava/sql/Date;
 
     const-wide/16 v1, 0x0
@@ -195,8 +190,8 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 72
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 73
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 27
     const/4 v0, 0x2
@@ -217,25 +212,25 @@
 
     iput-object v0, p0, Lcom/htc/app/FilePickerUtil;->ALLOW_FORDER:[Ljava/lang/String;
 
-    .line 339
+    .line 341
     iput-object v3, p0, Lcom/htc/app/FilePickerUtil;->mDcfAudioList:[Ljava/lang/String;
 
-    .line 340
+    .line 342
     iput-object v3, p0, Lcom/htc/app/FilePickerUtil;->mDcfVideoList:[Ljava/lang/String;
 
-    .line 341
+    .line 343
     iput-object v3, p0, Lcom/htc/app/FilePickerUtil;->mDcfImageList:[Ljava/lang/String;
 
-    .line 343
+    .line 345
     iput-object v3, p0, Lcom/htc/app/FilePickerUtil;->mDmAudioList:[Ljava/lang/String;
 
-    .line 344
+    .line 346
     iput-object v3, p0, Lcom/htc/app/FilePickerUtil;->mDmVideoList:[Ljava/lang/String;
 
-    .line 345
+    .line 347
     iput-object v3, p0, Lcom/htc/app/FilePickerUtil;->mDmImageList:[Ljava/lang/String;
 
-    .line 382
+    .line 384
     new-instance v0, Ljava/sql/Date;
 
     const-wide/16 v1, 0x0
@@ -244,16 +239,46 @@
 
     iput-object v0, p0, Lcom/htc/app/FilePickerUtil;->mFileDate:Ljava/sql/Date;
 
-    .line 73
+    .line 74
     iput-object p3, p0, Lcom/htc/app/FilePickerUtil;->mContext:Landroid/content/Context;
 
-    .line 74
+    .line 75
     invoke-virtual {p0, p2}, Lcom/htc/app/FilePickerUtil;->initDmFileList([Ljava/lang/String;)V
 
-    .line 75
+    .line 76
     invoke-virtual {p0, p1}, Lcom/htc/app/FilePickerUtil;->setRootPath(Ljava/lang/String;)V
 
     .line 77
+    iget-object v0, p0, Lcom/htc/app/FilePickerUtil;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "date_format"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/htc/app/FilePickerUtil;->mDateFormat:Ljava/lang/String;
+
+    .line 78
+    iget-object v0, p0, Lcom/htc/app/FilePickerUtil;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "time_12_24"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/htc/app/FilePickerUtil;->mTimeFormat:Ljava/lang/String;
+
+    .line 79
     return-void
 .end method
 
@@ -262,10 +287,10 @@
     .parameter "path"
 
     .prologue
-    .line 243
+    .line 245
     const/4 v0, 0x0
 
-    .line 244
+    .line 246
     .local v0, result:Z
     if-eqz p0, :cond_0
 
@@ -277,11 +302,11 @@
 
     if-eqz v1, :cond_1
 
-    .line 245
+    .line 247
     :cond_0
     const/4 v0, 0x1
 
-    .line 246
+    .line 248
     :cond_1
     return v0
 .end method
@@ -290,30 +315,30 @@
     .locals 2
 
     .prologue
-    .line 478
+    .line 477
     const/4 v0, 0x1
 
-    .line 479
+    .line 478
     .local v0, isEnableBottomRound:Z
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     sparse-switch v1, :sswitch_data_0
 
-    .line 486
+    .line 485
     const/4 v0, 0x1
 
-    .line 489
+    .line 488
     :goto_0
     return v0
 
-    .line 483
+    .line 482
     :sswitch_0
     const/4 v0, 0x0
 
-    .line 484
+    .line 483
     goto :goto_0
 
-    .line 479
+    .line 478
     :sswitch_data_0
     .sparse-switch
         0x21 -> :sswitch_0
@@ -328,19 +353,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 459
+    .line 458
     const/4 v0, 0x1
 
-    .line 460
+    .line 459
     .local v0, isEnableTopRound:Z
     sget-short v2, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     sparse-switch v2, :sswitch_data_0
 
-    .line 470
+    .line 469
     const/4 v0, 0x1
 
-    .line 472
+    .line 471
     :goto_0
     sget-object v2, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_Sense_Version:Ljava/lang/String;
 
@@ -354,21 +379,21 @@
 
     move v0, v1
 
-    .line 474
+    .line 473
     .end local v0           #isEnableTopRound:Z
     :cond_0
     :goto_1
     return v0
 
-    .line 467
+    .line 466
     .restart local v0       #isEnableTopRound:Z
     :sswitch_0
     const/4 v0, 0x0
 
-    .line 468
+    .line 467
     goto :goto_0
 
-    .line 473
+    .line 472
     :cond_1
     sget-object v2, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_Sense_Version:Ljava/lang/String;
 
@@ -384,7 +409,7 @@
 
     goto :goto_1
 
-    .line 460
+    .line 459
     :sswitch_data_0
     .sparse-switch
         0x10 -> :sswitch_0
@@ -400,19 +425,19 @@
     .locals 3
 
     .prologue
-    .line 441
+    .line 440
     const/4 v0, 0x0
 
-    .line 442
+    .line 441
     .local v0, enabledListViewRoundedCorner:Z
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     sparse-switch v1, :sswitch_data_0
 
-    .line 451
+    .line 450
     const/4 v0, 0x0
 
-    .line 453
+    .line 452
     :goto_0
     sget-object v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_Sense_Version:Ljava/lang/String;
 
@@ -426,21 +451,21 @@
 
     const/4 v0, 0x1
 
-    .line 455
+    .line 454
     .end local v0           #enabledListViewRoundedCorner:Z
     :cond_0
     :goto_1
     return v0
 
-    .line 448
+    .line 447
     .restart local v0       #enabledListViewRoundedCorner:Z
     :sswitch_0
     const/4 v0, 0x1
 
-    .line 449
+    .line 448
     goto :goto_0
 
-    .line 454
+    .line 453
     :cond_1
     sget-object v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_Sense_Version:Ljava/lang/String;
 
@@ -456,7 +481,7 @@
 
     goto :goto_1
 
-    .line 442
+    .line 441
     nop
 
     :sswitch_data_0
@@ -473,30 +498,30 @@
     .locals 2
 
     .prologue
-    .line 493
+    .line 492
     const/4 v0, 0x1
 
-    .line 494
+    .line 493
     .local v0, isEnabledTranparentBckground:Z
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     sparse-switch v1, :sswitch_data_0
 
-    .line 500
+    .line 499
     const/4 v0, 0x1
 
-    .line 502
+    .line 501
     :goto_0
     return v0
 
-    .line 497
+    .line 496
     :sswitch_0
     const/4 v0, 0x0
 
-    .line 498
+    .line 497
     goto :goto_0
 
-    .line 494
+    .line 493
     :sswitch_data_0
     .sparse-switch
         0x7b -> :sswitch_0
@@ -508,30 +533,30 @@
     .locals 2
 
     .prologue
-    .line 412
+    .line 411
     const/4 v0, 0x0
 
-    .line 413
+    .line 412
     .local v0, supportInternalStorage:Z
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     sparse-switch v1, :sswitch_data_0
 
-    .line 421
+    .line 420
     const/4 v0, 0x0
 
-    .line 424
+    .line 423
     :goto_0
     return v0
 
-    .line 418
+    .line 417
     :sswitch_0
     const/4 v0, 0x1
 
-    .line 419
+    .line 418
     goto :goto_0
 
-    .line 413
+    .line 412
     :sswitch_data_0
     .sparse-switch
         0x21 -> :sswitch_0
@@ -541,172 +566,50 @@
     .end sparse-switch
 .end method
 
-.method static final getInstance()Lcom/htc/app/FilePickerUtil;
-    .locals 2
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 66
-    sget-object v0, Lcom/htc/app/FilePickerUtil;->instance:Lcom/htc/app/FilePickerUtil;
-
-    if-nez v0, :cond_0
-
-    .line 67
-    invoke-static {v1, v1, v1}, Lcom/htc/app/FilePickerUtil;->newInstance(Ljava/lang/String;[Ljava/lang/String;Landroid/content/Context;)V
-
-    .line 69
-    :cond_0
-    sget-object v0, Lcom/htc/app/FilePickerUtil;->instance:Lcom/htc/app/FilePickerUtil;
-
-    return-object v0
-.end method
-
-.method static final getInstance(Ljava/lang/String;[Ljava/lang/String;Landroid/content/Context;)Lcom/htc/app/FilePickerUtil;
-    .locals 1
-    .parameter "path"
-    .parameter "mDrmFilter"
-    .parameter "context"
-
-    .prologue
-    .line 91
-    sget-object v0, Lcom/htc/app/FilePickerUtil;->instance:Lcom/htc/app/FilePickerUtil;
-
-    if-nez v0, :cond_0
-
-    .line 92
-    invoke-static {p0, p1, p2}, Lcom/htc/app/FilePickerUtil;->newInstance(Ljava/lang/String;[Ljava/lang/String;Landroid/content/Context;)V
-
-    .line 94
-    :cond_0
-    sget-object v0, Lcom/htc/app/FilePickerUtil;->instance:Lcom/htc/app/FilePickerUtil;
-
-    return-object v0
-.end method
-
 .method private is24Hour()Z
-    .locals 3
-
-    .prologue
-    .line 386
-    iget-object v1, p0, Lcom/htc/app/FilePickerUtil;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string v2, "time_12_24"
-
-    invoke-static {v1, v2}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 388
-    .local v0, setting:Ljava/lang/String;
-    const-string v1, "24"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    return v1
-.end method
-
-.method private static declared-synchronized newInstance(Ljava/lang/String;[Ljava/lang/String;Landroid/content/Context;)V
     .locals 2
-    .parameter "path"
-    .parameter "mDrmFilter"
-    .parameter "context"
 
     .prologue
-    .line 81
-    const-class v1, Lcom/htc/app/FilePickerUtil;
+    .line 388
+    const-string v0, "24"
 
-    monitor-enter v1
+    iget-object v1, p0, Lcom/htc/app/FilePickerUtil;->mTimeFormat:Ljava/lang/String;
 
-    :try_start_0
-    sget-object v0, Lcom/htc/app/FilePickerUtil;->instance:Lcom/htc/app/FilePickerUtil;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v0, :cond_0
-
-    .line 87
-    :goto_0
-    monitor-exit v1
-
-    return-void
-
-    .line 83
-    :cond_0
-    :try_start_1
-    invoke-static {p0}, Lcom/htc/app/FilePickerUtil;->IsEmptyPath(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
-
-    .line 84
-    new-instance v0, Lcom/htc/app/FilePickerUtil;
-
-    invoke-direct {v0}, Lcom/htc/app/FilePickerUtil;-><init>()V
-
-    sput-object v0, Lcom/htc/app/FilePickerUtil;->instance:Lcom/htc/app/FilePickerUtil;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 81
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-
-    .line 86
-    :cond_1
-    :try_start_2
-    new-instance v0, Lcom/htc/app/FilePickerUtil;
-
-    invoke-direct {v0, p0, p1, p2}, Lcom/htc/app/FilePickerUtil;-><init>(Ljava/lang/String;[Ljava/lang/String;Landroid/content/Context;)V
-
-    sput-object v0, Lcom/htc/app/FilePickerUtil;->instance:Lcom/htc/app/FilePickerUtil;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    goto :goto_0
+    return v0
 .end method
 
 .method private static shouldDrawSeperatorDivider()Z
     .locals 2
 
     .prologue
-    .line 507
+    .line 506
     const/4 v0, 0x1
 
-    .line 508
+    .line 507
     .local v0, shouldDrawSeperatorDivider:Z
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     sparse-switch v1, :sswitch_data_0
 
-    .line 515
+    .line 514
     const/4 v0, 0x1
 
-    .line 518
+    .line 517
     :goto_0
     return v0
 
-    .line 512
+    .line 511
     :sswitch_0
     const/4 v0, 0x0
 
-    .line 513
+    .line 512
     goto :goto_0
 
-    .line 508
+    .line 507
     :sswitch_data_0
     .sparse-switch
         0x21 -> :sswitch_0
@@ -766,16 +669,16 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 228
+    .line 230
     const/4 v3, 0x0
 
-    .line 229
+    .line 231
     .local v3, pathCount:I
     invoke-virtual {p0, p1}, Lcom/htc/app/FilePickerUtil;->getPathArray(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 231
+    .line 233
     .local v0, dirs:[Ljava/lang/String;
     const/4 v2, 0x0
 
@@ -785,14 +688,14 @@
 
     if-ge v2, v5, :cond_2
 
-    .line 232
+    .line 234
     new-instance v1, Ljava/io/File;
 
     aget-object v5, v0, v2
 
     invoke-direct {v1, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 233
+    .line 235
     .local v1, folder:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -800,26 +703,26 @@
 
     if-eqz v5, :cond_0
 
-    .line 234
+    .line 236
     add-int/lit8 v3, v3, 0x1
 
-    .line 236
+    .line 238
     :cond_0
     if-le v3, v4, :cond_1
 
-    .line 239
+    .line 241
     .end local v1           #folder:Ljava/io/File;
     :goto_1
     return v4
 
-    .line 231
+    .line 233
     .restart local v1       #folder:Ljava/io/File;
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 239
+    .line 241
     .end local v1           #folder:Ljava/io/File;
     :cond_2
     const/4 v4, 0x0
@@ -832,19 +735,19 @@
     .parameter "path"
 
     .prologue
-    .line 191
+    .line 193
     invoke-virtual {p0, p1}, Lcom/htc/app/FilePickerUtil;->getAvailableFolderPath(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 192
+    .line 194
     iget-object v1, p0, Lcom/htc/app/FilePickerUtil;->mRootPath:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Lcom/htc/app/FilePickerUtil;->getAvailableFolderPath(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 194
+    .line 196
     .local v0, tmpPath:Ljava/lang/String;
     invoke-static {p1}, Lcom/htc/app/FilePickerUtil;->IsEmptyPath(Ljava/lang/String;)Z
 
@@ -852,12 +755,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 195
+    .line 197
     invoke-virtual {p0}, Lcom/htc/app/FilePickerUtil;->getDefaultPath()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 196
+    .line 198
     :cond_0
     invoke-static {v0}, Lcom/htc/app/FilePickerUtil;->IsEmptyPath(Ljava/lang/String;)Z
 
@@ -865,23 +768,23 @@
 
     if-eqz v1, :cond_1
 
-    .line 197
+    .line 199
     invoke-virtual {p0}, Lcom/htc/app/FilePickerUtil;->getDefaultPath()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 198
+    .line 200
     :cond_1
     invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 199
+    .line 201
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 200
+    .line 202
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -894,16 +797,16 @@
     .parameter "path"
 
     .prologue
-    .line 176
+    .line 178
     const/4 v0, 0x0
 
-    .line 177
+    .line 179
     .local v0, result:Z
     sget-boolean v1, Lcom/htc/app/FilePickerUtil;->IsSupportInternalStorage:Z
 
     if-eqz v1, :cond_1
 
-    .line 178
+    .line 180
     const-string v1, "/mnt/sdcard/ext_sd"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -912,15 +815,15 @@
 
     if-eqz v1, :cond_0
 
-    .line 179
+    .line 181
     const/4 v0, 0x1
 
-    .line 187
+    .line 189
     :cond_0
     :goto_0
     return v0
 
-    .line 182
+    .line 184
     :cond_1
     sget-object v1, Lcom/htc/app/FilePickerUtil;->mSdcardPath:Ljava/lang/String;
 
@@ -946,7 +849,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 184
+    .line 186
     :cond_2
     const/4 v0, 0x1
 
@@ -958,16 +861,16 @@
     .parameter "path"
 
     .prologue
-    .line 102
+    .line 104
     const/4 v0, 0x0
 
-    .line 103
+    .line 105
     .local v0, result:Z
     sget-boolean v1, Lcom/htc/app/FilePickerUtil;->IsSupportInternalStorage:Z
 
     if-eqz v1, :cond_0
 
-    .line 104
+    .line 106
     const-string v1, "/mnt/sdcard/usb"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -976,10 +879,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 105
+    .line 107
     const/4 v0, 0x1
 
-    .line 108
+    .line 110
     :cond_0
     return v0
 .end method
@@ -989,23 +892,23 @@
     .parameter "path"
 
     .prologue
-    .line 250
+    .line 252
     invoke-static {p1}, Lcom/htc/app/FilePickerUtil;->IsEmptyPath(Ljava/lang/String;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 251
+    .line 253
     invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 252
+    .line 254
     :cond_0
     const/4 v0, 0x0
 
-    .line 253
+    .line 255
     .local v0, result:Z
     invoke-virtual {p0, p1}, Lcom/htc/app/FilePickerUtil;->IsSDcardPath(Ljava/lang/String;)Z
 
@@ -1019,7 +922,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 254
+    .line 256
     :cond_1
     invoke-virtual {p0, p1}, Lcom/htc/app/FilePickerUtil;->checkFileCanScan(Ljava/lang/String;)Z
 
@@ -1027,10 +930,10 @@
 
     if-nez v1, :cond_2
 
-    .line 255
+    .line 257
     const/4 v0, 0x1
 
-    .line 258
+    .line 260
     :cond_2
     return v0
 .end method
@@ -1039,7 +942,7 @@
     .locals 1
 
     .prologue
-    .line 148
+    .line 150
     const/4 v0, 0x0
 
     return v0
@@ -1050,10 +953,10 @@
     .parameter "path"
 
     .prologue
-    .line 152
+    .line 154
     const/4 v0, 0x0
 
-    .line 153
+    .line 155
     .local v0, result:Z
     invoke-static {p1}, Lcom/htc/app/FilePickerUtil;->IsEmptyPath(Ljava/lang/String;)Z
 
@@ -1061,12 +964,12 @@
 
     if-nez v1, :cond_0
 
-    .line 154
+    .line 156
     invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 155
+    .line 157
     :cond_0
     invoke-virtual {p0, p1}, Lcom/htc/app/FilePickerUtil;->IsSDcardPath(Ljava/lang/String;)Z
 
@@ -1074,21 +977,21 @@
 
     if-eqz v1, :cond_2
 
-    .line 156
+    .line 158
     sget-boolean v1, Lcom/htc/app/FilePickerUtil;->IsSupportInternalStorage:Z
 
     if-eqz v1, :cond_1
 
-    .line 157
+    .line 159
     invoke-virtual {p0}, Lcom/htc/app/FilePickerUtil;->checkExtSDCard()Z
 
     move-result v0
 
-    .line 172
+    .line 174
     :goto_0
     return v0
 
-    .line 159
+    .line 161
     :cond_1
     invoke-virtual {p0}, Lcom/htc/app/FilePickerUtil;->checkSDCard()Z
 
@@ -1096,7 +999,7 @@
 
     goto :goto_0
 
-    .line 163
+    .line 165
     :cond_2
     invoke-virtual {p0, p1}, Lcom/htc/app/FilePickerUtil;->IsUsbPath(Ljava/lang/String;)Z
 
@@ -1104,25 +1007,25 @@
 
     if-eqz v1, :cond_4
 
-    .line 164
+    .line 166
     sget-boolean v1, Lcom/htc/app/FilePickerUtil;->IsSupportInternalStorage:Z
 
     if-eqz v1, :cond_3
 
-    .line 165
+    .line 167
     invoke-virtual {p0}, Lcom/htc/app/FilePickerUtil;->checkUsb()Z
 
     move-result v0
 
     goto :goto_0
 
-    .line 167
+    .line 169
     :cond_3
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 169
+    .line 171
     :cond_4
     const/4 v0, 0x1
 
@@ -1133,7 +1036,7 @@
     .locals 2
 
     .prologue
-    .line 129
+    .line 131
     invoke-static {}, Landroid/os/Environment;->getExternalStorageState()Ljava/lang/String;
 
     move-result-object v0
@@ -1146,10 +1049,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 131
+    .line 133
     const/4 v0, 0x1
 
-    .line 133
+    .line 135
     :goto_0
     return v0
 
@@ -1163,7 +1066,7 @@
     .locals 1
 
     .prologue
-    .line 121
+    .line 123
     const/4 v0, 0x0
 
     return v0
@@ -1175,13 +1078,13 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 521
+    .line 520
     iput-object v0, p0, Lcom/htc/app/FilePickerUtil;->mRootPath:Ljava/lang/String;
 
-    .line 522
+    .line 521
     iput-object v0, p0, Lcom/htc/app/FilePickerUtil;->mContext:Landroid/content/Context;
 
-    .line 523
+    .line 522
     return-void
 .end method
 
@@ -1190,12 +1093,12 @@
     .parameter "number"
 
     .prologue
-    .line 406
+    .line 405
     const/16 v0, 0xa
 
     if-lt p1, v0, :cond_0
 
-    .line 407
+    .line 406
     new-instance v0, Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1218,7 +1121,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    .line 409
+    .line 408
     :goto_0
     return-object v0
 
@@ -1253,16 +1156,16 @@
     .parameter "path"
 
     .prologue
-    .line 205
+    .line 207
     const-string v3, ""
 
-    .line 206
+    .line 208
     .local v3, result:Ljava/lang/String;
     invoke-virtual {p0, p1}, Lcom/htc/app/FilePickerUtil;->getPathArray(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 207
+    .line 209
     .local v0, dirs:[Ljava/lang/String;
     const/4 v2, 0x0
 
@@ -1272,14 +1175,14 @@
 
     if-ge v2, v4, :cond_1
 
-    .line 208
+    .line 210
     new-instance v1, Ljava/io/File;
 
     aget-object v4, v0, v2
 
     invoke-direct {v1, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 209
+    .line 211
     .local v1, folder:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -1287,7 +1190,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 210
+    .line 212
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1314,13 +1217,13 @@
 
     move-result-object v3
 
-    .line 207
+    .line 209
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 214
+    .line 216
     .end local v1           #folder:Ljava/io/File;
     :cond_1
     invoke-virtual {v3}, Ljava/lang/String;->length()I
@@ -1337,7 +1240,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 215
+    .line 217
     const/4 v4, 0x1
 
     invoke-virtual {v3}, Ljava/lang/String;->length()I
@@ -1348,7 +1251,7 @@
 
     move-result-object v3
 
-    .line 216
+    .line 218
     :cond_2
     return-object v3
 .end method
@@ -1369,19 +1272,9 @@
 
     .prologue
     .line 396
-    iget-object v1, p0, Lcom/htc/app/FilePickerUtil;->mContext:Landroid/content/Context;
+    const-string v0, ""
 
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string v2, "date_format"
-
-    invoke-static {v1, v2}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 398
+    .line 397
     .local v0, dateFormat:Ljava/lang/String;
     invoke-direct {p0}, Lcom/htc/app/FilePickerUtil;->is24Hour()Z
 
@@ -1389,12 +1282,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 399
+    .line 398
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v2, p0, Lcom/htc/app/FilePickerUtil;->mDateFormat:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -1408,7 +1303,7 @@
 
     move-result-object v0
 
-    .line 402
+    .line 401
     :goto_0
     invoke-static {v0, p1}, Landroid/text/format/DateFormat;->format(Ljava/lang/CharSequence;Ljava/util/Date;)Ljava/lang/CharSequence;
 
@@ -1420,13 +1315,15 @@
 
     return-object v1
 
-    .line 401
+    .line 400
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v2, p0, Lcom/htc/app/FilePickerUtil;->mDateFormat:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -1459,21 +1356,21 @@
     .parameter "path"
 
     .prologue
-    .line 221
+    .line 223
     invoke-static {p1}, Lcom/htc/app/FilePickerUtil;->IsEmptyPath(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 222
+    .line 224
     const/4 v0, 0x0
 
-    .line 224
+    .line 226
     :goto_0
     return-object v0
 
-    .line 223
+    .line 225
     :cond_0
     const-string v1, ";"
 
@@ -1481,7 +1378,7 @@
 
     move-result-object v0
 
-    .line 224
+    .line 226
     .local v0, dirs:[Ljava/lang/String;
     goto :goto_0
 .end method
@@ -1501,10 +1398,10 @@
     .parameter "mDrmFilter"
 
     .prologue
-    .line 349
+    .line 351
     if-eqz p1, :cond_3
 
-    .line 350
+    .line 352
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1513,7 +1410,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 351
+    .line 353
     aget-object v1, p1, v0
 
     const-string v2, "drm_audio"
@@ -1524,7 +1421,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 353
+    .line 355
     iget-object v1, p0, Lcom/htc/app/FilePickerUtil;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1539,7 +1436,7 @@
 
     iput-object v1, p0, Lcom/htc/app/FilePickerUtil;->mDcfAudioList:[Ljava/lang/String;
 
-    .line 356
+    .line 358
     iget-object v1, p0, Lcom/htc/app/FilePickerUtil;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1554,14 +1451,14 @@
 
     iput-object v1, p0, Lcom/htc/app/FilePickerUtil;->mDmAudioList:[Ljava/lang/String;
 
-    .line 350
+    .line 352
     :cond_0
     :goto_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 359
+    .line 361
     :cond_1
     aget-object v1, p1, v0
 
@@ -1573,7 +1470,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 361
+    .line 363
     iget-object v1, p0, Lcom/htc/app/FilePickerUtil;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1588,7 +1485,7 @@
 
     iput-object v1, p0, Lcom/htc/app/FilePickerUtil;->mDcfVideoList:[Ljava/lang/String;
 
-    .line 364
+    .line 366
     iget-object v1, p0, Lcom/htc/app/FilePickerUtil;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1605,7 +1502,7 @@
 
     goto :goto_1
 
-    .line 367
+    .line 369
     :cond_2
     aget-object v1, p1, v0
 
@@ -1617,7 +1514,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 369
+    .line 371
     iget-object v1, p0, Lcom/htc/app/FilePickerUtil;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1632,7 +1529,7 @@
 
     iput-object v1, p0, Lcom/htc/app/FilePickerUtil;->mDcfImageList:[Ljava/lang/String;
 
-    .line 372
+    .line 374
     iget-object v1, p0, Lcom/htc/app/FilePickerUtil;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1649,7 +1546,7 @@
 
     goto :goto_1
 
-    .line 380
+    .line 382
     .end local v0           #i:I
     :cond_3
     return-void
@@ -1660,7 +1557,7 @@
     .parameter "forderName"
 
     .prologue
-    .line 276
+    .line 278
     iget-object v0, p0, Lcom/htc/app/FilePickerUtil;->ALLOW_FORDER:[Ljava/lang/String;
 
     .local v0, arr$:[Ljava/lang/String;
@@ -1675,7 +1572,7 @@
 
     aget-object v3, v0, v1
 
-    .line 277
+    .line 279
     .local v3, path:Ljava/lang/String;
     invoke-virtual {p1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -1683,22 +1580,22 @@
 
     if-eqz v4, :cond_0
 
-    .line 278
+    .line 280
     const/4 v4, 0x1
 
-    .line 280
+    .line 282
     .end local v3           #path:Ljava/lang/String;
     :goto_1
     return v4
 
-    .line 276
+    .line 278
     .restart local v3       #path:Ljava/lang/String;
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 280
+    .line 282
     .end local v3           #path:Ljava/lang/String;
     :cond_1
     const/4 v4, 0x0
@@ -1711,15 +1608,15 @@
     .parameter "filename"
 
     .prologue
-    .line 263
+    .line 265
     if-eqz p1, :cond_0
 
-    .line 264
+    .line 266
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 265
+    .line 267
     const-string v0, ""
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1728,12 +1625,12 @@
 
     if-nez v0, :cond_0
 
-    .line 266
+    .line 268
     invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 267
+    .line 269
     const-string v0, ".dm"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
@@ -1742,10 +1639,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 268
+    .line 270
     const/4 v0, 0x1
 
-    .line 272
+    .line 274
     :goto_0
     return v0
 
@@ -1762,12 +1659,12 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 285
+    .line 287
     iget-object v2, p0, Lcom/htc/app/FilePickerUtil;->mDcfAudioList:[Ljava/lang/String;
 
     if-eqz v2, :cond_2
 
-    .line 286
+    .line 288
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1778,7 +1675,7 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 287
+    .line 289
     iget-object v2, p0, Lcom/htc/app/FilePickerUtil;->mDcfAudioList:[Ljava/lang/String;
 
     aget-object v2, v2, v0
@@ -1789,27 +1686,27 @@
 
     if-eqz v2, :cond_1
 
-    .line 308
+    .line 310
     .end local v0           #i:I
     :cond_0
     :goto_1
     return v1
 
-    .line 286
+    .line 288
     .restart local v0       #i:I
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 293
+    .line 295
     .end local v0           #i:I
     :cond_2
     iget-object v2, p0, Lcom/htc/app/FilePickerUtil;->mDcfVideoList:[Ljava/lang/String;
 
     if-eqz v2, :cond_3
 
-    .line 294
+    .line 296
     const/4 v0, 0x0
 
     .restart local v0       #i:I
@@ -1820,7 +1717,7 @@
 
     if-ge v0, v2, :cond_3
 
-    .line 295
+    .line 297
     iget-object v2, p0, Lcom/htc/app/FilePickerUtil;->mDcfVideoList:[Ljava/lang/String;
 
     aget-object v2, v2, v0
@@ -1831,19 +1728,19 @@
 
     if-nez v2, :cond_0
 
-    .line 294
+    .line 296
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 301
+    .line 303
     .end local v0           #i:I
     :cond_3
     iget-object v2, p0, Lcom/htc/app/FilePickerUtil;->mDcfImageList:[Ljava/lang/String;
 
     if-eqz v2, :cond_4
 
-    .line 302
+    .line 304
     const/4 v0, 0x0
 
     .restart local v0       #i:I
@@ -1854,7 +1751,7 @@
 
     if-ge v0, v2, :cond_4
 
-    .line 303
+    .line 305
     iget-object v2, p0, Lcom/htc/app/FilePickerUtil;->mDcfImageList:[Ljava/lang/String;
 
     aget-object v2, v2, v0
@@ -1865,12 +1762,12 @@
 
     if-nez v2, :cond_0
 
-    .line 302
+    .line 304
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 
-    .line 308
+    .line 310
     .end local v0           #i:I
     :cond_4
     const/4 v1, 0x0
@@ -1885,12 +1782,12 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 312
+    .line 314
     iget-object v2, p0, Lcom/htc/app/FilePickerUtil;->mDmAudioList:[Ljava/lang/String;
 
     if-eqz v2, :cond_2
 
-    .line 313
+    .line 315
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1901,7 +1798,7 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 314
+    .line 316
     iget-object v2, p0, Lcom/htc/app/FilePickerUtil;->mDmAudioList:[Ljava/lang/String;
 
     aget-object v2, v2, v0
@@ -1912,27 +1809,27 @@
 
     if-eqz v2, :cond_1
 
-    .line 335
+    .line 337
     .end local v0           #i:I
     :cond_0
     :goto_1
     return v1
 
-    .line 313
+    .line 315
     .restart local v0       #i:I
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 320
+    .line 322
     .end local v0           #i:I
     :cond_2
     iget-object v2, p0, Lcom/htc/app/FilePickerUtil;->mDmVideoList:[Ljava/lang/String;
 
     if-eqz v2, :cond_3
 
-    .line 321
+    .line 323
     const/4 v0, 0x0
 
     .restart local v0       #i:I
@@ -1943,7 +1840,7 @@
 
     if-ge v0, v2, :cond_3
 
-    .line 322
+    .line 324
     iget-object v2, p0, Lcom/htc/app/FilePickerUtil;->mDmVideoList:[Ljava/lang/String;
 
     aget-object v2, v2, v0
@@ -1954,19 +1851,19 @@
 
     if-nez v2, :cond_0
 
-    .line 321
+    .line 323
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 328
+    .line 330
     .end local v0           #i:I
     :cond_3
     iget-object v2, p0, Lcom/htc/app/FilePickerUtil;->mDmImageList:[Ljava/lang/String;
 
     if-eqz v2, :cond_4
 
-    .line 329
+    .line 331
     const/4 v0, 0x0
 
     .restart local v0       #i:I
@@ -1977,7 +1874,7 @@
 
     if-ge v0, v2, :cond_4
 
-    .line 330
+    .line 332
     iget-object v2, p0, Lcom/htc/app/FilePickerUtil;->mDmImageList:[Ljava/lang/String;
 
     aget-object v2, v2, v0
@@ -1988,12 +1885,12 @@
 
     if-nez v2, :cond_0
 
-    .line 329
+    .line 331
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 
-    .line 335
+    .line 337
     .end local v0           #i:I
     :cond_4
     const/4 v1, 0x0

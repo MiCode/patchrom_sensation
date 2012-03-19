@@ -90,7 +90,7 @@
     .line 91
     new-instance v3, Ljava/lang/Object;
 
-    invoke-direct {v3}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v3 .. v3}, Ljava/lang/Object;-><init>()V
 
     iput-object v3, p0, Landroid/media/audiofx/BassEnhance;->mParamListenerLock:Ljava/lang/Object;
 

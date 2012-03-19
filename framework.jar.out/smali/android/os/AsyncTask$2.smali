@@ -82,7 +82,7 @@
 
     iget-object v1, p0, Landroid/os/AsyncTask$2;->this$0:Landroid/os/AsyncTask;
 
-    iget-object v2, p0, Landroid/os/AsyncTask$2;->mParams:[Ljava/lang/Object;
+    iget-object v2, p0, Landroid/os/AsyncTask$WorkerRunnable;->mParams:[Ljava/lang/Object;
 
     invoke-virtual {v1, v2}, Landroid/os/AsyncTask;->doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
 

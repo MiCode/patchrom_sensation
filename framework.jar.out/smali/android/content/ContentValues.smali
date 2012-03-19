@@ -55,7 +55,7 @@
 
     .prologue
     .line 41
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 44
     new-instance v0, Ljava/util/HashMap;
@@ -76,7 +76,7 @@
 
     .prologue
     .line 52
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 53
     new-instance v0, Ljava/util/HashMap;
@@ -97,7 +97,7 @@
 
     .prologue
     .line 61
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 62
     new-instance v0, Ljava/util/HashMap;
@@ -129,7 +129,7 @@
     .prologue
     .line 72
     .local p1, values:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 73
     iput-object p1, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;

@@ -59,7 +59,7 @@
     iput-boolean v2, p0, Lcom/scalado/caps/filter/clearshot/LocalBoost;->inAutomaticMode:Z
 
     .line 30
-    iget-object v1, p0, Lcom/scalado/caps/filter/clearshot/LocalBoost;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -197,7 +197,7 @@
 
     .prologue
     .line 176
-    iget-object v0, p0, Lcom/scalado/caps/filter/clearshot/LocalBoost;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -227,7 +227,7 @@
     const/4 v2, 0x1
 
     .line 127
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/clearshot/LocalBoost;->isCommitted:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v1, :cond_0
 
@@ -260,7 +260,7 @@
 
     .line 135
     :cond_2
-    iget-object v1, p0, Lcom/scalado/caps/filter/clearshot/LocalBoost;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -272,7 +272,7 @@
 
     .line 137
     .local v0, error:I
-    iput-boolean v2, p0, Lcom/scalado/caps/filter/clearshot/LocalBoost;->isSet:Z
+    iput-boolean v2, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 138
     iput p1, p0, Lcom/scalado/caps/filter/clearshot/LocalBoost;->autoLevel:I
@@ -297,7 +297,7 @@
     const/high16 v1, 0x3f00
 
     .line 63
-    iget-boolean v0, p0, Lcom/scalado/caps/filter/clearshot/LocalBoost;->isCommitted:Z
+    iget-boolean v0, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v0, :cond_0
 
@@ -364,7 +364,7 @@
 
     .line 74
     :cond_2
-    iget-object v0, p0, Lcom/scalado/caps/filter/clearshot/LocalBoost;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -388,7 +388,7 @@
     .local v6, error:I
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/scalado/caps/filter/clearshot/LocalBoost;->isSet:Z
+    iput-boolean v0, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 77
     iput p1, p0, Lcom/scalado/caps/filter/clearshot/LocalBoost;->gamma:F

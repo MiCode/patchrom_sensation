@@ -114,16 +114,16 @@
         <item>0</item>
     </string-array>
     <string-array name="world_phone_preferred_gsm_network_mode_choices_plus_lte">
-        <item>LTE only</item>
-        <item>GSM only</item>
-        <item>UMTS only</item>
-        <item>GSM/UMTS/LTE multiple</item>
+        <item>Tikai LTE</item>
+        <item>Tikai GSM</item>
+        <item>Tikai UMTS</item>
+        <item>GSM/UMTS/LTE vairāki</item>
     </string-array>
     <string-array name="world_phone_mode_of_operation_mode_choices_plus_lte">
-        <item>Global Mode</item>
-        <item>CDMA Mode</item>
-        <item>GSM/UMTS/LTE Mode</item>
-        <item>LTE Mode</item>
+        <item>Globālais režīms</item>
+        <item>CDMA režīms</item>
+        <item>GSM/UMTS/LTE režīms</item>
+        <item>LTE režīms</item>
     </string-array>
     <string-array name="world_phone_mode_of_operation_mode_values_plus_lte">
         <item>10</item>

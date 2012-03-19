@@ -95,7 +95,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_2
 
     .line 9638
     const-string v2, "result"
@@ -140,7 +140,7 @@
     :cond_1
     const/4 v2, -0x1
 
-    if-ne v2, v1, :cond_2
+    if-ne v2, v1, :cond_3
 
     .line 9641
     iget-object v2, p0, Lcom/android/phone/InCallScreen$PwdResultReceiver;->this$0:Lcom/android/phone/InCallScreen;
@@ -149,11 +149,14 @@
     invoke-static {v2}, Lcom/android/phone/InCallScreen;->access$5500(Lcom/android/phone/InCallScreen;)V
 
     .line 9651
+    .end local v1           #result_code:I
+    :cond_2
     :goto_0
     return-void
 
     .line 9643
-    :cond_2
+    .restart local v1       #result_code:I
+    :cond_3
     iget-object v2, p0, Lcom/android/phone/InCallScreen$PwdResultReceiver;->this$0:Lcom/android/phone/InCallScreen;
 
     #calls: Lcom/android/phone/InCallScreen;->clearPwdResultReceiver()V
@@ -168,13 +171,4 @@
     invoke-static {v2, v3}, Lcom/android/phone/InCallScreen;->access$5702(Lcom/android/phone/InCallScreen;Lcom/android/phone/util/PendingRequest;)Lcom/android/phone/util/PendingRequest;
 
     goto :goto_0
-
-    .line 9648
-    .end local v1           #result_code:I
-    :cond_3
-    new-instance v2, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v2}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw v2
 .end method

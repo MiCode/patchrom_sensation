@@ -104,7 +104,7 @@
     if-nez v0, :cond_2
 
     .line 64
-    iget-object v0, p0, Lcom/android/camera/effect/EffectBase;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "There is no camera thread"
 
@@ -140,7 +140,7 @@
     if-eqz v5, :cond_0
 
     .line 80
-    iget-object v5, p0, Lcom/android/camera/effect/EffectBase;->TAG:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "Effect is released"
 
@@ -159,7 +159,7 @@
     if-eqz v5, :cond_1
 
     .line 85
-    iget-object v5, p0, Lcom/android/camera/effect/EffectBase;->TAG:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -258,7 +258,7 @@
     if-eqz v4, :cond_3
 
     .line 111
-    iget-object v5, p0, Lcom/android/camera/effect/EffectBase;->TAG:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "Restore image settings"
 
@@ -298,7 +298,7 @@
     if-eqz v1, :cond_5
 
     .line 124
-    iget-object v5, p0, Lcom/android/camera/effect/EffectBase;->TAG:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "Apply special image settings"
 
@@ -346,7 +346,7 @@
     if-eqz v3, :cond_0
 
     .line 145
-    iget-object v3, p0, Lcom/android/camera/effect/EffectBase;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "Effect is released"
 
@@ -385,7 +385,7 @@
     if-nez v3, :cond_2
 
     .line 157
-    iget-object v3, p0, Lcom/android/camera/effect/EffectBase;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -445,7 +445,7 @@
     if-eqz v0, :cond_4
 
     .line 169
-    iget-object v3, p0, Lcom/android/camera/effect/EffectBase;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "Backup current image settings"
 
@@ -654,7 +654,7 @@
     if-eqz v0, :cond_0
 
     .line 285
-    iget-object v0, p0, Lcom/android/camera/effect/EffectBase;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Effect is released"
 
@@ -673,7 +673,7 @@
     if-eqz v0, :cond_1
 
     .line 290
-    iget-object v0, p0, Lcom/android/camera/effect/EffectBase;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -746,7 +746,7 @@
     if-eqz v0, :cond_0
 
     .line 312
-    iget-object v0, p0, Lcom/android/camera/effect/EffectBase;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Effect is released"
 
@@ -765,7 +765,7 @@
     if-nez v0, :cond_1
 
     .line 317
-    iget-object v0, p0, Lcom/android/camera/effect/EffectBase;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 

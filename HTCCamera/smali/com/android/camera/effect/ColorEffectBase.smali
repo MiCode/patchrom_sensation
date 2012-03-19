@@ -200,7 +200,7 @@
     if-nez v0, :cond_0
 
     .line 43
-    iget-object v0, p0, Lcom/android/camera/effect/ColorEffectBase;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Cannot find color effect controller"
 
@@ -302,7 +302,7 @@
     if-nez v2, :cond_4
 
     .line 85
-    iget-object v3, p0, Lcom/android/camera/effect/ColorEffectBase;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "Cannot get effect supported list"
 

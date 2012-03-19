@@ -735,7 +735,7 @@
 
     .line 100
     :cond_1
-    const v8, 0x7f080078
+    const v8, 0x7f080079
 
     invoke-virtual {p0, v8}, Lcom/android/phone/prefernetwork/PreferredNetworkList;->findViewById(I)Landroid/view/View;
 
@@ -766,7 +766,7 @@
 
     .line 106
     :cond_2
-    const v8, 0x7f080079
+    const v8, 0x7f080078
 
     invoke-virtual {p0, v8}, Lcom/android/phone/prefernetwork/PreferredNetworkList;->findViewById(I)Landroid/view/View;
 

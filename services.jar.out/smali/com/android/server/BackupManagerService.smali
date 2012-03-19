@@ -10015,7 +10015,7 @@
     if-eqz v2, :cond_0
 
     :try_start_a
-    invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
+    throw v2
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_1
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_3
@@ -11148,13 +11148,13 @@
     :cond_5
     if-eqz v1, :cond_6
 
-    invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
+    invoke-virtual {v1}, Ljava/io/BufferedOutputStream;->close()V
 
     .line 1142
     :cond_6
     if-eqz v7, :cond_0
 
-    invoke-virtual {v7}, Ljava/io/OutputStream;->close()V
+    invoke-virtual {v7}, Ljava/io/FileOutputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_0
 
@@ -11202,13 +11202,13 @@
     :cond_7
     if-eqz v0, :cond_8
 
-    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
+    invoke-virtual {v0}, Ljava/io/BufferedOutputStream;->close()V
 
     .line 1142
     :cond_8
     if-eqz v6, :cond_9
 
-    invoke-virtual {v6}, Ljava/io/OutputStream;->close()V
+    invoke-virtual {v6}, Ljava/io/FileOutputStream;->close()V
 
     .line 1140
     :cond_9

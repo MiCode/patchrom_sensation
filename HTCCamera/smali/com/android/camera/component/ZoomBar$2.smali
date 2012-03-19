@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 51
+    .line 53
     iput-object p1, p0, Lcom/android/camera/component/ZoomBar$2;->this$0:Lcom/android/camera/component/ZoomBar;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,26 +48,26 @@
 
     const/4 v2, 0x1
 
-    .line 54
+    .line 56
     move-object v8, p1
 
     check-cast v8, Lcom/android/camera/KeyEvent;
 
-    .line 55
+    .line 57
     .local v8, keyEvent:Lcom/android/camera/KeyEvent;
     invoke-virtual {v8}, Lcom/android/camera/KeyEvent;->getKeyCode()I
 
     move-result v7
 
-    .line 56
+    .line 58
     .local v7, keyCode:I
     packed-switch v7, :pswitch_data_0
 
-    .line 68
+    .line 70
     :goto_0
     return-void
 
-    .line 59
+    .line 61
     :pswitch_0
     iget-object v0, p0, Lcom/android/camera/component/ZoomBar$2;->this$0:Lcom/android/camera/component/ZoomBar;
 
@@ -79,13 +79,13 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/camera/component/ZoomBar;->sendMessage(Lcom/android/camera/component/Component;IIILjava/lang/Object;Z)Z
 
-    .line 67
+    .line 69
     :goto_1
     invoke-virtual {v8}, Lcom/android/camera/KeyEvent;->setHandled()V
 
     goto :goto_0
 
-    .line 62
+    .line 64
     :pswitch_1
     iget-object v0, p0, Lcom/android/camera/component/ZoomBar$2;->this$0:Lcom/android/camera/component/ZoomBar;
 
@@ -99,7 +99,7 @@
 
     goto :goto_1
 
-    .line 56
+    .line 58
     nop
 
     :pswitch_data_0

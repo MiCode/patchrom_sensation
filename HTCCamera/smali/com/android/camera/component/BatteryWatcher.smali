@@ -88,7 +88,7 @@
 
     .line 47
     :cond_1
-    iget-object v1, p0, Lcom/android/camera/component/BatteryWatcher;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
 

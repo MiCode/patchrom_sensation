@@ -302,18 +302,18 @@
     iput-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mTempStorage:[B
 
     .line 3189
-    iput-object p4, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mBaseUri:Landroid/net/Uri;
+    iput-object p4, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mBaseUri:Landroid/net/Uri;
 
     .line 3190
-    iput-object p5, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mThumbUri:Landroid/net/Uri;
+    iput-object p5, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mThumbUri:Landroid/net/Uri;
 
     .line 3191
     move/from16 v0, p6
 
-    iput v0, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mSort:I
+    iput v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mSort:I
 
     .line 3193
-    iput-object p3, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mContentResolver:Landroid/content/ContentResolver;
+    iput-object p3, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
     .line 3194
     move/from16 v0, p8
@@ -325,10 +325,10 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iput-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     .line 3196
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     if-nez v1, :cond_0
 
@@ -345,7 +345,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mBaseUri:Landroid/net/Uri;
+    iget-object v3, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mBaseUri:Landroid/net/Uri;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -471,7 +471,7 @@
 
     .line 3453
     :try_start_0
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v3, "r"
 
@@ -573,7 +573,7 @@
 
     .prologue
     .line 3467
-    iget v1, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mSort:I
+    iget v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mSort:I
 
     const/4 v2, 0x1
 
@@ -633,7 +633,7 @@
 
     .prologue
     .line 3300
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     .line 3302
     .local v0, c:Landroid/database/Cursor;
@@ -710,9 +710,9 @@
 
     .prologue
     .line 3346
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mBaseUri:Landroid/net/Uri;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mBaseUri:Landroid/net/Uri;
 
     invoke-static {}, Lcom/htc/opensense/album/util/ImageManager;->access$700()[Ljava/lang/String;
 
@@ -772,9 +772,9 @@
     const/4 v8, 0x0
 
     .line 3163
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mBaseUri:Landroid/net/Uri;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mBaseUri:Landroid/net/Uri;
 
     invoke-virtual {v1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
@@ -1059,7 +1059,7 @@
 
     iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->this$0:Lcom/htc/opensense/album/util/ImageManager;
 
-    iget-object v6, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v6, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
     move-wide v2, p1
 
@@ -1490,7 +1490,7 @@
 
     .line 3332
     .local v0, where:Ljava/lang/String;
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mWhereStatement:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mWhereStatement:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
@@ -1509,7 +1509,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mWhereStatement:Ljava/lang/String;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mWhereStatement:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1521,7 +1521,7 @@
 
     .line 3335
     :cond_0
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mBucketId:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mBucketId:Ljava/lang/String;
 
     if-eqz v1, :cond_1
 
@@ -1540,7 +1540,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->mBucketId:Ljava/lang/String;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mBucketId:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

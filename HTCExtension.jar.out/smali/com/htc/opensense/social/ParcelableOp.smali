@@ -44,7 +44,7 @@
 
     .prologue
     .line 16
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 17
     invoke-virtual {p0, p1}, Lcom/htc/opensense/social/ParcelableOp;->readFromParcel(Landroid/os/Parcel;)V
@@ -59,7 +59,7 @@
 
     .prologue
     .line 12
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 13
     iput-object p1, p0, Lcom/htc/opensense/social/ParcelableOp;->mService:Lcom/htc/opensense/social/ISocialService;

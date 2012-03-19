@@ -33,7 +33,7 @@
     .line 20
     iput-object p1, p0, Lcom/htc/app/AppLaunchObserver$NotificationRunnable;->this$0:Lcom/htc/app/AppLaunchObserver;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 21
     iput-object p2, p0, Lcom/htc/app/AppLaunchObserver$NotificationRunnable;->mStat:Lcom/android/internal/os/HtcAppUsageStats;

@@ -755,7 +755,7 @@
     .line 1080
     iget-object v9, p0, Lcom/htc/widget/CarouselHost;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iput v12, v9, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v12, v9, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 1082
     iget-object v9, p0, Lcom/htc/widget/CarouselHost;->mDragSource:Lcom/htc/widget/DragSource;
@@ -777,7 +777,7 @@
 
     move-result v10
 
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v10, v9, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 1087
     :goto_0
@@ -932,7 +932,7 @@
     :cond_0
     iget-object v9, p0, Lcom/htc/widget/CarouselHost;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iput v12, v9, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v12, v9, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     goto :goto_0
 .end method
@@ -2682,14 +2682,14 @@
     if-ne v5, v7, :cond_4
 
     .line 1740
-    invoke-virtual {v4}, Landroid/view/ViewGroup;->hasFocus()Z
+    invoke-virtual {v4}, Lcom/htc/widget/CarouselWidget;->hasFocus()Z
 
     move-result v5
 
     if-nez v5, :cond_3
 
     .line 1742
-    invoke-virtual {v4}, Landroid/view/ViewGroup;->requestFocus()Z
+    invoke-virtual {v4}, Lcom/htc/widget/CarouselWidget;->requestFocus()Z
 
     :cond_3
     move v5, v6
@@ -2820,10 +2820,10 @@
     if-nez v5, :cond_7
 
     .line 1796
-    invoke-virtual {v4}, Landroid/view/ViewGroup;->requestFocus()Z
+    invoke-virtual {v4}, Lcom/htc/widget/CarouselWidget;->requestFocus()Z
 
     .line 1797
-    invoke-virtual {v4, p1}, Landroid/view/ViewGroup;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+    invoke-virtual {v4, p1}, Lcom/htc/widget/CarouselWidget;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move v5, v6
 

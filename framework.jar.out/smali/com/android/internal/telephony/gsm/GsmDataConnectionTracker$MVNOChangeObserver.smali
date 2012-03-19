@@ -28,7 +28,7 @@
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$MVNOChangeObserver;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     .line 113
-    #getter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mDataConnectionTracker:Landroid/os/Handler;
+    #getter for: Lcom/android/internal/telephony/DataConnectionTracker;->mDataConnectionTracker:Landroid/os/Handler;
     invoke-static {p1}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$100(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)Landroid/os/Handler;
 
     move-result-object v0

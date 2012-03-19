@@ -285,7 +285,7 @@
     if-ltz v3, :cond_0
 
     .line 228
-    iget-object v3, p0, Lcom/android/phone/FdnList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
+    iget-object v3, p0, Lcom/android/phone/ADNList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
 
     invoke-virtual {p0}, Lcom/android/phone/FdnList;->getSelectedItemPosition()I
 
@@ -297,7 +297,7 @@
 
     .line 229
     .local v1, name:Ljava/lang/String;
-    iget-object v3, p0, Lcom/android/phone/FdnList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
+    iget-object v3, p0, Lcom/android/phone/ADNList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
 
     invoke-virtual {p0}, Lcom/android/phone/FdnList;->getSelectedItemPosition()I
 
@@ -349,7 +349,7 @@
     if-ltz p1, :cond_0
 
     .line 248
-    iget-object v3, p0, Lcom/android/phone/FdnList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
+    iget-object v3, p0, Lcom/android/phone/ADNList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
 
     aget-object v3, v3, p1
 
@@ -357,7 +357,7 @@
 
     .line 249
     .local v1, name:Ljava/lang/String;
-    iget-object v3, p0, Lcom/android/phone/FdnList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
+    iget-object v3, p0, Lcom/android/phone/ADNList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
 
     aget-object v3, v3, p1
 
@@ -420,7 +420,7 @@
     if-ltz p1, :cond_0
 
     .line 208
-    iget-object v3, p0, Lcom/android/phone/FdnList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
+    iget-object v3, p0, Lcom/android/phone/ADNList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
 
     aget-object v3, v3, p1
 
@@ -428,7 +428,7 @@
 
     .line 209
     .local v1, name:Ljava/lang/String;
-    iget-object v3, p0, Lcom/android/phone/FdnList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
+    iget-object v3, p0, Lcom/android/phone/ADNList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
 
     aget-object v3, v3, p1
 
@@ -476,7 +476,7 @@
     if-ltz p1, :cond_0
 
     .line 173
-    iget-object v3, p0, Lcom/android/phone/FdnList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
+    iget-object v3, p0, Lcom/android/phone/ADNList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
 
     aget-object v3, v3, p1
 
@@ -484,7 +484,7 @@
 
     .line 174
     .local v1, name:Ljava/lang/String;
-    iget-object v3, p0, Lcom/android/phone/FdnList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
+    iget-object v3, p0, Lcom/android/phone/ADNList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
 
     aget-object v3, v3, p1
 
@@ -730,7 +730,7 @@
     if-ne p1, v3, :cond_1
 
     .line 330
-    iget-object v3, p0, Lcom/android/phone/FdnList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
+    iget-object v3, p0, Lcom/android/phone/ADNList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
 
     if-eqz v3, :cond_0
 
@@ -749,14 +749,14 @@
     .local v2, selectedPos:I
     if-ltz v2, :cond_0
 
-    iget-object v3, p0, Lcom/android/phone/FdnList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
+    iget-object v3, p0, Lcom/android/phone/ADNList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
 
     array-length v3, v3
 
     if-ge v2, v3, :cond_0
 
     .line 334
-    iget-object v3, p0, Lcom/android/phone/FdnList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
+    iget-object v3, p0, Lcom/android/phone/ADNList;->mFdns:[Lcom/android/phone/ADNList$FdnData;
 
     invoke-virtual {p0}, Lcom/android/phone/FdnList;->getSelectedItemPosition()I
 
@@ -1008,33 +1008,6 @@
     .parameter "hasFocus"
 
     .prologue
-    .line 161
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onWindowFocusChanged("
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ")..."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lcom/android/phone/FdnList;->log(Ljava/lang/String;)V
-
     .line 162
     if-eqz p1, :cond_0
 

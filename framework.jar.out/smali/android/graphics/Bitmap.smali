@@ -2499,25 +2499,25 @@
 .end method
 
 .method public freeNativeBitmap()V
-    .locals 6
+    .locals 5
 
     .prologue
     .line 442
     iget-boolean v2, p0, Landroid/graphics/Bitmap;->mNativeBitmapFreed:Z
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_1
 
     iget-boolean v2, p0, Landroid/graphics/Bitmap;->mIsRestorable:Z
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_1
 
     iget-boolean v2, p0, Landroid/graphics/Bitmap;->mRecycled:Z
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_1
 
     iget-boolean v2, p0, Landroid/graphics/Bitmap;->mInUse:Z
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_1
 
     .line 451
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -2532,7 +2532,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_1
 
     .line 456
     const/4 v2, 0x1
@@ -2571,158 +2571,10 @@
     .line 462
     :cond_0
     monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 464
-    :cond_1
-    invoke-static {}, Lcom/htc/profileflag/ProfileConfig;->getFreeNativeBitmapDebug()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    .line 465
-    const-string v2, "Bitmap"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "free path = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Landroid/graphics/Bitmap;->mRestorePolicyInfo:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", size = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getRowBytes()I
-
-    move-result v4
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v5
-
-    mul-int/2addr v4, v5
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", Width = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", Height = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", Native Width = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget v4, p0, Landroid/graphics/Bitmap;->mNativeBitmap:I
-
-    invoke-static {v4}, Landroid/graphics/Bitmap;->nativeWidth(I)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", Native Height = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget v4, p0, Landroid/graphics/Bitmap;->mNativeBitmap:I
-
-    invoke-static {v4}, Landroid/graphics/Bitmap;->nativeHeight(I)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", cost = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v4
-
-    sub-long/2addr v4, v0
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", StreamSize = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget v4, p0, Landroid/graphics/Bitmap;->mNativeBitmap:I
-
-    invoke-static {v4}, Landroid/graphics/Bitmap;->nativeGetStreamLength(I)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 473
     .end local v0           #startTime:J
-    :cond_2
-    :goto_0
+    :cond_1
     return-void
 
     .line 462
@@ -2730,159 +2582,11 @@
     :catchall_0
     move-exception v2
 
-    :try_start_1
     monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v2
-
-    .line 468
-    :cond_3
-    invoke-static {}, Lcom/htc/profileflag/ProfileConfig;->getFreeNativeBitmapDebug()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    .line 469
-    const-string v2, "Bitmap"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "freeNativeBitmap failed!! free path = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Landroid/graphics/Bitmap;->mRestorePolicyInfo:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", size = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getRowBytes()I
-
-    move-result v4
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v5
-
-    mul-int/2addr v4, v5
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", Width = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", Height = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", Native Width = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget v4, p0, Landroid/graphics/Bitmap;->mNativeBitmap:I
-
-    invoke-static {v4}, Landroid/graphics/Bitmap;->nativeWidth(I)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", Native Height = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget v4, p0, Landroid/graphics/Bitmap;->mNativeBitmap:I
-
-    invoke-static {v4}, Landroid/graphics/Bitmap;->nativeHeight(I)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", cost = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v4
-
-    sub-long/2addr v4, v0
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", StreamSize = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget v4, p0, Landroid/graphics/Bitmap;->mNativeBitmap:I
-
-    invoke-static {v4}, Landroid/graphics/Bitmap;->nativeGetStreamLength(I)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_0
 .end method
 
 .method public final getByteCount()I
@@ -3507,17 +3211,17 @@
     .parameter "decodeTime"
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     .line 126
     iget-boolean v0, p0, Landroid/graphics/Bitmap;->mIsRestorable:Z
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     .line 127
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_6
 
     .line 128
     iget-boolean v0, p0, Landroid/graphics/Bitmap;->mNativeBitmapFreed:Z
@@ -3562,7 +3266,7 @@
     :cond_0
     iget-boolean v0, p0, Landroid/graphics/Bitmap;->mNativeBitmapFreed:Z
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     .line 130
     invoke-static {}, Lcom/htc/tracker/ObjectTracker;->getInstance()Lcom/htc/tracker/ObjectTracker;
@@ -3616,135 +3320,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 137
-    :cond_2
-    invoke-static {}, Lcom/htc/profileflag/ProfileConfig;->getFreeNativeBitmapDebug()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 138
-    const-string v0, "Bitmap"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "restore path = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Landroid/graphics/Bitmap;->mRestorePolicyInfo:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", size = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getRowBytes()I
-
-    move-result v2
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v3
-
-    mul-int/2addr v2, v3
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", Width = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", Height = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", Native Width = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Landroid/graphics/Bitmap;->mNativeBitmap:I
-
-    invoke-static {v2}, Landroid/graphics/Bitmap;->nativeWidth(I)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", Native Height = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Landroid/graphics/Bitmap;->mNativeBitmap:I
-
-    invoke-static {v2}, Landroid/graphics/Bitmap;->nativeHeight(I)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", cost = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 141
-    :cond_3
-    iput-boolean v4, p0, Landroid/graphics/Bitmap;->mNativeBitmapFreed:Z
+    :cond_2
+    iput-boolean v3, p0, Landroid/graphics/Bitmap;->mNativeBitmapFreed:Z
 
     .line 147
-    :cond_4
+    :cond_3
     :goto_0
     sget-object v1, Landroid/graphics/Bitmap;->sLock:Ljava/lang/Object;
 
@@ -3754,9 +3335,9 @@
     :try_start_1
     iget-boolean v0, p0, Landroid/graphics/Bitmap;->mPixelsIsAllocated:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
-    if-nez p1, :cond_9
+    if-nez p1, :cond_8
 
     .line 149
     sget v0, Landroid/graphics/Bitmap;->sBitmapSize:I
@@ -3773,11 +3354,11 @@
     iput-boolean v0, p0, Landroid/graphics/Bitmap;->mPixelsIsAllocated:Z
 
     .line 155
-    :cond_5
+    :cond_4
     :goto_1
     iget-object v0, p0, Landroid/graphics/Bitmap;->mFinalizer:Landroid/graphics/Bitmap$BitmapFinalizer;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     .line 156
     iget-object v0, p0, Landroid/graphics/Bitmap;->mFinalizer:Landroid/graphics/Bitmap$BitmapFinalizer;
@@ -3787,7 +3368,7 @@
     invoke-virtual {v0, v2}, Landroid/graphics/Bitmap$BitmapFinalizer;->setBitmapPixelIsAllocated(Z)V
 
     .line 157
-    :cond_6
+    :cond_5
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
@@ -3810,10 +3391,10 @@
     throw v0
 
     .line 143
-    :cond_7
+    :cond_6
     iget-boolean v0, p0, Landroid/graphics/Bitmap;->mNativeBitmapFreed:Z
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_7
 
     const-string v0, "Bitmap"
 
@@ -3850,19 +3431,19 @@
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 144
-    :cond_8
-    iput-boolean v3, p0, Landroid/graphics/Bitmap;->mNativeBitmapFreed:Z
+    :cond_7
+    iput-boolean v4, p0, Landroid/graphics/Bitmap;->mNativeBitmapFreed:Z
 
     goto :goto_0
 
     .line 151
-    :cond_9
+    :cond_8
     :try_start_3
     iget-boolean v0, p0, Landroid/graphics/Bitmap;->mPixelsIsAllocated:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_4
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_4
 
     .line 152
     sget v0, Landroid/graphics/Bitmap;->sBitmapSize:I

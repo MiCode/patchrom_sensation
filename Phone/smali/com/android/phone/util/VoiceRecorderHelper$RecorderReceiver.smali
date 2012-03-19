@@ -71,17 +71,11 @@
 
     if-eqz v1, :cond_1
 
-    .line 715
-    const-string v1, "receive recording stopped intent"
-
-    #calls: Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-    invoke-static {v1}, Lcom/android/phone/util/VoiceRecorderHelper;->access$100(Ljava/lang/String;)V
-
     .line 716
     iget-object v1, p0, Lcom/android/phone/util/VoiceRecorderHelper$RecorderReceiver;->this$0:Lcom/android/phone/util/VoiceRecorderHelper;
 
     #getter for: Lcom/android/phone/util/VoiceRecorderHelper;->mIsRecording:Z
-    invoke-static {v1}, Lcom/android/phone/util/VoiceRecorderHelper;->access$200(Lcom/android/phone/util/VoiceRecorderHelper;)Z
+    invoke-static {v1}, Lcom/android/phone/util/VoiceRecorderHelper;->access$100(Lcom/android/phone/util/VoiceRecorderHelper;)Z
 
     move-result v1
 
@@ -93,7 +87,7 @@
     iget-object v2, p0, Lcom/android/phone/util/VoiceRecorderHelper$RecorderReceiver;->this$0:Lcom/android/phone/util/VoiceRecorderHelper;
 
     #getter for: Lcom/android/phone/util/VoiceRecorderHelper;->mCM:Lcom/android/internal/telephony/CallManager;
-    invoke-static {v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$300(Lcom/android/phone/util/VoiceRecorderHelper;)Lcom/android/internal/telephony/CallManager;
+    invoke-static {v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$200(Lcom/android/phone/util/VoiceRecorderHelper;)Lcom/android/internal/telephony/CallManager;
 
     move-result-object v2
 
@@ -102,7 +96,7 @@
     move-result-object v2
 
     #calls: Lcom/android/phone/util/VoiceRecorderHelper;->changeStatus(ZLcom/android/internal/telephony/Call;)V
-    invoke-static {v1, v3, v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$400(Lcom/android/phone/util/VoiceRecorderHelper;ZLcom/android/internal/telephony/Call;)V
+    invoke-static {v1, v3, v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$300(Lcom/android/phone/util/VoiceRecorderHelper;ZLcom/android/internal/telephony/Call;)V
 
     .line 739
     :cond_0
@@ -119,17 +113,11 @@
 
     if-eqz v1, :cond_2
 
-    .line 720
-    const-string v1, "receive recording started intent"
-
-    #calls: Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-    invoke-static {v1}, Lcom/android/phone/util/VoiceRecorderHelper;->access$100(Ljava/lang/String;)V
-
     .line 721
     iget-object v1, p0, Lcom/android/phone/util/VoiceRecorderHelper$RecorderReceiver;->this$0:Lcom/android/phone/util/VoiceRecorderHelper;
 
     #getter for: Lcom/android/phone/util/VoiceRecorderHelper;->mIsRecording:Z
-    invoke-static {v1}, Lcom/android/phone/util/VoiceRecorderHelper;->access$200(Lcom/android/phone/util/VoiceRecorderHelper;)Z
+    invoke-static {v1}, Lcom/android/phone/util/VoiceRecorderHelper;->access$100(Lcom/android/phone/util/VoiceRecorderHelper;)Z
 
     move-result v1
 
@@ -141,7 +129,7 @@
     iget-object v2, p0, Lcom/android/phone/util/VoiceRecorderHelper$RecorderReceiver;->this$0:Lcom/android/phone/util/VoiceRecorderHelper;
 
     #getter for: Lcom/android/phone/util/VoiceRecorderHelper;->mCM:Lcom/android/internal/telephony/CallManager;
-    invoke-static {v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$300(Lcom/android/phone/util/VoiceRecorderHelper;)Lcom/android/internal/telephony/CallManager;
+    invoke-static {v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$200(Lcom/android/phone/util/VoiceRecorderHelper;)Lcom/android/internal/telephony/CallManager;
 
     move-result-object v2
 
@@ -150,7 +138,7 @@
     move-result-object v2
 
     #calls: Lcom/android/phone/util/VoiceRecorderHelper;->changeStatus(ZLcom/android/internal/telephony/Call;)V
-    invoke-static {v1, v4, v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$400(Lcom/android/phone/util/VoiceRecorderHelper;ZLcom/android/internal/telephony/Call;)V
+    invoke-static {v1, v4, v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$300(Lcom/android/phone/util/VoiceRecorderHelper;ZLcom/android/internal/telephony/Call;)V
 
     goto :goto_0
 
@@ -164,17 +152,11 @@
 
     if-eqz v1, :cond_3
 
-    .line 725
-    const-string v1, "receive recording error occured intent"
-
-    #calls: Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-    invoke-static {v1}, Lcom/android/phone/util/VoiceRecorderHelper;->access$100(Ljava/lang/String;)V
-
     .line 726
     iget-object v1, p0, Lcom/android/phone/util/VoiceRecorderHelper$RecorderReceiver;->this$0:Lcom/android/phone/util/VoiceRecorderHelper;
 
     #getter for: Lcom/android/phone/util/VoiceRecorderHelper;->mIsRecording:Z
-    invoke-static {v1}, Lcom/android/phone/util/VoiceRecorderHelper;->access$200(Lcom/android/phone/util/VoiceRecorderHelper;)Z
+    invoke-static {v1}, Lcom/android/phone/util/VoiceRecorderHelper;->access$100(Lcom/android/phone/util/VoiceRecorderHelper;)Z
 
     move-result v1
 
@@ -186,7 +168,7 @@
     iget-object v2, p0, Lcom/android/phone/util/VoiceRecorderHelper$RecorderReceiver;->this$0:Lcom/android/phone/util/VoiceRecorderHelper;
 
     #getter for: Lcom/android/phone/util/VoiceRecorderHelper;->mCM:Lcom/android/internal/telephony/CallManager;
-    invoke-static {v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$300(Lcom/android/phone/util/VoiceRecorderHelper;)Lcom/android/internal/telephony/CallManager;
+    invoke-static {v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$200(Lcom/android/phone/util/VoiceRecorderHelper;)Lcom/android/internal/telephony/CallManager;
 
     move-result-object v2
 
@@ -195,7 +177,7 @@
     move-result-object v2
 
     #calls: Lcom/android/phone/util/VoiceRecorderHelper;->changeStatus(ZLcom/android/internal/telephony/Call;)V
-    invoke-static {v1, v3, v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$400(Lcom/android/phone/util/VoiceRecorderHelper;ZLcom/android/internal/telephony/Call;)V
+    invoke-static {v1, v3, v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$300(Lcom/android/phone/util/VoiceRecorderHelper;ZLcom/android/internal/telephony/Call;)V
 
     goto :goto_0
 
@@ -213,7 +195,7 @@
     iget-object v1, p0, Lcom/android/phone/util/VoiceRecorderHelper$RecorderReceiver;->this$0:Lcom/android/phone/util/VoiceRecorderHelper;
 
     #getter for: Lcom/android/phone/util/VoiceRecorderHelper;->mServiceState:I
-    invoke-static {v1}, Lcom/android/phone/util/VoiceRecorderHelper;->access$500(Lcom/android/phone/util/VoiceRecorderHelper;)I
+    invoke-static {v1}, Lcom/android/phone/util/VoiceRecorderHelper;->access$400(Lcom/android/phone/util/VoiceRecorderHelper;)I
 
     move-result v1
 
@@ -225,12 +207,12 @@
     iget-object v2, p0, Lcom/android/phone/util/VoiceRecorderHelper$RecorderReceiver;->this$0:Lcom/android/phone/util/VoiceRecorderHelper;
 
     #getter for: Lcom/android/phone/util/VoiceRecorderHelper;->mCM:Lcom/android/internal/telephony/CallManager;
-    invoke-static {v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$300(Lcom/android/phone/util/VoiceRecorderHelper;)Lcom/android/internal/telephony/CallManager;
+    invoke-static {v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$200(Lcom/android/phone/util/VoiceRecorderHelper;)Lcom/android/internal/telephony/CallManager;
 
     move-result-object v2
 
     #calls: Lcom/android/phone/util/VoiceRecorderHelper;->startRecording(Lcom/android/internal/telephony/CallManager;)V
-    invoke-static {v1, v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$600(Lcom/android/phone/util/VoiceRecorderHelper;Lcom/android/internal/telephony/CallManager;)V
+    invoke-static {v1, v2}, Lcom/android/phone/util/VoiceRecorderHelper;->access$500(Lcom/android/phone/util/VoiceRecorderHelper;Lcom/android/internal/telephony/CallManager;)V
 
     goto :goto_0
 
@@ -255,7 +237,7 @@
     move-result-object v1
 
     #calls: Lcom/android/phone/util/VoiceRecorderHelper;->log(Ljava/lang/String;)V
-    invoke-static {v1}, Lcom/android/phone/util/VoiceRecorderHelper;->access$100(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/phone/util/VoiceRecorderHelper;->access$600(Ljava/lang/String;)V
 
     goto :goto_0
 .end method

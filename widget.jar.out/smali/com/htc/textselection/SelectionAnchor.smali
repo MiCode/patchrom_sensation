@@ -63,14 +63,14 @@
     .line 43
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/htc/textselection/SelectionAnchor;->PRIOR_ANCHOR:Ljava/lang/Object;
 
     .line 44
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/htc/textselection/SelectionAnchor;->POST_ANCHOR:Ljava/lang/Object;
 
@@ -90,7 +90,7 @@
     const/4 v7, 0x0
 
     .line 46
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 23
     iput-object v3, p0, Lcom/htc/textselection/SelectionAnchor;->mAnchorWindow:Landroid/widget/PopupWindow;

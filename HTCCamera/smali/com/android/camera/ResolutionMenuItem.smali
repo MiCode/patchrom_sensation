@@ -36,7 +36,7 @@
     const/4 v0, 0x0
 
     .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 7
     iput v0, p0, Lcom/android/camera/ResolutionMenuItem;->resStringId:I

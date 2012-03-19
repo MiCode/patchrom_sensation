@@ -4888,7 +4888,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v31, "handleMessage > "
+    const-string v31, "handleMessage > "
 
     move-object/from16 v0, v31
 
@@ -6325,6 +6325,8 @@
     goto/16 :goto_0
 
     .line 639
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

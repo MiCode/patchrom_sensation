@@ -93,7 +93,7 @@
     const/4 v0, 0x0
 
     .line 49
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
     iput v1, p0, Lcom/htc/gl/anim/AnimationObj;->mAnimationKind:I
@@ -160,7 +160,7 @@
     const/4 v0, 0x0
 
     .line 54
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
     iput v1, p0, Lcom/htc/gl/anim/AnimationObj;->mAnimationKind:I

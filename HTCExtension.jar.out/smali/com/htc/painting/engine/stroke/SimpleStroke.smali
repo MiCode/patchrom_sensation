@@ -1045,7 +1045,7 @@
     .line 91
     iget-object v0, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPaint:Landroid/graphics/Paint;
 
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
 
     invoke-virtual {v1}, Lcom/htc/painting/engine/StrokeProperties;->getWidth()F
 
@@ -1056,7 +1056,7 @@
     .line 92
     iget-object v0, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPaint:Landroid/graphics/Paint;
 
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
 
     invoke-virtual {v1}, Lcom/htc/painting/engine/StrokeProperties;->getColor()I
 
@@ -1086,7 +1086,7 @@
     .line 96
     iget-object v0, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mCircirPaint:Landroid/graphics/Paint;
 
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
 
     invoke-virtual {v1}, Lcom/htc/painting/engine/StrokeProperties;->getColor()I
 
@@ -1324,7 +1324,7 @@
     :goto_1
     move-object/from16 v0, p0
 
-    iput-boolean v2, v0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mIsEffective:Z
+    iput-boolean v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mIsEffective:Z
 
     .line 419
     move-object/from16 v0, p1
@@ -1344,7 +1344,7 @@
 
     move-object/from16 v0, p0
 
-    iput-object v2, v0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPoints:Ljava/util/List;
+    iput-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     .line 423
     new-instance v2, Landroid/graphics/Path;
@@ -1353,7 +1353,7 @@
 
     move-object/from16 v0, p0
 
-    iput-object v2, v0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPath:Landroid/graphics/Path;
+    iput-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPath:Landroid/graphics/Path;
 
     .line 425
     const/16 v16, 0x0
@@ -1416,7 +1416,7 @@
     .line 440
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPath:Landroid/graphics/Path;
+    iget-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPath:Landroid/graphics/Path;
 
     move/from16 v0, v25
 
@@ -1428,7 +1428,7 @@
     :goto_3
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v27, v0
 
@@ -1498,7 +1498,7 @@
     .line 442
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPath:Landroid/graphics/Path;
+    iget-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPath:Landroid/graphics/Path;
 
     move/from16 v0, v25
 
@@ -1512,7 +1512,7 @@
     :cond_3
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPath:Landroid/graphics/Path;
+    iget-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPath:Landroid/graphics/Path;
 
     add-float v3, v25, v16
 
@@ -1610,7 +1610,7 @@
     .local v20, r:Landroid/graphics/RectF;
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPath:Landroid/graphics/Path;
+    iget-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPath:Landroid/graphics/Path;
 
     const/4 v3, 0x1
 
@@ -1665,14 +1665,14 @@
 
     move-object/from16 v0, p0
 
-    iput-object v2, v0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mRectF:Landroid/graphics/RectF;
+    iput-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mRectF:Landroid/graphics/RectF;
 
     .line 473
     move-object/from16 v0, v18
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/htc/painting/engine/stroke/SimpleStroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
+    iput-object v0, v1, Lcom/htc/painting/engine/stroke/Stroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
 
     .line 475
     invoke-direct/range {p0 .. p0}, Lcom/htc/painting/engine/stroke/SimpleStroke;->prepareDefaultPaint()V
@@ -1773,11 +1773,11 @@
     add-int/lit8 v0, v0, 0xe
 
     .line 349
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -1786,7 +1786,7 @@
     if-lez v1, :cond_0
 
     .line 350
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -2041,7 +2041,7 @@
     iput v0, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPointCountNew:I
 
     .line 126
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
 
     invoke-virtual {v0}, Lcom/htc/painting/engine/StrokeProperties;->getWidth()F
 
@@ -2050,7 +2050,7 @@
     iput v0, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mThickness:F
 
     .line 127
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
 
     invoke-virtual {v0}, Lcom/htc/painting/engine/StrokeProperties;->getWidth()F
 
@@ -2110,7 +2110,7 @@
     invoke-virtual {p1, v12}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
     .line 364
-    iget-object v12, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPoints:Ljava/util/List;
+    iget-object v12, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v12}, Ljava/util/List;->size()I
 
@@ -2133,12 +2133,12 @@
 
     .line 369
     .local v7, preY:I
-    iget-object v12, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPoints:Ljava/util/List;
+    iget-object v12, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     if-eqz v12, :cond_3
 
     .line 370
-    iget-object v12, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPoints:Ljava/util/List;
+    iget-object v12, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v12}, Ljava/util/List;->size()I
 
@@ -2153,7 +2153,7 @@
 
     .local v3, i:I
     :goto_1
-    iget-object v12, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPoints:Ljava/util/List;
+    iget-object v12, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v12}, Ljava/util/List;->size()I
 
@@ -2162,7 +2162,7 @@
     if-ge v3, v12, :cond_3
 
     .line 372
-    iget-object v12, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPoints:Ljava/util/List;
+    iget-object v12, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v12, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -2176,7 +2176,7 @@
 
     .line 373
     .local v10, x:I
-    iget-object v12, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPoints:Ljava/util/List;
+    iget-object v12, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v12, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -2324,7 +2324,7 @@
     invoke-virtual {p1, v8}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
     .line 392
-    iget-object v12, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
+    iget-object v12, p0, Lcom/htc/painting/engine/stroke/Stroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
 
     invoke-virtual {v12}, Lcom/htc/painting/engine/StrokeProperties;->getWidth()F
 
@@ -2343,7 +2343,7 @@
     invoke-virtual {p1, v9}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
     .line 396
-    iget-object v12, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
+    iget-object v12, p0, Lcom/htc/painting/engine/stroke/Stroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
 
     invoke-virtual {v12}, Lcom/htc/painting/engine/StrokeProperties;->getColor()I
 
@@ -2369,16 +2369,16 @@
 
     .prologue
     .line 555
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mPath:Landroid/graphics/Path;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPath:Landroid/graphics/Path;
 
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mRectF:Landroid/graphics/RectF;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mRectF:Landroid/graphics/RectF;
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->computeBounds(Landroid/graphics/RectF;Z)V
 
     .line 556
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mRectF:Landroid/graphics/RectF;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mRectF:Landroid/graphics/RectF;
 
     iget v1, p0, Lcom/htc/painting/engine/stroke/SimpleStroke;->mHalfWidth:F
 

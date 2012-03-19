@@ -6,7 +6,7 @@
 # static fields
 .field public static final TAG:Ljava/lang/String; = "IdleScreen"
 
-.field private static final localLOGV:Z = true
+.field private static final localLOGV:Z
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     .prologue
     .line 6
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -25,7 +25,7 @@
 
     .prologue
     .line 75
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     return v0
 .end method
@@ -132,34 +132,20 @@
 .end method
 
 .method public static i(Ljava/lang/String;)V
-    .locals 1
+    .locals 0
     .parameter "msg"
 
     .prologue
-    .line 19
-    const-string v0, "IdleScreen"
-
-    invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 21
     return-void
 .end method
 
 .method public static i(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
+    .locals 0
     .parameter "prefix"
     .parameter "msg"
 
     .prologue
-    .line 49
-    const-string v0, "IdleScreen"
-
-    invoke-static {p0, p1}, Lcom/htc/lockscreen/idlescreen/ISLog;->output(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 51
     return-void
 .end method
@@ -197,34 +183,20 @@
 .end method
 
 .method public static v(Ljava/lang/String;)V
-    .locals 1
+    .locals 0
     .parameter "msg"
 
     .prologue
-    .line 13
-    const-string v0, "IdleScreen"
-
-    invoke-static {v0, p0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 15
     return-void
 .end method
 
 .method public static v(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
+    .locals 0
     .parameter "prefix"
     .parameter "msg"
 
     .prologue
-    .line 43
-    const-string v0, "IdleScreen"
-
-    invoke-static {p0, p1}, Lcom/htc/lockscreen/idlescreen/ISLog;->output(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 45
     return-void
 .end method

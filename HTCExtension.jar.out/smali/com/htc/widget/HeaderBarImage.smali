@@ -1035,7 +1035,7 @@
     invoke-virtual {v2, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     .line 242
-    iput v0, v2, Landroid/widget/RelativeLayout$LayoutParams;->rightMargin:I
+    iput v0, v2, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     .line 244
     iget-object v4, p0, Lcom/htc/widget/HeaderBarImage;->bubbleview:Landroid/widget/TextView;

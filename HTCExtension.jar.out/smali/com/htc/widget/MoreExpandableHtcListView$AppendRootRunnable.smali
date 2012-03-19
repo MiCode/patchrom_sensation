@@ -51,7 +51,7 @@
     .line 802
     iput-object p1, p0, Lcom/htc/widget/MoreExpandableHtcListView$AppendRootRunnable;->this$0:Lcom/htc/widget/MoreExpandableHtcListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 805
     new-instance v0, Ljava/util/LinkedList;

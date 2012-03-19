@@ -46,19 +46,19 @@
     .parameter
 
     .prologue
-    .line 478
+    .line 499
     iput-object p1, p0, Lcom/htc/widget/BinAdapter$RecycleBin;->this$0:Lcom/htc/widget/BinAdapter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 479
+    .line 500
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/htc/widget/BinAdapter$RecycleBin;->mScrapOverlayTextHeap:Landroid/util/SparseArray;
 
-    .line 480
+    .line 501
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
@@ -74,17 +74,17 @@
     .locals 1
 
     .prologue
-    .line 516
+    .line 537
     iget-object v0, p0, Lcom/htc/widget/BinAdapter$RecycleBin;->mScrapOverlayTextHeap:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 517
+    .line 538
     iget-object v0, p0, Lcom/htc/widget/BinAdapter$RecycleBin;->mScrapOverlayImgHeap:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 518
+    .line 539
     return-void
 .end method
 
@@ -93,7 +93,7 @@
     .parameter "position"
 
     .prologue
-    .line 504
+    .line 525
     iget-object v1, p0, Lcom/htc/widget/BinAdapter$RecycleBin;->mScrapOverlayImgHeap:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -102,11 +102,11 @@
 
     check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    .line 505
+    .line 526
     .local v0, result:Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_0
 
-    .line 512
+    .line 533
     :cond_0
     return-object v0
 .end method
@@ -116,7 +116,7 @@
     .parameter "position"
 
     .prologue
-    .line 492
+    .line 513
     iget-object v1, p0, Lcom/htc/widget/BinAdapter$RecycleBin;->mScrapOverlayTextHeap:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -125,11 +125,11 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 493
+    .line 514
     .local v0, result:Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 500
+    .line 521
     :cond_0
     return-object v0
 .end method
@@ -140,12 +140,12 @@
     .parameter "v"
 
     .prologue
-    .line 487
+    .line 508
     iget-object v0, p0, Lcom/htc/widget/BinAdapter$RecycleBin;->mScrapOverlayImgHeap:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 488
+    .line 509
     return-void
 .end method
 
@@ -155,11 +155,11 @@
     .parameter "s"
 
     .prologue
-    .line 483
+    .line 504
     iget-object v0, p0, Lcom/htc/widget/BinAdapter$RecycleBin;->mScrapOverlayTextHeap:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 484
+    .line 505
     return-void
 .end method

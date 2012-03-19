@@ -30,7 +30,7 @@
     .line 146
     iput-object p1, p0, Lcom/htc/dialog/HtcAlertController$1;->this$0:Lcom/htc/dialog/HtcAlertController;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

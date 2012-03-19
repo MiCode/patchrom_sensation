@@ -678,7 +678,7 @@
 
     .line 386
     :cond_7
-    iget-object v9, p0, Lcom/android/camera/component/IndicatorsUI;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "Request from MMS or CU, not need to update free length"
 
@@ -697,7 +697,7 @@
     if-eqz v9, :cond_9
 
     .line 388
-    iget-object v9, p0, Lcom/android/camera/component/IndicatorsUI;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "Request from Notes, not need to update free length"
 

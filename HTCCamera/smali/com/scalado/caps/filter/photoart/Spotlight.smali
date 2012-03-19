@@ -61,7 +61,7 @@
 
     .line 42
     :cond_1
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Spotlight;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -73,7 +73,7 @@
 
     .line 43
     .local v0, error:I
-    iput-boolean v3, p0, Lcom/scalado/caps/filter/photoart/Spotlight;->isSet:Z
+    iput-boolean v3, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 44
     iput-object p2, p0, Lcom/scalado/caps/filter/photoart/Spotlight;->position:Lcom/scalado/base/Point;
@@ -184,7 +184,7 @@
 
     .prologue
     .line 69
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Spotlight;->isCommitted:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v1, :cond_0
 
@@ -237,7 +237,7 @@
     .local v0, error:I
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Spotlight;->isSet:Z
+    iput-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 80
     iput-object p1, p0, Lcom/scalado/caps/filter/photoart/Spotlight;->position:Lcom/scalado/base/Point;

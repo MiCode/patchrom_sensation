@@ -31,7 +31,7 @@
     .local p0, this:Lcom/htc/widget/HtcAdapterView$SelectionNotifier;,"Lcom/htc/widget/HtcAdapterView<TT;>.SelectionNotifier;"
     iput-object p1, p0, Lcom/htc/widget/HtcAdapterView$SelectionNotifier;->this$0:Lcom/htc/widget/HtcAdapterView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

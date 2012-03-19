@@ -16,7 +16,7 @@
 
 .field public static final HostTest:Ljava/lang/String; = "andota.htctouch.com"
 
-.field private static final LOG_FLAG:Z = true
+.field private static final LOG_FLAG:Z = false
 
 .field private static final LOG_TAG:Ljava/lang/String; = "XMLRequest"
 
@@ -271,702 +271,420 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
-    .locals 11
+    .locals 10
     .parameter "context"
     .parameter "htcAccount"
 
     .prologue
-    const/16 v7, 0x1f40
+    const/16 v6, 0x1f40
 
-    const/16 v8, 0x28
+    const/16 v7, 0x28
 
-    const/4 v10, 0x3
+    const/4 v9, 0x3
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
     .line 207
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 151
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mSkinVer:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mSkinVer:Ljava/lang/String;
 
     .line 156
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
 
     .line 157
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mSku:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mSku:Ljava/lang/String;
 
     .line 158
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mCid:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mCid:Ljava/lang/String;
 
     .line 159
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mHCid:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mHCid:Ljava/lang/String;
 
     .line 160
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mRomVersion:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mRomVersion:Ljava/lang/String;
 
     .line 161
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mApiLevel:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mApiLevel:Ljava/lang/String;
 
     .line 162
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mLocale:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mLocale:Ljava/lang/String;
 
     .line 163
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mImei:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mImei:Ljava/lang/String;
 
     .line 164
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mMnc:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mMnc:Ljava/lang/String;
 
     .line 165
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mMcc:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mMcc:Ljava/lang/String;
 
     .line 166
-    const-string v6, "2"
+    const-string v5, "2"
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mPlatform:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mPlatform:Ljava/lang/String;
 
     .line 167
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mCert:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mCert:Ljava/lang/String;
 
     .line 168
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mKeyType:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mKeyType:Ljava/lang/String;
 
     .line 169
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mHtcAccoutn:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mHtcAccoutn:Ljava/lang/String;
 
     .line 170
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mUiSdk:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mUiSdk:Ljava/lang/String;
 
     .line 173
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mOWDeviceFlag:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWDeviceFlag:Ljava/lang/String;
 
     .line 174
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mOWSku:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWSku:Ljava/lang/String;
 
     .line 175
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mOWCid:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWCid:Ljava/lang/String;
 
     .line 176
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mOWCert:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWCert:Ljava/lang/String;
 
     .line 177
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mOWKeyType:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWKeyType:Ljava/lang/String;
 
     .line 178
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mOWSchema:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWSchema:Ljava/lang/String;
 
     .line 179
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mOWHost:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWHost:Ljava/lang/String;
 
     .line 182
-    iput v7, p0, Lcom/htc/util/http/XMLRequest;->mSocketTimeout:I
+    iput v6, p0, Lcom/htc/util/http/XMLRequest;->mSocketTimeout:I
 
     .line 183
-    iput v7, p0, Lcom/htc/util/http/XMLRequest;->mConnectTimeout:I
+    iput v6, p0, Lcom/htc/util/http/XMLRequest;->mConnectTimeout:I
 
     .line 185
-    iput-object v9, p0, Lcom/htc/util/http/XMLRequest;->mXmlString:Ljava/lang/String;
+    iput-object v8, p0, Lcom/htc/util/http/XMLRequest;->mXmlString:Ljava/lang/String;
 
     .line 208
     iput-object p1, p0, Lcom/htc/util/http/XMLRequest;->mContext:Landroid/content/Context;
 
     .line 210
-    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mContext:Landroid/content/Context;
 
-    const-string v7, "phone"
+    const-string v6, "phone"
 
-    invoke-virtual {v6, v7}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v5, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/telephony/TelephonyManager;
+
+    .line 211
+    .local v4, telMgr:Landroid/telephony/TelephonyManager;
+    if-eqz v4, :cond_3
+
+    .line 213
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, ""
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    check-cast v5, Landroid/telephony/TelephonyManager;
-
-    .line 211
-    .local v5, telMgr:Landroid/telephony/TelephonyManager;
-    if-eqz v5, :cond_4
-
-    .line 213
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, ""
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    sget-short v7, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
-
-    .line 214
-    sget-object v6, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_Sense_Version:Ljava/lang/String;
-
-    const-string v7, "2.1"
-
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_0
-
-    .line 216
     sget-short v6, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    if-ne v6, v8, :cond_5
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    sget-boolean v6, Lcom/htc/htcjavaflag/HtcBuildFlag;->HTC_WIFI_ONLY_flag:Z
+    move-result-object v5
 
-    if-eqz v6, :cond_5
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
+
+    .line 214
+    sget-object v5, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_Sense_Version:Ljava/lang/String;
+
+    const-string v6, "2.1"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    .line 216
+    sget-short v5, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    if-ne v5, v7, :cond_4
+
+    sget-boolean v5, Lcom/htc/htcjavaflag/HtcBuildFlag;->HTC_WIFI_ONLY_flag:Z
+
+    if-eqz v5, :cond_4
 
     .line 217
-    const-string v6, "211"
+    const-string v5, "211"
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
 
     .line 229
     :cond_0
     :goto_0
-    sget-object v6, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_Sense_Version:Ljava/lang/String;
+    sget-object v5, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_Sense_Version:Ljava/lang/String;
 
-    const-string v7, "3.5"
+    const-string v6, "3.5"
 
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_1
+    if-eqz v5, :cond_1
 
     .line 231
-    sget-short v6, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+    sget-short v5, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    const/16 v7, 0x7b
+    const/16 v6, 0x7b
 
-    if-ne v6, v7, :cond_1
+    if-ne v5, v6, :cond_1
 
     .line 233
-    const-string v6, "-42"
+    const-string v5, "-42"
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
 
     .line 237
     :cond_1
-    const-string v6, "ro.cid"
+    const-string v5, "ro.cid"
 
-    invoke-static {v6, v9}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, v8}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mCid:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mCid:Ljava/lang/String;
 
     .line 238
-    const-string v6, "ro.build.version.incremental"
+    const-string v5, "ro.build.version.incremental"
 
-    invoke-static {v6, v9}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, v8}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mRomVersion:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mRomVersion:Ljava/lang/String;
 
     .line 239
-    const-string v6, "ro.build.version.sdk"
+    const-string v5, "ro.build.version.sdk"
 
-    invoke-static {v6, v9}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, v8}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mApiLevel:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mApiLevel:Ljava/lang/String;
 
     .line 240
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mApiLevel:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mApiLevel:Ljava/lang/String;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    const-string v7, "000"
+    const-string v6, "000"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mApiLevel:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mApiLevel:Ljava/lang/String;
 
     .line 241
-    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v6}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    invoke-virtual {v5}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    move-result-object v6
+    move-result-object v5
 
-    iget-object v6, v6, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
+    iget-object v5, v5, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
-    invoke-virtual {v6}, Ljava/util/Locale;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/util/Locale;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mLocale:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mLocale:Ljava/lang/String;
 
     .line 242
-    invoke-virtual {v5}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
+    invoke-virtual {v4}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mImei:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mImei:Ljava/lang/String;
 
     .line 243
-    const-string v6, "ro.htc.common.version"
+    const-string v5, "ro.htc.common.version"
 
-    invoke-static {v6, v9}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, v8}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mUiSdk:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mUiSdk:Ljava/lang/String;
 
     .line 244
-    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mUiSdk:Ljava/lang/String;
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mUiSdk:Ljava/lang/String;
 
-    const-string v7, "."
+    const-string v6, "."
 
-    const-string v8, ""
+    const-string v7, ""
 
-    invoke-virtual {v6, v7, v8}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {v5, v6, v7}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mUiSdk:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mUiSdk:Ljava/lang/String;
 
     .line 247
     invoke-static {p1}, Lcom/htc/util/skin/HtcSkinUtil;->getSkinVersionCode(Landroid/content/Context;)I
 
-    move-result v6
+    move-result v5
 
-    invoke-static {v6}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {v5}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mSkinVer:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mSkinVer:Ljava/lang/String;
 
     .line 250
-    const-string v6, "ro.product.version"
+    const-string v5, "ro.product.version"
 
-    invoke-static {v6, v9}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, v8}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 251
-    .local v4, productVersion:Ljava/lang/String;
-    const-string v6, "0"
+    .local v3, productVersion:Ljava/lang/String;
+    const-string v5, "0"
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mSku:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mSku:Ljava/lang/String;
 
     .line 254
-    if-eqz v4, :cond_2
+    if-eqz v3, :cond_2
 
     .line 256
     :try_start_0
-    const-string v6, "//."
+    const-string v5, "//."
 
-    invoke-virtual {v4, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {v3, v5}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    const/4 v7, 0x2
+    const/4 v6, 0x2
 
-    aget-object v6, v6, v7
+    aget-object v5, v5, v6
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mSku:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mSku:Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 264
     :cond_2
     :goto_1
-    invoke-virtual {v5}, Landroid/telephony/TelephonyManager;->getNetworkOperator()Ljava/lang/String;
+    invoke-virtual {v4}, Landroid/telephony/TelephonyManager;->getNetworkOperator()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 265
-    .local v3, networkOperator:Ljava/lang/String;
-    if-eqz v3, :cond_8
+    .local v2, networkOperator:Ljava/lang/String;
+    if-eqz v2, :cond_7
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result v6
+    move-result v5
 
-    const/4 v7, 0x4
+    const/4 v6, 0x4
 
-    if-le v6, v7, :cond_8
+    if-le v5, v6, :cond_7
 
     .line 267
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    invoke-virtual {v3, v6, v10}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v2, v5, v9}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mMcc:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mMcc:Ljava/lang/String;
 
     .line 268
-    invoke-virtual {v3, v10}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v2, v9}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mMnc:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mMnc:Ljava/lang/String;
 
     .line 277
     :goto_2
     new-instance v0, Ljava/io/File;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v7}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v6
 
-    const-string v7, "/HTCWORACert"
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v5
 
-    move-result-object v6
+    const-string v6, "/HTCWORACert"
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-direct {v0, v6}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v0, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     .line 278
     .local v0, certFile:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_9
+    if-eqz v5, :cond_8
 
     .line 280
-    const-string v6, "1"
+    const-string v5, "1"
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mCert:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mCert:Ljava/lang/String;
 
-    .line 284
-    new-instance v1, Ljava/util/Properties;
-
-    invoke-direct {v1}, Ljava/util/Properties;-><init>()V
-
-    .line 286
-    .local v1, configFile:Ljava/util/Properties;
-    :try_start_1
-    new-instance v6, Ljava/io/FileInputStream;
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, "/HTCWORACert"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-direct {v6, v7}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, v6}, Ljava/util/Properties;->load(Ljava/io/InputStream;)V
-
-    .line 287
-    const-string v6, "host"
-
-    invoke-virtual {v1, v6}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mOWHost:Ljava/lang/String;
-
-    .line 288
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] mOWHost="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWHost:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 289
-    const-string v6, "schema"
-
-    invoke-virtual {v1, v6}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mOWSchema:Ljava/lang/String;
-
-    .line 290
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] mOWSchema="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWSchema:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 291
-    const-string v6, "de"
-
-    invoke-virtual {v1, v6}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mOWDeviceFlag:Ljava/lang/String;
-
-    .line 292
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] mOWDeviceFlag="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWDeviceFlag:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 293
-    const-string v6, "sk"
-
-    invoke-virtual {v1, v6}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mOWSku:Ljava/lang/String;
-
-    .line 294
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] mOWSku="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWSku:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 295
-    const-string v6, "ci"
-
-    invoke-virtual {v1, v6}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mOWCid:Ljava/lang/String;
-
-    .line 296
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] mOWCid="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWCid:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 297
-    const-string v6, "ct"
-
-    invoke-virtual {v1, v6}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mOWCert:Ljava/lang/String;
-
-    .line 298
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] mOWCert="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWCert:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 299
-    const-string v6, "rk"
-
-    invoke-virtual {v1, v6}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mOWKeyType:Ljava/lang/String;
-
-    .line 300
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] mOWKeyType="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWKeyType:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_1
-    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
-
-    .line 317
-    .end local v1           #configFile:Ljava/util/Properties;
+    .line 319
     :goto_3
-    const-string v6, "2"
+    const-string v5, "1"
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mKeyType:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mKeyType:Ljava/lang/String;
 
     .line 321
     if-eqz p2, :cond_3
@@ -974,464 +692,94 @@
     .line 322
     invoke-virtual {p2}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mHtcAccoutn:Ljava/lang/String;
-
-    .line 325
-    :cond_3
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] default mDeviceFlag="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 326
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] default mSku="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mSku:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 327
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] default mCid="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mCid:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 328
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] default mRomVersion="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mRomVersion:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 329
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] default mApiLevel="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mApiLevel:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 330
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] default mLocale="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mLocale:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 331
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] default mImei="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mImei:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 332
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] default mUiSdk="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mUiSdk:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 333
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] default mMcc="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mMcc:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, " mMnc="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mMnc:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 334
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] default mCert="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mCert:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 335
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] default mKeyType="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mKeyType:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 336
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] default mHtcAccoutn="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mHtcAccoutn:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 338
-    const-string v6, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[XMLRequest] default mSkinVer="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mSkinVer:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mHtcAccoutn:Ljava/lang/String;
 
     .line 342
     .end local v0           #certFile:Ljava/io/File;
-    .end local v3           #networkOperator:Ljava/lang/String;
-    .end local v4           #productVersion:Ljava/lang/String;
-    :cond_4
+    .end local v2           #networkOperator:Ljava/lang/String;
+    .end local v3           #productVersion:Ljava/lang/String;
+    :cond_3
     return-void
 
     .line 218
-    :cond_5
-    sget-short v6, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+    :cond_4
+    sget-short v5, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    if-ne v6, v8, :cond_6
+    if-ne v5, v7, :cond_5
 
     .line 220
-    const-string v6, "210"
+    const-string v5, "210"
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
 
     goto/16 :goto_0
 
     .line 221
-    :cond_6
-    sget-short v6, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+    :cond_5
+    sget-short v5, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    const/16 v7, 0x21
+    const/16 v6, 0x21
 
-    if-ne v6, v7, :cond_7
+    if-ne v5, v6, :cond_6
 
     .line 223
-    const-string v6, "213"
+    const-string v5, "213"
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
 
     goto/16 :goto_0
 
     .line 224
-    :cond_7
-    sget-short v6, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+    :cond_6
+    sget-short v5, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    const/16 v7, 0x22
+    const/16 v6, 0x22
 
-    if-ne v6, v7, :cond_0
+    if-ne v5, v6, :cond_0
 
     .line 226
-    const-string v6, "212"
+    const-string v5, "212"
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
 
     goto/16 :goto_0
 
     .line 259
-    .restart local v4       #productVersion:Ljava/lang/String;
+    .restart local v3       #productVersion:Ljava/lang/String;
     :catch_0
-    move-exception v2
+    move-exception v1
 
     .line 261
-    .local v2, e:Ljava/lang/Exception;
-    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
+    .local v1, e:Ljava/lang/Exception;
+    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
-    goto/16 :goto_1
+    goto :goto_1
 
     .line 272
-    .end local v2           #e:Ljava/lang/Exception;
-    .restart local v3       #networkOperator:Ljava/lang/String;
-    :cond_8
-    const-string v6, "000"
+    .end local v1           #e:Ljava/lang/Exception;
+    .restart local v2       #networkOperator:Ljava/lang/String;
+    :cond_7
+    const-string v5, "000"
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mMcc:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mMcc:Ljava/lang/String;
 
     .line 273
-    const-string v6, "00"
+    const-string v5, "00"
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mMnc:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mMnc:Ljava/lang/String;
 
-    goto/16 :goto_2
-
-    .line 301
-    .restart local v0       #certFile:Ljava/io/File;
-    .restart local v1       #configFile:Ljava/util/Properties;
-    :catch_1
-    move-exception v2
-
-    .line 303
-    .local v2, e:Ljava/io/FileNotFoundException;
-    const-string v6, "XMLRequest"
-
-    const-string v7, "[XMLRequest] FileNotFoundException"
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_3
-
-    .line 304
-    .end local v2           #e:Ljava/io/FileNotFoundException;
-    :catch_2
-    move-exception v2
-
-    .line 306
-    .local v2, e:Ljava/io/IOException;
-    const-string v6, "XMLRequest"
-
-    const-string v7, "[XMLRequest] IOException"
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_3
+    goto :goto_2
 
     .line 312
-    .end local v1           #configFile:Ljava/util/Properties;
-    .end local v2           #e:Ljava/io/IOException;
-    :cond_9
-    const-string v6, "2"
+    .restart local v0       #certFile:Ljava/io/File;
+    :cond_8
+    const-string v5, "2"
 
-    iput-object v6, p0, Lcom/htc/util/http/XMLRequest;->mCert:Ljava/lang/String;
+    iput-object v5, p0, Lcom/htc/util/http/XMLRequest;->mCert:Ljava/lang/String;
 
-    goto/16 :goto_3
+    goto :goto_3
 .end method
 
 .method public static IsNetworkAvailable(Landroid/content/Context;)Z
@@ -1478,7 +826,7 @@
 .end method
 
 .method private addHeaders(Lorg/apache/http/HttpRequest;Ljava/util/Map;)V
-    .locals 10
+    .locals 8
     .parameter "httpGet"
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -1498,382 +846,374 @@
     .local p2, header:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v7
+    move-result-wide v5
 
-    invoke-static {v7, v8}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+    invoke-static {v5, v6}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
     .line 600
-    .local v6, timestamp:Ljava/lang/String;
+    .local v4, timestamp:Ljava/lang/String;
     iget-object v0, p0, Lcom/htc/util/http/XMLRequest;->mHtcAccoutn:Ljava/lang/String;
 
     .line 602
     .local v0, account:Ljava/lang/String;
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
 
-    if-eqz v7, :cond_1
+    if-eqz v5, :cond_1
 
     if-eqz p2, :cond_0
 
-    const-string v7, "de"
+    const-string v5, "de"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_1
+    if-nez v5, :cond_1
 
     .line 603
     :cond_0
-    const-string v7, "de"
+    const-string v5, "de"
 
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mDeviceFlag:Ljava/lang/String;
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 604
     :cond_1
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mSku:Ljava/lang/String;
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mSku:Ljava/lang/String;
 
-    if-eqz v7, :cond_3
+    if-eqz v5, :cond_3
 
     if-eqz p2, :cond_2
 
-    const-string v7, "sk"
+    const-string v5, "sk"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_3
+    if-nez v5, :cond_3
 
     .line 605
     :cond_2
-    const-string v7, "sk"
+    const-string v5, "sk"
 
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mSku:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mSku:Ljava/lang/String;
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 606
     :cond_3
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mCid:Ljava/lang/String;
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mCid:Ljava/lang/String;
 
-    if-eqz v7, :cond_5
+    if-eqz v5, :cond_5
 
     if-eqz p2, :cond_4
 
-    const-string v7, "ci"
+    const-string v5, "ci"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_5
+    if-nez v5, :cond_5
 
     .line 607
     :cond_4
-    const-string v7, "ci"
+    const-string v5, "ci"
 
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mCid:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mCid:Ljava/lang/String;
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 608
     :cond_5
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mHCid:Ljava/lang/String;
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mHCid:Ljava/lang/String;
 
-    if-eqz v7, :cond_7
+    if-eqz v5, :cond_7
 
     if-eqz p2, :cond_6
 
-    const-string v7, "hc"
+    const-string v5, "hc"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_7
+    if-nez v5, :cond_7
 
     .line 609
     :cond_6
-    const-string v7, "hc"
+    const-string v5, "hc"
 
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mHCid:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mHCid:Ljava/lang/String;
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 610
     :cond_7
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mRomVersion:Ljava/lang/String;
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mRomVersion:Ljava/lang/String;
 
-    if-eqz v7, :cond_9
+    if-eqz v5, :cond_9
 
     if-eqz p2, :cond_8
 
-    const-string v7, "rv"
+    const-string v5, "rv"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_9
+    if-nez v5, :cond_9
 
     .line 611
     :cond_8
-    const-string v7, "rv"
+    const-string v5, "rv"
 
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mRomVersion:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mRomVersion:Ljava/lang/String;
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 612
     :cond_9
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mApiLevel:Ljava/lang/String;
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mApiLevel:Ljava/lang/String;
 
-    if-eqz v7, :cond_b
+    if-eqz v5, :cond_b
 
     if-eqz p2, :cond_a
 
-    const-string v7, "al"
+    const-string v5, "al"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_b
+    if-nez v5, :cond_b
 
     .line 613
     :cond_a
-    const-string v7, "al"
+    const-string v5, "al"
 
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mApiLevel:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mApiLevel:Ljava/lang/String;
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 614
     :cond_b
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mLocale:Ljava/lang/String;
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mLocale:Ljava/lang/String;
 
-    if-eqz v7, :cond_d
+    if-eqz v5, :cond_d
 
     if-eqz p2, :cond_c
 
-    const-string v7, "le"
+    const-string v5, "le"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_d
+    if-nez v5, :cond_d
 
     .line 615
     :cond_c
-    const-string v7, "le"
+    const-string v5, "le"
 
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mLocale:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mLocale:Ljava/lang/String;
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 617
     :cond_d
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mImei:Ljava/lang/String;
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mImei:Ljava/lang/String;
 
-    if-eqz v7, :cond_f
+    if-eqz v5, :cond_e
 
     if-eqz p2, :cond_e
 
-    const-string v7, "ii"
+    const-string v5, "ii"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_f
-
-    .line 618
-    :cond_e
-    const-string v7, "ii"
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mImei:Ljava/lang/String;
-
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    if-nez v5, :cond_e
 
     .line 619
-    :cond_f
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mMnc:Ljava/lang/String;
+    :cond_e
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mMnc:Ljava/lang/String;
 
-    if-eqz v7, :cond_11
+    if-eqz v5, :cond_10
 
-    if-eqz p2, :cond_10
+    if-eqz p2, :cond_f
 
-    const-string v7, "mnc"
+    const-string v5, "mnc"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_11
+    if-nez v5, :cond_10
 
     .line 620
-    :cond_10
-    const-string v7, "mnc"
+    :cond_f
+    const-string v5, "mnc"
 
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mMnc:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mMnc:Ljava/lang/String;
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 621
-    :cond_11
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mMcc:Ljava/lang/String;
+    :cond_10
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mMcc:Ljava/lang/String;
 
-    if-eqz v7, :cond_13
+    if-eqz v5, :cond_12
 
-    if-eqz p2, :cond_12
+    if-eqz p2, :cond_11
 
-    const-string v7, "mcc"
+    const-string v5, "mcc"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_13
+    if-nez v5, :cond_12
 
     .line 622
-    :cond_12
-    const-string v7, "mcc"
+    :cond_11
+    const-string v5, "mcc"
 
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mMcc:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mMcc:Ljava/lang/String;
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 623
-    :cond_13
-    const-string v7, "2"
+    :cond_12
+    const-string v5, "2"
 
-    if-eqz v7, :cond_15
+    if-eqz v5, :cond_14
 
-    if-eqz p2, :cond_14
+    if-eqz p2, :cond_13
 
-    const-string v7, "pl"
+    const-string v5, "pl"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_15
+    if-nez v5, :cond_14
 
     .line 624
-    :cond_14
-    const-string v7, "pl"
+    :cond_13
+    const-string v5, "pl"
 
-    const-string v8, "2"
+    const-string v6, "2"
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 625
-    :cond_15
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mCert:Ljava/lang/String;
+    :cond_14
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mCert:Ljava/lang/String;
 
-    if-eqz v7, :cond_17
+    if-eqz v5, :cond_16
 
-    if-eqz p2, :cond_16
+    if-eqz p2, :cond_15
 
-    const-string v7, "ct"
+    const-string v5, "ct"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_17
+    if-nez v5, :cond_16
 
     .line 626
-    :cond_16
-    const-string v7, "ct"
+    :cond_15
+    const-string v5, "ct"
 
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mCert:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mCert:Ljava/lang/String;
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 627
-    :cond_17
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mKeyType:Ljava/lang/String;
+    :cond_16
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mKeyType:Ljava/lang/String;
 
-    if-eqz v7, :cond_19
+    if-eqz v5, :cond_18
 
-    if-eqz p2, :cond_18
+    if-eqz p2, :cond_17
 
-    const-string v7, "rk"
+    const-string v5, "rk"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_19
+    if-nez v5, :cond_18
 
     .line 628
-    :cond_18
-    const-string v7, "rk"
+    :cond_17
+    const-string v5, "rk"
 
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mKeyType:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mKeyType:Ljava/lang/String;
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 629
-    :cond_19
-    if-eqz p2, :cond_1a
+    :cond_18
+    if-eqz p2, :cond_19
 
-    const-string v7, "tv"
+    const-string v5, "tv"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_1b
+    if-nez v5, :cond_1a
 
     .line 630
-    :cond_1a
-    const-string v7, "tv"
+    :cond_19
+    const-string v5, "tv"
 
-    const-string v8, "0"
+    const-string v6, "0"
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 631
-    :cond_1b
-    if-eqz p2, :cond_1c
+    :cond_1a
+    if-eqz p2, :cond_1b
 
-    const-string v7, "ht"
+    const-string v5, "ht"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_24
+    if-nez v5, :cond_23
 
     .line 632
-    :cond_1c
-    const-string v7, "ht"
+    :cond_1b
+    const-string v5, "ht"
 
-    invoke-interface {p1, v7, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v4}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 642
     :goto_0
-    if-eqz p2, :cond_1d
+    if-eqz p2, :cond_1c
 
-    const-string v7, "mya"
+    const-string v5, "mya"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-eqz v7, :cond_1d
+    if-eqz v5, :cond_1c
 
     .line 643
-    const-string v7, "mya"
+    const-string v5, "mya"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1882,598 +1222,201 @@
 
     .line 650
     .restart local v0       #account:Ljava/lang/String;
+    :cond_1c
+    if-eqz v0, :cond_1e
+
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mImei:Ljava/lang/String;
+
+    if-eqz v5, :cond_1e
+
+    if-eqz p2, :cond_1d
+
+    const-string v5, "digest"
+
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    if-nez v5, :cond_1e
+
+    .line 652
     :cond_1d
-    if-eqz v0, :cond_1f
+    invoke-static {v4}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v5
 
     iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mImei:Ljava/lang/String;
 
-    if-eqz v7, :cond_1f
-
-    if-eqz p2, :cond_1e
-
-    const-string v7, "digest"
-
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v7}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
     move-result-object v7
 
-    if-nez v7, :cond_1f
-
-    .line 652
-    :cond_1e
-    invoke-static {v6}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v7
-
-    iget-object v9, p0, Lcom/htc/util/http/XMLRequest;->mImei:Ljava/lang/String;
-
-    invoke-virtual {v9}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v7, v8, v9, v0}, Lcom/htc/util/http/XMLRequest;->getAuthDigest(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, v6, v7, v0}, Lcom/htc/util/http/XMLRequest;->getAuthDigest(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     .line 653
     .local v1, digest:Ljava/lang/String;
-    if-eqz v1, :cond_25
-
-    .line 655
-    const-string v7, "XMLRequest"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "[XMLRequest] digest="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    if-eqz v1, :cond_24
 
     .line 656
-    const-string v7, "digest"
+    const-string v5, "digest"
 
-    invoke-interface {p1, v7, v1}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v1}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 665
     .end local v1           #digest:Ljava/lang/String;
-    :cond_1f
+    :cond_1e
     :goto_1
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mUiSdk:Ljava/lang/String;
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mUiSdk:Ljava/lang/String;
 
-    if-eqz v7, :cond_21
+    if-eqz v5, :cond_20
 
-    if-eqz p2, :cond_20
+    if-eqz p2, :cond_1f
 
-    const-string v7, "uisdk"
+    const-string v5, "uisdk"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_21
+    if-nez v5, :cond_20
 
     .line 666
-    :cond_20
-    const-string v7, "uisdk"
+    :cond_1f
+    const-string v5, "uisdk"
 
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mUiSdk:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mUiSdk:Ljava/lang/String;
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 670
-    :cond_21
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mSkinVer:Ljava/lang/String;
+    :cond_20
+    iget-object v5, p0, Lcom/htc/util/http/XMLRequest;->mSkinVer:Ljava/lang/String;
 
-    if-eqz v7, :cond_23
+    if-eqz v5, :cond_22
 
-    if-eqz p2, :cond_22
+    if-eqz p2, :cond_21
 
-    const-string v7, "skn"
+    const-string v5, "skn"
 
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v5
 
-    if-nez v7, :cond_23
+    if-nez v5, :cond_22
 
     .line 671
-    :cond_22
-    const-string v7, "skn"
+    :cond_21
+    const-string v5, "skn"
 
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mSkinVer:Ljava/lang/String;
+    iget-object v6, p0, Lcom/htc/util/http/XMLRequest;->mSkinVer:Ljava/lang/String;
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 676
-    :cond_23
-    invoke-interface {p1}, Lorg/apache/http/HttpRequest;->headerIterator()Lorg/apache/http/HeaderIterator;
-
-    move-result-object v3
-
-    .line 677
-    .local v3, hdIterator:Lorg/apache/http/HeaderIterator;
-    const/4 v2, 0x0
-
-    .line 678
-    .local v2, hd:Lorg/apache/http/Header;
-    :goto_2
-    if-eqz v3, :cond_26
-
-    invoke-interface {v3}, Lorg/apache/http/HeaderIterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_26
-
-    .line 680
-    invoke-interface {v3}, Lorg/apache/http/HeaderIterator;->nextHeader()Lorg/apache/http/Header;
-
-    move-result-object v2
-
-    .line 681
-    const-string v7, "XMLRequest"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "[XMLRequest] before UserEdit Header "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-interface {v2}, Lorg/apache/http/Header;->getName()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, "="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-interface {v2}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_2
-
-    .line 634
-    .end local v2           #hd:Lorg/apache/http/Header;
-    .end local v3           #hdIterator:Lorg/apache/http/HeaderIterator;
-    :cond_24
-    const-string v7, "ht"
-
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    .end local v6           #timestamp:Ljava/lang/String;
-    check-cast v6, Ljava/lang/String;
-
-    .restart local v6       #timestamp:Ljava/lang/String;
-    goto/16 :goto_0
-
-    .line 660
-    .restart local v1       #digest:Ljava/lang/String;
-    :cond_25
-    const-string v7, "digest"
-
-    const-string v8, ""
-
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_1
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 685
-    .end local v1           #digest:Ljava/lang/String;
-    .restart local v2       #hd:Lorg/apache/http/Header;
-    .restart local v3       #hdIterator:Lorg/apache/http/HeaderIterator;
-    :cond_26
-    if-eqz p2, :cond_27
+    :cond_22
+    if-eqz p2, :cond_25
 
     .line 687
     invoke-interface {p2}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    move-result-object v7
-
-    invoke-interface {v7}, Ljava/util/Set;->toArray()[Ljava/lang/Object;
-
     move-result-object v5
 
+    invoke-interface {v5}, Ljava/util/Set;->toArray()[Ljava/lang/Object;
+
+    move-result-object v3
+
     .line 688
-    .local v5, keys:[Ljava/lang/Object;
-    const/4 v4, 0x0
+    .local v3, keys:[Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    .local v4, i:I
-    :goto_3
-    array-length v7, v5
+    .local v2, i:I
+    :goto_2
+    array-length v5, v3
 
-    if-ge v4, v7, :cond_27
-
-    .line 690
-    const-string v8, "XMLRequest"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "[XMLRequest] UserEdit addHeader "
-
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    aget-object v9, v5, v4
-
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v9, "="
-
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    aget-object v7, v5, v4
-
-    invoke-interface {p2, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Ljava/lang/String;
-
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v8, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    if-ge v2, v5, :cond_25
 
     .line 691
-    aget-object v7, v5, v4
+    aget-object v5, v3, v2
 
-    check-cast v7, Ljava/lang/String;
+    check-cast v5, Ljava/lang/String;
 
-    aget-object v8, v5, v4
+    aget-object v6, v3, v2
 
-    invoke-interface {p2, v8}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v6}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v6
 
-    check-cast v8, Ljava/lang/String;
+    check-cast v6, Ljava/lang/String;
 
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 688
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    goto :goto_3
+    goto :goto_2
 
-    .line 696
-    .end local v4           #i:I
-    .end local v5           #keys:[Ljava/lang/Object;
-    :cond_27
-    invoke-interface {p1}, Lorg/apache/http/HttpRequest;->headerIterator()Lorg/apache/http/HeaderIterator;
+    .line 634
+    .end local v2           #i:I
+    .end local v3           #keys:[Ljava/lang/Object;
+    :cond_23
+    const-string v5, "ht"
 
-    move-result-object v3
+    invoke-interface {p2, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 697
-    const/4 v2, 0x0
+    move-result-object v4
 
-    .line 698
-    :goto_4
-    if-eqz v3, :cond_28
+    .end local v4           #timestamp:Ljava/lang/String;
+    check-cast v4, Ljava/lang/String;
 
-    invoke-interface {v3}, Lorg/apache/http/HeaderIterator;->hasNext()Z
+    .restart local v4       #timestamp:Ljava/lang/String;
+    goto/16 :goto_0
 
-    move-result v7
+    .line 660
+    .restart local v1       #digest:Ljava/lang/String;
+    :cond_24
+    const-string v5, "digest"
 
-    if-eqz v7, :cond_28
+    const-string v6, ""
 
-    .line 700
-    invoke-interface {v3}, Lorg/apache/http/HeaderIterator;->nextHeader()Lorg/apache/http/Header;
+    invoke-interface {p1, v5, v6}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v2
+    goto :goto_1
 
-    .line 701
-    const-string v7, "XMLRequest"
+    .line 705
+    .end local v1           #digest:Ljava/lang/String;
+    :cond_25
+    const-string v5, "ii"
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    invoke-interface {p1, v5}, Lorg/apache/http/HttpRequest;->containsHeader(Ljava/lang/String;)Z
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v5
 
-    const-string v9, "[XMLRequest] after UserEdit Header "
+    if-eqz v5, :cond_26
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 708
+    const-string v5, "ii"
 
-    move-result-object v8
-
-    invoke-interface {v2}, Lorg/apache/http/Header;->getName()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, "="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-interface {v2}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_4
+    invoke-interface {p1, v5}, Lorg/apache/http/HttpRequest;->removeHeaders(Ljava/lang/String;)V
 
     .line 710
-    :cond_28
-    const-string v7, "mya"
+    :cond_26
+    const-string v5, "mya"
 
-    invoke-interface {p1, v7}, Lorg/apache/http/HttpRequest;->containsHeader(Ljava/lang/String;)Z
+    invoke-interface {p1, v5}, Lorg/apache/http/HttpRequest;->containsHeader(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v5
 
-    if-eqz v7, :cond_29
-
-    .line 712
-    const-string v7, "XMLRequest"
-
-    const-string v8, "[XMLRequest] remove htcAccount"
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    if-eqz v5, :cond_27
 
     .line 713
-    const-string v7, "mya"
+    const-string v5, "mya"
 
-    invoke-interface {p1, v7}, Lorg/apache/http/HttpRequest;->removeHeaders(Ljava/lang/String;)V
-
-    .line 720
-    :cond_29
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mOWDeviceFlag:Ljava/lang/String;
-
-    if-eqz v7, :cond_2a
-
-    .line 722
-    const-string v7, "de"
-
-    invoke-interface {p1, v7}, Lorg/apache/http/HttpRequest;->containsHeader(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_2e
-
-    .line 723
-    const-string v7, "de"
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWDeviceFlag:Ljava/lang/String;
-
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 727
-    :cond_2a
-    :goto_5
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mOWSku:Ljava/lang/String;
-
-    if-eqz v7, :cond_2b
-
-    .line 729
-    const-string v7, "sk"
-
-    invoke-interface {p1, v7}, Lorg/apache/http/HttpRequest;->containsHeader(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_2f
-
-    .line 730
-    const-string v7, "sk"
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWSku:Ljava/lang/String;
-
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 734
-    :cond_2b
-    :goto_6
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mOWCid:Ljava/lang/String;
-
-    if-eqz v7, :cond_2c
-
-    .line 736
-    const-string v7, "ci"
-
-    invoke-interface {p1, v7}, Lorg/apache/http/HttpRequest;->containsHeader(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_30
-
-    .line 737
-    const-string v7, "ci"
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWCid:Ljava/lang/String;
-
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 741
-    :cond_2c
-    :goto_7
-    iget-object v7, p0, Lcom/htc/util/http/XMLRequest;->mOWCert:Ljava/lang/String;
-
-    if-eqz v7, :cond_2d
-
-    .line 743
-    const-string v7, "ct"
-
-    invoke-interface {p1, v7}, Lorg/apache/http/HttpRequest;->containsHeader(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_31
-
-    .line 744
-    const-string v7, "ct"
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWCert:Ljava/lang/String;
-
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 749
-    :cond_2d
-    :goto_8
-    invoke-interface {p1}, Lorg/apache/http/HttpRequest;->headerIterator()Lorg/apache/http/HeaderIterator;
-
-    move-result-object v3
-
-    .line 750
-    const/4 v2, 0x0
-
-    .line 751
-    :goto_9
-    if-eqz v3, :cond_32
-
-    invoke-interface {v3}, Lorg/apache/http/HeaderIterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_32
-
-    .line 753
-    invoke-interface {v3}, Lorg/apache/http/HeaderIterator;->nextHeader()Lorg/apache/http/Header;
-
-    move-result-object v2
-
-    .line 754
-    const-string v7, "XMLRequest"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "[XMLRequest] after TestOW Header "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-interface {v2}, Lorg/apache/http/Header;->getName()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, "="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-interface {v2}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_9
-
-    .line 725
-    :cond_2e
-    const-string v7, "de"
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWDeviceFlag:Ljava/lang/String;
-
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_5
-
-    .line 732
-    :cond_2f
-    const-string v7, "sk"
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWSku:Ljava/lang/String;
-
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_6
-
-    .line 739
-    :cond_30
-    const-string v7, "ci"
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWCid:Ljava/lang/String;
-
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_7
-
-    .line 746
-    :cond_31
-    const-string v7, "ct"
-
-    iget-object v8, p0, Lcom/htc/util/http/XMLRequest;->mOWCert:Ljava/lang/String;
-
-    invoke-interface {p1, v7, v8}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_8
+    invoke-interface {p1, v5}, Lorg/apache/http/HttpRequest;->removeHeaders(Ljava/lang/String;)V
 
     .line 758
-    :cond_32
+    :cond_27
     return-void
 .end method
 
@@ -3253,7 +2196,7 @@
 .end method
 
 .method public getXMLTable(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;)I
-    .locals 20
+    .locals 19
     .parameter "schema"
     .parameter "host"
     .parameter "service"
@@ -3343,81 +2286,8 @@
     .local v5, httpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
     const/16 v16, 0x0
 
-    .line 384
+    .line 402
     .local v16, uriBuilder:Ljava/lang/StringBuilder;
-    const-string v17, "XMLRequest"
-
-    new-instance v18, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v19, "[XMLRequest] schema="
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    const-string v19, " host"
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, p2
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    const-string v19, " service="
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, p3
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 388
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mOWSchema:Ljava/lang/String;
-
-    move-object/from16 v17, v0
-
-    if-eqz v17, :cond_4
-
-    .line 390
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mOWHost:Ljava/lang/String;
-
-    move-object/from16 v17, v0
-
-    if-eqz v17, :cond_3
-
-    .line 391
     new-instance v16, Ljava/lang/StringBuilder;
 
     .end local v16           #uriBuilder:Ljava/lang/StringBuilder;
@@ -3425,23 +2295,19 @@
 
     invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, p0
+    move-object/from16 v0, v17
 
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mOWSchema:Ljava/lang/String;
+    move-object/from16 v1, p1
 
-    move-object/from16 v18, v0
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
-    move-object/from16 v0, p0
+    move-object/from16 v0, v17
 
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mOWHost:Ljava/lang/String;
+    move-object/from16 v1, p2
 
-    move-object/from16 v18, v0
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
@@ -3459,37 +2325,9 @@
 
     invoke-direct/range {v16 .. v17}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 403
-    .restart local v16       #uriBuilder:Ljava/lang/StringBuilder;
-    :goto_1
-    const-string v17, "XMLRequest"
-
-    new-instance v18, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v19, "[XMLRequest] uriBuilder="
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 404
-    if-eqz p5, :cond_7
+    .restart local v16       #uriBuilder:Ljava/lang/StringBuilder;
+    if-eqz p5, :cond_4
 
     .line 406
     invoke-interface/range {p5 .. p5}, Ljava/util/Map;->keySet()Ljava/util/Set;
@@ -3508,17 +2346,17 @@
     const/4 v8, 0x0
 
     .local v8, i:I
-    :goto_2
+    :goto_1
     array-length v0, v9
 
     move/from16 v17, v0
 
     move/from16 v0, v17
 
-    if-ge v8, v0, :cond_7
+    if-ge v8, v0, :cond_4
 
     .line 410
-    if-nez v8, :cond_6
+    if-nez v8, :cond_3
 
     .line 411
     new-instance v17, Ljava/lang/StringBuilder;
@@ -3570,156 +2408,13 @@
     invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 408
-    :goto_3
+    :goto_2
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_2
-
-    .line 393
-    .end local v8           #i:I
-    .end local v9           #keys:[Ljava/lang/Object;
-    :cond_3
-    new-instance v16, Ljava/lang/StringBuilder;
-
-    .end local v16           #uriBuilder:Ljava/lang/StringBuilder;
-    new-instance v17, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mOWSchema:Ljava/lang/String;
-
-    move-object/from16 v18, v0
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p2
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p3
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-direct/range {v16 .. v17}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .restart local v16       #uriBuilder:Ljava/lang/StringBuilder;
-    goto/16 :goto_1
-
-    .line 395
-    :cond_4
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mOWHost:Ljava/lang/String;
-
-    move-object/from16 v17, v0
-
-    if-eqz v17, :cond_5
-
-    .line 396
-    new-instance v16, Ljava/lang/StringBuilder;
-
-    .end local v16           #uriBuilder:Ljava/lang/StringBuilder;
-    new-instance v17, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mOWHost:Ljava/lang/String;
-
-    move-object/from16 v18, v0
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p3
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-direct/range {v16 .. v17}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .restart local v16       #uriBuilder:Ljava/lang/StringBuilder;
-    goto/16 :goto_1
-
-    .line 398
-    :cond_5
-    new-instance v16, Ljava/lang/StringBuilder;
-
-    .end local v16           #uriBuilder:Ljava/lang/StringBuilder;
-    new-instance v17, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p2
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p3
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-direct/range {v16 .. v17}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .restart local v16       #uriBuilder:Ljava/lang/StringBuilder;
-    goto/16 :goto_1
+    goto :goto_1
 
     .line 413
-    .restart local v8       #i:I
-    .restart local v9       #keys:[Ljava/lang/Object;
-    :cond_6
+    :cond_3
     new-instance v17, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
@@ -3768,39 +2463,12 @@
 
     invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_3
-
-    .line 417
-    .end local v8           #i:I
-    .end local v9           #keys:[Ljava/lang/Object;
-    :cond_7
-    const-string v17, "XMLRequest"
-
-    new-instance v18, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v19, "[XMLRequest] getXMLTable URL:"
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-static/range {v17 .. v18}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    goto :goto_2
 
     .line 419
+    .end local v8           #i:I
+    .end local v9           #keys:[Ljava/lang/Object;
+    :cond_4
     new-instance v6, Lorg/apache/http/client/methods/HttpGet;
 
     invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -3841,7 +2509,7 @@
 
     move/from16 v0, v17
 
-    if-eq v15, v0, :cond_9
+    if-eq v15, v0, :cond_6
 
     .line 430
     invoke-interface {v13}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
@@ -3850,7 +2518,7 @@
 
     .line 431
     .local v4, entity:Lorg/apache/http/HttpEntity;
-    if-eqz v4, :cond_8
+    if-eqz v4, :cond_5
 
     .line 433
     new-instance v11, Ljava/io/ByteArrayOutputStream;
@@ -3871,37 +2539,6 @@
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/htc/util/http/XMLRequest;->mXmlString:Ljava/lang/String;
-
-    .line 441
-    .end local v11           #ostream:Ljava/io/ByteArrayOutputStream;
-    :goto_4
-    const-string v17, "XMLRequest"
-
-    new-instance v18, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v19, "[XMLRequest] HTTP CLIENT "
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mXmlString:Ljava/lang/String;
-
-    move-object/from16 v19, v0
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catch Lorg/apache/http/client/ClientProtocolException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
@@ -3911,6 +2548,7 @@
 
     .line 461
     .end local v4           #entity:Lorg/apache/http/HttpEntity;
+    .end local v11           #ostream:Ljava/io/ByteArrayOutputStream;
     .end local v13           #response:Lorg/apache/http/HttpResponse;
     .end local v15           #status:I
     :catch_0
@@ -3941,7 +2579,7 @@
     .restart local v4       #entity:Lorg/apache/http/HttpEntity;
     .restart local v13       #response:Lorg/apache/http/HttpResponse;
     .restart local v15       #status:I
-    :cond_8
+    :cond_5
     :try_start_1
     const-string v17, "Empty entity"
 
@@ -3955,7 +2593,7 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
 
-    goto :goto_4
+    goto/16 :goto_0
 
     .line 465
     .end local v4           #entity:Lorg/apache/http/HttpEntity;
@@ -3988,7 +2626,7 @@
     .end local v3           #e:Ljava/io/IOException;
     .restart local v13       #response:Lorg/apache/http/HttpResponse;
     .restart local v15       #status:I
-    :cond_9
+    :cond_6
     :try_start_2
     invoke-interface {v13}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
@@ -4027,13 +2665,13 @@
 
     .line 451
     .local v12, reader:Ljava/io/BufferedReader;
-    :goto_5
+    :goto_3
     invoke-virtual {v12}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     move-result-object v10
 
     .local v10, line:Ljava/lang/String;
-    if-eqz v10, :cond_a
+    if-eqz v10, :cond_7
 
     .line 453
     invoke-virtual {v14, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -4048,7 +2686,7 @@
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
-    goto :goto_5
+    goto :goto_3
 
     .line 470
     .end local v2           #content:Ljava/io/InputStream;
@@ -4088,7 +2726,7 @@
     .restart local v13       #response:Lorg/apache/http/HttpResponse;
     .restart local v14       #sb:Ljava/lang/StringBuilder;
     .restart local v15       #status:I
-    :cond_a
+    :cond_7
     :try_start_3
     invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -4121,7 +2759,7 @@
 .end method
 
 .method public postXMLTable(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Ljava/lang/String;)I
-    .locals 20
+    .locals 19
     .parameter "schema"
     .parameter "host"
     .parameter "service"
@@ -4216,81 +2854,8 @@
     .local v5, httpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
     const/16 v16, 0x0
 
-    .line 508
+    .line 526
     .local v16, uriBuilder:Ljava/lang/StringBuilder;
-    const-string v17, "XMLRequest"
-
-    new-instance v18, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v19, "[XMLRequest] schema="
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    const-string v19, " host"
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, p2
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    const-string v19, " service="
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, p3
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 512
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mOWSchema:Ljava/lang/String;
-
-    move-object/from16 v17, v0
-
-    if-eqz v17, :cond_4
-
-    .line 514
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mOWHost:Ljava/lang/String;
-
-    move-object/from16 v17, v0
-
-    if-eqz v17, :cond_3
-
-    .line 515
     new-instance v16, Ljava/lang/StringBuilder;
 
     .end local v16           #uriBuilder:Ljava/lang/StringBuilder;
@@ -4298,23 +2863,19 @@
 
     invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, p0
+    move-object/from16 v0, v17
 
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mOWSchema:Ljava/lang/String;
+    move-object/from16 v1, p1
 
-    move-object/from16 v18, v0
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
-    move-object/from16 v0, p0
+    move-object/from16 v0, v17
 
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mOWHost:Ljava/lang/String;
+    move-object/from16 v1, p2
 
-    move-object/from16 v18, v0
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
@@ -4332,37 +2893,9 @@
 
     invoke-direct/range {v16 .. v17}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 528
-    .restart local v16       #uriBuilder:Ljava/lang/StringBuilder;
-    :goto_1
-    const-string v17, "XMLRequest"
-
-    new-instance v18, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v19, "[XMLRequest] uriBuilder="
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 530
-    if-eqz p5, :cond_7
+    .restart local v16       #uriBuilder:Ljava/lang/StringBuilder;
+    if-eqz p5, :cond_4
 
     .line 532
     invoke-interface/range {p5 .. p5}, Ljava/util/Map;->keySet()Ljava/util/Set;
@@ -4381,17 +2914,17 @@
     const/4 v8, 0x0
 
     .local v8, i:I
-    :goto_2
+    :goto_1
     array-length v0, v9
 
     move/from16 v17, v0
 
     move/from16 v0, v17
 
-    if-ge v8, v0, :cond_7
+    if-ge v8, v0, :cond_4
 
     .line 536
-    if-nez v8, :cond_6
+    if-nez v8, :cond_3
 
     .line 537
     new-instance v17, Ljava/lang/StringBuilder;
@@ -4443,156 +2976,13 @@
     invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 534
-    :goto_3
+    :goto_2
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_2
-
-    .line 517
-    .end local v8           #i:I
-    .end local v9           #keys:[Ljava/lang/Object;
-    :cond_3
-    new-instance v16, Ljava/lang/StringBuilder;
-
-    .end local v16           #uriBuilder:Ljava/lang/StringBuilder;
-    new-instance v17, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mOWSchema:Ljava/lang/String;
-
-    move-object/from16 v18, v0
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p2
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p3
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-direct/range {v16 .. v17}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .restart local v16       #uriBuilder:Ljava/lang/StringBuilder;
-    goto/16 :goto_1
-
-    .line 519
-    :cond_4
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mOWHost:Ljava/lang/String;
-
-    move-object/from16 v17, v0
-
-    if-eqz v17, :cond_5
-
-    .line 520
-    new-instance v16, Ljava/lang/StringBuilder;
-
-    .end local v16           #uriBuilder:Ljava/lang/StringBuilder;
-    new-instance v17, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mOWHost:Ljava/lang/String;
-
-    move-object/from16 v18, v0
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p3
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-direct/range {v16 .. v17}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .restart local v16       #uriBuilder:Ljava/lang/StringBuilder;
-    goto/16 :goto_1
-
-    .line 522
-    :cond_5
-    new-instance v16, Ljava/lang/StringBuilder;
-
-    .end local v16           #uriBuilder:Ljava/lang/StringBuilder;
-    new-instance v17, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p2
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p3
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-direct/range {v16 .. v17}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .restart local v16       #uriBuilder:Ljava/lang/StringBuilder;
-    goto/16 :goto_1
+    goto :goto_1
 
     .line 539
-    .restart local v8       #i:I
-    .restart local v9       #keys:[Ljava/lang/Object;
-    :cond_6
+    :cond_3
     new-instance v17, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
@@ -4641,39 +3031,12 @@
 
     invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_3
-
-    .line 542
-    .end local v8           #i:I
-    .end local v9           #keys:[Ljava/lang/Object;
-    :cond_7
-    const-string v17, "XMLRequest"
-
-    new-instance v18, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v19, "[XMLRequest] postXMLTable URL:"
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-static/range {v17 .. v18}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    goto :goto_2
 
     .line 543
+    .end local v8           #i:I
+    .end local v9           #keys:[Ljava/lang/Object;
+    :cond_4
     new-instance v7, Lorg/apache/http/client/methods/HttpPost;
 
     invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -4727,7 +3090,7 @@
 
     move/from16 v0, v17
 
-    if-eq v15, v0, :cond_9
+    if-eq v15, v0, :cond_6
 
     .line 555
     invoke-interface {v13}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
@@ -4736,7 +3099,7 @@
 
     .line 556
     .local v4, entity:Lorg/apache/http/HttpEntity;
-    if-eqz v4, :cond_8
+    if-eqz v4, :cond_5
 
     .line 558
     new-instance v11, Ljava/io/ByteArrayOutputStream;
@@ -4757,37 +3120,6 @@
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/htc/util/http/XMLRequest;->mXmlString:Ljava/lang/String;
-
-    .line 566
-    .end local v11           #ostream:Ljava/io/ByteArrayOutputStream;
-    :goto_4
-    const-string v17, "XMLRequest"
-
-    new-instance v18, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v19, "[XMLRequest] HTTP CLIENT "
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/util/http/XMLRequest;->mXmlString:Ljava/lang/String;
-
-    move-object/from16 v19, v0
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catch Lorg/apache/http/client/ClientProtocolException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
@@ -4796,6 +3128,7 @@
 
     .line 586
     .end local v4           #entity:Lorg/apache/http/HttpEntity;
+    .end local v11           #ostream:Ljava/io/ByteArrayOutputStream;
     .end local v13           #response:Lorg/apache/http/HttpResponse;
     .end local v15           #status:I
     :catch_0
@@ -4826,7 +3159,7 @@
     .restart local v4       #entity:Lorg/apache/http/HttpEntity;
     .restart local v13       #response:Lorg/apache/http/HttpResponse;
     .restart local v15       #status:I
-    :cond_8
+    :cond_5
     :try_start_1
     const-string v17, "Empty entity"
 
@@ -4839,7 +3172,7 @@
     .catch Lorg/apache/http/client/ClientProtocolException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_4
+    goto/16 :goto_0
 
     .line 590
     .end local v4           #entity:Lorg/apache/http/HttpEntity;
@@ -4872,7 +3205,7 @@
     .end local v3           #e:Ljava/io/IOException;
     .restart local v13       #response:Lorg/apache/http/HttpResponse;
     .restart local v15       #status:I
-    :cond_9
+    :cond_6
     :try_start_2
     invoke-interface {v13}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
@@ -4911,13 +3244,13 @@
 
     .line 576
     .local v12, reader:Ljava/io/BufferedReader;
-    :goto_5
+    :goto_3
     invoke-virtual {v12}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     move-result-object v10
 
     .local v10, line:Ljava/lang/String;
-    if-eqz v10, :cond_a
+    if-eqz v10, :cond_7
 
     .line 578
     invoke-virtual {v14, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -4928,10 +3261,10 @@
 
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_5
+    goto :goto_3
 
     .line 580
-    :cond_a
+    :cond_7
     invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v17

@@ -24,7 +24,7 @@
     const/4 v0, 0x0
 
     .line 43
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 44
     iput v0, p0, Landroid/media/videoeditor/WaveformData;->mFrameDurationMs:I
@@ -54,7 +54,7 @@
     const/4 v10, 0x4
 
     .line 66
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 68
     if-nez p1, :cond_0

@@ -40,7 +40,7 @@
 
     .prologue
     .line 102
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 49
     new-instance v0, Landroid/media/MediaScannerConnection$1;

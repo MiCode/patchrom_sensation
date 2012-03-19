@@ -67,7 +67,7 @@
 
     move-object/from16 v0, p0
 
-    iput v1, v0, Landroid/renderscript/RenderScriptGL;->mDev:I
+    iput v1, v0, Landroid/renderscript/RenderScript;->mDev:I
 
     .line 168
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -86,7 +86,7 @@
     .local v16, dpi:I
     move-object/from16 v0, p0
 
-    iget v2, v0, Landroid/renderscript/RenderScriptGL;->mDev:I
+    iget v2, v0, Landroid/renderscript/RenderScript;->mDev:I
 
     const/4 v3, 0x0
 
@@ -164,12 +164,12 @@
 
     move-object/from16 v0, p0
 
-    iput v1, v0, Landroid/renderscript/RenderScriptGL;->mContext:I
+    iput v1, v0, Landroid/renderscript/RenderScript;->mContext:I
 
     .line 176
     move-object/from16 v0, p0
 
-    iget v1, v0, Landroid/renderscript/RenderScriptGL;->mContext:I
+    iget v1, v0, Landroid/renderscript/RenderScript;->mContext:I
 
     if-nez v1, :cond_0
 
@@ -192,12 +192,12 @@
 
     move-object/from16 v0, p0
 
-    iput-object v1, v0, Landroid/renderscript/RenderScriptGL;->mMessageThread:Landroid/renderscript/RenderScript$MessageThread;
+    iput-object v1, v0, Landroid/renderscript/RenderScript;->mMessageThread:Landroid/renderscript/RenderScript$MessageThread;
 
     .line 180
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Landroid/renderscript/RenderScriptGL;->mMessageThread:Landroid/renderscript/RenderScript$MessageThread;
+    iget-object v1, v0, Landroid/renderscript/RenderScript;->mMessageThread:Landroid/renderscript/RenderScript$MessageThread;
 
     invoke-virtual {v1}, Landroid/renderscript/RenderScript$MessageThread;->start()V
 

@@ -237,7 +237,7 @@
     const/4 v1, 0x1
 
     .line 250
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 227
     iput v1, p0, Landroid/media/RingtoneManager;->mType:I
@@ -274,7 +274,7 @@
     const/4 v1, 0x1
 
     .line 262
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 227
     iput v1, p0, Landroid/media/RingtoneManager;->mType:I

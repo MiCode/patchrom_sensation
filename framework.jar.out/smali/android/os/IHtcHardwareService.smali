@@ -15,6 +15,14 @@
 
 
 # virtual methods
+.method public abstract DmbRequestWakeUpSignal(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getCapsLedState()I
     .annotation system Ldalvik/annotation/Throws;
         value = {

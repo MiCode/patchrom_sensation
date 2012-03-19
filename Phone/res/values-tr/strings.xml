@@ -238,8 +238,8 @@ Bu işlem dakikalarca sürebilir."</string>
     <string name="htc_preferred_network_global_mode">Küresel Modu</string>
     <string name="htc_preferred_network_cdma_evdo_aut_mode">CDMA Modu</string>
     <string name="htc_preferred_network_gsm_wcdma_aut_mode">GSM / UMTS Modu</string>
-    <string name="htc_preferred_network_lte_mode">LTE Mode</string>
-    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM / UMTS / LTE Mode</string>
+    <string name="htc_preferred_network_lte_mode">LTE Modu</string>
+    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM / UMTS / LTE Modu</string>
     <string name="title_gsm_preferred_network_options">GSM / UMTS Modu</string>
     <string name="btn_Menu_Edit">Düzenle</string>
     <string name="btn_Menu_Set_Done">Bitti</string>

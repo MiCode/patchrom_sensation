@@ -34,7 +34,7 @@
 
     .prologue
     .line 719
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 720
     iput p1, p0, Landroid/os/BatteryStats$BitDescription;->mask:I
@@ -59,7 +59,7 @@
 
     .prologue
     .line 712
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 713
     iput p1, p0, Landroid/os/BatteryStats$BitDescription;->mask:I

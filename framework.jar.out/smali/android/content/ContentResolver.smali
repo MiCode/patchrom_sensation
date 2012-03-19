@@ -114,7 +114,7 @@
 
     .prologue
     .line 187
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 185
     new-instance v0, Ljava/util/Random;
@@ -843,13 +843,11 @@
     monitor-exit v5
 
     .line 1605
-    .end local p5
     .end local p6
     :goto_0
     return-void
 
     .line 1561
-    .restart local p5
     .restart local p6
     :cond_0
     monitor-exit v5
@@ -913,7 +911,7 @@
 
     move-result-object v0
 
-    .line 1583
+    .line 1594
     .local v0, blockingPackage:Ljava/lang/String;
     const v4, 0xcb22
 
@@ -923,34 +921,28 @@
 
     const/4 v6, 0x0
 
-    invoke-virtual {p3}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v7
+    const-string v7, ""
 
     aput-object v7, v5, v6
 
     const/4 v6, 0x1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
+    const-string v7, ""
 
     aput-object v7, v5, v6
 
     const/4 v6, 0x2
 
-    if-eqz p5, :cond_4
+    const-string v7, ""
 
-    .end local p5
-    :goto_2
-    aput-object p5, v5, v6
+    aput-object v7, v5, v6
 
     const/4 v6, 0x3
 
-    if-eqz p6, :cond_5
+    if-eqz p6, :cond_4
 
     .end local p6
-    :goto_3
+    :goto_2
     aput-object p6, v5, v6
 
     const/4 v6, 0x4
@@ -963,10 +955,10 @@
 
     const/4 v6, 0x5
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     .end local v0           #blockingPackage:Ljava/lang/String;
-    :goto_4
+    :goto_3
     aput-object v0, v5, v6
 
     const/4 v6, 0x6
@@ -982,24 +974,17 @@
     goto :goto_0
 
     .restart local v0       #blockingPackage:Ljava/lang/String;
-    .restart local p5
     .restart local p6
     :cond_4
-    const-string p5, ""
+    const-string p6, ""
 
     goto :goto_2
 
-    .end local p5
-    :cond_5
-    const-string p6, ""
-
-    goto :goto_3
-
     .end local p6
-    :cond_6
+    :cond_5
     const-string v0, ""
 
-    goto :goto_4
+    goto :goto_3
 .end method
 
 .method private maybeLogUpdateToEventLog(JLandroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V
@@ -1042,12 +1027,10 @@
     monitor-exit v3
 
     .line 1640
-    .end local p5
     :goto_0
     return-void
 
     .line 1615
-    .restart local p5
     :cond_0
     monitor-exit v3
     :try_end_0
@@ -1059,7 +1042,7 @@
 
     move-result-object v0
 
-    .line 1620
+    .line 1630
     .local v0, blockingPackage:Ljava/lang/String;
     const v2, 0xcb23
 
@@ -1069,9 +1052,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {p3}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v5
+    const-string v5, ""
 
     aput-object v5, v3, v4
 
@@ -1081,11 +1062,9 @@
 
     const/4 v4, 0x2
 
-    if-eqz p5, :cond_2
+    const-string v5, ""
 
-    .end local p5
-    :goto_1
-    aput-object p5, v3, v4
+    aput-object v5, v3, v4
 
     const/4 v4, 0x3
 
@@ -1097,10 +1076,10 @@
 
     const/4 v4, 0x4
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     .end local v0           #blockingPackage:Ljava/lang/String;
-    :goto_2
+    :goto_1
     aput-object v0, v3, v4
 
     const/4 v4, 0x5
@@ -1116,7 +1095,6 @@
     goto :goto_0
 
     .line 1615
-    .restart local p5
     :catchall_0
     move-exception v2
 
@@ -1127,18 +1105,12 @@
 
     throw v2
 
-    .line 1620
+    .line 1630
     .restart local v0       #blockingPackage:Ljava/lang/String;
     :cond_2
-    const-string p5, ""
-
-    goto :goto_1
-
-    .end local p5
-    :cond_3
     const-string v0, ""
 
-    goto :goto_2
+    goto :goto_1
 .end method
 
 .method public static modeToMode(Landroid/net/Uri;Ljava/lang/String;)I

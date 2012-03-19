@@ -51,7 +51,7 @@
     .line 1294
     iget-object v0, p0, Lcom/htc/view/table/AbstractTableView$PerformClick;->this$0:Lcom/htc/view/table/AbstractTableView;
 
-    iget-boolean v0, v0, Lcom/htc/view/table/AbstractTableView;->mDataChanged:Z
+    iget-boolean v0, v0, Lcom/htc/view/table/AbstractAdapterView;->mDataChanged:Z
 
     if-eqz v0, :cond_1
 
@@ -70,7 +70,7 @@
 
     iget-object v0, p0, Lcom/htc/view/table/AbstractTableView$PerformClick;->this$0:Lcom/htc/view/table/AbstractTableView;
 
-    iget v0, v0, Lcom/htc/view/table/AbstractTableView;->mItemCount:I
+    iget v0, v0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     if-lez v0, :cond_0
 

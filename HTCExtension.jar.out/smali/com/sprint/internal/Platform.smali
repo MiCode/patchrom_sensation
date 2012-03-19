@@ -60,7 +60,7 @@
     const/4 v2, 0x0
 
     .line 85
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 33
     iput-boolean v2, p0, Lcom/sprint/internal/Platform;->mSignaturePass:Z
@@ -71,7 +71,7 @@
     .line 36
     new-instance v1, Ljava/lang/Object;
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v1 .. v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, p0, Lcom/sprint/internal/Platform;->mLock:Ljava/lang/Object;
 

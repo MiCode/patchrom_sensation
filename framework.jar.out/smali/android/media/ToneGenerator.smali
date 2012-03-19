@@ -243,7 +243,7 @@
 
     .prologue
     .line 797
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 798
     invoke-direct {p0, p1, p2}, Landroid/media/ToneGenerator;->native_setup(II)V

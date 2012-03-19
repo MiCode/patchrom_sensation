@@ -81,7 +81,7 @@
     invoke-direct {p0, p1, v0, p3}, Landroid/app/Dialog;-><init>(Landroid/content/Context;IZ)V
 
     .line 115
-    iget-object v0, p0, Landroid/app/AlertDialog;->mWindow:Landroid/view/Window;
+    iget-object v0, p0, Landroid/app/Dialog;->mWindow:Landroid/view/Window;
 
     invoke-virtual {v0}, Landroid/view/Window;->alwaysReadCloseOnTouchAttr()V
 
@@ -121,7 +121,7 @@
     invoke-direct {p0, p1, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     .line 121
-    iget-object v0, p0, Landroid/app/AlertDialog;->mWindow:Landroid/view/Window;
+    iget-object v0, p0, Landroid/app/Dialog;->mWindow:Landroid/view/Window;
 
     invoke-virtual {v0}, Landroid/view/Window;->alwaysReadCloseOnTouchAttr()V
 
@@ -547,7 +547,7 @@
 
     .line 325
     .local v0, out:Landroid/util/TypedValue;
-    iget-object v1, p0, Landroid/app/AlertDialog;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/app/Dialog;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 

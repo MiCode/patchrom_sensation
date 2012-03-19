@@ -44,20 +44,13 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 1
 
     .prologue
     .line 1302
     iget-object v0, p0, Lcom/android/internal/telephony/CallerInfo$CloseCursorThread;->cursor:Landroid/database/Cursor;
 
-    if-eqz v0, :cond_1
-
-    .line 1304
-    const-string v0, "CallerInfo"
-
-    const-string v1, "close cursor thread start"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    if-eqz v0, :cond_0
 
     .line 1306
     iget-object v0, p0, Lcom/android/internal/telephony/CallerInfo$CloseCursorThread;->cursor:Landroid/database/Cursor;
@@ -73,15 +66,7 @@
 
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 1310
-    :cond_0
-    const-string v0, "CallerInfo"
-
-    const-string v1, "close cursor thread end"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1313
-    :cond_1
+    :cond_0
     return-void
 .end method

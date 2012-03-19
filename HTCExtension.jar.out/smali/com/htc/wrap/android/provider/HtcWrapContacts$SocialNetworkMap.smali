@@ -60,7 +60,7 @@
 
     .prologue
     .line 1238
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1240
     return-void
@@ -152,12 +152,12 @@
     .local v3, newdata:Lcom/htc/wrap/android/provider/HtcWrapContacts$SocialNetworkMap$SNLinkData;
     iget-object v5, v1, Landroid/provider/Contacts$SocialNetworkMap$SNLinkData;->friendOf:Ljava/lang/String;
 
-    iput-object v5, v3, Lcom/htc/wrap/android/provider/HtcWrapContacts$SocialNetworkMap$SNLinkData;->friendOf:Ljava/lang/String;
+    iput-object v5, v3, Landroid/provider/Contacts$SocialNetworkMap$SNLinkData;->friendOf:Ljava/lang/String;
 
     .line 1354
     iget-object v5, v1, Landroid/provider/Contacts$SocialNetworkMap$SNLinkData;->userId:Ljava/lang/String;
 
-    iput-object v5, v3, Lcom/htc/wrap/android/provider/HtcWrapContacts$SocialNetworkMap$SNLinkData;->userId:Ljava/lang/String;
+    iput-object v5, v3, Landroid/provider/Contacts$SocialNetworkMap$SNLinkData;->userId:Ljava/lang/String;
 
     .line 1355
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z

@@ -62,7 +62,7 @@
     .line 2120
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->mObjectLock:Ljava/lang/Object;
 
@@ -77,7 +77,7 @@
 
     .prologue
     .line 2104
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -188,31 +188,8 @@
     :goto_0
     return-void
 
-    .line 2483
-    :cond_1
-    const-string v2, "ContactsUtility"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "broadcastFavoriteChangeIntent lContactId: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2484
+    :cond_1
     sget-object v3, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->mObjectLock:Ljava/lang/Object;
 
     monitor-enter v3
@@ -296,13 +273,6 @@
     .parameter "context"
 
     .prologue
-    .line 2539
-    const-string v0, "ContactsUtility"
-
-    const-string v1, "doDownloadOriginalFacebookLargePhoto"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2540
     const-wide/16 v0, 0x0
 
@@ -346,13 +316,6 @@
     .parameter "largeAvatarUrl"
 
     .prologue
-    .line 2580
-    const-string v1, "ContactsUtility"
-
-    const-string v2, "doDownloadOriginalFacebookLargePhoto"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2581
     const-wide/16 v1, 0x0
 
@@ -425,13 +388,6 @@
     move-result v1
 
     if-nez v1, :cond_4
-
-    .line 2590
-    const-string v1, "ContactsUtility"
-
-    const-string v2, "doDownloadOriginalFacebookLargePhoto 0 == c.getCount()"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2591
     sget-object v1, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->mAndroidHttpClient:Landroid/net/http/AndroidHttpClient;
@@ -512,47 +468,6 @@
 
     move-result-object v7
 
-    .line 2602
-    const-string v1, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "doDownloadOriginalFacebookLargePhoto getScaledCenterCropBitmap bmPhoto W H:  "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v7}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v7}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2603
     #calls: Lcom/htc/util/contacts/ContactsUtility;->getPhotoByteArray(Landroid/graphics/Bitmap;)[B
     invoke-static {v7}, Lcom/htc/util/contacts/ContactsUtility;->access$900(Landroid/graphics/Bitmap;)[B
@@ -568,13 +483,6 @@
 
     .line 2606
     if-eqz v8, :cond_3
-
-    .line 2607
-    const-string v1, "ContactsUtility"
-
-    const-string v2, "doDownloadOriginalFacebookLargePhoto null != byteArrayPhoto"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2609
     const-wide/16 v1, 0x0
@@ -611,13 +519,6 @@
     move-object/from16 v0, p4
 
     invoke-virtual {v14, v1, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 2616
-    const-string v1, "ContactsUtility"
-
-    const-string v2, "doDownloadOriginalFacebookLargePhoto insert large photo data"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2617
     const-string v1, "raw_contact_id"
@@ -688,54 +589,8 @@
 
     move-result-object v11
 
-    .line 2627
-    .local v11, oldLargeUrl:Ljava/lang/String;
-    const-string v1, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "doDownloadOriginalFacebookLargePhoto photoDataId: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v12, v13}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2628
-    const-string v1, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "doDownloadOriginalFacebookLargePhoto oldLargeUrl: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2630
+    .local v11, oldLargeUrl:Ljava/lang/String;
     const/4 v10, 0x0
 
     .line 2631
@@ -756,32 +611,9 @@
     .line 2633
     const/4 v10, 0x1
 
-    .line 2638
+    .line 2639
     :cond_5
     :goto_2
-    const-string v1, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "doDownloadOriginalFacebookLargePhoto needDownload: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2639
     if-eqz v10, :cond_4
 
     .line 2640
@@ -863,47 +695,6 @@
 
     move-result-object v7
 
-    .line 2651
-    const-string v1, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "doDownloadOriginalFacebookLargePhoto getScaledCenterCropBitmap bmPhoto W H:  "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v7}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v7}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2652
     #calls: Lcom/htc/util/contacts/ContactsUtility;->getPhotoByteArray(Landroid/graphics/Bitmap;)[B
     invoke-static {v7}, Lcom/htc/util/contacts/ContactsUtility;->access$900(Landroid/graphics/Bitmap;)[B
@@ -919,13 +710,6 @@
 
     .line 2655
     if-eqz v8, :cond_4
-
-    .line 2656
-    const-string v1, "ContactsUtility"
-
-    const-string v2, "doDownloadOriginalFacebookLargePhoto null != byteArrayPhoto"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2658
     const-wide/16 v1, 0x0
@@ -969,13 +753,6 @@
     cmp-long v1, v1, v12
 
     if-nez v1, :cond_8
-
-    .line 2665
-    const-string v1, "ContactsUtility"
-
-    const-string v2, "doDownloadOriginalFacebookLargePhoto insert large photo data"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2666
     const-string v1, "raw_contact_id"
@@ -1046,29 +823,6 @@
     move-result v1
 
     if-nez v1, :cond_4
-
-    .line 2670
-    const-string v1, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "doDownloadOriginalFacebookLargePhoto update large photo data photoDataId: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v12, v13}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2671
     invoke-virtual/range {p3 .. p3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1208,54 +962,8 @@
 
     move-result-object v13
 
-    .line 2512
-    .local v13, sourceId:Ljava/lang/String;
-    const-string v1, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "downloadOriginalFacebookLargePhoto rawContactId: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2513
-    const-string v1, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "downloadOriginalFacebookLargePhoto sourceId: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2514
+    .local v13, sourceId:Ljava/lang/String;
     const-wide/16 v1, 0x0
 
     cmp-long v1, v1, v11
@@ -1345,7 +1053,7 @@
     .line 2531
     monitor-exit v2
 
-    goto/16 :goto_1
+    goto :goto_1
 
     .end local v7           #bundle:Landroid/os/Bundle;
     .end local v9           #msg:Landroid/os/Message;
@@ -1394,31 +1102,8 @@
     :goto_0
     return-void
 
-    .line 2454
-    :cond_1
-    const-string v3, "ContactsUtility"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "downloadSocialNetworkLargePhoto lRawContactId: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2455
+    :cond_1
     sget-object v4, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->mObjectLock:Ljava/lang/Object;
 
     monitor-enter v4
@@ -1543,13 +1228,6 @@
     .locals 5
 
     .prologue
-    .line 2139
-    const-string v0, "ContactsUtility"
-
-    const-string v1, "endHandler "
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2140
     sget-object v1, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->mObjectLock:Ljava/lang/Object;
 
@@ -1559,7 +1237,7 @@
     :try_start_0
     sget-object v0, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->mHandlerThread:Landroid/os/HandlerThread;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     sget-object v0, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->mHandlerThread:Landroid/os/HandlerThread;
 
@@ -1567,7 +1245,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     .line 2142
     sget-object v0, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->MessageHandler:Landroid/os/Handler;
@@ -1640,15 +1318,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 2149
-    :cond_0
-    const-string v0, "ContactsUtility"
-
-    const-string v2, "endHandler still has messages, send MSG_END_HANDLER again"
-
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2150
+    :cond_0
     sget-object v0, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->MessageHandler:Landroid/os/Handler;
 
     const/16 v2, 0x32
@@ -1699,16 +1370,8 @@
 
     sput-object v0, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->mAndroidHttpClient:Landroid/net/http/AndroidHttpClient;
 
-    .line 2162
-    :cond_2
-    const-string v0, "ContactsUtility"
-
-    const-string v2, "endHandler done!!"
-
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2164
-    :cond_3
+    :cond_2
     monitor-exit v1
 
     goto :goto_0
@@ -1745,13 +1408,6 @@
     .locals 3
 
     .prologue
-    .line 2129
-    const-string v0, "ContactsUtility"
-
-    const-string v1, "startHandler"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2130
     sget-object v0, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->mHandlerThread:Landroid/os/HandlerThread;
 
@@ -1792,13 +1448,6 @@
     move-result-object v0
 
     sput-object v0, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->mAndroidHttpClient:Landroid/net/http/AndroidHttpClient;
-
-    .line 2135
-    const-string v0, "ContactsUtility"
-
-    const-string v1, "startHandler done!!"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2137
     :cond_0

@@ -35,7 +35,7 @@
     const/4 v0, 0x0
 
     .line 41
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 33
     iput v0, p0, Lcom/htc/sunny/SBitmap;->mBmpId:I
@@ -80,7 +80,7 @@
     const/4 v0, 0x0
 
     .line 47
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 33
     iput v0, p0, Lcom/htc/sunny/SBitmap;->mBmpId:I

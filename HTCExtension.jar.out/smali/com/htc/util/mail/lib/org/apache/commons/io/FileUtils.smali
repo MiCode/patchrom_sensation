@@ -33,7 +33,7 @@
 
     .prologue
     .line 86
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 87
     return-void
@@ -5258,7 +5258,7 @@
     move-result-object v0
 
     .line 1283
-    invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write([B)V
+    invoke-virtual {v0, p1}, Ljava/io/FileOutputStream;->write([B)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

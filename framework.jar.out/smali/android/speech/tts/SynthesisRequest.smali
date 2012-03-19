@@ -27,7 +27,7 @@
 
     .prologue
     .line 45
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     iput-object p1, p0, Landroid/speech/tts/SynthesisRequest;->mText:Ljava/lang/String;

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2116
+    .line 2189
     iput-object p1, p0, Landroid/webkit/EditableWebView$EditableQuickActions$9;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 
     const/4 v1, 0x1
 
-    .line 2119
+    .line 2192
     iget-object v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions$9;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-boolean v3, v2, Landroid/webkit/EditableWebView$EditableQuickActions;->bFontUnderline:Z
@@ -67,14 +67,14 @@
     :goto_0
     if-eq v3, v2, :cond_0
 
-    .line 2120
+    .line 2193
     iget-object v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions$9;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v2, v2, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-virtual {v2}, Landroid/webkit/EditableWebView;->toggleUnderline()V
 
-    .line 2121
+    .line 2194
     :cond_0
     iget-object v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions$9;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -95,14 +95,14 @@
     :goto_1
     if-eq v3, v2, :cond_1
 
-    .line 2122
+    .line 2195
     iget-object v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions$9;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v2, v2, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-virtual {v2}, Landroid/webkit/EditableWebView;->toggleBold()V
 
-    .line 2123
+    .line 2196
     :cond_1
     iget-object v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions$9;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -123,14 +123,14 @@
     :cond_2
     if-eq v2, v0, :cond_3
 
-    .line 2124
+    .line 2197
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$9;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-virtual {v0}, Landroid/webkit/EditableWebView;->toggleItalic()V
 
-    .line 2127
+    .line 2200
     :cond_3
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$9;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -138,7 +138,7 @@
 
     iput-boolean v1, v0, Landroid/webkit/EditableWebView;->m_bRemoveSelectRangeDuringUpdateContent:Z
 
-    .line 2128
+    .line 2201
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$9;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
@@ -151,32 +151,32 @@
 
     invoke-virtual {v0, v2}, Landroid/webkit/WebViewSelectionMethod;->setMode(Landroid/webkit/WebViewSelectionMethod$SelectionMode;)Z
 
-    .line 2129
+    .line 2202
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$9;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-virtual {v0, v1}, Landroid/webkit/EditableWebView;->onEndSelect(Z)V
 
-    .line 2130
+    .line 2203
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$9;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_settings:Lcom/htc/dialog/HtcAlertDialog;
 
     invoke-virtual {v0}, Lcom/htc/dialog/HtcAlertDialog;->dismiss()V
 
-    .line 2131
+    .line 2204
     return-void
 
     :cond_4
     move v2, v0
 
-    .line 2119
+    .line 2192
     goto :goto_0
 
     :cond_5
     move v2, v0
 
-    .line 2121
+    .line 2194
     goto :goto_1
 .end method

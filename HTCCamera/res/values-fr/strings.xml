@@ -90,11 +90,11 @@
     <string name="image_ratio_wideon_3_2">Résolution - 3:2 (écran large)</string>
     <string name="image_ratio_wideoff">Résolution - 4:3 (Taille de photo standard)</string>
     <string name="record_with_audio">Enregistrer avec audio</string>
-    <string name="storage">Stockage</string>
-    <string name="storage_card">la carte de stockage</string>
+    <string name="storage">Mémoire</string>
+    <string name="storage_card">la carte mémoire</string>
     <string name="fast_frame_recording">Ralenti (2X)</string>
     <string name="stereo_recording">Enregistrement stéréo</string>
-    <string name="storage_phone">Stockage du téléphone</string>
+    <string name="storage_phone">Mémoire du téléphone</string>
     <string name="geo_tagging">Géomarquer les photos</string>
     <string name="post_processing">Auto-améliorer</string>
     <string name="auto_focus">Mise au point auto</string>
@@ -199,7 +199,7 @@
     <string name="text_title_location_disable">Sources de positionnement désactivées</string>
     <string name="text_message_location_disable">Cette application nécessite un accès à la localisation. Activez le réseau sans fil ou les satellites GPS dans Paramètres pour obtenir la position actuelle.</string>
     <string name="txt_query_switch_storage_title">"Définir l'emplacement du stockage"</string>
-    <string name="txt_query_switch_to_phone_storage">Voulez-vous basculer au stockage du téléphone ?</string>
+    <string name="txt_query_switch_to_phone_storage">Voulez-vous basculer sur la mémoire du téléphone ?</string>
     <string name="txt_query_switch_to_sdcard">Voulez-vous basculer à la carte SD ?</string>
     <string name="txt_switch_to_phone_storage">Votre carte SD est pleine ou indisponible. Enregistrement sur la mémoire du téléphone.</string>
     <string name="txt_switch_to_sdcard">La mémoire du téléphone est pleine ou indisponible. Enregistrement sur la carte SD.</string>

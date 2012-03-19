@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onShutDownComplete(I)V
-    .locals 3
+    .locals 1
     .parameter "statusCode"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -44,35 +44,6 @@
     .end annotation
 
     .prologue
-    .line 790
-    const-string v0, "HtcShutdownThread"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Result code "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " from MountService.shutdown"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 791
     iget-object v0, p0, Lcom/htc/app/HtcShutdownThread$7;->this$0:Lcom/htc/app/HtcShutdownThread;
 

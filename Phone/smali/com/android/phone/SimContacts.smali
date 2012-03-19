@@ -17,7 +17,7 @@
 
 .field private static final COLUMN_NAMES:[Ljava/lang/String; = null
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final DIALOG_IMPORT_ALL:I = 0x64
 
@@ -702,7 +702,7 @@
 
     .line 285
     .local v2, resolver:Landroid/content/ContentResolver;
-    iget-object v5, p0, Lcom/android/phone/SimContacts;->mCursor:Landroid/database/Cursor;
+    iget-object v5, p0, Lcom/android/phone/ADNList;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v5, p1}, Landroid/database/Cursor;->moveToPosition(I)Z
 
@@ -717,7 +717,7 @@
 
     .line 289
     .local v1, operationList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentProviderOperation;>;"
-    iget-object v5, p0, Lcom/android/phone/SimContacts;->mCursor:Landroid/database/Cursor;
+    iget-object v5, p0, Lcom/android/phone/ADNList;->mCursor:Landroid/database/Cursor;
 
     iget-object v6, p0, Lcom/android/phone/SimContacts;->mAccount:Landroid/accounts/Account;
 
@@ -825,7 +825,7 @@
 
     const v2, 0x7f030050
 
-    iget-object v3, p0, Lcom/android/phone/SimContacts;->mCursor:Landroid/database/Cursor;
+    iget-object v3, p0, Lcom/android/phone/ADNList;->mCursor:Landroid/database/Cursor;
 
     new-array v4, v5, [Ljava/lang/String;
 
@@ -1091,11 +1091,11 @@
 
     .line 426
     :pswitch_0
-    iget-object v3, p0, Lcom/android/phone/SimContacts;->mCursor:Landroid/database/Cursor;
+    iget-object v3, p0, Lcom/android/phone/ADNList;->mCursor:Landroid/database/Cursor;
 
     if-eqz v3, :cond_0
 
-    iget-object v3, p0, Lcom/android/phone/SimContacts;->mCursor:Landroid/database/Cursor;
+    iget-object v3, p0, Lcom/android/phone/ADNList;->mCursor:Landroid/database/Cursor;
 
     invoke-virtual {p0}, Lcom/android/phone/SimContacts;->getSelectedItemPosition()I
 
@@ -1108,7 +1108,7 @@
     if-eqz v3, :cond_0
 
     .line 427
-    iget-object v3, p0, Lcom/android/phone/SimContacts;->mCursor:Landroid/database/Cursor;
+    iget-object v3, p0, Lcom/android/phone/ADNList;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v3, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -1224,7 +1224,7 @@
 
     .line 366
     .local v1, message:Ljava/lang/CharSequence;
-    iget-object v5, p0, Lcom/android/phone/SimContacts;->mCursor:Landroid/database/Cursor;
+    iget-object v5, p0, Lcom/android/phone/ADNList;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v5}, Landroid/database/Cursor;->getCount()I
 
@@ -1280,7 +1280,7 @@
     invoke-virtual {v5, v6}, Lcom/htc/app/HtcProgressDialog;->setProgress(I)V
 
     .line 376
-    iget-object v5, p0, Lcom/android/phone/SimContacts;->mCursor:Landroid/database/Cursor;
+    iget-object v5, p0, Lcom/android/phone/ADNList;->mCursor:Landroid/database/Cursor;
 
     if-eqz v5, :cond_0
 
@@ -1348,11 +1348,11 @@
     if-eqz v0, :cond_0
 
     .line 353
-    iget-object v1, p0, Lcom/android/phone/SimContacts;->mCursor:Landroid/database/Cursor;
+    iget-object v1, p0, Lcom/android/phone/ADNList;->mCursor:Landroid/database/Cursor;
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lcom/android/phone/SimContacts;->mCursor:Landroid/database/Cursor;
+    iget-object v1, p0, Lcom/android/phone/ADNList;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v1}, Landroid/database/Cursor;->getCount()I
 
@@ -1419,7 +1419,7 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    iput v1, p0, Lcom/android/phone/SimContacts;->mInitialSelection:I
+    iput v1, p0, Lcom/android/phone/ADNList;->mInitialSelection:I
 
     .line 339
     :cond_0

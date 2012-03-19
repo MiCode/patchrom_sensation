@@ -66,7 +66,7 @@
 
     .prologue
     .line 174
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 175
     new-instance v0, Ljava/util/HashMap;
@@ -85,7 +85,7 @@
 
     .prologue
     .line 183
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 184
     if-eqz p1, :cond_0

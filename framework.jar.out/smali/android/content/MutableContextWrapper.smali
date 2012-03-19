@@ -24,7 +24,7 @@
 
     .prologue
     .line 36
-    iput-object p1, p0, Landroid/content/MutableContextWrapper;->mBase:Landroid/content/Context;
+    iput-object p1, p0, Landroid/content/ContextWrapper;->mBase:Landroid/content/Context;
 
     .line 37
     return-void

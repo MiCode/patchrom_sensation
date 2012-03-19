@@ -12,7 +12,7 @@
 
 .field private static final BUTTON_HOME_DIALING_KEY:Ljava/lang/String; = "button_home_dialing_key"
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field static final DEFAULT_EDIT_REJECT_MSG:Z = true
 
@@ -325,11 +325,6 @@
     iget-object v2, p0, Lcom/android/phone/PhonePreference;->mCallRejectMessage:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v2, v1}, Lcom/htc/preference/HtcPreference;->setSummary(Ljava/lang/CharSequence;)V
-
-    .line 335
-    const-string v2, "PhonePreference"
-
-    invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 338
     .end local v0           #editor:Landroid/content/SharedPreferences$Editor;
@@ -764,18 +759,11 @@
 .end method
 
 .method protected onPause()V
-    .locals 2
+    .locals 0
 
     .prologue
     .line 237
     invoke-super {p0}, Lcom/htc/preference/HtcPreferenceActivity;->onPause()V
-
-    .line 238
-    const-string v0, "PhonePreference"
-
-    const-string v1, " onPause"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 239
     return-void
@@ -1050,13 +1038,6 @@
 
     .line 197
     invoke-super {p0}, Lcom/htc/preference/HtcPreferenceActivity;->onResume()V
-
-    .line 198
-    const-string v6, "PhonePreference"
-
-    const-string v7, " OnResume"
-
-    invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 200
     invoke-virtual {p0}, Lcom/android/phone/PhonePreference;->getContentResolver()Landroid/content/ContentResolver;

@@ -116,7 +116,7 @@
     iput-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mLoadingText:Ljava/lang/String;
 
     .line 211
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -144,7 +144,7 @@
 
     .prologue
     .line 71
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -155,7 +155,7 @@
 
     .prologue
     .line 71
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -166,7 +166,7 @@
 
     .prologue
     .line 71
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     return-object v0
 .end method
@@ -177,7 +177,7 @@
 
     .prologue
     .line 71
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -188,7 +188,7 @@
 
     .prologue
     .line 71
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -199,7 +199,7 @@
 
     .prologue
     .line 71
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     return-object v0
 .end method
@@ -210,7 +210,7 @@
 
     .prologue
     .line 71
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -221,7 +221,7 @@
 
     .prologue
     .line 71
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     return-object v0
 .end method
@@ -235,7 +235,7 @@
     const/4 v1, 0x1
 
     .line 603
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     if-nez v0, :cond_0
 
@@ -248,7 +248,7 @@
 
     .line 606
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v0, Lcom/htc/opensense/widget/HtcFilmstripView;
 
@@ -259,7 +259,7 @@
     if-eqz v0, :cond_1
 
     .line 607
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v0, Lcom/htc/opensense/widget/HtcFilmstripView;
 
@@ -267,7 +267,7 @@
 
     .line 611
     :goto_1
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v0, Lcom/htc/opensense/widget/HtcFilmstripView;
 
@@ -279,7 +279,7 @@
 
     .line 609
     :cond_1
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v0, Lcom/htc/opensense/widget/HtcFilmstripView;
 
@@ -300,12 +300,12 @@
     invoke-virtual {p0}, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->initParameters()V
 
     .line 219
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v3, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     if-eqz v3, :cond_2
 
     .line 221
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v3, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v3}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -327,7 +327,7 @@
 
     .line 224
     .local v1, nPosition:I
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v3, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     invoke-virtual {v3}, Landroid/widget/BaseAdapter;->getCount()I
 
@@ -343,7 +343,7 @@
     iput v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mPhotoPos:I
 
     .line 229
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
@@ -352,7 +352,7 @@
     if-eqz v0, :cond_2
 
     .line 232
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v3, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v3}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -393,16 +393,16 @@
     invoke-virtual {p0}, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->setMaxIndicatorWidth()I
 
     .line 245
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v3, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v3, Lcom/htc/opensense/widget/HtcFilmstripView;
 
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v4, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     invoke-virtual {v3, v4}, Lcom/htc/opensense/widget/HtcFilmstripView;->setAdapter(Landroid/widget/SpinnerAdapter;)V
 
     .line 246
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v3, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v3, Lcom/htc/opensense/widget/HtcFilmstripView;
 
@@ -411,7 +411,7 @@
     invoke-virtual {v3, v4}, Lcom/htc/opensense/widget/HtcFilmstripView;->setSelection(I)V
 
     .line 248
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v3, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     invoke-virtual {v3}, Landroid/widget/BaseAdapter;->getCount()I
 
@@ -450,10 +450,10 @@
     .line 638
     const/16 v0, 0x1e
 
-    iput v0, p1, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
+    iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     .line 639
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v0, Lcom/htc/opensense/widget/HtcFilmstripView;
 
@@ -493,11 +493,11 @@
     const/4 v2, 0x0
 
     .line 279
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v1, Lcom/htc/opensense/widget/HtcFilmstripView;
 
@@ -509,7 +509,7 @@
     :cond_0
     new-instance v0, Lcom/htc/opensense/widget/HtcFilmstripView;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v1}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -617,7 +617,7 @@
 
     .prologue
     .line 350
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v1, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
@@ -644,7 +644,7 @@
     new-instance v3, Lcom/htc/opensense/widget/GalleryImageView;
 
     .end local v3           #view:Lcom/htc/opensense/widget/GalleryImageView;
-    iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v5, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v5}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -654,7 +654,7 @@
 
     move-result v7
 
-    iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v5, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v5, Landroid/view/ViewGroup;
 
@@ -785,7 +785,7 @@
     const/16 v3, 0x2724
 
     .line 535
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v2}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -821,7 +821,7 @@
 
     .line 549
     :sswitch_3
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     invoke-virtual {v2}, Landroid/widget/BaseAdapter;->getCount()I
 
@@ -829,7 +829,7 @@
 
     .line 550
     .local v1, count:I
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v2, Lcom/htc/opensense/widget/HtcFilmstripView;
 
@@ -854,7 +854,7 @@
 
     .prologue
     .line 616
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v1}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -929,7 +929,7 @@
 
     .prologue
     .line 429
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v2}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -994,7 +994,7 @@
     invoke-virtual {p0}, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->onScreenChange()V
 
     .line 309
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v3, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v3}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1103,7 +1103,7 @@
     iput-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAnimationEnter:Landroid/view/animation/Animation;
 
     .line 340
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v1}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1168,7 +1168,7 @@
     invoke-virtual {p0}, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->setupMainView()V
 
     .line 473
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v3, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v3}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1226,7 +1226,7 @@
     invoke-virtual {p0}, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->onUpdateCommandBar()V
 
     .line 649
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
@@ -1234,7 +1234,7 @@
     .local v0, adapter:Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
     if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     invoke-virtual {v1}, Landroid/widget/BaseAdapter;->getCount()I
 
@@ -1333,7 +1333,7 @@
     invoke-virtual {v0, v4, v5}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
 
     .line 507
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v4, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v4}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentTitleBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -1342,7 +1342,7 @@
     if-eqz v4, :cond_3
 
     .line 509
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v4, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v4}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentTitleBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -1351,9 +1351,9 @@
     invoke-virtual {v4, v8}, Lcom/htc/opensense/album/ControlBase;->setVisibility(I)V
 
     .line 510
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v4, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
-    iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v5, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v5}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentTitleBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -1369,9 +1369,9 @@
 
     .line 512
     :cond_3
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v4, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
-    iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v5, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     const/16 v6, 0x2bc
 
@@ -1391,9 +1391,9 @@
     if-ne v1, v4, :cond_1
 
     .line 519
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v4, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
-    iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v5, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     iget-object v6, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAnimationEnter:Landroid/view/animation/Animation;
 
@@ -1433,12 +1433,12 @@
     sput p1, Lcom/htc/opensense/album/AlbumCommon/CommonFeatureModeID;->CURRENT_MODE:I
 
     .line 623
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->refreshControlBars()V
 
     .line 624
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     invoke-virtual {v0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
@@ -1464,7 +1464,7 @@
 
     .line 560
     :cond_1
-    iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v5, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     invoke-virtual {v5}, Landroid/widget/BaseAdapter;->getCount()I
 
@@ -1487,7 +1487,7 @@
     if-lez v1, :cond_2
 
     .line 565
-    iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v5, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v5}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1535,7 +1535,7 @@
     if-eqz v2, :cond_0
 
     .line 574
-    invoke-virtual {v4, v2}, Landroid/graphics/Paint;->measureText(Ljava/lang/String;)F
+    invoke-virtual {v4, v2}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
 
     move-result v5
 
@@ -1558,7 +1558,7 @@
     const/4 v4, 0x0
 
     .line 583
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v2}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1578,7 +1578,7 @@
     if-eqz v1, :cond_0
 
     .line 588
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v2, Lcom/htc/opensense/widget/HtcFilmstripView;
 
@@ -1587,7 +1587,7 @@
     invoke-virtual {v2, v3, v4}, Lcom/htc/opensense/widget/HtcFilmstripView;->setChildViewOffset(II)V
 
     .line 589
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v2, Lcom/htc/opensense/widget/HtcFilmstripView;
 
@@ -1597,7 +1597,7 @@
 
     .line 597
     :goto_0
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v2, Lcom/htc/opensense/widget/HtcFilmstripView;
 
@@ -1613,21 +1613,21 @@
 
     .line 593
     :cond_0
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v2, Lcom/htc/opensense/widget/HtcFilmstripView;
 
     invoke-virtual {v2, v4, v4}, Lcom/htc/opensense/widget/HtcFilmstripView;->setChildViewOffset(II)V
 
     .line 594
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v2, Lcom/htc/opensense/widget/HtcFilmstripView;
 
     invoke-virtual {v2, v4, v4, v4, v4}, Lcom/htc/opensense/widget/HtcFilmstripView;->setPadding(IIII)V
 
     .line 595
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v2, Lcom/htc/opensense/widget/HtcFilmstripView;
 
@@ -1645,12 +1645,12 @@
     const/4 v2, 0x0
 
     .line 258
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     if-eqz v1, :cond_0
 
     .line 260
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v1, Lcom/htc/opensense/widget/HtcFilmstripView;
 
@@ -1661,7 +1661,7 @@
     iput v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mPhotoPos:I
 
     .line 262
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v1, Lcom/htc/opensense/widget/HtcFilmstripView;
 
@@ -1669,7 +1669,7 @@
 
     .line 265
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 

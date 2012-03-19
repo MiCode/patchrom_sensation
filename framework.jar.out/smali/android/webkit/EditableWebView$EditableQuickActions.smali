@@ -240,213 +240,213 @@
 
     const/4 v3, 0x0
 
-    .line 1533
+    .line 1606
     iput-object p1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1534
+    .line 1607
     iput v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->G_EXTEND:I
 
-    .line 1535
+    .line 1608
     iput v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->G_MOVABLE:I
 
-    .line 1536
+    .line 1609
     iput v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->G_HIGHLIGHT:I
 
-    .line 1538
+    .line 1611
     const/16 v0, 0x8
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->BUTTON_ID_COPY:I
 
-    .line 1539
+    .line 1612
     const/16 v0, 0x9
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->BUTTON_ID_CUT:I
 
-    .line 1540
+    .line 1613
     const/16 v0, 0xa
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->BUTTON_ID_SELECT:I
 
-    .line 1541
+    .line 1614
     const/16 v0, 0xb
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->BUTTON_ID_PASTE:I
 
-    .line 1542
+    .line 1615
     const/16 v0, 0xc
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->BUTTON_ID_PASTE_STYLE:I
 
-    .line 1543
+    .line 1616
     const/16 v0, 0xd
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->BUTTON_ID_IME:I
 
-    .line 1544
+    .line 1617
     const/16 v0, 0xe
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->BUTTON_ID_OPEN_LINK:I
 
-    .line 1545
+    .line 1618
     const/16 v0, 0xf
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->BUTTON_ID_HIGHLIGHT:I
 
-    .line 1546
+    .line 1619
     const/16 v0, 0x10
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->BUTTON_ID_GREEN:I
 
-    .line 1547
+    .line 1620
     const/16 v0, 0x11
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->BUTTON_ID_BLUE:I
 
-    .line 1548
+    .line 1621
     const/16 v0, 0x12
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->BUTTON_ID_YELLOW:I
 
-    .line 1549
+    .line 1622
     const/16 v0, 0x13
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->BUTTON_ID_RED:I
 
-    .line 1550
+    .line 1623
     const/16 v0, 0x14
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->BUTTON_ID_UNHIGHLIGHT:I
 
-    .line 1553
+    .line 1626
     const/16 v0, 0x15
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->BUTTON_ID_FONTSTYLE:I
 
-    .line 1556
+    .line 1629
     iput v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_SIZE:I
 
-    .line 1557
+    .line 1630
     iput v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_COLOR:I
 
-    .line 1558
+    .line 1631
     iput v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_SETTINGS:I
 
-    .line 1559
+    .line 1632
     iput v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_ALIGNMENT:I
 
-    .line 1560
+    .line 1633
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_NONE:I
 
-    .line 1563
+    .line 1636
     const/4 v0, 0x4
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_SIZE_SMALLEST:I
 
-    .line 1564
+    .line 1637
     iput v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_SIZE_SMALL:I
 
-    .line 1565
+    .line 1638
     iput v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_SIZE_MEDIUM:I
 
-    .line 1566
+    .line 1639
     iput v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_SIZE_LARGE:I
 
-    .line 1567
+    .line 1640
     iput v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_SIZE_LARGEST:I
 
-    .line 1569
+    .line 1642
     iput v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_SIZE_SMALLEST_PX:I
 
-    .line 1570
+    .line 1643
     iput v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_SIZE_SMALL_PX:I
 
-    .line 1571
+    .line 1644
     const/4 v0, 0x4
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_SIZE_MEDIUM_PX:I
 
-    .line 1572
+    .line 1645
     const/4 v0, 0x5
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_SIZE_LARGE_PX:I
 
-    .line 1573
+    .line 1646
     const/4 v0, 0x6
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_SIZE_LARGEST_PX:I
 
-    .line 1577
+    .line 1650
     iput v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_COLOR_WHITE:I
 
-    .line 1578
+    .line 1651
     iput v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_COLOR_BLACK:I
 
-    .line 1579
+    .line 1652
     iput v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_COLOR_GRAY:I
 
-    .line 1580
+    .line 1653
     iput v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_COLOR_RED:I
 
-    .line 1581
+    .line 1654
     const/4 v0, 0x4
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_COLOR_GREEN:I
 
-    .line 1582
+    .line 1655
     const/4 v0, 0x5
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_COLOR_YELLOW:I
 
-    .line 1583
+    .line 1656
     const/4 v0, 0x6
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_COLOR_BLUE:I
 
-    .line 1586
+    .line 1659
     iput v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_SETTINGS_UNDERLINE:I
 
-    .line 1587
+    .line 1660
     iput v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_SETTINGS_BOLDFACE:I
 
-    .line 1588
+    .line 1661
     iput v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_SETTINGS_ITALIC:I
 
-    .line 1591
+    .line 1664
     iput v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_ALIGNMENT_LEFT:I
 
-    .line 1592
+    .line 1665
     iput v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_ALIGNMENT_JUSTIFY:I
 
-    .line 1593
+    .line 1666
     iput v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->SELECT_FONT_ALIGNMENT_RIGHT:I
 
-    .line 1601
+    .line 1674
     iput-boolean v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_bFontStyleKeyUpDown:Z
 
-    .line 1602
+    .line 1675
     const/high16 v0, 0x3f80
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->fWebViewTextScale:F
 
-    .line 1640
+    .line 1713
     invoke-static {v4, v4, v4}, Landroid/graphics/Color;->rgb(III)I
 
     move-result v0
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nWhiteColor_select:I
 
-    .line 1641
+    .line 1714
     invoke-static {v3, v3, v3}, Landroid/graphics/Color;->rgb(III)I
 
     move-result v0
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nBlackColor_select:I
 
-    .line 1642
+    .line 1715
     const/16 v0, 0x7f
 
     const/16 v1, 0x7f
@@ -459,68 +459,68 @@
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nGrayColor_select:I
 
-    .line 1643
+    .line 1716
     invoke-static {v4, v3, v3}, Landroid/graphics/Color;->rgb(III)I
 
     move-result v0
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nRedColor_select:I
 
-    .line 1644
+    .line 1717
     invoke-static {v4, v4, v3}, Landroid/graphics/Color;->rgb(III)I
 
     move-result v0
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nYellowColor_select:I
 
-    .line 1645
+    .line 1718
     invoke-static {v3, v4, v3}, Landroid/graphics/Color;->rgb(III)I
 
     move-result v0
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nGreenColor_select:I
 
-    .line 1646
+    .line 1719
     invoke-static {v3, v3, v4}, Landroid/graphics/Color;->rgb(III)I
 
     move-result v0
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nBlueColor_select:I
 
-    .line 1649
+    .line 1722
     const v0, 0xd0f7a7
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nGreenColor:I
 
-    .line 1650
+    .line 1723
     const v0, 0xa6e1ff
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nBlueColor:I
 
-    .line 1651
+    .line 1724
     const v0, 0xffef99
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nYellowColor:I
 
-    .line 1652
+    .line 1725
     const v0, 0xffa6a6
 
     iput v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nRedColor:I
 
-    .line 1654
+    .line 1727
     iput-boolean v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->highlightMode:Z
 
-    .line 1656
+    .line 1729
     iput-boolean v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->resLoaded:Z
 
-    .line 1913
+    .line 1986
     new-instance v0, Landroid/webkit/EditableWebView$EditableQuickActions$1;
 
     invoke-direct {v0, p0}, Landroid/webkit/EditableWebView$EditableQuickActions$1;-><init>(Landroid/webkit/EditableWebView$EditableQuickActions;)V
 
     iput-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->cancellistener_FontStyle:Landroid/content/DialogInterface$OnCancelListener;
 
-    .line 2242
+    .line 2315
     iput-boolean v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->showQuickLookup:Z
 
     return-void
@@ -531,7 +531,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1533
+    .line 1606
     invoke-direct {p0}, Landroid/webkit/EditableWebView$EditableQuickActions;->getDialogFontStyleContext()Landroid/content/Context;
 
     move-result-object v0
@@ -545,7 +545,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1533
+    .line 1606
     invoke-direct {p0, p1}, Landroid/webkit/EditableWebView$EditableQuickActions;->onCreateDialogFontStyle(Landroid/content/Context;)V
 
     return-void
@@ -557,7 +557,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1533
+    .line 1606
     invoke-direct {p0, p1}, Landroid/webkit/EditableWebView$EditableQuickActions;->onCreateDialogFontsize(Landroid/content/Context;)V
 
     return-void
@@ -569,7 +569,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1533
+    .line 1606
     invoke-direct {p0, p1}, Landroid/webkit/EditableWebView$EditableQuickActions;->onCreateDialogFontcolor(Landroid/content/Context;)V
 
     return-void
@@ -581,7 +581,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1533
+    .line 1606
     invoke-direct {p0, p1}, Landroid/webkit/EditableWebView$EditableQuickActions;->onCreateDialogSettings(Landroid/content/Context;)V
 
     return-void
@@ -593,7 +593,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1533
+    .line 1606
     invoke-direct {p0, p1}, Landroid/webkit/EditableWebView$EditableQuickActions;->onCreateDialogAlignment(Landroid/content/Context;)V
 
     return-void
@@ -605,7 +605,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1533
+    .line 1606
     invoke-direct {p0, p1}, Landroid/webkit/EditableWebView$EditableQuickActions;->getFontSizeIdx(I)I
 
     move-result v0
@@ -618,7 +618,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1533
+    .line 1606
     iget v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nWhiteColor_select:I
 
     return v0
@@ -629,7 +629,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1533
+    .line 1606
     iget v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nBlackColor_select:I
 
     return v0
@@ -640,7 +640,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1533
+    .line 1606
     iget v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nGrayColor_select:I
 
     return v0
@@ -651,7 +651,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1533
+    .line 1606
     iget v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nRedColor_select:I
 
     return v0
@@ -662,7 +662,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1533
+    .line 1606
     iget v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nGreenColor_select:I
 
     return v0
@@ -673,7 +673,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1533
+    .line 1606
     iget v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nYellowColor_select:I
 
     return v0
@@ -684,7 +684,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1533
+    .line 1606
     iget v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nBlueColor_select:I
 
     return v0
@@ -694,14 +694,14 @@
     .locals 3
 
     .prologue
-    .line 2181
+    .line 2254
     iget-object v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-virtual {v2}, Landroid/webkit/EditableWebView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 2182
+    .line 2255
     .local v1, context:Landroid/content/Context;
     iget-object v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
@@ -709,7 +709,7 @@
 
     move-result v0
 
-    .line 2185
+    .line 2258
     .local v0, TextSize_current:I
     iget-object v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
@@ -719,7 +719,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 2188
+    .line 2261
     iget-object v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-virtual {v2}, Landroid/webkit/EditableWebView;->GetOwnerActivityContext()Ljava/lang/ref/WeakReference;
@@ -733,7 +733,7 @@
     .end local v1           #context:Landroid/content/Context;
     check-cast v1, Landroid/content/Context;
 
-    .line 2190
+    .line 2263
     .restart local v1       #context:Landroid/content/Context;
     :cond_0
     return-object v1
@@ -744,85 +744,85 @@
     .parameter "nFontcolor_current"
 
     .prologue
-    .line 2218
+    .line 2291
     iget v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nWhiteColor_select:I
 
     if-ne p1, v0, :cond_0
 
-    .line 2219
+    .line 2292
     const/4 v0, 0x0
 
-    .line 2233
+    .line 2306
     :goto_0
     return v0
 
-    .line 2220
+    .line 2293
     :cond_0
     iget v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nBlackColor_select:I
 
     if-ne p1, v0, :cond_1
 
-    .line 2221
+    .line 2294
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 2222
+    .line 2295
     :cond_1
     iget v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nGrayColor_select:I
 
     if-ne p1, v0, :cond_2
 
-    .line 2223
+    .line 2296
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 2224
+    .line 2297
     :cond_2
     iget v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nRedColor_select:I
 
     if-ne p1, v0, :cond_3
 
-    .line 2225
+    .line 2298
     const/4 v0, 0x3
 
     goto :goto_0
 
-    .line 2226
+    .line 2299
     :cond_3
     iget v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nGreenColor_select:I
 
     if-ne p1, v0, :cond_4
 
-    .line 2227
+    .line 2300
     const/4 v0, 0x4
 
     goto :goto_0
 
-    .line 2228
+    .line 2301
     :cond_4
     iget v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nYellowColor_select:I
 
     if-ne p1, v0, :cond_5
 
-    .line 2229
+    .line 2302
     const/4 v0, 0x5
 
     goto :goto_0
 
-    .line 2230
+    .line 2303
     :cond_5
     iget v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nBlueColor_select:I
 
     if-ne p1, v0, :cond_6
 
-    .line 2231
+    .line 2304
     const/4 v0, 0x6
 
     goto :goto_0
 
-    .line 2233
+    .line 2306
     :cond_6
     const/4 v0, -0x1
 
@@ -834,7 +834,7 @@
     .parameter "nFontsize_current"
 
     .prologue
-    .line 2194
+    .line 2267
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-virtual {v1}, Landroid/webkit/EditableWebView;->GetOwnerActivityContext()Ljava/lang/ref/WeakReference;
@@ -843,7 +843,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 2197
+    .line 2270
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-virtual {v1}, Landroid/webkit/EditableWebView;->getSettings()Landroid/webkit/WebSettings;
@@ -856,7 +856,7 @@
 
     iget v0, v1, Landroid/webkit/WebSettings$TextSize;->value:I
 
-    .line 2198
+    .line 2271
     .local v0, nWebViewTextScale:I
     int-to-float v1, v0
 
@@ -866,7 +866,7 @@
 
     iput v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->fWebViewTextScale:F
 
-    .line 2199
+    .line 2272
     int-to-float v1, p1
 
     iget v2, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->fWebViewTextScale:F
@@ -877,48 +877,48 @@
 
     move-result p1
 
-    .line 2201
+    .line 2274
     .end local v0           #nWebViewTextScale:I
     :cond_0
     packed-switch p1, :pswitch_data_0
 
-    .line 2213
+    .line 2286
     const/4 v1, -0x1
 
     :goto_0
     return v1
 
-    .line 2203
+    .line 2276
     :pswitch_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 2205
+    .line 2278
     :pswitch_1
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 2207
+    .line 2280
     :pswitch_2
     const/4 v1, 0x2
 
     goto :goto_0
 
-    .line 2209
+    .line 2282
     :pswitch_3
     const/4 v1, 0x3
 
     goto :goto_0
 
-    .line 2211
+    .line 2284
     :pswitch_4
     const/4 v1, 0x4
 
     goto :goto_0
 
-    .line 2201
+    .line 2274
     nop
 
     :pswitch_data_0
@@ -942,12 +942,12 @@
 
     const/4 v7, 0x0
 
-    .line 1659
+    .line 1732
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 1662
+    .line 1735
     .local v3, res:Landroid/content/res/Resources;
     const v5, 0x20805f0
 
@@ -957,7 +957,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_copy:Landroid/graphics/drawable/Drawable;
 
-    .line 1663
+    .line 1736
     const v5, 0x1040001
 
     invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -966,7 +966,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_copy:Ljava/lang/String;
 
-    .line 1666
+    .line 1739
     const v5, 0x20805f1
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -975,7 +975,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_cut:Landroid/graphics/drawable/Drawable;
 
-    .line 1667
+    .line 1740
     const v5, 0x1040003
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -984,7 +984,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_cut:Ljava/lang/String;
 
-    .line 1670
+    .line 1743
     const v5, 0x20805f6
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -993,7 +993,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_select:Landroid/graphics/drawable/Drawable;
 
-    .line 1672
+    .line 1745
     const v5, 0x1040016
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -1002,28 +1002,28 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_select:Ljava/lang/String;
 
-    .line 1675
+    .line 1748
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_paste:Landroid/graphics/drawable/Drawable;
 
-    .line 1676
+    .line 1749
     invoke-virtual {v3, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_paste:Ljava/lang/String;
 
-    .line 1679
+    .line 1752
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_paste_styled:Landroid/graphics/drawable/Drawable;
 
-    .line 1680
+    .line 1753
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1048,7 +1048,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_paste_styled:Ljava/lang/String;
 
-    .line 1683
+    .line 1756
     const v5, 0x20809a5
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -1057,7 +1057,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_font_style:Landroid/graphics/drawable/Drawable;
 
-    .line 1684
+    .line 1757
     const v5, 0x104054f
 
     invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -1066,7 +1066,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_font_style:Ljava/lang/String;
 
-    .line 1687
+    .line 1760
     const v5, 0x20805f2
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -1075,7 +1075,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_ime_switch:Landroid/graphics/drawable/Drawable;
 
-    .line 1688
+    .line 1761
     const v5, 0x104039a
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -1084,12 +1084,12 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_ime_switch:Ljava/lang/String;
 
-    .line 1690
+    .line 1763
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
-    .line 1694
+    .line 1767
     .local v2, pm:Landroid/content/pm/PackageManager;
     new-instance v4, Landroid/content/Intent;
 
@@ -1103,13 +1103,13 @@
 
     invoke-direct {v4, v5, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 1695
+    .line 1768
     .local v4, target:Landroid/content/Intent;
     invoke-virtual {v2, v4, v7}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
 
     move-result-object v1
 
-    .line 1696
+    .line 1769
     .local v1, mainActivitiesList:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -1117,14 +1117,14 @@
 
     if-lez v5, :cond_0
 
-    .line 1697
+    .line 1770
     invoke-interface {v1, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/content/pm/ResolveInfo;
 
-    .line 1698
+    .line 1771
     .local v0, info:Landroid/content/pm/ResolveInfo;
     invoke-virtual {v0, v2}, Landroid/content/pm/ResolveInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
@@ -1132,14 +1132,14 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_open_link:Landroid/graphics/drawable/Drawable;
 
-    .line 1700
+    .line 1773
     .end local v0           #info:Landroid/content/pm/ResolveInfo;
     :cond_0
     const-string v5, "Open Link"
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_open_link:Ljava/lang/String;
 
-    .line 1703
+    .line 1776
     const v5, 0x20805b1
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -1148,7 +1148,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_highlight:Landroid/graphics/drawable/Drawable;
 
-    .line 1704
+    .line 1777
     const v5, 0x20c0216
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -1157,7 +1157,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_highlight:Ljava/lang/String;
 
-    .line 1707
+    .line 1780
     const v5, 0x20805b3
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -1166,7 +1166,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_green:Landroid/graphics/drawable/Drawable;
 
-    .line 1708
+    .line 1781
     const v5, 0x20c0217
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -1175,7 +1175,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_green:Ljava/lang/String;
 
-    .line 1709
+    .line 1782
     const v5, 0x20a004c
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getColor(I)I
@@ -1184,7 +1184,7 @@
 
     iput v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nGreenColor:I
 
-    .line 1712
+    .line 1785
     const v5, 0x20805b2
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -1193,7 +1193,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_blue:Landroid/graphics/drawable/Drawable;
 
-    .line 1713
+    .line 1786
     const v5, 0x20c0218
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -1202,7 +1202,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_blue:Ljava/lang/String;
 
-    .line 1714
+    .line 1787
     const v5, 0x20a004d
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getColor(I)I
@@ -1211,7 +1211,7 @@
 
     iput v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nBlueColor:I
 
-    .line 1717
+    .line 1790
     const v5, 0x20805b6
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -1220,7 +1220,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_yellow:Landroid/graphics/drawable/Drawable;
 
-    .line 1718
+    .line 1791
     const v5, 0x20c0219
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -1229,7 +1229,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_yellow:Ljava/lang/String;
 
-    .line 1719
+    .line 1792
     const v5, 0x20a004e
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getColor(I)I
@@ -1238,7 +1238,7 @@
 
     iput v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nYellowColor:I
 
-    .line 1722
+    .line 1795
     const v5, 0x20805b4
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -1247,7 +1247,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_red:Landroid/graphics/drawable/Drawable;
 
-    .line 1723
+    .line 1796
     const v5, 0x20c021a
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -1256,7 +1256,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_red:Ljava/lang/String;
 
-    .line 1724
+    .line 1797
     const v5, 0x20a004f
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getColor(I)I
@@ -1265,7 +1265,7 @@
 
     iput v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nRedColor:I
 
-    .line 1727
+    .line 1800
     const v5, 0x20805b5
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -1274,7 +1274,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_unhighlight:Landroid/graphics/drawable/Drawable;
 
-    .line 1728
+    .line 1801
     const v5, 0x20c021b
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -1283,7 +1283,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_unhighlight:Ljava/lang/String;
 
-    .line 1729
+    .line 1802
     return-void
 .end method
 
@@ -1292,12 +1292,12 @@
     .parameter "context"
 
     .prologue
-    .line 2140
+    .line 2213
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_alignment:Lcom/htc/dialog/HtcAlertDialog;
 
     if-nez v0, :cond_0
 
-    .line 2142
+    .line 2215
     new-instance v0, Lcom/htc/dialog/HtcAlertDialog$Builder;
 
     invoke-direct {v0, p1}, Lcom/htc/dialog/HtcAlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -1348,7 +1348,7 @@
 
     iput-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_alignment:Lcom/htc/dialog/HtcAlertDialog;
 
-    .line 2178
+    .line 2251
     :cond_0
     return-void
 .end method
@@ -1358,12 +1358,12 @@
     .parameter "context"
 
     .prologue
-    .line 1922
+    .line 1995
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style:Lcom/htc/dialog/HtcAlertDialog;
 
     if-nez v0, :cond_0
 
-    .line 1923
+    .line 1996
     new-instance v0, Lcom/htc/dialog/HtcAlertDialog$Builder;
 
     invoke-direct {v0, p1}, Lcom/htc/dialog/HtcAlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -1408,7 +1408,7 @@
 
     iput-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style:Lcom/htc/dialog/HtcAlertDialog;
 
-    .line 1975
+    .line 2048
     :cond_0
     return-void
 .end method
@@ -1418,12 +1418,12 @@
     .parameter "context"
 
     .prologue
-    .line 2030
+    .line 2103
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_fontcolor:Lcom/htc/dialog/HtcAlertDialog;
 
     if-nez v0, :cond_0
 
-    .line 2031
+    .line 2104
     new-instance v0, Lcom/htc/dialog/HtcAlertDialog$Builder;
 
     invoke-direct {v0, p1}, Lcom/htc/dialog/HtcAlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -1482,7 +1482,7 @@
 
     iput-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_fontcolor:Lcom/htc/dialog/HtcAlertDialog;
 
-    .line 2078
+    .line 2151
     :cond_0
     return-void
 .end method
@@ -1492,12 +1492,12 @@
     .parameter "context"
 
     .prologue
-    .line 1978
+    .line 2051
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_fontsize:Lcom/htc/dialog/HtcAlertDialog;
 
     if-nez v0, :cond_0
 
-    .line 1979
+    .line 2052
     new-instance v0, Lcom/htc/dialog/HtcAlertDialog$Builder;
 
     invoke-direct {v0, p1}, Lcom/htc/dialog/HtcAlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -1556,7 +1556,7 @@
 
     iput-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_fontsize:Lcom/htc/dialog/HtcAlertDialog;
 
-    .line 2027
+    .line 2100
     :cond_0
     return-void
 .end method
@@ -1570,12 +1570,12 @@
 
     const/4 v3, 0x1
 
-    .line 2082
+    .line 2155
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_settings:Lcom/htc/dialog/HtcAlertDialog;
 
     if-nez v1, :cond_0
 
-    .line 2083
+    .line 2156
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-virtual {v1}, Landroid/webkit/EditableWebView;->getUnderlineState()I
@@ -1589,7 +1589,7 @@
     :goto_0
     iput-boolean v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->bFontUnderline:Z
 
-    .line 2084
+    .line 2157
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-virtual {v1}, Landroid/webkit/EditableWebView;->getBoldState()I
@@ -1603,7 +1603,7 @@
     :goto_1
     iput-boolean v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->bFontBold:Z
 
-    .line 2085
+    .line 2158
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-virtual {v1}, Landroid/webkit/EditableWebView;->getItalicState()I
@@ -1617,7 +1617,7 @@
     :goto_2
     iput-boolean v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->bFontItalic:Z
 
-    .line 2086
+    .line 2159
     const/4 v1, 0x3
 
     new-array v0, v1, [Z
@@ -1636,7 +1636,7 @@
 
     aput-boolean v2, v0, v1
 
-    .line 2088
+    .line 2161
     .local v0, tmpboolarray:[Z
     new-instance v1, Lcom/htc/dialog/HtcAlertDialog$Builder;
 
@@ -1684,7 +1684,7 @@
 
     iput-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_settings:Lcom/htc/dialog/HtcAlertDialog;
 
-    .line 2137
+    .line 2210
     .end local v0           #tmpboolarray:[Z
     :cond_0
     return-void
@@ -1692,19 +1692,19 @@
     :cond_1
     move v1, v3
 
-    .line 2083
+    .line 2156
     goto :goto_0
 
     :cond_2
     move v1, v3
 
-    .line 2084
+    .line 2157
     goto :goto_1
 
     :cond_3
     move v1, v3
 
-    .line 2085
+    .line 2158
     goto :goto_2
 .end method
 
@@ -1714,17 +1714,17 @@
     .locals 1
 
     .prologue
-    .line 2445
+    .line 2518
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->mActionMode:Landroid/view/ActionMode;
 
     if-eqz v0, :cond_0
 
-    .line 2446
+    .line 2519
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->mActionMode:Landroid/view/ActionMode;
 
     invoke-virtual {v0}, Landroid/view/ActionMode;->finish()V
 
-    .line 2448
+    .line 2521
     :cond_0
     return-void
 .end method
@@ -1735,7 +1735,7 @@
     .parameter "item"
 
     .prologue
-    .line 2431
+    .line 2504
     const/4 v0, 0x1
 
     return v0
@@ -1747,7 +1747,7 @@
     .parameter "menu"
 
     .prologue
-    .line 2271
+    .line 2344
     const/4 v0, 0x1
 
     return v0
@@ -1766,15 +1766,15 @@
 
     const/4 v3, 0x0
 
-    .line 1732
+    .line 1805
     iget-boolean v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->resLoaded:Z
 
     if-nez v0, :cond_0
 
-    .line 1733
+    .line 1806
     iput-boolean v4, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->resLoaded:Z
 
-    .line 1734
+    .line 1807
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     #getter for: Landroid/webkit/EditableWebView;->mContext:Landroid/content/Context;
@@ -1784,7 +1784,7 @@
 
     invoke-direct {p0, v0}, Landroid/webkit/EditableWebView$EditableQuickActions;->loadResource(Landroid/content/Context;)V
 
-    .line 1736
+    .line 1809
     :cond_0
     const/16 v0, 0x8
 
@@ -1794,7 +1794,7 @@
 
     invoke-interface {p1, v3, v0, v1, v2}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 1737
+    .line 1810
     const/16 v0, 0x9
 
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_cut:Ljava/lang/String;
@@ -1803,14 +1803,14 @@
 
     invoke-interface {p1, v3, v0, v1, v2}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 1738
+    .line 1811
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_paste:Ljava/lang/String;
 
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_paste:Landroid/graphics/drawable/Drawable;
 
     invoke-interface {p1, v3, v6, v0, v1}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 1740
+    .line 1813
     const/16 v0, 0xf
 
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_highlight:Ljava/lang/String;
@@ -1819,14 +1819,14 @@
 
     invoke-interface {p1, v3, v0, v1, v2}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 1743
+    .line 1816
     sget-object v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_Sense_Version:Ljava/lang/String;
 
     const-string v1, "3.5"
 
     if-eq v0, v1, :cond_1
 
-    .line 1744
+    .line 1817
     const/16 v0, 0x15
 
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_font_style:Ljava/lang/String;
@@ -1835,7 +1835,7 @@
 
     invoke-interface {p1, v3, v0, v1, v2}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 1749
+    .line 1822
     :cond_1
     const/16 v0, 0xa
 
@@ -1845,14 +1845,14 @@
 
     invoke-interface {p1, v4, v0, v1, v2}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 1750
+    .line 1823
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_paste:Ljava/lang/String;
 
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->icon_paste:Landroid/graphics/drawable/Drawable;
 
     invoke-interface {p1, v4, v6, v0, v1}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 1752
+    .line 1825
     const/16 v0, 0xd
 
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_ime_switch:Ljava/lang/String;
@@ -1861,7 +1861,7 @@
 
     invoke-interface {p1, v4, v0, v1, v2}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 1753
+    .line 1826
     const/16 v0, 0xe
 
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_open_link:Ljava/lang/String;
@@ -1870,7 +1870,7 @@
 
     invoke-interface {p1, v4, v0, v1, v2}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 1756
+    .line 1829
     const/16 v0, 0x10
 
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_green:Ljava/lang/String;
@@ -1879,7 +1879,7 @@
 
     invoke-interface {p1, v5, v0, v1, v2}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 1757
+    .line 1830
     const/16 v0, 0x11
 
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_blue:Ljava/lang/String;
@@ -1888,7 +1888,7 @@
 
     invoke-interface {p1, v5, v0, v1, v2}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 1758
+    .line 1831
     const/16 v0, 0x12
 
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_yellow:Ljava/lang/String;
@@ -1897,7 +1897,7 @@
 
     invoke-interface {p1, v5, v0, v1, v2}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 1759
+    .line 1832
     const/16 v0, 0x13
 
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_red:Ljava/lang/String;
@@ -1906,7 +1906,7 @@
 
     invoke-interface {p1, v5, v0, v1, v2}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 1760
+    .line 1833
     const/16 v0, 0x14
 
     iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->str_unhighlight:Ljava/lang/String;
@@ -1915,7 +1915,7 @@
 
     invoke-interface {p1, v5, v0, v1, v2}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 1761
+    .line 1834
     return-void
 .end method
 
@@ -1924,7 +1924,7 @@
     .parameter "mode"
 
     .prologue
-    .line 2437
+    .line 2510
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView;->mSelection:Landroid/webkit/WebViewSelectionMethod;
@@ -1937,14 +1937,14 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 2438
+    .line 2511
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/webkit/EditableWebView;->onEndSelect(Z)V
 
-    .line 2439
+    .line 2512
     :cond_0
     return-void
 .end method
@@ -1955,7 +1955,7 @@
     .parameter "menu"
 
     .prologue
-    .line 2336
+    .line 2409
     const/4 v0, 0x1
 
     return v0
@@ -1972,19 +1972,19 @@
 
     const/4 v5, 0x0
 
-    .line 1764
+    .line 1837
     invoke-interface {p1, v5, v5}, Lcom/htc/textselection/ActionMenu;->setGroupVisibility(IZ)V
 
-    .line 1765
+    .line 1838
     invoke-interface {p1, v8, v5}, Lcom/htc/textselection/ActionMenu;->setGroupVisibility(IZ)V
 
-    .line 1766
+    .line 1839
     invoke-interface {p1, v4, v5}, Lcom/htc/textselection/ActionMenu;->setGroupVisibility(IZ)V
 
-    .line 1768
+    .line 1841
     const/4 v2, 0x0
 
-    .line 1769
+    .line 1842
     .local v2, groupID:I
     iget-object v6, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
@@ -1998,18 +1998,18 @@
 
     if-ne v6, v7, :cond_4
 
-    .line 1770
+    .line 1843
     iget-boolean v6, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->highlightMode:Z
 
     if-eqz v6, :cond_3
 
     move v2, v4
 
-    .line 1775
+    .line 1848
     :goto_0
     invoke-interface {p1, v2, v8}, Lcom/htc/textselection/ActionMenu;->setGroupVisibility(IZ)V
 
-    .line 1778
+    .line 1851
     iget-object v4, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iget-object v4, v4, Landroid/webkit/EditableWebView;->mClipboard:Landroid/content/ClipboardManager;
@@ -2078,7 +2078,7 @@
 
     if-nez v4, :cond_1
 
-    .line 1784
+    .line 1857
     :cond_0
     const/16 v4, 0xb
 
@@ -2086,14 +2086,14 @@
 
     move-result-object v0
 
-    .line 1785
+    .line 1858
     .local v0, a:Lcom/htc/textselection/Action;
     if-eqz v0, :cond_1
 
-    .line 1786
+    .line 1859
     invoke-interface {v0, v5}, Lcom/htc/textselection/Action;->setVisible(Z)V
 
-    .line 1799
+    .line 1872
     .end local v0           #a:Lcom/htc/textselection/Action;
     :cond_1
     const/16 v4, 0xe
@@ -2102,7 +2102,7 @@
 
     move-result-object v1
 
-    .line 1800
+    .line 1873
     .local v1, aLink:Lcom/htc/textselection/Action;
     iget-object v4, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
@@ -2112,7 +2112,7 @@
 
     const-string v3, ""
 
-    .line 1801
+    .line 1874
     .local v3, href:Ljava/lang/String;
     :goto_1
     invoke-static {v3}, Landroid/webkit/URLUtil;->isNetworkUrl(Ljava/lang/String;)Z
@@ -2121,7 +2121,7 @@
 
     if-eqz v4, :cond_6
 
-    .line 1802
+    .line 1875
     iget-object v4, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -2131,13 +2131,13 @@
     #setter for: Landroid/webkit/EditableWebView;->mTappedURL:Ljava/lang/String;
     invoke-static {v4, v5}, Landroid/webkit/EditableWebView;->access$3102(Landroid/webkit/EditableWebView;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 1803
+    .line 1876
     if-eqz v1, :cond_2
 
-    .line 1804
+    .line 1877
     invoke-interface {v1, v8}, Lcom/htc/textselection/Action;->setVisible(Z)V
 
-    .line 1818
+    .line 1891
     :cond_2
     :goto_2
     return-void
@@ -2147,16 +2147,16 @@
     :cond_3
     move v2, v5
 
-    .line 1770
+    .line 1843
     goto :goto_0
 
-    .line 1772
+    .line 1845
     :cond_4
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 1800
+    .line 1873
     .restart local v1       #aLink:Lcom/htc/textselection/Action;
     :cond_5
     iget-object v4, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
@@ -2176,7 +2176,7 @@
 
     goto :goto_1
 
-    .line 1806
+    .line 1879
     .restart local v3       #href:Ljava/lang/String;
     :cond_6
     iget-object v4, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
@@ -2186,10 +2186,10 @@
     #setter for: Landroid/webkit/EditableWebView;->mTappedURL:Ljava/lang/String;
     invoke-static {v4, v6}, Landroid/webkit/EditableWebView;->access$3102(Landroid/webkit/EditableWebView;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 1807
+    .line 1880
     if-eqz v1, :cond_2
 
-    .line 1808
+    .line 1881
     invoke-interface {v1, v5}, Lcom/htc/textselection/Action;->setVisible(Z)V
 
     goto :goto_2
@@ -2204,26 +2204,26 @@
 
     const/4 v6, 0x1
 
-    .line 1821
+    .line 1894
     packed-switch p1, :pswitch_data_0
 
-    .line 1908
+    .line 1981
     :cond_0
     :goto_0
     const/16 v3, 0xf
 
     if-eq v3, p1, :cond_1
 
-    .line 1909
+    .line 1982
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-virtual {v3, v7}, Landroid/webkit/EditableWebView;->onEndSelect(Z)V
 
-    .line 1910
+    .line 1983
     :cond_1
     return-void
 
-    .line 1823
+    .line 1896
     :pswitch_0
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
@@ -2231,7 +2231,7 @@
 
     goto :goto_0
 
-    .line 1826
+    .line 1899
     :pswitch_1
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
@@ -2239,7 +2239,7 @@
 
     goto :goto_0
 
-    .line 1829
+    .line 1902
     :pswitch_2
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
@@ -2247,7 +2247,7 @@
 
     goto :goto_0
 
-    .line 1834
+    .line 1907
     :pswitch_3
     invoke-direct {p0}, Landroid/webkit/EditableWebView$EditableQuickActions;->getDialogFontStyleContext()Landroid/content/Context;
 
@@ -2255,14 +2255,14 @@
 
     invoke-direct {p0, v3}, Landroid/webkit/EditableWebView$EditableQuickActions;->onCreateDialogFontStyle(Landroid/content/Context;)V
 
-    .line 1835
+    .line 1908
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style:Lcom/htc/dialog/HtcAlertDialog;
 
     invoke-virtual {v3}, Lcom/htc/dialog/HtcAlertDialog;->show()V
 
     goto :goto_0
 
-    .line 1839
+    .line 1912
     :pswitch_4
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
@@ -2270,7 +2270,7 @@
 
     goto :goto_0
 
-    .line 1842
+    .line 1915
     :pswitch_5
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
@@ -2280,7 +2280,7 @@
 
     move-result-object v1
 
-    .line 1843
+    .line 1916
     .local v1, r:Landroid/graphics/Rect;
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
@@ -2301,7 +2301,7 @@
 
     goto :goto_0
 
-    .line 1862
+    .line 1935
     .end local v1           #r:Landroid/graphics/Rect;
     :pswitch_6
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
@@ -2323,7 +2323,7 @@
 
     goto :goto_0
 
-    .line 1868
+    .line 1941
     :pswitch_7
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
@@ -2360,7 +2360,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 1869
+    .line 1942
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     #getter for: Landroid/webkit/EditableWebView;->mTappedURL:Ljava/lang/String;
@@ -2372,7 +2372,7 @@
 
     move-result-object v2
 
-    .line 1870
+    .line 1943
     .local v2, uri:Landroid/net/Uri;
     new-instance v0, Landroid/content/Intent;
 
@@ -2380,13 +2380,13 @@
 
     invoke-direct {v0, v3, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 1871
+    .line 1944
     .local v0, intent:Landroid/content/Intent;
     const/high16 v3, 0x1000
 
     invoke-virtual {v0, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1872
+    .line 1945
     const-string v3, "KENLOG"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2409,7 +2409,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1873
+    .line 1946
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     #getter for: Landroid/webkit/EditableWebView;->mContext:Landroid/content/Context;
@@ -2421,26 +2421,24 @@
 
     goto/16 :goto_0
 
-    .line 1877
+    .line 1950
     .end local v0           #intent:Landroid/content/Intent;
     .end local v2           #uri:Landroid/net/Uri;
     :pswitch_8
     iput-boolean v6, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->highlightMode:Z
 
-    .line 1878
+    .line 1951
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
-    .line 1879
+    .line 1952
     .restart local v1       #r:Landroid/graphics/Rect;
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
-    iget-object v3, v3, Landroid/webkit/EditableWebView;->mHTCWebCore:Landroid/webkit/HTCWebCore;
+    invoke-virtual {v3, v1}, Landroid/webkit/EditableWebView;->getVSbound(Landroid/graphics/Rect;)I
 
-    invoke-virtual {v3, v1}, Landroid/webkit/HTCWebCore;->nativeGetVSbound(Landroid/graphics/Rect;)I
-
-    .line 1880
+    .line 1953
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iget-object v3, v3, Landroid/webkit/EditableWebView;->mQuickSelect:Landroid/webkit/WebView$QuickSelectAbs;
@@ -2449,21 +2447,21 @@
 
     goto/16 :goto_0
 
-    .line 1883
+    .line 1956
     .end local v1           #r:Landroid/graphics/Rect;
     :pswitch_9
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iput-boolean v6, v3, Landroid/webkit/EditableWebView;->m_bRemoveSelectRangeDuringUpdateContent:Z
 
-    .line 1884
+    .line 1957
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iget v4, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nGreenColor:I
 
     iput v4, v3, Landroid/webkit/EditableWebView;->m_nSelectHighlightColor:I
 
-    .line 1885
+    .line 1958
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iget v4, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nGreenColor:I
@@ -2472,20 +2470,20 @@
 
     goto/16 :goto_0
 
-    .line 1888
+    .line 1961
     :pswitch_a
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iput-boolean v6, v3, Landroid/webkit/EditableWebView;->m_bRemoveSelectRangeDuringUpdateContent:Z
 
-    .line 1889
+    .line 1962
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iget v4, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nBlueColor:I
 
     iput v4, v3, Landroid/webkit/EditableWebView;->m_nSelectHighlightColor:I
 
-    .line 1890
+    .line 1963
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iget v4, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nBlueColor:I
@@ -2494,20 +2492,20 @@
 
     goto/16 :goto_0
 
-    .line 1893
+    .line 1966
     :pswitch_b
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iput-boolean v6, v3, Landroid/webkit/EditableWebView;->m_bRemoveSelectRangeDuringUpdateContent:Z
 
-    .line 1894
+    .line 1967
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iget v4, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nYellowColor:I
 
     iput v4, v3, Landroid/webkit/EditableWebView;->m_nSelectHighlightColor:I
 
-    .line 1895
+    .line 1968
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iget v4, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nYellowColor:I
@@ -2516,20 +2514,20 @@
 
     goto/16 :goto_0
 
-    .line 1898
+    .line 1971
     :pswitch_c
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iput-boolean v6, v3, Landroid/webkit/EditableWebView;->m_bRemoveSelectRangeDuringUpdateContent:Z
 
-    .line 1899
+    .line 1972
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iget v4, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nRedColor:I
 
     iput v4, v3, Landroid/webkit/EditableWebView;->m_nSelectHighlightColor:I
 
-    .line 1900
+    .line 1973
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iget v4, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->m_nRedColor:I
@@ -2538,13 +2536,13 @@
 
     goto/16 :goto_0
 
-    .line 1903
+    .line 1976
     :pswitch_d
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iput-boolean v6, v3, Landroid/webkit/EditableWebView;->m_bRemoveSelectRangeDuringUpdateContent:Z
 
-    .line 1904
+    .line 1977
     iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iget-object v4, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
@@ -2557,7 +2555,7 @@
 
     goto/16 :goto_0
 
-    .line 1821
+    .line 1894
     nop
 
     :pswitch_data_0

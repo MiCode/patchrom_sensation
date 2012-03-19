@@ -7,7 +7,7 @@
     <string name="wait">Vui lòng chờ…</string>
     <string name="no_storage">Vui lòng lắp thẻ nhớ trước khi sử dụng Máy ảnh.</string>
     <string name="no_storage_camcorder">Vui lòng lắp thẻ nhớ trước khi sử dụng Máy quay phim.</string>
-    <string name="not_write_storage">Không thể lưu tập tin này vào thẻ nhớ do cho phép tập tin bị thiếu.</string>
+    <string name="not_write_storage">Không thể lưu file này vào thẻ nhớ do cho phép file bị thiếu.</string>
     <string name="not_enough_space">Thẻ nhớ của bạn đã đầy.</string>
     <string name="not_enough_phone_storage">Bộ nhớ máy đầy</string>
     <string name="mass_storage_camera">Máy ảnh chưa sẵn sàng vì thẻ nhớ đang được nối với máy tính. Ngắt kết nối USB để thực hiện.</string>
@@ -74,7 +74,7 @@
     <string name="file_format_3gpp">3gpp</string>
     <string name="file_format_mp4">mp4</string>
     <string name="review_duration">Thời gian xem lại</string>
-    <string name="file_format">Định dạng tệp tin</string>
+    <string name="file_format">Định dạng file</string>
     <string name="camera_switch">Chuyển đổi máy ảnh</string>
     <string name="camera_3D_status">Máy ảnh 3D</string>
     <string name="front_camera_mode">Chế độ phản chiếu</string>

@@ -72,13 +72,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 601
-    const-string v0, "WindowManager"
-
-    const-string v1, "skip orientation because shutting down now"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 607
     :goto_0
     return-void

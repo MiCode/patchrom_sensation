@@ -53,7 +53,7 @@
 
     .line 57
     .local v0, view:Landroid/view/View;
-    iget-object v2, p0, Lcom/htc/opensense/album/ControlTitleBar;->mRoot:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ControlBase;->mRoot:Landroid/view/View;
 
     if-nez v2, :cond_1
 
@@ -64,7 +64,7 @@
 
     .line 60
     :cond_1
-    iget-object v2, p0, Lcom/htc/opensense/album/ControlTitleBar;->mRoot:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ControlBase;->mRoot:Landroid/view/View;
 
     invoke-virtual {v2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -102,7 +102,7 @@
 
     .line 36
     .local v0, view:Landroid/view/View;
-    iget-object v1, p0, Lcom/htc/opensense/album/ControlTitleBar;->mRoot:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ControlBase;->mRoot:Landroid/view/View;
 
     if-nez v1, :cond_1
 
@@ -113,7 +113,7 @@
 
     .line 39
     :cond_1
-    iget-object v1, p0, Lcom/htc/opensense/album/ControlTitleBar;->mRoot:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ControlBase;->mRoot:Landroid/view/View;
 
     invoke-virtual {v1, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

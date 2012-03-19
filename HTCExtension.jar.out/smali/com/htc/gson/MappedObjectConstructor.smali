@@ -60,7 +60,7 @@
     .prologue
     .line 45
     .local p1, instanceCreators:Lcom/htc/gson/ParameterizedTypeHandlerMap;,"Lcom/htc/gson/ParameterizedTypeHandlerMap<Lcom/htc/gson/InstanceCreator<*>;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     iput-object p1, p0, Lcom/htc/gson/MappedObjectConstructor;->instanceCreatorMap:Lcom/htc/gson/ParameterizedTypeHandlerMap;

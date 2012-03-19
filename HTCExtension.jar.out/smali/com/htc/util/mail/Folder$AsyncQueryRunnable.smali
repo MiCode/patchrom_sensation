@@ -37,7 +37,7 @@
     .line 822
     iput-object p1, p0, Lcom/htc/util/mail/Folder$AsyncQueryRunnable;->this$0:Lcom/htc/util/mail/Folder;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 818
     const-wide/16 v0, 0x0
@@ -75,7 +75,7 @@
     .line 826
     iput-object p1, p0, Lcom/htc/util/mail/Folder$AsyncQueryRunnable;->this$0:Lcom/htc/util/mail/Folder;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 818
     const-wide/16 v0, 0x0

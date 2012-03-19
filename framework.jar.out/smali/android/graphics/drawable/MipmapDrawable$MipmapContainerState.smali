@@ -108,7 +108,7 @@
     if-lez v1, :cond_0
 
     .line 249
-    iget-object v4, p0, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->mDrawables:[Landroid/graphics/drawable/Drawable;
+    iget-object v4, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables:[Landroid/graphics/drawable/Drawable;
 
     add-int/lit8 v5, v1, -0x1
 
@@ -125,7 +125,7 @@
     if-ge v0, v3, :cond_0
 
     .line 253
-    iget-object v4, p0, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->mDrawables:[Landroid/graphics/drawable/Drawable;
+    iget-object v4, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables:[Landroid/graphics/drawable/Drawable;
 
     aput-object v2, v4, v1
 
@@ -135,7 +135,7 @@
     aput v3, v4, v1
 
     .line 256
-    iget-object v4, p0, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->mDrawables:[Landroid/graphics/drawable/Drawable;
+    iget-object v4, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables:[Landroid/graphics/drawable/Drawable;
 
     add-int/lit8 v5, v1, -0x1
 
@@ -177,7 +177,7 @@
     if-lez v0, :cond_0
 
     .line 273
-    iget-object v3, p0, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->mDrawables:[Landroid/graphics/drawable/Drawable;
+    iget-object v3, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v2, v3, v4
 
@@ -187,17 +187,17 @@
 
     move-result v3
 
-    iput v3, p0, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->mConstantMinimumWidth:I
+    iput v3, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantMinimumWidth:I
 
     .line 275
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
 
     move-result v3
 
-    iput v3, p0, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->mConstantMinimumHeight:I
+    iput v3, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantMinimumHeight:I
 
     .line 277
-    iget-object v3, p0, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->mDrawables:[Landroid/graphics/drawable/Drawable;
+    iget-object v3, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables:[Landroid/graphics/drawable/Drawable;
 
     add-int/lit8 v4, v0, -0x1
 
@@ -209,14 +209,14 @@
 
     move-result v3
 
-    iput v3, p0, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->mConstantWidth:I
+    iput v3, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantWidth:I
 
     .line 279
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v3
 
-    iput v3, p0, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->mConstantHeight:I
+    iput v3, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantHeight:I
 
     .line 284
     .end local v1           #largestDrawable:Landroid/graphics/drawable/Drawable;
@@ -224,7 +224,7 @@
     :goto_0
     const/4 v3, 0x1
 
-    iput-boolean v3, p0, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->mComputedConstantSize:Z
+    iput-boolean v3, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mComputedConstantSize:Z
 
     .line 285
     return-void
@@ -233,14 +233,14 @@
     :cond_0
     const/4 v3, -0x1
 
-    iput v3, p0, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->mConstantHeight:I
+    iput v3, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantHeight:I
 
-    iput v3, p0, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->mConstantWidth:I
+    iput v3, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantWidth:I
 
     .line 282
-    iput v4, p0, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->mConstantMinimumHeight:I
+    iput v4, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantMinimumHeight:I
 
-    iput v4, p0, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->mConstantMinimumWidth:I
+    iput v4, p0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantMinimumWidth:I
 
     goto :goto_0
 .end method

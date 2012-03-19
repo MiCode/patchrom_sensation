@@ -275,7 +275,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/TableRow$LayoutParams;->width:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 499
     :goto_0
@@ -292,7 +292,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/TableRow$LayoutParams;->height:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 504
     :goto_1
@@ -302,7 +302,7 @@
     :cond_0
     const/4 v0, -0x1
 
-    iput v0, p0, Landroid/widget/TableRow$LayoutParams;->width:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     goto :goto_0
 
@@ -310,7 +310,7 @@
     :cond_1
     const/4 v0, -0x2
 
-    iput v0, p0, Landroid/widget/TableRow$LayoutParams;->height:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     goto :goto_1
 .end method

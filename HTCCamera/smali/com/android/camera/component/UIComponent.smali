@@ -116,7 +116,7 @@
     if-nez v0, :cond_1
 
     .line 71
-    iget-object v0, p0, Lcom/android/camera/component/UIComponent;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "No camera thread"
 
@@ -356,7 +356,7 @@
     if-nez v4, :cond_2
 
     .line 184
-    iget-object v3, p0, Lcom/android/camera/component/UIComponent;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "Base layout must be a ViewGroup"
 
@@ -739,7 +739,7 @@
 
     invoke-direct {v1, p0, p4}, Lcom/android/camera/component/UIComponent$1;-><init>(Lcom/android/camera/component/UIComponent;Ljava/lang/Runnable;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+    invoke-virtual {v0, v1}, Landroid/view/animation/AlphaAnimation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
     .line 354
     .end local v0           #ani:Landroid/view/animation/Animation;
@@ -789,7 +789,7 @@
 
     invoke-direct {v1, p0, p4}, Lcom/android/camera/component/UIComponent$2;-><init>(Lcom/android/camera/component/UIComponent;Ljava/lang/Runnable;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+    invoke-virtual {v0, v1}, Landroid/view/animation/AlphaAnimation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
     goto :goto_0
 

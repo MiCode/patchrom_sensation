@@ -36,7 +36,7 @@
     .locals 1
 
     .prologue
-    .line 121
+    .line 102
     new-instance v0, Landroid/net/wifi/ScanResult$1;
 
     invoke-direct {v0}, Landroid/net/wifi/ScanResult$1;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V
-    .locals 1
+    .locals 0
     .parameter "SSID"
     .parameter "BSSID"
     .parameter "caps"
@@ -56,7 +56,7 @@
 
     .prologue
     .line 59
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 60
     iput-object p1, p0, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
@@ -64,84 +64,17 @@
     .line 61
     iput-object p2, p0, Landroid/net/wifi/ScanResult;->BSSID:Ljava/lang/String;
 
-    .line 63
-    invoke-direct {p0, p3}, Landroid/net/wifi/ScanResult;->isTkip(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-direct {p0, p3}, Landroid/net/wifi/ScanResult;->isWep(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 64
-    :cond_0
-    invoke-direct {p0, p3}, Landroid/net/wifi/ScanResult;->removeWps(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p3
-
-    .line 67
-    :cond_1
+    .line 62
     iput-object p3, p0, Landroid/net/wifi/ScanResult;->capabilities:Ljava/lang/String;
 
-    .line 68
+    .line 63
     iput p4, p0, Landroid/net/wifi/ScanResult;->level:I
 
-    .line 69
+    .line 64
     iput p5, p0, Landroid/net/wifi/ScanResult;->frequency:I
 
-    .line 71
+    .line 66
     return-void
-.end method
-
-.method private isTkip(Ljava/lang/String;)Z
-    .locals 1
-    .parameter "caps"
-
-    .prologue
-    .line 75
-    const-string v0, "TKIP"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private isWep(Ljava/lang/String;)Z
-    .locals 1
-    .parameter "caps"
-
-    .prologue
-    .line 79
-    const-string v0, "WEP"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private removeWps(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
-    .parameter "caps"
-
-    .prologue
-    .line 83
-    const-string v0, "[WPS]"
-
-    const-string v1, ""
-
-    invoke-virtual {p1, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 
@@ -150,7 +83,7 @@
     .locals 1
 
     .prologue
-    .line 108
+    .line 89
     const/4 v0, 0x0
 
     return v0
@@ -160,16 +93,16 @@
     .locals 4
 
     .prologue
-    .line 89
+    .line 70
     new-instance v1, Ljava/lang/StringBuffer;
 
     invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 90
+    .line 71
     .local v1, sb:Ljava/lang/StringBuffer;
     const-string v0, "<none>"
 
-    .line 92
+    .line 73
     .local v0, none:Ljava/lang/String;
     const-string v2, "SSID: "
 
@@ -243,14 +176,14 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
 
-    .line 103
+    .line 84
     invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     return-object v2
 
-    .line 92
+    .line 73
     .restart local v0       #none:Ljava/lang/String;
     :cond_0
     iget-object v2, p0, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
@@ -274,31 +207,31 @@
     .parameter "flags"
 
     .prologue
-    .line 113
+    .line 94
     iget-object v0, p0, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 114
+    .line 95
     iget-object v0, p0, Landroid/net/wifi/ScanResult;->BSSID:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 115
+    .line 96
     iget-object v0, p0, Landroid/net/wifi/ScanResult;->capabilities:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 116
+    .line 97
     iget v0, p0, Landroid/net/wifi/ScanResult;->level:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 117
+    .line 98
     iget v0, p0, Landroid/net/wifi/ScanResult;->frequency:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 118
+    .line 99
     return-void
 .end method

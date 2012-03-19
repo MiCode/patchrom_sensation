@@ -79,7 +79,7 @@
     const/4 v0, 0x0
 
     .line 100
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 84
     iput v0, p0, Landroid/location/Criteria;->mHorizontalAccuracy:I
@@ -120,7 +120,7 @@
     const/4 v0, 0x0
 
     .line 105
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 84
     iput v0, p0, Landroid/location/Criteria;->mHorizontalAccuracy:I

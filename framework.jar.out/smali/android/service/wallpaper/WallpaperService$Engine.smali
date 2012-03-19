@@ -117,7 +117,7 @@
     .line 127
     iput-object p1, p0, Landroid/service/wallpaper/WallpaperService$Engine;->this$0:Landroid/service/wallpaper/WallpaperService;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 135
     iput-boolean v0, p0, Landroid/service/wallpaper/WallpaperService$Engine;->mInitializing:Z
@@ -186,7 +186,7 @@
     .line 169
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/service/wallpaper/WallpaperService$Engine;->mLock:Ljava/lang/Object;
 
@@ -1888,7 +1888,7 @@
 
     move/from16 v0, v27
 
-    iput v0, v2, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v0, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 612
     move-object/from16 v0, p0
@@ -1897,7 +1897,7 @@
 
     move/from16 v0, v26
 
-    iput v0, v2, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v0, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 614
     move-object/from16 v0, p0

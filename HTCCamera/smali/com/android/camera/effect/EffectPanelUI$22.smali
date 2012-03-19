@@ -30,7 +30,7 @@
     .line 467
     iput-object p1, p0, Lcom/android/camera/effect/EffectPanelUI$22;->this$0:Lcom/android/camera/effect/EffectPanelUI;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -64,7 +64,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/camera/effect/EffectPanelUI$22;->this$0:Lcom/android/camera/effect/EffectPanelUI;
 
-    #getter for: Lcom/android/camera/effect/EffectPanelUI;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/effect/EffectPanelUI;->access$2200(Lcom/android/camera/effect/EffectPanelUI;)Ljava/lang/String;
 
     move-result-object v1

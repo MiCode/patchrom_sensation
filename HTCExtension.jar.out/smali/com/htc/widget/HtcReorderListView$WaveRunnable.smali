@@ -49,7 +49,7 @@
     .line 1153
     iput-object p1, p0, Lcom/htc/widget/HtcReorderListView$WaveRunnable;->this$0:Lcom/htc/widget/HtcReorderListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1148
     const/16 v0, 0x12c
@@ -616,7 +616,7 @@
 
     iget-object v13, v0, Lcom/htc/widget/HtcReorderListView$WaveRunnable;->this$0:Lcom/htc/widget/HtcReorderListView;
 
-    #getter for: Lcom/htc/widget/HtcReorderListView;->mContext:Landroid/content/Context;
+    #getter for: Lcom/htc/widget/HtcAbsListView;->mContext:Landroid/content/Context;
     invoke-static {v13}, Lcom/htc/widget/HtcReorderListView;->access$600(Lcom/htc/widget/HtcReorderListView;)Landroid/content/Context;
 
     move-result-object v13

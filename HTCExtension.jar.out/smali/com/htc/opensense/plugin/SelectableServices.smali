@@ -36,7 +36,7 @@
 
     .prologue
     .line 32
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 18
     const-string v7, "SupportStreamHost"
@@ -63,7 +63,10 @@
 
     iput-object v7, p0, Lcom/htc/opensense/plugin/SelectableServices;->serviceLists:Ljava/util/List;
 
-    .line 37
+    .line 38
+    if-eqz v5, :cond_3
+
+    .line 39
     move-object v1, v5
 
     .local v1, arr$:[Lcom/htc/opensense/plugin/Plugin;
@@ -78,7 +81,7 @@
 
     aget-object v4, v1, v2
 
-    .line 38
+    .line 40
     .local v4, plugin:Lcom/htc/opensense/plugin/Plugin;
     iget-object v7, v4, Lcom/htc/opensense/plugin/Plugin;->component_name:Landroid/content/ComponentName;
 
@@ -88,18 +91,18 @@
 
     if-eqz v7, :cond_1
 
-    .line 37
+    .line 39
     :cond_0
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 41
+    .line 43
     :cond_1
     iget-object v0, v4, Lcom/htc/opensense/plugin/Plugin;->pluginMeta:Ljava/lang/String;
 
-    .line 42
+    .line 44
     .local v0, accountType:Ljava/lang/String;
     invoke-direct {p0, v0}, Lcom/htc/opensense/plugin/SelectableServices;->isLogin(Ljava/lang/String;)Z
 
@@ -107,7 +110,7 @@
 
     if-eqz v7, :cond_0
 
-    .line 45
+    .line 47
     iget-object v7, v4, Lcom/htc/opensense/plugin/Plugin;->component_name:Landroid/content/ComponentName;
 
     invoke-direct {p0, v7}, Lcom/htc/opensense/plugin/SelectableServices;->getTitleFromComponentName(Landroid/content/ComponentName;)Ljava/lang/CharSequence;
@@ -118,7 +121,7 @@
 
     move-result-object v6
 
-    .line 47
+    .line 49
     .local v6, title:Ljava/lang/String;
     iget-object v7, p0, Lcom/htc/opensense/plugin/SelectableServices;->serviceLists:Ljava/util/List;
 
@@ -132,7 +135,7 @@
 
     goto :goto_1
 
-    .line 50
+    .line 52
     .end local v0           #accountType:Ljava/lang/String;
     .end local v4           #plugin:Lcom/htc/opensense/plugin/Plugin;
     .end local v6           #title:Ljava/lang/String;
@@ -145,7 +148,11 @@
 
     invoke-static {v7, v8}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 56
+    .line 59
+    .end local v1           #arr$:[Lcom/htc/opensense/plugin/Plugin;
+    .end local v2           #i$:I
+    .end local v3           #len$:I
+    :cond_3
     return-void
 .end method
 
@@ -154,7 +161,7 @@
     .parameter "component_name"
 
     .prologue
-    .line 64
+    .line 67
     :try_start_0
     iget-object v3, p0, Lcom/htc/opensense/plugin/SelectableServices;->mActivity:Landroid/app/Activity;
 
@@ -168,7 +175,7 @@
 
     move-result-object v1
 
-    .line 66
+    .line 69
     .local v1, info:Landroid/content/pm/ActivityInfo;
     iget-object v3, p0, Lcom/htc/opensense/plugin/SelectableServices;->mActivity:Landroid/app/Activity;
 
@@ -182,7 +189,7 @@
 
     move-result-object v2
 
-    .line 69
+    .line 72
     .local v2, pkgContext:Landroid/content/Context;
     iget v3, v1, Landroid/content/pm/ActivityInfo;->labelRes:I
 
@@ -192,22 +199,22 @@
 
     move-result-object v3
 
-    .line 73
+    .line 77
     .end local v1           #info:Landroid/content/pm/ActivityInfo;
     .end local v2           #pkgContext:Landroid/content/Context;
     :goto_0
     return-object v3
 
-    .line 70
+    .line 73
     :catch_0
     move-exception v0
 
-    .line 71
+    .line 74
     .local v0, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     invoke-virtual {v0}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
 
-    .line 73
-    const/4 v3, 0x0
+    .line 77
+    const-string v3, ""
 
     goto :goto_0
 .end method
@@ -217,20 +224,20 @@
     .parameter "accountType"
 
     .prologue
-    .line 58
+    .line 61
     iget-object v2, p0, Lcom/htc/opensense/plugin/SelectableServices;->mActivity:Landroid/app/Activity;
 
     invoke-static {v2}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
 
     move-result-object v0
 
-    .line 59
+    .line 62
     .local v0, accountManager:Landroid/accounts/AccountManager;
     invoke-virtual {v0, p1}, Landroid/accounts/AccountManager;->getAccountsByType(Ljava/lang/String;)[Landroid/accounts/Account;
 
     move-result-object v1
 
-    .line 60
+    .line 63
     .local v1, accounts:[Landroid/accounts/Account;
     if-eqz v1, :cond_0
 

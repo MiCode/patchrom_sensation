@@ -47,7 +47,7 @@
 
     .prologue
     .line 353
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 354
     return-void
@@ -59,7 +59,7 @@
 
     .prologue
     .line 356
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 357
     sget-object v0, Landroid/app/FragmentState;->CREATOR:Landroid/os/Parcelable$Creator;

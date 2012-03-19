@@ -80,7 +80,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -91,7 +91,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -102,7 +102,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -113,7 +113,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -124,7 +124,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -135,7 +135,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     return-object v0
 .end method
@@ -146,7 +146,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     return-object v0
 .end method
@@ -157,7 +157,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     return-object v0
 .end method
@@ -168,7 +168,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     return-object v0
 .end method
@@ -179,7 +179,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     return-object v0
 .end method
@@ -190,7 +190,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     return-object v0
 .end method
@@ -201,7 +201,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     return-object v0
 .end method
@@ -212,7 +212,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     return-object v0
 .end method
@@ -223,7 +223,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     return-object v0
 .end method
@@ -234,7 +234,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     return-object v0
 .end method
@@ -245,7 +245,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     return-object v0
 .end method
@@ -256,7 +256,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     return-object v0
 .end method
@@ -267,7 +267,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     return-object v0
 .end method
@@ -278,7 +278,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     return-object v0
 .end method
@@ -289,7 +289,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     return-object v0
 .end method
@@ -300,7 +300,7 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     return-object v0
 .end method
@@ -327,7 +327,7 @@
     const/4 v5, 0x0
 
     .line 265
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v4, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v4}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivityListener()Lcom/htc/opensense/album/TemplateActivityInterface;
 
@@ -342,7 +342,7 @@
 
     .line 269
     :cond_0
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v4, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v4}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -362,7 +362,7 @@
 
     .line 272
     .local v2, nPosition:I
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v4, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     invoke-virtual {v4}, Landroid/widget/BaseAdapter;->getCount()I
 
@@ -375,7 +375,7 @@
 
     .line 277
     :cond_1
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v1, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
@@ -397,27 +397,27 @@
     invoke-virtual {v1, v4, v5, v6}, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->setTemplateLayout(ILcom/htc/opensense/album/SocialNetworkManager/NotifyLiveImageState$ImageDecoder;Lcom/htc/opensense/album/SocialNetworkManager/NotifyLiveImageState$ImageDownloadedListener;)V
 
     .line 284
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v4, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v4, Lcom/htc/opensense/widget/FullScreenView;
 
     invoke-virtual {v4, v2}, Lcom/htc/opensense/widget/FullScreenView;->setPosition(I)V
 
     .line 285
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v4, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v4, Lcom/htc/opensense/widget/FullScreenView;
 
-    iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v5, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     invoke-virtual {v4, v5}, Lcom/htc/opensense/widget/FullScreenView;->setAdapter(Landroid/widget/BaseAdapter;)V
 
     .line 286
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v4, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v4, Lcom/htc/opensense/widget/FullScreenView;
 
-    iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v5, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v5}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -476,11 +476,11 @@
 
     .prologue
     .line 79
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v1, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -492,13 +492,13 @@
     :cond_0
     new-instance v0, Lcom/htc/opensense/widget/FullScreenView;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v1}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v2}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivityListener()Lcom/htc/opensense/album/TemplateActivityInterface;
 
@@ -544,11 +544,11 @@
     const/4 v2, 0x1
 
     .line 96
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v1, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -582,7 +582,7 @@
 
     if-ne v1, v3, :cond_2
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v1, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -593,7 +593,7 @@
     if-nez v1, :cond_2
 
     .line 101
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v1}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -618,7 +618,7 @@
     if-nez v1, :cond_2
 
     .line 104
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v1, v2}, Lcom/htc/opensense/album/DisplayManagerInterface;->switchBackToPreviousTemplate(Z)V
 
@@ -630,7 +630,7 @@
     .line 109
     .end local v0           #action:Ljava/lang/String;
     :cond_2
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v1, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -651,11 +651,11 @@
 
     .line 119
     .local v0, bResult:Z
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v1, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -678,11 +678,11 @@
     const/4 v1, 0x0
 
     .line 132
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v0, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -725,7 +725,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v5, v0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     if-nez v5, :cond_1
 
@@ -747,7 +747,7 @@
     .local v3, touchView:Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v12, v0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v12, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
@@ -813,7 +813,7 @@
     .line 395
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v5, v0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v5}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1061,7 +1061,7 @@
 
     .line 457
     :sswitch_2
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivityListener()Lcom/htc/opensense/album/TemplateActivityInterface;
 
@@ -1079,7 +1079,7 @@
 
     .line 463
     :sswitch_3
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1091,7 +1091,7 @@
 
     .line 467
     :sswitch_4
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1109,7 +1109,7 @@
 
     .line 473
     :sswitch_6
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1121,7 +1121,7 @@
 
     .line 476
     :sswitch_7
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1133,7 +1133,7 @@
 
     .line 479
     :sswitch_8
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1174,7 +1174,7 @@
 
     .prologue
     .line 767
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentTitleBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -1187,7 +1187,7 @@
     if-nez v0, :cond_0
 
     .line 768
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentTitleBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -1197,7 +1197,7 @@
 
     .line 770
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentCommandBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -1210,7 +1210,7 @@
     if-nez v0, :cond_1
 
     .line 771
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentCommandBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -1231,7 +1231,7 @@
 
     .prologue
     .line 157
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1249,11 +1249,11 @@
 
     .prologue
     .line 436
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v0, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -1285,7 +1285,7 @@
     new-instance v0, Lcom/htc/app/HtcProgressDialog;
 
     .end local v0           #dialog:Lcom/htc/app/HtcProgressDialog;
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v1}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1320,12 +1320,12 @@
 
     .prologue
     .line 351
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
     .line 353
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v0, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -1345,7 +1345,7 @@
     invoke-super {p0, p1}, Lcom/htc/opensense/album/ViewTemplateBase;->onEnter(Landroid/os/Bundle;)V
 
     .line 301
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v3, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v3}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1371,7 +1371,7 @@
     if-eqz v3, :cond_0
 
     .line 307
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v3, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v3}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1413,7 +1413,7 @@
 
     .prologue
     .line 320
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v2}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivity()Landroid/app/Activity;
 
@@ -1433,7 +1433,7 @@
     .local v1, editor:Landroid/content/SharedPreferences$Editor;
     const-string v3, "photo_position"
 
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v2, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -1480,7 +1480,7 @@
     const/high16 v4, 0x3f80
 
     .line 510
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentCommandBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -1489,7 +1489,7 @@
     invoke-virtual {v0, v1}, Lcom/htc/opensense/album/ControlBase;->setVisibility(I)V
 
     .line 511
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentTitleBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -1542,13 +1542,13 @@
 
     .prologue
     .line 535
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
     .line 536
     .local v0, adapter:Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v1, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -1568,7 +1568,7 @@
 
     .line 541
     :pswitch_0
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v1, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -1592,7 +1592,7 @@
 
     .prologue
     .line 775
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     invoke-virtual {v1}, Landroid/widget/BaseAdapter;->getCount()I
 
@@ -1601,7 +1601,7 @@
     if-lez v1, :cond_1
 
     .line 777
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v1, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
@@ -1616,7 +1616,7 @@
     if-eq v1, v0, :cond_0
 
     .line 780
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v1, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -1624,7 +1624,7 @@
 
     .line 781
     :cond_0
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v1, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
@@ -1643,7 +1643,7 @@
     const/16 v3, 0x4e3c
 
     .line 754
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentCommandBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -1652,7 +1652,7 @@
     invoke-virtual {v0}, Lcom/htc/opensense/album/ControlBase;->toggleVisibility()V
 
     .line 755
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivityListener()Lcom/htc/opensense/album/TemplateActivityInterface;
 
@@ -1665,7 +1665,7 @@
     invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
     .line 756
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentCommandBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -1678,7 +1678,7 @@
     if-nez v0, :cond_0
 
     .line 758
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v0, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -1689,7 +1689,7 @@
     invoke-virtual {p0, v0}, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->onUpdateViewCommandBarChange(I)V
 
     .line 760
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivityListener()Lcom/htc/opensense/album/TemplateActivityInterface;
 
@@ -1713,7 +1713,7 @@
 
     .prologue
     .line 743
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v2}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentTitleBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -1722,7 +1722,7 @@
     invoke-virtual {v2}, Lcom/htc/opensense/album/ControlBase;->toggleVisibility()V
 
     .line 744
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v2}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentTitleBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -1735,7 +1735,7 @@
     if-nez v2, :cond_0
 
     .line 746
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v2, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -1747,7 +1747,7 @@
 
     .line 747
     .local v1, nNumerator:I
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v2, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -1790,7 +1790,7 @@
     const/16 v1, 0x8
 
     .line 488
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentTitleBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -1799,7 +1799,7 @@
     invoke-virtual {v0, v1}, Lcom/htc/opensense/album/ControlBase;->setVisibility(I)V
 
     .line 489
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v0, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v0}, Lcom/htc/opensense/album/DisplayManagerInterface;->getCurrentCommandBar()Lcom/htc/opensense/album/ControlBase;
 
@@ -1833,12 +1833,12 @@
 
     .prologue
     .line 334
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     if-eqz v2, :cond_0
 
     .line 335
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mMainView:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
 
     check-cast v2, Lcom/htc/opensense/widget/FullScreenView;
 
@@ -1848,7 +1848,7 @@
 
     .line 337
     :cond_0
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v1, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
@@ -1860,7 +1860,7 @@
     invoke-virtual {v1}, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->onRelease()V
 
     .line 341
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFullscreenviewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
+    iget-object v2, p0, Lcom/htc/opensense/album/ViewTemplateBase;->mDispMgrListener:Lcom/htc/opensense/album/DisplayManagerInterface;
 
     invoke-interface {v2}, Lcom/htc/opensense/album/DisplayManagerInterface;->getActivityListener()Lcom/htc/opensense/album/TemplateActivityInterface;
 

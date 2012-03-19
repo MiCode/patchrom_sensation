@@ -44,7 +44,7 @@
     .parameter
 
     .prologue
-    .line 4312
+    .line 4356
     iput-object p1, p0, Lcom/android/phone/BluetoothHandsfree$DebugThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -58,7 +58,7 @@
     .parameter "x1"
 
     .prologue
-    .line 4312
+    .line 4356
     invoke-direct {p0, p1}, Lcom/android/phone/BluetoothHandsfree$DebugThread;-><init>(Lcom/android/phone/BluetoothHandsfree;)V
 
     return-void
@@ -70,18 +70,18 @@
     .locals 21
 
     .prologue
-    .line 4351
+    .line 4395
     const/16 v18, 0x1
 
-    .line 4352
+    .line 4396
     .local v18, oldService:Z
     const/16 v17, 0x0
 
-    .line 4353
+    .line 4397
     .local v17, oldRoam:Z
     const/16 v16, 0x0
 
-    .line 4355
+    .line 4399
     .local v16, oldAudio:Z
     :cond_0
     :goto_0
@@ -102,7 +102,7 @@
 
     if-eqz v3, :cond_e
 
-    .line 4356
+    .line 4400
     const-string v3, "debug.bt.hfp.battery"
 
     const/4 v4, -0x1
@@ -111,7 +111,7 @@
 
     move-result v11
 
-    .line 4357
+    .line 4401
     .local v11, batteryLevel:I
     if-ltz v11, :cond_1
 
@@ -119,25 +119,25 @@
 
     if-gt v11, v3, :cond_1
 
-    .line 4358
+    .line 4402
     new-instance v15, Landroid/content/Intent;
 
     invoke-direct {v15}, Landroid/content/Intent;-><init>()V
 
-    .line 4359
+    .line 4403
     .local v15, intent:Landroid/content/Intent;
     const-string v3, "level"
 
     invoke-virtual {v15, v3, v11}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 4360
+    .line 4404
     const-string v3, "scale"
 
     const/4 v4, 0x5
 
     invoke-virtual {v15, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 4361
+    .line 4405
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/phone/BluetoothHandsfree$DebugThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
@@ -150,12 +150,12 @@
     #calls: Lcom/android/phone/BluetoothHandsfree$BluetoothPhoneState;->updateBatteryState(Landroid/content/Intent;)V
     invoke-static {v3, v15}, Lcom/android/phone/BluetoothHandsfree$BluetoothPhoneState;->access$6500(Lcom/android/phone/BluetoothHandsfree$BluetoothPhoneState;Landroid/content/Intent;)V
 
-    .line 4364
+    .line 4408
     .end local v15           #intent:Landroid/content/Intent;
     :cond_1
     const/16 v20, 0x0
 
-    .line 4365
+    .line 4409
     .local v20, serviceStateChanged:Z
     const-string v3, "debug.bt.hfp.service"
 
@@ -169,16 +169,16 @@
 
     if-eq v3, v0, :cond_2
 
-    .line 4366
+    .line 4410
     if-nez v18, :cond_9
 
     const/16 v18, 0x1
 
-    .line 4367
+    .line 4411
     :goto_1
     const/16 v20, 0x1
 
-    .line 4369
+    .line 4413
     :cond_2
     const-string v3, "debug.bt.hfp.roam"
 
@@ -192,25 +192,25 @@
 
     if-eq v3, v0, :cond_3
 
-    .line 4370
+    .line 4414
     if-nez v17, :cond_a
 
     const/16 v17, 0x1
 
-    .line 4371
+    .line 4415
     :goto_2
     const/16 v20, 0x1
 
-    .line 4373
+    .line 4417
     :cond_3
     if-eqz v20, :cond_4
 
-    .line 4374
+    .line 4418
     new-instance v10, Landroid/os/Bundle;
 
     invoke-direct {v10}, Landroid/os/Bundle;-><init>()V
 
-    .line 4375
+    .line 4419
     .local v10, b:Landroid/os/Bundle;
     const-string v4, "state"
 
@@ -221,14 +221,14 @@
     :goto_3
     invoke-virtual {v10, v4, v3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 4376
+    .line 4420
     const-string v3, "roaming"
 
     move/from16 v0, v17
 
     invoke-virtual {v10, v3, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 4377
+    .line 4421
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/phone/BluetoothHandsfree$DebugThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
@@ -245,9 +245,9 @@
     move-result-object v5
 
     #calls: Lcom/android/phone/BluetoothHandsfree$BluetoothPhoneState;->updateServiceState(ZLandroid/telephony/ServiceState;)V
-    invoke-static {v3, v4, v5}, Lcom/android/phone/BluetoothHandsfree$BluetoothPhoneState;->access$2500(Lcom/android/phone/BluetoothHandsfree$BluetoothPhoneState;ZLandroid/telephony/ServiceState;)V
+    invoke-static {v3, v4, v5}, Lcom/android/phone/BluetoothHandsfree$BluetoothPhoneState;->access$2400(Lcom/android/phone/BluetoothHandsfree$BluetoothPhoneState;ZLandroid/telephony/ServiceState;)V
 
-    .line 4380
+    .line 4424
     .end local v10           #b:Landroid/os/Bundle;
     :cond_4
     const-string v3, "debug.bt.hfp.audio"
@@ -262,16 +262,16 @@
 
     if-eq v3, v0, :cond_5
 
-    .line 4381
+    .line 4425
     if-nez v16, :cond_c
 
     const/16 v16, 0x1
 
-    .line 4382
+    .line 4426
     :goto_4
     if-eqz v16, :cond_d
 
-    .line 4383
+    .line 4427
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/phone/BluetoothHandsfree$DebugThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
@@ -281,14 +281,14 @@
     #setter for: Lcom/android/phone/BluetoothHandsfree;->mUserWantsAudio:Z
     invoke-static {v3, v4}, Lcom/android/phone/BluetoothHandsfree;->access$4202(Lcom/android/phone/BluetoothHandsfree;Z)Z
 
-    .line 4384
+    .line 4428
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/phone/BluetoothHandsfree$DebugThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     invoke-virtual {v3}, Lcom/android/phone/BluetoothHandsfree;->audioOn()Z
 
-    .line 4390
+    .line 4434
     :cond_5
     :goto_5
     const-string v3, "debug.bt.hfp.signal"
@@ -299,7 +299,7 @@
 
     move-result v2
 
-    .line 4391
+    .line 4435
     .local v2, signalLevel:I
     if-ltz v2, :cond_6
 
@@ -307,7 +307,7 @@
 
     if-gt v2, v3, :cond_6
 
-    .line 4392
+    .line 4436
     new-instance v1, Landroid/telephony/SignalStrength;
 
     const/4 v3, -0x1
@@ -326,26 +326,26 @@
 
     invoke-direct/range {v1 .. v9}, Landroid/telephony/SignalStrength;-><init>(IIIIIIIZ)V
 
-    .line 4394
+    .line 4438
     .local v1, signalStrength:Landroid/telephony/SignalStrength;
     new-instance v15, Landroid/content/Intent;
 
     invoke-direct {v15}, Landroid/content/Intent;-><init>()V
 
-    .line 4395
+    .line 4439
     .restart local v15       #intent:Landroid/content/Intent;
     new-instance v12, Landroid/os/Bundle;
 
     invoke-direct {v12}, Landroid/os/Bundle;-><init>()V
 
-    .line 4396
+    .line 4440
     .local v12, data:Landroid/os/Bundle;
     invoke-virtual {v1, v12}, Landroid/telephony/SignalStrength;->fillInNotifierBundle(Landroid/os/Bundle;)V
 
-    .line 4397
+    .line 4441
     invoke-virtual {v15, v12}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 4398
+    .line 4442
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/phone/BluetoothHandsfree$DebugThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
@@ -358,7 +358,7 @@
     #calls: Lcom/android/phone/BluetoothHandsfree$BluetoothPhoneState;->updateSignalState(Landroid/content/Intent;)V
     invoke-static {v3, v15}, Lcom/android/phone/BluetoothHandsfree$BluetoothPhoneState;->access$6600(Lcom/android/phone/BluetoothHandsfree$BluetoothPhoneState;Landroid/content/Intent;)V
 
-    .line 4401
+    .line 4445
     .end local v1           #signalStrength:Landroid/telephony/SignalStrength;
     .end local v12           #data:Landroid/os/Bundle;
     .end local v15           #intent:Landroid/content/Intent;
@@ -373,7 +373,7 @@
 
     if-eqz v3, :cond_7
 
-    .line 4402
+    .line 4446
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/phone/BluetoothHandsfree$DebugThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
@@ -388,9 +388,9 @@
     move-result-object v3
 
     #calls: Lcom/android/phone/BluetoothHandsfree;->log(Ljava/lang/String;)V
-    invoke-static {v3}, Lcom/android/phone/BluetoothHandsfree;->access$1100(Ljava/lang/String;)V
+    invoke-static {v3}, Lcom/android/phone/BluetoothHandsfree;->access$3800(Ljava/lang/String;)V
 
-    .line 4405
+    .line 4449
     :cond_7
     const-wide/16 v3, 0x3e8
 
@@ -399,7 +399,7 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4410
+    .line 4454
     const-string v3, "debug.bt.unsol.inband"
 
     const/4 v4, -0x1
@@ -408,7 +408,7 @@
 
     move-result v14
 
-    .line 4412
+    .line 4456
     .local v14, inBandRing:I
     if-eqz v14, :cond_8
 
@@ -416,7 +416,7 @@
 
     if-ne v14, v3, :cond_0
 
-    .line 4413
+    .line 4457
     :cond_8
     new-instance v19, Landroid/bluetooth/AtCommandResult;
 
@@ -426,7 +426,7 @@
 
     invoke-direct {v0, v3}, Landroid/bluetooth/AtCommandResult;-><init>(I)V
 
-    .line 4415
+    .line 4459
     .local v19, result:Landroid/bluetooth/AtCommandResult;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -450,7 +450,7 @@
 
     invoke-virtual {v0, v3}, Landroid/bluetooth/AtCommandResult;->addResponse(Ljava/lang/String;)V
 
-    .line 4416
+    .line 4460
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/phone/BluetoothHandsfree$DebugThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
@@ -460,11 +460,11 @@
     move-result-object v4
 
     #calls: Lcom/android/phone/BluetoothHandsfree;->sendURC(Ljava/lang/String;)V
-    invoke-static {v3, v4}, Lcom/android/phone/BluetoothHandsfree;->access$1300(Lcom/android/phone/BluetoothHandsfree;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lcom/android/phone/BluetoothHandsfree;->access$1200(Lcom/android/phone/BluetoothHandsfree;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 4366
+    .line 4410
     .end local v2           #signalLevel:I
     .end local v14           #inBandRing:I
     .end local v19           #result:Landroid/bluetooth/AtCommandResult;
@@ -473,27 +473,27 @@
 
     goto/16 :goto_1
 
-    .line 4370
+    .line 4414
     :cond_a
     const/16 v17, 0x0
 
     goto/16 :goto_2
 
-    .line 4375
+    .line 4419
     .restart local v10       #b:Landroid/os/Bundle;
     :cond_b
     const/4 v3, 0x1
 
     goto/16 :goto_3
 
-    .line 4381
+    .line 4425
     .end local v10           #b:Landroid/os/Bundle;
     :cond_c
     const/16 v16, 0x0
 
     goto/16 :goto_4
 
-    .line 4386
+    .line 4430
     :cond_d
     move-object/from16 v0, p0
 
@@ -503,12 +503,12 @@
 
     goto/16 :goto_5
 
-    .line 4406
+    .line 4450
     .restart local v2       #signalLevel:I
     :catch_0
     move-exception v13
 
-    .line 4419
+    .line 4463
     .end local v2           #signalLevel:I
     .end local v11           #batteryLevel:I
     .end local v20           #serviceStateChanged:Z

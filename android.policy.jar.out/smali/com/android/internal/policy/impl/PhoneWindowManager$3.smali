@@ -30,7 +30,7 @@
     .line 784
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$3;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -147,22 +147,12 @@
 
     iget-boolean v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsGuestMode:Z
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_1
 
     .line 818
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$3;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->showGlobalActionsDialog()V
-
-    goto :goto_0
-
-    .line 821
-    :cond_3
-    const-string v1, "WindowManager"
-
-    const-string v2, "LONG_PRESS_POWER_GLOBAL_ACTIONS, do not show the GlobalActionsDialog for guest mode"
-
-    invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
@@ -208,6 +198,7 @@
     invoke-static {v1, v4}, Lcom/android/internal/app/ShutdownThread;->shutdown(Landroid/content/Context;Z)V
 
     .line 854
+    :cond_3
     :goto_1
     const-string v1, "WindowManager"
 
@@ -223,22 +214,12 @@
 
     iget-boolean v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsGuestMode:Z
 
-    if-nez v1, :cond_5
+    if-nez v1, :cond_3
 
     .line 847
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$3;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->showGlobalActionsDialog()V
-
-    goto :goto_1
-
-    .line 850
-    :cond_5
-    const-string v1, "WindowManager"
-
-    const-string v2, "LONG_PRESS_POWER_SHUT_OFF, do not show the GlobalActionsDialog for guest mode"
-
-    invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_1
 

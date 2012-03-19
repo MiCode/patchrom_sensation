@@ -21,7 +21,7 @@
 
     .prologue
     .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 12
     iput-object p1, p0, Lcom/htc/app/ItemInfo;->mFile:Ljava/io/File;
@@ -45,7 +45,7 @@
 
     .prologue
     .line 17
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 18
     iput-boolean p1, p0, Lcom/htc/app/ItemInfo;->isFolder:Z

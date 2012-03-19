@@ -39,7 +39,7 @@
     .line 38
     iput-object p1, p0, Lcom/android/phone/widget/ButtonGroup$ButtonTag;->this$0:Lcom/android/phone/widget/ButtonGroup;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 35
     iput v0, p0, Lcom/android/phone/widget/ButtonGroup$ButtonTag;->id:I

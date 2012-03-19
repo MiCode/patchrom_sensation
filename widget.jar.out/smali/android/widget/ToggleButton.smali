@@ -289,7 +289,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/widget/ToggleButton;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
 
     const v2, 0x104048a
 
@@ -309,7 +309,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/widget/ToggleButton;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
 
     const v2, 0x104048b
 

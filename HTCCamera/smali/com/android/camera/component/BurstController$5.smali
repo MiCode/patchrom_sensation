@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 359
+    .line 360
     iput-object p1, p0, Lcom/android/camera/component/BurstController$5;->this$0:Lcom/android/camera/component/BurstController;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,10 +45,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 362
+    .line 363
     iget-object v0, p0, Lcom/android/camera/component/BurstController$5;->this$0:Lcom/android/camera/component/BurstController;
 
-    #getter for: Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/BurstController;->access$1200(Lcom/android/camera/component/BurstController;)Ljava/lang/String;
 
     move-result-object v2
@@ -78,7 +78,7 @@
 
     invoke-static {v2, v0}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 364
+    .line 365
     iget-object v0, p0, Lcom/android/camera/component/BurstController$5;->this$0:Lcom/android/camera/component/BurstController;
 
     #getter for: Lcom/android/camera/component/BurstController;->m_postviewData:[[B
@@ -88,7 +88,7 @@
 
     if-nez v0, :cond_0
 
-    .line 365
+    .line 366
     iget-object v0, p0, Lcom/android/camera/component/BurstController$5;->this$0:Lcom/android/camera/component/BurstController;
 
     const/4 v2, 0x5
@@ -98,7 +98,7 @@
     #setter for: Lcom/android/camera/component/BurstController;->m_postviewData:[[B
     invoke-static {v0, v2}, Lcom/android/camera/component/BurstController;->access$1302(Lcom/android/camera/component/BurstController;[[B)[[B
 
-    .line 366
+    .line 367
     :cond_0
     iget-object v0, p0, Lcom/android/camera/component/BurstController$5;->this$0:Lcom/android/camera/component/BurstController;
 
@@ -116,12 +116,12 @@
 
     aput-object p1, v0, v2
 
-    .line 369
+    .line 370
     iget-object v0, p0, Lcom/android/camera/component/BurstController$5;->this$0:Lcom/android/camera/component/BurstController;
 
     invoke-static {v0}, Lcom/android/camera/component/BurstController;->access$1104(Lcom/android/camera/component/BurstController;)I
 
-    .line 370
+    .line 371
     iget-object v0, p0, Lcom/android/camera/component/BurstController$5;->this$0:Lcom/android/camera/component/BurstController;
 
     #getter for: Lcom/android/camera/component/BurstController;->m_CurrentCaptureIndex:I
@@ -138,7 +138,7 @@
 
     if-lt v0, v2, :cond_1
 
-    .line 372
+    .line 373
     iget-object v0, p0, Lcom/android/camera/component/BurstController$5;->this$0:Lcom/android/camera/component/BurstController;
 
     iget-object v2, p0, Lcom/android/camera/component/BurstController$5;->this$0:Lcom/android/camera/component/BurstController;
@@ -152,19 +152,19 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/android/camera/component/BurstController;->sendMessage(Lcom/android/camera/component/Component;I)Z
 
-    .line 373
+    .line 374
     iget-object v0, p0, Lcom/android/camera/component/BurstController$5;->this$0:Lcom/android/camera/component/BurstController;
 
     #setter for: Lcom/android/camera/component/BurstController;->m_CurrentCaptureIndex:I
     invoke-static {v0, v1}, Lcom/android/camera/component/BurstController;->access$1102(Lcom/android/camera/component/BurstController;I)I
 
-    .line 375
+    .line 376
     :cond_1
     return-void
 
     :cond_2
     move v0, v1
 
-    .line 362
+    .line 363
     goto :goto_0
 .end method

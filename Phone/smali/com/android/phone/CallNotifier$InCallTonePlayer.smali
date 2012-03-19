@@ -160,40 +160,14 @@
 .end method
 
 .method public run()V
-    .locals 13
+    .locals 15
 
     .prologue
-    .line 2171
-    iget-object v10, p0, Lcom/android/phone/CallNotifier$InCallTonePlayer;->this$0:Lcom/android/phone/CallNotifier;
+    const/4 v11, 0x0
 
-    new-instance v11, Ljava/lang/StringBuilder;
+    const/4 v14, 0x2
 
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v12, "InCallTonePlayer.run(toneId = "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    iget v12, p0, Lcom/android/phone/CallNotifier$InCallTonePlayer;->mToneId:I
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    const-string v12, ")..."
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    #calls: Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-    invoke-static {v10, v11}, Lcom/android/phone/CallNotifier;->access$400(Lcom/android/phone/CallNotifier;Ljava/lang/String;)V
+    const/4 v13, 0x1
 
     .line 2173
     const/4 v8, 0x0
@@ -203,7 +177,7 @@
     iget-object v10, p0, Lcom/android/phone/CallNotifier$InCallTonePlayer;->this$0:Lcom/android/phone/CallNotifier;
 
     #getter for: Lcom/android/phone/CallNotifier;->mCM:Lcom/android/internal/telephony/CallManager;
-    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$500(Lcom/android/phone/CallNotifier;)Lcom/android/internal/telephony/CallManager;
+    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$400(Lcom/android/phone/CallNotifier;)Lcom/android/internal/telephony/CallManager;
 
     move-result-object v10
 
@@ -223,7 +197,7 @@
     iget-object v10, p0, Lcom/android/phone/CallNotifier$InCallTonePlayer;->this$0:Lcom/android/phone/CallNotifier;
 
     #getter for: Lcom/android/phone/CallNotifier;->mCM:Lcom/android/internal/telephony/CallManager;
-    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$500(Lcom/android/phone/CallNotifier;)Lcom/android/internal/telephony/CallManager;
+    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$400(Lcom/android/phone/CallNotifier;)Lcom/android/internal/telephony/CallManager;
 
     move-result-object v10
 
@@ -276,19 +250,15 @@
     iget-object v10, p0, Lcom/android/phone/CallNotifier$InCallTonePlayer;->this$0:Lcom/android/phone/CallNotifier;
 
     #getter for: Lcom/android/phone/CallNotifier;->mAudioManager:Landroid/media/AudioManager;
-    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$600(Lcom/android/phone/CallNotifier;)Landroid/media/AudioManager;
+    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$500(Lcom/android/phone/CallNotifier;)Landroid/media/AudioManager;
 
     move-result-object v10
-
-    const/4 v11, 0x0
 
     invoke-virtual {v10, v11}, Landroid/media/AudioManager;->getStreamVolume(I)I
 
     move-result v10
 
-    const/4 v11, 0x2
-
-    if-le v10, v11, :cond_7
+    if-le v10, v14, :cond_7
 
     .line 2187
     const/16 v9, 0x50
@@ -305,7 +275,7 @@
     iget-object v10, p0, Lcom/android/phone/CallNotifier$InCallTonePlayer;->this$0:Lcom/android/phone/CallNotifier;
 
     #getter for: Lcom/android/phone/CallNotifier;->mBluetoothHandsfree:Lcom/android/phone/BluetoothHandsfree;
-    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$800(Lcom/android/phone/CallNotifier;)Lcom/android/phone/BluetoothHandsfree;
+    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$700(Lcom/android/phone/CallNotifier;)Lcom/android/phone/BluetoothHandsfree;
 
     move-result-object v10
 
@@ -314,7 +284,7 @@
     iget-object v10, p0, Lcom/android/phone/CallNotifier$InCallTonePlayer;->this$0:Lcom/android/phone/CallNotifier;
 
     #getter for: Lcom/android/phone/CallNotifier;->mBluetoothHandsfree:Lcom/android/phone/BluetoothHandsfree;
-    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$800(Lcom/android/phone/CallNotifier;)Lcom/android/phone/BluetoothHandsfree;
+    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$700(Lcom/android/phone/CallNotifier;)Lcom/android/phone/BluetoothHandsfree;
 
     move-result-object v10
 
@@ -372,7 +342,7 @@
     iget-object v10, p0, Lcom/android/phone/CallNotifier$InCallTonePlayer;->this$0:Lcom/android/phone/CallNotifier;
 
     #getter for: Lcom/android/phone/CallNotifier;->mAudioManager:Landroid/media/AudioManager;
-    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$600(Lcom/android/phone/CallNotifier;)Landroid/media/AudioManager;
+    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$500(Lcom/android/phone/CallNotifier;)Landroid/media/AudioManager;
 
     move-result-object v10
 
@@ -382,9 +352,7 @@
 
     .line 2354
     .local v4, ringerMode:I
-    const/4 v10, 0x2
-
-    if-ne v3, v10, :cond_15
+    if-ne v3, v14, :cond_15
 
     .line 2355
     const/16 v10, 0x5d
@@ -394,12 +362,10 @@
     .line 2356
     if-eqz v4, :cond_4
 
-    const/4 v10, 0x1
-
-    if-eq v4, v10, :cond_4
+    if-eq v4, v13, :cond_4
 
     .line 2358
-    invoke-static {}, Lcom/android/phone/CallNotifier;->access$900()Z
+    invoke-static {}, Lcom/android/phone/CallNotifier;->access$800()Z
 
     move-result v10
 
@@ -426,7 +392,7 @@
     move-result-object v11
 
     #calls: Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-    invoke-static {v10, v11}, Lcom/android/phone/CallNotifier;->access$400(Lcom/android/phone/CallNotifier;Ljava/lang/String;)V
+    invoke-static {v10, v11}, Lcom/android/phone/CallNotifier;->access$900(Lcom/android/phone/CallNotifier;Ljava/lang/String;)V
 
     .line 2359
     :cond_3
@@ -446,9 +412,7 @@
     :try_start_1
     iget v10, p0, Lcom/android/phone/CallNotifier$InCallTonePlayer;->mState:I
 
-    const/4 v11, 0x2
-
-    if-eq v10, v11, :cond_5
+    if-eq v10, v14, :cond_5
 
     .line 2388
     const/4 v10, 0x1
@@ -504,7 +468,7 @@
     iget-object v10, p0, Lcom/android/phone/CallNotifier$InCallTonePlayer;->this$0:Lcom/android/phone/CallNotifier;
 
     #getter for: Lcom/android/phone/CallNotifier;->mCM:Lcom/android/internal/telephony/CallManager;
-    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$500(Lcom/android/phone/CallNotifier;)Lcom/android/internal/telephony/CallManager;
+    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$400(Lcom/android/phone/CallNotifier;)Lcom/android/internal/telephony/CallManager;
 
     move-result-object v10
 
@@ -539,9 +503,7 @@
     .line 2199
     .end local v9           #toneVolume:I
     :sswitch_1
-    const/4 v10, 0x2
-
-    if-ne v3, v10, :cond_8
+    if-ne v3, v14, :cond_8
 
     .line 2200
     const/16 v8, 0x60
@@ -560,9 +522,7 @@
     .end local v7           #toneLengthMillis:I
     .end local v9           #toneVolume:I
     :cond_8
-    const/4 v10, 0x1
-
-    if-eq v3, v10, :cond_9
+    if-eq v3, v13, :cond_9
 
     const/4 v10, 0x3
 
@@ -666,7 +626,7 @@
     iget-object v10, p0, Lcom/android/phone/CallNotifier$InCallTonePlayer;->this$0:Lcom/android/phone/CallNotifier;
 
     #getter for: Lcom/android/phone/CallNotifier;->mApplication:Lcom/android/phone/PhoneApp;
-    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$700(Lcom/android/phone/CallNotifier;)Lcom/android/phone/PhoneApp;
+    invoke-static {v10}, Lcom/android/phone/CallNotifier;->access$600(Lcom/android/phone/CallNotifier;)Lcom/android/phone/PhoneApp;
 
     move-result-object v10
 
@@ -674,9 +634,7 @@
 
     iget v10, v10, Lcom/android/phone/OtaUtils$CdmaOtaConfigData;->otaPlaySuccessFailureTone:I
 
-    const/4 v11, 0x1
-
-    if-ne v10, v11, :cond_b
+    if-ne v10, v13, :cond_b
 
     .line 2243
     const/16 v8, 0x5d
@@ -921,7 +879,7 @@
     if-eqz v4, :cond_4
 
     .line 2367
-    invoke-static {}, Lcom/android/phone/CallNotifier;->access$900()Z
+    invoke-static {}, Lcom/android/phone/CallNotifier;->access$800()Z
 
     move-result v10
 
@@ -948,7 +906,7 @@
     move-result-object v11
 
     #calls: Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-    invoke-static {v10, v11}, Lcom/android/phone/CallNotifier;->access$400(Lcom/android/phone/CallNotifier;Ljava/lang/String;)V
+    invoke-static {v10, v11}, Lcom/android/phone/CallNotifier;->access$900(Lcom/android/phone/CallNotifier;Ljava/lang/String;)V
 
     .line 2368
     :cond_10
@@ -973,12 +931,10 @@
     :cond_12
     if-eqz v4, :cond_4
 
-    const/4 v10, 0x1
-
-    if-eq v4, v10, :cond_4
+    if-eq v4, v13, :cond_4
 
     .line 2375
-    invoke-static {}, Lcom/android/phone/CallNotifier;->access$900()Z
+    invoke-static {}, Lcom/android/phone/CallNotifier;->access$800()Z
 
     move-result v10
 
@@ -1005,7 +961,7 @@
     move-result-object v11
 
     #calls: Lcom/android/phone/CallNotifier;->log(Ljava/lang/String;)V
-    invoke-static {v10, v11}, Lcom/android/phone/CallNotifier;->access$400(Lcom/android/phone/CallNotifier;Ljava/lang/String;)V
+    invoke-static {v10, v11}, Lcom/android/phone/CallNotifier;->access$900(Lcom/android/phone/CallNotifier;Ljava/lang/String;)V
 
     .line 2376
     :cond_13

@@ -106,13 +106,6 @@
 
     iput-boolean v2, v1, Landroid/service/wallpaper/WallpaperService$Engine;->mScreenOn:Z
 
-    .line 192
-    const-string v1, "WallpaperService"
-
-    const-string v2, "Dispatch wallpaper Screen Off, reset mRosieOff=true"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 193
     iget-object v1, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 

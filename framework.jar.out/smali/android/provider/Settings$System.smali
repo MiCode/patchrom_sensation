@@ -726,13 +726,13 @@
     .locals 8
 
     .prologue
-    const/4 v7, 0x3
+    const/4 v7, 0x4
 
-    const/4 v6, 0x2
+    const/4 v6, 0x3
 
-    const/4 v5, 0x0
+    const/4 v5, 0x2
 
-    const/4 v4, 0x5
+    const/4 v4, 0x0
 
     const/4 v3, 0x1
 
@@ -986,34 +986,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 906
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0, v4}, Ljava/util/HashSet;-><init>(I)V
-
-    sput-object v0, Landroid/provider/Settings$System;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    .line 907
-    sget-object v0, Landroid/provider/Settings$System;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    const-string/jumbo v1, "screen_brightness"
-
-    invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    .line 908
-    sget-object v0, Landroid/provider/Settings$System;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    const-string/jumbo v1, "screen_brightness_mode"
-
-    invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    .line 909
-    sget-object v0, Landroid/provider/Settings$System;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    const-string/jumbo v1, "screen_off_timeout"
-
-    invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
     .line 912
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
@@ -1219,7 +1191,7 @@
 
     const-string/jumbo v1, "volume_voice"
 
-    aput-object v1, v0, v5
+    aput-object v1, v0, v4
 
     const-string/jumbo v1, "volume_system"
 
@@ -1227,21 +1199,21 @@
 
     const-string/jumbo v1, "volume_ring"
 
-    aput-object v1, v0, v6
+    aput-object v1, v0, v5
 
     const-string/jumbo v1, "volume_music"
 
+    aput-object v1, v0, v6
+
+    const-string/jumbo v1, "volume_alarm"
+
     aput-object v1, v0, v7
 
-    const/4 v1, 0x4
+    const/4 v1, 0x5
 
-    const-string/jumbo v2, "volume_alarm"
+    const-string/jumbo v2, "volume_notification"
 
     aput-object v2, v0, v1
-
-    const-string/jumbo v1, "volume_notification"
-
-    aput-object v1, v0, v4
 
     const/4 v1, 0x6
 
@@ -1309,7 +1281,7 @@
 
     const-string/jumbo v1, "stay_on_while_plugged_in"
 
-    aput-object v1, v0, v5
+    aput-object v1, v0, v4
 
     const-string/jumbo v1, "wifi_use_static_ip"
 
@@ -1317,21 +1289,21 @@
 
     const-string/jumbo v1, "wifi_static_ip"
 
-    aput-object v1, v0, v6
+    aput-object v1, v0, v5
 
     const-string/jumbo v1, "wifi_static_gateway"
 
+    aput-object v1, v0, v6
+
+    const-string/jumbo v1, "wifi_static_netmask"
+
     aput-object v1, v0, v7
 
-    const/4 v1, 0x4
+    const/4 v1, 0x5
 
-    const-string/jumbo v2, "wifi_static_netmask"
+    const-string/jumbo v2, "wifi_static_dns1"
 
     aput-object v2, v0, v1
-
-    const-string/jumbo v1, "wifi_static_dns1"
-
-    aput-object v1, v0, v4
 
     const/4 v1, 0x6
 
@@ -1695,9 +1667,6 @@
 
     .line 2174
     invoke-static {p0}, Landroid/provider/Settings$System;->saveQuickTipState(Landroid/content/ContentResolver;)V
-
-    .line 2177
-    invoke-static {p0}, Landroid/provider/Settings$System;->printQuickTipState(Landroid/content/ContentResolver;)V
 
     .line 2179
     return-void
@@ -2112,11 +2081,8 @@
     .line 2158
     const/4 v0, 0x0
 
-    .line 2162
-    :cond_0
-    invoke-static {p0}, Landroid/provider/Settings$System;->printQuickTipState(Landroid/content/ContentResolver;)V
-
     .line 2165
+    :cond_0
     return v0
 .end method
 
@@ -2149,9 +2115,6 @@
     .prologue
     .line 2196
     invoke-static {p0}, Landroid/provider/Settings$System;->loadQuickTipState(Landroid/content/ContentResolver;)V
-
-    .line 2199
-    invoke-static {p0}, Landroid/provider/Settings$System;->printQuickTipState(Landroid/content/ContentResolver;)V
 
     .line 2202
     sget-boolean v0, Landroid/provider/Settings$System;->sShowQuickTipFlag:Z
@@ -2366,12 +2329,6 @@
     .parameter "resolver"
 
     .prologue
-    .line 2229
-    const-string/jumbo v3, "loadQuickTipState()"
-
-    #calls: Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-    invoke-static {v3}, Landroid/provider/Settings;->access$000(Ljava/lang/String;)V
-
     .line 2231
     new-instance v3, Ljava/util/HashSet;
 
@@ -2388,14 +2345,14 @@
 
     .line 2235
     .local v2, value:Ljava/lang/String;
-    if-nez v2, :cond_0
+    if-nez v2, :cond_1
 
     .line 2261
-    :goto_0
+    :cond_0
     return-void
 
     .line 2239
-    :cond_0
+    :cond_1
     const-string v3, ";"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -2407,16 +2364,10 @@
     const/4 v0, 0x0
 
     .local v0, index:I
-    :goto_1
+    :goto_0
     array-length v3, v1
 
-    if-ge v0, v3, :cond_1
-
-    .line 2242
-    aget-object v3, v1, v0
-
-    #calls: Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-    invoke-static {v3}, Landroid/provider/Settings;->access$000(Ljava/lang/String;)V
+    if-ge v0, v3, :cond_0
 
     .line 2245
     packed-switch v0, :pswitch_data_0
@@ -2429,10 +2380,10 @@
     invoke-interface {v3, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     .line 2240
-    :goto_2
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 2247
     :pswitch_0
@@ -2450,7 +2401,7 @@
 
     sput-boolean v3, Landroid/provider/Settings$System;->sGlobalQuickTipFlag:Z
 
-    goto :goto_2
+    goto :goto_1
 
     .line 2250
     :pswitch_1
@@ -2468,17 +2419,9 @@
 
     sput-boolean v3, Landroid/provider/Settings$System;->sShowQuickTipFlag:Z
 
-    goto :goto_2
-
-    .line 2259
-    :cond_1
-    invoke-static {p0}, Landroid/provider/Settings$System;->printQuickTipState(Landroid/content/ContentResolver;)V
-
-    goto :goto_0
+    goto :goto_1
 
     .line 2245
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -2666,72 +2609,14 @@
     .parameter "value"
 
     .prologue
-    .line 997
-    sget-object v0, Landroid/provider/Settings$System;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 998
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v1, "name: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    #calls: Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-    invoke-static {v0}, Landroid/provider/Settings;->access$000(Ljava/lang/String;)V
-
-    .line 999
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v1, "value: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    #calls: Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-    invoke-static {v0}, Landroid/provider/Settings;->access$000(Ljava/lang/String;)V
-
-    .line 1000
-    #calls: Landroid/provider/Settings;->traceCallingStack()V
-    invoke-static {}, Landroid/provider/Settings;->access$100()V
-
     .line 1006
-    :cond_0
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     .line 1007
     const-string v0, "Settings"
@@ -2775,7 +2660,7 @@
     :goto_0
     return v0
 
-    :cond_1
+    :cond_0
     sget-object v0, Landroid/provider/Settings$System;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {p0, v0, p1, p2}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)Z
@@ -2791,12 +2676,6 @@
 
     .prologue
     const/16 v4, 0x3b
-
-    .line 2207
-    const-string/jumbo v3, "saveQuickTipState()"
-
-    #calls: Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-    invoke-static {v3}, Landroid/provider/Settings;->access$000(Ljava/lang/String;)V
 
     .line 2210
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2915,9 +2794,6 @@
 
     .line 2188
     invoke-static {p0}, Landroid/provider/Settings$System;->saveQuickTipState(Landroid/content/ContentResolver;)V
-
-    .line 2191
-    invoke-static {p0}, Landroid/provider/Settings$System;->printQuickTipState(Landroid/content/ContentResolver;)V
 
     .line 2193
     return-void

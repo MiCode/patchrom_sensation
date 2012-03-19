@@ -213,7 +213,7 @@
     :try_start_1
     move-object/from16 v0, p0
 
-    iget-boolean v4, v0, Lcom/android/camera/ImageManager$1AddImageCancelable;->mCancel:Z
+    iget-boolean v4, v0, Lcom/android/camera/ImageManager$BaseCancelable;->mCancel:Z
 
     if-eqz v4, :cond_9
 

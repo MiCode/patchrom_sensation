@@ -23,7 +23,7 @@
 # static fields
 .field private static final DIALOG_DISMISS_DELAY:I = 0x12c
 
-.field private static final HTC_DEBUG:Z = true
+.field private static final HTC_DEBUG:Z = false
 
 .field private static final MESSAGE_DISMISS:I = 0x0
 
@@ -1173,31 +1173,8 @@
     .local v1, config:Landroid/content/res/Configuration;
     iget-object v3, v1, Landroid/content/res/Configuration;->skin:Ljava/lang/String;
 
-    .line 602
-    .local v3, skinPackage:Ljava/lang/String;
-    const-string v5, "GlobalActions"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "updateDialogSelector(), skinPackage == "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 603
+    .local v3, skinPackage:Ljava/lang/String;
     const-string v5, ""
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

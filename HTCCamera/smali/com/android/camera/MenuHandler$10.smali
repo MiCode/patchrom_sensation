@@ -30,7 +30,7 @@
     .line 890
     iput-object p1, p0, Lcom/android/camera/MenuHandler$10;->this$0:Lcom/android/camera/MenuHandler;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

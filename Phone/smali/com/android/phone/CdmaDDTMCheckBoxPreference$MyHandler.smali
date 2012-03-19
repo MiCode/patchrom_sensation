@@ -51,7 +51,7 @@
 .end method
 
 .method private handleGetDDTMResponse(Landroid/os/Message;)V
-    .locals 6
+    .locals 5
     .parameter "msg"
 
     .prologue
@@ -67,31 +67,6 @@
     iget-object v2, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v2, :cond_0
-
-    .line 80
-    const-string v2, "CdmaDDTMCheckBoxPreference"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "OoO handleGetDDTMResponse: ar.exception="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 81
     iget-object v2, p0, Lcom/android/phone/CdmaDDTMCheckBoxPreference$MyHandler;->this$0:Lcom/android/phone/CdmaDDTMCheckBoxPreference;
@@ -112,37 +87,8 @@
 
     aget v1, v2, v3
 
-    .line 84
-    .local v1, enable:I
-    const-string v2, "CdmaDDTMCheckBoxPreference"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "OoO handleGetDDTMResponse: DDTM state successfully queried.("
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ")"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 85
+    .local v1, enable:I
     iget-object v4, p0, Lcom/android/phone/CdmaDDTMCheckBoxPreference$MyHandler;->this$0:Lcom/android/phone/CdmaDDTMCheckBoxPreference;
 
     if-eqz v1, :cond_1
@@ -161,7 +107,7 @@
 .end method
 
 .method private handleSetDDTMResponse(Landroid/os/Message;)V
-    .locals 4
+    .locals 3
     .parameter "msg"
 
     .prologue
@@ -176,40 +122,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 99
-    const-string v1, "CdmaDDTMCheckBoxPreference"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "OoO handleSetDDTMResponse: ar.exception="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 101
-    :cond_0
-    const-string v1, "CdmaDDTMCheckBoxPreference"
-
-    const-string v2, "OoO handleSetDDTMResponse: re get"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 103
+    :cond_0
     iget-object v1, p0, Lcom/android/phone/CdmaDDTMCheckBoxPreference$MyHandler;->this$0:Lcom/android/phone/CdmaDDTMCheckBoxPreference;
 
     iget-object v1, v1, Lcom/android/phone/CdmaDDTMCheckBoxPreference;->mPhone:Lcom/android/internal/telephony/Phone;

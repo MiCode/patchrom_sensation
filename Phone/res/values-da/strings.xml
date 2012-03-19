@@ -214,7 +214,7 @@ Det kan tage flere minutter."</string>
     <string name="end_voip_cs_call">Tilbage til VoIP-opkald</string>
     <string name="sim_swap_error">Kunne ikke registrere SIM-kortet. Sørg for, at SIM-kortet er korrekt sat i, og genstart telefonen.</string>
     <string name="entitlement_check_fail">Aktiver tethering på denne enhed ved at gå til att.com/mywireless, eller indtast 611.</string>
-    <string name="entitlement_check_fail_others">Der er et midlertidigt netværksproblem, som forhindrer aktivering af funktionen Mobilt hotspot. Prøv igen senere.</string>
+    <string name="entitlement_check_fail_others">Der er et midlertidigt netværksproblem, som forhindrer aktivering af funktionen Hotspot. Prøv igen senere.</string>
     <string name="entitlement_check_conn_fail">Forbindelse mislykkedes</string>
     <string name="tmo_roaming_msg_title">Vil du aktivere data under roaming? (der skal betales internationale roaming-gebyrer)</string>
     <string name="htc_cdma_network_busy_title">Netværksstatus</string>
@@ -238,8 +238,8 @@ Det kan tage flere minutter."</string>
     <string name="htc_preferred_network_global_mode">Global tilstand</string>
     <string name="htc_preferred_network_cdma_evdo_aut_mode">CDMA-tilstand</string>
     <string name="htc_preferred_network_gsm_wcdma_aut_mode">GSM/UMTS-tilstand</string>
-    <string name="htc_preferred_network_lte_mode">LTE Mode</string>
-    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM / UMTS / LTE Mode</string>
+    <string name="htc_preferred_network_lte_mode">LTE Tilstand</string>
+    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM / UMTS / LTE Tilstand</string>
     <string name="title_gsm_preferred_network_options">GSM/UMTS-tilstand</string>
     <string name="btn_Menu_Edit">Rediger</string>
     <string name="btn_Menu_Set_Done">Udført</string>
@@ -491,7 +491,7 @@ Meget højere gebyrer kan komme på tale."</string>
     <string name="contact_status_update_attribution_with_date">%1$s via %2$s</string>
     <string name="htc_emergency_hint">Nødopkald-tilstand</string>
     <string name="label_phone">Telefon</string>
-    <string name="htc_failed">Mislykkedes</string>
+    <string name="htc_failed">Fejl</string>
     <string name="keyguard_password_enter_pin_code_with_counter_verizon">Indtast din SIM-pinkode på 4 - 8 cifre</string>
     <string name="keyguard_password_enter_puk_code_with_counter_verizon">Indtast din 8-cifrede SIM PUK-kode</string>
     <string name="keyguard_password_enter_new_pin_code_verizon">Indtast en ny SIM-pinkode på 4 - 8 cifre:</string>

@@ -33,7 +33,7 @@
     .line 581
     iput-object p1, p0, Lcom/htc/opensense/cache/CacheManager$FileInfo;->this$0:Lcom/htc/opensense/cache/CacheManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 582
     iput-object p2, p0, Lcom/htc/opensense/cache/CacheManager$FileInfo;->uri:Landroid/net/Uri;

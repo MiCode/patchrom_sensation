@@ -18,7 +18,7 @@
 # static fields
 .field private static CUSTOMIZED_NAME:Ljava/lang/String; = null
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static DEVICE_NAME:Ljava/lang/String; = null
 
@@ -120,19 +120,12 @@
 
     .prologue
     .line 116
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 112
     const/4 v1, -0x1
 
     iput v1, p0, Lcom/android/phone/HtcIncallControlPanel;->mLastSrc:I
-
-    .line 118
-    const-string v1, "HtcIncallControlPanel"
-
-    const-string v2, "constructed"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 120
     iput-object p1, p0, Lcom/android/phone/HtcIncallControlPanel;->mIncallScreen:Lcom/android/phone/InCallScreen;
@@ -351,7 +344,7 @@
 .end method
 
 .method private static final getDeviceName()Ljava/lang/String;
-    .locals 3
+    .locals 2
 
     .prologue
     .line 1046
@@ -393,31 +386,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 1052
-    const-string v0, "HtcIncallControlPanel"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "use model name: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/android/phone/HtcIncallControlPanel;->MODEL_NAME:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1053
     sget-object v0, Lcom/android/phone/HtcIncallControlPanel;->MODEL_NAME:Ljava/lang/String;
 
@@ -430,33 +398,8 @@
 
     return-object v0
 
-    .line 1055
-    :cond_2
-    const-string v0, "HtcIncallControlPanel"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "use CUSTOMIZED_NAME: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/android/phone/HtcIncallControlPanel;->CUSTOMIZED_NAME:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1056
+    :cond_2
     sget-object v0, Lcom/android/phone/HtcIncallControlPanel;->CUSTOMIZED_NAME:Ljava/lang/String;
 
     sput-object v0, Lcom/android/phone/HtcIncallControlPanel;->DEVICE_NAME:Ljava/lang/String;
@@ -1761,13 +1704,6 @@
     :goto_3
     if-nez v0, :cond_7
 
-    .line 627
-    const-string v5, "HtcIncallControlPanel"
-
-    const-string v7, "hold: disabled"
-
-    invoke-static {v5, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 629
     iget-object v5, p0, Lcom/android/phone/HtcIncallControlPanel;->mControlHold:Lcom/android/phone/widget/ControlButton;
 
@@ -1820,16 +1756,9 @@
     .line 624
     goto :goto_3
 
-    .line 634
+    .line 636
     .restart local v0       #canHold:Z
     :cond_7
-    const-string v6, "HtcIncallControlPanel"
-
-    const-string v7, "hold: enabled"
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 636
     iget-object v6, p0, Lcom/android/phone/HtcIncallControlPanel;->mControlHold:Lcom/android/phone/widget/ControlButton;
 
     invoke-virtual {v6}, Lcom/android/phone/widget/ControlButton;->isEnabled()Z
@@ -1949,7 +1878,7 @@
 .end method
 
 .method private updateMuteState(Lcom/android/internal/telephony/Phone;)V
-    .locals 5
+    .locals 4
     .parameter "phone"
 
     .prologue
@@ -1958,56 +1887,8 @@
 
     move-result v0
 
-    .line 390
-    .local v0, muteOn:Z
-    const-string v2, "HtcIncallControlPanel"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "mute: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 391
-    const-string v2, "HtcIncallControlPanel"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "mMuteState: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-boolean v4, p0, Lcom/android/phone/HtcIncallControlPanel;->mMuteState:Z
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 394
+    .local v0, muteOn:Z
     iget-boolean v2, p0, Lcom/android/phone/HtcIncallControlPanel;->mMuteState:Z
 
     if-eq v2, v0, :cond_0
@@ -2104,15 +1985,8 @@
 
     if-eqz p3, :cond_3
 
-    .line 439
-    :cond_0
-    const-string v4, "HtcIncallControlPanel"
-
-    const-string v5, "speaker: disabled"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 441
+    :cond_0
     iget-object v4, p0, Lcom/android/phone/HtcIncallControlPanel;->mControlSpeaker:Lcom/android/phone/widget/ControlButton;
 
     invoke-virtual {v4}, Lcom/android/phone/widget/ControlButton;->isEnabled()Z
@@ -2186,16 +2060,9 @@
     .line 510
     return-void
 
-    .line 446
+    .line 448
     .end local v2           #resId:I
     :cond_3
-    const-string v4, "HtcIncallControlPanel"
-
-    const-string v5, "speaker: enabled"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 448
     iget-object v4, p0, Lcom/android/phone/HtcIncallControlPanel;->mControlSpeaker:Lcom/android/phone/widget/ControlButton;
 
     invoke-virtual {v4}, Lcom/android/phone/widget/ControlButton;->isEnabled()Z
@@ -2287,7 +2154,7 @@
 
     invoke-virtual {v4, v7}, Lcom/android/phone/widget/ControlButton;->setEnabled(Z)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 470
     .end local v0           #cr:Landroid/content/ContentResolver;
@@ -2297,7 +2164,7 @@
 
     invoke-virtual {v4, v7}, Lcom/android/phone/widget/ControlButton;->setEnabled(Z)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 479
     :cond_6
@@ -2671,17 +2538,10 @@
 .end method
 
 .method destroy()V
-    .locals 3
+    .locals 2
 
     .prologue
-    const/4 v2, 0x0
-
-    .line 231
-    const-string v0, "HtcIncallControlPanel"
-
-    const-string v1, "destroy"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v1, 0x0
 
     .line 240
     iget-object v0, p0, Lcom/android/phone/HtcIncallControlPanel;->mControlMute:Lcom/android/phone/widget/ControlButton;
@@ -2728,10 +2588,10 @@
     .line 250
     iget-object v0, p0, Lcom/android/phone/HtcIncallControlPanel;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
     .line 251
-    iput-object v2, p0, Lcom/android/phone/HtcIncallControlPanel;->mHandler:Landroid/os/Handler;
+    iput-object v1, p0, Lcom/android/phone/HtcIncallControlPanel;->mHandler:Landroid/os/Handler;
 
     .line 253
     :cond_0
@@ -2767,18 +2627,11 @@
 .end method
 
 .method getDialog(Landroid/app/Activity;I)Landroid/app/Dialog;
-    .locals 3
+    .locals 2
     .parameter "screen"
     .parameter "dialogId"
 
     .prologue
-    .line 872
-    const-string v1, "HtcIncallControlPanel"
-
-    const-string v2, "getDialog: start"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 874
     const/4 v0, 0x0
 
@@ -2799,15 +2652,8 @@
 
     move-result-object v0
 
-    .line 884
-    :cond_1
-    const-string v1, "HtcIncallControlPanel"
-
-    const-string v2, "getDialog: end"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 886
+    :cond_1
     return-object v0
 .end method
 
@@ -2816,16 +2662,9 @@
     .parameter "controlLayout"
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
     const/4 v1, 0x0
-
-    .line 136
-    const-string v2, "HtcIncallControlPanel"
-
-    const-string v3, "init layout"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 138
     if-eqz p1, :cond_2
@@ -2896,12 +2735,12 @@
     .line 148
     iget-object v2, p0, Lcom/android/phone/HtcIncallControlPanel;->mControlMute:Lcom/android/phone/widget/ControlButton;
 
-    invoke-virtual {v2, v4}, Lcom/android/phone/widget/ControlButton;->setCheckable(Z)V
+    invoke-virtual {v2, v3}, Lcom/android/phone/widget/ControlButton;->setCheckable(Z)V
 
     .line 149
     iget-object v2, p0, Lcom/android/phone/HtcIncallControlPanel;->mControlSpeaker:Lcom/android/phone/widget/ControlButton;
 
-    invoke-virtual {v2, v4}, Lcom/android/phone/widget/ControlButton;->setCheckable(Z)V
+    invoke-virtual {v2, v3}, Lcom/android/phone/widget/ControlButton;->setCheckable(Z)V
 
     .line 151
     iget-object v2, p0, Lcom/android/phone/HtcIncallControlPanel;->mControlLayout:Landroid/view/View;
@@ -3414,13 +3253,6 @@
     .locals 2
 
     .prologue
-    .line 1168
-    const-string v0, "HtcIncallControlPanel"
-
-    const-string v1, "onLocaleChanged(): reset the text string by locale"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1170
     iget-object v0, p0, Lcom/android/phone/HtcIncallControlPanel;->mMuteText:Landroid/widget/TextView;
 
@@ -3554,18 +3386,11 @@
 .end method
 
 .method updateLayout(Lcom/android/internal/telephony/Phone;)V
-    .locals 6
+    .locals 5
     .parameter "phone"
 
     .prologue
-    const/4 v5, 0x0
-
-    .line 269
-    const-string v3, "HtcIncallControlPanel"
-
-    const-string v4, "updateLayout"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v4, 0x0
 
     .line 272
     iget-boolean v3, p0, Lcom/android/phone/HtcIncallControlPanel;->mPendingSpeakerOn:Z
@@ -3573,7 +3398,7 @@
     if-eqz v3, :cond_0
 
     .line 273
-    iput-boolean v5, p0, Lcom/android/phone/HtcIncallControlPanel;->mPendingSpeakerOn:Z
+    iput-boolean v4, p0, Lcom/android/phone/HtcIncallControlPanel;->mPendingSpeakerOn:Z
 
     .line 276
     :cond_0
@@ -3610,13 +3435,6 @@
 
     if-eqz v3, :cond_2
 
-    .line 296
-    const-string v3, "HtcIncallControlPanel"
-
-    const-string v4, "isRinging: set all disabled"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 298
     invoke-direct {p0, p1}, Lcom/android/phone/HtcIncallControlPanel;->updateMuteState(Lcom/android/internal/telephony/Phone;)V
 
@@ -3626,22 +3444,22 @@
     .line 300
     iget-object v3, p0, Lcom/android/phone/HtcIncallControlPanel;->mControlMute:Lcom/android/phone/widget/ControlButton;
 
-    invoke-virtual {v3, v5}, Lcom/android/phone/widget/ControlButton;->setEnabled(Z)V
+    invoke-virtual {v3, v4}, Lcom/android/phone/widget/ControlButton;->setEnabled(Z)V
 
     .line 301
     iget-object v3, p0, Lcom/android/phone/HtcIncallControlPanel;->mControlSpeaker:Lcom/android/phone/widget/ControlButton;
 
-    invoke-virtual {v3, v5}, Lcom/android/phone/widget/ControlButton;->setEnabled(Z)V
+    invoke-virtual {v3, v4}, Lcom/android/phone/widget/ControlButton;->setEnabled(Z)V
 
     .line 302
     iget-object v3, p0, Lcom/android/phone/HtcIncallControlPanel;->mControlHold:Lcom/android/phone/widget/ControlButton;
 
-    invoke-virtual {v3, v5}, Lcom/android/phone/widget/ControlButton;->setEnabled(Z)V
+    invoke-virtual {v3, v4}, Lcom/android/phone/widget/ControlButton;->setEnabled(Z)V
 
     .line 303
     iget-object v3, p0, Lcom/android/phone/HtcIncallControlPanel;->mControlAddCall:Landroid/view/View;
 
-    invoke-virtual {v3, v5}, Landroid/view/View;->setEnabled(Z)V
+    invoke-virtual {v3, v4}, Landroid/view/View;->setEnabled(Z)V
 
     .line 319
     .end local v0           #fgCallState:Lcom/android/internal/telephony/Call$State;

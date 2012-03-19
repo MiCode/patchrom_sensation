@@ -120,7 +120,7 @@
     .line 96
     .local v0, id:I
     :goto_0
-    iget-object v1, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v1, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {p0}, Landroid/renderscript/Program;->getID()I
 
@@ -151,7 +151,7 @@
 
     .prologue
     .line 132
-    iget-object v1, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v1, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v1}, Landroid/renderscript/RenderScript;->validate()V
 
@@ -183,7 +183,7 @@
     .line 138
     .local v0, id:I
     :goto_0
-    iget-object v1, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v1, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {p0}, Landroid/renderscript/Program;->getID()I
 
@@ -214,7 +214,7 @@
 
     .prologue
     .line 108
-    iget-object v1, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v1, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v1}, Landroid/renderscript/RenderScript;->validate()V
 
@@ -277,7 +277,7 @@
     .line 118
     .local v0, id:I
     :goto_0
-    iget-object v1, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v1, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {p0}, Landroid/renderscript/Program;->getID()I
 

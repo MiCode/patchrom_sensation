@@ -109,7 +109,7 @@
     iput-boolean v1, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mDetached:Z
 
     .line 47
-    iget v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mWindowFlags:I
+    iget v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mWindowFlags:I
 
     iput v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mCurWindowFlags:I
 
@@ -180,10 +180,10 @@
     .locals 3
 
     .prologue
-    .line 326
+    .line 336
     const/4 v0, 0x1
 
-    .line 328
+    .line 338
     .local v0, inTop:Z
     :try_start_0
     const-string v2, "window"
@@ -196,7 +196,7 @@
 
     move-result-object v1
 
-    .line 330
+    .line 340
     .local v1, wm:Landroid/view/IWindowManager;
     invoke-interface {v1}, Landroid/view/IWindowManager;->canStatusBarHide()Z
     :try_end_0
@@ -206,16 +206,16 @@
 
     if-nez v2, :cond_0
 
-    .line 331
+    .line 341
     const/4 v0, 0x0
 
-    .line 336
+    .line 346
     .end local v1           #wm:Landroid/view/IWindowManager;
     :cond_0
     :goto_0
     return v0
 
-    .line 333
+    .line 343
     :catch_0
     move-exception v2
 
@@ -234,7 +234,7 @@
     iput-boolean v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mDetached:Z
 
     .line 61
-    iget-object v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
 
@@ -364,7 +364,7 @@
     .locals 3
 
     .prologue
-    .line 475
+    .line 485
     :try_start_0
     iget-object v1, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSession:Landroid/view/IWindowSession;
 
@@ -374,15 +374,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 480
+    .line 490
     :goto_0
     return-void
 
-    .line 476
+    .line 486
     :catch_0
     move-exception v0
 
-    .line 478
+    .line 488
     .local v0, e:Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 
@@ -393,7 +393,7 @@
     .locals 1
 
     .prologue
-    .line 461
+    .line 471
     iget-object v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSession:Landroid/view/IWindowSession;
 
     return-object v0
@@ -403,7 +403,7 @@
     .locals 1
 
     .prologue
-    .line 453
+    .line 463
     iget-object v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSurfaceHolder:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;
 
     return-object v0
@@ -413,7 +413,7 @@
     .locals 1
 
     .prologue
-    .line 470
+    .line 480
     iget-object v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mWindow:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MyWindow;
 
     return-object v0
@@ -424,7 +424,7 @@
 
     .prologue
     .line 85
-    iget-object v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+    iget-object v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
 
     invoke-virtual {v0}, Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;->isDestroyed()Z
 
@@ -437,24 +437,24 @@
     .locals 8
 
     .prologue
-    .line 340
+    .line 350
     iget-boolean v5, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSurfaceCreated:Z
 
     if-eqz v5, :cond_1
 
-    .line 341
+    .line 351
     const/4 v5, 0x0
 
     iput-boolean v5, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSurfaceCreated:Z
 
-    .line 343
+    .line 353
     iget-object v5, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSurfaceHolder:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;
 
     iget-object v6, v5, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;->mCallbacks:Ljava/util/ArrayList;
 
     monitor-enter v6
 
-    .line 344
+    .line 354
     :try_start_0
     iget-object v5, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSurfaceHolder:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;
 
@@ -466,7 +466,7 @@
 
     new-array v2, v5, [Landroid/view/SurfaceHolder$Callback;
 
-    .line 346
+    .line 356
     .local v2, callbacks:[Landroid/view/SurfaceHolder$Callback;
     iget-object v5, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSurfaceHolder:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;
 
@@ -474,12 +474,12 @@
 
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    .line 347
+    .line 357
     monitor-exit v6
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 348
+    .line 358
     move-object v0, v2
 
     .local v0, arr$:[Landroid/view/SurfaceHolder$Callback;
@@ -494,18 +494,18 @@
 
     aget-object v1, v0, v3
 
-    .line 349
+    .line 359
     .local v1, c:Landroid/view/SurfaceHolder$Callback;
     iget-object v5, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSurfaceHolder:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;
 
     invoke-interface {v1, v5}, Landroid/view/SurfaceHolder$Callback;->surfaceDestroyed(Landroid/view/SurfaceHolder;)V
 
-    .line 348
+    .line 358
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 347
+    .line 357
     .end local v0           #arr$:[Landroid/view/SurfaceHolder$Callback;
     .end local v1           #c:Landroid/view/SurfaceHolder$Callback;
     .end local v2           #callbacks:[Landroid/view/SurfaceHolder$Callback;
@@ -521,7 +521,7 @@
 
     throw v5
 
-    .line 351
+    .line 361
     .restart local v0       #arr$:[Landroid/view/SurfaceHolder$Callback;
     .restart local v2       #callbacks:[Landroid/view/SurfaceHolder$Callback;
     .restart local v3       #i$:I
@@ -561,14 +561,14 @@
 
     invoke-static {v5, v6}, Lcom/htc/lockscreen/idlescreen/ISLog;->v(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 353
-    iget-object v5, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+    .line 363
+    iget-object v5, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
 
     iget-object v6, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSurfaceHolder:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;
 
     invoke-virtual {v5, v6}, Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;->onSurfaceDestroyed(Landroid/view/SurfaceHolder;)V
 
-    .line 355
+    .line 365
     .end local v0           #arr$:[Landroid/view/SurfaceHolder$Callback;
     .end local v2           #callbacks:[Landroid/view/SurfaceHolder$Callback;
     .end local v3           #i$:I
@@ -582,12 +582,12 @@
     .parameter "format"
 
     .prologue
-    .line 457
+    .line 467
     iget-object v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSurfaceHolder:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;
 
     invoke-virtual {v0, p1}, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;->setFormat(I)V
 
-    .line 458
+    .line 468
     return-void
 .end method
 
@@ -595,17 +595,17 @@
     .locals 1
 
     .prologue
-    .line 465
+    .line 475
     iget-object v0, p0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSurfaceHolder:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;
 
     invoke-virtual {v0}, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;->setSizeFromLayout()V
 
-    .line 467
+    .line 477
     return-void
 .end method
 
 .method public updateSurface(ZZZ)V
-    .locals 39
+    .locals 40
     .parameter "forceRelayout"
     .parameter "forceReport"
     .parameter "redrawNeeded"
@@ -633,13 +633,13 @@
 
     invoke-virtual {v2}, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;->getRequestedWidth()I
 
-    move-result v29
+    move-result v30
 
     .line 108
-    .local v29, myWidth:I
-    if-gtz v29, :cond_1
+    .local v30, myWidth:I
+    if-gtz v30, :cond_1
 
-    const/16 v29, -0x1
+    const/16 v30, -0x1
 
     .line 109
     :cond_1
@@ -649,22 +649,22 @@
 
     invoke-virtual {v2}, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;->getRequestedHeight()I
 
-    move-result v28
+    move-result v29
 
     .line 110
-    .local v28, myHeight:I
-    if-gtz v28, :cond_2
+    .local v29, myHeight:I
+    if-gtz v29, :cond_2
 
-    const/16 v28, -0x1
+    const/16 v29, -0x1
 
     .line 111
     :cond_2
     invoke-direct/range {p0 .. p0}, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->getWindowFormat()I
 
-    move-result v27
+    move-result v28
 
     .line 113
-    .local v27, myFormat:I
+    .local v28, myFormat:I
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mCreated:Z
@@ -682,29 +682,29 @@
 
     if-nez v2, :cond_c
 
-    const/16 v33, 0x1
+    const/16 v34, 0x1
 
     .line 115
-    .local v33, surfaceCreating:Z
+    .local v34, surfaceCreating:Z
     :goto_1
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mFormat:I
 
-    move/from16 v0, v27
+    move/from16 v0, v28
 
     if-eq v2, v0, :cond_d
 
-    const/16 v23, 0x1
+    const/16 v24, 0x1
 
     .line 116
-    .local v23, formatChanged:Z
+    .local v24, formatChanged:Z
     :goto_2
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mWidth:I
 
-    move/from16 v0, v29
+    move/from16 v0, v30
 
     if-ne v2, v0, :cond_3
 
@@ -712,15 +712,15 @@
 
     iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mHeight:I
 
-    move/from16 v0, v28
+    move/from16 v0, v29
 
     if-eq v2, v0, :cond_e
 
     :cond_3
-    const/16 v32, 0x1
+    const/16 v33, 0x1
 
     .line 117
-    .local v32, sizeChanged:Z
+    .local v33, sizeChanged:Z
     :goto_3
     move-object/from16 v0, p0
 
@@ -736,27 +736,27 @@
 
     if-eq v2, v3, :cond_f
 
-    const/16 v34, 0x1
+    const/16 v35, 0x1
 
     .line 119
-    .local v34, typeChanged:Z
+    .local v35, typeChanged:Z
     :goto_4
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mVisibility:I
+    iget v0, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mVisibility:I
 
-    move/from16 v35, v0
+    move/from16 v36, v0
 
     .line 120
-    .local v35, visibility:I
+    .local v36, visibility:I
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mShow:I
+    iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mShow:I
 
     if-gtz v2, :cond_4
 
     .line 121
-    const/16 v35, 0x8
+    const/16 v36, 0x8
 
     .line 123
     :cond_4
@@ -764,21 +764,21 @@
 
     iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mWindowVisibility:I
 
-    move/from16 v0, v35
+    move/from16 v0, v36
 
     if-eq v0, v2, :cond_10
 
-    const/16 v36, 0x1
+    const/16 v37, 0x1
 
     .line 125
-    .local v36, visibleChanged:Z
+    .local v37, visibleChanged:Z
     :goto_5
-    if-eqz v36, :cond_11
+    if-eqz v37, :cond_11
 
     .line 126
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mWindowFlags:I
+    iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mWindowFlags:I
 
     const v3, -0x100001
 
@@ -786,21 +786,21 @@
 
     move-object/from16 v0, p0
 
-    iput v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mWindowFlags:I
+    iput v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mWindowFlags:I
 
     .line 127
-    if-nez v35, :cond_5
+    if-nez v36, :cond_5
 
     move-object/from16 v0, p0
 
-    iget-boolean v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mShowLiveWallpaper:Z
+    iget-boolean v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mShowLiveWallpaper:Z
 
     if-eqz v2, :cond_5
 
     .line 128
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
 
     const-wide/16 v3, 0xc8
 
@@ -815,14 +815,14 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mWindowFlags:I
+    iget v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mWindowFlags:I
 
     if-eq v2, v3, :cond_12
 
-    const/16 v22, 0x1
+    const/16 v23, 0x1
 
     .line 137
-    .local v22, flagsChanged:Z
+    .local v23, flagsChanged:Z
     :goto_7
     move-object/from16 v0, p0
 
@@ -830,14 +830,14 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mShow:I
+    iget v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mShow:I
 
     if-eq v2, v3, :cond_13
 
-    const/16 v38, 0x1
+    const/16 v39, 0x1
 
     .line 140
-    .local v38, windowShowChanged:Z
+    .local v39, windowShowChanged:Z
     :goto_8
     const/16 v16, 0x0
 
@@ -852,7 +852,7 @@
     .line 142
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
 
     invoke-virtual {v2}, Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;->getWindowAnimation()I
 
@@ -897,7 +897,7 @@
 
     move-result-object v3
 
-    move/from16 v0, v33
+    move/from16 v0, v34
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -909,7 +909,7 @@
 
     move-result-object v3
 
-    move/from16 v0, v23
+    move/from16 v0, v24
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -921,7 +921,7 @@
 
     move-result-object v3
 
-    move/from16 v0, v32
+    move/from16 v0, v33
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -933,7 +933,7 @@
 
     move-result-object v3
 
-    move/from16 v0, v34
+    move/from16 v0, v35
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -945,7 +945,7 @@
 
     move-result-object v3
 
-    move/from16 v0, v22
+    move/from16 v0, v23
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -957,7 +957,7 @@
 
     move-result-object v3
 
-    move/from16 v0, v36
+    move/from16 v0, v37
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -969,7 +969,7 @@
 
     move-result-object v3
 
-    move/from16 v0, v38
+    move/from16 v0, v39
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -1010,19 +1010,19 @@
 
     if-nez v21, :cond_7
 
+    if-nez v34, :cond_7
+
+    if-nez v24, :cond_7
+
     if-nez v33, :cond_7
+
+    if-nez v35, :cond_7
 
     if-nez v23, :cond_7
 
-    if-nez v32, :cond_7
+    if-nez v37, :cond_7
 
-    if-nez v34, :cond_7
-
-    if-nez v22, :cond_7
-
-    if-nez v36, :cond_7
-
-    if-nez v38, :cond_7
+    if-nez v39, :cond_7
 
     if-nez p3, :cond_7
 
@@ -1031,28 +1031,28 @@
     .line 161
     :cond_7
     :try_start_0
-    move/from16 v0, v35
+    move/from16 v0, v36
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mWindowVisibility:I
 
     .line 163
-    move/from16 v0, v29
+    move/from16 v0, v30
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mWidth:I
 
     .line 164
-    move/from16 v0, v28
+    move/from16 v0, v29
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mHeight:I
 
     .line 166
-    move/from16 v0, v27
+    move/from16 v0, v28
 
     move-object/from16 v1, p0
 
@@ -1072,10 +1072,10 @@
     iput v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mType:I
 
     .line 169
-    const/16 v30, 0x0
+    const/16 v31, 0x0
 
     .line 170
-    .local v30, padding:I
+    .local v31, padding:I
     invoke-direct/range {p0 .. p0}, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->isStatusBarInTop()Z
 
     move-result v2
@@ -1085,7 +1085,7 @@
     .line 171
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mContext:Landroid/content/Context;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -1095,13 +1095,13 @@
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v30
+    move-result v31
 
     .line 174
     :cond_8
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     const/4 v3, 0x0
 
@@ -1110,34 +1110,34 @@
     .line 175
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
-    move/from16 v0, v30
+    move/from16 v0, v31
 
     iput v0, v2, Landroid/view/WindowManager$LayoutParams;->y:I
 
     .line 176
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
-    move/from16 v0, v29
+    move/from16 v0, v30
 
-    iput v0, v2, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v0, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 177
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
-    move/from16 v0, v28
+    move/from16 v0, v29
 
-    iput v0, v2, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v0, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 178
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     move-object/from16 v0, p0
 
@@ -1148,7 +1148,7 @@
     .line 180
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mWindowFlags:I
+    iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mWindowFlags:I
 
     move-object/from16 v0, p0
 
@@ -1157,18 +1157,18 @@
     .line 181
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mWindowFlags:I
+    iget v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mWindowFlags:I
 
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     .line 183
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mShow:I
+    iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mShow:I
 
     move-object/from16 v0, p0
 
@@ -1184,7 +1184,7 @@
     .line 186
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
 
     move-object/from16 v0, p0
 
@@ -1196,7 +1196,7 @@
     :cond_9
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     move-object/from16 v0, p0
 
@@ -1207,11 +1207,11 @@
     .line 197
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+    iget-object v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
 
     invoke-virtual {v3}, Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;->getWindowToken()Landroid/os/IBinder;
 
@@ -1225,7 +1225,7 @@
     .line 201
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     move/from16 v0, v16
 
@@ -1249,11 +1249,11 @@
     .line 209
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+    iget-object v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
 
     invoke-virtual {v3}, Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;->getWindowType()I
 
@@ -1264,7 +1264,7 @@
     .line 210
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     const/16 v3, 0x33
 
@@ -1273,11 +1273,11 @@
     .line 211
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mContext:Landroid/content/Context;
+    iget-object v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -1306,7 +1306,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v5, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     move-object/from16 v0, p0
 
@@ -1331,8 +1331,8 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 323
-    .end local v30           #padding:I
+    .line 333
+    .end local v31           #padding:I
     :cond_a
     :goto_b
     return-void
@@ -1341,14 +1341,14 @@
     .end local v16           #animation:I
     .end local v17           #animationChanged:Z
     .end local v21           #creating:Z
-    .end local v22           #flagsChanged:Z
-    .end local v23           #formatChanged:Z
-    .end local v32           #sizeChanged:Z
-    .end local v33           #surfaceCreating:Z
-    .end local v34           #typeChanged:Z
-    .end local v35           #visibility:I
-    .end local v36           #visibleChanged:Z
-    .end local v38           #windowShowChanged:Z
+    .end local v23           #flagsChanged:Z
+    .end local v24           #formatChanged:Z
+    .end local v33           #sizeChanged:Z
+    .end local v34           #surfaceCreating:Z
+    .end local v35           #typeChanged:Z
+    .end local v36           #visibility:I
+    .end local v37           #visibleChanged:Z
+    .end local v39           #windowShowChanged:Z
     :cond_b
     const/16 v21, 0x0
 
@@ -1357,54 +1357,54 @@
     .line 114
     .restart local v21       #creating:Z
     :cond_c
-    const/16 v33, 0x0
+    const/16 v34, 0x0
 
     goto/16 :goto_1
 
     .line 115
-    .restart local v33       #surfaceCreating:Z
+    .restart local v34       #surfaceCreating:Z
     :cond_d
-    const/16 v23, 0x0
+    const/16 v24, 0x0
 
     goto/16 :goto_2
 
     .line 116
-    .restart local v23       #formatChanged:Z
+    .restart local v24       #formatChanged:Z
     :cond_e
-    const/16 v32, 0x0
+    const/16 v33, 0x0
 
     goto/16 :goto_3
 
     .line 117
-    .restart local v32       #sizeChanged:Z
+    .restart local v33       #sizeChanged:Z
     :cond_f
-    const/16 v34, 0x0
+    const/16 v35, 0x0
 
     goto/16 :goto_4
 
     .line 123
-    .restart local v34       #typeChanged:Z
-    .restart local v35       #visibility:I
+    .restart local v35       #typeChanged:Z
+    .restart local v36       #visibility:I
     :cond_10
-    const/16 v36, 0x0
+    const/16 v37, 0x0
 
     goto/16 :goto_5
 
     .line 132
-    .restart local v36       #visibleChanged:Z
+    .restart local v37       #visibleChanged:Z
     :cond_11
-    if-nez v35, :cond_5
+    if-nez v36, :cond_5
 
     move-object/from16 v0, p0
 
-    iget-boolean v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mShowLiveWallpaper:Z
+    iget-boolean v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mShowLiveWallpaper:Z
 
     if-eqz v2, :cond_5
 
     .line 133
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mWindowFlags:I
+    iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mWindowFlags:I
 
     const/high16 v3, 0x10
 
@@ -1412,26 +1412,26 @@
 
     move-object/from16 v0, p0
 
-    iput v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mWindowFlags:I
+    iput v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mWindowFlags:I
 
     goto/16 :goto_6
 
     .line 136
     :cond_12
-    const/16 v22, 0x0
+    const/16 v23, 0x0
 
     goto/16 :goto_7
 
     .line 137
-    .restart local v22       #flagsChanged:Z
+    .restart local v23       #flagsChanged:Z
     :cond_13
-    const/16 v38, 0x0
+    const/16 v39, 0x0
 
     goto/16 :goto_8
 
     .line 145
     .restart local v16       #animation:I
-    .restart local v38       #windowShowChanged:Z
+    .restart local v39       #windowShowChanged:Z
     :cond_14
     const/16 v17, 0x0
 
@@ -1439,12 +1439,12 @@
 
     .line 204
     .restart local v17       #animationChanged:Z
-    .restart local v30       #padding:I
+    .restart local v31       #padding:I
     :cond_15
     :try_start_1
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     const/4 v3, 0x0
 
@@ -1454,12 +1454,39 @@
 
     goto/16 :goto_a
 
-    .line 317
-    .end local v30           #padding:I
+    .line 326
+    .end local v31           #padding:I
     :catch_0
-    move-exception v2
+    move-exception v22
 
-    .line 319
+    .line 327
+    .local v22, ex:Landroid/os/RemoteException;
+    const-string v2, "IdleScreenWindowBase"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "updateSurface~ RemoteException: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    move-object/from16 v0, v22
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/htc/lockscreen/idlescreen/ISLog;->w(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 329
+    .end local v22           #ex:Landroid/os/RemoteException;
     :cond_16
     :goto_c
     const-string v2, "IdleScreenWindowBase"
@@ -1476,7 +1503,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v4, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     iget v4, v4, Landroid/view/WindowManager$LayoutParams;->x:I
 
@@ -1492,7 +1519,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v4, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     iget v4, v4, Landroid/view/WindowManager$LayoutParams;->y:I
 
@@ -1508,9 +1535,9 @@
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v4, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
-    iget v4, v4, Landroid/view/WindowManager$LayoutParams;->width:I
+    iget v4, v4, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1524,9 +1551,9 @@
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v4, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
-    iget v4, v4, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget v4, v4, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1541,7 +1568,7 @@
     goto/16 :goto_b
 
     .line 219
-    .restart local v30       #padding:I
+    .restart local v31       #padding:I
     :cond_17
     const/4 v2, 0x1
 
@@ -1584,7 +1611,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mLayout:Landroid/view/WindowManager$LayoutParams;
+    iget-object v5, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     move-object/from16 v0, p0
 
@@ -1624,10 +1651,10 @@
 
     invoke-interface/range {v2 .. v14}, Landroid/view/IWindowSession;->relayout(Landroid/view/IWindow;ILandroid/view/WindowManager$LayoutParams;IIIILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/content/res/Configuration;Landroid/view/Surface;)I
 
-    move-result v31
+    move-result v32
 
     .line 242
-    .local v31, relayoutResult:I
+    .local v32, relayoutResult:I
     const-string v2, "IdleScreenWindowBase"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1677,23 +1704,23 @@
 
     invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
 
-    move-result v37
+    move-result v38
 
     .line 246
-    .local v37, w:I
+    .local v38, w:I
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mCurWidth:I
 
-    move/from16 v0, v37
+    move/from16 v0, v38
 
     if-eq v2, v0, :cond_19
 
     .line 247
-    const/16 v32, 0x1
+    const/16 v33, 0x1
 
     .line 248
-    move/from16 v0, v37
+    move/from16 v0, v38
 
     move-object/from16 v1, p0
 
@@ -1707,23 +1734,23 @@
 
     invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
 
-    move-result v24
+    move-result v25
 
     .line 251
-    .local v24, h:I
+    .local v25, h:I
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mCurHeight:I
 
-    move/from16 v0, v24
+    move/from16 v0, v25
 
     if-eq v2, v0, :cond_1a
 
     .line 252
-    const/16 v32, 0x1
+    const/16 v33, 0x1
 
     .line 253
-    move/from16 v0, v24
+    move/from16 v0, v25
 
     move-object/from16 v1, p0
 
@@ -1750,20 +1777,59 @@
 
     move-result v2
 
-    if-nez v2, :cond_1b
+    if-nez v2, :cond_1c
 
     .line 259
     invoke-virtual/range {p0 .. p0}, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->reportSurfaceDestroyed()V
+
+    .line 322
+    :cond_1b
+    :goto_d
+    if-eqz v37, :cond_16
+
+    .line 323
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSurfaceHolder:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;
+
+    move-object/from16 v0, p0
+
+    iget v4, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mWindowVisibility:I
+
+    invoke-virtual {v2, v3, v4}, Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;->onSurfaceVisibilityChanged(Landroid/view/SurfaceHolder;I)V
+
+    goto/16 :goto_c
+
+    .line 262
+    :cond_1c
+    move-object/from16 v0, p0
+
+    iget v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mWindowVisibility:I
+
+    if-eqz v2, :cond_1d
+
+    .line 263
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSurfaceHolder:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;
+
+    invoke-virtual {v2, v3}, Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;->onSurfaceDestroyPredict(Landroid/view/SurfaceHolder;)V
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    goto/16 :goto_b
-
-    .line 264
-    :cond_1b
+    .line 266
+    :cond_1d
     const/16 v20, 0x0
 
-    .line 265
+    .line 267
     .local v20, callbacks:[Landroid/view/SurfaceHolder$Callback;
     :try_start_3
     move-object/from16 v0, p0
@@ -1776,7 +1842,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 266
+    .line 268
     :try_start_4
     move-object/from16 v0, p0
 
@@ -1788,16 +1854,16 @@
 
     move-result v15
 
-    .line 267
+    .line 269
     .local v15, N:I
-    if-lez v15, :cond_1c
+    if-lez v15, :cond_1e
 
-    .line 268
+    .line 270
     new-array v0, v15, [Landroid/view/SurfaceHolder$Callback;
 
     move-object/from16 v20, v0
 
-    .line 269
+    .line 271
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSurfaceHolder:Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase$MySurfaceHolder;
@@ -1808,16 +1874,16 @@
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    .line 271
-    :cond_1c
+    .line 273
+    :cond_1e
     monitor-exit v3
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 273
-    if-eqz v33, :cond_1e
+    .line 275
+    if-eqz v34, :cond_20
 
-    .line 274
+    .line 276
     const/4 v2, 0x1
 
     :try_start_5
@@ -1825,7 +1891,7 @@
 
     iput-boolean v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mIsCreating:Z
 
-    .line 275
+    .line 277
     const-string v2, "IdleScreenWindowBase"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1864,10 +1930,10 @@
 
     invoke-static {v2, v3}, Lcom/htc/lockscreen/idlescreen/ISLog;->v(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 277
+    .line 279
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
 
     move-object/from16 v0, p0
 
@@ -1875,10 +1941,10 @@
 
     invoke-virtual {v2, v3}, Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;->onSurfaceCreated(Landroid/view/SurfaceHolder;)V
 
-    .line 278
-    if-eqz v20, :cond_1e
+    .line 280
+    if-eqz v20, :cond_20
 
-    .line 279
+    .line 281
     move-object/from16 v18, v20
 
     .local v18, arr$:[Landroid/view/SurfaceHolder$Callback;
@@ -1886,22 +1952,22 @@
 
     array-length v0, v0
 
-    move/from16 v26, v0
+    move/from16 v27, v0
 
-    .local v26, len$:I
-    const/16 v25, 0x0
+    .local v27, len$:I
+    const/16 v26, 0x0
 
-    .local v25, i$:I
-    :goto_d
-    move/from16 v0, v25
+    .local v26, i$:I
+    :goto_e
+    move/from16 v0, v26
 
-    move/from16 v1, v26
+    move/from16 v1, v27
 
-    if-ge v0, v1, :cond_1e
+    if-ge v0, v1, :cond_20
 
-    aget-object v19, v18, v25
+    aget-object v19, v18, v26
 
-    .line 280
+    .line 282
     .local v19, c:Landroid/view/SurfaceHolder$Callback;
     move-object/from16 v0, p0
 
@@ -1913,17 +1979,17 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 279
-    add-int/lit8 v25, v25, 0x1
+    .line 281
+    add-int/lit8 v26, v26, 0x1
 
-    goto :goto_d
+    goto :goto_e
 
-    .line 271
+    .line 273
     .end local v15           #N:I
     .end local v18           #arr$:[Landroid/view/SurfaceHolder$Callback;
     .end local v19           #c:Landroid/view/SurfaceHolder$Callback;
-    .end local v25           #i$:I
-    .end local v26           #len$:I
+    .end local v26           #i$:I
+    .end local v27           #len$:I
     :catchall_0
     move-exception v2
 
@@ -1937,7 +2003,7 @@
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
-    .line 311
+    .line 315
     :catchall_1
     move-exception v2
 
@@ -1948,56 +2014,56 @@
 
     iput-boolean v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mIsCreating:Z
 
-    .line 312
+    .line 316
     const/4 v3, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v3, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSurfaceCreated:Z
 
-    .line 313
-    if-eqz p3, :cond_1d
+    .line 317
+    if-eqz p3, :cond_1f
 
-    .line 314
+    .line 318
     invoke-virtual/range {p0 .. p0}, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->finishDrawing()V
 
-    :cond_1d
+    :cond_1f
     throw v2
     :try_end_8
     .catch Landroid/os/RemoteException; {:try_start_8 .. :try_end_8} :catch_0
 
-    .line 285
+    .line 287
     .restart local v15       #N:I
-    :cond_1e
-    if-nez v21, :cond_1f
+    :cond_20
+    if-nez v21, :cond_21
 
-    and-int/lit8 v2, v31, 0x2
+    and-int/lit8 v2, v32, 0x2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_23
 
-    :cond_1f
+    :cond_21
     const/4 v2, 0x1
 
-    :goto_e
+    :goto_f
     or-int p3, p3, v2
 
-    .line 287
-    if-nez p2, :cond_20
-
-    if-nez v21, :cond_20
-
-    if-nez v33, :cond_20
-
-    if-nez v23, :cond_20
-
-    if-eqz v32, :cond_22
-
     .line 289
-    :cond_20
+    if-nez p2, :cond_22
+
+    if-nez v21, :cond_22
+
+    if-nez v34, :cond_22
+
+    if-nez v24, :cond_22
+
+    if-eqz v33, :cond_24
+
+    .line 291
+    :cond_22
     :try_start_9
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
 
     move-object/from16 v0, p0
 
@@ -2017,10 +2083,10 @@
 
     invoke-virtual {v2, v3, v4, v5, v6}, Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;->onSurfaceChanged(Landroid/view/SurfaceHolder;III)V
 
-    .line 291
-    if-eqz v20, :cond_22
+    .line 293
+    if-eqz v20, :cond_24
 
-    .line 292
+    .line 294
     move-object/from16 v18, v20
 
     .restart local v18       #arr$:[Landroid/view/SurfaceHolder$Callback;
@@ -2028,22 +2094,22 @@
 
     array-length v0, v0
 
-    move/from16 v26, v0
+    move/from16 v27, v0
 
-    .restart local v26       #len$:I
-    const/16 v25, 0x0
+    .restart local v27       #len$:I
+    const/16 v26, 0x0
 
-    .restart local v25       #i$:I
-    :goto_f
-    move/from16 v0, v25
+    .restart local v26       #i$:I
+    :goto_10
+    move/from16 v0, v26
 
-    move/from16 v1, v26
+    move/from16 v1, v27
 
-    if-ge v0, v1, :cond_22
+    if-ge v0, v1, :cond_24
 
-    aget-object v19, v18, v25
+    aget-object v19, v18, v26
 
-    .line 293
+    .line 295
     .restart local v19       #c:Landroid/view/SurfaceHolder$Callback;
     move-object/from16 v0, p0
 
@@ -2065,29 +2131,29 @@
 
     invoke-interface {v0, v2, v3, v4, v5}, Landroid/view/SurfaceHolder$Callback;->surfaceChanged(Landroid/view/SurfaceHolder;III)V
 
-    .line 292
-    add-int/lit8 v25, v25, 0x1
+    .line 294
+    add-int/lit8 v26, v26, 0x1
+
+    goto :goto_10
+
+    .line 287
+    .end local v18           #arr$:[Landroid/view/SurfaceHolder$Callback;
+    .end local v19           #c:Landroid/view/SurfaceHolder$Callback;
+    .end local v26           #i$:I
+    .end local v27           #len$:I
+    :cond_23
+    const/4 v2, 0x0
 
     goto :goto_f
 
-    .line 285
-    .end local v18           #arr$:[Landroid/view/SurfaceHolder$Callback;
-    .end local v19           #c:Landroid/view/SurfaceHolder$Callback;
-    .end local v25           #i$:I
-    .end local v26           #len$:I
-    :cond_21
-    const/4 v2, 0x0
+    .line 301
+    :cond_24
+    if-eqz p3, :cond_26
 
-    goto :goto_e
-
-    .line 299
-    :cond_22
-    if-eqz p3, :cond_24
-
-    .line 300
+    .line 302
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
+    iget-object v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindow;->mEngine:Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;
 
     move-object/from16 v0, p0
 
@@ -2095,10 +2161,10 @@
 
     invoke-virtual {v2, v3}, Lcom/htc/lockscreen/idlescreen/IdleScreenEngine;->onSurfaceRedrawNeeded(Landroid/view/SurfaceHolder;)V
 
-    .line 301
-    if-eqz v20, :cond_24
+    .line 303
+    if-eqz v20, :cond_26
 
-    .line 302
+    .line 304
     move-object/from16 v18, v20
 
     .restart local v18       #arr$:[Landroid/view/SurfaceHolder$Callback;
@@ -2106,30 +2172,30 @@
 
     array-length v0, v0
 
-    move/from16 v26, v0
+    move/from16 v27, v0
 
-    .restart local v26       #len$:I
-    const/16 v25, 0x0
+    .restart local v27       #len$:I
+    const/16 v26, 0x0
 
-    .restart local v25       #i$:I
-    :goto_10
-    move/from16 v0, v25
+    .restart local v26       #i$:I
+    :goto_11
+    move/from16 v0, v26
 
-    move/from16 v1, v26
+    move/from16 v1, v27
 
-    if-ge v0, v1, :cond_24
+    if-ge v0, v1, :cond_26
 
-    aget-object v19, v18, v25
+    aget-object v19, v18, v26
 
-    .line 303
+    .line 305
     .restart local v19       #c:Landroid/view/SurfaceHolder$Callback;
     move-object/from16 v0, v19
 
     instance-of v2, v0, Landroid/view/SurfaceHolder$Callback2;
 
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_25
 
-    .line 304
+    .line 306
     check-cast v19, Landroid/view/SurfaceHolder$Callback2;
 
     .end local v19           #c:Landroid/view/SurfaceHolder$Callback;
@@ -2143,17 +2209,17 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_1
 
-    .line 302
-    :cond_23
-    add-int/lit8 v25, v25, 0x1
+    .line 304
+    :cond_25
+    add-int/lit8 v26, v26, 0x1
 
-    goto :goto_10
+    goto :goto_11
 
-    .line 311
+    .line 315
     .end local v18           #arr$:[Landroid/view/SurfaceHolder$Callback;
-    .end local v25           #i$:I
-    .end local v26           #len$:I
-    :cond_24
+    .end local v26           #i$:I
+    .end local v27           #len$:I
+    :cond_26
     const/4 v2, 0x0
 
     :try_start_a
@@ -2161,20 +2227,20 @@
 
     iput-boolean v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mIsCreating:Z
 
-    .line 312
+    .line 316
     const/4 v2, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->mSurfaceCreated:Z
 
-    .line 313
-    if-eqz p3, :cond_16
+    .line 317
+    if-eqz p3, :cond_1b
 
-    .line 314
+    .line 318
     invoke-virtual/range {p0 .. p0}, Lcom/htc/lockscreen/idlescreen/IdleScreenWindowBase;->finishDrawing()V
     :try_end_a
     .catch Landroid/os/RemoteException; {:try_start_a .. :try_end_a} :catch_0
 
-    goto/16 :goto_c
+    goto/16 :goto_d
 .end method

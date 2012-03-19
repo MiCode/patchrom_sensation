@@ -392,7 +392,7 @@
     .parameter "convertView"
 
     .prologue
-    .line 269
+    .line 290
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/htc/widget/BinAdapter;->mDataValid:Z
@@ -401,7 +401,7 @@
 
     if-nez v20, :cond_0
 
-    .line 270
+    .line 291
     new-instance v20, Ljava/lang/IllegalStateException;
 
     const-string v21, "this should only be called when the cursor is valid"
@@ -410,11 +410,11 @@
 
     throw v20
 
-    .line 273
+    .line 294
     :cond_0
     if-nez p2, :cond_1
 
-    .line 274
+    .line 295
     new-instance v20, Ljava/lang/IllegalStateException;
 
     const-string v21, "convertView couldn\'t be null "
@@ -423,7 +423,7 @@
 
     throw v20
 
-    .line 276
+    .line 297
     :cond_1
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -431,15 +431,15 @@
 
     check-cast v6, Lcom/htc/widget/BinAdapter$CoverViewHolder;
 
-    .line 277
+    .line 298
     .local v6, cvh:Lcom/htc/widget/BinAdapter$CoverViewHolder;
     iget-object v8, v6, Lcom/htc/widget/BinAdapter$CoverViewHolder;->infoImage:Landroid/widget/ImageView;
 
-    .line 278
+    .line 299
     .local v8, infoImage:Landroid/widget/ImageView;
     iget-object v9, v6, Lcom/htc/widget/BinAdapter$CoverViewHolder;->infoText:Landroid/widget/TextView;
 
-    .line 279
+    .line 300
     .local v9, infoText:Landroid/widget/TextView;
     move-object/from16 v0, p0
 
@@ -455,7 +455,7 @@
 
     move-result-object v7
 
-    .line 280
+    .line 301
     .local v7, img:Landroid/graphics/drawable/Drawable;
     move-object/from16 v0, p0
 
@@ -471,23 +471,23 @@
 
     move-result-object v12
 
-    .line 281
+    .line 302
     .local v12, name:Ljava/lang/String;
     if-eqz v7, :cond_2
 
     if-eqz v12, :cond_2
 
-    .line 282
+    .line 303
     invoke-virtual {v8, v7}, Landroid/widget/ImageView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 283
+    .line 304
     invoke-virtual {v9, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 336
+    .line 357
     :goto_0
     return-void
 
-    .line 286
+    .line 307
     :cond_2
     move-object/from16 v0, p0
 
@@ -505,7 +505,7 @@
 
     if-nez v20, :cond_3
 
-    .line 287
+    .line 308
     new-instance v20, Ljava/lang/IllegalStateException;
 
     new-instance v21, Ljava/lang/StringBuilder;
@@ -534,13 +534,13 @@
 
     throw v20
 
-    .line 290
+    .line 311
     :cond_3
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/htc/widget/BinAdapter;->mCursor:Landroid/database/Cursor;
 
-    .line 291
+    .line 312
     .local v5, c:Landroid/database/Cursor;
     move-object/from16 v0, p0
 
@@ -554,7 +554,7 @@
 
     move-result-object v3
 
-    .line 292
+    .line 313
     .local v3, alternativeName:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -568,7 +568,7 @@
 
     move-result-object v13
 
-    .line 293
+    .line 314
     .local v13, overlay:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -582,7 +582,7 @@
 
     move-result-object v19
 
-    .line 294
+    .line 315
     .local v19, taskName:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -596,19 +596,19 @@
 
     move-result-object v16
 
-    .line 296
+    .line 317
     .local v16, packageName:Ljava/lang/String;
     const/4 v10, 0x0
 
-    .line 297
+    .line 318
     .local v10, iresources:Landroid/content/res/Resources;
     const/16 v17, 0x0
 
-    .line 298
+    .line 319
     .local v17, tabNmae:Ljava/lang/String;
     const/4 v15, 0x0
 
-    .line 300
+    .line 321
     .local v15, overlayImg:Landroid/graphics/drawable/Drawable;
     :try_start_0
     move-object/from16 v0, p0
@@ -627,7 +627,7 @@
 
     if-eqz v20, :cond_7
 
-    .line 301
+    .line 322
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/htc/widget/BinAdapter;->eresources:Landroid/content/res/Resources;
@@ -642,11 +642,11 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 310
+    .line 331
     :goto_1
     if-eqz v10, :cond_5
 
-    .line 311
+    .line 332
     const/16 v20, 0x0
 
     const/16 v21, 0x0
@@ -659,13 +659,13 @@
 
     move-result v14
 
-    .line 312
+    .line 333
     .local v14, overlayIconId:I
     invoke-virtual {v10, v14}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
 
     move-result-object v11
 
-    .line 313
+    .line 334
     .local v11, is:Ljava/io/InputStream;
     const/16 v20, 0x0
 
@@ -679,25 +679,25 @@
 
     move-result-object v4
 
-    .line 315
+    .line 336
     .local v4, bm:Landroid/graphics/Bitmap;
     :try_start_1
     invoke-virtual {v11}, Ljava/io/InputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 318
+    .line 339
     :goto_2
     if-eqz v4, :cond_4
 
-    .line 319
+    .line 340
     sget v20, Landroid/util/DisplayMetrics;->DENSITY_DEVICE:I
 
     move/from16 v0, v20
 
     invoke-virtual {v4, v0}, Landroid/graphics/Bitmap;->setDensity(I)V
 
-    .line 320
+    .line 341
     new-instance v15, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;
 
     .end local v15           #overlayImg:Landroid/graphics/drawable/Drawable;
@@ -707,15 +707,15 @@
 
     invoke-direct {v15, v4, v0}, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;-><init>(Landroid/graphics/Bitmap;Lcom/htc/widget/BinAdapter$1;)V
 
-    .line 323
+    .line 344
     .restart local v15       #overlayImg:Landroid/graphics/drawable/Drawable;
     :cond_4
     move-object/from16 v17, v3
 
-    .line 324
+    .line 345
     if-nez v3, :cond_5
 
-    .line 325
+    .line 346
     const/16 v20, 0x0
 
     const/16 v21, 0x0
@@ -730,7 +730,7 @@
 
     move-result v18
 
-    .line 326
+    .line 347
     .local v18, tadNameId:I
     move/from16 v0, v18
 
@@ -738,7 +738,7 @@
 
     move-result-object v17
 
-    .line 330
+    .line 351
     .end local v4           #bm:Landroid/graphics/Bitmap;
     .end local v11           #is:Ljava/io/InputStream;
     .end local v14           #overlayIconId:I
@@ -756,7 +756,7 @@
 
     invoke-virtual {v0, v1, v15}, Lcom/htc/widget/BinAdapter$RecycleBin;->put(ILandroid/graphics/drawable/Drawable;)V
 
-    .line 331
+    .line 352
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/htc/widget/BinAdapter;->mRecycler:Lcom/htc/widget/BinAdapter$RecycleBin;
@@ -771,17 +771,17 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/htc/widget/BinAdapter$RecycleBin;->put(ILjava/lang/String;)V
 
-    .line 332
+    .line 353
     invoke-virtual {v8, v15}, Landroid/widget/ImageView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 333
+    .line 354
     move-object/from16 v0, v17
 
     invoke-virtual {v9, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_0
 
-    .line 301
+    .line 322
     :cond_6
     :try_start_2
     move-object/from16 v0, p0
@@ -790,7 +790,7 @@
 
     goto :goto_1
 
-    .line 304
+    .line 325
     :cond_7
     move-object/from16 v0, p0
 
@@ -826,7 +826,7 @@
 
     goto :goto_3
 
-    .line 316
+    .line 337
     .restart local v4       #bm:Landroid/graphics/Bitmap;
     .restart local v11       #is:Ljava/io/InputStream;
     .restart local v14       #overlayIconId:I
@@ -835,7 +835,7 @@
 
     goto :goto_2
 
-    .line 307
+    .line 328
     .end local v4           #bm:Landroid/graphics/Bitmap;
     .end local v11           #is:Ljava/io/InputStream;
     .end local v14           #overlayIconId:I
@@ -852,12 +852,12 @@
     .parameter "cursor"
 
     .prologue
-    .line 357
+    .line 378
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, p2, p3, v0}, Lcom/htc/widget/BinAdapter;->bindView(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;Z)V
 
-    .line 358
+    .line 379
     return-void
 .end method
 
@@ -878,7 +878,7 @@
 .end method
 
 .method bindView(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;Z)V
-    .locals 32
+    .locals 34
     .parameter "view"
     .parameter "context"
     .parameter "cursor"
@@ -906,10 +906,10 @@
 
     invoke-interface {v0, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v30
+    move-result-object v32
 
     .line 159
-    .local v30, taskTag:Ljava/lang/String;
+    .local v32, taskTag:Ljava/lang/String;
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/htc/widget/BinAdapter;->mTaskNameIndex:I
@@ -918,10 +918,10 @@
 
     invoke-interface {v0, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v28
+    move-result-object v30
 
     .line 160
-    .local v28, taskName:Ljava/lang/String;
+    .local v30, taskName:Ljava/lang/String;
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/htc/widget/BinAdapter;->mIntentIndex:I
@@ -966,10 +966,10 @@
 
     invoke-interface {v0, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v28
 
     .line 164
-    .local v27, selectedIcon:Ljava/lang/String;
+    .local v28, selectedIcon:Ljava/lang/String;
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/htc/widget/BinAdapter;->mOverlayIndex:I
@@ -990,10 +990,10 @@
 
     invoke-interface {v0, v3}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v29
+    move-result v31
 
     .line 166
-    .local v29, taskOrder:I
+    .local v31, taskOrder:I
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/htc/widget/BinAdapter;->mIsHostIndex:I
@@ -1053,14 +1053,14 @@
     iput-wide v14, v0, Lcom/htc/widget/TaskInfo;->_id:J
 
     .line 173
-    move-object/from16 v0, v30
+    move-object/from16 v0, v32
 
     move-object/from16 v1, v16
 
     iput-object v0, v1, Lcom/htc/widget/TaskInfo;->taskTag:Ljava/lang/String;
 
     .line 174
-    move-object/from16 v0, v28
+    move-object/from16 v0, v30
 
     move-object/from16 v1, v16
 
@@ -1086,7 +1086,7 @@
     iput-object v13, v0, Lcom/htc/widget/TaskInfo;->icon:Ljava/lang/String;
 
     .line 178
-    move-object/from16 v0, v27
+    move-object/from16 v0, v28
 
     move-object/from16 v1, v16
 
@@ -1100,7 +1100,7 @@
     iput-object v0, v1, Lcom/htc/widget/TaskInfo;->overlay:Ljava/lang/String;
 
     .line 180
-    move/from16 v0, v29
+    move/from16 v0, v31
 
     move-object/from16 v1, v16
 
@@ -1189,12 +1189,12 @@
 
     invoke-virtual {v12, v3}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
-    move-result-object v31
+    move-result-object v33
 
-    check-cast v31, Landroid/widget/TextView;
+    check-cast v33, Landroid/widget/TextView;
 
     .line 208
-    .local v31, textView:Landroid/widget/TextView;
+    .local v33, textView:Landroid/widget/TextView;
     move-object/from16 v0, v16
 
     iget v3, v0, Lcom/htc/widget/TaskInfo;->isHost:I
@@ -1219,7 +1219,7 @@
 
     move-object/from16 v0, v18
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
     invoke-virtual {v0, v1, v3, v4}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
@@ -1250,7 +1250,7 @@
 
     const/4 v5, 0x0
 
-    move-object/from16 v0, v31
+    move-object/from16 v0, v33
 
     invoke-virtual {v0, v3, v10, v4, v5}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
@@ -1261,46 +1261,131 @@
 
     move-object/from16 v0, v18
 
-    move-object/from16 v1, v28
+    move-object/from16 v1, v30
 
     invoke-virtual {v0, v1, v3, v4}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v26
 
-    .line 220
+    .line 221
     .local v26, rTaskNameID:I
-    move-object/from16 v0, v18
+    if-nez v26, :cond_8
 
-    move/from16 v1, v26
+    .line 222
+    const-string v3, "BinAdapter::bindView()"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "We can not find taskName resource, taskName "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    move-object/from16 v0, v30
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, " taskTag "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    move-object/from16 v0, v32
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 224
+    const/16 v27, 0x0
+
+    .line 226
+    .local v27, resources:Landroid/content/res/Resources;
+    :try_start_1
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/htc/widget/BinAdapter;->eresources:Landroid/content/res/Resources;
+
+    if-nez v3, :cond_6
+
+    move-object/from16 v0, v16
+
+    iget-object v3, v0, Lcom/htc/widget/TaskInfo;->resPackage:Ljava/lang/String;
+
+    move-object/from16 v0, v23
+
+    invoke-virtual {v0, v3}, Landroid/content/pm/PackageManager;->getResourcesForApplication(Ljava/lang/String;)Landroid/content/res/Resources;
+
+    move-result-object v27
+
+    .line 227
+    :goto_2
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v30
+
+    invoke-virtual {v0, v1, v3, v4}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v29
+
+    .line 228
+    .local v29, tID:I
+    if-eqz v29, :cond_7
+
+    .line 229
+    move-object/from16 v0, v27
+
+    move/from16 v1, v29
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v31
+    move-object/from16 v0, v33
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    :try_end_1
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 221
+    .line 242
+    .end local v27           #resources:Landroid/content/res/Resources;
+    .end local v29           #tID:I
+    :goto_3
     move-object/from16 v0, v16
 
     invoke-virtual {v12, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 222
+    .line 243
     move-object/from16 v0, v16
 
     iget v3, v0, Lcom/htc/widget/TaskInfo;->isHost:I
 
-    if-nez v3, :cond_6
+    if-nez v3, :cond_9
 
-    .line 223
+    .line 244
     const/4 v3, 0x1
 
-    move-object/from16 v0, v31
+    move-object/from16 v0, v33
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 224
+    .line 245
     const v3, 0x20200c1
 
     invoke-virtual {v12, v3}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
@@ -1311,34 +1396,34 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 247
+    .line 268
     :cond_1
-    :goto_2
+    :goto_4
     const/4 v3, 0x0
 
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 248
+    .line 269
     .end local v10           #d:Landroid/graphics/drawable/Drawable;
     .end local v12           #frame:Landroid/widget/FrameLayout;
     .end local v25           #rID:Ljava/lang/Integer;
     .end local v26           #rTaskNameID:I
-    .end local v31           #textView:Landroid/widget/TextView;
-    :goto_3
+    .end local v33           #textView:Landroid/widget/TextView;
+    :goto_5
     return-void
 
     .line 191
     :cond_2
-    :try_start_1
+    :try_start_2
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/htc/widget/BinAdapter;->eresources:Landroid/content/res/Resources;
 
     move-object/from16 v18, v0
 
-    goto :goto_0
+    goto/16 :goto_0
 
     .line 194
     :cond_3
@@ -1358,7 +1443,7 @@
 
     move-result-object v18
 
-    :goto_4
+    :goto_6
     goto/16 :goto_0
 
     :cond_4
@@ -1367,10 +1452,10 @@
     iget-object v0, v0, Lcom/htc/widget/BinAdapter;->eresources:Landroid/content/res/Resources;
 
     move-object/from16 v18, v0
-    :try_end_1
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_2
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
 
-    goto :goto_4
+    goto :goto_6
 
     .line 197
     :catch_0
@@ -1406,7 +1491,7 @@
 
     move-result-object v6
 
-    move-object/from16 v0, v30
+    move-object/from16 v0, v32
 
     invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1453,13 +1538,13 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_3
+    goto :goto_5
 
     .line 211
     .end local v2           #handle:Lcom/htc/content/NotifyingAsyncQueryHandler;
     .end local v11           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     .restart local v12       #frame:Landroid/widget/FrameLayout;
-    .restart local v31       #textView:Landroid/widget/TextView;
+    .restart local v33       #textView:Landroid/widget/TextView;
     :cond_5
     const/4 v3, 0x0
 
@@ -1481,7 +1566,7 @@
 
     iget v3, v0, Lcom/htc/widget/BinAdapter;->mUnSelectedColor:I
 
-    move-object/from16 v0, v31
+    move-object/from16 v0, v33
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
@@ -1490,22 +1575,101 @@
     .line 226
     .restart local v10       #d:Landroid/graphics/drawable/Drawable;
     .restart local v26       #rTaskNameID:I
+    .restart local v27       #resources:Landroid/content/res/Resources;
     :cond_6
+    :try_start_3
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/widget/BinAdapter;->eresources:Landroid/content/res/Resources;
+
+    move-object/from16 v27, v0
+
+    goto/16 :goto_2
+
+    .line 231
+    .restart local v29       #tID:I
+    :cond_7
+    const-string v3, "BinAdapter::bindView()"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "We try again and still fail, taskName "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    move-object/from16 v0, v30
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, " taskTag "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    move-object/from16 v0, v32
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_3
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_3 .. :try_end_3} :catch_1
+
+    goto/16 :goto_3
+
+    .line 233
+    .end local v29           #tID:I
+    :catch_1
+    move-exception v3
+
+    goto/16 :goto_3
+
+    .line 239
+    .end local v27           #resources:Landroid/content/res/Resources;
+    :cond_8
+    move-object/from16 v0, v18
+
+    move/from16 v1, v26
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    move-object/from16 v0, v33
+
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto/16 :goto_3
+
+    .line 247
+    :cond_9
     invoke-static {}, Lcom/htc/widget/CarouselSkinUtil;->isTextRequiredInWidget()Z
 
     move-result v3
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_b
 
-    .line 227
+    .line 248
     const/4 v3, 0x1
 
-    move-object/from16 v0, v31
+    move-object/from16 v0, v33
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 232
-    :goto_5
+    .line 253
+    :goto_7
     const v3, 0x20200c1
 
     invoke-virtual {v12, v3}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
@@ -1514,14 +1678,14 @@
 
     check-cast v8, Landroid/widget/TextView;
 
-    .line 233
+    .line 254
     .local v8, count:Landroid/widget/TextView;
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 235
-    if-eqz v19, :cond_7
+    .line 256
+    if-eqz v19, :cond_a
 
-    if-eqz v9, :cond_7
+    if-eqz v9, :cond_a
 
     const-string v3, "0"
 
@@ -1529,16 +1693,16 @@
 
     move-result v3
 
-    if-eqz v3, :cond_9
+    if-eqz v3, :cond_c
 
-    .line 236
-    :cond_7
+    .line 257
+    :cond_a
     const/4 v3, 0x4
 
     invoke-virtual {v8, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 241
-    :goto_6
+    .line 262
+    :goto_8
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/htc/widget/BinAdapter;->mState:I
@@ -1547,7 +1711,7 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 242
+    .line 263
     const v3, 0x20200c1
 
     invoke-virtual {v12, v3}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
@@ -1558,27 +1722,27 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
 
-    goto/16 :goto_2
+    goto/16 :goto_4
 
-    .line 229
+    .line 250
     .end local v8           #count:Landroid/widget/TextView;
-    :cond_8
+    :cond_b
     const/4 v3, 0x0
 
-    move-object/from16 v0, v31
+    move-object/from16 v0, v33
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setLines(I)V
 
-    goto :goto_5
+    goto :goto_7
 
-    .line 238
+    .line 259
     .restart local v8       #count:Landroid/widget/TextView;
-    :cond_9
+    :cond_c
     const/4 v3, 0x0
 
     invoke-virtual {v8, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    goto :goto_6
+    goto :goto_8
 .end method
 
 .method public changeCursor(Landroid/database/Cursor;)V
@@ -1586,18 +1750,18 @@
     .parameter "cursor"
 
     .prologue
-    .line 383
+    .line 404
     invoke-super {p0, p1}, Landroid/widget/SimpleCursorAdapter;->changeCursor(Landroid/database/Cursor;)V
 
-    .line 384
+    .line 405
     invoke-direct {p0, p1}, Lcom/htc/widget/BinAdapter;->getColumnIndices(Landroid/database/Cursor;)V
 
-    .line 385
+    .line 406
     iget-object v0, p0, Lcom/htc/widget/BinAdapter;->mRecycler:Lcom/htc/widget/BinAdapter$RecycleBin;
 
     invoke-virtual {v0}, Lcom/htc/widget/BinAdapter$RecycleBin;->clear()V
 
-    .line 387
+    .line 408
     if-eqz p1, :cond_0
 
     iget v0, p0, Lcom/htc/widget/BinAdapter;->mOwner:I
@@ -1606,12 +1770,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 388
+    .line 409
     iget-object v0, p0, Lcom/htc/widget/BinAdapter;->mModel:Lcom/htc/widget/CarouselModel;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/CarouselModel;->changeCursor(Landroid/database/Cursor;)V
 
-    .line 390
+    .line 411
     :cond_0
     return-void
 .end method
@@ -1620,7 +1784,7 @@
     .locals 1
 
     .prologue
-    .line 361
+    .line 382
     iget-object v0, p0, Lcom/htc/widget/BinAdapter;->mQueryHandler:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -1639,12 +1803,12 @@
     .parameter "parent"
 
     .prologue
-    .line 252
+    .line 273
     iget-boolean v1, p0, Lcom/htc/widget/BinAdapter;->mDataValid:Z
 
     if-nez v1, :cond_0
 
-    .line 253
+    .line 274
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "this should only be called when the cursor is valid"
@@ -1653,7 +1817,7 @@
 
     throw v1
 
-    .line 255
+    .line 276
     :cond_0
     iget-object v1, p0, Lcom/htc/widget/BinAdapter;->mCursor:Landroid/database/Cursor;
 
@@ -1663,7 +1827,7 @@
 
     if-nez v1, :cond_1
 
-    .line 256
+    .line 277
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1688,11 +1852,11 @@
 
     throw v1
 
-    .line 259
+    .line 280
     :cond_1
     if-nez p2, :cond_2
 
-    .line 260
+    .line 281
     iget-object v1, p0, Lcom/htc/widget/BinAdapter;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/htc/widget/BinAdapter;->mCursor:Landroid/database/Cursor;
@@ -1701,7 +1865,7 @@
 
     move-result-object v0
 
-    .line 264
+    .line 285
     .local v0, v:Landroid/view/View;
     :goto_0
     iget-object v1, p0, Lcom/htc/widget/BinAdapter;->mContext:Landroid/content/Context;
@@ -1710,10 +1874,10 @@
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/htc/widget/BinAdapter;->bindSelectedView(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V
 
-    .line 265
+    .line 286
     return-object v0
 
-    .line 262
+    .line 283
     .end local v0           #v:Landroid/view/View;
     :cond_2
     move-object v0, p2
@@ -1727,12 +1891,12 @@
     .parameter "position"
 
     .prologue
-    .line 339
+    .line 360
     iget-boolean v2, p0, Lcom/htc/widget/BinAdapter;->mDataValid:Z
 
     if-nez v2, :cond_0
 
-    .line 340
+    .line 361
     new-instance v2, Ljava/lang/IllegalStateException;
 
     const-string v3, "this should only be called when the cursor is valid"
@@ -1741,7 +1905,7 @@
 
     throw v2
 
-    .line 342
+    .line 363
     :cond_0
     iget-object v2, p0, Lcom/htc/widget/BinAdapter;->mCursor:Landroid/database/Cursor;
 
@@ -1751,7 +1915,7 @@
 
     if-nez v2, :cond_1
 
-    .line 343
+    .line 364
     new-instance v2, Ljava/lang/IllegalStateException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1776,11 +1940,11 @@
 
     throw v2
 
-    .line 345
+    .line 366
     :cond_1
     iget-object v0, p0, Lcom/htc/widget/BinAdapter;->mCursor:Landroid/database/Cursor;
 
-    .line 347
+    .line 368
     .local v0, c:Landroid/database/Cursor;
     iget v2, p0, Lcom/htc/widget/BinAdapter;->mTaskTagIndex:I
 
@@ -1788,7 +1952,7 @@
 
     move-result-object v1
 
-    .line 348
+    .line 369
     .local v1, taskTag:Ljava/lang/String;
     return-object v1
 .end method
@@ -1797,7 +1961,7 @@
     .locals 1
 
     .prologue
-    .line 365
+    .line 386
     iget-object v0, p0, Lcom/htc/widget/BinAdapter;->mUri:Landroid/net/Uri;
 
     return-object v0
@@ -1883,7 +2047,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 374
     iget-boolean v0, p0, Lcom/htc/widget/BinAdapter;->mDataValid:Z
 
     return v0
@@ -1945,12 +2109,12 @@
     .locals 2
 
     .prologue
-    .line 369
+    .line 390
     iget-object v0, p0, Lcom/htc/widget/BinAdapter;->mRecycler:Lcom/htc/widget/BinAdapter$RecycleBin;
 
     invoke-virtual {v0}, Lcom/htc/widget/BinAdapter$RecycleBin;->clear()V
 
-    .line 370
+    .line 391
     iget-object v0, p0, Lcom/htc/widget/BinAdapter;->mCursor:Landroid/database/Cursor;
 
     if-eqz v0, :cond_0
@@ -1961,18 +2125,18 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 371
+    .line 392
     iget-object v0, p0, Lcom/htc/widget/BinAdapter;->mModel:Lcom/htc/widget/CarouselModel;
 
     iget-object v1, p0, Lcom/htc/widget/BinAdapter;->mCursor:Landroid/database/Cursor;
 
     invoke-virtual {v0, v1}, Lcom/htc/widget/CarouselModel;->notifyDataSetChanged(Landroid/database/Cursor;)V
 
-    .line 374
+    .line 395
     :cond_0
     invoke-super {p0}, Landroid/widget/SimpleCursorAdapter;->notifyDataSetChanged()V
 
-    .line 375
+    .line 396
     return-void
 .end method
 
@@ -1980,15 +2144,15 @@
     .locals 1
 
     .prologue
-    .line 378
+    .line 399
     invoke-super {p0}, Landroid/widget/SimpleCursorAdapter;->notifyDataSetInvalidated()V
 
-    .line 379
+    .line 400
     iget-object v0, p0, Lcom/htc/widget/BinAdapter;->mRecycler:Lcom/htc/widget/BinAdapter$RecycleBin;
 
     invoke-virtual {v0}, Lcom/htc/widget/BinAdapter$RecycleBin;->clear()V
 
-    .line 380
+    .line 401
     return-void
 .end method
 

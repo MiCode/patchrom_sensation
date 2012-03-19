@@ -24,12 +24,12 @@
     .parameter "pCount"
 
     .prologue
-    .line 3097
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 3147
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3098
+    .line 3148
     iput p1, p0, Landroid/app/ActivityThread$ProviderRefCount;->count:I
 
-    .line 3099
+    .line 3149
     return-void
 .end method

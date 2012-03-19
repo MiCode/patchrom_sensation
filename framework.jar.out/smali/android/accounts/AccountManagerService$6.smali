@@ -63,7 +63,7 @@
 
     .prologue
     .line 1211
-    iget-object v0, p0, Landroid/accounts/AccountManagerService$6;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
+    iget-object v0, p0, Landroid/accounts/AccountManagerService$Session;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v1, p0, Landroid/accounts/AccountManagerService$6;->val$account:Landroid/accounts/Account;
 

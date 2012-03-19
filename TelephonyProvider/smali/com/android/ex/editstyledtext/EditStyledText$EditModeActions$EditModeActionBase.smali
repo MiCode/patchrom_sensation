@@ -29,7 +29,7 @@
     .line 2913
     iput-object p1, p0, Lcom/android/ex/editstyledtext/EditStyledText$EditModeActions$EditModeActionBase;->this$1:Lcom/android/ex/editstyledtext/EditStyledText$EditModeActions;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

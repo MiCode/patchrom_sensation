@@ -33,7 +33,7 @@
     const/4 v5, 0x0
 
     .line 77
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 78
     iput p4, p0, Landroid/bluetooth/BluetoothServerSocket;->mChannel:I

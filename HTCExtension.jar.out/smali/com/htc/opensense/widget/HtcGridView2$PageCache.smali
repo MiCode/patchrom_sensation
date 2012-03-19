@@ -114,7 +114,7 @@
     const/4 v1, 0x0
 
     .line 2646
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 2612
     iput-object v1, p0, Lcom/htc/opensense/widget/HtcGridView2$PageCache;->mParentView:Lcom/htc/opensense/widget/HtcGridView2;
@@ -203,14 +203,14 @@
     .line 2637
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/htc/opensense/widget/HtcGridView2$PageCache;->mLockPage:Ljava/lang/Object;
 
     .line 2638
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/htc/opensense/widget/HtcGridView2$PageCache;->mAdapterPage:Ljava/lang/Object;
 

@@ -32,8 +32,8 @@
     .locals 0
 
     .prologue
-    .line 420
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 434
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -50,19 +50,19 @@
 
     const/4 v0, -0x1
 
-    .line 422
+    .line 436
     iget v2, p1, Lcom/htc/text/util/HtcLinkify$LinkSpec;->start:I
 
     iget v3, p2, Lcom/htc/text/util/HtcLinkify$LinkSpec;->start:I
 
     if-ge v2, v3, :cond_1
 
-    .line 438
+    .line 452
     :cond_0
     :goto_0
     return v0
 
-    .line 426
+    .line 440
     :cond_1
     iget v2, p1, Lcom/htc/text/util/HtcLinkify$LinkSpec;->start:I
 
@@ -72,10 +72,10 @@
 
     move v0, v1
 
-    .line 427
+    .line 441
     goto :goto_0
 
-    .line 430
+    .line 444
     :cond_2
     iget v2, p1, Lcom/htc/text/util/HtcLinkify$LinkSpec;->end:I
 
@@ -85,10 +85,10 @@
 
     move v0, v1
 
-    .line 431
+    .line 445
     goto :goto_0
 
-    .line 434
+    .line 448
     :cond_3
     iget v1, p1, Lcom/htc/text/util/HtcLinkify$LinkSpec;->end:I
 
@@ -96,7 +96,7 @@
 
     if-gt v1, v2, :cond_0
 
-    .line 438
+    .line 452
     const/4 v0, 0x0
 
     goto :goto_0
@@ -108,7 +108,7 @@
     .parameter "x1"
 
     .prologue
-    .line 420
+    .line 434
     check-cast p1, Lcom/htc/text/util/HtcLinkify$LinkSpec;
 
     .end local p1
@@ -127,7 +127,7 @@
     .parameter "o"
 
     .prologue
-    .line 442
+    .line 456
     const/4 v0, 0x0
 
     return v0

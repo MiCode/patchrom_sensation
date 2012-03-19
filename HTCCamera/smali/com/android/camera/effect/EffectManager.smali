@@ -410,7 +410,7 @@
     if-nez v1, :cond_2
 
     .line 276
-    iget-object v10, p0, Lcom/android/camera/effect/EffectManager;->TAG:Ljava/lang/String;
+    iget-object v10, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v11, Ljava/lang/StringBuilder;
 
@@ -453,7 +453,7 @@
 
     .line 295
     .local v5, ex:Ljava/lang/Throwable;
-    iget-object v10, p0, Lcom/android/camera/effect/EffectManager;->TAG:Ljava/lang/String;
+    iget-object v10, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v11, Ljava/lang/StringBuilder;
 
@@ -511,7 +511,7 @@
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 283
-    iget-object v10, p0, Lcom/android/camera/effect/EffectManager;->TAG:Ljava/lang/String;
+    iget-object v10, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v11, Ljava/lang/StringBuilder;
 
@@ -566,7 +566,7 @@
 
     .line 291
     :cond_4
-    iget-object v10, p0, Lcom/android/camera/effect/EffectManager;->TAG:Ljava/lang/String;
+    iget-object v10, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v11, Ljava/lang/StringBuilder;
 
@@ -977,7 +977,7 @@
     .line 422
     .local v4, nextScene:Lcom/android/camera/effect/EffectBase;
     :goto_2
-    iget-object v6, p0, Lcom/android/camera/effect/EffectManager;->TAG:Ljava/lang/String;
+    iget-object v6, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -1004,7 +1004,7 @@
     invoke-static {v6, v7}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 423
-    iget-object v6, p0, Lcom/android/camera/effect/EffectManager;->TAG:Ljava/lang/String;
+    iget-object v6, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -1598,7 +1598,7 @@
     if-nez v0, :cond_0
 
     .line 488
-    iget-object v0, p0, Lcom/android/camera/effect/EffectManager;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1716,7 +1716,7 @@
     if-nez v0, :cond_0
 
     .line 509
-    iget-object v0, p0, Lcom/android/camera/effect/EffectManager;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 

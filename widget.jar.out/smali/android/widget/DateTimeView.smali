@@ -605,7 +605,7 @@
     :pswitch_0
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/widget/DateTimeView;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
 
     move-object/from16 v22, v0
 

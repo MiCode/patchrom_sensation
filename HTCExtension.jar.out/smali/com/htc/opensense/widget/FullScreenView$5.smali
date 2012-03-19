@@ -30,7 +30,7 @@
     .line 468
     iput-object p1, p0, Lcom/htc/opensense/widget/FullScreenView$5;->this$0:Lcom/htc/opensense/widget/FullScreenView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -411,14 +411,14 @@
 
     .line 563
     :cond_5
-    iget-object v0, v11, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mSuppMatrix:Landroid/graphics/Matrix;
+    iget-object v0, v11, Lcom/htc/opensense/widget/ImageViewTouchBase;->mSuppMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
     .line 564
-    iget-object v0, v11, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v0, v11, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
-    iget-object v1, v11, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBaseMatrix:Landroid/graphics/Matrix;
+    iget-object v1, v11, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBaseMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v11, v0, v1}, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->setBaseMatrix(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;)V
 

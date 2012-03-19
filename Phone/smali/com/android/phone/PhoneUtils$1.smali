@@ -23,7 +23,7 @@
 
     .prologue
     .line 417
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -36,18 +36,12 @@
     .parameter "iBinder"
 
     .prologue
-    .line 419
-    const-string v0, "Extended NW onServiceConnected"
-
-    #calls: Lcom/android/phone/PhoneUtils;->log(Ljava/lang/String;)V
-    invoke-static {v0}, Lcom/android/phone/PhoneUtils;->access$000(Ljava/lang/String;)V
-
     .line 420
     invoke-static {p2}, Lcom/android/internal/telephony/IExtendedNetworkService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/IExtendedNetworkService;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/android/phone/PhoneUtils;->access$502(Lcom/android/internal/telephony/IExtendedNetworkService;)Lcom/android/internal/telephony/IExtendedNetworkService;
+    invoke-static {v0}, Lcom/android/phone/PhoneUtils;->access$402(Lcom/android/internal/telephony/IExtendedNetworkService;)Lcom/android/internal/telephony/IExtendedNetworkService;
 
     .line 421
     return-void
@@ -58,16 +52,10 @@
     .parameter "arg0"
 
     .prologue
-    .line 424
-    const-string v0, "Extended NW onServiceDisconnected"
-
-    #calls: Lcom/android/phone/PhoneUtils;->log(Ljava/lang/String;)V
-    invoke-static {v0}, Lcom/android/phone/PhoneUtils;->access$000(Ljava/lang/String;)V
-
     .line 425
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/android/phone/PhoneUtils;->access$502(Lcom/android/internal/telephony/IExtendedNetworkService;)Lcom/android/internal/telephony/IExtendedNetworkService;
+    invoke-static {v0}, Lcom/android/phone/PhoneUtils;->access$402(Lcom/android/internal/telephony/IExtendedNetworkService;)Lcom/android/internal/telephony/IExtendedNetworkService;
 
     .line 426
     return-void

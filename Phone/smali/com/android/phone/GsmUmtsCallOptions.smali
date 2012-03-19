@@ -120,16 +120,16 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 1
+    .locals 2
 
     .prologue
+    const/4 v1, 0x0
+
     .line 62
     invoke-direct {p0}, Lcom/android/phone/TimeConsumingPreferenceActivity;-><init>()V
 
     .line 67
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/android/phone/GsmUmtsCallOptions;->DBG:Z
+    iput-boolean v1, p0, Lcom/android/phone/GsmUmtsCallOptions;->DBG:Z
 
     .line 88
     new-instance v0, Ljava/util/ArrayList;
@@ -139,9 +139,7 @@
     iput-object v0, p0, Lcom/android/phone/GsmUmtsCallOptions;->mPreferences:Ljava/util/ArrayList;
 
     .line 89
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/android/phone/GsmUmtsCallOptions;->mInitIndex:I
+    iput v1, p0, Lcom/android/phone/GsmUmtsCallOptions;->mInitIndex:I
 
     .line 455
     new-instance v0, Lcom/android/phone/GsmUmtsCallOptions$3;
@@ -449,7 +447,7 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 9
+    .locals 8
     .parameter "icicle"
 
     .prologue
@@ -712,13 +710,6 @@
     .line 162
     if-nez p1, :cond_f
 
-    .line 164
-    const-string v4, "GsmUmtsCallOptions"
-
-    const-string v7, "start to init "
-
-    invoke-static {v4, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 165
     iget-object v4, p0, Lcom/android/phone/GsmUmtsCallOptions;->mCLIRButton:Lcom/android/phone/CLIRListPreference;
 
@@ -862,17 +853,10 @@
     move v4, v6
 
     .line 159
-    goto/16 :goto_3
-
-    .line 168
-    :cond_f
-    const-string v4, "GsmUmtsCallOptions"
-
-    const-string v7, "restore stored states"
-
-    invoke-static {v4, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    goto :goto_3
 
     .line 169
+    :cond_f
     iget-object v4, p0, Lcom/android/phone/GsmUmtsCallOptions;->mPreferences:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -905,43 +889,6 @@
     .line 173
     .local v0, clirArray:[I
     if-eqz v0, :cond_10
-
-    .line 174
-    const-string v4, "GsmUmtsCallOptions"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "onCreate:  clirArray[0]="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    aget v8, v0, v6
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, ", clirArray[1]="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    aget v8, v0, v5
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v4, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 176
     iget-object v4, p0, Lcom/android/phone/GsmUmtsCallOptions;->mCLIRButton:Lcom/android/phone/CLIRListPreference;

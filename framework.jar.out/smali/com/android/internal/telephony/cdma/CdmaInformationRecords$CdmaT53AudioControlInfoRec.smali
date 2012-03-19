@@ -28,7 +28,7 @@
 
     .prologue
     .line 250
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 251
     int-to-byte v0, p1

@@ -69,7 +69,7 @@
     const/4 v0, 0x0
 
     .line 3996
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 3983
     iput-object v1, p0, Lcom/htc/opensense/widget/HtcGridView2$Prefetch;->mFetchInfoList:Ljava/util/LinkedList;
@@ -745,7 +745,7 @@
 .end method
 
 .method public updatePrefetchRange(IIIII)V
-    .locals 5
+    .locals 1
     .parameter "min"
     .parameter "max"
     .parameter "pos"
@@ -753,71 +753,6 @@
     .parameter "row"
 
     .prologue
-    const/4 v4, 0x0
-
-    .line 4170
-    const-string v0, "HtcGridView2.Prefetch"
-
-    const/16 v1, 0x8
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const-string v2, "updatePrefetchRange() min:"
-
-    aput-object v2, v1, v4
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    const-string v3, " pos:"
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x4
-
-    const-string v3, " max:"
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x5
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x6
-
-    const-string v3, " row:"
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x7
-
-    invoke-static {p5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Lcom/htc/opensense/album/util/Log;->d2(Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 4171
     iput p1, p0, Lcom/htc/opensense/widget/HtcGridView2$Prefetch;->mMinPosRange:I
 
@@ -834,7 +769,9 @@
     iput p5, p0, Lcom/htc/opensense/widget/HtcGridView2$Prefetch;->mNumRow:I
 
     .line 4176
-    iput-boolean v4, p0, Lcom/htc/opensense/widget/HtcGridView2$Prefetch;->mHasSorted:Z
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/htc/opensense/widget/HtcGridView2$Prefetch;->mHasSorted:Z
 
     .line 4177
     return-void

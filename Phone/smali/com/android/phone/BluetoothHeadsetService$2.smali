@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 266
+    .line 268
     iput-object p1, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,299 +35,408 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 8
+    .locals 13
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 270
+    const/4 v12, 0x0
+
+    const/high16 v11, -0x8000
+
+    .line 272
+    const-string v8, "Bluetooth HSHFP"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "[U53_BT]mBluetoothReceiver(), Intent = "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 273
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 271
-    .local v0, action:Ljava/lang/String;
-    const-string v5, "android.bluetooth.device.extra.DEVICE"
-
-    invoke-virtual {p2, v5}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/bluetooth/BluetoothDevice;
-
     .line 274
-    .local v2, device:Landroid/bluetooth/BluetoothDevice;
-    iget-object v5, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+    .local v0, action:Ljava/lang/String;
+    const-string v8, "android.bluetooth.device.extra.DEVICE"
 
-    #calls: Lcom/android/phone/BluetoothHeadsetService;->getCurrentDevice()Landroid/bluetooth/BluetoothDevice;
-    invoke-static {v5}, Lcom/android/phone/BluetoothHeadsetService;->access$500(Lcom/android/phone/BluetoothHeadsetService;)Landroid/bluetooth/BluetoothDevice;
+    invoke-virtual {p2, v8}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    move-result-object v1
+    move-result-object v4
 
-    .line 275
-    .local v1, currDevice:Landroid/bluetooth/BluetoothDevice;
-    const/4 v3, 0x0
-
-    .line 276
-    .local v3, state:I
-    if-eqz v1, :cond_0
+    check-cast v4, Landroid/bluetooth/BluetoothDevice;
 
     .line 277
-    iget-object v5, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+    .local v4, device:Landroid/bluetooth/BluetoothDevice;
+    iget-object v8, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
-    #getter for: Lcom/android/phone/BluetoothHeadsetService;->mRemoteHeadsets:Ljava/util/concurrent/ConcurrentHashMap;
-    invoke-static {v5}, Lcom/android/phone/BluetoothHeadsetService;->access$600(Lcom/android/phone/BluetoothHeadsetService;)Ljava/util/concurrent/ConcurrentHashMap;
+    #calls: Lcom/android/phone/BluetoothHeadsetService;->getCurrentDevice()Landroid/bluetooth/BluetoothDevice;
+    invoke-static {v8}, Lcom/android/phone/BluetoothHeadsetService;->access$500(Lcom/android/phone/BluetoothHeadsetService;)Landroid/bluetooth/BluetoothDevice;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-virtual {v5, v1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 278
+    .local v3, currDevice:Landroid/bluetooth/BluetoothDevice;
+    const/4 v6, 0x0
 
-    move-result-object v5
-
-    check-cast v5, Lcom/android/phone/BluetoothHeadsetService$BluetoothRemoteHeadset;
-
-    #getter for: Lcom/android/phone/BluetoothHeadsetService$BluetoothRemoteHeadset;->mState:I
-    invoke-static {v5}, Lcom/android/phone/BluetoothHeadsetService$BluetoothRemoteHeadset;->access$000(Lcom/android/phone/BluetoothHeadsetService$BluetoothRemoteHeadset;)I
-
-    move-result v3
+    .line 279
+    .local v6, state:I
+    if-eqz v3, :cond_0
 
     .line 280
+    iget-object v8, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+
+    #getter for: Lcom/android/phone/BluetoothHeadsetService;->mRemoteHeadsets:Ljava/util/concurrent/ConcurrentHashMap;
+    invoke-static {v8}, Lcom/android/phone/BluetoothHeadsetService;->access$600(Lcom/android/phone/BluetoothHeadsetService;)Ljava/util/concurrent/ConcurrentHashMap;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v3}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lcom/android/phone/BluetoothHeadsetService$BluetoothRemoteHeadset;
+
+    #getter for: Lcom/android/phone/BluetoothHeadsetService$BluetoothRemoteHeadset;->mState:I
+    invoke-static {v8}, Lcom/android/phone/BluetoothHeadsetService$BluetoothRemoteHeadset;->access$000(Lcom/android/phone/BluetoothHeadsetService$BluetoothRemoteHeadset;)I
+
+    move-result v6
+
+    .line 283
     :cond_0
-    const/4 v5, 0x2
+    const/4 v8, 0x2
 
-    if-eq v3, v5, :cond_1
+    if-eq v6, v8, :cond_1
 
-    const/4 v5, 0x1
+    const/4 v8, 0x1
 
-    if-ne v3, v5, :cond_3
+    if-ne v6, v8, :cond_3
 
     :cond_1
-    const-string v5, "android.bluetooth.device.action.ACL_DISCONNECT_REQUESTED"
+    const-string v8, "android.bluetooth.device.action.ACL_DISCONNECT_REQUESTED"
 
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v8
 
-    if-eqz v5, :cond_3
+    if-eqz v8, :cond_3
 
-    invoke-virtual {v2, v1}, Landroid/bluetooth/BluetoothDevice;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v3}, Landroid/bluetooth/BluetoothDevice;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v8
 
-    if-eqz v5, :cond_3
+    if-eqz v8, :cond_3
 
-    .line 285
+    .line 288
     :try_start_0
-    iget-object v5, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+    iget-object v8, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
     #getter for: Lcom/android/phone/BluetoothHeadsetService;->mBinder:Landroid/bluetooth/IBluetoothHeadset$Stub;
-    invoke-static {v5}, Lcom/android/phone/BluetoothHeadsetService;->access$1000(Lcom/android/phone/BluetoothHeadsetService;)Landroid/bluetooth/IBluetoothHeadset$Stub;
+    invoke-static {v8}, Lcom/android/phone/BluetoothHeadsetService;->access$1000(Lcom/android/phone/BluetoothHeadsetService;)Landroid/bluetooth/IBluetoothHeadset$Stub;
 
-    move-result-object v5
+    move-result-object v8
 
-    invoke-virtual {v5, v1}, Landroid/bluetooth/IBluetoothHeadset$Stub;->disconnect(Landroid/bluetooth/BluetoothDevice;)Z
+    invoke-virtual {v8, v3}, Landroid/bluetooth/IBluetoothHeadset$Stub;->disconnect(Landroid/bluetooth/BluetoothDevice;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 317
+    .line 339
     :cond_2
     :goto_0
     return-void
 
-    .line 287
+    .line 290
     :cond_3
-    const-string v5, "android.bluetooth.adapter.action.STATE_CHANGED"
+    const-string v8, "android.bluetooth.adapter.action.STATE_CHANGED"
 
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v8
 
-    if-eqz v5, :cond_4
-
-    .line 288
-    const-string v5, "android.bluetooth.adapter.extra.STATE"
-
-    const/high16 v6, -0x8000
-
-    invoke-virtual {p2, v5, v6}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v5
-
-    packed-switch v5, :pswitch_data_0
-
-    goto :goto_0
+    if-eqz v8, :cond_4
 
     .line 291
-    :pswitch_0
-    iget-object v5, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+    const-string v8, "android.bluetooth.adapter.extra.STATE"
 
-    #getter for: Lcom/android/phone/BluetoothHeadsetService;->mAg:Landroid/bluetooth/BluetoothAudioGateway;
-    invoke-static {v5}, Lcom/android/phone/BluetoothHeadsetService;->access$1200(Lcom/android/phone/BluetoothHeadsetService;)Landroid/bluetooth/BluetoothAudioGateway;
+    invoke-virtual {p2, v8, v11}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result-object v5
+    move-result v8
 
-    iget-object v6, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
-
-    #getter for: Lcom/android/phone/BluetoothHeadsetService;->mIncomingConnectionHandler:Landroid/os/Handler;
-    invoke-static {v6}, Lcom/android/phone/BluetoothHeadsetService;->access$1100(Lcom/android/phone/BluetoothHeadsetService;)Landroid/os/Handler;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Landroid/bluetooth/BluetoothAudioGateway;->start(Landroid/os/Handler;)Z
-
-    .line 292
-    iget-object v5, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
-
-    #getter for: Lcom/android/phone/BluetoothHeadsetService;->mBtHandsfree:Lcom/android/phone/BluetoothHandsfree;
-    invoke-static {v5}, Lcom/android/phone/BluetoothHeadsetService;->access$1300(Lcom/android/phone/BluetoothHeadsetService;)Lcom/android/phone/BluetoothHandsfree;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/android/phone/BluetoothHandsfree;->onBluetoothEnabled()V
+    packed-switch v8, :pswitch_data_0
 
     goto :goto_0
 
-    .line 295
-    :pswitch_1
-    iget-object v5, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
-
-    #getter for: Lcom/android/phone/BluetoothHeadsetService;->mBtHandsfree:Lcom/android/phone/BluetoothHandsfree;
-    invoke-static {v5}, Lcom/android/phone/BluetoothHeadsetService;->access$1300(Lcom/android/phone/BluetoothHeadsetService;)Lcom/android/phone/BluetoothHandsfree;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/android/phone/BluetoothHandsfree;->onBluetoothDisabled()V
-
-    .line 296
-    iget-object v5, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+    .line 294
+    :pswitch_0
+    iget-object v8, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
     #getter for: Lcom/android/phone/BluetoothHeadsetService;->mAg:Landroid/bluetooth/BluetoothAudioGateway;
-    invoke-static {v5}, Lcom/android/phone/BluetoothHeadsetService;->access$1200(Lcom/android/phone/BluetoothHeadsetService;)Landroid/bluetooth/BluetoothAudioGateway;
+    invoke-static {v8}, Lcom/android/phone/BluetoothHeadsetService;->access$1200(Lcom/android/phone/BluetoothHeadsetService;)Landroid/bluetooth/BluetoothAudioGateway;
 
-    move-result-object v5
+    move-result-object v8
 
-    invoke-virtual {v5}, Landroid/bluetooth/BluetoothAudioGateway;->stop()V
+    iget-object v9, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
-    .line 297
-    if-eqz v1, :cond_2
+    #getter for: Lcom/android/phone/BluetoothHeadsetService;->mIncomingConnectionHandler:Landroid/os/Handler;
+    invoke-static {v9}, Lcom/android/phone/BluetoothHeadsetService;->access$1100(Lcom/android/phone/BluetoothHeadsetService;)Landroid/os/Handler;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Landroid/bluetooth/BluetoothAudioGateway;->start(Landroid/os/Handler;)Z
+
+    .line 295
+    iget-object v8, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+
+    #getter for: Lcom/android/phone/BluetoothHeadsetService;->mBtHandsfree:Lcom/android/phone/BluetoothHandsfree;
+    invoke-static {v8}, Lcom/android/phone/BluetoothHeadsetService;->access$1300(Lcom/android/phone/BluetoothHeadsetService;)Lcom/android/phone/BluetoothHandsfree;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Lcom/android/phone/BluetoothHandsfree;->onBluetoothEnabled()V
+
+    goto :goto_0
+
+    .line 298
+    :pswitch_1
+    iget-object v8, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+
+    #getter for: Lcom/android/phone/BluetoothHeadsetService;->mBtHandsfree:Lcom/android/phone/BluetoothHandsfree;
+    invoke-static {v8}, Lcom/android/phone/BluetoothHeadsetService;->access$1300(Lcom/android/phone/BluetoothHeadsetService;)Lcom/android/phone/BluetoothHandsfree;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Lcom/android/phone/BluetoothHandsfree;->onBluetoothDisabled()V
 
     .line 299
+    iget-object v8, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+
+    #getter for: Lcom/android/phone/BluetoothHeadsetService;->mAg:Landroid/bluetooth/BluetoothAudioGateway;
+    invoke-static {v8}, Lcom/android/phone/BluetoothHeadsetService;->access$1200(Lcom/android/phone/BluetoothHeadsetService;)Landroid/bluetooth/BluetoothAudioGateway;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/bluetooth/BluetoothAudioGateway;->stop()V
+
+    .line 300
+    if-eqz v3, :cond_2
+
+    .line 302
     :try_start_1
-    iget-object v5, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+    iget-object v8, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
     #getter for: Lcom/android/phone/BluetoothHeadsetService;->mBinder:Landroid/bluetooth/IBluetoothHeadset$Stub;
-    invoke-static {v5}, Lcom/android/phone/BluetoothHeadsetService;->access$1000(Lcom/android/phone/BluetoothHeadsetService;)Landroid/bluetooth/IBluetoothHeadset$Stub;
+    invoke-static {v8}, Lcom/android/phone/BluetoothHeadsetService;->access$1000(Lcom/android/phone/BluetoothHeadsetService;)Landroid/bluetooth/IBluetoothHeadset$Stub;
 
-    move-result-object v5
+    move-result-object v8
 
-    invoke-virtual {v5, v1}, Landroid/bluetooth/IBluetoothHeadset$Stub;->disconnect(Landroid/bluetooth/BluetoothDevice;)Z
+    invoke-virtual {v8, v3}, Landroid/bluetooth/IBluetoothHeadset$Stub;->disconnect(Landroid/bluetooth/BluetoothDevice;)Z
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_0
 
-    .line 300
+    .line 303
     :catch_0
-    move-exception v5
+    move-exception v8
 
     goto :goto_0
-
-    .line 304
-    :cond_4
-    const-string v5, "android.media.VOLUME_CHANGED_ACTION"
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_5
-
-    .line 305
-    const-string v5, "android.media.EXTRA_VOLUME_STREAM_TYPE"
-
-    const/4 v6, -0x1
-
-    invoke-virtual {p2, v5, v6}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v4
-
-    .line 306
-    .local v4, streamType:I
-    const/4 v5, 0x6
-
-    if-ne v4, v5, :cond_2
 
     .line 307
-    iget-object v5, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+    :cond_4
+    const-string v8, "android.bluetooth.device.action.BOND_STATE_CHANGED"
 
-    #getter for: Lcom/android/phone/BluetoothHeadsetService;->mBtHandsfree:Lcom/android/phone/BluetoothHandsfree;
-    invoke-static {v5}, Lcom/android/phone/BluetoothHeadsetService;->access$1300(Lcom/android/phone/BluetoothHeadsetService;)Lcom/android/phone/BluetoothHandsfree;
+    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v5
+    move-result v8
 
-    const-string v6, "android.media.EXTRA_VOLUME_STREAM_VALUE"
+    if-eqz v8, :cond_6
 
-    const/4 v7, 0x0
+    .line 308
+    const-string v8, "android.bluetooth.device.extra.BOND_STATE"
 
-    invoke-virtual {p2, v6, v7}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {p2, v8, v11}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result v6
+    move-result v1
 
-    invoke-virtual {v5, v6}, Lcom/android/phone/BluetoothHandsfree;->sendScoGainUpdate(I)V
+    .line 310
+    .local v1, bondState:I
+    packed-switch v1, :pswitch_data_1
+
+    :pswitch_2
+    goto :goto_0
+
+    .line 323
+    :pswitch_3
+    iget-object v8, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+
+    #calls: Lcom/android/phone/BluetoothHeadsetService;->setPriority(Landroid/bluetooth/BluetoothDevice;I)V
+    invoke-static {v8, v4, v12}, Lcom/android/phone/BluetoothHeadsetService;->access$1400(Lcom/android/phone/BluetoothHeadsetService;Landroid/bluetooth/BluetoothDevice;I)V
 
     goto :goto_0
 
-    .line 311
-    .end local v4           #streamType:I
-    :cond_5
-    const-string v5, "android.bluetooth.device.action.UUID"
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_2
-
     .line 312
-    iget-object v5, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+    :pswitch_4
+    const/4 v5, 0x0
 
-    #getter for: Lcom/android/phone/BluetoothHeadsetService;->mDeviceSdpQuery:Landroid/bluetooth/BluetoothDevice;
-    invoke-static {v5}, Lcom/android/phone/BluetoothHeadsetService;->access$1400(Lcom/android/phone/BluetoothHeadsetService;)Landroid/bluetooth/BluetoothDevice;
+    .line 313
+    .local v5, priority:I
+    invoke-virtual {v4}, Landroid/bluetooth/BluetoothDevice;->getBluetoothClass()Landroid/bluetooth/BluetoothClass;
 
-    move-result-object v5
-
-    invoke-virtual {v2, v5}, Landroid/bluetooth/BluetoothDevice;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_2
-
-    invoke-virtual {v2, v1}, Landroid/bluetooth/BluetoothDevice;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_2
+    move-result-object v2
 
     .line 314
-    iget-object v5, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+    .local v2, btClass:Landroid/bluetooth/BluetoothClass;
+    if-eqz v2, :cond_5
+
+    .line 315
+    invoke-virtual {v2}, Landroid/bluetooth/BluetoothClass;->getMajorDeviceClass()I
+
+    move-result v8
+
+    const/16 v9, 0x100
+
+    if-eq v8, v9, :cond_5
+
+    .line 316
+    const-string v8, "Bluetooth HSHFP"
+
+    const-string v9, "Remote device matched connectable priority"
+
+    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 317
+    const/16 v5, 0x64
+
+    .line 320
+    :cond_5
+    iget-object v8, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+
+    #calls: Lcom/android/phone/BluetoothHeadsetService;->setPriority(Landroid/bluetooth/BluetoothDevice;I)V
+    invoke-static {v8, v4, v5}, Lcom/android/phone/BluetoothHeadsetService;->access$1400(Lcom/android/phone/BluetoothHeadsetService;Landroid/bluetooth/BluetoothDevice;I)V
+
+    goto/16 :goto_0
+
+    .line 326
+    .end local v1           #bondState:I
+    .end local v2           #btClass:Landroid/bluetooth/BluetoothClass;
+    .end local v5           #priority:I
+    :cond_6
+    const-string v8, "android.media.VOLUME_CHANGED_ACTION"
+
+    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_7
+
+    .line 327
+    const-string v8, "android.media.EXTRA_VOLUME_STREAM_TYPE"
+
+    const/4 v9, -0x1
+
+    invoke-virtual {p2, v8, v9}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+
+    move-result v7
+
+    .line 328
+    .local v7, streamType:I
+    const/4 v8, 0x6
+
+    if-ne v7, v8, :cond_2
+
+    .line 329
+    iget-object v8, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+
+    #getter for: Lcom/android/phone/BluetoothHeadsetService;->mBtHandsfree:Lcom/android/phone/BluetoothHandsfree;
+    invoke-static {v8}, Lcom/android/phone/BluetoothHeadsetService;->access$1300(Lcom/android/phone/BluetoothHeadsetService;)Lcom/android/phone/BluetoothHandsfree;
+
+    move-result-object v8
+
+    const-string v9, "android.media.EXTRA_VOLUME_STREAM_VALUE"
+
+    invoke-virtual {p2, v9, v12}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+
+    move-result v9
+
+    invoke-virtual {v8, v9}, Lcom/android/phone/BluetoothHandsfree;->sendScoGainUpdate(I)V
+
+    goto/16 :goto_0
+
+    .line 333
+    .end local v7           #streamType:I
+    :cond_7
+    const-string v8, "android.bluetooth.device.action.UUID"
+
+    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_2
+
+    .line 334
+    iget-object v8, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
+
+    #getter for: Lcom/android/phone/BluetoothHeadsetService;->mDeviceSdpQuery:Landroid/bluetooth/BluetoothDevice;
+    invoke-static {v8}, Lcom/android/phone/BluetoothHeadsetService;->access$1500(Lcom/android/phone/BluetoothHeadsetService;)Landroid/bluetooth/BluetoothDevice;
+
+    move-result-object v8
+
+    invoke-virtual {v4, v8}, Landroid/bluetooth/BluetoothDevice;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_2
+
+    invoke-virtual {v4, v3}, Landroid/bluetooth/BluetoothDevice;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_2
+
+    .line 336
+    iget-object v8, p0, Lcom/android/phone/BluetoothHeadsetService$2;->this$0:Lcom/android/phone/BluetoothHeadsetService;
 
     #calls: Lcom/android/phone/BluetoothHeadsetService;->getSdpRecordsAndConnect(Landroid/bluetooth/BluetoothDevice;)V
-    invoke-static {v5, v2}, Lcom/android/phone/BluetoothHeadsetService;->access$1500(Lcom/android/phone/BluetoothHeadsetService;Landroid/bluetooth/BluetoothDevice;)V
+    invoke-static {v8, v4}, Lcom/android/phone/BluetoothHeadsetService;->access$1600(Lcom/android/phone/BluetoothHeadsetService;Landroid/bluetooth/BluetoothDevice;)V
 
     goto/16 :goto_0
 
-    .line 286
+    .line 289
     :catch_1
-    move-exception v5
+    move-exception v8
 
     goto/16 :goto_0
 
-    .line 288
+    .line 291
     nop
 
     :pswitch_data_0
     .packed-switch 0xc
         :pswitch_0
         :pswitch_1
+    .end packed-switch
+
+    .line 310
+    :pswitch_data_1
+    .packed-switch 0xa
+        :pswitch_3
+        :pswitch_2
+        :pswitch_4
     .end packed-switch
 .end method

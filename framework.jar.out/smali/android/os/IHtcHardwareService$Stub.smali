@@ -26,13 +26,15 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.os.IHtcHardwareService"
 
+.field static final TRANSACTION_DmbRequestWakeUpSignal:I = 0xe
+
 .field static final TRANSACTION_getCapsLedState:I = 0x7
 
 .field static final TRANSACTION_getFnLedState:I = 0x8
 
 .field static final TRANSACTION_getHeadsetType:I = 0xc
 
-.field static final TRANSACTION_getIMSITstmp:I = 0xe
+.field static final TRANSACTION_getIMSITstmp:I = 0xf
 
 .field static final TRANSACTION_hasHWKB:I = 0xd
 
@@ -52,7 +54,7 @@
 
 .field static final TRANSACTION_setHeadsetTTYType:I = 0xb
 
-.field static final TRANSACTION_setIMSITstmp:I = 0xf
+.field static final TRANSACTION_setIMSITstmp:I = 0x10
 
 .field static final TRANSACTION_setJogBallMode:I = 0x2
 
@@ -150,7 +152,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 193
+    .line 202
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v8
@@ -550,49 +552,70 @@
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 176
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    .line 177
+    .local v1, _arg0:I
+    invoke-virtual {p0, v1}, Landroid/os/IHtcHardwareService$Stub;->DmbRequestWakeUpSignal(I)V
+
+    .line 178
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
+    .line 183
+    .end local v1           #_arg0:I
+    :sswitch_f
+    const-string v0, "android.os.IHtcHardwareService"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 185
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 177
-    .restart local v1       #_arg0:Ljava/lang/String;
+    .line 186
+    .local v1, _arg0:Ljava/lang/String;
     invoke-virtual {p0, v1}, Landroid/os/IHtcHardwareService$Stub;->getIMSITstmp(Ljava/lang/String;)J
 
     move-result-wide v6
 
-    .line 178
+    .line 187
     .local v6, _result:J
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 179
+    .line 188
     invoke-virtual {p3, v6, v7}, Landroid/os/Parcel;->writeLong(J)V
 
     goto/16 :goto_0
 
-    .line 184
+    .line 193
     .end local v1           #_arg0:Ljava/lang/String;
     .end local v6           #_result:J
-    :sswitch_f
+    :sswitch_10
     const-string v9, "android.os.IHtcHardwareService"
 
     invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 186
+    .line 195
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 187
+    .line 196
     .restart local v1       #_arg0:Ljava/lang/String;
     invoke-virtual {p0, v1}, Landroid/os/IHtcHardwareService$Stub;->setIMSITstmp(Ljava/lang/String;)Z
 
     move-result v6
 
-    .line 188
+    .line 197
     .local v6, _result:Z
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 189
+    .line 198
     if-eqz v6, :cond_5
 
     move v0, v8
@@ -603,8 +626,6 @@
     goto/16 :goto_0
 
     .line 39
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -622,6 +643,7 @@
         0xd -> :sswitch_d
         0xe -> :sswitch_e
         0xf -> :sswitch_f
+        0x10 -> :sswitch_10
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 6242
+    .line 6278
     iput-object p1, p0, Lcom/android/camera/HTCCamera$30;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -44,12 +44,12 @@
 
     const/4 v2, 0x0
 
-    .line 6246
+    .line 6282
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 6247
+    .line 6283
     .local v7, action:Ljava/lang/String;
     const-string v0, "HTCCamera"
 
@@ -73,7 +73,7 @@
 
     invoke-static {v0, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6249
+    .line 6285
     invoke-static {}, Lcom/android/camera/DisplayDevice;->support3DCamera()Z
 
     move-result v0
@@ -92,14 +92,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 6252
+    .line 6288
     const-string v0, "HTCCamera"
 
     const-string v3, "onReceive() - com.htc.content.Intent.ACTION_HTC_CAM_SWITCH_CHANGE"
 
     invoke-static {v0, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6253
+    .line 6289
     iget-object v0, p0, Lcom/android/camera/HTCCamera$30;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mForce2DMode:Z
@@ -109,12 +109,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 6273
+    .line 6309
     :cond_0
     :goto_0
     return-void
 
-    .line 6257
+    .line 6293
     :cond_1
     const-string v0, "android.intent.extra.KEY_EVENT"
 
@@ -124,7 +124,7 @@
 
     check-cast v8, Landroid/view/KeyEvent;
 
-    .line 6258
+    .line 6294
     .local v8, event:Landroid/view/KeyEvent;
     invoke-virtual {v8}, Landroid/view/KeyEvent;->getKeyCode()I
 
@@ -134,7 +134,7 @@
 
     if-ne v0, v3, :cond_0
 
-    .line 6260
+    .line 6296
     iget-object v0, p0, Lcom/android/camera/HTCCamera$30;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v8}, Landroid/view/KeyEvent;->getAction()I
@@ -144,14 +144,14 @@
     #setter for: Lcom/android/camera/HTCCamera;->m3DButtonStatus:I
     invoke-static {v0, v3}, Lcom/android/camera/HTCCamera;->access$3102(Lcom/android/camera/HTCCamera;I)I
 
-    .line 6261
+    .line 6297
     invoke-static {}, Lcom/android/camera/HTCCamera;->access$12600()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 6262
+    .line 6298
     const-string v0, "HTCCamera"
 
     const-string v1, "mIsKeyguardShow is true, return"
@@ -160,7 +160,7 @@
 
     goto :goto_0
 
-    .line 6265
+    .line 6301
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera$30;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -177,7 +177,7 @@
 
     if-nez v0, :cond_0
 
-    .line 6267
+    .line 6303
     iget-object v0, p0, Lcom/android/camera/HTCCamera$30;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
@@ -187,7 +187,7 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 6268
+    .line 6304
     iget-object v0, p0, Lcom/android/camera/HTCCamera$30;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;

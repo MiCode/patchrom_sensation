@@ -34,7 +34,7 @@
     .line 141
     iput-object p1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase$ItemSelectedListener;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 138
     const/4 v0, -0x1
@@ -88,7 +88,7 @@
     .line 148
     iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase$ItemSelectedListener;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
     invoke-static {v0}, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->access$100(Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;)Landroid/widget/BaseAdapter;
 
     move-result-object v0
@@ -97,7 +97,7 @@
 
     iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase$ItemSelectedListener;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
     invoke-static {v0}, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->access$200(Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;)Landroid/widget/BaseAdapter;
 
     move-result-object v0
@@ -109,7 +109,7 @@
     .line 150
     iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase$ItemSelectedListener;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
     invoke-static {v0}, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->access$300(Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;)Landroid/widget/BaseAdapter;
 
     move-result-object v6
@@ -165,7 +165,7 @@
 
     iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase$ItemSelectedListener;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
     invoke-static {v0}, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->access$400(Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;)Landroid/view/View;
 
     move-result-object v0
@@ -246,7 +246,7 @@
     .local p1, parent:Lcom/htc/opensense/widget/AlbumAdapterView;,"Lcom/htc/opensense/widget/AlbumAdapterView<*>;"
     iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase$ItemSelectedListener;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
     invoke-static {v1}, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->access$500(Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;)Landroid/widget/BaseAdapter;
 
     move-result-object v0
@@ -264,7 +264,7 @@
     :goto_0
     iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase$ItemSelectedListener;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->mMainView:Landroid/view/View;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
     invoke-static {v1}, Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;->access$600(Lcom/htc/opensense/album/SocialNetwork/LiveFilmstripViewTemplateBase;)Landroid/view/View;
 
     move-result-object v1

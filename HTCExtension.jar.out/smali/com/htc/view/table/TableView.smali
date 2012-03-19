@@ -225,7 +225,7 @@
     const/4 v3, 0x1
 
     .line 475
-    iget-object v4, p0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v4, p0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
     if-nez v4, :cond_0
 
@@ -235,7 +235,7 @@
 
     .line 479
     :cond_0
-    iget-boolean v4, p0, Lcom/htc/view/table/TableView;->mDataChanged:Z
+    iget-boolean v4, p0, Lcom/htc/view/table/AbstractAdapterView;->mDataChanged:Z
 
     if-eqz v4, :cond_1
 
@@ -257,7 +257,7 @@
     if-eq v0, v3, :cond_3
 
     .line 488
-    iget v4, p0, Lcom/htc/view/table/TableView;->mSelectedPosition:I
+    iget v4, p0, Lcom/htc/view/table/AbstractAdapterView;->mSelectedPosition:I
 
     if-gez v4, :cond_2
 
@@ -391,11 +391,11 @@
 
     .line 539
     :sswitch_6
-    iget-object v4, p0, Lcom/htc/view/table/TableView;->mPopup:Landroid/widget/PopupWindow;
+    iget-object v4, p0, Lcom/htc/view/table/AbstractTableView;->mPopup:Landroid/widget/PopupWindow;
 
     if-eqz v4, :cond_8
 
-    iget-object v4, p0, Lcom/htc/view/table/TableView;->mPopup:Landroid/widget/PopupWindow;
+    iget-object v4, p0, Lcom/htc/view/table/AbstractTableView;->mPopup:Landroid/widget/PopupWindow;
 
     invoke-virtual {v4}, Landroid/widget/PopupWindow;->isShowing()Z
 
@@ -512,12 +512,12 @@
 
     .line 705
     .local v1, invertedIndex:I
-    iget-boolean v6, p0, Lcom/htc/view/table/TableView;->mStackFromBottom:Z
+    iget-boolean v6, p0, Lcom/htc/view/table/AbstractTableView;->mStackFromBottom:Z
 
     if-nez v6, :cond_0
 
     .line 706
-    iget-object v6, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v6, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v6, v6, Lcom/htc/view/table/TableColleague;->mNumColumnRows:I
 
@@ -527,7 +527,7 @@
 
     .line 707
     .local v3, rowStart:I
-    iget-object v6, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v6, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v6, v6, Lcom/htc/view/table/TableColleague;->mNumColumnRows:I
 
@@ -559,7 +559,7 @@
     :cond_0
     add-int/lit8 v6, v0, -0x1
 
-    iget-object v7, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v7, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v7, v7, Lcom/htc/view/table/TableColleague;->mNumColumnRows:I
 
@@ -571,7 +571,7 @@
 
     .line 710
     .restart local v2       #rowEnd:I
-    iget-object v6, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v6, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v6, v6, Lcom/htc/view/table/TableColleague;->mNumColumnRows:I
 
@@ -660,11 +660,11 @@
 
     .prologue
     .line 625
-    iget v4, p0, Lcom/htc/view/table/TableView;->mSelectedPosition:I
+    iget v4, p0, Lcom/htc/view/table/AbstractAdapterView;->mSelectedPosition:I
 
     .line 626
     .local v4, selectedPosition:I
-    iget-object v6, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v6, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v3, v6, Lcom/htc/view/table/TableColleague;->mNumColumnRows:I
 
@@ -674,7 +674,7 @@
 
     .line 633
     .local v2, moved:Z
-    iget-boolean v6, p0, Lcom/htc/view/table/TableView;->mStackFromBottom:Z
+    iget-boolean v6, p0, Lcom/htc/view/table/AbstractTableView;->mStackFromBottom:Z
 
     if-nez v6, :cond_1
 
@@ -689,7 +689,7 @@
 
     add-int/lit8 v6, v6, -0x1
 
-    iget v7, p0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v7, p0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     add-int/lit8 v7, v7, -0x1
 
@@ -700,7 +700,7 @@
     .line 642
     .local v0, endOfRowPos:I
     :goto_0
-    iget-object v6, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v6, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     invoke-virtual {v6, p1, v5, v0, v4}, Lcom/htc/view/table/TableColleague;->findAndSetSelecionInt(IIII)Z
 
@@ -724,7 +724,7 @@
     .end local v0           #endOfRowPos:I
     .end local v5           #startOfRowPos:I
     :cond_1
-    iget v6, p0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v6, p0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     add-int/lit8 v6, v6, -0x1
 
@@ -732,7 +732,7 @@
 
     .line 638
     .local v1, invertedSelection:I
-    iget v6, p0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v6, p0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     add-int/lit8 v6, v6, -0x1
 
@@ -793,14 +793,14 @@
     iput p3, v0, Landroid/view/animation/GridLayoutAnimationController$AnimationParameters;->index:I
 
     .line 215
-    iget-object v2, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v2, v2, Lcom/htc/view/table/TableColleague;->mNumColumnRows:I
 
     iput v2, v0, Landroid/view/animation/GridLayoutAnimationController$AnimationParameters;->columnsCount:I
 
     .line 216
-    iget-object v2, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v2, v2, Lcom/htc/view/table/TableColleague;->mNumColumnRows:I
 
@@ -809,12 +809,12 @@
     iput v2, v0, Landroid/view/animation/GridLayoutAnimationController$AnimationParameters;->rowsCount:I
 
     .line 218
-    iget-boolean v2, p0, Lcom/htc/view/table/TableView;->mStackFromBottom:Z
+    iget-boolean v2, p0, Lcom/htc/view/table/AbstractTableView;->mStackFromBottom:Z
 
     if-nez v2, :cond_1
 
     .line 219
-    iget-object v2, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v2, v2, Lcom/htc/view/table/TableColleague;->mNumColumnRows:I
 
@@ -823,7 +823,7 @@
     iput v2, v0, Landroid/view/animation/GridLayoutAnimationController$AnimationParameters;->column:I
 
     .line 220
-    iget-object v2, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v2, v2, Lcom/htc/view/table/TableColleague;->mNumColumnRows:I
 
@@ -843,13 +843,13 @@
 
     .line 224
     .local v1, invertedIndex:I
-    iget-object v2, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v2, v2, Lcom/htc/view/table/TableColleague;->mNumColumnRows:I
 
     add-int/lit8 v2, v2, -0x1
 
-    iget-object v3, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v3, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v3, v3, Lcom/htc/view/table/TableColleague;->mNumColumnRows:I
 
@@ -864,7 +864,7 @@
 
     add-int/lit8 v2, v2, -0x1
 
-    iget-object v3, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v3, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v3, v3, Lcom/htc/view/table/TableColleague;->mNumColumnRows:I
 
@@ -1024,7 +1024,7 @@
     const/4 v4, 0x0
 
     .line 995
-    iget v5, p0, Lcom/htc/view/table/TableView;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/view/table/AbstractAdapterView;->mFirstPosition:I
 
     if-ltz v5, :cond_0
 
@@ -1056,7 +1056,7 @@
     if-lez v0, :cond_0
 
     .line 1000
-    iget v5, p0, Lcom/htc/view/table/TableView;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/view/table/AbstractAdapterView;->mFirstPosition:I
 
     invoke-virtual {p0}, Lcom/htc/view/table/TableView;->getNumColumnRows()I
 
@@ -1098,7 +1098,7 @@
 
     .line 1011
     .local v0, numColumns:I
-    iget v2, p0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v2, p0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     add-int/2addr v2, v0
 
@@ -1240,7 +1240,7 @@
     const/4 v4, 0x0
 
     .line 945
-    iget v5, p0, Lcom/htc/view/table/TableView;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/view/table/AbstractAdapterView;->mFirstPosition:I
 
     if-ltz v5, :cond_0
 
@@ -1272,7 +1272,7 @@
     if-lez v0, :cond_0
 
     .line 950
-    iget v5, p0, Lcom/htc/view/table/TableView;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/view/table/AbstractAdapterView;->mFirstPosition:I
 
     invoke-virtual {p0}, Lcom/htc/view/table/TableView;->getNumColumnRows()I
 
@@ -1314,7 +1314,7 @@
 
     .line 961
     .local v0, numColumns:I
-    iget v2, p0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v2, p0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     add-int/2addr v2, v0
 
@@ -1340,14 +1340,14 @@
 
     .prologue
     .line 147
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
     instance-of v0, v0, Lcom/htc/view/util/ProxyListAdapter;
 
     if-eqz v0, :cond_0
 
     .line 148
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
     check-cast v0, Lcom/htc/view/util/ProxyListAdapter;
 
@@ -1355,7 +1355,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iput-object v0, p0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
     .line 149
     invoke-virtual {p0}, Lcom/htc/view/table/TableView;->invalidateViews()V
@@ -1371,12 +1371,12 @@
 
     .prologue
     .line 141
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
     invoke-virtual {p1, v0}, Lcom/htc/view/util/ProxyListAdapter;->setTarget(Landroid/widget/ListAdapter;)V
 
     .line 142
-    iput-object p1, p0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iput-object p1, p0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
     .line 143
     invoke-virtual {p0}, Lcom/htc/view/table/TableView;->invalidateViews()V
@@ -1400,13 +1400,13 @@
     if-lez v0, :cond_4
 
     .line 171
-    iget-object v3, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v3, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v2, v3, Lcom/htc/view/table/TableColleague;->mNumColumnRows:I
 
     .line 172
     .local v2, numColumns:I
-    iget-boolean v3, p0, Lcom/htc/view/table/TableView;->mStackFromBottom:Z
+    iget-boolean v3, p0, Lcom/htc/view/table/AbstractTableView;->mStackFromBottom:Z
 
     if-nez v3, :cond_1
 
@@ -1429,7 +1429,7 @@
     if-gt p1, v3, :cond_0
 
     .line 175
-    iget v3, p0, Lcom/htc/view/table/TableView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/view/table/AbstractAdapterView;->mFirstPosition:I
 
     add-int/2addr v3, v1
 
@@ -1468,7 +1468,7 @@
     if-lt p1, v3, :cond_2
 
     .line 181
-    iget v3, p0, Lcom/htc/view/table/TableView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/view/table/AbstractAdapterView;->mFirstPosition:I
 
     add-int/2addr v3, v1
 
@@ -1482,7 +1482,7 @@
 
     .line 186
     :cond_3
-    iget v3, p0, Lcom/htc/view/table/TableView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/view/table/AbstractAdapterView;->mFirstPosition:I
 
     add-int/2addr v3, v0
 
@@ -1516,7 +1516,7 @@
     if-ne p1, v1, :cond_1
 
     .line 604
-    iput v2, p0, Lcom/htc/view/table/TableView;->mLayoutMode:I
+    iput v2, p0, Lcom/htc/view/table/AbstractTableView;->mLayoutMode:I
 
     .line 605
     const/4 v1, 0x0
@@ -1538,10 +1538,10 @@
     if-ne p1, v1, :cond_0
 
     .line 608
-    iput v2, p0, Lcom/htc/view/table/TableView;->mLayoutMode:I
+    iput v2, p0, Lcom/htc/view/table/AbstractTableView;->mLayoutMode:I
 
     .line 609
-    iget v1, p0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v1, p0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     add-int/lit8 v1, v1, -0x1
 
@@ -1570,7 +1570,7 @@
 
     .prologue
     .line 83
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
     return-object v0
 .end method
@@ -1624,7 +1624,7 @@
 
     .prologue
     .line 817
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->mTableLayoutParams:Lcom/htc/view/table/TableLayoutParams;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->mTableLayoutParams:Lcom/htc/view/table/TableLayoutParams;
 
     invoke-virtual {v0}, Lcom/htc/view/table/TableLayoutParams;->getOrientation()I
 
@@ -1639,11 +1639,11 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iput-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     .line 824
     :goto_0
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v1, p0, Lcom/htc/view/table/TableView;->mRequestedNumColumnRows:I
 
@@ -1658,7 +1658,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iput-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     goto :goto_0
 .end method
@@ -1670,7 +1670,7 @@
     .line 231
     move-object/from16 v0, p0
 
-    iget-boolean v8, v0, Lcom/htc/view/table/TableView;->mBlockLayoutRequests:Z
+    iget-boolean v8, v0, Lcom/htc/view/table/AbstractAdapterView;->mBlockLayoutRequests:Z
 
     .line 232
     .local v8, blockLayoutRequests:Z
@@ -1681,7 +1681,7 @@
 
     move-object/from16 v0, p0
 
-    iput-boolean v2, v0, Lcom/htc/view/table/TableView;->mBlockLayoutRequests:Z
+    iput-boolean v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mBlockLayoutRequests:Z
 
     .line 237
     :cond_0
@@ -1694,7 +1694,7 @@
     .line 241
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
     if-nez v2, :cond_2
 
@@ -1714,7 +1714,7 @@
 
     move-object/from16 v0, p0
 
-    iput-boolean v2, v0, Lcom/htc/view/table/TableView;->mBlockLayoutRequests:Z
+    iput-boolean v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mBlockLayoutRequests:Z
 
     .line 420
     :cond_1
@@ -1726,11 +1726,11 @@
     :try_start_1
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/htc/view/table/TableView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v3, v0, Lcom/htc/view/table/AbstractTableView;->mListPadding:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v3}, Lcom/htc/view/table/TableColleague;->getOrnTop(Landroid/graphics/Rect;)I
 
@@ -1740,7 +1740,7 @@
     .local v4, childrenOrnTop:I
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     move-object/from16 v0, p0
 
@@ -1750,7 +1750,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v3, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     move-object/from16 v0, p0
 
@@ -1762,11 +1762,11 @@
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v3, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/htc/view/table/TableView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v7, v0, Lcom/htc/view/table/AbstractTableView;->mListPadding:Landroid/graphics/Rect;
 
     invoke-virtual {v3, v7}, Lcom/htc/view/table/TableColleague;->getOrnBottom(Landroid/graphics/Rect;)I
 
@@ -1804,18 +1804,18 @@
     .local v16, newSel:Landroid/view/View;
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/view/table/TableView;->mLayoutMode:I
+    iget v2, v0, Lcom/htc/view/table/AbstractTableView;->mLayoutMode:I
 
     packed-switch v2, :pswitch_data_0
 
     .line 291
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/view/table/TableView;->mSelectedPosition:I
+    iget v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mSelectedPosition:I
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/htc/view/table/TableView;->mFirstPosition:I
+    iget v3, v0, Lcom/htc/view/table/AbstractAdapterView;->mFirstPosition:I
 
     sub-int v14, v2, v3
 
@@ -1849,7 +1849,7 @@
     :pswitch_0
     move-object/from16 v0, p0
 
-    iget-boolean v10, v0, Lcom/htc/view/table/TableView;->mDataChanged:Z
+    iget-boolean v10, v0, Lcom/htc/view/table/AbstractAdapterView;->mDataChanged:Z
 
     .line 301
     .local v10, dataChanged:Z
@@ -1862,7 +1862,7 @@
     :cond_5
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     if-nez v2, :cond_7
 
@@ -1882,7 +1882,7 @@
 
     move-object/from16 v0, p0
 
-    iput-boolean v2, v0, Lcom/htc/view/table/TableView;->mBlockLayoutRequests:Z
+    iput-boolean v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mBlockLayoutRequests:Z
 
     goto :goto_0
 
@@ -1892,11 +1892,11 @@
     :try_start_2
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/view/table/TableView;->mNextSelectedPosition:I
+    iget v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mNextSelectedPosition:I
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/htc/view/table/TableView;->mFirstPosition:I
+    iget v3, v0, Lcom/htc/view/table/AbstractAdapterView;->mFirstPosition:I
 
     sub-int v14, v2, v3
 
@@ -1920,18 +1920,18 @@
     :pswitch_2
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/view/table/TableView;->mNextSelectedPosition:I
+    iget v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mNextSelectedPosition:I
 
     if-ltz v2, :cond_4
 
     .line 278
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/view/table/TableView;->mNextSelectedPosition:I
+    iget v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mNextSelectedPosition:I
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/htc/view/table/TableView;->mSelectedPosition:I
+    iget v3, v0, Lcom/htc/view/table/AbstractAdapterView;->mSelectedPosition:I
 
     sub-int v11, v2, v3
 
@@ -1954,7 +1954,7 @@
     :cond_6
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     const/4 v3, 0x0
 
@@ -1976,7 +1976,7 @@
     :cond_7
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/view/table/TableView;->mNextSelectedPosition:I
+    iget v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mNextSelectedPosition:I
 
     move-object/from16 v0, p0
 
@@ -1985,13 +1985,13 @@
     .line 317
     move-object/from16 v0, p0
 
-    iget v12, v0, Lcom/htc/view/table/TableView;->mFirstPosition:I
+    iget v12, v0, Lcom/htc/view/table/AbstractAdapterView;->mFirstPosition:I
 
     .line 318
     .local v12, firstPosition:I
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/view/table/TableView;->mRecycler:Lcom/htc/view/table/AbstractTableView$RecycleBin;
+    iget-object v0, v0, Lcom/htc/view/table/AbstractTableView;->mRecycler:Lcom/htc/view/table/AbstractTableView$RecycleBin;
 
     move-object/from16 v19, v0
 
@@ -2036,7 +2036,7 @@
     .line 332
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/view/table/TableView;->mLayoutMode:I
+    iget v2, v0, Lcom/htc/view/table/AbstractTableView;->mLayoutMode:I
 
     packed-switch v2, :pswitch_data_1
 
@@ -2046,7 +2046,7 @@
     .line 368
     move-object/from16 v0, p0
 
-    iget-boolean v2, v0, Lcom/htc/view/table/TableView;->mStackFromBottom:Z
+    iget-boolean v2, v0, Lcom/htc/view/table/AbstractTableView;->mStackFromBottom:Z
 
     if-nez v2, :cond_c
 
@@ -2060,7 +2060,7 @@
     .line 371
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     invoke-virtual {v2, v4}, Lcom/htc/view/table/TableColleague;->fillFromTop(I)Landroid/view/View;
 
@@ -2085,7 +2085,7 @@
     .line 397
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     move-object/from16 v0, v20
 
@@ -2095,7 +2095,7 @@
 
     move-object/from16 v0, p0
 
-    iput v2, v0, Lcom/htc/view/table/TableView;->mSelectedOrnTop:I
+    iput v2, v0, Lcom/htc/view/table/AbstractTableView;->mSelectedOrnTop:I
 
     .line 403
     :goto_4
@@ -2103,26 +2103,26 @@
 
     move-object/from16 v0, p0
 
-    iput v2, v0, Lcom/htc/view/table/TableView;->mLayoutMode:I
+    iput v2, v0, Lcom/htc/view/table/AbstractTableView;->mLayoutMode:I
 
     .line 404
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
-    iput-boolean v2, v0, Lcom/htc/view/table/TableView;->mDataChanged:Z
+    iput-boolean v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mDataChanged:Z
 
     .line 405
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
-    iput-boolean v2, v0, Lcom/htc/view/table/TableView;->mNeedSync:Z
+    iput-boolean v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mNeedSync:Z
 
     .line 406
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/view/table/TableView;->mSelectedPosition:I
+    iget v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mSelectedPosition:I
 
     move-object/from16 v0, p0
 
@@ -2131,7 +2131,7 @@
     .line 410
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     if-lez v2, :cond_a
 
@@ -2152,7 +2152,7 @@
 
     move-object/from16 v0, p0
 
-    iput-boolean v2, v0, Lcom/htc/view/table/TableView;->mBlockLayoutRequests:Z
+    iput-boolean v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mBlockLayoutRequests:Z
 
     goto/16 :goto_0
 
@@ -2166,11 +2166,11 @@
     :try_start_3
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v3, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     move-object/from16 v0, v16
 
@@ -2190,7 +2190,7 @@
     :cond_b
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     invoke-virtual {v2, v4, v5}, Lcom/htc/view/table/TableColleague;->fillSelection(II)Landroid/view/View;
 
@@ -2207,7 +2207,7 @@
 
     move-object/from16 v0, p0
 
-    iput v2, v0, Lcom/htc/view/table/TableView;->mFirstPosition:I
+    iput v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mFirstPosition:I
 
     .line 343
     const/4 v2, 0x0
@@ -2219,7 +2219,7 @@
     .line 344
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     invoke-virtual {v2, v4}, Lcom/htc/view/table/TableColleague;->fillFromTop(I)Landroid/view/View;
 
@@ -2234,7 +2234,7 @@
     :pswitch_6
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     add-int/lit8 v2, v2, -0x1
 
@@ -2245,11 +2245,11 @@
     .line 350
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v3, v0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     add-int/lit8 v3, v3, -0x1
 
@@ -2266,15 +2266,15 @@
     :pswitch_7
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/htc/view/table/TableView;->mSelectedPosition:I
+    iget v3, v0, Lcom/htc/view/table/AbstractAdapterView;->mSelectedPosition:I
 
     move-object/from16 v0, p0
 
-    iget v7, v0, Lcom/htc/view/table/TableView;->mSpecificTop:I
+    iget v7, v0, Lcom/htc/view/table/AbstractAdapterView;->mSpecificTop:I
 
     invoke-virtual {v2, v3, v7}, Lcom/htc/view/table/TableColleague;->fillSpecific(II)Landroid/view/View;
 
@@ -2289,15 +2289,15 @@
     :pswitch_8
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/htc/view/table/TableView;->mSyncPosition:I
+    iget v3, v0, Lcom/htc/view/table/AbstractAdapterView;->mSyncPosition:I
 
     move-object/from16 v0, p0
 
-    iget v7, v0, Lcom/htc/view/table/TableView;->mSpecificTop:I
+    iget v7, v0, Lcom/htc/view/table/AbstractAdapterView;->mSpecificTop:I
 
     invoke-virtual {v2, v3, v7}, Lcom/htc/view/table/TableColleague;->fillSpecific(II)Landroid/view/View;
 
@@ -2312,7 +2312,7 @@
     :pswitch_9
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     invoke-virtual {v2, v11, v4, v5}, Lcom/htc/view/table/TableColleague;->moveSelection(III)Landroid/view/View;
 
@@ -2327,11 +2327,11 @@
     :pswitch_a
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/htc/view/table/TableView;->mSelectedPosition:I
+    iget v3, v0, Lcom/htc/view/table/AbstractAdapterView;->mSelectedPosition:I
 
     move-object/from16 v0, p0
 
@@ -2350,7 +2350,7 @@
     :cond_c
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     add-int/lit8 v15, v2, -0x1
 
@@ -2363,7 +2363,7 @@
     .line 376
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     invoke-virtual {v2, v15, v5}, Lcom/htc/view/table/TableColleague;->fillFromBottom(II)Landroid/view/View;
 
@@ -2379,28 +2379,28 @@
     :cond_d
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/view/table/TableView;->mSelectedPosition:I
+    iget v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mSelectedPosition:I
 
     if-ltz v2, :cond_f
 
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/view/table/TableView;->mSelectedPosition:I
+    iget v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mSelectedPosition:I
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v3, v0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     if-ge v2, v3, :cond_f
 
     .line 380
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/htc/view/table/TableView;->mSelectedPosition:I
+    iget v3, v0, Lcom/htc/view/table/AbstractAdapterView;->mSelectedPosition:I
 
     if-nez v18, :cond_e
 
@@ -2418,7 +2418,7 @@
     :cond_e
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v7, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     move-object/from16 v0, v18
 
@@ -2432,22 +2432,22 @@
     :cond_f
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/htc/view/table/TableView;->mFirstPosition:I
+    iget v2, v0, Lcom/htc/view/table/AbstractAdapterView;->mFirstPosition:I
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v3, v0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     if-ge v2, v3, :cond_11
 
     .line 383
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/htc/view/table/TableView;->mFirstPosition:I
+    iget v3, v0, Lcom/htc/view/table/AbstractAdapterView;->mFirstPosition:I
 
     if-nez v17, :cond_10
 
@@ -2465,7 +2465,7 @@
     :cond_10
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v7, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     move-object/from16 v0, v17
 
@@ -2479,7 +2479,7 @@
     :cond_11
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     const/4 v3, 0x0
 
@@ -2497,12 +2497,12 @@
 
     move-object/from16 v0, p0
 
-    iput v2, v0, Lcom/htc/view/table/TableView;->mSelectedOrnTop:I
+    iput v2, v0, Lcom/htc/view/table/AbstractTableView;->mSelectedOrnTop:I
 
     .line 400
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/view/table/TableView;->mSelectorRect:Landroid/graphics/Rect;
+    iget-object v2, v0, Lcom/htc/view/table/AbstractTableView;->mSelectorRect:Landroid/graphics/Rect;
 
     invoke-virtual {v2}, Landroid/graphics/Rect;->setEmpty()V
     :try_end_3
@@ -2532,7 +2532,7 @@
 
     move-object/from16 v0, p0
 
-    iput-boolean v3, v0, Lcom/htc/view/table/TableView;->mBlockLayoutRequests:Z
+    iput-boolean v3, v0, Lcom/htc/view/table/AbstractAdapterView;->mBlockLayoutRequests:Z
 
     :cond_13
     throw v2
@@ -2571,7 +2571,7 @@
 
     .prologue
     .line 155
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
     .line 156
     .local v0, adapter:Landroid/widget/ListAdapter;
@@ -2598,7 +2598,7 @@
     :cond_2
     if-ltz p1, :cond_3
 
-    iget v1, p0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v1, p0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     if-lt p1, v1, :cond_1
 
@@ -2629,9 +2629,9 @@
     if-eqz p3, :cond_2
 
     .line 658
-    iget v7, p0, Lcom/htc/view/table/TableView;->mScrollX:I
+    iget v7, p0, Lcom/htc/view/table/AbstractTableView;->mScrollX:I
 
-    iget v8, p0, Lcom/htc/view/table/TableView;->mScrollY:I
+    iget v8, p0, Lcom/htc/view/table/AbstractTableView;->mScrollY:I
 
     invoke-virtual {p3, v7, v8}, Landroid/graphics/Rect;->offset(II)V
 
@@ -2711,7 +2711,7 @@
     if-ltz v1, :cond_3
 
     .line 684
-    iget v7, p0, Lcom/htc/view/table/TableView;->mFirstPosition:I
+    iget v7, p0, Lcom/htc/view/table/AbstractAdapterView;->mFirstPosition:I
 
     add-int/2addr v7, v1
 
@@ -2785,7 +2785,7 @@
     invoke-super {p0, p1, p2}, Lcom/htc/view/table/AbstractTableView;->onMeasure(II)V
 
     .line 195
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     if-nez v0, :cond_0
 
@@ -2794,11 +2794,11 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iput-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     .line 198
     :cond_0
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     invoke-virtual {v0, p1, p2}, Lcom/htc/view/table/TableColleague;->onMeasure(II)V
 
@@ -2823,7 +2823,7 @@
     if-ne p1, v2, :cond_2
 
     .line 581
-    iget v2, p0, Lcom/htc/view/table/TableView;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/view/table/AbstractAdapterView;->mSelectedPosition:I
 
     invoke-virtual {p0}, Lcom/htc/view/table/TableView;->getChildCount()I
 
@@ -2859,11 +2859,11 @@
     if-ne p1, v2, :cond_0
 
     .line 583
-    iget v2, p0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v2, p0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     add-int/lit8 v2, v2, -0x1
 
-    iget v3, p0, Lcom/htc/view/table/TableView;->mSelectedPosition:I
+    iget v3, p0, Lcom/htc/view/table/AbstractAdapterView;->mSelectedPosition:I
 
     invoke-virtual {p0}, Lcom/htc/view/table/TableView;->getChildCount()I
 
@@ -2904,14 +2904,14 @@
     const/4 v3, 0x0
 
     .line 93
-    iget-object v1, p0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v1, p0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
     if-eqz v1, :cond_0
 
     .line 94
-    iget-object v1, p0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v1, p0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
-    iget-object v2, p0, Lcom/htc/view/table/TableView;->mDataSetObserver:Lcom/htc/view/table/AbstractAdapterView$AdapterDataSetObserver;
+    iget-object v2, p0, Lcom/htc/view/table/AbstractTableView;->mDataSetObserver:Lcom/htc/view/table/AbstractAdapterView$AdapterDataSetObserver;
 
     invoke-interface {v1, v2}, Landroid/widget/ListAdapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
 
@@ -2920,44 +2920,44 @@
     invoke-virtual {p0}, Lcom/htc/view/table/TableView;->resetList()V
 
     .line 98
-    iget-object v1, p0, Lcom/htc/view/table/TableView;->mRecycler:Lcom/htc/view/table/AbstractTableView$RecycleBin;
+    iget-object v1, p0, Lcom/htc/view/table/AbstractTableView;->mRecycler:Lcom/htc/view/table/AbstractTableView$RecycleBin;
 
     invoke-virtual {v1}, Lcom/htc/view/table/AbstractTableView$RecycleBin;->clear()V
 
     .line 99
-    iput-object p1, p0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iput-object p1, p0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
     .line 101
     sget v1, Lcom/htc/view/table/TableView;->INVALID_POSITION:I
 
-    iput v1, p0, Lcom/htc/view/table/TableView;->mOldSelectedPosition:I
+    iput v1, p0, Lcom/htc/view/table/AbstractAdapterView;->mOldSelectedPosition:I
 
     .line 102
     sget-wide v1, Lcom/htc/view/table/TableView;->INVALID_ROW_ID:J
 
-    iput-wide v1, p0, Lcom/htc/view/table/TableView;->mOldSelectedRowId:J
+    iput-wide v1, p0, Lcom/htc/view/table/AbstractAdapterView;->mOldSelectedRowId:J
 
     .line 104
-    iget-object v1, p0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v1, p0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
     if-eqz v1, :cond_2
 
     .line 105
-    iget v1, p0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v1, p0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
-    iput v1, p0, Lcom/htc/view/table/TableView;->mOldItemCount:I
+    iput v1, p0, Lcom/htc/view/table/AbstractAdapterView;->mOldItemCount:I
 
     .line 106
-    iget-object v1, p0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v1, p0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
     invoke-interface {v1}, Landroid/widget/ListAdapter;->getCount()I
 
     move-result v1
 
-    iput v1, p0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iput v1, p0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     .line 107
-    iput-boolean v4, p0, Lcom/htc/view/table/TableView;->mDataChanged:Z
+    iput-boolean v4, p0, Lcom/htc/view/table/AbstractAdapterView;->mDataChanged:Z
 
     .line 108
     invoke-virtual {p0}, Lcom/htc/view/table/TableView;->checkFocus()V
@@ -2967,19 +2967,19 @@
 
     invoke-direct {v1, p0}, Lcom/htc/view/table/AbstractAdapterView$AdapterDataSetObserver;-><init>(Lcom/htc/view/table/AbstractAdapterView;)V
 
-    iput-object v1, p0, Lcom/htc/view/table/TableView;->mDataSetObserver:Lcom/htc/view/table/AbstractAdapterView$AdapterDataSetObserver;
+    iput-object v1, p0, Lcom/htc/view/table/AbstractTableView;->mDataSetObserver:Lcom/htc/view/table/AbstractAdapterView$AdapterDataSetObserver;
 
     .line 111
-    iget-object v1, p0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v1, p0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
-    iget-object v2, p0, Lcom/htc/view/table/TableView;->mDataSetObserver:Lcom/htc/view/table/AbstractAdapterView$AdapterDataSetObserver;
+    iget-object v2, p0, Lcom/htc/view/table/AbstractTableView;->mDataSetObserver:Lcom/htc/view/table/AbstractAdapterView$AdapterDataSetObserver;
 
     invoke-interface {v1, v2}, Landroid/widget/ListAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
     .line 113
-    iget-object v1, p0, Lcom/htc/view/table/TableView;->mRecycler:Lcom/htc/view/table/AbstractTableView$RecycleBin;
+    iget-object v1, p0, Lcom/htc/view/table/AbstractTableView;->mRecycler:Lcom/htc/view/table/AbstractTableView$RecycleBin;
 
-    iget-object v2, p0, Lcom/htc/view/table/TableView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v2, p0, Lcom/htc/view/table/AbstractTableView;->mAdapter:Landroid/widget/ListAdapter;
 
     invoke-interface {v2}, Landroid/widget/ListAdapter;->getViewTypeCount()I
 
@@ -2988,12 +2988,12 @@
     invoke-virtual {v1, v2}, Lcom/htc/view/table/AbstractTableView$RecycleBin;->setViewTypeCount(I)V
 
     .line 116
-    iget-boolean v1, p0, Lcom/htc/view/table/TableView;->mStackFromBottom:Z
+    iget-boolean v1, p0, Lcom/htc/view/table/AbstractTableView;->mStackFromBottom:Z
 
     if-eqz v1, :cond_1
 
     .line 117
-    iget v1, p0, Lcom/htc/view/table/TableView;->mItemCount:I
+    iget v1, p0, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     add-int/lit8 v1, v1, -0x1
 
@@ -3121,7 +3121,7 @@
     .line 862
     const/4 v0, 0x7
 
-    iput v0, p0, Lcom/htc/view/table/TableView;->mLayoutMode:I
+    iput v0, p0, Lcom/htc/view/table/AbstractTableView;->mLayoutMode:I
 
     .line 863
     invoke-virtual {p0, p1}, Lcom/htc/view/table/TableView;->setSelectionInt(I)V
@@ -3211,7 +3211,7 @@
     .line 894
     const/4 v0, 0x7
 
-    iput v0, p0, Lcom/htc/view/table/TableView;->mLayoutMode:I
+    iput v0, p0, Lcom/htc/view/table/AbstractTableView;->mLayoutMode:I
 
     .line 895
     iput p2, p0, Lcom/htc/view/table/TableView;->mTableViewOrnHeight:I
@@ -3303,7 +3303,7 @@
     .line 910
     const/4 v0, 0x7
 
-    iput v0, p0, Lcom/htc/view/table/TableView;->mLayoutMode:I
+    iput v0, p0, Lcom/htc/view/table/AbstractTableView;->mLayoutMode:I
 
     .line 911
     iput p2, p0, Lcom/htc/view/table/TableView;->mTableViewOrnHeight:I
@@ -3332,14 +3332,14 @@
 
     .prologue
     .line 740
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v0, v0, Lcom/htc/view/table/TableColleague;->mGravity:I
 
     if-eq v0, p1, :cond_0
 
     .line 741
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iput p1, v0, Lcom/htc/view/table/TableColleague;->mGravity:I
 
@@ -3382,7 +3382,7 @@
 
     .prologue
     .line 1022
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     invoke-virtual {v0, p1}, Lcom/htc/view/table/TableColleague;->setMultiStop(Z)V
 
@@ -3396,7 +3396,7 @@
 
     .prologue
     .line 1026
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     invoke-virtual {v0, p1}, Lcom/htc/view/table/TableColleague;->setMultiStopDistance(I)Z
 
@@ -3414,12 +3414,12 @@
     iput p1, p0, Lcom/htc/view/table/TableView;->mRequestedNumColumnRows:I
 
     .line 807
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     if-eqz v0, :cond_0
 
     .line 808
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     iget v1, p0, Lcom/htc/view/table/TableView;->mRequestedNumColumnRows:I
 
@@ -3441,12 +3441,12 @@
     invoke-virtual {p0, v0}, Lcom/htc/view/table/TableView;->setCycling(Z)V
 
     .line 1017
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     invoke-virtual {v0, p1}, Lcom/htc/view/table/TableColleague;->setRepeatEnable(Z)V
 
     .line 1018
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     invoke-virtual {v0, p1}, Lcom/htc/view/table/TableColleague;->setCloseBouncing(Z)V
 
@@ -3473,7 +3473,7 @@
     :goto_0
     const/4 v0, 0x2
 
-    iput v0, p0, Lcom/htc/view/table/TableView;->mLayoutMode:I
+    iput v0, p0, Lcom/htc/view/table/AbstractTableView;->mLayoutMode:I
 
     .line 440
     invoke-virtual {p0}, Lcom/htc/view/table/TableView;->requestLayout()V
@@ -3483,7 +3483,7 @@
 
     .line 437
     :cond_0
-    iput p1, p0, Lcom/htc/view/table/TableView;->mResurrectToPosition:I
+    iput p1, p0, Lcom/htc/view/table/AbstractTableView;->mResurrectToPosition:I
 
     goto :goto_0
 .end method
@@ -3496,7 +3496,7 @@
     .line 450
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/htc/view/table/TableView;->mBlockLayoutRequests:Z
+    iput-boolean v0, p0, Lcom/htc/view/table/AbstractAdapterView;->mBlockLayoutRequests:Z
 
     .line 451
     invoke-virtual {p0, p1}, Lcom/htc/view/table/TableView;->setNextSelectedPositionInt(I)V
@@ -3507,7 +3507,7 @@
     .line 455
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/htc/view/table/TableView;->mBlockLayoutRequests:Z
+    iput-boolean v0, p0, Lcom/htc/view/table/AbstractAdapterView;->mBlockLayoutRequests:Z
 
     .line 456
     return-void
@@ -3519,7 +3519,7 @@
 
     .prologue
     .line 1030
-    iget-object v0, p0, Lcom/htc/view/table/TableView;->tableColleague:Lcom/htc/view/table/TableColleague;
+    iget-object v0, p0, Lcom/htc/view/table/AbstractTableView;->tableColleague:Lcom/htc/view/table/TableColleague;
 
     invoke-virtual {v0, p1}, Lcom/htc/view/table/TableColleague;->setStopExcept(I)V
 

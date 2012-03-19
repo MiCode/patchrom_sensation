@@ -42,7 +42,7 @@
     const-wide/16 v1, 0x0
 
     .line 1200
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1201
     iput-wide v1, p0, Lcom/android/server/AlarmManagerService$Alarm;->when:J

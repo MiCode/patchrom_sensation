@@ -246,13 +246,6 @@
 
     invoke-virtual {v1}, Lcom/htc/preference/HtcEditTextPreference$LaunchIMEReceiver;->relaunchIME()V
 
-    .line 156
-    const-string v1, "EditTextPerference"
-
-    const-string v2, "[onAddEditTextToDialogView] I want to open SIP"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 157
     return-void
 .end method

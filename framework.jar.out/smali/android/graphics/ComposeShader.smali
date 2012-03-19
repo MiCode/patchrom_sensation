@@ -37,10 +37,10 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/ComposeShader;->native_instance:I
+    iput v0, p0, Landroid/graphics/Shader;->native_instance:I
 
     .line 66
-    iget v0, p0, Landroid/graphics/ComposeShader;->native_instance:I
+    iget v0, p0, Landroid/graphics/Shader;->native_instance:I
 
     iget v1, p1, Landroid/graphics/Shader;->native_shader:I
 
@@ -52,7 +52,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/ComposeShader;->native_shader:I
+    iput v0, p0, Landroid/graphics/Shader;->native_shader:I
 
     .line 68
     return-void
@@ -90,7 +90,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/ComposeShader;->native_instance:I
+    iput v1, p0, Landroid/graphics/Shader;->native_instance:I
 
     .line 44
     instance-of v1, p3, Landroid/graphics/PorterDuffXfermode;
@@ -105,7 +105,7 @@
 
     .line 46
     .local v0, pdMode:Landroid/graphics/PorterDuff$Mode;
-    iget v1, p0, Landroid/graphics/ComposeShader;->native_instance:I
+    iget v1, p0, Landroid/graphics/Shader;->native_instance:I
 
     iget v3, p1, Landroid/graphics/Shader;->native_shader:I
 
@@ -120,7 +120,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/ComposeShader;->native_shader:I
+    iput v1, p0, Landroid/graphics/Shader;->native_shader:I
 
     .line 52
     .end local v0           #pdMode:Landroid/graphics/PorterDuff$Mode;
@@ -136,7 +136,7 @@
 
     .line 49
     :cond_2
-    iget v1, p0, Landroid/graphics/ComposeShader;->native_instance:I
+    iget v1, p0, Landroid/graphics/Shader;->native_instance:I
 
     iget v3, p1, Landroid/graphics/Shader;->native_shader:I
 
@@ -151,7 +151,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/ComposeShader;->native_shader:I
+    iput v1, p0, Landroid/graphics/Shader;->native_shader:I
 
     goto :goto_1
 .end method

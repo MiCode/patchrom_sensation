@@ -68,7 +68,7 @@
 
     iget-object v7, p0, Lcom/htc/widget/HtcAbsListView2$CheckForLongPress;->this$0:Lcom/htc/widget/HtcAbsListView2;
 
-    iget v7, v7, Lcom/htc/widget/HtcAbsListView2;->mFirstPosition:I
+    iget v7, v7, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     sub-int v7, v5, v7
 
@@ -113,7 +113,7 @@
 
     iget-object v6, p0, Lcom/htc/widget/HtcAbsListView2$CheckForLongPress;->this$0:Lcom/htc/widget/HtcAbsListView2;
 
-    iget-boolean v6, v6, Lcom/htc/widget/HtcAbsListView2;->mDataChanged:Z
+    iget-boolean v6, v6, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     if-nez v6, :cond_0
 

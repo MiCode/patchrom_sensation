@@ -47,7 +47,7 @@
 
     .prologue
     .line 231
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 232
     iput-boolean p1, p0, Landroid/os/memory/RunningState$BaseItem;->mIsProcess:Z

@@ -17,7 +17,7 @@
 
     .prologue
     .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 116
     return-void
@@ -381,7 +381,7 @@
     if-eqz v1, :cond_2
 
     .line 78
-    invoke-virtual {v8}, Ljava/nio/Buffer;->remaining()I
+    invoke-virtual {v8}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v7
 

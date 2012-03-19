@@ -132,7 +132,7 @@
 
     move-object/from16 v0, v21
 
-    iget-object v0, v0, Lcom/android/camera/ImageManager$Image;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
+    iget-object v0, v0, Lcom/android/camera/ImageManager$BaseImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
 
     move-object/from16 v21, v0
 
@@ -144,7 +144,7 @@
 
     move-object/from16 v0, v22
 
-    iget-wide v0, v0, Lcom/android/camera/ImageManager$Image;->mId:J
+    iget-wide v0, v0, Lcom/android/camera/ImageManager$BaseImage;->mId:J
 
     move-wide/from16 v22, v0
 
@@ -980,7 +980,7 @@
 
     move-object/from16 v0, v21
 
-    iget-object v0, v0, Lcom/android/camera/ImageManager$Image;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, v0, Lcom/android/camera/ImageManager$BaseImage;->mContentResolver:Landroid/content/ContentResolver;
 
     move-object/from16 v21, v0
 

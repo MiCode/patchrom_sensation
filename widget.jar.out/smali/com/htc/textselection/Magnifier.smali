@@ -114,7 +114,7 @@
     const/4 v2, 0x0
 
     .line 67
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 35
     iput-object v2, p0, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;

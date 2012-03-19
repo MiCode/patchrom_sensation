@@ -29,7 +29,7 @@
     invoke-virtual {p0, p1, p2}, Lcom/htc/socialnetwork/tmo/engine/TmoHttpClient;->InitAuth2(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 11
-    iget-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/TmoHttpClient;->mHttpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
+    iget-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mHttpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
 
     return-object v0
 .end method

@@ -238,8 +238,8 @@ To može da potraje nekoliko minuta."</string>
     <string name="htc_preferred_network_global_mode">Globalni Režim</string>
     <string name="htc_preferred_network_cdma_evdo_aut_mode">CDMA Režim</string>
     <string name="htc_preferred_network_gsm_wcdma_aut_mode">GSM / UMTS Režim</string>
-    <string name="htc_preferred_network_lte_mode">LTE Mode</string>
-    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM / UMTS / LTE Mode</string>
+    <string name="htc_preferred_network_lte_mode">LTE režim</string>
+    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM/UMTS/LTE režim</string>
     <string name="title_gsm_preferred_network_options">GSM / UMTS Režim</string>
     <string name="btn_Menu_Edit">Izmeni</string>
     <string name="btn_Menu_Set_Done">Gotovo</string>
@@ -1090,8 +1090,8 @@ završetak poziva na čekanju"</string>
     <string name="set_primary_title">Podesi kao primarni nalog</string>
     <string name="set_primary_summary">Korišćeno za izlazne pozive</string>
     <string name="advanced_settings">Opciona podešavanja</string>
-    <string name="auth_username_title">Корисничко име за потврду идентитета</string>
-    <string name="auth_username_summary">За потврду идентитета користи се корисничко име</string>
+    <string name="auth_username_title">Korisničko ime za potvrdu identiteta</string>
+    <string name="auth_username_summary">Za potvrdu identiteta koristi se korisničko ime</string>
     <string name="default_preference_summary">&lt;Nije podešeno></string>
     <string name="display_name_summary">&lt;Sačuvaj kao korisničko ime></string>
     <string name="optional_summary">&lt;Opciono></string>

@@ -28,7 +28,7 @@
 
     .prologue
     .line 71
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 72
     iput-object p1, p0, Landroid/net/wifi/p2p/IWifiP2pManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;

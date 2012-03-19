@@ -68,7 +68,7 @@
 
     iget-object v7, p0, Lcom/htc/opensense/widget/AlbumAbsListView$CheckForLongPress;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget v7, v7, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v7, v7, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int v7, v5, v7
 
@@ -113,7 +113,7 @@
 
     iget-object v6, p0, Lcom/htc/opensense/widget/AlbumAbsListView$CheckForLongPress;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget-boolean v6, v6, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataChanged:Z
+    iget-boolean v6, v6, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     if-nez v6, :cond_0
 

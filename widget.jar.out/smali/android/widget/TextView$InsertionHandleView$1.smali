@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/widget/TextView$InsertionHandleView;->hideAfterDelay()V
+    value = Landroid/widget/TextView$InsertionHandleView;->hidePasteAfterDelay()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 12035
+    .line 12089
     iput-object p1, p0, Landroid/widget/TextView$InsertionHandleView$1;->this$1:Landroid/widget/TextView$InsertionHandleView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 12037
+    .line 12091
     iget-object v0, p0, Landroid/widget/TextView$InsertionHandleView$1;->this$1:Landroid/widget/TextView$InsertionHandleView;
 
-    invoke-virtual {v0}, Landroid/widget/TextView$InsertionHandleView;->hide()V
+    invoke-virtual {v0}, Landroid/widget/TextView$InsertionHandleView;->hidePasteWidow()V
 
-    .line 12038
+    .line 12092
     return-void
 .end method

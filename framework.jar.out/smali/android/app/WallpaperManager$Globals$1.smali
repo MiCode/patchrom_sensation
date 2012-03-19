@@ -65,7 +65,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "handleMessage MSG_CLEAR_WALLPAPER @"
+    const-string v2, "handleMessage MSG_CLEAR_WALLPAPER @"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -147,6 +147,8 @@
     throw v0
 
     .line 207
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

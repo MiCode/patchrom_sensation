@@ -189,7 +189,7 @@
 
     .prologue
     .line 54
-    iget-object v0, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -290,7 +290,7 @@
 
     .prologue
     .line 54
-    iget-object v0, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -450,7 +450,7 @@
     const/4 v2, 0x1
 
     .line 291
-    iget-object v0, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "onCaptureClicked() - start"
 
@@ -471,7 +471,7 @@
 
     .line 296
     :cond_0
-    iget-object v0, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Action screen is closed, cancel action"
 
@@ -488,7 +488,7 @@
     if-eqz v0, :cond_2
 
     .line 301
-    iget-object v0, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Another action is performing, cannot re-capture"
 
@@ -510,7 +510,7 @@
     if-nez v0, :cond_3
 
     .line 309
-    iget-object v0, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Media is not saved yet, close later"
 
@@ -523,7 +523,7 @@
     invoke-virtual {p0, v2, v2}, Lcom/android/camera/actionscreen/CommonActionScreen;->close(IZ)V
 
     .line 314
-    iget-object v0, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "onCaptureClicked() - end"
 
@@ -539,7 +539,7 @@
     const/4 v7, 0x1
 
     .line 322
-    iget-object v5, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "onDeleteClicked() - start"
 
@@ -560,7 +560,7 @@
 
     .line 327
     :cond_0
-    iget-object v5, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "Action screen is closed, cancel action"
 
@@ -577,7 +577,7 @@
     if-eqz v5, :cond_2
 
     .line 332
-    iget-object v5, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "Another action is performing, cannot delete content"
 
@@ -602,7 +602,7 @@
     if-nez v5, :cond_3
 
     .line 343
-    iget-object v5, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "Media is not saved yet, delete content later"
 
@@ -733,7 +733,7 @@
     invoke-virtual {v0}, Lcom/android/camera/rotate/RotateDialog;->show()V
 
     .line 399
-    iget-object v5, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v6, "onDeleteClicked() - end"
 
@@ -788,7 +788,7 @@
     const/4 v5, 0x1
 
     .line 451
-    iget-object v3, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "onPlayClicked() - start"
 
@@ -809,7 +809,7 @@
 
     .line 456
     :cond_0
-    iget-object v3, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "Action screen is closed, cancel action"
 
@@ -826,7 +826,7 @@
     if-eqz v3, :cond_2
 
     .line 461
-    iget-object v3, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "Another action is performing, cannot play video"
 
@@ -851,7 +851,7 @@
     if-nez v3, :cond_3
 
     .line 472
-    iget-object v3, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "Media is not saved yet, play video later"
 
@@ -928,7 +928,7 @@
     .line 507
     :cond_4
     :goto_2
-    iget-object v3, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "onPlayClicked() - end"
 
@@ -945,7 +945,7 @@
     const/4 v0, 0x0
 
     .line 489
-    iget-object v3, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "com.htc.video - play video fail"
 
@@ -960,7 +960,7 @@
 
     .line 503
     .restart local v1       #e:Ljava/lang/Exception;
-    iget-object v3, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "com.htc.album - play video fail"
 
@@ -978,7 +978,7 @@
     const/4 v11, 0x0
 
     .line 515
-    iget-object v9, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "onSetAsClicked() - start"
 
@@ -999,7 +999,7 @@
 
     .line 520
     :cond_0
-    iget-object v9, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "Action screen is closed, cancel action"
 
@@ -1016,7 +1016,7 @@
     if-eqz v9, :cond_2
 
     .line 525
-    iget-object v9, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "Another action is performing, cannot set media"
 
@@ -1043,7 +1043,7 @@
     if-nez v9, :cond_3
 
     .line 536
-    iget-object v9, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "Media is not saved yet, set later"
 
@@ -1089,7 +1089,7 @@
     if-eqz v9, :cond_4
 
     .line 549
-    iget-object v9, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "Set media as by another object"
 
@@ -1106,7 +1106,7 @@
     if-nez v9, :cond_5
 
     .line 556
-    iget-object v9, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "No media information to set as"
 
@@ -1139,7 +1139,7 @@
 
     .line 563
     :cond_6
-    iget-object v9, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "No media information to set as"
 
@@ -1283,7 +1283,7 @@
     invoke-virtual {v9, v10}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 623
-    iget-object v9, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "onSetAsClicked() - end"
 
@@ -1307,7 +1307,7 @@
     const/4 v11, 0x0
 
     .line 631
-    iget-object v9, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "onShareClicked() - start"
 
@@ -1328,7 +1328,7 @@
 
     .line 636
     :cond_0
-    iget-object v9, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "Action screen is closed, cancel action"
 
@@ -1345,7 +1345,7 @@
     if-eqz v9, :cond_2
 
     .line 641
-    iget-object v9, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "Another action is performing, cannot share content"
 
@@ -1370,7 +1370,7 @@
     if-nez v9, :cond_3
 
     .line 652
-    iget-object v9, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "Media is not saved yet, share content later"
 
@@ -1416,7 +1416,7 @@
     if-eqz v9, :cond_4
 
     .line 665
-    iget-object v9, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "Share media by another object"
 
@@ -1436,7 +1436,7 @@
     if-nez v9, :cond_5
 
     .line 673
-    iget-object v9, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "No media information to share"
 
@@ -1593,7 +1593,7 @@
     invoke-virtual {v9, v10}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 740
-    iget-object v9, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v10, "onShareClicked() - end"
 
@@ -1615,7 +1615,7 @@
     const/4 v2, 0x1
 
     .line 748
-    iget-object v0, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "onTimeout() - start"
 
@@ -1636,7 +1636,7 @@
 
     .line 753
     :cond_0
-    iget-object v0, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Action screen is closed, cancel action"
 
@@ -1658,7 +1658,7 @@
     if-nez v0, :cond_2
 
     .line 761
-    iget-object v0, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Media is not saved yet, close later"
 
@@ -1673,7 +1673,7 @@
     invoke-virtual {p0, v0, v2}, Lcom/android/camera/actionscreen/CommonActionScreen;->close(IZ)V
 
     .line 766
-    iget-object v0, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "onTimeout() - end"
 
@@ -2845,7 +2845,7 @@
     if-eqz v0, :cond_1
 
     .line 227
-    iget-object v0, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "ActionScreen=>close=>triggerAutoUpload"
 
@@ -3008,7 +3008,7 @@
     if-eqz v1, :cond_2
 
     .line 433
-    iget-object v1, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "Media save failed"
 
@@ -3162,7 +3162,7 @@
     if-eqz v1, :cond_2
 
     .line 813
-    iget-object v1, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "Another action is performing, cannot perform action"
 
@@ -3192,7 +3192,7 @@
 
     .line 822
     :cond_3
-    iget-object v0, p0, Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Media is not saved yet, perform action later"
 

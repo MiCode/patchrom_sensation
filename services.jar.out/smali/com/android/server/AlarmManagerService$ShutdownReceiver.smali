@@ -42,7 +42,7 @@
 
     .line 1594
     #getter for: Lcom/android/server/AlarmManagerService;->mContext:Landroid/content/Context;
-    invoke-static {p1}, Lcom/android/server/AlarmManagerService;->access$600(Lcom/android/server/AlarmManagerService;)Landroid/content/Context;
+    invoke-static {p1}, Lcom/android/server/AlarmManagerService;->access$500(Lcom/android/server/AlarmManagerService;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -64,7 +64,7 @@
     iget-object v0, p0, Lcom/android/server/AlarmManagerService$ShutdownReceiver;->this$0:Lcom/android/server/AlarmManagerService;
 
     #getter for: Lcom/android/server/AlarmManagerService;->mLock:Ljava/lang/Object;
-    invoke-static {v0}, Lcom/android/server/AlarmManagerService;->access$700(Lcom/android/server/AlarmManagerService;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/server/AlarmManagerService;->access$600(Lcom/android/server/AlarmManagerService;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -75,7 +75,7 @@
     iget-object v0, p0, Lcom/android/server/AlarmManagerService$ShutdownReceiver;->this$0:Lcom/android/server/AlarmManagerService;
 
     #getter for: Lcom/android/server/AlarmManagerService;->mBroadcastRefCount:I
-    invoke-static {v0}, Lcom/android/server/AlarmManagerService;->access$1900(Lcom/android/server/AlarmManagerService;)I
+    invoke-static {v0}, Lcom/android/server/AlarmManagerService;->access$1800(Lcom/android/server/AlarmManagerService;)I
 
     move-result v0
 
@@ -85,7 +85,7 @@
     iget-object v0, p0, Lcom/android/server/AlarmManagerService$ShutdownReceiver;->this$0:Lcom/android/server/AlarmManagerService;
 
     #getter for: Lcom/android/server/AlarmManagerService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-    invoke-static {v0}, Lcom/android/server/AlarmManagerService;->access$2000(Lcom/android/server/AlarmManagerService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v0}, Lcom/android/server/AlarmManagerService;->access$1900(Lcom/android/server/AlarmManagerService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v0
 
@@ -98,7 +98,7 @@
     const/4 v2, 0x0
 
     #setter for: Lcom/android/server/AlarmManagerService;->mBroadcastRefCount:I
-    invoke-static {v0, v2}, Lcom/android/server/AlarmManagerService;->access$1902(Lcom/android/server/AlarmManagerService;I)I
+    invoke-static {v0, v2}, Lcom/android/server/AlarmManagerService;->access$1802(Lcom/android/server/AlarmManagerService;I)I
 
     .line 1603
     monitor-exit v1

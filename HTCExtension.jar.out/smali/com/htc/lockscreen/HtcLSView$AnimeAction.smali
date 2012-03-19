@@ -42,7 +42,7 @@
     .line 28
     iput-object p1, p0, Lcom/htc/lockscreen/HtcLSView$AnimeAction;->this$0:Lcom/htc/lockscreen/HtcLSView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
     iput-object v0, p0, Lcom/htc/lockscreen/HtcLSView$AnimeAction;->mTarget:Landroid/view/View;
@@ -71,7 +71,7 @@
     .line 33
     iput-object p1, p0, Lcom/htc/lockscreen/HtcLSView$AnimeAction;->this$0:Lcom/htc/lockscreen/HtcLSView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
     iput-object v0, p0, Lcom/htc/lockscreen/HtcLSView$AnimeAction;->mTarget:Landroid/view/View;

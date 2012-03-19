@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 5334
+    .line 5337
     iput-object p1, p0, Lcom/android/phone/PhoneApp$PhoneAppHtcBroadcastReceiver;->this$0:Lcom/android/phone/PhoneApp;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 5334
+    .line 5337
     invoke-direct {p0, p1}, Lcom/android/phone/PhoneApp$PhoneAppHtcBroadcastReceiver;-><init>(Lcom/android/phone/PhoneApp;)V
 
     return-void
@@ -56,12 +56,12 @@
 
     const/4 v3, 0x0
 
-    .line 5338
+    .line 5341
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5339
+    .line 5342
     .local v0, action:Ljava/lang/String;
     invoke-static {}, Lcom/android/phone/PhoneApp;->access$400()Z
 
@@ -91,7 +91,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5340
+    .line 5343
     :cond_0
     const-string v4, "com.htc.launcher.action.mode_change"
 
@@ -101,7 +101,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 5341
+    .line 5344
     const-string v4, "kidzone_mode"
 
     invoke-virtual {p2, v4, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -110,14 +110,14 @@
 
     if-eqz v4, :cond_2
 
-    .line 5344
+    .line 5347
     .local v1, isEnabled:Z
     :goto_0
     iget-object v3, p0, Lcom/android/phone/PhoneApp$PhoneAppHtcBroadcastReceiver;->this$0:Lcom/android/phone/PhoneApp;
 
     invoke-virtual {v3, v1}, Lcom/android/phone/PhoneApp;->setKidzone(Z)V
 
-    .line 5358
+    .line 5361
     .end local v1           #isEnabled:Z
     :cond_1
     :goto_1
@@ -126,10 +126,10 @@
     :cond_2
     move v1, v3
 
-    .line 5341
+    .line 5344
     goto :goto_0
 
-    .line 5345
+    .line 5348
     :cond_3
     const-string v4, "android.intent.action.TIME_SET"
 
@@ -139,7 +139,7 @@
 
     if-eqz v4, :cond_4
 
-    .line 5346
+    .line 5349
     iget-object v3, p0, Lcom/android/phone/PhoneApp$PhoneAppHtcBroadcastReceiver;->this$0:Lcom/android/phone/PhoneApp;
 
     #calls: Lcom/android/phone/PhoneApp;->notifyRadioTimezone()V
@@ -147,7 +147,7 @@
 
     goto :goto_1
 
-    .line 5347
+    .line 5350
     :cond_4
     const-string v4, "android.intent.action.LOCALE_CHANGED"
 
@@ -157,7 +157,7 @@
 
     if-eqz v4, :cond_6
 
-    .line 5348
+    .line 5351
     invoke-static {}, Lcom/android/phone/PhoneApp;->access$400()Z
 
     move-result v3
@@ -170,7 +170,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5349
+    .line 5352
     :cond_5
     invoke-static {}, Lcom/android/phone/NotificationMgr;->getDefault()Lcom/android/phone/NotificationMgr;
 
@@ -180,7 +180,7 @@
 
     goto :goto_1
 
-    .line 5350
+    .line 5353
     :cond_6
     const-string v4, "android.intent.action.MEDIA_UNMOUNTED"
 
@@ -190,12 +190,12 @@
 
     if-eqz v4, :cond_7
 
-    .line 5351
+    .line 5354
     invoke-static {v3}, Lcom/android/phone/util/VoiceRecorderHelper;->setMediaMounted(Z)V
 
     goto :goto_1
 
-    .line 5352
+    .line 5355
     :cond_7
     const-string v4, "android.intent.action.MEDIA_EJECT"
 
@@ -205,12 +205,12 @@
 
     if-eqz v4, :cond_8
 
-    .line 5353
+    .line 5356
     invoke-static {v3}, Lcom/android/phone/util/VoiceRecorderHelper;->setMediaMounted(Z)V
 
     goto :goto_1
 
-    .line 5354
+    .line 5357
     :cond_8
     const-string v4, "android.intent.action.MEDIA_MOUNTED"
 
@@ -220,7 +220,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 5355
+    .line 5358
     const-string v4, "read-only"
 
     invoke-virtual {p2, v4, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -231,7 +231,7 @@
 
     move v2, v1
 
-    .line 5356
+    .line 5359
     .local v2, writable:Z
     :goto_2
     invoke-static {v2}, Lcom/android/phone/util/VoiceRecorderHelper;->setMediaMounted(Z)V
@@ -242,6 +242,6 @@
     :cond_9
     move v2, v3
 
-    .line 5355
+    .line 5358
     goto :goto_2
 .end method

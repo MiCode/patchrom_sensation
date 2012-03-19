@@ -97,7 +97,7 @@
     .local v3, listPaddingRight:I
     add-int v6, v2, v3
 
-    iget v7, v5, Landroid/widget/AbsListView$LayoutParams;->width:I
+    iget v7, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     invoke-static {p3, v6, v7}, Landroid/view/ViewGroup;->getChildMeasureSpec(III)I
 
@@ -105,7 +105,7 @@
 
     .line 1472
     .local v1, childWidthSpec:I
-    iget v4, v5, Landroid/widget/AbsListView$LayoutParams;->height:I
+    iget v4, v5, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 1474
     .local v4, lpHeight:I

@@ -40,7 +40,7 @@
 
     iput-object p3, p0, Landroid/accounts/AccountManager$10;->val$future:Landroid/accounts/AccountManagerFuture;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

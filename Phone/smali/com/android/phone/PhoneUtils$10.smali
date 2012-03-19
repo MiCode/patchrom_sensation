@@ -23,7 +23,7 @@
 
     .prologue
     .line 3961
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -38,7 +38,7 @@
 
     .prologue
     .line 3963
-    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$800()Lcom/htc/widget/HtcAlertDialog;
+    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$700()Lcom/htc/widget/HtcAlertDialog;
 
     move-result-object v0
 
@@ -47,7 +47,7 @@
     .line 3964
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/android/phone/PhoneUtils;->access$802(Lcom/htc/widget/HtcAlertDialog;)Lcom/htc/widget/HtcAlertDialog;
+    invoke-static {v0}, Lcom/android/phone/PhoneUtils;->access$702(Lcom/htc/widget/HtcAlertDialog;)Lcom/htc/widget/HtcAlertDialog;
 
     .line 3965
     const/4 v0, 0x0

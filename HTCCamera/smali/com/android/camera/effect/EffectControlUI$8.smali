@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 196
+    .line 199
     iput-object p1, p0, Lcom/android/camera/effect/EffectControlUI$8;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,7 +42,7 @@
     .parameter "event"
 
     .prologue
-    .line 199
+    .line 202
     iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$8;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
     const/4 v1, 0x0
@@ -50,7 +50,7 @@
     #setter for: Lcom/android/camera/effect/EffectControlUI;->m_IsToastShown:Z
     invoke-static {v0, v1}, Lcom/android/camera/effect/EffectControlUI;->access$002(Lcom/android/camera/effect/EffectControlUI;Z)Z
 
-    .line 200
+    .line 203
     iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$8;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
     const/4 v1, 0x1
@@ -58,6 +58,6 @@
     #setter for: Lcom/android/camera/effect/EffectControlUI;->m_InitEffectFromControlBar:Z
     invoke-static {v0, v1}, Lcom/android/camera/effect/EffectControlUI;->access$302(Lcom/android/camera/effect/EffectControlUI;Z)Z
 
-    .line 201
+    .line 204
     return-void
 .end method

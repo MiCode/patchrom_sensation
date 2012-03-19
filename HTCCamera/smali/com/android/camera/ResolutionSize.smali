@@ -47,7 +47,7 @@
 
     .prologue
     .line 19
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 20
     sget-object v0, Lcom/android/camera/ResolutionSize;->TAG:Ljava/lang/String;

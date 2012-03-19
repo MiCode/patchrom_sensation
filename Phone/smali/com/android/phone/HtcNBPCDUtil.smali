@@ -8,7 +8,7 @@
 
 .field public static final CONTENT_URI_MCC_OTA:Landroid/net/Uri; = null
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field public static final ENABLE_ASSISTED_DIALING:Ljava/lang/String; = "EnableAssistedDialing"
 
@@ -26,7 +26,7 @@
 
 .field private static final MCC_PREFIX:Ljava/lang/String; = "un_"
 
-.field private static final VDBG:Z = true
+.field private static final VDBG:Z = false
 
 .field public static final VZWConvSetting:Ljava/lang/String; = "VZWConversionSetting"
 
@@ -176,7 +176,7 @@
     const/4 v4, 0x1
 
     .line 98
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 128
     new-instance v1, Lcom/android/phone/HtcNBPCDUtil$1;
@@ -271,31 +271,6 @@
     move-result v1
 
     sput-boolean v1, Lcom/android/phone/HtcNBPCDUtil;->mAssistedDialing:Z
-
-    .line 111
-    const-string v1, "HtcNBPCDUtil"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "bVZWConversion="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    sget-boolean v3, Lcom/android/phone/HtcNBPCDUtil;->bVZWConversion:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 114
     .end local v0           #vzwConvSettings:Landroid/content/SharedPreferences;
@@ -1053,29 +1028,6 @@
     .line 462
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 463
-    const-string v2, "HtcNBPCDUtil"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "setCheckhtcCdmaOperator -->"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     goto :goto_0
 .end method
 
@@ -1142,35 +1094,12 @@
 .end method
 
 .method public static setVZWConversionEnbale(Z)V
-    .locals 3
+    .locals 0
     .parameter "enable"
 
     .prologue
     .line 250
     sput-boolean p0, Lcom/android/phone/HtcNBPCDUtil;->bVZWConversion:Z
-
-    .line 252
-    const-string v0, "HtcNBPCDUtil"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " Set VZW Conversion Enable:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 256
     return-void
@@ -1520,49 +1449,8 @@
 
     move-object v2, v0
 
-    .line 174
-    .local v2, nbpcdInfo:[Ljava/lang/String;
-    const-string v3, "HtcNBPCDUtil"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "NBPCD[0]:"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const/4 v5, 0x0
-
-    aget-object v5, v2, v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, " NBPCD[1]:"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const/4 v5, 0x1
-
-    aget-object v5, v2, v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 175
+    .local v2, nbpcdInfo:[Ljava/lang/String;
     const/4 v3, 0x0
 
     aget-object v3, v2, v3
@@ -1661,11 +1549,6 @@
     .local v10, isEnableNBPCD:Z
     if-nez v10, :cond_1
 
-    .line 373
-    const-string v0, "Unknown NBPCD dialog disable"
-
-    invoke-direct {p0, v0}, Lcom/android/phone/HtcNBPCDUtil;->log(Ljava/lang/String;)V
-
     .line 441
     .end local v10           #isEnableNBPCD:Z
     .end local v13           #settings:Landroid/content/SharedPreferences;
@@ -1711,20 +1594,15 @@
     .line 387
     .local v12, operator:Ljava/lang/String;
     invoke-virtual {v12}, Ljava/lang/String;->length()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v0
 
     const/4 v1, 0x3
 
     if-ge v0, v1, :cond_4
-
-    .line 388
-    const-string v0, "not illegal operator"
-
-    invoke-direct {p0, v0}, Lcom/android/phone/HtcNBPCDUtil;->log(Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 436
     if-eqz v7, :cond_0
@@ -1833,35 +1711,6 @@
     move-result v0
 
     if-lez v0, :cond_7
-
-    .line 417
-    const-string v0, "HtcNBPCDUtil"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " get the mcc from data base "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-interface {v7, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 418
     const/4 v6, 0x1

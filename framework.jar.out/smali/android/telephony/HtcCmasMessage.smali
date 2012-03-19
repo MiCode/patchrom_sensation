@@ -83,7 +83,7 @@
     const/4 v0, -0x1
 
     .line 29
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 36
     iput v1, p0, Landroid/telephony/HtcCmasMessage;->cmasFormat:I

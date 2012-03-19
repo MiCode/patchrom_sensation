@@ -25,7 +25,7 @@
 
 .field public static final ContactsProviderFilesTempPath:Ljava/lang/String; = "/data/data/com.android.providers.contacts/Temp"
 
-.field public static final DEBUG:Z = true
+.field public static final DEBUG:Z = false
 
 .field private static final DEBUG_URL_INDEX:I = 0x0
 
@@ -70,7 +70,7 @@
 
     .prologue
     .line 111
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 3560
     return-void
@@ -948,13 +948,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 1959
-    const-string v2, "ContactsUtility"
-
-    const-string v3, "deleteRawContactPhotoData has Photo data"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1960
     const-string v2, "data_id"
 
@@ -963,35 +956,6 @@
     move-result v2
 
     if-eqz v2, :cond_0
-
-    .line 1961
-    const-string v2, "ContactsUtility"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "deleteRawContactPhotoData delete data Id: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "data_id"
-
-    invoke-virtual {v0, v4}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v4
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1962
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1030,31 +994,8 @@
 
     move-result v1
 
-    .line 1963
-    .local v1, deleteCount:I
-    const-string v2, "ContactsUtility"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "deleteRawContactPhotoData deleteCount: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1964
+    .local v1, deleteCount:I
     if-lez v1, :cond_0
 
     .line 1965
@@ -1482,29 +1423,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1979
-    const-string v0, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "getContactId lRawContactId: "
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1980
     const-wide/16 v7, 0x0
 
@@ -1578,29 +1496,6 @@
 
     move-result-wide v7
 
-    .line 1986
-    const-string v0, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "getContactId lContactId: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1988
     :cond_0
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
@@ -1614,7 +1509,7 @@
 .end method
 
 .method public static getContentValues(Landroid/content/Entity;Ljava/lang/String;)Ljava/util/ArrayList;
-    .locals 8
+    .locals 6
     .parameter "entity"
     .parameter "mimeType"
     .annotation system Ldalvik/annotation/Signature;
@@ -1631,29 +1526,6 @@
     .end annotation
 
     .prologue
-    .line 1483
-    const-string v5, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "getContentValues mimeType: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1484
     new-instance v0, Ljava/util/ArrayList;
 
@@ -1721,39 +1593,12 @@
 
     goto :goto_0
 
-    .line 1495
+    .line 1496
     .end local v1           #entryValues:Landroid/content/ContentValues;
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v3           #mimetype:Ljava/lang/String;
     .end local v4           #subValue:Landroid/content/Entity$NamedContentValues;
     :cond_1
-    const-string v5, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "getContentValues return size: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1496
     return-object v0
 .end method
 
@@ -3563,33 +3408,10 @@
 .end method
 
 .method public static getFromRemote(Ljava/lang/String;)Landroid/graphics/Bitmap;
-    .locals 5
+    .locals 3
     .parameter "url"
 
     .prologue
-    .line 2697
-    const-string v2, "ContactsUtility"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "getFromRemote url: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2699
     const/4 v0, 0x0
 
@@ -3611,33 +3433,6 @@
     .parameter "url"
 
     .prologue
-    .line 2758
-    const-string v18, "ContactsUtility"
-
-    new-instance v19, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v20, "getFromRemote2 url: "
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    move-object/from16 v0, v19
-
-    move-object/from16 v1, p0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    invoke-static/range {v18 .. v19}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2759
     const/4 v4, 0x0
 
@@ -3720,33 +3515,8 @@
 
     move-result-object v9
 
-    .line 2764
-    .local v9, encodedUrl:Ljava/lang/String;
-    const-string v18, "ContactsUtility"
-
-    new-instance v19, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v20, "getFromRemote2 encodedUrl: "
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    invoke-static/range {v18 .. v19}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2766
+    .local v9, encodedUrl:Ljava/lang/String;
     new-instance v18, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
@@ -3791,37 +3561,7 @@
     .restart local v10       #file:Ljava/io/File;
     invoke-virtual {v10}, Ljava/io/File;->createNewFile()Z
 
-    .line 2771
-    if-eqz v10, :cond_0
-
-    const-string v18, "ContactsUtility"
-
-    new-instance v19, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v20, "getFromRemote2 file.getAbsolutePath(): "
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    invoke-virtual {v10}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v20
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    invoke-static/range {v18 .. v19}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2773
-    :cond_0
     new-instance v18, Ljava/net/URL;
 
     move-object/from16 v0, v18
@@ -3856,31 +3596,6 @@
 
     int-to-long v14, v0
 
-    .line 2779
-    const-string v18, "ContactsUtility"
-
-    new-instance v19, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v20, "getFromRemote2 photoSize: "
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v0, v14, v15}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    invoke-static/range {v18 .. v19}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2780
     invoke-virtual {v7}, Ljava/net/URLConnection;->getInputStream()Ljava/io/InputStream;
 
@@ -3888,7 +3603,7 @@
 
     .line 2781
     .local v11, is:Ljava/io/InputStream;
-    if-eqz v11, :cond_3
+    if-eqz v11, :cond_2
 
     .line 2782
     new-instance v13, Ljava/io/FileOutputStream;
@@ -3897,7 +3612,7 @@
 
     .line 2783
     .local v13, out:Ljava/io/FileOutputStream;
-    if-eqz v13, :cond_2
+    if-eqz v13, :cond_1
 
     .line 2785
     const-wide/16 v16, 0x0
@@ -3918,7 +3633,7 @@
     move-result v6
 
     .local v6, bytesRead:I
-    if-lez v6, :cond_1
+    if-lez v6, :cond_0
 
     .line 2788
     const/16 v18, 0x0
@@ -3937,7 +3652,7 @@
     goto :goto_0
 
     .line 2791
-    :cond_1
+    :cond_0
     invoke-virtual {v13}, Ljava/io/FileOutputStream;->flush()V
 
     .line 2792
@@ -3947,12 +3662,12 @@
     .end local v5           #buffer:[B
     .end local v6           #bytesRead:I
     .end local v16           #size:J
-    :cond_2
+    :cond_1
     invoke-virtual {v11}, Ljava/io/InputStream;->close()V
 
     .line 2797
     .end local v13           #out:Ljava/io/FileOutputStream;
-    :cond_3
+    :cond_2
     invoke-static {v12}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v4
@@ -4037,29 +3752,6 @@
     .parameter "url"
 
     .prologue
-    .line 2819
-    const-string v8, "ContactsUtility"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "getFromRemote3 url: "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2820
     const/4 v1, 0x0
 
@@ -4120,31 +3812,8 @@
 
     move-result-object v4
 
-    .line 2825
-    .local v4, encodedUrl:Ljava/lang/String;
-    const-string v8, "ContactsUtility"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "getFromRemote3 encodedUrl: "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2827
+    .local v4, encodedUrl:Ljava/lang/String;
     new-instance v2, Lorg/apache/http/impl/client/DefaultHttpClient;
 
     invoke-direct {v2}, Lorg/apache/http/impl/client/DefaultHttpClient;-><init>()V
@@ -4163,81 +3832,16 @@
 
     .line 2830
     .local v7, resp:Lorg/apache/http/HttpResponse;
-    if-eqz v7, :cond_1
-
-    .line 2831
-    const-string v8, "ContactsUtility"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "getFromRemote3 resp.getStatusLine(): "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-interface {v7}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
-
-    move-result-object v10
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2832
-    invoke-interface {v7}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
-
-    move-result-object v8
-
-    if-eqz v8, :cond_0
-
-    const-string v8, "ContactsUtility"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "getFromRemote3 resp.getStatusLine().getStatusCode(): "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-interface {v7}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
-
-    move-result-object v10
-
-    invoke-interface {v10}, Lorg/apache/http/StatusLine;->getStatusCode()I
-
-    move-result v10
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    if-eqz v7, :cond_0
 
     .line 2833
-    :cond_0
     invoke-interface {v7}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
     move-result-object v5
 
     .line 2834
     .local v5, ent:Lorg/apache/http/HttpEntity;
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_0
 
     .line 2835
     invoke-interface {v5}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
@@ -4260,7 +3864,7 @@
     .end local v5           #ent:Lorg/apache/http/HttpEntity;
     .end local v6           #get:Lorg/apache/http/client/methods/HttpGet;
     .end local v7           #resp:Lorg/apache/http/HttpResponse;
-    :cond_1
+    :cond_0
     :goto_0
     return-object v1
 
@@ -4342,41 +3946,8 @@
     :goto_0
     return-object v1
 
-    .line 2853
-    :cond_1
-    const-string v7, "ContactsUtility"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "getFromRemote4 url: "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, " androidHttpClient: "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2854
+    :cond_1
     const/4 v1, 0x0
 
     .line 2856
@@ -4436,31 +4007,8 @@
 
     move-result-object v3
 
-    .line 2859
-    .local v3, encodedUrl:Ljava/lang/String;
-    const-string v7, "ContactsUtility"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "getFromRemote4 encodedUrl: "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2861
+    .local v3, encodedUrl:Ljava/lang/String;
     new-instance v5, Lorg/apache/http/client/methods/HttpGet;
 
     invoke-direct {v5, v3}, Lorg/apache/http/client/methods/HttpGet;-><init>(Ljava/lang/String;)V
@@ -4475,72 +4023,7 @@
     .local v6, resp:Lorg/apache/http/HttpResponse;
     if-eqz v6, :cond_0
 
-    .line 2864
-    const-string v7, "ContactsUtility"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "getFromRemote4 resp.getStatusLine(): "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-interface {v6}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2865
-    invoke-interface {v6}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
-
-    move-result-object v7
-
-    if-eqz v7, :cond_2
-
-    const-string v7, "ContactsUtility"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "getFromRemote4 resp.getStatusLine().getStatusCode(): "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-interface {v6}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
-
-    move-result-object v9
-
-    invoke-interface {v9}, Lorg/apache/http/StatusLine;->getStatusCode()I
-
-    move-result v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2866
-    :cond_2
     invoke-interface {v6}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
     move-result-object v4
@@ -4563,7 +4046,7 @@
 
     move-result-object v1
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 2871
     .end local v0           #basename:Ljava/lang/String;
@@ -4582,7 +4065,7 @@
 
     invoke-static {v7, v8, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 2873
     .end local v2           #e:Lorg/apache/http/client/ClientProtocolException;
@@ -4597,7 +4080,7 @@
 
     invoke-static {v7, v8, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 2875
     .end local v2           #e:Ljava/io/IOException;
@@ -4612,7 +4095,7 @@
 
     invoke-static {v7, v8, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 2877
     .end local v2           #e:Ljava/lang/OutOfMemoryError;
@@ -4627,7 +4110,7 @@
 
     invoke-static {v7, v8, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto/16 :goto_0
+    goto :goto_0
 .end method
 
 .method public static getImportantGroupDisplayName(Landroid/content/Context;)Ljava/lang/CharSequence;
@@ -8109,31 +7592,8 @@
     :goto_0
     return-void
 
-    .line 2047
-    :cond_1
-    const-string v2, "ContactsUtility"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "handleSocialNetworkLargePhoto lContactId: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2048
+    :cond_1
     sget-object v3, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->mObjectLock:Ljava/lang/Object;
 
     monitor-enter v3
@@ -8233,13 +7693,6 @@
     .parameter "r"
 
     .prologue
-    .line 1999
-    const-string v4, "ContactsUtility"
-
-    const-string v5, "handleSocialNetworkLargePhotoEnd"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2000
     sget-object v5, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->mObjectLock:Ljava/lang/Object;
 
@@ -8351,45 +7804,12 @@
 .end method
 
 .method public static importAccountEmailToMyContact(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 4
+    .locals 2
     .parameter "context"
     .parameter "email"
     .parameter "accountType"
 
     .prologue
-    .line 1231
-    const-string v1, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "importAccountEmailToMyContact email: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", accountType: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1232
     if-eqz p0, :cond_0
 
@@ -8422,48 +7842,11 @@
 .end method
 
 .method public static importCsAccountInfoToMyContact(Landroid/content/Context;Landroid/accounts/Account;)V
-    .locals 4
+    .locals 3
     .parameter "context"
     .parameter "account"
 
     .prologue
-    .line 1333
-    const-string v1, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "importCsAccountInfoToMyContact Name: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p1, Landroid/accounts/Account;->name:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", Type: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p1, Landroid/accounts/Account;->type:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1334
     if-eqz p0, :cond_0
 
@@ -8503,34 +7886,11 @@
 .end method
 
 .method public static importToMyContact(Landroid/content/Context;J)V
-    .locals 4
+    .locals 3
     .parameter "context"
     .parameter "lContactId"
 
     .prologue
-    .line 1551
-    const-string v1, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "importToMyContact lContactId: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1552
     if-eqz p0, :cond_0
 
@@ -8569,49 +7929,16 @@
     .parameter "rawId"
 
     .prologue
-    const-wide/16 v4, 0x0
-
-    .line 1501
-    const-string v1, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "importToMyContact lContactId: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", rawId: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p3, p4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const-wide/16 v2, 0x0
 
     .line 1502
     if-eqz p0, :cond_0
 
-    cmp-long v1, v4, p1
+    cmp-long v1, v2, p1
 
     if-gez v1, :cond_0
 
-    cmp-long v1, v4, p3
+    cmp-long v1, v2, p3
 
     if-ltz v1, :cond_1
 
@@ -9078,7 +8405,7 @@
 .end method
 
 .method public static isDuplicate(Landroid/content/Entity;Landroid/content/ContentValues;)Z
-    .locals 13
+    .locals 12
     .parameter "entity"
     .parameter "entryValuesTarget"
 
@@ -9163,29 +8490,6 @@
     move-result v10
 
     if-eqz v10, :cond_0
-
-    .line 1757
-    const-string v10, "ContactsUtility"
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v12, "isDuplicate mimetype: "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1759
     const-string v10, "vnd.android.cursor.item/phone_v2"
@@ -9526,14 +8830,14 @@
 
     .line 1933
     .local v7, c:Landroid/database/Cursor;
-    if-eqz v7, :cond_2
+    if-eqz v7, :cond_1
 
     .line 1934
     invoke-interface {v7}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     .line 1935
     const/4 v6, 0x1
@@ -9558,63 +8862,16 @@
 
     invoke-virtual {p3, v0, v8, v9}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 1940
-    :cond_0
-    const-string v0, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "isRawContactIdHasPhoto bHasPhoto: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1941
-    const-string v0, "ContactsUtility"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "isRawContactIdHasPhoto lDataId: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1943
     .end local v8           #lDataId:J
-    :cond_1
+    :cond_0
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
     .line 1944
     const/4 v7, 0x0
 
     .line 1946
-    :cond_2
+    :cond_1
     return v6
 .end method
 

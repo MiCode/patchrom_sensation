@@ -656,7 +656,7 @@
 
     .prologue
     .line 723
-    iget-boolean v0, p0, Landroid/widget/AdapterViewAnimator;->mDataChanged:Z
+    iget-boolean v0, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     .line 724
     .local v0, dataChanged:Z
@@ -673,7 +673,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Landroid/widget/AdapterViewAnimator;->mDataChanged:Z
+    iput-boolean v1, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     .line 743
     return-void
@@ -1913,7 +1913,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/AdapterViewAnimator;->mItemCount:I
+    iput v0, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     .line 949
     :cond_1

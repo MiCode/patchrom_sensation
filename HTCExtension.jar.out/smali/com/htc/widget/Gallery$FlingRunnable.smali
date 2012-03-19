@@ -44,7 +44,7 @@
     .line 1392
     iput-object p1, p0, Lcom/htc/widget/Gallery$FlingRunnable;->this$0:Lcom/htc/widget/Gallery;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1388
     const/4 v1, 0x0
@@ -196,7 +196,7 @@
     .line 1479
     iget-object v2, p0, Lcom/htc/widget/Gallery$FlingRunnable;->this$0:Lcom/htc/widget/Gallery;
 
-    iget v3, v2, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v3, v2, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     iget-object v4, p0, Lcom/htc/widget/Gallery$FlingRunnable;->this$0:Lcom/htc/widget/Gallery;
 
@@ -204,7 +204,7 @@
 
     sub-int/2addr v3, v4
 
-    iput v3, v2, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iput v3, v2, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     .line 1480
     iget-object v2, p0, Lcom/htc/widget/Gallery$FlingRunnable;->this$0:Lcom/htc/widget/Gallery;
@@ -261,7 +261,7 @@
     .line 1487
     iget-object v5, p0, Lcom/htc/widget/Gallery$FlingRunnable;->this$0:Lcom/htc/widget/Gallery;
 
-    iget v5, v5, Lcom/htc/widget/Gallery;->mItemCount:I
+    iget v5, v5, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     if-nez v5, :cond_0
 
@@ -317,7 +317,7 @@
 
     iget-object v6, p0, Lcom/htc/widget/Gallery$FlingRunnable;->this$0:Lcom/htc/widget/Gallery;
 
-    iget v6, v6, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v6, v6, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     #setter for: Lcom/htc/widget/Gallery;->mDownTouchPosition:I
     invoke-static {v5, v6}, Lcom/htc/widget/Gallery;->access$502(Lcom/htc/widget/Gallery;I)I
@@ -336,7 +336,7 @@
 
     iget-object v6, p0, Lcom/htc/widget/Gallery$FlingRunnable;->this$0:Lcom/htc/widget/Gallery;
 
-    #getter for: Lcom/htc/widget/Gallery;->mPaddingLeft:I
+    #getter for: Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
     invoke-static {v6}, Lcom/htc/widget/Gallery;->access$600(Lcom/htc/widget/Gallery;)I
 
     move-result v6
@@ -345,7 +345,7 @@
 
     iget-object v6, p0, Lcom/htc/widget/Gallery$FlingRunnable;->this$0:Lcom/htc/widget/Gallery;
 
-    #getter for: Lcom/htc/widget/Gallery;->mPaddingRight:I
+    #getter for: Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
     invoke-static {v6}, Lcom/htc/widget/Gallery;->access$700(Lcom/htc/widget/Gallery;)I
 
     move-result v6
@@ -423,7 +423,7 @@
 
     iget-object v6, p0, Lcom/htc/widget/Gallery$FlingRunnable;->this$0:Lcom/htc/widget/Gallery;
 
-    iget v6, v6, Lcom/htc/widget/Gallery;->mFirstPosition:I
+    iget v6, v6, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     add-int/2addr v6, v2
 
@@ -444,7 +444,7 @@
 
     iget-object v6, p0, Lcom/htc/widget/Gallery$FlingRunnable;->this$0:Lcom/htc/widget/Gallery;
 
-    #getter for: Lcom/htc/widget/Gallery;->mPaddingRight:I
+    #getter for: Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
     invoke-static {v6}, Lcom/htc/widget/Gallery;->access$800(Lcom/htc/widget/Gallery;)I
 
     move-result v6
@@ -453,7 +453,7 @@
 
     iget-object v6, p0, Lcom/htc/widget/Gallery$FlingRunnable;->this$0:Lcom/htc/widget/Gallery;
 
-    #getter for: Lcom/htc/widget/Gallery;->mPaddingLeft:I
+    #getter for: Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
     invoke-static {v6}, Lcom/htc/widget/Gallery;->access$900(Lcom/htc/widget/Gallery;)I
 
     move-result v6

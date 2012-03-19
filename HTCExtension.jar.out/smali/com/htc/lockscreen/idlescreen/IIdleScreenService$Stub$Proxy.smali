@@ -28,7 +28,7 @@
 
     .prologue
     .line 76
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 77
     iput-object p1, p0, Lcom/htc/lockscreen/idlescreen/IIdleScreenService$Stub$Proxy;->mRemote:Landroid/os/IBinder;

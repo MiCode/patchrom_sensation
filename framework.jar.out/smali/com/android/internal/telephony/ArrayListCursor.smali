@@ -189,13 +189,13 @@
 
     .line 102
     :try_start_0
-    iget v5, p0, Lcom/android/internal/telephony/ArrayListCursor;->mPos:I
+    iget v5, p0, Landroid/database/AbstractCursor;->mPos:I
 
     .line 103
     .local v5, oldpos:I
     add-int/lit8 v6, p1, -0x1
 
-    iput v6, p0, Lcom/android/internal/telephony/ArrayListCursor;->mPos:I
+    iput v6, p0, Landroid/database/AbstractCursor;->mPos:I
 
     .line 104
     invoke-virtual {p2}, Landroid/database/CursorWindow;->clear()V
@@ -237,7 +237,7 @@
     .line 110
     iget-object v6, p0, Lcom/android/internal/telephony/ArrayListCursor;->mRows:[Ljava/util/ArrayList;
 
-    iget v7, p0, Lcom/android/internal/telephony/ArrayListCursor;->mPos:I
+    iget v7, p0, Landroid/database/AbstractCursor;->mPos:I
 
     aget-object v6, v6, v7
 
@@ -266,7 +266,7 @@
 
     .line 114
     .local v3, field:[B
-    iget v6, p0, Lcom/android/internal/telephony/ArrayListCursor;->mPos:I
+    iget v6, p0, Landroid/database/AbstractCursor;->mPos:I
 
     invoke-virtual {p2, v3, v6, v4}, Landroid/database/CursorWindow;->putBlob([BII)Z
 
@@ -309,7 +309,7 @@
 
     .line 120
     .local v3, field:Ljava/lang/String;
-    iget v6, p0, Lcom/android/internal/telephony/ArrayListCursor;->mPos:I
+    iget v6, p0, Landroid/database/AbstractCursor;->mPos:I
 
     invoke-virtual {p2, v3, v6, v4}, Landroid/database/CursorWindow;->putString(Ljava/lang/String;II)Z
 
@@ -345,7 +345,7 @@
     .restart local v5       #oldpos:I
     :cond_4
     :try_start_2
-    iget v6, p0, Lcom/android/internal/telephony/ArrayListCursor;->mPos:I
+    iget v6, p0, Landroid/database/AbstractCursor;->mPos:I
 
     invoke-virtual {p2, v6, v4}, Landroid/database/CursorWindow;->putNull(II)Z
 
@@ -368,7 +368,7 @@
     .line 134
     .end local v4           #i:I
     :cond_6
-    iput v5, p0, Lcom/android/internal/telephony/ArrayListCursor;->mPos:I
+    iput v5, p0, Landroid/database/AbstractCursor;->mPos:I
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/lang/IllegalStateException; {:try_start_2 .. :try_end_2} :catch_0
@@ -384,7 +384,7 @@
     .line 154
     iget-object v0, p0, Lcom/android/internal/telephony/ArrayListCursor;->mRows:[Ljava/util/ArrayList;
 
-    iget v1, p0, Lcom/android/internal/telephony/ArrayListCursor;->mPos:I
+    iget v1, p0, Landroid/database/AbstractCursor;->mPos:I
 
     aget-object v0, v0, v1
 
@@ -429,7 +429,7 @@
     .line 189
     iget-object v1, p0, Lcom/android/internal/telephony/ArrayListCursor;->mRows:[Ljava/util/ArrayList;
 
-    iget v2, p0, Lcom/android/internal/telephony/ArrayListCursor;->mPos:I
+    iget v2, p0, Landroid/database/AbstractCursor;->mPos:I
 
     aget-object v1, v1, v2
 
@@ -456,7 +456,7 @@
     .line 183
     iget-object v1, p0, Lcom/android/internal/telephony/ArrayListCursor;->mRows:[Ljava/util/ArrayList;
 
-    iget v2, p0, Lcom/android/internal/telephony/ArrayListCursor;->mPos:I
+    iget v2, p0, Landroid/database/AbstractCursor;->mPos:I
 
     aget-object v1, v1, v2
 
@@ -483,7 +483,7 @@
     .line 171
     iget-object v1, p0, Lcom/android/internal/telephony/ArrayListCursor;->mRows:[Ljava/util/ArrayList;
 
-    iget v2, p0, Lcom/android/internal/telephony/ArrayListCursor;->mPos:I
+    iget v2, p0, Landroid/database/AbstractCursor;->mPos:I
 
     aget-object v1, v1, v2
 
@@ -510,7 +510,7 @@
     .line 177
     iget-object v1, p0, Lcom/android/internal/telephony/ArrayListCursor;->mRows:[Ljava/util/ArrayList;
 
-    iget v2, p0, Lcom/android/internal/telephony/ArrayListCursor;->mPos:I
+    iget v2, p0, Landroid/database/AbstractCursor;->mPos:I
 
     aget-object v1, v1, v2
 
@@ -537,7 +537,7 @@
     .line 165
     iget-object v1, p0, Lcom/android/internal/telephony/ArrayListCursor;->mRows:[Ljava/util/ArrayList;
 
-    iget v2, p0, Lcom/android/internal/telephony/ArrayListCursor;->mPos:I
+    iget v2, p0, Landroid/database/AbstractCursor;->mPos:I
 
     aget-object v1, v1, v2
 
@@ -564,7 +564,7 @@
     .line 159
     iget-object v1, p0, Lcom/android/internal/telephony/ArrayListCursor;->mRows:[Ljava/util/ArrayList;
 
-    iget v2, p0, Lcom/android/internal/telephony/ArrayListCursor;->mPos:I
+    iget v2, p0, Landroid/database/AbstractCursor;->mPos:I
 
     aget-object v1, v1, v2
 
@@ -597,7 +597,7 @@
     .line 195
     iget-object v0, p0, Lcom/android/internal/telephony/ArrayListCursor;->mRows:[Ljava/util/ArrayList;
 
-    iget v1, p0, Lcom/android/internal/telephony/ArrayListCursor;->mPos:I
+    iget v1, p0, Landroid/database/AbstractCursor;->mPos:I
 
     aget-object v0, v0, v1
 

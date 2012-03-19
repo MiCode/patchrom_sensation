@@ -62,7 +62,7 @@
 
     .prologue
     .line 34
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 35
     const/4 v0, 0x0
@@ -83,7 +83,7 @@
     const/4 v1, 0x0
 
     .line 56
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 57
     iput v2, p0, Landroid/os/WorkSource;->mNum:I
@@ -109,7 +109,7 @@
 
     .prologue
     .line 61
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 62
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -135,7 +135,7 @@
 
     .prologue
     .line 42
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
     if-nez p1, :cond_0
@@ -265,345 +265,201 @@
 .end method
 
 .method private updateLocked(Landroid/os/WorkSource;ZZ)Z
-    .locals 16
+    .locals 14
     .parameter "other"
     .parameter "set"
     .parameter "returnNewbs"
 
     .prologue
     .line 224
-    move-object/from16 v0, p0
-
-    iget v1, v0, Landroid/os/WorkSource;->mNum:I
+    iget v0, p0, Landroid/os/WorkSource;->mNum:I
 
     .line 225
-    .local v1, N1:I
-    move-object/from16 v0, p0
-
-    iget-object v10, v0, Landroid/os/WorkSource;->mUids:[I
+    .local v0, N1:I
+    iget-object v9, p0, Landroid/os/WorkSource;->mUids:[I
 
     .line 226
-    .local v10, uids1:[I
-    move-object/from16 v0, p1
-
-    iget v2, v0, Landroid/os/WorkSource;->mNum:I
+    .local v9, uids1:[I
+    iget v1, p1, Landroid/os/WorkSource;->mNum:I
 
     .line 227
-    .local v2, N2:I
-    move-object/from16 v0, p1
-
-    iget-object v11, v0, Landroid/os/WorkSource;->mUids:[I
-
-    .line 229
-    .local v11, uids2:[I
-    const-string v13, "WorkSource"
-
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v15, "updateLocked, set= "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    move/from16 v0, p2
-
-    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    const-string v15, ", returnNewbs= "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    move/from16 v0, p3
-
-    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 230
-    const-string v13, "WorkSource"
-
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v15, "N1= "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    const-string v15, ", N2= "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    .local v1, N2:I
+    iget-object v10, p1, Landroid/os/WorkSource;->mUids:[I
 
     .line 232
-    const/4 v3, 0x0
+    .local v10, uids2:[I
+    const/4 v2, 0x0
 
     .line 233
-    .local v3, changed:Z
-    const/4 v6, 0x0
+    .local v2, changed:Z
+    const/4 v5, 0x0
 
     .line 234
-    .local v6, i1:I
-    const/4 v7, 0x0
+    .local v5, i1:I
+    const/4 v6, 0x0
 
-    .local v7, i2:I
+    .local v6, i2:I
     :goto_0
-    if-ge v7, v2, :cond_10
+    if-ge v6, v1, :cond_10
 
     .line 235
-    if-ge v6, v1, :cond_0
+    if-ge v5, v0, :cond_0
 
-    aget v13, v11, v7
+    aget v12, v10, v6
 
-    aget v14, v10, v6
+    aget v13, v9, v5
 
-    if-ge v13, v14, :cond_a
+    if-ge v12, v13, :cond_a
 
     .line 237
     :cond_0
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     .line 238
-    if-nez v10, :cond_3
+    if-nez v9, :cond_3
 
     .line 239
-    const/4 v13, 0x4
+    const/4 v12, 0x4
 
-    new-array v10, v13, [I
+    new-array v9, v12, [I
 
     .line 240
-    const/4 v13, 0x0
+    const/4 v12, 0x0
 
-    aget v14, v11, v7
+    aget v13, v10, v6
 
-    aput v14, v10, v13
+    aput v13, v9, v12
 
     .line 265
     :goto_1
     if-eqz p3, :cond_1
 
     .line 266
-    sget-object v13, Landroid/os/WorkSource;->sNewbWork:Landroid/os/WorkSource;
+    sget-object v12, Landroid/os/WorkSource;->sNewbWork:Landroid/os/WorkSource;
 
-    if-nez v13, :cond_9
+    if-nez v12, :cond_9
 
     .line 267
-    new-instance v13, Landroid/os/WorkSource;
+    new-instance v12, Landroid/os/WorkSource;
 
-    aget v14, v11, v7
+    aget v13, v10, v6
 
-    invoke-direct {v13, v14}, Landroid/os/WorkSource;-><init>(I)V
+    invoke-direct {v12, v13}, Landroid/os/WorkSource;-><init>(I)V
 
-    sput-object v13, Landroid/os/WorkSource;->sNewbWork:Landroid/os/WorkSource;
+    sput-object v12, Landroid/os/WorkSource;->sNewbWork:Landroid/os/WorkSource;
 
     .line 272
     :cond_1
     :goto_2
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     .line 273
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     .line 234
     :cond_2
     :goto_3
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
     .line 241
     :cond_3
-    array-length v13, v10
+    array-length v12, v9
 
-    if-lt v6, v13, :cond_6
+    if-lt v5, v12, :cond_6
 
     .line 242
-    array-length v13, v10
+    array-length v12, v9
 
-    mul-int/lit8 v13, v13, 0x3
+    mul-int/lit8 v12, v12, 0x3
 
-    div-int/lit8 v13, v13, 0x2
+    div-int/lit8 v12, v12, 0x2
 
-    new-array v8, v13, [I
+    new-array v7, v12, [I
 
     .line 243
-    .local v8, newuids:[I
-    if-lez v6, :cond_4
+    .local v7, newuids:[I
+    if-lez v5, :cond_4
+
+    const/4 v12, 0x0
 
     const/4 v13, 0x0
 
-    const/4 v14, 0x0
-
-    invoke-static {v10, v13, v8, v14, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v9, v12, v7, v13, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 244
     :cond_4
-    if-ge v6, v1, :cond_5
+    if-ge v5, v0, :cond_5
 
-    add-int/lit8 v13, v6, 0x1
+    add-int/lit8 v12, v5, 0x1
 
-    sub-int v14, v1, v6
+    sub-int v13, v0, v5
 
-    invoke-static {v10, v6, v8, v13, v14}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v9, v5, v7, v12, v13}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 245
     :cond_5
-    move-object v10, v8
+    move-object v9, v7
 
     .line 246
-    aget v13, v11, v7
+    aget v12, v10, v6
 
-    aput v13, v10, v6
+    aput v12, v9, v5
 
     goto :goto_1
 
     .line 248
-    .end local v8           #newuids:[I
+    .end local v7           #newuids:[I
     :cond_6
-    if-ge v6, v1, :cond_8
+    if-ge v5, v0, :cond_8
 
     .line 250
-    sub-int v4, v1, v6
+    sub-int v3, v0, v5
 
     .line 251
-    .local v4, copylength:I
-    add-int v5, v6, v4
+    .local v3, copylength:I
+    add-int v4, v5, v3
 
     .line 252
-    .local v5, finalposition:I
-    array-length v13, v10
+    .local v4, finalposition:I
+    array-length v12, v9
 
-    add-int/lit8 v12, v13, -0x1
+    add-int/lit8 v11, v12, -0x1
 
     .line 253
-    .local v12, validfinalposition:I
-    if-le v5, v12, :cond_7
-
-    .line 255
-    const-string v13, "WorkSource"
-
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v15, "copylength= "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    const-string v15, ", finalposition= "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    const-string v15, ", validfinalposition= "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    .local v11, validfinalposition:I
+    if-le v4, v11, :cond_7
 
     .line 256
-    sub-int v4, v12, v6
-
-    .line 258
-    const-string v13, "WorkSource"
-
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v15, "Adjust copylength, copylength= "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    sub-int v3, v11, v5
 
     .line 260
     :cond_7
-    add-int/lit8 v13, v6, 0x1
+    add-int/lit8 v12, v5, 0x1
 
-    invoke-static {v10, v6, v10, v13, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v9, v5, v9, v12, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 263
-    .end local v4           #copylength:I
-    .end local v5           #finalposition:I
-    .end local v12           #validfinalposition:I
+    .end local v3           #copylength:I
+    .end local v4           #finalposition:I
+    .end local v11           #validfinalposition:I
     :cond_8
-    aget v13, v11, v7
+    aget v12, v10, v6
 
-    aput v13, v10, v6
+    aput v12, v9, v5
 
-    goto/16 :goto_1
+    goto :goto_1
 
     .line 269
     :cond_9
-    sget-object v13, Landroid/os/WorkSource;->sNewbWork:Landroid/os/WorkSource;
+    sget-object v12, Landroid/os/WorkSource;->sNewbWork:Landroid/os/WorkSource;
 
-    aget v14, v11, v7
+    aget v13, v10, v6
 
-    invoke-direct {v13, v14}, Landroid/os/WorkSource;->addLocked(I)V
+    invoke-direct {v12, v13}, Landroid/os/WorkSource;->addLocked(I)V
 
-    goto/16 :goto_2
+    goto :goto_2
 
     .line 275
     :cond_a
@@ -611,110 +467,106 @@
 
     .line 278
     :cond_b
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     .line 279
-    if-ge v6, v1, :cond_2
+    if-ge v5, v0, :cond_2
 
-    aget v13, v11, v7
+    aget v12, v10, v6
 
-    aget v14, v10, v6
+    aget v13, v9, v5
 
-    if-ge v13, v14, :cond_b
+    if-ge v12, v13, :cond_b
 
-    goto/16 :goto_3
+    goto :goto_3
 
     .line 282
     :cond_c
-    move v9, v6
+    move v8, v5
 
     .line 283
-    .local v9, start:I
+    .local v8, start:I
     :goto_4
-    if-ge v6, v1, :cond_e
+    if-ge v5, v0, :cond_e
 
-    aget v13, v11, v7
+    aget v12, v10, v6
 
-    aget v14, v10, v6
+    aget v13, v9, v5
 
-    if-le v13, v14, :cond_e
+    if-le v12, v13, :cond_e
 
     .line 284
-    sget-object v13, Landroid/os/WorkSource;->sGoneWork:Landroid/os/WorkSource;
+    sget-object v12, Landroid/os/WorkSource;->sGoneWork:Landroid/os/WorkSource;
 
-    if-nez v13, :cond_d
+    if-nez v12, :cond_d
 
     .line 285
-    new-instance v13, Landroid/os/WorkSource;
+    new-instance v12, Landroid/os/WorkSource;
 
-    aget v14, v10, v6
+    aget v13, v9, v5
 
-    invoke-direct {v13, v14}, Landroid/os/WorkSource;-><init>(I)V
+    invoke-direct {v12, v13}, Landroid/os/WorkSource;-><init>(I)V
 
-    sput-object v13, Landroid/os/WorkSource;->sGoneWork:Landroid/os/WorkSource;
+    sput-object v12, Landroid/os/WorkSource;->sGoneWork:Landroid/os/WorkSource;
 
     .line 289
     :goto_5
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_4
 
     .line 287
     :cond_d
-    sget-object v13, Landroid/os/WorkSource;->sGoneWork:Landroid/os/WorkSource;
+    sget-object v12, Landroid/os/WorkSource;->sGoneWork:Landroid/os/WorkSource;
 
-    aget v14, v10, v6
+    aget v13, v9, v5
 
-    invoke-direct {v13, v14}, Landroid/os/WorkSource;->addLocked(I)V
+    invoke-direct {v12, v13}, Landroid/os/WorkSource;->addLocked(I)V
 
     goto :goto_5
 
     .line 291
     :cond_e
-    if-ge v9, v6, :cond_f
+    if-ge v8, v5, :cond_f
 
     .line 292
-    sub-int v13, v6, v9
+    sub-int v12, v5, v8
 
-    invoke-static {v10, v6, v10, v9, v13}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v9, v5, v9, v8, v12}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 293
-    sub-int v13, v6, v9
+    sub-int v12, v5, v8
 
-    sub-int/2addr v1, v13
+    sub-int/2addr v0, v12
 
     .line 294
-    move v6, v9
+    move v5, v8
 
     .line 297
     :cond_f
-    if-ge v6, v1, :cond_2
+    if-ge v5, v0, :cond_2
 
-    aget v13, v11, v6
+    aget v12, v10, v5
 
-    aget v14, v10, v6
+    aget v13, v9, v5
 
-    if-ne v13, v14, :cond_2
+    if-ne v12, v13, :cond_2
 
     .line 298
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto/16 :goto_3
 
     .line 304
-    .end local v9           #start:I
+    .end local v8           #start:I
     :cond_10
-    move-object/from16 v0, p0
-
-    iput v1, v0, Landroid/os/WorkSource;->mNum:I
+    iput v0, p0, Landroid/os/WorkSource;->mNum:I
 
     .line 305
-    move-object/from16 v0, p0
-
-    iput-object v10, v0, Landroid/os/WorkSource;->mUids:[I
+    iput-object v9, p0, Landroid/os/WorkSource;->mUids:[I
 
     .line 307
-    return v3
+    return v2
 .end method
 
 
@@ -986,7 +838,7 @@
 .end method
 
 .method public remove(Landroid/os/WorkSource;)Z
-    .locals 13
+    .locals 12
     .parameter "other"
 
     .prologue
@@ -1053,74 +905,8 @@
     .local v9, validfinalposition:I
     if-le v4, v9, :cond_0
 
-    .line 204
-    const-string v10, "WorkSource"
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v12, "copylength= "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    const-string v12, ", finalposition= "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    const-string v12, ", validfinalposition= "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 205
     sub-int v3, v9, v5
-
-    .line 207
-    const-string v10, "WorkSource"
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v12, "Adjust copylength, copylength= "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 209
     :cond_0

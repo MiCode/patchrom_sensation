@@ -40,7 +40,7 @@
 
     .prologue
     .line 487
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 504
     invoke-static {}, Ljava/text/Collator;->getInstance()Ljava/text/Collator;
@@ -76,7 +76,7 @@
     if-nez v0, :cond_0
 
     .line 494
-    iget-object v0, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v0, p1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     .line 496
     :cond_0
@@ -91,7 +91,7 @@
     if-nez v1, :cond_1
 
     .line 498
-    iget-object v1, p2, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v1, p2, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     .line 501
     :cond_1

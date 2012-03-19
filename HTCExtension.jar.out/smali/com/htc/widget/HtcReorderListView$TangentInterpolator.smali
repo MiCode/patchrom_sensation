@@ -36,7 +36,7 @@
     .line 1274
     iput-object p1, p0, Lcom/htc/widget/HtcReorderListView$TangentInterpolator;->this$0:Lcom/htc/widget/HtcReorderListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1276
     const/high16 v0, 0x4100

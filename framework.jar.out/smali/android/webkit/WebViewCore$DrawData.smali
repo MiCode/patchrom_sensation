@@ -37,28 +37,28 @@
     .locals 1
 
     .prologue
-    .line 2210
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 2222
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2211
+    .line 2223
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/webkit/WebViewCore$DrawData;->mBaseLayer:I
 
-    .line 2212
+    .line 2224
     new-instance v0, Landroid/graphics/Region;
 
     invoke-direct {v0}, Landroid/graphics/Region;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/WebViewCore$DrawData;->mInvalRegion:Landroid/graphics/Region;
 
-    .line 2213
+    .line 2225
     new-instance v0, Landroid/graphics/Point;
 
     invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/WebViewCore$DrawData;->mContentSize:Landroid/graphics/Point;
 
-    .line 2214
+    .line 2226
     return-void
 .end method

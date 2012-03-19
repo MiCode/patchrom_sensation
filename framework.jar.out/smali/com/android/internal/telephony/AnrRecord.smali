@@ -39,7 +39,7 @@
 
     .prologue
     .line 423
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 412
     const/16 v0, 0xff
@@ -68,7 +68,7 @@
 
     .prologue
     .line 451
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 412
     const/16 v0, 0xff
@@ -105,7 +105,7 @@
 
     .prologue
     .line 436
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 412
     const/16 v0, 0xff
@@ -140,7 +140,7 @@
 
     .prologue
     .line 443
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 412
     const/16 v0, 0xff

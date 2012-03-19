@@ -6,7 +6,7 @@
 # static fields
 .field private static final AUTHORITY:Ljava/lang/String; = "com.htc.calendar"
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final EVENTS_ID:I = 0x3
 
@@ -88,25 +88,17 @@
 
     .prologue
     .line 26
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 .method private static Debug(Ljava/lang/String;)V
-    .locals 1
+    .locals 0
     .parameter "s"
 
     .prologue
-    .line 34
-    if-eqz p0, :cond_0
-
-    const-string v0, "UriTools"
-
-    invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 36
-    :cond_0
     return-void
 .end method
 

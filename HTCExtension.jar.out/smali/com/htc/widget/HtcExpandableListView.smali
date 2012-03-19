@@ -701,7 +701,7 @@
 
     .prologue
     .line 510
-    iget v1, p0, Lcom/htc/widget/HtcExpandableListView;->mItemCount:I
+    iget v1, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     invoke-virtual {p0}, Lcom/htc/widget/HtcExpandableListView;->getFooterViewsCount()I
 
@@ -870,7 +870,7 @@
     .local v18, saveCount:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcExpandableListView;->mGroupFlags:I
+    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mGroupFlags:I
 
     move/from16 v22, v0
 
@@ -899,7 +899,7 @@
     .line 258
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcExpandableListView;->mScrollX:I
+    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mScrollX:I
 
     move/from16 v19, v0
 
@@ -907,7 +907,7 @@
     .local v19, scrollX:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcExpandableListView;->mScrollY:I
+    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mScrollY:I
 
     move/from16 v20, v0
 
@@ -915,7 +915,7 @@
     .local v20, scrollY:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcExpandableListView;->mPaddingLeft:I
+    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mPaddingLeft:I
 
     move/from16 v22, v0
 
@@ -923,7 +923,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcExpandableListView;->mPaddingTop:I
+    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mPaddingTop:I
 
     move/from16 v23, v0
 
@@ -931,7 +931,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcExpandableListView;->mRight:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mRight:I
 
     move/from16 v24, v0
 
@@ -939,7 +939,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcExpandableListView;->mLeft:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mLeft:I
 
     move/from16 v25, v0
 
@@ -947,7 +947,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcExpandableListView;->mPaddingRight:I
+    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mPaddingRight:I
 
     move/from16 v25, v0
 
@@ -955,7 +955,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcExpandableListView;->mBottom:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mBottom:I
 
     move/from16 v25, v0
 
@@ -963,7 +963,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcExpandableListView;->mTop:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mTop:I
 
     move/from16 v26, v0
 
@@ -971,7 +971,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcExpandableListView;->mPaddingBottom:I
+    iget v0, v0, Lcom/htc/widget/HtcAbsListView;->mPaddingBottom:I
 
     move/from16 v26, v0
 
@@ -1001,7 +1001,7 @@
     .local v9, headerViewsCount:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcExpandableListView;->mItemCount:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     move/from16 v22, v0
 
@@ -1019,7 +1019,7 @@
     .local v14, lastChildFlPos:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcExpandableListView;->mBottom:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mBottom:I
 
     move/from16 v16, v0
 
@@ -1046,7 +1046,7 @@
     .local v10, i:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/widget/HtcExpandableListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     move/from16 v22, v0
 
@@ -1274,7 +1274,7 @@
     .line 324
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/htc/widget/HtcExpandableListView;->mStackFromBottom:Z
+    iget-boolean v0, v0, Lcom/htc/widget/HtcAbsListView;->mStackFromBottom:Z
 
     move/from16 v22, v0
 
@@ -1382,7 +1382,7 @@
 
     .prologue
     .line 405
-    iget v5, p0, Lcom/htc/widget/HtcExpandableListView;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     add-int v3, p3, v5
 
@@ -2119,7 +2119,7 @@
     .line 487
     new-instance v0, Lcom/htc/widget/HtcExpandableListConnector;
 
-    iget-object v1, p0, Lcom/htc/widget/HtcExpandableListView;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/htc/widget/HtcAbsListView;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, p1, v1}, Lcom/htc/widget/HtcExpandableListConnector;-><init>(Landroid/widget/ExpandableListAdapter;Landroid/content/Context;)V
 

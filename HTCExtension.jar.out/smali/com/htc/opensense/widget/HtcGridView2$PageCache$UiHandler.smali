@@ -83,35 +83,8 @@
 
     div-int v9, v12, v17
 
-    .line 3471
-    .local v9, nCachePageIndex:I
-    const-string v17, "HtcGridView2"
-
-    const/16 v18, 0x2
-
-    move/from16 v0, v18
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    move-object/from16 v18, v0
-
-    const/16 v19, 0x0
-
-    const-string v20, "addItemToCache() nPos="
-
-    aput-object v20, v18, v19
-
-    const/16 v19, 0x1
-
-    invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v20
-
-    aput-object v20, v18, v19
-
-    invoke-static/range {v17 .. v18}, Lcom/htc/opensense/album/util/Log;->i2(Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 3473
+    .local v9, nCachePageIndex:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/htc/opensense/widget/HtcGridView2$PageCache$UiHandler;->this$0:Lcom/htc/opensense/widget/HtcGridView2$PageCache;
@@ -210,118 +183,8 @@
 
     if-nez v17, :cond_2
 
-    .line 3481
-    :cond_0
-    const-string v17, "HtcGridView2"
-
-    const/16 v19, 0x8
-
-    move/from16 v0, v19
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    move-object/from16 v19, v0
-
-    const/16 v20, 0x0
-
-    const-string v21, "addItemToCache() return because mAdapter="
-
-    aput-object v21, v19, v20
-
-    const/16 v20, 0x1
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/opensense/widget/HtcGridView2$PageCache$UiHandler;->this$0:Lcom/htc/opensense/widget/HtcGridView2$PageCache;
-
-    move-object/from16 v21, v0
-
-    #getter for: Lcom/htc/opensense/widget/HtcGridView2$PageCache;->mAdapter:Landroid/widget/BaseAdapter;
-    invoke-static/range {v21 .. v21}, Lcom/htc/opensense/widget/HtcGridView2$PageCache;->access$3500(Lcom/htc/opensense/widget/HtcGridView2$PageCache;)Landroid/widget/BaseAdapter;
-
-    move-result-object v21
-
-    aput-object v21, v19, v20
-
-    const/16 v20, 0x2
-
-    const-string v21, ", nPosInCache="
-
-    aput-object v21, v19, v20
-
-    const/16 v20, 0x3
-
-    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v21
-
-    aput-object v21, v19, v20
-
-    const/16 v20, 0x4
-
-    const-string v21, ", mTotalCacheItems="
-
-    aput-object v21, v19, v20
-
-    const/16 v20, 0x5
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/opensense/widget/HtcGridView2$PageCache$UiHandler;->this$0:Lcom/htc/opensense/widget/HtcGridView2$PageCache;
-
-    move-object/from16 v21, v0
-
-    move-object/from16 v0, v21
-
-    iget v0, v0, Lcom/htc/opensense/widget/HtcGridView2$PageCache;->mTotalCacheItems:I
-
-    move/from16 v21, v0
-
-    invoke-static/range {v21 .. v21}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v21
-
-    aput-object v21, v19, v20
-
-    const/16 v20, 0x6
-
-    const-string v21, ", mCachePages.length="
-
-    aput-object v21, v19, v20
-
-    const/16 v20, 0x7
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/opensense/widget/HtcGridView2$PageCache$UiHandler;->this$0:Lcom/htc/opensense/widget/HtcGridView2$PageCache;
-
-    move-object/from16 v21, v0
-
-    move-object/from16 v0, v21
-
-    iget-object v0, v0, Lcom/htc/opensense/widget/HtcGridView2$PageCache;->mCachePages:[Lcom/htc/opensense/widget/HtcGridView2$PageCache$Page;
-
-    move-object/from16 v21, v0
-
-    move-object/from16 v0, v21
-
-    array-length v0, v0
-
-    move/from16 v21, v0
-
-    invoke-static/range {v21 .. v21}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v21
-
-    aput-object v21, v19, v20
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, v19
-
-    invoke-static {v0, v1}, Lcom/htc/opensense/album/util/Log;->i2(Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 3485
+    :cond_0
     monitor-exit v18
 
     .line 3565
@@ -626,52 +489,15 @@
     move-object/from16 v19, v0
 
     aget-boolean v19, v19, v10
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     move/from16 v0, v17
 
     move/from16 v1, v19
 
     if-ne v0, v1, :cond_4
-
-    .line 3504
-    const-string v17, "HtcGridView2"
-
-    const/16 v19, 0x3
-
-    move/from16 v0, v19
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    move-object/from16 v19, v0
-
-    const/16 v20, 0x0
-
-    const-string v21, "addItemToCache() return mLoadedPage["
-
-    aput-object v21, v19, v20
-
-    const/16 v20, 0x1
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v21
-
-    aput-object v21, v19, v20
-
-    const/16 v20, 0x2
-
-    const-string v21, "]=true"
-
-    aput-object v21, v19, v20
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, v19
-
-    invoke-static {v0, v1}, Lcom/htc/opensense/album/util/Log;->i2(Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 3505
     :try_start_3

@@ -14,7 +14,7 @@
 # static fields
 .field private static final ACCOUNT_TYPE_GOOGLE:Ljava/lang/String; = "com.google.GAIA"
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final GOOGLE_MY_CONTACTS_GROUP:Ljava/lang/String; = "System Group: My Contacts"
 
@@ -67,7 +67,7 @@
 
     .prologue
     .line 60
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 85
     return-void
@@ -416,13 +416,6 @@
 
     const/4 v5, 0x0
 
-    .line 467
-    const-string v0, "ImportUtils"
-
-    const-string v1, "get google group id string"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 468
     const/4 v6, 0x0
 
@@ -490,32 +483,9 @@
     .line 482
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 487
+    .line 488
     .end local v7           #tmpCursor:Landroid/database/Cursor;
     :cond_1
-    const-string v0, "ImportUtils"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "google my group id: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 488
     return-object v6
 
     .line 481
@@ -921,7 +891,7 @@
 .end method
 
 .method public static importSimIntoContactDb(Landroid/database/Cursor;Landroid/content/ContentResolver;Landroid/accounts/Account;)I
-    .locals 9
+    .locals 8
     .parameter "simCursor"
     .parameter "resolver"
     .parameter "account"
@@ -937,42 +907,12 @@
     :goto_0
     const/4 v4, -0x1
 
-    .line 177
-    .local v4, insertRawContact:I
-    :try_start_0
-    const-string v6, "ImportUtils"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v8, "phonebook size: "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 178
-    if-lez v5, :cond_3
-
-    .line 179
-    const-string v6, "ImportUtils"
-
-    const-string/jumbo v7, "start import"
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    .local v4, insertRawContact:I
+    if-lez v5, :cond_2
 
     .line 181
+    :try_start_0
     invoke-static {p2, p1}, Lcom/android/internal/telephony/ImportUtils;->getGoogleGroupIdString(Landroid/accounts/Account;Landroid/content/ContentResolver;)Ljava/lang/String;
 
     move-result-object v3
@@ -1039,31 +979,16 @@
     const-string v6, "com.android.contacts"
 
     invoke-virtual {p1, v6, v0}, Landroid/content/ContentResolver;->applyBatch(Ljava/lang/String;Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;
-
-    .line 198
-    :cond_2
-    const-string v6, "ImportUtils"
-
-    const-string/jumbo v7, "import end"
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Landroid/content/OperationApplicationException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 206
+    .line 208
     .end local v0           #batchOperations:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentProviderOperation;>;"
     .end local v3           #groupIdString:Ljava/lang/String;
-    :cond_3
+    :cond_2
     :goto_2
-    const-string v6, "ImportUtils"
-
-    const-string v7, "end of import all sim contacts"
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 208
     return v4
 
     .line 200
@@ -1463,7 +1388,7 @@
 .end method
 
 .method static insertSimDataIntoContactDb(Landroid/database/Cursor;Landroid/content/ContentResolver;Landroid/accounts/Account;I)I
-    .locals 10
+    .locals 9
     .parameter "simCursor"
     .parameter "resolver"
     .parameter "account"
@@ -1566,30 +1491,6 @@
     const-string v7, "com.android.contacts"
 
     invoke-virtual {p1, v7, v0}, Landroid/content/ContentResolver;->applyBatch(Ljava/lang/String;Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;
-
-    .line 150
-    :cond_4
-    const-string v7, "ImportUtils"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v9, "insert end. count: "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Landroid/content/OperationApplicationException; {:try_start_1 .. :try_end_1} :catch_0
@@ -1597,6 +1498,7 @@
 
     .end local v0           #batchOperations:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentProviderOperation;>;"
     .end local v3           #groupIdString:Ljava/lang/String;
+    :cond_4
     :goto_3
     move v5, v4
 

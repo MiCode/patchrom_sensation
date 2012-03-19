@@ -160,7 +160,7 @@
     .line 127
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/phone/EmergencyDialer;->mToneGeneratorLock:Ljava/lang/Object;
 
@@ -2977,16 +2977,16 @@
 .end method
 
 .method placeCall()V
-    .locals 13
+    .locals 12
 
     .prologue
-    const/4 v12, 0x2
+    const/4 v11, 0x2
 
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
-    const/16 v10, 0x1a
+    const/16 v9, 0x1a
 
-    const/high16 v9, 0x1000
+    const/high16 v7, 0x1000
 
     const/4 v8, 0x1
 
@@ -3130,7 +3130,7 @@
 
     move-result v7
 
-    invoke-virtual {v3, v12, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v3, v11, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v7
 
@@ -3164,29 +3164,6 @@
 
     if-eqz v5, :cond_4
 
-    .line 806
-    const-string v5, "EmergencyDialer"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "placing call to "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 809
     if-eqz v3, :cond_2
 
@@ -3198,7 +3175,7 @@
 
     .line 811
     :cond_2
-    invoke-virtual {p0, v10}, Lcom/android/phone/EmergencyDialer;->playTone(I)V
+    invoke-virtual {p0, v9}, Lcom/android/phone/EmergencyDialer;->playTone(I)V
 
     goto :goto_0
 
@@ -3214,14 +3191,14 @@
     .local v1, intent:Landroid/content/Intent;
     const-string v5, "tel"
 
-    invoke-static {v5, v3, v11}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v5, v3, v10}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v5
 
     invoke-virtual {v1, v5}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
     .line 817
-    invoke-virtual {v1, v9}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    invoke-virtual {v1, v7}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
     .line 818
     const-string v5, "com.android.phone.EmergencyDialer"
@@ -3239,7 +3216,7 @@
     .line 821
     invoke-virtual {p0}, Lcom/android/phone/EmergencyDialer;->finish()V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 825
     .end local v1           #intent:Landroid/content/Intent;
@@ -3256,29 +3233,6 @@
 
     if-eqz v5, :cond_7
 
-    .line 827
-    const-string v5, "EmergencyDialer"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "placing call to "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 830
     if-eqz v3, :cond_5
 
@@ -3290,7 +3244,7 @@
 
     .line 832
     :cond_5
-    invoke-virtual {p0, v10}, Lcom/android/phone/EmergencyDialer;->playTone(I)V
+    invoke-virtual {p0, v9}, Lcom/android/phone/EmergencyDialer;->playTone(I)V
 
     goto/16 :goto_0
 
@@ -3319,7 +3273,7 @@
     invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 841
-    invoke-virtual {v0, v9}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    invoke-virtual {v0, v7}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     .line 842
     invoke-virtual {p0, v0}, Lcom/android/phone/EmergencyDialer;->startActivity(Landroid/content/Intent;)V
@@ -3352,31 +3306,8 @@
 
     if-eqz v5, :cond_b
 
-    .line 853
-    :cond_8
-    const-string v5, "EmergencyDialer"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "placing call to "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 856
+    :cond_8
     if-eqz v3, :cond_9
 
     invoke-static {v3}, Landroid/text/TextUtils;->isGraphic(Ljava/lang/CharSequence;)Z
@@ -3387,7 +3318,7 @@
 
     .line 858
     :cond_9
-    invoke-virtual {p0, v10}, Lcom/android/phone/EmergencyDialer;->playTone(I)V
+    invoke-virtual {p0, v9}, Lcom/android/phone/EmergencyDialer;->playTone(I)V
 
     goto/16 :goto_0
 
@@ -3403,14 +3334,14 @@
     .restart local v1       #intent:Landroid/content/Intent;
     const-string v5, "tel"
 
-    invoke-static {v5, v3, v11}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v5, v3, v10}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v5
 
     invoke-virtual {v1, v5}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
     .line 863
-    invoke-virtual {v1, v9}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    invoke-virtual {v1, v7}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
     .line 864
     const-string v5, "com.android.phone.EmergencyDialer"
@@ -3442,7 +3373,7 @@
 
     sget-short v5, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_LANGUAGE_flag:S
 
-    if-eq v5, v12, :cond_d
+    if-eq v5, v11, :cond_d
 
     :cond_c
     sget-short v5, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
@@ -3472,14 +3403,14 @@
     .restart local v1       #intent:Landroid/content/Intent;
     const-string v5, "tel"
 
-    invoke-static {v5, v3, v11}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v5, v3, v10}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v5
 
     invoke-virtual {v1, v5}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
     .line 878
-    invoke-virtual {v1, v9}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    invoke-virtual {v1, v7}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
     .line 879
     invoke-virtual {p0, v1}, Lcom/android/phone/EmergencyDialer;->startActivity(Landroid/content/Intent;)V
@@ -3489,32 +3420,9 @@
 
     goto/16 :goto_0
 
-    .line 885
+    .line 889
     .end local v1           #intent:Landroid/content/Intent;
     :cond_e
-    const-string v5, "EmergencyDialer"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "rejecting bad requested number "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 889
     iget-object v5, p0, Lcom/android/phone/EmergencyDialer;->mDigits:Landroid/widget/EditText;
 
     invoke-virtual {v5}, Landroid/widget/EditText;->getText()Landroid/text/Editable;

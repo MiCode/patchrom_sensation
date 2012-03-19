@@ -53,7 +53,7 @@
 
     .prologue
     .line 50
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 51
     iput p1, p0, Landroid/content/SyncInfo;->authorityId:I
@@ -77,7 +77,7 @@
 
     .prologue
     .line 71
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 72
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I

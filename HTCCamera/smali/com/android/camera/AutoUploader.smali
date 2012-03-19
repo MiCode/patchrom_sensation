@@ -107,7 +107,7 @@
     const/4 v0, 0x0
 
     .line 69
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 28
     iput-object v1, p0, Lcom/android/camera/AutoUploader;->mAutoUploadUri:Landroid/net/Uri;
@@ -1563,7 +1563,7 @@
     invoke-virtual {v4, v5}, Lcom/android/camera/rotate/RotateDialog;->setOrientation(I)V
 
     .line 273
-    invoke-virtual {v0}, Landroid/app/Dialog;->show()V
+    invoke-virtual {v0}, Lcom/android/camera/rotate/RotateDialog;->show()V
 
     .line 276
     iget-object v4, p0, Lcom/android/camera/AutoUploader;->mHTCCamera:Lcom/android/camera/HTCCamera;
@@ -1638,7 +1638,7 @@
     invoke-virtual {v2, v3}, Lcom/android/camera/rotate/RotateDialog;->setOrientation(I)V
 
     .line 296
-    invoke-virtual {v0}, Landroid/app/Dialog;->show()V
+    invoke-virtual {v0}, Lcom/android/camera/rotate/RotateDialog;->show()V
 
     .line 298
     return-void

@@ -68,7 +68,7 @@
     .local p0, this:Landroid/preference/GenericInflater$FactoryMerger;,"Landroid/preference/GenericInflater$FactoryMerger<TT;>;"
     .local p1, f1:Landroid/preference/GenericInflater$Factory;,"Landroid/preference/GenericInflater$Factory<TT;>;"
     .local p2, f2:Landroid/preference/GenericInflater$Factory;,"Landroid/preference/GenericInflater$Factory<TT;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 88
     iput-object p1, p0, Landroid/preference/GenericInflater$FactoryMerger;->mF1:Landroid/preference/GenericInflater$Factory;

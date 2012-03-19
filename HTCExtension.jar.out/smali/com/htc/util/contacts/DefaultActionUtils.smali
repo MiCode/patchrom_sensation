@@ -85,7 +85,7 @@
 
     .prologue
     .line 115
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 117
     return-void
@@ -1415,7 +1415,7 @@
 
     .line 127
     .local v14, defaultList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/htc/util/contacts/DefaultActionUtils$actionEntry;>;"
-    if-eqz v9, :cond_9
+    if-eqz v9, :cond_8
 
     .line 129
     :cond_0
@@ -1424,7 +1424,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_1
 
     .line 130
     const/4 v2, 0x1
@@ -1468,35 +1468,8 @@
 
     move-result-object v13
 
-    .line 136
-    .local v13, dafaultAction:Ljava/lang/String;
-    if-eqz v13, :cond_1
-
-    .line 137
-    const-string v2, "DefaultActionUtils"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "after extract: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 140
-    :cond_1
+    .local v13, dafaultAction:Ljava/lang/String;
     invoke-static {v13}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -1532,7 +1505,7 @@
     .end local v13           #dafaultAction:Ljava/lang/String;
     .end local v16           #entry:Lcom/htc/util/contacts/DefaultActionUtils$actionEntry;
     .end local v19           #noteText:Ljava/lang/String;
-    :cond_2
+    :cond_1
     const/16 v18, 0x0
 
     .line 157
@@ -1542,12 +1515,12 @@
     move-result-object v17
 
     .local v17, i$:Ljava/util/Iterator;
-    :cond_3
+    :cond_2
     invoke-interface/range {v17 .. v17}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_5
 
     invoke-interface/range {v17 .. v17}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1563,13 +1536,13 @@
 
     const/16 v3, 0xf01
 
-    if-ne v2, v3, :cond_b
+    if-ne v2, v3, :cond_a
 
     .line 159
     invoke-interface {v9}, Landroid/database/Cursor;->moveToFirst()Z
 
     .line 161
-    :cond_4
+    :cond_3
     const/4 v2, 0x0
 
     invoke-interface {v9, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -1582,7 +1555,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_9
 
     const/4 v2, 0x3
 
@@ -1594,7 +1567,7 @@
 
     iget v3, v0, Lcom/htc/util/contacts/DefaultActionUtils$actionEntry;->mType:I
 
-    if-ne v2, v3, :cond_a
+    if-ne v2, v3, :cond_9
 
     const/4 v2, 0x5
 
@@ -1608,7 +1581,7 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_a
+    if-nez v2, :cond_9
 
     .line 163
     const/16 v2, 0xf01
@@ -1638,27 +1611,27 @@
 
     .line 210
     .end local v22           #uri:Landroid/net/Uri;
-    :cond_5
+    :cond_4
     :goto_1
     const/4 v2, 0x1
 
     move/from16 v0, v18
 
-    if-ne v0, v2, :cond_3
+    if-ne v0, v2, :cond_2
 
     .line 215
     .end local v16           #entry:Lcom/htc/util/contacts/DefaultActionUtils$actionEntry;
-    :cond_6
+    :cond_5
     invoke-virtual {v14}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v17
 
-    :cond_7
+    :cond_6
     invoke-interface/range {v17 .. v17}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_7
 
     invoke-interface/range {v17 .. v17}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1672,7 +1645,7 @@
 
     iget-object v2, v0, Lcom/htc/util/contacts/DefaultActionUtils$actionEntry;->mUri:Landroid/net/Uri;
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_6
 
     .line 217
     invoke-static/range {v16 .. v16}, Lcom/htc/util/contacts/DefaultActionUtils;->buildDefaultString(Lcom/htc/util/contacts/DefaultActionUtils$actionEntry;)Ljava/lang/String;
@@ -1681,43 +1654,43 @@
 
     .line 222
     .end local v16           #entry:Lcom/htc/util/contacts/DefaultActionUtils$actionEntry;
-    :cond_8
+    :cond_7
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
     .line 225
     .end local v17           #i$:Ljava/util/Iterator;
     .end local v18           #isFound:Z
-    :cond_9
+    :cond_8
     return-object v15
 
     .line 168
     .restart local v16       #entry:Lcom/htc/util/contacts/DefaultActionUtils$actionEntry;
     .restart local v17       #i$:Ljava/util/Iterator;
     .restart local v18       #isFound:Z
-    :cond_a
+    :cond_9
     invoke-interface {v9}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v2
 
-    if-nez v2, :cond_4
+    if-nez v2, :cond_3
 
     goto :goto_1
 
     .line 169
-    :cond_b
+    :cond_a
     move-object/from16 v0, v16
 
     iget v2, v0, Lcom/htc/util/contacts/DefaultActionUtils$actionEntry;->mKind:I
 
     const/16 v3, 0xf02
 
-    if-ne v2, v3, :cond_e
+    if-ne v2, v3, :cond_d
 
     .line 170
     invoke-interface {v9}, Landroid/database/Cursor;->moveToFirst()Z
 
     .line 172
-    :cond_c
+    :cond_b
     const/4 v2, 0x0
 
     invoke-interface {v9, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -1730,7 +1703,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_c
 
     const/4 v2, 0x3
 
@@ -1740,7 +1713,7 @@
 
     const/4 v3, 0x2
 
-    if-ne v2, v3, :cond_d
+    if-ne v2, v3, :cond_c
 
     const/4 v2, 0x5
 
@@ -1754,7 +1727,7 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_d
+    if-nez v2, :cond_c
 
     .line 174
     const/16 v2, 0xf02
@@ -1787,24 +1760,24 @@
 
     .line 179
     .end local v22           #uri:Landroid/net/Uri;
-    :cond_d
+    :cond_c
     invoke-interface {v9}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_b
 
     goto :goto_1
 
     .line 180
-    :cond_e
+    :cond_d
     move-object/from16 v0, v16
 
     iget v2, v0, Lcom/htc/util/contacts/DefaultActionUtils$actionEntry;->mKind:I
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_13
+    if-ne v2, v3, :cond_12
 
     .line 181
     invoke-interface {v9}, Landroid/database/Cursor;->moveToFirst()Z
@@ -1822,7 +1795,7 @@
 
     .line 186
     .local v11, cur_raw_id:J
-    :cond_f
+    :cond_e
     const/4 v2, 0x5
 
     invoke-interface {v9, v2}, Landroid/database/Cursor;->getLong(I)J
@@ -1832,13 +1805,13 @@
     .line 187
     cmp-long v2, v20, v11
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_f
 
     .line 188
     const/4 v10, 0x0
 
     .line 190
-    :cond_10
+    :cond_f
     const/4 v2, 0x0
 
     invoke-interface {v9, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -1851,7 +1824,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_11
 
     move-object/from16 v0, v16
 
@@ -1859,7 +1832,7 @@
 
     cmp-long v2, v11, v2
 
-    if-nez v2, :cond_12
+    if-nez v2, :cond_11
 
     .line 191
     add-int/lit8 v10, v10, 0x1
@@ -1869,7 +1842,7 @@
 
     iget v2, v0, Lcom/htc/util/contacts/DefaultActionUtils$actionEntry;->mType:I
 
-    if-eq v2, v10, :cond_11
+    if-eq v2, v10, :cond_10
 
     .line 194
     move-wide/from16 v20, v11
@@ -1880,12 +1853,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_f
+    if-nez v2, :cond_e
 
     goto/16 :goto_1
 
     .line 197
-    :cond_11
+    :cond_10
     const/4 v2, 0x1
 
     const/4 v3, 0x4
@@ -1916,7 +1889,7 @@
 
     .line 202
     .end local v22           #uri:Landroid/net/Uri;
-    :cond_12
+    :cond_11
     move-wide/from16 v20, v11
 
     goto :goto_2
@@ -1925,14 +1898,14 @@
     .end local v10           #count:I
     .end local v11           #cur_raw_id:J
     .end local v20           #pre_raw_id:J
-    :cond_13
+    :cond_12
     move-object/from16 v0, v16
 
     iget v2, v0, Lcom/htc/util/contacts/DefaultActionUtils$actionEntry;->mKind:I
 
     const/16 v3, 0xf03
 
-    if-ne v2, v3, :cond_5
+    if-ne v2, v3, :cond_4
 
     .line 205
     const/16 v2, 0xf03

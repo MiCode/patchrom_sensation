@@ -16,7 +16,7 @@
 
     .prologue
     .line 167
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 168
     iput p1, p0, Landroid/graphics/BitmapRegionDecoder;->mNativeBitmapRegionDecoder:I
@@ -204,7 +204,7 @@
 
     .line 153
     :try_start_2
-    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
@@ -224,7 +224,7 @@
 
     .line 153
     :try_start_3
-    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 

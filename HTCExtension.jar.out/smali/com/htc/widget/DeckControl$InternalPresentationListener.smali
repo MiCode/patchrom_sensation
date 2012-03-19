@@ -32,7 +32,7 @@
     .line 202
     iput-object p1, p0, Lcom/htc/widget/DeckControl$InternalPresentationListener;->this$0:Lcom/htc/widget/DeckControl;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 204
     const/4 v0, 0x0

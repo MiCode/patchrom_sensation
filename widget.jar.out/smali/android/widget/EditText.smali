@@ -84,7 +84,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/widget/EditText;->mSelectionManager:Lcom/htc/textselection/HtcTextSelectionManager;
+    iput-object v0, p0, Landroid/widget/TextView;->mSelectionManager:Lcom/htc/textselection/HtcTextSelectionManager;
 
     .line 72
     invoke-static {}, Landroid/text/method/ArrowKeyMovementMethod;->getInstance()Landroid/text/method/MovementMethod;

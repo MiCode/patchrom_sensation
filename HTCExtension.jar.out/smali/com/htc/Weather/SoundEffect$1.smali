@@ -57,38 +57,8 @@
     :goto_0
     return-void
 
-    .line 188
-    :pswitch_0
-    const-string v0, "WeatherSound"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "case MSG_START: state = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/htc/Weather/SoundEffect$1;->this$0:Lcom/htc/Weather/SoundEffect;
-
-    #getter for: Lcom/htc/Weather/SoundEffect;->state:I
-    invoke-static {v2}, Lcom/htc/Weather/SoundEffect;->access$000(Lcom/htc/Weather/SoundEffect;)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 189
+    :pswitch_0
     iget-object v0, p0, Lcom/htc/Weather/SoundEffect$1;->this$0:Lcom/htc/Weather/SoundEffect;
 
     const/16 v1, 0xb
@@ -104,15 +74,8 @@
 
     goto :goto_0
 
-    .line 194
-    :pswitch_1
-    const-string v0, "WeatherSound"
-
-    const-string v1, "case MSG_FADEOUT"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 195
+    :pswitch_1
     iget-object v0, p0, Lcom/htc/Weather/SoundEffect$1;->this$0:Lcom/htc/Weather/SoundEffect;
 
     #getter for: Lcom/htc/Weather/SoundEffect;->mMediaPlayer:Landroid/media/MediaPlayer;
@@ -170,15 +133,8 @@
 
     goto :goto_0
 
-    .line 203
-    :cond_0
-    const-string v0, "WeatherSound"
-
-    const-string v1, "case FADEOUT end"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 204
+    :cond_0
     iget-object v0, p0, Lcom/htc/Weather/SoundEffect$1;->this$0:Lcom/htc/Weather/SoundEffect;
 
     #getter for: Lcom/htc/Weather/SoundEffect;->mHandler:Landroid/os/Handler;
@@ -205,17 +161,10 @@
 
     iput v0, p0, Lcom/htc/Weather/SoundEffect$1;->mCurrentVolume:F
 
-    goto/16 :goto_0
-
-    .line 210
-    :cond_1
-    const-string v0, "WeatherSound"
-
-    const-string v1, "MSG_FADEOUT - set state = STATE_INIT"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    goto :goto_0
 
     .line 211
+    :cond_1
     iget-object v0, p0, Lcom/htc/Weather/SoundEffect$1;->this$0:Lcom/htc/Weather/SoundEffect;
 
     const/16 v1, 0xa
@@ -223,40 +172,10 @@
     #setter for: Lcom/htc/Weather/SoundEffect;->state:I
     invoke-static {v0, v1}, Lcom/htc/Weather/SoundEffect;->access$002(Lcom/htc/Weather/SoundEffect;I)I
 
-    goto/16 :goto_0
-
-    .line 216
-    :pswitch_2
-    const-string v0, "WeatherSound"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "case MSG_RELEASE: state = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/htc/Weather/SoundEffect$1;->this$0:Lcom/htc/Weather/SoundEffect;
-
-    #getter for: Lcom/htc/Weather/SoundEffect;->state:I
-    invoke-static {v2}, Lcom/htc/Weather/SoundEffect;->access$000(Lcom/htc/Weather/SoundEffect;)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    goto :goto_0
 
     .line 217
+    :pswitch_2
     iget-object v0, p0, Lcom/htc/Weather/SoundEffect$1;->this$0:Lcom/htc/Weather/SoundEffect;
 
     #getter for: Lcom/htc/Weather/SoundEffect;->mHandler:Landroid/os/Handler;
@@ -278,7 +197,7 @@
     #calls: Lcom/htc/Weather/SoundEffect;->checkNeedRestart()V
     invoke-static {v0}, Lcom/htc/Weather/SoundEffect;->access$600(Lcom/htc/Weather/SoundEffect;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 186
     nop

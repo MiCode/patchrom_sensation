@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1925
+    .line 1998
     iput-object p1, p0, Landroid/webkit/EditableWebView$EditableQuickActions$4;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,21 +43,21 @@
     .parameter "which"
 
     .prologue
-    .line 1928
+    .line 2001
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$4;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style:Lcom/htc/dialog/HtcAlertDialog;
 
     invoke-virtual {v0}, Lcom/htc/dialog/HtcAlertDialog;->dismiss()V
 
-    .line 1930
+    .line 2003
     packed-switch p2, :pswitch_data_0
 
-    .line 1950
+    .line 2023
     :goto_0
     return-void
 
-    .line 1932
+    .line 2005
     :pswitch_0
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$4;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -71,7 +71,7 @@
     #calls: Landroid/webkit/EditableWebView$EditableQuickActions;->onCreateDialogFontsize(Landroid/content/Context;)V
     invoke-static {v0, v1}, Landroid/webkit/EditableWebView$EditableQuickActions;->access$3600(Landroid/webkit/EditableWebView$EditableQuickActions;Landroid/content/Context;)V
 
-    .line 1933
+    .line 2006
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$4;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_fontsize:Lcom/htc/dialog/HtcAlertDialog;
@@ -80,7 +80,7 @@
 
     goto :goto_0
 
-    .line 1936
+    .line 2009
     :pswitch_1
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$4;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -94,7 +94,7 @@
     #calls: Landroid/webkit/EditableWebView$EditableQuickActions;->onCreateDialogFontcolor(Landroid/content/Context;)V
     invoke-static {v0, v1}, Landroid/webkit/EditableWebView$EditableQuickActions;->access$3700(Landroid/webkit/EditableWebView$EditableQuickActions;Landroid/content/Context;)V
 
-    .line 1937
+    .line 2010
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$4;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_fontcolor:Lcom/htc/dialog/HtcAlertDialog;
@@ -103,7 +103,7 @@
 
     goto :goto_0
 
-    .line 1940
+    .line 2013
     :pswitch_2
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$4;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -117,7 +117,7 @@
     #calls: Landroid/webkit/EditableWebView$EditableQuickActions;->onCreateDialogSettings(Landroid/content/Context;)V
     invoke-static {v0, v1}, Landroid/webkit/EditableWebView$EditableQuickActions;->access$3800(Landroid/webkit/EditableWebView$EditableQuickActions;Landroid/content/Context;)V
 
-    .line 1941
+    .line 2014
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$4;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_settings:Lcom/htc/dialog/HtcAlertDialog;
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 1944
+    .line 2017
     :pswitch_3
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$4;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -140,7 +140,7 @@
     #calls: Landroid/webkit/EditableWebView$EditableQuickActions;->onCreateDialogAlignment(Landroid/content/Context;)V
     invoke-static {v0, v1}, Landroid/webkit/EditableWebView$EditableQuickActions;->access$3900(Landroid/webkit/EditableWebView$EditableQuickActions;Landroid/content/Context;)V
 
-    .line 1945
+    .line 2018
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$4;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_alignment:Lcom/htc/dialog/HtcAlertDialog;
@@ -149,7 +149,7 @@
 
     goto :goto_0
 
-    .line 1930
+    .line 2003
     nop
 
     :pswitch_data_0

@@ -67,7 +67,7 @@
 
     .line 2436
     :try_start_1
-    iget-object v5, p0, Lcom/android/camera/ImageManager$Image;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
+    iget-object v5, p0, Lcom/android/camera/ImageManager$BaseImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
 
     invoke-virtual {v5}, Lcom/android/camera/ImageManager$BaseImageList;->indexData()I
 
@@ -259,7 +259,7 @@
 
     .prologue
     .line 2187
-    iget-object v0, p0, Lcom/android/camera/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     if-nez v0, :cond_0
 
@@ -268,11 +268,11 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/camera/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     .line 2190
     :cond_0
-    iget-object v0, p0, Lcom/android/camera/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -281,7 +281,7 @@
     if-nez v0, :cond_1
 
     .line 2191
-    iget-object v0, p0, Lcom/android/camera/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -467,12 +467,12 @@
 
     .prologue
     .line 2203
-    iget-object v1, p0, Lcom/android/camera/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/android/camera/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     if-eqz v1, :cond_0
 
     .line 2204
-    iget-object v1, p0, Lcom/android/camera/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/android/camera/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -554,7 +554,7 @@
 
     .prologue
     .line 2226
-    iget-object v0, p0, Lcom/android/camera/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     if-nez v0, :cond_0
 
@@ -563,11 +563,11 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/camera/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     .line 2229
     :cond_0
-    iget-object v0, p0, Lcom/android/camera/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -582,7 +582,7 @@
 
     .prologue
     .line 2238
-    iget-object v0, p0, Lcom/android/camera/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     if-nez v0, :cond_0
 
@@ -591,11 +591,11 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/camera/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     .line 2241
     :cond_0
-    iget-object v0, p0, Lcom/android/camera/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -604,13 +604,13 @@
     if-nez v0, :cond_1
 
     .line 2242
-    iget-object v0, p0, Lcom/android/camera/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2244
     :cond_1
-    iget-object v0, p0, Lcom/android/camera/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -661,7 +661,7 @@
     .local v9, c:Landroid/database/Cursor;
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/ImageManager$Image;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
+    iget-object v2, v0, Lcom/android/camera/ImageManager$BaseImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
 
     iget-object v2, v2, Lcom/android/camera/ImageManager$BaseImageList;->mThumbUri:Landroid/net/Uri;
 
@@ -671,11 +671,11 @@
     :try_start_0
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/android/camera/ImageManager$Image;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v1, v0, Lcom/android/camera/ImageManager$BaseImage;->mContentResolver:Landroid/content/ContentResolver;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/ImageManager$Image;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
+    iget-object v2, v0, Lcom/android/camera/ImageManager$BaseImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
 
     iget-object v2, v2, Lcom/android/camera/ImageManager$BaseImageList;->mThumbUri:Landroid/net/Uri;
 
@@ -719,13 +719,13 @@
     .line 2509
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/ImageManager$Image;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
+    iget-object v2, v0, Lcom/android/camera/ImageManager$BaseImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
 
     iget-object v3, v2, Lcom/android/camera/ImageManager$BaseImageList;->mThumbUri:Landroid/net/Uri;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/ImageManager$Image;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
+    iget-object v2, v0, Lcom/android/camera/ImageManager$BaseImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
 
     check-cast v2, Lcom/android/camera/ImageManager$ImageList;
 
@@ -763,7 +763,7 @@
     .line 2515
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/ImageManager$Image;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v2, v0, Lcom/android/camera/ImageManager$BaseImage;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v3, "r"
 
@@ -860,7 +860,7 @@
     .line 2542
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/ImageManager$Image;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
+    iget-object v2, v0, Lcom/android/camera/ImageManager$BaseImage;->mContainer:Lcom/android/camera/ImageManager$BaseImageList;
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ImageManager$Image;->fullSizeImageId()J
 

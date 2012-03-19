@@ -43,12 +43,12 @@
     .parameter
 
     .prologue
-    .line 2980
+    .line 3068
     iput-object p1, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2991
+    .line 3079
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->checkTimeout:Z
@@ -64,12 +64,12 @@
 
     const/4 v8, 0x0
 
-    .line 3042
+    .line 3130
     invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    .line 3043
+    .line 3131
     .local v0, canPaste:Ljava/lang/Boolean;
     iget-object v4, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
@@ -87,7 +87,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 3044
+    .line 3132
     iget-object v4, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iget-object v4, v4, Landroid/webkit/EditableWebView;->mClipboard:Landroid/content/ClipboardManager;
@@ -96,20 +96,20 @@
 
     move-result-object v1
 
-    .line 3045
+    .line 3133
     .local v1, description:Landroid/content/ClipDescription;
     iget-boolean v4, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->checkTimeout:Z
 
     if-eqz v4, :cond_3
 
-    .line 3047
+    .line 3135
     invoke-virtual {v1}, Landroid/content/ClipDescription;->getLabel()Ljava/lang/CharSequence;
 
     move-result-object v4
 
     if-eqz v4, :cond_0
 
-    .line 3048
+    .line 3136
     invoke-virtual {v1}, Landroid/content/ClipDescription;->getLabel()Ljava/lang/CharSequence;
 
     move-result-object v4
@@ -118,7 +118,7 @@
 
     move-result-object v2
 
-    .line 3050
+    .line 3138
     .local v2, label:Ljava/lang/String;
     const-string v4, "HTC_MODIFIED_CLIPDATA="
 
@@ -128,7 +128,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 3051
+    .line 3139
     invoke-virtual {v1}, Landroid/content/ClipDescription;->getLabel()Ljava/lang/CharSequence;
 
     move-result-object v4
@@ -151,7 +151,7 @@
 
     move-result-object v3
 
-    .line 3053
+    .line 3141
     .local v3, timestamp:Ljava/lang/String;
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -173,12 +173,12 @@
 
     if-gez v4, :cond_0
 
-    .line 3054
+    .line 3142
     invoke-static {v9}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    .line 3060
+    .line 3148
     .end local v2           #label:Ljava/lang/String;
     .end local v3           #timestamp:Ljava/lang/String;
     :cond_0
@@ -227,13 +227,13 @@
 
     if-nez v4, :cond_2
 
-    .line 3063
+    .line 3151
     :cond_1
     invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    .line 3066
+    .line 3154
     .end local v1           #description:Landroid/content/ClipDescription;
     :cond_2
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -242,7 +242,7 @@
 
     return v4
 
-    .line 3059
+    .line 3147
     .restart local v1       #description:Landroid/content/ClipDescription;
     :cond_3
     invoke-static {v9}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -261,12 +261,12 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 2994
+    .line 3082
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 2995
+    .line 3083
     .local v3, res:Landroid/content/res/Resources;
     const v5, 0x20805f5
 
@@ -276,7 +276,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->icon_paste:Landroid/graphics/drawable/Drawable;
 
-    .line 2996
+    .line 3084
     const v5, 0x104000b
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -285,12 +285,12 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->str_paste:Ljava/lang/String;
 
-    .line 2998
+    .line 3086
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
-    .line 3002
+    .line 3090
     .local v2, pm:Landroid/content/pm/PackageManager;
     new-instance v4, Landroid/content/Intent;
 
@@ -304,13 +304,13 @@
 
     invoke-direct {v4, v5, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 3003
+    .line 3091
     .local v4, target:Landroid/content/Intent;
     invoke-virtual {v2, v4, v7}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
 
     move-result-object v1
 
-    .line 3004
+    .line 3092
     .local v1, mainActivitiesList:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -318,14 +318,14 @@
 
     if-lez v5, :cond_0
 
-    .line 3005
+    .line 3093
     invoke-interface {v1, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/content/pm/ResolveInfo;
 
-    .line 3006
+    .line 3094
     .local v0, info:Landroid/content/pm/ResolveInfo;
     invoke-virtual {v0, v2}, Landroid/content/pm/ResolveInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
@@ -333,7 +333,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->icon_open_link:Landroid/graphics/drawable/Drawable;
 
-    .line 3008
+    .line 3096
     .end local v0           #info:Landroid/content/pm/ResolveInfo;
     :cond_0
     const v5, 0x20c0236
@@ -344,7 +344,7 @@
 
     iput-object v5, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->str_open_link:Ljava/lang/String;
 
-    .line 3011
+    .line 3099
     return-void
 .end method
 
@@ -355,14 +355,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3015
+    .line 3103
     iget-object v0, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->str_paste:Ljava/lang/String;
 
     iget-object v1, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->icon_paste:Landroid/graphics/drawable/Drawable;
 
     invoke-interface {p1, v3, v3, v0, v1}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 3016
+    .line 3104
     const/16 v0, 0xe
 
     iget-object v1, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->str_open_link:Ljava/lang/String;
@@ -371,7 +371,7 @@
 
     invoke-interface {p1, v3, v0, v1, v2}, Lcom/htc/textselection/ActionMenu;->addAction(IILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Lcom/htc/textselection/Action;
 
-    .line 3017
+    .line 3105
     return-void
 .end method
 
@@ -384,16 +384,16 @@
 
     const/4 v6, 0x0
 
-    .line 3022
+    .line 3110
     invoke-direct {p0}, Landroid/webkit/EditableWebView$SingleTapQuickActions;->canPaste()Z
 
     move-result v3
 
-    .line 3023
+    .line 3111
     .local v3, bShowPaste:Z
     const/4 v2, 0x1
 
-    .line 3025
+    .line 3113
     .local v2, bShowOpenLink:Z
     iget-object v7, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
@@ -410,7 +410,7 @@
 
     move-result-object v4
 
-    .line 3026
+    .line 3114
     .local v4, href:Ljava/lang/String;
     if-eqz v4, :cond_2
 
@@ -422,7 +422,7 @@
 
     move v2, v5
 
-    .line 3027
+    .line 3115
     :goto_0
     iget-object v8, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
@@ -436,15 +436,15 @@
     #setter for: Landroid/webkit/EditableWebView;->mTappedURL:Ljava/lang/String;
     invoke-static {v8, v7}, Landroid/webkit/EditableWebView;->access$3102(Landroid/webkit/EditableWebView;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 3029
+    .line 3117
     invoke-interface {p1, v6, v5}, Lcom/htc/textselection/ActionMenu;->setGroupVisibility(IZ)V
 
-    .line 3031
+    .line 3119
     invoke-interface {p1, v6, v6}, Lcom/htc/textselection/ActionMenu;->getAction(II)Lcom/htc/textselection/Action;
 
     move-result-object v1
 
-    .line 3032
+    .line 3120
     .local v1, aPaste:Lcom/htc/textselection/Action;
     const/16 v5, 0xe
 
@@ -452,21 +452,21 @@
 
     move-result-object v0
 
-    .line 3034
+    .line 3122
     .local v0, aLink:Lcom/htc/textselection/Action;
     if-eqz v1, :cond_0
 
-    .line 3035
+    .line 3123
     invoke-interface {v1, v3}, Lcom/htc/textselection/Action;->setVisible(Z)V
 
-    .line 3037
+    .line 3125
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 3038
+    .line 3126
     invoke-interface {v0, v2}, Lcom/htc/textselection/Action;->setVisible(Z)V
 
-    .line 3039
+    .line 3127
     :cond_1
     return-void
 
@@ -475,10 +475,10 @@
     :cond_2
     move v2, v6
 
-    .line 3026
+    .line 3114
     goto :goto_0
 
-    .line 3027
+    .line 3115
     :cond_3
     const-string v7, ""
 
@@ -486,130 +486,49 @@
 .end method
 
 .method public onQuickActionItemClicked(I)V
-    .locals 5
+    .locals 2
     .parameter "actionID"
 
     .prologue
-    .line 3071
+    .line 3159
     sparse-switch p1, :sswitch_data_0
 
-    .line 3088
-    :cond_0
+    .line 3167
     :goto_0
-    iget-object v2, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
+    iget-object v0, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
-    invoke-virtual {v2}, Landroid/webkit/EditableWebView;->hideSingleTapQuickActions()V
+    invoke-virtual {v0}, Landroid/webkit/EditableWebView;->hideSingleTapQuickActions()V
 
-    .line 3089
+    .line 3168
     return-void
 
-    .line 3073
+    .line 3161
     :sswitch_0
-    iget-object v2, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
+    iget-object v0, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
-    invoke-virtual {v2}, Landroid/webkit/EditableWebView;->pasteWithStyle()V
+    invoke-virtual {v0}, Landroid/webkit/EditableWebView;->pasteWithStyle()V
 
     goto :goto_0
 
-    .line 3078
+    .line 3164
     :sswitch_1
-    iget-object v2, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
+    iget-object v0, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
+
+    iget-object v1, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     #getter for: Landroid/webkit/EditableWebView;->mTappedURL:Ljava/lang/String;
-    invoke-static {v2}, Landroid/webkit/EditableWebView;->access$3100(Landroid/webkit/EditableWebView;)Ljava/lang/String;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
-
-    #getter for: Landroid/webkit/EditableWebView;->mTappedURL:Ljava/lang/String;
-    invoke-static {v2}, Landroid/webkit/EditableWebView;->access$3100(Landroid/webkit/EditableWebView;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-lez v2, :cond_0
-
-    iget-object v2, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
-
-    #getter for: Landroid/webkit/EditableWebView;->mTappedURL:Ljava/lang/String;
-    invoke-static {v2}, Landroid/webkit/EditableWebView;->access$3100(Landroid/webkit/EditableWebView;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Landroid/webkit/URLUtil;->isValidUrl(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 3079
-    iget-object v2, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
-
-    #getter for: Landroid/webkit/EditableWebView;->mTappedURL:Ljava/lang/String;
-    invoke-static {v2}, Landroid/webkit/EditableWebView;->access$3100(Landroid/webkit/EditableWebView;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v1}, Landroid/webkit/EditableWebView;->access$3100(Landroid/webkit/EditableWebView;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3080
-    .local v1, uri:Landroid/net/Uri;
-    new-instance v0, Landroid/content/Intent;
-
-    const-string v2, "android.intent.action.VIEW"
-
-    invoke-direct {v0, v2, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
-
-    .line 3081
-    .local v0, intent:Landroid/content/Intent;
-    const/high16 v2, 0x1000
-
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 3083
-    const-string v2, "KENLOG"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "intent="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3084
-    iget-object v2, p0, Landroid/webkit/EditableWebView$SingleTapQuickActions;->this$0:Landroid/webkit/EditableWebView;
-
-    #getter for: Landroid/webkit/EditableWebView;->mContext:Landroid/content/Context;
-    invoke-static {v2}, Landroid/webkit/EditableWebView;->access$5400(Landroid/webkit/EditableWebView;)Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    #calls: Landroid/webkit/EditableWebView;->openLink(Ljava/lang/String;)V
+    invoke-static {v0, v1}, Landroid/webkit/EditableWebView;->access$5400(Landroid/webkit/EditableWebView;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 3071
+    .line 3159
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0

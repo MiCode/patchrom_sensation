@@ -80,7 +80,7 @@
 
     .prologue
     .line 66
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 67
     iput-object p1, p0, Landroid/app/ActivityManager;->mContext:Landroid/content/Context;
@@ -952,132 +952,35 @@
 .end method
 
 .method public getProcessMemoryInfo([I)[Landroid/os/Debug$MemoryInfo;
-    .locals 9
+    .locals 2
     .parameter "pids"
 
     .prologue
-    .line 1369
-    :try_start_0
-    sget-object v6, Landroid/app/ActivityManager;->TAG:Ljava/lang/String;
-
-    const-string v7, "@# dump getProcessMemoryInfo"
-
-    new-instance v8, Ljava/lang/Throwable;
-
-    invoke-direct {v8}, Ljava/lang/Throwable;-><init>()V
-
-    invoke-static {v6, v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 1370
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    array-length v6, p1
-
-    mul-int/lit8 v6, v6, 0x6
-
-    add-int/lit8 v6, v6, 0x10
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    .line 1371
-    .local v5, sb:Ljava/lang/StringBuilder;
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "@# "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    array-length v7, p1
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, " pids: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 1372
-    move-object v0, p1
-
-    .local v0, arr$:[I
-    array-length v3, v0
-
-    .local v3, len$:I
-    const/4 v2, 0x0
-
-    .local v2, i$:I
-    :goto_0
-    if-ge v2, v3, :cond_0
-
-    aget v4, v0, v2
-
-    .line 1373
-    .local v4, pid:I
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, ","
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 1372
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    .line 1375
-    .end local v4           #pid:I
-    :cond_0
-    sget-object v6, Landroid/app/ActivityManager;->TAG:Ljava/lang/String;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1378
+    :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-interface {v6, p1}, Landroid/app/IActivityManager;->getProcessMemoryInfo([I)[Landroid/os/Debug$MemoryInfo;
+    invoke-interface {v1, p1}, Landroid/app/IActivityManager;->getProcessMemoryInfo([I)[Landroid/os/Debug$MemoryInfo;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v6
+    move-result-object v1
 
     .line 1380
-    .end local v0           #arr$:[I
-    .end local v2           #i$:I
-    .end local v3           #len$:I
-    .end local v5           #sb:Ljava/lang/StringBuilder;
-    :goto_1
-    return-object v6
+    :goto_0
+    return-object v1
 
     .line 1379
     :catch_0
-    move-exception v1
+    move-exception v0
 
     .line 1380
-    .local v1, e:Landroid/os/RemoteException;
-    const/4 v6, 0x0
+    .local v0, e:Landroid/os/RemoteException;
+    const/4 v1, 0x0
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method public getProcessesInErrorState()Ljava/util/List;

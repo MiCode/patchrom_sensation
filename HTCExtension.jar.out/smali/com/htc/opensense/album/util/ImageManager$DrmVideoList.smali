@@ -95,7 +95,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mCursor:Landroid/database/Cursor;
+    iput-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     .line 4505
     invoke-virtual {p0}, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->registerObservers()V
@@ -153,7 +153,7 @@
 
     .line 4707
     .local v3, u:Landroid/net/Uri;
-    iget-object v4, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v4, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-static {v4, v3}, Lcom/htc/opensense/album/util/DrmManager;->deleteDrmFile(Landroid/content/ContentResolver;Landroid/net/Uri;)Z
 
@@ -225,7 +225,7 @@
 
     .prologue
     .line 4774
-    iget v1, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mSort:I
+    iget v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mSort:I
 
     const/4 v2, 0x1
 
@@ -353,7 +353,7 @@
 
     .line 4639
     .local v1, id:J
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mCache:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCache:Ljava/util/HashMap;
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -372,7 +372,7 @@
     .line 4641
     const-wide/16 v3, 0x0
 
-    iget-object v5, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v5, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
     const-wide/16 v7, 0x0
 
@@ -387,7 +387,7 @@
     move-result-object v12
 
     .line 4642
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mCache:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCache:Ljava/util/HashMap;
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -582,7 +582,7 @@
 
     .prologue
     .line 4754
-    iget v0, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->INDEX_DATA:I
+    iget v0, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->INDEX_DATA:I
 
     return v0
 .end method
@@ -592,7 +592,7 @@
 
     .prologue
     .line 4765
-    iget v0, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->INDEX_DATE_ADDED:I
+    iget v0, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->INDEX_DATE_ADDED:I
 
     return v0
 .end method
@@ -652,7 +652,7 @@
 
     .prologue
     .line 4753
-    iget v0, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->INDEX_ID:I
+    iget v0, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->INDEX_ID:I
 
     return v0
 .end method
@@ -682,7 +682,7 @@
 
     .prologue
     .line 4752
-    iget v0, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->INDEX_MIME_TYPE:I
+    iget v0, p0, Lcom/htc/opensense/album/util/ImageManager$ImageList;->INDEX_MIME_TYPE:I
 
     return v0
 .end method
@@ -762,9 +762,9 @@
 
     iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->this$0:Lcom/htc/opensense/album/util/ImageManager;
 
-    iget-object v4, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mContext:Landroid/content/Context;
 
-    iget-object v5, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v5, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
     move-wide v2, p1
 
@@ -785,7 +785,7 @@
     const/4 v0, 0x0
 
     .line 4658
-    iget-boolean v1, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mIsFavorite:Z
+    iget-boolean v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mIsFavorite:Z
 
     if-eqz v1, :cond_1
 
@@ -849,7 +849,7 @@
 
     .line 4720
     :cond_0
-    iget-boolean v1, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mIsFavorite:Z
+    iget-boolean v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mIsFavorite:Z
 
     if-eqz v1, :cond_1
 
@@ -880,7 +880,7 @@
 
     .line 4731
     :cond_1
-    iget-boolean v4, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mIsFavorite:Z
+    iget-boolean v4, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mIsFavorite:Z
 
     if-eqz v4, :cond_2
 
@@ -920,23 +920,23 @@
 
     .prologue
     .line 4782
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mCache:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCache:Ljava/util/HashMap;
 
     if-eqz v1, :cond_0
 
     .line 4783
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mCache:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCache:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
     .line 4784
     :cond_0
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mCursor:Landroid/database/Cursor;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     if-eqz v1, :cond_1
 
     .line 4785
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mCursor:Landroid/database/Cursor;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v1}, Landroid/database/Cursor;->requery()Z
 
@@ -971,7 +971,7 @@
     :goto_0
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mCursorDeactivated:Z
+    iput-boolean v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursorDeactivated:Z
 
     .line 4791
     invoke-virtual {p0}, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->getDrmShareCount()V
@@ -1021,12 +1021,12 @@
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 4595
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mBucketId:Ljava/lang/String;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mBucketId:Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
     .line 4596
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmVideoList;->mBucketId:Ljava/lang/String;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mBucketId:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 

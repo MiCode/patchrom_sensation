@@ -320,7 +320,7 @@
 
     .line 67
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mContext:Landroid/app/Activity;
+    iget-object v0, p0, Lcom/htc/opensense/album/AdapterBase;->mContext:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
 
@@ -335,7 +335,7 @@
     .line 68
     new-instance v0, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mContext:Landroid/app/Activity;
+    iget-object v1, p0, Lcom/htc/opensense/album/AdapterBase;->mContext:Landroid/app/Activity;
 
     invoke-virtual {v1}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
 
@@ -360,7 +360,7 @@
     .line 75
     iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mImageProvider:Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mContext:Landroid/app/Activity;
+    iget-object v1, p0, Lcom/htc/opensense/album/AdapterBase;->mContext:Landroid/app/Activity;
 
     invoke-virtual {v1}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
 
@@ -388,7 +388,7 @@
     .line 80
     iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mImageProvider:Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mContext:Landroid/app/Activity;
+    iget-object v1, p0, Lcom/htc/opensense/album/AdapterBase;->mContext:Landroid/app/Activity;
 
     invoke-virtual {v1}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
 

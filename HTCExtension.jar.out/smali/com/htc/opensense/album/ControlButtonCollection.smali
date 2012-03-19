@@ -77,7 +77,7 @@
     new-instance v0, Lcom/htc/opensense/album/ControlButton;
 
     .end local v0           #button:Lcom/htc/opensense/album/ControlButton;
-    iget-object v1, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mRoot:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ControlBase;->mRoot:Landroid/view/View;
 
     aget v2, p4, v6
 
@@ -146,7 +146,7 @@
     new-instance v0, Lcom/htc/opensense/album/ControlButton;
 
     .end local v0           #button:Lcom/htc/opensense/album/ControlButton;
-    iget-object v1, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mRoot:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ControlBase;->mRoot:Landroid/view/View;
 
     aget v2, p4, v7
 
@@ -215,7 +215,7 @@
     new-instance v0, Lcom/htc/opensense/album/ControlButton;
 
     .end local v0           #button:Lcom/htc/opensense/album/ControlButton;
-    iget-object v3, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mRoot:Landroid/view/View;
+    iget-object v3, p0, Lcom/htc/opensense/album/ControlBase;->mRoot:Landroid/view/View;
 
     aget v4, p4, v1
 
@@ -290,7 +290,7 @@
     :cond_1
     new-instance v0, Lcom/htc/opensense/album/ControlButton;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mRoot:Landroid/view/View;
+    iget-object v1, p0, Lcom/htc/opensense/album/ControlBase;->mRoot:Landroid/view/View;
 
     move v2, p1
 
@@ -359,7 +359,7 @@
     :cond_1
     new-instance v0, Lcom/htc/opensense/album/ControlButton;
 
-    iget-object v2, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mRoot:Landroid/view/View;
+    iget-object v2, p0, Lcom/htc/opensense/album/ControlBase;->mRoot:Landroid/view/View;
 
     invoke-direct {v0, v2, p1, p2, p3}, Lcom/htc/opensense/album/ControlButton;-><init>(Landroid/view/View;IILjava/lang/String;)V
 
@@ -387,12 +387,12 @@
     .line 178
     const/4 v0, -0x1
 
-    iput v0, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mLayoutId:I
+    iput v0, p0, Lcom/htc/opensense/album/ControlBase;->mLayoutId:I
 
     .line 179
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mRoot:Landroid/view/View;
+    iput-object v0, p0, Lcom/htc/opensense/album/ControlBase;->mRoot:Landroid/view/View;
 
     .line 180
     return-void
@@ -505,7 +505,7 @@
 
     .prologue
     .line 194
-    iget-object v3, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/htc/opensense/album/ControlBase;->mContext:Landroid/content/Context;
 
     invoke-static {v3}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
@@ -513,7 +513,7 @@
 
     .line 195
     .local v1, inflater:Landroid/view/LayoutInflater;
-    iget v3, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mLayoutId:I
+    iget v3, p0, Lcom/htc/opensense/album/ControlBase;->mLayoutId:I
 
     const/4 v4, 0x0
 
@@ -521,7 +521,7 @@
 
     move-result-object v3
 
-    iput-object v3, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mRoot:Landroid/view/View;
+    iput-object v3, p0, Lcom/htc/opensense/album/ControlBase;->mRoot:Landroid/view/View;
 
     .line 197
     const/4 v0, 0x0
@@ -554,12 +554,12 @@
     if-eqz v0, :cond_0
 
     .line 202
-    iget-object v3, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mRoot:Landroid/view/View;
+    iget-object v3, p0, Lcom/htc/opensense/album/ControlBase;->mRoot:Landroid/view/View;
 
     invoke-virtual {v0, v3}, Lcom/htc/opensense/album/ControlButton;->refreshLayout(Landroid/view/View;)V
 
     .line 203
-    iget-object v3, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mClickListener:Landroid/view/View$OnClickListener;
+    iget-object v3, p0, Lcom/htc/opensense/album/ControlBase;->mClickListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v3}, Lcom/htc/opensense/album/ControlButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -793,7 +793,7 @@
 
     .prologue
     .line 187
-    iput p1, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mLayoutId:I
+    iput p1, p0, Lcom/htc/opensense/album/ControlBase;->mLayoutId:I
 
     .line 188
     return-void
@@ -805,7 +805,7 @@
 
     .prologue
     .line 88
-    iput-object p1, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mClickListener:Landroid/view/View$OnClickListener;
+    iput-object p1, p0, Lcom/htc/opensense/album/ControlBase;->mClickListener:Landroid/view/View$OnClickListener;
 
     .line 89
     iget-object v2, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mList:Ljava/util/ArrayList;
@@ -830,7 +830,7 @@
 
     .line 90
     .local v0, button:Lcom/htc/opensense/album/ControlButton;
-    iget-object v2, p0, Lcom/htc/opensense/album/ControlButtonCollection;->mClickListener:Landroid/view/View$OnClickListener;
+    iget-object v2, p0, Lcom/htc/opensense/album/ControlBase;->mClickListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v2}, Lcom/htc/opensense/album/ControlButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

@@ -34,7 +34,7 @@
 
     .prologue
     .line 42
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
     invoke-direct {p0, p1}, Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/datetime/DateTime;->convertToYear(Ljava/lang/String;)I

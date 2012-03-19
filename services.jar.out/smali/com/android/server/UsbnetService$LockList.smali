@@ -38,7 +38,7 @@
     .line 459
     iput-object p1, p0, Lcom/android/server/UsbnetService$LockList;->this$0:Lcom/android/server/UsbnetService;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 460
     new-instance v0, Ljava/util/ArrayList;

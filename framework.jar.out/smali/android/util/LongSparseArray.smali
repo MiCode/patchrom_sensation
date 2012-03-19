@@ -36,7 +36,7 @@
     .line 29
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/util/LongSparseArray;->DELETED:Ljava/lang/Object;
 
@@ -66,7 +66,7 @@
     const/4 v1, 0x0
 
     .line 44
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
     iput-boolean v1, p0, Landroid/util/LongSparseArray;->mGarbage:Z

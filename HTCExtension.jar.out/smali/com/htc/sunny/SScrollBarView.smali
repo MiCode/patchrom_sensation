@@ -300,7 +300,7 @@
 
     .prologue
     .line 70
-    iget-object v0, p0, Lcom/htc/sunny/SScrollBarView;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
@@ -311,7 +311,7 @@
     iput v0, p0, Lcom/htc/sunny/SScrollBarView;->mScrollBarDefaultDelayBeforeFade:I
 
     .line 71
-    iget-object v0, p0, Lcom/htc/sunny/SScrollBarView;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
@@ -322,7 +322,7 @@
     iput v0, p0, Lcom/htc/sunny/SScrollBarView;->mScrollBarFadeDuration:I
 
     .line 72
-    iget-object v0, p0, Lcom/htc/sunny/SScrollBarView;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
@@ -362,7 +362,7 @@
     .line 78
     new-instance v0, Lcom/htc/sunny/SScrollBarView$1;
 
-    iget-object v1, p0, Lcom/htc/sunny/SScrollBarView;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
 
@@ -418,7 +418,7 @@
     invoke-super {p0}, Lcom/htc/sunny/SView;->createResource()V
 
     .line 98
-    iget-boolean v0, p0, Lcom/htc/sunny/SScrollBarView;->mIsSurfaceBinded:Z
+    iget-boolean v0, p0, Lcom/htc/sunny/SView;->mIsSurfaceBinded:Z
 
     if-nez v0, :cond_0
 
@@ -747,7 +747,7 @@
     if-ne v6, v3, :cond_6
 
     .line 128
-    iget-object v3, p0, Lcom/htc/sunny/SScrollBarView;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -759,7 +759,7 @@
 
     .line 129
     .local v2, verticalScrollBar:Landroid/graphics/drawable/Drawable;
-    iget-object v3, p0, Lcom/htc/sunny/SScrollBarView;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -885,7 +885,7 @@
     .end local v0           #horizonatalScrollBar:Landroid/graphics/drawable/Drawable;
     .end local v2           #verticalScrollBar:Landroid/graphics/drawable/Drawable;
     :cond_6
-    iget-object v3, p0, Lcom/htc/sunny/SScrollBarView;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -897,7 +897,7 @@
 
     .line 146
     .restart local v2       #verticalScrollBar:Landroid/graphics/drawable/Drawable;
-    iget-object v3, p0, Lcom/htc/sunny/SScrollBarView;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 

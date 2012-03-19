@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 234
+    .line 235
     iput-object p1, p0, Lcom/htc/preference/HtcPreferenceActivity$1;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,17 +39,17 @@
     .parameter "msg"
 
     .prologue
-    .line 237
+    .line 238
     iget v3, p1, Landroid/os/Message;->what:I
 
     packed-switch v3, :pswitch_data_0
 
-    .line 262
+    .line 263
     :cond_0
     :goto_0
     return-void
 
-    .line 239
+    .line 240
     :pswitch_0
     iget-object v3, p0, Lcom/htc/preference/HtcPreferenceActivity$1;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
 
@@ -58,7 +58,7 @@
 
     goto :goto_0
 
-    .line 242
+    .line 243
     :pswitch_1
     new-instance v2, Ljava/util/ArrayList;
 
@@ -71,7 +71,7 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 243
+    .line 244
     .local v2, oldHeaders:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/htc/preference/HtcPreferenceActivity$Header;>;"
     iget-object v3, p0, Lcom/htc/preference/HtcPreferenceActivity$1;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
 
@@ -82,7 +82,7 @@
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 244
+    .line 245
     iget-object v3, p0, Lcom/htc/preference/HtcPreferenceActivity$1;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
 
     iget-object v4, p0, Lcom/htc/preference/HtcPreferenceActivity$1;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
@@ -94,7 +94,7 @@
 
     invoke-virtual {v3, v4}, Lcom/htc/preference/HtcPreferenceActivity;->onBuildHeaders(Ljava/util/List;)V
 
-    .line 245
+    .line 246
     iget-object v3, p0, Lcom/htc/preference/HtcPreferenceActivity$1;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
 
     #getter for: Lcom/htc/preference/HtcPreferenceActivity;->mAdapter:Landroid/widget/ListAdapter;
@@ -106,7 +106,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 246
+    .line 247
     iget-object v3, p0, Lcom/htc/preference/HtcPreferenceActivity$1;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
 
     #getter for: Lcom/htc/preference/HtcPreferenceActivity;->mAdapter:Landroid/widget/ListAdapter;
@@ -118,7 +118,7 @@
 
     invoke-virtual {v3}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
-    .line 248
+    .line 249
     :cond_1
     iget-object v3, p0, Lcom/htc/preference/HtcPreferenceActivity$1;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
 
@@ -126,7 +126,7 @@
 
     move-result-object v0
 
-    .line 249
+    .line 250
     .local v0, header:Lcom/htc/preference/HtcPreferenceActivity$Header;
     if-eqz v0, :cond_3
 
@@ -134,14 +134,14 @@
 
     if-eqz v3, :cond_3
 
-    .line 250
+    .line 251
     iget-object v3, p0, Lcom/htc/preference/HtcPreferenceActivity$1;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
 
     invoke-virtual {v3, v0, v2}, Lcom/htc/preference/HtcPreferenceActivity;->findBestMatchingHeader(Lcom/htc/preference/HtcPreferenceActivity$Header;Ljava/util/ArrayList;)Lcom/htc/preference/HtcPreferenceActivity$Header;
 
     move-result-object v1
 
-    .line 251
+    .line 252
     .local v1, mappedHeader:Lcom/htc/preference/HtcPreferenceActivity$Header;
     if-eqz v1, :cond_2
 
@@ -154,7 +154,7 @@
 
     if-eq v3, v1, :cond_0
 
-    .line 252
+    .line 253
     :cond_2
     iget-object v3, p0, Lcom/htc/preference/HtcPreferenceActivity$1;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
 
@@ -162,7 +162,7 @@
 
     goto :goto_0
 
-    .line 254
+    .line 255
     .end local v1           #mappedHeader:Lcom/htc/preference/HtcPreferenceActivity$Header;
     :cond_3
     iget-object v3, p0, Lcom/htc/preference/HtcPreferenceActivity$1;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
@@ -174,7 +174,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 255
+    .line 256
     iget-object v3, p0, Lcom/htc/preference/HtcPreferenceActivity$1;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
 
     iget-object v4, p0, Lcom/htc/preference/HtcPreferenceActivity$1;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
@@ -195,18 +195,18 @@
 
     move-result-object v1
 
-    .line 256
+    .line 257
     .restart local v1       #mappedHeader:Lcom/htc/preference/HtcPreferenceActivity$Header;
     if-eqz v1, :cond_0
 
-    .line 257
+    .line 258
     iget-object v3, p0, Lcom/htc/preference/HtcPreferenceActivity$1;->this$0:Lcom/htc/preference/HtcPreferenceActivity;
 
     invoke-virtual {v3, v1}, Lcom/htc/preference/HtcPreferenceActivity;->setSelectedHeader(Lcom/htc/preference/HtcPreferenceActivity$Header;)V
 
     goto :goto_0
 
-    .line 237
+    .line 238
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

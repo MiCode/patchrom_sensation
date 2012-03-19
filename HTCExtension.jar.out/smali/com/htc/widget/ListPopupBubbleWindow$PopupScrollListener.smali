@@ -30,7 +30,7 @@
     .line 1618
     iput-object p1, p0, Lcom/htc/widget/ListPopupBubbleWindow$PopupScrollListener;->this$0:Lcom/htc/widget/ListPopupBubbleWindow;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

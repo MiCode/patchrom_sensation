@@ -56,7 +56,7 @@
     sput-object v0, Lcom/android/phone/widget/HtcLockScreenControlArcIncomingCall;->TAG:Ljava/lang/String;
 
     .line 50
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/phone/widget/HtcLockScreenControlArcIncomingCall;->openLog:Z
 

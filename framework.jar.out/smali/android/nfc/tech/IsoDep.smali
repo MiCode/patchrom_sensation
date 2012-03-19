@@ -197,7 +197,7 @@
     .prologue
     .line 112
     :try_start_0
-    iget-object v1, p0, Landroid/nfc/tech/IsoDep;->mTag:Landroid/nfc/Tag;
+    iget-object v1, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
     invoke-virtual {v1}, Landroid/nfc/Tag;->getTagService()Landroid/nfc/INfcTag;
 
@@ -267,7 +267,7 @@
     .prologue
     .line 94
     :try_start_0
-    iget-object v2, p0, Landroid/nfc/tech/IsoDep;->mTag:Landroid/nfc/Tag;
+    iget-object v2, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
     invoke-virtual {v2}, Landroid/nfc/Tag;->getTagService()Landroid/nfc/INfcTag;
 

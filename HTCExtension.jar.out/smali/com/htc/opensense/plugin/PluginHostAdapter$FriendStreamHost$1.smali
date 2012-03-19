@@ -40,7 +40,7 @@
     .line 159
     iput-object p1, p0, Lcom/htc/opensense/plugin/PluginHostAdapter$FriendStreamHost$1;->this$0:Lcom/htc/opensense/plugin/PluginHostAdapter$FriendStreamHost;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

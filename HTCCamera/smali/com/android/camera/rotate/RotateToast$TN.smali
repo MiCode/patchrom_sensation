@@ -65,10 +65,10 @@
 
     .line 345
     .local v0, params:Landroid/view/WindowManager$LayoutParams;
-    iput v2, v0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 346
-    iput v2, v0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 347
     const/16 v1, 0x98

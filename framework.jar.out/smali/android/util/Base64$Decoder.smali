@@ -592,7 +592,7 @@
     invoke-direct {p0}, Landroid/util/Base64$Coder;-><init>()V
 
     .line 242
-    iput-object p2, p0, Landroid/util/Base64$Decoder;->output:[B
+    iput-object p2, p0, Landroid/util/Base64$Coder;->output:[B
 
     .line 244
     and-int/lit8 v0, p1, 0x8
@@ -679,7 +679,7 @@
 
     .line 277
     .local v2, op:I
-    iget-object v4, p0, Landroid/util/Base64$Decoder;->output:[B
+    iget-object v4, p0, Landroid/util/Base64$Coder;->output:[B
 
     .line 278
     .local v4, output:[B
@@ -793,7 +793,7 @@
     iput v8, p0, Landroid/util/Base64$Decoder;->value:I
 
     .line 398
-    iput v3, p0, Landroid/util/Base64$Decoder;->op:I
+    iput v3, p0, Landroid/util/Base64$Coder;->op:I
 
     .line 399
     const/4 v9, 0x1
@@ -1090,7 +1090,7 @@
     iput v7, p0, Landroid/util/Base64$Decoder;->state:I
 
     .line 436
-    iput v2, p0, Landroid/util/Base64$Decoder;->op:I
+    iput v2, p0, Landroid/util/Base64$Coder;->op:I
 
     .line 437
     const/4 v9, 0x1

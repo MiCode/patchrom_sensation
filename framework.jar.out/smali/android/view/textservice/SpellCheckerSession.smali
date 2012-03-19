@@ -64,7 +64,7 @@
 
     .prologue
     .line 123
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 107
     new-instance v0, Landroid/view/textservice/SpellCheckerSession$1;

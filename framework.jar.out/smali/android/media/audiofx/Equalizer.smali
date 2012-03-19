@@ -92,7 +92,7 @@
     .line 127
     new-instance v5, Ljava/lang/Object;
 
-    invoke-direct {v5}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v5 .. v5}, Ljava/lang/Object;-><init>()V
 
     iput-object v5, p0, Landroid/media/audiofx/Equalizer;->mParamListenerLock:Ljava/lang/Object;
 

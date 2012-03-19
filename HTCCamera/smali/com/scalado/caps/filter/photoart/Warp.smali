@@ -111,7 +111,7 @@
 
     .line 44
     :cond_0
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Warp;->isCommitted:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v1, :cond_1
 
@@ -126,12 +126,12 @@
 
     .line 47
     :cond_1
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Warp;->isSet:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     if-eqz v1, :cond_2
 
     .line 49
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Warp;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -142,11 +142,11 @@
     .line 50
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Warp;->isSet:Z
+    iput-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 52
     :cond_2
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Warp;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -164,7 +164,7 @@
     .local v0, error:I
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Warp;->isSet:Z
+    iput-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 54
     invoke-virtual {p1}, Lcom/scalado/stream/BufferStream;->getBuffer()Lcom/scalado/base/Buffer;
@@ -199,7 +199,7 @@
 
     .line 72
     :cond_0
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Warp;->isCommitted:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v1, :cond_1
 
@@ -214,12 +214,12 @@
 
     .line 75
     :cond_1
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Warp;->isSet:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     if-eqz v1, :cond_2
 
     .line 77
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Warp;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -230,11 +230,11 @@
     .line 78
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Warp;->isSet:Z
+    iput-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 80
     :cond_2
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Warp;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -252,7 +252,7 @@
     .local v0, error:I
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Warp;->isSet:Z
+    iput-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 82
     const/4 v1, 0x0

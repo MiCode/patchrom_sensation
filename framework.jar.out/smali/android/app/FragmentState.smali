@@ -66,7 +66,7 @@
 
     .prologue
     .line 66
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 67
     iget-object v0, p1, Landroid/app/Fragment;->mPackageName:Ljava/lang/String;
@@ -138,7 +138,7 @@
     const/4 v2, 0x0
 
     .line 79
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 80
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;

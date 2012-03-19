@@ -564,12 +564,12 @@
 
     .line 285
     .local v3, tmpListeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator$AnimatorListener;>;"
-    iget-object v4, p0, Landroid/animation/AnimatorSet;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v4, :cond_0
 
     .line 286
-    iget-object v4, p0, Landroid/animation/AnimatorSet;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
 
@@ -1170,12 +1170,12 @@
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v2           #node:Landroid/animation/AnimatorSet$Node;
     :cond_3
-    iget-object v4, p0, Landroid/animation/AnimatorSet;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v4, :cond_4
 
     .line 338
-    iget-object v4, p0, Landroid/animation/AnimatorSet;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
 
@@ -2380,7 +2380,7 @@
     :cond_a
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/animation/AnimatorSet;->mListeners:Ljava/util/ArrayList;
+    iget-object v0, v0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
 
@@ -2389,7 +2389,7 @@
     .line 525
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/animation/AnimatorSet;->mListeners:Ljava/util/ArrayList;
+    iget-object v0, v0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
 
@@ -2470,7 +2470,7 @@
     .line 536
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/animation/AnimatorSet;->mListeners:Ljava/util/ArrayList;
+    iget-object v0, v0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
 
@@ -2479,7 +2479,7 @@
     .line 537
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/animation/AnimatorSet;->mListeners:Ljava/util/ArrayList;
+    iget-object v0, v0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
 

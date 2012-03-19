@@ -24,7 +24,7 @@
 
     .prologue
     .line 1567
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1568
     new-instance v0, Landroid/provider/Telephony$namephoto;
@@ -43,7 +43,7 @@
 
     .prologue
     .line 1571
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1572
     new-instance v0, Landroid/provider/Telephony$namephoto;

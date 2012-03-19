@@ -15,7 +15,7 @@
 
     .prologue
     .line 53
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
     new-instance v0, Ljava/util/LinkedList;
@@ -46,7 +46,7 @@
 
     .prologue
     .line 61
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
     new-instance v1, Ljava/util/LinkedList;

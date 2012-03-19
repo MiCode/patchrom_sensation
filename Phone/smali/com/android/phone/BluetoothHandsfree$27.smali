@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 3826
+    .line 3870
     iput-object p1, p0, Lcom/android/phone/BluetoothHandsfree$27;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     invoke-direct {p0}, Landroid/bluetooth/AtCommandHandler;-><init>()V
@@ -38,8 +38,8 @@
     .locals 3
 
     .prologue
-    .line 3830
-    invoke-static {}, Lcom/android/phone/BluetoothHandsfree;->access$3800()Z
+    .line 3874
+    invoke-static {}, Lcom/android/phone/BluetoothHandsfree;->access$3700()Z
 
     move-result v0
 
@@ -60,7 +60,7 @@
     iget-object v0, p0, Lcom/android/phone/BluetoothHandsfree$27;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #getter for: Lcom/android/phone/BluetoothHandsfree;->mClip:Z
-    invoke-static {v0}, Lcom/android/phone/BluetoothHandsfree;->access$3100(Lcom/android/phone/BluetoothHandsfree;)Z
+    invoke-static {v0}, Lcom/android/phone/BluetoothHandsfree;->access$3000(Lcom/android/phone/BluetoothHandsfree;)Z
 
     move-result v0
 
@@ -85,7 +85,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3831
+    .line 3875
     :cond_0
     new-instance v1, Landroid/bluetooth/AtCommandResult;
 
@@ -102,7 +102,7 @@
     iget-object v0, p0, Lcom/android/phone/BluetoothHandsfree$27;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #getter for: Lcom/android/phone/BluetoothHandsfree;->mClip:Z
-    invoke-static {v0}, Lcom/android/phone/BluetoothHandsfree;->access$3100(Lcom/android/phone/BluetoothHandsfree;)Z
+    invoke-static {v0}, Lcom/android/phone/BluetoothHandsfree;->access$3000(Lcom/android/phone/BluetoothHandsfree;)Z
 
     move-result v0
 
@@ -129,13 +129,13 @@
 
     return-object v1
 
-    .line 3830
+    .line 3874
     :cond_1
     const-string v0, "0"
 
     goto :goto_0
 
-    .line 3831
+    .line 3875
     :cond_2
     const-string v0, "0"
 
@@ -151,7 +151,7 @@
 
     const/4 v3, 0x0
 
-    .line 3836
+    .line 3880
     array-length v0, p1
 
     if-lt v0, v2, :cond_1
@@ -180,7 +180,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3837
+    .line 3881
     :cond_0
     iget-object v0, p0, Lcom/android/phone/BluetoothHandsfree$27;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
@@ -195,14 +195,14 @@
     move-result v1
 
     #setter for: Lcom/android/phone/BluetoothHandsfree;->mClip:Z
-    invoke-static {v0, v1}, Lcom/android/phone/BluetoothHandsfree;->access$3102(Lcom/android/phone/BluetoothHandsfree;Z)Z
+    invoke-static {v0, v1}, Lcom/android/phone/BluetoothHandsfree;->access$3002(Lcom/android/phone/BluetoothHandsfree;Z)Z
 
-    .line 3838
+    .line 3882
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     invoke-direct {v0, v3}, Landroid/bluetooth/AtCommandResult;-><init>(I)V
 
-    .line 3840
+    .line 3884
     :goto_0
     return-object v0
 
@@ -218,7 +218,7 @@
     .locals 2
 
     .prologue
-    .line 3845
+    .line 3889
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     const-string v1, "+CLIP: (0-1)"

@@ -61,7 +61,7 @@
     .local p0, this:Landroid/widget/GridLayout$PackedMap;,"Landroid/widget/GridLayout$PackedMap<TK;TV;>;"
     .local p1, keys:[Ljava/lang/Object;,"[TK;"
     .local p2, values:[Ljava/lang/Object;,"[TV;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1989
     invoke-static {p1}, Landroid/widget/GridLayout$PackedMap;->createIndex([Ljava/lang/Object;)[I

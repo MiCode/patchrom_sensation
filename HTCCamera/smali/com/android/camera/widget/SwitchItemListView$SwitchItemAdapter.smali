@@ -235,7 +235,7 @@
     if-nez v0, :cond_0
 
     .line 237
-    invoke-virtual {p2, v2}, Landroid/view/View;->setEnabled(Z)V
+    invoke-virtual {p2, v2}, Landroid/widget/LinearLayout;->setEnabled(Z)V
 
     goto :goto_0
 

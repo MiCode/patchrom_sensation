@@ -58,7 +58,7 @@
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     .line 53
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/internal/telephony/cdma/HtcCdmaGpsOne;->DBG:Z
 
@@ -137,16 +137,9 @@
 .end method
 
 .method protected finalize()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 108
-    const-string v0, "CDMA"
-
-    const-string v1, "HtcCdmaGpsOne finalized"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 109
     return-void
 .end method

@@ -99,7 +99,7 @@
 
     .prologue
     .line 245
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 246
     iput p1, p0, Landroid/content/res/CompatibilityInfo;->mCompatibilityFlags:I
@@ -126,7 +126,7 @@
 
     .prologue
     .line 96
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 97
     const/4 v5, 0x0
@@ -516,7 +516,7 @@
 
     .prologue
     .line 586
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 587
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I

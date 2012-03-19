@@ -25,7 +25,7 @@
 
     .prologue
     .line 25
-    iget-object v0, p0, Lcom/htc/painting/tool/pen/BasePen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v0, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v1, "_transparency_adjustable"
 
@@ -41,7 +41,7 @@
 
     .prologue
     .line 17
-    iget-object v0, p0, Lcom/htc/painting/tool/pen/BasePen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v0, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v1, "_color_adjustable"
 
@@ -57,7 +57,7 @@
 
     .prologue
     .line 33
-    iget-object v0, p0, Lcom/htc/painting/tool/pen/BasePen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v0, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v1, "_width_adjustable"
 
@@ -73,7 +73,7 @@
 
     .prologue
     .line 29
-    iget-object v0, p0, Lcom/htc/painting/tool/pen/BasePen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v0, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v1, "_transparency_alpha_default"
 
@@ -89,7 +89,7 @@
 
     .prologue
     .line 21
-    iget-object v0, p0, Lcom/htc/painting/tool/pen/BasePen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v0, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v1, "_color_default"
 
@@ -105,7 +105,7 @@
 
     .prologue
     .line 44
-    iget-object v0, p0, Lcom/htc/painting/tool/pen/BasePen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v0, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v1, "_width_default"
 
@@ -121,7 +121,7 @@
 
     .prologue
     .line 37
-    iget-object v0, p0, Lcom/htc/painting/tool/pen/BasePen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v0, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v1, "_width_max"
 
@@ -137,7 +137,7 @@
 
     .prologue
     .line 41
-    iget-object v0, p0, Lcom/htc/painting/tool/pen/BasePen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
+    iget-object v0, p0, Lcom/htc/painting/tool/pen/Pen;->mPenProps:Lcom/htc/painting/tool/pen/ReadOnlyPenProps;
 
     const-string v1, "_width_min"
 

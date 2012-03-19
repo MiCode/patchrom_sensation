@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 3129
+    .line 3173
     iput-object p1, p0, Lcom/android/phone/BluetoothHandsfree$7;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     invoke-direct {p0}, Landroid/bluetooth/AtCommandHandler;-><init>()V
@@ -45,7 +45,7 @@
 
     const/4 v4, 0x0
 
-    .line 3133
+    .line 3177
     array-length v3, p1
 
     if-ne v3, v0, :cond_0
@@ -56,17 +56,17 @@
 
     if-nez v3, :cond_1
 
-    .line 3134
+    .line 3178
     :cond_0
     new-instance v3, Landroid/bluetooth/AtCommandResult;
 
     invoke-direct {v3, v0}, Landroid/bluetooth/AtCommandResult;-><init>(I)V
 
-    .line 3151
+    .line 3195
     :goto_0
     return-object v3
 
-    .line 3136
+    .line 3180
     :cond_1
     iget-object v3, p0, Lcom/android/phone/BluetoothHandsfree$7;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
@@ -79,7 +79,7 @@
 
     move-result v1
 
-    .line 3137
+    .line 3181
     .local v1, maxGain:I
     aget-object v3, p1, v4
 
@@ -89,7 +89,7 @@
 
     move-result v2
 
-    .line 3138
+    .line 3182
     .local v2, scoGain:I
     iget-object v3, p0, Lcom/android/phone/BluetoothHandsfree$7;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
@@ -100,14 +100,14 @@
 
     if-ne v3, v2, :cond_2
 
-    .line 3139
+    .line 3183
     new-instance v3, Landroid/bluetooth/AtCommandResult;
 
     invoke-direct {v3, v4}, Landroid/bluetooth/AtCommandResult;-><init>(I)V
 
     goto :goto_0
 
-    .line 3141
+    .line 3185
     :cond_2
     iget-object v3, p0, Lcom/android/phone/BluetoothHandsfree$7;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
@@ -124,7 +124,7 @@
 
     move v2, v1
 
-    .line 3143
+    .line 3187
     :cond_3
     iget-object v3, p0, Lcom/android/phone/BluetoothHandsfree$7;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
@@ -137,12 +137,12 @@
 
     if-nez v2, :cond_4
 
-    .line 3144
+    .line 3188
     iget-object v3, p0, Lcom/android/phone/BluetoothHandsfree$7;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     invoke-virtual {v3, v4}, Lcom/android/phone/BluetoothHandsfree;->sendScoGainUpdate(I)V
 
-    .line 3149
+    .line 3193
     :goto_1
     iget-object v3, p0, Lcom/android/phone/BluetoothHandsfree$7;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
@@ -157,7 +157,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 3150
+    .line 3194
     .local v0, flag:I
     :goto_2
     iget-object v3, p0, Lcom/android/phone/BluetoothHandsfree$7;->this$0:Lcom/android/phone/BluetoothHandsfree;
@@ -176,14 +176,14 @@
 
     invoke-virtual {v3, v6, v5, v0}, Landroid/media/AudioManager;->setStreamVolume(III)V
 
-    .line 3151
+    .line 3195
     new-instance v3, Landroid/bluetooth/AtCommandResult;
 
     invoke-direct {v3, v4}, Landroid/bluetooth/AtCommandResult;-><init>(I)V
 
     goto :goto_0
 
-    .line 3146
+    .line 3190
     .end local v0           #flag:I
     :cond_4
     iget-object v3, p0, Lcom/android/phone/BluetoothHandsfree$7;->this$0:Lcom/android/phone/BluetoothHandsfree;
@@ -196,6 +196,6 @@
     :cond_5
     move v0, v4
 
-    .line 3149
+    .line 3193
     goto :goto_2
 .end method

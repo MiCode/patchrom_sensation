@@ -35,7 +35,7 @@
     const/4 v2, 0x0
 
     .line 91
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 74
     new-instance v1, Landroid/net/sip/SipProfile;
@@ -169,7 +169,7 @@
 
     .prologue
     .line 112
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 74
     new-instance v2, Landroid/net/sip/SipProfile;
@@ -300,7 +300,7 @@
 
     .prologue
     .line 135
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 74
     new-instance v1, Landroid/net/sip/SipProfile;

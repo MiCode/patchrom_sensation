@@ -52,7 +52,7 @@
     .local p2, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/htc/opensense/album/util/ImageManager$IImage;>;"
     iput-object p1, p0, Lcom/htc/opensense/album/util/ImageManager$NonCursorImageList;->this$0:Lcom/htc/opensense/album/util/ImageManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 8824
     new-instance v0, Ljava/util/ArrayList;

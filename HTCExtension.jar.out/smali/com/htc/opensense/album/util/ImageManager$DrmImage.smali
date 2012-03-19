@@ -352,7 +352,7 @@
 
     move-result v2
 
-    iput v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmImage;->mFrameCount:I
+    iput v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmMedia;->mFrameCount:I
 
     .line 3680
     .end local v1           #parser:Lcom/htc/opensense/album/util/GIFImageParser;
@@ -386,7 +386,7 @@
     if-nez v2, :cond_0
 
     .line 3899
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmImage;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmMedia;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0}, Lcom/htc/opensense/album/util/ImageManager$DrmImage;->fullSizeImageUri()Landroid/net/Uri;
 
@@ -435,7 +435,7 @@
     if-nez v2, :cond_0
 
     .line 3886
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmImage;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmMedia;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0}, Lcom/htc/opensense/album/util/ImageManager$DrmImage;->fullSizeImageUri()Landroid/net/Uri;
 
@@ -523,7 +523,7 @@
     .local v3, ret:I
     if-eqz p1, :cond_2
 
-    iget-object v4, p0, Lcom/htc/opensense/album/util/ImageManager$DrmImage;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/htc/opensense/album/util/ImageManager$DrmMedia;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0}, Lcom/htc/opensense/album/util/ImageManager$DrmImage;->fullSizeImageUri()Landroid/net/Uri;
 
@@ -715,7 +715,7 @@
 
     .prologue
     .line 3936
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$DrmImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v1, Lcom/htc/opensense/album/util/ImageManager$DrmImageList;
 
@@ -758,7 +758,7 @@
     invoke-interface {v0, v1}, Landroid/database/Cursor;->moveToPosition(I)Z
 
     .line 3941
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$DrmImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v1, Lcom/htc/opensense/album/util/ImageManager$DrmImageList;
 
@@ -825,7 +825,7 @@
     if-eqz v2, :cond_1
 
     .line 3926
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v2, Lcom/htc/opensense/album/util/ImageManager$DrmImageList;
 
@@ -889,7 +889,7 @@
     .end local v2           #is:Ljava/io/InputStream;
     :cond_0
     :goto_0
-    iget v3, p0, Lcom/htc/opensense/album/util/ImageManager$DrmImage;->mFrameCount:I
+    iget v3, p0, Lcom/htc/opensense/album/util/ImageManager$DrmMedia;->mFrameCount:I
 
     return v3
 
@@ -976,7 +976,7 @@
     if-eqz v2, :cond_1
 
     .line 3914
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     check-cast v2, Lcom/htc/opensense/album/util/ImageManager$DrmImageList;
 

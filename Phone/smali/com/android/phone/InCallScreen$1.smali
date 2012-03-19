@@ -460,16 +460,8 @@
 
     goto/16 :goto_0
 
-    .line 829
-    :sswitch_e
-    iget-object v10, p0, Lcom/android/phone/InCallScreen$1;->this$0:Lcom/android/phone/InCallScreen;
-
-    const-string v11, "ALLOW_SCREEN_ON message..."
-
-    #calls: Lcom/android/phone/InCallScreen;->log(Ljava/lang/String;)V
-    invoke-static {v10, v11}, Lcom/android/phone/InCallScreen;->access$200(Lcom/android/phone/InCallScreen;Ljava/lang/String;)V
-
     .line 831
+    :sswitch_e
     iget-object v10, p0, Lcom/android/phone/InCallScreen$1;->this$0:Lcom/android/phone/InCallScreen;
 
     #calls: Lcom/android/phone/InCallScreen;->processAllowScreenOn()V
@@ -477,16 +469,8 @@
 
     goto/16 :goto_0
 
-    .line 836
-    :sswitch_f
-    iget-object v10, p0, Lcom/android/phone/InCallScreen$1;->this$0:Lcom/android/phone/InCallScreen;
-
-    const-string v11, "BLUETOOTH_STATE_CHANGED..."
-
-    #calls: Lcom/android/phone/InCallScreen;->log(Ljava/lang/String;)V
-    invoke-static {v10, v11}, Lcom/android/phone/InCallScreen;->access$200(Lcom/android/phone/InCallScreen;Ljava/lang/String;)V
-
     .line 842
+    :sswitch_f
     iget-object v10, p0, Lcom/android/phone/InCallScreen$1;->this$0:Lcom/android/phone/InCallScreen;
 
     #calls: Lcom/android/phone/InCallScreen;->phoneIsInUse()Z

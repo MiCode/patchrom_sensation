@@ -34,34 +34,34 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 404
+    .line 425
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 405
+    .line 426
     iput-object p1, p0, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 406
+    .line 427
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
 
     iput v0, p0, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->mWidth:I
 
-    .line 407
+    .line 428
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v0
 
     iput v0, p0, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->mHeight:I
 
-    .line 408
+    .line 429
     iget v0, p0, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->mWidth:I
 
     iget v1, p0, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->mHeight:I
 
     invoke-virtual {p0, v2, v2, v0, v1}, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->setBounds(IIII)V
 
-    .line 409
+    .line 430
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .parameter "x1"
 
     .prologue
-    .line 397
+    .line 418
     invoke-direct {p0, p1}, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
 
     return-void
@@ -84,7 +84,7 @@
     .parameter "canvas"
 
     .prologue
-    .line 413
+    .line 434
     iget-object v0, p0, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
     iget v1, p0, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->mDrawLeft:I
@@ -99,7 +99,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 414
+    .line 435
     return-void
 .end method
 
@@ -107,7 +107,7 @@
     .locals 1
 
     .prologue
-    .line 464
+    .line 485
     iget v0, p0, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->mHeight:I
 
     return v0
@@ -117,7 +117,7 @@
     .locals 1
 
     .prologue
-    .line 459
+    .line 480
     iget v0, p0, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->mWidth:I
 
     return v0
@@ -127,7 +127,7 @@
     .locals 1
 
     .prologue
-    .line 474
+    .line 495
     iget v0, p0, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->mHeight:I
 
     return v0
@@ -137,7 +137,7 @@
     .locals 1
 
     .prologue
-    .line 469
+    .line 490
     iget v0, p0, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->mWidth:I
 
     return v0
@@ -147,7 +147,7 @@
     .locals 1
 
     .prologue
-    .line 418
+    .line 439
     const/4 v0, -0x1
 
     return v0
@@ -158,7 +158,7 @@
     .parameter "alpha"
 
     .prologue
-    .line 435
+    .line 456
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Not supported with this drawable"
@@ -176,7 +176,7 @@
     .parameter "bottom"
 
     .prologue
-    .line 423
+    .line 444
     sub-int v0, p3, p1
 
     iget v1, p0, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->mWidth:I
@@ -189,7 +189,7 @@
 
     iput v0, p0, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->mDrawLeft:I
 
-    .line 424
+    .line 445
     sub-int v0, p4, p2
 
     iget v1, p0, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->mHeight:I
@@ -202,7 +202,7 @@
 
     iput v0, p0, Lcom/htc/widget/BinAdapter$FastBitmapDrawable;->mDrawTop:I
 
-    .line 425
+    .line 446
     return-void
 .end method
 
@@ -211,10 +211,10 @@
     .parameter "bounds"
 
     .prologue
-    .line 430
+    .line 451
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 431
+    .line 452
     return-void
 .end method
 
@@ -223,7 +223,7 @@
     .parameter "cf"
 
     .prologue
-    .line 441
+    .line 462
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Not supported with this drawable"
@@ -238,7 +238,7 @@
     .parameter "dither"
 
     .prologue
-    .line 447
+    .line 468
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Not supported with this drawable"
@@ -253,7 +253,7 @@
     .parameter "filter"
 
     .prologue
-    .line 453
+    .line 474
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Not supported with this drawable"

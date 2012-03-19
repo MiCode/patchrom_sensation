@@ -44,17 +44,17 @@
     .parameter
 
     .prologue
-    .line 13140
+    .line 13231
     iput-object p1, p0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 13147
+    .line 13238
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->queryWorker:Landroid/webkit/WebView$QuickSelectWV$EventHub$QueryWorker;
 
-    .line 13253
+    .line 13344
     return-void
 .end method
 
@@ -65,19 +65,19 @@
     .parameter "msg"
 
     .prologue
-    .line 13151
+    .line 13242
     move-object/from16 v0, p1
 
     iget v14, v0, Landroid/os/Message;->what:I
 
     packed-switch v14, :pswitch_data_0
 
-    .line 13251
+    .line 13342
     :cond_0
     :goto_0
     return-void
 
-    .line 13153
+    .line 13244
     :pswitch_0
     move-object/from16 v0, p0
 
@@ -95,7 +95,7 @@
 
     goto :goto_0
 
-    .line 13165
+    .line 13256
     :pswitch_1
     move-object/from16 v0, p0
 
@@ -107,7 +107,7 @@
 
     sget-object v4, Landroid/webkit/HTCWebCore;->suggestionFromIME:Lcom/htc/textselection/FetchSuggestionFromIME;
 
-    .line 13166
+    .line 13257
     .local v4, detector:Lcom/htc/textselection/FetchSuggestionFromIME;
     move-object/from16 v0, p0
 
@@ -116,31 +116,31 @@
     iget-object v14, v14, Landroid/webkit/WebView$QuickSelectWV;->this$0:Landroid/webkit/WebView;
 
     #getter for: Landroid/webkit/WebView;->mContext:Landroid/content/Context;
-    invoke-static {v14}, Landroid/webkit/WebView;->access$16000(Landroid/webkit/WebView;)Landroid/content/Context;
+    invoke-static {v14}, Landroid/webkit/WebView;->access$15900(Landroid/webkit/WebView;)Landroid/content/Context;
 
     move-result-object v14
 
     invoke-virtual {v4, v14}, Lcom/htc/textselection/FetchSuggestionFromIME;->setContext(Landroid/content/Context;)V
 
-    .line 13167
+    .line 13258
     invoke-virtual {v4}, Lcom/htc/textselection/FetchSuggestionFromIME;->isEnable()Z
 
     move-result v14
 
     if-eqz v14, :cond_0
 
-    .line 13173
+    .line 13264
     move-object/from16 v0, p1
 
     iget-object v13, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v13, Landroid/webkit/SelectionUnitInfo;
 
-    .line 13174
+    .line 13265
     .local v13, targetInfo:Landroid/webkit/SelectionUnitInfo;
     iget v9, v13, Landroid/webkit/SelectionUnitInfo;->node:I
 
-    .line 13175
+    .line 13266
     .local v9, pnode:I
     iget-object v14, v13, Landroid/webkit/SelectionUnitInfo;->sb:Ljava/lang/StringBuffer;
 
@@ -158,7 +158,7 @@
 
     move-result-object v10
 
-    .line 13181
+    .line 13272
     .local v10, ret:[I
     const/4 v14, 0x0
 
@@ -170,12 +170,12 @@
 
     if-eq v14, v15, :cond_0
 
-    .line 13184
+    .line 13275
     new-instance v3, Landroid/graphics/Rect;
 
     invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
 
-    .line 13185
+    .line 13276
     .local v3, cursor2:Landroid/graphics/Rect;
     move-object/from16 v0, p0
 
@@ -193,12 +193,12 @@
 
     invoke-virtual {v14, v9, v15, v3}, Landroid/webkit/HTCWebCore;->nativeGetCharRect(IILandroid/graphics/Rect;)Z
 
-    .line 13186
+    .line 13277
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    .line 13187
+    .line 13278
     .local v2, cursor1:Landroid/graphics/Rect;
     move-object/from16 v0, p0
 
@@ -214,7 +214,7 @@
 
     invoke-virtual {v14, v9, v15, v2}, Landroid/webkit/HTCWebCore;->nativeGetCharRect(IILandroid/graphics/Rect;)Z
 
-    .line 13189
+    .line 13280
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
@@ -237,7 +237,7 @@
 
     invoke-virtual/range {v14 .. v18}, Landroid/webkit/WebView$QuickSelectWV;->makeSelect(IIII)Z
 
-    .line 13191
+    .line 13282
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
@@ -253,7 +253,7 @@
     #calls: Landroid/webkit/WebView;->nativeGetSelectionStart(Landroid/graphics/Rect;)V
     invoke-static {v14, v15}, Landroid/webkit/WebView;->access$14600(Landroid/webkit/WebView;Landroid/graphics/Rect;)V
 
-    .line 13192
+    .line 13283
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
@@ -268,15 +268,15 @@
 
     invoke-virtual {v14, v15}, Landroid/webkit/WebView;->nativeGetSelectionEnd(Landroid/graphics/Rect;)V
 
-    .line 13194
+    .line 13285
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
 
     #calls: Landroid/webkit/WebView$QuickSelectWV;->getUIdataFromWebcore()V
-    invoke-static {v14}, Landroid/webkit/WebView$QuickSelectWV;->access$16100(Landroid/webkit/WebView$QuickSelectWV;)V
+    invoke-static {v14}, Landroid/webkit/WebView$QuickSelectWV;->access$16000(Landroid/webkit/WebView$QuickSelectWV;)V
 
-    .line 13195
+    .line 13286
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
@@ -350,7 +350,7 @@
 
     goto/16 :goto_0
 
-    .line 13201
+    .line 13292
     .end local v2           #cursor1:Landroid/graphics/Rect;
     .end local v3           #cursor2:Landroid/graphics/Rect;
     .end local v4           #detector:Lcom/htc/textselection/FetchSuggestionFromIME;
@@ -362,19 +362,19 @@
 
     iget v11, v0, Landroid/os/Message;->arg1:I
 
-    .line 13202
+    .line 13293
     .local v11, src:I
     move-object/from16 v0, p1
 
     iget v12, v0, Landroid/os/Message;->arg2:I
 
-    .line 13203
+    .line 13294
     .local v12, target:I
     if-le v12, v11, :cond_2
 
     const/4 v6, 0x1
 
-    .line 13205
+    .line 13296
     .local v6, extendToRight:Z
     :goto_1
     if-eqz v6, :cond_3
@@ -390,16 +390,16 @@
 
     float-to-int v7, v14
 
-    .line 13206
+    .line 13297
     .local v7, inc:I
     const/4 v14, 0x2
 
     if-ge v7, v14, :cond_1
 
-    .line 13207
+    .line 13298
     const/4 v7, 0x2
 
-    .line 13209
+    .line 13300
     :cond_1
     if-eqz v6, :cond_4
 
@@ -409,17 +409,17 @@
 
     move-result v11
 
-    .line 13211
+    .line 13302
     :goto_3
     new-instance v5, Landroid/graphics/Rect;
 
     invoke-direct {v5}, Landroid/graphics/Rect;-><init>()V
 
-    .line 13212
+    .line 13303
     .local v5, extend:Landroid/graphics/Rect;
     if-ne v11, v12, :cond_5
 
-    .line 13213
+    .line 13304
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
@@ -488,7 +488,7 @@
 
     invoke-virtual/range {v14 .. v18}, Landroid/webkit/WebView$QuickSelectWV;->makeSelect(IIII)Z
 
-    .line 13214
+    .line 13305
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
@@ -504,7 +504,7 @@
     #calls: Landroid/webkit/WebView;->nativeGetSelectionStart(Landroid/graphics/Rect;)V
     invoke-static {v14, v15}, Landroid/webkit/WebView;->access$14600(Landroid/webkit/WebView;Landroid/graphics/Rect;)V
 
-    .line 13215
+    .line 13306
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
@@ -519,15 +519,15 @@
 
     invoke-virtual {v14, v15}, Landroid/webkit/WebView;->nativeGetSelectionEnd(Landroid/graphics/Rect;)V
 
-    .line 13216
+    .line 13307
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
 
     #calls: Landroid/webkit/WebView$QuickSelectWV;->getUIdataFromWebcore()V
-    invoke-static {v14}, Landroid/webkit/WebView$QuickSelectWV;->access$16100(Landroid/webkit/WebView$QuickSelectWV;)V
+    invoke-static {v14}, Landroid/webkit/WebView$QuickSelectWV;->access$16000(Landroid/webkit/WebView$QuickSelectWV;)V
 
-    .line 13217
+    .line 13308
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
@@ -536,7 +536,7 @@
 
     invoke-virtual {v5, v14}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 13219
+    .line 13310
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
@@ -551,7 +551,7 @@
 
     invoke-virtual/range {v14 .. v16}, Landroid/webkit/WebView$QuickSelectWV;->showQuickActions(Landroid/graphics/Rect;I)V
 
-    .line 13237
+    .line 13328
     :goto_4
     const/4 v14, -0x2
 
@@ -559,7 +559,7 @@
 
     invoke-virtual {v5, v14, v15}, Landroid/graphics/Rect;->inset(II)V
 
-    .line 13238
+    .line 13329
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
@@ -585,7 +585,7 @@
 
     goto/16 :goto_0
 
-    .line 13203
+    .line 13294
     .end local v5           #extend:Landroid/graphics/Rect;
     .end local v6           #extendToRight:Z
     .end local v7           #inc:I
@@ -594,14 +594,14 @@
 
     goto/16 :goto_1
 
-    .line 13205
+    .line 13296
     .restart local v6       #extendToRight:Z
     :cond_3
     sub-int v14, v11, v12
 
     goto/16 :goto_2
 
-    .line 13209
+    .line 13300
     .restart local v7       #inc:I
     :cond_4
     sub-int v14, v11, v7
@@ -612,28 +612,28 @@
 
     goto/16 :goto_3
 
-    .line 13221
+    .line 13312
     .restart local v5       #extend:Landroid/graphics/Rect;
     :cond_5
     invoke-static/range {p1 .. p1}, Landroid/os/Message;->obtain(Landroid/os/Message;)Landroid/os/Message;
 
     move-result-object v8
 
-    .line 13222
+    .line 13313
     .local v8, nextExtend:Landroid/os/Message;
     iput v11, v8, Landroid/os/Message;->arg1:I
 
-    .line 13224
+    .line 13315
     const-wide/16 v14, 0x19
 
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v8, v14, v15}, Landroid/webkit/WebView$QuickSelectWV$EventHub;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 13227
+    .line 13318
     if-eqz v6, :cond_6
 
-    .line 13228
+    .line 13319
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
@@ -642,7 +642,7 @@
 
     iput v11, v14, Landroid/graphics/Rect;->right:I
 
-    .line 13229
+    .line 13320
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
@@ -651,7 +651,7 @@
 
     invoke-virtual {v5, v14}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 13234
+    .line 13325
     :goto_5
     move-object/from16 v0, p0
 
@@ -661,7 +661,7 @@
 
     invoke-virtual {v14, v5}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 13235
+    .line 13326
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
@@ -680,7 +680,7 @@
 
     goto :goto_4
 
-    .line 13231
+    .line 13322
     :cond_6
     move-object/from16 v0, p0
 
@@ -690,7 +690,7 @@
 
     iput v11, v14, Landroid/graphics/Rect;->left:I
 
-    .line 13232
+    .line 13323
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
@@ -701,7 +701,7 @@
 
     goto :goto_5
 
-    .line 13243
+    .line 13334
     .end local v5           #extend:Landroid/graphics/Rect;
     .end local v6           #extendToRight:Z
     .end local v7           #inc:I
@@ -713,11 +713,12 @@
 
     iget-object v14, v0, Landroid/webkit/WebView$QuickSelectWV$EventHub;->this$1:Landroid/webkit/WebView$QuickSelectWV;
 
-    invoke-virtual {v14}, Landroid/webkit/WebView$QuickSelectWV;->resumeSelection()V
+    #calls: Landroid/webkit/WebView$QuickSelectWV;->resumeSelectionImpl()V
+    invoke-static {v14}, Landroid/webkit/WebView$QuickSelectWV;->access$16100(Landroid/webkit/WebView$QuickSelectWV;)V
 
     goto/16 :goto_0
 
-    .line 13246
+    .line 13337
     :pswitch_4
     move-object/from16 v0, p1
 
@@ -725,7 +726,7 @@
 
     check-cast v1, Landroid/graphics/Rect;
 
-    .line 13247
+    .line 13338
     .local v1, anchor:Landroid/graphics/Rect;
     move-object/from16 v0, p0
 
@@ -737,7 +738,7 @@
 
     goto/16 :goto_0
 
-    .line 13151
+    .line 13242
     :pswitch_data_0
     .packed-switch 0x13e1d8
         :pswitch_0

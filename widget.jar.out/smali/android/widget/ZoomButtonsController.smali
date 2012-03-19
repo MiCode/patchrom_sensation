@@ -99,7 +99,7 @@
     const/4 v1, 0x2
 
     .line 203
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 86
     const/4 v0, 0x1
@@ -345,12 +345,12 @@
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     .line 250
-    iput v4, v2, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v4, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 251
     const/4 v3, -0x1
 
-    iput v3, v2, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v3, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 252
     const/16 v3, 0x3e8
@@ -981,7 +981,7 @@
     .line 466
     iget-object v4, p0, Landroid/widget/ZoomButtonsController;->mContainerLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
-    iput v3, v4, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v3, v4, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 467
     iget-object v4, p0, Landroid/widget/ZoomButtonsController;->mContainerLayoutParams:Landroid/view/WindowManager$LayoutParams;

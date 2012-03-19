@@ -36,7 +36,7 @@
     .prologue
     .line 32
     .local p1, strategies:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/htc/gson/ExclusionStrategy;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 33
     invoke-static {p1}, Lcom/htc/gson/Preconditions;->checkNotNull(Ljava/lang/Object;)V

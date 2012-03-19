@@ -27,7 +27,7 @@
     const/4 v0, -0x1
 
     .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 20
     iput v0, p0, Lcom/htc/home/WidgetItemProperties;->mMaxInstances:I

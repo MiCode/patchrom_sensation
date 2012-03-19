@@ -397,7 +397,7 @@
 
     .prologue
     .line 191
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -994,7 +994,7 @@
     if-eqz v0, :cond_0
 
     .line 431
-    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+    throw v0
 
     move-result-object v1
 
@@ -1006,7 +1006,7 @@
     sput-object v1, Lcom/htc/messaging/utils/MessageProvider$MissedMessages;->sDailyFormat24:Ljava/lang/CharSequence;
 
     .line 435
-    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+    throw v0
 
     move-result-object v1
 
@@ -1021,7 +1021,7 @@
     if-eqz v0, :cond_1
 
     .line 431
-    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+    throw v0
 
     move-result-object v2
 
@@ -1033,7 +1033,7 @@
     sput-object v2, Lcom/htc/messaging/utils/MessageProvider$MissedMessages;->sDailyFormat24:Ljava/lang/CharSequence;
 
     .line 435
-    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+    throw v0
 
     move-result-object v2
 

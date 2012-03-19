@@ -52,7 +52,7 @@
 
     .prologue
     .line 70
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 71
     iget-object v0, p1, Landroid/content/ClipDescription;->mLabel:Ljava/lang/CharSequence;
@@ -74,7 +74,7 @@
 
     .prologue
     .line 190
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 191
     sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
@@ -105,7 +105,7 @@
 
     .prologue
     .line 59
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 60
     if-nez p2, :cond_0

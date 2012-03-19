@@ -52,7 +52,7 @@
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/htc/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;-><init>(Lcom/htc/protobuf/Descriptors$FieldDescriptor;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Class;)V
 
     .line 1176
-    iget-object v0, p0, Lcom/htc/protobuf/GeneratedMessage$FieldAccessorTable$SingularEnumFieldAccessor;->type:Ljava/lang/Class;
+    iget-object v0, p0, Lcom/htc/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->type:Ljava/lang/Class;
 
     const-string v1, "valueOf"
 
@@ -72,7 +72,7 @@
     iput-object v0, p0, Lcom/htc/protobuf/GeneratedMessage$FieldAccessorTable$SingularEnumFieldAccessor;->valueOfMethod:Ljava/lang/reflect/Method;
 
     .line 1178
-    iget-object v0, p0, Lcom/htc/protobuf/GeneratedMessage$FieldAccessorTable$SingularEnumFieldAccessor;->type:Ljava/lang/Class;
+    iget-object v0, p0, Lcom/htc/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->type:Ljava/lang/Class;
 
     const-string v1, "getValueDescriptor"
 

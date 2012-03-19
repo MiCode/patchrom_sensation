@@ -55,7 +55,7 @@
 
     .prologue
     .line 171
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -95,7 +95,7 @@
 .end method
 
 .method public static final getCallbackMode(Landroid/content/Context;)I
-    .locals 6
+    .locals 5
     .parameter "context"
 
     .prologue
@@ -134,33 +134,10 @@
 
     move-result v2
 
-    .line 299
+    .line 301
     .end local v0           #modeValue:Ljava/lang/String;
     .end local v1           #pref:Landroid/content/SharedPreferences;
     :cond_0
-    const-string v3, "VTPrefHelper"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "getCallbackMode in pref:"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 301
     return v2
 .end method
 

@@ -40,14 +40,7 @@
     .parameter "selfChange"
 
     .prologue
-    const/4 v3, 0x1
-
-    .line 226
-    const-string v1, "ContactMessageStore"
-
-    const-string v2, "onChange() >>"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v2, 0x1
 
     .line 227
     iget-object v1, p0, Lcom/android/providers/telephony/ContactMessageStore$1;->this$0:Lcom/android/providers/telephony/ContactMessageStore;
@@ -57,7 +50,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v3}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
     .line 228
     iget-object v1, p0, Lcom/android/providers/telephony/ContactMessageStore$1;->this$0:Lcom/android/providers/telephony/ContactMessageStore;
@@ -67,7 +60,7 @@
 
     move-result-object v1
 
-    invoke-static {v1, v3}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
+    invoke-static {v1, v2}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
 
     move-result-object v0
 
@@ -83,13 +76,6 @@
     const-wide/16 v2, 0x1388
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    .line 230
-    const-string v1, "ContactMessageStore"
-
-    const-string v2, "onChange() <<"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 231
     return-void

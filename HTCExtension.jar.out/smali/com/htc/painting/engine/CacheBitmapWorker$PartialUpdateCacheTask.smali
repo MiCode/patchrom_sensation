@@ -397,12 +397,12 @@
     invoke-virtual {v9, v7}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     .line 256
-    iget-object v11, p0, Lcom/htc/painting/engine/CacheBitmapWorker$PartialUpdateCacheTask;->mListener:Lcom/htc/painting/engine/CacheBitmapWorker$OnProgressiveTaskListener;
+    iget-object v11, p0, Lcom/htc/painting/engine/cachebitmap/CacheTask;->mListener:Lcom/htc/painting/engine/CacheBitmapWorker$OnProgressiveTaskListener;
 
     if-eqz v11, :cond_0
 
     .line 257
-    iget-object v11, p0, Lcom/htc/painting/engine/CacheBitmapWorker$PartialUpdateCacheTask;->mListener:Lcom/htc/painting/engine/CacheBitmapWorker$OnProgressiveTaskListener;
+    iget-object v11, p0, Lcom/htc/painting/engine/cachebitmap/CacheTask;->mListener:Lcom/htc/painting/engine/CacheBitmapWorker$OnProgressiveTaskListener;
 
     invoke-virtual {p0}, Lcom/htc/painting/engine/CacheBitmapWorker$PartialUpdateCacheTask;->getRequestKey()J
 

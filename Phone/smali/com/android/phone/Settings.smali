@@ -157,7 +157,7 @@
     .line 169
     iput-object v1, p0, Lcom/android/phone/Settings;->mHtcCdmaGloableRoamingOption:Lcom/android/phone/HtcCdmaGloableRoamingOption;
 
-    .line 1611
+    .line 1615
     iput-object v1, p0, Lcom/android/phone/Settings;->mHtcWorldPhoneOptions:Lcom/android/phone/HtcWorldPhoneOptions;
 
     return-void
@@ -174,16 +174,16 @@
 
     const/4 v2, 0x2
 
-    .line 1421
+    .line 1425
     iget-object v0, p0, Lcom/android/phone/Settings;->mNetworkModeList:[Ljava/lang/CharSequence;
 
     if-nez v0, :cond_0
 
-    .line 1496
+    .line 1500
     :goto_0
     return-void
 
-    .line 1427
+    .line 1431
     :cond_0
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->LTE_CONFIG()Z
 
@@ -191,10 +191,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 1428
+    .line 1432
     packed-switch p1, :pswitch_data_0
 
-    .line 1450
+    .line 1454
     :pswitch_0
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -204,7 +204,7 @@
 
     goto :goto_0
 
-    .line 1431
+    .line 1435
     :pswitch_1
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -216,7 +216,7 @@
 
     goto :goto_0
 
-    .line 1435
+    .line 1439
     :pswitch_2
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -228,7 +228,7 @@
 
     goto :goto_0
 
-    .line 1439
+    .line 1443
     :pswitch_3
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -240,7 +240,7 @@
 
     goto :goto_0
 
-    .line 1443
+    .line 1447
     :pswitch_4
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -252,7 +252,7 @@
 
     goto :goto_0
 
-    .line 1447
+    .line 1451
     :pswitch_5
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -266,7 +266,7 @@
 
     goto :goto_0
 
-    .line 1454
+    .line 1458
     :cond_1
     iget-object v0, p0, Lcom/android/phone/Settings;->mNetworkModeList:[Ljava/lang/CharSequence;
 
@@ -274,10 +274,10 @@
 
     if-gt v0, v2, :cond_2
 
-    .line 1455
+    .line 1459
     packed-switch p1, :pswitch_data_1
 
-    .line 1470
+    .line 1474
     :pswitch_6
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -289,7 +289,7 @@
 
     goto :goto_0
 
-    .line 1458
+    .line 1462
     :pswitch_7
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -301,7 +301,7 @@
 
     goto :goto_0
 
-    .line 1463
+    .line 1467
     :pswitch_8
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -313,7 +313,7 @@
 
     goto :goto_0
 
-    .line 1467
+    .line 1471
     :pswitch_9
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -325,23 +325,11 @@
 
     goto :goto_0
 
-    .line 1473
+    .line 1477
     :cond_2
     packed-switch p1, :pswitch_data_2
 
-    .line 1491
-    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
-
-    iget-object v1, p0, Lcom/android/phone/Settings;->mNetworkModeList:[Ljava/lang/CharSequence;
-
-    aget-object v1, v1, v2
-
-    invoke-virtual {v0, v1}, Lcom/htc/preference/HtcListPreference;->setSummary(Ljava/lang/CharSequence;)V
-
-    goto/16 :goto_0
-
-    .line 1476
-    :pswitch_a
+    .line 1495
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     iget-object v1, p0, Lcom/android/phone/Settings;->mNetworkModeList:[Ljava/lang/CharSequence;
@@ -353,6 +341,18 @@
     goto/16 :goto_0
 
     .line 1480
+    :pswitch_a
+    iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
+
+    iget-object v1, p0, Lcom/android/phone/Settings;->mNetworkModeList:[Ljava/lang/CharSequence;
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, v1}, Lcom/htc/preference/HtcListPreference;->setSummary(Ljava/lang/CharSequence;)V
+
+    goto/16 :goto_0
+
+    .line 1484
     :pswitch_b
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -364,7 +364,7 @@
 
     goto/16 :goto_0
 
-    .line 1484
+    .line 1488
     :pswitch_c
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -376,7 +376,7 @@
 
     goto/16 :goto_0
 
-    .line 1488
+    .line 1492
     :pswitch_d
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -388,7 +388,7 @@
 
     goto/16 :goto_0
 
-    .line 1428
+    .line 1432
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -403,7 +403,7 @@
         :pswitch_5
     .end packed-switch
 
-    .line 1455
+    .line 1459
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_7
@@ -412,7 +412,7 @@
         :pswitch_9
     .end packed-switch
 
-    .line 1473
+    .line 1477
     :pswitch_data_2
     .packed-switch 0x0
         :pswitch_a
@@ -427,20 +427,20 @@
     .parameter "NetworkMode"
 
     .prologue
-    .line 1363
+    .line 1367
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     if-nez v0, :cond_0
 
-    .line 1413
+    .line 1417
     :goto_0
     return-void
 
-    .line 1367
+    .line 1371
     :cond_0
     packed-switch p1, :pswitch_data_0
 
-    .line 1411
+    .line 1415
     :pswitch_0
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -450,7 +450,7 @@
 
     goto :goto_0
 
-    .line 1370
+    .line 1374
     :pswitch_1
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -460,7 +460,7 @@
 
     goto :goto_0
 
-    .line 1373
+    .line 1377
     :pswitch_2
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -470,7 +470,7 @@
 
     goto :goto_0
 
-    .line 1376
+    .line 1380
     :pswitch_3
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -480,7 +480,7 @@
 
     goto :goto_0
 
-    .line 1379
+    .line 1383
     :pswitch_4
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -490,7 +490,7 @@
 
     goto :goto_0
 
-    .line 1382
+    .line 1386
     :pswitch_5
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -500,7 +500,7 @@
 
     goto :goto_0
 
-    .line 1385
+    .line 1389
     :pswitch_6
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -510,7 +510,7 @@
 
     goto :goto_0
 
-    .line 1388
+    .line 1392
     :pswitch_7
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -520,7 +520,7 @@
 
     goto :goto_0
 
-    .line 1392
+    .line 1396
     :pswitch_8
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -530,7 +530,7 @@
 
     goto :goto_0
 
-    .line 1395
+    .line 1399
     :pswitch_9
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -540,7 +540,7 @@
 
     goto :goto_0
 
-    .line 1400
+    .line 1404
     :pswitch_a
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -550,7 +550,7 @@
 
     goto :goto_0
 
-    .line 1403
+    .line 1407
     :pswitch_b
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -560,7 +560,7 @@
 
     goto :goto_0
 
-    .line 1406
+    .line 1410
     :pswitch_c
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -570,7 +570,7 @@
 
     goto :goto_0
 
-    .line 1367
+    .line 1371
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -734,7 +734,7 @@
 
     const/4 v2, 0x0
 
-    .line 1523
+    .line 1527
     :try_start_0
     invoke-virtual {p0}, Lcom/android/phone/Settings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -750,24 +750,24 @@
 
     if-ne v3, v1, :cond_0
 
-    .line 1525
+    .line 1529
     :goto_0
     return v1
 
     :cond_0
     move v1, v2
 
-    .line 1523
+    .line 1527
     goto :goto_0
 
-    .line 1524
+    .line 1528
     :catch_0
     move-exception v0
 
     .local v0, e:Landroid/provider/Settings$SettingNotFoundException;
     move v1, v2
 
-    .line 1525
+    .line 1529
     goto :goto_0
 .end method
 
@@ -776,12 +776,12 @@
     .parameter "msg"
 
     .prologue
-    .line 1519
+    .line 1523
     const-string v0, "NetworkSettings"
 
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1520
+    .line 1524
     return-void
 .end method
 
@@ -789,7 +789,7 @@
     .locals 3
 
     .prologue
-    .line 1570
+    .line 1574
     const-string v1, "gsm.sim.operator.numeric"
 
     const-string v2, ""
@@ -798,7 +798,7 @@
 
     move-result-object v0
 
-    .line 1571
+    .line 1575
     .local v0, mccmnc:Ljava/lang/String;
     const-string v1, "22299"
 
@@ -808,10 +808,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 1572
+    .line 1576
     const/4 v1, 0x1
 
-    .line 1573
+    .line 1577
     :goto_0
     return v1
 
@@ -829,15 +829,15 @@
 
     const/4 v6, 0x1
 
-    .line 1579
+    .line 1583
     iget-object v3, p0, Lcom/android/phone/Settings;->carrierSelect:Lcom/htc/preference/HtcPreference;
 
     if-eqz v3, :cond_2
 
-    .line 1580
+    .line 1584
     const-string v0, ""
 
-    .line 1581
+    .line 1585
     .local v0, alpha:Ljava/lang/String;
     iget-object v3, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
@@ -847,7 +847,7 @@
 
     check-cast v2, Lcom/android/internal/telephony/gsm/OperatorInfo;
 
-    .line 1582
+    .line 1586
     .local v2, operatorInfo:Lcom/android/internal/telephony/gsm/OperatorInfo;
     if-eqz v2, :cond_0
 
@@ -855,7 +855,7 @@
 
     if-nez v3, :cond_3
 
-    .line 1583
+    .line 1587
     :cond_0
     const v3, 0x7f0e02c8
 
@@ -863,18 +863,18 @@
 
     move-result-object v0
 
-    .line 1596
+    .line 1600
     :goto_0
     sget-boolean v3, Lcom/android/phone/HtcFeatureList;->FEATURE_WORLD_PHONE_LAYOUT_SP:Z
 
     if-ne v3, v6, :cond_1
 
-    .line 1598
+    .line 1602
     invoke-static {}, Lcom/android/phone/WorldPhoneModeSelection;->getInstance()Lcom/android/phone/WorldPhoneModeSelection;
 
     move-result-object v1
 
-    .line 1599
+    .line 1603
     .local v1, modeSelection:Lcom/android/phone/WorldPhoneModeSelection;
     invoke-virtual {v1}, Lcom/android/phone/WorldPhoneModeSelection;->isSimActive()Z
 
@@ -882,7 +882,7 @@
 
     if-nez v3, :cond_1
 
-    .line 1600
+    .line 1604
     invoke-virtual {p0}, Lcom/android/phone/Settings;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
@@ -893,20 +893,20 @@
 
     move-result-object v0
 
-    .line 1604
+    .line 1608
     .end local v1           #modeSelection:Lcom/android/phone/WorldPhoneModeSelection;
     :cond_1
     iget-object v3, p0, Lcom/android/phone/Settings;->carrierSelect:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v3, v0}, Lcom/htc/preference/HtcPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 1606
+    .line 1610
     .end local v0           #alpha:Ljava/lang/String;
     .end local v2           #operatorInfo:Lcom/android/internal/telephony/gsm/OperatorInfo;
     :cond_2
     return-void
 
-    .line 1585
+    .line 1589
     .restart local v0       #alpha:Ljava/lang/String;
     .restart local v2       #operatorInfo:Lcom/android/internal/telephony/gsm/OperatorInfo;
     :cond_3
@@ -918,7 +918,7 @@
 
     if-eqz v3, :cond_4
 
-    .line 1586
+    .line 1590
     const-string v3, "%s(%s)"
 
     const/4 v4, 0x2
@@ -939,7 +939,7 @@
 
     goto :goto_0
 
-    .line 1587
+    .line 1591
     :cond_4
     iget-boolean v3, v2, Lcom/android/internal/telephony/gsm/OperatorInfo;->showPlmn:Z
 
@@ -949,7 +949,7 @@
 
     if-nez v3, :cond_5
 
-    .line 1588
+    .line 1592
     const-string v3, "%s"
 
     new-array v4, v6, [Ljava/lang/Object;
@@ -964,7 +964,7 @@
 
     goto :goto_0
 
-    .line 1589
+    .line 1593
     :cond_5
     iget-boolean v3, v2, Lcom/android/internal/telephony/gsm/OperatorInfo;->showPlmn:Z
 
@@ -974,7 +974,7 @@
 
     if-eqz v3, :cond_6
 
-    .line 1590
+    .line 1594
     const-string v3, "%s"
 
     new-array v4, v6, [Ljava/lang/Object;
@@ -989,7 +989,7 @@
 
     goto :goto_0
 
-    .line 1592
+    .line 1596
     :cond_6
     const-string v3, "%s"
 
@@ -1014,7 +1014,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1562
+    .line 1566
     :try_start_0
     iget-object v2, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
@@ -1038,16 +1038,16 @@
 
     const/4 v1, 0x1
 
-    .line 1565
+    .line 1569
     :cond_0
     :goto_0
     return v1
 
-    .line 1564
+    .line 1568
     :catch_0
     move-exception v0
 
-    .line 1565
+    .line 1569
     .local v0, snfe:Landroid/provider/Settings$SettingNotFoundException;
     goto :goto_0
 .end method
@@ -1056,18 +1056,18 @@
     .locals 5
 
     .prologue
-    .line 1543
+    .line 1547
     invoke-static {}, Lcom/android/phone/PhoneApp;->getInstance()Lcom/android/phone/PhoneApp;
 
     move-result-object v0
 
-    .line 1544
+    .line 1548
     .local v0, app:Lcom/android/phone/PhoneApp;
     invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v2
 
-    .line 1545
+    .line 1549
     .local v2, sp:Landroid/content/SharedPreferences;
     const-string v3, "network_selection_name_key"
 
@@ -1077,7 +1077,7 @@
 
     move-result-object v1
 
-    .line 1547
+    .line 1551
     .local v1, networkSelection:Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1103,15 +1103,15 @@
     .parameter "data"
 
     .prologue
-    .line 1501
+    .line 1505
     packed-switch p1, :pswitch_data_0
 
-    .line 1516
+    .line 1520
     :cond_0
     :goto_0
     return-void
 
-    .line 1503
+    .line 1507
     :pswitch_0
     const-string v1, "exit_ecm_result"
 
@@ -1125,7 +1125,7 @@
 
     move-result-object v0
 
-    .line 1505
+    .line 1509
     .local v0, isChoiceYes:Ljava/lang/Boolean;
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -1133,7 +1133,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1507
+    .line 1511
     iget-object v1, p0, Lcom/android/phone/Settings;->mCdmaOptions:Lcom/android/phone/CdmaOptions;
 
     iget-object v2, p0, Lcom/android/phone/Settings;->mClickedPreference:Lcom/htc/preference/HtcPreference;
@@ -1142,7 +1142,7 @@
 
     goto :goto_0
 
-    .line 1501
+    .line 1505
     nop
 
     :pswitch_data_0
@@ -1245,15 +1245,15 @@
     .parameter "icicle"
 
     .prologue
-    .line 419
+    .line 423
     invoke-super {p0, p1}, Lcom/htc/preference/HtcPreferenceActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 422
+    .line 426
     sget-boolean v10, Lcom/android/phone/HtcFeatureList;->FEATURE_GLOBAL_ROAMING_OPTIONS:Z
 
     if-eqz v10, :cond_0
 
-    .line 423
+    .line 427
     new-instance v10, Lcom/android/phone/HtcCdmaGloableRoamingOption;
 
     invoke-virtual {p0}, Lcom/android/phone/Settings;->getPreferenceScreen()Lcom/htc/preference/HtcPreferenceScreen;
@@ -1266,20 +1266,20 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mHtcCdmaGloableRoamingOption:Lcom/android/phone/HtcCdmaGloableRoamingOption;
 
-    .line 428
+    .line 432
     :cond_0
     const v10, 0x7f050021
 
     invoke-virtual {p0, v10}, Lcom/android/phone/Settings;->addPreferencesFromResource(I)V
 
-    .line 430
+    .line 434
     invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->getDefaultPhone()Lcom/android/internal/telephony/Phone;
 
     move-result-object v10
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
-    .line 431
+    .line 435
     new-instance v10, Lcom/android/phone/Settings$MyHandler;
 
     const/4 v11, 0x0
@@ -1288,12 +1288,12 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mHandler:Lcom/android/phone/Settings$MyHandler;
 
-    .line 434
+    .line 438
     invoke-virtual {p0}, Lcom/android/phone/Settings;->getPreferenceScreen()Lcom/htc/preference/HtcPreferenceScreen;
 
     move-result-object v6
 
-    .line 436
+    .line 440
     .local v6, prefSet:Lcom/htc/preference/HtcPreferenceScreen;
     sget-short v10, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
@@ -1301,12 +1301,12 @@
 
     if-ne v10, v11, :cond_f
 
-    .line 437
+    .line 441
     const/4 v10, 0x1
 
     iput-boolean v10, p0, Lcom/android/phone/Settings;->mEnableNationalRoaming:Z
 
-    .line 438
+    .line 442
     const-string v10, "button_national_roaming_key"
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Lcom/htc/preference/HtcPreference;
@@ -1317,26 +1317,26 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
 
-    .line 439
+    .line 443
     iget-object v10, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
 
     invoke-virtual {v10, p0}, Lcom/android/phone/NationalRoamingList;->setOnPreferenceChangeListener(Lcom/htc/preference/HtcPreference$OnPreferenceChangeListener;)V
 
-    .line 440
+    .line 444
     invoke-direct {p0}, Lcom/android/phone/Settings;->showRoamingWarning()Z
 
     move-result v10
 
     if-eqz v10, :cond_1
 
-    .line 441
+    .line 445
     iget-object v10, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
 
     const/4 v11, 0x1
 
     invoke-virtual {v10, v11}, Lcom/android/phone/NationalRoamingList;->setEnablePopup(Z)V
 
-    .line 444
+    .line 448
     :cond_1
     const-string v10, "button_roaming_key"
 
@@ -1348,12 +1348,12 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
-    .line 445
+    .line 449
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->removePreference(Lcom/htc/preference/HtcPreference;)Z
 
-    .line 473
+    .line 477
     :cond_2
     :goto_0
     const-string v10, "preferred_network_mode_key"
@@ -1366,7 +1366,7 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
-    .line 475
+    .line 479
     const-string v10, "button_data_usage_key"
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Lcom/htc/preference/HtcPreference;
@@ -1375,7 +1375,7 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mButtonDataUsage:Lcom/htc/preference/HtcPreference;
 
-    .line 477
+    .line 481
     const-string v10, "button_smart_data_roaming_key"
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Lcom/htc/preference/HtcPreference;
@@ -1384,12 +1384,12 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
-    .line 478
+    .line 482
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->removePreference(Lcom/htc/preference/HtcPreference;)Z
 
-    .line 480
+    .line 484
     iget-object v10, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v10}, Lcom/android/internal/telephony/Phone;->getContext()Landroid/content/Context;
@@ -1408,13 +1408,13 @@
 
     move-result v7
 
-    .line 486
+    .line 490
     .local v7, settingsNetworkMode:I
     sget-boolean v10, Lcom/android/phone/HtcFeatureList;->FEATURE_THIS_IS_WORLD_PHONE:Z
 
     if-eqz v10, :cond_13
 
-    .line 490
+    .line 494
     new-instance v10, Lcom/android/phone/HtcWorldPhoneOptions;
 
     const/4 v11, 0x1
@@ -1423,21 +1423,21 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mHtcWorldPhoneOptions:Lcom/android/phone/HtcWorldPhoneOptions;
 
-    .line 496
+    .line 500
     sget-boolean v10, Lcom/android/phone/HtcFeatureList;->FEATURE_WORLD_PHONE_LAYOUT_SP:Z
 
     const/4 v11, 0x1
 
     if-ne v10, v11, :cond_3
 
-    .line 497
+    .line 501
     new-instance v10, Lcom/android/phone/CdmaOptions;
 
     invoke-direct {v10, p0, v6}, Lcom/android/phone/CdmaOptions;-><init>(Lcom/htc/preference/HtcPreferenceActivity;Lcom/htc/preference/HtcPreferenceScreen;)V
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mCdmaOptions:Lcom/android/phone/CdmaOptions;
 
-    .line 504
+    .line 508
     :cond_3
     sget-boolean v10, Lcom/android/phone/HtcFeatureList;->FEATURE_DATA_ROAM_GUARD3:Z
 
@@ -1445,14 +1445,14 @@
 
     if-ne v10, v11, :cond_4
 
-    .line 505
+    .line 509
     new-instance v10, Lcom/android/phone/HtcCdmaRoamingOptions;
 
     invoke-direct {v10, p0, v6}, Lcom/android/phone/HtcCdmaRoamingOptions;-><init>(Lcom/htc/preference/HtcPreferenceActivity;Lcom/htc/preference/HtcPreferenceScreen;)V
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mHtcCdmaRoamingOptions:Lcom/android/phone/HtcCdmaRoamingOptions;
 
-    .line 507
+    .line 511
     const-string v10, "NetworkSettings"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -1481,7 +1481,7 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 512
+    .line 516
     :cond_4
     sget-boolean v10, Lcom/android/phone/HtcFeatureList;->FEATURE_WORLD_PHONE_LAYOUT_SP:Z
 
@@ -1489,14 +1489,14 @@
 
     if-ne v10, v11, :cond_6
 
-    .line 514
+    .line 518
     new-instance v10, Lcom/android/phone/GsmUmtsOptions;
 
     invoke-direct {v10, p0, v6}, Lcom/android/phone/GsmUmtsOptions;-><init>(Lcom/htc/preference/HtcPreferenceActivity;Lcom/htc/preference/HtcPreferenceScreen;)V
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mGsmUmtsOptions:Lcom/android/phone/GsmUmtsOptions;
 
-    .line 516
+    .line 520
     const-string v10, "button_apn_key"
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Lcom/htc/preference/HtcPreference;
@@ -1507,7 +1507,7 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mButtonAPNExpand:Lcom/htc/preference/HtcPreferenceScreen;
 
-    .line 517
+    .line 521
     const-string v10, "preferred_gsm_umts_network_mode_key"
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Lcom/htc/preference/HtcPreference;
@@ -1518,7 +1518,7 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
-    .line 519
+    .line 523
     const-string v10, "button_carrier_sel_key"
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Lcom/htc/preference/HtcPreference;
@@ -1527,29 +1527,29 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->carrierSelect:Lcom/htc/preference/HtcPreference;
 
-    .line 521
+    .line 525
     iget-object v10, p0, Lcom/android/phone/Settings;->carrierSelect:Lcom/htc/preference/HtcPreference;
 
     const v11, 0x7f0e04a1
 
     invoke-virtual {v10, v11}, Lcom/htc/preference/HtcPreference;->setTitle(I)V
 
-    .line 523
+    .line 527
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     if-eqz v10, :cond_5
 
-    .line 524
+    .line 528
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->removePreference(Lcom/htc/preference/HtcPreference;)Z
 
-    .line 525
+    .line 529
     const/4 v10, 0x0
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
-    .line 528
+    .line 532
     :cond_5
     iget-object v10, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
@@ -1561,35 +1561,35 @@
 
     if-eq v10, v11, :cond_11
 
-    .line 529
+    .line 533
     const-string v10, "NetworkSettings"
 
     const-string v11, "Not a GSM phone"
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 530
+    .line 534
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonAPNExpand:Lcom/htc/preference/HtcPreferenceScreen;
 
     const/4 v11, 0x0
 
     invoke-virtual {v10, v11}, Lcom/htc/preference/HtcPreferenceScreen;->setEnabled(Z)V
 
-    .line 531
+    .line 535
     iget-object v10, p0, Lcom/android/phone/Settings;->carrierSelect:Lcom/htc/preference/HtcPreference;
 
     const/4 v11, 0x0
 
     invoke-virtual {v10, v11}, Lcom/htc/preference/HtcPreference;->setEnabled(Z)V
 
-    .line 641
+    .line 645
     :cond_6
     :goto_1
     iget-boolean v10, p0, Lcom/android/phone/Settings;->mEnableNationalRoaming:Z
 
     if-nez v10, :cond_7
 
-    .line 642
+    .line 646
     const-string v10, "button_roaming_key"
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Lcom/htc/preference/HtcPreference;
@@ -1600,13 +1600,13 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
-    .line 643
+    .line 647
     :cond_7
     sget-boolean v10, Lcom/android/phone/PhoneApp;->ENABLE_SDR_FEATURE:Z
 
     if-eqz v10, :cond_8
 
-    .line 644
+    .line 648
     iget-object v10, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
     iget-object v11, p0, Lcom/android/phone/Settings;->mHandler:Lcom/android/phone/Settings$MyHandler;
@@ -1617,7 +1617,7 @@
 
     invoke-interface {v10, v11, v12, v13}, Lcom/android/internal/telephony/Phone;->registerForSmartDataRoamingStatus(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 647
+    .line 651
     :cond_8
     const-string v10, "button_roaming_sound_key"
 
@@ -1629,29 +1629,29 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoamSound:Lcom/htc/preference/HtcCheckBoxPreference;
 
-    .line 651
+    .line 655
     sget-boolean v10, Lcom/android/phone/HtcFeatureList;->FEATURE_DATA_ROAMING_SOUND:Z
 
     const/4 v11, 0x1
 
     if-eq v10, v11, :cond_9
 
-    .line 652
+    .line 656
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoamSound:Lcom/htc/preference/HtcCheckBoxPreference;
 
     if-eqz v10, :cond_9
 
-    .line 653
+    .line 657
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoamSound:Lcom/htc/preference/HtcCheckBoxPreference;
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->removePreference(Lcom/htc/preference/HtcPreference;)Z
 
-    .line 654
+    .line 658
     const/4 v10, 0x0
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoamSound:Lcom/htc/preference/HtcCheckBoxPreference;
 
-    .line 660
+    .line 664
     :cond_9
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->isTablet()Z
 
@@ -1659,12 +1659,12 @@
 
     if-nez v10, :cond_a
 
-    .line 661
+    .line 665
     const v10, 0x7f050022
 
     invoke-virtual {p0, v10}, Lcom/android/phone/Settings;->addPreferencesFromResource(I)V
 
-    .line 662
+    .line 666
     const-string v10, "button_3g_powersave_key"
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Lcom/htc/preference/HtcPreference;
@@ -1675,26 +1675,26 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mButton3GPowerSave:Lcom/htc/preference/HtcCheckBoxPreference;
 
-    .line 667
+    .line 671
     :cond_a
     sget-boolean v10, Lcom/android/phone/PhoneApp;->ENABLE_SDR_FEATURE:Z
 
     if-eqz v10, :cond_21
 
-    .line 668
+    .line 672
     new-instance v1, Landroid/content/IntentFilter;
 
     const-string v10, "android.intent.action.AIRPLANE_MODE"
 
     invoke-direct {v1, v10}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 669
+    .line 673
     .local v1, airplaneMode:Landroid/content/IntentFilter;
     iget-object v10, p0, Lcom/android/phone/Settings;->mReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v10, v1}, Lcom/android/phone/Settings;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 682
+    .line 686
     .end local v1           #airplaneMode:Landroid/content/IntentFilter;
     :goto_2
     sget-boolean v10, Lcom/android/phone/HtcFeatureList;->FEATURE_DATA_ROAM_GUARD:Z
@@ -1710,19 +1710,19 @@
 
     if-eqz v10, :cond_22
 
-    .line 684
+    .line 688
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     if-eqz v10, :cond_c
 
-    .line 685
+    .line 689
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     const/4 v11, 0x0
 
     invoke-virtual {v10, v11}, Lcom/htc/preference/HtcCheckBoxPreference;->setChecked(Z)V
 
-    .line 695
+    .line 699
     :cond_c
     :goto_3
     const-string v10, "throttle"
@@ -1733,7 +1733,7 @@
 
     check-cast v9, Landroid/net/ThrottleManager;
 
-    .line 696
+    .line 700
     .local v9, tm:Landroid/net/ThrottleManager;
     new-instance v10, Lcom/android/phone/DataUsageListener;
 
@@ -1743,14 +1743,14 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mDataUsageListener:Lcom/android/phone/DataUsageListener;
 
-    .line 701
+    .line 705
     sget-boolean v10, Lcom/android/phone/HtcFeatureList;->FEATURE_MANUAL_NAI:Z
 
     const/4 v11, 0x1
 
     if-eq v10, v11, :cond_d
 
-    .line 702
+    .line 706
     const-string v10, "advanced_settings_key"
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Lcom/htc/preference/HtcPreference;
@@ -1759,11 +1759,11 @@
 
     check-cast v0, Lcom/htc/preference/HtcPreferenceScreen;
 
-    .line 703
+    .line 707
     .local v0, advancedSettings:Lcom/htc/preference/HtcPreferenceScreen;
     if-eqz v0, :cond_d
 
-    .line 704
+    .line 708
     const-string v10, "NetworkSettings"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -1790,23 +1790,23 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 710
+    .line 714
     .end local v0           #advancedSettings:Lcom/htc/preference/HtcPreferenceScreen;
     :cond_d
     sget-boolean v10, Lcom/android/phone/HtcFeatureList;->FEATURE_GLOBAL_ROAMING_OPTIONS:Z
 
     if-eqz v10, :cond_e
 
-    .line 711
+    .line 715
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->removePreference(Lcom/htc/preference/HtcPreference;)Z
 
-    .line 714
+    .line 718
     :cond_e
     return-void
 
-    .line 448
+    .line 452
     .end local v7           #settingsNetworkMode:I
     .end local v9           #tm:Landroid/net/ThrottleManager;
     :cond_f
@@ -1814,7 +1814,7 @@
 
     iput-boolean v10, p0, Lcom/android/phone/Settings;->mEnableNationalRoaming:Z
 
-    .line 450
+    .line 454
     const-string v10, "button_roaming_key"
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Lcom/htc/preference/HtcPreference;
@@ -1825,7 +1825,7 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
-    .line 451
+    .line 455
     const-string v10, "button_national_roaming_key"
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Lcom/htc/preference/HtcPreference;
@@ -1836,38 +1836,38 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
 
-    .line 452
+    .line 456
     iget-object v10, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->removePreference(Lcom/htc/preference/HtcPreference;)Z
 
-    .line 453
+    .line 457
     sget-short v10, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/4 v11, 0x2
 
     if-ne v10, v11, :cond_10
 
-    .line 454
+    .line 458
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     if-eqz v10, :cond_10
 
-    .line 455
+    .line 459
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     const v11, 0x7f0e009f
 
     invoke-virtual {v10, v11}, Lcom/htc/preference/HtcCheckBoxPreference;->setSummaryOn(I)V
 
-    .line 456
+    .line 460
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     const v11, 0x7f0e00a0
 
     invoke-virtual {v10, v11}, Lcom/htc/preference/HtcCheckBoxPreference;->setSummaryOff(I)V
 
-    .line 463
+    .line 467
     :cond_10
     sget-boolean v10, Lcom/android/phone/HtcFeatureList;->FEATURE_DATA_ROAMING_MODE_ENABLER:Z
 
@@ -1875,12 +1875,12 @@
 
     if-eq v10, v11, :cond_2
 
-    .line 464
+    .line 468
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     if-eqz v10, :cond_2
 
-    .line 465
+    .line 469
     const-string v10, "NetworkSettings"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -1911,7 +1911,7 @@
 
     goto/16 :goto_0
 
-    .line 534
+    .line 538
     .restart local v7       #settingsNetworkMode:I
     :cond_11
     const-string v10, "NetworkSettings"
@@ -1936,25 +1936,25 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 535
+    .line 539
     const/4 v10, 0x4
 
     if-lt v7, v10, :cond_12
 
-    .line 537
+    .line 541
     iget-object v10, p0, Lcom/android/phone/Settings;->carrierSelect:Lcom/htc/preference/HtcPreference;
 
     const/4 v11, 0x0
 
     invoke-virtual {v10, v11}, Lcom/htc/preference/HtcPreference;->setEnabled(Z)V
 
-    .line 539
+    .line 543
     :cond_12
     invoke-static {}, Lcom/android/phone/WorldPhoneModeSelection;->getInstance()Lcom/android/phone/WorldPhoneModeSelection;
 
     move-result-object v3
 
-    .line 540
+    .line 544
     .local v3, modeSelection:Lcom/android/phone/WorldPhoneModeSelection;
     invoke-virtual {v3}, Lcom/android/phone/WorldPhoneModeSelection;->isSimActive()Z
 
@@ -1962,7 +1962,7 @@
 
     if-nez v10, :cond_6
 
-    .line 541
+    .line 545
     iget-object v10, p0, Lcom/android/phone/Settings;->carrierSelect:Lcom/htc/preference/HtcPreference;
 
     const v11, 0x7f0e04a2
@@ -1971,7 +1971,7 @@
 
     goto/16 :goto_1
 
-    .line 549
+    .line 553
     .end local v3           #modeSelection:Lcom/android/phone/WorldPhoneModeSelection;
     :cond_13
     iget-object v10, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
@@ -1980,41 +1980,41 @@
 
     move-result v5
 
-    .line 550
+    .line 554
     .local v5, phoneType:I
     const/4 v10, 0x2
 
     if-ne v5, v10, :cond_16
 
-    .line 551
+    .line 555
     new-instance v10, Lcom/android/phone/CdmaOptions;
 
     invoke-direct {v10, p0, v6}, Lcom/android/phone/CdmaOptions;-><init>(Lcom/htc/preference/HtcPreferenceActivity;Lcom/htc/preference/HtcPreferenceScreen;)V
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mCdmaOptions:Lcom/android/phone/CdmaOptions;
 
-    .line 552
+    .line 556
     iget-object v10, p0, Lcom/android/phone/Settings;->mCdmaOptions:Lcom/android/phone/CdmaOptions;
 
     iget-object v11, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     invoke-virtual {v10, v11}, Lcom/android/phone/CdmaOptions;->setButtonRoam(Lcom/htc/preference/HtcCheckBoxPreference;)V
 
-    .line 557
+    .line 561
     sget-boolean v10, Lcom/android/phone/HtcFeatureList;->FEATURE_DATA_ROAM_GUARD3:Z
 
     const/4 v11, 0x1
 
     if-ne v10, v11, :cond_14
 
-    .line 558
+    .line 562
     new-instance v10, Lcom/android/phone/HtcCdmaRoamingOptions;
 
     invoke-direct {v10, p0, v6}, Lcom/android/phone/HtcCdmaRoamingOptions;-><init>(Lcom/htc/preference/HtcPreferenceActivity;Lcom/htc/preference/HtcPreferenceScreen;)V
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mHtcCdmaRoamingOptions:Lcom/android/phone/HtcCdmaRoamingOptions;
 
-    .line 560
+    .line 564
     const-string v10, "NetworkSettings"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -2043,7 +2043,7 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 564
+    .line 568
     :cond_14
     sget-boolean v10, Lcom/android/phone/HtcFeatureList;->FEATURE_THIS_IS_WORLD_PHONE:Z
 
@@ -2057,7 +2057,7 @@
 
     if-eqz v10, :cond_6
 
-    .line 573
+    .line 577
     :cond_15
     sget-short v10, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
@@ -2065,7 +2065,7 @@
 
     if-eq v10, v11, :cond_6
 
-    .line 574
+    .line 578
     new-instance v10, Lcom/android/phone/GsmUmtsOptions;
 
     invoke-direct {v10, p0, v6}, Lcom/android/phone/GsmUmtsOptions;-><init>(Lcom/htc/preference/HtcPreferenceActivity;Lcom/htc/preference/HtcPreferenceScreen;)V
@@ -2074,20 +2074,20 @@
 
     goto/16 :goto_1
 
-    .line 578
+    .line 582
     :cond_16
     const/4 v10, 0x1
 
     if-ne v5, v10, :cond_20
 
-    .line 579
+    .line 583
     new-instance v10, Lcom/android/phone/GsmUmtsOptions;
 
     invoke-direct {v10, p0, v6}, Lcom/android/phone/GsmUmtsOptions;-><init>(Lcom/htc/preference/HtcPreferenceActivity;Lcom/htc/preference/HtcPreferenceScreen;)V
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mGsmUmtsOptions:Lcom/android/phone/GsmUmtsOptions;
 
-    .line 582
+    .line 586
     const-string v10, "preferred_gsm_umts_network_mode_key"
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Lcom/htc/preference/HtcPreference;
@@ -2098,35 +2098,35 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
-    .line 586
+    .line 590
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->LTE_CONFIG()Z
 
     move-result v10
 
     if-eqz v10, :cond_1b
 
-    .line 587
+    .line 591
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     const v11, 0x7f07002a
 
     invoke-virtual {v10, v11}, Lcom/htc/preference/HtcListPreference;->setEntries(I)V
 
-    .line 588
+    .line 592
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     const v11, 0x7f07002b
 
     invoke-virtual {v10, v11}, Lcom/htc/preference/HtcListPreference;->setEntryValues(I)V
 
-    .line 610
+    .line 614
     :cond_17
     :goto_4
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     if-eqz v10, :cond_18
 
-    .line 611
+    .line 615
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     invoke-static {v7}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -2135,7 +2135,7 @@
 
     invoke-virtual {v10, v11}, Lcom/htc/preference/HtcListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 614
+    .line 618
     :cond_18
     iget-object v10, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
@@ -2159,25 +2159,25 @@
 
     if-ne v10, v11, :cond_1f
 
-    .line 618
+    .line 622
     :cond_19
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     if-eqz v10, :cond_1a
 
-    .line 619
+    .line 623
     const-string v10, "NetworkSettings"
 
     const-string v11, "remove FEATURE_GSM_UMTS_NETWORK_MODE"
 
     invoke-static {v10, v11}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 620
+    .line 624
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     invoke-virtual {v6, v10}, Lcom/htc/preference/HtcPreferenceScreen;->removePreference(Lcom/htc/preference/HtcPreference;)Z
 
-    .line 628
+    .line 632
     :cond_1a
     :goto_5
     const-string v10, "button_carrier_sel_key"
@@ -2188,7 +2188,7 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->carrierSelect:Lcom/htc/preference/HtcPreference;
 
-    .line 632
+    .line 636
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     invoke-virtual {v10}, Lcom/htc/preference/HtcListPreference;->getEntries()[Ljava/lang/CharSequence;
@@ -2197,7 +2197,7 @@
 
     iput-object v10, p0, Lcom/android/phone/Settings;->mNetworkModeList:[Ljava/lang/CharSequence;
 
-    .line 633
+    .line 637
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     invoke-virtual {v10}, Lcom/htc/preference/HtcListPreference;->getEntryValues()[Ljava/lang/CharSequence;
@@ -2208,7 +2208,7 @@
 
     goto/16 :goto_1
 
-    .line 591
+    .line 595
     :cond_1b
     const-string v10, "gsm.sim.state"
 
@@ -2216,7 +2216,7 @@
 
     move-result-object v8
 
-    .line 593
+    .line 597
     .local v8, simState:Ljava/lang/String;
     const-string v10, "READY"
 
@@ -2226,14 +2226,14 @@
 
     if-eqz v10, :cond_17
 
-    .line 595
+    .line 599
     const-string v10, "gsm.sim.operator.numeric"
 
     invoke-static {v10}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 597
+    .line 601
     .local v4, operator:Ljava/lang/String;
     const-string v10, "ro.cid"
 
@@ -2243,7 +2243,7 @@
 
     move-result-object v2
 
-    .line 599
+    .line 603
     .local v2, cid:Ljava/lang/String;
     const-string v10, "VODAP304"
 
@@ -2295,7 +2295,7 @@
 
     if-eqz v10, :cond_17
 
-    .line 602
+    .line 606
     :cond_1e
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
@@ -2303,7 +2303,7 @@
 
     invoke-virtual {v10, v11}, Lcom/htc/preference/HtcListPreference;->setEntries(I)V
 
-    .line 603
+    .line 607
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     const v11, 0x7f07002d
@@ -2312,7 +2312,7 @@
 
     goto/16 :goto_4
 
-    .line 623
+    .line 627
     .end local v2           #cid:Ljava/lang/String;
     .end local v4           #operator:Ljava/lang/String;
     .end local v8           #simState:Ljava/lang/String;
@@ -2323,19 +2323,19 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 624
+    .line 628
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     if-eqz v10, :cond_1a
 
-    .line 625
+    .line 629
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     invoke-virtual {v10, p0}, Lcom/htc/preference/HtcListPreference;->setOnPreferenceChangeListener(Lcom/htc/preference/HtcPreference$OnPreferenceChangeListener;)V
 
     goto/16 :goto_5
 
-    .line 636
+    .line 640
     :cond_20
     new-instance v10, Ljava/lang/IllegalStateException;
 
@@ -2361,7 +2361,7 @@
 
     throw v10
 
-    .line 672
+    .line 676
     .end local v5           #phoneType:I
     :cond_21
     const/4 v10, 0x0
@@ -2370,13 +2370,13 @@
 
     goto/16 :goto_2
 
-    .line 689
+    .line 693
     :cond_22
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     if-eqz v10, :cond_c
 
-    .line 690
+    .line 694
     iget-object v10, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     iget-object v11, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
@@ -2394,42 +2394,42 @@
     .locals 1
 
     .prologue
-    .line 911
+    .line 915
     invoke-super {p0}, Lcom/htc/preference/HtcPreferenceActivity;->onDestroy()V
 
-    .line 912
+    .line 916
     sget-boolean v0, Lcom/android/phone/PhoneApp;->ENABLE_SDR_FEATURE:Z
 
     if-eqz v0, :cond_0
 
-    .line 913
+    .line 917
     iget-object v0, p0, Lcom/android/phone/Settings;->mReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v0}, Lcom/android/phone/Settings;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 916
+    .line 920
     :cond_0
     iget-object v0, p0, Lcom/android/phone/Settings;->mCdmaOptions:Lcom/android/phone/CdmaOptions;
 
     if-eqz v0, :cond_1
 
-    .line 917
+    .line 921
     iget-object v0, p0, Lcom/android/phone/Settings;->mCdmaOptions:Lcom/android/phone/CdmaOptions;
 
     invoke-virtual {v0}, Lcom/android/phone/CdmaOptions;->destroy()V
 
-    .line 923
+    .line 927
     :cond_1
     iget-object v0, p0, Lcom/android/phone/Settings;->mHtcCdmaRoamingOptions:Lcom/android/phone/HtcCdmaRoamingOptions;
 
     if-eqz v0, :cond_2
 
-    .line 924
+    .line 928
     iget-object v0, p0, Lcom/android/phone/Settings;->mHtcCdmaRoamingOptions:Lcom/android/phone/HtcCdmaRoamingOptions;
 
     invoke-virtual {v0}, Lcom/android/phone/HtcCdmaRoamingOptions;->destroy()V
 
-    .line 927
+    .line 931
     :cond_2
     return-void
 .end method
@@ -2465,20 +2465,20 @@
     .locals 2
 
     .prologue
-    .line 887
+    .line 891
     invoke-super {p0}, Lcom/htc/preference/HtcPreferenceActivity;->onPause()V
 
-    .line 888
+    .line 892
     sget-boolean v1, Lcom/android/phone/PhoneApp;->ENABLE_SDR_FEATURE:Z
 
     if-eqz v1, :cond_1
 
-    .line 889
+    .line 893
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/phone/Settings;->mForeground:Z
 
-    .line 890
+    .line 894
     iget-boolean v1, p0, Lcom/android/phone/Settings;->mSmartDataRoamingSuccess:Z
 
     if-nez v1, :cond_0
@@ -2489,47 +2489,47 @@
 
     if-eqz v1, :cond_1
 
-    .line 891
+    .line 895
     :cond_0
     invoke-virtual {p0}, Lcom/android/phone/Settings;->getPreferenceScreen()Lcom/htc/preference/HtcPreferenceScreen;
 
     move-result-object v0
 
-    .line 892
+    .line 896
     .local v0, prefSet:Lcom/htc/preference/HtcPreferenceScreen;
     iget-object v1, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v0, v1}, Lcom/htc/preference/HtcPreferenceScreen;->removePreference(Lcom/htc/preference/HtcPreference;)Z
 
-    .line 896
+    .line 900
     .end local v0           #prefSet:Lcom/htc/preference/HtcPreferenceScreen;
     :cond_1
     iget-object v1, p0, Lcom/android/phone/Settings;->mDataUsageListener:Lcom/android/phone/DataUsageListener;
 
     invoke-virtual {v1}, Lcom/android/phone/DataUsageListener;->pause()V
 
-    .line 898
+    .line 902
     iget-object v1, p0, Lcom/android/phone/Settings;->mHtcCdmaRoamingOptions:Lcom/android/phone/HtcCdmaRoamingOptions;
 
     if-eqz v1, :cond_2
 
-    .line 899
+    .line 903
     iget-object v1, p0, Lcom/android/phone/Settings;->mHtcCdmaRoamingOptions:Lcom/android/phone/HtcCdmaRoamingOptions;
 
     invoke-virtual {v1}, Lcom/android/phone/HtcCdmaRoamingOptions;->pause()V
 
-    .line 903
+    .line 907
     :cond_2
     iget-object v1, p0, Lcom/android/phone/Settings;->mHtcWorldPhoneOptions:Lcom/android/phone/HtcWorldPhoneOptions;
 
     if-eqz v1, :cond_3
 
-    .line 904
+    .line 908
     iget-object v1, p0, Lcom/android/phone/Settings;->mHtcWorldPhoneOptions:Lcom/android/phone/HtcWorldPhoneOptions;
 
     invoke-virtual {v1}, Lcom/android/phone/HtcWorldPhoneOptions;->pause()V
 
-    .line 907
+    .line 911
     :cond_3
     return-void
 .end method
@@ -2546,12 +2546,12 @@
 
     const/4 v9, 0x1
 
-    .line 938
+    .line 942
     iget-object v7, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     if-ne p1, v7, :cond_1
 
-    .line 941
+    .line 945
     iget-object v8, p0, Lcom/android/phone/Settings;->mButtonPreferredNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     move-object v7, p2
@@ -2560,7 +2560,7 @@
 
     invoke-virtual {v8, v7}, Lcom/htc/preference/HtcListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 943
+    .line 947
     check-cast p2, Ljava/lang/String;
 
     .end local p2
@@ -2572,7 +2572,7 @@
 
     move-result v1
 
-    .line 944
+    .line 948
     .local v1, buttonNetworkMode:I
     iget-object v7, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
@@ -2590,22 +2590,22 @@
 
     move-result v5
 
-    .line 947
+    .line 951
     .local v5, settingsNetworkMode:I
     if-eq v1, v5, :cond_0
 
-    .line 949
+    .line 953
     packed-switch v1, :pswitch_data_0
 
-    .line 992
+    .line 996
     const/4 v4, 0x0
 
-    .line 994
+    .line 998
     .local v4, modemNetworkMode:I
     :goto_0
     invoke-direct {p0, v1}, Lcom/android/phone/Settings;->UpdatePreferredNetworkModeSummary(I)V
 
-    .line 996
+    .line 1000
     iget-object v7, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v7}, Lcom/android/internal/telephony/Phone;->getContext()Landroid/content/Context;
@@ -2620,7 +2620,7 @@
 
     invoke-static {v7, v8, v1}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 1000
+    .line 1004
     iget-object v7, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
     iget-object v8, p0, Lcom/android/phone/Settings;->mHandler:Lcom/android/phone/Settings$MyHandler;
@@ -2631,7 +2631,7 @@
 
     invoke-interface {v7, v4, v8}, Lcom/android/internal/telephony/Phone;->setPreferredNetworkType(ILandroid/os/Message;)V
 
-    .line 1100
+    .line 1104
     .end local v1           #buttonNetworkMode:I
     .end local v4           #modemNetworkMode:I
     .end local v5           #settingsNetworkMode:I
@@ -2639,125 +2639,125 @@
     :goto_1
     return v9
 
-    .line 951
+    .line 955
     .restart local v1       #buttonNetworkMode:I
     .restart local v5       #settingsNetworkMode:I
     :pswitch_0
     const/4 v4, 0x7
 
-    .line 952
+    .line 956
     .restart local v4       #modemNetworkMode:I
     goto :goto_0
 
-    .line 954
+    .line 958
     .end local v4           #modemNetworkMode:I
     :pswitch_1
     const/4 v4, 0x6
 
-    .line 955
+    .line 959
     .restart local v4       #modemNetworkMode:I
     goto :goto_0
 
-    .line 957
+    .line 961
     .end local v4           #modemNetworkMode:I
     :pswitch_2
     const/4 v4, 0x5
 
-    .line 958
+    .line 962
     .restart local v4       #modemNetworkMode:I
     goto :goto_0
 
-    .line 960
+    .line 964
     .end local v4           #modemNetworkMode:I
     :pswitch_3
     const/4 v4, 0x4
 
-    .line 961
+    .line 965
     .restart local v4       #modemNetworkMode:I
     goto :goto_0
 
-    .line 963
+    .line 967
     .end local v4           #modemNetworkMode:I
     :pswitch_4
     const/4 v4, 0x3
 
-    .line 964
+    .line 968
     .restart local v4       #modemNetworkMode:I
     goto :goto_0
 
-    .line 966
+    .line 970
     .end local v4           #modemNetworkMode:I
     :pswitch_5
     const/4 v4, 0x2
 
-    .line 967
+    .line 971
     .restart local v4       #modemNetworkMode:I
     goto :goto_0
 
-    .line 969
+    .line 973
     .end local v4           #modemNetworkMode:I
     :pswitch_6
     const/4 v4, 0x1
 
-    .line 970
-    .restart local v4       #modemNetworkMode:I
-    goto :goto_0
-
-    .line 972
-    .end local v4           #modemNetworkMode:I
-    :pswitch_7
-    const/4 v4, 0x0
-
-    .line 973
+    .line 974
     .restart local v4       #modemNetworkMode:I
     goto :goto_0
 
     .line 976
     .end local v4           #modemNetworkMode:I
-    :pswitch_8
-    const/16 v4, 0x8
+    :pswitch_7
+    const/4 v4, 0x0
 
     .line 977
     .restart local v4       #modemNetworkMode:I
     goto :goto_0
 
-    .line 979
+    .line 980
+    .end local v4           #modemNetworkMode:I
+    :pswitch_8
+    const/16 v4, 0x8
+
+    .line 981
+    .restart local v4       #modemNetworkMode:I
+    goto :goto_0
+
+    .line 983
     .end local v4           #modemNetworkMode:I
     :pswitch_9
     const/16 v4, 0x9
 
-    .line 980
+    .line 984
     .restart local v4       #modemNetworkMode:I
     goto :goto_0
 
-    .line 982
+    .line 986
     .end local v4           #modemNetworkMode:I
     :pswitch_a
     const/16 v4, 0xa
 
-    .line 983
+    .line 987
     .restart local v4       #modemNetworkMode:I
     goto :goto_0
 
-    .line 985
+    .line 989
     .end local v4           #modemNetworkMode:I
     :pswitch_b
     const/16 v4, 0xb
 
-    .line 986
+    .line 990
     .restart local v4       #modemNetworkMode:I
     goto :goto_0
 
-    .line 988
+    .line 992
     .end local v4           #modemNetworkMode:I
     :pswitch_c
     const/16 v4, 0xc
 
-    .line 989
+    .line 993
     .restart local v4       #modemNetworkMode:I
     goto :goto_0
 
-    .line 1005
+    .line 1009
     .end local v1           #buttonNetworkMode:I
     .end local v4           #modemNetworkMode:I
     .end local v5           #settingsNetworkMode:I
@@ -2767,7 +2767,7 @@
 
     if-ne p1, v7, :cond_3
 
-    .line 1006
+    .line 1010
     iget-object v8, p0, Lcom/android/phone/Settings;->mButtonPreferredGsmUmtsNetworkMode:Lcom/htc/preference/HtcListPreference;
 
     move-object v7, p2
@@ -2776,7 +2776,7 @@
 
     invoke-virtual {v8, v7}, Lcom/htc/preference/HtcListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 1008
+    .line 1012
     check-cast p2, Ljava/lang/String;
 
     .end local p2
@@ -2788,7 +2788,7 @@
 
     move-result v1
 
-    .line 1009
+    .line 1013
     .restart local v1       #buttonNetworkMode:I
     iget-object v7, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
@@ -2806,30 +2806,30 @@
 
     move-result v5
 
-    .line 1012
+    .line 1016
     .restart local v5       #settingsNetworkMode:I
     if-eq v1, v5, :cond_0
 
-    .line 1015
+    .line 1019
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->LTE_CONFIG()Z
 
     move-result v7
 
     if-eqz v7, :cond_2
 
-    .line 1016
+    .line 1020
     packed-switch v1, :pswitch_data_1
 
-    .line 1033
+    .line 1037
     :pswitch_d
     const/4 v4, 0x0
 
-    .line 1054
+    .line 1058
     .restart local v4       #modemNetworkMode:I
     :goto_2
     invoke-direct {p0, v1}, Lcom/android/phone/Settings;->UpdatePreferredGsmUmtsNetworkModeSummary(I)V
 
-    .line 1056
+    .line 1060
     iget-object v7, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v7}, Lcom/android/internal/telephony/Phone;->getContext()Landroid/content/Context;
@@ -2844,7 +2844,7 @@
 
     invoke-static {v7, v8, v1}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 1060
+    .line 1064
     iget-object v7, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
     iget-object v8, p0, Lcom/android/phone/Settings;->mHandler:Lcom/android/phone/Settings$MyHandler;
@@ -2857,99 +2857,99 @@
 
     goto :goto_1
 
-    .line 1018
+    .line 1022
     .end local v4           #modemNetworkMode:I
     :pswitch_e
     const/4 v4, 0x3
 
-    .line 1019
+    .line 1023
     .restart local v4       #modemNetworkMode:I
     goto :goto_2
 
-    .line 1021
+    .line 1025
     .end local v4           #modemNetworkMode:I
     :pswitch_f
     const/4 v4, 0x2
 
-    .line 1022
+    .line 1026
     .restart local v4       #modemNetworkMode:I
     goto :goto_2
 
-    .line 1024
+    .line 1028
     .end local v4           #modemNetworkMode:I
     :pswitch_10
     const/4 v4, 0x1
 
-    .line 1025
+    .line 1029
     .restart local v4       #modemNetworkMode:I
     goto :goto_2
 
-    .line 1027
+    .line 1031
     .end local v4           #modemNetworkMode:I
     :pswitch_11
     const/4 v4, 0x0
 
-    .line 1028
+    .line 1032
     .restart local v4       #modemNetworkMode:I
     goto :goto_2
 
-    .line 1030
+    .line 1034
     .end local v4           #modemNetworkMode:I
     :pswitch_12
     const/16 v4, 0x9
 
-    .line 1031
+    .line 1035
     .restart local v4       #modemNetworkMode:I
     goto :goto_2
 
-    .line 1036
+    .line 1040
     .end local v4           #modemNetworkMode:I
     :cond_2
     packed-switch v1, :pswitch_data_2
 
-    .line 1050
+    .line 1054
     const/4 v4, 0x0
 
     .restart local v4       #modemNetworkMode:I
     goto :goto_2
 
-    .line 1038
+    .line 1042
     .end local v4           #modemNetworkMode:I
     :pswitch_13
     const/4 v4, 0x3
 
-    .line 1039
+    .line 1043
     .restart local v4       #modemNetworkMode:I
     goto :goto_2
 
-    .line 1041
+    .line 1045
     .end local v4           #modemNetworkMode:I
     :pswitch_14
     const/4 v4, 0x2
 
-    .line 1042
+    .line 1046
     .restart local v4       #modemNetworkMode:I
     goto :goto_2
 
-    .line 1044
+    .line 1048
     .end local v4           #modemNetworkMode:I
     :pswitch_15
     const/4 v4, 0x1
 
-    .line 1045
+    .line 1049
     .restart local v4       #modemNetworkMode:I
     goto :goto_2
 
-    .line 1047
+    .line 1051
     .end local v4           #modemNetworkMode:I
     :pswitch_16
     const/4 v4, 0x0
 
-    .line 1048
+    .line 1052
     .restart local v4       #modemNetworkMode:I
     goto :goto_2
 
-    .line 1063
+    .line 1067
     .end local v1           #buttonNetworkMode:I
     .end local v4           #modemNetworkMode:I
     .end local v5           #settingsNetworkMode:I
@@ -2971,7 +2971,7 @@
 
     if-eqz v7, :cond_0
 
-    .line 1069
+    .line 1073
     :try_start_0
     move-object v0, p2
 
@@ -2979,19 +2979,19 @@
 
     move-object v6, v0
 
-    .line 1070
+    .line 1074
     .local v6, strIndex:Ljava/lang/String;
     invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
 
-    .line 1071
+    .line 1075
     .local v3, index:I
     iget-object v7, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
 
     invoke-virtual {v7, v6}, Lcom/android/phone/NationalRoamingList;->setValue(Ljava/lang/String;)V
 
-    .line 1072
+    .line 1076
     iget-object v7, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
 
     iget-object v8, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
@@ -3004,62 +3004,13 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1078
+    .line 1082
     .end local v6           #strIndex:Ljava/lang/String;
     :goto_3
     if-ltz v3, :cond_0
 
-    .line 1079
-    if-nez v3, :cond_4
-
-    .line 1080
-    invoke-virtual {p0}, Lcom/android/phone/Settings;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v7
-
-    const-string v8, "data_roaming"
-
-    invoke-static {v7, v8, v10}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    .line 1081
-    invoke-virtual {p0}, Lcom/android/phone/Settings;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v7
-
-    const-string v8, "national_roaming_on"
-
-    invoke-static {v7, v8, v10}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    .line 1082
-    iget-object v7, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
-
-    invoke-interface {v7, v10}, Lcom/android/internal/telephony/Phone;->setDataNationalRoamingMode(I)V
-
-    goto/16 :goto_1
-
-    .line 1073
-    .end local v3           #index:I
-    :catch_0
-    move-exception v2
-
-    .line 1074
-    .local v2, e:Ljava/lang/NumberFormatException;
-    const-string v7, "NetworkSettings"
-
-    const-string v8, "could not get/set roaming setting"
-
-    invoke-static {v7, v8, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 1075
-    const/4 v3, -0x1
-
-    .restart local v3       #index:I
-    goto :goto_3
-
     .line 1083
-    .end local v2           #e:Ljava/lang/NumberFormatException;
-    :cond_4
-    if-ne v3, v9, :cond_5
+    if-nez v3, :cond_4
 
     .line 1084
     invoke-virtual {p0}, Lcom/android/phone/Settings;->getContentResolver()Landroid/content/ContentResolver;
@@ -3077,29 +3028,49 @@
 
     const-string v8, "national_roaming_on"
 
-    invoke-static {v7, v8, v9}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v7, v8, v10}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 1086
     iget-object v7, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
-    invoke-interface {v7, v9}, Lcom/android/internal/telephony/Phone;->setDataNationalRoamingMode(I)V
+    invoke-interface {v7, v10}, Lcom/android/internal/telephony/Phone;->setDataNationalRoamingMode(I)V
 
     goto/16 :goto_1
 
-    .line 1087
-    :cond_5
-    if-ne v3, v11, :cond_0
+    .line 1077
+    .end local v3           #index:I
+    :catch_0
+    move-exception v2
 
-    .line 1089
+    .line 1078
+    .local v2, e:Ljava/lang/NumberFormatException;
+    const-string v7, "NetworkSettings"
+
+    const-string v8, "could not get/set roaming setting"
+
+    invoke-static {v7, v8, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 1079
+    const/4 v3, -0x1
+
+    .restart local v3       #index:I
+    goto :goto_3
+
+    .line 1087
+    .end local v2           #e:Ljava/lang/NumberFormatException;
+    :cond_4
+    if-ne v3, v9, :cond_5
+
+    .line 1088
     invoke-virtual {p0}, Lcom/android/phone/Settings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v7
 
     const-string v8, "data_roaming"
 
-    invoke-static {v7, v8, v9}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v7, v8, v10}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 1090
+    .line 1089
     invoke-virtual {p0}, Lcom/android/phone/Settings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v7
@@ -3108,14 +3079,43 @@
 
     invoke-static {v7, v8, v9}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
+    .line 1090
+    iget-object v7, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v7, v9}, Lcom/android/internal/telephony/Phone;->setDataNationalRoamingMode(I)V
+
+    goto/16 :goto_1
+
     .line 1091
+    :cond_5
+    if-ne v3, v11, :cond_0
+
+    .line 1093
+    invoke-virtual {p0}, Lcom/android/phone/Settings;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v7
+
+    const-string v8, "data_roaming"
+
+    invoke-static {v7, v8, v9}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    .line 1094
+    invoke-virtual {p0}, Lcom/android/phone/Settings;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v7
+
+    const-string v8, "national_roaming_on"
+
+    invoke-static {v7, v8, v9}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    .line 1095
     iget-object v7, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v7, v11}, Lcom/android/internal/telephony/Phone;->setDataNationalRoamingMode(I)V
 
     goto/16 :goto_1
 
-    .line 949
+    .line 953
     nop
 
     :pswitch_data_0
@@ -3135,7 +3135,7 @@
         :pswitch_c
     .end packed-switch
 
-    .line 1016
+    .line 1020
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_11
@@ -3150,7 +3150,7 @@
         :pswitch_12
     .end packed-switch
 
-    .line 1036
+    .line 1040
     :pswitch_data_2
     .packed-switch 0x0
         :pswitch_16
@@ -3185,7 +3185,7 @@
 
     if-ne v9, v8, :cond_1
 
-    .line 403
+    .line 407
     :cond_0
     :goto_0
     return v8
@@ -3713,13 +3713,10 @@
 
     goto/16 :goto_0
 
-    .line 401
     :cond_14
-    invoke-virtual {p1, v7}, Lcom/htc/preference/HtcPreferenceScreen;->setEnabled(Z)V
-
     move v8, v7
 
-    .line 403
+    .line 407
     goto/16 :goto_0
 .end method
 
@@ -3735,25 +3732,25 @@
 
     const/4 v5, 0x1
 
-    .line 727
+    .line 731
     invoke-super {p0}, Lcom/htc/preference/HtcPreferenceActivity;->onResume()V
 
-    .line 728
+    .line 732
     iput-boolean v5, p0, Lcom/android/phone/Settings;->mForeground:Z
 
-    .line 732
+    .line 736
     invoke-virtual {p0}, Lcom/android/phone/Settings;->getPreferenceScreen()Lcom/htc/preference/HtcPreferenceScreen;
 
     move-result-object v4
 
     invoke-virtual {v4, v5}, Lcom/htc/preference/HtcPreferenceScreen;->setEnabled(Z)V
 
-    .line 744
+    .line 748
     iget-boolean v4, p0, Lcom/android/phone/Settings;->mEnableNationalRoaming:Z
 
     if-eqz v4, :cond_f
 
-    .line 746
+    .line 750
     iget-object v4, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v4}, Lcom/android/internal/telephony/Phone;->getContext()Landroid/content/Context;
@@ -3772,12 +3769,12 @@
 
     if-lez v4, :cond_d
 
-    .line 747
+    .line 751
     iget-object v4, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
 
     invoke-virtual {v4, v9}, Lcom/android/phone/NationalRoamingList;->setValueIndex(I)V
 
-    .line 748
+    .line 752
     iget-object v4, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
 
     iget-object v7, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
@@ -3788,7 +3785,7 @@
 
     invoke-virtual {v4, v7}, Lcom/android/phone/NationalRoamingList;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 772
+    .line 776
     :cond_0
     :goto_0
     invoke-virtual {p0}, Lcom/android/phone/Settings;->getPreferenceScreen()Lcom/htc/preference/HtcPreferenceScreen;
@@ -3815,7 +3812,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 775
+    .line 779
     :cond_1
     iget-object v4, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
 
@@ -3827,16 +3824,16 @@
 
     invoke-interface {v4, v7}, Lcom/android/internal/telephony/Phone;->getPreferredNetworkType(Landroid/os/Message;)V
 
-    .line 788
+    .line 792
     :cond_2
     invoke-direct {p0}, Lcom/android/phone/Settings;->updateOperatorInfo()V
 
-    .line 791
+    .line 795
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonDataRoamSound:Lcom/htc/preference/HtcCheckBoxPreference;
 
     if-eqz v4, :cond_3
 
-    .line 792
+    .line 796
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonDataRoamSound:Lcom/htc/preference/HtcCheckBoxPreference;
 
     invoke-direct {p0}, Lcom/android/phone/Settings;->getRoamingSoundEnabled()Z
@@ -3845,13 +3842,13 @@
 
     invoke-virtual {v4, v7}, Lcom/htc/preference/HtcCheckBoxPreference;->setChecked(Z)V
 
-    .line 794
+    .line 798
     :cond_3
     iget-object v4, p0, Lcom/android/phone/Settings;->mButton3GPowerSave:Lcom/htc/preference/HtcCheckBoxPreference;
 
     if-eqz v4, :cond_4
 
-    .line 795
+    .line 799
     iget-object v7, p0, Lcom/android/phone/Settings;->mButton3GPowerSave:Lcom/htc/preference/HtcCheckBoxPreference;
 
     invoke-virtual {p0}, Lcom/android/phone/Settings;->getContentResolver()Landroid/content/ContentResolver;
@@ -3871,47 +3868,47 @@
     :goto_1
     invoke-virtual {v7, v4}, Lcom/htc/preference/HtcCheckBoxPreference;->setChecked(Z)V
 
-    .line 799
+    .line 803
     :cond_4
     invoke-virtual {p0}, Lcom/android/phone/Settings;->getPreferenceScreen()Lcom/htc/preference/HtcPreferenceScreen;
 
     move-result-object v2
 
-    .line 800
+    .line 804
     .local v2, prefSet:Lcom/htc/preference/HtcPreferenceScreen;
     sget-short v4, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     if-ne v4, v9, :cond_5
 
-    .line 801
+    .line 805
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonDataRoamSound:Lcom/htc/preference/HtcCheckBoxPreference;
 
     invoke-virtual {v2, v4}, Lcom/htc/preference/HtcPreferenceScreen;->removePreference(Lcom/htc/preference/HtcPreference;)Z
 
-    .line 805
+    .line 809
     :cond_5
     sget-boolean v4, Lcom/android/phone/PhoneApp;->ENABLE_SDR_FEATURE:Z
 
     if-eqz v4, :cond_15
 
-    .line 806
+    .line 810
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v3
 
-    .line 807
+    .line 811
     .local v3, tm:Landroid/telephony/TelephonyManager;
     invoke-virtual {v3}, Landroid/telephony/TelephonyManager;->isNetworkRoaming()Z
 
     move-result v1
 
-    .line 808
+    .line 812
     .local v1, netRoaming:Z
     invoke-static {}, Lcom/android/phone/PhoneApp;->getInstance()Lcom/android/phone/PhoneApp;
 
     move-result-object v0
 
-    .line 809
+    .line 813
     .local v0, app:Lcom/android/phone/PhoneApp;
     invoke-virtual {v0}, Lcom/android/phone/PhoneApp;->getSmartDataRoamingState()I
 
@@ -3919,7 +3916,7 @@
 
     iput v4, p0, Lcom/android/phone/Settings;->mSmartDataRoamingMode:I
 
-    .line 810
+    .line 814
     const-string v4, "NetworkSettings"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -3958,7 +3955,7 @@
 
     invoke-static {v4, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 811
+    .line 815
     invoke-virtual {p0}, Lcom/android/phone/Settings;->getDataOnRoamingEnabled()Z
 
     move-result v4
@@ -3975,36 +3972,36 @@
 
     if-eq v4, v7, :cond_6
 
-    .line 812
+    .line 816
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v2, v4}, Lcom/htc/preference/HtcPreferenceScreen;->addPreference(Lcom/htc/preference/HtcPreference;)Z
 
-    .line 813
+    .line 817
     iget v4, p0, Lcom/android/phone/Settings;->mSmartDataRoamingMode:I
 
     const/4 v7, 0x3
 
     if-ne v4, v7, :cond_12
 
-    .line 814
+    .line 818
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v2, v4}, Lcom/htc/preference/HtcPreferenceScreen;->addPreference(Lcom/htc/preference/HtcPreference;)Z
 
-    .line 815
+    .line 819
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v4, v6}, Lcom/htc/preference/HtcPreference;->setEnabled(Z)V
 
-    .line 816
+    .line 820
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     const v7, 0x7f0e0093
 
     invoke-virtual {v4, v7}, Lcom/htc/preference/HtcPreference;->setSummary(I)V
 
-    .line 839
+    .line 843
     :cond_6
     :goto_2
     invoke-virtual {p0}, Lcom/android/phone/Settings;->getNetworkManualModeEnabled()Z
@@ -4015,23 +4012,23 @@
 
     if-nez v1, :cond_8
 
-    .line 841
+    .line 845
     :cond_7
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v4, v5}, Lcom/htc/preference/HtcPreference;->setEnabled(Z)V
 
-    .line 842
+    .line 846
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v4, v10}, Lcom/htc/preference/HtcPreference;->setSummary(I)V
 
-    .line 844
+    .line 848
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v2, v4}, Lcom/htc/preference/HtcPreferenceScreen;->removePreference(Lcom/htc/preference/HtcPreference;)Z
 
-    .line 851
+    .line 855
     .end local v0           #app:Lcom/android/phone/PhoneApp;
     .end local v1           #netRoaming:Z
     .end local v3           #tm:Landroid/telephony/TelephonyManager;
@@ -4041,17 +4038,17 @@
 
     invoke-virtual {v4}, Lcom/android/phone/DataUsageListener;->resume()V
 
-    .line 855
+    .line 859
     sget-boolean v4, Lcom/android/phone/HtcFeatureList;->FEATURE_THIS_IS_WORLD_PHONE:Z
 
     if-ne v4, v5, :cond_a
 
-    .line 856
+    .line 860
     iget-object v4, p0, Lcom/android/phone/Settings;->mHtcWorldPhoneOptions:Lcom/android/phone/HtcWorldPhoneOptions;
 
     invoke-virtual {v4}, Lcom/android/phone/HtcWorldPhoneOptions;->resume()V
 
-    .line 858
+    .line 862
     sget-boolean v4, Lcom/android/phone/HtcFeatureList;->FEATURE_WORLD_PHONE_LAYOUT_SP:Z
 
     if-ne v4, v5, :cond_a
@@ -4064,61 +4061,61 @@
 
     if-eq v4, v5, :cond_a
 
-    .line 860
+    .line 864
     const-string v4, "NetworkSettings"
 
     const-string v5, "Not a GSM phone"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 861
+    .line 865
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonAPNExpand:Lcom/htc/preference/HtcPreferenceScreen;
 
     if-eqz v4, :cond_9
 
-    .line 862
+    .line 866
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonAPNExpand:Lcom/htc/preference/HtcPreferenceScreen;
 
     invoke-virtual {v4, v6}, Lcom/htc/preference/HtcPreferenceScreen;->setEnabled(Z)V
 
-    .line 864
+    .line 868
     :cond_9
     iget-object v4, p0, Lcom/android/phone/Settings;->carrierSelect:Lcom/htc/preference/HtcPreference;
 
     if-eqz v4, :cond_a
 
-    .line 865
+    .line 869
     iget-object v4, p0, Lcom/android/phone/Settings;->carrierSelect:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v4, v6}, Lcom/htc/preference/HtcPreference;->setEnabled(Z)V
 
-    .line 871
+    .line 875
     :cond_a
     iget-object v4, p0, Lcom/android/phone/Settings;->mCdmaOptions:Lcom/android/phone/CdmaOptions;
 
     if-eqz v4, :cond_b
 
-    .line 872
+    .line 876
     iget-object v4, p0, Lcom/android/phone/Settings;->mCdmaOptions:Lcom/android/phone/CdmaOptions;
 
     invoke-virtual {v4}, Lcom/android/phone/CdmaOptions;->resume()V
 
-    .line 878
+    .line 882
     :cond_b
     iget-object v4, p0, Lcom/android/phone/Settings;->mHtcCdmaRoamingOptions:Lcom/android/phone/HtcCdmaRoamingOptions;
 
     if-eqz v4, :cond_c
 
-    .line 879
+    .line 883
     iget-object v4, p0, Lcom/android/phone/Settings;->mHtcCdmaRoamingOptions:Lcom/android/phone/HtcCdmaRoamingOptions;
 
     invoke-virtual {v4}, Lcom/android/phone/HtcCdmaRoamingOptions;->resume()V
 
-    .line 882
+    .line 886
     :cond_c
     return-void
 
-    .line 750
+    .line 754
     .end local v2           #prefSet:Lcom/htc/preference/HtcPreferenceScreen;
     :cond_d
     iget-object v4, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
@@ -4139,12 +4136,12 @@
 
     if-lez v4, :cond_e
 
-    .line 751
+    .line 755
     iget-object v4, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
 
     invoke-virtual {v4, v5}, Lcom/android/phone/NationalRoamingList;->setValueIndex(I)V
 
-    .line 752
+    .line 756
     iget-object v4, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
 
     iget-object v7, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
@@ -4157,13 +4154,13 @@
 
     goto/16 :goto_0
 
-    .line 754
+    .line 758
     :cond_e
     iget-object v4, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
 
     invoke-virtual {v4, v6}, Lcom/android/phone/NationalRoamingList;->setValueIndex(I)V
 
-    .line 755
+    .line 759
     iget-object v4, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
 
     iget-object v7, p0, Lcom/android/phone/Settings;->mNationORInterRoaming:Lcom/android/phone/NationalRoamingList;
@@ -4176,31 +4173,31 @@
 
     goto/16 :goto_0
 
-    .line 759
+    .line 763
     :cond_f
     iget-boolean v4, p0, Lcom/android/phone/Settings;->mDialogShowing:Z
 
     if-eqz v4, :cond_10
 
-    .line 760
+    .line 764
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     if-eqz v4, :cond_0
 
-    .line 761
+    .line 765
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     invoke-virtual {v4, v5}, Lcom/htc/preference/HtcCheckBoxPreference;->setChecked(Z)V
 
     goto/16 :goto_0
 
-    .line 764
+    .line 768
     :cond_10
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     if-eqz v4, :cond_0
 
-    .line 765
+    .line 769
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     iget-object v7, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
@@ -4216,10 +4213,10 @@
     :cond_11
     move v4, v6
 
-    .line 795
+    .line 799
     goto/16 :goto_1
 
-    .line 818
+    .line 822
     .restart local v0       #app:Lcom/android/phone/PhoneApp;
     .restart local v1       #netRoaming:Z
     .restart local v2       #prefSet:Lcom/htc/preference/HtcPreferenceScreen;
@@ -4231,17 +4228,17 @@
 
     if-ne v4, v7, :cond_13
 
-    .line 819
+    .line 823
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v2, v4}, Lcom/htc/preference/HtcPreferenceScreen;->addPreference(Lcom/htc/preference/HtcPreference;)Z
 
-    .line 820
+    .line 824
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v4, v5}, Lcom/htc/preference/HtcPreference;->setEnabled(Z)V
 
-    .line 822
+    .line 826
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     const v7, 0x7f0e009c
@@ -4250,30 +4247,30 @@
 
     goto/16 :goto_2
 
-    .line 824
+    .line 828
     :cond_13
     iget v4, p0, Lcom/android/phone/Settings;->mSmartDataRoamingMode:I
 
     if-ne v4, v5, :cond_14
 
-    .line 825
+    .line 829
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v2, v4}, Lcom/htc/preference/HtcPreferenceScreen;->addPreference(Lcom/htc/preference/HtcPreference;)Z
 
-    .line 826
+    .line 830
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v4, v5}, Lcom/htc/preference/HtcPreference;->setEnabled(Z)V
 
-    .line 828
+    .line 832
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v4, v10}, Lcom/htc/preference/HtcPreference;->setSummary(I)V
 
     goto/16 :goto_2
 
-    .line 829
+    .line 833
     :cond_14
     iget v4, p0, Lcom/android/phone/Settings;->mSmartDataRoamingMode:I
 
@@ -4281,17 +4278,17 @@
 
     if-ne v4, v7, :cond_6
 
-    .line 830
+    .line 834
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v2, v4}, Lcom/htc/preference/HtcPreferenceScreen;->addPreference(Lcom/htc/preference/HtcPreference;)Z
 
-    .line 831
+    .line 835
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     invoke-virtual {v4, v6}, Lcom/htc/preference/HtcPreference;->setEnabled(Z)V
 
-    .line 833
+    .line 837
     iget-object v4, p0, Lcom/android/phone/Settings;->mButtonSmartDataRoaming:Lcom/htc/preference/HtcPreference;
 
     const v7, 0x7f0e009b
@@ -4300,7 +4297,7 @@
 
     goto/16 :goto_2
 
-    .line 847
+    .line 851
     .end local v0           #app:Lcom/android/phone/PhoneApp;
     .end local v1           #netRoaming:Z
     .end local v3           #tm:Landroid/telephony/TelephonyManager;
@@ -4317,25 +4314,25 @@
     .parameter "hasFocus"
 
     .prologue
-    .line 717
+    .line 721
     invoke-super {p0, p1}, Lcom/htc/preference/HtcPreferenceActivity;->onWindowFocusChanged(Z)V
 
-    .line 718
+    .line 722
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_0
 
-    .line 719
+    .line 723
     iget-boolean v0, p0, Lcom/android/phone/Settings;->mEnableNationalRoaming:Z
 
     if-nez v0, :cond_0
 
-    .line 720
+    .line 724
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     if-eqz v0, :cond_0
 
-    .line 721
+    .line 725
     iget-object v0, p0, Lcom/android/phone/Settings;->mButtonDataRoam:Lcom/htc/preference/HtcCheckBoxPreference;
 
     iget-object v1, p0, Lcom/android/phone/Settings;->mPhone:Lcom/android/internal/telephony/Phone;
@@ -4346,7 +4343,7 @@
 
     invoke-virtual {v0, v1}, Lcom/htc/preference/HtcCheckBoxPreference;->setChecked(Z)V
 
-    .line 723
+    .line 727
     :cond_0
     return-void
 .end method

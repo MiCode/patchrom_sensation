@@ -8,6 +8,8 @@
 
 .field background:Landroid/graphics/drawable/Drawable;
 
+.field bgID:I
+
 .field bgPadding:Landroid/graphics/Rect;
 
 .field centerX:F
@@ -65,73 +67,76 @@
     .prologue
     const/high16 v3, 0x3fc0
 
-    const/4 v2, 0x0
-
     const/high16 v1, 0x3f80
 
-    .line 48
+    const/4 v2, 0x0
+
+    .line 52
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 20
+    .line 22
     new-instance v0, Landroid/graphics/Picture;
 
     invoke-direct {v0}, Landroid/graphics/Picture;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/MagnifyView;->contentPicture:Landroid/graphics/Picture;
 
-    .line 21
+    .line 23
     iput v1, p0, Landroid/webkit/MagnifyView;->contentScale:F
 
-    .line 22
+    .line 24
     iput v1, p0, Landroid/webkit/MagnifyView;->invContentScale:F
 
-    .line 28
+    .line 30
     iput-boolean v2, p0, Landroid/webkit/MagnifyView;->drawing:Z
 
-    .line 31
+    .line 33
     iput v3, p0, Landroid/webkit/MagnifyView;->SCALE_RATIO:F
 
-    .line 32
+    .line 34
     iput v3, p0, Landroid/webkit/MagnifyView;->magnifyRatio:F
 
-    .line 39
+    .line 40
+    iput v2, p0, Landroid/webkit/MagnifyView;->bgID:I
+
+    .line 43
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/MagnifyView;->bgPadding:Landroid/graphics/Rect;
 
-    .line 40
+    .line 44
     iput v1, p0, Landroid/webkit/MagnifyView;->densityFactor:F
 
-    .line 41
+    .line 45
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/MagnifyView;->clip:Landroid/graphics/RectF;
 
-    .line 42
+    .line 46
     iput v2, p0, Landroid/webkit/MagnifyView;->parentXOffset:I
 
-    .line 49
+    .line 53
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/webkit/MagnifyView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 50
+    .line 54
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Landroid/webkit/MagnifyView;->ml:Landroid/widget/FrameLayout;
 
-    .line 51
+    .line 55
     iget-object v0, p0, Landroid/webkit/MagnifyView;->ml:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, p0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 53
+    .line 57
     new-instance v0, Landroid/widget/PopupWindow;
 
     iget-object v1, p0, Landroid/webkit/MagnifyView;->ml:Landroid/widget/FrameLayout;
@@ -140,12 +145,12 @@
 
     iput-object v0, p0, Landroid/webkit/MagnifyView;->magnifyWindow:Landroid/widget/PopupWindow;
 
-    .line 54
+    .line 58
     iget-object v0, p0, Landroid/webkit/MagnifyView;->magnifyWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0, v2}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
-    .line 56
+    .line 60
     invoke-virtual {p0}, Landroid/webkit/MagnifyView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -154,14 +159,14 @@
 
     iput-object v0, p0, Landroid/webkit/MagnifyView;->mll:Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 57
+    .line 61
     iget-object v0, p0, Landroid/webkit/MagnifyView;->mll:Landroid/widget/FrameLayout$LayoutParams;
 
     const/4 v1, -0x1
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 63
+    .line 67
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -174,7 +179,7 @@
 
     iput v0, p0, Landroid/webkit/MagnifyView;->densityFactor:F
 
-    .line 64
+    .line 68
     return-void
 .end method
 
@@ -184,25 +189,25 @@
     .locals 5
 
     .prologue
-    .line 162
+    .line 185
     iget-boolean v1, p0, Landroid/webkit/MagnifyView;->drawing:Z
 
     if-eqz v1, :cond_0
 
-    .line 163
+    .line 186
     const/4 v0, 0x0
 
-    .line 177
+    .line 200
     :goto_0
     return-object v0
 
-    .line 165
+    .line 188
     :cond_0
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Landroid/webkit/MagnifyView;->drawing:Z
 
-    .line 166
+    .line 189
     iget-object v1, p0, Landroid/webkit/MagnifyView;->contentPicture:Landroid/graphics/Picture;
 
     iget v2, p0, Landroid/webkit/MagnifyView;->contentW:I
@@ -213,7 +218,7 @@
 
     move-result-object v0
 
-    .line 172
+    .line 195
     .local v0, canvas:Landroid/graphics/Canvas;
     iget v1, p0, Landroid/webkit/MagnifyView;->offsetX:F
 
@@ -225,7 +230,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 173
+    .line 196
     iget v1, p0, Landroid/webkit/MagnifyView;->parentXOffset:I
 
     int-to-float v1, v1
@@ -252,7 +257,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 175
+    .line 198
     iget v1, p0, Landroid/webkit/MagnifyView;->magnifyRatio:F
 
     iget v2, p0, Landroid/webkit/MagnifyView;->magnifyRatio:F
@@ -270,7 +275,7 @@
     .locals 1
 
     .prologue
-    .line 123
+    .line 146
     iget-object v0, p0, Landroid/webkit/MagnifyView;->magnifyWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
@@ -279,12 +284,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 124
+    .line 147
     iget-object v0, p0, Landroid/webkit/MagnifyView;->magnifyWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->dismiss()V
 
-    .line 125
+    .line 148
     :cond_0
     return-void
 .end method
@@ -293,22 +298,22 @@
     .locals 1
 
     .prologue
-    .line 181
+    .line 204
     iget-boolean v0, p0, Landroid/webkit/MagnifyView;->drawing:Z
 
     if-nez v0, :cond_0
 
-    .line 189
+    .line 212
     :goto_0
     return-void
 
-    .line 184
+    .line 207
     :cond_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/webkit/MagnifyView;->drawing:Z
 
-    .line 185
+    .line 208
     iget-object v0, p0, Landroid/webkit/MagnifyView;->contentPicture:Landroid/graphics/Picture;
 
     invoke-virtual {v0}, Landroid/graphics/Picture;->endRecording()V
@@ -316,11 +321,21 @@
     goto :goto_0
 .end method
 
+.method getBGdrawableID()I
+    .locals 1
+
+    .prologue
+    .line 94
+    iget v0, p0, Landroid/webkit/MagnifyView;->bgID:I
+
+    return v0
+.end method
+
 .method getFullHeight()I
     .locals 1
 
     .prologue
-    .line 102
+    .line 125
     iget-object v0, p0, Landroid/webkit/MagnifyView;->ml:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -334,7 +349,7 @@
     .locals 1
 
     .prologue
-    .line 98
+    .line 121
     iget-object v0, p0, Landroid/webkit/MagnifyView;->ml:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -349,36 +364,36 @@
     .parameter "canvas"
 
     .prologue
-    .line 197
+    .line 220
     iget-object v2, p0, Landroid/webkit/MagnifyView;->contentPicture:Landroid/graphics/Picture;
 
     if-nez v2, :cond_1
 
-    .line 248
+    .line 271
     :cond_0
     :goto_0
     return-void
 
-    .line 200
+    .line 223
     :cond_1
     iget-boolean v2, p0, Landroid/webkit/MagnifyView;->drawing:Z
 
     if-eqz v2, :cond_2
 
-    .line 201
+    .line 224
     const-wide/16 v2, 0x1
 
     invoke-virtual {p0, v2, v3}, Landroid/webkit/MagnifyView;->postInvalidateDelayed(J)V
 
     goto :goto_0
 
-    .line 204
+    .line 227
     :cond_2
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v0
 
-    .line 217
+    .line 240
     .local v0, saveflag:I
     iget v2, p0, Landroid/webkit/MagnifyView;->centerX:F
 
@@ -398,7 +413,7 @@
 
     add-float v1, v2, v3
 
-    .line 218
+    .line 241
     .local v1, viewCenter:F
     iget-object v2, p0, Landroid/webkit/MagnifyView;->clip:Landroid/graphics/RectF;
 
@@ -414,34 +429,34 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/graphics/RectF;->offsetTo(FF)V
 
-    .line 219
+    .line 242
     iget-object v2, p0, Landroid/webkit/MagnifyView;->clip:Landroid/graphics/RectF;
 
     invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/RectF;)Z
 
-    .line 220
+    .line 243
     const/4 v2, -0x1
 
     invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 224
+    .line 247
     invoke-virtual {p1}, Landroid/graphics/Canvas;->isHardwareAccelerated()Z
 
     move-result v2
 
     if-eqz v2, :cond_4
 
-    .line 225
+    .line 248
     iget-object v2, p0, Landroid/webkit/MagnifyView;->mContentBMP:Landroid/graphics/Bitmap;
 
     if-eqz v2, :cond_3
 
-    .line 226
+    .line 249
     iget-object v2, p0, Landroid/webkit/MagnifyView;->mBMPcanvas:Landroid/graphics/Canvas;
 
     invoke-virtual {v2}, Landroid/graphics/Canvas;->save()I
 
-    .line 228
+    .line 251
     iget-object v2, p0, Landroid/webkit/MagnifyView;->mBMPcanvas:Landroid/graphics/Canvas;
 
     iget-object v3, p0, Landroid/webkit/MagnifyView;->clip:Landroid/graphics/RectF;
@@ -458,19 +473,19 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 229
+    .line 252
     iget-object v2, p0, Landroid/webkit/MagnifyView;->mBMPcanvas:Landroid/graphics/Canvas;
 
     iget-object v3, p0, Landroid/webkit/MagnifyView;->contentPicture:Landroid/graphics/Picture;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Canvas;->drawPicture(Landroid/graphics/Picture;)V
 
-    .line 230
+    .line 253
     iget-object v2, p0, Landroid/webkit/MagnifyView;->mBMPcanvas:Landroid/graphics/Canvas;
 
     invoke-virtual {v2}, Landroid/graphics/Canvas;->restore()V
 
-    .line 231
+    .line 254
     iget-object v2, p0, Landroid/webkit/MagnifyView;->mContentBMP:Landroid/graphics/Bitmap;
 
     iget-object v3, p0, Landroid/webkit/MagnifyView;->clip:Landroid/graphics/RectF;
@@ -485,17 +500,17 @@
 
     invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 236
+    .line 259
     :cond_3
     :goto_1
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 239
+    .line 262
     iget-object v2, p0, Landroid/webkit/MagnifyView;->background:Landroid/graphics/drawable/Drawable;
 
     if-eqz v2, :cond_0
 
-    .line 240
+    .line 263
     iget-object v2, p0, Landroid/webkit/MagnifyView;->background:Landroid/graphics/drawable/Drawable;
 
     iget-object v3, p0, Landroid/webkit/MagnifyView;->clip:Landroid/graphics/RectF;
@@ -556,14 +571,14 @@
 
     invoke-virtual {v2, v3, v4, v5, v6}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 245
+    .line 268
     iget-object v2, p0, Landroid/webkit/MagnifyView;->background:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     goto/16 :goto_0
 
-    .line 234
+    .line 257
     :cond_4
     iget-object v2, p0, Landroid/webkit/MagnifyView;->contentPicture:Landroid/graphics/Picture;
 
@@ -572,31 +587,96 @@
     goto :goto_1
 .end method
 
-.method setBGdrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 1
-    .parameter "bg"
+.method setBGdrawable(I)V
+    .locals 4
+    .parameter "resID"
 
     .prologue
-    .line 67
-    iput-object p1, p0, Landroid/webkit/MagnifyView;->background:Landroid/graphics/drawable/Drawable;
+    const/4 v3, 0x0
 
-    .line 68
-    if-eqz p1, :cond_0
+    .line 71
+    iget v1, p0, Landroid/webkit/MagnifyView;->bgID:I
 
-    .line 69
-    iget-object v0, p0, Landroid/webkit/MagnifyView;->bgPadding:Landroid/graphics/Rect;
+    if-ne v1, p1, :cond_0
 
-    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
-
-    .line 72
+    .line 91
     :goto_0
     return-void
 
-    .line 71
+    .line 74
     :cond_0
-    iget-object v0, p0, Landroid/webkit/MagnifyView;->bgPadding:Landroid/graphics/Rect;
+    iput p1, p0, Landroid/webkit/MagnifyView;->bgID:I
 
-    invoke-virtual {v0}, Landroid/graphics/Rect;->setEmpty()V
+    .line 75
+    if-lez p1, :cond_1
+
+    .line 77
+    :try_start_0
+    iget-object v1, p0, Landroid/webkit/MagnifyView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    iput-object v1, p0, Landroid/webkit/MagnifyView;->background:Landroid/graphics/drawable/Drawable;
+
+    .line 78
+    iget-object v1, p0, Landroid/webkit/MagnifyView;->background:Landroid/graphics/drawable/Drawable;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setDither(Z)V
+    :try_end_0
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 87
+    :goto_1
+    iget-object v1, p0, Landroid/webkit/MagnifyView;->background:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v1, :cond_2
+
+    .line 88
+    iget-object v1, p0, Landroid/webkit/MagnifyView;->background:Landroid/graphics/drawable/Drawable;
+
+    iget-object v2, p0, Landroid/webkit/MagnifyView;->bgPadding:Landroid/graphics/Rect;
+
+    invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
+
+    goto :goto_0
+
+    .line 79
+    :catch_0
+    move-exception v0
+
+    .line 80
+    .local v0, e:Landroid/content/res/Resources$NotFoundException;
+    iput-object v3, p0, Landroid/webkit/MagnifyView;->background:Landroid/graphics/drawable/Drawable;
+
+    .line 81
+    const-string v1, "MagnifyView"
+
+    const-string v2, "ERROR!"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_1
+
+    .line 84
+    .end local v0           #e:Landroid/content/res/Resources$NotFoundException;
+    :cond_1
+    iput-object v3, p0, Landroid/webkit/MagnifyView;->background:Landroid/graphics/drawable/Drawable;
+
+    goto :goto_1
+
+    .line 90
+    :cond_2
+    iget-object v1, p0, Landroid/webkit/MagnifyView;->bgPadding:Landroid/graphics/Rect;
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->setEmpty()V
 
     goto :goto_0
 .end method
@@ -616,24 +696,24 @@
 
     const/high16 v1, 0x3fc0
 
-    .line 132
+    .line 155
     iget v0, p0, Landroid/webkit/MagnifyView;->contentScale:F
 
     cmpl-float v0, v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 133
+    .line 156
     iput p1, p0, Landroid/webkit/MagnifyView;->contentScale:F
 
-    .line 134
+    .line 157
     const/high16 v0, 0x3f80
 
     div-float/2addr v0, p1
 
     iput v0, p0, Landroid/webkit/MagnifyView;->invContentScale:F
 
-    .line 137
+    .line 160
     iget v0, p0, Landroid/webkit/MagnifyView;->densityFactor:F
 
     cmpg-float v0, p1, v0
@@ -647,14 +727,14 @@
     :goto_0
     iput v0, p0, Landroid/webkit/MagnifyView;->magnifyRatio:F
 
-    .line 140
+    .line 163
     :cond_0
     iput p2, p0, Landroid/webkit/MagnifyView;->centerX:F
 
-    .line 141
+    .line 164
     iput p3, p0, Landroid/webkit/MagnifyView;->centerY:F
 
-    .line 142
+    .line 165
     iget v0, p0, Landroid/webkit/MagnifyView;->halfW:F
 
     mul-float/2addr v0, v2
@@ -667,7 +747,7 @@
 
     iput v0, p0, Landroid/webkit/MagnifyView;->contentW:I
 
-    .line 143
+    .line 166
     iget v0, p0, Landroid/webkit/MagnifyView;->halfH:F
 
     mul-float/2addr v0, v2
@@ -680,13 +760,13 @@
 
     iput v0, p0, Landroid/webkit/MagnifyView;->contentH:I
 
-    .line 144
+    .line 167
     iput p6, p0, Landroid/webkit/MagnifyView;->contentScrollX:I
 
-    .line 145
+    .line 168
     iput p7, p0, Landroid/webkit/MagnifyView;->contentScrollY:I
 
-    .line 149
+    .line 172
     iget v0, p0, Landroid/webkit/MagnifyView;->centerX:F
 
     iget v1, p0, Landroid/webkit/MagnifyView;->halfW:F
@@ -695,7 +775,7 @@
 
     iput v0, p0, Landroid/webkit/MagnifyView;->offsetX:F
 
-    .line 150
+    .line 173
     iget v0, p0, Landroid/webkit/MagnifyView;->centerY:F
 
     iget v1, p0, Landroid/webkit/MagnifyView;->halfH:F
@@ -712,10 +792,10 @@
 
     iput v0, p0, Landroid/webkit/MagnifyView;->offsetY:F
 
-    .line 159
+    .line 182
     return-void
 
-    .line 137
+    .line 160
     :cond_1
     iget v0, p0, Landroid/webkit/MagnifyView;->densityFactor:F
 
@@ -753,21 +833,21 @@
 
     const/4 v3, 0x0
 
-    .line 75
+    .line 98
     int-to-float v0, p1
 
     mul-float/2addr v0, v1
 
     iput v0, p0, Landroid/webkit/MagnifyView;->halfW:F
 
-    .line 76
+    .line 99
     int-to-float v0, p2
 
     mul-float/2addr v0, v1
 
     iput v0, p0, Landroid/webkit/MagnifyView;->halfH:F
 
-    .line 77
+    .line 100
     iget-object v0, p0, Landroid/webkit/MagnifyView;->clip:Landroid/graphics/RectF;
 
     int-to-float v1, p1
@@ -776,7 +856,7 @@
 
     invoke-virtual {v0, v4, v4, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 78
+    .line 101
     iget-object v0, p0, Landroid/webkit/MagnifyView;->mll:Landroid/widget/FrameLayout$LayoutParams;
 
     iget-object v1, p0, Landroid/webkit/MagnifyView;->bgPadding:Landroid/graphics/Rect;
@@ -793,12 +873,12 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 79
+    .line 102
     iget-object v0, p0, Landroid/webkit/MagnifyView;->ml:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v3, v3}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 81
+    .line 104
     iget-object v0, p0, Landroid/webkit/MagnifyView;->mContentBMP:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
@@ -819,30 +899,30 @@
 
     if-eq v0, p2, :cond_2
 
-    .line 82
+    .line 105
     :cond_0
     iget-object v0, p0, Landroid/webkit/MagnifyView;->mContentBMP:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_1
 
-    .line 83
+    .line 106
     iget-object v0, p0, Landroid/webkit/MagnifyView;->mContentBMP:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 85
+    .line 108
     :cond_1
     iput-object v5, p0, Landroid/webkit/MagnifyView;->mBMPcanvas:Landroid/graphics/Canvas;
 
-    .line 86
+    .line 109
     iput-object v5, p0, Landroid/webkit/MagnifyView;->mContentBMP:Landroid/graphics/Bitmap;
 
-    .line 88
+    .line 111
     if-lez p1, :cond_2
 
     if-lez p2, :cond_2
 
-    .line 89
+    .line 112
     sget-object v0, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
     invoke-static {p1, p2, v0}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -851,7 +931,7 @@
 
     iput-object v0, p0, Landroid/webkit/MagnifyView;->mContentBMP:Landroid/graphics/Bitmap;
 
-    .line 90
+    .line 113
     new-instance v0, Landroid/graphics/Canvas;
 
     iget-object v1, p0, Landroid/webkit/MagnifyView;->mContentBMP:Landroid/graphics/Bitmap;
@@ -860,12 +940,12 @@
 
     iput-object v0, p0, Landroid/webkit/MagnifyView;->mBMPcanvas:Landroid/graphics/Canvas;
 
-    .line 91
+    .line 114
     iget-object v0, p0, Landroid/webkit/MagnifyView;->mBMPcanvas:Landroid/graphics/Canvas;
 
     invoke-virtual {v0, v3, v3, p1, p2}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 95
+    .line 118
     :cond_2
     return-void
 .end method
@@ -881,10 +961,10 @@
 
     const/4 v3, 0x0
 
-    .line 106
+    .line 129
     iput p2, p0, Landroid/webkit/MagnifyView;->parentXOffset:I
 
-    .line 107
+    .line 130
     iget-object v1, p0, Landroid/webkit/MagnifyView;->magnifyWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v1}, Landroid/widget/PopupWindow;->isShowing()Z
@@ -893,19 +973,19 @@
 
     if-eqz v1, :cond_0
 
-    .line 108
+    .line 131
     invoke-virtual {p0}, Landroid/webkit/MagnifyView;->invalidate()V
 
-    .line 109
+    .line 132
     iget-object v1, p0, Landroid/webkit/MagnifyView;->magnifyWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v1, v3, p3, v2, v2}, Landroid/widget/PopupWindow;->update(IIII)V
 
-    .line 120
+    .line 143
     :goto_0
     return-void
 
-    .line 113
+    .line 136
     :cond_0
     iget-object v1, p0, Landroid/webkit/MagnifyView;->mContext:Landroid/content/Context;
 
@@ -921,7 +1001,7 @@
 
     move-result-object v0
 
-    .line 114
+    .line 137
     .local v0, display:Landroid/view/Display;
     iget-object v1, p0, Landroid/webkit/MagnifyView;->magnifyWindow:Landroid/widget/PopupWindow;
 
@@ -931,7 +1011,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setWidth(I)V
 
-    .line 116
+    .line 139
     iget-object v1, p0, Landroid/webkit/MagnifyView;->magnifyWindow:Landroid/widget/PopupWindow;
 
     iget-object v2, p0, Landroid/webkit/MagnifyView;->ml:Landroid/widget/FrameLayout;
@@ -942,12 +1022,12 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setHeight(I)V
 
-    .line 117
+    .line 140
     iget-object v1, p0, Landroid/webkit/MagnifyView;->magnifyWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v1, p1, v3, v3, p3}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 118
+    .line 141
     invoke-virtual {p0}, Landroid/webkit/MagnifyView;->invalidate()V
 
     goto :goto_0

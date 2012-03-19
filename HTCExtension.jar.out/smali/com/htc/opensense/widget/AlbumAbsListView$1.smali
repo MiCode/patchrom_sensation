@@ -40,7 +40,7 @@
 
     iput-object p3, p0, Lcom/htc/opensense/widget/AlbumAbsListView$1;->val$performClick:Lcom/htc/opensense/widget/AlbumAbsListView$PerformClick;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -66,7 +66,7 @@
     .line 2089
     iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView$1;->this$0:Lcom/htc/opensense/widget/AlbumAbsListView;
 
-    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataChanged:Z
+    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     if-nez v0, :cond_0
 

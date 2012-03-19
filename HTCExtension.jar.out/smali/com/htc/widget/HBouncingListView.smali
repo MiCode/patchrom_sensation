@@ -46,7 +46,7 @@
 
     .prologue
     .line 31
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     sput-boolean v0, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
 
@@ -297,7 +297,7 @@
 
     .prologue
     .line 30
-    iget v0, p0, Lcom/htc/widget/HBouncingListView;->mPaddingRight:I
+    iget v0, p0, Lcom/htc/widget/HtcAbsListView2;->mPaddingRight:I
 
     return v0
 .end method
@@ -308,7 +308,7 @@
 
     .prologue
     .line 30
-    iget v0, p0, Lcom/htc/widget/HBouncingListView;->mPaddingLeft:I
+    iget v0, p0, Lcom/htc/widget/HtcAbsListView2;->mPaddingLeft:I
 
     return v0
 .end method
@@ -319,7 +319,7 @@
 
     .prologue
     .line 30
-    iget v0, p0, Lcom/htc/widget/HBouncingListView;->mPaddingBottom:I
+    iget v0, p0, Lcom/htc/widget/HtcAbsListView2;->mPaddingBottom:I
 
     return v0
 .end method
@@ -330,7 +330,7 @@
 
     .prologue
     .line 30
-    iget v0, p0, Lcom/htc/widget/HBouncingListView;->mPaddingTop:I
+    iget v0, p0, Lcom/htc/widget/HtcAbsListView2;->mPaddingTop:I
 
     return v0
 .end method
@@ -341,7 +341,7 @@
 
     .prologue
     .line 30
-    iget v0, p0, Lcom/htc/widget/HBouncingListView;->mPaddingBottom:I
+    iget v0, p0, Lcom/htc/widget/HtcAbsListView2;->mPaddingBottom:I
 
     return v0
 .end method
@@ -352,7 +352,7 @@
 
     .prologue
     .line 30
-    iget v0, p0, Lcom/htc/widget/HBouncingListView;->mPaddingTop:I
+    iget v0, p0, Lcom/htc/widget/HtcAbsListView2;->mPaddingTop:I
 
     return v0
 .end method
@@ -484,7 +484,7 @@
 
     .prologue
     .line 30
-    iget v0, p0, Lcom/htc/widget/HBouncingListView;->mPaddingRight:I
+    iget v0, p0, Lcom/htc/widget/HtcAbsListView2;->mPaddingRight:I
 
     return v0
 .end method
@@ -495,7 +495,7 @@
 
     .prologue
     .line 30
-    iget v0, p0, Lcom/htc/widget/HBouncingListView;->mPaddingLeft:I
+    iget v0, p0, Lcom/htc/widget/HtcAbsListView2;->mPaddingLeft:I
 
     return v0
 .end method
@@ -560,7 +560,7 @@
     if-eqz v5, :cond_8
 
     .line 680
-    iget-object v5, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->left:I
 
@@ -594,7 +594,7 @@
 
     move-result v6
 
-    iget-object v7, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v7, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v7, v7, Landroid/graphics/Rect;->right:I
 
@@ -646,7 +646,7 @@
     if-eqz v5, :cond_d
 
     .line 708
-    iget v5, p0, Lcom/htc/widget/HBouncingListView;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     if-eqz v5, :cond_a
 
@@ -780,7 +780,7 @@
 
     .line 691
     :cond_8
-    iget-object v5, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->top:I
 
@@ -814,7 +814,7 @@
 
     move-result v6
 
-    iget-object v7, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v7, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v7, v7, Landroid/graphics/Rect;->bottom:I
 
@@ -917,7 +917,7 @@
     .line 728
     .end local v2           #childrenWidth:I
     :cond_d
-    iget v5, p0, Lcom/htc/widget/HBouncingListView;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     if-eqz v5, :cond_e
 
@@ -1480,7 +1480,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v14, v0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v14, v14, Landroid/graphics/Rect;->left:I
 
@@ -1534,7 +1534,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v14, v0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v14, v14, Landroid/graphics/Rect;->right:I
 
@@ -1649,7 +1649,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v14, v0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v14, v14, Landroid/graphics/Rect;->top:I
 
@@ -1700,7 +1700,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v14, v0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v14, v14, Landroid/graphics/Rect;->bottom:I
 
@@ -1778,7 +1778,7 @@
     return v0
 
     :cond_1
-    iget v1, p0, Lcom/htc/widget/HBouncingListView;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
 
@@ -1786,7 +1786,7 @@
 
     add-int/2addr v1, v2
 
-    iget v2, p0, Lcom/htc/widget/HBouncingListView;->mItemCount:I
+    iget v2, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     if-ne v1, v2, :cond_0
 
@@ -1808,7 +1808,7 @@
 
     move-result v2
 
-    iget-object v3, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v3, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v3, v3, Landroid/graphics/Rect;->bottom:I
 
@@ -1846,7 +1846,7 @@
     return v0
 
     :cond_1
-    iget v1, p0, Lcom/htc/widget/HBouncingListView;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     if-nez v1, :cond_0
 
@@ -1858,7 +1858,7 @@
 
     move-result v1
 
-    iget-object v2, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v2, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v2, v2, Landroid/graphics/Rect;->left:I
 
@@ -1894,7 +1894,7 @@
     return v0
 
     :cond_1
-    iget v1, p0, Lcom/htc/widget/HBouncingListView;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
 
@@ -1902,7 +1902,7 @@
 
     add-int/2addr v1, v2
 
-    iget v2, p0, Lcom/htc/widget/HBouncingListView;->mItemCount:I
+    iget v2, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     if-ne v1, v2, :cond_0
 
@@ -1924,7 +1924,7 @@
 
     move-result v2
 
-    iget-object v3, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v3, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v3, v3, Landroid/graphics/Rect;->right:I
 
@@ -1962,7 +1962,7 @@
     return v0
 
     :cond_1
-    iget v1, p0, Lcom/htc/widget/HBouncingListView;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     if-nez v1, :cond_0
 
@@ -1974,7 +1974,7 @@
 
     move-result v1
 
-    iget-object v2, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v2, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v2, v2, Landroid/graphics/Rect;->top:I
 
@@ -2050,13 +2050,13 @@
 
     move-result v0
 
-    iget-object v1, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->top:I
 
     sub-int/2addr v0, v1
 
-    iget-object v1, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->bottom:I
 
@@ -2134,13 +2134,13 @@
 
     move-result v0
 
-    iget-object v1, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v0, v1
 
-    iget-object v1, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->right:I
 
@@ -2190,13 +2190,13 @@
 
     move-result v0
 
-    iget-object v1, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v0, v1
 
-    iget-object v1, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->right:I
 
@@ -2246,13 +2246,13 @@
 
     move-result v0
 
-    iget-object v1, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->top:I
 
     sub-int/2addr v0, v1
 
-    iget-object v1, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->bottom:I
 
@@ -2334,7 +2334,7 @@
 
     .line 274
     :cond_1
-    iget-object v2, p0, Lcom/htc/widget/HBouncingListView;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
+    iget-object v2, p0, Lcom/htc/widget/HtcAbsListView2;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
 
     if-nez v2, :cond_2
 
@@ -2343,7 +2343,7 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/htc/widget/HBouncingListView;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
+    iput-object v2, p0, Lcom/htc/widget/HtcAbsListView2;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
 
     .line 277
     :cond_2
@@ -2381,7 +2381,7 @@
     if-gtz p1, :cond_3
 
     .line 283
-    iget-object v2, p0, Lcom/htc/widget/HBouncingListView;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
+    iget-object v2, p0, Lcom/htc/widget/HtcAbsListView2;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
 
     check-cast v2, Lcom/htc/widget/HBouncingListView$BouncingFlingRunnable;
 
@@ -2393,7 +2393,7 @@
 
     .line 286
     :cond_3
-    iget-object v2, p0, Lcom/htc/widget/HBouncingListView;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
+    iget-object v2, p0, Lcom/htc/widget/HtcAbsListView2;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
 
     check-cast v2, Lcom/htc/widget/HBouncingListView$BouncingFlingRunnable;
 
@@ -2409,7 +2409,7 @@
     .end local v0           #estimateDistance:I
     .end local v1           #totalDistance:I
     :cond_4
-    iget-object v2, p0, Lcom/htc/widget/HBouncingListView;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
+    iget-object v2, p0, Lcom/htc/widget/HtcAbsListView2;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
 
     neg-int v3, p1
 
@@ -2497,18 +2497,18 @@
     invoke-super {p0}, Lcom/htc/widget/HtcListViewCore2;->onScrollToBoundary()V
 
     .line 785
-    iget-object v0, p0, Lcom/htc/widget/HBouncingListView;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
+    iget-object v0, p0, Lcom/htc/widget/HtcAbsListView2;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
 
     if-eqz v0, :cond_1
 
-    iget v0, p0, Lcom/htc/widget/HBouncingListView;->mTouchMode:I
+    iget v0, p0, Lcom/htc/widget/HtcAbsListView2;->mTouchMode:I
 
     const/4 v1, 0x4
 
     if-ne v0, v1, :cond_1
 
     .line 786
-    iget-object v0, p0, Lcom/htc/widget/HBouncingListView;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
+    iget-object v0, p0, Lcom/htc/widget/HtcAbsListView2;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcAbsListView2$FlingRunnable;->endFling()V
 
@@ -2555,7 +2555,7 @@
 
     .line 220
     :cond_0
-    iget-object v5, p0, Lcom/htc/widget/HBouncingListView;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
+    iget-object v5, p0, Lcom/htc/widget/HtcAbsListView2;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
 
     if-nez v5, :cond_1
 
@@ -2564,7 +2564,7 @@
 
     move-result-object v5
 
-    iput-object v5, p0, Lcom/htc/widget/HBouncingListView;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
+    iput-object v5, p0, Lcom/htc/widget/HtcAbsListView2;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
 
     .line 225
     :cond_1
@@ -2582,7 +2582,7 @@
     if-eqz v5, :cond_2
 
     .line 227
-    iget-object v5, p0, Lcom/htc/widget/HBouncingListView;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
+    iget-object v5, p0, Lcom/htc/widget/HtcAbsListView2;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
 
     check-cast v5, Lcom/htc/widget/HBouncingListView$BouncingFlingRunnable;
 
@@ -2594,7 +2594,7 @@
 
     move-result v6
 
-    iget-object v7, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v7, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v7, v7, Landroid/graphics/Rect;->left:I
 
@@ -2623,7 +2623,7 @@
 
     move-result v5
 
-    iget-object v6, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v6, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->right:I
 
@@ -2671,7 +2671,7 @@
 
     sub-int/2addr v5, v6
 
-    iget-object v6, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v6, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->left:I
 
@@ -2692,7 +2692,7 @@
     .line 238
     .local v4, scrollDistance:I
     :goto_1
-    iget-object v5, p0, Lcom/htc/widget/HBouncingListView;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
+    iget-object v5, p0, Lcom/htc/widget/HtcAbsListView2;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
 
     check-cast v5, Lcom/htc/widget/HBouncingListView$BouncingFlingRunnable;
 
@@ -2729,7 +2729,7 @@
     if-eqz v5, :cond_6
 
     .line 246
-    iget-object v5, p0, Lcom/htc/widget/HBouncingListView;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
+    iget-object v5, p0, Lcom/htc/widget/HtcAbsListView2;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
 
     check-cast v5, Lcom/htc/widget/HBouncingListView$BouncingFlingRunnable;
 
@@ -2741,7 +2741,7 @@
 
     move-result v6
 
-    iget-object v7, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v7, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v7, v7, Landroid/graphics/Rect;->top:I
 
@@ -2770,7 +2770,7 @@
 
     move-result v5
 
-    iget-object v6, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v6, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->bottom:I
 
@@ -2818,7 +2818,7 @@
 
     sub-int/2addr v5, v6
 
-    iget-object v6, p0, Lcom/htc/widget/HBouncingListView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v6, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->top:I
 
@@ -2839,7 +2839,7 @@
     .line 257
     .restart local v4       #scrollDistance:I
     :goto_2
-    iget-object v5, p0, Lcom/htc/widget/HBouncingListView;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
+    iget-object v5, p0, Lcom/htc/widget/HtcAbsListView2;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
 
     check-cast v5, Lcom/htc/widget/HBouncingListView$BouncingFlingRunnable;
 

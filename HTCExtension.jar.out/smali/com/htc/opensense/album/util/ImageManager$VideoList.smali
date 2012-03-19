@@ -432,10 +432,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoList;->mCursor:Landroid/database/Cursor;
+    iput-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     .line 7438
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     if-nez v0, :cond_0
 
@@ -448,11 +448,11 @@
 
     .line 7441
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -466,7 +466,7 @@
     .line 7444
     .local v8, row:I
     :goto_0
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     invoke-virtual {p0}, Lcom/htc/opensense/album/util/ImageManager$VideoList;->indexId()I
 
@@ -478,7 +478,7 @@
 
     .line 7445
     .local v2, imageId:J
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     invoke-virtual {p0}, Lcom/htc/opensense/album/util/ImageManager$VideoList;->indexDateTaken()I
 
@@ -490,7 +490,7 @@
 
     .line 7446
     .local v6, dateTaken:J
-    iget-object v10, p0, Lcom/htc/opensense/album/util/ImageManager$VideoList;->mCache:Ljava/util/HashMap;
+    iget-object v10, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCache:Ljava/util/HashMap;
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -513,7 +513,7 @@
     invoke-virtual {v10, v11, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 7447
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$VideoList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -959,7 +959,7 @@
 
     .prologue
     .line 7513
-    iget v1, p0, Lcom/htc/opensense/album/util/ImageManager$VideoList;->mSort:I
+    iget v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mSort:I
 
     const/4 v2, 0x1
 
@@ -1041,7 +1041,7 @@
 
     .line 7416
     .local v0, where:Ljava/lang/String;
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$VideoList;->mWhereStatement:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mWhereStatement:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
@@ -1060,7 +1060,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$VideoList;->mWhereStatement:Ljava/lang/String;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mWhereStatement:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1072,7 +1072,7 @@
 
     .line 7419
     :cond_0
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$VideoList;->mBucketId:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mBucketId:Ljava/lang/String;
 
     if-eqz v1, :cond_1
 
@@ -1091,7 +1091,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$VideoList;->mBucketId:Ljava/lang/String;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mBucketId:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

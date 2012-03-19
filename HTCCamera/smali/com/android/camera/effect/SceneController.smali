@@ -85,7 +85,7 @@
 
     .line 61
     :cond_0
-    iget-object v1, p0, Lcom/android/camera/effect/SceneController;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -138,7 +138,7 @@
 
     .line 69
     :cond_1
-    iget-object v1, p0, Lcom/android/camera/effect/SceneController;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "There is no camera controller for scene setting"
 

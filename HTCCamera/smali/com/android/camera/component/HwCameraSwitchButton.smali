@@ -105,7 +105,7 @@
     .line 47
     .end local v1           #eventManager:Lcom/android/camera/EventManager;
     :pswitch_0
-    iget-object v2, p0, Lcom/android/camera/component/HwCameraSwitchButton;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v3, "Initialize mode to CAMERA_MODE"
 
@@ -118,7 +118,7 @@
 
     .line 51
     :pswitch_1
-    iget-object v2, p0, Lcom/android/camera/component/HwCameraSwitchButton;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v3, "Initialize mode to VIDEO_MODE"
 
@@ -131,7 +131,7 @@
 
     .line 55
     :pswitch_2
-    iget-object v2, p0, Lcom/android/camera/component/HwCameraSwitchButton;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v3, "Unable to initialize mode"
 
@@ -256,7 +256,7 @@
     if-nez v0, :cond_1
 
     .line 210
-    iget-object v0, p0, Lcom/android/camera/component/HwCameraSwitchButton;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Capture UI is closed, cancel switching mode"
 
@@ -274,7 +274,7 @@
     packed-switch v0, :pswitch_data_0
 
     .line 225
-    iget-object v0, p0, Lcom/android/camera/component/HwCameraSwitchButton;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -312,7 +312,7 @@
     if-nez v9, :cond_0
 
     .line 230
-    iget-object v0, p0, Lcom/android/camera/component/HwCameraSwitchButton;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Fail to switch camera mode"
 
@@ -405,7 +405,7 @@
     packed-switch v2, :pswitch_data_0
 
     .line 119
-    iget-object v4, p0, Lcom/android/camera/component/HwCameraSwitchButton;->TAG:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -462,7 +462,7 @@
 
     .line 126
     .local v1, ex:Ljava/lang/Throwable;
-    iget-object v4, p0, Lcom/android/camera/component/HwCameraSwitchButton;->TAG:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v5, "Cannot get hardware camera switch button state"
 
@@ -538,7 +538,7 @@
     packed-switch v8, :pswitch_data_0
 
     .line 191
-    iget-object v0, p0, Lcom/android/camera/component/HwCameraSwitchButton;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 

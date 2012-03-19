@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 5487
+    .line 5490
     iput-object p1, p0, Lcom/android/phone/PhoneApp$HtcScreenStateReceiver;->this$0:Lcom/android/phone/PhoneApp;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 5487
+    .line 5490
     invoke-direct {p0, p1}, Lcom/android/phone/PhoneApp$HtcScreenStateReceiver;-><init>(Lcom/android/phone/PhoneApp;)V
 
     return-void
@@ -52,12 +52,12 @@
     .parameter "intent"
 
     .prologue
-    .line 5490
+    .line 5493
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5491
+    .line 5494
     .local v0, action:Ljava/lang/String;
     invoke-static {}, Lcom/android/phone/PhoneApp;->access$400()Z
 
@@ -65,7 +65,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 5492
+    .line 5495
     const-string v1, "PhoneApp"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -88,7 +88,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5494
+    .line 5497
     :cond_0
     const-string v1, "android.intent.action.SCREEN_OFF"
 
@@ -98,19 +98,19 @@
 
     if-eqz v1, :cond_2
 
-    .line 5495
+    .line 5498
     invoke-static {}, Lcom/android/phone/NotificationMgr;->getDefault()Lcom/android/phone/NotificationMgr;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/android/phone/NotificationMgr;->pauseGlow()V
 
-    .line 5499
+    .line 5502
     :cond_1
     :goto_0
     return-void
 
-    .line 5496
+    .line 5499
     :cond_2
     const-string v1, "android.intent.action.SCREEN_ON"
 
@@ -120,7 +120,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 5497
+    .line 5500
     invoke-static {}, Lcom/android/phone/NotificationMgr;->getDefault()Lcom/android/phone/NotificationMgr;
 
     move-result-object v1

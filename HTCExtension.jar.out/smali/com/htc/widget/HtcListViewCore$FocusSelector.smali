@@ -34,7 +34,7 @@
     .line 1157
     iput-object p1, p0, Lcom/htc/widget/HtcListViewCore$FocusSelector;->this$0:Lcom/htc/widget/HtcListViewCore;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -6,7 +6,7 @@
 # static fields
 .field public static final CALENDAR_EVENT_DATA:Ljava/lang/String; = "calendar_event_data"
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field public static final DEFAULT_DATE_FORMAT:Ljava/lang/String; = "EE, MMM d, yyyy"
 
@@ -531,52 +531,6 @@
 
     invoke-virtual {v0, v8}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 167
-    :goto_1
-    const-string v0, "CalendarEventPanel"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "setDateTime(): mTime = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/phone/widget/CalendarEventPanel;->mTime:Landroid/widget/TextView;
-
-    invoke-virtual {v2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", mDate = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/phone/widget/CalendarEventPanel;->mDate:Landroid/widget/TextView;
-
-    invoke-virtual {v2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     goto :goto_0
 
     .line 163
@@ -587,7 +541,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method private setDescription(Ljava/lang/String;)V
@@ -800,7 +754,7 @@
 .end method
 
 .method private update()V
-    .locals 10
+    .locals 8
 
     .prologue
     .line 114
@@ -847,79 +801,8 @@
 
     move-result-wide v3
 
-    .line 122
-    .local v3, end:J
-    const-string v7, "CalendarEventPanel"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "update(): title = "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, ", location = "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, ", begin = "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, ", end = "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-static {v3, v4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, ", description = "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 127
+    .local v3, end:J
     invoke-direct {p0, v6}, Lcom/android/phone/widget/CalendarEventPanel;->setTitle(Ljava/lang/String;)V
 
     .line 128
@@ -944,16 +827,9 @@
 
 # virtual methods
 .method public hide()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 106
-    const-string v0, "CalendarEventPanel"
-
-    const-string v1, "hide()"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 109
     const/16 v0, 0x8
 
@@ -1093,35 +969,10 @@
 .end method
 
 .method public show()V
-    .locals 4
+    .locals 2
 
     .prologue
-    const/4 v3, 0x0
-
-    .line 95
-    const-string v0, "CalendarEventPanel"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "show(): mEvent = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/phone/widget/CalendarEventPanel;->mEvent:Lcom/htc/util/calendar/EventInstance;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v1, 0x0
 
     .line 97
     iget-object v0, p0, Lcom/android/phone/widget/CalendarEventPanel;->mEvent:Lcom/htc/util/calendar/EventInstance;
@@ -1129,14 +980,14 @@
     if-eqz v0, :cond_0
 
     .line 98
-    invoke-virtual {p0, v3}, Lcom/android/phone/widget/CalendarEventPanel;->setVisibility(I)V
+    invoke-virtual {p0, v1}, Lcom/android/phone/widget/CalendarEventPanel;->setVisibility(I)V
 
     .line 100
     :cond_0
-    invoke-virtual {p0, v3, v3}, Lcom/android/phone/widget/CalendarEventPanel;->scrollTo(II)V
+    invoke-virtual {p0, v1, v1}, Lcom/android/phone/widget/CalendarEventPanel;->scrollTo(II)V
 
     .line 101
-    iput-boolean v3, p0, Lcom/android/phone/widget/CalendarEventPanel;->mHidden:Z
+    iput-boolean v1, p0, Lcom/android/phone/widget/CalendarEventPanel;->mHidden:Z
 
     .line 102
     return-void

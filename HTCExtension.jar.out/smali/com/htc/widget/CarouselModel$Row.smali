@@ -30,7 +30,7 @@
     .line 514
     iput-object p1, p0, Lcom/htc/widget/CarouselModel$Row;->this$0:Lcom/htc/widget/CarouselModel;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 515
     iput-object p2, p0, Lcom/htc/widget/CarouselModel$Row;->mRow:[Ljava/lang/Object;

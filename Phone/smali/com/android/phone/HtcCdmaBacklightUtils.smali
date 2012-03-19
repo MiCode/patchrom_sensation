@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static LOG_TAG:Ljava/lang/String; = null
 
@@ -42,7 +42,7 @@
     const/4 v0, 0x0
 
     .line 28
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 19
     iput v0, p0, Lcom/android/phone/HtcCdmaBacklightUtils;->mBatteryLevel:I
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public processBacklight()V
-    .locals 4
+    .locals 3
 
     .prologue
     .line 37
@@ -81,37 +81,8 @@
 
     div-int v0, v1, v2
 
-    .line 40
-    :cond_0
-    sget-object v1, Lcom/android/phone/HtcCdmaBacklightUtils;->LOG_TAG:Ljava/lang/String;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Battery percentage "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " %"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 41
+    :cond_0
     const/16 v1, 0x32
 
     if-le v0, v1, :cond_1
@@ -120,13 +91,6 @@
     const/16 v1, 0xff
 
     invoke-virtual {p0, v1}, Lcom/android/phone/HtcCdmaBacklightUtils;->setBrightness(I)V
-
-    .line 43
-    sget-object v1, Lcom/android/phone/HtcCdmaBacklightUtils;->LOG_TAG:Ljava/lang/String;
-
-    const-string v2, "Highest backlight"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 45
     :cond_1
@@ -154,13 +118,6 @@
     .line 51
     .local v0, OldBrightness:I
     invoke-virtual {p0, v0}, Lcom/android/phone/HtcCdmaBacklightUtils;->setBrightness(I)V
-
-    .line 52
-    sget-object v1, Lcom/android/phone/HtcCdmaBacklightUtils;->LOG_TAG:Ljava/lang/String;
-
-    const-string v2, "Reset backlight"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 

@@ -28,7 +28,7 @@
     const/4 v0, 0x2
 
     .line 23
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 24
     iput p1, p0, Landroid/graphics/Interpolator;->mValueCount:I
@@ -54,7 +54,7 @@
 
     .prologue
     .line 29
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
     iput p1, p0, Landroid/graphics/Interpolator;->mValueCount:I

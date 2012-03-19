@@ -89,7 +89,7 @@
 
     .prologue
     .line 17
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 18
     iput p1, p0, Lcom/scalado/caps/filter/photoart/Lomo$Style;->value:I

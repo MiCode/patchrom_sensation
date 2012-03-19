@@ -75,7 +75,7 @@
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v12, "handleMessage() Unknown event type: "
+    const-string v12, "handleMessage() Unknown event type: "
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -326,8 +326,6 @@
     throw v10
 
     .line 1099
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1

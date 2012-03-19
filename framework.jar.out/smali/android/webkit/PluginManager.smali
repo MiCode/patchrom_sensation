@@ -74,7 +74,7 @@
 
     .prologue
     .line 83
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 84
     iput-object p1, p0, Landroid/webkit/PluginManager;->mContext:Landroid/content/Context;
@@ -553,7 +553,7 @@
     .restart local v15       #serviceInfo:Landroid/content/pm/ServiceInfo;
     :cond_1
     :try_start_1
-    iget-object v0, v15, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v15, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v17, v0
 
@@ -680,7 +680,7 @@
     if-eqz v17, :cond_0
 
     .line 169
-    iget-object v0, v15, Landroid/content/pm/ServiceInfo;->metaData:Landroid/os/Bundle;
+    iget-object v0, v15, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
     move-object/from16 v17, v0
 
@@ -699,7 +699,7 @@
 
     move-result-object v19
 
-    iget-object v0, v15, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v0, v15, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v20, v0
 
@@ -747,7 +747,7 @@
 
     move-result-object v19
 
-    iget-object v0, v15, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v15, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v20, v0
 
@@ -774,7 +774,7 @@
     .restart local v11       #pkgInfo:Landroid/content/pm/PackageInfo;
     .restart local v16       #updatedSystemFlags:I
     :cond_3
-    iget-object v0, v15, Landroid/content/pm/ServiceInfo;->metaData:Landroid/os/Bundle;
+    iget-object v0, v15, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
     move-object/from16 v17, v0
 
@@ -836,11 +836,11 @@
     .line 181
     :cond_4
     :try_start_3
-    iget-object v0, v15, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v15, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v17, v0
 
-    iget-object v0, v15, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v0, v15, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v19, v0
 
@@ -875,7 +875,7 @@
 
     move-result-object v19
 
-    iget-object v0, v15, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v0, v15, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v20, v0
 
@@ -926,7 +926,7 @@
 
     move-result-object v19
 
-    iget-object v0, v15, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v15, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v20, v0
 
@@ -965,7 +965,7 @@
 
     move-result-object v19
 
-    iget-object v0, v15, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v0, v15, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     move-object/from16 v20, v0
 

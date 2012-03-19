@@ -107,7 +107,7 @@
     const/4 v1, 0x0
 
     .line 12
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 15
     iput-object v1, p0, Lcom/android/camera/FaceDetection;->mHTCCamera:Lcom/android/camera/HTCCamera;
@@ -2326,7 +2326,7 @@
 
     .line 893
     .local v0, display:Landroid/graphics/Rect;
-    invoke-virtual {v3, v0}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
+    invoke-virtual {v3, v0}, Landroid/view/SurfaceView;->getHitRect(Landroid/graphics/Rect;)V
 
     .line 895
     invoke-direct {p0, p1, v1, v0, v2}, Lcom/android/camera/FaceDetection;->mapRect_Preview2Screen(Lcom/android/camera/FaceDetection$Face;Landroid/graphics/Rect;Landroid/graphics/Rect;I)V

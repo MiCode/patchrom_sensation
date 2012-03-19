@@ -55,7 +55,7 @@
     .line 519
     iput-object p1, p0, Lcom/htc/widget/MoreExpandableHtcListView$ChangeChildrenRunnable;->this$0:Lcom/htc/widget/MoreExpandableHtcListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 521
     iput-object v0, p0, Lcom/htc/widget/MoreExpandableHtcListView$ChangeChildrenRunnable;->mSelf:Lcom/htc/widget/MoreExpandableItemInfo;

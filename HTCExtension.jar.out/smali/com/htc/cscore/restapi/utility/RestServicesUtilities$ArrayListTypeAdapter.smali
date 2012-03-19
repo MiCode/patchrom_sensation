@@ -35,7 +35,7 @@
     .prologue
     .line 711
     .local p0, this:Lcom/htc/cscore/restapi/utility/RestServicesUtilities$ArrayListTypeAdapter;,"Lcom/htc/cscore/restapi/utility/RestServicesUtilities$ArrayListTypeAdapter<TT;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

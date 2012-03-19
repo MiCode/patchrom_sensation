@@ -18,7 +18,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/DiscretePathEffect;->native_instance:I
+    iput v0, p0, Landroid/graphics/PathEffect;->native_instance:I
 
     .line 27
     return-void

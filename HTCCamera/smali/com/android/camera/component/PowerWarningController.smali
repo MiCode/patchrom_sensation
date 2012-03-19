@@ -72,6 +72,12 @@
 
     const/16 v1, 0x97
 
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    const/16 v1, 0xdc
+
     if-ne v0, v1, :cond_1
 
     :cond_0
@@ -153,7 +159,7 @@
     if-nez v1, :cond_0
 
     .line 52
-    iget-object v2, p0, Lcom/android/camera/component/PowerWarningController;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v3, "eventManager == null"
 

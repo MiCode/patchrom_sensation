@@ -9,7 +9,7 @@
 
 .field private static final DBG:Z = true
 
-.field private static final DBG_DETAIL:Z = true
+.field private static final DBG_DETAIL:Z = false
 
 .field private static final DISPLAY_ICCID_LEN:I = 0x8
 
@@ -470,7 +470,7 @@
 
     .prologue
     .line 40
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -1432,13 +1432,69 @@
 .end method
 
 .method private static final displayLimitedNumber(Ljava/lang/String;I)Ljava/lang/String;
-    .locals 0
+    .locals 4
     .parameter "number"
     .parameter "maxDisplayed"
 
     .prologue
-    .line 735
-    return-object p0
+    .line 738
+    const/4 v0, 0x0
+
+    .line 739
+    .local v0, displayText:Ljava/lang/String;
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-le v2, p1, :cond_0
+
+    .line 740
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    sub-int/2addr v2, p1
+
+    const-string v3, "********************************"
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    .line 741
+    .local v1, hiddenLength:I
+    const-string v2, "********************************"
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 746
+    .end local v1           #hiddenLength:I
+    :goto_0
+    return-object v0
+
+    .line 744
+    :cond_0
+    move-object v0, p0
+
+    goto :goto_0
 .end method
 
 .method public static final displayPhoneNumber(Ljava/lang/String;)Ljava/lang/String;

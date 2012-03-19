@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 94
+    .line 96
     iput-object p1, p0, Lcom/android/camera/component/ZoomBar$6;->this$0:Lcom/android/camera/component/ZoomBar;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,7 +42,7 @@
     .parameter "event"
 
     .prologue
-    .line 98
+    .line 100
     check-cast p1, Lcom/android/camera/OneValueEvent;
 
     .end local p1
@@ -58,17 +58,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 99
+    .line 101
     iget-object v0, p0, Lcom/android/camera/component/ZoomBar$6;->this$0:Lcom/android/camera/component/ZoomBar;
 
     #calls: Lcom/android/camera/component/ZoomBar;->hideZoomBar()V
     invoke-static {v0}, Lcom/android/camera/component/ZoomBar;->access$000(Lcom/android/camera/component/ZoomBar;)V
 
-    .line 102
+    .line 104
     :goto_0
     return-void
 
-    .line 101
+    .line 103
     :cond_0
     iget-object v0, p0, Lcom/android/camera/component/ZoomBar$6;->this$0:Lcom/android/camera/component/ZoomBar;
 

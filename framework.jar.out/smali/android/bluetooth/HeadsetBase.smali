@@ -71,7 +71,7 @@
 
     .prologue
     .line 78
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 79
     const/4 v0, 0x2
@@ -144,7 +144,7 @@
     const/4 v2, 0x1
 
     .line 95
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 96
     iput v2, p0, Landroid/bluetooth/HeadsetBase;->mDirection:I

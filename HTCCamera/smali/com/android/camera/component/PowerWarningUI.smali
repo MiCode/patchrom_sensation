@@ -143,7 +143,7 @@
     if-nez v0, :cond_0
 
     .line 153
-    iget-object v1, p0, Lcom/android/camera/component/PowerWarningUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "eventManager == null"
 
@@ -278,7 +278,7 @@
     if-nez v0, :cond_1
 
     .line 204
-    iget-object v0, p0, Lcom/android/camera/component/PowerWarningUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "m_HTCCamera == null"
 
@@ -296,7 +296,7 @@
     if-nez v0, :cond_2
 
     .line 208
-    iget-object v0, p0, Lcom/android/camera/component/PowerWarningUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "m_CameraThread == null"
 
@@ -390,7 +390,7 @@
 
     .line 113
     :cond_1
-    iget-object v0, p0, Lcom/android/camera/component/PowerWarningUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "HTCCamera.isBlockPowerWarning = true"
 

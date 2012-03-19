@@ -102,7 +102,7 @@
     const/4 v4, 0x0
 
     .line 48
-    iget-object v0, p0, Lcom/htc/widget/HtcListItemColorIcon;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItemImageComponent;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -114,10 +114,10 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/htc/widget/HtcListItemColorIcon;->mLeftMargin:I
+    iput v0, p0, Lcom/htc/widget/HtcListItemImageComponent;->mLeftMargin:I
 
     .line 49
-    iget-object v0, p0, Lcom/htc/widget/HtcListItemColorIcon;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItemImageComponent;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -129,11 +129,11 @@
 
     move-result v0
 
-    iget v1, p0, Lcom/htc/widget/HtcListItemColorIcon;->mLeftMargin:I
+    iget v1, p0, Lcom/htc/widget/HtcListItemImageComponent;->mLeftMargin:I
 
     sub-int/2addr v0, v1
 
-    iput v0, p0, Lcom/htc/widget/HtcListItemColorIcon;->mComponentWidth:I
+    iput v0, p0, Lcom/htc/widget/HtcListItemImageComponent;->mComponentWidth:I
 
     .line 50
     new-instance v0, Landroid/widget/ImageView;
@@ -143,7 +143,7 @@
     iput-object v0, p0, Lcom/htc/widget/HtcListItemColorIcon;->mBadge:Landroid/widget/ImageView;
 
     .line 51
-    iget-object v0, p0, Lcom/htc/widget/HtcListItemColorIcon;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItemImageComponent;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -202,7 +202,7 @@
 
     move-result v4
 
-    iget v5, p0, Lcom/htc/widget/HtcListItemColorIcon;->mIndicatorLeftShift:I
+    iget v5, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorLeftShift:I
 
     sub-int v2, v4, v5
 
@@ -243,7 +243,7 @@
     invoke-virtual {v4, v1, v3, v5, v6}, Landroid/widget/ImageView;->layout(IIII)V
 
     .line 130
-    iget v4, p0, Lcom/htc/widget/HtcListItemColorIcon;->mMode:I
+    iget v4, p0, Lcom/htc/widget/HtcListItemImageComponent;->mMode:I
 
     packed-switch v4, :pswitch_data_0
 
@@ -253,13 +253,13 @@
 
     .line 132
     :pswitch_0
-    iget-object v4, p0, Lcom/htc/widget/HtcListItemColorIcon;->mBubbleCount:Lcom/htc/widget/HtcListItemBubbleCount;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItemImageComponent;->mBubbleCount:Lcom/htc/widget/HtcListItemBubbleCount;
 
-    iget v5, p0, Lcom/htc/widget/HtcListItemColorIcon;->mBubbleSize:I
+    iget v5, p0, Lcom/htc/widget/HtcListItemImageComponent;->mBubbleSize:I
 
     sub-int v5, v2, v5
 
-    iget v6, p0, Lcom/htc/widget/HtcListItemColorIcon;->mBubbleSize:I
+    iget v6, p0, Lcom/htc/widget/HtcListItemImageComponent;->mBubbleSize:I
 
     sub-int v6, v0, v6
 
@@ -269,25 +269,25 @@
 
     .line 135
     :pswitch_1
-    iget-object v4, p0, Lcom/htc/widget/HtcListItemColorIcon;->mIndicator:Landroid/widget/ImageView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicator:Landroid/widget/ImageView;
 
-    iget v5, p0, Lcom/htc/widget/HtcListItemColorIcon;->mIndicatorSize:I
+    iget v5, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     sub-int v5, v2, v5
 
-    iget v6, p0, Lcom/htc/widget/HtcListItemColorIcon;->mIndicatorSize:I
+    iget v6, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     sub-int v6, v0, v6
 
     div-int/lit8 v6, v6, 0x2
 
-    iget v7, p0, Lcom/htc/widget/HtcListItemColorIcon;->mIndicatorSize:I
+    iget v7, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     sub-int v7, v0, v7
 
     div-int/lit8 v7, v7, 0x2
 
-    iget v8, p0, Lcom/htc/widget/HtcListItemColorIcon;->mIndicatorSize:I
+    iget v8, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     add-int/2addr v7, v8
 
@@ -320,7 +320,7 @@
 
     .line 143
     .local v0, parentBottom:I
-    iget v4, p0, Lcom/htc/widget/HtcListItemColorIcon;->mIndicatorLeftShift:I
+    iget v4, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorLeftShift:I
 
     add-int/lit8 v1, v4, 0x0
 
@@ -351,7 +351,7 @@
     invoke-virtual {v4, v5, v3, v2, v6}, Landroid/widget/ImageView;->layout(IIII)V
 
     .line 147
-    iget v4, p0, Lcom/htc/widget/HtcListItemColorIcon;->mMode:I
+    iget v4, p0, Lcom/htc/widget/HtcListItemImageComponent;->mMode:I
 
     packed-switch v4, :pswitch_data_0
 
@@ -361,13 +361,13 @@
 
     .line 149
     :pswitch_0
-    iget-object v4, p0, Lcom/htc/widget/HtcListItemColorIcon;->mBubbleCount:Lcom/htc/widget/HtcListItemBubbleCount;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItemImageComponent;->mBubbleCount:Lcom/htc/widget/HtcListItemBubbleCount;
 
-    iget v5, p0, Lcom/htc/widget/HtcListItemColorIcon;->mBubbleSize:I
+    iget v5, p0, Lcom/htc/widget/HtcListItemImageComponent;->mBubbleSize:I
 
     sub-int v5, v0, v5
 
-    iget v6, p0, Lcom/htc/widget/HtcListItemColorIcon;->mBubbleSize:I
+    iget v6, p0, Lcom/htc/widget/HtcListItemImageComponent;->mBubbleSize:I
 
     add-int/2addr v6, v1
 
@@ -377,25 +377,25 @@
 
     .line 152
     :pswitch_1
-    iget-object v4, p0, Lcom/htc/widget/HtcListItemColorIcon;->mIndicator:Landroid/widget/ImageView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicator:Landroid/widget/ImageView;
 
-    iget v5, p0, Lcom/htc/widget/HtcListItemColorIcon;->mIndicatorSize:I
+    iget v5, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     sub-int v5, v0, v5
 
     div-int/lit8 v5, v5, 0x2
 
-    iget v6, p0, Lcom/htc/widget/HtcListItemColorIcon;->mIndicatorSize:I
+    iget v6, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     add-int/2addr v6, v1
 
-    iget v7, p0, Lcom/htc/widget/HtcListItemColorIcon;->mIndicatorSize:I
+    iget v7, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     sub-int v7, v0, v7
 
     div-int/lit8 v7, v7, 0x2
 
-    iget v8, p0, Lcom/htc/widget/HtcListItemColorIcon;->mIndicatorSize:I
+    iget v8, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     add-int/2addr v7, v8
 
@@ -472,15 +472,15 @@
     :cond_0
     new-instance v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    iget v1, p0, Lcom/htc/widget/HtcListItemColorIcon;->mComponentWidth:I
+    iget v1, p0, Lcom/htc/widget/HtcListItemImageComponent;->mComponentWidth:I
 
-    iget v2, p0, Lcom/htc/widget/HtcListItemColorIcon;->mComponentHeight:I
+    iget v2, p0, Lcom/htc/widget/HtcListItemImageComponent;->mComponentHeight:I
 
     invoke-direct {v0, v1, v2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
     .line 100
     .local v0, params:Landroid/view/ViewGroup$MarginLayoutParams;
-    iget v1, p0, Lcom/htc/widget/HtcListItemColorIcon;->mLeftMargin:I
+    iget v1, p0, Lcom/htc/widget/HtcListItemImageComponent;->mLeftMargin:I
 
     invoke-virtual {v0, v1, v3, v3, v3}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
@@ -500,7 +500,7 @@
 
     .prologue
     .line 116
-    iget-boolean v0, p0, Lcom/htc/widget/HtcListItemColorIcon;->mIsRevert:Z
+    iget-boolean v0, p0, Lcom/htc/widget/HtcListItemComponent;->mIsRevert:Z
 
     if-eqz v0, :cond_0
 
@@ -656,18 +656,18 @@
     .line 85
     check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    iget v1, p0, Lcom/htc/widget/HtcListItemColorIcon;->mLeftMargin:I
+    iget v1, p0, Lcom/htc/widget/HtcListItemImageComponent;->mLeftMargin:I
 
     invoke-virtual {v0, v1, v2, v2, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
     .line 88
     :cond_0
-    iget v0, p0, Lcom/htc/widget/HtcListItemColorIcon;->mComponentWidth:I
+    iget v0, p0, Lcom/htc/widget/HtcListItemImageComponent;->mComponentWidth:I
 
     iput v0, p1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 89
-    iget v0, p0, Lcom/htc/widget/HtcListItemColorIcon;->mComponentHeight:I
+    iget v0, p0, Lcom/htc/widget/HtcListItemImageComponent;->mComponentHeight:I
 
     iput v0, p1, Landroid/view/ViewGroup$LayoutParams;->height:I
 

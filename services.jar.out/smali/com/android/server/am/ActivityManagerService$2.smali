@@ -165,30 +165,6 @@
 
     if-nez v3, :cond_3
 
-    .line 962
-    const-string v3, "sys.last_issue.type"
-
-    const-string v5, "1"
-
-    invoke-static {v3, v5}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 963
-    const-string v3, "sys.last_issue.time"
-
-    new-instance v5, Ljava/lang/Long;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v11
-
-    invoke-direct {v5, v11, v12}, Ljava/lang/Long;-><init>(J)V
-
-    invoke-virtual {v5}, Ljava/lang/Long;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v3, v5}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
-
     .line 967
     if-eqz v38, :cond_2
 
@@ -225,7 +201,7 @@
     .line 972
     .local v20, d:Landroid/app/Dialog;
     :goto_1
-    invoke-virtual/range {v20 .. v20}, Landroid/app/Dialog;->show()V
+    invoke-virtual/range {v20 .. v20}, Landroid/app/AlertDialog;->show()V
 
     .line 973
     move-object/from16 v0, v20
@@ -429,30 +405,6 @@
     #calls: Lcom/android/server/am/ActivityManagerService;->broadcastIntentLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;Ljava/lang/String;ZZII)I
     invoke-static/range {v3 .. v16}, Lcom/android/server/am/ActivityManagerService;->access$000(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;Ljava/lang/String;ZZII)I
 
-    .line 1002
-    const-string v3, "sys.last_issue.type"
-
-    const-string v4, "2"
-
-    invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1003
-    const-string v3, "sys.last_issue.time"
-
-    new-instance v4, Ljava/lang/Long;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v11
-
-    invoke-direct {v4, v11, v12}, Ljava/lang/Long;-><init>(J)V
-
-    invoke-virtual {v4}, Ljava/lang/Long;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
-
     .line 1008
     if-eqz v38, :cond_6
 
@@ -501,7 +453,7 @@
     .line 1015
     .restart local v20       #d:Landroid/app/Dialog;
     :goto_3
-    invoke-virtual/range {v20 .. v20}, Landroid/app/Dialog;->show()V
+    invoke-virtual/range {v20 .. v20}, Landroid/app/AlertDialog;->show()V
 
     .line 1016
     move-object/from16 v0, v20
@@ -709,7 +661,7 @@
 
     .line 1036
     .restart local v20       #d:Landroid/app/Dialog;
-    invoke-virtual/range {v20 .. v20}, Landroid/app/Dialog;->show()V
+    invoke-virtual/range {v20 .. v20}, Landroid/app/AlertDialog;->show()V
 
     .line 1037
     move-object/from16 v0, v20
@@ -776,7 +728,7 @@
 
     .line 1049
     .restart local v20       #d:Landroid/app/Dialog;
-    invoke-virtual/range {v20 .. v20}, Landroid/app/Dialog;->show()V
+    invoke-virtual/range {v20 .. v20}, Landroid/app/AlertDialog;->show()V
 
     .line 1050
     move-object/from16 v0, p0
@@ -913,7 +865,7 @@
     iput-boolean v3, v0, Lcom/android/server/am/ProcessRecord;->waitedForDebugger:Z
 
     .line 1071
-    invoke-virtual/range {v20 .. v20}, Landroid/app/Dialog;->show()V
+    invoke-virtual/range {v20 .. v20}, Landroid/app/AlertDialog;->show()V
 
     .line 1079
     .end local v20           #d:Landroid/app/Dialog;
@@ -1540,7 +1492,7 @@
 
     .line 1156
     .local v20, d:Landroid/app/AlertDialog;
-    invoke-virtual/range {v20 .. v20}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual/range {v20 .. v20}, Lcom/android/server/am/BaseErrorDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v3
 

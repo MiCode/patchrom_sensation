@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 381
+    .line 386
     iput-object p1, p0, Lcom/htc/app/FileScanner$UpdateUiRunnable;->this$0:Lcom/htc/app/FileScanner;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 381
+    .line 386
     invoke-direct {p0, p1}, Lcom/htc/app/FileScanner$UpdateUiRunnable;-><init>(Lcom/htc/app/FileScanner;)V
 
     return-void
@@ -53,7 +53,7 @@
     .locals 4
 
     .prologue
-    .line 387
+    .line 392
     iget-object v0, p0, Lcom/htc/app/FileScanner$UpdateUiRunnable;->this$0:Lcom/htc/app/FileScanner;
 
     #getter for: Lcom/htc/app/FileScanner;->isStop:Z
@@ -72,7 +72,17 @@
 
     if-nez v0, :cond_0
 
-    .line 388
+    .line 393
+    iget-object v0, p0, Lcom/htc/app/FileScanner$UpdateUiRunnable;->this$0:Lcom/htc/app/FileScanner;
+
+    #getter for: Lcom/htc/app/FileScanner;->mHandler:Landroid/os/Handler;
+    invoke-static {v0}, Lcom/htc/app/FileScanner;->access$700(Lcom/htc/app/FileScanner;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 394
     iget-object v0, p0, Lcom/htc/app/FileScanner$UpdateUiRunnable;->this$0:Lcom/htc/app/FileScanner;
 
     #getter for: Lcom/htc/app/FileScanner;->mHandler:Landroid/os/Handler;
@@ -95,7 +105,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 390
+    .line 396
     iget-object v0, p0, Lcom/htc/app/FileScanner$UpdateUiRunnable;->this$0:Lcom/htc/app/FileScanner;
 
     new-instance v1, Lcom/htc/app/FileScanner$UpdateUiRunnable;
@@ -107,7 +117,7 @@
     #setter for: Lcom/htc/app/FileScanner;->updateUiRunnable:Lcom/htc/app/FileScanner$UpdateUiRunnable;
     invoke-static {v0, v1}, Lcom/htc/app/FileScanner;->access$802(Lcom/htc/app/FileScanner;Lcom/htc/app/FileScanner$UpdateUiRunnable;)Lcom/htc/app/FileScanner$UpdateUiRunnable;
 
-    .line 391
+    .line 397
     iget-object v0, p0, Lcom/htc/app/FileScanner$UpdateUiRunnable;->this$0:Lcom/htc/app/FileScanner;
 
     #getter for: Lcom/htc/app/FileScanner;->mHandler:Landroid/os/Handler;
@@ -126,7 +136,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 394
+    .line 401
     :cond_0
     return-void
 .end method

@@ -419,7 +419,7 @@
 
     .prologue
     .line 326
-    iput-object p1, p0, Lcom/scalado/caps/speedview/SpmoEncoder$SpmoCreateIterator;->source:Lcom/scalado/caps/speedview/SpmoEncoder$BaseSpmoEncoderStep;
+    iput-object p1, p0, Lcom/scalado/caps/speedview/SpmoEncoder$BaseSpmoEncoderStep;->source:Lcom/scalado/caps/speedview/SpmoEncoder$BaseSpmoEncoderStep;
 
     .line 327
     invoke-virtual {p1}, Lcom/scalado/caps/speedview/SpmoEncoder$BaseSpmoEncoderStep;->getDestinationStream()Lcom/scalado/stream/Stream;
@@ -510,12 +510,12 @@
     iput-boolean v0, p0, Lcom/scalado/caps/speedview/SpmoEncoder$SpmoCreateIterator;->isDone:Z
 
     .line 346
-    iget-object v0, p0, Lcom/scalado/caps/speedview/SpmoEncoder$SpmoCreateIterator;->source:Lcom/scalado/caps/speedview/SpmoEncoder$BaseSpmoEncoderStep;
+    iget-object v0, p0, Lcom/scalado/caps/speedview/SpmoEncoder$BaseSpmoEncoderStep;->source:Lcom/scalado/caps/speedview/SpmoEncoder$BaseSpmoEncoderStep;
 
     if-eqz v0, :cond_0
 
     .line 347
-    iget-object v0, p0, Lcom/scalado/caps/speedview/SpmoEncoder$SpmoCreateIterator;->source:Lcom/scalado/caps/speedview/SpmoEncoder$BaseSpmoEncoderStep;
+    iget-object v0, p0, Lcom/scalado/caps/speedview/SpmoEncoder$BaseSpmoEncoderStep;->source:Lcom/scalado/caps/speedview/SpmoEncoder$BaseSpmoEncoderStep;
 
     invoke-virtual {v0}, Lcom/scalado/caps/speedview/SpmoEncoder$BaseSpmoEncoderStep;->onSuccessorComplete()V
 

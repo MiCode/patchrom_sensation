@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 220
+    .line 222
     iput-object p1, p0, Lcom/android/camera/component/ZoomBar$8;->this$0:Lcom/android/camera/component/ZoomBar;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,7 +46,7 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 230
+    .line 232
     iget-object v1, p0, Lcom/android/camera/component/ZoomBar$8;->this$0:Lcom/android/camera/component/ZoomBar;
 
     #getter for: Lcom/android/camera/component/ZoomBar;->m_IsUpdatingZoom:Z
@@ -56,12 +56,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 244
+    .line 246
     :cond_0
     :goto_0
     return-void
 
-    .line 232
+    .line 234
     :cond_1
     iget-object v1, p0, Lcom/android/camera/component/ZoomBar$8;->this$0:Lcom/android/camera/component/ZoomBar;
 
@@ -69,7 +69,7 @@
 
     move-result-object v0
 
-    .line 233
+    .line 235
     .local v0, cameraActivity:Lcom/android/camera/HTCCamera;
     iget-object v1, p0, Lcom/android/camera/component/ZoomBar$8;->this$0:Lcom/android/camera/component/ZoomBar;
 
@@ -88,10 +88,10 @@
 
     if-nez v1, :cond_0
 
-    .line 237
+    .line 239
     if-eqz p3, :cond_2
 
-    .line 238
+    .line 240
     invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->getEventManager()Lcom/android/camera/EventManager;
 
     move-result-object v1
@@ -104,17 +104,17 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 241
+    .line 243
     :cond_2
     iget-object v1, p0, Lcom/android/camera/component/ZoomBar$8;->this$0:Lcom/android/camera/component/ZoomBar;
 
     #setter for: Lcom/android/camera/component/ZoomBar;->m_IsUpdatingZoom:Z
     invoke-static {v1, v4}, Lcom/android/camera/component/ZoomBar;->access$402(Lcom/android/camera/component/ZoomBar;Z)Z
 
-    .line 242
+    .line 244
     invoke-virtual {v0, p2}, Lcom/android/camera/HTCCamera;->changeZoom(I)V
 
-    .line 243
+    .line 245
     iget-object v1, p0, Lcom/android/camera/component/ZoomBar$8;->this$0:Lcom/android/camera/component/ZoomBar;
 
     const/4 v2, 0x0
@@ -130,7 +130,7 @@
     .parameter "seekBar"
 
     .prologue
-    .line 225
+    .line 227
     return-void
 .end method
 
@@ -139,6 +139,6 @@
     .parameter "seekBar"
 
     .prologue
-    .line 222
+    .line 224
     return-void
 .end method

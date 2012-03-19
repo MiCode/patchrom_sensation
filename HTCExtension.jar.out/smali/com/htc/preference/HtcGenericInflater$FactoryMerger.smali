@@ -68,7 +68,7 @@
     .local p0, this:Lcom/htc/preference/HtcGenericInflater$FactoryMerger;,"Lcom/htc/preference/HtcGenericInflater$FactoryMerger<TT;>;"
     .local p1, f1:Lcom/htc/preference/HtcGenericInflater$Factory;,"Lcom/htc/preference/HtcGenericInflater$Factory<TT;>;"
     .local p2, f2:Lcom/htc/preference/HtcGenericInflater$Factory;,"Lcom/htc/preference/HtcGenericInflater$Factory<TT;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 88
     iput-object p1, p0, Lcom/htc/preference/HtcGenericInflater$FactoryMerger;->mF1:Lcom/htc/preference/HtcGenericInflater$Factory;

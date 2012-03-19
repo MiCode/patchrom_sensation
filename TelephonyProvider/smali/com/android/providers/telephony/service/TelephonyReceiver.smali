@@ -6,7 +6,7 @@
 # static fields
 .field public static final ACTION_CHECK_DB_CORRUPT:Ljava/lang/String; = "com.android.mms.intent.ACTION_CHECK_DB_CORRUPT"
 
-.field private static final HTC_DEBUG:Z = true
+.field private static final HTC_DEBUG:Z = false
 
 .field private static final TAG:Ljava/lang/String; = "TelephonyReceiver"
 
@@ -44,31 +44,8 @@
     :goto_0
     return-void
 
-    .line 27
-    :cond_1
-    const-string v3, "TelephonyReceiver"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "action> "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 29
+    :cond_1
     const-string v3, "com.android.mms.intent.ACTION_CHECK_DB_CORRUPT"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

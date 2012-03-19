@@ -26,7 +26,7 @@
 
     .prologue
     .line 129
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 127
     const/16 v0, 0xa
@@ -47,7 +47,7 @@
     const/16 v3, 0xa
 
     .line 147
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 127
     new-array v2, v3, [I

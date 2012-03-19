@@ -2335,7 +2335,7 @@
 
     add-int/2addr v3, p5
 
-    iget v4, v2, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iget v4, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-static {p4, v3, v4}, Lcom/android/camera/widget/HorizontalEasingScrollView;->getChildMeasureSpec(III)I
 
@@ -2518,7 +2518,7 @@
 
     add-int/2addr v6, v7
 
-    iget v7, v3, Landroid/widget/FrameLayout$LayoutParams;->height:I
+    iget v7, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-static {p2, v6, v7}, Lcom/android/camera/widget/HorizontalEasingScrollView;->getChildMeasureSpec(III)I
 

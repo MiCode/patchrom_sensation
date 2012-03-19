@@ -41,7 +41,7 @@
 
     .prologue
     .line 300
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 301
     if-nez p1, :cond_0
@@ -108,7 +108,7 @@
 
     .prologue
     .line 281
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 282
     iput-object p1, p0, Lcom/htc/util/mail/lib/org/apache/commons/io/DirectoryWalker;->filter:Ljava/io/FileFilter;

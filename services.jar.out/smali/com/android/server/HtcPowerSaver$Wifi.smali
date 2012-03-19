@@ -33,10 +33,10 @@
     .parameter "ctx"
 
     .prologue
-    .line 1063
+    .line 1049
     iput-object p1, p0, Lcom/android/server/HtcPowerSaver$Wifi;->this$0:Lcom/android/server/HtcPowerSaver;
 
-    .line 1064
+    .line 1050
     const-string v2, "Wifi"
 
     const-string v3, "powersaver_wifi"
@@ -51,10 +51,10 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/server/HtcPowerSaver$Feature;-><init>(Lcom/android/server/HtcPowerSaver;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;)V
 
-    .line 1065
+    .line 1051
     iput-object p2, p0, Lcom/android/server/HtcPowerSaver$Wifi;->mContext:Landroid/content/Context;
 
-    .line 1066
+    .line 1052
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .locals 3
 
     .prologue
-    .line 1070
+    .line 1055
     iget-object v1, p0, Lcom/android/server/HtcPowerSaver$Wifi;->mContext:Landroid/content/Context;
 
     const-string v2, "wifi"
@@ -73,21 +73,21 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    .line 1071
+    .line 1056
     .local v0, wifimgr:Landroid/net/wifi/WifiManager;
     if-nez v0, :cond_0
 
-    .line 1073
-    iget-object v1, p0, Lcom/android/server/HtcPowerSaver$Wifi;->TAG:Ljava/lang/String;
+    .line 1057
+    const-string v1, "HtcPowerSaver"
 
-    const-string v2, "Cannot get Wifi service"
+    const-string v2, "getSysSettings: Cannot get Wifi service"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1074
+    .line 1058
     const/4 v1, 0x0
 
-    .line 1076
+    .line 1060
     :goto_0
     return v1
 
@@ -100,11 +100,11 @@
 .end method
 
 .method private setSysSettings(Z)V
-    .locals 6
+    .locals 7
     .parameter "enable"
 
     .prologue
-    .line 1081
+    .line 1064
     iget-object v4, p0, Lcom/android/server/HtcPowerSaver$Wifi;->mContext:Landroid/content/Context;
 
     const-string v5, "wifi"
@@ -115,23 +115,23 @@
 
     check-cast v3, Landroid/net/wifi/WifiManager;
 
-    .line 1082
+    .line 1065
     .local v3, wifimgr:Landroid/net/wifi/WifiManager;
     if-nez v3, :cond_1
 
-    .line 1084
-    iget-object v4, p0, Lcom/android/server/HtcPowerSaver$Wifi;->TAG:Ljava/lang/String;
+    .line 1066
+    const-string v4, "HtcPowerSaver"
 
-    const-string v5, "Cannot get WifiManager"
+    const-string v5, "setSysSettings: Cannot get Wifi service"
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1117
+    .line 1095
     :cond_0
     :goto_0
     return-void
 
-    .line 1087
+    .line 1069
     :cond_1
     iget-object v4, p0, Lcom/android/server/HtcPowerSaver$Wifi;->mContext:Landroid/content/Context;
 
@@ -143,7 +143,7 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 1088
+    .line 1070
     .local v0, CM:Landroid/net/ConnectivityManager;
     const/4 v4, 0x1
 
@@ -151,11 +151,11 @@
 
     move-result-object v2
 
-    .line 1089
+    .line 1071
     .local v2, info:Landroid/net/NetworkInfo;
     if-eqz p1, :cond_2
 
-    .line 1093
+    .line 1073
     :try_start_0
     invoke-virtual {v3, p1}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
 
@@ -163,10 +163,10 @@
 
     if-nez v4, :cond_0
 
-    .line 1094
-    iget-object v4, p0, Lcom/android/server/HtcPowerSaver$Wifi;->TAG:Ljava/lang/String;
+    .line 1074
+    const-string v4, "HtcPowerSaver"
 
-    const-string v5, "wifi set fail"
+    const-string v5, "setSysSettings: wifimgr.setWifiEnabled(enable) set fail."
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
@@ -174,17 +174,37 @@
 
     goto :goto_0
 
-    .line 1096
+    .line 1076
     :catch_0
     move-exception v1
 
-    .line 1097
+    .line 1077
     .local v1, e:Ljava/lang/SecurityException;
-    invoke-virtual {v1}, Ljava/lang/SecurityException;->printStackTrace()V
+    const-string v4, "HtcPowerSaver"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "setSysSettings: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
-    .line 1100
+    .line 1080
     .end local v1           #e:Ljava/lang/SecurityException;
     :cond_2
     invoke-virtual {v3}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z
@@ -199,7 +219,7 @@
 
     if-nez v4, :cond_3
 
-    .line 1104
+    .line 1082
     :try_start_1
     invoke-virtual {v3, p1}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
 
@@ -207,10 +227,10 @@
 
     if-nez v4, :cond_0
 
-    .line 1105
-    iget-object v4, p0, Lcom/android/server/HtcPowerSaver$Wifi;->TAG:Ljava/lang/String;
+    .line 1083
+    const-string v4, "HtcPowerSaver"
 
-    const-string v5, "wifi set fail"
+    const-string v5, "setSysSettings: wifi set fail"
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
@@ -218,17 +238,37 @@
 
     goto :goto_0
 
-    .line 1107
+    .line 1085
     :catch_1
     move-exception v1
 
-    .line 1108
+    .line 1086
     .restart local v1       #e:Ljava/lang/SecurityException;
-    invoke-virtual {v1}, Ljava/lang/SecurityException;->printStackTrace()V
+    const-string v4, "HtcPowerSaver"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "setSysSettings: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
-    .line 1111
+    .line 1089
     .end local v1           #e:Ljava/lang/SecurityException;
     :cond_3
     invoke-virtual {v3}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z
@@ -237,14 +277,14 @@
 
     if-nez v4, :cond_4
 
-    .line 1112
-    iget-object v4, p0, Lcom/android/server/HtcPowerSaver$Wifi;->TAG:Ljava/lang/String;
+    .line 1090
+    const-string v4, "HtcPowerSaver"
 
-    const-string v5, "wifi not enable"
+    const-string v5, "setSysSettings: wifi is not enabled"
 
-    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1113
+    .line 1091
     :cond_4
     invoke-virtual {v2}, Landroid/net/NetworkInfo;->isConnected()Z
 
@@ -252,14 +292,14 @@
 
     if-eqz v4, :cond_0
 
-    .line 1114
-    iget-object v4, p0, Lcom/android/server/HtcPowerSaver$Wifi;->TAG:Ljava/lang/String;
+    .line 1092
+    const-string v4, "HtcPowerSaver"
 
-    const-string v5, "not connect3"
+    const-string v5, "should not be connected."
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
 
@@ -270,17 +310,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1135
+    .line 1112
     invoke-direct {p0, v2}, Lcom/android/server/HtcPowerSaver$Wifi;->setSysSettings(Z)V
 
-    .line 1136
-    iget-object v0, p0, Lcom/android/server/HtcPowerSaver$Wifi;->TAG:Ljava/lang/String;
+    .line 1113
+    const-string v0, "HtcPowerSaver"
 
     const-string v1, "applyPowerSaverSettings."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1137
+    .line 1114
     return v2
 .end method
 
@@ -290,29 +330,32 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1142
-    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Wifi;->mContext:Landroid/content/Context;
+    .line 1119
+    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Wifi;->this$0:Lcom/android/server/HtcPowerSaver;
 
-    invoke-virtual {p0, v2}, Lcom/android/server/HtcPowerSaver$Wifi;->getSettingsSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    iget-object v3, p0, Lcom/android/server/HtcPowerSaver$Wifi;->mContext:Landroid/content/Context;
+
+    #calls: Lcom/android/server/HtcPowerSaver;->getSettingsSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-static {v2, v3}, Lcom/android/server/HtcPowerSaver;->access$400(Lcom/android/server/HtcPowerSaver;Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
 
-    .line 1143
+    .line 1120
     .local v1, sp:Landroid/content/SharedPreferences;
     if-nez v1, :cond_0
 
-    .line 1145
-    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Wifi;->TAG:Ljava/lang/String;
+    .line 1121
+    const-string v2, "HtcPowerSaver"
 
-    const-string v3, "Get SharedPreferences fail."
+    const-string v3, "restoreSystemSettings: Get SharedPreferences fail."
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1155
+    .line 1130
     :goto_0
     return v4
 
-    .line 1148
+    .line 1124
     :cond_0
     const-string v2, "psaver_normal_wifi"
 
@@ -322,7 +365,7 @@
 
     move-result v0
 
-    .line 1149
+    .line 1125
     .local v0, normalValue:Z
     invoke-direct {p0}, Lcom/android/server/HtcPowerSaver$Wifi;->getSysSettings()Z
 
@@ -330,16 +373,16 @@
 
     if-eqz v2, :cond_1
 
-    .line 1151
-    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Wifi;->TAG:Ljava/lang/String;
+    .line 1126
+    const-string v2, "HtcPowerSaver"
 
-    const-string v3, "Wifi was enabled."
+    const-string v3, "restoreSystemSettings: Wifi was enabled."
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
-    .line 1153
+    .line 1128
     :cond_1
     invoke-direct {p0, v0}, Lcom/android/server/HtcPowerSaver$Wifi;->setSysSettings(Z)V
 
@@ -352,35 +395,38 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1121
+    .line 1099
     invoke-direct {p0}, Lcom/android/server/HtcPowerSaver$Wifi;->getSysSettings()Z
 
     move-result v1
 
-    .line 1122
+    .line 1100
     .local v1, sysValue:Z
-    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Wifi;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Wifi;->this$0:Lcom/android/server/HtcPowerSaver;
 
-    invoke-virtual {p0, v2}, Lcom/android/server/HtcPowerSaver$Wifi;->getSettingsSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    iget-object v3, p0, Lcom/android/server/HtcPowerSaver$Wifi;->mContext:Landroid/content/Context;
+
+    #calls: Lcom/android/server/HtcPowerSaver;->getSettingsSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-static {v2, v3}, Lcom/android/server/HtcPowerSaver;->access$400(Lcom/android/server/HtcPowerSaver;Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 1123
+    .line 1101
     .local v0, sp:Landroid/content/SharedPreferences;
     if-nez v0, :cond_0
 
-    .line 1125
-    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Wifi;->TAG:Ljava/lang/String;
+    .line 1102
+    const-string v2, "HtcPowerSaver"
 
-    const-string v3, "Get SharedPreferences fail."
+    const-string v3, "saveSystemSettings: Get SharedPreferences fail."
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1130
+    .line 1107
     :goto_0
     return v5
 
-    .line 1128
+    .line 1105
     :cond_0
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -394,8 +440,8 @@
 
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 1129
-    iget-object v2, p0, Lcom/android/server/HtcPowerSaver$Wifi;->TAG:Ljava/lang/String;
+    .line 1106
+    const-string v2, "HtcPowerSaver"
 
     new-instance v3, Ljava/lang/StringBuilder;
 

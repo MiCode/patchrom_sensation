@@ -387,7 +387,7 @@
 
     move-result v2
 
-    iput v2, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList$DrmUriImage;->mFrameCount:I
+    iput v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmMedia;->mFrameCount:I
 
     .line 5687
     .end local v1           #parser:Lcom/htc/opensense/album/util/GIFImageParser;
@@ -1001,7 +1001,7 @@
     .line 6021
     iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList$DrmUriImage;->this$1:Lcom/htc/opensense/album/util/ImageManager$SingleImageList;
 
-    iget-object v0, v0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, v0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     return-object v0
 .end method
@@ -1130,7 +1130,7 @@
     .end local v2           #is:Ljava/io/InputStream;
     :cond_0
     :goto_0
-    iget v3, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList$DrmUriImage;->mFrameCount:I
+    iget v3, p0, Lcom/htc/opensense/album/util/ImageManager$DrmMedia;->mFrameCount:I
 
     return v3
 

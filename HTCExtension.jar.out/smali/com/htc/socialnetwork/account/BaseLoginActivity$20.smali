@@ -35,7 +35,7 @@
 
     iput p2, p0, Lcom/htc/socialnetwork/account/BaseLoginActivity$20;->val$dialog_type:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

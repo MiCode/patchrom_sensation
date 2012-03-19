@@ -33,7 +33,7 @@
     const/4 v4, 0x1
 
     .line 62
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 63
     invoke-interface {p1}, Ljava/io/DataInput;->readInt()I
@@ -160,7 +160,7 @@
 
     .prologue
     .line 39
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 41
     invoke-static {p1}, Lcom/htc/wrap/com/android/internal/util/HtcWrapObjects;->nonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -224,7 +224,7 @@
 
     .prologue
     .line 51
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 53
     invoke-static {p1}, Lcom/htc/wrap/com/android/internal/util/HtcWrapObjects;->nonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -283,7 +283,7 @@
 
     .prologue
     .line 86
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 87
     const-string v0, ""

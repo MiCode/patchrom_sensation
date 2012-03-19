@@ -31,7 +31,7 @@
     .line 1711
     iput-object p1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker$htcRedirectNumberRec;->this$0:Lcom/android/internal/telephony/cdma/CdmaCallTracker;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -50,7 +50,7 @@
     .locals 1
 
     .prologue
-    .line 300
+    .line 305
     const-string v0, "error_state"
 
     sput-object v0, Lcom/android/server/HtcHardwareService;->mHeadsetType:Ljava/lang/String;
@@ -165,6 +165,9 @@
     .line 63
     :cond_3
     return-void
+.end method
+
+.method private static native DmbRequestWakeUpSignal_native(I)V
 .end method
 
 .method private broadcastFNCAPSStatus(II)V
@@ -365,14 +368,14 @@
     .locals 6
 
     .prologue
-    .line 303
+    .line 308
     new-instance v1, Ljava/io/File;
 
     const-string v4, "/sys/class/htc_accessory/headset/state"
 
     invoke-direct {v1, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 304
+    .line 309
     .local v1, file:Ljava/io/File;
     if-eqz v1, :cond_0
 
@@ -382,7 +385,7 @@
 
     if-nez v4, :cond_1
 
-    .line 306
+    .line 311
     :cond_0
     const-string v4, "HtcHardwareService"
 
@@ -390,20 +393,20 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 307
+    .line 312
     const-string v4, "error_state"
 
     sput-object v4, Lcom/android/server/HtcHardwareService;->mHeadsetType:Ljava/lang/String;
 
-    .line 350
+    .line 355
     :goto_0
     return-void
 
-    .line 311
+    .line 316
     :cond_1
     const/4 v2, 0x0
 
-    .line 314
+    .line 319
     .local v2, input:Ljava/io/BufferedReader;
     :try_start_0
     new-instance v2, Ljava/io/BufferedReader;
@@ -419,30 +422,30 @@
     :try_end_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 323
+    .line 328
     .restart local v2       #input:Ljava/io/BufferedReader;
     if-nez v2, :cond_2
 
-    .line 325
+    .line 330
     const-string v4, "HtcHardwareService"
 
     const-string v5, "BufferedReader input = null"
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 326
+    .line 331
     const-string v4, "error_state"
 
     sput-object v4, Lcom/android/server/HtcHardwareService;->mHeadsetType:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 316
+    .line 321
     .end local v2           #input:Ljava/io/BufferedReader;
     :catch_0
     move-exception v0
 
-    .line 318
+    .line 323
     .local v0, e:Ljava/io/FileNotFoundException;
     const-string v4, "HtcHardwareService"
 
@@ -450,46 +453,46 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 319
+    .line 324
     const-string v4, "error_state"
 
     sput-object v4, Lcom/android/server/HtcHardwareService;->mHeadsetType:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 330
+    .line 335
     .end local v0           #e:Ljava/io/FileNotFoundException;
     .restart local v2       #input:Ljava/io/BufferedReader;
     :cond_2
     const/4 v3, 0x0
 
-    .line 333
+    .line 338
     .local v3, line:Ljava/lang/String;
     :try_start_1
     invoke-virtual {v2}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 334
+    .line 339
     invoke-virtual {v2}, Ljava/io/BufferedReader;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 343
+    .line 348
     if-nez v3, :cond_3
 
-    .line 345
+    .line 350
     const-string v4, "error_state"
 
     sput-object v4, Lcom/android/server/HtcHardwareService;->mHeadsetType:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 336
+    .line 341
     :catch_1
     move-exception v0
 
-    .line 338
+    .line 343
     .local v0, e:Ljava/io/IOException;
     const-string v4, "HtcHardwareService"
 
@@ -497,14 +500,14 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 339
+    .line 344
     const-string v4, "error_state"
 
     sput-object v4, Lcom/android/server/HtcHardwareService;->mHeadsetType:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 349
+    .line 354
     .end local v0           #e:Ljava/io/IOException;
     :cond_3
     sput-object v3, Lcom/android/server/HtcHardwareService;->mHeadsetType:Ljava/lang/String;
@@ -618,6 +621,18 @@
 
 
 # virtual methods
+.method public DmbRequestWakeUpSignal(I)V
+    .locals 0
+    .parameter "wakeup"
+
+    .prologue
+    .line 292
+    invoke-static {p1}, Lcom/android/server/HtcHardwareService;->DmbRequestWakeUpSignal_native(I)V
+
+    .line 293
+    return-void
+.end method
+
 .method public getCapsLedState()I
     .locals 1
 
@@ -642,10 +657,10 @@
     .locals 3
 
     .prologue
-    .line 353
+    .line 358
     invoke-direct {p0}, Lcom/android/server/HtcHardwareService;->detectHeadsetType()V
 
-    .line 354
+    .line 359
     const-string v0, "HtcHardwareService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -670,7 +685,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 355
+    .line 360
     sget-object v0, Lcom/android/server/HtcHardwareService;->mHeadsetType:Ljava/lang/String;
 
     return-object v0
@@ -681,7 +696,7 @@
     .parameter "mImsi"
 
     .prologue
-    .line 361
+    .line 366
     iget-object v0, p0, Lcom/android/server/HtcHardwareService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.WRITE_SECURE_SETTINGS"
@@ -690,7 +705,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 365
+    .line 370
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -1127,10 +1142,10 @@
     .parameter "type"
 
     .prologue
-    .line 292
+    .line 297
     invoke-static {p1}, Lcom/android/server/HtcHardwareService;->setHeadsetFMType_native(Ljava/lang/String;)V
 
-    .line 293
+    .line 298
     return-void
 .end method
 
@@ -1139,10 +1154,10 @@
     .parameter "type"
 
     .prologue
-    .line 297
+    .line 302
     invoke-static {p1}, Lcom/android/server/HtcHardwareService;->setHeadsetTTYType_native(Ljava/lang/String;)V
 
-    .line 298
+    .line 303
     return-void
 .end method
 
@@ -1151,7 +1166,7 @@
     .parameter "mImsi"
 
     .prologue
-    .line 370
+    .line 375
     iget-object v0, p0, Lcom/android/server/HtcHardwareService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.WRITE_SECURE_SETTINGS"
@@ -1160,7 +1175,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 374
+    .line 379
     const/4 v0, 0x0
 
     return v0

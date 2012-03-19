@@ -28,14 +28,14 @@
 
     .prologue
     .line 47
-    iget-object v1, p0, Landroid/database/CrossProcessCursorWrapper;->mCursor:Landroid/database/Cursor;
+    iget-object v1, p0, Landroid/database/CursorWrapper;->mCursor:Landroid/database/Cursor;
 
     instance-of v1, v1, Landroid/database/CrossProcessCursor;
 
     if-eqz v1, :cond_0
 
     .line 48
-    iget-object v0, p0, Landroid/database/CrossProcessCursorWrapper;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Landroid/database/CursorWrapper;->mCursor:Landroid/database/Cursor;
 
     check-cast v0, Landroid/database/CrossProcessCursor;
 
@@ -50,7 +50,7 @@
 
     .line 53
     :cond_0
-    iget-object v1, p0, Landroid/database/CrossProcessCursorWrapper;->mCursor:Landroid/database/Cursor;
+    iget-object v1, p0, Landroid/database/CursorWrapper;->mCursor:Landroid/database/Cursor;
 
     invoke-static {v1, p1, p2}, Landroid/database/DatabaseUtils;->cursorFillWindow(Landroid/database/Cursor;ILandroid/database/CursorWindow;)V
 
@@ -62,14 +62,14 @@
 
     .prologue
     .line 58
-    iget-object v1, p0, Landroid/database/CrossProcessCursorWrapper;->mCursor:Landroid/database/Cursor;
+    iget-object v1, p0, Landroid/database/CursorWrapper;->mCursor:Landroid/database/Cursor;
 
     instance-of v1, v1, Landroid/database/CrossProcessCursor;
 
     if-eqz v1, :cond_0
 
     .line 59
-    iget-object v0, p0, Landroid/database/CrossProcessCursorWrapper;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Landroid/database/CursorWrapper;->mCursor:Landroid/database/Cursor;
 
     check-cast v0, Landroid/database/CrossProcessCursor;
 
@@ -97,14 +97,14 @@
 
     .prologue
     .line 68
-    iget-object v1, p0, Landroid/database/CrossProcessCursorWrapper;->mCursor:Landroid/database/Cursor;
+    iget-object v1, p0, Landroid/database/CursorWrapper;->mCursor:Landroid/database/Cursor;
 
     instance-of v1, v1, Landroid/database/CrossProcessCursor;
 
     if-eqz v1, :cond_0
 
     .line 69
-    iget-object v0, p0, Landroid/database/CrossProcessCursorWrapper;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Landroid/database/CursorWrapper;->mCursor:Landroid/database/Cursor;
 
     check-cast v0, Landroid/database/CrossProcessCursor;
 

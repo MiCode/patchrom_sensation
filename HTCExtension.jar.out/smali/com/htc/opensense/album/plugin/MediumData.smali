@@ -84,28 +84,28 @@
 
     .prologue
     .line 54
-    iput-object p1, p0, Lcom/htc/opensense/album/plugin/MediumData;->id:Ljava/lang/String;
+    iput-object p1, p0, Lcom/htc/opensense/social/data/Medium;->id:Ljava/lang/String;
 
     .line 55
-    iput-object p2, p0, Lcom/htc/opensense/album/plugin/MediumData;->name:Ljava/lang/String;
+    iput-object p2, p0, Lcom/htc/opensense/social/data/Medium;->name:Ljava/lang/String;
 
     .line 56
-    iput-object p3, p0, Lcom/htc/opensense/album/plugin/MediumData;->url:Ljava/lang/String;
+    iput-object p3, p0, Lcom/htc/opensense/social/data/Medium;->url:Ljava/lang/String;
 
     .line 57
-    iput-object p4, p0, Lcom/htc/opensense/album/plugin/MediumData;->thumbnailUrl:Ljava/lang/String;
+    iput-object p4, p0, Lcom/htc/opensense/social/data/Medium;->thumbnailUrl:Ljava/lang/String;
 
     .line 58
-    iput-wide p7, p0, Lcom/htc/opensense/album/plugin/MediumData;->createTime:J
+    iput-wide p7, p0, Lcom/htc/opensense/social/data/Medium;->createTime:J
 
     .line 59
-    iput-object p5, p0, Lcom/htc/opensense/album/plugin/MediumData;->webLink:Ljava/lang/String;
+    iput-object p5, p0, Lcom/htc/opensense/social/data/Medium;->webLink:Ljava/lang/String;
 
     .line 60
-    iput-object p6, p0, Lcom/htc/opensense/album/plugin/MediumData;->description:Ljava/lang/String;
+    iput-object p6, p0, Lcom/htc/opensense/social/data/Medium;->description:Ljava/lang/String;
 
     .line 61
-    iput p9, p0, Lcom/htc/opensense/album/plugin/MediumData;->type:I
+    iput p9, p0, Lcom/htc/opensense/social/data/Medium;->type:I
 
     .line 62
     return-void

@@ -561,7 +561,7 @@
     iput-object v4, p0, Lcom/htc/app/HtcRingtonePickerActivity;->mExistingUri:Landroid/net/Uri;
 
     .line 157
-    iget-object v2, p0, Lcom/htc/app/HtcRingtonePickerActivity;->mAlertParams:Lcom/htc/app/HtcAlertController$AlertParams;
+    iget-object v2, p0, Lcom/htc/app/HtcAlertActivity;->mAlertParams:Lcom/htc/app/HtcAlertController$AlertParams;
 
     .line 158
     .local v2, p:Lcom/htc/app/HtcAlertController$AlertParams;
@@ -762,7 +762,7 @@
 
     .line 201
     :cond_2
-    iget-object v0, p0, Lcom/htc/app/HtcRingtonePickerActivity;->mAlertParams:Lcom/htc/app/HtcAlertController$AlertParams;
+    iget-object v0, p0, Lcom/htc/app/HtcAlertActivity;->mAlertParams:Lcom/htc/app/HtcAlertController$AlertParams;
 
     iget v1, p0, Lcom/htc/app/HtcRingtonePickerActivity;->mClickedPos:I
 

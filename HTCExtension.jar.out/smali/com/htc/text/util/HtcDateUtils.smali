@@ -235,7 +235,7 @@
     .end local v10           #dateClause:Ljava/lang/CharSequence;
     .end local v17           #result:Ljava/lang/String;
     :cond_4
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v17
 

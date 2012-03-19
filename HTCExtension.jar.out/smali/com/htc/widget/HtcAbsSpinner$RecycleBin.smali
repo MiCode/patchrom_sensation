@@ -38,7 +38,7 @@
     .line 457
     iput-object p1, p0, Lcom/htc/widget/HtcAbsSpinner$RecycleBin;->this$0:Lcom/htc/widget/HtcAbsSpinner;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 458
     new-instance v0, Landroid/util/SparseArray;

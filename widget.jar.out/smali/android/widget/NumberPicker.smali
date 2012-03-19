@@ -2025,9 +2025,9 @@
     invoke-virtual {p0, v0}, Landroid/widget/NumberPicker;->setVerticalFadingEdgeEnabled(Z)V
 
     .line 1562
-    iget v0, p0, Landroid/widget/NumberPicker;->mBottom:I
+    iget v0, p0, Landroid/widget/LinearLayout;->mBottom:I
 
-    iget v1, p0, Landroid/widget/NumberPicker;->mTop:I
+    iget v1, p0, Landroid/widget/LinearLayout;->mTop:I
 
     sub-int/2addr v0, v1
 
@@ -2063,9 +2063,9 @@
 
     .line 1548
     .local v4, totalTextHeight:I
-    iget v5, p0, Landroid/widget/NumberPicker;->mBottom:I
+    iget v5, p0, Landroid/widget/LinearLayout;->mBottom:I
 
-    iget v6, p0, Landroid/widget/NumberPicker;->mTop:I
+    iget v6, p0, Landroid/widget/LinearLayout;->mTop:I
 
     sub-int/2addr v5, v6
 
@@ -3632,11 +3632,11 @@
     :cond_0
     move-object/from16 v0, p0
 
-    iget v13, v0, Landroid/widget/NumberPicker;->mRight:I
+    iget v13, v0, Landroid/widget/LinearLayout;->mRight:I
 
     move-object/from16 v0, p0
 
-    iget v14, v0, Landroid/widget/NumberPicker;->mLeft:I
+    iget v14, v0, Landroid/widget/LinearLayout;->mLeft:I
 
     sub-int/2addr v13, v14
 
@@ -3808,7 +3808,7 @@
 
     move-object/from16 v0, p0
 
-    iget v15, v0, Landroid/widget/NumberPicker;->mRight:I
+    iget v15, v0, Landroid/widget/LinearLayout;->mRight:I
 
     invoke-virtual {v13, v14, v10, v15, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
@@ -3846,7 +3846,7 @@
 
     move-object/from16 v0, p0
 
-    iget v15, v0, Landroid/widget/NumberPicker;->mRight:I
+    iget v15, v0, Landroid/widget/LinearLayout;->mRight:I
 
     invoke-virtual {v13, v14, v9, v15, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 

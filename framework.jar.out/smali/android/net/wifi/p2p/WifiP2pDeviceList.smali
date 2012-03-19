@@ -52,7 +52,7 @@
 
     .prologue
     .line 37
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 38
     new-instance v0, Ljava/util/ArrayList;
@@ -71,7 +71,7 @@
 
     .prologue
     .line 42
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
     if-eqz p1, :cond_0
@@ -104,7 +104,7 @@
     .prologue
     .line 49
     .local p1, devices:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/net/wifi/p2p/WifiP2pDevice;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 50
     new-instance v2, Ljava/util/ArrayList;

@@ -26,7 +26,7 @@
 
     .prologue
     .line 364
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 365
     return-void
@@ -39,7 +39,7 @@
 
     .prologue
     .line 372
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 373
     iput-object p1, p0, Lcom/android/calendarcommon/ICalendar$Parameter;->name:Ljava/lang/String;

@@ -106,7 +106,7 @@
     if-nez v0, :cond_0
 
     .line 32
-    iget-object v0, p0, Lcom/android/camera/effect/BurstScene;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Cannot link to burst UI"
 
@@ -138,7 +138,7 @@
     if-nez v0, :cond_0
 
     .line 46
-    iget-object v0, p0, Lcom/android/camera/effect/BurstScene;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Cannot link to burst UI"
 
@@ -221,7 +221,7 @@
 
     .line 104
     :cond_2
-    iget-object v0, p0, Lcom/android/camera/effect/BurstScene;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Cannot link to burst UI"
 
@@ -274,7 +274,7 @@
 
     .line 123
     :cond_2
-    iget-object v0, p0, Lcom/android/camera/effect/BurstScene;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Cannot link to burst UI"
 

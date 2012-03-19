@@ -40,7 +40,7 @@
     .line 34
     iput-object p1, p0, Lcom/htc/server/SystemCrashChecker$CheckSystemCrashRunnable;->this$0:Lcom/htc/server/SystemCrashChecker;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 35
     iput-object v0, p0, Lcom/htc/server/SystemCrashChecker$CheckSystemCrashRunnable;->mTag:Ljava/lang/String;

@@ -159,7 +159,7 @@
     const/4 v5, 0x1
 
     .line 260
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 108
     iput-boolean v4, p0, Lcom/htc/preference/HtcPreference;->mIconVisibility:Z

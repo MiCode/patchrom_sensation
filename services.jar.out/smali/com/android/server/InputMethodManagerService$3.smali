@@ -45,7 +45,7 @@
 
     iput-object p2, p0, Lcom/android/server/InputMethodManagerService$3;->val$pm:Landroid/content/pm/PackageManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -166,11 +166,11 @@
 
     .line 2137
     .local v1, imiId2:Ljava/lang/CharSequence;
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v3
 

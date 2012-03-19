@@ -53,7 +53,7 @@
     invoke-direct {p0, v6}, Lcom/htc/utils/ulog/ULogDataDecorator;-><init>(Lcom/htc/utils/ulog/ULogData;)V
 
     .line 90
-    iget-object v4, p0, Lcom/htc/utils/ulog/ParcelableULogData;->mULogData:Lcom/htc/utils/ulog/ULogData;
+    iget-object v4, p0, Lcom/htc/utils/ulog/ULogDataDecorator;->mULogData:Lcom/htc/utils/ulog/ULogData;
 
     check-cast v4, Lcom/htc/utils/ulog/ReusableULogData;
 
@@ -237,7 +237,7 @@
 
     .prologue
     .line 22
-    iget-object v3, p0, Lcom/htc/utils/ulog/ParcelableULogData;->mULogData:Lcom/htc/utils/ulog/ULogData;
+    iget-object v3, p0, Lcom/htc/utils/ulog/ULogDataDecorator;->mULogData:Lcom/htc/utils/ulog/ULogData;
 
     if-eqz v3, :cond_3
 
@@ -252,7 +252,7 @@
 
     .line 24
     .local v2, dataSize:I
-    iget-object v3, p0, Lcom/htc/utils/ulog/ParcelableULogData;->mULogData:Lcom/htc/utils/ulog/ULogData;
+    iget-object v3, p0, Lcom/htc/utils/ulog/ULogDataDecorator;->mULogData:Lcom/htc/utils/ulog/ULogData;
 
     invoke-interface {v3}, Lcom/htc/utils/ulog/ULogData;->getAppId()Ljava/lang/String;
 
@@ -261,7 +261,7 @@
     if-eqz v3, :cond_0
 
     .line 25
-    iget-object v3, p0, Lcom/htc/utils/ulog/ParcelableULogData;->mULogData:Lcom/htc/utils/ulog/ULogData;
+    iget-object v3, p0, Lcom/htc/utils/ulog/ULogDataDecorator;->mULogData:Lcom/htc/utils/ulog/ULogData;
 
     invoke-interface {v3}, Lcom/htc/utils/ulog/ULogData;->getAppId()Ljava/lang/String;
 
@@ -273,7 +273,7 @@
 
     .line 26
     :cond_0
-    iget-object v3, p0, Lcom/htc/utils/ulog/ParcelableULogData;->mULogData:Lcom/htc/utils/ulog/ULogData;
+    iget-object v3, p0, Lcom/htc/utils/ulog/ULogDataDecorator;->mULogData:Lcom/htc/utils/ulog/ULogData;
 
     invoke-interface {v3}, Lcom/htc/utils/ulog/ULogData;->getCategory()Ljava/lang/String;
 
@@ -282,7 +282,7 @@
     if-eqz v3, :cond_1
 
     .line 27
-    iget-object v3, p0, Lcom/htc/utils/ulog/ParcelableULogData;->mULogData:Lcom/htc/utils/ulog/ULogData;
+    iget-object v3, p0, Lcom/htc/utils/ulog/ULogDataDecorator;->mULogData:Lcom/htc/utils/ulog/ULogData;
 
     invoke-interface {v3}, Lcom/htc/utils/ulog/ULogData;->getCategory()Ljava/lang/String;
 
@@ -294,7 +294,7 @@
 
     .line 28
     :cond_1
-    iget-object v3, p0, Lcom/htc/utils/ulog/ParcelableULogData;->mULogData:Lcom/htc/utils/ulog/ULogData;
+    iget-object v3, p0, Lcom/htc/utils/ulog/ULogDataDecorator;->mULogData:Lcom/htc/utils/ulog/ULogData;
 
     invoke-interface {v3}, Lcom/htc/utils/ulog/ULogData;->getData()Lcom/htc/utils/ulog/ULogData$ULogItem;
 
@@ -303,7 +303,7 @@
     if-eqz v3, :cond_2
 
     .line 29
-    iget-object v3, p0, Lcom/htc/utils/ulog/ParcelableULogData;->mULogData:Lcom/htc/utils/ulog/ULogData;
+    iget-object v3, p0, Lcom/htc/utils/ulog/ULogDataDecorator;->mULogData:Lcom/htc/utils/ulog/ULogData;
 
     invoke-interface {v3}, Lcom/htc/utils/ulog/ULogData;->getData()Lcom/htc/utils/ulog/ULogData$ULogItem;
 
@@ -381,7 +381,7 @@
     const/4 v8, 0x1
 
     .line 42
-    iget-object v9, p0, Lcom/htc/utils/ulog/ParcelableULogData;->mULogData:Lcom/htc/utils/ulog/ULogData;
+    iget-object v9, p0, Lcom/htc/utils/ulog/ULogDataDecorator;->mULogData:Lcom/htc/utils/ulog/ULogData;
 
     if-nez v9, :cond_1
 
@@ -396,7 +396,7 @@
 
     .line 48
     .local v1, flag:I
-    iget-object v9, p0, Lcom/htc/utils/ulog/ParcelableULogData;->mULogData:Lcom/htc/utils/ulog/ULogData;
+    iget-object v9, p0, Lcom/htc/utils/ulog/ULogDataDecorator;->mULogData:Lcom/htc/utils/ulog/ULogData;
 
     invoke-interface {v9}, Lcom/htc/utils/ulog/ULogData;->getAppId()Ljava/lang/String;
 
@@ -418,7 +418,7 @@
     if-ne v1, v8, :cond_2
 
     .line 51
-    iget-object v9, p0, Lcom/htc/utils/ulog/ParcelableULogData;->mULogData:Lcom/htc/utils/ulog/ULogData;
+    iget-object v9, p0, Lcom/htc/utils/ulog/ULogDataDecorator;->mULogData:Lcom/htc/utils/ulog/ULogData;
 
     invoke-interface {v9}, Lcom/htc/utils/ulog/ULogData;->getAppId()Ljava/lang/String;
 
@@ -428,7 +428,7 @@
 
     .line 54
     :cond_2
-    iget-object v9, p0, Lcom/htc/utils/ulog/ParcelableULogData;->mULogData:Lcom/htc/utils/ulog/ULogData;
+    iget-object v9, p0, Lcom/htc/utils/ulog/ULogDataDecorator;->mULogData:Lcom/htc/utils/ulog/ULogData;
 
     invoke-interface {v9}, Lcom/htc/utils/ulog/ULogData;->getCategory()Ljava/lang/String;
 
@@ -450,7 +450,7 @@
     if-ne v1, v8, :cond_3
 
     .line 57
-    iget-object v8, p0, Lcom/htc/utils/ulog/ParcelableULogData;->mULogData:Lcom/htc/utils/ulog/ULogData;
+    iget-object v8, p0, Lcom/htc/utils/ulog/ULogDataDecorator;->mULogData:Lcom/htc/utils/ulog/ULogData;
 
     invoke-interface {v8}, Lcom/htc/utils/ulog/ULogData;->getCategory()Ljava/lang/String;
 
@@ -460,7 +460,7 @@
 
     .line 60
     :cond_3
-    iget-object v8, p0, Lcom/htc/utils/ulog/ParcelableULogData;->mULogData:Lcom/htc/utils/ulog/ULogData;
+    iget-object v8, p0, Lcom/htc/utils/ulog/ULogDataDecorator;->mULogData:Lcom/htc/utils/ulog/ULogData;
 
     invoke-interface {v8}, Lcom/htc/utils/ulog/ULogData;->getTimestamp()J
 
@@ -469,7 +469,7 @@
     invoke-virtual {p1, v8, v9}, Landroid/os/Parcel;->writeLong(J)V
 
     .line 63
-    iget-object v8, p0, Lcom/htc/utils/ulog/ParcelableULogData;->mULogData:Lcom/htc/utils/ulog/ULogData;
+    iget-object v8, p0, Lcom/htc/utils/ulog/ULogDataDecorator;->mULogData:Lcom/htc/utils/ulog/ULogData;
 
     invoke-interface {v8}, Lcom/htc/utils/ulog/ULogData;->getData()Lcom/htc/utils/ulog/ULogData$ULogItem;
 

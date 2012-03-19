@@ -26,7 +26,7 @@
 
     .prologue
     .line 839
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 840
     const/4 v0, -0x1
@@ -49,7 +49,7 @@
 
     .prologue
     .line 844
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 845
     iput p1, p0, Landroid/webkit/WebViewCore$AutoFillData;->mQueryId:I

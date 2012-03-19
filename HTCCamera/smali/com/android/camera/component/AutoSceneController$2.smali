@@ -30,7 +30,7 @@
     .line 76
     iput-object p1, p0, Lcom/android/camera/component/AutoSceneController$2;->this$0:Lcom/android/camera/component/AutoSceneController;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -57,7 +57,7 @@
     .line 82
     iget-object v1, p0, Lcom/android/camera/component/AutoSceneController$2;->this$0:Lcom/android/camera/component/AutoSceneController;
 
-    #getter for: Lcom/android/camera/component/AutoSceneController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/AutoSceneController;->access$400(Lcom/android/camera/component/AutoSceneController;)Ljava/lang/String;
 
     move-result-object v1
@@ -86,7 +86,7 @@
     .line 87
     iget-object v1, p0, Lcom/android/camera/component/AutoSceneController$2;->this$0:Lcom/android/camera/component/AutoSceneController;
 
-    #getter for: Lcom/android/camera/component/AutoSceneController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/AutoSceneController;->access$600(Lcom/android/camera/component/AutoSceneController;)Ljava/lang/String;
 
     move-result-object v1

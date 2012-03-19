@@ -75,43 +75,8 @@
 
     move-result-wide v3
 
-    .line 61
-    .local v3, now:J
-    const-string v5, "com.htc.util.phone.CityIdInfo"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Processing Timer scheduled: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    iget-wide v7, p0, Lcom/android/phone/CityIdInfo$CityIdTimerManager;->m_timeScheduled:J
-
-    invoke-virtual {v6, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, " at "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 63
+    .local v3, now:J
     invoke-static {}, Lcom/android/phone/PhoneApp;->getInstance()Lcom/android/phone/PhoneApp;
 
     move-result-object v5
@@ -159,31 +124,8 @@
 
     goto :goto_0
 
-    .line 72
-    :cond_0
-    const-string v5, "com.htc.util.phone.CityIdInfo"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Scheduling Timer: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 73
+    :cond_0
     invoke-virtual {p0, p0, v1, v2}, Lcom/android/phone/CityIdInfo$CityIdTimerManager;->postAtTime(Ljava/lang/Runnable;J)Z
 
     .line 74
@@ -199,13 +141,6 @@
     const/4 v5, 0x0
 
     iput-boolean v5, p0, Lcom/android/phone/CityIdInfo$CityIdTimerManager;->m_isTimerRunning:Z
-
-    .line 79
-    const-string v5, "com.htc.util.phone.CityIdInfo"
-
-    const-string v6, "Not scheduling another timer execution"
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_1
 .end method
@@ -241,31 +176,6 @@
     add-long/2addr v0, v2
 
     iput-wide v0, p0, Lcom/android/phone/CityIdInfo$CityIdTimerManager;->m_timeScheduled:J
-
-    .line 44
-    const-string v0, "com.htc.util.phone.CityIdInfo"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Starting Timer scheduled: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-wide v2, p0, Lcom/android/phone/CityIdInfo$CityIdTimerManager;->m_timeScheduled:J
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 45
     iget-wide v0, p0, Lcom/android/phone/CityIdInfo$CityIdTimerManager;->m_timeScheduled:J

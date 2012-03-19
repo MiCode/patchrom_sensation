@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final DEFAULT_SNOOZE_TIMEOUT:J = 0x927c0L
 
@@ -39,14 +39,16 @@
     .local v1, result:Ljava/lang/String;
     if-nez p2, :cond_0
 
-    .line 162
-    new-instance v3, Ljava/lang/IllegalArgumentException;
+    .line 164
+    const-string v3, "HtcCallDeferReceiver"
 
     const-string v4, "calculateInformation: no callerinfo is given!"
 
-    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-static {v3, v4}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    throw v3
+    .line 184
+    :goto_0
+    return-object v1
 
     .line 167
     :cond_0
@@ -104,8 +106,7 @@
 
     move-result-object v1
 
-    .line 184
-    return-object v1
+    goto :goto_0
 .end method
 
 .method private onReceivePlaceCall(Landroid/content/Context;Landroid/content/Intent;)V
@@ -147,25 +148,26 @@
     .local v1, dialIntent:Landroid/content/Intent;
     if-nez v1, :cond_0
 
-    .line 199
-    new-instance v2, Ljava/lang/UnsupportedOperationException;
+    .line 201
+    const-string v2, "HtcCallDeferReceiver"
 
     const-string v3, "make call without correct intent!"
 
-    invoke-direct {v2, v3}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    throw v2
+    .line 206
+    :goto_0
+    return-void
 
     .line 204
     :cond_0
     invoke-static {v1}, Lcom/htc/util/phone/DialUtils;->callDirectly(Landroid/content/Intent;)Z
 
-    .line 206
-    return-void
+    goto :goto_0
 .end method
 
 .method private onReceiveReminder(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
+    .locals 3
     .parameter "context"
     .parameter "intent"
 
@@ -194,13 +196,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 81
-    const-string v2, "HtcCallDeferReceiver"
-
-    const-string v3, "suspend mode, update lockscreen!"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 82
     invoke-direct {p0, p1, p2}, Lcom/android/phone/htc/HtcCallDeferReceiver;->updateLockscreenReminder(Landroid/content/Context;Landroid/content/Intent;)V
 
@@ -213,16 +208,9 @@
     .line 91
     return-void
 
-    .line 84
+    .line 85
     .restart local v1       #keyguard:Landroid/app/KeyguardManager;
     :cond_1
-    const-string v2, "HtcCallDeferReceiver"
-
-    const-string v3, "idle mode, launch activty directly!"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 85
     invoke-static {p2}, Lcom/android/phone/util/CallDeferUtils;->launchDeferDecision(Landroid/content/Intent;)Landroid/content/Intent;
 
     move-result-object v0
@@ -276,14 +264,16 @@
     .local v2, snoozeIntent:Landroid/content/Intent;
     if-nez v2, :cond_0
 
-    .line 219
-    new-instance v5, Ljava/lang/UnsupportedOperationException;
+    .line 221
+    const-string v5, "HtcCallDeferReceiver"
 
     const-string v6, "snooze without correct intent!"
 
-    invoke-direct {v5, v6}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    throw v5
+    .line 232
+    :goto_0
+    return-void
 
     .line 224
     :cond_0
@@ -305,8 +295,7 @@
     .local v3, triggerTime:J
     invoke-static {v0, v2, v3, v4, v1}, Lcom/android/phone/util/CallDeferUtils;->schduleDeferReminder(Landroid/content/Context;Landroid/content/Intent;JLcom/android/internal/telephony/CallerInfo;)Z
 
-    .line 232
-    return-void
+    goto :goto_0
 .end method
 
 .method private updateLockscreenReminder(Landroid/content/Context;Landroid/content/Intent;)V
@@ -471,13 +460,6 @@
 
     invoke-virtual {v3, v9}, Lcom/htc/lockscreen/HtcLSViewConnection;->setWakeUp(Z)V
 
-    .line 151
-    const-string v9, "HtcCallDeferReceiver"
-
-    const-string v10, "notify lockscreen"
-
-    invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 152
     invoke-virtual {v3}, Lcom/htc/lockscreen/HtcLSViewConnection;->updateView()V
 
@@ -504,31 +486,8 @@
 
     move-result-object v0
 
-    .line 60
-    .local v0, action:Ljava/lang/String;
-    const-string v1, "HtcCallDeferReceiver"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "receive action: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 62
+    .local v0, action:Ljava/lang/String;
     const-string v1, "com.android.phone.ACTION_CALL_REMINDER"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -574,15 +533,15 @@
 
     goto :goto_0
 
-    .line 70
+    .line 72
     :cond_2
-    new-instance v1, Ljava/lang/IllegalStateException;
+    const-string v1, "HtcCallDeferReceiver"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "unexpected action: "
+    const-string v3, "onReceive. unexpected action: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -596,7 +555,7 @@
 
     move-result-object v2
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    throw v1
+    goto :goto_0
 .end method

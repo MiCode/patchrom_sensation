@@ -295,7 +295,7 @@
 .end method
 
 .method private appendTimeStringInto(Ljava/lang/StringBuilder;III)V
-    .locals 2
+    .locals 1
     .parameter "sb"
     .parameter "quantity"
     .parameter "singularResId"
@@ -304,13 +304,6 @@
     .prologue
     .line 757
     if-nez p1, :cond_1
-
-    .line 758
-    const-string v0, "CallDefer"
-
-    const-string v1, "putTimeStringInto: no stringbuilder given."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 773
     :cond_0
@@ -368,7 +361,7 @@
 .end method
 
 .method private calculateReminderTimeout()J
-    .locals 5
+    .locals 4
 
     .prologue
     .line 824
@@ -430,31 +423,8 @@
     .line 838
     const-wide/16 v0, 0x384
 
-    .line 842
-    :cond_3
-    const-string v2, "CallDefer"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "calcualte reminder timeout (after seocnds) : "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 845
+    :cond_3
     const-wide/16 v2, 0x3e8
 
     mul-long/2addr v2, v0
@@ -886,7 +856,7 @@
 
     .line 147
     .local v0, valid:Z
-    iget-object v1, p0, Lcom/android/phone/htc/CallDeferActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v1, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     iget-object v1, v1, Lcom/android/internal/telephony/CallerInfo;->phoneNumber:Ljava/lang/String;
 
@@ -909,7 +879,7 @@
 
     .prologue
     .line 490
-    iget-object v3, p0, Lcom/android/phone/htc/CallDeferActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v3, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     invoke-static {v3}, Lcom/android/phone/util/CallDeferUtils;->launchCallReminder(Lcom/android/internal/telephony/CallerInfo;)Landroid/content/Intent;
 
@@ -930,36 +900,13 @@
 
     add-long v1, v3, v5
 
-    .line 496
-    .local v1, triggerTime:J
-    const-string v3, "CallDefer"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "call defer at: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 497
+    .local v1, triggerTime:J
     invoke-virtual {p0}, Lcom/android/phone/htc/CallDeferActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v3
 
-    iget-object v4, p0, Lcom/android/phone/htc/CallDeferActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v4, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     invoke-static {v3, v0, v1, v2, v4}, Lcom/android/phone/util/CallDeferUtils;->schduleDeferReminder(Landroid/content/Context;Landroid/content/Intent;JLcom/android/internal/telephony/CallerInfo;)Z
 
@@ -970,16 +917,9 @@
 .end method
 
 .method private onCancelClick()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 453
-    const-string v0, "CallDefer"
-
-    const-string v1, "onCancelClick"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 454
     invoke-virtual {p0}, Lcom/android/phone/htc/CallDeferActivity;->finish()V
 
@@ -988,16 +928,9 @@
 .end method
 
 .method private onOkClick()V
-    .locals 4
+    .locals 3
 
     .prologue
-    .line 435
-    const-string v1, "CallDefer"
-
-    const-string v2, "onDoneClick"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 436
     iget v1, p0, Lcom/android/phone/htc/CallDeferActivity;->mDeferMsgItem:I
 
@@ -1020,31 +953,8 @@
 
     if-nez v1, :cond_0
 
-    .line 440
-    const-string v1, "CallDefer"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "send message with content: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 441
-    iget-object v1, p0, Lcom/android/phone/htc/CallDeferActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v1, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     iget-object v1, v1, Lcom/android/internal/telephony/CallerInfo;->phoneNumber:Ljava/lang/String;
 
@@ -1063,24 +973,20 @@
 .end method
 
 .method private onTimerSet(Lcom/htc/widget/HtcTimePicker;)V
-    .locals 5
+    .locals 4
     .parameter "timer"
 
     .prologue
     .line 286
-    if-nez p1, :cond_0
+    if-nez p1, :cond_1
 
-    .line 288
-    new-instance v3, Ljava/lang/IllegalArgumentException;
-
-    const-string v4, "onTimerSet: timer is null"
-
-    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v3
+    .line 303
+    :cond_0
+    :goto_0
+    return-void
 
     .line 291
-    :cond_0
+    :cond_1
     invoke-virtual {p1}, Lcom/htc/widget/HtcTimePicker;->getCurrentHour()I
 
     move-result v0
@@ -1101,18 +1007,18 @@
     .local v2, second:I
     iget v3, p0, Lcom/android/phone/htc/CallDeferActivity;->mReminderHour:I
 
-    if-ne v0, v3, :cond_1
+    if-ne v0, v3, :cond_2
 
     iget v3, p0, Lcom/android/phone/htc/CallDeferActivity;->mReminderMinute:I
 
-    if-ne v1, v3, :cond_1
+    if-ne v1, v3, :cond_2
 
     iget v3, p0, Lcom/android/phone/htc/CallDeferActivity;->mReminderSecond:I
 
-    if-eq v2, v3, :cond_2
+    if-eq v2, v3, :cond_0
 
     .line 297
-    :cond_1
+    :cond_2
     iput v0, p0, Lcom/android/phone/htc/CallDeferActivity;->mReminderHour:I
 
     .line 298
@@ -1126,9 +1032,7 @@
 
     invoke-virtual {v3}, Lcom/android/phone/htc/CallDeferActivity$DeferAdapter;->notifyDataSetChanged()V
 
-    .line 303
-    :cond_2
-    return-void
+    goto :goto_0
 .end method
 
 .method private prepareReminderDialog(Landroid/app/Dialog;Landroid/os/Bundle;)V
@@ -1177,16 +1081,16 @@
 
     .prologue
     .line 131
-    iget-object v0, p0, Lcom/android/phone/htc/CallDeferActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v0, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     invoke-static {v0, p1}, Lcom/android/phone/util/CallDeferUtils;->initFromIntent(Lcom/android/internal/telephony/CallerInfo;Landroid/content/Intent;)Lcom/android/internal/telephony/CallerInfo;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/phone/htc/CallDeferActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iput-object v0, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     .line 132
-    iget-object v0, p0, Lcom/android/phone/htc/CallDeferActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v0, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     iget-wide v0, v0, Lcom/android/internal/telephony/CallerInfo;->recordNumber:J
 
@@ -1197,7 +1101,7 @@
     if-lez v0, :cond_0
 
     .line 133
-    iget-object v0, p0, Lcom/android/phone/htc/CallDeferActivity;->mImageView:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mImageView:Landroid/widget/ImageView;
 
     const v1, 0x208025a
 
@@ -1231,15 +1135,15 @@
 
     if-eqz v2, :cond_1
 
-    .line 470
+    .line 472
     :cond_0
-    new-instance v2, Ljava/lang/IllegalArgumentException;
+    const-string v2, "CallDefer"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "number: "
+    const-string v4, "sendMessage: number: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1263,9 +1167,14 @@
 
     move-result-object v3
 
-    invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    throw v2
+    .line 474
+    const/4 v1, 0x0
+
+    .line 486
+    :goto_0
+    return v1
 
     .line 476
     :cond_1
@@ -1292,8 +1201,7 @@
     .line 483
     invoke-virtual {p0, v0}, Lcom/android/phone/htc/CallDeferActivity;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 486
-    return v1
+    goto :goto_0
 .end method
 
 .method private setupActionBtns(II)V
@@ -1399,7 +1307,7 @@
 
     .prologue
     .line 138
-    iget-object v0, p0, Lcom/android/phone/htc/CallDeferActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v0, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     iget-object v0, v0, Lcom/android/internal/telephony/CallerInfo;->name:Ljava/lang/String;
 
@@ -1410,9 +1318,9 @@
     if-nez v0, :cond_0
 
     .line 139
-    iget-object v0, p0, Lcom/android/phone/htc/CallDeferActivity;->mNameView:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mNameView:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/android/phone/htc/CallDeferActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v1, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     iget-object v1, v1, Lcom/android/internal/telephony/CallerInfo;->name:Ljava/lang/String;
 
@@ -1592,28 +1500,28 @@
     if-nez v0, :cond_0
 
     .line 106
-    iget-object v0, p0, Lcom/android/phone/htc/CallDeferActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v0, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     const-string v1, "HTC"
 
     iput-object v1, v0, Lcom/android/internal/telephony/CallerInfo;->name:Ljava/lang/String;
 
     .line 107
-    iget-object v0, p0, Lcom/android/phone/htc/CallDeferActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v0, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     const-string v1, "0972267717"
 
     iput-object v1, v0, Lcom/android/internal/telephony/CallerInfo;->phoneNumber:Ljava/lang/String;
 
     .line 108
-    iget-object v0, p0, Lcom/android/phone/htc/CallDeferActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v0, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     const/4 v1, 0x2
 
     iput v1, v0, Lcom/android/internal/telephony/CallerInfo;->numberType:I
 
     .line 109
-    iget-object v0, p0, Lcom/android/phone/htc/CallDeferActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v0, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     const-wide/16 v1, 0x1381
 
@@ -1637,36 +1545,13 @@
 .end method
 
 .method protected onCreateDialog(ILandroid/os/Bundle;)Landroid/app/Dialog;
-    .locals 3
+    .locals 1
     .parameter "id"
     .parameter "args"
 
     .prologue
     .line 156
     packed-switch p1, :pswitch_data_0
-
-    .line 170
-    const-string v0, "CallDefer"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onCreateDialog: unknown dialog id: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 173
     invoke-super {p0, p1, p2}, Lcom/android/phone/htc/HtcDeferPersonActivity;->onCreateDialog(ILandroid/os/Bundle;)Landroid/app/Dialog;
@@ -1763,7 +1648,7 @@
 .end method
 
 .method protected onPrepareDialog(ILandroid/app/Dialog;Landroid/os/Bundle;)V
-    .locals 3
+    .locals 1
     .parameter "id"
     .parameter "dialog"
     .parameter "args"
@@ -1771,29 +1656,6 @@
     .prologue
     .line 178
     packed-switch p1, :pswitch_data_0
-
-    .line 195
-    const-string v0, "CallDefer"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onPrepareDialog: unknown dialog id: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 198
     :goto_0

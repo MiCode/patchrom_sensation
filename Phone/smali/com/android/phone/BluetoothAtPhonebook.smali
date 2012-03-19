@@ -248,7 +248,7 @@
     const/4 v3, 0x0
 
     .line 133
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 59
     iput-object v3, p0, Lcom/android/phone/BluetoothAtPhonebook;->mQueryHandler:Lcom/android/phone/BluetoothAtPhonebook$QueryHandler;

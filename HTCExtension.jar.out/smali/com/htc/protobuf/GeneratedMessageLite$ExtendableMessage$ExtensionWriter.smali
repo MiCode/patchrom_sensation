@@ -57,7 +57,7 @@
     .local p0, this:Lcom/htc/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;,"Lcom/htc/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>.ExtensionWriter;"
     iput-object p1, p0, Lcom/htc/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->this$0:Lcom/htc/protobuf/GeneratedMessageLite$ExtendableMessage;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 161
     iget-object v0, p0, Lcom/htc/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->this$0:Lcom/htc/protobuf/GeneratedMessageLite$ExtendableMessage;

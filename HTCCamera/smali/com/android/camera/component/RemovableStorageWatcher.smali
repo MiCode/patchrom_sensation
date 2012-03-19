@@ -108,7 +108,7 @@
     .line 36
     .end local v1           #eventName:Ljava/lang/String;
     :cond_2
-    iget-object v2, p0, Lcom/android/camera/component/RemovableStorageWatcher;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
 

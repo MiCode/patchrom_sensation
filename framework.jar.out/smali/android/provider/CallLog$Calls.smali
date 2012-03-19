@@ -160,7 +160,7 @@
 
     .prologue
     .line 47
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -576,24 +576,20 @@
 
     if-nez v4, :cond_6
     goto :cond_6
-    .line 453
     const-string v4, "city_id"
 
     move-object/from16 v0, v17
 
     invoke-virtual {v0, v4, v10}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 456
     :cond_6
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/internal/telephony/CallerInfo;->cnapName:Ljava/lang/String;
 
-    .line 458
     .local v11, cname:Ljava/lang/String;
     const/4 v9, 0x0
 
-    .line 463
     .local v9, FAKE_CNAME:Z
     invoke-static {v11}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 

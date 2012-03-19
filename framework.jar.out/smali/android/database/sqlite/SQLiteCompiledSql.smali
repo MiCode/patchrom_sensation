@@ -33,7 +33,7 @@
     const/4 v0, 0x0
 
     .line 57
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 48
     iput v0, p0, Landroid/database/sqlite/SQLiteCompiledSql;->nStatement:I

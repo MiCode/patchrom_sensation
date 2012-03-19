@@ -34,7 +34,7 @@
 
     .prologue
     .line 373
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 374
     iput-object p1, p0, Lcom/htc/opensense/widget/AlbumAdapterView$AdapterContextMenuInfo;->targetView:Landroid/view/View;

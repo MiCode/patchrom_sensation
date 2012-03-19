@@ -56,7 +56,7 @@
     .prologue
     .line 76
     .local p4, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;[Ljava/lang/String;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 77
     iput-object p1, p0, Landroid/webkit/PluginData;->mStream:Ljava/io/InputStream;

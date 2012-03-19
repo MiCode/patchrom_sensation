@@ -45,7 +45,7 @@
     const/4 v1, 0x0
 
     .line 543
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 535
     new-instance v0, Ljava/util/Vector;

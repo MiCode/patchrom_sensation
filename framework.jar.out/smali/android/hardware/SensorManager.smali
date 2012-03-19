@@ -322,7 +322,7 @@
 
     .prologue
     .line 628
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 361
     new-instance v3, Ljava/util/HashMap;
@@ -3839,7 +3839,7 @@
 .end method
 
 .method public registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;ILandroid/os/Handler;)Z
-    .locals 9
+    .locals 8
     .parameter "listener"
     .parameter "sensor"
     .parameter "rate"
@@ -3874,43 +3874,8 @@
     .line 1103
     move v0, p3
 
-    .line 1109
-    :goto_1
-    const/16 v6, 0x4e20
-
-    if-ge v0, v6, :cond_2
-
-    .line 1110
-    const-string v6, "SensorManager"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[SensorManager] registerListener: delay = "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, "\n"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 1114
-    :cond_2
+    :goto_1
     sget-object v7, Landroid/hardware/SensorManager;->sListeners:Ljava/util/ArrayList;
 
     monitor-enter v7
@@ -3928,12 +3893,12 @@
     move-result-object v2
 
     .local v2, i$:Ljava/util/Iterator;
-    :cond_3
+    :cond_2
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_9
+    if-eqz v6, :cond_8
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3949,7 +3914,7 @@
 
     move-result-object v6
 
-    if-ne v6, p1, :cond_3
+    if-ne v6, p1, :cond_2
 
     .line 1119
     move-object v3, v1
@@ -3961,7 +3926,7 @@
     .end local v3           #l:Landroid/hardware/SensorManager$ListenerDelegate;
     .local v4, l:Landroid/hardware/SensorManager$ListenerDelegate;
     :goto_2
-    if-nez v4, :cond_7
+    if-nez v4, :cond_6
 
     .line 1126
     :try_start_1
@@ -3986,7 +3951,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_6
+    if-nez v6, :cond_5
 
     .line 1130
     sget-object v6, Landroid/hardware/SensorManager;->sSensorThread:Landroid/hardware/SensorManager$SensorThread;
@@ -3995,14 +3960,14 @@
 
     move-result v6
 
-    if-eqz v6, :cond_5
+    if-eqz v6, :cond_4
 
     .line 1131
     invoke-direct {p0, p2, v0}, Landroid/hardware/SensorManager;->enableSensorLocked(Landroid/hardware/Sensor;I)Z
 
     move-result v6
 
-    if-nez v6, :cond_4
+    if-nez v6, :cond_3
 
     .line 1133
     sget-object v6, Landroid/hardware/SensorManager;->sListeners:Ljava/util/ArrayList;
@@ -4013,7 +3978,7 @@
     const/4 v5, 0x0
 
     .line 1153
-    :cond_4
+    :cond_3
     :goto_3
     monitor-exit v7
 
@@ -4062,7 +4027,7 @@
     .line 1138
     .restart local v2       #i$:Ljava/util/Iterator;
     .restart local v3       #l:Landroid/hardware/SensorManager$ListenerDelegate;
-    :cond_5
+    :cond_4
     :try_start_3
     sget-object v6, Landroid/hardware/SensorManager;->sListeners:Ljava/util/ArrayList;
 
@@ -4076,7 +4041,7 @@
     goto :goto_3
 
     .line 1143
-    :cond_6
+    :cond_5
     const/4 v5, 0x0
 
     goto :goto_3
@@ -4084,7 +4049,7 @@
     .line 1146
     .end local v3           #l:Landroid/hardware/SensorManager$ListenerDelegate;
     .restart local v4       #l:Landroid/hardware/SensorManager$ListenerDelegate;
-    :cond_7
+    :cond_6
     :try_start_4
     invoke-virtual {v4, p2}, Landroid/hardware/SensorManager$ListenerDelegate;->addSensor(Landroid/hardware/Sensor;)V
 
@@ -4093,7 +4058,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_8
+    if-nez v6, :cond_7
 
     .line 1149
     invoke-virtual {v4, p2}, Landroid/hardware/SensorManager$ListenerDelegate;->removeSensor(Landroid/hardware/Sensor;)I
@@ -4123,14 +4088,14 @@
 
     .end local v3           #l:Landroid/hardware/SensorManager$ListenerDelegate;
     .restart local v4       #l:Landroid/hardware/SensorManager$ListenerDelegate;
-    :cond_8
+    :cond_7
     move-object v3, v4
 
     .end local v4           #l:Landroid/hardware/SensorManager$ListenerDelegate;
     .restart local v3       #l:Landroid/hardware/SensorManager$ListenerDelegate;
     goto :goto_3
 
-    :cond_9
+    :cond_8
     move-object v4, v3
 
     .end local v3           #l:Landroid/hardware/SensorManager$ListenerDelegate;

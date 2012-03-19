@@ -36,7 +36,7 @@
     .line 168
     iput-object p1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseCancelable;->this$0:Lcom/htc/opensense/album/util/ImageManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 169
     iput-boolean v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseCancelable;->mCancel:Z

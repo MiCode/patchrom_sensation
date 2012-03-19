@@ -50,13 +50,13 @@
     .end annotation
 
     .prologue
-    .line 275
+    .line 276
     .local p2, objects:Ljava/util/List;,"Ljava/util/List<Lcom/htc/preference/HtcPreferenceActivity$Header;>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0, p2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
-    .line 276
+    .line 277
     const-string v0, "layout_inflater"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -67,7 +67,7 @@
 
     iput-object v0, p0, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 277
+    .line 278
     return-void
 .end method
 
@@ -82,10 +82,10 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 284
+    .line 285
     if-nez p2, :cond_0
 
-    .line 285
+    .line 286
     iget-object v5, p0, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     const v6, 0x10900c2
@@ -94,7 +94,7 @@
 
     move-result-object v4
 
-    .line 287
+    .line 288
     .local v4, view:Landroid/view/View;
     new-instance v1, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter$HeaderViewHolder;
 
@@ -102,7 +102,7 @@
 
     invoke-direct {v1, v5}, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter$HeaderViewHolder;-><init>(Lcom/htc/preference/HtcPreferenceActivity$1;)V
 
-    .line 288
+    .line 289
     .local v1, holder:Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter$HeaderViewHolder;
     const v5, 0x1020006
 
@@ -114,7 +114,7 @@
 
     iput-object v5, v1, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter$HeaderViewHolder;->icon:Landroid/widget/ImageView;
 
-    .line 289
+    .line 290
     const v5, 0x1020016
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -125,7 +125,7 @@
 
     iput-object v5, v1, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter$HeaderViewHolder;->title:Landroid/widget/TextView;
 
-    .line 290
+    .line 291
     const v5, 0x1020010
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -136,7 +136,7 @@
 
     iput-object v5, v1, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter$HeaderViewHolder;->summary:Landroid/widget/TextView;
 
-    .line 291
+    .line 292
     iget-object v5, v1, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter$HeaderViewHolder;->title:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter;->getContext()Landroid/content/Context;
@@ -147,7 +147,7 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
 
-    .line 292
+    .line 293
     iget-object v5, v1, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter$HeaderViewHolder;->summary:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter;->getContext()Landroid/content/Context;
@@ -158,10 +158,10 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
 
-    .line 293
+    .line 294
     invoke-virtual {v4, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 300
+    .line 301
     :goto_0
     invoke-virtual {p0, p1}, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -169,7 +169,7 @@
 
     check-cast v0, Lcom/htc/preference/HtcPreferenceActivity$Header;
 
-    .line 303
+    .line 304
     .local v0, header:Lcom/htc/preference/HtcPreferenceActivity$Header;
     invoke-virtual {p0}, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter;->getContext()Landroid/content/Context;
 
@@ -185,7 +185,7 @@
 
     move-result-object v2
 
-    .line 305
+    .line 306
     .local v2, res:Landroid/content/res/Resources;
     iget-object v5, v1, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter$HeaderViewHolder;->icon:Landroid/widget/ImageView;
 
@@ -195,7 +195,7 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 306
+    .line 307
     iget-object v5, v1, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter$HeaderViewHolder;->title:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Lcom/htc/preference/HtcPreferenceActivity$Header;->getTitle(Landroid/content/res/Resources;)Ljava/lang/CharSequence;
@@ -204,12 +204,12 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 307
+    .line 308
     invoke-virtual {v0, v2}, Lcom/htc/preference/HtcPreferenceActivity$Header;->getSummary(Landroid/content/res/Resources;)Ljava/lang/CharSequence;
 
     move-result-object v3
 
-    .line 310
+    .line 311
     .local v3, summary:Ljava/lang/CharSequence;
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -217,21 +217,21 @@
 
     if-nez v5, :cond_1
 
-    .line 311
+    .line 312
     iget-object v5, v1, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter$HeaderViewHolder;->summary:Landroid/widget/TextView;
 
     invoke-virtual {v5, v8}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 312
+    .line 313
     iget-object v5, v1, Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter$HeaderViewHolder;->summary:Landroid/widget/TextView;
 
     invoke-virtual {v5, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 317
+    .line 318
     :goto_1
     return-object v4
 
-    .line 295
+    .line 296
     .end local v0           #header:Lcom/htc/preference/HtcPreferenceActivity$Header;
     .end local v1           #holder:Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter$HeaderViewHolder;
     .end local v2           #res:Landroid/content/res/Resources;
@@ -240,7 +240,7 @@
     :cond_0
     move-object v4, p2
 
-    .line 296
+    .line 297
     .restart local v4       #view:Landroid/view/View;
     invoke-virtual {v4}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -251,7 +251,7 @@
     .restart local v1       #holder:Lcom/htc/preference/HtcPreferenceActivity$HeaderAdapter$HeaderViewHolder;
     goto :goto_0
 
-    .line 314
+    .line 315
     .restart local v0       #header:Lcom/htc/preference/HtcPreferenceActivity$Header;
     .restart local v2       #res:Landroid/content/res/Resources;
     .restart local v3       #summary:Ljava/lang/CharSequence;

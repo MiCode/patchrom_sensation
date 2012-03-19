@@ -40,7 +40,7 @@
 
     iput p3, p0, Lcom/android/internal/util/CharSequences$2;->val$end:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

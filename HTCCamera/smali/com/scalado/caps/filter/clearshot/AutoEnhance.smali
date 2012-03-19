@@ -24,7 +24,7 @@
     iput-object v1, p0, Lcom/scalado/caps/filter/clearshot/AutoEnhance;->parameters:Lcom/scalado/caps/filter/clearshot/AutoEnhanceParameters;
 
     .line 30
-    iget-object v1, p0, Lcom/scalado/caps/filter/clearshot/AutoEnhance;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -86,7 +86,7 @@
 
     .line 73
     :cond_0
-    iget-object v0, p0, Lcom/scalado/caps/filter/clearshot/AutoEnhance;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -129,7 +129,7 @@
 
     .prologue
     .line 89
-    iget-object v0, p0, Lcom/scalado/caps/filter/clearshot/AutoEnhance;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -147,7 +147,7 @@
 
     .prologue
     .line 46
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/clearshot/AutoEnhance;->isCommitted:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v1, :cond_0
 
@@ -173,7 +173,7 @@
 
     .line 53
     :cond_1
-    iget-object v1, p0, Lcom/scalado/caps/filter/clearshot/AutoEnhance;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -187,7 +187,7 @@
     .local v0, error:I
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/scalado/caps/filter/clearshot/AutoEnhance;->isSet:Z
+    iput-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 56
     iput-object p1, p0, Lcom/scalado/caps/filter/clearshot/AutoEnhance;->parameters:Lcom/scalado/caps/filter/clearshot/AutoEnhanceParameters;

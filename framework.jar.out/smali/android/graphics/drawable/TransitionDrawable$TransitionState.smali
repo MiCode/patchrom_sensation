@@ -36,7 +36,7 @@
 
     .prologue
     .line 264
-    iget v0, p0, Landroid/graphics/drawable/TransitionDrawable$TransitionState;->mChangingConfigurations:I
+    iget v0, p0, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChangingConfigurations:I
 
     return v0
 .end method

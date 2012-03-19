@@ -30,7 +30,7 @@
     .line 346
     iput-object p1, p0, Lcom/android/camera/component/AutoSceneUI$15;->this$0:Lcom/android/camera/component/AutoSceneUI;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

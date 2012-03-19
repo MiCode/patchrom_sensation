@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final EVENT_FINISH:I = 0x3
 
@@ -630,21 +630,14 @@
 .end method
 
 .method private final updateCdmaRoamingIcon()V
-    .locals 8
+    .locals 7
 
     .prologue
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    const/4 v5, -0x1
-
-    .line 409
-    const-string v3, "HtcCdmaLoopbackScreen"
-
-    const-string v4, "updateCdmaRoamingIcon()..."
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v4, -0x1
 
     .line 410
     const-string v3, "phone"
@@ -669,7 +662,7 @@
 
     .line 414
     .local v1, iconMode:I
-    if-ne v0, v5, :cond_0
+    if-ne v0, v4, :cond_0
 
     .line 415
     const-string v3, "HtcCdmaLoopbackScreen"
@@ -684,7 +677,7 @@
 
     .line 419
     :cond_0
-    if-ne v1, v5, :cond_1
+    if-ne v1, v4, :cond_1
 
     .line 420
     const-string v3, "HtcCdmaLoopbackScreen"
@@ -697,19 +690,12 @@
 
     .line 424
     :cond_1
-    if-ne v0, v7, :cond_2
-
-    .line 425
-    const-string v3, "HtcCdmaLoopbackScreen"
-
-    const-string v4, "Cdma ROAMING_INDICATOR_OFF, removing ERI icon"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    if-ne v0, v6, :cond_2
 
     .line 426
     iget-object v3, p0, Lcom/android/phone/HtcCdmaLoopbackScreen;->mOperatorName:Lcom/htc/widget/HtcBlinkingTextView;
 
-    invoke-virtual {v3, v6}, Lcom/htc/widget/HtcBlinkingTextView;->setTextBlinkable(Z)V
+    invoke-virtual {v3, v5}, Lcom/htc/widget/HtcBlinkingTextView;->setTextBlinkable(Z)V
 
     goto :goto_0
 
@@ -723,7 +709,7 @@
     :pswitch_0
     iget-object v3, p0, Lcom/android/phone/HtcCdmaLoopbackScreen;->mOperatorName:Lcom/htc/widget/HtcBlinkingTextView;
 
-    invoke-virtual {v3, v6}, Lcom/htc/widget/HtcBlinkingTextView;->setTextBlinkable(Z)V
+    invoke-virtual {v3, v5}, Lcom/htc/widget/HtcBlinkingTextView;->setTextBlinkable(Z)V
 
     goto :goto_0
 
@@ -731,7 +717,7 @@
     :pswitch_1
     iget-object v3, p0, Lcom/android/phone/HtcCdmaLoopbackScreen;->mOperatorName:Lcom/htc/widget/HtcBlinkingTextView;
 
-    invoke-virtual {v3, v7}, Lcom/htc/widget/HtcBlinkingTextView;->setTextBlinkable(Z)V
+    invoke-virtual {v3, v6}, Lcom/htc/widget/HtcBlinkingTextView;->setTextBlinkable(Z)V
 
     goto :goto_0
 
@@ -805,16 +791,9 @@
 
 # virtual methods
 .method disableKeyguard()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 354
-    const-string v0, "HtcCdmaLoopbackScreen"
-
-    const-string v1, "disable keyguard"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 356
     iget-object v0, p0, Lcom/android/phone/HtcCdmaLoopbackScreen;->mKeyguardLock:Landroid/app/KeyguardManager$KeyguardLock;
 
@@ -1030,13 +1009,6 @@
 
     invoke-virtual {p0, v2, v0}, Lcom/android/phone/HtcCdmaLoopbackScreen;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 137
-    const-string v2, "HtcCdmaLoopbackScreen"
-
-    const-string v3, "Created"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 138
     const-string v2, "keyguard"
 
@@ -1081,13 +1053,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 144
-    const-string v2, "HtcCdmaLoopbackScreen"
-
-    const-string v3, "Created for destroy"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 145
     iget-object v2, p0, Lcom/android/phone/HtcCdmaLoopbackScreen;->mCallTimer:Landroid/os/Handler;
 
@@ -1119,13 +1084,6 @@
     .locals 2
 
     .prologue
-    .line 192
-    const-string v0, "HtcCdmaLoopbackScreen"
-
-    const-string v1, "Closed"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 193
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
@@ -1185,13 +1143,6 @@
     .prologue
     .line 124
     invoke-super {p0, p1}, Landroid/app/Activity;->onNewIntent(Landroid/content/Intent;)V
-
-    .line 125
-    const-string v1, "HtcCdmaLoopbackScreen"
-
-    const-string v2, "onNewIntent"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 126
     const-string v1, "finish"
@@ -1267,17 +1218,10 @@
 .end method
 
 .method protected onSaveInstanceState(Landroid/os/Bundle;)V
-    .locals 2
+    .locals 0
     .parameter "outState"
 
     .prologue
-    .line 201
-    const-string v0, "HtcCdmaLoopbackScreen"
-
-    const-string v1, "onSaveInstanceState"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 202
     invoke-super {p0, p1}, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
@@ -1300,16 +1244,9 @@
 .end method
 
 .method reenableKeyguard()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 366
-    const-string v0, "HtcCdmaLoopbackScreen"
-
-    const-string v1, "re-enable keyguard"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 368
     iget-object v0, p0, Lcom/android/phone/HtcCdmaLoopbackScreen;->mKeyguardLock:Landroid/app/KeyguardManager$KeyguardLock;
 

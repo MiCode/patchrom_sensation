@@ -30,7 +30,7 @@
 #the value of this static final field might be set in the static constructor
 .field private static final CITY_ID:Z = false
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 #the value of this static final field might be set in the static constructor
 .field private static final ENLARGE_CALLER_INFO_FONT:Z = false
@@ -324,63 +324,6 @@
     invoke-direct {v1, v2}, Lcom/android/phone/CallCard$ImageLoadListener;-><init>(Lcom/android/phone/CallCard$1;)V
 
     iput-object v1, p0, Lcom/android/phone/CallCard;->mImageLoadListener:Lcom/android/phone/CallCard$ImageLoadListener;
-
-    .line 268
-    const-string v1, "CallCard constructor..."
-
-    invoke-direct {p0, v1}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
-    .line 269
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "- this = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
-    .line 270
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "- context "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", attrs "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     .line 273
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -974,43 +917,6 @@
     .parameter "call"
 
     .prologue
-    .line 1189
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "displayMainCallStatus(phone "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    const-string v10, ", call "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    const-string v10, ")..."
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-direct {p0, v9}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1192
     if-nez p2, :cond_1
 
@@ -1032,33 +938,8 @@
 
     move-result-object v8
 
-    .line 1200
-    .local v8, state:Lcom/android/internal/telephony/Call$State;
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "  - call.state: "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {p2}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
-
-    move-result-object v10
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-direct {p0, v9}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1202
+    .local v8, state:Lcom/android/internal/telephony/Call$State;
     sget-object v9, Lcom/android/phone/CallCard$2;->$SwitchMap$com$android$internal$telephony$Call$State:[I
 
     invoke-virtual {v8}, Lcom/android/internal/telephony/Call$State;->ordinal()I
@@ -1158,11 +1039,6 @@
     .end local v5           #phoneType:I
     :pswitch_0
     invoke-direct {p0}, Lcom/android/phone/CallCard;->showCallConnected()V
-
-    .line 1206
-    const-string v9, "displayMainCallStatus: start periodicUpdateTimer"
-
-    invoke-direct {p0, v9}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     .line 1207
     iget-object v9, p0, Lcom/android/phone/CallCard;->mCallTime:Lcom/android/phone/CallTime;
@@ -1277,11 +1153,6 @@
     .local v6, presentation:I
     if-nez v1, :cond_7
 
-    .line 1294
-    const-string v9, "displayMainCallStatus: connection is null, using default values."
-
-    invoke-direct {p0, v9}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1299
     invoke-virtual {p0}, Lcom/android/phone/CallCard;->getContext()Landroid/content/Context;
 
@@ -1297,7 +1168,7 @@
 
     invoke-direct {p0, v2, v6, v9, p2}, Lcom/android/phone/CallCard;->updateDisplayForPerson(Lcom/android/internal/telephony/CallerInfo;IZLcom/android/internal/telephony/Call;)V
 
-    goto/16 :goto_2
+    goto :goto_2
 
     .line 1284
     .end local v2           #info:Lcom/android/internal/telephony/CallerInfo;
@@ -1345,44 +1216,9 @@
 
     throw v9
 
-    .line 1302
+    .line 1306
     .restart local v6       #presentation:I
     :cond_7
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "  - CONN: "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    const-string v10, ", state = "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/Connection;->getState()Lcom/android/internal/telephony/Call$State;
-
-    move-result-object v10
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-direct {p0, v9}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
-    .line 1306
     const/4 v7, 0x1
 
     .line 1307
@@ -1438,11 +1274,6 @@
     .line 1325
     .local v3, isRoaming:[Z
     if-eqz v7, :cond_c
-
-    .line 1326
-    const-string v9, "- displayMainCallStatus: starting CallerInfo query..."
-
-    invoke-direct {p0, v9}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     .line 1327
     invoke-virtual {p0}, Lcom/android/phone/CallCard;->getContext()Landroid/content/Context;
@@ -1537,13 +1368,8 @@
 
     invoke-direct {p0, v4, v1, v9, v10}, Lcom/android/phone/CallCard;->doQueryECID(Ljava/lang/Object;Lcom/android/internal/telephony/Connection;ZZ)V
 
-    .line 1344
-    :cond_d
-    const-string v9, "- displayMainCallStatus: using data we already have..."
-
-    invoke-direct {p0, v9}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1345
+    :cond_d
     instance-of v9, v4, Lcom/android/internal/telephony/CallerInfo;
 
     if-eqz v9, :cond_e
@@ -1553,29 +1379,8 @@
     .line 1346
     check-cast v0, Lcom/android/internal/telephony/CallerInfo;
 
-    .line 1347
-    .local v0, ci:Lcom/android/internal/telephony/CallerInfo;
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "   ==> Got CallerInfo; updating display: ci = "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-direct {p0, v9}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1348
+    .local v0, ci:Lcom/android/internal/telephony/CallerInfo;
     const/4 v9, 0x0
 
     invoke-direct {p0, v0, v6, v9, p2}, Lcom/android/phone/CallCard;->updateDisplayForPerson(Lcom/android/internal/telephony/CallerInfo;IZLcom/android/internal/telephony/Call;)V
@@ -1595,29 +1400,8 @@
     .end local v4           #o:Ljava/lang/Object;
     iget-object v0, v4, Lcom/android/phone/PhoneUtils$CallerInfoToken;->currentInfo:Lcom/android/internal/telephony/CallerInfo;
 
-    .line 1351
-    .restart local v0       #ci:Lcom/android/internal/telephony/CallerInfo;
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "   ==> Got CallerInfoToken; updating display: ci = "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-direct {p0, v9}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1352
+    .restart local v0       #ci:Lcom/android/internal/telephony/CallerInfo;
     const/4 v9, 0x1
 
     invoke-direct {p0, v0, v6, v9, p2}, Lcom/android/phone/CallCard;->updateDisplayForPerson(Lcom/android/internal/telephony/CallerInfo;IZLcom/android/internal/telephony/Call;)V
@@ -1653,8 +1437,6 @@
     goto/16 :goto_2
 
     .line 1202
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -1760,11 +1542,6 @@
     .line 1630
     .local v0, c:Lcom/android/internal/telephony/Connection;
     if-nez v0, :cond_0
-
-    .line 1631
-    const-string v3, "getCallFailedString: connection is null, using default values."
-
-    invoke-direct {p0, v3}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     .line 1634
     const v2, 0x7f0e0398
@@ -2002,8 +1779,6 @@
     goto :goto_1
 
     .line 1643
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -3522,35 +3297,8 @@
 
     move-result-object v0
 
-    .line 1571
-    .local v0, context:Landroid/content/Context;
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "- getTitleForCallCard(Call "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ")..."
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {p0, v3}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1573
+    .local v0, context:Landroid/content/Context;
     sget-object v3, Lcom/android/phone/CallCard$2;->$SwitchMap$com$android$internal$telephony$Call$State:[I
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/Call$State;->ordinal()I
@@ -3561,31 +3309,10 @@
 
     packed-switch v3, :pswitch_data_0
 
-    .line 1611
+    .line 1612
     :cond_0
     :goto_0
     :pswitch_0
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "  ==> result: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {p0, v3}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
-    .line 1612
     return-object v1
 
     .line 1581
@@ -4017,39 +3744,8 @@
 
     move-result v0
 
-    .line 3699
-    .local v0, bDataRoamingEnabled:Z
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "bIsRoaming = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, " bDataRoamingEnabled = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-direct {p0, v5}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 3701
+    .local v0, bDataRoamingEnabled:Z
     const/4 v5, 0x2
 
     new-array v4, v5, [Z
@@ -4706,66 +4402,41 @@
 .end method
 
 .method private showCallConnected()V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 1733
-    const-string v0, "showCallConnected()..."
-
-    invoke-direct {p0, v0}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1735
     return-void
 .end method
 
 .method private showCallConnecting()V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 1723
-    const-string v0, "showCallConnecting()..."
-
-    invoke-direct {p0, v0}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1725
     return-void
 .end method
 
 .method private showCallEnded()V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 1738
-    const-string v0, "showCallEnded()..."
-
-    invoke-direct {p0, v0}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1740
     return-void
 .end method
 
 .method private showCallIncoming()V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 1728
-    const-string v0, "showCallIncoming()..."
-
-    invoke-direct {p0, v0}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1730
     return-void
 .end method
 
 .method private showCallOnhold()V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 1742
-    const-string v0, "showCallOnhold()..."
-
-    invoke-direct {p0, v0}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1744
     return-void
 .end method
@@ -4880,33 +4551,6 @@
 
     const/16 v7, 0x8
 
-    .line 1446
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "updateCardTitleWidgets(call "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, ")..."
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-direct {p0, v5}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1447
     invoke-virtual {p2}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
 
@@ -4953,27 +4597,6 @@
     iget-object v5, p0, Lcom/android/phone/CallCard;->mTitleElapsedTimeShadow:Landroid/widget/TextView;
 
     iput-object v5, p0, Lcom/android/phone/CallCard;->mElapsedTimeShadow:Landroid/widget/TextView;
-
-    .line 1473
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "updateCardTitleWidgets: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-direct {p0, v5}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     .line 1477
     sget-object v5, Lcom/android/internal/telephony/Call$State;->ACTIVE:Lcom/android/internal/telephony/Call$State;
@@ -5226,11 +4849,6 @@
     .parameter "call"
 
     .prologue
-    .line 2267
-    const-string v0, "updateDisplayForConference()..."
-
-    invoke-direct {p0, v0}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 2272
     iget-object v0, p0, Lcom/android/phone/CallCard;->mName:Landroid/widget/TextView;
 
@@ -5294,63 +4912,6 @@
     .parameter "call"
 
     .prologue
-    .line 1757
-    new-instance v24, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v24 .. v24}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v25, "updateDisplayForPerson("
-
-    invoke-virtual/range {v24 .. v25}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v24
-
-    move-object/from16 v0, v24
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v24
-
-    const-string v25, ")\npresentation:"
-
-    invoke-virtual/range {v24 .. v25}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v24
-
-    move-object/from16 v0, v24
-
-    move/from16 v1, p2
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v24
-
-    const-string v25, " isTemporary:"
-
-    invoke-virtual/range {v24 .. v25}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v24
-
-    move-object/from16 v0, v24
-
-    move/from16 v1, p3
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v24
-
-    invoke-virtual/range {v24 .. v24}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v24
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v24
-
-    invoke-direct {v0, v1}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1761
     move-object/from16 v0, p0
 
@@ -7331,66 +6892,15 @@
 .end method
 
 .method private updateFakeForRingingOrSingleCallStatus(Lcom/android/internal/telephony/Phone;Lcom/android/internal/telephony/Call;Ljava/lang/String;)V
-    .locals 11
+    .locals 10
     .parameter "phone"
     .parameter "call"
     .parameter "personId"
 
     .prologue
-    const/4 v10, 0x2
+    const/4 v8, 0x2
 
     const/4 v9, 0x0
-
-    .line 1074
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "updateFakeForRingingOrSingleCallStatus(phone "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, ", call "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, ", state "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {p2}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, ")..."
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-direct {p0, v7}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     .line 1077
     invoke-virtual {p2}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
@@ -7403,7 +6913,7 @@
 
     move-result v7
 
-    if-ne v7, v10, :cond_0
+    if-ne v7, v8, :cond_0
 
     invoke-virtual {p2}, Lcom/android/internal/telephony/Call;->isGeneric()Z
 
@@ -7432,11 +6942,6 @@
     .local v1, conn:Lcom/android/internal/telephony/Connection;
     if-nez v1, :cond_1
 
-    .line 1089
-    const-string v7, "displayMainCallStatus: connection is null, using default values..."
-
-    invoke-direct {p0, v7}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1090
     invoke-virtual {p0}, Lcom/android/phone/CallCard;->getContext()Landroid/content/Context;
 
@@ -7461,43 +6966,8 @@
 
     move-result v4
 
-    .line 1094
-    .local v4, presentation:I
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "  - CONN: "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, ", state = "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/Connection;->getState()Lcom/android/internal/telephony/Call$State;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-direct {p0, v7}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1098
+    .local v4, presentation:I
     const/4 v5, 0x1
 
     .line 1099
@@ -7512,20 +6982,15 @@
 
     move-result v7
 
-    if-ne v7, v10, :cond_2
+    if-ne v7, v8, :cond_2
 
     .line 1103
     invoke-static {v1, v3}, Lcom/android/phone/HtcCdmaPhoneApp;->callingNumberUpdate(Lcom/android/internal/telephony/Connection;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 1110
-    :cond_2
-    const-string v7, "- displayMainCallStatus: using data we already have"
-
-    invoke-direct {p0, v7}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1111
+    :cond_2
     instance-of v7, v3, Lcom/android/internal/telephony/CallerInfo;
 
     if-eqz v7, :cond_3
@@ -7535,29 +7000,8 @@
     .line 1112
     check-cast v0, Lcom/android/internal/telephony/CallerInfo;
 
-    .line 1113
-    .local v0, ci:Lcom/android/internal/telephony/CallerInfo;
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "  Got CallerInfo; updating display: ci = "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-direct {p0, v7}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1115
+    .local v0, ci:Lcom/android/internal/telephony/CallerInfo;
     invoke-direct {p0, v0}, Lcom/android/phone/CallCard;->displayFakePersonalInfo(Lcom/android/internal/telephony/CallerInfo;)V
 
     goto :goto_0
@@ -7575,32 +7019,11 @@
     .end local v3           #o:Ljava/lang/Object;
     iget-object v0, v3, Lcom/android/phone/PhoneUtils$CallerInfoToken;->currentInfo:Lcom/android/internal/telephony/CallerInfo;
 
-    .line 1119
-    .restart local v0       #ci:Lcom/android/internal/telephony/CallerInfo;
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "   Got CallerInfoToken; updating display: ci = "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-direct {p0, v7}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1120
+    .restart local v0       #ci:Lcom/android/internal/telephony/CallerInfo;
     invoke-direct {p0, v0}, Lcom/android/phone/CallCard;->displayFakePersonalInfo(Lcom/android/internal/telephony/CallerInfo;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 1122
     .end local v0           #ci:Lcom/android/internal/telephony/CallerInfo;
@@ -7628,7 +7051,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_0
+    goto :goto_0
 .end method
 
 .method private updateForRingingOrSingleCallStatus(Lcom/android/internal/telephony/CallManager;Lcom/android/internal/telephony/Call;Ljava/lang/String;)V
@@ -7638,69 +7061,6 @@
     .parameter "personId"
 
     .prologue
-    .line 841
-    new-instance v21, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v21 .. v21}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v22, "displayMainCallStatus(cm "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    move-object/from16 v0, v21
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, ", call "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    move-object/from16 v0, v21
-
-    move-object/from16 v1, p2
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, ", state"
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    invoke-virtual/range {p2 .. p2}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
-
-    move-result-object v22
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, ")..."
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v21
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v21
-
-    invoke-direct {v0, v1}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 844
     invoke-virtual/range {p2 .. p2}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
 
@@ -7837,15 +7197,6 @@
     .end local v13           #inCallPhoneType:I
     :pswitch_0
     invoke-direct/range {p0 .. p0}, Lcom/android/phone/CallCard;->showCallConnected()V
-
-    .line 850
-    const-string v21, "displayMainCallStatus: start periodicUpdateTimer"
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v21
-
-    invoke-direct {v0, v1}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     .line 851
     move-object/from16 v0, p0
@@ -8003,15 +7354,6 @@
     .local v11, conn:Lcom/android/internal/telephony/Connection;
     if-nez v11, :cond_5
 
-    .line 918
-    const-string v21, "displayMainCallStatus: connection is null, using default values."
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v21
-
-    invoke-direct {v0, v1}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 923
     invoke-virtual/range {p0 .. p0}, Lcom/android/phone/CallCard;->getContext()Landroid/content/Context;
 
@@ -8048,49 +7390,8 @@
 
     move-result v17
 
-    .line 931
-    .local v17, presentation:I
-    new-instance v21, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v21 .. v21}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v22, "  - CONN: "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    move-object/from16 v0, v21
-
-    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string v22, ", state = "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    invoke-virtual {v11}, Lcom/android/internal/telephony/Connection;->getState()Lcom/android/internal/telephony/Call$State;
-
-    move-result-object v22
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v21
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v21
-
-    invoke-direct {v0, v1}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 935
+    .local v17, presentation:I
     const/16 v18, 0x1
 
     .line 936
@@ -8162,15 +7463,6 @@
     .line 954
     .local v15, isRoaming:[Z
     if-eqz v18, :cond_f
-
-    .line 955
-    const-string v21, "- displayMainCallStatus: starting CallerInfo query..."
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v21
-
-    invoke-direct {v0, v1}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     .line 956
     invoke-virtual/range {p0 .. p0}, Lcom/android/phone/CallCard;->getContext()Landroid/content/Context;
@@ -8495,17 +7787,8 @@
 
     invoke-direct {v0, v1, v11, v2, v3}, Lcom/android/phone/CallCard;->doQueryECID(Ljava/lang/Object;Lcom/android/internal/telephony/Connection;ZZ)V
 
-    .line 1014
-    :cond_10
-    const-string v21, "- displayMainCallStatus: using data we already have..."
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v21
-
-    invoke-direct {v0, v1}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1015
+    :cond_10
     const/4 v10, 0x0
 
     .line 1016
@@ -8522,33 +7805,6 @@
 
     .line 1017
     check-cast v10, Lcom/android/internal/telephony/CallerInfo;
-
-    .line 1018
-    new-instance v21, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v21 .. v21}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v22, "   ==> Got CallerInfo; updating display: ci = "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    move-object/from16 v0, v21
-
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v21
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v21
-
-    invoke-direct {v0, v1}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     .line 1031
     .end local v16           #o:Ljava/lang/Object;
@@ -8651,33 +7907,6 @@
 
     iget-object v10, v0, Lcom/android/phone/PhoneUtils$CallerInfoToken;->currentInfo:Lcom/android/internal/telephony/CallerInfo;
 
-    .line 1021
-    new-instance v21, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v21 .. v21}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v22, "   ==> Got CallerInfoToken; updating display: ci = "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    move-object/from16 v0, v21
-
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v21
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v21
-
-    invoke-direct {v0, v1}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     goto :goto_5
 
     .line 1023
@@ -8709,11 +7938,9 @@
 
     invoke-static/range {v21 .. v22}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_5
+    goto :goto_5
 
     .line 846
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -8732,14 +7959,6 @@
     .parameter "cm"
 
     .prologue
-    .line 744
-    const-string v4, "updateForegroundCall()..."
-
-    invoke-direct {p0, v4}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
-    .line 745
-    invoke-static {}, Lcom/android/phone/PhoneUtils;->dumpCallManager()V
-
     .line 747
     invoke-virtual {p1}, Lcom/android/internal/telephony/CallManager;->getActiveFgCall()Lcom/android/internal/telephony/Call;
 
@@ -8764,11 +7983,6 @@
     move-result v4
 
     if-nez v4, :cond_0
-
-    .line 751
-    const-string v4, "updateForegroundCall: no active call, show holding call"
-
-    invoke-direct {p0, v4}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     .line 758
     move-object v1, v0
@@ -8840,11 +8054,6 @@
     .parameter "personId"
 
     .prologue
-    .line 674
-    const-string v2, "updateForegroundCall()..."
-
-    invoke-direct {p0, v2}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 676
     invoke-virtual {p1}, Lcom/android/internal/telephony/CallManager;->getActiveFgCall()Lcom/android/internal/telephony/Call;
 
@@ -8865,11 +8074,6 @@
     sget-object v3, Lcom/android/internal/telephony/Call$State;->IDLE:Lcom/android/internal/telephony/Call$State;
 
     if-ne v2, v3, :cond_0
-
-    .line 680
-    const-string v2, "updateForegroundCall: no active call, show holding call"
-
-    invoke-direct {p0, v2}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     .line 687
     move-object v1, v0
@@ -8916,33 +8120,16 @@
 
     if-eqz v2, :cond_2
 
-    .line 706
-    const-string v2, "Foreground call is multiple or Conference call"
-
-    invoke-direct {p0, v2}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 707
     invoke-direct {p0, v1, v0}, Lcom/android/phone/CallCard;->updateMultipleOrConferenceCall(Lcom/android/internal/telephony/Call;Lcom/android/internal/telephony/Call;)V
 
     .line 723
+    :cond_2
     :goto_0
     return-void
 
-    .line 709
-    :cond_2
-    const-string v2, "Foreground call is not active , not update MultipleOrConferenceCall UI"
-
-    invoke-direct {p0, v2}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .line 713
-    :cond_3
-    const-string v2, "Foreground call is not multiple or conference call"
-
-    invoke-direct {p0, v2}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 714
+    :cond_3
     iget-object v2, p0, Lcom/android/phone/CallCard;->mPersonInfoPanel:Landroid/view/ViewGroup;
 
     const/4 v3, 0x0
@@ -9265,11 +8452,6 @@
     .parameter "cm"
 
     .prologue
-    .line 828
-    const-string v0, "updateNoCall()..."
-
-    invoke-direct {p0, v0}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 830
     const/4 v0, 0x0
 
@@ -9291,33 +8473,6 @@
     const/4 v9, -0x2
 
     const/4 v8, 0x0
-
-    .line 2312
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "updatePhotoForCallState("
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, ")..."
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-direct {p0, v6}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     .line 2314
     iget-object v6, p0, Lcom/android/phone/CallCard;->mApplication:Lcom/android/phone/PhoneApp;
@@ -9463,27 +8618,6 @@
     :cond_3
     :pswitch_1
     if-eqz v4, :cond_4
-
-    .line 2410
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "- overrriding photo image: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-direct {p0, v6}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     .line 2411
     invoke-direct {p0, v4, v8}, Lcom/android/phone/CallCard;->setPhotoImageResource(ILandroid/graphics/drawable/Drawable;)V
@@ -9767,15 +8901,10 @@
 .end method
 
 .method private updateRingingCall(Lcom/android/internal/telephony/CallManager;)V
-    .locals 2
+    .locals 1
     .parameter "cm"
 
     .prologue
-    .line 805
-    const-string v1, "updateRingingCall()..."
-
-    invoke-direct {p0, v1}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 807
     invoke-virtual {p1}, Lcom/android/internal/telephony/CallManager;->getFirstActiveRingingCall()Lcom/android/internal/telephony/Call;
 
@@ -9795,11 +8924,6 @@
     .parameter "personId"
 
     .prologue
-    .line 787
-    const-string v2, "updateRingingCall()..."
-
-    invoke-direct {p0, v2}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 789
     invoke-virtual {p1}, Lcom/android/internal/telephony/CallManager;->getFirstActiveRingingCall()Lcom/android/internal/telephony/Call;
 
@@ -10080,33 +9204,6 @@
 
     .line 341
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
-
-    .line 343
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "CallCard onFinishInflate(this = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ")..."
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {p0, v3}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     .line 345
     invoke-virtual {p0}, Lcom/android/phone/CallCard;->getContext()Landroid/content/Context;
@@ -10564,17 +9661,10 @@
 .end method
 
 .method public onPrepared(Landroid/media/MediaPlayer;)V
-    .locals 2
+    .locals 0
     .parameter "mp"
 
     .prologue
-    .line 3556
-    const-string v0, "CallCard"
-
-    const-string v1, "robot onPrepared"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 3558
     return-void
 .end method
@@ -10588,56 +9678,10 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 1386
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "onQueryComplete: token "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, ", cookie "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, ", ci "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-direct {p0, v5}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1388
     instance-of v5, p2, Lcom/android/internal/telephony/Call;
 
     if-eqz v5, :cond_6
-
-    .line 1392
-    const-string v5, "callerinfo query complete, updating ui from displayMainCallStatus()"
-
-    invoke-direct {p0, v5}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     move-object v0, p2
 
@@ -10693,41 +9737,8 @@
 
     move-result v4
 
-    .line 1409
-    :cond_0
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "- onQueryComplete: presentation="
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, ", contactExists="
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget-boolean v6, p3, Lcom/android/internal/telephony/CallerInfo;->contactExists:Z
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-direct {p0, v5}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 1415
+    :cond_0
     iget-boolean v5, p3, Lcom/android/internal/telephony/CallerInfo;->contactExists:Z
 
     if-eqz v5, :cond_5
@@ -10823,11 +9834,6 @@
     instance-of v5, p2, Landroid/widget/TextView;
 
     if-eqz v5, :cond_1
-
-    .line 1424
-    const-string v5, "callerinfo query complete, updating ui from ongoing or onhold"
-
-    invoke-direct {p0, v5}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
 
     .line 1425
     check-cast p2, Landroid/widget/TextView;
@@ -11024,11 +10030,6 @@
     .locals 2
 
     .prologue
-    .line 292
-    const-string v0, "reset()..."
-
-    invoke-direct {p0, v0}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 294
     invoke-direct {p0}, Lcom/android/phone/CallCard;->showCallConnected()V
 
@@ -12013,13 +11014,8 @@
     .line 3371
     const/4 v1, 0x0
 
-    .line 3372
-    .local v1, displayNumber:Ljava/lang/String;
-    const-string v2, "updateDisplayForPerson Call guard"
-
-    invoke-direct {p0, v2}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 3375
+    .local v1, displayNumber:Ljava/lang/String;
     iget-object v2, p0, Lcom/android/phone/CallCard;->mInCallScreen:Lcom/android/phone/InCallScreen;
 
     invoke-virtual {v2}, Lcom/android/phone/InCallScreen;->getCallerPhotoData()Landroid/graphics/drawable/Drawable;
@@ -12159,14 +11155,9 @@
 .end method
 
 .method updateForLandscapeMode()V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 2493
-    const-string v0, "updateForLandscapeMode()..."
-
-    invoke-direct {p0, v0}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 2494
     return-void
 .end method
@@ -12176,33 +11167,6 @@
     .parameter "cm"
 
     .prologue
-    .line 619
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "updateState("
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ")..."
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-direct {p0, v4}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 625
     invoke-virtual {p1}, Lcom/android/internal/telephony/CallManager;->getState()Lcom/android/internal/telephony/Phone$State;
 
@@ -12291,43 +11255,6 @@
     .parameter "mode"
 
     .prologue
-    .line 555
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "updateState(CallManager: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ", personId: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ")..."
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-direct {p0, v4}, Lcom/android/phone/CallCard;->log(Ljava/lang/String;)V
-
     .line 556
     iput-object p3, p0, Lcom/android/phone/CallCard;->mCallMode:Lcom/android/phone/InCallScreen$InCallScreenMode;
 

@@ -111,13 +111,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 308
-    const-string v2, "WallpaperService"
-
-    const-string v4, "Dispatch wallpaper COMMAND_STOP_RENDER"
-
-    invoke-static {v2, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 309
     iget-object v2, p0, Landroid/service/wallpaper/WallpaperService$Engine$4;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
@@ -161,13 +154,6 @@
     move-result v2
 
     if-eqz v2, :cond_1
-
-    .line 318
-    const-string v2, "WallpaperService"
-
-    const-string v4, "Dispatch wallpaper COMMAND_RESUME_RENDER"
-
-    invoke-static {v2, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 319
     iget-object v2, p0, Landroid/service/wallpaper/WallpaperService$Engine$4;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;

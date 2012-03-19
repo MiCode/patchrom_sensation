@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/android/phone/CallFeaturesSetting$5;->val$langStr:Ljava/lang/String;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

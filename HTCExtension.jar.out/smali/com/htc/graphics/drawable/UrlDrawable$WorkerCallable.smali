@@ -47,10 +47,10 @@
     .parameter
 
     .prologue
-    .line 872
+    .line 878
     iput-object p1, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -61,7 +61,7 @@
     .parameter "x1"
 
     .prologue
-    .line 872
+    .line 878
     invoke-direct {p0, p1}, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;-><init>(Lcom/htc/graphics/drawable/UrlDrawable;)V
 
     return-void
@@ -78,534 +78,722 @@
     .end annotation
 
     .prologue
-    const/16 v13, 0x64
+    .line 890
+    const/16 v9, 0x13
+
+    invoke-static {v9}, Landroid/os/Process;->setThreadPriority(I)V
+
+    .line 892
+    const/4 v3, 0x1
+
+    .line 893
+    .local v3, msg:I
+    const/4 v6, 0x0
+
+    .line 894
+    .local v6, retry_general:I
+    const/4 v4, 0x0
+
+    .line 895
+    .local v4, retry_duplicate:I
+    const/4 v0, 0x0
+
+    .line 897
+    .local v0, bitmap:Landroid/graphics/Bitmap;
+    iget-object v9, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    iget-object v9, v9, Lcom/htc/graphics/drawable/UrlDrawable;->mImageId:Ljava/lang/String;
+
+    invoke-virtual {v9}, Ljava/lang/String;->hashCode()I
+
+    move-result v9
+
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    .local v2, image_hash:Ljava/lang/Integer;
+    move v5, v4
+
+    .line 899
+    .end local v4           #retry_duplicate:I
+    .local v5, retry_duplicate:I
+    :goto_0
+    packed-switch v3, :pswitch_data_0
+
+    :goto_1
+    move v4, v5
+
+    .end local v5           #retry_duplicate:I
+    .restart local v4       #retry_duplicate:I
+    :goto_2
+    move v5, v4
+
+    .line 995
+    .end local v4           #retry_duplicate:I
+    .restart local v5       #retry_duplicate:I
+    goto :goto_0
+
+    .line 902
+    :pswitch_0
+    const/4 v9, 0x4
+
+    if-ne v3, v9, :cond_0
+
+    add-int/lit8 v4, v5, 0x1
+
+    .end local v5           #retry_duplicate:I
+    .restart local v4       #retry_duplicate:I
+    const/16 v9, 0x64
+
+    if-lt v5, v9, :cond_1
+
+    .line 904
+    const-string v9, "UrlDrawable"
+
+    const-string v10, "[%s] retry_duplicate=%d/%d exceeded"
+
+    const/4 v11, 0x3
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    iget-object v13, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    iget-object v13, v13, Lcom/htc/graphics/drawable/UrlDrawable;->mUrl:Ljava/lang/String;
+
+    aput-object v13, v11, v12
+
+    const/4 v12, 0x1
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v13
+
+    aput-object v13, v11, v12
 
     const/4 v12, 0x2
 
-    const/4 v11, 0x1
-
-    const/4 v10, 0x0
-
-    const/4 v9, 0x3
-
-    .line 884
-    const/16 v5, 0x13
-
-    invoke-static {v5}, Landroid/os/Process;->setThreadPriority(I)V
-
-    .line 886
-    const/4 v1, 0x1
-
-    .line 887
-    .local v1, msg:I
-    const/4 v4, 0x0
-
-    .line 888
-    .local v4, retry_general:I
-    const/4 v2, 0x0
-
-    .line 889
-    .local v2, retry_duplicate:I
-    const/4 v0, 0x0
-
-    .local v0, bitmap:Landroid/graphics/Bitmap;
-    move v3, v2
-
-    .line 892
-    .end local v2           #retry_duplicate:I
-    .local v3, retry_duplicate:I
-    :goto_0
-    packed-switch v1, :pswitch_data_0
-
-    :goto_1
-    move v2, v3
-
-    .end local v3           #retry_duplicate:I
-    .restart local v2       #retry_duplicate:I
-    :goto_2
-    move v3, v2
-
-    .line 972
-    .end local v2           #retry_duplicate:I
-    .restart local v3       #retry_duplicate:I
-    goto :goto_0
-
-    .line 895
-    :pswitch_0
-    const/4 v5, 0x4
-
-    if-ne v1, v5, :cond_0
-
-    add-int/lit8 v2, v3, 0x1
-
-    .end local v3           #retry_duplicate:I
-    .restart local v2       #retry_duplicate:I
-    if-lt v3, v13, :cond_1
-
-    .line 897
-    const-string v5, "UrlDrawable"
-
-    const-string v6, "[%s] retry_duplicate=%d/%d exceeded"
-
-    new-array v7, v9, [Ljava/lang/Object;
-
-    iget-object v8, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
-
-    iget-object v8, v8, Lcom/htc/graphics/drawable/UrlDrawable;->mUrl:Ljava/lang/String;
-
-    aput-object v8, v7, v10
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v8
-
-    aput-object v8, v7, v11
+    const/16 v13, 0x64
 
     invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v8
+    move-result-object v13
 
-    aput-object v8, v7, v12
+    aput-object v13, v11, v12
 
-    invoke-static {v6, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v10, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v10
 
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v9, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 900
+    .line 907
     const/4 v0, 0x0
 
-    move-object v5, v0
+    move-object v9, v0
 
-    .line 961
+    .line 984
     :goto_3
-    return-object v5
+    return-object v9
 
-    .end local v2           #retry_duplicate:I
-    .restart local v3       #retry_duplicate:I
+    .end local v4           #retry_duplicate:I
+    .restart local v5       #retry_duplicate:I
     :cond_0
-    move v2, v3
+    move v4, v5
 
-    .line 902
-    .end local v3           #retry_duplicate:I
-    .restart local v2       #retry_duplicate:I
+    .line 909
+    .end local v5           #retry_duplicate:I
+    .restart local v4       #retry_duplicate:I
     :cond_1
-    iget-object v5, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+    iget-object v9, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
 
     #calls: Lcom/htc/graphics/drawable/UrlDrawable;->getFromLocal()Landroid/graphics/Bitmap;
-    invoke-static {v5}, Lcom/htc/graphics/drawable/UrlDrawable;->access$500(Lcom/htc/graphics/drawable/UrlDrawable;)Landroid/graphics/Bitmap;
+    invoke-static {v9}, Lcom/htc/graphics/drawable/UrlDrawable;->access$500(Lcom/htc/graphics/drawable/UrlDrawable;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    move-object v5, v0
+    move-object v9, v0
 
-    .line 903
+    .line 910
     goto :goto_3
 
-    .line 904
+    .line 911
     :cond_2
-    iget-object v5, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+    iget-object v9, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
 
     #calls: Lcom/htc/graphics/drawable/UrlDrawable;->canLoadToRamCache()Z
-    invoke-static {v5}, Lcom/htc/graphics/drawable/UrlDrawable;->access$600(Lcom/htc/graphics/drawable/UrlDrawable;)Z
+    invoke-static {v9}, Lcom/htc/graphics/drawable/UrlDrawable;->access$600(Lcom/htc/graphics/drawable/UrlDrawable;)Z
 
-    move-result v5
+    move-result v9
 
-    if-nez v5, :cond_3
+    if-nez v9, :cond_3
 
-    .line 905
-    const/4 v1, 0x1
+    .line 912
+    const/4 v3, 0x1
 
-    .line 906
-    const-wide/16 v5, 0xc8
+    .line 913
+    const-wide/16 v9, 0xc8
 
-    invoke-static {v5, v6}, Ljava/lang/Thread;->sleep(J)V
+    invoke-static {v9, v10}, Ljava/lang/Thread;->sleep(J)V
 
     goto :goto_2
 
-    .line 909
+    .line 917
     :cond_3
+    iget-object v9, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    iget-object v9, v9, Lcom/htc/graphics/drawable/UrlDrawable;->mOptions:Lcom/htc/graphics/drawable/UrlDrawable$Options;
+
+    iget-boolean v9, v9, Lcom/htc/graphics/drawable/UrlDrawable$Options;->saveDefaultImageWhenDownloadFail:Z
+
+    if-nez v9, :cond_5
+
     invoke-static {}, Lcom/htc/graphics/drawable/UrlDrawable;->access$700()Ljava/util/concurrent/ConcurrentMap;
 
-    move-result-object v5
+    move-result-object v9
 
-    iget-object v6, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+    invoke-interface {v9, v2}, Ljava/util/concurrent/ConcurrentMap;->containsKey(Ljava/lang/Object;)Z
 
-    iget-object v6, v6, Lcom/htc/graphics/drawable/UrlDrawable;->mImageId:Ljava/lang/String;
+    move-result v9
 
-    invoke-virtual {v6}, Ljava/lang/String;->hashCode()I
+    if-eqz v9, :cond_5
 
-    move-result v6
+    .line 918
+    invoke-static {}, Lcom/htc/graphics/drawable/UrlDrawable;->access$700()Ljava/util/concurrent/ConcurrentMap;
 
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v9
 
-    move-result-object v6
+    invoke-interface {v9, v2}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v5, v6}, Ljava/util/concurrent/ConcurrentMap;->containsKey(Ljava/lang/Object;)Z
+    move-result-object v9
 
-    move-result v5
+    check-cast v9, Ljava/lang/Long;
 
-    if-eqz v5, :cond_5
+    invoke-virtual {v9}, Ljava/lang/Long;->longValue()J
 
-    .line 910
-    sget-boolean v5, Lcom/htc/graphics/drawable/UrlDrawable;->DEBUT_LOG_ENABLED:Z
+    move-result-wide v7
 
-    if-eqz v5, :cond_4
+    .line 919
+    .local v7, time:J
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    .line 911
-    const-string v5, "UrlDrawable"
+    move-result-wide v9
 
-    const-string v6, "[%s] retry_duplicate=%d/%d"
+    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    new-array v7, v9, [Ljava/lang/Object;
+    move-result-object v1
 
-    iget-object v8, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+    .line 920
+    .local v1, currentTime:Ljava/lang/Long;
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
 
-    iget-object v8, v8, Lcom/htc/graphics/drawable/UrlDrawable;->mUrl:Ljava/lang/String;
+    move-result-wide v9
 
-    aput-object v8, v7, v10
+    sub-long/2addr v9, v7
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const-wide/32 v11, 0x927c0
 
-    move-result-object v8
+    cmp-long v9, v9, v11
 
-    aput-object v8, v7, v11
+    if-gez v9, :cond_4
+
+    .line 921
+    const-string v9, "UrlDrawable"
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v11, "it\'s in blackList : "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 922
+    const/4 v0, 0x0
+
+    move-object v9, v0
+
+    goto :goto_3
+
+    .line 925
+    :cond_4
+    invoke-static {}, Lcom/htc/graphics/drawable/UrlDrawable;->access$700()Ljava/util/concurrent/ConcurrentMap;
+
+    move-result-object v9
+
+    invoke-interface {v9, v2}, Ljava/util/concurrent/ConcurrentMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 929
+    .end local v1           #currentTime:Ljava/lang/Long;
+    .end local v7           #time:J
+    :cond_5
+    invoke-static {}, Lcom/htc/graphics/drawable/UrlDrawable;->access$800()Ljava/util/concurrent/ConcurrentMap;
+
+    move-result-object v9
+
+    iget-object v10, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    iget-object v10, v10, Lcom/htc/graphics/drawable/UrlDrawable;->mImageId:Ljava/lang/String;
+
+    invoke-virtual {v10}, Ljava/lang/String;->hashCode()I
+
+    move-result v10
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
+
+    invoke-interface {v9, v10}, Ljava/util/concurrent/ConcurrentMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_7
+
+    .line 930
+    sget-boolean v9, Lcom/htc/graphics/drawable/UrlDrawable;->DEBUT_LOG_ENABLED:Z
+
+    if-eqz v9, :cond_6
+
+    .line 931
+    const-string v9, "UrlDrawable"
+
+    const-string v10, "[%s] retry_duplicate=%d/%d"
+
+    const/4 v11, 0x3
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    iget-object v13, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    iget-object v13, v13, Lcom/htc/graphics/drawable/UrlDrawable;->mUrl:Ljava/lang/String;
+
+    aput-object v13, v11, v12
+
+    const/4 v12, 0x1
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v13
+
+    aput-object v13, v11, v12
+
+    const/4 v12, 0x2
+
+    const/16 v13, 0x64
 
     invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v8
+    move-result-object v13
 
-    aput-object v8, v7, v12
+    aput-object v13, v11, v12
 
-    invoke-static {v6, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v10, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v10
 
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v9, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 915
-    :cond_4
-    const/4 v1, 0x4
-
-    .line 916
-    const-wide/16 v5, 0xc8
-
-    invoke-static {v5, v6}, Ljava/lang/Thread;->sleep(J)V
-
-    goto/16 :goto_2
-
-    .line 918
-    :cond_5
-    const/4 v1, 0x2
-
-    .line 920
-    goto/16 :goto_2
-
-    .line 923
-    .end local v2           #retry_duplicate:I
-    .restart local v3       #retry_duplicate:I
-    :pswitch_1
-    if-ne v1, v9, :cond_8
-
-    .line 924
-    add-int/lit8 v4, v4, 0x1
-
-    if-lt v4, v9, :cond_8
-
-    .line 925
-    const-string v5, "UrlDrawable"
-
-    const-string v6, "[%s] retry_general=%d/%d exceeded"
-
-    new-array v7, v9, [Ljava/lang/Object;
-
-    iget-object v8, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
-
-    iget-object v8, v8, Lcom/htc/graphics/drawable/UrlDrawable;->mUrl:Ljava/lang/String;
-
-    aput-object v8, v7, v10
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v8
-
-    aput-object v8, v7, v11
-
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v8
-
-    aput-object v8, v7, v12
-
-    invoke-static {v6, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 930
-    iget-object v5, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
-
-    iget-object v5, v5, Lcom/htc/graphics/drawable/UrlDrawable;->mOptions:Lcom/htc/graphics/drawable/UrlDrawable$Options;
-
-    iget-boolean v5, v5, Lcom/htc/graphics/drawable/UrlDrawable$Options;->saveDefaultImageWhenDownloadFail:Z
-
-    if-eqz v5, :cond_7
-
-    .line 934
-    const-string v5, "UrlDrawable"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "try to store default bitmap into cache , defaultBitmap:"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    iget-object v7, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
-
-    iget-object v7, v7, Lcom/htc/graphics/drawable/UrlDrawable;->mOptions:Lcom/htc/graphics/drawable/UrlDrawable$Options;
-
-    iget-object v7, v7, Lcom/htc/graphics/drawable/UrlDrawable$Options;->defaultBitmap:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, " option.writeDisk:"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    iget-object v7, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
-
-    iget-object v7, v7, Lcom/htc/graphics/drawable/UrlDrawable;->mOptions:Lcom/htc/graphics/drawable/UrlDrawable$Options;
-
-    iget-boolean v7, v7, Lcom/htc/graphics/drawable/UrlDrawable$Options;->writeDisk:Z
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    .line 935
+    :cond_6
+    const/4 v3, 0x4
 
     .line 936
-    iget-object v5, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+    const-wide/16 v9, 0xc8
 
-    iget-object v5, v5, Lcom/htc/graphics/drawable/UrlDrawable;->mOptions:Lcom/htc/graphics/drawable/UrlDrawable$Options;
+    invoke-static {v9, v10}, Ljava/lang/Thread;->sleep(J)V
 
-    iget-object v0, v5, Lcom/htc/graphics/drawable/UrlDrawable$Options;->defaultBitmap:Landroid/graphics/Bitmap;
-
-    .line 937
-    invoke-static {v0}, Lcom/htc/graphics/drawable/UrlDrawable;->isValidBitmap(Landroid/graphics/Bitmap;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_6
-
-    .line 938
-    iget-object v5, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
-
-    invoke-virtual {v5, v0}, Lcom/htc/graphics/drawable/UrlDrawable;->writeBitmapToDiskCache(Landroid/graphics/Bitmap;)V
-
-    .line 939
-    iget-object v5, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
-
-    #calls: Lcom/htc/graphics/drawable/UrlDrawable;->writeBitmapToRamCache(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
-    invoke-static {v5, v0}, Lcom/htc/graphics/drawable/UrlDrawable;->access$800(Lcom/htc/graphics/drawable/UrlDrawable;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    :cond_6
-    move v2, v3
-
-    .end local v3           #retry_duplicate:I
-    .restart local v2       #retry_duplicate:I
-    move-object v5, v0
-
-    .line 941
-    goto/16 :goto_3
-
-    .line 944
-    .end local v2           #retry_duplicate:I
-    .restart local v3       #retry_duplicate:I
-    :cond_7
-    const/4 v0, 0x0
-
-    move v2, v3
-
-    .end local v3           #retry_duplicate:I
-    .restart local v2       #retry_duplicate:I
-    move-object v5, v0
-
-    goto/16 :goto_3
-
-    .line 948
-    .end local v2           #retry_duplicate:I
-    .restart local v3       #retry_duplicate:I
-    :cond_8
-    iget-object v5, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
-
-    #calls: Lcom/htc/graphics/drawable/UrlDrawable;->getFromLocal()Landroid/graphics/Bitmap;
-    invoke-static {v5}, Lcom/htc/graphics/drawable/UrlDrawable;->access$500(Lcom/htc/graphics/drawable/UrlDrawable;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_9
-
-    move v2, v3
-
-    .end local v3           #retry_duplicate:I
-    .restart local v2       #retry_duplicate:I
-    move-object v5, v0
-
-    .line 949
-    goto/16 :goto_3
-
-    .line 950
-    .end local v2           #retry_duplicate:I
-    .restart local v3       #retry_duplicate:I
-    :cond_9
-    iget-object v5, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
-
-    #calls: Lcom/htc/graphics/drawable/UrlDrawable;->canLoadToRamCache()Z
-    invoke-static {v5}, Lcom/htc/graphics/drawable/UrlDrawable;->access$600(Lcom/htc/graphics/drawable/UrlDrawable;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_a
-
-    .line 951
-    const/4 v1, 0x1
-
-    .line 952
-    const-wide/16 v5, 0xc8
-
-    invoke-static {v5, v6}, Ljava/lang/Thread;->sleep(J)V
-
-    move v2, v3
-
-    .line 953
-    .end local v3           #retry_duplicate:I
-    .restart local v2       #retry_duplicate:I
     goto/16 :goto_2
 
-    .line 955
-    .end local v2           #retry_duplicate:I
-    .restart local v3       #retry_duplicate:I
-    :cond_a
-    iget-object v5, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+    .line 938
+    :cond_7
+    const/4 v3, 0x2
 
-    #calls: Lcom/htc/graphics/drawable/UrlDrawable;->getFromRemote()Landroid/graphics/Bitmap;
-    invoke-static {v5}, Lcom/htc/graphics/drawable/UrlDrawable;->access$900(Lcom/htc/graphics/drawable/UrlDrawable;)Landroid/graphics/Bitmap;
+    .line 940
+    goto/16 :goto_2
+
+    .line 943
+    .end local v4           #retry_duplicate:I
+    .restart local v5       #retry_duplicate:I
+    :pswitch_1
+    const/4 v9, 0x3
+
+    if-ne v3, v9, :cond_a
+
+    .line 944
+    add-int/lit8 v6, v6, 0x1
+
+    const/4 v9, 0x3
+
+    if-lt v6, v9, :cond_a
+
+    .line 945
+    const-string v9, "UrlDrawable"
+
+    const-string v10, "[%s] retry_general=%d/%d exceeded"
+
+    const/4 v11, 0x3
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    iget-object v13, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    iget-object v13, v13, Lcom/htc/graphics/drawable/UrlDrawable;->mUrl:Ljava/lang/String;
+
+    aput-object v13, v11, v12
+
+    const/4 v12, 0x1
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v13
+
+    aput-object v13, v11, v12
+
+    const/4 v12, 0x2
+
+    const/4 v13, 0x3
+
+    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v13
+
+    aput-object v13, v11, v12
+
+    invoke-static {v10, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 950
+    iget-object v9, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    iget-object v9, v9, Lcom/htc/graphics/drawable/UrlDrawable;->mOptions:Lcom/htc/graphics/drawable/UrlDrawable$Options;
+
+    iget-boolean v9, v9, Lcom/htc/graphics/drawable/UrlDrawable$Options;->saveDefaultImageWhenDownloadFail:Z
+
+    if-eqz v9, :cond_9
+
+    .line 954
+    const-string v9, "UrlDrawable"
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v11, "try to store default bitmap into cache , defaultBitmap:"
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    iget-object v11, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    iget-object v11, v11, Lcom/htc/graphics/drawable/UrlDrawable;->mOptions:Lcom/htc/graphics/drawable/UrlDrawable$Options;
+
+    iget-object v11, v11, Lcom/htc/graphics/drawable/UrlDrawable$Options;->defaultBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string v11, " option.writeDisk:"
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    iget-object v11, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    iget-object v11, v11, Lcom/htc/graphics/drawable/UrlDrawable;->mOptions:Lcom/htc/graphics/drawable/UrlDrawable$Options;
+
+    iget-boolean v11, v11, Lcom/htc/graphics/drawable/UrlDrawable$Options;->writeDisk:Z
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 956
+    iget-object v9, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    iget-object v9, v9, Lcom/htc/graphics/drawable/UrlDrawable;->mOptions:Lcom/htc/graphics/drawable/UrlDrawable$Options;
+
+    iget-object v0, v9, Lcom/htc/graphics/drawable/UrlDrawable$Options;->defaultBitmap:Landroid/graphics/Bitmap;
+
+    .line 957
+    invoke-static {v0}, Lcom/htc/graphics/drawable/UrlDrawable;->isValidBitmap(Landroid/graphics/Bitmap;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_8
+
+    .line 958
+    iget-object v9, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    invoke-virtual {v9, v0}, Lcom/htc/graphics/drawable/UrlDrawable;->writeBitmapToDiskCache(Landroid/graphics/Bitmap;)V
+
+    .line 959
+    iget-object v9, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    #calls: Lcom/htc/graphics/drawable/UrlDrawable;->writeBitmapToRamCache(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+    invoke-static {v9, v0}, Lcom/htc/graphics/drawable/UrlDrawable;->access$900(Lcom/htc/graphics/drawable/UrlDrawable;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 956
-    invoke-static {v0}, Lcom/htc/graphics/drawable/UrlDrawable;->isValidBitmap(Landroid/graphics/Bitmap;)Z
+    :cond_8
+    move v4, v5
 
-    move-result v5
-
-    if-eqz v5, :cond_c
-
-    .line 957
-    iget-object v5, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
-
-    #calls: Lcom/htc/graphics/drawable/UrlDrawable;->canLoadToRamCache()Z
-    invoke-static {v5}, Lcom/htc/graphics/drawable/UrlDrawable;->access$600(Lcom/htc/graphics/drawable/UrlDrawable;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_b
-
-    move v2, v3
-
-    .end local v3           #retry_duplicate:I
-    .restart local v2       #retry_duplicate:I
-    move-object v5, v0
-
-    .line 958
-    goto/16 :goto_3
-
-    .line 960
-    .end local v2           #retry_duplicate:I
-    .restart local v3       #retry_duplicate:I
-    :cond_b
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
+    .end local v5           #retry_duplicate:I
+    .restart local v4       #retry_duplicate:I
+    move-object v9, v0
 
     .line 961
-    const/4 v5, 0x0
-
-    move v2, v3
-
-    .end local v3           #retry_duplicate:I
-    .restart local v2       #retry_duplicate:I
     goto/16 :goto_3
 
     .line 964
-    .end local v2           #retry_duplicate:I
-    .restart local v3       #retry_duplicate:I
-    :cond_c
-    sget-boolean v5, Lcom/htc/graphics/drawable/UrlDrawable;->DEBUT_LOG_ENABLED:Z
+    .end local v4           #retry_duplicate:I
+    .restart local v5       #retry_duplicate:I
+    :cond_9
+    const-string v9, "UrlDrawable"
 
-    if-eqz v5, :cond_d
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v11, "Insert blackList : "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 965
-    const-string v5, "UrlDrawable"
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    const-string v6, "[%s] retry_general=%d/%d"
+    move-result-wide v9
 
-    new-array v7, v9, [Ljava/lang/Object;
+    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    iget-object v8, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+    move-result-object v7
 
-    iget-object v8, v8, Lcom/htc/graphics/drawable/UrlDrawable;->mUrl:Ljava/lang/String;
+    .line 966
+    .local v7, time:Ljava/lang/Long;
+    invoke-static {}, Lcom/htc/graphics/drawable/UrlDrawable;->access$700()Ljava/util/concurrent/ConcurrentMap;
 
-    aput-object v8, v7, v10
+    move-result-object v9
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v9, v2, v7}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v8
+    .line 967
+    const/4 v0, 0x0
 
-    aput-object v8, v7, v11
+    move v4, v5
 
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .end local v5           #retry_duplicate:I
+    .restart local v4       #retry_duplicate:I
+    move-object v9, v0
 
-    move-result-object v8
+    goto/16 :goto_3
 
-    aput-object v8, v7, v12
+    .line 971
+    .end local v4           #retry_duplicate:I
+    .end local v7           #time:Ljava/lang/Long;
+    .restart local v5       #retry_duplicate:I
+    :cond_a
+    iget-object v9, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
 
-    invoke-static {v6, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    #calls: Lcom/htc/graphics/drawable/UrlDrawable;->getFromLocal()Landroid/graphics/Bitmap;
+    invoke-static {v9}, Lcom/htc/graphics/drawable/UrlDrawable;->access$500(Lcom/htc/graphics/drawable/UrlDrawable;)Landroid/graphics/Bitmap;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    if-eqz v0, :cond_b
 
-    .line 969
+    move v4, v5
+
+    .end local v5           #retry_duplicate:I
+    .restart local v4       #retry_duplicate:I
+    move-object v9, v0
+
+    .line 972
+    goto/16 :goto_3
+
+    .line 973
+    .end local v4           #retry_duplicate:I
+    .restart local v5       #retry_duplicate:I
+    :cond_b
+    iget-object v9, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    #calls: Lcom/htc/graphics/drawable/UrlDrawable;->canLoadToRamCache()Z
+    invoke-static {v9}, Lcom/htc/graphics/drawable/UrlDrawable;->access$600(Lcom/htc/graphics/drawable/UrlDrawable;)Z
+
+    move-result v9
+
+    if-nez v9, :cond_c
+
+    .line 974
+    const/4 v3, 0x1
+
+    .line 975
+    const-wide/16 v9, 0xc8
+
+    invoke-static {v9, v10}, Ljava/lang/Thread;->sleep(J)V
+
+    move v4, v5
+
+    .line 976
+    .end local v5           #retry_duplicate:I
+    .restart local v4       #retry_duplicate:I
+    goto/16 :goto_2
+
+    .line 978
+    .end local v4           #retry_duplicate:I
+    .restart local v5       #retry_duplicate:I
+    :cond_c
+    iget-object v9, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    #calls: Lcom/htc/graphics/drawable/UrlDrawable;->getFromRemote()Landroid/graphics/Bitmap;
+    invoke-static {v9}, Lcom/htc/graphics/drawable/UrlDrawable;->access$1000(Lcom/htc/graphics/drawable/UrlDrawable;)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    .line 979
+    invoke-static {v0}, Lcom/htc/graphics/drawable/UrlDrawable;->isValidBitmap(Landroid/graphics/Bitmap;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_e
+
+    .line 980
+    iget-object v9, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    #calls: Lcom/htc/graphics/drawable/UrlDrawable;->canLoadToRamCache()Z
+    invoke-static {v9}, Lcom/htc/graphics/drawable/UrlDrawable;->access$600(Lcom/htc/graphics/drawable/UrlDrawable;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_d
+
+    move v4, v5
+
+    .end local v5           #retry_duplicate:I
+    .restart local v4       #retry_duplicate:I
+    move-object v9, v0
+
+    .line 981
+    goto/16 :goto_3
+
+    .line 983
+    .end local v4           #retry_duplicate:I
+    .restart local v5       #retry_duplicate:I
     :cond_d
-    const/4 v1, 0x3
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 970
-    const-wide/16 v5, 0x0
+    .line 984
+    const/4 v9, 0x0
 
-    invoke-static {v5, v6}, Ljava/lang/Thread;->sleep(J)V
+    move v4, v5
+
+    .end local v5           #retry_duplicate:I
+    .restart local v4       #retry_duplicate:I
+    goto/16 :goto_3
+
+    .line 987
+    .end local v4           #retry_duplicate:I
+    .restart local v5       #retry_duplicate:I
+    :cond_e
+    sget-boolean v9, Lcom/htc/graphics/drawable/UrlDrawable;->DEBUT_LOG_ENABLED:Z
+
+    if-eqz v9, :cond_f
+
+    .line 988
+    const-string v9, "UrlDrawable"
+
+    const-string v10, "[%s] retry_general=%d/%d"
+
+    const/4 v11, 0x3
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    iget-object v13, p0, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->this$0:Lcom/htc/graphics/drawable/UrlDrawable;
+
+    iget-object v13, v13, Lcom/htc/graphics/drawable/UrlDrawable;->mUrl:Ljava/lang/String;
+
+    aput-object v13, v11, v12
+
+    const/4 v12, 0x1
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v13
+
+    aput-object v13, v11, v12
+
+    const/4 v12, 0x2
+
+    const/4 v13, 0x3
+
+    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v13
+
+    aput-object v13, v11, v12
+
+    invoke-static {v10, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 992
+    :cond_f
+    const/4 v3, 0x3
+
+    .line 993
+    const-wide/16 v9, 0x0
+
+    invoke-static {v9, v10}, Ljava/lang/Thread;->sleep(J)V
 
     goto/16 :goto_1
 
-    .line 892
-    nop
-
+    .line 899
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -624,7 +812,7 @@
     .end annotation
 
     .prologue
-    .line 872
+    .line 878
     invoke-virtual {p0}, Lcom/htc/graphics/drawable/UrlDrawable$WorkerCallable;->call()Landroid/graphics/Bitmap;
 
     move-result-object v0

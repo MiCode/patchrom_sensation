@@ -285,7 +285,7 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 4
+    .locals 3
     .parameter "savedInstanceState"
 
     .prologue
@@ -316,13 +316,6 @@
 
     .line 518
     invoke-virtual {v1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
-
-    .line 519
-    const-string v2, "AlertDialog"
-
-    const-string v3, "[onCreate] auto launch SIP."
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 522
     return-void

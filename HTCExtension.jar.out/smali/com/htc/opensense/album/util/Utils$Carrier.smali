@@ -47,7 +47,7 @@
     .line 9
     .local p0, this:Lcom/htc/opensense/album/util/Utils$Carrier;,"Lcom/htc/opensense/album/util/Utils$Carrier<TT;>;"
     .local p1, value:Ljava/lang/Object;,"TT;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 10
     iput-object p1, p0, Lcom/htc/opensense/album/util/Utils$Carrier;->mMember:Ljava/lang/Object;

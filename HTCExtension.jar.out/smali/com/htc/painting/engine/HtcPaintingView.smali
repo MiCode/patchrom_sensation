@@ -2249,10 +2249,10 @@
 
     .line 2361
     .local v0, layout:Landroid/widget/RelativeLayout$LayoutParams;
-    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->rightMargin:I
+    iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     .line 2362
-    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
+    iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     .line 2363
     const/16 v1, 0x9
@@ -2281,10 +2281,10 @@
 
     .line 268
     .local v0, layout:Landroid/widget/RelativeLayout$LayoutParams;
-    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->rightMargin:I
+    iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     .line 269
-    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
+    iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     .line 270
     const/16 v1, 0xb

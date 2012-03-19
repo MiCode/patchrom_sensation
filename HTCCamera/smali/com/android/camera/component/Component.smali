@@ -63,7 +63,7 @@
     if-nez p1, :cond_0
 
     .line 45
-    iget-object v0, p0, Lcom/android/camera/component/Component;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "name == null in .ctor"
 
@@ -108,7 +108,7 @@
 
     .prologue
     .line 10
-    iget-object v0, p0, Lcom/android/camera/component/Component;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -130,7 +130,7 @@
 
     .prologue
     .line 10
-    iget-object v0, p0, Lcom/android/camera/component/Component;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -141,7 +141,7 @@
 
     .prologue
     .line 10
-    iget-object v0, p0, Lcom/android/camera/component/Component;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -312,7 +312,7 @@
     if-nez p1, :cond_0
 
     .line 169
-    iget-object v1, p0, Lcom/android/camera/component/Component;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "target == null in hasMessages()"
 
@@ -425,7 +425,7 @@
     if-nez p1, :cond_0
 
     .line 216
-    iget-object v1, p0, Lcom/android/camera/component/Component;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "target == null in removeMessages()"
 
@@ -599,7 +599,7 @@
     if-nez p1, :cond_0
 
     .line 258
-    iget-object v3, p0, Lcom/android/camera/component/Component;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "target == null in sendMessage()"
 
@@ -655,7 +655,7 @@
 
     .line 267
     .local v1, msg:Ljava/lang/String;
-    iget-object v3, p0, Lcom/android/camera/component/Component;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     invoke-static {v3, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -693,7 +693,7 @@
     if-nez v2, :cond_3
 
     .line 280
-    iget-object v3, p0, Lcom/android/camera/component/Component;->TAG:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
 

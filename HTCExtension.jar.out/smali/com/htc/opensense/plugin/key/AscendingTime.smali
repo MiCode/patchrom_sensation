@@ -33,7 +33,7 @@
     if-eqz v0, :cond_0
 
     .line 22
-    iget-wide v0, p0, Lcom/htc/opensense/plugin/key/AscendingTime;->mTime:J
+    iget-wide v0, p0, Lcom/htc/opensense/plugin/key/Time;->mTime:J
 
     iget-wide v2, p1, Lcom/htc/opensense/plugin/key/Time;->mTime:J
 

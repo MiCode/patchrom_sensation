@@ -30,7 +30,7 @@
     .line 77
     iput-object p1, p0, Lcom/android/phone/HtcCdmaNetworkBusyScreen$1;->this$0:Lcom/android/phone/HtcCdmaNetworkBusyScreen;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

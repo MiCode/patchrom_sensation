@@ -678,32 +678,16 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 3
 
     .prologue
     const/4 v0, 0x0
-
-    const/4 v3, 0x3
 
     .line 3547
     sput-object v0, Landroid/provider/Settings$Secure;->MONITOR_KEYS:Ljava/util/HashSet;
 
     .line 3552
     sput-object v0, Landroid/provider/Settings$Secure;->sNameValueCache:Landroid/provider/Settings$NameValueCache;
-
-    .line 3562
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0, v3}, Ljava/util/HashSet;-><init>(I)V
-
-    sput-object v0, Landroid/provider/Settings$Secure;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    .line 3564
-    sget-object v0, Landroid/provider/Settings$Secure;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    const-string v1, "assisted_gps_enabled"
-
-    invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 3830
     const-string v0, "content://settings/secure"
@@ -737,9 +721,11 @@
 
     aput-object v2, v0, v1
 
-    const-string/jumbo v1, "parental_control_redirect_url"
+    const/4 v1, 0x3
 
-    aput-object v1, v0, v3
+    const-string/jumbo v2, "parental_control_redirect_url"
+
+    aput-object v2, v0, v1
 
     const/4 v1, 0x4
 
@@ -1737,71 +1723,13 @@
 .end method
 
 .method public static putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
-    .locals 2
+    .locals 1
     .parameter "resolver"
     .parameter "name"
     .parameter "value"
 
     .prologue
-    .line 3597
-    sget-object v0, Landroid/provider/Settings$Secure;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 3598
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v1, "name: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    #calls: Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-    invoke-static {v0}, Landroid/provider/Settings;->access$000(Ljava/lang/String;)V
-
-    .line 3599
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v1, "value: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    #calls: Landroid/provider/Settings;->Log(Ljava/lang/String;)V
-    invoke-static {v0}, Landroid/provider/Settings;->access$000(Ljava/lang/String;)V
-
-    .line 3600
-    #calls: Landroid/provider/Settings;->traceCallingStack()V
-    invoke-static {}, Landroid/provider/Settings;->access$100()V
-
     .line 3606
-    :cond_0
     sget-object v0, Landroid/provider/Settings$Secure;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {p0, v0, p1, p2}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)Z
@@ -2062,10 +1990,6 @@
     .parameter "enabled"
 
     .prologue
-    .line 6450
-    #calls: Landroid/provider/Settings;->traceCallingStack()V
-    invoke-static {}, Landroid/provider/Settings;->access$100()V
-
     .line 6458
     if-eqz p2, :cond_0
 

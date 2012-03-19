@@ -50,7 +50,7 @@
 
     .prologue
     .line 14
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 15
     iput p1, p0, Lcom/htc/android/pim/hux/HuxProvResult;->status:I
@@ -71,7 +71,7 @@
 
     .prologue
     .line 20
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 21
     const/4 v0, 0x0

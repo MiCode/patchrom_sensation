@@ -40,7 +40,7 @@
 
     iput p3, p0, Landroid/app/FragmentManagerImpl$3;->val$flags:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -57,7 +57,7 @@
     .prologue
     .line 94
     .local p0, this:Lcom/htc/gson/JsonObjectDeserializationVisitor;,"Lcom/htc/gson/JsonObjectDeserializationVisitor<TT;>;"
-    iget-object v1, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->factory:Lcom/htc/gson/ObjectNavigatorFactory;
+    iget-object v1, p0, Lcom/htc/gson/JsonDeserializationVisitor;->factory:Lcom/htc/gson/ObjectNavigatorFactory;
 
     invoke-virtual {v1}, Lcom/htc/gson/ObjectNavigatorFactory;->getFieldNamingPolicy()Lcom/htc/gson/FieldNamingStrategy;
 
@@ -85,9 +85,9 @@
     .prologue
     .line 43
     .local p0, this:Lcom/htc/gson/JsonObjectDeserializationVisitor;,"Lcom/htc/gson/JsonObjectDeserializationVisitor<TT;>;"
-    iget-object v0, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->objectConstructor:Lcom/htc/gson/ObjectConstructor;
+    iget-object v0, p0, Lcom/htc/gson/JsonDeserializationVisitor;->objectConstructor:Lcom/htc/gson/ObjectConstructor;
 
-    iget-object v1, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->targetType:Ljava/lang/reflect/Type;
+    iget-object v1, p0, Lcom/htc/gson/JsonDeserializationVisitor;->targetType:Ljava/lang/reflect/Type;
 
     invoke-interface {v0, v1}, Lcom/htc/gson/ObjectConstructor;->construct(Ljava/lang/reflect/Type;)Ljava/lang/Object;
 
@@ -149,7 +149,7 @@
     .line 76
     .local p0, this:Lcom/htc/gson/JsonObjectDeserializationVisitor;,"Lcom/htc/gson/JsonObjectDeserializationVisitor<TT;>;"
     :try_start_0
-    iget-object v5, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v5, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v5}, Lcom/htc/gson/JsonElement;->isJsonObject()Z
 
@@ -170,7 +170,7 @@
 
     move-result-object v6
 
-    iget-object v7, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v7, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -202,7 +202,7 @@
     .end local v1           #e:Ljava/lang/IllegalAccessException;
     :cond_0
     :try_start_1
-    iget-object v5, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v5, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v5}, Lcom/htc/gson/JsonElement;->getAsJsonObject()Lcom/htc/gson/JsonObject;
 
@@ -271,7 +271,7 @@
 
     .line 101
     .local v2, fName:Ljava/lang/String;
-    iget-object v9, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v9, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v9}, Lcom/htc/gson/JsonElement;->isJsonObject()Z
 
@@ -292,7 +292,7 @@
 
     move-result-object v8
 
-    iget-object v9, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v9, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -326,7 +326,7 @@
     .restart local v2       #fName:Ljava/lang/String;
     :cond_0
     :try_start_1
-    iget-object v9, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v9, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v9}, Lcom/htc/gson/JsonElement;->getAsJsonObject()Lcom/htc/gson/JsonObject;
 
@@ -385,7 +385,7 @@
 
     .line 115
     .local v3, objTypePair:Lcom/htc/gson/ObjectTypePair;
-    iget-object v9, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->deserializers:Lcom/htc/gson/ParameterizedTypeHandlerMap;
+    iget-object v9, p0, Lcom/htc/gson/JsonDeserializationVisitor;->deserializers:Lcom/htc/gson/ParameterizedTypeHandlerMap;
 
     invoke-virtual {v3, v9}, Lcom/htc/gson/ObjectTypePair;->getMatchingHandler(Lcom/htc/gson/ParameterizedTypeHandlerMap;)Lcom/htc/gson/Pair;
 
@@ -435,7 +435,7 @@
     .line 57
     .local p0, this:Lcom/htc/gson/JsonObjectDeserializationVisitor;,"Lcom/htc/gson/JsonObjectDeserializationVisitor<TT;>;"
     :try_start_0
-    iget-object v5, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v5, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v5}, Lcom/htc/gson/JsonElement;->isJsonObject()Z
 
@@ -456,7 +456,7 @@
 
     move-result-object v6
 
-    iget-object v7, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v7, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -488,7 +488,7 @@
     .end local v1           #e:Ljava/lang/IllegalAccessException;
     :cond_0
     :try_start_1
-    iget-object v5, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v5, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v5}, Lcom/htc/gson/JsonElement;->getAsJsonObject()Lcom/htc/gson/JsonObject;
 
@@ -542,7 +542,7 @@
     .prologue
     .line 131
     .local p0, this:Lcom/htc/gson/JsonObjectDeserializationVisitor;,"Lcom/htc/gson/JsonObjectDeserializationVisitor<TT;>;"
-    iget-object v1, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v1, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v1}, Lcom/htc/gson/JsonElement;->isJsonPrimitive()Z
 
@@ -563,7 +563,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v3, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -579,7 +579,7 @@
 
     .line 135
     :cond_0
-    iget-object v1, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v1, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v1}, Lcom/htc/gson/JsonElement;->getAsJsonPrimitive()Lcom/htc/gson/JsonPrimitive;
 
@@ -591,7 +591,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/htc/gson/JsonObjectDeserializationVisitor;->target:Ljava/lang/Object;
+    iput-object v1, p0, Lcom/htc/gson/JsonDeserializationVisitor;->target:Ljava/lang/Object;
 
     .line 137
     return-void

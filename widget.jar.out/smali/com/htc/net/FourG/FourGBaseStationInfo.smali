@@ -59,7 +59,7 @@
     const/high16 v2, -0x8000
 
     .line 72
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 73
     const-string v0, "000000000000"
@@ -126,7 +126,7 @@
 
     .prologue
     .line 409
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 410
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -258,7 +258,7 @@
 
     .prologue
     .line 90
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 91
     if-nez p1, :cond_0

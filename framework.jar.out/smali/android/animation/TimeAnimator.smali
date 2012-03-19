@@ -53,24 +53,24 @@
     const-wide/16 v4, 0x0
 
     .line 19
-    iget v0, p0, Landroid/animation/TimeAnimator;->mPlayingState:I
+    iget v0, p0, Landroid/animation/ValueAnimator;->mPlayingState:I
 
     if-nez v0, :cond_0
 
     .line 20
     const/4 v0, 0x1
 
-    iput v0, p0, Landroid/animation/TimeAnimator;->mPlayingState:I
+    iput v0, p0, Landroid/animation/ValueAnimator;->mPlayingState:I
 
     .line 21
-    iget-wide v0, p0, Landroid/animation/TimeAnimator;->mSeekTime:J
+    iget-wide v0, p0, Landroid/animation/ValueAnimator;->mSeekTime:J
 
     cmp-long v0, v0, v4
 
     if-gez v0, :cond_2
 
     .line 22
-    iput-wide p1, p0, Landroid/animation/TimeAnimator;->mStartTime:J
+    iput-wide p1, p0, Landroid/animation/ValueAnimator;->mStartTime:J
 
     .line 29
     :cond_0
@@ -80,7 +80,7 @@
     if-eqz v0, :cond_1
 
     .line 30
-    iget-wide v0, p0, Landroid/animation/TimeAnimator;->mStartTime:J
+    iget-wide v0, p0, Landroid/animation/ValueAnimator;->mStartTime:J
 
     sub-long v2, p1, v0
 
@@ -114,16 +114,16 @@
 
     .line 24
     :cond_2
-    iget-wide v0, p0, Landroid/animation/TimeAnimator;->mSeekTime:J
+    iget-wide v0, p0, Landroid/animation/ValueAnimator;->mSeekTime:J
 
     sub-long v0, p1, v0
 
-    iput-wide v0, p0, Landroid/animation/TimeAnimator;->mStartTime:J
+    iput-wide v0, p0, Landroid/animation/ValueAnimator;->mStartTime:J
 
     .line 26
     const-wide/16 v0, -0x1
 
-    iput-wide v0, p0, Landroid/animation/TimeAnimator;->mSeekTime:J
+    iput-wide v0, p0, Landroid/animation/ValueAnimator;->mSeekTime:J
 
     goto :goto_0
 

@@ -305,7 +305,7 @@
 
     .prologue
     .line 15
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mPaddingBottom:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mPaddingBottom:I
 
     return v0
 .end method
@@ -316,7 +316,7 @@
 
     .prologue
     .line 15
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mPaddingTop:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mPaddingTop:I
 
     return v0
 .end method
@@ -327,7 +327,7 @@
 
     .prologue
     .line 15
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mPaddingBottom:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mPaddingBottom:I
 
     return v0
 .end method
@@ -338,7 +338,7 @@
 
     .prologue
     .line 15
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mPaddingTop:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mPaddingTop:I
 
     return v0
 .end method
@@ -399,7 +399,7 @@
     if-lez v4, :cond_2
 
     .line 415
-    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->top:I
 
@@ -433,7 +433,7 @@
 
     move-result v5
 
-    iget-object v6, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v6, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->bottom:I
 
@@ -478,7 +478,7 @@
 
     .line 427
     :cond_1
-    iget v4, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFirstPosition:I
+    iget v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     if-eqz v4, :cond_4
 
@@ -742,7 +742,7 @@
 
     add-int/2addr v8, v9
 
-    iget-object v9, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->top:I
 
@@ -798,7 +798,7 @@
 
     add-int/2addr v8, v9
 
-    iget-object v9, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->bottom:I
 
@@ -886,7 +886,7 @@
     return v0
 
     :cond_1
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumBouncingGridView;->getChildCount()I
 
@@ -894,7 +894,7 @@
 
     add-int/2addr v1, v2
 
-    iget v2, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mItemCount:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-ne v1, v2, :cond_0
 
@@ -916,7 +916,7 @@
 
     move-result v2
 
-    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v3, v3, Landroid/graphics/Rect;->bottom:I
 
@@ -954,7 +954,7 @@
     return v0
 
     :cond_1
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     if-nez v1, :cond_0
 
@@ -966,7 +966,7 @@
 
     move-result v1
 
-    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v2, v2, Landroid/graphics/Rect;->top:I
 
@@ -1120,13 +1120,13 @@
 
     move-result v0
 
-    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->top:I
 
     sub-int/2addr v0, v1
 
-    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->bottom:I
 
@@ -1202,13 +1202,13 @@
 
     move-result v0
 
-    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->top:I
 
     sub-int/2addr v0, v1
 
-    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->bottom:I
 
@@ -1254,7 +1254,7 @@
 
     .line 155
     :cond_1
-    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
+    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
 
     if-nez v2, :cond_2
 
@@ -1263,7 +1263,7 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
+    iput-object v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
 
     .line 158
     :cond_2
@@ -1301,7 +1301,7 @@
     if-gtz p1, :cond_3
 
     .line 164
-    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
+    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
 
     check-cast v2, Lcom/htc/opensense/widget/AlbumBouncingGridView$BouncingFlingRunnable;
 
@@ -1313,7 +1313,7 @@
 
     .line 167
     :cond_3
-    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
+    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
 
     check-cast v2, Lcom/htc/opensense/widget/AlbumBouncingGridView$BouncingFlingRunnable;
 
@@ -1329,7 +1329,7 @@
     .end local v0           #estimateDistance:I
     .end local v1           #totalDistance:I
     :cond_4
-    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
+    iget-object v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
 
     neg-int v3, p1
 
@@ -1351,18 +1351,18 @@
     invoke-super {p0}, Lcom/htc/opensense/widget/AlbumGridView;->onScrollToBoundary()V
 
     .line 467
-    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
 
     if-eqz v0, :cond_0
 
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mTouchMode:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mTouchMode:I
 
     const/4 v1, 0x4
 
     if-ne v0, v1, :cond_0
 
     .line 468
-    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
 
     invoke-virtual {v0}, Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;->endFling()V
 
@@ -1396,7 +1396,7 @@
 
     .line 124
     :cond_0
-    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
+    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
 
     if-nez v3, :cond_1
 
@@ -1405,7 +1405,7 @@
 
     move-result-object v3
 
-    iput-object v3, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
+    iput-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
 
     .line 128
     :cond_1
@@ -1416,7 +1416,7 @@
     if-eqz v3, :cond_2
 
     .line 129
-    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
+    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
 
     check-cast v3, Lcom/htc/opensense/widget/AlbumBouncingGridView$BouncingFlingRunnable;
 
@@ -1430,7 +1430,7 @@
 
     move-result v4
 
-    iget-object v5, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->top:I
 
@@ -1459,7 +1459,7 @@
 
     move-result v3
 
-    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->bottom:I
 
@@ -1507,7 +1507,7 @@
 
     sub-int/2addr v3, v4
 
-    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->top:I
 
@@ -1528,7 +1528,7 @@
     .line 140
     .local v2, scrollDistance:I
     :goto_1
-    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
+    iget-object v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
 
     check-cast v3, Lcom/htc/opensense/widget/AlbumBouncingGridView$BouncingFlingRunnable;
 
@@ -1604,25 +1604,25 @@
 
     .prologue
     .line 517
-    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
 
     iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;->mScroller:Lcom/htc/widget/HtcScroller;
 
     if-eqz v0, :cond_0
 
     .line 518
-    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
 
     iget-object v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;->mScroller:Lcom/htc/widget/HtcScroller;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcScroller;->abortAnimation()V
 
     .line 519
-    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumBouncingGridView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFlingRunnable:Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;
 
     invoke-virtual {v0}, Lcom/htc/opensense/widget/AlbumAbsListView$FlingRunnable;->stop()V
 

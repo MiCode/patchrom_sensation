@@ -53,7 +53,7 @@
 
     .prologue
     .line 159
-    iget-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Clipart;->isCommitted:Z
+    iget-boolean v0, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v0, :cond_0
 
@@ -84,7 +84,7 @@
     if-eqz v0, :cond_2
 
     .line 166
-    iget-object v0, p0, Lcom/scalado/caps/filter/photoart/Clipart;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -115,14 +115,14 @@
     .line 175
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Clipart;->isSet:Z
+    iput-boolean v0, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 176
     return-void
 
     .line 169
     :cond_2
-    iget-object v0, p0, Lcom/scalado/caps/filter/photoart/Clipart;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -444,7 +444,7 @@
 
     .prologue
     .line 74
-    iget-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Clipart;->isCommitted:Z
+    iget-boolean v0, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v0, :cond_0
 

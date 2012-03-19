@@ -124,7 +124,7 @@
     .line 114
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/media/ExifInterface;->sLock:Ljava/lang/Object;
 
@@ -142,7 +142,7 @@
 
     .prologue
     .line 119
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 120
     iput-object p1, p0, Landroid/media/ExifInterface;->mFilename:Ljava/lang/String;

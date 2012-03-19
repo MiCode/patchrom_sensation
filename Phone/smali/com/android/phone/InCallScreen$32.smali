@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/android/phone/InCallScreen$32;->val$number_HBPCD:Ljava/lang/String;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -92,14 +92,6 @@
     move-result v2
 
     if-nez v2, :cond_0
-
-    .line 9461
-    iget-object v2, p0, Lcom/android/phone/InCallScreen$32;->this$0:Lcom/android/phone/InCallScreen;
-
-    const-string v3, "@@@ onclick IDLE FISH"
-
-    #calls: Lcom/android/phone/InCallScreen;->log(Ljava/lang/String;)V
-    invoke-static {v2, v3}, Lcom/android/phone/InCallScreen;->access$200(Lcom/android/phone/InCallScreen;Ljava/lang/String;)V
 
     .line 9462
     iget-object v2, p0, Lcom/android/phone/InCallScreen$32;->this$0:Lcom/android/phone/InCallScreen;
@@ -205,8 +197,6 @@
     goto :goto_0
 
     .line 9427
-    nop
-
     :pswitch_data_0
     .packed-switch 0x7f0800f6
         :pswitch_1

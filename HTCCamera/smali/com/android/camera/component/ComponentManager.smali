@@ -88,7 +88,7 @@
     if-nez p1, :cond_0
 
     .line 33
-    iget-object v0, p0, Lcom/android/camera/component/ComponentManager;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "owner is NULL"
 
@@ -122,7 +122,7 @@
     if-eqz v0, :cond_0
 
     .line 97
-    iget-object v0, p0, Lcom/android/camera/component/ComponentManager;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -191,7 +191,7 @@
     if-eqz v0, :cond_0
 
     .line 166
-    iget-object v0, p0, Lcom/android/camera/component/ComponentManager;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -263,7 +263,7 @@
     if-nez p1, :cond_0
 
     .line 51
-    iget-object v1, p0, Lcom/android/camera/component/ComponentManager;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "component is NULL in addComponent()"
 
@@ -287,7 +287,7 @@
     if-eqz v1, :cond_1
 
     .line 56
-    iget-object v1, p0, Lcom/android/camera/component/ComponentManager;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "component is already owned"
 
@@ -315,7 +315,7 @@
     if-eq v1, v2, :cond_2
 
     .line 61
-    iget-object v1, p0, Lcom/android/camera/component/ComponentManager;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "component is created from another thread"
 
@@ -353,7 +353,7 @@
     if-eqz v1, :cond_3
 
     .line 72
-    iget-object v1, p0, Lcom/android/camera/component/ComponentManager;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -432,7 +432,7 @@
     if-eqz v1, :cond_4
 
     .line 78
-    iget-object v1, p0, Lcom/android/camera/component/ComponentManager;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -611,7 +611,7 @@
     if-nez p1, :cond_0
 
     .line 140
-    iget-object v0, p0, Lcom/android/camera/component/ComponentManager;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "name is NULL in getComponent()"
 
@@ -746,7 +746,7 @@
     if-nez p1, :cond_0
 
     .line 200
-    iget-object v2, p0, Lcom/android/camera/component/ComponentManager;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v3, "component is NULL in addComponent()"
 
@@ -796,7 +796,7 @@
     if-eqz v2, :cond_1
 
     .line 216
-    iget-object v2, p0, Lcom/android/camera/component/ComponentManager;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -953,7 +953,7 @@
     if-eqz v6, :cond_0
 
     .line 252
-    iget-object v6, p0, Lcom/android/camera/component/ComponentManager;->TAG:Ljava/lang/String;
+    iget-object v6, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
 

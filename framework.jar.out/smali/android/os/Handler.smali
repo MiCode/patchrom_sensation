@@ -35,7 +35,7 @@
 
     .prologue
     .line 109
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 119
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -81,7 +81,7 @@
 
     .prologue
     .line 133
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 143
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -125,7 +125,7 @@
 
     .prologue
     .line 155
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 156
     iput-object p1, p0, Landroid/os/Handler;->mLooper:Landroid/os/Looper;
@@ -151,7 +151,7 @@
 
     .prologue
     .line 165
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 166
     iput-object p1, p0, Landroid/os/Handler;->mLooper:Landroid/os/Looper;

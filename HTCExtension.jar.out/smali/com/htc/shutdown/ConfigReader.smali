@@ -17,7 +17,7 @@
 
     .prologue
     .line 31
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 28
     const/4 v0, 0x0
@@ -41,7 +41,7 @@
 
     .prologue
     .line 37
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 28
     const/4 v0, 0x0
@@ -63,231 +63,155 @@
 .end method
 
 .method private fromXML(Ljava/lang/String;)V
-    .locals 11
+    .locals 7
     .parameter "filename"
 
     .prologue
     .line 53
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
     .line 55
-    .local v4, reader:Ljava/io/FileReader;
+    .local v2, reader:Ljava/io/FileReader;
     :try_start_0
     invoke-static {}, Lorg/xmlpull/v1/XmlPullParserFactory;->newInstance()Lorg/xmlpull/v1/XmlPullParserFactory;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 56
-    .local v2, factory:Lorg/xmlpull/v1/XmlPullParserFactory;
-    invoke-virtual {v2}, Lorg/xmlpull/v1/XmlPullParserFactory;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
+    .local v1, factory:Lorg/xmlpull/v1/XmlPullParserFactory;
+    invoke-virtual {v1}, Lorg/xmlpull/v1/XmlPullParserFactory;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
-    move-result-object v6
+    move-result-object v4
 
     .line 58
-    .local v6, xpp:Lorg/xmlpull/v1/XmlPullParser;
-    new-instance v5, Ljava/io/FileReader;
+    .local v4, xpp:Lorg/xmlpull/v1/XmlPullParser;
+    new-instance v3, Ljava/io/FileReader;
 
-    invoke-direct {v5, p1}, Ljava/io/FileReader;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, p1}, Ljava/io/FileReader;-><init>(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_5
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 61
-    .end local v4           #reader:Ljava/io/FileReader;
-    .local v5, reader:Ljava/io/FileReader;
-    const-wide/16 v8, 0x1
+    .end local v2           #reader:Ljava/io/FileReader;
+    .local v3, reader:Ljava/io/FileReader;
+    const-wide/16 v5, 0x1
 
     :try_start_1
-    invoke-virtual {v5, v8, v9}, Ljava/io/FileReader;->skip(J)J
+    invoke-virtual {v3, v5, v6}, Ljava/io/FileReader;->skip(J)J
 
     .line 63
-    invoke-interface {v6, v5}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/Reader;)V
+    invoke-interface {v4, v3}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/Reader;)V
 
     .line 64
-    invoke-interface {v6}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
+    invoke-interface {v4}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
-    move-result v1
+    move-result v0
 
     .line 66
-    .local v1, eventType:I
+    .local v0, eventType:I
     :cond_0
-    packed-switch v1, :pswitch_data_0
+    packed-switch v0, :pswitch_data_0
 
     .line 77
     :goto_0
     :pswitch_0
-    invoke-interface {v6}, Lorg/xmlpull/v1/XmlPullParser;->next()I
+    invoke-interface {v4}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
-    move-result v1
+    move-result v0
 
     .line 78
-    const/4 v8, 0x1
+    const/4 v5, 0x1
 
-    if-ne v1, v8, :cond_0
+    if-ne v0, v5, :cond_0
 
-    move-object v4, v5
+    move-object v2, v3
 
     .line 91
-    .end local v1           #eventType:I
-    .end local v2           #factory:Lorg/xmlpull/v1/XmlPullParserFactory;
-    .end local v5           #reader:Ljava/io/FileReader;
-    .end local v6           #xpp:Lorg/xmlpull/v1/XmlPullParser;
-    .restart local v4       #reader:Ljava/io/FileReader;
+    .end local v0           #eventType:I
+    .end local v1           #factory:Lorg/xmlpull/v1/XmlPullParserFactory;
+    .end local v3           #reader:Ljava/io/FileReader;
+    .end local v4           #xpp:Lorg/xmlpull/v1/XmlPullParser;
+    .restart local v2       #reader:Ljava/io/FileReader;
     :goto_1
     return-void
 
     .line 71
-    .end local v4           #reader:Ljava/io/FileReader;
-    .restart local v1       #eventType:I
-    .restart local v2       #factory:Lorg/xmlpull/v1/XmlPullParserFactory;
-    .restart local v5       #reader:Ljava/io/FileReader;
-    .restart local v6       #xpp:Lorg/xmlpull/v1/XmlPullParser;
+    .end local v2           #reader:Ljava/io/FileReader;
+    .restart local v0       #eventType:I
+    .restart local v1       #factory:Lorg/xmlpull/v1/XmlPullParserFactory;
+    .restart local v3       #reader:Ljava/io/FileReader;
+    .restart local v4       #xpp:Lorg/xmlpull/v1/XmlPullParser;
     :pswitch_1
-    invoke-direct {p0, v6}, Lcom/htc/shutdown/ConfigReader;->parseInfo(Lorg/xmlpull/v1/XmlPullParser;)V
+    invoke-direct {p0, v4}, Lcom/htc/shutdown/ConfigReader;->parseInfo(Lorg/xmlpull/v1/XmlPullParser;)V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_4
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
 
     goto :goto_0
 
     .line 80
-    .end local v1           #eventType:I
+    .end local v0           #eventType:I
     :catch_0
-    move-exception v3
+    move-exception v5
 
-    move-object v4, v5
+    move-object v2, v3
 
-    .line 82
-    .end local v2           #factory:Lorg/xmlpull/v1/XmlPullParserFactory;
-    .end local v5           #reader:Ljava/io/FileReader;
-    .end local v6           #xpp:Lorg/xmlpull/v1/XmlPullParser;
-    .local v3, ioe:Ljava/io/IOException;
-    .restart local v4       #reader:Ljava/io/FileReader;
-    :goto_2
-    const-string v8, "ConfigReader"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "Exception reading XML data: "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
+    .end local v3           #reader:Ljava/io/FileReader;
+    .restart local v2       #reader:Ljava/io/FileReader;
     goto :goto_1
 
-    .line 84
-    .end local v3           #ioe:Ljava/io/IOException;
+    .line 87
+    .end local v1           #factory:Lorg/xmlpull/v1/XmlPullParserFactory;
+    .end local v4           #xpp:Lorg/xmlpull/v1/XmlPullParser;
     :catch_1
-    move-exception v7
-
-    .line 86
-    .local v7, xppe:Lorg/xmlpull/v1/XmlPullParserException;
-    :goto_3
-    const-string v8, "ConfigReader"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "Exception reading XML data: "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    move-exception v5
 
     goto :goto_1
 
-    .line 87
-    .end local v7           #xppe:Lorg/xmlpull/v1/XmlPullParserException;
+    .end local v2           #reader:Ljava/io/FileReader;
+    .restart local v1       #factory:Lorg/xmlpull/v1/XmlPullParserFactory;
+    .restart local v3       #reader:Ljava/io/FileReader;
+    .restart local v4       #xpp:Lorg/xmlpull/v1/XmlPullParser;
     :catch_2
-    move-exception v0
+    move-exception v5
 
-    .line 89
-    .local v0, e:Ljava/lang/Exception;
-    :goto_4
-    const-string v8, "ConfigReader"
+    move-object v2, v3
 
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "Exception reading XML data: "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
+    .end local v3           #reader:Ljava/io/FileReader;
+    .restart local v2       #reader:Ljava/io/FileReader;
     goto :goto_1
-
-    .line 87
-    .end local v0           #e:Ljava/lang/Exception;
-    .end local v4           #reader:Ljava/io/FileReader;
-    .restart local v2       #factory:Lorg/xmlpull/v1/XmlPullParserFactory;
-    .restart local v5       #reader:Ljava/io/FileReader;
-    .restart local v6       #xpp:Lorg/xmlpull/v1/XmlPullParser;
-    :catch_3
-    move-exception v0
-
-    move-object v4, v5
-
-    .end local v5           #reader:Ljava/io/FileReader;
-    .restart local v4       #reader:Ljava/io/FileReader;
-    goto :goto_4
 
     .line 84
-    .end local v4           #reader:Ljava/io/FileReader;
-    .restart local v5       #reader:Ljava/io/FileReader;
+    .end local v1           #factory:Lorg/xmlpull/v1/XmlPullParserFactory;
+    .end local v4           #xpp:Lorg/xmlpull/v1/XmlPullParser;
+    :catch_3
+    move-exception v5
+
+    goto :goto_1
+
+    .end local v2           #reader:Ljava/io/FileReader;
+    .restart local v1       #factory:Lorg/xmlpull/v1/XmlPullParserFactory;
+    .restart local v3       #reader:Ljava/io/FileReader;
+    .restart local v4       #xpp:Lorg/xmlpull/v1/XmlPullParser;
     :catch_4
-    move-exception v7
+    move-exception v5
 
-    move-object v4, v5
+    move-object v2, v3
 
-    .end local v5           #reader:Ljava/io/FileReader;
-    .restart local v4       #reader:Ljava/io/FileReader;
-    goto :goto_3
+    .end local v3           #reader:Ljava/io/FileReader;
+    .restart local v2       #reader:Ljava/io/FileReader;
+    goto :goto_1
 
     .line 80
-    .end local v2           #factory:Lorg/xmlpull/v1/XmlPullParserFactory;
-    .end local v6           #xpp:Lorg/xmlpull/v1/XmlPullParser;
+    .end local v1           #factory:Lorg/xmlpull/v1/XmlPullParserFactory;
+    .end local v4           #xpp:Lorg/xmlpull/v1/XmlPullParser;
     :catch_5
-    move-exception v3
+    move-exception v5
 
-    goto :goto_2
+    goto :goto_1
 
     .line 66
     nop

@@ -38,7 +38,7 @@
     .line 350
     iput-object p1, p0, Lcom/htc/opensense/widget/Gesture$Behavior;->this$0:Lcom/htc/opensense/widget/Gesture;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 351
     const/4 v0, 0x1

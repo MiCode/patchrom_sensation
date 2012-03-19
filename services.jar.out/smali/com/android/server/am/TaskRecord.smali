@@ -255,7 +255,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/android/server/am/TaskRecord;->lastThumbnail:Landroid/graphics/Bitmap;
+    iget-object v1, p0, Lcom/android/server/am/ThumbnailHolder;->lastThumbnail:Landroid/graphics/Bitmap;
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
@@ -264,7 +264,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/android/server/am/TaskRecord;->lastDescription:Ljava/lang/CharSequence;
+    iget-object v1, p0, Lcom/android/server/am/ThumbnailHolder;->lastDescription:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
@@ -413,7 +413,7 @@
     :cond_3
     new-instance v1, Landroid/content/ComponentName;
 
-    iget-object v3, p2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v3, p2, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
 
     iget-object v5, p2, Landroid/content/pm/ActivityInfo;->targetActivity:Ljava/lang/String;
 
@@ -461,9 +461,9 @@
     .line 84
     new-instance v3, Landroid/content/ComponentName;
 
-    iget-object v4, p2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v4, p2, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
 
-    iget-object v5, p2, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v5, p2, Landroid/content/pm/ComponentInfo;->name:Ljava/lang/String;
 
     invoke-direct {v3, v4, v5}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

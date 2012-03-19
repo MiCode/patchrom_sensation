@@ -65,39 +65,9 @@
     #setter for: Lcom/htc/server/PowerManagerAmsListener;->mPowerSaverEnabled:Z
     invoke-static {v2, v3}, Lcom/htc/server/PowerManagerAmsListener;->access$002(Lcom/htc/server/PowerManagerAmsListener;Z)Z
 
-    .line 85
+    .line 87
     :cond_0
     :goto_0
-    const-string v2, "PowerManagerAmsListener"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "BroadcastReceiver: mPowerSaverEnabled="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/htc/server/PowerManagerAmsListener$1;->this$0:Lcom/htc/server/PowerManagerAmsListener;
-
-    #getter for: Lcom/htc/server/PowerManagerAmsListener;->mPowerSaverEnabled:Z
-    invoke-static {v4}, Lcom/htc/server/PowerManagerAmsListener;->access$000(Lcom/htc/server/PowerManagerAmsListener;)Z
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 87
     return-void
 
     .line 75

@@ -40,7 +40,7 @@
     const/4 v4, 0x1
 
     .line 21
-    iget-boolean v2, p0, Lcom/htc/widget/DeckControlView;->mInited:Z
+    iget-boolean v2, p0, Lcom/htc/sunny/SSurfaceView;->mInited:Z
 
     if-nez v2, :cond_1
 
@@ -82,7 +82,7 @@
     if-nez v2, :cond_2
 
     .line 39
-    iput-boolean v4, p0, Lcom/htc/widget/DeckControlView;->mEnabledTranslucent:Z
+    iput-boolean v4, p0, Lcom/htc/sunny/SSurfaceView;->mEnabledTranslucent:Z
 
     .line 43
     :goto_0
@@ -101,7 +101,7 @@
     invoke-interface {v2, p0}, Landroid/view/SurfaceHolder;->addCallback(Landroid/view/SurfaceHolder$Callback;)V
 
     .line 50
-    iget-boolean v2, p0, Lcom/htc/widget/DeckControlView;->mEnabledTranslucent:Z
+    iget-boolean v2, p0, Lcom/htc/sunny/SSurfaceView;->mEnabledTranslucent:Z
 
     if-eqz v2, :cond_3
 
@@ -117,17 +117,17 @@
 
     .line 59
     :goto_1
-    iget-object v2, p0, Lcom/htc/widget/DeckControlView;->mRenderThread:Lcom/htc/sunny/SSurfaceView$RenderThread;
+    iget-object v2, p0, Lcom/htc/sunny/SSurfaceView;->mRenderThread:Lcom/htc/sunny/SSurfaceView$RenderThread;
 
     if-eqz v2, :cond_4
 
     .line 61
-    iget-object v2, p0, Lcom/htc/widget/DeckControlView;->mRenderThread:Lcom/htc/sunny/SSurfaceView$RenderThread;
+    iget-object v2, p0, Lcom/htc/sunny/SSurfaceView;->mRenderThread:Lcom/htc/sunny/SSurfaceView$RenderThread;
 
     invoke-virtual {v2, v5}, Lcom/htc/sunny/SSurfaceView$RenderThread;->setPriority(I)V
 
     .line 62
-    iget-object v2, p0, Lcom/htc/widget/DeckControlView;->mRenderThread:Lcom/htc/sunny/SSurfaceView$RenderThread;
+    iget-object v2, p0, Lcom/htc/sunny/SSurfaceView;->mRenderThread:Lcom/htc/sunny/SSurfaceView$RenderThread;
 
     invoke-virtual {v2}, Lcom/htc/sunny/SSurfaceView$RenderThread;->start()V
 
@@ -140,7 +140,7 @@
     invoke-virtual {p0, v2}, Lcom/htc/widget/DeckControlView;->runOnRenderThread(Ljava/lang/Runnable;)V
 
     .line 79
-    iput-boolean v4, p0, Lcom/htc/widget/DeckControlView;->mInited:Z
+    iput-boolean v4, p0, Lcom/htc/sunny/SSurfaceView;->mInited:Z
 
     .line 81
     .end local v1           #context:Landroid/content/Context;
@@ -153,7 +153,7 @@
     :cond_2
     const/4 v2, 0x0
 
-    iput-boolean v2, p0, Lcom/htc/widget/DeckControlView;->mEnabledTranslucent:Z
+    iput-boolean v2, p0, Lcom/htc/sunny/SSurfaceView;->mEnabledTranslucent:Z
 
     goto :goto_0
 
@@ -178,15 +178,15 @@
 
     invoke-direct {v2, p0, v3}, Lcom/htc/sunny/SSurfaceView$RenderThread;-><init>(Lcom/htc/sunny/SSurfaceView;Ljava/lang/String;)V
 
-    iput-object v2, p0, Lcom/htc/widget/DeckControlView;->mRenderThread:Lcom/htc/sunny/SSurfaceView$RenderThread;
+    iput-object v2, p0, Lcom/htc/sunny/SSurfaceView;->mRenderThread:Lcom/htc/sunny/SSurfaceView$RenderThread;
 
     .line 67
-    iget-object v2, p0, Lcom/htc/widget/DeckControlView;->mRenderThread:Lcom/htc/sunny/SSurfaceView$RenderThread;
+    iget-object v2, p0, Lcom/htc/sunny/SSurfaceView;->mRenderThread:Lcom/htc/sunny/SSurfaceView$RenderThread;
 
     invoke-virtual {v2, v5}, Lcom/htc/sunny/SSurfaceView$RenderThread;->setPriority(I)V
 
     .line 68
-    iget-object v2, p0, Lcom/htc/widget/DeckControlView;->mRenderThread:Lcom/htc/sunny/SSurfaceView$RenderThread;
+    iget-object v2, p0, Lcom/htc/sunny/SSurfaceView;->mRenderThread:Lcom/htc/sunny/SSurfaceView$RenderThread;
 
     invoke-virtual {v2}, Lcom/htc/sunny/SSurfaceView$RenderThread;->start()V
 

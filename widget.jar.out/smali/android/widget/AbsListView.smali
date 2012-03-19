@@ -1470,7 +1470,7 @@
 
     .line 1138
     :cond_1
-    iget v3, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v3, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     if-eq v0, v3, :cond_2
 
@@ -2611,7 +2611,7 @@
 
     move-object/from16 v0, p0
 
-    iget v4, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v4, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     sub-int v19, v3, v4
 
@@ -3157,7 +3157,7 @@
     .line 2969
     move-object/from16 v0, p0
 
-    iget v3, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v3, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     sub-int v3, v20, v3
 
@@ -3382,7 +3382,7 @@
     .line 2799
     iget v6, p0, Landroid/widget/AbsListView;->mMotionPosition:I
 
-    iget v9, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v9, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v6, v9
 
@@ -3509,7 +3509,7 @@
 
     .line 3600
     .local v2, count:I
-    iget v3, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v3, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     .line 3601
     .local v3, firstPosition:I
@@ -3806,7 +3806,7 @@
     const/4 v7, 0x0
 
     .line 1756
-    iget v2, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v2, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     .line 1757
     .local v2, firstPosition:I
@@ -3867,7 +3867,7 @@
 
     div-float/2addr v9, v10
 
-    iget v10, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v10, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     int-to-float v10, v10
 
@@ -3895,7 +3895,7 @@
 
     .line 1769
     :cond_1
-    iget v1, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v1, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     .line 1770
     .local v1, count:I
@@ -3959,7 +3959,7 @@
     if-eqz v1, :cond_1
 
     .line 1787
-    iget v1, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v1, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     mul-int/lit8 v1, v1, 0x64
 
@@ -3988,7 +3988,7 @@
 
     div-float/2addr v1, v2
 
-    iget v2, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v2, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     int-to-float v2, v2
 
@@ -4014,7 +4014,7 @@
     .line 1793
     .end local v0           #result:I
     :cond_1
-    iget v0, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v0, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     .restart local v0       #result:I
     goto :goto_0
@@ -4106,7 +4106,7 @@
 
     move-object/from16 v0, p0
 
-    iget v2, v0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v2, v0, Landroid/widget/AdapterView;->mItemCount:I
 
     invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
 
@@ -4356,11 +4356,11 @@
 
     add-int/2addr v6, v4
 
-    iget v7, p0, Landroid/widget/AbsListView;->mRight:I
+    iget v7, p0, Landroid/widget/AdapterView;->mRight:I
 
     add-int/2addr v7, v3
 
-    iget v8, p0, Landroid/widget/AbsListView;->mLeft:I
+    iget v8, p0, Landroid/widget/AdapterView;->mLeft:I
 
     sub-int/2addr v7, v8
 
@@ -4368,11 +4368,11 @@
 
     sub-int/2addr v7, v8
 
-    iget v8, p0, Landroid/widget/AbsListView;->mBottom:I
+    iget v8, p0, Landroid/widget/AdapterView;->mBottom:I
 
     add-int/2addr v8, v4
 
-    iget v9, p0, Landroid/widget/AbsListView;->mTop:I
+    iget v9, p0, Landroid/widget/AdapterView;->mTop:I
 
     sub-int/2addr v8, v9
 
@@ -4762,7 +4762,7 @@
     .local v1, motionRow:I
     if-ne v1, v2, :cond_0
 
-    iget v2, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v2, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     add-int/2addr v2, v0
 
@@ -4845,13 +4845,13 @@
     .line 1822
     .restart local v2       #fadeEdge:F
     :cond_1
-    iget v5, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v5, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     add-int/2addr v5, v1
 
     add-int/lit8 v5, v5, -0x1
 
-    iget v6, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v6, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     add-int/lit8 v6, v6, -0x1
 
@@ -5264,18 +5264,18 @@
 
     .prologue
     .line 1945
-    iget v0, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v0, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     if-lez v0, :cond_0
 
-    iget v0, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v0, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
     if-ltz v0, :cond_0
 
     .line 1946
-    iget v0, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v0, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
-    iget v1, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v1, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v0, v1
 
@@ -5371,7 +5371,7 @@
     .line 1805
     .restart local v1       #fadeEdge:F
     :cond_1
-    iget v4, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v4, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     if-lez v4, :cond_2
 
@@ -5508,7 +5508,7 @@
     const/4 v12, 0x0
 
     .line 4875
-    iget v1, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v1, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     .line 4876
     .local v1, count:I
@@ -5516,7 +5516,7 @@
 
     .line 4877
     .local v4, lastHandledItemCount:I
-    iget v10, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v10, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     iput v10, p0, Landroid/widget/AbsListView;->mLastHandledItemCount:I
 
@@ -5545,12 +5545,12 @@
     if-lez v1, :cond_e
 
     .line 4888
-    iget-boolean v10, p0, Landroid/widget/AbsListView;->mNeedSync:Z
+    iget-boolean v10, p0, Landroid/widget/AdapterView;->mNeedSync:Z
 
     if-eqz v10, :cond_7
 
     .line 4890
-    iput-boolean v12, p0, Landroid/widget/AbsListView;->mNeedSync:Z
+    iput-boolean v12, p0, Landroid/widget/AdapterView;->mNeedSync:Z
 
     .line 4892
     iget v10, p0, Landroid/widget/AbsListView;->mTranscriptMode:I
@@ -5623,7 +5623,7 @@
     .line 4905
     .local v2, lastBottom:I
     :goto_1
-    iget v10, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v10, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     add-int/2addr v10, v0
 
@@ -5654,7 +5654,7 @@
     .end local v3           #lastChild:Landroid/view/View;
     .end local v5           #listBottom:I
     :cond_6
-    iget v10, p0, Landroid/widget/AbsListView;->mSyncMode:I
+    iget v10, p0, Landroid/widget/AdapterView;->mSyncMode:I
 
     packed-switch v10, :pswitch_data_0
 
@@ -5714,7 +5714,7 @@
     iput v14, p0, Landroid/widget/AbsListView;->mLayoutMode:I
 
     .line 4923
-    iget v8, p0, Landroid/widget/AbsListView;->mSyncPosition:I
+    iget v8, p0, Landroid/widget/AdapterView;->mSyncPosition:I
 
     invoke-static {v12, v8}, Ljava/lang/Math;->max(II)I
 
@@ -5726,7 +5726,7 @@
 
     move-result v8
 
-    iput v8, p0, Landroid/widget/AbsListView;->mSyncPosition:I
+    iput v8, p0, Landroid/widget/AdapterView;->mSyncPosition:I
 
     goto :goto_0
 
@@ -5750,10 +5750,10 @@
     if-ne v7, v6, :cond_7
 
     .line 4935
-    iput v6, p0, Landroid/widget/AbsListView;->mSyncPosition:I
+    iput v6, p0, Landroid/widget/AdapterView;->mSyncPosition:I
 
     .line 4937
-    iget-wide v8, p0, Landroid/widget/AbsListView;->mSyncHeight:J
+    iget-wide v8, p0, Landroid/widget/AdapterView;->mSyncHeight:J
 
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeight()I
 
@@ -5789,7 +5789,7 @@
     iput v14, p0, Landroid/widget/AbsListView;->mLayoutMode:I
 
     .line 4957
-    iget v8, p0, Landroid/widget/AbsListView;->mSyncPosition:I
+    iget v8, p0, Landroid/widget/AdapterView;->mSyncPosition:I
 
     invoke-static {v12, v8}, Ljava/lang/Math;->max(II)I
 
@@ -5801,7 +5801,7 @@
 
     move-result v8
 
-    iput v8, p0, Landroid/widget/AbsListView;->mSyncPosition:I
+    iput v8, p0, Landroid/widget/AdapterView;->mSyncPosition:I
 
     goto/16 :goto_0
 
@@ -5839,23 +5839,23 @@
     iput v8, p0, Landroid/widget/AbsListView;->mLayoutMode:I
 
     .line 5001
-    iput v13, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iput v13, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
     .line 5002
     const-wide/high16 v8, -0x8000
 
-    iput-wide v8, p0, Landroid/widget/AbsListView;->mSelectedRowId:J
+    iput-wide v8, p0, Landroid/widget/AdapterView;->mSelectedRowId:J
 
     .line 5003
-    iput v13, p0, Landroid/widget/AbsListView;->mNextSelectedPosition:I
+    iput v13, p0, Landroid/widget/AdapterView;->mNextSelectedPosition:I
 
     .line 5004
     const-wide/high16 v8, -0x8000
 
-    iput-wide v8, p0, Landroid/widget/AbsListView;->mNextSelectedRowId:J
+    iput-wide v8, p0, Landroid/widget/AdapterView;->mNextSelectedRowId:J
 
     .line 5005
-    iput-boolean v12, p0, Landroid/widget/AbsListView;->mNeedSync:Z
+    iput-boolean v12, p0, Landroid/widget/AdapterView;->mNeedSync:Z
 
     .line 5006
     iput v13, p0, Landroid/widget/AbsListView;->mSelectorPosition:I
@@ -5898,7 +5898,7 @@
     const/4 v2, -0x1
 
     .line 4640
-    iget v0, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v0, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
     if-eq v0, v2, :cond_2
 
@@ -5910,24 +5910,24 @@
     if-eq v0, v1, :cond_0
 
     .line 4642
-    iget v0, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v0, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
     iput v0, p0, Landroid/widget/AbsListView;->mResurrectToPosition:I
 
     .line 4644
     :cond_0
-    iget v0, p0, Landroid/widget/AbsListView;->mNextSelectedPosition:I
+    iget v0, p0, Landroid/widget/AdapterView;->mNextSelectedPosition:I
 
     if-ltz v0, :cond_1
 
-    iget v0, p0, Landroid/widget/AbsListView;->mNextSelectedPosition:I
+    iget v0, p0, Landroid/widget/AdapterView;->mNextSelectedPosition:I
 
-    iget v1, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v1, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
     if-eq v0, v1, :cond_1
 
     .line 4645
-    iget v0, p0, Landroid/widget/AbsListView;->mNextSelectedPosition:I
+    iget v0, p0, Landroid/widget/AdapterView;->mNextSelectedPosition:I
 
     iput v0, p0, Landroid/widget/AbsListView;->mResurrectToPosition:I
 
@@ -5955,7 +5955,7 @@
     .line 4696
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/widget/AbsListView;->mDataChanged:Z
+    iput-boolean v0, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     .line 4697
     invoke-virtual {p0}, Landroid/widget/AbsListView;->rememberSyncState()V
@@ -5984,13 +5984,13 @@
     .line 1286
     iget-object v0, p0, Landroid/widget/AbsListView;->mFastScroller:Landroid/widget/FastScroller;
 
-    iget v1, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v1, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getChildCount()I
 
     move-result v2
 
-    iget v3, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v3, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     invoke-virtual {v0, p0, v1, v2, v3}, Landroid/widget/FastScroller;->onScroll(Landroid/widget/AbsListView;III)V
 
@@ -6003,13 +6003,13 @@
     .line 1289
     iget-object v0, p0, Landroid/widget/AbsListView;->mOnScrollListener:Landroid/widget/AbsListView$OnScrollListener;
 
-    iget v1, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v1, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getChildCount()I
 
     move-result v2
 
-    iget v3, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v3, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     invoke-interface {v0, p0, v1, v2, v3}, Landroid/widget/AbsListView$OnScrollListener;->onScroll(Landroid/widget/AbsListView;III)V
 
@@ -6279,9 +6279,9 @@
     if-nez v5, :cond_0
 
     .line 2252
-    iget v5, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v5, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
-    iget v6, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v6, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v5, v6
 
@@ -6344,7 +6344,7 @@
     :goto_1
     if-eqz v1, :cond_0
 
-    iget-boolean v5, p0, Landroid/widget/AbsListView;->mDataChanged:Z
+    iget-boolean v5, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     if-nez v5, :cond_0
 
@@ -6548,12 +6548,12 @@
     invoke-interface {v1, v2}, Landroid/widget/ListAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
     .line 2361
-    iput-boolean v3, p0, Landroid/widget/AbsListView;->mDataChanged:Z
+    iput-boolean v3, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     .line 2362
-    iget v1, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v1, p0, Landroid/widget/AdapterView;->mItemCount:I
 
-    iput v1, p0, Landroid/widget/AbsListView;->mOldItemCount:I
+    iput v1, p0, Landroid/widget/AdapterView;->mOldItemCount:I
 
     .line 2363
     iget-object v1, p0, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
@@ -6562,7 +6562,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iput v1, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     .line 2365
     :cond_1
@@ -7136,7 +7136,7 @@
 
     .prologue
     .line 5380
-    iget v0, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v0, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
     if-gez v0, :cond_0
 
@@ -7168,7 +7168,7 @@
     .line 1688
     if-eqz p1, :cond_1
 
-    iget v0, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v0, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
     if-gez v0, :cond_1
 
@@ -7190,12 +7190,12 @@
     .line 1692
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/widget/AbsListView;->mDataChanged:Z
+    iput-boolean v0, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     .line 1693
-    iget v0, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v0, p0, Landroid/widget/AdapterView;->mItemCount:I
 
-    iput v0, p0, Landroid/widget/AbsListView;->mOldItemCount:I
+    iput v0, p0, Landroid/widget/AdapterView;->mOldItemCount:I
 
     .line 1694
     iget-object v0, p0, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
@@ -7204,7 +7204,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iput v0, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     .line 1696
     :cond_0
@@ -7467,7 +7467,7 @@
     if-ltz v2, :cond_4
 
     .line 3524
-    iget v10, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v10, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     sub-int v10, v2, v10
 
@@ -7676,7 +7676,7 @@
 
     if-eqz v2, :cond_0
 
-    iget v2, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v2, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
     if-ltz v2, :cond_0
 
@@ -7684,7 +7684,7 @@
 
     if-eqz v2, :cond_0
 
-    iget v2, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v2, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
     iget-object v3, p0, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
@@ -7695,9 +7695,9 @@
     if-ge v2, v3, :cond_0
 
     .line 2666
-    iget v2, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v2, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
-    iget v3, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v3, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v2, v3
 
@@ -7710,9 +7710,9 @@
     if-eqz v0, :cond_2
 
     .line 2668
-    iget v2, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v2, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
-    iget-wide v3, p0, Landroid/widget/AbsListView;->mSelectedRowId:J
+    iget-wide v3, p0, Landroid/widget/AdapterView;->mSelectedRowId:J
 
     invoke-virtual {p0, v0, v2, v3, v4}, Landroid/widget/AbsListView;->performItemClick(Landroid/view/View;IJ)Z
 
@@ -7750,7 +7750,7 @@
     .line 1863
     const/4 v2, 0x1
 
-    iput-boolean v2, p0, Landroid/widget/AbsListView;->mInLayout:Z
+    iput-boolean v2, p0, Landroid/widget/AdapterView;->mInLayout:Z
 
     .line 1864
     if-eqz p1, :cond_1
@@ -7794,18 +7794,18 @@
 
     if-eqz v2, :cond_2
 
-    iget v2, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v2, p0, Landroid/widget/AdapterView;->mItemCount:I
 
-    iget v3, p0, Landroid/widget/AbsListView;->mOldItemCount:I
+    iget v3, p0, Landroid/widget/AdapterView;->mOldItemCount:I
 
     if-eq v2, v3, :cond_2
 
     .line 1873
     iget-object v2, p0, Landroid/widget/AbsListView;->mFastScroller:Landroid/widget/FastScroller;
 
-    iget v3, p0, Landroid/widget/AbsListView;->mOldItemCount:I
+    iget v3, p0, Landroid/widget/AdapterView;->mOldItemCount:I
 
-    iget v4, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v4, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     invoke-virtual {v2, v3, v4}, Landroid/widget/FastScroller;->onItemCountChanged(II)V
 
@@ -7816,7 +7816,7 @@
     .line 1877
     const/4 v2, 0x0
 
-    iput-boolean v2, p0, Landroid/widget/AbsListView;->mInLayout:Z
+    iput-boolean v2, p0, Landroid/widget/AdapterView;->mInLayout:Z
 
     .line 1879
     sub-int v2, p5, p3
@@ -7927,7 +7927,7 @@
     .line 1851
     .local v1, lastBottom:I
     :goto_0
-    iget v6, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v6, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     add-int/2addr v6, v0
 
@@ -8087,14 +8087,14 @@
     invoke-super {p0, v1}, Landroid/widget/AdapterView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     .line 1599
-    iput-boolean v3, p0, Landroid/widget/AbsListView;->mDataChanged:Z
+    iput-boolean v3, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     .line 1601
     iget v1, v0, Landroid/widget/AbsListView$SavedState;->height:I
 
     int-to-long v1, v1
 
-    iput-wide v1, p0, Landroid/widget/AbsListView;->mSyncHeight:J
+    iput-wide v1, p0, Landroid/widget/AdapterView;->mSyncHeight:J
 
     .line 1603
     iget-wide v1, v0, Landroid/widget/AbsListView$SavedState;->selectedId:J
@@ -8104,27 +8104,27 @@
     if-ltz v1, :cond_4
 
     .line 1604
-    iput-boolean v3, p0, Landroid/widget/AbsListView;->mNeedSync:Z
+    iput-boolean v3, p0, Landroid/widget/AdapterView;->mNeedSync:Z
 
     .line 1605
     iget-wide v1, v0, Landroid/widget/AbsListView$SavedState;->selectedId:J
 
-    iput-wide v1, p0, Landroid/widget/AbsListView;->mSyncRowId:J
+    iput-wide v1, p0, Landroid/widget/AdapterView;->mSyncRowId:J
 
     .line 1606
     iget v1, v0, Landroid/widget/AbsListView$SavedState;->position:I
 
-    iput v1, p0, Landroid/widget/AbsListView;->mSyncPosition:I
+    iput v1, p0, Landroid/widget/AdapterView;->mSyncPosition:I
 
     .line 1607
     iget v1, v0, Landroid/widget/AbsListView$SavedState;->viewTop:I
 
-    iput v1, p0, Landroid/widget/AbsListView;->mSpecificTop:I
+    iput v1, p0, Landroid/widget/AdapterView;->mSpecificTop:I
 
     .line 1608
     const/4 v1, 0x0
 
-    iput v1, p0, Landroid/widget/AbsListView;->mSyncMode:I
+    iput v1, p0, Landroid/widget/AdapterView;->mSyncMode:I
 
     .line 1621
     :cond_0
@@ -8209,25 +8209,25 @@
     iput v4, p0, Landroid/widget/AbsListView;->mSelectorPosition:I
 
     .line 1614
-    iput-boolean v3, p0, Landroid/widget/AbsListView;->mNeedSync:Z
+    iput-boolean v3, p0, Landroid/widget/AdapterView;->mNeedSync:Z
 
     .line 1615
     iget-wide v1, v0, Landroid/widget/AbsListView$SavedState;->firstId:J
 
-    iput-wide v1, p0, Landroid/widget/AbsListView;->mSyncRowId:J
+    iput-wide v1, p0, Landroid/widget/AdapterView;->mSyncRowId:J
 
     .line 1616
     iget v1, v0, Landroid/widget/AbsListView$SavedState;->position:I
 
-    iput v1, p0, Landroid/widget/AbsListView;->mSyncPosition:I
+    iput v1, p0, Landroid/widget/AdapterView;->mSyncPosition:I
 
     .line 1617
     iget v1, v0, Landroid/widget/AbsListView$SavedState;->viewTop:I
 
-    iput v1, p0, Landroid/widget/AbsListView;->mSpecificTop:I
+    iput v1, p0, Landroid/widget/AdapterView;->mSpecificTop:I
 
     .line 1618
-    iput v3, p0, Landroid/widget/AbsListView;->mSyncMode:I
+    iput v3, p0, Landroid/widget/AdapterView;->mSyncMode:I
 
     goto :goto_0
 .end method
@@ -8258,7 +8258,7 @@
 
     if-lez v12, :cond_2
 
-    iget v12, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v12, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     if-lez v12, :cond_2
 
@@ -8437,7 +8437,7 @@
     :cond_3
     if-eqz v3, :cond_5
 
-    iget v12, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v12, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     if-lez v12, :cond_5
 
@@ -8457,16 +8457,16 @@
     iput v12, v8, Landroid/widget/AbsListView$SavedState;->viewTop:I
 
     .line 1552
-    iget v2, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v2, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     .line 1553
     .local v2, firstPos:I
-    iget v12, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v12, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     if-lt v2, v12, :cond_4
 
     .line 1554
-    iget v12, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v12, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     add-int/lit8 v2, v12, -0x1
 
@@ -8549,7 +8549,7 @@
     .line 2145
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/widget/AbsListView;->mDataChanged:Z
+    iput-boolean v0, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     .line 2146
     invoke-virtual {p0}, Landroid/widget/AbsListView;->rememberSyncState()V
@@ -8855,7 +8855,7 @@
     .local v18, motionPosition:I
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Landroid/widget/AbsListView;->mDataChanged:Z
+    iget-boolean v0, v0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     move/from16 v26, v0
 
@@ -8961,7 +8961,7 @@
     .line 3083
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     move/from16 v26, v0
 
@@ -9455,7 +9455,7 @@
     .restart local v18       #motionPosition:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     move/from16 v26, v0
 
@@ -9679,7 +9679,7 @@
     .line 3158
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Landroid/widget/AbsListView;->mDataChanged:Z
+    iget-boolean v0, v0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     move/from16 v26, v0
 
@@ -9905,7 +9905,7 @@
     :cond_17
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Landroid/widget/AbsListView;->mDataChanged:Z
+    iget-boolean v0, v0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     move/from16 v26, v0
 
@@ -10027,7 +10027,7 @@
     .local v7, contentBottom:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     move/from16 v26, v0
 
@@ -10037,7 +10037,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     move/from16 v26, v0
 
@@ -10045,7 +10045,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v0, v0, Landroid/widget/AdapterView;->mItemCount:I
 
     move/from16 v27, v0
 
@@ -10166,7 +10166,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     move/from16 v26, v0
 
@@ -10187,7 +10187,7 @@
     :cond_1a
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     move/from16 v26, v0
 
@@ -10195,7 +10195,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v0, v0, Landroid/widget/AdapterView;->mItemCount:I
 
     move/from16 v27, v0
 
@@ -10524,7 +10524,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     move/from16 v27, v0
 
@@ -10697,7 +10697,7 @@
     .line 3345
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     move/from16 v26, v0
 
@@ -10833,7 +10833,7 @@
     .line 3366
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     move/from16 v26, v0
 
@@ -11100,7 +11100,7 @@
     if-ne v0, v2, :cond_2
 
     .line 2451
-    iget v1, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v1, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
     iput v1, p0, Landroid/widget/AbsListView;->mResurrectToPosition:I
 
@@ -11296,7 +11296,7 @@
     .end local v5           #newValue:Z
     :cond_2
     :goto_3
-    iput-boolean v8, p0, Landroid/widget/AbsListView;->mDataChanged:Z
+    iput-boolean v8, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     .line 1066
     invoke-virtual {p0}, Landroid/widget/AbsListView;->rememberSyncState()V
@@ -11505,12 +11505,12 @@
 
     .line 2592
     .local v6, handled:Z
-    iget-object v0, p0, Landroid/widget/AbsListView;->mOnItemLongClickListener:Landroid/widget/AdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Landroid/widget/AdapterView;->mOnItemLongClickListener:Landroid/widget/AdapterView$OnItemLongClickListener;
 
     if-eqz v0, :cond_2
 
     .line 2593
-    iget-object v0, p0, Landroid/widget/AbsListView;->mOnItemLongClickListener:Landroid/widget/AdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Landroid/widget/AdapterView;->mOnItemLongClickListener:Landroid/widget/AdapterView$OnItemLongClickListener;
 
     move-object v1, p0
 
@@ -11611,7 +11611,7 @@
     if-eqz v4, :cond_1
 
     .line 2706
-    iget v4, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v4, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     add-int/2addr v4, v3
 
@@ -11868,7 +11868,7 @@
 
     .prologue
     .line 4659
-    iget v0, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v0, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
     .line 4660
     .local v0, position:I
@@ -11886,7 +11886,7 @@
     move-result v0
 
     .line 4664
-    iget v1, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v1, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     add-int/lit8 v1, v1, -0x1
 
@@ -12085,11 +12085,11 @@
 
     .prologue
     .line 1702
-    iget-boolean v0, p0, Landroid/widget/AbsListView;->mBlockLayoutRequests:Z
+    iget-boolean v0, p0, Landroid/widget/AdapterView;->mBlockLayoutRequests:Z
 
     if-nez v0, :cond_0
 
-    iget-boolean v0, p0, Landroid/widget/AbsListView;->mInLayout:Z
+    iget-boolean v0, p0, Landroid/widget/AdapterView;->mInLayout:Z
 
     if-nez v0, :cond_0
 
@@ -12138,21 +12138,21 @@
     invoke-virtual {p0}, Landroid/widget/AbsListView;->removeAllViewsInLayout()V
 
     .line 1712
-    iput v3, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iput v3, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     .line 1713
-    iput-boolean v3, p0, Landroid/widget/AbsListView;->mDataChanged:Z
+    iput-boolean v3, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     .line 1714
-    iput-boolean v3, p0, Landroid/widget/AbsListView;->mNeedSync:Z
+    iput-boolean v3, p0, Landroid/widget/AdapterView;->mNeedSync:Z
 
     .line 1715
-    iput v2, p0, Landroid/widget/AbsListView;->mOldSelectedPosition:I
+    iput v2, p0, Landroid/widget/AdapterView;->mOldSelectedPosition:I
 
     .line 1716
     const-wide/high16 v0, -0x8000
 
-    iput-wide v0, p0, Landroid/widget/AbsListView;->mOldSelectedRowId:J
+    iput-wide v0, p0, Landroid/widget/AdapterView;->mOldSelectedRowId:J
 
     .line 1717
     invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->setSelectedPositionInt(I)V
@@ -12218,13 +12218,13 @@
     .local v5, childrenTop:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mBottom:I
+    iget v0, v0, Landroid/widget/AdapterView;->mBottom:I
 
     move/from16 v17, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mTop:I
+    iget v0, v0, Landroid/widget/AdapterView;->mTop:I
 
     move/from16 v18, v0
 
@@ -12248,7 +12248,7 @@
     .local v4, childrenBottom:I
     move-object/from16 v0, p0
 
-    iget v7, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v7, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     .line 4738
     .local v7, firstPosition:I
@@ -12277,7 +12277,7 @@
     .local v12, selectedPos:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     move/from16 v17, v0
 
@@ -12373,7 +12373,7 @@
     .line 4813
     move-object/from16 v0, p0
 
-    iput v13, v0, Landroid/widget/AbsListView;->mSpecificTop:I
+    iput v13, v0, Landroid/widget/AdapterView;->mSpecificTop:I
 
     .line 4814
     move-object/from16 v0, p0
@@ -12529,7 +12529,7 @@
     :cond_8
     move-object/from16 v0, p0
 
-    iget v9, v0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v9, v0, Landroid/widget/AdapterView;->mItemCount:I
 
     .line 4782
     .local v9, itemCount:I
@@ -12637,7 +12637,7 @@
 
     .prologue
     .line 4707
-    iget v0, p0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v0, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
     if-gez v0, :cond_0
 
@@ -13583,16 +13583,16 @@
     .end local v6           #oldValue:Z
     :cond_6
     :goto_3
-    iget-boolean v0, p0, Landroid/widget/AbsListView;->mInLayout:Z
+    iget-boolean v0, p0, Landroid/widget/AdapterView;->mInLayout:Z
 
     if-nez v0, :cond_0
 
-    iget-boolean v0, p0, Landroid/widget/AbsListView;->mBlockLayoutRequests:Z
+    iget-boolean v0, p0, Landroid/widget/AdapterView;->mBlockLayoutRequests:Z
 
     if-nez v0, :cond_0
 
     .line 1015
-    iput-boolean v8, p0, Landroid/widget/AbsListView;->mDataChanged:Z
+    iput-boolean v8, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     .line 1016
     invoke-virtual {p0}, Landroid/widget/AbsListView;->rememberSyncState()V
@@ -14211,7 +14211,7 @@
 
     .line 2617
     .local v1, id:J
-    iget v4, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v4, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     sub-int v4, v3, v4
 
@@ -14276,12 +14276,12 @@
 
     .line 2633
     .local v6, handled:Z
-    iget-object v0, p0, Landroid/widget/AbsListView;->mOnItemLongClickListener:Landroid/widget/AdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Landroid/widget/AdapterView;->mOnItemLongClickListener:Landroid/widget/AdapterView$OnItemLongClickListener;
 
     if-eqz v0, :cond_0
 
     .line 2634
-    iget-object v0, p0, Landroid/widget/AbsListView;->mOnItemLongClickListener:Landroid/widget/AdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Landroid/widget/AdapterView;->mOnItemLongClickListener:Landroid/widget/AdapterView$OnItemLongClickListener;
 
     move-object v1, p0
 
@@ -14296,7 +14296,7 @@
     if-nez v6, :cond_1
 
     .line 2638
-    iget v0, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v0, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     sub-int v0, v3, v0
 
@@ -14348,7 +14348,7 @@
 
     .line 4351
     :cond_0
-    iget v2, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v2, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     .line 4352
     .local v2, firstPos:I
@@ -14382,7 +14382,7 @@
     .local v0, bottomLimit:I
     if-eqz p1, :cond_2
 
-    iget v5, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v5, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     if-eqz v5, :cond_2
 
@@ -14405,7 +14405,7 @@
     if-ltz p1, :cond_2
 
     :cond_1
-    iget v5, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v5, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     add-int/lit8 v5, v5, -0x1
 
@@ -14947,7 +14947,7 @@
     :goto_2
     move-object/from16 v0, p0
 
-    iget v15, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v15, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     .line 4485
     .local v15, firstPosition:I
@@ -14974,7 +14974,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v0, v0, Landroid/widget/AdapterView;->mItemCount:I
 
     move/from16 v30, v0
 
@@ -15026,7 +15026,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v0, v0, Landroid/widget/AdapterView;->mItemCount:I
 
     move/from16 v30, v0
 
@@ -15191,7 +15191,7 @@
     .local v18, headerViewsCount:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v0, v0, Landroid/widget/AdapterView;->mItemCount:I
 
     move/from16 v29, v0
 
@@ -15303,7 +15303,7 @@
 
     move-object/from16 v1, p0
 
-    iput-boolean v0, v1, Landroid/widget/AbsListView;->mBlockLayoutRequests:Z
+    iput-boolean v0, v1, Landroid/widget/AdapterView;->mBlockLayoutRequests:Z
 
     .line 4571
     if-lez v10, :cond_e
@@ -15329,7 +15329,7 @@
     .line 4577
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     move/from16 v29, v0
 
@@ -15339,7 +15339,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Landroid/widget/AbsListView;->mFirstPosition:I
+    iput v0, v1, Landroid/widget/AdapterView;->mFirstPosition:I
 
     .line 4580
     :cond_f
@@ -15372,7 +15372,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
     move/from16 v29, v0
 
@@ -15387,13 +15387,13 @@
     .line 4588
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
     move/from16 v29, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     move/from16 v30, v0
 
@@ -15414,7 +15414,7 @@
     .line 4590
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mSelectedPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mSelectedPosition:I
 
     move/from16 v29, v0
 
@@ -15442,7 +15442,7 @@
 
     move-object/from16 v1, p0
 
-    iput-boolean v0, v1, Landroid/widget/AbsListView;->mBlockLayoutRequests:Z
+    iput-boolean v0, v1, Landroid/widget/AdapterView;->mBlockLayoutRequests:Z
 
     .line 4603
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->invokeOnItemScrollListener()V
@@ -15655,7 +15655,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     move/from16 v30, v0
 
@@ -15722,7 +15722,7 @@
     if-eqz v6, :cond_1
 
     .line 1912
-    iget v6, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v6, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     if-lez v6, :cond_4
 
@@ -15786,11 +15786,11 @@
 
     .line 1930
     .local v3, count:I
-    iget v6, p0, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v6, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     add-int/2addr v6, v3
 
-    iget v8, p0, Landroid/widget/AbsListView;->mItemCount:I
+    iget v8, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     if-ge v6, v8, :cond_7
 
@@ -15816,7 +15816,7 @@
 
     move-result v6
 
-    iget v8, p0, Landroid/widget/AbsListView;->mBottom:I
+    iget v8, p0, Landroid/widget/AdapterView;->mBottom:I
 
     iget-object v9, p0, Landroid/widget/AbsListView;->mListPadding:Landroid/graphics/Rect;
 

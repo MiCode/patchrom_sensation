@@ -50,7 +50,7 @@
 
     iput p5, p0, Lcom/htc/sunny/SImageView$4;->val$nHeight:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -70,7 +70,7 @@
     .line 123
     iget-object v1, p0, Lcom/htc/sunny/SImageView$4;->this$0:Lcom/htc/sunny/SImageView;
 
-    iget-object v1, v1, Lcom/htc/sunny/SImageView;->mContext:Landroid/content/Context;
+    iget-object v1, v1, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 

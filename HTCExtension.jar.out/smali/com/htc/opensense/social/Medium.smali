@@ -170,7 +170,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/opensense/social/Medium;->data:Landroid/os/Bundle;
+    iput-object v0, p0, Lcom/htc/opensense/social/Core;->data:Landroid/os/Bundle;
 
     .line 53
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
@@ -185,7 +185,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/opensense/social/Medium;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iput-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     .line 56
     return-void
@@ -204,7 +204,7 @@
 
     .prologue
     .line 153
-    iget-object v0, p0, Lcom/htc/opensense/social/Medium;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     const-string v1, "medium"
 
@@ -242,7 +242,7 @@
     const/4 v5, 0x0
 
     .line 173
-    iget-object v2, p0, Lcom/htc/opensense/social/Medium;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v2, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     const/4 v3, 0x1
 
@@ -292,7 +292,7 @@
 
     .prologue
     .line 149
-    iget-object v0, p0, Lcom/htc/opensense/social/Medium;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     const-string v1, "medium"
 
@@ -377,7 +377,7 @@
 
     .prologue
     .line 202
-    iget-object v0, p0, Lcom/htc/opensense/social/Medium;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     iget-object v1, p0, Lcom/htc/opensense/social/Medium;->owner_id:Ljava/lang/String;
 
@@ -519,7 +519,7 @@
 
     .prologue
     .line 210
-    iget-object v0, p0, Lcom/htc/opensense/social/Medium;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     const-string v1, "medium"
 
@@ -682,12 +682,12 @@
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
     .line 79
-    iget-object v0, p0, Lcom/htc/opensense/social/Medium;->data:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->data:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
     .line 80
-    iget-object v0, p0, Lcom/htc/opensense/social/Medium;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     invoke-static {v0}, Lcom/htc/opensense/social/ISocialInterfaceProxy$_ServiceInvocationHandler;->unwrap(Lcom/htc/opensense/social/ISocialInterfaceProxy;)Lcom/htc/opensense/social/ISocialService;
 

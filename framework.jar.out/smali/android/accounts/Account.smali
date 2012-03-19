@@ -46,7 +46,7 @@
 
     .prologue
     .line 61
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 62
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -73,7 +73,7 @@
 
     .prologue
     .line 50
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 51
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -302,7 +302,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .locals 4
 
     .prologue
     .line 99
@@ -317,6 +317,14 @@
     move-result-object v0
 
     iget-object v1, p0, Landroid/accounts/Account;->name:Ljava/lang/String;
+
+    const/4 v2, 0x3
+
+    const/4 v3, 0x1
+
+    invoke-direct {p0, v1, v2, v3}, Landroid/accounts/Account;->encryptString(Ljava/lang/String;II)Ljava/lang/String;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

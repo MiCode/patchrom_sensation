@@ -88,7 +88,7 @@
     .line 64
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/android/internal/telephony/PhoneProxy;->lockForRadioTechnologyChange:Ljava/lang/Object;
 
@@ -2571,7 +2571,7 @@
 
     check-cast v2, Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    iget-object v0, v2, Lcom/android/internal/telephony/cdma/CDMAPhone;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+    iget-object v0, v2, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
 
     .end local v0           #mmdt:Lcom/android/internal/telephony/MMDataConnectionTracker;
     check-cast v0, Lcom/android/internal/telephony/MMDataConnectionTracker;
@@ -2640,7 +2640,7 @@
 
     check-cast v2, Lcom/android/internal/telephony/gsm/GSMPhone;
 
-    iget-object v0, v2, Lcom/android/internal/telephony/gsm/GSMPhone;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+    iget-object v0, v2, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
 
     .end local v0           #mmdt:Lcom/android/internal/telephony/MMDataConnectionTracker;
     check-cast v0, Lcom/android/internal/telephony/MMDataConnectionTracker;
@@ -6134,7 +6134,7 @@
 
     check-cast v2, Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    iget-object v0, v2, Lcom/android/internal/telephony/cdma/CDMAPhone;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+    iget-object v0, v2, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
 
     .end local v0           #mmdt:Lcom/android/internal/telephony/MMDataConnectionTracker;
     check-cast v0, Lcom/android/internal/telephony/MMDataConnectionTracker;
@@ -6205,7 +6205,7 @@
 
     check-cast v2, Lcom/android/internal/telephony/gsm/GSMPhone;
 
-    iget-object v0, v2, Lcom/android/internal/telephony/gsm/GSMPhone;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+    iget-object v0, v2, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
 
     .end local v0           #mmdt:Lcom/android/internal/telephony/MMDataConnectionTracker;
     check-cast v0, Lcom/android/internal/telephony/MMDataConnectionTracker;
@@ -6934,7 +6934,7 @@
 
     check-cast v2, Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    iget-object v1, v2, Lcom/android/internal/telephony/cdma/CDMAPhone;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+    iget-object v1, v2, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
 
     .end local v1           #mmdt:Lcom/android/internal/telephony/MMDataConnectionTracker;
     check-cast v1, Lcom/android/internal/telephony/MMDataConnectionTracker;
@@ -7023,7 +7023,7 @@
 
     check-cast v2, Lcom/android/internal/telephony/gsm/GSMPhone;
 
-    iget-object v1, v2, Lcom/android/internal/telephony/gsm/GSMPhone;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+    iget-object v1, v2, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
 
     .end local v1           #mmdt:Lcom/android/internal/telephony/MMDataConnectionTracker;
     check-cast v1, Lcom/android/internal/telephony/MMDataConnectionTracker;

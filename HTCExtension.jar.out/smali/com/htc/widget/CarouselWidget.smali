@@ -287,10 +287,10 @@
     .line 464
     .end local v0           #temp:I
     :goto_0
-    iput p1, p0, Lcom/htc/widget/CarouselWidget;->mReorderFrom:I
+    iput p1, p0, Lcom/htc/widget/Gallery;->mReorderFrom:I
 
     .line 465
-    iput p2, p0, Lcom/htc/widget/CarouselWidget;->mReorderTo:I
+    iput p2, p0, Lcom/htc/widget/Gallery;->mReorderTo:I
 
     .line 466
     return-void
@@ -1207,7 +1207,7 @@
     .line 98
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/htc/widget/CarouselWidget;->mDragger:Lcom/htc/widget/DragController;
+    iput-object v0, p0, Lcom/htc/widget/Gallery;->mDragger:Lcom/htc/widget/DragController;
 
     .line 99
     iput-boolean v3, p0, Lcom/htc/widget/CarouselWidget;->mMemoryMode:Z
@@ -1215,7 +1215,7 @@
     .line 100
     const/16 v0, 0x3e9
 
-    iput v0, p0, Lcom/htc/widget/CarouselWidget;->mState:I
+    iput v0, p0, Lcom/htc/widget/Gallery;->mState:I
 
     .line 101
     invoke-virtual {p0}, Lcom/htc/widget/CarouselWidget;->initFlags()V
@@ -1893,7 +1893,7 @@
     if-eqz v0, :cond_4
 
     .line 341
-    iget-object v0, p0, Lcom/htc/widget/CarouselWidget;->mDragger:Lcom/htc/widget/DragController;
+    iget-object v0, p0, Lcom/htc/widget/Gallery;->mDragger:Lcom/htc/widget/DragController;
 
     check-cast v0, Lcom/htc/widget/CarouselHost;
 
@@ -1918,12 +1918,12 @@
     .line 351
     :cond_5
     :goto_0
-    iget-object v0, p0, Lcom/htc/widget/CarouselWidget;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v0, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     if-eqz v0, :cond_6
 
     .line 352
-    iget-object v0, p0, Lcom/htc/widget/CarouselWidget;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v0, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/FastScroller;->draw(Landroid/graphics/Canvas;)V
 
@@ -2039,7 +2039,7 @@
 
     .prologue
     .line 940
-    iget v0, p0, Lcom/htc/widget/CarouselWidget;->mState:I
+    iget v0, p0, Lcom/htc/widget/Gallery;->mState:I
 
     return v0
 .end method
@@ -2189,12 +2189,12 @@
 
     .prologue
     .line 945
-    iget-object v0, p0, Lcom/htc/widget/CarouselWidget;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v0, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     if-eqz v0, :cond_0
 
     .line 946
-    iget-object v0, p0, Lcom/htc/widget/CarouselWidget;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v0, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v0}, Lcom/htc/widget/FastScroller;->isDragging()Z
 
@@ -2457,7 +2457,7 @@
     if-eqz v1, :cond_0
 
     .line 433
-    iget-object v1, p0, Lcom/htc/widget/CarouselWidget;->mDragger:Lcom/htc/widget/DragController;
+    iget-object v1, p0, Lcom/htc/widget/Gallery;->mDragger:Lcom/htc/widget/DragController;
 
     check-cast v1, Lcom/htc/widget/CarouselHost;
 
@@ -2855,7 +2855,7 @@
     invoke-direct {p0, v10, v9}, Lcom/htc/widget/CarouselWidget;->getLocationFromPos(I[I)V
 
     .line 494
-    iget-object v1, p0, Lcom/htc/widget/CarouselWidget;->mDragger:Lcom/htc/widget/DragController;
+    iget-object v1, p0, Lcom/htc/widget/Gallery;->mDragger:Lcom/htc/widget/DragController;
 
     check-cast v1, Lcom/htc/widget/CarouselHost;
 
@@ -3006,7 +3006,7 @@
     invoke-direct {p0, v10, v9}, Lcom/htc/widget/CarouselWidget;->getLocationFromPos(I[I)V
 
     .line 520
-    iget-object v1, p0, Lcom/htc/widget/CarouselWidget;->mDragger:Lcom/htc/widget/DragController;
+    iget-object v1, p0, Lcom/htc/widget/Gallery;->mDragger:Lcom/htc/widget/DragController;
 
     check-cast v1, Lcom/htc/widget/CarouselHost;
 
@@ -3067,7 +3067,7 @@
     invoke-virtual/range {v0 .. v6}, Lcom/htc/content/NotifyingAsyncQueryHandler;->startUpdate(ILjava/lang/Object;Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)V
 
     .line 531
-    iget-object v1, p0, Lcom/htc/widget/CarouselWidget;->mDragger:Lcom/htc/widget/DragController;
+    iget-object v1, p0, Lcom/htc/widget/Gallery;->mDragger:Lcom/htc/widget/DragController;
 
     check-cast v1, Lcom/htc/widget/CarouselHost;
 
@@ -3110,7 +3110,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 365
-    iget-object v0, p0, Lcom/htc/widget/CarouselWidget;->mDragger:Lcom/htc/widget/DragController;
+    iget-object v0, p0, Lcom/htc/widget/Gallery;->mDragger:Lcom/htc/widget/DragController;
 
     check-cast v0, Lcom/htc/widget/CarouselHost;
 
@@ -3153,7 +3153,7 @@
     invoke-virtual {v1, v0}, Landroid/view/View;->getLocationInWindow([I)V
 
     .line 381
-    iget-object v1, p0, Lcom/htc/widget/CarouselWidget;->mDragger:Lcom/htc/widget/DragController;
+    iget-object v1, p0, Lcom/htc/widget/Gallery;->mDragger:Lcom/htc/widget/DragController;
 
     check-cast v1, Lcom/htc/widget/CarouselHost;
 
@@ -3258,7 +3258,7 @@
     .prologue
     .line 815
     .local p1, parent:Lcom/htc/widget/AdapterView;,"Lcom/htc/widget/AdapterView<*>;"
-    iget v2, p0, Lcom/htc/widget/CarouselWidget;->mState:I
+    iget v2, p0, Lcom/htc/widget/Gallery;->mState:I
 
     packed-switch v2, :pswitch_data_0
 
@@ -3506,7 +3506,7 @@
     invoke-virtual {p0}, Lcom/htc/widget/CarouselWidget;->initFlags()V
 
     .line 205
-    iget-object v0, p0, Lcom/htc/widget/CarouselWidget;->mDragger:Lcom/htc/widget/DragController;
+    iget-object v0, p0, Lcom/htc/widget/Gallery;->mDragger:Lcom/htc/widget/DragController;
 
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -3586,13 +3586,13 @@
     .line 928
     const/4 v2, 0x2
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->requestFocus(I)Z
+    invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->requestFocus(I)Z
 
     move-result v1
 
     .line 929
     .local v1, handle:Z
-    invoke-virtual {v0, p2}, Landroid/view/View;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+    invoke-virtual {v0, p2}, Landroid/widget/FrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v1
 
@@ -3611,12 +3611,12 @@
     if-eqz v2, :cond_0
 
     .line 890
-    iget-object v2, p0, Lcom/htc/widget/CarouselWidget;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v2, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     if-eqz v2, :cond_1
 
     .line 891
-    iget-object v2, p0, Lcom/htc/widget/CarouselWidget;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v2, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v2}, Lcom/htc/widget/FastScroller;->movePrevious()Z
 
@@ -3640,12 +3640,12 @@
     if-eqz v2, :cond_0
 
     .line 904
-    iget-object v2, p0, Lcom/htc/widget/CarouselWidget;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v2, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     if-eqz v2, :cond_2
 
     .line 905
-    iget-object v2, p0, Lcom/htc/widget/CarouselWidget;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v2, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v2}, Lcom/htc/widget/FastScroller;->moveNext()Z
 
@@ -4368,7 +4368,7 @@
 
     .prologue
     .line 226
-    iput-object p1, p0, Lcom/htc/widget/CarouselWidget;->mDragger:Lcom/htc/widget/DragController;
+    iput-object p1, p0, Lcom/htc/widget/Gallery;->mDragger:Lcom/htc/widget/DragController;
 
     .line 227
     return-void
@@ -4392,12 +4392,12 @@
 
     .prologue
     .line 867
-    iget-object v0, p0, Lcom/htc/widget/CarouselWidget;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v0, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     if-eqz v0, :cond_0
 
     .line 868
-    iget-object v0, p0, Lcom/htc/widget/CarouselWidget;->mFastScroller:Lcom/htc/widget/FastScroller;
+    iget-object v0, p0, Lcom/htc/widget/AbsSpinner;->mFastScroller:Lcom/htc/widget/FastScroller;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/FastScroller;->setEditorMode(Z)V
 
@@ -4446,7 +4446,7 @@
 
     .prologue
     .line 834
-    iput p1, p0, Lcom/htc/widget/CarouselWidget;->mState:I
+    iput p1, p0, Lcom/htc/widget/Gallery;->mState:I
 
     .line 835
     invoke-virtual {p0}, Lcom/htc/widget/CarouselWidget;->getAdapter()Landroid/widget/SpinnerAdapter;

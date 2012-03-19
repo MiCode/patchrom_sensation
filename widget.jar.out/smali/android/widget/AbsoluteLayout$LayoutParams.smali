@@ -118,7 +118,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Landroid/widget/AbsoluteLayout$LayoutParams;->width:I
+    iget v1, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     invoke-static {v1}, Landroid/widget/AbsoluteLayout$LayoutParams;->sizeToString(I)Ljava/lang/String;
 
@@ -134,7 +134,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Landroid/widget/AbsoluteLayout$LayoutParams;->height:I
+    iget v1, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-static {v1}, Landroid/widget/AbsoluteLayout$LayoutParams;->sizeToString(I)Ljava/lang/String;
 

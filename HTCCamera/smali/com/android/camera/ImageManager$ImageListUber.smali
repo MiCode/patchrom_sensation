@@ -55,7 +55,7 @@
     .line 3231
     iput-object p1, p0, Lcom/android/camera/ImageManager$ImageListUber;->this$0:Lcom/android/camera/ImageManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 3211
     iput-object v4, p0, Lcom/android/camera/ImageManager$ImageListUber;->mListener:Lcom/android/camera/ImageManager$IImageList$OnChange;

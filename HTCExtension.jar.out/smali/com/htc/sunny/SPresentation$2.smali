@@ -45,7 +45,7 @@
 
     iput p4, p0, Lcom/htc/sunny/SPresentation$2;->val$b:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -121,7 +121,7 @@
     :cond_2
     iget-object v0, p0, Lcom/htc/sunny/SPresentation$2;->this$0:Lcom/htc/sunny/SPresentation;
 
-    iget-object v0, v0, Lcom/htc/sunny/SPresentation;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, v0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v1, v6, Lcom/htc/sunny/SPresentation$ItemContainer;->mReflectSprite:I
 

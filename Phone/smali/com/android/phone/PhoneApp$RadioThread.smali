@@ -27,20 +27,20 @@
     .parameter "state"
 
     .prologue
-    .line 5149
+    .line 5152
     iput-object p1, p0, Lcom/android/phone/PhoneApp$RadioThread;->this$0:Lcom/android/phone/PhoneApp;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 5147
+    .line 5150
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/phone/PhoneApp$RadioThread;->mPowerState:Z
 
-    .line 5150
+    .line 5153
     iput-boolean p2, p0, Lcom/android/phone/PhoneApp$RadioThread;->mPowerState:Z
 
-    .line 5151
+    .line 5154
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .locals 3
 
     .prologue
-    .line 5156
+    .line 5159
     const-string v0, "PhoneApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -79,7 +79,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5158
+    .line 5161
     iget-object v0, p0, Lcom/android/phone/PhoneApp$RadioThread;->this$0:Lcom/android/phone/PhoneApp;
 
     iget-object v0, v0, Lcom/android/phone/PhoneApp;->phone:Lcom/android/internal/telephony/Phone;
@@ -88,7 +88,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/Phone;->setRadioPower(Z)V
 
-    .line 5159
+    .line 5162
     iget-object v0, p0, Lcom/android/phone/PhoneApp$RadioThread;->this$0:Lcom/android/phone/PhoneApp;
 
     iget-boolean v1, p0, Lcom/android/phone/PhoneApp$RadioThread;->mPowerState:Z
@@ -96,17 +96,17 @@
     #setter for: Lcom/android/phone/PhoneApp;->mRadioSwitch:Z
     invoke-static {v0, v1}, Lcom/android/phone/PhoneApp;->access$2502(Lcom/android/phone/PhoneApp;Z)Z
 
-    .line 5162
+    .line 5165
     iget-boolean v0, p0, Lcom/android/phone/PhoneApp$RadioThread;->mPowerState:Z
 
     if-nez v0, :cond_0
 
-    .line 5163
+    .line 5166
     iget-object v0, p0, Lcom/android/phone/PhoneApp$RadioThread;->this$0:Lcom/android/phone/PhoneApp;
 
     invoke-virtual {v0}, Lcom/android/phone/PhoneApp;->cancelTimer()V
 
-    .line 5167
+    .line 5170
     :cond_0
     iget-object v0, p0, Lcom/android/phone/PhoneApp$RadioThread;->this$0:Lcom/android/phone/PhoneApp;
 
@@ -117,7 +117,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 5168
+    .line 5171
     iget-object v0, p0, Lcom/android/phone/PhoneApp$RadioThread;->this$0:Lcom/android/phone/PhoneApp;
 
     const/4 v1, 0x2
@@ -125,7 +125,7 @@
     #setter for: Lcom/android/phone/PhoneApp;->mSmartDataRoamingMode:I
     invoke-static {v0, v1}, Lcom/android/phone/PhoneApp;->access$2602(Lcom/android/phone/PhoneApp;I)I
 
-    .line 5170
+    .line 5173
     :cond_1
     return-void
 .end method

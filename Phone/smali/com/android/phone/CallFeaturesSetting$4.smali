@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/android/phone/CallFeaturesSetting$4;->val$sp:Landroid/content/SharedPreferences;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -70,7 +70,7 @@
     iget-object v1, p0, Lcom/android/phone/CallFeaturesSetting$4;->this$0:Lcom/android/phone/CallFeaturesSetting;
 
     #getter for: Lcom/android/phone/CallFeaturesSetting;->mSetCB:Lcom/htc/preference/HtcCheckBoxPreference;
-    invoke-static {v1}, Lcom/android/phone/CallFeaturesSetting;->access$700(Lcom/android/phone/CallFeaturesSetting;)Lcom/htc/preference/HtcCheckBoxPreference;
+    invoke-static {v1}, Lcom/android/phone/CallFeaturesSetting;->access$600(Lcom/android/phone/CallFeaturesSetting;)Lcom/htc/preference/HtcCheckBoxPreference;
 
     move-result-object v1
 

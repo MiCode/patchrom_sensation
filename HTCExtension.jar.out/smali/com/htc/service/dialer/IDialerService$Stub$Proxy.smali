@@ -28,7 +28,7 @@
 
     .prologue
     .line 183
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 184
     iput-object p1, p0, Lcom/htc/service/dialer/IDialerService$Stub$Proxy;->mRemote:Landroid/os/IBinder;

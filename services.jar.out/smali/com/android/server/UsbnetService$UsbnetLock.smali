@@ -37,7 +37,7 @@
     iput-object p1, p0, Lcom/android/server/UsbnetService$UsbnetLock;->this$0:Lcom/android/server/UsbnetService;
 
     .line 435
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 436
     iput-object p2, p0, Lcom/android/server/UsbnetService$UsbnetLock;->mTag:Ljava/lang/String;

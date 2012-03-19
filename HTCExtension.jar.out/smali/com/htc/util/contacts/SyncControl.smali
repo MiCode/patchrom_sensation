@@ -18,7 +18,7 @@
 # static fields
 .field public static final CANCEL:I = 0x3e9
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field public static final INIT:I = 0x3e8
 
@@ -77,7 +77,7 @@
 
     .prologue
     .line 62
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 63
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -184,18 +184,7 @@
     goto :goto_0
 .end method
 
-.method static synthetic access$000(Lcom/htc/util/contacts/SyncControl;)Ljava/lang/String;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 44
-    iget-object v0, p0, Lcom/htc/util/contacts/SyncControl;->mTag:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic access$100(Lcom/htc/util/contacts/SyncControl;Ljava/lang/String;Ljava/util/List;)I
+.method static synthetic access$000(Lcom/htc/util/contacts/SyncControl;Ljava/lang/String;Ljava/util/List;)I
     .locals 1
     .parameter "x0"
     .parameter "x1"
@@ -210,7 +199,7 @@
     return v0
 .end method
 
-.method static synthetic access$200(Lcom/htc/util/contacts/SyncControl;)Ljava/util/HashSet;
+.method static synthetic access$100(Lcom/htc/util/contacts/SyncControl;)Ljava/util/HashSet;
     .locals 1
     .parameter "x0"
 
@@ -221,13 +210,24 @@
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/htc/util/contacts/SyncControl;)Ljava/util/HashSet;
+.method static synthetic access$200(Lcom/htc/util/contacts/SyncControl;)Ljava/util/HashSet;
     .locals 1
     .parameter "x0"
 
     .prologue
     .line 44
     iget-object v0, p0, Lcom/htc/util/contacts/SyncControl;->mPendingSyncs:Ljava/util/HashSet;
+
+    return-object v0
+.end method
+
+.method static synthetic access$300(Lcom/htc/util/contacts/SyncControl;)Ljava/lang/String;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 44
+    iget-object v0, p0, Lcom/htc/util/contacts/SyncControl;->mTag:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -449,20 +449,13 @@
 .end method
 
 .method public removeAutoCancel()V
-    .locals 2
+    .locals 1
 
     .prologue
     .line 327
     iget-object v0, p0, Lcom/htc/util/contacts/SyncControl;->mAutoCancelAuthority:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
-
-    .line 328
-    iget-object v0, p0, Lcom/htc/util/contacts/SyncControl;->mTag:Ljava/lang/String;
-
-    const-string v1, "Removed all auto sync killer..."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 329
     return-void

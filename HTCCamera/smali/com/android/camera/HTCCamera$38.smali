@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 10194
+    .line 10234
     iput-object p1, p0, Lcom/android/camera/HTCCamera$38;->this$0:Lcom/android/camera/HTCCamera;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,16 +46,16 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 10197
+    .line 10237
     sparse-switch p2, :sswitch_data_0
 
-    .line 10210
+    .line 10250
     const/4 v0, 0x0
 
     :sswitch_0
     return v0
 
-    .line 10197
+    .line 10237
     :sswitch_data_0
     .sparse-switch
         0x18 -> :sswitch_0

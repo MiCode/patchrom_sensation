@@ -261,11 +261,11 @@
 
     .line 562
     .local v0, lp:Landroid/widget/LinearLayout$LayoutParams;
-    iget v2, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+    iget v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     sub-int/2addr v2, p1
 
-    iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 563
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V

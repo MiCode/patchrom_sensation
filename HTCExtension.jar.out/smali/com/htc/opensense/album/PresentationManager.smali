@@ -141,12 +141,12 @@
 
     .prologue
     .line 55
-    iget-object v0, p0, Lcom/htc/opensense/album/PresentationManager;->mContext:Landroid/app/Activity;
+    iget-object v0, p0, Lcom/htc/opensense/album/DisplayManager;->mContext:Landroid/app/Activity;
 
     if-eqz v0, :cond_0
 
     .line 56
-    iget-object v0, p0, Lcom/htc/opensense/album/PresentationManager;->mContext:Landroid/app/Activity;
+    iget-object v0, p0, Lcom/htc/opensense/album/DisplayManager;->mContext:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
@@ -201,7 +201,7 @@
 
     .line 132
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/album/PresentationManager;->mContext:Landroid/app/Activity;
+    iget-object v0, p0, Lcom/htc/opensense/album/DisplayManager;->mContext:Landroid/app/Activity;
 
     invoke-virtual {v0, p1}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
@@ -254,7 +254,7 @@
 
     .line 113
     :cond_1
-    iget-object v0, p0, Lcom/htc/opensense/album/PresentationManager;->mContext:Landroid/app/Activity;
+    iget-object v0, p0, Lcom/htc/opensense/album/DisplayManager;->mContext:Landroid/app/Activity;
 
     const/4 v1, 0x2
 
@@ -313,7 +313,7 @@
     :goto_0
     if-eqz v3, :cond_3
 
-    iget v7, p0, Lcom/htc/opensense/album/PresentationManager;->mFocusTemplateId:I
+    iget v7, p0, Lcom/htc/opensense/album/DisplayManager;->mFocusTemplateId:I
 
     invoke-direct {p0, v7}, Lcom/htc/opensense/album/PresentationManager;->doFilterOut(I)Z
 
@@ -334,7 +334,7 @@
     .line 75
     .local v1, enable:Z
     :goto_2
-    iget v7, p0, Lcom/htc/opensense/album/PresentationManager;->mFocusTemplateId:I
+    iget v7, p0, Lcom/htc/opensense/album/DisplayManager;->mFocusTemplateId:I
 
     const/4 v8, -0x1
 

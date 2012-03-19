@@ -166,15 +166,15 @@
     .line 42
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoDownloadThread;->mCancel:Z
+    iput-boolean v0, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mCancel:Z
 
     .line 43
-    iget-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoDownloadThread;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
+    iget-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
 
     if-eqz v0, :cond_0
 
     .line 44
-    iget-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoDownloadThread;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
+    iget-object v0, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
 
     invoke-interface {v0}, Lorg/apache/http/client/methods/AbortableHttpRequest;->abort()V
 
@@ -292,7 +292,7 @@
     .line 79
     iget-object v9, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoDownloadThread;->mHttpGet:Lorg/apache/http/client/methods/HttpGet;
 
-    iput-object v9, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoDownloadThread;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
+    iput-object v9, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mAbort:Lorg/apache/http/client/methods/AbortableHttpRequest;
 
     .line 80
     const/4 v5, 0x0
@@ -300,7 +300,7 @@
     .line 84
     .local v5, httpresponse:Lorg/apache/http/HttpResponse;
     :try_start_1
-    iget-object v9, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoDownloadThread;->mHttpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
+    iget-object v9, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mHttpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
 
     iget-object v10, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoDownloadThread;->mHttpGet:Lorg/apache/http/client/methods/HttpGet;
 
@@ -411,7 +411,7 @@
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
     .line 146
-    iget-object v9, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoDownloadThread;->mHttpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
+    iget-object v9, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mHttpClient:Lorg/apache/http/impl/client/DefaultHttpClient;
 
     invoke-virtual {v9}, Lorg/apache/http/impl/client/DefaultHttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
@@ -458,7 +458,7 @@
     if-eqz v9, :cond_a
 
     .line 132
-    iget-boolean v9, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoDownloadThread;->mCancel:Z
+    iget-boolean v9, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mCancel:Z
 
     if-eqz v9, :cond_9
 
@@ -564,7 +564,7 @@
 
     .line 139
     :cond_a
-    iget-boolean v9, p0, Lcom/htc/socialnetwork/tmo/engine/livegallery/PhotoDownloadThread;->mCancel:Z
+    iget-boolean v9, p0, Lcom/htc/socialnetwork/tmo/engine/HttpTransport;->mCancel:Z
 
     if-eqz v9, :cond_b
 

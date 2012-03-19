@@ -155,7 +155,7 @@
     const/4 v1, 0x0
 
     .line 265
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 98
     iput-object v1, p0, Lcom/htc/util/contacts/TMOClient;->mContext:Landroid/content/Context;
@@ -2306,7 +2306,7 @@
 
     move-object/from16 v1, v70
 
-    invoke-virtual {v0, v1}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
+    invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
 
     move-result-object v28
 
@@ -6593,7 +6593,7 @@
     .local v6, formatter:Ljava/text/DateFormat;
     move-object/from16 v0, p3
 
-    invoke-virtual {v6, v0}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
+    invoke-virtual {v6, v0}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
 
     move-result-object v2
 

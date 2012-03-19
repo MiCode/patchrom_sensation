@@ -35,7 +35,7 @@
 
     iput p2, p0, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase$GridImageDownloadedHandler$1;->val$pos:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -51,7 +51,7 @@
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase$GridImageDownloadedHandler;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
     invoke-static {v1}, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->access$100(Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;)Landroid/widget/BaseAdapter;
 
     move-result-object v1
@@ -62,7 +62,7 @@
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase$GridImageDownloadedHandler;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
     invoke-static {v1}, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->access$200(Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;)Landroid/widget/BaseAdapter;
 
     move-result-object v1
@@ -76,7 +76,7 @@
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase$GridImageDownloadedHandler;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mAdapter:Landroid/widget/BaseAdapter;
     invoke-static {v1}, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->access$300(Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;)Landroid/widget/BaseAdapter;
 
     move-result-object v0
@@ -114,7 +114,7 @@
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase$GridImageDownloadedHandler;->this$0:Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;
 
-    #getter for: Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->mMainView:Landroid/view/View;
+    #getter for: Lcom/htc/opensense/album/ViewTemplateBase;->mMainView:Landroid/view/View;
     invoke-static {v1}, Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;->access$400(Lcom/htc/opensense/album/SocialNetwork/LiveGridviewTemplateBase;)Landroid/view/View;
 
     move-result-object v1

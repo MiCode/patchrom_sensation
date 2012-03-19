@@ -2418,7 +2418,7 @@
     if-eqz v19, :cond_3
 
     :try_start_4
-    invoke-virtual/range {v19 .. v19}, Ljava/io/OutputStream;->close()V
+    throw v19
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
 
@@ -3181,7 +3181,7 @@
     if-eqz v23, :cond_3
 
     :try_start_4
-    invoke-virtual/range {v23 .. v23}, Ljava/io/OutputStream;->close()V
+    throw v23
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
 

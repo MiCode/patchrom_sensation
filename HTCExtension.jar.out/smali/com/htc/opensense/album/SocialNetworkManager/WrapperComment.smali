@@ -46,7 +46,7 @@
     const/4 v1, 0x0
 
     .line 24
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 15
     sget-object v0, Lcom/htc/opensense/album/util/SeparatorTag;->SEPARABLE_MIDDLE:Lcom/htc/opensense/album/util/SeparatorTag;
@@ -225,7 +225,7 @@
     .line 33
     iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/WrapperComment;->mComment:Lcom/htc/opensense/social/data/Comment;
 
-    iget-object v0, v1, Lcom/htc/opensense/social/data/Comment;->id:Ljava/lang/String;
+    iget-object v0, v1, Lcom/htc/opensense/social/data/Attachment;->id:Ljava/lang/String;
 
     .line 36
     :cond_0

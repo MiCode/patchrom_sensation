@@ -33,14 +33,14 @@
     .parameter
 
     .prologue
-    .line 378
+    .line 379
     iput-object p1, p0, Lcom/android/camera/component/BurstController$6;->this$0:Lcom/android/camera/component/BurstController;
 
     iput-object p2, p0, Lcom/android/camera/component/BurstController$6;->val$cameraThread:Lcom/android/camera/CameraThread;
 
     iput-object p3, p0, Lcom/android/camera/component/BurstController$6;->val$cameraController:Lcom/android/camera/CameraController;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -57,10 +57,10 @@
 
     const/4 v2, 0x0
 
-    .line 381
+    .line 382
     iget-object v1, p0, Lcom/android/camera/component/BurstController$6;->this$0:Lcom/android/camera/component/BurstController;
 
-    #getter for: Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/BurstController;->access$1400(Lcom/android/camera/component/BurstController;)Ljava/lang/String;
 
     move-result-object v4
@@ -107,7 +107,7 @@
 
     invoke-static {v4, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 383
+    .line 384
     iget-object v1, p0, Lcom/android/camera/component/BurstController$6;->this$0:Lcom/android/camera/component/BurstController;
 
     iget-object v4, p0, Lcom/android/camera/component/BurstController$6;->this$0:Lcom/android/camera/component/BurstController;
@@ -120,12 +120,12 @@
     #calls: Lcom/android/camera/component/BurstController;->createPostviewImage(ILandroid/hardware/Camera;)V
     invoke-static {v1, v4, p2}, Lcom/android/camera/component/BurstController;->access$1500(Lcom/android/camera/component/BurstController;ILandroid/hardware/Camera;)V
 
-    .line 385
+    .line 386
     iget-object v1, p0, Lcom/android/camera/component/BurstController$6;->this$0:Lcom/android/camera/component/BurstController;
 
     invoke-static {v1}, Lcom/android/camera/component/BurstController;->access$1104(Lcom/android/camera/component/BurstController;)I
 
-    .line 388
+    .line 389
     iget-object v1, p0, Lcom/android/camera/component/BurstController$6;->this$0:Lcom/android/camera/component/BurstController;
 
     #getter for: Lcom/android/camera/component/BurstController;->m_CurrentCaptureIndex:I
@@ -144,7 +144,7 @@
 
     move v0, v3
 
-    .line 389
+    .line 390
     .local v0, isLastPicture:Z
     :goto_1
     iget-object v1, p0, Lcom/android/camera/component/BurstController$6;->this$0:Lcom/android/camera/component/BurstController;
@@ -156,12 +156,12 @@
 
     if-ne v1, v3, :cond_0
 
-    .line 390
+    .line 391
     iget-object v1, p0, Lcom/android/camera/component/BurstController$6;->val$cameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v1}, Lcom/android/camera/CameraThread;->setCanStartPreview()V
 
-    .line 393
+    .line 394
     :cond_0
     iget-object v4, p0, Lcom/android/camera/component/BurstController$6;->val$cameraThread:Lcom/android/camera/CameraThread;
 
@@ -185,27 +185,27 @@
     :goto_2
     invoke-virtual {v4, p1, v5, v1, v0}, Lcom/android/camera/CameraThread;->storeTakenPicture([BLcom/android/camera/CameraThread$StorePictureCallback;Lcom/android/camera/DCFInfo;Z)V
 
-    .line 396
+    .line 397
     if-eqz v0, :cond_1
 
-    .line 399
+    .line 400
     iget-object v1, p0, Lcom/android/camera/component/BurstController$6;->val$cameraController:Lcom/android/camera/CameraController;
 
     const-string v4, "picture-count"
 
     invoke-virtual {v1, v4, v3}, Lcom/android/camera/CameraController;->setCameraParameter(Ljava/lang/String;I)V
 
-    .line 400
+    .line 401
     iget-object v1, p0, Lcom/android/camera/component/BurstController$6;->val$cameraController:Lcom/android/camera/CameraController;
 
     invoke-virtual {v1}, Lcom/android/camera/CameraController;->doSetCameraParameters()V
 
-    .line 403
+    .line 404
     iget-object v1, p0, Lcom/android/camera/component/BurstController$6;->val$cameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v1}, Lcom/android/camera/CameraThread;->endTakePicture()V
 
-    .line 406
+    .line 407
     iget-object v1, p0, Lcom/android/camera/component/BurstController$6;->this$0:Lcom/android/camera/component/BurstController;
 
     iget-object v3, p0, Lcom/android/camera/component/BurstController$6;->this$0:Lcom/android/camera/component/BurstController;
@@ -219,7 +219,7 @@
 
     invoke-virtual {v1, v3, v4}, Lcom/android/camera/component/BurstController;->sendMessage(Lcom/android/camera/component/Component;I)Z
 
-    .line 408
+    .line 409
     iget-object v3, p0, Lcom/android/camera/component/BurstController$6;->this$0:Lcom/android/camera/component/BurstController;
 
     const/4 v1, 0x0
@@ -229,7 +229,7 @@
     #setter for: Lcom/android/camera/component/BurstController;->m_postviewData:[[B
     invoke-static {v3, v1}, Lcom/android/camera/component/BurstController;->access$1302(Lcom/android/camera/component/BurstController;[[B)[[B
 
-    .line 411
+    .line 412
     iget-object v1, p0, Lcom/android/camera/component/BurstController$6;->this$0:Lcom/android/camera/component/BurstController;
 
     #getter for: Lcom/android/camera/component/BurstController;->m_BurstUI:Lcom/android/camera/component/BurstUI;
@@ -247,16 +247,16 @@
 
     if-nez v1, :cond_1
 
-    .line 412
+    .line 413
     iget-object v1, p0, Lcom/android/camera/component/BurstController$6;->val$cameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraThread;->startPreview(I)V
 
-    .line 415
+    .line 416
     :cond_1
     iget-object v1, p0, Lcom/android/camera/component/BurstController$6;->this$0:Lcom/android/camera/component/BurstController;
 
-    #getter for: Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/component/BurstController;->access$1700(Lcom/android/camera/component/BurstController;)Ljava/lang/String;
 
     move-result-object v1
@@ -265,23 +265,23 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 416
+    .line 417
     return-void
 
     .end local v0           #isLastPicture:Z
     :cond_2
     move v1, v2
 
-    .line 381
+    .line 382
     goto/16 :goto_0
 
     :cond_3
     move v0, v2
 
-    .line 388
+    .line 389
     goto :goto_1
 
-    .line 393
+    .line 394
     .restart local v0       #isLastPicture:Z
     :cond_4
     sget-object v1, Lcom/android/camera/DCFRuler;->DefaultDCFInfo:Lcom/android/camera/DCFInfo;

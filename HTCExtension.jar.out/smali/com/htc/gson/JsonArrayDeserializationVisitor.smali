@@ -65,13 +65,13 @@
     .local p0, this:Lcom/htc/gson/JsonArrayDeserializationVisitor;,"Lcom/htc/gson/JsonArrayDeserializationVisitor<TT;>;"
     new-instance v2, Lcom/htc/gson/TypeInfo;
 
-    iget-object v3, p0, Lcom/htc/gson/JsonArrayDeserializationVisitor;->targetType:Ljava/lang/reflect/Type;
+    iget-object v3, p0, Lcom/htc/gson/JsonDeserializationVisitor;->targetType:Ljava/lang/reflect/Type;
 
     invoke-direct {v2, v3}, Lcom/htc/gson/TypeInfo;-><init>(Ljava/lang/reflect/Type;)V
 
     .line 47
     .local v2, typeInfo:Lcom/htc/gson/TypeInfo;
-    iget-object v3, p0, Lcom/htc/gson/JsonArrayDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v3, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v3}, Lcom/htc/gson/JsonElement;->isJsonArray()Z
 
@@ -92,7 +92,7 @@
 
     move-result-object v4
 
-    iget-object v5, p0, Lcom/htc/gson/JsonArrayDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v5, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -108,7 +108,7 @@
 
     .line 50
     :cond_0
-    iget-object v3, p0, Lcom/htc/gson/JsonArrayDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v3, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v3}, Lcom/htc/gson/JsonElement;->getAsJsonArray()Lcom/htc/gson/JsonArray;
 
@@ -123,7 +123,7 @@
     if-eqz v3, :cond_1
 
     .line 52
-    iget-object v3, p0, Lcom/htc/gson/JsonArrayDeserializationVisitor;->targetType:Ljava/lang/reflect/Type;
+    iget-object v3, p0, Lcom/htc/gson/JsonDeserializationVisitor;->targetType:Ljava/lang/reflect/Type;
 
     invoke-static {v3}, Lcom/htc/gson/TypeInfoFactory;->getTypeInfoForArray(Ljava/lang/reflect/Type;)Lcom/htc/gson/TypeInfoArray;
 
@@ -131,7 +131,7 @@
 
     .line 55
     .local v0, arrayTypeInfo:Lcom/htc/gson/TypeInfoArray;
-    iget-object v3, p0, Lcom/htc/gson/JsonArrayDeserializationVisitor;->objectConstructor:Lcom/htc/gson/ObjectConstructor;
+    iget-object v3, p0, Lcom/htc/gson/JsonDeserializationVisitor;->objectConstructor:Lcom/htc/gson/ObjectConstructor;
 
     invoke-virtual {v0}, Lcom/htc/gson/TypeInfoArray;->getSecondLevelType()Ljava/lang/reflect/Type;
 
@@ -151,7 +151,7 @@
     return-object v3
 
     :cond_1
-    iget-object v3, p0, Lcom/htc/gson/JsonArrayDeserializationVisitor;->objectConstructor:Lcom/htc/gson/ObjectConstructor;
+    iget-object v3, p0, Lcom/htc/gson/JsonDeserializationVisitor;->objectConstructor:Lcom/htc/gson/ObjectConstructor;
 
     invoke-virtual {v2}, Lcom/htc/gson/TypeInfo;->getRawClass()Ljava/lang/Class;
 
@@ -204,7 +204,7 @@
     .prologue
     .line 63
     .local p0, this:Lcom/htc/gson/JsonArrayDeserializationVisitor;,"Lcom/htc/gson/JsonArrayDeserializationVisitor<TT;>;"
-    iget-object v5, p0, Lcom/htc/gson/JsonArrayDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v5, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v5}, Lcom/htc/gson/JsonElement;->isJsonArray()Z
 
@@ -225,7 +225,7 @@
 
     move-result-object v6
 
-    iget-object v7, p0, Lcom/htc/gson/JsonArrayDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v7, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -241,7 +241,7 @@
 
     .line 66
     :cond_0
-    iget-object v5, p0, Lcom/htc/gson/JsonArrayDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v5, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v5}, Lcom/htc/gson/JsonElement;->getAsJsonArray()Lcom/htc/gson/JsonArray;
 
@@ -535,7 +535,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/htc/gson/JsonArrayDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
+    iget-object v2, p0, Lcom/htc/gson/JsonDeserializationVisitor;->json:Lcom/htc/gson/JsonElement;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

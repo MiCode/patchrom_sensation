@@ -1052,7 +1052,7 @@
     const/4 v4, 0x0
 
     .line 1080
-    const-string/jumbo v2, "handleExt1loaded"
+    const-string v2, "handleExt1loaded"
 
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/HtcIccPbkEntryCache;->log(Ljava/lang/String;)V
 

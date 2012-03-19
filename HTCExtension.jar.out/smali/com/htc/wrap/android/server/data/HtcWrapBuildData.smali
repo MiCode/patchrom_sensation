@@ -21,7 +21,7 @@
 
     .prologue
     .line 40
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 41
     new-instance v0, Ljava/lang/StringBuilder;
@@ -75,7 +75,7 @@
 
     .prologue
     .line 52
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 53
     invoke-interface {p1}, Ljava/io/DataInput;->readInt()I
@@ -149,7 +149,7 @@
 
     .prologue
     .line 46
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
     invoke-static {p1}, Lcom/htc/wrap/com/android/internal/util/HtcWrapObjects;->nonNull(Ljava/lang/Object;)Ljava/lang/Object;

@@ -32,7 +32,7 @@
     .line 5665
     iput-object p1, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -112,7 +112,7 @@
     .line 5696
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
 
-    iput-boolean v2, v0, Landroid/widget/AbsListView;->mDataChanged:Z
+    iput-boolean v2, v0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     .line 5697
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;

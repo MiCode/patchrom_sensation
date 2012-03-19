@@ -35,7 +35,7 @@
     .line 99
     iput-object p1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager$SocialNetworkService;->this$0:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 101
     const/4 v0, 0x0

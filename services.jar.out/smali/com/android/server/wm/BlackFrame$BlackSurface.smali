@@ -44,7 +44,7 @@
     .line 36
     iput-object p1, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 37
     iput p4, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->left:I

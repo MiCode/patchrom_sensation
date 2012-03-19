@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final LOG_TAG:Ljava/lang/String; = "HtcCdmaSignalFadeUtils"
 
@@ -20,7 +20,7 @@
 
     .prologue
     .line 15
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 16
     iput-object p1, p0, Lcom/android/phone/HtcCdmaSignalFadeUtils;->mContext:Landroid/content/Context;
@@ -126,11 +126,11 @@
 
 # virtual methods
 .method public handleSignalFadeError(Landroid/os/AsyncResult;)V
-    .locals 6
+    .locals 5
     .parameter "ar"
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     .line 20
     iget-object v2, p1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
@@ -174,33 +174,8 @@
 
     goto :goto_0
 
-    .line 30
-    :cond_2
-    const-string v2, "HtcCdmaSignalFadeUtils"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "SignalFade Message ID:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    aget v4, v0, v5
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 32
+    :cond_2
     sget-short v2, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v3, 0x94
@@ -208,7 +183,7 @@
     if-ne v2, v3, :cond_3
 
     .line 33
-    aget v2, v0, v5
+    aget v2, v0, v4
 
     invoke-direct {p0, v2}, Lcom/android/phone/HtcCdmaSignalFadeUtils;->launchSignalFadeDialog(I)V
 
@@ -216,7 +191,7 @@
 
     .line 35
     :cond_3
-    aget v2, v0, v5
+    aget v2, v0, v4
 
     invoke-static {v2}, Lcom/android/phone/HtcCdmaSignalFadeUtils;->getSignalFadeString(I)I
 

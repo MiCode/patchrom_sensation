@@ -171,7 +171,7 @@
     iput-boolean v1, p0, Landroid/widget/AdapterViewFlipper;->mAutoStart:Z
 
     .line 72
-    iput-boolean v3, p0, Landroid/widget/AdapterViewFlipper;->mLoopViews:Z
+    iput-boolean v3, p0, Landroid/widget/AdapterViewAnimator;->mLoopViews:Z
 
     .line 74
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
@@ -263,7 +263,7 @@
 
     if-eqz v3, :cond_1
 
-    iget-object v3, p0, Landroid/widget/AdapterViewFlipper;->mAdapter:Landroid/widget/Adapter;
+    iget-object v3, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
 
     if-eqz v3, :cond_1
 
@@ -280,7 +280,7 @@
     if-eqz v1, :cond_2
 
     .line 210
-    iget v3, p0, Landroid/widget/AdapterViewFlipper;->mWhichChild:I
+    iget v3, p0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
 
     invoke-virtual {p0, v3, p1}, Landroid/widget/AdapterViewFlipper;->showOnly(IZ)V
 

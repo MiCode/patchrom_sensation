@@ -708,7 +708,7 @@
     <string name="keyguard_password_wrong_pin_code">PIN 码不正确！</string>
     <string name="keyguard_label_text">要解锁，请按“菜单”，然后按 0。</string>
     <string name="emergency_call_dialog_number_for_display">紧急电话号码</string>
-    <string name="lockscreen_carrier_default">无服务</string>
+    <string name="lockscreen_carrier_default">无服务。</string>
     <string name="lockscreen_screen_locked">屏幕已锁定。</string>
     <string name="lockscreen_instructions_when_pattern_enabled">按“菜单”解锁或拨打紧急电话。</string>
     <string name="lockscreen_instructions_when_pattern_disabled">按“菜单”解锁。</string>

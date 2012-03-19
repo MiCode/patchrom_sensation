@@ -129,7 +129,7 @@
 
     .line 185
     .local v2, minDist:I
-    iget v4, p0, Lcom/android/camera/widget/LeveledScrollWheel;->mScrollX:I
+    iget v4, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mScrollX:I
 
     .line 186
     .local v4, scrollX:I
@@ -218,9 +218,9 @@
     iput-object v5, p0, Lcom/android/camera/widget/LeveledScrollWheel;->mLevelsInLength:[I
 
     .line 151
-    iget v5, p0, Lcom/android/camera/widget/LeveledScrollWheel;->mMax:I
+    iget v5, p0, Lcom/android/camera/widget/ScrollWheel;->mMax:I
 
-    iget v6, p0, Lcom/android/camera/widget/LeveledScrollWheel;->mMin:I
+    iget v6, p0, Lcom/android/camera/widget/ScrollWheel;->mMin:I
 
     sub-int/2addr v5, v6
 
@@ -589,7 +589,7 @@
 
     aget v1, v1, p1
 
-    iget v2, p0, Lcom/android/camera/widget/LeveledScrollWheel;->mScrollY:I
+    iget v2, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mScrollY:I
 
     invoke-virtual {p0, v1, v2, p3}, Lcom/android/camera/widget/LeveledScrollWheel;->smoothScrollTo(III)V
 
@@ -601,7 +601,7 @@
 
     aget v1, v1, p1
 
-    iget v2, p0, Lcom/android/camera/widget/LeveledScrollWheel;->mScrollY:I
+    iget v2, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mScrollY:I
 
     invoke-virtual {p0, v1, v2}, Lcom/android/camera/widget/LeveledScrollWheel;->smoothScrollTo(II)V
 
@@ -613,7 +613,7 @@
 
     aget v1, v1, p1
 
-    iget v2, p0, Lcom/android/camera/widget/LeveledScrollWheel;->mScrollY:I
+    iget v2, p0, Lcom/android/camera/widget/HorizontalEasingScrollView;->mScrollY:I
 
     invoke-virtual {p0, v1, v2}, Lcom/android/camera/widget/LeveledScrollWheel;->scrollTo(II)V
 
@@ -716,10 +716,10 @@
 
     .line 134
     :cond_0
-    iput p1, p0, Lcom/android/camera/widget/LeveledScrollWheel;->mMin:I
+    iput p1, p0, Lcom/android/camera/widget/ScrollWheel;->mMin:I
 
     .line 135
-    iput p2, p0, Lcom/android/camera/widget/LeveledScrollWheel;->mMax:I
+    iput p2, p0, Lcom/android/camera/widget/ScrollWheel;->mMax:I
 
     .line 136
     sub-int v0, p2, p1
@@ -729,7 +729,7 @@
     iput v0, p0, Lcom/android/camera/widget/LeveledScrollWheel;->mLevelNum:I
 
     .line 137
-    iget v0, p0, Lcom/android/camera/widget/LeveledScrollWheel;->mMin:I
+    iget v0, p0, Lcom/android/camera/widget/ScrollWheel;->mMin:I
 
     iput v0, p0, Lcom/android/camera/widget/LeveledScrollWheel;->mCurLevel:I
 

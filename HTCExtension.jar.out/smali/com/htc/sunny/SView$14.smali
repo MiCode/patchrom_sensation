@@ -45,7 +45,7 @@
 
     iput p4, p0, Lcom/htc/sunny/SView$14;->val$z:F
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

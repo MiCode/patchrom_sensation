@@ -41,10 +41,10 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/LinearGradient;->native_instance:I
+    iput v1, p0, Landroid/graphics/Shader;->native_instance:I
 
     .line 56
-    iget v2, p0, Landroid/graphics/LinearGradient;->native_instance:I
+    iget v2, p0, Landroid/graphics/Shader;->native_instance:I
 
     move-object/from16 v0, p7
 
@@ -68,7 +68,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/LinearGradient;->native_shader:I
+    iput v1, p0, Landroid/graphics/Shader;->native_shader:I
 
     .line 58
     return-void
@@ -149,10 +149,10 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/LinearGradient;->native_instance:I
+    iput v1, p0, Landroid/graphics/Shader;->native_instance:I
 
     .line 40
-    iget v2, p0, Landroid/graphics/LinearGradient;->native_instance:I
+    iget v2, p0, Landroid/graphics/Shader;->native_instance:I
 
     move-object/from16 v0, p7
 
@@ -176,7 +176,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/LinearGradient;->native_shader:I
+    iput v1, p0, Landroid/graphics/Shader;->native_shader:I
 
     .line 42
     return-void

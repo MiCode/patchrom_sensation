@@ -16,7 +16,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final DEFAULT_TOKEN:I = -0x1
 
@@ -180,7 +180,7 @@
 .end method
 
 .method public static final updateImageViewWithContactPhotoAsync(Lcom/android/internal/telephony/CallerInfo;ILcom/htc/util/calendar/ContactsAsyncHelper$OnImageLoadCompleteListener;Ljava/lang/Object;Landroid/content/Context;Landroid/widget/ImageView;Landroid/net/Uri;IZ)V
-    .locals 6
+    .locals 4
     .parameter "info"
     .parameter "token"
     .parameter "listener"
@@ -192,20 +192,13 @@
     .parameter "preferHighres"
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     .line 298
     if-nez p6, :cond_0
 
-    .line 299
-    const-string v2, "ContactsAsyncHelper"
-
-    const-string v3, "target image is null, just display placeholder."
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 300
-    invoke-virtual {p5, v5}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p5, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 301
     invoke-virtual {p5, p7}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -264,44 +257,13 @@
     :goto_1
     iput-object v0, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 330
-    const-string v2, "ContactsAsyncHelper"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Begin loading image: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, v0, Lcom/htc/util/calendar/ContactsAsyncHelper$WorkerArgs;->uri:Landroid/net/Uri;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", displaying default image for now."
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 335
     const/4 v2, -0x1
 
     if-eq p7, v2, :cond_2
 
     .line 336
-    invoke-virtual {p5, v5}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p5, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 337
     invoke-virtual {p5, p7}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -449,53 +411,6 @@
     iget-object v2, v0, Lcom/htc/util/calendar/ContactsAsyncHelper$WorkerArgs;->listener:Lcom/htc/util/calendar/ContactsAsyncHelper$OnImageLoadCompleteListener;
 
     if-eqz v2, :cond_0
-
-    .line 380
-    const-string v2, "ContactsAsyncHelper"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Notifying listener: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, v0, Lcom/htc/util/calendar/ContactsAsyncHelper$WorkerArgs;->listener:Lcom/htc/util/calendar/ContactsAsyncHelper$OnImageLoadCompleteListener;
-
-    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, " image: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, v0, Lcom/htc/util/calendar/ContactsAsyncHelper$WorkerArgs;->uri:Landroid/net/Uri;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, " completed"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 382
     iget-object v2, v0, Lcom/htc/util/calendar/ContactsAsyncHelper$WorkerArgs;->listener:Lcom/htc/util/calendar/ContactsAsyncHelper$OnImageLoadCompleteListener;

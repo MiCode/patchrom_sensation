@@ -105,7 +105,7 @@
 
     .line 1285
     :cond_1
-    iget-object v0, p0, Landroid/accounts/AccountManagerService$GetAccountsByTypeAndFeatureSession;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
+    iget-object v0, p0, Landroid/accounts/AccountManagerService$Session;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     .line 1286
     .local v0, accountAuthenticator:Landroid/accounts/IAccountAuthenticator;
@@ -189,11 +189,11 @@
 
     .prologue
     .line 1305
-    iget v0, p0, Landroid/accounts/AccountManagerService$GetAccountsByTypeAndFeatureSession;->mNumResults:I
+    iget v0, p0, Landroid/accounts/AccountManagerService$Session;->mNumResults:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Landroid/accounts/AccountManagerService$GetAccountsByTypeAndFeatureSession;->mNumResults:I
+    iput v0, p0, Landroid/accounts/AccountManagerService$Session;->mNumResults:I
 
     .line 1306
     if-nez p1, :cond_0
@@ -269,7 +269,7 @@
     :try_start_0
     iget-object v0, p0, Landroid/accounts/AccountManagerService$GetAccountsByTypeAndFeatureSession;->this$0:Landroid/accounts/AccountManagerService;
 
-    iget-object v2, p0, Landroid/accounts/AccountManagerService$GetAccountsByTypeAndFeatureSession;->mAccountType:Ljava/lang/String;
+    iget-object v2, p0, Landroid/accounts/AccountManagerService$Session;->mAccountType:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Landroid/accounts/AccountManagerService;->getAccountsFromCacheLocked(Ljava/lang/String;)[Landroid/accounts/Account;
 

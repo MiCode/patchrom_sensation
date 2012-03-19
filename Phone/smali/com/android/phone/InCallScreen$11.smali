@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/android/phone/InCallScreen$11;->val$msg:Landroid/os/Message;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,18 +43,10 @@
 
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
-    .locals 2
+    .locals 1
     .parameter "dialog"
 
     .prologue
-    .line 4856
-    iget-object v0, p0, Lcom/android/phone/InCallScreen$11;->this$0:Lcom/android/phone/InCallScreen;
-
-    const-string v1, "Missing voicemail AlertDialog: CANCEL handler..."
-
-    #calls: Lcom/android/phone/InCallScreen;->log(Ljava/lang/String;)V
-    invoke-static {v0, v1}, Lcom/android/phone/InCallScreen;->access$200(Lcom/android/phone/InCallScreen;Ljava/lang/String;)V
-
     .line 4857
     iget-object v0, p0, Lcom/android/phone/InCallScreen$11;->val$msg:Landroid/os/Message;
 

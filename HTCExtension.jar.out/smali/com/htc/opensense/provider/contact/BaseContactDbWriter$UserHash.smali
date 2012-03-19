@@ -120,7 +120,7 @@
     const/4 v1, -0x1
 
     .line 816
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 810
     const/4 v0, 0x0
@@ -152,7 +152,7 @@
     const/4 v1, -0x1
 
     .line 826
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 810
     const/4 v0, 0x0
@@ -192,7 +192,7 @@
     const/4 v1, -0x1
 
     .line 820
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 810
     const/4 v0, 0x0

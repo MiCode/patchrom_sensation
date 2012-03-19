@@ -110,7 +110,7 @@
     const/4 v2, -0x1
 
     .line 72
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 73
     new-instance v0, Ljava/io/File;

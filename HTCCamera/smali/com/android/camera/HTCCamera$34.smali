@@ -30,12 +30,12 @@
     .parameter
 
     .prologue
-    .line 7933
+    .line 7969
     iput-object p1, p0, Lcom/android/camera/HTCCamera$34;->this$0:Lcom/android/camera/HTCCamera;
 
     iput-boolean p2, p0, Lcom/android/camera/HTCCamera$34;->val$isLastPlay:Z
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -49,10 +49,10 @@
     .parameter "extra"
 
     .prologue
-    .line 7936
+    .line 7972
     if-eqz p1, :cond_2
 
-    .line 7938
+    .line 7974
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -85,15 +85,15 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7939
+    .line 7975
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera$34;->val$isLastPlay:Z
 
     if-eqz v0, :cond_0
 
-    .line 7940
+    .line 7976
     invoke-virtual {p1}, Landroid/media/MediaPlayer;->release()V
 
-    .line 7941
+    .line 7977
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera$34;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -104,7 +104,7 @@
 
     monitor-enter v1
 
-    .line 7943
+    .line 7979
     :try_start_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera$34;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -115,7 +115,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 7944
+    .line 7980
     iget-object v0, p0, Lcom/android/camera/HTCCamera$34;->this$0:Lcom/android/camera/HTCCamera;
 
     const/4 v2, 0x0
@@ -123,17 +123,17 @@
     #setter for: Lcom/android/camera/HTCCamera;->mAudioPlayer:Landroid/media/MediaPlayer;
     invoke-static {v0, v2}, Lcom/android/camera/HTCCamera;->access$202(Lcom/android/camera/HTCCamera;Landroid/media/MediaPlayer;)Landroid/media/MediaPlayer;
 
-    .line 7945
+    .line 7981
     :cond_1
     monitor-exit v1
 
-    .line 7947
+    .line 7983
     :cond_2
     const/4 v0, 0x0
 
     return v0
 
-    .line 7945
+    .line 7981
     :catchall_0
     move-exception v0
 

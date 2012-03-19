@@ -80,7 +80,7 @@
 
     .prologue
     .line 96
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 97
     iput-object p1, p0, Lcom/htc/util/mail/lib/org/apache/commons/io/IOCase;->name:Ljava/lang/String;

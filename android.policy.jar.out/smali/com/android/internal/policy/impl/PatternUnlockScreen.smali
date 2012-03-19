@@ -660,7 +660,6 @@
 .method public onPause()V
     .locals 0
 
-    .line 264
     return-void
 .end method
 

@@ -62,7 +62,7 @@
     const/4 v1, 0x0
 
     .line 47
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 33
     const-class v0, Lcom/htc/opensense/album/SocialNetworkManager/comments/HTCCommentsCacher;

@@ -197,7 +197,7 @@
 
     .prologue
     .line 82
-    iput-object p1, p0, Lcom/htc/net/wimax/WimaxQosServiceFlowDescriptor;->description:Ljava/lang/String;
+    iput-object p1, p0, Lcom/htc/net/FourG/QosServiceFlowDescriptor;->description:Ljava/lang/String;
 
     .line 83
     return-void

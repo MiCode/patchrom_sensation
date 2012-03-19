@@ -28,7 +28,7 @@
 
     .prologue
     .line 592
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 593
     iput-object p1, p0, Lcom/htc/util/skin/HtcSkinUtil$SkinPackageInfo;->skinPackageName:Ljava/lang/String;

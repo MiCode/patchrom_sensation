@@ -36,7 +36,7 @@
     const/4 v0, 0x0
 
     .line 799
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 795
     iput-object v0, p0, Lcom/htc/util/mail/lib/org/apache/james/mime4j/util/CharsetUtil$Charset;->canonical:Ljava/lang/String;

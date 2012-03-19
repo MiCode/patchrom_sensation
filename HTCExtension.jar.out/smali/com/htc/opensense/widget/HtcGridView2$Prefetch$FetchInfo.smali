@@ -39,7 +39,7 @@
     .line 3880
     iput-object p1, p0, Lcom/htc/opensense/widget/HtcGridView2$Prefetch$FetchInfo;->this$0:Lcom/htc/opensense/widget/HtcGridView2$Prefetch;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 3881
     iput p2, p0, Lcom/htc/opensense/widget/HtcGridView2$Prefetch$FetchInfo;->pos:I

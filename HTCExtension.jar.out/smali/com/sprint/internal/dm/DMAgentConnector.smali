@@ -8,7 +8,7 @@
 
 .field public static final Activate_MIP_Profile:Ljava/lang/String; = "C017"
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field public static final MDN:Ljava/lang/String; = "C001"
 
@@ -106,7 +106,7 @@
 
     .prologue
     .line 57
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 13
     const/16 v0, 0x2606

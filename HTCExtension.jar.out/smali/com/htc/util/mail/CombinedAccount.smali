@@ -89,7 +89,7 @@
 
     .prologue
     .line 263
-    iget-object v0, p0, Lcom/htc/util/mail/CombinedAccount;->mDelFolderIdList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/mail/MailAccount;->mDelFolderIdList:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
@@ -97,16 +97,16 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/htc/util/mail/CombinedAccount;->mDelFolderIdList:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/htc/util/mail/MailAccount;->mDelFolderIdList:Ljava/util/ArrayList;
 
     .line 264
     :cond_0
-    iget-object v0, p0, Lcom/htc/util/mail/CombinedAccount;->mDelFolderIdList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/mail/MailAccount;->mDelFolderIdList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     .line 266
-    iget-object v0, p0, Lcom/htc/util/mail/CombinedAccount;->mDelFolderIdList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/mail/MailAccount;->mDelFolderIdList:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -143,7 +143,7 @@
 
     .line 218
     .local v12, mailBoxId:[I
-    iget-object v1, p0, Lcom/htc/util/mail/CombinedAccount;->folderPathNameList:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/htc/util/mail/MailAccount;->folderPathNameList:Ljava/util/ArrayList;
 
     if-nez v1, :cond_0
 
@@ -151,11 +151,11 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v1, p0, Lcom/htc/util/mail/CombinedAccount;->folderPathNameList:Ljava/util/ArrayList;
+    iput-object v1, p0, Lcom/htc/util/mail/MailAccount;->folderPathNameList:Ljava/util/ArrayList;
 
     .line 220
     :cond_0
-    iget-object v1, p0, Lcom/htc/util/mail/CombinedAccount;->folderPathNameList:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/htc/util/mail/MailAccount;->folderPathNameList:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -175,11 +175,11 @@
     .line 222
     new-instance v0, Lcom/htc/util/mail/Folder;
 
-    iget-object v1, p0, Lcom/htc/util/mail/CombinedAccount;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/htc/util/mail/MailAccount;->mContext:Landroid/content/Context;
 
     const/4 v3, 0x0
 
-    iget-object v2, p0, Lcom/htc/util/mail/CombinedAccount;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/htc/util/mail/MailAccount;->mContext:Landroid/content/Context;
 
     aget v4, v13, v11
 
@@ -187,7 +187,7 @@
 
     move-result-object v4
 
-    iget-object v2, p0, Lcom/htc/util/mail/CombinedAccount;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/htc/util/mail/MailAccount;->mContext:Landroid/content/Context;
 
     aget v5, v14, v11
 
@@ -211,7 +211,7 @@
 
     .line 234
     .local v0, f:Lcom/htc/util/mail/Folder;
-    iget-object v2, p0, Lcom/htc/util/mail/CombinedAccount;->folderPathNameList:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/htc/util/mail/MailAccount;->folderPathNameList:Ljava/util/ArrayList;
 
     monitor-enter v2
     :try_end_0
@@ -219,7 +219,7 @@
 
     .line 235
     :try_start_1
-    iget-object v1, p0, Lcom/htc/util/mail/CombinedAccount;->folderPathNameList:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/htc/util/mail/MailAccount;->folderPathNameList:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -398,7 +398,7 @@
 
     .line 149
     .local v2, kind:I
-    iget-object v5, p0, Lcom/htc/util/mail/CombinedAccount;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Lcom/htc/util/mail/MailAccount;->mContext:Landroid/content/Context;
 
     invoke-static {v5}, Lcom/htc/util/mail/MailManager;->getInstance(Landroid/content/Context;)Lcom/htc/util/mail/MailManager;
 
@@ -494,7 +494,7 @@
 
     .prologue
     .line 253
-    iget-object v0, p0, Lcom/htc/util/mail/CombinedAccount;->mNewFolderIdList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/mail/MailAccount;->mNewFolderIdList:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
@@ -502,16 +502,16 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/htc/util/mail/CombinedAccount;->mNewFolderIdList:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/htc/util/mail/MailAccount;->mNewFolderIdList:Ljava/util/ArrayList;
 
     .line 254
     :cond_0
-    iget-object v0, p0, Lcom/htc/util/mail/CombinedAccount;->mNewFolderIdList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/mail/MailAccount;->mNewFolderIdList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     .line 256
-    iget-object v0, p0, Lcom/htc/util/mail/CombinedAccount;->mNewFolderIdList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/mail/MailAccount;->mNewFolderIdList:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -521,7 +521,7 @@
 
     .prologue
     .line 137
-    iget-object v0, p0, Lcom/htc/util/mail/CombinedAccount;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/htc/util/mail/MailAccount;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/htc/util/mail/MailManager;->getInstance(Landroid/content/Context;)Lcom/htc/util/mail/MailManager;
 
@@ -556,7 +556,7 @@
 
     .prologue
     .line 123
-    iget-object v1, p0, Lcom/htc/util/mail/CombinedAccount;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/htc/util/mail/MailAccount;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/htc/util/mail/MailManager;->getInstance(Landroid/content/Context;)Lcom/htc/util/mail/MailManager;
 
@@ -593,7 +593,7 @@
     const/4 v8, 0x1
 
     .line 85
-    iget-object v5, p0, Lcom/htc/util/mail/CombinedAccount;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Lcom/htc/util/mail/MailAccount;->mContext:Landroid/content/Context;
 
     invoke-static {v5}, Lcom/htc/util/mail/MailManager;->getInstance(Landroid/content/Context;)Lcom/htc/util/mail/MailManager;
 

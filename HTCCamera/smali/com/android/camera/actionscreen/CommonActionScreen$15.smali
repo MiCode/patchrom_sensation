@@ -45,7 +45,7 @@
 
     iput-object p4, p0, Lcom/android/camera/actionscreen/CommonActionScreen$15;->val$adapter:Lcom/android/camera/share/MediaShareListAdapter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -120,7 +120,7 @@
     .local v0, ex:Ljava/lang/Exception;
     iget-object v1, p0, Lcom/android/camera/actionscreen/CommonActionScreen$15;->this$0:Lcom/android/camera/actionscreen/CommonActionScreen;
 
-    #getter for: Lcom/android/camera/actionscreen/CommonActionScreen;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/actionscreen/CommonActionScreen;->access$1000(Lcom/android/camera/actionscreen/CommonActionScreen;)Ljava/lang/String;
 
     move-result-object v1

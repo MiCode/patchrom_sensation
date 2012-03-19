@@ -32,7 +32,7 @@
 
 .field public static final EXCEPTION_MSG_SOCKET_TIMEOUT:Ljava/lang/String; = "socket_timeout"
 
-.field private static final LOG_FLAG:Z = true
+.field private static final LOG_FLAG:Z = false
 
 .field private static final LOG_TAG:Ljava/lang/String; = "Util"
 
@@ -63,7 +63,7 @@
     const/4 v1, 0x0
 
     .line 85
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
     const-string v0, "UTF-8"
@@ -109,7 +109,7 @@
     const/4 v1, 0x0
 
     .line 93
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
     const-string v0, "UTF-8"
@@ -162,7 +162,7 @@
     const/4 v1, 0x0
 
     .line 104
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
     const-string v0, "UTF-8"
@@ -219,7 +219,7 @@
     const/4 v1, 0x0
 
     .line 117
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
     const-string v0, "UTF-8"
@@ -367,16 +367,9 @@
 .end method
 
 .method private connectionTimeout()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 71
-    const-string v0, "Util"
-
-    const-string v1, "[HttpUtil] connection timeout"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 73
     invoke-direct {p0}, Lcom/htc/util/http/HttpUtil;->_cancelCurrentRequest()V
 
@@ -597,100 +590,12 @@
 
     move-result-object p1
 
-    .line 261
+    .line 264
     .end local v4           #arr$:[Lorg/apache/http/NameValuePair;
     .end local v10           #i$:I
     .end local v12           #len$:I
     .end local v19           #temp:Ljava/lang/String;
     :cond_2
-    const-string v22, "Util"
-
-    new-instance v23, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v24, "[HttpUtil] target URL: "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    move-object/from16 v0, v23
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v23
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 262
-    const-string v22, "Util"
-
-    new-instance v23, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v24, "[HttpUtil] request setting - socket timeout: "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/htc/util/http/HttpUtil;->socketTimeout:I
-
-    move/from16 v24, v0
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    const-string v24, "(ms), connection timeout: "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/htc/util/http/HttpUtil;->connectionTimeout:I
-
-    move/from16 v24, v0
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    const-string v24, "(ms), retry times: "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/htc/util/http/HttpUtil;->retry:I
-
-    move/from16 v24, v0
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v23
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 264
     const/4 v15, 0x0
 
     .line 265
@@ -791,51 +696,8 @@
     :cond_4
     throw v11
 
-    .line 293
-    :cond_5
-    const-string v22, "Util"
-
-    new-instance v23, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v24, "[HttpUtil] send GET request, "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    move-object/from16 v0, v23
-
-    move/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    const-string v24, "/"
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/htc/util/http/HttpUtil;->retry:I
-
-    move/from16 v24, v0
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v23
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 296
+    :cond_5
     :try_start_0
     new-instance v22, Lorg/apache/http/client/methods/HttpGet;
 
@@ -910,45 +772,6 @@
     move-object/from16 v1, v21
 
     invoke-virtual {v0, v13, v1}, Lorg/apache/http/client/methods/HttpRequestBase;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 304
-    const-string v22, "Util"
-
-    new-instance v23, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v24, "[HttpUtil] custom header: "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    move-object/from16 v0, v23
-
-    invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    const-string v24, ", value: "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    move-object/from16 v0, v23
-
-    move-object/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v23
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -970,36 +793,6 @@
     .local v8, e:Ljava/lang/Exception;
     :goto_4
     move-object v11, v8
-
-    .line 354
-    :try_start_1
-    const-string v22, "Util"
-
-    new-instance v23, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v24, "[HttpUtil] "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual {v8}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v24
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v23
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 357
     if-eqz v6, :cond_6
@@ -1024,7 +817,7 @@
 
     .line 309
     :cond_7
-    :try_start_2
+    :try_start_1
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/htc/util/http/HttpUtil;->socketTimeout:I
@@ -1078,14 +871,14 @@
     move/from16 v0, v22
 
     invoke-direct {v6, v0}, Ljava/util/concurrent/ScheduledThreadPoolExecutor;-><init>(I)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 315
     .end local v7           #connectionTimeoutControler:Ljava/util/concurrent/ScheduledThreadPoolExecutor;
     .restart local v6       #connectionTimeoutControler:Ljava/util/concurrent/ScheduledThreadPoolExecutor;
-    :try_start_3
+    :try_start_2
     new-instance v22, Lcom/htc/util/http/HttpUtil$1;
 
     move-object/from16 v0, v22
@@ -1124,15 +917,8 @@
 
     invoke-direct {v9}, Lorg/apache/http/impl/client/DefaultHttpClient;-><init>()V
 
-    .line 325
-    .local v9, httpClient:Lorg/apache/http/client/HttpClient;
-    const-string v22, "Util"
-
-    const-string v23, "[HttpUtil] start to send HTTP request"
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 327
+    .local v9, httpClient:Lorg/apache/http/client/HttpClient;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/htc/util/http/HttpUtil;->httpRequest:Lorg/apache/http/client/methods/HttpRequestBase;
@@ -1161,15 +947,8 @@
 
     invoke-interface {v5, v0}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
 
-    .line 334
-    :cond_9
-    const-string v22, "Util"
-
-    const-string v23, "[HttpUtil] receive HTTP response"
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 337
+    :cond_9
     invoke-interface {v15}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
 
     move-result-object v22
@@ -1185,13 +964,6 @@
     move/from16 v1, v23
 
     if-ne v0, v1, :cond_a
-
-    .line 339
-    const-string v22, "Util"
-
-    const-string v23, "[HttpUtil] HTTP response state is OK"
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 341
     new-instance v17, Lcom/htc/util/http/HttpUtil$ResponseObj;
@@ -1225,9 +997,9 @@
     move-object/from16 v3, v24
 
     invoke-direct {v0, v1, v2, v3}, Lcom/htc/util/http/HttpUtil$ResponseObj;-><init>(Ljava/lang/String;[B[Lorg/apache/http/Header;)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     .line 344
     .end local v16           #responseObj:Lcom/htc/util/http/HttpUtil$ResponseObj;
@@ -1253,19 +1025,8 @@
 
     goto/16 :goto_5
 
-    .line 347
-    :cond_a
-    :try_start_4
-    const-string v22, "Util"
-
-    const-string v23, "[HttpUtil] HTTP response state is NOT OK"
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
-
     .line 349
+    :cond_a
     const/16 v18, 0x0
 
     goto :goto_7
@@ -1330,7 +1091,7 @@
 
     .end local v7           #connectionTimeoutControler:Ljava/util/concurrent/ScheduledThreadPoolExecutor;
     .restart local v6       #connectionTimeoutControler:Ljava/util/concurrent/ScheduledThreadPoolExecutor;
-    goto/16 :goto_6
+    goto :goto_6
 .end method
 
 .method private wifiLockAcquire(Landroid/content/Context;)Landroid/net/wifi/WifiManager$WifiLock;
@@ -1399,13 +1160,6 @@
     .line 399
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager$WifiLock;->acquire()V
 
-    .line 401
-    const-string v2, "Util"
-
-    const-string v3, "[HttpUtil] acquire wifi lock"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 406
     .end local v1           #wifiManager:Landroid/net/wifi/WifiManager;
     :cond_0
@@ -1413,7 +1167,7 @@
 .end method
 
 .method private wifiLockRelease(Landroid/net/wifi/WifiManager$WifiLock;)V
-    .locals 2
+    .locals 1
     .parameter "wifiLock"
 
     .prologue
@@ -1428,13 +1182,6 @@
 
     .line 411
     invoke-virtual {p1}, Landroid/net/wifi/WifiManager$WifiLock;->release()V
-
-    .line 413
-    const-string v0, "Util"
-
-    const-string v1, "[HttpUtil] release wifi lock"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 416
     :cond_0
@@ -1709,16 +1456,9 @@
 .end method
 
 .method public forceClose()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 63
-    const-string v0, "Util"
-
-    const-string v1, "[HttpUtil] force to close HTTP request"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 65
     const/4 v0, -0x1
 

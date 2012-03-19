@@ -1610,7 +1610,7 @@
     :try_start_1
     iget-object v3, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList$UriImage;->this$1:Lcom/htc/opensense/album/util/ImageManager$SingleImageList;
 
-    iget-object v3, v3, Lcom/htc/opensense/album/util/ImageManager$SingleImageList;->mBaseUri:Landroid/net/Uri;
+    iget-object v3, v3, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mBaseUri:Landroid/net/Uri;
 
     iget-object v4, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList$UriImage;->this$1:Lcom/htc/opensense/album/util/ImageManager$SingleImageList;
 

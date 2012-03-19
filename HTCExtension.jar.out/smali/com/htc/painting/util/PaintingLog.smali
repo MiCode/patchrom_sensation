@@ -17,18 +17,16 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     .prologue
-    const/4 v1, 0x0
-
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     .line 12
-    sput-boolean v1, Lcom/htc/painting/util/PaintingLog;->enableLogv:Z
+    sput-boolean v0, Lcom/htc/painting/util/PaintingLog;->enableLogv:Z
 
     .line 13
-    sput-boolean v1, Lcom/htc/painting/util/PaintingLog;->enableLogd:Z
+    sput-boolean v0, Lcom/htc/painting/util/PaintingLog;->enableLogd:Z
 
     .line 14
     sput-boolean v0, Lcom/htc/painting/util/PaintingLog;->enableLogi:Z
@@ -47,7 +45,7 @@
 
     .prologue
     .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

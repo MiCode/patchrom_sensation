@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 4088
+    .line 4091
     iput-object p1, p0, Lcom/android/phone/PhoneApp$PackageChangeBroadcastReceiver;->this$0:Lcom/android/phone/PhoneApp;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 4088
+    .line 4091
     invoke-direct {p0, p1}, Lcom/android/phone/PhoneApp$PackageChangeBroadcastReceiver;-><init>(Lcom/android/phone/PhoneApp;)V
 
     return-void
@@ -54,12 +54,12 @@
     .prologue
     const/16 v4, 0x323
 
-    .line 4092
+    .line 4095
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4094
+    .line 4097
     .local v0, action:Ljava/lang/String;
     const-string v1, "PhoneApp"
 
@@ -83,7 +83,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4096
+    .line 4099
     const-string v1, "android.intent.action.PACKAGE_ADDED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -124,7 +124,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 4101
+    .line 4104
     :cond_0
     invoke-static {}, Lcom/android/phone/PhoneApp;->access$5000()Landroid/os/Handler;
 
@@ -132,7 +132,7 @@
 
     invoke-virtual {v1, v4}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 4102
+    .line 4105
     invoke-static {}, Lcom/android/phone/PhoneApp;->access$5000()Landroid/os/Handler;
 
     move-result-object v1
@@ -141,7 +141,7 @@
 
     invoke-virtual {v1, v4, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 4104
+    .line 4107
     :cond_1
     return-void
 .end method

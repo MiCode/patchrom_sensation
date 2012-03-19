@@ -54,7 +54,7 @@
     const/4 v3, 0x0
 
     .line 139
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 140
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -350,7 +350,7 @@
 
     .prologue
     .line 47
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 48
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/HtcAkaAuthenticationResult;->ex:Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationException;
@@ -365,7 +365,7 @@
 
     .prologue
     .line 57
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 58
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/HtcAkaAuthenticationResult;->auts:[B
@@ -391,7 +391,7 @@
 
     .prologue
     .line 51
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 52
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/HtcAkaAuthenticationResult;->ck:[B

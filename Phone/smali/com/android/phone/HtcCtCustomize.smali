@@ -14,7 +14,7 @@
 # static fields
 .field private static final DBG:Z = true
 
-.field private static final DBG_DETAIL:Z = true
+.field private static final DBG_DETAIL:Z = false
 
 #the value of this static final field might be set in the static constructor
 .field public static final ENABLE:Z = false
@@ -191,7 +191,7 @@
 .end method
 
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 5
+    .locals 4
     .parameter "msg"
 
     .prologue
@@ -203,31 +203,6 @@
     iget-object v2, p0, Lcom/android/phone/HtcCtCustomize;->mObj:Lcom/android/phone/HtcCtCustomize$CustomizeObj;
 
     if-eqz v2, :cond_0
-
-    .line 107
-    const-string v2, "HtcCtCustomize"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "msg "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget v4, p1, Landroid/os/Message;->what:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 119
     new-instance v0, Landroid/app/Notification;

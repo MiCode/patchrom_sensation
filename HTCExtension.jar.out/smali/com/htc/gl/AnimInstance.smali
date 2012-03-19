@@ -126,7 +126,7 @@
     .line 40
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/htc/gl/AnimInstance;->sLock:Ljava/lang/Object;
 
@@ -839,7 +839,7 @@
 
     .prologue
     .line 417
-    iget-boolean v2, p0, Lcom/htc/gl/AnimInstance;->m_Visible:Z
+    iget-boolean v2, p0, Lcom/htc/gl/Instance;->m_Visible:Z
 
     if-eqz v2, :cond_3
 
@@ -855,17 +855,17 @@
     iput-boolean v2, p0, Lcom/htc/gl/AnimInstance;->isDrawing:Z
 
     .line 430
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Renderable:Lcom/htc/gl/shape/Renderable;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Renderable:Lcom/htc/gl/shape/Renderable;
 
     if-eqz v2, :cond_0
 
     .line 432
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Material:Lcom/htc/gl/Material;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Material:Lcom/htc/gl/Material;
 
     if-eqz v2, :cond_1
 
     .line 434
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Material:Lcom/htc/gl/Material;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Material:Lcom/htc/gl/Material;
 
     invoke-virtual {v2, p1}, Lcom/htc/gl/Material;->setMaterialParameters(Ljavax/microedition/khronos/opengles/GL10;)V
 
@@ -982,7 +982,7 @@
     .line 462
     .end local v0           #alpha:F
     :cond_0
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     if-eqz v2, :cond_2
 
@@ -991,7 +991,7 @@
 
     .local v1, i:I
     :goto_1
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     invoke-virtual {v2}, Ljava/util/Vector;->size()I
 
@@ -1000,7 +1000,7 @@
     if-ge v1, v2, :cond_2
 
     .line 466
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     invoke-virtual {v2, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
@@ -1017,7 +1017,7 @@
     invoke-virtual {v2, v4}, Lcom/htc/gl/Instance;->setAlphaByParent(F)V
 
     .line 467
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     invoke-virtual {v2, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
@@ -1034,7 +1034,7 @@
     invoke-virtual {v2, v4, v5, v6}, Lcom/htc/gl/Instance;->setPositionByParent(FFF)V
 
     .line 468
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     invoke-virtual {v2, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
@@ -1051,7 +1051,7 @@
     invoke-virtual {v2, v4, v5, v6}, Lcom/htc/gl/Instance;->setAngleByParent(FFF)V
 
     .line 469
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     invoke-virtual {v2, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
@@ -1068,7 +1068,7 @@
     invoke-virtual {v2, v4, v5, v6}, Lcom/htc/gl/Instance;->setScaleByParent(FFF)V
 
     .line 470
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     invoke-virtual {v2, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
@@ -1525,7 +1525,7 @@
     iput-wide v1, p0, Lcom/htc/gl/AnimInstance;->mStartAnimationTime:J
 
     .line 170
-    iget-object v1, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v1, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     if-eqz v1, :cond_0
 
@@ -1534,7 +1534,7 @@
 
     .local v0, i:I
     :goto_0
-    iget-object v1, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v1, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     invoke-virtual {v1}, Ljava/util/Vector;->size()I
 
@@ -1543,7 +1543,7 @@
     if-ge v0, v1, :cond_0
 
     .line 174
-    iget-object v1, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v1, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     invoke-virtual {v1, v0}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
@@ -1660,7 +1660,7 @@
 
     if-eqz v3, :cond_1
 
-    iget-object v3, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v3, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     if-eqz v3, :cond_1
 
@@ -1669,7 +1669,7 @@
 
     .restart local v1       #i:I
     :goto_1
-    iget-object v3, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v3, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     invoke-virtual {v3}, Ljava/util/Vector;->size()I
 
@@ -1678,7 +1678,7 @@
     if-ge v1, v3, :cond_1
 
     .line 205
-    iget-object v3, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v3, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     invoke-virtual {v3, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
@@ -1798,7 +1798,7 @@
 
     if-eqz v2, :cond_1
 
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     if-eqz v2, :cond_1
 
@@ -1807,7 +1807,7 @@
 
     .restart local v0       #i:I
     :goto_1
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     invoke-virtual {v2}, Ljava/util/Vector;->size()I
 
@@ -1816,7 +1816,7 @@
     if-ge v0, v2, :cond_1
 
     .line 234
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     invoke-virtual {v2, v0}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
@@ -1967,7 +1967,7 @@
 
     if-eqz v2, :cond_2
 
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     if-eqz v2, :cond_2
 
@@ -1976,7 +1976,7 @@
 
     .restart local v0       #i:I
     :goto_1
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     invoke-virtual {v2}, Ljava/util/Vector;->size()I
 
@@ -1985,7 +1985,7 @@
     if-ge v0, v2, :cond_2
 
     .line 267
-    iget-object v2, p0, Lcom/htc/gl/AnimInstance;->m_Children:Ljava/util/Vector;
+    iget-object v2, p0, Lcom/htc/gl/Instance;->m_Children:Ljava/util/Vector;
 
     invoke-virtual {v2, v0}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 

@@ -51,10 +51,10 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/RadialGradient;->native_instance:I
+    iput v0, p0, Landroid/graphics/Shader;->native_instance:I
 
     .line 61
-    iget v0, p0, Landroid/graphics/RadialGradient;->native_instance:I
+    iget v0, p0, Landroid/graphics/Shader;->native_instance:I
 
     iget v6, p6, Landroid/graphics/Shader$TileMode;->nativeInt:I
 
@@ -72,7 +72,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/RadialGradient;->native_shader:I
+    iput v0, p0, Landroid/graphics/Shader;->native_shader:I
 
     .line 63
     return-void
@@ -161,10 +161,10 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/RadialGradient;->native_instance:I
+    iput v0, p0, Landroid/graphics/Shader;->native_instance:I
 
     .line 43
-    iget v0, p0, Landroid/graphics/RadialGradient;->native_instance:I
+    iget v0, p0, Landroid/graphics/Shader;->native_instance:I
 
     iget v6, p6, Landroid/graphics/Shader$TileMode;->nativeInt:I
 
@@ -182,7 +182,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/RadialGradient;->native_shader:I
+    iput v0, p0, Landroid/graphics/Shader;->native_shader:I
 
     .line 45
     return-void

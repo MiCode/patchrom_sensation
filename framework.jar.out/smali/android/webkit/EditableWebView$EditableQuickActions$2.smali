@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1959
+    .line 2032
     iput-object p1, p0, Landroid/webkit/EditableWebView$EditableQuickActions$2;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 1962
+    .line 2035
     const/4 v0, 0x4
 
     if-ne p2, v0, :cond_0
@@ -57,21 +57,21 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 1963
+    .line 2036
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$2;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style:Lcom/htc/dialog/HtcAlertDialog;
 
     invoke-virtual {v0}, Lcom/htc/dialog/HtcAlertDialog;->dismiss()V
 
-    .line 1964
+    .line 2037
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$2;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     iput-boolean v2, v0, Landroid/webkit/EditableWebView;->m_bRemoveSelectRangeDuringUpdateContent:Z
 
-    .line 1965
+    .line 2038
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$2;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
@@ -84,14 +84,14 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebViewSelectionMethod;->setMode(Landroid/webkit/WebViewSelectionMethod$SelectionMode;)Z
 
-    .line 1966
+    .line 2039
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$2;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
 
     invoke-virtual {v0, v2}, Landroid/webkit/EditableWebView;->onEndSelect(Z)V
 
-    .line 1968
+    .line 2041
     :cond_0
     return v2
 .end method

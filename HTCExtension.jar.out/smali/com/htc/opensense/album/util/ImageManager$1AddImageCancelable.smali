@@ -152,7 +152,7 @@
     :try_start_1
     move-object/from16 v0, p0
 
-    iget-boolean v4, v0, Lcom/htc/opensense/album/util/ImageManager$1AddImageCancelable;->mCancel:Z
+    iget-boolean v4, v0, Lcom/htc/opensense/album/util/ImageManager$BaseCancelable;->mCancel:Z
 
     if-eqz v4, :cond_3
 
@@ -261,10 +261,10 @@
     invoke-static {v4, v5}, Lcom/htc/opensense/album/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 8369
-    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->deactivate()V
+    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$ImageList;->deactivate()V
 
     .line 8370
-    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->closeCursor()V
+    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$ImageList;->closeCursor()V
 
     .line 8373
     .end local v20           #ex:Lcom/htc/opensense/album/util/ImageManager$CanceledException;
@@ -970,10 +970,10 @@
     invoke-static {v4, v5}, Lcom/htc/opensense/album/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 8369
-    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->deactivate()V
+    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$ImageList;->deactivate()V
 
     .line 8370
-    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->closeCursor()V
+    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$ImageList;->closeCursor()V
 
     goto/16 :goto_1
 
@@ -1213,10 +1213,10 @@
     invoke-static {v4, v5}, Lcom/htc/opensense/album/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 8369
-    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->deactivate()V
+    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$ImageList;->deactivate()V
 
     .line 8370
-    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->closeCursor()V
+    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$ImageList;->closeCursor()V
 
     goto/16 :goto_1
 
@@ -1347,10 +1347,10 @@
     invoke-static {v4, v5}, Lcom/htc/opensense/album/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 8369
-    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->deactivate()V
+    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$ImageList;->deactivate()V
 
     .line 8370
-    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->closeCursor()V
+    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$ImageList;->closeCursor()V
 
     goto/16 :goto_1
 
@@ -1406,10 +1406,10 @@
     invoke-static {v5, v6}, Lcom/htc/opensense/album/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 8369
-    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->deactivate()V
+    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$ImageList;->deactivate()V
 
     .line 8370
-    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->closeCursor()V
+    invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$ImageList;->closeCursor()V
 
     :cond_12
     throw v4

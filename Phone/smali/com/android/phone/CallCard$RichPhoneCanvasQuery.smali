@@ -49,7 +49,7 @@
     .line 2983
     iput-object p1, p0, Lcom/android/phone/CallCard$RichPhoneCanvasQuery;->this$0:Lcom/android/phone/CallCard;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 2984
     iput-object p2, p0, Lcom/android/phone/CallCard$RichPhoneCanvasQuery;->mHandler:Landroid/os/Handler;
@@ -202,31 +202,6 @@
     iget-object v1, p0, Lcom/android/phone/CallCard$RichPhoneCanvasQuery;->mInfo:Lcom/android/internal/telephony/CallerInfo;
 
     if-eqz v1, :cond_3
-
-    .line 2991
-    const-string v1, "CallCard"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "------START RichPhoneCanvasQuery! destroyed:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-boolean v3, p0, Lcom/android/phone/CallCard$RichPhoneCanvasQuery;->isDestroyed:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2993
     iget-boolean v1, p0, Lcom/android/phone/CallCard$RichPhoneCanvasQuery;->isDestroyed:Z

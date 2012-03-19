@@ -567,7 +567,7 @@
 
     .line 89
     .local v0, lp:Landroid/widget/LinearLayout$LayoutParams;
-    iput v7, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
+    iput v7, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     .line 90
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -1396,7 +1396,7 @@
     .local v0, lp:Landroid/widget/LinearLayout$LayoutParams;
     const/4 v5, -0x3
 
-    iput v5, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
+    iput v5, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     .line 105
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V

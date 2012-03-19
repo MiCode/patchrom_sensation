@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<set android:shareInterpolator="false"
+<set android:interpolator="@anim/htc_ime_decelerate_interpolator"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <translate android:interpolator="@anim/accelerate_quint" android:duration="@integer/config_shortAnimTime" android:fromYDelta="0.0" android:toYDelta="10.000002%" />
-    <alpha android:interpolator="@anim/accelerate_cubic" android:duration="@integer/config_shortAnimTime" android:fromAlpha="1.0" android:toAlpha="0.0" />
+    <translate android:duration="300" android:fromYDelta="0.0" android:toYDelta="85.0%" />
 </set>

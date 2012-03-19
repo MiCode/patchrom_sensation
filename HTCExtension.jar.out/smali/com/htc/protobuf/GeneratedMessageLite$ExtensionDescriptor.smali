@@ -67,7 +67,7 @@
     .prologue
     .line 446
     .local p1, enumTypeMap:Lcom/htc/protobuf/Internal$EnumLiteMap;,"Lcom/htc/protobuf/Internal$EnumLiteMap<*>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 447
     iput-object p1, p0, Lcom/htc/protobuf/GeneratedMessageLite$ExtensionDescriptor;->enumTypeMap:Lcom/htc/protobuf/Internal$EnumLiteMap;

@@ -92,7 +92,7 @@
 
     .prologue
     .line 37
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -103,7 +103,7 @@
 
     .prologue
     .line 37
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -125,7 +125,7 @@
 
     .prologue
     .line 37
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -136,7 +136,7 @@
 
     .prologue
     .line 37
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -220,7 +220,7 @@
     :cond_3
     iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mDecodeThread:Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase$DecodeThread;
 
-    iget v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mFirstVisibleIndex:I
+    iget v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mFirstVisibleIndex:I
 
     invoke-virtual {v1, v2}, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase$DecodeThread;->setCenter(I)Z
 
@@ -350,7 +350,7 @@
     iput v3, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mFocusItem:I
 
     .line 987
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v3, v3, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mMediumIds:Ljava/util/ArrayList;
 
@@ -367,7 +367,7 @@
 
     .line 990
     :cond_1
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v3, v3, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mMediumIds:Ljava/util/ArrayList;
 
@@ -395,7 +395,7 @@
 
     .local v1, nIndex:I
     :goto_1
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -404,7 +404,7 @@
     if-le v3, v1, :cond_3
 
     .line 996
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -602,7 +602,7 @@
 
     .prologue
     .line 980
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -612,7 +612,7 @@
 
     .prologue
     .line 719
-    iget v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mUIScrollState:I
+    iget v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIScrollState:I
 
     return v0
 .end method
@@ -634,7 +634,7 @@
 
     .line 956
     .local v2, wrapperAlbums:Ljava/util/List;,"Ljava/util/List<Lcom/htc/opensense/album/SocialNetworkManager/WrapperAlbum;>;"
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v3}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->getCachedAlbumList()Ljava/util/List;
 
@@ -697,13 +697,13 @@
 
     .line 937
     .local v0, szText:Ljava/lang/String;
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumName:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumName:Ljava/lang/String;
 
@@ -723,7 +723,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v2, v2, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumName:Ljava/lang/String;
 
@@ -737,7 +737,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -764,7 +764,7 @@
 
     .line 942
     :cond_1
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v0, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumName:Ljava/lang/String;
 
@@ -776,7 +776,7 @@
 
     .prologue
     .line 363
-    iget v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mUIState:I
+    iget v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIState:I
 
     return v0
 .end method
@@ -808,7 +808,7 @@
     .line 371
     iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mImageProvider:Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mContext:Landroid/app/Activity;
+    iget-object v1, p0, Lcom/htc/opensense/album/AdapterBase;->mContext:Landroid/app/Activity;
 
     const/4 v2, 0x1
 
@@ -819,7 +819,7 @@
     .line 372
     iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mImageProvider:Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mHandlerData:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mHandlerData:Landroid/os/Handler;
 
     invoke-virtual {v0, v1}, Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;->setDataHandler(Landroid/os/Handler;)V
 
@@ -931,7 +931,7 @@
     const/4 v1, 0x0
 
     .line 820
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
@@ -1120,7 +1120,7 @@
 
     .prologue
     .line 533
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     if-nez v2, :cond_0
 
@@ -1130,7 +1130,7 @@
 
     .line 536
     :cond_0
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v2, v2, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumIds:Ljava/util/ArrayList;
 
@@ -1151,7 +1151,7 @@
     if-le v2, v0, :cond_1
 
     .line 540
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v2, v2, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumIds:Ljava/util/ArrayList;
 
@@ -1170,7 +1170,7 @@
 
     .line 544
     :cond_1
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v2, v1}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->getAlbumOp([Ljava/lang/String;)Z
 
@@ -1210,7 +1210,7 @@
 
     .line 501
     :sswitch_0
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     const/4 v1, 0x1
 
@@ -1283,7 +1283,7 @@
 
     const/4 v4, 0x0
 
-    iget v5, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mFirstVisibleIndex:I
+    iget v5, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mFirstVisibleIndex:I
 
     move-object v1, p1
 
@@ -1371,7 +1371,7 @@
     const/4 v4, 0x0
 
     .line 549
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     if-nez v1, :cond_0
 
@@ -1406,7 +1406,7 @@
     invoke-static {v1, v2}, Lcom/htc/opensense/album/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 558
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumIds:Ljava/util/ArrayList;
 
@@ -1424,7 +1424,7 @@
 
     if-nez v1, :cond_2
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumIds:Ljava/util/ArrayList;
 
@@ -1442,7 +1442,7 @@
 
     if-nez v1, :cond_2
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumIds:Ljava/util/ArrayList;
 
@@ -1476,9 +1476,9 @@
     if-ne v5, v1, :cond_1
 
     .line 566
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumIds:Ljava/util/ArrayList;
 
@@ -1494,9 +1494,9 @@
 
     .line 570
     :cond_1
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumIds:Ljava/util/ArrayList;
 
@@ -1512,7 +1512,7 @@
 
     .line 573
     :cond_2
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumIds:Ljava/util/ArrayList;
 
@@ -1550,9 +1550,9 @@
     if-ne v5, v1, :cond_3
 
     .line 578
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mUserIds:Ljava/util/ArrayList;
 
@@ -1568,9 +1568,9 @@
 
     .line 582
     :cond_3
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mUserIds:Ljava/util/ArrayList;
 
@@ -1591,7 +1591,7 @@
 
     .line 589
     .restart local v0       #nMediumType:I
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumIds:Ljava/util/ArrayList;
 
@@ -1629,9 +1629,9 @@
     if-ne v5, v1, :cond_6
 
     .line 594
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mUserIds:Ljava/util/ArrayList;
 
@@ -1647,9 +1647,9 @@
 
     .line 598
     :cond_6
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v1, v1, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mUserIds:Ljava/util/ArrayList;
 
@@ -1677,7 +1677,7 @@
     invoke-virtual {v0}, Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;->onResume()V
 
     .line 381
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v0, v0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mServiceName:Ljava/lang/String;
 
@@ -1761,7 +1761,7 @@
     .line 669
     const/16 v0, 0x4eea
 
-    iget v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mUIState:I
+    iget v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIState:I
 
     if-ne v0, v1, :cond_1
 
@@ -1772,7 +1772,7 @@
 
     .line 672
     :cond_1
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     if-eqz v0, :cond_0
 
@@ -1781,12 +1781,12 @@
     if-eqz v0, :cond_0
 
     .line 675
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     .line 677
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v0}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->getCachedPhotoList()Ljava/util/List;
 
@@ -1797,7 +1797,7 @@
     .line 679
     iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mImageProvider:Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;
 
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;->setAdapterList(Ljava/util/List;)V
 
@@ -1855,7 +1855,7 @@
     .line 701
     const/16 v1, 0x4f4d
 
-    iget v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mUIScrollState:I
+    iget v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIScrollState:I
 
     if-ne v1, v2, :cond_0
 
@@ -1918,7 +1918,7 @@
 
     .line 887
     .local v0, nIndex:I
-    iget v1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mFirstVisibleIndex:I
+    iget v1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mFirstVisibleIndex:I
 
     const/4 v2, 0x1
 
@@ -1935,7 +1935,7 @@
     const/4 v5, 0x1
 
     .line 767
-    iget v3, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mUIScrollState:I
+    iget v3, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIScrollState:I
 
     if-nez v3, :cond_0
 
@@ -1959,7 +1959,7 @@
     if-ne v3, p1, :cond_2
 
     .line 775
-    iget v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mFirstVisibleIndex:I
+    iget v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mFirstVisibleIndex:I
 
     .line 779
     :goto_1
@@ -2017,7 +2017,7 @@
 
     .line 795
     :cond_3
-    iget v3, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mFirstVisibleIndex:I
+    iget v3, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mFirstVisibleIndex:I
 
     invoke-virtual {p0, v3, v5}, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->setCenteredVisibleRange(IZ)V
 
@@ -2079,7 +2079,7 @@
 
     .prologue
     .line 723
-    iput p1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mFirstVisibleIndex:I
+    iput p1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mFirstVisibleIndex:I
 
     .line 724
     return-void
@@ -2129,7 +2129,7 @@
     const/4 v2, 0x2
 
     .line 727
-    iget v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mUIScrollState:I
+    iget v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIScrollState:I
 
     if-eq p1, v0, :cond_0
 
@@ -2144,13 +2144,13 @@
 
     .line 733
     :cond_1
-    iput p1, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mUIScrollState:I
+    iput p1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIScrollState:I
 
     .line 734
-    iput p2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mFirstVisibleIndex:I
+    iput p2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mFirstVisibleIndex:I
 
     .line 741
-    iget v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mUIScrollState:I
+    iget v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIScrollState:I
 
     if-nez v0, :cond_3
 
@@ -2253,7 +2253,7 @@
     .line 480
     const/16 v0, 0x4f4c
 
-    iput v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mUIScrollState:I
+    iput v0, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mUIScrollState:I
 
     .line 481
     iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mImageProvider:Lcom/htc/opensense/album/SocialNetworkManager/ImageProvider;
@@ -2330,7 +2330,7 @@
     if-eqz v2, :cond_0
 
     .line 420
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     const-string v3, "service_name"
 
@@ -2351,7 +2351,7 @@
     if-eqz v2, :cond_1
 
     .line 423
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v2, v2, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mUserIds:Ljava/util/ArrayList;
 
@@ -2374,7 +2374,7 @@
     if-eqz v2, :cond_2
 
     .line 426
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     const-string v3, "album_name"
 
@@ -2395,7 +2395,7 @@
     if-eqz v2, :cond_3
 
     .line 429
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v2, v2, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumIds:Ljava/util/ArrayList;
 
@@ -2418,7 +2418,7 @@
     if-eqz v2, :cond_4
 
     .line 432
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v2, v2, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mMediumIds:Ljava/util/ArrayList;
 
@@ -2444,7 +2444,7 @@
 
     move-result-object v3
 
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v4, v4, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumName:Ljava/lang/String;
 
@@ -2471,7 +2471,7 @@
 
     move-result-object v2
 
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v4, v4, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mServiceName:Ljava/lang/String;
 
@@ -2485,7 +2485,7 @@
 
     move-result-object v4
 
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v2, v2, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mAlbumIds:Ljava/util/ArrayList;
 
@@ -2506,9 +2506,9 @@
     invoke-static {v3, v2}, Lcom/htc/opensense/album/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 437
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
+    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mServiceInfo:Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;
 
     iget-object v3, v3, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork$ServiceInfo;->mServiceName:Ljava/lang/String;
 
@@ -2527,7 +2527,7 @@
     if-ne v7, v2, :cond_5
 
     .line 439
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v2}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->isAccountActive()Z
 
@@ -2554,7 +2554,7 @@
 
     .line 446
     :cond_6
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v2}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->isExistingAccount()Z
 
@@ -2563,7 +2563,7 @@
     if-ne v7, v2, :cond_8
 
     .line 448
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v2}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->isAccountStatusChanged()Z
 
@@ -2597,12 +2597,12 @@
     invoke-static {v2, v3}, Lcom/htc/opensense/album/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 460
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v2}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->syncActiveAccount()V
 
     .line 461
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
+    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mSNManager:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
     invoke-virtual {v2, v7, v6}, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;->InitConnection(ZZ)Z
 
@@ -2679,7 +2679,7 @@
 
     .line 907
     .restart local v2       #wrapper:Lcom/htc/opensense/album/SocialNetworkManager/WrapperPhoto;
-    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;->mList:Ljava/util/ArrayList;
+    iget-object v3, p0, Lcom/htc/opensense/album/SocialNetworkManager/AdapterBaseSocialNetwork;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 

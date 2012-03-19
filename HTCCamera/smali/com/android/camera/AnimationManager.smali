@@ -27,7 +27,7 @@
 
     .prologue
     .line 14
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 210
     return-void
@@ -572,10 +572,10 @@
     .line 181
     .local v0, anim:Landroid/view/animation/Animation;
     :goto_0
-    invoke-virtual {v0, p2, p3}, Landroid/view/animation/Animation;->setStartOffset(J)V
+    invoke-virtual {v0, p2, p3}, Landroid/view/animation/TranslateAnimation;->setStartOffset(J)V
 
     .line 182
-    invoke-virtual {v0, p4, p5}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, p4, p5}, Landroid/view/animation/TranslateAnimation;->setDuration(J)V
 
     .line 183
     invoke-virtual {p0, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
@@ -695,10 +695,10 @@
     .line 155
     .local v0, anim:Landroid/view/animation/Animation;
     :goto_0
-    invoke-virtual {v0, p2, p3}, Landroid/view/animation/Animation;->setStartOffset(J)V
+    invoke-virtual {v0, p2, p3}, Landroid/view/animation/TranslateAnimation;->setStartOffset(J)V
 
     .line 156
-    invoke-virtual {v0, p4, p5}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, p4, p5}, Landroid/view/animation/TranslateAnimation;->setDuration(J)V
 
     .line 157
     invoke-virtual {p0, v0}, Landroid/view/View;->setAnimation(Landroid/view/animation/Animation;)V

@@ -793,7 +793,7 @@
 
     .line 105
     .local v5, params:Landroid/view/WindowManager$LayoutParams;
-    iput v8, v5, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v8, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 106
     iput v8, v5, Landroid/view/WindowManager$LayoutParams;->height:I

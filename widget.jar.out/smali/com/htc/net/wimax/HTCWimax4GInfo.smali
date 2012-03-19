@@ -479,7 +479,7 @@
 
     invoke-direct {v0}, Lcom/htc/net/wimax/HTCWimax4GBaseStationInfo;-><init>()V
 
-    iput-object v0, p0, Lcom/htc/net/wimax/HTCWimax4GInfo;->bsInfoServing:Lcom/htc/net/wimax/Wimax4GBaseStationInfo;
+    iput-object v0, p0, Lcom/htc/net/wimax/Wimax4GInfo;->bsInfoServing:Lcom/htc/net/wimax/Wimax4GBaseStationInfo;
 
     .line 169
     new-instance v0, Lcom/htc/net/wimax/HTCWimax4GBaseStationInfo;
@@ -528,7 +528,7 @@
 
     invoke-direct {v0}, Lcom/htc/net/wimax/HTCWimax4GBaseStationInfo;-><init>()V
 
-    iput-object v0, p0, Lcom/htc/net/wimax/HTCWimax4GInfo;->bsInfoServing:Lcom/htc/net/wimax/Wimax4GBaseStationInfo;
+    iput-object v0, p0, Lcom/htc/net/wimax/Wimax4GInfo;->bsInfoServing:Lcom/htc/net/wimax/Wimax4GBaseStationInfo;
 
     .line 359
     new-instance v0, Lcom/htc/net/wimax/HTCWimax4GBaseStationInfo;
@@ -568,7 +568,7 @@
     iput-object v0, p0, Lcom/htc/net/wimax/HTCWimax4GInfo;->ktWiBroState:Lcom/htc/net/wimax/HTCWimax4GInfo$KT_WIBRO_STATE;
 
     .line 299
-    iget-object v0, p0, Lcom/htc/net/wimax/HTCWimax4GInfo;->bsInfoServing:Lcom/htc/net/wimax/Wimax4GBaseStationInfo;
+    iget-object v0, p0, Lcom/htc/net/wimax/Wimax4GInfo;->bsInfoServing:Lcom/htc/net/wimax/Wimax4GBaseStationInfo;
 
     invoke-virtual {v0}, Lcom/htc/net/wimax/Wimax4GBaseStationInfo;->clear()V
 
@@ -582,7 +582,7 @@
 
     invoke-direct {v0}, Lcom/htc/net/wimax/HTCWimax4GBaseStationInfo;-><init>()V
 
-    iput-object v0, p0, Lcom/htc/net/wimax/HTCWimax4GInfo;->bsInfoServing:Lcom/htc/net/wimax/Wimax4GBaseStationInfo;
+    iput-object v0, p0, Lcom/htc/net/wimax/Wimax4GInfo;->bsInfoServing:Lcom/htc/net/wimax/Wimax4GBaseStationInfo;
 
     .line 304
     new-instance v0, Lcom/htc/net/wimax/HTCWimax4GBaseStationInfo;

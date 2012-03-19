@@ -40,7 +40,7 @@
 
     iput-object p3, p0, Lcom/htc/widget/HtcAbsListView2$1;->val$performClick:Lcom/htc/widget/HtcAbsListView2$PerformClick;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -66,7 +66,7 @@
     .line 2431
     iget-object v0, p0, Lcom/htc/widget/HtcAbsListView2$1;->this$0:Lcom/htc/widget/HtcAbsListView2;
 
-    iget-boolean v0, v0, Lcom/htc/widget/HtcAbsListView2;->mDataChanged:Z
+    iget-boolean v0, v0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     if-nez v0, :cond_0
 

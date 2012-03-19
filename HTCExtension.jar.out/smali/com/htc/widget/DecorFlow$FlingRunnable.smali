@@ -38,7 +38,7 @@
     .line 1512
     iput-object p1, p0, Lcom/htc/widget/DecorFlow$FlingRunnable;->this$0:Lcom/htc/widget/DecorFlow;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1513
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
@@ -359,7 +359,7 @@
     .line 1640
     iget-object v5, p0, Lcom/htc/widget/DecorFlow$FlingRunnable;->this$0:Lcom/htc/widget/DecorFlow;
 
-    iget v5, v5, Lcom/htc/widget/DecorFlow;->mItemCount:I
+    iget v5, v5, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     if-nez v5, :cond_0
 
@@ -409,7 +409,7 @@
 
     iget-object v6, p0, Lcom/htc/widget/DecorFlow$FlingRunnable;->this$0:Lcom/htc/widget/DecorFlow;
 
-    iget v6, v6, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iget v6, v6, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     #setter for: Lcom/htc/widget/DecorFlow;->mDownTouchPosition:I
     invoke-static {v5, v6}, Lcom/htc/widget/DecorFlow;->access$1202(Lcom/htc/widget/DecorFlow;I)I
@@ -423,7 +423,7 @@
 
     iget-object v6, p0, Lcom/htc/widget/DecorFlow$FlingRunnable;->this$0:Lcom/htc/widget/DecorFlow;
 
-    #getter for: Lcom/htc/widget/DecorFlow;->mPaddingLeft:I
+    #getter for: Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
     invoke-static {v6}, Lcom/htc/widget/DecorFlow;->access$1300(Lcom/htc/widget/DecorFlow;)I
 
     move-result v6
@@ -432,7 +432,7 @@
 
     iget-object v6, p0, Lcom/htc/widget/DecorFlow$FlingRunnable;->this$0:Lcom/htc/widget/DecorFlow;
 
-    #getter for: Lcom/htc/widget/DecorFlow;->mPaddingRight:I
+    #getter for: Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
     invoke-static {v6}, Lcom/htc/widget/DecorFlow;->access$1400(Lcom/htc/widget/DecorFlow;)I
 
     move-result v6
@@ -489,7 +489,7 @@
 
     iget-object v6, p0, Lcom/htc/widget/DecorFlow$FlingRunnable;->this$0:Lcom/htc/widget/DecorFlow;
 
-    iget v6, v6, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iget v6, v6, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     add-int/2addr v6, v2
 
@@ -505,7 +505,7 @@
 
     iget-object v6, p0, Lcom/htc/widget/DecorFlow$FlingRunnable;->this$0:Lcom/htc/widget/DecorFlow;
 
-    #getter for: Lcom/htc/widget/DecorFlow;->mPaddingRight:I
+    #getter for: Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
     invoke-static {v6}, Lcom/htc/widget/DecorFlow;->access$1500(Lcom/htc/widget/DecorFlow;)I
 
     move-result v6
@@ -514,7 +514,7 @@
 
     iget-object v6, p0, Lcom/htc/widget/DecorFlow$FlingRunnable;->this$0:Lcom/htc/widget/DecorFlow;
 
-    #getter for: Lcom/htc/widget/DecorFlow;->mPaddingLeft:I
+    #getter for: Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
     invoke-static {v6}, Lcom/htc/widget/DecorFlow;->access$1600(Lcom/htc/widget/DecorFlow;)I
 
     move-result v6

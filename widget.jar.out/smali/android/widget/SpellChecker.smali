@@ -59,7 +59,7 @@
     const/4 v2, 0x0
 
     .line 87
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 73
     new-array v1, v2, [Landroid/widget/SpellChecker$SpellParser;

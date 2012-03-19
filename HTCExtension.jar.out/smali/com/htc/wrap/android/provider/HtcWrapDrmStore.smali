@@ -399,7 +399,7 @@
 
     .prologue
     .line 66
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 410
     return-void
@@ -666,7 +666,7 @@
     .local v12, fis:Ljava/io/InputStream;
     new-instance v9, Landroid/drm/mobile1/DrmRawContent;
 
-    invoke-virtual {v12}, Ljava/io/InputStream;->available()I
+    invoke-virtual {v12}, Ljava/io/FileInputStream;->available()I
 
     move-result v2
 
@@ -690,7 +690,7 @@
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 5883
-    invoke-virtual {v12}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v12}, Ljava/io/FileInputStream;->close()V
 
     .line 5884
     const/4 v2, 0x0
@@ -713,7 +713,7 @@
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 5889
-    invoke-virtual {v12}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v12}, Ljava/io/FileInputStream;->close()V
 
     .line 5890
     const/4 v2, 0x0
@@ -890,7 +890,7 @@
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 5950
-    invoke-virtual {v12}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v12}, Ljava/io/FileInputStream;->close()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
@@ -15082,7 +15082,7 @@
     .local v24, fis:Ljava/io/InputStream;
     new-instance v11, Landroid/drm/mobile1/DrmRawContent;
 
-    invoke-virtual/range {v24 .. v24}, Ljava/io/InputStream;->available()I
+    invoke-virtual/range {v24 .. v24}, Ljava/io/FileInputStream;->available()I
 
     move-result v3
 
@@ -16747,7 +16747,7 @@
     .restart local v27       #res:Lcom/htc/wrap/android/provider/HtcWrapDrmStore$DrmConstraint;
     :goto_2
     :try_start_3
-    invoke-virtual/range {v22 .. v22}, Ljava/io/InputStream;->close()V
+    invoke-virtual/range {v22 .. v22}, Ljava/io/FileInputStream;->close()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
@@ -17473,7 +17473,7 @@
     .end local v32           #rc:Landroid/content/res/Resources;
     .end local v35           #tv:Landroid/widget/TextView;
     :cond_6
-    invoke-virtual/range {v24 .. v24}, Ljava/io/InputStream;->close()V
+    invoke-virtual/range {v24 .. v24}, Ljava/io/FileInputStream;->close()V
 
     .line 4985
     if-eqz v33, :cond_9
@@ -18374,7 +18374,7 @@
     .line 5182
     .end local v31           #rightsIssuer:Ljava/lang/String;
     :cond_5
-    invoke-virtual/range {v23 .. v23}, Ljava/io/InputStream;->close()V
+    invoke-virtual/range {v23 .. v23}, Ljava/io/FileInputStream;->close()V
 
     .line 5184
     if-eqz v30, :cond_14
@@ -24210,7 +24210,7 @@
     .local v11, fis:Ljava/io/InputStream;
     new-instance v8, Landroid/drm/mobile1/DrmRawContent;
 
-    invoke-virtual {v11}, Ljava/io/InputStream;->available()I
+    invoke-virtual {v11}, Ljava/io/FileInputStream;->available()I
 
     move-result v1
 
@@ -24224,7 +24224,7 @@
 
     .line 5805
     .local v13, issuer:Ljava/lang/String;
-    invoke-virtual {v11}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v11}, Ljava/io/FileInputStream;->close()V
 
     .line 5806
     if-nez v13, :cond_5
@@ -24237,7 +24237,7 @@
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 5810
-    invoke-virtual {v11}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v11}, Ljava/io/FileInputStream;->close()V
 
     .line 5811
     const/4 v1, -0x7
@@ -24529,7 +24529,7 @@
     .local v11, fis:Ljava/io/InputStream;
     new-instance v8, Landroid/drm/mobile1/DrmRawContent;
 
-    invoke-virtual {v11}, Ljava/io/InputStream;->available()I
+    invoke-virtual {v11}, Ljava/io/FileInputStream;->available()I
 
     move-result v1
 
@@ -24553,7 +24553,7 @@
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 6018
-    invoke-virtual {v11}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v11}, Ljava/io/FileInputStream;->close()V
 
     .line 6019
     const/16 v1, -0x9
@@ -24576,7 +24576,7 @@
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 6024
-    invoke-virtual {v11}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v11}, Ljava/io/FileInputStream;->close()V
 
     .line 6025
     const/16 v1, -0x9
@@ -24730,7 +24730,7 @@
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 6083
-    invoke-virtual {v11}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v11}, Ljava/io/FileInputStream;->close()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 

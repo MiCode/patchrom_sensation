@@ -690,7 +690,7 @@
 
     .prologue
     .line 485
-    iget v1, p0, Landroid/widget/ExpandableListView;->mItemCount:I
+    iget v1, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     invoke-virtual {p0}, Landroid/widget/ExpandableListView;->getFooterViewsCount()I
 
@@ -859,7 +859,7 @@
     .local v18, saveCount:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mGroupFlags:I
+    iget v0, v0, Landroid/widget/AbsListView;->mGroupFlags:I
 
     move/from16 v22, v0
 
@@ -888,7 +888,7 @@
     .line 241
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mScrollX:I
+    iget v0, v0, Landroid/widget/AbsListView;->mScrollX:I
 
     move/from16 v19, v0
 
@@ -896,7 +896,7 @@
     .local v19, scrollX:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mScrollY:I
+    iget v0, v0, Landroid/widget/AbsListView;->mScrollY:I
 
     move/from16 v20, v0
 
@@ -904,7 +904,7 @@
     .local v20, scrollY:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mPaddingLeft:I
+    iget v0, v0, Landroid/widget/AbsListView;->mPaddingLeft:I
 
     move/from16 v22, v0
 
@@ -912,7 +912,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mPaddingTop:I
+    iget v0, v0, Landroid/widget/AbsListView;->mPaddingTop:I
 
     move/from16 v23, v0
 
@@ -920,7 +920,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mRight:I
+    iget v0, v0, Landroid/widget/AdapterView;->mRight:I
 
     move/from16 v24, v0
 
@@ -928,7 +928,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mLeft:I
+    iget v0, v0, Landroid/widget/AdapterView;->mLeft:I
 
     move/from16 v25, v0
 
@@ -936,7 +936,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mPaddingRight:I
+    iget v0, v0, Landroid/widget/AbsListView;->mPaddingRight:I
 
     move/from16 v25, v0
 
@@ -944,7 +944,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mBottom:I
+    iget v0, v0, Landroid/widget/AdapterView;->mBottom:I
 
     move/from16 v25, v0
 
@@ -952,7 +952,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mTop:I
+    iget v0, v0, Landroid/widget/AdapterView;->mTop:I
 
     move/from16 v26, v0
 
@@ -960,7 +960,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mPaddingBottom:I
+    iget v0, v0, Landroid/widget/AbsListView;->mPaddingBottom:I
 
     move/from16 v26, v0
 
@@ -990,7 +990,7 @@
     .local v9, headerViewsCount:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mItemCount:I
+    iget v0, v0, Landroid/widget/AdapterView;->mItemCount:I
 
     move/from16 v22, v0
 
@@ -1008,7 +1008,7 @@
     .local v14, lastChildFlPos:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mBottom:I
+    iget v0, v0, Landroid/widget/AdapterView;->mBottom:I
 
     move/from16 v16, v0
 
@@ -1035,7 +1035,7 @@
     .local v10, i:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mFirstPosition:I
+    iget v0, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     move/from16 v22, v0
 
@@ -1240,7 +1240,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mPaddingLeft:I
+    iget v0, v0, Landroid/widget/AbsListView;->mPaddingLeft:I
 
     move/from16 v23, v0
 
@@ -1257,7 +1257,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/ExpandableListView;->mPaddingLeft:I
+    iget v0, v0, Landroid/widget/AbsListView;->mPaddingLeft:I
 
     move/from16 v23, v0
 
@@ -1297,7 +1297,7 @@
     .line 310
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Landroid/widget/ExpandableListView;->mStackFromBottom:Z
+    iget-boolean v0, v0, Landroid/widget/AbsListView;->mStackFromBottom:Z
 
     move/from16 v22, v0
 
@@ -1405,7 +1405,7 @@
 
     .prologue
     .line 390
-    iget v4, p0, Landroid/widget/ExpandableListView;->mFirstPosition:I
+    iget v4, p0, Landroid/widget/AdapterView;->mFirstPosition:I
 
     add-int v2, p3, v4
 

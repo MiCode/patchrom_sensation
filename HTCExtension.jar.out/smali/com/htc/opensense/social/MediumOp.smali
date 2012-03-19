@@ -305,7 +305,7 @@
 
     .line 160
     :cond_0
-    iget-object v2, p0, Lcom/htc/opensense/social/MediumOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v2, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     iget-object v3, p0, Lcom/htc/opensense/social/MediumOp;->mMedium:Lcom/htc/opensense/social/data/Medium;
 
@@ -367,7 +367,7 @@
     .line 173
     .local v2, modified:Landroid/os/Bundle;
     :try_start_0
-    iget-object v3, p0, Lcom/htc/opensense/social/MediumOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v3, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     iget-object v4, p0, Lcom/htc/opensense/social/MediumOp;->mMedium:Lcom/htc/opensense/social/data/Medium;
 
@@ -454,7 +454,7 @@
     .line 114
     .local v7, media:[Lcom/htc/opensense/social/data/Medium;
     :try_start_0
-    iget-object v0, p0, Lcom/htc/opensense/social/MediumOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v0, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     const/4 v1, 0x1
 

@@ -876,7 +876,7 @@
     .line 246
     iget v1, p0, Lcom/htc/widget/HeaderBarInput;->iPadding:I
 
-    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->rightMargin:I
+    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     .line 248
     iget-object v1, p0, Lcom/htc/widget/HeaderBarInput;->progressBar:Landroid/widget/ProgressBar;
@@ -906,7 +906,7 @@
     invoke-virtual {v0, v4, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
     .line 257
-    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->rightMargin:I
+    iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     .line 259
     iget-object v1, p0, Lcom/htc/widget/HeaderBarInput;->progressBar:Landroid/widget/ProgressBar;

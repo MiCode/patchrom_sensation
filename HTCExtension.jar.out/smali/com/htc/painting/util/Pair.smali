@@ -50,7 +50,7 @@
     .local p0, this:Lcom/htc/painting/util/Pair;,"Lcom/htc/painting/util/Pair<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 13
     iput-object p1, p0, Lcom/htc/painting/util/Pair;->mKey:Ljava/lang/Object;

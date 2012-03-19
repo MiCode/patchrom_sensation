@@ -165,7 +165,7 @@
     const/high16 v1, 0x3f80
 
     .line 199
-    iget-object v2, p0, Lcom/android/camera/component/ReviewAnimation;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v3, "showReviewAnimation - Start"
 
@@ -304,7 +304,7 @@
     invoke-virtual {v9, v1}, Landroid/view/animation/AnimationSet;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
     .line 238
-    iget-object v1, p0, Lcom/android/camera/component/ReviewAnimation;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "showReviewAnimation - end"
 

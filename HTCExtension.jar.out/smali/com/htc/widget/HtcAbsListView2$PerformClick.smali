@@ -50,7 +50,7 @@
     .line 1906
     iget-object v0, p0, Lcom/htc/widget/HtcAbsListView2$PerformClick;->this$0:Lcom/htc/widget/HtcAbsListView2;
 
-    iget-boolean v0, v0, Lcom/htc/widget/HtcAbsListView2;->mDataChanged:Z
+    iget-boolean v0, v0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     if-eqz v0, :cond_1
 
@@ -69,7 +69,7 @@
 
     iget-object v0, p0, Lcom/htc/widget/HtcAbsListView2$PerformClick;->this$0:Lcom/htc/widget/HtcAbsListView2;
 
-    iget v0, v0, Lcom/htc/widget/HtcAbsListView2;->mItemCount:I
+    iget v0, v0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     if-lez v0, :cond_0
 

@@ -125,7 +125,7 @@
     const/4 v3, 0x1
 
     .line 99
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 40
     const/16 v0, 0x11

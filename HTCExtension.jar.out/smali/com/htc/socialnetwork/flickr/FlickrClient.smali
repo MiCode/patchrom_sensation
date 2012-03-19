@@ -53,7 +53,7 @@
 
     .line 47
     .local v0, metrics:Landroid/util/DisplayMetrics;
-    iget-object v2, p0, Lcom/htc/socialnetwork/flickr/FlickrClient;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/htc/socialnetwork/SocialNetworkClient;->mContext:Landroid/content/Context;
 
     const-string v3, "window"
 
@@ -1214,11 +1214,11 @@
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 116
-    iget v1, p0, Lcom/htc/socialnetwork/flickr/FlickrClient;->mDisplayWidth:I
+    iget v1, p0, Lcom/htc/socialnetwork/SocialNetworkClient;->mDisplayWidth:I
 
     if-eq v1, v3, :cond_0
 
-    iget v1, p0, Lcom/htc/socialnetwork/flickr/FlickrClient;->mDisplayHeight:I
+    iget v1, p0, Lcom/htc/socialnetwork/SocialNetworkClient;->mDisplayHeight:I
 
     if-ne v1, v3, :cond_1
 
@@ -1234,9 +1234,9 @@
 
     .line 118
     :cond_1
-    iget v1, p0, Lcom/htc/socialnetwork/flickr/FlickrClient;->mDisplayWidth:I
+    iget v1, p0, Lcom/htc/socialnetwork/SocialNetworkClient;->mDisplayWidth:I
 
-    iget v2, p0, Lcom/htc/socialnetwork/flickr/FlickrClient;->mDisplayHeight:I
+    iget v2, p0, Lcom/htc/socialnetwork/SocialNetworkClient;->mDisplayHeight:I
 
     invoke-static {v1, v2}, Lcom/htc/socialnetwork/flickr/Flickr;->setPhotoype(II)V
 
@@ -2073,7 +2073,7 @@
 
     .line 297
     .local v0, e:Lcom/htc/socialnetwork/AuthenticationException;
-    iget-object v1, p0, Lcom/htc/socialnetwork/flickr/FlickrClient;->mDataHelper:Lcom/htc/socialnetwork/SocialNetworkDataHelper;
+    iget-object v1, p0, Lcom/htc/socialnetwork/SocialNetworkClient;->mDataHelper:Lcom/htc/socialnetwork/SocialNetworkDataHelper;
 
     invoke-virtual {v1}, Lcom/htc/socialnetwork/SocialNetworkDataHelper;->removeActiveAccount()Z
 
@@ -2153,7 +2153,7 @@
     .prologue
     .line 309
     :try_start_0
-    iget-object v2, p0, Lcom/htc/socialnetwork/flickr/FlickrClient;->mDataHelper:Lcom/htc/socialnetwork/SocialNetworkDataHelper;
+    iget-object v2, p0, Lcom/htc/socialnetwork/SocialNetworkClient;->mDataHelper:Lcom/htc/socialnetwork/SocialNetworkDataHelper;
 
     invoke-virtual {v2}, Lcom/htc/socialnetwork/SocialNetworkDataHelper;->getSessionToken()Ljava/lang/String;
 
@@ -2195,7 +2195,7 @@
 
     const-string v3, "auth_token"
 
-    iget-object v4, p0, Lcom/htc/socialnetwork/flickr/FlickrClient;->mDataHelper:Lcom/htc/socialnetwork/SocialNetworkDataHelper;
+    iget-object v4, p0, Lcom/htc/socialnetwork/SocialNetworkClient;->mDataHelper:Lcom/htc/socialnetwork/SocialNetworkDataHelper;
 
     invoke-virtual {v4}, Lcom/htc/socialnetwork/SocialNetworkDataHelper;->getSessionToken()Ljava/lang/String;
 

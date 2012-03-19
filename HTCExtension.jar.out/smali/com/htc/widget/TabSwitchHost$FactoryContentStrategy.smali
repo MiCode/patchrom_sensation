@@ -38,7 +38,7 @@
     .line 1114
     iput-object p1, p0, Lcom/htc/widget/TabSwitchHost$FactoryContentStrategy;->this$0:Lcom/htc/widget/TabSwitchHost;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1115
     iput-object p2, p0, Lcom/htc/widget/TabSwitchHost$FactoryContentStrategy;->mTag:Ljava/lang/CharSequence;

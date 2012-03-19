@@ -48,7 +48,7 @@
     .line 27
     .local p0, this:Landroid/util/SynchronizedPool;,"Landroid/util/SynchronizedPool<TT;>;"
     .local p1, pool:Landroid/util/Pool;,"Landroid/util/Pool<TT;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 28
     iput-object p1, p0, Landroid/util/SynchronizedPool;->mPool:Landroid/util/Pool;
@@ -78,7 +78,7 @@
     .line 32
     .local p0, this:Landroid/util/SynchronizedPool;,"Landroid/util/SynchronizedPool<TT;>;"
     .local p1, pool:Landroid/util/Pool;,"Landroid/util/Pool<TT;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 33
     iput-object p1, p0, Landroid/util/SynchronizedPool;->mPool:Landroid/util/Pool;

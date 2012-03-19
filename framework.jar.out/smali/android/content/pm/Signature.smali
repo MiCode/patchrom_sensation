@@ -59,7 +59,7 @@
 
     .prologue
     .line 198
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 199
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
@@ -90,7 +90,7 @@
 
     .prologue
     .line 67
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 68
     invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
@@ -224,7 +224,7 @@
 
     .prologue
     .line 43
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 44
     invoke-virtual {p1}, [B->clone()Ljava/lang/Object;

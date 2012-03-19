@@ -72,7 +72,7 @@
 
     .prologue
     .line 67
-    iget-object v0, p0, Lcom/android/camera/actionscreen/RequestActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "onDoneClicked() - start"
 
@@ -98,7 +98,7 @@
     invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->returnRequestedMedia()V
 
     .line 76
-    iget-object v0, p0, Lcom/android/camera/actionscreen/RequestActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "onDoneClicked() - end"
 
@@ -112,7 +112,7 @@
 
     .prologue
     .line 120
-    iget-object v0, p0, Lcom/android/camera/actionscreen/RequestActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "onReCaptureClicked() - start"
 
@@ -145,7 +145,7 @@
     invoke-virtual {p0, v0, v1}, Lcom/android/camera/actionscreen/RequestActionScreen;->close(IZ)V
 
     .line 132
-    iget-object v0, p0, Lcom/android/camera/actionscreen/RequestActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "onReCaptureClicked() - end"
 
@@ -295,7 +295,7 @@
     if-eqz v0, :cond_2
 
     .line 109
-    iget-object v0, p0, Lcom/android/camera/actionscreen/RequestActionScreen;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Media save failed"
 

@@ -123,7 +123,7 @@
 
     .prologue
     .line 99
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 100
     iput-wide p1, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
@@ -208,7 +208,7 @@
 
     .prologue
     .line 111
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 112
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
@@ -288,7 +288,7 @@
 
     .prologue
     .line 135
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 136
     invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I

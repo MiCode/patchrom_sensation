@@ -57,7 +57,7 @@
     .line 211
     iput-object p1, p0, Lcom/android/camera/ImageManager$BaseImage;->this$0:Lcom/android/camera/ImageManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 212
     iput-object p6, p0, Lcom/android/camera/ImageManager$BaseImage;->mContentResolver:Landroid/content/ContentResolver;

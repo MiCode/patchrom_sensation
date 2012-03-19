@@ -46,7 +46,7 @@
     const/4 v0, -0x1
 
     .line 147
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 148
     iput v0, p0, Landroid/content/res/StringBlock$StyleIDs;->boldId:I

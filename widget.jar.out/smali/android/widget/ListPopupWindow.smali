@@ -161,7 +161,7 @@
     const/4 v1, 0x0
 
     .line 192
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 61
     iput v0, p0, Landroid/widget/ListPopupWindow;->mDropDownHeight:I
@@ -606,11 +606,11 @@
 
     move-result v1
 
-    iget v2, v13, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
+    iget v2, v13, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     add-int/2addr v1, v2
 
-    iget v2, v13, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
+    iget v2, v13, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     add-int v18, v1, v2
 
@@ -827,11 +827,11 @@
 
     move-result v1
 
-    iget v2, v13, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
+    iget v2, v13, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     add-int/2addr v1, v2
 
-    iget v2, v13, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
+    iget v2, v13, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     add-int v18, v1, v2
 

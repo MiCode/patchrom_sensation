@@ -30,7 +30,7 @@
     .line 400
     iput-object p1, p0, Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager$ServiceConnectionListener;->this$0:Lcom/htc/opensense/album/SocialNetworkManager/AlbumSNManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

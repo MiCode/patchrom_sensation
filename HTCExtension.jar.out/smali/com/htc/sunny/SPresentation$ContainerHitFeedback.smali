@@ -31,7 +31,7 @@
     .line 2726
     iput-object p1, p0, Lcom/htc/sunny/SPresentation$ContainerHitFeedback;->this$0:Lcom/htc/sunny/SPresentation;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 2727
     const/4 v0, 0x0
@@ -70,7 +70,7 @@
     .local v0, vScale:Lcom/htc/sunny/Vector3F;
     iget-object v1, p0, Lcom/htc/sunny/SPresentation$ContainerHitFeedback;->this$0:Lcom/htc/sunny/SPresentation;
 
-    iget-object v1, v1, Lcom/htc/sunny/SPresentation;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, v1, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget-object v2, p0, Lcom/htc/sunny/SPresentation$ContainerHitFeedback;->mContainer:Lcom/htc/sunny/SPresentation$ItemContainer;
 
@@ -214,7 +214,7 @@
     .local v0, vScale:Lcom/htc/sunny/Vector3F;
     iget-object v1, p0, Lcom/htc/sunny/SPresentation$ContainerHitFeedback;->this$0:Lcom/htc/sunny/SPresentation;
 
-    iget-object v1, v1, Lcom/htc/sunny/SPresentation;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, v1, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget-object v2, p0, Lcom/htc/sunny/SPresentation$ContainerHitFeedback;->mContainer:Lcom/htc/sunny/SPresentation$ItemContainer;
 

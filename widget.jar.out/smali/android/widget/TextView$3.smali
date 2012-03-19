@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 9047
+    .line 9075
     iput-object p1, p0, Landroid/widget/TextView$3;->this$0:Landroid/widget/TextView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,12 +41,12 @@
     .locals 1
 
     .prologue
-    .line 9049
+    .line 9077
     iget-object v0, p0, Landroid/widget/TextView$3;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->hookIME()V
-    invoke-static {v0}, Landroid/widget/TextView;->access$2600(Landroid/widget/TextView;)V
+    invoke-static {v0}, Landroid/widget/TextView;->access$2700(Landroid/widget/TextView;)V
 
-    .line 9050
+    .line 9078
     return-void
 .end method

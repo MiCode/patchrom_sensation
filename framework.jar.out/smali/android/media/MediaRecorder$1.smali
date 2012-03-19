@@ -120,7 +120,7 @@
     invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     .line 684
-    invoke-virtual {v1, v2}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+    invoke-virtual {v1, v2}, Landroid/app/ContextImpl;->sendBroadcast(Landroid/content/Intent;)V
 
     goto :goto_0
 .end method

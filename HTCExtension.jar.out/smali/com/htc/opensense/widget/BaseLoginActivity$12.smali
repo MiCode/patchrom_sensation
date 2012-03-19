@@ -30,7 +30,7 @@
     .line 416
     iput-object p1, p0, Lcom/htc/opensense/widget/BaseLoginActivity$12;->this$0:Lcom/htc/opensense/widget/BaseLoginActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

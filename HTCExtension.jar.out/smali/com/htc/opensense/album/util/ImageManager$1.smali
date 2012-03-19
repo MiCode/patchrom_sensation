@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/htc/opensense/album/util/ImageManager$1;->val$finaluri:Landroid/net/Uri;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

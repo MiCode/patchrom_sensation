@@ -36,7 +36,7 @@
     .line 497
     iput-object p1, p0, Lcom/htc/opensense/album/util/ImageFileCacheManager$ThumbDBWorker$Parameter;->this$1:Lcom/htc/opensense/album/util/ImageFileCacheManager$ThumbDBWorker;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 498
     iput-object p2, p0, Lcom/htc/opensense/album/util/ImageFileCacheManager$ThumbDBWorker$Parameter;->fileName:Ljava/lang/String;

@@ -28,7 +28,7 @@
 
     .prologue
     .line 78
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 79
     iput p1, p0, Landroid/text/InputFilter$LengthFilter;->mMax:I

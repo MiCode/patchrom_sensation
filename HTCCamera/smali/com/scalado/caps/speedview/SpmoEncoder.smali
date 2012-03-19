@@ -156,12 +156,12 @@
 
     .line 526
     .local v2, decDims:Lcom/scalado/base/Size;
-    iget-object v9, p0, Lcom/scalado/caps/speedview/SpmoEncoder;->dimensions:Lcom/scalado/base/Size;
+    iget-object v9, p0, Lcom/scalado/caps/codec/encoder/JpegEncoder;->dimensions:Lcom/scalado/base/Size;
 
     if-nez v9, :cond_0
 
     .line 528
-    iput-object v2, p0, Lcom/scalado/caps/speedview/SpmoEncoder;->dimensions:Lcom/scalado/base/Size;
+    iput-object v2, p0, Lcom/scalado/caps/codec/encoder/JpegEncoder;->dimensions:Lcom/scalado/base/Size;
 
     .line 534
     :cond_0
@@ -214,7 +214,7 @@
 
     move-result v9
 
-    iget-object v10, p0, Lcom/scalado/caps/speedview/SpmoEncoder;->dimensions:Lcom/scalado/base/Size;
+    iget-object v10, p0, Lcom/scalado/caps/codec/encoder/JpegEncoder;->dimensions:Lcom/scalado/base/Size;
 
     invoke-virtual {v10}, Lcom/scalado/base/Size;->getWidth()I
 
@@ -226,7 +226,7 @@
 
     move-result v9
 
-    iget-object v10, p0, Lcom/scalado/caps/speedview/SpmoEncoder;->dimensions:Lcom/scalado/base/Size;
+    iget-object v10, p0, Lcom/scalado/caps/codec/encoder/JpegEncoder;->dimensions:Lcom/scalado/base/Size;
 
     invoke-virtual {v10}, Lcom/scalado/base/Size;->getHeight()I
 
@@ -378,7 +378,7 @@
     :goto_0
     new-instance v0, Lcom/scalado/caps/speedview/SpmoEncoder$JpegEncoderRenderIterator2;
 
-    iget-object v1, p0, Lcom/scalado/caps/speedview/SpmoEncoder;->dimensions:Lcom/scalado/base/Size;
+    iget-object v1, p0, Lcom/scalado/caps/codec/encoder/JpegEncoder;->dimensions:Lcom/scalado/base/Size;
 
     iget-object v2, p0, Lcom/scalado/caps/speedview/SpmoEncoder;->spmoCreateStep:Lcom/scalado/caps/speedview/SpmoEncoder$SpmoCreateIterator;
 

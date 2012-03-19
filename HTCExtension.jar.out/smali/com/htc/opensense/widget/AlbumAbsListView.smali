@@ -1284,12 +1284,12 @@
 
     .line 1689
     .local v6, handled:Z
-    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mOnItemLongClickListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOnItemLongClickListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemLongClickListener;
 
     if-eqz v0, :cond_0
 
     .line 1690
-    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mOnItemLongClickListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOnItemLongClickListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemLongClickListener;
 
     move-object v1, p0
 
@@ -1531,7 +1531,7 @@
     .line 1862
     iget v5, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mMotionPosition:I
 
-    iget v6, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int/2addr v5, v6
 
@@ -1597,7 +1597,7 @@
 
     .line 2246
     .local v2, count:I
-    iget v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 2247
     .local v3, firstPosition:I
@@ -1903,7 +1903,7 @@
     const/4 v7, 0x0
 
     .line 1022
-    iget v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 1023
     .local v2, firstPosition:I
@@ -1966,7 +1966,7 @@
 
     .line 1034
     :cond_1
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mItemCount:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     .line 1035
     .local v1, count:I
@@ -2029,7 +2029,7 @@
 
     if-eqz v0, :cond_0
 
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mItemCount:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     mul-int/lit8 v0, v0, 0x64
 
@@ -2043,7 +2043,7 @@
     return v0
 
     :cond_0
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mItemCount:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     goto :goto_0
 .end method
@@ -2129,11 +2129,11 @@
 
     add-int/2addr v6, v4
 
-    iget v7, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mRight:I
+    iget v7, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mRight:I
 
     add-int/2addr v7, v3
 
-    iget v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mLeft:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mLeft:I
 
     sub-int/2addr v7, v8
 
@@ -2141,11 +2141,11 @@
 
     sub-int/2addr v7, v8
 
-    iget v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mBottom:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mBottom:I
 
     add-int/2addr v8, v4
 
-    iget v9, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mTop:I
+    iget v9, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mTop:I
 
     sub-int/2addr v8, v9
 
@@ -2366,13 +2366,13 @@
     .line 1077
     .restart local v2       #fadeEdge:F
     :cond_1
-    iget v5, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int/2addr v5, v1
 
     add-int/lit8 v5, v5, -0x1
 
-    iget v6, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mItemCount:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v6, v6, -0x1
 
@@ -2608,18 +2608,18 @@
 
     .prologue
     .line 1167
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mItemCount:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-lez v0, :cond_0
 
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     if-ltz v0, :cond_0
 
     .line 1168
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int/2addr v0, v1
 
@@ -2735,7 +2735,7 @@
     .line 1060
     .restart local v1       #fadeEdge:F
     :cond_1
-    iget v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     if-lez v4, :cond_2
 
@@ -2808,19 +2808,19 @@
     const/4 v6, 0x0
 
     .line 2724
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mItemCount:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     .line 2725
     .local v0, count:I
     if-lez v0, :cond_a
 
     .line 2732
-    iget-boolean v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mNeedSync:Z
+    iget-boolean v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNeedSync:Z
 
     if-eqz v4, :cond_3
 
     .line 2734
-    iput-boolean v6, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mNeedSync:Z
+    iput-boolean v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNeedSync:Z
 
     .line 2736
     iget v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mTranscriptMode:I
@@ -2831,7 +2831,7 @@
 
     if-ne v4, v3, :cond_2
 
-    iget v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumAbsListView;->getChildCount()I
 
@@ -2839,7 +2839,7 @@
 
     add-int/2addr v4, v5
 
-    iget v5, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mOldItemCount:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOldItemCount:I
 
     if-lt v4, v5, :cond_2
 
@@ -2856,7 +2856,7 @@
 
     .line 2743
     :cond_2
-    iget v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSyncMode:I
+    iget v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSyncMode:I
 
     packed-switch v4, :pswitch_data_0
 
@@ -2916,7 +2916,7 @@
     iput v7, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mLayoutMode:I
 
     .line 2751
-    iget v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSyncPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSyncPosition:I
 
     invoke-static {v6, v3}, Ljava/lang/Math;->max(II)I
 
@@ -2928,7 +2928,7 @@
 
     move-result v3
 
-    iput v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSyncPosition:I
+    iput v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSyncPosition:I
 
     goto :goto_0
 
@@ -2952,10 +2952,10 @@
     if-ne v2, v1, :cond_3
 
     .line 2763
-    iput v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSyncPosition:I
+    iput v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSyncPosition:I
 
     .line 2765
-    iget-wide v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSyncHeight:J
+    iget-wide v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSyncHeight:J
 
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumAbsListView;->getHeight()I
 
@@ -2989,7 +2989,7 @@
     iput v7, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mLayoutMode:I
 
     .line 2785
-    iget v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSyncPosition:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSyncPosition:I
 
     invoke-static {v6, v3}, Ljava/lang/Math;->max(II)I
 
@@ -3001,7 +3001,7 @@
 
     move-result v3
 
-    iput v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSyncPosition:I
+    iput v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSyncPosition:I
 
     goto :goto_0
 
@@ -3041,23 +3041,23 @@
     iput v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mLayoutMode:I
 
     .line 2829
-    iput v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iput v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     .line 2830
     const-wide/high16 v3, -0x8000
 
-    iput-wide v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedRowId:J
+    iput-wide v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedRowId:J
 
     .line 2831
-    iput v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mNextSelectedPosition:I
+    iput v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNextSelectedPosition:I
 
     .line 2832
     const-wide/high16 v3, -0x8000
 
-    iput-wide v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mNextSelectedRowId:J
+    iput-wide v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNextSelectedRowId:J
 
     .line 2833
-    iput-boolean v6, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mNeedSync:Z
+    iput-boolean v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNeedSync:Z
 
     .line 2834
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumAbsListView;->checkSelectionChanged()V
@@ -3089,28 +3089,28 @@
     const/4 v2, -0x1
 
     .line 2567
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     if-eq v0, v2, :cond_1
 
     .line 2568
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     iput v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mResurrectToPosition:I
 
     .line 2569
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mNextSelectedPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNextSelectedPosition:I
 
     if-ltz v0, :cond_0
 
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mNextSelectedPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNextSelectedPosition:I
 
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     if-eq v0, v1, :cond_0
 
     .line 2570
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mNextSelectedPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNextSelectedPosition:I
 
     iput v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mResurrectToPosition:I
 
@@ -3143,7 +3143,7 @@
     .line 2606
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataChanged:Z
+    iput-boolean v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     .line 2607
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumAbsListView;->rememberSyncState()V
@@ -3170,13 +3170,13 @@
     .line 614
     iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mOnScrollListener:Lcom/htc/opensense/widget/AlbumAbsListView$OnScrollListener;
 
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumAbsListView;->getChildCount()I
 
     move-result v2
 
-    iget v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mItemCount:I
+    iget v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     invoke-interface {v0, p0, v1, v2, v3}, Lcom/htc/opensense/widget/AlbumAbsListView$OnScrollListener;->onScroll(Lcom/htc/opensense/widget/AlbumAbsListView;III)V
 
@@ -3294,9 +3294,9 @@
     if-nez v5, :cond_1
 
     .line 1428
-    iget v5, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iget v6, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int/2addr v5, v6
 
@@ -3367,7 +3367,7 @@
     :goto_1
     if-eqz v1, :cond_1
 
-    iget-boolean v5, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataChanged:Z
+    iget-boolean v5, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     if-nez v5, :cond_1
 
@@ -3657,7 +3657,7 @@
 
     .prologue
     .line 3171
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     if-gez v0, :cond_0
 
@@ -3723,7 +3723,7 @@
     .line 950
     if-eqz p1, :cond_0
 
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     if-gez v0, :cond_0
 
@@ -3847,7 +3847,7 @@
     if-ltz v1, :cond_1
 
     .line 2207
-    iget v6, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int v6, v1, v6
 
@@ -3969,7 +3969,7 @@
 
     if-eqz v1, :cond_0
 
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     if-ltz v1, :cond_0
 
@@ -3977,7 +3977,7 @@
 
     if-eqz v1, :cond_0
 
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     iget-object v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
@@ -3988,9 +3988,9 @@
     if-ge v1, v2, :cond_0
 
     .line 1738
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iget v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int/2addr v1, v2
 
@@ -4003,9 +4003,9 @@
     if-eqz v0, :cond_1
 
     .line 1740
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
-    iget-wide v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedRowId:J
+    iget-wide v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedRowId:J
 
     invoke-virtual {p0, v0, v1, v2, v3}, Lcom/htc/opensense/widget/AlbumAbsListView;->performItemClick(Landroid/view/View;IJ)Z
 
@@ -4046,7 +4046,7 @@
     .line 1104
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mInLayout:Z
+    iput-boolean v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mInLayout:Z
 
     .line 1105
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumAbsListView;->layoutChildren()V
@@ -4054,7 +4054,7 @@
     .line 1106
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mInLayout:Z
+    iput-boolean v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mInLayout:Z
 
     .line 1107
     return-void
@@ -4144,14 +4144,14 @@
     invoke-super {p0, v1}, Lcom/htc/opensense/widget/AlbumAdapterView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     .line 874
-    iput-boolean v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataChanged:Z
+    iput-boolean v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     .line 876
     iget v1, v0, Lcom/htc/opensense/widget/AlbumAbsListView$SavedState;->height:I
 
     int-to-long v1, v1
 
-    iput-wide v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSyncHeight:J
+    iput-wide v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSyncHeight:J
 
     .line 878
     iget-wide v1, v0, Lcom/htc/opensense/widget/AlbumAbsListView$SavedState;->selectedId:J
@@ -4161,27 +4161,27 @@
     if-ltz v1, :cond_1
 
     .line 879
-    iput-boolean v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mNeedSync:Z
+    iput-boolean v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNeedSync:Z
 
     .line 880
     iget-wide v1, v0, Lcom/htc/opensense/widget/AlbumAbsListView$SavedState;->selectedId:J
 
-    iput-wide v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSyncRowId:J
+    iput-wide v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSyncRowId:J
 
     .line 881
     iget v1, v0, Lcom/htc/opensense/widget/AlbumAbsListView$SavedState;->position:I
 
-    iput v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSyncPosition:I
+    iput v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSyncPosition:I
 
     .line 882
     iget v1, v0, Lcom/htc/opensense/widget/AlbumAbsListView$SavedState;->viewTop:I
 
-    iput v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSpecificTop:I
+    iput v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSpecificTop:I
 
     .line 883
     const/4 v1, 0x0
 
-    iput v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSyncMode:I
+    iput v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSyncMode:I
 
     .line 895
     :cond_0
@@ -4211,25 +4211,25 @@
     invoke-virtual {p0, v4}, Lcom/htc/opensense/widget/AlbumAbsListView;->setNextSelectedPositionInt(I)V
 
     .line 888
-    iput-boolean v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mNeedSync:Z
+    iput-boolean v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNeedSync:Z
 
     .line 889
     iget-wide v1, v0, Lcom/htc/opensense/widget/AlbumAbsListView$SavedState;->firstId:J
 
-    iput-wide v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSyncRowId:J
+    iput-wide v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSyncRowId:J
 
     .line 890
     iget v1, v0, Lcom/htc/opensense/widget/AlbumAbsListView$SavedState;->position:I
 
-    iput v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSyncPosition:I
+    iput v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSyncPosition:I
 
     .line 891
     iget v1, v0, Lcom/htc/opensense/widget/AlbumAbsListView$SavedState;->viewTop:I
 
-    iput v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSpecificTop:I
+    iput v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSpecificTop:I
 
     .line 892
-    iput v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSyncMode:I
+    iput v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSyncMode:I
 
     goto :goto_0
 .end method
@@ -4374,14 +4374,14 @@
     iput v8, v4, Lcom/htc/opensense/widget/AlbumAbsListView$SavedState;->viewTop:I
 
     .line 846
-    iget v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     iput v8, v4, Lcom/htc/opensense/widget/AlbumAbsListView$SavedState;->position:I
 
     .line 847
     iget-object v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mAdapter:Landroid/widget/BaseAdapter;
 
-    iget v9, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v9, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     invoke-virtual {v8, v9}, Landroid/widget/BaseAdapter;->getItemId(I)J
 
@@ -4431,7 +4431,7 @@
     .line 1326
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataChanged:Z
+    iput-boolean v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     .line 1327
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumAbsListView;->rememberSyncState()V
@@ -4645,7 +4645,7 @@
     .local v13, motionPosition:I
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataChanged:Z
+    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     move/from16 v20, v0
 
@@ -4749,7 +4749,7 @@
     .line 1964
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     move/from16 v20, v0
 
@@ -4948,7 +4948,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     move/from16 v21, v0
 
@@ -5005,7 +5005,7 @@
     .line 2008
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     move/from16 v20, v0
 
@@ -5155,7 +5155,7 @@
     .restart local v13       #motionPosition:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     move/from16 v20, v0
 
@@ -5363,7 +5363,7 @@
     .line 2067
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataChanged:Z
+    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     move/from16 v20, v0
 
@@ -5546,7 +5546,7 @@
     :cond_16
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataChanged:Z
+    iget-boolean v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     move/from16 v20, v0
 
@@ -5705,7 +5705,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     move/from16 v21, v0
 
@@ -5935,7 +5935,7 @@
     if-ne v0, v2, :cond_2
 
     .line 1562
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     iput v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mResurrectToPosition:I
 
@@ -6057,7 +6057,7 @@
     if-eqz v4, :cond_1
 
     .line 1777
-    iget v4, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v4, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int/2addr v4, v3
 
@@ -6209,7 +6209,7 @@
 
     .prologue
     .line 2585
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSelectedPosition:I
 
     .line 2586
     .local v0, position:I
@@ -6227,7 +6227,7 @@
     move-result v0
 
     .line 2590
-    iget v1, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mItemCount:I
+    iget v1, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     add-int/lit8 v1, v1, -0x1
 
@@ -6272,11 +6272,11 @@
 
     .prologue
     .line 957
-    iget-boolean v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mBlockLayoutRequests:Z
+    iget-boolean v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mBlockLayoutRequests:Z
 
     if-nez v0, :cond_0
 
-    iget-boolean v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mInLayout:Z
+    iget-boolean v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mInLayout:Z
 
     if-nez v0, :cond_0
 
@@ -6328,21 +6328,21 @@
     invoke-virtual {p0}, Lcom/htc/opensense/widget/AlbumAbsListView;->removeAllViewsInLayout()V
 
     .line 967
-    iput v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iput v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 968
-    iput-boolean v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mDataChanged:Z
+    iput-boolean v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mDataChanged:Z
 
     .line 969
-    iput-boolean v2, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mNeedSync:Z
+    iput-boolean v2, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mNeedSync:Z
 
     .line 970
-    iput v3, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mOldSelectedPosition:I
+    iput v3, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOldSelectedPosition:I
 
     .line 971
     const-wide/high16 v0, -0x8000
 
-    iput-wide v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mOldSelectedRowId:J
+    iput-wide v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOldSelectedRowId:J
 
     .line 972
     invoke-virtual {p0, v3}, Lcom/htc/opensense/widget/AlbumAbsListView;->setSelectedPositionInt(I)V
@@ -6448,13 +6448,13 @@
     .local v5, childrenTop:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mBottom:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mBottom:I
 
     move/from16 v17, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mTop:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mTop:I
 
     move/from16 v18, v0
 
@@ -6478,7 +6478,7 @@
     .local v4, childrenBottom:I
     move-object/from16 v0, p0
 
-    iget v7, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v7, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 2636
     .local v7, firstPosition:I
@@ -6507,7 +6507,7 @@
     .local v12, selectedPos:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     move/from16 v17, v0
 
@@ -6584,7 +6584,7 @@
     .line 2708
     move-object/from16 v0, p0
 
-    iput v13, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mSpecificTop:I
+    iput v13, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mSpecificTop:I
 
     .line 2709
     move-object/from16 v0, p0
@@ -6737,7 +6737,7 @@
     :cond_7
     move-object/from16 v0, p0
 
-    iget v9, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mItemCount:I
+    iget v9, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     .line 2680
     .local v9, itemCount:I
@@ -7477,12 +7477,12 @@
 
     .line 1715
     .local v6, handled:Z
-    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mOnItemLongClickListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOnItemLongClickListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemLongClickListener;
 
     if-eqz v0, :cond_0
 
     .line 1716
-    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mOnItemLongClickListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mOnItemLongClickListener:Lcom/htc/opensense/widget/AlbumAdapterView$OnItemLongClickListener;
 
     move-object v1, p0
 
@@ -7497,7 +7497,7 @@
     if-nez v6, :cond_1
 
     .line 1720
-    iget v0, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v0, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     sub-int v0, v3, v0
 
@@ -7791,7 +7791,7 @@
     :cond_3
     move-object/from16 v0, p0
 
-    iget v9, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v9, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 2461
     .local v9, firstPosition:I
@@ -7838,7 +7838,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mItemCount:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     move/from16 v22, v0
 
@@ -7899,7 +7899,7 @@
     .local v12, headerViewsCount:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mItemCount:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     move/from16 v21, v0
 
@@ -7998,7 +7998,7 @@
 
     move-object/from16 v1, p0
 
-    iput-boolean v0, v1, Lcom/htc/opensense/widget/AlbumAbsListView;->mBlockLayoutRequests:Z
+    iput-boolean v0, v1, Lcom/htc/opensense/widget/AlbumAdapterView;->mBlockLayoutRequests:Z
 
     .line 2521
     move-object/from16 v0, p0
@@ -8020,7 +8020,7 @@
     .line 2525
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v0, v0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     move/from16 v21, v0
 
@@ -8030,7 +8030,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iput v0, v1, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     .line 2528
     :cond_7
@@ -8048,7 +8048,7 @@
 
     move-object/from16 v1, p0
 
-    iput-boolean v0, v1, Lcom/htc/opensense/widget/AlbumAbsListView;->mBlockLayoutRequests:Z
+    iput-boolean v0, v1, Lcom/htc/opensense/widget/AlbumAdapterView;->mBlockLayoutRequests:Z
 
     .line 2532
     invoke-virtual/range {p0 .. p0}, Lcom/htc/opensense/widget/AlbumAbsListView;->invokeOnItemScrollListener()V
@@ -8205,7 +8205,7 @@
     if-eqz v6, :cond_1
 
     .line 1134
-    iget v6, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     if-lez v6, :cond_4
 
@@ -8269,11 +8269,11 @@
 
     .line 1152
     .local v3, count:I
-    iget v6, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mFirstPosition:I
+    iget v6, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mFirstPosition:I
 
     add-int/2addr v6, v3
 
-    iget v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mItemCount:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mItemCount:I
 
     if-ge v6, v8, :cond_7
 
@@ -8299,7 +8299,7 @@
 
     move-result v6
 
-    iget v8, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mBottom:I
+    iget v8, p0, Lcom/htc/opensense/widget/AlbumAdapterView;->mBottom:I
 
     iget-object v9, p0, Lcom/htc/opensense/widget/AlbumAbsListView;->mListPadding:Landroid/graphics/Rect;
 

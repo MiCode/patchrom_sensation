@@ -75,7 +75,7 @@
 
     .prologue
     .line 83
-    iget-object v5, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v5, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v5}, Ljava/util/concurrent/ConcurrentHashMap;->keySet()Ljava/util/Set;
 
@@ -98,7 +98,7 @@
     if-eqz v5, :cond_1
 
     .line 87
-    iget-object v5, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v5, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -370,7 +370,7 @@
 
     .prologue
     .line 186
-    iget-object v7, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount;->mKeyQueues:Ljava/util/ArrayList;
+    iget-object v7, p0, Lcom/htc/opensense/album/util/MemoryCacheByCount;->mKeyQueues:Ljava/util/ArrayList;
 
     invoke-virtual {v7}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
 
@@ -401,7 +401,7 @@
 
     .line 189
     .local v4, key:Ljava/lang/String;
-    iget-object v7, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v7, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v7, v4}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -566,7 +566,7 @@
     const/4 v12, 0x0
 
     .line 108
-    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v9}, Ljava/util/concurrent/ConcurrentHashMap;->size()I
 
@@ -574,7 +574,7 @@
 
     if-lez v9, :cond_0
 
-    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount;->mKeyQueues:Ljava/util/ArrayList;
+    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheByCount;->mKeyQueues:Ljava/util/ArrayList;
 
     invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
@@ -596,7 +596,7 @@
 
     .line 111
     .local v3, lower:I
-    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount;->mKeyQueues:Ljava/util/ArrayList;
+    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheByCount;->mKeyQueues:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -605,7 +605,7 @@
     check-cast v8, Ljava/lang/String;
 
     .local v8, upperKey:Ljava/lang/String;
-    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount;->mKeyQueues:Ljava/util/ArrayList;
+    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheByCount;->mKeyQueues:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -615,7 +615,7 @@
 
     .line 112
     .local v4, lowerKey:Ljava/lang/String;
-    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount;->mKeyQueues:Ljava/util/ArrayList;
+    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheByCount;->mKeyQueues:Ljava/util/ArrayList;
 
     invoke-virtual {v9}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -641,7 +641,7 @@
     if-eqz v2, :cond_2
 
     .line 114
-    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v9, v2}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -702,44 +702,11 @@
 
     goto :goto_1
 
-    .line 142
+    .line 144
     .end local v1           #item:Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount$CacheItem;
     .end local v2           #key:Ljava/lang/String;
     .end local v6           #pos:I
     :cond_5
-    const-string v9, "MemCache"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v11, "[removeTheLowestPriorityItem] upper : "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, ", lower "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Lcom/htc/opensense/album/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 144
     const/4 v5, 0x0
 
     .line 146
@@ -753,7 +720,7 @@
 
     .line 160
     :goto_2
-    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount;->mKeyQueues:Ljava/util/ArrayList;
+    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheByCount;->mKeyQueues:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v5}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
@@ -761,7 +728,7 @@
     if-eqz v5, :cond_7
 
     .line 164
-    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v9, v5}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -835,11 +802,11 @@
     .end local v1           #item:Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount$CacheItem;
     :cond_7
     :goto_3
-    iget v9, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount;->mTop:I
+    iget v9, p0, Lcom/htc/opensense/album/util/MemoryCacheByCount;->mTop:I
 
     add-int/lit8 v9, v9, -0x1
 
-    iput v9, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount;->mTop:I
+    iput v9, p0, Lcom/htc/opensense/album/util/MemoryCacheByCount;->mTop:I
 
     goto/16 :goto_0
 
@@ -899,7 +866,7 @@
     invoke-static {v9, v10}, Lcom/htc/opensense/album/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 157
-    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheBitmapByCount;->mKeyQueues:Ljava/util/ArrayList;
+    iget-object v9, p0, Lcom/htc/opensense/album/util/MemoryCacheByCount;->mKeyQueues:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 

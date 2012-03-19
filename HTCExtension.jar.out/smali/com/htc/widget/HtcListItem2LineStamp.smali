@@ -91,10 +91,10 @@
     const/4 v3, 0x1
 
     .line 74
-    iput-object p1, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mContext:Landroid/content/Context;
+    iput-object p1, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mContext:Landroid/content/Context;
 
     .line 76
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     new-instance v1, Landroid/widget/TextView;
 
@@ -103,7 +103,7 @@
     aput-object v1, v0, v4
 
     .line 77
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     new-instance v1, Landroid/widget/TextView;
 
@@ -112,19 +112,19 @@
     aput-object v1, v0, v3
 
     .line 79
-    iget-boolean v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mIsMarqueeEnabled:Z
+    iget-boolean v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mIsMarqueeEnabled:Z
 
     if-eqz v0, :cond_1
 
     .line 80
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v0, v0, v4
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     .line 81
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v0, v0, v4
 
@@ -133,28 +133,28 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     .line 82
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v0, v0, v4
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setMarqueeRepeatLimit(I)V
 
     .line 83
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v0, v0, v4
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setHorizontalFadingEdgeEnabled(Z)V
 
     .line 86
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v0, v0, v3
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     .line 87
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v0, v0, v3
 
@@ -163,14 +163,14 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     .line 88
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v0, v0, v3
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setMarqueeRepeatLimit(I)V
 
     .line 89
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v0, v0, v3
 
@@ -178,9 +178,9 @@
 
     .line 99
     :goto_0
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mFontSize:[I
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mFontSize:[I
 
-    iget-object v1, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -195,9 +195,9 @@
     aput v1, v0, v4
 
     .line 100
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mFontSize:[I
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mFontSize:[I
 
-    iget-object v1, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -212,7 +212,7 @@
     aput v1, v0, v3
 
     .line 102
-    iget v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mMode:I
+    iget v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mMode:I
 
     if-nez v0, :cond_2
 
@@ -229,7 +229,7 @@
     .line 110
     :cond_0
     :goto_1
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mTextTopY:[I
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mTextTopY:[I
 
     invoke-static {}, Lcom/htc/widget/HtcListItemUtil;->getPrimaryTextBottomYPosition()I
 
@@ -244,7 +244,7 @@
     aput v1, v0, v4
 
     .line 111
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mTextTopY:[I
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mTextTopY:[I
 
     invoke-static {}, Lcom/htc/widget/HtcListItemUtil;->getSecondaryTextTopYPosition()I
 
@@ -253,7 +253,7 @@
     aput v1, v0, v3
 
     .line 113
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mRealHeightOfText:[I
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mRealHeightOfText:[I
 
     invoke-static {}, Lcom/htc/widget/HtcListItemUtil;->getSecondaryTextHeight()I
 
@@ -262,16 +262,16 @@
     aput v1, v0, v4
 
     .line 114
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mRealHeightOfText:[I
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mRealHeightOfText:[I
 
-    iget-object v1, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mRealHeightOfText:[I
+    iget-object v1, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mRealHeightOfText:[I
 
     aget v1, v1, v4
 
     aput v1, v0, v3
 
     .line 115
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -298,7 +298,7 @@
     iput v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mPaddingBottom:I
 
     .line 122
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v0, v0, v4
 
@@ -309,7 +309,7 @@
     invoke-virtual {p0, v0, v1}, Lcom/htc/widget/HtcListItem2LineStamp;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 123
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v0, v0, v3
 
@@ -324,14 +324,14 @@
 
     .line 92
     :cond_1
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v0, v0, v4
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     .line 93
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v0, v0, v4
 
@@ -340,14 +340,14 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     .line 95
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v0, v0, v3
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     .line 96
-    iget-object v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v0, v0, v3
 
@@ -359,7 +359,7 @@
 
     .line 105
     :cond_2
-    iget v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mMode:I
+    iget v0, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mMode:I
 
     if-ne v0, v3, :cond_0
 
@@ -389,7 +389,7 @@
 
     .line 181
     .local v0, right:I
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v7
 
@@ -399,7 +399,7 @@
 
     if-eq v4, v5, :cond_1
 
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v8
 
@@ -410,11 +410,11 @@
     if-eq v4, v5, :cond_1
 
     .line 182
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mTextTopY:[I
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mTextTopY:[I
 
     aget v4, v4, v7
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v7
 
@@ -422,7 +422,7 @@
 
     move-result v5
 
-    iget-object v6, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mRealHeightOfText:[I
+    iget-object v6, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mRealHeightOfText:[I
 
     aget v6, v6, v7
 
@@ -434,11 +434,11 @@
 
     .line 183
     .local v3, topMargin:I
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v7
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v7
 
@@ -448,7 +448,7 @@
 
     sub-int v5, v0, v5
 
-    iget-object v6, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v6, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v6, v6, v7
 
@@ -461,11 +461,11 @@
     invoke-virtual {v4, v5, v3, v0, v6}, Landroid/widget/TextView;->layout(IIII)V
 
     .line 185
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mTextTopY:[I
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mTextTopY:[I
 
     aget v4, v4, v8
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v8
 
@@ -473,7 +473,7 @@
 
     move-result v5
 
-    iget-object v6, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mRealHeightOfText:[I
+    iget-object v6, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mRealHeightOfText:[I
 
     aget v6, v6, v8
 
@@ -485,11 +485,11 @@
 
     .line 186
     .local v1, text2TopMargin:I
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v8
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v8
 
@@ -499,7 +499,7 @@
 
     sub-int v5, v0, v5
 
-    iget-object v6, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v6, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v6, v6, v8
 
@@ -520,7 +520,7 @@
 
     .line 187
     :cond_1
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v7
 
@@ -535,7 +535,7 @@
 
     move-result v4
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v7
 
@@ -549,11 +549,11 @@
 
     .line 189
     .local v2, top:I
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v7
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v7
 
@@ -563,7 +563,7 @@
 
     sub-int v5, v0, v5
 
-    iget-object v6, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v6, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v6, v6, v7
 
@@ -580,7 +580,7 @@
     .line 190
     .end local v2           #top:I
     :cond_2
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v8
 
@@ -595,7 +595,7 @@
 
     move-result v4
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v8
 
@@ -609,11 +609,11 @@
 
     .line 192
     .restart local v2       #top:I
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v8
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v8
 
@@ -623,7 +623,7 @@
 
     sub-int v5, v0, v5
 
-    iget-object v6, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v6, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v6, v6, v8
 
@@ -653,7 +653,7 @@
 
     .line 198
     .local v0, left:I
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v7
 
@@ -663,7 +663,7 @@
 
     if-eq v4, v5, :cond_1
 
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v8
 
@@ -674,11 +674,11 @@
     if-eq v4, v5, :cond_1
 
     .line 199
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mTextTopY:[I
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mTextTopY:[I
 
     aget v4, v4, v7
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v7
 
@@ -686,7 +686,7 @@
 
     move-result v5
 
-    iget-object v6, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mRealHeightOfText:[I
+    iget-object v6, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mRealHeightOfText:[I
 
     aget v6, v6, v7
 
@@ -698,11 +698,11 @@
 
     .line 200
     .local v3, topMargin:I
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v7
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v7
 
@@ -712,7 +712,7 @@
 
     add-int/2addr v5, v0
 
-    iget-object v6, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v6, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v6, v6, v7
 
@@ -725,11 +725,11 @@
     invoke-virtual {v4, v0, v3, v5, v6}, Landroid/widget/TextView;->layout(IIII)V
 
     .line 202
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mTextTopY:[I
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mTextTopY:[I
 
     aget v4, v4, v8
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v8
 
@@ -737,7 +737,7 @@
 
     move-result v5
 
-    iget-object v6, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mRealHeightOfText:[I
+    iget-object v6, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mRealHeightOfText:[I
 
     aget v6, v6, v8
 
@@ -749,11 +749,11 @@
 
     .line 203
     .local v1, text2TopMargin:I
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v8
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v8
 
@@ -763,7 +763,7 @@
 
     add-int/2addr v5, v0
 
-    iget-object v6, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v6, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v6, v6, v8
 
@@ -784,7 +784,7 @@
 
     .line 204
     :cond_1
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v7
 
@@ -799,7 +799,7 @@
 
     move-result v4
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v7
 
@@ -813,11 +813,11 @@
 
     .line 206
     .local v2, top:I
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v7
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v7
 
@@ -827,7 +827,7 @@
 
     add-int/2addr v5, v0
 
-    iget-object v6, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v6, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v6, v6, v7
 
@@ -844,7 +844,7 @@
     .line 207
     .end local v2           #top:I
     :cond_2
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v8
 
@@ -859,7 +859,7 @@
 
     move-result v4
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v8
 
@@ -873,11 +873,11 @@
 
     .line 209
     .restart local v2       #top:I
-    iget-object v4, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v4, v4, v8
 
-    iget-object v5, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v5, v5, v8
 
@@ -887,7 +887,7 @@
 
     add-int/2addr v5, v0
 
-    iget-object v6, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mText:[Landroid/widget/TextView;
+    iget-object v6, p0, Lcom/htc/widget/HtcListItem2TextComponent;->mText:[Landroid/widget/TextView;
 
     aget-object v6, v6, v8
 
@@ -1036,7 +1036,7 @@
 
     .prologue
     .line 172
-    iget-boolean v0, p0, Lcom/htc/widget/HtcListItem2LineStamp;->mIsRevert:Z
+    iget-boolean v0, p0, Lcom/htc/widget/HtcListItemComponent;->mIsRevert:Z
 
     if-eqz v0, :cond_0
 

@@ -66,7 +66,7 @@
     .line 871
     .local p0, this:Landroid/text/TextLine$SpanSet;,"Landroid/text/TextLine$SpanSet<TE;>;"
     .local p1, type:Ljava/lang/Class;,"Ljava/lang/Class<+TE;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 872
     iput-object p1, p0, Landroid/text/TextLine$SpanSet;->classType:Ljava/lang/Class;

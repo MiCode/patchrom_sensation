@@ -40,7 +40,7 @@
     .line 876
     iput-object p1, p0, Lcom/htc/widget/CarouselHost$IntentContentStrategy;->this$0:Lcom/htc/widget/CarouselHost;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 874
     const/4 v1, 0x0

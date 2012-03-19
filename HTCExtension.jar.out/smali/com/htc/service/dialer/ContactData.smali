@@ -59,7 +59,7 @@
     const/4 v2, 0x0
 
     .line 82
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 83
     const-wide/16 v0, 0x0
@@ -91,7 +91,7 @@
 
     .prologue
     .line 90
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 91
     iput-wide p1, p0, Lcom/htc/service/dialer/ContactData;->mContactId:J
@@ -118,7 +118,7 @@
 
     .prologue
     .line 98
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 99
     invoke-virtual {p0, p1}, Lcom/htc/service/dialer/ContactData;->readFromParcel(Landroid/os/Parcel;)V

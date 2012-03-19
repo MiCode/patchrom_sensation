@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final LOG_FLAG:Z = true
+.field public static final LOG_FLAG:Z = false
 
 .field public static final LOG_TAG:Ljava/lang/String; = "WeatherSound"
 
@@ -166,7 +166,7 @@
     const/4 v1, 0x0
 
     .line 63
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 26
     const/4 v0, 0x1
@@ -196,17 +196,6 @@
 
     .line 65
     return-void
-.end method
-
-.method static synthetic access$000(Lcom/htc/Weather/SoundEffect;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 19
-    iget v0, p0, Lcom/htc/Weather/SoundEffect;->state:I
-
-    return v0
 .end method
 
 .method static synthetic access$002(Lcom/htc/Weather/SoundEffect;I)I
@@ -289,30 +278,23 @@
 .end method
 
 .method private checkNeedRestart()V
-    .locals 3
+    .locals 2
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 234
     iget-boolean v0, p0, Lcom/htc/Weather/SoundEffect;->isNeedStart:Z
 
     if-eqz v0, :cond_0
 
-    .line 235
-    const-string v0, "WeatherSound"
-
-    const-string v1, "isNeedStart"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 236
     iget-object v0, p0, Lcom/htc/Weather/SoundEffect;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {v0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     .line 237
-    iput-boolean v2, p0, Lcom/htc/Weather/SoundEffect;->isNeedStart:Z
+    iput-boolean v1, p0, Lcom/htc/Weather/SoundEffect;->isNeedStart:Z
 
     .line 239
     :cond_0
@@ -324,31 +306,6 @@
 
     .prologue
     const/4 v4, 0x0
-
-    .line 268
-    const-string v1, "WeatherSound"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "forceReleaseMediaPlayer()  - state = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget v3, p0, Lcom/htc/Weather/SoundEffect;->state:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 269
     const/16 v1, 0xd
@@ -483,31 +440,6 @@
     .prologue
     const/16 v6, 0xd
 
-    .line 90
-    const-string v3, "WeatherSound"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "start: state = "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget v5, p0, Lcom/htc/Weather/SoundEffect;->state:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 92
     iget-boolean v3, p0, Lcom/htc/Weather/SoundEffect;->mbSoundOn:Z
 
@@ -556,13 +488,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 101
-    const-string v3, "WeatherSound"
-
-    const-string v4, "mAudioManager.isSpeakerphoneOn()"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 102
     iput v6, p0, Lcom/htc/Weather/SoundEffect;->state:I
 
@@ -577,13 +502,6 @@
     move-result v3
 
     if-eqz v3, :cond_2
-
-    .line 107
-    const-string v3, "WeatherSound"
-
-    const-string v4, "mAudioManager.isMusicActive()"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 108
     iput v6, p0, Lcom/htc/Weather/SoundEffect;->state:I
@@ -603,13 +521,6 @@
     const/16 v3, 0x9
 
     if-ne v1, v3, :cond_3
-
-    .line 114
-    const-string v3, "WeatherSound"
-
-    const-string v4, "map == 9"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 115
     iput v6, p0, Lcom/htc/Weather/SoundEffect;->state:I
@@ -655,31 +566,6 @@
 
     invoke-virtual {v3, p0}, Landroid/media/MediaPlayer;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
 
-    .line 131
-    const-string v3, "WeatherSound"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "mMediaPlayer.start();"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget v5, p0, Lcom/htc/Weather/SoundEffect;->conditionId:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 133
     :try_start_0
     iget-object v3, p0, Lcom/htc/Weather/SoundEffect;->mMediaPlayer:Landroid/media/MediaPlayer;
@@ -688,7 +574,7 @@
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 135
     :catch_0
@@ -750,43 +636,6 @@
     :cond_5
     iput v6, p0, Lcom/htc/Weather/SoundEffect;->state:I
 
-    .line 144
-    const-string v3, "WeatherSound"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "illegal conditionId = "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget v5, p0, Lcom/htc/Weather/SoundEffect;->conditionId:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "; state = "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget v5, p0, Lcom/htc/Weather/SoundEffect;->state:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     goto/16 :goto_0
 .end method
 
@@ -798,13 +647,6 @@
     .parameter "resid"
 
     .prologue
-    .line 151
-    const-string v0, "WeatherSound"
-
-    const-string v1, "create in"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 153
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -856,18 +698,10 @@
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_3
 
-    .line 177
-    .end local v6           #afd:Landroid/content/res/AssetFileDescriptor;
-    :goto_1
-    const-string v0, "WeatherSound"
-
-    const-string v1, "create out"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     goto :goto_0
 
     .line 161
+    .end local v6           #afd:Landroid/content/res/AssetFileDescriptor;
     :catch_0
     move-exception v7
 
@@ -879,7 +713,7 @@
 
     invoke-static {v0, v1, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1
+    goto :goto_0
 
     .line 165
     .end local v7           #ex:Ljava/io/IOException;
@@ -894,7 +728,7 @@
 
     invoke-static {v0, v1, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1
+    goto :goto_0
 
     .line 169
     .end local v7           #ex:Ljava/lang/IllegalArgumentException;
@@ -909,7 +743,7 @@
 
     invoke-static {v0, v1, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1
+    goto :goto_0
 
     .line 173
     .end local v7           #ex:Ljava/lang/SecurityException;
@@ -924,39 +758,14 @@
 
     invoke-static {v0, v1, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method public onCompletion(Landroid/media/MediaPlayer;)V
-    .locals 3
+    .locals 1
     .parameter "mp"
 
     .prologue
-    .line 256
-    const-string v0, "WeatherSound"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onCompletion: state = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/htc/Weather/SoundEffect;->state:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 257
     const/16 v0, 0xa
 
@@ -966,13 +775,6 @@
     iget-object v0, p0, Lcom/htc/Weather/SoundEffect;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     if-eqz v0, :cond_0
-
-    .line 259
-    const-string v0, "WeatherSound"
-
-    const-string v1, "mMediaPlayer onCompletion"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 260
     iget-object v0, p0, Lcom/htc/Weather/SoundEffect;->mMediaPlayer:Landroid/media/MediaPlayer;
@@ -993,45 +795,13 @@
 .end method
 
 .method public releaseMediaPalyer()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 243
-    const-string v0, "WeatherSound"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "releaseMediaPalyer(): state = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/htc/Weather/SoundEffect;->state:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 244
     iget-object v0, p0, Lcom/htc/Weather/SoundEffect;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     if-eqz v0, :cond_0
-
-    .line 245
-    const-string v0, "WeatherSound"
-
-    const-string v1, "releaseMediaPalyer() - MSG_FADEOUT"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 246
     iget-object v0, p0, Lcom/htc/Weather/SoundEffect;->mHandler:Landroid/os/Handler;
@@ -1044,15 +814,8 @@
     :goto_0
     return-void
 
-    .line 249
-    :cond_0
-    const-string v0, "WeatherSound"
-
-    const-string v1, "releaseMediaPalyer() - MSG_RELEASE"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 250
+    :cond_0
     iget-object v0, p0, Lcom/htc/Weather/SoundEffect;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x2
@@ -1075,37 +838,12 @@
 .end method
 
 .method public startMediaPlayer(I)V
-    .locals 3
+    .locals 2
     .parameter "id"
 
     .prologue
     .line 73
     iput p1, p0, Lcom/htc/Weather/SoundEffect;->conditionId:I
-
-    .line 74
-    const-string v0, "WeatherSound"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "startMediaPlayer: state = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/htc/Weather/SoundEffect;->state:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 76
     iget v0, p0, Lcom/htc/Weather/SoundEffect;->state:I
@@ -1125,13 +863,6 @@
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/htc/Weather/SoundEffect;->isNeedStart:Z
-
-    .line 78
-    const-string v0, "WeatherSound"
-
-    const-string v1, "startMediaPlayer: FADEOUT/RELEASE NEED TO BE DONE FIRST"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 84
     :goto_0

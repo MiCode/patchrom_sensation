@@ -68,7 +68,7 @@
     .local p0, this:Lcom/htc/protobuf/GeneratedMessageLite$GeneratedExtension;,"Lcom/htc/protobuf/GeneratedMessageLite$GeneratedExtension<TContainingType;TType;>;"
     .local p1, containingTypeDefaultInstance:Lcom/htc/protobuf/MessageLite;,"TContainingType;"
     .local p2, defaultValue:Ljava/lang/Object;,"TType;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 508
     iput-object p1, p0, Lcom/htc/protobuf/GeneratedMessageLite$GeneratedExtension;->containingTypeDefaultInstance:Lcom/htc/protobuf/MessageLite;

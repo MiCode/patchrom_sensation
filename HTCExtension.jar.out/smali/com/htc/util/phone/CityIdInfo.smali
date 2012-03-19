@@ -219,7 +219,7 @@
     move v0, v2
 
     :goto_0
-    sput-boolean v2, Lcom/htc/util/phone/CityIdInfo;->CALL_LOCATION:Z
+    sput-boolean v0, Lcom/htc/util/phone/CityIdInfo;->CALL_LOCATION:Z
 
     .line 62
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
@@ -295,7 +295,7 @@
     move v0, v2
 
     :goto_3
-    sput-boolean v1, Lcom/htc/util/phone/CityIdInfo;->EXCEPTION_PROJECTS:Z
+    sput-boolean v0, Lcom/htc/util/phone/CityIdInfo;->EXCEPTION_PROJECTS:Z
 
     .line 87
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
@@ -586,7 +586,7 @@
     const/4 v1, 0x0
 
     .line 43
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 181
     iput-boolean v1, p0, Lcom/htc/util/phone/CityIdInfo;->m_isNanp:Z
@@ -948,7 +948,7 @@
 .end method
 
 .method private extractCallLocation(Landroid/database/Cursor;)V
-    .locals 3
+    .locals 1
     .parameter "c"
 
     .prologue
@@ -961,37 +961,12 @@
 
     iput-object v0, p0, Lcom/htc/util/phone/CityIdInfo;->m_strCityName:Ljava/lang/String;
 
-    .line 539
-    const-string v0, "com.htc.util.phone.CityIdInfo"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "City   : "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/htc/util/phone/CityIdInfo;->m_strCityName:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 541
     return-void
 .end method
 
 .method private extractCityID(Landroid/database/Cursor;)V
-    .locals 5
+    .locals 3
     .parameter "c"
 
     .prologue
@@ -1134,106 +1109,6 @@
     :goto_2
     iput-boolean v0, p0, Lcom/htc/util/phone/CityIdInfo;->m_bPreferCidImage:Z
 
-    .line 528
-    const-string v0, "com.htc.util.phone.CityIdInfo"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "City   : "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/htc/util/phone/CityIdInfo;->m_strCityName:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 529
-    const-string v0, "com.htc.util.phone.CityIdInfo"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "State  : "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/htc/util/phone/CityIdInfo;->m_strStateName:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 530
-    const-string v0, "com.htc.util.phone.CityIdInfo"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "ST     : "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/htc/util/phone/CityIdInfo;->m_strStateAbrv:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 531
-    const-string v0, "com.htc.util.phone.CityIdInfo"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Country: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/htc/util/phone/CityIdInfo;->m_strCountryName:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 533
     sget v0, Lcom/htc/util/phone/CityIdInfo;->COLUMN_ISNANP:I
 
@@ -1253,13 +1128,13 @@
     move v0, v2
 
     .line 524
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_1
     move v0, v2
 
     .line 525
-    goto/16 :goto_1
+    goto :goto_1
 
     :cond_2
     move v0, v2
@@ -1691,76 +1566,8 @@
 
     move-result-object v1
 
-    .line 501
-    .local v1, uri:Landroid/net/Uri;
-    const-string v0, "com.htc.util.phone.CityIdInfo"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "queryCallLocation():mo = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-static {v8}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "international = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-static {v7}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 503
-    const-string v0, "com.htc.util.phone.CityIdInfo"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "queryCallLocation():uri = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v1}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 506
+    .local v1, uri:Landroid/net/Uri;
     invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -2234,7 +2041,7 @@
     :try_start_0
     sget-boolean v2, Lcom/htc/util/phone/CityIdInfo;->CALL_LOCATION:Z
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -2247,31 +2054,32 @@
     .line 315
     .local v0, c:Landroid/database/Cursor;
     :goto_1
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_2
 
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_2
 
     .line 316
     sget-boolean v2, Lcom/htc/util/phone/CityIdInfo;->CALL_LOCATION:Z
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
     .line 317
     invoke-direct {p0, v0}, Lcom/htc/util/phone/CityIdInfo;->extractCallLocation(Landroid/database/Cursor;)V
 
     .line 329
+    :cond_2
     :goto_2
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     .line 330
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     .line 332
-    :cond_2
+    :cond_3
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/htc/util/phone/CityIdInfo;->m_hasLookupBeenPerformed:Z
@@ -2297,7 +2105,7 @@
 
     .line 311
     .end local v1           #e:Ljava/lang/Exception;
-    :cond_3
+    :cond_4
     :try_start_1
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -2311,18 +2119,8 @@
 
     .line 319
     .restart local v0       #c:Landroid/database/Cursor;
-    :cond_4
-    invoke-direct {p0, v0}, Lcom/htc/util/phone/CityIdInfo;->extractCityID(Landroid/database/Cursor;)V
-
-    goto :goto_2
-
-    .line 325
     :cond_5
-    const-string v2, "com.htc.util.phone.CityIdInfo"
-
-    const-string v3, "No CityID found"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-direct {p0, v0}, Lcom/htc/util/phone/CityIdInfo;->extractCityID(Landroid/database/Cursor;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 

@@ -30,7 +30,7 @@
     .line 2007
     iput-object p1, p0, Lcom/htc/util/contacts/ContactsUtility$5;->val$rFinal:Ljava/lang/Runnable;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,13 +41,6 @@
     .locals 4
 
     .prologue
-    .line 2009
-    const-string v2, "ContactsUtility"
-
-    const-string v3, "handleSocialNetworkLargePhotoEnd run"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2010
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -69,16 +62,9 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2018
+    .line 2019
     :goto_0
     :try_start_1
-    const-string v2, "ContactsUtility"
-
-    const-string v3, "handleSocialNetworkLargePhotoEnd run rFinal"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2019
     iget-object v2, p0, Lcom/htc/util/contacts/ContactsUtility$5;->val$rFinal:Ljava/lang/Runnable;
 
     invoke-interface {v2}, Ljava/lang/Runnable;->run()V

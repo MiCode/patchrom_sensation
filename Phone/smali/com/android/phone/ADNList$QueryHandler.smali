@@ -38,19 +38,12 @@
 
 # virtual methods
 .method protected onDeleteComplete(ILjava/lang/Object;I)V
-    .locals 2
+    .locals 1
     .parameter "token"
     .parameter "cookie"
     .parameter "result"
 
     .prologue
-    .line 406
-    iget-object v0, p0, Lcom/android/phone/ADNList$QueryHandler;->this$0:Lcom/android/phone/ADNList;
-
-    const-string v1, "onDeleteComplete: requery"
-
-    invoke-virtual {v0, v1}, Lcom/android/phone/ADNList;->log(Ljava/lang/String;)V
-
     .line 407
     iget-object v0, p0, Lcom/android/phone/ADNList$QueryHandler;->this$0:Lcom/android/phone/ADNList;
 
@@ -62,19 +55,12 @@
 .end method
 
 .method protected onInsertComplete(ILjava/lang/Object;Landroid/net/Uri;)V
-    .locals 2
+    .locals 1
     .parameter "token"
     .parameter "cookie"
     .parameter "uri"
 
     .prologue
-    .line 394
-    iget-object v0, p0, Lcom/android/phone/ADNList$QueryHandler;->this$0:Lcom/android/phone/ADNList;
-
-    const-string v1, "onInsertComplete: requery"
-
-    invoke-virtual {v0, v1}, Lcom/android/phone/ADNList;->log(Ljava/lang/String;)V
-
     .line 395
     iget-object v0, p0, Lcom/android/phone/ADNList$QueryHandler;->this$0:Lcom/android/phone/ADNList;
 
@@ -99,13 +85,6 @@
     .line 349
     if-nez p3, :cond_0
 
-    .line 350
-    iget-object v2, p0, Lcom/android/phone/ADNList$QueryHandler;->this$0:Lcom/android/phone/ADNList;
-
-    const-string v3, "onQueryComplete: cursor=null"
-
-    invoke-virtual {v2, v3}, Lcom/android/phone/ADNList;->log(Ljava/lang/String;)V
-
     .line 351
     iget-object v2, p0, Lcom/android/phone/ADNList$QueryHandler;->this$0:Lcom/android/phone/ADNList;
 
@@ -129,36 +108,9 @@
     :goto_0
     return-void
 
-    .line 356
+    .line 360
     .restart local p2
     :cond_0
-    iget-object v2, p0, Lcom/android/phone/ADNList$QueryHandler;->this$0:Lcom/android/phone/ADNList;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "onQueryComplete: cursor.count="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-interface {p3}, Landroid/database/Cursor;->getCount()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/android/phone/ADNList;->log(Ljava/lang/String;)V
-
-    .line 360
     if-eqz p2, :cond_2
 
     check-cast p2, Landroid/net/Uri;
@@ -292,7 +244,7 @@
     #calls: Lcom/android/phone/ADNList;->displayProgress(Z)V
     invoke-static {v2, v5}, Lcom/android/phone/ADNList;->access$000(Lcom/android/phone/ADNList;Z)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 385
     .end local v1           #i:I
@@ -317,19 +269,12 @@
 .end method
 
 .method protected onUpdateComplete(ILjava/lang/Object;I)V
-    .locals 2
+    .locals 1
     .parameter "token"
     .parameter "cookie"
     .parameter "result"
 
     .prologue
-    .line 400
-    iget-object v0, p0, Lcom/android/phone/ADNList$QueryHandler;->this$0:Lcom/android/phone/ADNList;
-
-    const-string v1, "onUpdateComplete: requery"
-
-    invoke-virtual {v0, v1}, Lcom/android/phone/ADNList;->log(Ljava/lang/String;)V
-
     .line 401
     iget-object v0, p0, Lcom/android/phone/ADNList$QueryHandler;->this$0:Lcom/android/phone/ADNList;
 

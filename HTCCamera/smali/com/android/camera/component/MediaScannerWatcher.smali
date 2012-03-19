@@ -91,7 +91,7 @@
     .line 34
     .end local v1           #eventName:Ljava/lang/String;
     :cond_1
-    iget-object v2, p0, Lcom/android/camera/component/MediaScannerWatcher;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
 

@@ -102,7 +102,7 @@
 
     .prologue
     .line 34
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -113,7 +113,7 @@
 
     .prologue
     .line 28
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 29
     iput-wide p1, p0, Lcom/htc/clientprofileservice/Profile;->version:D
@@ -142,7 +142,7 @@
 
     .prologue
     .line 42
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
     invoke-virtual {p0, p1}, Lcom/htc/clientprofileservice/Profile;->readFromParcel(Landroid/os/Parcel;)V
@@ -157,7 +157,7 @@
 
     .prologue
     .line 36
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 37
     iget-wide v0, p1, Lcom/htc/clientprofileservice/Profile;->version:D

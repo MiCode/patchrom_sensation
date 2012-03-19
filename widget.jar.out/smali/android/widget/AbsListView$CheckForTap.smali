@@ -30,7 +30,7 @@
     .line 2730
     iput-object p1, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -66,7 +66,7 @@
 
     iget-object v6, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
-    iget v6, v6, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v6, v6, Landroid/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v5, v6
 
@@ -94,7 +94,7 @@
     .line 2738
     iget-object v4, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
-    iget-boolean v4, v4, Landroid/widget/AbsListView;->mDataChanged:Z
+    iget-boolean v4, v4, Landroid/widget/AdapterView;->mDataChanged:Z
 
     if-nez v4, :cond_5
 

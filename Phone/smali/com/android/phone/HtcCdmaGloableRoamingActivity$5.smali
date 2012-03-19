@@ -30,7 +30,7 @@
     .line 167
     iput-object p1, p0, Lcom/android/phone/HtcCdmaGloableRoamingActivity$5;->this$0:Lcom/android/phone/HtcCdmaGloableRoamingActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

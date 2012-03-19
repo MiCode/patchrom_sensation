@@ -441,7 +441,7 @@
     if-nez v0, :cond_0
 
     .line 185
-    iget-object v1, p0, Lcom/android/camera/component/AutoSceneUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "eventManager == null"
 
@@ -982,12 +982,12 @@
     .line 446
     iget v1, p0, Lcom/android/camera/component/AutoSceneUI;->MARGIN_TOP:I
 
-    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
+    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     .line 447
     iget v1, p0, Lcom/android/camera/component/AutoSceneUI;->MARGIN_RIGHT:I
 
-    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->rightMargin:I
+    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     .line 448
     invoke-virtual {p1, v0}, Lcom/android/camera/rotate/RotateRelativeLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V

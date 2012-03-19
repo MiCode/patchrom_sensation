@@ -263,7 +263,7 @@
     .line 72
     .restart local v0       #controller:Lcom/android/camera/effect/GpuEffectController;
     :cond_1
-    iget-object v1, p0, Lcom/android/camera/effect/DepthOfFieldEffect;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "No GPU effect controller to change center"
 
@@ -308,7 +308,7 @@
     .line 90
     .restart local v0       #controller:Lcom/android/camera/effect/GpuEffectController;
     :cond_1
-    iget-object v1, p0, Lcom/android/camera/effect/DepthOfFieldEffect;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "No GPU effect controller to change radius"
 

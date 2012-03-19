@@ -23,7 +23,7 @@
     const/4 v0, 0x0
 
     .line 46
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
     iput-object v0, p0, Landroid/media/videoeditor/Effect;->mMediaItem:Landroid/media/videoeditor/MediaItem;
@@ -52,7 +52,7 @@
     const-wide/16 v1, 0x0
 
     .line 63
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 64
     if-nez p1, :cond_0

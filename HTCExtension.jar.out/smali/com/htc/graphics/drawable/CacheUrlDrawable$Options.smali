@@ -64,7 +64,7 @@
 
     .prologue
     .line 176
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 177
     invoke-virtual {p0}, Lcom/htc/graphics/drawable/CacheUrlDrawable$Options;->reset()V

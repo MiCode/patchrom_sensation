@@ -30,7 +30,7 @@
     .line 401
     iput-object p1, p0, Lcom/android/camera/component/PanoramaUI$16;->this$0:Lcom/android/camera/component/PanoramaUI;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -68,7 +68,7 @@
     .line 408
     iget-object v2, p0, Lcom/android/camera/component/PanoramaUI$16;->this$0:Lcom/android/camera/component/PanoramaUI;
 
-    #getter for: Lcom/android/camera/component/PanoramaUI;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v2}, Lcom/android/camera/component/PanoramaUI;->access$2400(Lcom/android/camera/component/PanoramaUI;)Ljava/lang/String;
 
     move-result-object v2

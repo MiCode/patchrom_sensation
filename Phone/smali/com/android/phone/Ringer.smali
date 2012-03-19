@@ -80,50 +80,27 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     .line 73
-    const-string v0, "ro.debuggable"
-
-    invoke-static {v0, v2}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v0
-
-    if-ne v0, v1, :cond_0
-
-    move v0, v1
-
-    :goto_0
     sput-boolean v0, Lcom/android/phone/Ringer;->DBG:Z
 
     .line 116
-    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
+    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
-    const/16 v3, 0x50
+    const/16 v2, 0x50
 
-    if-ne v0, v3, :cond_1
+    if-ne v1, v2, :cond_0
 
-    :goto_1
-    sput-boolean v1, Lcom/android/phone/Ringer;->sDisableRingtoneCache:Z
-
-    return-void
+    const/4 v0, 0x1
 
     :cond_0
-    move v0, v2
+    sput-boolean v0, Lcom/android/phone/Ringer;->sDisableRingtoneCache:Z
 
-    .line 73
-    goto :goto_0
-
-    :cond_1
-    move v1, v2
-
-    .line 116
-    goto :goto_1
+    return-void
 .end method
 
 .method constructor <init>(Landroid/content/Context;)V
@@ -136,7 +113,7 @@
     const/4 v5, 0x0
 
     .line 186
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 88
     sget-object v1, Landroid/provider/Settings$System;->DEFAULT_RINGTONE_URI:Landroid/net/Uri;
@@ -492,7 +469,7 @@
 
     .line 902
     :try_start_2
-    invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
+    throw v3
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 

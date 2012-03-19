@@ -40,7 +40,7 @@
 
     iput-object p3, p0, Landroid/provider/DrmHelper$2;->val$context:Landroid/content/Context;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

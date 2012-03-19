@@ -28,7 +28,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/BlurMaskFilter;->native_instance:I
+    iput v0, p0, Landroid/graphics/MaskFilter;->native_instance:I
 
     .line 48
     return-void

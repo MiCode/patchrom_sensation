@@ -198,12 +198,12 @@
     .line 56
     const/16 v0, -0x14
 
-    iput v0, p0, Lcom/htc/weather/animations/Raindrops;->shift_x_:I
+    iput v0, p0, Lcom/htc/weather/animations/WeatherAnimationData;->shift_x_:I
 
     .line 57
     const/16 v0, -0xa
 
-    iput v0, p0, Lcom/htc/weather/animations/Raindrops;->shift_y_:I
+    iput v0, p0, Lcom/htc/weather/animations/WeatherAnimationData;->shift_y_:I
 
     .line 58
     new-instance v0, Lcom/htc/weather/animations/Wiper;
@@ -360,12 +360,12 @@
     .line 47
     const/16 v0, -0x14
 
-    iput v0, p0, Lcom/htc/weather/animations/Raindrops;->shift_x_:I
+    iput v0, p0, Lcom/htc/weather/animations/WeatherAnimationData;->shift_x_:I
 
     .line 48
     const/16 v0, -0xa
 
-    iput v0, p0, Lcom/htc/weather/animations/Raindrops;->shift_y_:I
+    iput v0, p0, Lcom/htc/weather/animations/WeatherAnimationData;->shift_y_:I
 
     .line 49
     new-instance v0, Lcom/htc/weather/animations/Wiper;
@@ -628,7 +628,7 @@
 
     const v5, 0x3f7d70a4
 
-    iget v6, p0, Lcom/htc/weather/animations/Raindrops;->alpha_:F
+    iget v6, p0, Lcom/htc/weather/animations/WeatherAnimationData;->alpha_:F
 
     mul-float/2addr v5, v6
 
@@ -636,7 +636,7 @@
 
     const/4 v4, 0x3
 
-    iget v5, p0, Lcom/htc/weather/animations/Raindrops;->alpha_:F
+    iget v5, p0, Lcom/htc/weather/animations/WeatherAnimationData;->alpha_:F
 
     aput v5, v2, v4
 
@@ -656,7 +656,7 @@
 
     const v5, 0x3f7d70a4
 
-    iget v6, p0, Lcom/htc/weather/animations/Raindrops;->alpha_:F
+    iget v6, p0, Lcom/htc/weather/animations/WeatherAnimationData;->alpha_:F
 
     mul-float/2addr v5, v6
 
@@ -666,7 +666,7 @@
 
     const v5, 0x3f7d70a4
 
-    iget v6, p0, Lcom/htc/weather/animations/Raindrops;->alpha_:F
+    iget v6, p0, Lcom/htc/weather/animations/WeatherAnimationData;->alpha_:F
 
     mul-float/2addr v5, v6
 

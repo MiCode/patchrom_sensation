@@ -16,7 +16,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/LayerRasterizer;->native_instance:I
+    iput v0, p0, Landroid/graphics/Rasterizer;->native_instance:I
 
     .line 22
     return-void
@@ -38,7 +38,7 @@
     const/4 v2, 0x0
 
     .line 34
-    iget v0, p0, Landroid/graphics/LayerRasterizer;->native_instance:I
+    iget v0, p0, Landroid/graphics/Rasterizer;->native_instance:I
 
     iget v1, p1, Landroid/graphics/Paint;->mNativePaint:I
 
@@ -56,7 +56,7 @@
 
     .prologue
     .line 30
-    iget v0, p0, Landroid/graphics/LayerRasterizer;->native_instance:I
+    iget v0, p0, Landroid/graphics/Rasterizer;->native_instance:I
 
     iget v1, p1, Landroid/graphics/Paint;->mNativePaint:I
 

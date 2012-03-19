@@ -47,7 +47,7 @@
 
     iget-object v2, p0, Lcom/htc/weather/animations/Anim31$2;->this$0:Lcom/htc/weather/animations/Anim31;
 
-    iget-object v2, v2, Lcom/htc/weather/animations/Anim31;->mContext:Landroid/content/Context;
+    iget-object v2, v2, Lcom/htc/weather/animations/WeatherAnimationData;->mContext:Landroid/content/Context;
 
     invoke-direct {v1, v2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
@@ -55,7 +55,7 @@
     .local v1, imageView:Landroid/widget/ImageView;
     iget-object v2, p0, Lcom/htc/weather/animations/Anim31$2;->this$0:Lcom/htc/weather/animations/Anim31;
 
-    iget-object v2, v2, Lcom/htc/weather/animations/Anim31;->mContext:Landroid/content/Context;
+    iget-object v2, v2, Lcom/htc/weather/animations/WeatherAnimationData;->mContext:Landroid/content/Context;
 
     const v3, 0x2080590
 
@@ -73,7 +73,7 @@
     .line 112
     iget-object v2, p0, Lcom/htc/weather/animations/Anim31$2;->this$0:Lcom/htc/weather/animations/Anim31;
 
-    iget-object v2, v2, Lcom/htc/weather/animations/Anim31;->mEnv:Lcom/htc/weather/EnvSetting$Env;
+    iget-object v2, v2, Lcom/htc/weather/animations/WeatherAnimationData;->mEnv:Lcom/htc/weather/EnvSetting$Env;
 
     iget v2, v2, Lcom/htc/weather/EnvSetting$Env;->scale_x_:F
 
@@ -83,7 +83,7 @@
 
     iget-object v2, p0, Lcom/htc/weather/animations/Anim31$2;->this$0:Lcom/htc/weather/animations/Anim31;
 
-    iget-object v2, v2, Lcom/htc/weather/animations/Anim31;->mEnv:Lcom/htc/weather/EnvSetting$Env;
+    iget-object v2, v2, Lcom/htc/weather/animations/WeatherAnimationData;->mEnv:Lcom/htc/weather/EnvSetting$Env;
 
     iget v2, v2, Lcom/htc/weather/EnvSetting$Env;->scale_y_:F
 
@@ -96,11 +96,11 @@
 
     iget-object v3, p0, Lcom/htc/weather/animations/Anim31$2;->this$0:Lcom/htc/weather/animations/Anim31;
 
-    iget v3, v3, Lcom/htc/weather/animations/Anim31;->shift_x_:I
+    iget v3, v3, Lcom/htc/weather/animations/WeatherAnimationData;->shift_x_:I
 
     iget-object v4, p0, Lcom/htc/weather/animations/Anim31$2;->this$0:Lcom/htc/weather/animations/Anim31;
 
-    iget v4, v4, Lcom/htc/weather/animations/Anim31;->shift_y_:I
+    iget v4, v4, Lcom/htc/weather/animations/WeatherAnimationData;->shift_y_:I
 
     add-int/lit16 v4, v4, 0xf5
 
@@ -119,11 +119,11 @@
 
     iget-object v3, p0, Lcom/htc/weather/animations/Anim31$2;->this$0:Lcom/htc/weather/animations/Anim31;
 
-    iget v3, v3, Lcom/htc/weather/animations/Anim31;->shift_x_:I
+    iget v3, v3, Lcom/htc/weather/animations/WeatherAnimationData;->shift_x_:I
 
     iget-object v4, p0, Lcom/htc/weather/animations/Anim31$2;->this$0:Lcom/htc/weather/animations/Anim31;
 
-    iget-object v4, v4, Lcom/htc/weather/animations/Anim31;->mEnv:Lcom/htc/weather/EnvSetting$Env;
+    iget-object v4, v4, Lcom/htc/weather/animations/WeatherAnimationData;->mEnv:Lcom/htc/weather/EnvSetting$Env;
 
     iget v4, v4, Lcom/htc/weather/EnvSetting$Env;->height_:I
 
@@ -135,7 +135,7 @@
 
     iget-object v5, p0, Lcom/htc/weather/animations/Anim31$2;->this$0:Lcom/htc/weather/animations/Anim31;
 
-    iget v5, v5, Lcom/htc/weather/animations/Anim31;->shift_y_:I
+    iget v5, v5, Lcom/htc/weather/animations/WeatherAnimationData;->shift_y_:I
 
     add-int/2addr v4, v5
 
@@ -167,7 +167,7 @@
 
     iget-object v3, p0, Lcom/htc/weather/animations/Anim31$2;->this$0:Lcom/htc/weather/animations/Anim31;
 
-    iget v3, v3, Lcom/htc/weather/animations/Anim31;->alpha_:F
+    iget v3, v3, Lcom/htc/weather/animations/WeatherAnimationData;->alpha_:F
 
     mul-float/2addr v2, v3
 
@@ -177,7 +177,7 @@
 
     iget-object v6, p0, Lcom/htc/weather/animations/Anim31$2;->this$0:Lcom/htc/weather/animations/Anim31;
 
-    iget-wide v6, v6, Lcom/htc/weather/animations/Anim31;->delay_:J
+    iget-wide v6, v6, Lcom/htc/weather/animations/WeatherAnimationData;->delay_:J
 
     const-wide/16 v9, 0x21
 
@@ -215,7 +215,7 @@
 
     iget-object v2, p0, Lcom/htc/weather/animations/Anim31$2;->this$0:Lcom/htc/weather/animations/Anim31;
 
-    iget v2, v2, Lcom/htc/weather/animations/Anim31;->alpha_:F
+    iget v2, v2, Lcom/htc/weather/animations/WeatherAnimationData;->alpha_:F
 
     mul-float/2addr v1, v2
 
@@ -227,7 +227,7 @@
 
     iget-object v6, p0, Lcom/htc/weather/animations/Anim31$2;->this$0:Lcom/htc/weather/animations/Anim31;
 
-    iget-wide v6, v6, Lcom/htc/weather/animations/Anim31;->delay_:J
+    iget-wide v6, v6, Lcom/htc/weather/animations/WeatherAnimationData;->delay_:J
 
     const-wide/16 v9, 0x21
 

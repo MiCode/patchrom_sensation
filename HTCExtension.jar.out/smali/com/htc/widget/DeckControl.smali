@@ -140,7 +140,7 @@
     invoke-super {p0, v0}, Lcom/htc/sunny/SPresentation;->enlargeSensorArea(F)V
 
     .line 76
-    iput-object p1, p0, Lcom/htc/widget/DeckControl;->mContext:Landroid/content/Context;
+    iput-object p1, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     .line 77
     iput p3, p0, Lcom/htc/widget/DeckControl;->mCacheSize:I
@@ -401,13 +401,13 @@
 
     .line 711
     :cond_1
-    iget v9, p0, Lcom/htc/widget/DeckControl;->mPresentationState:I
+    iget v9, p0, Lcom/htc/sunny/SPresentation;->mPresentationState:I
 
     const/16 v10, 0x12
 
     if-eq v9, v10, :cond_2
 
-    iget v9, p0, Lcom/htc/widget/DeckControl;->mPresentationState:I
+    iget v9, p0, Lcom/htc/sunny/SPresentation;->mPresentationState:I
 
     const/4 v10, -0x1
 

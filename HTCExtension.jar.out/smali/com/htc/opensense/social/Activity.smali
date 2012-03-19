@@ -151,7 +151,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/opensense/social/Activity;->data:Landroid/os/Bundle;
+    iput-object v0, p0, Lcom/htc/opensense/social/Core;->data:Landroid/os/Bundle;
 
     .line 51
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
@@ -166,7 +166,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/opensense/social/Activity;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iput-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     .line 53
     return-void
@@ -185,7 +185,7 @@
 
     .prologue
     .line 187
-    iget-object v0, p0, Lcom/htc/opensense/social/Activity;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     const-string v1, "Activity"
 
@@ -227,7 +227,7 @@
 
     .prologue
     .line 183
-    iget-object v0, p0, Lcom/htc/opensense/social/Activity;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     const-string v1, "Activity"
 
@@ -310,7 +310,7 @@
 
     .prologue
     .line 179
-    iget-object v0, p0, Lcom/htc/opensense/social/Activity;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     iget-object v1, p0, Lcom/htc/opensense/social/Activity;->id:Ljava/lang/String;
 
@@ -599,12 +599,12 @@
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
     .line 73
-    iget-object v0, p0, Lcom/htc/opensense/social/Activity;->data:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->data:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
     .line 74
-    iget-object v0, p0, Lcom/htc/opensense/social/Activity;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
+    iget-object v0, p0, Lcom/htc/opensense/social/Core;->_service:Lcom/htc/opensense/social/ISocialInterfaceProxy;
 
     invoke-static {v0}, Lcom/htc/opensense/social/ISocialInterfaceProxy$_ServiceInvocationHandler;->unwrap(Lcom/htc/opensense/social/ISocialInterfaceProxy;)Lcom/htc/opensense/social/ISocialService;
 

@@ -772,7 +772,7 @@
 
     .line 194
     .local v1, dlg:Landroid/app/Dialog;
-    invoke-virtual {v1}, Landroid/app/Dialog;->show()V
+    invoke-virtual {v1}, Lcom/htc/widget/HtcAlertDialog;->show()V
 
     .line 249
     .end local v0           #builder:Lcom/htc/widget/HtcAlertDialog$Builder;
@@ -1179,7 +1179,7 @@
 
     .line 476
     .local v1, dlg:Landroid/app/Dialog;
-    invoke-virtual {v1}, Landroid/app/Dialog;->show()V
+    invoke-virtual {v1}, Lcom/htc/widget/HtcAlertDialog;->show()V
 
     .line 477
     return-void

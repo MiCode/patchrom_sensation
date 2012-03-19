@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 87
+    .line 89
     iput-object p1, p0, Lcom/android/camera/component/ZoomBar$5;->this$0:Lcom/android/camera/component/ZoomBar;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,12 +42,12 @@
     .parameter "event"
 
     .prologue
-    .line 90
+    .line 92
     iget-object v0, p0, Lcom/android/camera/component/ZoomBar$5;->this$0:Lcom/android/camera/component/ZoomBar;
 
     #calls: Lcom/android/camera/component/ZoomBar;->hideZoomBar()V
     invoke-static {v0}, Lcom/android/camera/component/ZoomBar;->access$000(Lcom/android/camera/component/ZoomBar;)V
 
-    .line 91
+    .line 93
     return-void
 .end method

@@ -59,7 +59,7 @@
     const/4 v3, 0x0
 
     .line 67
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 48
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -421,7 +421,7 @@
     .parameter "met"
 
     .prologue
-    .line 287
+    .line 293
     return-void
 .end method
 

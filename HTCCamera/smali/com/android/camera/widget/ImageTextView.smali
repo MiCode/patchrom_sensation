@@ -278,7 +278,7 @@
 
     .line 129
     .local v0, layoutParams:Landroid/widget/LinearLayout$LayoutParams;
-    iput p1, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
+    iput p1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     .line 130
     iget-object v1, p0, Lcom/android/camera/widget/ImageTextView;->m_TextView:Landroid/widget/TextView;

@@ -626,7 +626,7 @@
     .line 4401
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/camera/CameraThread;->mSyncObject:Ljava/lang/Object;
 
@@ -726,7 +726,7 @@
     .local v0, mModeHdr:Lcom/android/camera/ModeHandler;
     iget-object v4, p0, Lcom/android/camera/CameraThread;->mCameraActivity:Lcom/android/camera/HTCCamera;
 
-    invoke-virtual {v0, v4}, Lcom/android/camera/ModeHandler;->getCurrentResolutionSettingValue(Lcom/android/camera/HTCCamera;)Lcom/android/camera/Resolution;
+    invoke-virtual {v0, v4}, Lcom/android/camera/MovieModeHandler;->getCurrentResolutionSettingValue(Lcom/android/camera/HTCCamera;)Lcom/android/camera/Resolution;
 
     move-result-object v1
 
@@ -3069,7 +3069,7 @@
     .local v0, mModeHdr:Lcom/android/camera/ModeHandler;
     iget-object v4, p0, Lcom/android/camera/CameraThread;->mCameraActivity:Lcom/android/camera/HTCCamera;
 
-    invoke-virtual {v0, v4}, Lcom/android/camera/ModeHandler;->getCurrentResolutionSettingValue(Lcom/android/camera/HTCCamera;)Lcom/android/camera/Resolution;
+    invoke-virtual {v0, v4}, Lcom/android/camera/MovieModeHandler;->getCurrentResolutionSettingValue(Lcom/android/camera/HTCCamera;)Lcom/android/camera/Resolution;
 
     move-result-object v1
 
@@ -3159,7 +3159,7 @@
     :cond_0
     iget-object v4, p0, Lcom/android/camera/CameraThread;->mCameraActivity:Lcom/android/camera/HTCCamera;
 
-    invoke-virtual {v1, v4}, Lcom/android/camera/ModeHandler;->getCurrentResolutionSettingValue(Lcom/android/camera/HTCCamera;)Lcom/android/camera/Resolution;
+    invoke-virtual {v1, v4}, Lcom/android/camera/PhotoModeHandler;->getCurrentResolutionSettingValue(Lcom/android/camera/HTCCamera;)Lcom/android/camera/Resolution;
 
     move-result-object v3
 
@@ -3418,7 +3418,7 @@
     .restart local v1       #mModeHdr:Lcom/android/camera/ModeHandler;
     iget-object v4, p0, Lcom/android/camera/CameraThread;->mCameraActivity:Lcom/android/camera/HTCCamera;
 
-    invoke-virtual {v1, v4}, Lcom/android/camera/ModeHandler;->getCurrentResolutionSettingValue(Lcom/android/camera/HTCCamera;)Lcom/android/camera/Resolution;
+    invoke-virtual {v1, v4}, Lcom/android/camera/MovieModeHandler;->getCurrentResolutionSettingValue(Lcom/android/camera/HTCCamera;)Lcom/android/camera/Resolution;
 
     move-result-object v3
 
@@ -6747,7 +6747,7 @@
     .local v0, mModeHdr:Lcom/android/camera/ModeHandler;
     iget-object v4, p0, Lcom/android/camera/CameraThread;->mCameraActivity:Lcom/android/camera/HTCCamera;
 
-    invoke-virtual {v0, v4}, Lcom/android/camera/ModeHandler;->getCurrentResolutionSettingValue(Lcom/android/camera/HTCCamera;)Lcom/android/camera/Resolution;
+    invoke-virtual {v0, v4}, Lcom/android/camera/MovieModeHandler;->getCurrentResolutionSettingValue(Lcom/android/camera/HTCCamera;)Lcom/android/camera/Resolution;
 
     move-result-object v1
 
@@ -8887,7 +8887,7 @@
     .local v0, mModeHdr:Lcom/android/camera/ModeHandler;
     iget-object v3, p0, Lcom/android/camera/CameraThread;->mCameraActivity:Lcom/android/camera/HTCCamera;
 
-    invoke-virtual {v0, v3}, Lcom/android/camera/ModeHandler;->getCurrentResolutionSettingValue(Lcom/android/camera/HTCCamera;)Lcom/android/camera/Resolution;
+    invoke-virtual {v0, v3}, Lcom/android/camera/MovieModeHandler;->getCurrentResolutionSettingValue(Lcom/android/camera/HTCCamera;)Lcom/android/camera/Resolution;
 
     move-result-object v1
 
@@ -13948,7 +13948,7 @@
 
     move-object/from16 v0, v17
 
-    invoke-virtual {v0, v3}, Lcom/android/camera/ModeHandler;->getCurrentResolutionSettingValue(Lcom/android/camera/HTCCamera;)Lcom/android/camera/Resolution;
+    invoke-virtual {v0, v3}, Lcom/android/camera/MovieModeHandler;->getCurrentResolutionSettingValue(Lcom/android/camera/HTCCamera;)Lcom/android/camera/Resolution;
 
     move-result-object v21
 

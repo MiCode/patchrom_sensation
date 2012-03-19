@@ -55,7 +55,7 @@
 
     .prologue
     .line 500
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 501
     iput-object p1, p0, Landroid/app/Fragment$SavedState;->mState:Landroid/os/Bundle;
@@ -71,7 +71,7 @@
 
     .prologue
     .line 504
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 505
     invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;

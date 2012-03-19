@@ -30,7 +30,7 @@
     .line 3187
     iput-object p1, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,13 +41,6 @@
     .locals 2
 
     .prologue
-    .line 3190
-    const-string v0, "PowerManagerService"
-
-    const-string v1, "Clear PhoneOffHook ScreenTimeout"
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 3192
     monitor-enter p0
 

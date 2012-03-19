@@ -47,7 +47,7 @@
     .line 859
     iput-object p1, p0, Lcom/htc/opensense/cache/CacheManager$ImageCallable;->this$0:Lcom/htc/opensense/cache/CacheManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 860
     iput-object p2, p0, Lcom/htc/opensense/cache/CacheManager$ImageCallable;->mUrl:Ljava/lang/String;

@@ -11,8 +11,8 @@
     <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
         <com.htc.widget.HtcFooter android:id="@id/footer" android:layout_width="fill_parent" android:layout_height="wrap_content"
           xmlns:htcfooter="http://schemas.android.com/apk/res/com.htc">
-            <com.htc.widget.HtcFooterButton android:id="@id/button1" />
             <com.htc.widget.HtcFooterButton android:id="@id/button2" />
+            <com.htc.widget.HtcFooterButton android:id="@id/button1" />
         </com.htc.widget.HtcFooter>
     </LinearLayout>
 </RelativeLayout>

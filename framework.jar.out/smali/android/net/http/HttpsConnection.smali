@@ -50,7 +50,7 @@
     .line 121
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/net/http/HttpsConnection;->mSuspendLock:Ljava/lang/Object;
 
@@ -258,11 +258,11 @@
     .line 388
     :cond_0
     :try_start_0
-    iget-object v1, p0, Landroid/net/http/HttpsConnection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
+    iget-object v1, p0, Landroid/net/http/Connection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Landroid/net/http/HttpsConnection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
+    iget-object v1, p0, Landroid/net/http/Connection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
 
     invoke-virtual {v1}, Landroid/net/http/AndroidHttpClientConnection;->isOpen()Z
 
@@ -271,7 +271,7 @@
     if-eqz v1, :cond_1
 
     .line 389
-    iget-object v1, p0, Landroid/net/http/HttpsConnection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
+    iget-object v1, p0, Landroid/net/http/Connection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
 
     invoke-virtual {v1}, Landroid/net/http/AndroidHttpClientConnection;->close()V
     :try_end_0
@@ -438,7 +438,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/net/http/HttpsConnection;->mHost:Lorg/apache/http/HttpHost;
+    iget-object v0, v0, Landroid/net/http/Connection;->mHost:Lorg/apache/http/HttpHost;
 
     move-object/from16 v27, v0
 
@@ -650,7 +650,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/net/http/HttpsConnection;->mHost:Lorg/apache/http/HttpHost;
+    iget-object v0, v0, Landroid/net/http/Connection;->mHost:Lorg/apache/http/HttpHost;
 
     move-object/from16 v27, v0
 
@@ -660,7 +660,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/net/http/HttpsConnection;->mHost:Lorg/apache/http/HttpHost;
+    iget-object v0, v0, Landroid/net/http/Connection;->mHost:Lorg/apache/http/HttpHost;
 
     move-object/from16 v28, v0
 
@@ -710,7 +710,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/net/http/HttpsConnection;->mHost:Lorg/apache/http/HttpHost;
+    iget-object v0, v0, Landroid/net/http/Connection;->mHost:Lorg/apache/http/HttpHost;
 
     move-object/from16 v27, v0
 
@@ -908,7 +908,7 @@
     if-eqz v22, :cond_9
 
     .line 262
-    invoke-virtual/range {v22 .. v22}, Ljavax/net/ssl/SSLSocket;->close()V
+    throw v22
 
     .line 265
     :cond_9
@@ -1023,7 +1023,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/net/http/HttpsConnection;->mHost:Lorg/apache/http/HttpHost;
+    iget-object v0, v0, Landroid/net/http/Connection;->mHost:Lorg/apache/http/HttpHost;
 
     move-object/from16 v27, v0
 
@@ -1033,7 +1033,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/net/http/HttpsConnection;->mHost:Lorg/apache/http/HttpHost;
+    iget-object v0, v0, Landroid/net/http/Connection;->mHost:Lorg/apache/http/HttpHost;
 
     move-object/from16 v28, v0
 
@@ -1362,7 +1362,7 @@
 
     .prologue
     .line 153
-    iput-object p1, p0, Landroid/net/http/HttpsConnection;->mCertificate:Landroid/net/http/SslCertificate;
+    iput-object p1, p0, Landroid/net/http/Connection;->mCertificate:Landroid/net/http/SslCertificate;
 
     .line 154
     return-void

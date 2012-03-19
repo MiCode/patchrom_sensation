@@ -27,7 +27,7 @@
 
     invoke-direct {v0}, Lcom/htc/util/mail/lib/org/apache/commons/io/output/ClosedOutputStream;-><init>()V
 
-    iput-object v0, p0, Lcom/htc/util/mail/lib/org/apache/commons/io/output/CloseShieldOutputStream;->out:Ljava/io/OutputStream;
+    iput-object v0, p0, Lcom/htc/util/mail/lib/org/apache/commons/io/output/ProxyOutputStream;->out:Ljava/io/OutputStream;
 
     .line 50
     return-void

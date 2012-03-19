@@ -40,7 +40,7 @@
 
     iput p3, p0, Lcom/android/server/am/ServiceRecord$2;->val$localForegroundId:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

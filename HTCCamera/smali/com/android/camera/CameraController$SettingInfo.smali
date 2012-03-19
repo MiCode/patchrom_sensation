@@ -34,7 +34,7 @@
     const/4 v1, 0x0
 
     .line 420
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 409
     iput v1, p0, Lcom/android/camera/CameraController$SettingInfo;->min_value:I

@@ -295,7 +295,7 @@
     if-nez v0, :cond_0
 
     .line 214
-    iget-object v0, p0, Lcom/htc/opensense/social/PersonOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v0, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     invoke-interface {v0}, Lcom/htc/opensense/social/ISocialService;->asBinder()Landroid/os/IBinder;
 
@@ -340,7 +340,7 @@
     if-nez v0, :cond_0
 
     .line 204
-    iget-object v0, p0, Lcom/htc/opensense/social/PersonOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v0, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     invoke-interface {v0}, Lcom/htc/opensense/social/ISocialService;->asBinder()Landroid/os/IBinder;
 
@@ -385,7 +385,7 @@
     if-nez v0, :cond_0
 
     .line 194
-    iget-object v0, p0, Lcom/htc/opensense/social/PersonOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v0, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     invoke-interface {v0}, Lcom/htc/opensense/social/ISocialService;->asBinder()Landroid/os/IBinder;
 
@@ -446,7 +446,7 @@
     .line 85
     .local v0, albumList:[Lcom/htc/opensense/social/data/Album;
     :try_start_0
-    iget-object v3, p0, Lcom/htc/opensense/social/PersonOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v3, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     iget-object v4, p0, Lcom/htc/opensense/social/PersonOp;->mPerson:Lcom/htc/opensense/social/data/Person;
 
@@ -463,7 +463,7 @@
     invoke-virtual {v2}, Lcom/htc/opensense/social/RemoteError;->toRemoteException()V
 
     .line 91
-    iget-object v3, p0, Lcom/htc/opensense/social/PersonOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v3, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     sget-object v4, Lcom/htc/opensense/social/AlbumOp;->CREATOR:Lcom/htc/opensense/social/DataOp$OpCreator;
 
@@ -547,7 +547,7 @@
     .line 103
     .local v2, feedList:[Lcom/htc/opensense/social/data/Feed;
     :try_start_0
-    iget-object v3, p0, Lcom/htc/opensense/social/PersonOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v3, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     iget-object v4, p0, Lcom/htc/opensense/social/PersonOp;->mPerson:Lcom/htc/opensense/social/data/Person;
 
@@ -564,7 +564,7 @@
     invoke-virtual {v1}, Lcom/htc/opensense/social/RemoteError;->toRemoteException()V
 
     .line 110
-    iget-object v3, p0, Lcom/htc/opensense/social/PersonOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v3, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     invoke-static {v3, v2}, Lcom/htc/opensense/social/FeedOp;->convertToFeedServiceList(Lcom/htc/opensense/social/ISocialService;[Lcom/htc/opensense/social/data/Feed;)Ljava/util/List;
 
@@ -623,7 +623,7 @@
     .line 66
     .local v2, friendList:[Lcom/htc/opensense/social/data/Person;
     :try_start_0
-    iget-object v3, p0, Lcom/htc/opensense/social/PersonOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v3, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     iget-object v4, p0, Lcom/htc/opensense/social/PersonOp;->mPerson:Lcom/htc/opensense/social/data/Person;
 
@@ -640,7 +640,7 @@
     invoke-virtual {v1}, Lcom/htc/opensense/social/RemoteError;->toRemoteException()V
 
     .line 72
-    iget-object v3, p0, Lcom/htc/opensense/social/PersonOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v3, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     sget-object v4, Lcom/htc/opensense/social/PersonOp;->CREATOR:Lcom/htc/opensense/social/DataOp$OpCreator;
 
@@ -705,7 +705,7 @@
     .line 180
     .local v8, media:[Lcom/htc/opensense/social/data/Medium;
     :try_start_0
-    iget-object v0, p0, Lcom/htc/opensense/social/PersonOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v0, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     iget-object v1, p0, Lcom/htc/opensense/social/PersonOp;->mPerson:Lcom/htc/opensense/social/data/Person;
 
@@ -730,7 +730,7 @@
     invoke-virtual {v6}, Lcom/htc/opensense/social/RemoteError;->toRemoteException()V
 
     .line 186
-    iget-object v0, p0, Lcom/htc/opensense/social/PersonOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v0, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     sget-object v1, Lcom/htc/opensense/social/MediumOp;->CREATOR:Lcom/htc/opensense/social/DataOp$OpCreator;
 
@@ -788,7 +788,7 @@
     .line 165
     .local v8, media:[Lcom/htc/opensense/social/data/Medium;
     :try_start_0
-    iget-object v0, p0, Lcom/htc/opensense/social/PersonOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v0, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     iget-object v1, p0, Lcom/htc/opensense/social/PersonOp;->mPerson:Lcom/htc/opensense/social/data/Person;
 
@@ -813,7 +813,7 @@
     invoke-virtual {v6}, Lcom/htc/opensense/social/RemoteError;->toRemoteException()V
 
     .line 171
-    iget-object v0, p0, Lcom/htc/opensense/social/PersonOp;->socialService:Lcom/htc/opensense/social/ISocialService;
+    iget-object v0, p0, Lcom/htc/opensense/social/DataOp;->socialService:Lcom/htc/opensense/social/ISocialService;
 
     sget-object v1, Lcom/htc/opensense/social/MediumOp;->CREATOR:Lcom/htc/opensense/social/DataOp$OpCreator;
 

@@ -12,7 +12,7 @@
 #the value of this static final field might be set in the static constructor
 .field static final ENABLE_USER_PROFILING:Z = false
 
-.field static final IS_DEBUG:Z = true
+.field static final IS_DEBUG:Z = false
 
 .field static SEED_GETTER:Lcom/htc/utils/ulog/io/LogStream$SeedGetter; = null
 
@@ -72,7 +72,7 @@
     .line 188
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/htc/server/ulog/Utils;->sLock:Ljava/lang/Object;
 
@@ -120,7 +120,7 @@
     .line 278
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/htc/server/ulog/Utils;->sTimeSuncLock:Ljava/lang/Object;
 
@@ -163,7 +163,7 @@
 
     .prologue
     .line 35
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -1768,15 +1768,10 @@
 .end method
 
 .method static logD(Ljava/lang/String;)V
-    .locals 1
+    .locals 0
     .parameter "msg"
 
     .prologue
-    .line 101
-    const-string v0, "UserBehaviorLoggingService"
-
-    invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 103
     return-void
 .end method
@@ -1787,9 +1782,6 @@
     .parameter "msg"
 
     .prologue
-    .line 95
-    invoke-static {p0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 97
     return-void
 .end method

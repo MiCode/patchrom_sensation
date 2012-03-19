@@ -30,7 +30,7 @@
     .line 106
     iput-object p1, p0, Lcom/htc/textselection/HtcTextSelectionWrapper$1;->val$watcher:Lcom/htc/textselection/HtcTextSelectionWrapper$TextSelectionWatcher;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

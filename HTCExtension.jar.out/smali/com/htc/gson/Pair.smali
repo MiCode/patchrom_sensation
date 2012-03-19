@@ -50,7 +50,7 @@
     .local p0, this:Lcom/htc/gson/Pair;,"Lcom/htc/gson/Pair<TFIRST;TSECOND;>;"
     .local p1, first:Ljava/lang/Object;,"TFIRST;"
     .local p2, second:Ljava/lang/Object;,"TSECOND;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 26
     iput-object p1, p0, Lcom/htc/gson/Pair;->first:Ljava/lang/Object;

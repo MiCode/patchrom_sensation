@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1889
+    .line 1900
     iput-object p1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -36,14 +36,14 @@
     .locals 4
 
     .prologue
-    .line 1939
+    .line 1950
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v1, v1, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->mMyUpstreamIfaceName:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 1946
+    .line 1957
     :try_start_0
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -58,7 +58,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1951
+    .line 1962
     :goto_0
     :try_start_1
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
@@ -82,7 +82,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 1960
+    .line 1971
     :goto_1
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -90,15 +90,15 @@
 
     iput-object v2, v1, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->mMyUpstreamIfaceName:Ljava/lang/String;
 
-    .line 1962
+    .line 1973
     :cond_0
     return-void
 
-    .line 1947
+    .line 1958
     :catch_0
     move-exception v0
 
-    .line 1948
+    .line 1959
     .local v0, e:Ljava/lang/Exception;
     const-string v1, "Tethering"
 
@@ -128,12 +128,12 @@
 
     goto :goto_0
 
-    .line 1952
+    .line 1963
     .end local v0           #e:Ljava/lang/Exception;
     :catch_1
     move-exception v0
 
-    .line 1957
+    .line 1968
     .restart local v0       #e:Ljava/lang/Exception;
     const-string v1, "Tethering"
 
@@ -200,7 +200,7 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 1893
+    .line 1904
     :try_start_0
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -219,12 +219,12 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1907
+    .line 1918
     sget-boolean v1, Lcom/android/server/connectivity/Tethering;->DISABLE_MULTI_RAB_TRAFFIC_support:Z
 
     if-eqz v1, :cond_0
 
-    .line 1908
+    .line 1919
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v1, v1, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -236,7 +236,7 @@
     #calls: Lcom/android/server/connectivity/Tethering;->setMultiRABTrafficThrottling(Ljava/lang/String;I)V
     invoke-static {v1, v2, v4}, Lcom/android/server/connectivity/Tethering;->access$4200(Lcom/android/server/connectivity/Tethering;Ljava/lang/String;I)V
 
-    .line 1918
+    .line 1929
     :cond_0
     const-string v1, "Tethering"
 
@@ -264,7 +264,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1919
+    .line 1930
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     const/4 v2, 0x0
@@ -272,13 +272,13 @@
     #calls: Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->setAvailable(Z)V
     invoke-static {v1, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->access$2600(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;Z)V
 
-    .line 1920
+    .line 1931
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     #calls: Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->setTethered(Z)V
     invoke-static {v1, v4}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->access$2700(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;Z)V
 
-    .line 1921
+    .line 1932
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v1, v1, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -286,15 +286,15 @@
     #calls: Lcom/android/server/connectivity/Tethering;->sendTetherStateChangedBroadcast()V
     invoke-static {v1}, Lcom/android/server/connectivity/Tethering;->access$2800(Lcom/android/server/connectivity/Tethering;)V
 
-    .line 1922
+    .line 1933
     :goto_0
     return-void
 
-    .line 1894
+    .line 1905
     :catch_0
     move-exception v0
 
-    .line 1895
+    .line 1906
     .local v0, e:Ljava/lang/Exception;
     const-string v1, "Tethering"
 
@@ -322,7 +322,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1896
+    .line 1907
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     const/4 v2, 0x6
@@ -330,7 +330,7 @@
     #calls: Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->setLastError(I)V
     invoke-static {v1, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->access$2900(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;I)V
 
-    .line 1899
+    .line 1910
     const-string v1, "Tethering"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -367,7 +367,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1901
+    .line 1912
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v2, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
@@ -387,14 +387,14 @@
     .locals 3
 
     .prologue
-    .line 1927
+    .line 1938
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-boolean v0, v0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->mUsb:Z
 
     if-eqz v0, :cond_1
 
-    .line 1928
+    .line 1939
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v0, v0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -406,7 +406,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1929
+    .line 1940
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v0, v0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -416,7 +416,7 @@
     #setter for: Lcom/android/server/connectivity/Tethering;->mPreferredUpstreamMobileApn:I
     invoke-static {v0, v1}, Lcom/android/server/connectivity/Tethering;->access$2402(Lcom/android/server/connectivity/Tethering;I)I
 
-    .line 1930
+    .line 1941
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v0, v0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -432,7 +432,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/util/StateMachine;->sendMessage(ILjava/lang/Object;)V
 
-    .line 1933
+    .line 1944
     :cond_0
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -443,7 +443,7 @@
     #calls: Lcom/android/server/connectivity/Tethering;->configureUsbIface(Z)Z
     invoke-static {v0, v1}, Lcom/android/server/connectivity/Tethering;->access$2200(Lcom/android/server/connectivity/Tethering;Z)Z
 
-    .line 1935
+    .line 1946
     :cond_1
     return-void
 .end method
@@ -453,7 +453,7 @@
     .parameter "message"
 
     .prologue
-    .line 1967
+    .line 1978
     const-string v10, "Tethering"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -478,33 +478,33 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1968
+    .line 1979
     const/4 v9, 0x1
 
-    .line 1969
+    .line 1980
     .local v9, retValue:Z
     const/4 v3, 0x0
 
-    .line 1970
+    .line 1981
     .local v3, error:Z
     iget v10, p1, Landroid/os/Message;->what:I
 
     packed-switch v10, :pswitch_data_0
 
-    .line 2193
+    .line 2204
     :pswitch_0
     const/4 v9, 0x0
 
-    .line 2196
+    .line 2207
     :cond_0
     :goto_0
     return v9
 
-    .line 1973
+    .line 1984
     :pswitch_1
     invoke-direct {p0}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->cleanupUpstream()V
 
-    .line 1975
+    .line 1986
     :try_start_0
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -523,7 +523,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1981
+    .line 1992
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v10, v10, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -539,21 +539,21 @@
 
     invoke-virtual {v10, v11, v12}, Lcom/android/internal/util/StateMachine;->sendMessage(ILjava/lang/Object;)V
 
-    .line 1983
+    .line 1994
     iget v10, p1, Landroid/os/Message;->what:I
 
     const/4 v11, 0x3
 
     if-ne v10, v11, :cond_4
 
-    .line 1984
+    .line 1995
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-boolean v10, v10, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->mUsb:Z
 
     if-eqz v10, :cond_1
 
-    .line 1985
+    .line 1996
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v10, v10, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -567,7 +567,7 @@
 
     if-nez v10, :cond_1
 
-    .line 1986
+    .line 1997
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     const/16 v11, 0xa
@@ -575,7 +575,7 @@
     #calls: Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->setLastError(I)V
     invoke-static {v10, v11}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->access$2900(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;I)V
 
-    .line 1990
+    .line 2001
     :cond_1
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -589,14 +589,14 @@
     #calls: Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->transitionTo(Lcom/android/internal/util/IState;)V
     invoke-static {v10, v11}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->access$4400(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;Lcom/android/internal/util/IState;)V
 
-    .line 2000
+    .line 2011
     :cond_2
     :goto_1
     sget-boolean v10, Lcom/android/server/connectivity/Tethering;->DISABLE_MULTI_RAB_TRAFFIC_support:Z
 
     if-eqz v10, :cond_3
 
-    .line 2001
+    .line 2012
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v10, v10, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -610,7 +610,7 @@
     #calls: Lcom/android/server/connectivity/Tethering;->setMultiRABTrafficThrottling(Ljava/lang/String;I)V
     invoke-static {v10, v11, v12}, Lcom/android/server/connectivity/Tethering;->access$4200(Lcom/android/server/connectivity/Tethering;Ljava/lang/String;I)V
 
-    .line 2011
+    .line 2022
     :cond_3
     const-string v10, "Tethering"
 
@@ -640,11 +640,11 @@
 
     goto :goto_0
 
-    .line 1976
+    .line 1987
     :catch_0
     move-exception v2
 
-    .line 1977
+    .line 1988
     .local v2, e:Ljava/lang/Exception;
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -654,7 +654,7 @@
 
     goto :goto_0
 
-    .line 1991
+    .line 2002
     .end local v2           #e:Ljava/lang/Exception;
     :cond_4
     iget v10, p1, Landroid/os/Message;->what:I
@@ -663,7 +663,7 @@
 
     if-ne v10, v11, :cond_2
 
-    .line 1993
+    .line 2004
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-boolean v10, v10, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->mUsb:Z
@@ -679,7 +679,7 @@
     #calls: Lcom/android/server/connectivity/Tethering;->configureUsbIface(Z)Z
     invoke-static {v10, v11}, Lcom/android/server/connectivity/Tethering;->access$2200(Lcom/android/server/connectivity/Tethering;Z)Z
 
-    .line 1995
+    .line 2006
     :cond_5
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -695,7 +695,7 @@
 
     goto :goto_1
 
-    .line 2014
+    .line 2025
     :pswitch_2
     iget-object v10, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -705,11 +705,11 @@
 
     check-cast v7, Ljava/lang/String;
 
-    .line 2029
+    .line 2040
     .local v7, newUpstreamIfaceName:Ljava/lang/String;
     const/4 v4, 0x0
 
-    .line 2030
+    .line 2041
     .local v4, fakeTetherinfChange:Z
     if-eqz v7, :cond_6
 
@@ -721,19 +721,52 @@
 
     if-eqz v10, :cond_6
 
-    .line 2031
+    .line 2042
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v7, v10, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->mMyUpstreamIfaceName:Ljava/lang/String;
 
-    .line 2032
+    .line 2043
     const/4 v4, 0x1
 
-    .line 2036
+    .line 2050
     :cond_6
-    invoke-static {}, Lcom/android/server/connectivity/Tethering;->access$4600()Ljava/lang/String;
+    if-eqz v7, :cond_8
 
-    move-result-object v10
+    .line 2053
+    const/4 v8, 0x0
+
+    .line 2054
+    .local v8, regexDownStreamIfaceName:Ljava/lang/String;
+    iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
+
+    iget-object v10, v10, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->this$0:Lcom/android/server/connectivity/Tethering;
+
+    iget-object v11, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
+
+    iget-object v11, v11, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->mIfaceName:Ljava/lang/String;
+
+    #calls: Lcom/android/server/connectivity/Tethering;->isUsb(Ljava/lang/String;)Z
+    invoke-static {v10, v11}, Lcom/android/server/connectivity/Tethering;->access$4600(Lcom/android/server/connectivity/Tethering;Ljava/lang/String;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_12
+
+    .line 2061
+    :cond_7
+    :goto_2
+    if-eqz v8, :cond_8
+
+    .line 2062
+    invoke-virtual {v7, v8}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_8
+
+    .line 2064
+    const-string v10, "Tethering"
 
     new-instance v11, Ljava/lang/StringBuilder;
 
@@ -783,50 +816,15 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2039
-    if-eqz v7, :cond_8
-
-    .line 2042
-    const/4 v8, 0x0
-
-    .line 2043
-    .local v8, regexDownStreamIfaceName:Ljava/lang/String;
-    iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-
-    iget-object v10, v10, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->this$0:Lcom/android/server/connectivity/Tethering;
-
-    iget-object v11, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-
-    iget-object v11, v11, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->mIfaceName:Ljava/lang/String;
-
-    #calls: Lcom/android/server/connectivity/Tethering;->isUsb(Ljava/lang/String;)Z
-    invoke-static {v10, v11}, Lcom/android/server/connectivity/Tethering;->access$4700(Lcom/android/server/connectivity/Tethering;Ljava/lang/String;)Z
-
-    move-result v10
-
-    if-eqz v10, :cond_12
-
-    .line 2050
-    :cond_7
-    :goto_2
-    if-eqz v8, :cond_8
-
-    .line 2051
-    invoke-virtual {v7, v8}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
-
-    move-result v10
-
-    if-eqz v10, :cond_8
-
-    .line 2060
+    .line 2071
     const/4 v7, 0x0
 
-    .line 2068
+    .line 2079
     .end local v8           #regexDownStreamIfaceName:Ljava/lang/String;
     :cond_8
     move-object v1, v7
 
-    .line 2069
+    .line 2080
     .local v1, currentUpstreamIfaceName:Ljava/lang/String;
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -850,62 +848,23 @@
 
     :goto_3
     #calls: Lcom/android/server/connectivity/Tethering;->htcPermittedTetherAllow(Ljava/lang/String;Ljava/lang/String;Z)Z
-    invoke-static {v11, v12, v7, v10}, Lcom/android/server/connectivity/Tethering;->access$4800(Lcom/android/server/connectivity/Tethering;Ljava/lang/String;Ljava/lang/String;Z)Z
+    invoke-static {v11, v12, v7, v10}, Lcom/android/server/connectivity/Tethering;->access$4700(Lcom/android/server/connectivity/Tethering;Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v0
 
-    .line 2072
+    .line 2083
     .local v0, allowPermittedTether:Z
     if-nez v0, :cond_14
 
-    .line 2074
-    invoke-static {}, Lcom/android/server/connectivity/Tethering;->access$4600()Ljava/lang/String;
-
-    move-result-object v10
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v12, "not allow if "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    iget-object v12, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-
-    iget-object v12, v12, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->mIfaceName:Ljava/lang/String;
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    const-string v12, ", up="
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2076
+    .line 2087
     const/4 v7, 0x0
 
-    .line 2084
+    .line 2095
     :cond_9
     :goto_4
     const/4 v5, 0x1
 
-    .line 2085
+    .line 2096
     .local v5, isUpstreamIfaceChange:Z
     if-eqz v7, :cond_a
 
@@ -925,14 +884,14 @@
 
     if-eqz v10, :cond_a
 
-    .line 2088
+    .line 2099
     const/4 v5, 0x0
 
-    .line 2094
+    .line 2105
     :cond_a
     const/4 v6, 0x0
 
-    .line 2095
+    .line 2106
     .local v6, mPrevUpstreamIfaceName:Ljava/lang/String;
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -940,7 +899,7 @@
 
     if-eqz v10, :cond_d
 
-    .line 2096
+    .line 2107
     new-instance v6, Ljava/lang/String;
 
     .end local v6           #mPrevUpstreamIfaceName:Ljava/lang/String;
@@ -950,32 +909,32 @@
 
     invoke-direct {v6, v10}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    .line 2097
+    .line 2108
     .restart local v6       #mPrevUpstreamIfaceName:Ljava/lang/String;
     if-eqz v0, :cond_b
 
     if-eqz v5, :cond_c
 
-    .line 2099
+    .line 2110
     :cond_b
     invoke-direct {p0}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->cleanupUpstream()V
 
-    .line 2102
+    .line 2113
     :cond_c
     if-nez v0, :cond_d
 
-    .line 2103
+    .line 2114
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iput-object v6, v10, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->mMyUpstreamIfaceName:Ljava/lang/String;
 
-    .line 2111
+    .line 2122
     :cond_d
     if-eqz v5, :cond_e
 
     if-eqz v7, :cond_e
 
-    .line 2114
+    .line 2125
     :try_start_1
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -994,13 +953,13 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 2145
+    .line 2156
     :cond_e
     if-eqz v5, :cond_f
 
     if-eqz v7, :cond_10
 
-    .line 2146
+    .line 2157
     :cond_f
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -1017,13 +976,13 @@
 
     invoke-virtual {v10, v11, v12}, Lcom/android/internal/util/StateMachine;->sendMessage(ILjava/lang/Object;)V
 
-    .line 2149
+    .line 2160
     :cond_10
     if-eqz v4, :cond_11
 
     if-eqz v0, :cond_0
 
-    .line 2150
+    .line 2161
     :cond_11
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -1031,7 +990,7 @@
 
     goto/16 :goto_0
 
-    .line 2046
+    .line 2057
     .end local v0           #allowPermittedTether:Z
     .end local v1           #currentUpstreamIfaceName:Ljava/lang/String;
     .end local v5           #isUpstreamIfaceChange:Z
@@ -1052,25 +1011,25 @@
 
     if-eqz v10, :cond_7
 
-    .line 2047
+    .line 2058
     const-string v8, "wlan0"
 
     goto/16 :goto_2
 
-    .line 2069
+    .line 2080
     .end local v8           #regexDownStreamIfaceName:Ljava/lang/String;
     .restart local v1       #currentUpstreamIfaceName:Ljava/lang/String;
     :cond_13
     const/4 v10, 0x0
 
-    goto/16 :goto_3
+    goto :goto_3
 
-    .line 2079
+    .line 2090
     .restart local v0       #allowPermittedTether:Z
     :cond_14
     if-eqz v4, :cond_9
 
-    .line 2080
+    .line 2091
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     const/4 v11, 0x0
@@ -1079,13 +1038,13 @@
 
     goto :goto_4
 
-    .line 2115
+    .line 2126
     .restart local v5       #isUpstreamIfaceChange:Z
     .restart local v6       #mPrevUpstreamIfaceName:Ljava/lang/String;
     :catch_1
     move-exception v2
 
-    .line 2116
+    .line 2127
     .restart local v2       #e:Ljava/lang/Exception;
     const-string v10, "Tethering"
 
@@ -1113,7 +1072,7 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2118
+    .line 2129
     const-string v10, "Tethering"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -1160,10 +1119,10 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2119
+    .line 2130
     if-nez v4, :cond_e
 
-    .line 2122
+    .line 2133
     :try_start_2
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -1182,7 +1141,7 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
 
-    .line 2132
+    .line 2143
     :goto_5
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -1192,7 +1151,7 @@
 
     goto/16 :goto_0
 
-    .line 2160
+    .line 2171
     .end local v0           #allowPermittedTether:Z
     .end local v1           #currentUpstreamIfaceName:Ljava/lang/String;
     .end local v2           #e:Ljava/lang/Exception;
@@ -1203,11 +1162,11 @@
     :pswitch_3
     const/4 v3, 0x1
 
-    .line 2163
+    .line 2174
     :pswitch_4
     invoke-direct {p0}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->cleanupUpstream()V
 
-    .line 2165
+    .line 2176
     :try_start_3
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -1226,10 +1185,10 @@
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 2174
+    .line 2185
     if-eqz v3, :cond_15
 
-    .line 2175
+    .line 2186
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     const/4 v11, 0x5
@@ -1238,11 +1197,11 @@
 
     goto/16 :goto_0
 
-    .line 2166
+    .line 2177
     :catch_2
     move-exception v2
 
-    .line 2168
+    .line 2179
     .restart local v2       #e:Ljava/lang/Exception;
     const-string v10, "Tethering"
 
@@ -1280,7 +1239,7 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2170
+    .line 2181
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     const/4 v11, 0x7
@@ -1289,7 +1248,7 @@
 
     goto/16 :goto_0
 
-    .line 2179
+    .line 2190
     .end local v2           #e:Ljava/lang/Exception;
     :cond_15
     const-string v10, "Tethering"
@@ -1318,7 +1277,7 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2180
+    .line 2191
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v10, v10, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -1326,14 +1285,14 @@
     #calls: Lcom/android/server/connectivity/Tethering;->sendTetherStateChangedBroadcast()V
     invoke-static {v10}, Lcom/android/server/connectivity/Tethering;->access$2800(Lcom/android/server/connectivity/Tethering;)V
 
-    .line 2181
+    .line 2192
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-boolean v10, v10, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->mUsb:Z
 
     if-eqz v10, :cond_16
 
-    .line 2182
+    .line 2193
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v10, v10, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -1347,7 +1306,7 @@
 
     if-nez v10, :cond_16
 
-    .line 2183
+    .line 2194
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     const/16 v11, 0xa
@@ -1355,7 +1314,7 @@
     #calls: Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->setLastError(I)V
     invoke-static {v10, v11}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->access$2900(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;I)V
 
-    .line 2187
+    .line 2198
     :cond_16
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
@@ -1372,7 +1331,7 @@
 
     invoke-virtual {v10, v11, v12}, Lcom/android/internal/util/StateMachine;->sendMessage(ILjava/lang/Object;)V
 
-    .line 2190
+    .line 2201
     iget-object v10, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v11, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$TetheredState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
@@ -1383,11 +1342,11 @@
     move-result-object v11
 
     #calls: Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->transitionTo(Lcom/android/internal/util/IState;)V
-    invoke-static {v10, v11}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->access$4900(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;Lcom/android/internal/util/IState;)V
+    invoke-static {v10, v11}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->access$4800(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;Lcom/android/internal/util/IState;)V
 
     goto/16 :goto_0
 
-    .line 2123
+    .line 2134
     .restart local v0       #allowPermittedTether:Z
     .restart local v1       #currentUpstreamIfaceName:Ljava/lang/String;
     .restart local v2       #e:Ljava/lang/Exception;
@@ -1400,7 +1359,9 @@
 
     goto/16 :goto_5
 
-    .line 1970
+    .line 1981
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_4

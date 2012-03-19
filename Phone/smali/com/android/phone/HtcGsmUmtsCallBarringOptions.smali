@@ -21,7 +21,7 @@
 
 .field private static final CB_OUTGOING_INTL_ROAM:Ljava/lang/String; = "cb_outgoing_intl_roam"
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final KEY_CHECK:Ljava/lang/String; = "check"
 
@@ -298,13 +298,6 @@
     .line 110
     if-nez p1, :cond_1
 
-    .line 111
-    const-string v4, "HtcGsmUmtsCallBarringOptions"
-
-    const-string v5, "start to init "
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 112
     iget-object v4, p0, Lcom/android/phone/HtcGsmUmtsCallBarringOptions;->mPreferences:Ljava/util/ArrayList;
 
@@ -394,19 +387,12 @@
 .end method
 
 .method public onFinished(Lcom/htc/preference/HtcPreference;Z)V
-    .locals 4
+    .locals 3
     .parameter "preference"
     .parameter "reading"
 
     .prologue
-    const/4 v3, 0x0
-
-    .line 140
-    const-string v0, "HtcGsmUmtsCallBarringOptions"
-
-    const-string v1, "onFinished"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v2, 0x0
 
     .line 142
     invoke-virtual {p0}, Lcom/android/phone/HtcGsmUmtsCallBarringOptions;->isFinishing()Z
@@ -435,31 +421,6 @@
 
     iput v0, p0, Lcom/android/phone/HtcGsmUmtsCallBarringOptions;->mInitIndex:I
 
-    .line 145
-    const-string v0, "HtcGsmUmtsCallBarringOptions"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "init "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/phone/HtcGsmUmtsCallBarringOptions;->mInitIndex:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 146
     iget-object v0, p0, Lcom/android/phone/HtcGsmUmtsCallBarringOptions;->mPreferences:Ljava/util/ArrayList;
 
@@ -471,7 +432,7 @@
 
     check-cast v0, Lcom/android/phone/HtcCallBarringEditPreference;
 
-    invoke-virtual {v0, p0, v3}, Lcom/android/phone/HtcCallBarringEditPreference;->init(Lcom/android/phone/TimeConsumingPreferenceListener;Z)V
+    invoke-virtual {v0, p0, v2}, Lcom/android/phone/HtcCallBarringEditPreference;->init(Lcom/android/phone/TimeConsumingPreferenceListener;Z)V
 
     .line 153
     :cond_0
@@ -485,7 +446,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/phone/HtcGsmUmtsCallBarringOptions;->mButtonCBDA:Lcom/android/phone/HtcDeactiveAllCallBarring;
 
-    invoke-virtual {v0, p0, v3}, Lcom/android/phone/HtcDeactiveAllCallBarring;->init(Lcom/android/phone/TimeConsumingPreferenceListener;Z)V
+    invoke-virtual {v0, p0, v2}, Lcom/android/phone/HtcDeactiveAllCallBarring;->init(Lcom/android/phone/TimeConsumingPreferenceListener;Z)V
 
     goto :goto_0
 .end method

@@ -88,7 +88,7 @@
     .prologue
     .line 133
     .local p0, this:Lcom/htc/opensense/album/PresentationActivityBase;,"Lcom/htc/opensense/album/PresentationActivityBase<TAD;>;"
-    iget-object v0, p0, Lcom/htc/opensense/album/PresentationActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v0, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     check-cast v0, Lcom/htc/opensense/album/PresentationManager;
 
@@ -104,7 +104,7 @@
     .prologue
     .line 128
     .local p0, this:Lcom/htc/opensense/album/PresentationActivityBase;,"Lcom/htc/opensense/album/PresentationActivityBase<TAD;>;"
-    iget-object v0, p0, Lcom/htc/opensense/album/PresentationActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v0, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     check-cast v0, Lcom/htc/opensense/album/PresentationManager;
 
@@ -130,7 +130,7 @@
     if-eq v1, v2, :cond_1
 
     .line 98
-    iget-object v1, p0, Lcom/htc/opensense/album/PresentationActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v1, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     check-cast v1, Lcom/htc/opensense/album/PresentationManager;
 
@@ -158,7 +158,7 @@
     invoke-virtual {v0, v1, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 105
-    iget-object v1, p0, Lcom/htc/opensense/album/PresentationActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v1, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     const/4 v2, 0x5
 
@@ -209,10 +209,10 @@
 
     invoke-direct {v0, p0}, Lcom/htc/opensense/album/PresentationManager;-><init>(Landroid/app/Activity;)V
 
-    iput-object v0, p0, Lcom/htc/opensense/album/PresentationActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iput-object v0, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     .line 123
-    iget-object v0, p0, Lcom/htc/opensense/album/PresentationActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v0, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     check-cast v0, Lcom/htc/opensense/album/PresentationManager;
 
@@ -257,7 +257,7 @@
     invoke-super {p0}, Lcom/htc/opensense/album/TemplateActivityBase;->onResume()V
 
     .line 82
-    iget-object v0, p0, Lcom/htc/opensense/album/PresentationActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v0, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     check-cast v0, Lcom/htc/opensense/album/PresentationManager;
 
@@ -308,7 +308,7 @@
 
     .line 59
     :goto_0
-    iget-object v1, p0, Lcom/htc/opensense/album/PresentationActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v1, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     check-cast v1, Lcom/htc/opensense/album/PresentationManager;
 
@@ -330,7 +330,7 @@
     invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 62
-    iget-object v1, p0, Lcom/htc/opensense/album/PresentationActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v1, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     const/4 v2, 0x5
 
@@ -373,7 +373,7 @@
     .prologue
     .line 138
     .local p0, this:Lcom/htc/opensense/album/PresentationActivityBase;,"Lcom/htc/opensense/album/PresentationActivityBase<TAD;>;"
-    iget-object v0, p0, Lcom/htc/opensense/album/PresentationActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v0, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     check-cast v0, Lcom/htc/opensense/album/PresentationManager;
 

@@ -33,7 +33,7 @@
     const/4 v0, 0x0
 
     .line 28
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 7
     iput v1, p0, Lcom/htc/painting/engine/MotionPoint;->mX:I

@@ -1214,7 +1214,7 @@
     .line 668
     iget v8, p0, Lcom/android/camera/widget/SlidingDrawer;->mTopOffset:I
 
-    invoke-virtual {v3}, Landroid/view/View;->getTop()I
+    invoke-virtual {v3}, Landroid/widget/ImageView;->getTop()I
 
     move-result v9
 
@@ -1234,7 +1234,7 @@
     :cond_0
     iget v8, p0, Lcom/android/camera/widget/SlidingDrawer;->mTopOffset:I
 
-    invoke-virtual {v3}, Landroid/view/View;->getTop()I
+    invoke-virtual {v3}, Landroid/widget/ImageView;->getTop()I
 
     move-result v9
 
@@ -1270,7 +1270,7 @@
 
     sub-int/2addr v8, v9
 
-    invoke-virtual {v3}, Landroid/view/View;->getTop()I
+    invoke-virtual {v3}, Landroid/widget/ImageView;->getTop()I
 
     move-result v9
 
@@ -1300,7 +1300,7 @@
 
     sub-int/2addr v8, v9
 
-    invoke-virtual {v3}, Landroid/view/View;->getTop()I
+    invoke-virtual {v3}, Landroid/widget/ImageView;->getTop()I
 
     move-result v9
 
@@ -1312,7 +1312,7 @@
 
     .line 689
     :cond_3
-    invoke-virtual {v3}, Landroid/view/View;->getTop()I
+    invoke-virtual {v3}, Landroid/widget/ImageView;->getTop()I
 
     move-result v7
 
@@ -1391,7 +1391,7 @@
 
     .line 723
     .local v5, region:Landroid/graphics/Rect;
-    invoke-virtual {v3, v2}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
+    invoke-virtual {v3, v2}, Landroid/widget/ImageView;->getHitRect(Landroid/graphics/Rect;)V
 
     .line 724
     invoke-virtual {v5, v2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
@@ -1520,7 +1520,7 @@
     .line 734
     iget v8, p0, Lcom/android/camera/widget/SlidingDrawer;->mTopOffset:I
 
-    invoke-virtual {v3}, Landroid/view/View;->getLeft()I
+    invoke-virtual {v3}, Landroid/widget/ImageView;->getLeft()I
 
     move-result v9
 
@@ -1552,7 +1552,7 @@
 
     sub-int/2addr v8, v9
 
-    invoke-virtual {v3}, Landroid/view/View;->getLeft()I
+    invoke-virtual {v3}, Landroid/widget/ImageView;->getLeft()I
 
     move-result v9
 
@@ -1567,7 +1567,7 @@
 
     .line 741
     :cond_c
-    invoke-virtual {v3}, Landroid/view/View;->getLeft()I
+    invoke-virtual {v3}, Landroid/widget/ImageView;->getLeft()I
 
     move-result v4
 
@@ -1638,7 +1638,7 @@
 
     .line 770
     .restart local v5       #region:Landroid/graphics/Rect;
-    invoke-virtual {v3, v2}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
+    invoke-virtual {v3, v2}, Landroid/widget/ImageView;->getHitRect(Landroid/graphics/Rect;)V
 
     .line 771
     invoke-virtual {v5, v2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
@@ -2637,7 +2637,7 @@
     :goto_1
     if-eqz v4, :cond_4
 
-    invoke-virtual {v3}, Landroid/view/View;->getTop()I
+    invoke-virtual {v3}, Landroid/widget/ImageView;->getTop()I
 
     move-result v5
 
@@ -2662,7 +2662,7 @@
 
     .line 351
     :cond_5
-    invoke-virtual {v3}, Landroid/view/View;->getLeft()I
+    invoke-virtual {v3}, Landroid/widget/ImageView;->getLeft()I
 
     move-result v6
 
@@ -2903,7 +2903,7 @@
 
     .line 414
     .local v2, handle:Landroid/view/View;
-    invoke-virtual {v2, v1}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
+    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->getHitRect(Landroid/graphics/Rect;)V
 
     .line 415
     iget-boolean v10, p0, Lcom/android/camera/widget/SlidingDrawer;->mTracking:Z
@@ -2997,7 +2997,7 @@
 
     .line 444
     :goto_1
-    invoke-virtual {v2, v9}, Landroid/view/View;->setPressed(Z)V
+    invoke-virtual {v2, v9}, Landroid/widget/ImageView;->setPressed(Z)V
 
     .line 446
     invoke-direct {p0}, Lcom/android/camera/widget/SlidingDrawer;->prepareContent()V
@@ -3185,14 +3185,14 @@
     invoke-virtual {v5, v1, v2, v8, v9}, Landroid/view/View;->layout(IIII)V
 
     .line 396
-    invoke-virtual {v5}, Landroid/view/View;->getHeight()I
+    invoke-virtual {v5}, Landroid/widget/ImageView;->getHeight()I
 
     move-result v8
 
     iput v8, p0, Lcom/android/camera/widget/SlidingDrawer;->mHandleHeight:I
 
     .line 397
-    invoke-virtual {v5}, Landroid/view/View;->getWidth()I
+    invoke-virtual {v5}, Landroid/widget/ImageView;->getWidth()I
 
     move-result v8
 

@@ -64,7 +64,7 @@
     .prologue
     .line 40
     .local p2, allEffects:Ljava/util/List;,"Ljava/util/List<Lcom/android/camera/effect/EffectBase;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
     new-instance v0, Ljava/util/ArrayList;

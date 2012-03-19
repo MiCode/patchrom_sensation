@@ -79,16 +79,16 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 1
+    .locals 2
 
     .prologue
+    const/4 v1, 0x0
+
     .line 28
     invoke-direct {p0}, Lcom/android/phone/TimeConsumingPreferenceActivity;-><init>()V
 
     .line 31
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/android/phone/HtcCdmaCallForwardOptions;->DBG:Z
+    iput-boolean v1, p0, Lcom/android/phone/HtcCdmaCallForwardOptions;->DBG:Z
 
     .line 50
     const/4 v0, 0x0
@@ -103,9 +103,7 @@
     iput-object v0, p0, Lcom/android/phone/HtcCdmaCallForwardOptions;->mPreferences:Ljava/util/ArrayList;
 
     .line 54
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/android/phone/HtcCdmaCallForwardOptions;->mInitIndex:I
+    iput v1, p0, Lcom/android/phone/HtcCdmaCallForwardOptions;->mInitIndex:I
 
     return-void
 .end method
@@ -156,24 +154,10 @@
 
     const/4 v7, 0x0
 
-    .line 139
-    const-string v0, "HtcCdmaCallForwardOptions"
-
-    const-string v1, "onActivityResult: done"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 140
     const/4 v0, -0x1
 
     if-eq p2, v0, :cond_1
-
-    .line 141
-    const-string v0, "HtcCdmaCallForwardOptions"
-
-    const-string v1, "onActivityResult: contact picker result not OK."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 172
     :cond_0
@@ -202,26 +186,15 @@
 
     .line 146
     .local v6, cursor:Landroid/database/Cursor;
-    if-eqz v6, :cond_2
+    if-eqz v6, :cond_0
 
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
-
-    .line 147
-    :cond_2
-    const-string v0, "HtcCdmaCallForwardOptions"
-
-    const-string v1, "onActivityResult: bad contact data, no results found."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
+    if-eqz v0, :cond_0
 
     .line 151
-    :cond_3
     packed-switch p1, :pswitch_data_0
 
     .line 168
@@ -482,13 +455,6 @@
     .line 90
     :cond_0
     if-nez p1, :cond_2
-
-    .line 91
-    const-string v4, "HtcCdmaCallForwardOptions"
-
-    const-string v5, "start to init "
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 92
     iget-object v4, p0, Lcom/android/phone/HtcCdmaCallForwardOptions;->mPreferences:Ljava/util/ArrayList;

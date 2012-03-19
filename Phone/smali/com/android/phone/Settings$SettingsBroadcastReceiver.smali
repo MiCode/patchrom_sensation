@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1530
+    .line 1534
     iput-object p1, p0, Lcom/android/phone/Settings$SettingsBroadcastReceiver;->this$0:Lcom/android/phone/Settings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1530
+    .line 1534
     invoke-direct {p0, p1}, Lcom/android/phone/Settings$SettingsBroadcastReceiver;-><init>(Lcom/android/phone/Settings;)V
 
     return-void
@@ -54,12 +54,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1532
+    .line 1536
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1533
+    .line 1537
     .local v0, action:Ljava/lang/String;
     const-string v2, "android.intent.action.AIRPLANE_MODE"
 
@@ -69,7 +69,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 1534
+    .line 1538
     iget-object v2, p0, Lcom/android/phone/Settings$SettingsBroadcastReceiver;->this$0:Lcom/android/phone/Settings;
 
     invoke-virtual {v2}, Lcom/android/phone/Settings;->getContentResolver()Landroid/content/ContentResolver;
@@ -86,7 +86,7 @@
 
     const/4 v1, 0x1
 
-    .line 1535
+    .line 1539
     .local v1, enabled:Z
     :cond_0
     iget-object v2, p0, Lcom/android/phone/Settings$SettingsBroadcastReceiver;->this$0:Lcom/android/phone/Settings;
@@ -94,7 +94,7 @@
     #setter for: Lcom/android/phone/Settings;->mSwitch:Z
     invoke-static {v2, v1}, Lcom/android/phone/Settings;->access$1302(Lcom/android/phone/Settings;Z)Z
 
-    .line 1537
+    .line 1541
     .end local v1           #enabled:Z
     :cond_1
     return-void

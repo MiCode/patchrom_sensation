@@ -372,7 +372,7 @@
     const/4 v2, 0x0
 
     .line 126
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 14
     iput v2, p0, Lcom/htc/util/weather/WSPData;->type:I
@@ -506,7 +506,7 @@
     const/4 v6, -0x1
 
     .line 129
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 14
     iput v7, p0, Lcom/htc/util/weather/WSPData;->type:I
@@ -1069,7 +1069,7 @@
     const/4 v2, 0x0
 
     .line 101
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 14
     iput v2, p0, Lcom/htc/util/weather/WSPData;->type:I

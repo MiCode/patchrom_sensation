@@ -38,7 +38,7 @@
     .line 1309
     iput-object p1, p0, Lcom/htc/widget/FastScroller$RecycleBin;->this$0:Lcom/htc/widget/FastScroller;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1310
     new-instance v0, Landroid/util/SparseArray;

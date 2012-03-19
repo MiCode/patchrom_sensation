@@ -198,7 +198,7 @@
 
     .prologue
     .line 232
-    iget-object v0, p0, Lcom/android/internal/telephony/sip/SipConnectionBase;->cnapName:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -208,7 +208,7 @@
 
     .prologue
     .line 237
-    iget v0, p0, Lcom/android/internal/telephony/sip/SipConnectionBase;->cnapNamePresentation:I
+    iget v0, p0, Lcom/android/internal/telephony/Connection;->cnapNamePresentation:I
 
     return v0
 .end method

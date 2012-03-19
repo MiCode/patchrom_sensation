@@ -65,14 +65,8 @@
     :goto_0
     return-void
 
-    .line 315
-    :pswitch_0
-    const-string v16, "ConnectionHandler: updating mute state for each connection"
-
-    #calls: Lcom/android/phone/PhoneUtils;->log(Ljava/lang/String;)V
-    invoke-static/range {v16 .. v16}, Lcom/android/phone/PhoneUtils;->access$000(Ljava/lang/String;)V
-
     .line 317
+    :pswitch_0
     iget-object v7, v3, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
 
     check-cast v7, Lcom/android/internal/telephony/CallManager;
@@ -150,7 +144,7 @@
 
     .line 331
     .local v8, cn:Lcom/android/internal/telephony/Connection;
-    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$100()Ljava/util/Hashtable;
+    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$000()Ljava/util/Hashtable;
 
     move-result-object v16
 
@@ -163,7 +157,7 @@
     if-nez v16, :cond_3
 
     .line 332
-    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$100()Ljava/util/Hashtable;
+    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$000()Ljava/util/Hashtable;
 
     move-result-object v16
 
@@ -250,7 +244,7 @@
 
     .line 346
     .restart local v8       #cn:Lcom/android/internal/telephony/Connection;
-    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$100()Ljava/util/Hashtable;
+    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$000()Ljava/util/Hashtable;
 
     move-result-object v16
 
@@ -263,7 +257,7 @@
     if-nez v16, :cond_7
 
     .line 347
-    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$100()Ljava/util/Hashtable;
+    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$000()Ljava/util/Hashtable;
 
     move-result-object v16
 
@@ -280,7 +274,7 @@
     .line 355
     .end local v8           #cn:Lcom/android/internal/telephony/Connection;
     :cond_8
-    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$100()Ljava/util/Hashtable;
+    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$000()Ljava/util/Hashtable;
 
     move-result-object v16
 
@@ -323,36 +317,6 @@
 
     if-nez v16, :cond_9
 
-    .line 359
-    new-instance v16, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v16 .. v16}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v17, "connection \'"
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v16
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v16
-
-    const-string v17, "\' not accounted for, removing."
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v16
-
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v16
-
-    #calls: Lcom/android/phone/PhoneUtils;->log(Ljava/lang/String;)V
-    invoke-static/range {v16 .. v16}, Lcom/android/phone/PhoneUtils;->access$000(Ljava/lang/String;)V
-
     .line 360
     invoke-interface {v9}, Ljava/util/Iterator;->remove()V
 
@@ -394,7 +358,7 @@
     const/16 v17, 0x0
 
     #calls: Lcom/android/phone/PhoneUtils;->setMuteInternal(Lcom/android/internal/telephony/Phone;Z)V
-    invoke-static/range {v16 .. v17}, Lcom/android/phone/PhoneUtils;->access$200(Lcom/android/internal/telephony/Phone;Z)V
+    invoke-static/range {v16 .. v17}, Lcom/android/phone/PhoneUtils;->access$100(Lcom/android/internal/telephony/Phone;Z)V
 
     .line 377
     :cond_c
@@ -426,7 +390,7 @@
 
     if-nez v16, :cond_0
 
-    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$300()Ljava/lang/String;
+    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$200()Ljava/lang/String;
 
     move-result-object v16
 
@@ -502,7 +466,7 @@
 
     if-ne v0, v1, :cond_0
 
-    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$300()Ljava/lang/String;
+    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$200()Ljava/lang/String;
 
     move-result-object v16
 
@@ -564,17 +528,11 @@
 
     if-ne v0, v1, :cond_0
 
-    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$300()Ljava/lang/String;
+    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$200()Ljava/lang/String;
 
     move-result-object v16
 
     if-eqz v16, :cond_0
-
-    .line 399
-    const-string v16, "ConnectionHandler: emergency call"
-
-    #calls: Lcom/android/phone/PhoneUtils;->log(Ljava/lang/String;)V
-    invoke-static/range {v16 .. v16}, Lcom/android/phone/PhoneUtils;->access$000(Ljava/lang/String;)V
 
     .line 400
     invoke-interface {v15}, Lcom/android/internal/telephony/Phone;->getContext()Landroid/content/Context;
@@ -595,7 +553,7 @@
     .local v13, intent:Landroid/content/Intent;
     const-string v16, "android.intent.extra.PHONE_NUMBER"
 
-    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$300()Ljava/lang/String;
+    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$200()Ljava/lang/String;
 
     move-result-object v17
 
@@ -606,7 +564,7 @@
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 403
-    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$400()Landroid/net/Uri;
+    invoke-static {}, Lcom/android/phone/PhoneUtils;->access$300()Landroid/net/Uri;
 
     move-result-object v16
 
@@ -631,12 +589,12 @@
     .line 406
     const/16 v16, 0x0
 
-    invoke-static/range {v16 .. v16}, Lcom/android/phone/PhoneUtils;->access$302(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static/range {v16 .. v16}, Lcom/android/phone/PhoneUtils;->access$202(Ljava/lang/String;)Ljava/lang/String;
 
     .line 407
     const/16 v16, 0x0
 
-    invoke-static/range {v16 .. v16}, Lcom/android/phone/PhoneUtils;->access$402(Landroid/net/Uri;)Landroid/net/Uri;
+    invoke-static/range {v16 .. v16}, Lcom/android/phone/PhoneUtils;->access$302(Landroid/net/Uri;)Landroid/net/Uri;
 
     .line 408
     invoke-virtual {v14, v13}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V

@@ -94,7 +94,7 @@
     const-wide/16 v2, 0x0
 
     .line 111
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 61
     const-wide/16 v0, 0x0
@@ -180,7 +180,7 @@
     const-wide/16 v2, 0x0
 
     .line 103
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 61
     const-wide/16 v0, 0x0

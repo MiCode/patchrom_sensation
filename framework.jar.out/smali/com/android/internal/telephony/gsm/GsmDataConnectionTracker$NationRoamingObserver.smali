@@ -24,18 +24,18 @@
     .parameter
 
     .prologue
-    .line 3865
+    .line 3868
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$NationRoamingObserver;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
-    .line 3866
-    #getter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mDataConnectionTracker:Landroid/os/Handler;
+    .line 3869
+    #getter for: Lcom/android/internal/telephony/DataConnectionTracker;->mDataConnectionTracker:Landroid/os/Handler;
     invoke-static {p1}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$1400(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)Landroid/os/Handler;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 3867
+    .line 3870
     return-void
 .end method
 
@@ -46,10 +46,10 @@
     .parameter "selfChange"
 
     .prologue
-    .line 3870
+    .line 3873
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$NationRoamingObserver;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
-    #getter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
+    #getter for: Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
     invoke-static {v0}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$1500(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)Lcom/android/internal/telephony/PhoneBase;
 
     move-result-object v0
@@ -72,17 +72,17 @@
 
     if-nez v0, :cond_0
 
-    .line 3872
+    .line 3875
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$NationRoamingObserver;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     #calls: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->onNationRoamingDisabled()V
     invoke-static {v0}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$1600(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)V
 
-    .line 3875
+    .line 3878
     :goto_0
     return-void
 
-    .line 3874
+    .line 3877
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$NationRoamingObserver;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 

@@ -928,14 +928,14 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1521
+    .line 1557
     iget-object v4, p0, Lcom/android/server/DeviceManager3LMService;->mPackageManager:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v4, v5}, Landroid/content/pm/PackageManager;->getInstalledApplications(I)Ljava/util/List;
 
     move-result-object v1
 
-    .line 1523
+    .line 1559
     .local v1, apps:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ApplicationInfo;>;"
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -955,7 +955,7 @@
 
     check-cast v0, Landroid/content/pm/ApplicationInfo;
 
-    .line 1524
+    .line 1560
     .local v0, app:Landroid/content/pm/ApplicationInfo;
     iget-object v4, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
@@ -963,12 +963,12 @@
 
     move-result v2
 
-    .line 1526
+    .line 1562
     .local v2, check:Z
     :try_start_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    .line 1527
+    .line 1563
     iget-object v6, p0, Lcom/android/server/DeviceManager3LMService;->mNetworkManager:Landroid/os/INetworkManagementService;
 
     iget v7, v0, Landroid/content/pm/ApplicationInfo;->uid:I
@@ -984,7 +984,7 @@
 
     goto :goto_0
 
-    .line 1528
+    .line 1564
     :catch_0
     move-exception v4
 
@@ -993,10 +993,10 @@
     :cond_0
     move v4, v5
 
-    .line 1527
+    .line 1563
     goto :goto_1
 
-    .line 1532
+    .line 1568
     .end local v0           #app:Landroid/content/pm/ApplicationInfo;
     .end local v2           #check:Z
     :cond_1
@@ -1012,23 +1012,23 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1447
+    .line 1483
     invoke-direct {p0}, Lcom/android/server/DeviceManager3LMService;->isAccessPermitted()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 1459
+    .line 1495
     :cond_0
     :goto_0
     return-void
 
-    .line 1449
+    .line 1485
     :cond_1
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    .line 1453
+    .line 1489
     iget-object v0, p0, Lcom/android/server/DeviceManager3LMService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1044,10 +1044,10 @@
     :goto_1
     invoke-static {v2, v3, v0}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 1456
+    .line 1492
     if-eqz p1, :cond_0
 
-    .line 1457
+    .line 1493
     iget-object v0, p0, Lcom/android/server/DeviceManager3LMService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1063,7 +1063,7 @@
     :cond_2
     move v0, v1
 
-    .line 1453
+    .line 1489
     goto :goto_1
 .end method
 
@@ -1956,19 +1956,19 @@
     .parameter "uid"
 
     .prologue
-    .line 1542
+    .line 1578
     iget-object v11, p0, Lcom/android/server/DeviceManager3LMService;->mPublicKey3LM:Lcom/android/server/DeviceManager3LMService$PublicKey3LM;
 
     if-nez v11, :cond_0
 
-    .line 1543
+    .line 1579
     const/4 v11, 0x0
 
-    .line 1568
+    .line 1604
     :goto_0
     return v11
 
-    .line 1548
+    .line 1584
     :cond_0
     :try_start_0
     iget-object v11, p0, Lcom/android/server/DeviceManager3LMService;->mPackageManager:Landroid/content/pm/PackageManager;
@@ -1977,7 +1977,7 @@
 
     move-result-object v8
 
-    .line 1550
+    .line 1586
     .local v8, packages:[Ljava/lang/String;
     move-object v0, v8
 
@@ -1999,7 +1999,7 @@
 
     aget-object v9, v0, v4
 
-    .line 1551
+    .line 1587
     .local v9, pkg:Ljava/lang/String;
     iget-object v11, p0, Lcom/android/server/DeviceManager3LMService;->mPackageManager:Landroid/content/pm/PackageManager;
 
@@ -2009,7 +2009,7 @@
 
     move-result-object v7
 
-    .line 1556
+    .line 1592
     .local v7, packageInfo:Landroid/content/pm/PackageInfo;
     iget-object v1, v7, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
 
@@ -2026,7 +2026,7 @@
 
     aget-object v10, v1, v3
 
-    .line 1557
+    .line 1593
     .local v10, pkgSignature:Landroid/content/pm/Signature;
     iget-object v11, p0, Lcom/android/server/DeviceManager3LMService;->mPublicKey3LM:Lcom/android/server/DeviceManager3LMService$PublicKey3LM;
 
@@ -2042,18 +2042,18 @@
 
     if-eqz v11, :cond_1
 
-    .line 1561
+    .line 1597
     const/4 v11, 0x1
 
     goto :goto_0
 
-    .line 1556
+    .line 1592
     :cond_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_2
 
-    .line 1550
+    .line 1586
     .end local v10           #pkgSignature:Landroid/content/pm/Signature;
     :cond_2
     add-int/lit8 v3, v4, 0x1
@@ -2064,7 +2064,7 @@
     .restart local v4       #i$:I
     goto :goto_1
 
-    .line 1565
+    .line 1601
     .end local v1           #arr$:[Landroid/content/pm/Signature;
     .end local v4           #i$:I
     .end local v6           #len$:I
@@ -2074,7 +2074,7 @@
     :catch_0
     move-exception v2
 
-    .line 1566
+    .line 1602
     .local v2, e:Ljava/lang/Exception;
     const-string v11, "DeviceManager3LM"
 
@@ -2098,7 +2098,7 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1568
+    .line 1604
     .end local v2           #e:Ljava/lang/Exception;
     :cond_3
     const/4 v11, 0x0
@@ -2429,7 +2429,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 1435
+    .line 1471
     invoke-direct {p0}, Lcom/android/server/DeviceManager3LMService;->isAccessPermitted()Z
 
     move-result v1
@@ -2438,11 +2438,11 @@
 
     const/4 v1, 0x0
 
-    .line 1438
+    .line 1474
     :goto_0
     return v1
 
-    .line 1436
+    .line 1472
     :cond_0
     iget-object v1, p0, Lcom/android/server/DeviceManager3LMService;->mContext:Landroid/content/Context;
 
@@ -2454,11 +2454,11 @@
 
     check-cast v0, Landroid/app/ActivityManager;
 
-    .line 1437
+    .line 1473
     .local v0, am:Landroid/app/ActivityManager;
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    .line 1438
+    .line 1474
     new-instance v1, Lcom/android/server/DeviceManager3LMService$ClearUserDataObserver;
 
     const/4 v2, 0x0
@@ -3001,7 +3001,7 @@
     .locals 2
 
     .prologue
-    .line 1375
+    .line 1411
     iget-object v0, p0, Lcom/android/server/DeviceManager3LMService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -3016,10 +3016,10 @@
 
     if-nez v0, :cond_0
 
-    .line 1376
+    .line 1412
     const/4 v0, -0x1
 
-    .line 1378
+    .line 1414
     :goto_0
     return v0
 
@@ -3042,10 +3042,10 @@
     .prologue
     const/4 v12, 0x0
 
-    .line 1344
+    .line 1380
     const/4 v9, 0x0
 
-    .line 1347
+    .line 1383
     .local v9, skip:I
     :try_start_0
     iget-object v10, p0, Lcom/android/server/DeviceManager3LMService;->mPackageManager:Landroid/content/pm/PackageManager;
@@ -3054,22 +3054,22 @@
 
     move-result-object v0
 
-    .line 1348
+    .line 1384
     .local v0, appGids:[I
     if-nez v0, :cond_1
 
-    .line 1349
+    .line 1385
     const/4 v10, 0x0
 
     new-array v3, v10, [I
 
-    .line 1371
+    .line 1407
     .end local v0           #appGids:[I
     :cond_0
     :goto_0
     return-object v3
 
-    .line 1351
+    .line 1387
     .restart local v0       #appGids:[I
     :cond_1
     move-object v1, v0
@@ -3086,7 +3086,7 @@
 
     aget v4, v1, v6
 
-    .line 1352
+    .line 1388
     .local v4, gid:I
     iget-object v10, p0, Lcom/android/server/DeviceManager3LMService;->mAndroidIds:Ljava/util/HashMap;
 
@@ -3100,7 +3100,7 @@
 
     check-cast v8, Ljava/lang/String;
 
-    .line 1353
+    .line 1389
     .local v8, perm:Ljava/lang/String;
     if-eqz v8, :cond_2
 
@@ -3110,16 +3110,16 @@
 
     if-nez v10, :cond_2
 
-    .line 1354
+    .line 1390
     add-int/lit8 v9, v9, 0x1
 
-    .line 1351
+    .line 1387
     :cond_2
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
-    .line 1358
+    .line 1394
     .end local v4           #gid:I
     .end local v8           #perm:Ljava/lang/String;
     :cond_3
@@ -3129,11 +3129,11 @@
 
     new-array v3, v10, [I
 
-    .line 1359
+    .line 1395
     .local v3, filteredGids:[I
     const/4 v9, 0x0
 
-    .line 1360
+    .line 1396
     const/4 v5, 0x0
 
     .local v5, i:I
@@ -3142,7 +3142,7 @@
 
     if-ge v5, v10, :cond_0
 
-    .line 1361
+    .line 1397
     iget-object v10, p0, Lcom/android/server/DeviceManager3LMService;->mAndroidIds:Ljava/util/HashMap;
 
     aget v11, v0, v5
@@ -3157,7 +3157,7 @@
 
     check-cast v8, Ljava/lang/String;
 
-    .line 1362
+    .line 1398
     .restart local v8       #perm:Ljava/lang/String;
     if-eqz v8, :cond_4
 
@@ -3167,16 +3167,16 @@
 
     if-nez v10, :cond_4
 
-    .line 1363
+    .line 1399
     add-int/lit8 v9, v9, 0x1
 
-    .line 1360
+    .line 1396
     :goto_3
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_2
 
-    .line 1366
+    .line 1402
     :cond_4
     sub-int v10, v5, v9
 
@@ -3188,7 +3188,7 @@
 
     goto :goto_3
 
-    .line 1368
+    .line 1404
     .end local v0           #appGids:[I
     .end local v1           #arr$:[I
     .end local v3           #filteredGids:[I
@@ -3199,7 +3199,7 @@
     :catch_0
     move-exception v2
 
-    .line 1369
+    .line 1405
     .local v2, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     new-array v3, v12, [I
 
@@ -3220,7 +3220,7 @@
     .locals 2
 
     .prologue
-    .line 1411
+    .line 1447
     const-string v0, "persist.security.wifi.lockout"
 
     const/4 v1, 0x1
@@ -3599,7 +3599,7 @@
 
     const/4 v1, 0x0
 
-    .line 1469
+    .line 1505
     iget-object v2, p0, Lcom/android/server/DeviceManager3LMService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -3959,7 +3959,7 @@
 
     const/4 v1, 0x1
 
-    .line 1504
+    .line 1540
     iget-object v2, p0, Lcom/android/server/DeviceManager3LMService;->mWifiFilter:Ljava/util/Set;
 
     invoke-interface {v2}, Ljava/util/Set;->size()I
@@ -3968,15 +3968,15 @@
 
     if-nez v2, :cond_0
 
-    .line 1512
+    .line 1548
     :goto_0
     return v1
 
-    .line 1507
+    .line 1543
     :cond_0
     move-object v0, p1
 
-    .line 1508
+    .line 1544
     .local v0, name:Ljava/lang/String;
     const/4 v2, 0x0
 
@@ -3998,7 +3998,7 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 1509
+    .line 1545
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -4009,7 +4009,7 @@
 
     move-result-object v0
 
-    .line 1512
+    .line 1548
     :cond_1
     iget-object v1, p0, Lcom/android/server/DeviceManager3LMService;->mWifiFilter:Ljava/util/Set;
 
@@ -4451,18 +4451,18 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1579
+    .line 1615
     invoke-direct {p0}, Lcom/android/server/DeviceManager3LMService;->isAccessPermitted()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1587
+    .line 1623
     :goto_0
     return-void
 
-    .line 1581
+    .line 1617
     :cond_0
     iget-object v0, p0, Lcom/android/server/DeviceManager3LMService;->mContext:Landroid/content/Context;
 
@@ -4470,25 +4470,25 @@
 
     move-result-object v6
 
-    .line 1582
+    .line 1618
     .local v6, res:Landroid/content/res/Resources;
     if-nez p1, :cond_1
 
     move-object v2, v4
 
-    .line 1583
+    .line 1619
     .local v2, bar:Ljava/lang/String;
     :goto_1
     if-nez p2, :cond_2
 
     move-object v3, v4
 
-    .line 1584
+    .line 1620
     .local v3, title:Ljava/lang/String;
     :goto_2
     if-nez p3, :cond_3
 
-    .line 1586
+    .line 1622
     .local v4, text:Ljava/lang/String;
     :goto_3
     add-int v0, p1, p2
@@ -4505,7 +4505,7 @@
 
     goto :goto_0
 
-    .line 1582
+    .line 1618
     .end local v2           #bar:Ljava/lang/String;
     .end local v3           #title:Ljava/lang/String;
     .end local v4           #text:Ljava/lang/String;
@@ -4516,7 +4516,7 @@
 
     goto :goto_1
 
-    .line 1583
+    .line 1619
     .restart local v2       #bar:Ljava/lang/String;
     :cond_2
     invoke-virtual {v6, p2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -4525,7 +4525,7 @@
 
     goto :goto_2
 
-    .line 1584
+    .line 1620
     .restart local v3       #title:Ljava/lang/String;
     :cond_3
     invoke-virtual {v6, p3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -5172,7 +5172,7 @@
     .parameter "state"
 
     .prologue
-    .line 1386
+    .line 1422
     invoke-direct {p0}, Lcom/android/server/DeviceManager3LMService;->isAccessPermitted()Z
 
     move-result v1
@@ -5193,12 +5193,12 @@
 
     if-nez v1, :cond_1
 
-    .line 1402
+    .line 1438
     :cond_0
     :goto_0
     return-void
 
-    .line 1391
+    .line 1427
     :cond_1
     const-string v1, "persist.security.nfc.lockout"
 
@@ -5208,14 +5208,14 @@
 
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1392
+    .line 1428
     iget-object v1, p0, Lcom/android/server/DeviceManager3LMService;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/nfc/NfcAdapter;->getDefaultAdapter(Landroid/content/Context;)Landroid/nfc/NfcAdapter;
 
     move-result-object v0
 
-    .line 1394
+    .line 1430
     .local v0, nfc:Landroid/nfc/NfcAdapter;
     if-eqz v0, :cond_0
 
@@ -5227,7 +5227,7 @@
 
     if-nez p1, :cond_0
 
-    .line 1395
+    .line 1431
     new-instance v1, Lcom/android/server/DeviceManager3LMService$2;
 
     invoke-direct {v1, p0, v0}, Lcom/android/server/DeviceManager3LMService$2;-><init>(Lcom/android/server/DeviceManager3LMService;Landroid/nfc/NfcAdapter;)V
@@ -5416,7 +5416,7 @@
     .end annotation
 
     .prologue
-    .line 1481
+    .line 1517
     .local p1, filter:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-direct {p0}, Lcom/android/server/DeviceManager3LMService;->isAccessPermitted()Z
 
@@ -5424,22 +5424,22 @@
 
     if-nez v4, :cond_1
 
-    .line 1494
+    .line 1530
     :cond_0
     return-void
 
-    .line 1483
+    .line 1519
     :cond_1
     iget-object v4, p0, Lcom/android/server/DeviceManager3LMService;->mWifiFilter:Ljava/util/Set;
 
     invoke-interface {v4}, Ljava/util/Set;->clear()V
 
-    .line 1484
+    .line 1520
     iget-object v4, p0, Lcom/android/server/DeviceManager3LMService;->mWifiFilter:Ljava/util/Set;
 
     invoke-interface {v4, p1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    .line 1487
+    .line 1523
     iget-object v4, p0, Lcom/android/server/DeviceManager3LMService;->mContext:Landroid/content/Context;
 
     const-string v5, "wifi"
@@ -5450,13 +5450,13 @@
 
     check-cast v3, Landroid/net/wifi/WifiManager;
 
-    .line 1488
+    .line 1524
     .local v3, wm:Landroid/net/wifi/WifiManager;
     invoke-virtual {v3}, Landroid/net/wifi/WifiManager;->getConfiguredNetworks()Ljava/util/List;
 
     move-result-object v1
 
-    .line 1489
+    .line 1525
     .local v1, configList:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -5477,7 +5477,7 @@
 
     check-cast v0, Landroid/net/wifi/WifiConfiguration;
 
-    .line 1490
+    .line 1526
     .local v0, config:Landroid/net/wifi/WifiConfiguration;
     iget-object v4, v0, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
 
@@ -5487,7 +5487,7 @@
 
     if-nez v4, :cond_2
 
-    .line 1491
+    .line 1527
     iget v4, v0, Landroid/net/wifi/WifiConfiguration;->networkId:I
 
     invoke-virtual {v3, v4}, Landroid/net/wifi/WifiManager;->removeNetwork(I)Z
@@ -5500,14 +5500,14 @@
     .parameter "state"
 
     .prologue
-    .line 1419
+    .line 1455
     invoke-direct {p0}, Lcom/android/server/DeviceManager3LMService;->isAccessPermitted()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1420
+    .line 1456
     const-string v0, "persist.security.wifi.lockout"
 
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -5516,7 +5516,7 @@
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1422
+    .line 1458
     :cond_0
     return-void
 .end method

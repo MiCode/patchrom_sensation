@@ -32,7 +32,7 @@
 
     .prologue
     .line 83
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -50,7 +50,7 @@
 .end method
 
 .method public static getContext(Landroid/content/Context;)Landroid/content/Context;
-    .locals 2
+    .locals 0
     .parameter "context"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -59,24 +59,7 @@
     .end annotation
 
     .prologue
-    .line 53
-    sget-object v0, Lcom/htc/res/HtcResources;->sContext:Landroid/content/Context;
-
-    if-nez v0, :cond_0
-
-    .line 54
-    const-string v0, "com.htc"
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->createPackageContext(Ljava/lang/String;I)Landroid/content/Context;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/htc/res/HtcResources;->sContext:Landroid/content/Context;
-
     .line 56
-    :cond_0
     return-object p0
 .end method
 

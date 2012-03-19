@@ -1389,15 +1389,4 @@ for account %s"</string>
     <string name="font_settings">Font settings</string>
     <string name="font_alignment">Font alignment</string>
     <string name="configure_input_methods_short">Configure</string>
-    <string name="reboot_system">Reboot phone</string>
-    <string name="global_action_screenshot">Screenshot</string>
-    <string name="reboot_reboot">Reboot</string>
-    <string name="reboot_recovery">Recovery</string>
-    <string name="reboot_bootloader">Bootloader</string>
-    <string name="reboot_bootmenu">Bootmenu</string>
-    <string name="reboot_fastboot">Fastboot</string>
-    <string name="reboot_download">Download</string>
-    <string name="reboot_progress">Rebooting…</string>
-    <string name="reboot_confirm">Your phone will reboot.</string>
-    <string name="global_action_reboot">Reboot</string>
 </resources>

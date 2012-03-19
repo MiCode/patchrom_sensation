@@ -44,7 +44,7 @@
 
     .prologue
     .line 344
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 345
     iput p1, p0, Landroid/content/res/StringBlock$Height;->mSize:I

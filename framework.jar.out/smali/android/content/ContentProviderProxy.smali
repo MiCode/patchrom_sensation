@@ -1236,18 +1236,11 @@
 
     goto :goto_4
 
-    .line 417
+    .line 420
     .end local v7           #idColumnPosition:I
     .end local v10           #rowCount:I
     :cond_6
     :try_start_1
-    const-string v12, "ContentProviderProxy"
-
-    const-string v13, "bulkCursor: null"
-
-    invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 420
     invoke-virtual {v1}, Landroid/database/BulkCursorToCursorAdaptor;->close()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0

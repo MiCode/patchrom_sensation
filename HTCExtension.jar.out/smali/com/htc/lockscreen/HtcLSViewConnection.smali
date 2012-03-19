@@ -41,7 +41,7 @@
 
     .prologue
     .line 22
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 23
     iput-object p1, p0, Lcom/htc/lockscreen/HtcLSViewConnection;->mContext:Landroid/content/Context;

@@ -235,7 +235,7 @@
 
     .line 68
     :pswitch_0
-    iget-object v0, p0, Lcom/htc/widget/HtcTimeView;->mHourTableView:Lcom/htc/widget/NumberTableView;
+    iget-object v0, p0, Lcom/htc/widget/TimerTableView;->mHourTableView:Lcom/htc/widget/NumberTableView;
 
     invoke-virtual {v0, p2, p3}, Lcom/htc/widget/NumberTableView;->setRange(II)V
 
@@ -243,7 +243,7 @@
 
     .line 71
     :pswitch_1
-    iget-object v0, p0, Lcom/htc/widget/HtcTimeView;->mMinuteTableView:Lcom/htc/widget/NumberTableView;
+    iget-object v0, p0, Lcom/htc/widget/TimerTableView;->mMinuteTableView:Lcom/htc/widget/NumberTableView;
 
     invoke-virtual {v0, p2, p3}, Lcom/htc/widget/NumberTableView;->setRange(II)V
 
@@ -251,12 +251,12 @@
 
     .line 74
     :pswitch_2
-    iget-object v0, p0, Lcom/htc/widget/HtcTimeView;->mSecondTableView:Lcom/htc/widget/NumberTableView;
+    iget-object v0, p0, Lcom/htc/widget/TimerTableView;->mSecondTableView:Lcom/htc/widget/NumberTableView;
 
     invoke-virtual {v0, p2, p3}, Lcom/htc/widget/NumberTableView;->setRange(II)V
 
     .line 75
-    iget-object v0, p0, Lcom/htc/widget/HtcTimeView;->mAmPmTableView:Lcom/htc/widget/NumberTableView;
+    iget-object v0, p0, Lcom/htc/widget/TimerTableView;->mAmPmTableView:Lcom/htc/widget/NumberTableView;
 
     invoke-virtual {v0, p2, p3}, Lcom/htc/widget/NumberTableView;->setRange(II)V
 
@@ -355,7 +355,7 @@
 
     .line 85
     :pswitch_0
-    iget-object v0, p0, Lcom/htc/widget/HtcTimeView;->mHourTableView:Lcom/htc/widget/NumberTableView;
+    iget-object v0, p0, Lcom/htc/widget/TimerTableView;->mHourTableView:Lcom/htc/widget/NumberTableView;
 
     invoke-virtual {v0, p2}, Lcom/htc/widget/NumberTableView;->setCenterView(I)V
 
@@ -363,7 +363,7 @@
 
     .line 88
     :pswitch_1
-    iget-object v0, p0, Lcom/htc/widget/HtcTimeView;->mMinuteTableView:Lcom/htc/widget/NumberTableView;
+    iget-object v0, p0, Lcom/htc/widget/TimerTableView;->mMinuteTableView:Lcom/htc/widget/NumberTableView;
 
     invoke-virtual {v0, p2}, Lcom/htc/widget/NumberTableView;->setCenterView(I)V
 
@@ -378,7 +378,7 @@
     if-ne v0, v1, :cond_1
 
     .line 92
-    iget-object v0, p0, Lcom/htc/widget/HtcTimeView;->mAmPmTableView:Lcom/htc/widget/NumberTableView;
+    iget-object v0, p0, Lcom/htc/widget/TimerTableView;->mAmPmTableView:Lcom/htc/widget/NumberTableView;
 
     invoke-virtual {v0, p2}, Lcom/htc/widget/NumberTableView;->setCenterAmPmView(I)V
 
@@ -391,7 +391,7 @@
     if-ne v0, v1, :cond_0
 
     .line 96
-    iget-object v0, p0, Lcom/htc/widget/HtcTimeView;->mSecondTableView:Lcom/htc/widget/NumberTableView;
+    iget-object v0, p0, Lcom/htc/widget/TimerTableView;->mSecondTableView:Lcom/htc/widget/NumberTableView;
 
     invoke-virtual {v0, p2}, Lcom/htc/widget/NumberTableView;->setCenterView(I)V
 
@@ -399,7 +399,7 @@
 
     .line 94
     :cond_1
-    iget-object v0, p0, Lcom/htc/widget/HtcTimeView;->mAmPmTableView:Lcom/htc/widget/NumberTableView;
+    iget-object v0, p0, Lcom/htc/widget/TimerTableView;->mAmPmTableView:Lcom/htc/widget/NumberTableView;
 
     invoke-virtual {v0, p2}, Lcom/htc/widget/NumberTableView;->setCenterView(I)V
 

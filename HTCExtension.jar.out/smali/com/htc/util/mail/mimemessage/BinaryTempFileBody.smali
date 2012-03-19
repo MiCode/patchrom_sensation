@@ -33,7 +33,7 @@
 
     .prologue
     .line 52
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 53
     sget-object v0, Lcom/htc/util/mail/mimemessage/BinaryTempFileBody;->mTempDirectory:Ljava/io/File;

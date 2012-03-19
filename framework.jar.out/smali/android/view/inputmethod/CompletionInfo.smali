@@ -52,7 +52,7 @@
 
     .prologue
     .line 36
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 37
     iput-wide p1, p0, Landroid/view/inputmethod/CompletionInfo;->mId:J
@@ -81,7 +81,7 @@
 
     .prologue
     .line 46
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
     iput-wide p1, p0, Landroid/view/inputmethod/CompletionInfo;->mId:J
@@ -105,7 +105,7 @@
 
     .prologue
     .line 53
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J

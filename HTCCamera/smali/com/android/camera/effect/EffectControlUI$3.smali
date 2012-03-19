@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 144
+    .line 147
     iput-object p1, p0, Lcom/android/camera/effect/EffectControlUI$3;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -44,7 +44,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 147
+    .line 150
     check-cast p1, Lcom/android/camera/effect/EffectEvent;
 
     .end local p1
@@ -56,7 +56,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 149
+    .line 152
     iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$3;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
     iget-object v1, p0, Lcom/android/camera/effect/EffectControlUI$3;->this$0:Lcom/android/camera/effect/EffectControlUI;
@@ -69,7 +69,7 @@
     #setter for: Lcom/android/camera/effect/EffectControlUI;->m_PreviousEffect:Lcom/android/camera/effect/EffectBase;
     invoke-static {v0, v1}, Lcom/android/camera/effect/EffectControlUI;->access$402(Lcom/android/camera/effect/EffectControlUI;Lcom/android/camera/effect/EffectBase;)Lcom/android/camera/effect/EffectBase;
 
-    .line 150
+    .line 153
     iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$3;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
     const/4 v1, 0x0
@@ -77,7 +77,7 @@
     #setter for: Lcom/android/camera/effect/EffectControlUI;->m_CurrentEffect:Lcom/android/camera/effect/EffectBase;
     invoke-static {v0, v1}, Lcom/android/camera/effect/EffectControlUI;->access$202(Lcom/android/camera/effect/EffectControlUI;Lcom/android/camera/effect/EffectBase;)Lcom/android/camera/effect/EffectBase;
 
-    .line 151
+    .line 154
     iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$3;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
     #getter for: Lcom/android/camera/effect/EffectControlUI;->m_IsControlsNeeded:Z
@@ -87,7 +87,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 153
+    .line 156
     iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$3;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
     invoke-virtual {v0}, Lcom/android/camera/effect/EffectControlUI;->getCameraActivity()Lcom/android/camera/HTCCamera;
@@ -110,13 +110,13 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 154
+    .line 157
     iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$3;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
     #setter for: Lcom/android/camera/effect/EffectControlUI;->m_IsControlsNeeded:Z
     invoke-static {v0, v4}, Lcom/android/camera/effect/EffectControlUI;->access$502(Lcom/android/camera/effect/EffectControlUI;Z)Z
 
-    .line 157
+    .line 160
     :cond_0
     return-void
 .end method

@@ -156,7 +156,7 @@
     if-eqz v2, :cond_1
 
     .line 3510
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmMedia;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->indexData()I
 
@@ -320,7 +320,7 @@
     if-eqz v2, :cond_1
 
     .line 3522
-    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$DrmMedia;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     invoke-virtual {v2}, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->indexTitle()I
 

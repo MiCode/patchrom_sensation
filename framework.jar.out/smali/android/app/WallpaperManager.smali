@@ -49,23 +49,21 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     .prologue
+    const/4 v1, 0x0
+
     .line 63
     const-string v0, "WallpaperManager"
 
     sput-object v0, Landroid/app/WallpaperManager;->TAG:Ljava/lang/String;
 
     .line 64
-    const/4 v0, 0x1
-
-    sput-boolean v0, Landroid/app/WallpaperManager;->DEBUG:Z
+    sput-boolean v1, Landroid/app/WallpaperManager;->DEBUG:Z
 
     .line 338
-    const/4 v0, 0x0
-
-    new-array v0, v0, [Ljava/lang/Object;
+    new-array v0, v1, [Ljava/lang/Object;
 
     sput-object v0, Landroid/app/WallpaperManager;->sSync:Ljava/lang/Object;
 

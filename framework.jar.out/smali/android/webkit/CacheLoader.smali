@@ -211,17 +211,17 @@
 
     iget-object v0, v0, Landroid/webkit/CacheManager$CacheResult;->inStream:Ljava/io/InputStream;
 
-    iput-object v0, p0, Landroid/webkit/CacheLoader;->mDataStream:Ljava/io/InputStream;
+    iput-object v0, p0, Landroid/webkit/StreamLoader;->mDataStream:Ljava/io/InputStream;
 
     .line 49
     iget-object v0, p0, Landroid/webkit/CacheLoader;->mCacheResult:Landroid/webkit/CacheManager$CacheResult;
 
     iget-wide v0, v0, Landroid/webkit/CacheManager$CacheResult;->contentLength:J
 
-    iput-wide v0, p0, Landroid/webkit/CacheLoader;->mContentLength:J
+    iput-wide v0, p0, Landroid/webkit/StreamLoader;->mContentLength:J
 
     .line 50
-    iget-object v0, p0, Landroid/webkit/CacheLoader;->mLoadListener:Landroid/webkit/LoadListener;
+    iget-object v0, p0, Landroid/webkit/StreamLoader;->mLoadListener:Landroid/webkit/LoadListener;
 
     iget-object v1, p0, Landroid/webkit/CacheLoader;->mCacheResult:Landroid/webkit/CacheManager$CacheResult;
 

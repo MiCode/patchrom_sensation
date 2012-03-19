@@ -261,7 +261,7 @@
 
     move-result v3
 
-    iput v3, v1, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
+    iput v3, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     .line 82
     new-instance v2, Landroid/widget/LinearLayout;

@@ -14,7 +14,7 @@
 
     .prologue
     .line 34
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 35
     instance-of v1, p1, Ljava/lang/reflect/ParameterizedType;

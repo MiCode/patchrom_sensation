@@ -53,7 +53,7 @@
     .line 2216
     iput-object p1, p0, Lcom/htc/sunny/SPresentation$FakeAnimationControl;->this$0:Lcom/htc/sunny/SPresentation;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 2218
     iput v1, p0, Lcom/htc/sunny/SPresentation$FakeAnimationControl;->mFirstUpdateIndex:I

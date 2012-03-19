@@ -77,10 +77,12 @@
     .locals 5
 
     .prologue
+    const/4 v2, 0x0
+
     const/4 v4, 0x1
 
     .line 97
-    sput-boolean v4, Lcom/android/providers/telephony/GsmApnProvider;->DBG:Z
+    sput-boolean v2, Lcom/android/providers/telephony/GsmApnProvider;->DBG:Z
 
     .line 117
     new-instance v0, Landroid/content/UriMatcher;
@@ -92,9 +94,7 @@
     sput-object v0, Lcom/android/providers/telephony/GsmApnProvider;->s_urlMatcher:Landroid/content/UriMatcher;
 
     .line 121
-    const/4 v0, 0x0
-
-    sput-boolean v0, Lcom/android/providers/telephony/GsmApnProvider;->mCustomizeApns:Z
+    sput-boolean v2, Lcom/android/providers/telephony/GsmApnProvider;->mCustomizeApns:Z
 
     .line 123
     sget-boolean v0, Landroid/provider/Telephony$Carriers;->FLAG_APN_DISPATCH_MODE:Z

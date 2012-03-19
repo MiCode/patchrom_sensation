@@ -46,15 +46,8 @@
     :pswitch_0
     return-void
 
-    .line 2182
-    :pswitch_1
-    const-string v4, "ContactsUtility"
-
-    const-string v6, "MSG_CHECK_DOWNLOAD_SET"
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2183
+    :pswitch_1
     move-object/from16 v0, p1
 
     iget v4, v0, Landroid/os/Message;->arg1:I
@@ -82,31 +75,6 @@
     if-gez v4, :cond_0
 
     if-eqz v22, :cond_0
-
-    .line 2186
-    const-string v4, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "MSG_CHECK_DOWNLOAD_SET lContactId: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    move-wide/from16 v0, v26
-
-    invoke-virtual {v6, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2188
     new-instance v4, Ljava/lang/StringBuilder;
@@ -218,33 +186,6 @@
     .local v21, c:Landroid/database/Cursor;
     if-eqz v21, :cond_d
 
-    .line 2199
-    const-string v4, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "MSG_CHECK_DOWNLOAD_SET c.getCount() "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-interface/range {v21 .. v21}, Landroid/database/Cursor;->getCount()I
-
-    move-result v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2200
     invoke-interface/range {v21 .. v21}, Landroid/database/Cursor;->getCount()I
 
@@ -290,31 +231,6 @@
 
     if-gez v4, :cond_1
 
-    .line 2205
-    const-string v4, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "MSG_CHECK_DOWNLOAD_SET add rawContactIdset:lRawContactId "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    move-wide/from16 v0, v28
-
-    invoke-virtual {v6, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2206
     invoke-static/range {v28 .. v29}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -326,36 +242,9 @@
 
     goto :goto_1
 
-    .line 2209
+    .line 2210
     .end local v28           #lRawContactId:J
     :cond_2
-    const-string v4, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "MSG_CHECK_DOWNLOAD_SET rawContactIdset.size() "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual/range {v36 .. v36}, Ljava/util/HashSet;->size()I
-
-    move-result v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2210
     invoke-virtual/range {v36 .. v36}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v24
@@ -375,31 +264,8 @@
 
     check-cast v13, Ljava/lang/Long;
 
-    .line 2211
-    .local v13, LrawContactId:Ljava/lang/Long;
-    const-string v4, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "MSG_CHECK_DOWNLOAD_SET lRawContactId: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2212
+    .local v13, LrawContactId:Ljava/lang/Long;
     invoke-interface/range {v21 .. v21}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v4
@@ -425,36 +291,9 @@
     .local v15, bIsSocialNetworkLargePhotoData:Z
     const-wide/16 v11, -0x1
 
-    .line 2219
+    .line 2220
     .local v11, lDataId:J
     :cond_4
-    const-string v4, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "MSG_CHECK_DOWNLOAD_SET c.getPosition() "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-interface/range {v21 .. v21}, Landroid/database/Cursor;->getPosition()I
-
-    move-result v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2220
     const-string v4, "raw_contact_id"
 
     move-object/from16 v0, v21
@@ -521,29 +360,6 @@
 
     move-result-object v9
 
-    .line 2225
-    const-string v4, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "MSG_CHECK_DOWNLOAD_SET sLargeAvatarUrl "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2248
     .end local v37           #sMimetype:Ljava/lang/String;
     :cond_5
@@ -564,13 +380,6 @@
     .line 2251
     if-nez v14, :cond_b
 
-    .line 2252
-    const-string v4, "ContactsUtility"
-
-    const-string v6, "MSG_CHECK_DOWNLOAD_SET download and insert"
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2253
     invoke-virtual {v13}, Ljava/lang/Long;->longValue()J
 
@@ -585,7 +394,7 @@
     #calls: Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->downloadSocialNetworkLargePhoto(Landroid/content/Context;JLjava/lang/String;ZJ)V
     invoke-static/range {v6 .. v12}, Lcom/htc/util/contacts/ContactsUtility$HandleSocialNetworkLargePhotoHelper;->access$100(Landroid/content/Context;JLjava/lang/String;ZJ)V
 
-    goto/16 :goto_2
+    goto :goto_2
 
     .line 2226
     .restart local v37       #sMimetype:Ljava/lang/String;
@@ -644,33 +453,8 @@
     :cond_7
     const/16 v16, 0x0
 
-    .line 2235
-    :goto_4
-    const-string v4, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "MSG_CHECK_DOWNLOAD_SET bIsSocialNetworkPhotoData "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    move/from16 v0, v16
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2236
+    :goto_4
     const-wide/16 v6, 0x0
 
     const-string v4, "data8"
@@ -711,31 +495,8 @@
     :cond_8
     const/4 v15, 0x0
 
-    .line 2243
-    :goto_5
-    const-string v4, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "MSG_CHECK_DOWNLOAD_SET bIsSocialNetworkLargePhotoData "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v15}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2244
+    :goto_5
     const-string v4, "data_id"
 
     move-object/from16 v0, v21
@@ -750,36 +511,13 @@
 
     move-result-wide v11
 
-    .line 2245
-    const-string v4, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "MSG_CHECK_DOWNLOAD_SET lDataId "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_3
+    goto :goto_3
 
     .line 2233
     :cond_9
     const/16 v16, 0x1
 
-    goto/16 :goto_4
+    goto :goto_4
 
     .line 2241
     :cond_a
@@ -795,13 +533,6 @@
     if-eqz v16, :cond_3
 
     if-nez v15, :cond_3
-
-    .line 2255
-    const-string v4, "ContactsUtility"
-
-    const-string v6, "MSG_CHECK_DOWNLOAD_SET download and update"
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2256
     invoke-virtual {v13}, Ljava/lang/Long;->longValue()J
@@ -851,31 +582,13 @@
 
     goto/16 :goto_0
 
-    .line 2274
+    .line 2280
     .end local v5           #uri:Landroid/net/Uri;
     .end local v21           #c:Landroid/database/Cursor;
     .end local v22           #context:Landroid/content/Context;
     .end local v26           #lContactId:J
     .end local v38           #sbSelection:Ljava/lang/StringBuilder;
     :pswitch_2
-    const/16 v4, 0x34
-
-    move-object/from16 v0, p1
-
-    iget v6, v0, Landroid/os/Message;->what:I
-
-    if-ne v4, v6, :cond_10
-
-    .line 2275
-    const-string v4, "ContactsUtility"
-
-    const-string v6, "MSG_DOWNLOAD_UPDATE"
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2280
-    :cond_e
-    :goto_6
     move-object/from16 v0, p1
 
     iget-object v0, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -940,7 +653,7 @@
 
     .line 2288
     .local v17, bmPhoto:Landroid/graphics/Bitmap;
-    if-nez v17, :cond_f
+    if-nez v17, :cond_e
 
     .line 2289
     const-string v4, "ContactsUtility"
@@ -984,7 +697,7 @@
     move-result-object v17
 
     .line 2292
-    if-nez v17, :cond_f
+    if-nez v17, :cond_e
 
     .line 2293
     const-string v4, "ContactsUtility"
@@ -994,49 +707,8 @@
     invoke-static {v4, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2296
-    :cond_f
+    :cond_e
     if-eqz v17, :cond_0
-
-    .line 2297
-    const-string v4, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "MSG_DOWNLOAD_UPDATE(INSERT) bmPhoto W H:  "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual/range {v17 .. v17}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, " "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual/range {v17 .. v17}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2300
     sget v4, Lcom/htc/util/contacts/PhotoUtils;->FULL_ICON_SIZE:I
@@ -1050,48 +722,9 @@
     move-result-object v17
 
     .line 2310
-    if-nez v17, :cond_11
-
-    .line 2311
-    const-string v4, "ContactsUtility"
-
-    const-string v6, "MSG_DOWNLOAD_UPDATE(INSERT) bmPhoto after getFacebookSquareBitmap null return "
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_0
-
-    .line 2276
-    .end local v9           #sLargeAvatarUrl:Ljava/lang/String;
-    .end local v17           #bmPhoto:Landroid/graphics/Bitmap;
-    .end local v18           #bundle:Landroid/os/Bundle;
-    .end local v22           #context:Landroid/content/Context;
-    .end local v28           #lRawContactId:J
-    :cond_10
-    const/16 v4, 0x35
-
-    move-object/from16 v0, p1
-
-    iget v6, v0, Landroid/os/Message;->what:I
-
-    if-ne v4, v6, :cond_e
-
-    .line 2277
-    const-string v4, "ContactsUtility"
-
-    const-string v6, "MSG_DOWNLOAD_INSERT"
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_6
+    if-eqz v17, :cond_0
 
     .line 2315
-    .restart local v9       #sLargeAvatarUrl:Ljava/lang/String;
-    .restart local v17       #bmPhoto:Landroid/graphics/Bitmap;
-    .restart local v18       #bundle:Landroid/os/Bundle;
-    .restart local v22       #context:Landroid/content/Context;
-    .restart local v28       #lRawContactId:J
-    :cond_11
     sget v4, Lcom/htc/util/contacts/PhotoUtils;->JPEG_QUALITY_50:I
 
     move-object/from16 v0, v17
@@ -1104,13 +737,6 @@
     .line 2316
     .local v20, byteArrayPhoto:[B
     if-eqz v20, :cond_0
-
-    .line 2317
-    const-string v4, "ContactsUtility"
-
-    const-string v6, "MSG_DOWNLOAD_UPDATE(INSERT) null != byteArrayPhoto"
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2318
     new-instance v41, Landroid/content/ContentValues;
@@ -1187,7 +813,7 @@
 
     iget v6, v0, Landroid/os/Message;->what:I
 
-    if-ne v4, v6, :cond_13
+    if-ne v4, v6, :cond_10
 
     .line 2341
     const-string v4, "data_id"
@@ -1206,30 +832,7 @@
 
     cmp-long v4, v6, v11
 
-    if-gez v4, :cond_12
-
-    .line 2343
-    const-string v4, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "MSG_DOWNLOAD_UPDATE do lDataId: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    if-gez v4, :cond_f
 
     .line 2345
     :try_start_0
@@ -1268,8 +871,8 @@
 
     .line 2379
     .end local v11           #lDataId:J
-    :cond_12
-    :goto_7
+    :cond_f
+    :goto_6
     move-object/from16 v0, v22
 
     move-wide/from16 v1, v28
@@ -1321,7 +924,7 @@
 
     invoke-static {v4, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_7
+    goto :goto_6
 
     .line 2348
     .end local v23           #e:Landroid/database/sqlite/SQLiteDiskIOException;
@@ -1354,26 +957,19 @@
 
     invoke-static {v4, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_7
+    goto :goto_6
 
     .line 2352
     .end local v11           #lDataId:J
     .end local v23           #e:Landroid/database/sqlite/SQLiteException;
-    :cond_13
+    :cond_10
     const/16 v4, 0x35
 
     move-object/from16 v0, p1
 
     iget v6, v0, Landroid/os/Message;->what:I
 
-    if-ne v4, v6, :cond_12
-
-    .line 2353
-    const-string v4, "ContactsUtility"
-
-    const-string v6, "MSG_DOWNLOAD_INSERT do"
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    if-ne v4, v6, :cond_f
 
     .line 2357
     new-instance v19, Landroid/os/Bundle;
@@ -1392,7 +988,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_14
+    if-eqz v4, :cond_11
 
     .line 2359
     const-string v4, "data_id"
@@ -1405,31 +1001,8 @@
 
     move-result-wide v11
 
-    .line 2360
-    .restart local v11       #lDataId:J
-    const-string v4, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "MSG_DOWNLOAD_INSERT insert changed to update!!! lDataId: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 2362
+    .restart local v11       #lDataId:J
     :try_start_1
     invoke-virtual/range {v22 .. v22}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1464,7 +1037,7 @@
     .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_1 .. :try_end_1} :catch_2
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_1 .. :try_end_1} :catch_3
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
     .line 2363
     :catch_2
@@ -1496,7 +1069,7 @@
 
     invoke-static {v4, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
     .line 2365
     .end local v23           #e:Landroid/database/sqlite/SQLiteDiskIOException;
@@ -1529,19 +1102,12 @@
 
     invoke-static {v4, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_7
-
-    .line 2369
-    .end local v11           #lDataId:J
-    .end local v23           #e:Landroid/database/sqlite/SQLiteException;
-    :cond_14
-    const-string v4, "ContactsUtility"
-
-    const-string v6, "MSG_DOWNLOAD_INSERT do still insert"
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    goto/16 :goto_6
 
     .line 2371
+    .end local v11           #lDataId:J
+    .end local v23           #e:Landroid/database/sqlite/SQLiteException;
+    :cond_11
     :try_start_2
     invoke-virtual/range {v22 .. v22}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1556,7 +1122,7 @@
     .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_2 .. :try_end_2} :catch_4
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_2 .. :try_end_2} :catch_5
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
     .line 2372
     :catch_4
@@ -1588,7 +1154,7 @@
 
     invoke-static {v4, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
     .line 2374
     .end local v23           #e:Landroid/database/sqlite/SQLiteDiskIOException;
@@ -1621,9 +1187,9 @@
 
     invoke-static {v4, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
-    .line 2387
+    .line 2388
     .end local v9           #sLargeAvatarUrl:Ljava/lang/String;
     .end local v17           #bmPhoto:Landroid/graphics/Bitmap;
     .end local v18           #bundle:Landroid/os/Bundle;
@@ -1634,13 +1200,6 @@
     .end local v28           #lRawContactId:J
     .end local v41           #valuesDataPhoto:Landroid/content/ContentValues;
     :pswitch_3
-    const-string v4, "ContactsUtility"
-
-    const-string v6, "MSG_FAVORITE_CHANGE"
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2388
     move-object/from16 v0, p1
 
     iget v4, v0, Landroid/os/Message;->arg1:I
@@ -1668,31 +1227,6 @@
     if-gez v4, :cond_0
 
     if-eqz v22, :cond_0
-
-    .line 2391
-    const-string v4, "ContactsUtility"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "MSG_FAVORITE_CHANGE lContactId: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    move-wide/from16 v0, v26
-
-    invoke-virtual {v6, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2392
     new-instance v25, Landroid/content/Intent;
@@ -1722,18 +1256,11 @@
 
     goto/16 :goto_0
 
-    .line 2399
+    .line 2400
     .end local v22           #context:Landroid/content/Context;
     .end local v25           #intent:Landroid/content/Intent;
     .end local v26           #lContactId:J
     :pswitch_4
-    const-string v4, "ContactsUtility"
-
-    const-string v6, "MSG_CHECK_DOWNLOAD_ORIGINAL_FACEBOOK_LARGE_PHOTO"
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2400
     move-object/from16 v0, p1
 
     iget-object v0, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -1801,19 +1328,12 @@
 
     goto/16 :goto_0
 
-    .line 2411
+    .line 2412
     .end local v18           #bundle:Landroid/os/Bundle;
     .end local v22           #context:Landroid/content/Context;
     .end local v34           #rawContactId:J
     .end local v40           #sourceId:Ljava/lang/String;
     :pswitch_5
-    const-string v4, "ContactsUtility"
-
-    const-string v6, "MSG_DOWNLOAD_ORIGINAL_FACEBOOK_LARGE_PHOTO"
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2412
     move-object/from16 v0, p1
 
     iget-object v0, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -1906,12 +1426,12 @@
     move-result-object v24
 
     .restart local v24       #i$:Ljava/util/Iterator;
-    :goto_8
+    :goto_7
     invoke-interface/range {v24 .. v24}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_16
+    if-eqz v4, :cond_13
 
     invoke-interface/range {v24 .. v24}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1921,13 +1441,13 @@
 
     .line 2426
     .local v33, person:Lcom/htc/opensense/social/PersonOp;
-    if-eqz v33, :cond_15
+    if-eqz v33, :cond_12
 
     invoke-virtual/range {v33 .. v33}, Lcom/htc/opensense/social/PersonOp;->getData()Lcom/htc/opensense/social/data/Person;
 
     move-result-object v4
 
-    if-eqz v4, :cond_15
+    if-eqz v4, :cond_12
 
     .line 2427
     invoke-virtual/range {v33 .. v33}, Lcom/htc/opensense/social/PersonOp;->getData()Lcom/htc/opensense/social/data/Person;
@@ -1939,7 +1459,7 @@
     move-object/from16 v30, v0
 
     .line 2429
-    :cond_15
+    :cond_12
     const-string v4, "ContactsUtility"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1967,7 +1487,7 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Lcom/htc/opensense/social/SocialNetworkError$SocialNetworkException; {:try_start_3 .. :try_end_3} :catch_6
 
-    goto :goto_8
+    goto :goto_7
 
     .line 2434
     .end local v24           #i$:Ljava/util/Iterator;
@@ -2006,13 +1526,13 @@
     .restart local v24       #i$:Ljava/util/Iterator;
     .restart local v30       #largeBuddyIconUrl:Ljava/lang/String;
     .restart local v32       #people:Ljava/util/List;,"Ljava/util/List<Lcom/htc/opensense/social/PersonOp;>;"
-    :cond_16
+    :cond_13
     :try_start_5
     invoke-static/range {v30 .. v30}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
-    if-nez v4, :cond_17
+    if-nez v4, :cond_14
 
     .line 2432
     const-string v4, "_id"
@@ -2038,7 +1558,7 @@
     .catch Lcom/htc/opensense/social/SocialNetworkError$SocialNetworkException; {:try_start_5 .. :try_end_5} :catch_6
 
     .line 2438
-    :cond_17
+    :cond_14
     if-eqz v39, :cond_0
 
     .line 2439
@@ -2053,12 +1573,12 @@
     :catchall_0
     move-exception v4
 
-    if-eqz v39, :cond_18
+    if-eqz v39, :cond_15
 
     .line 2439
     invoke-virtual/range {v39 .. v39}, Lcom/htc/opensense/social/SocialServiceManager;->disconnect()V
 
-    :cond_18
+    :cond_15
     throw v4
 
     .line 2445
@@ -2074,8 +1594,6 @@
     goto/16 :goto_0
 
     .line 2179
-    nop
-
     :pswitch_data_0
     .packed-switch 0x32
         :pswitch_6

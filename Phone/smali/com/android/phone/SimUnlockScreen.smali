@@ -4229,10 +4229,10 @@
 
     .line 1334
     .local v0, params:Landroid/widget/LinearLayout$LayoutParams;
-    iput v3, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
+    iput v3, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 1335
-    iput v3, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+    iput v3, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 1336
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V

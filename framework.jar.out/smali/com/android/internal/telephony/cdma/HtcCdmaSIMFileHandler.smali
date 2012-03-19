@@ -152,7 +152,7 @@
     if-nez v1, :cond_0
 
     .line 116
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/HtcCdmaSIMFileHandler;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccFileHandler;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getIccCard()Lcom/android/internal/telephony/IccCard;
 

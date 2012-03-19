@@ -12,7 +12,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z
 
 .field static m_timer:Lcom/android/phone/CityIdInfo$CityIdTimerManager;
 

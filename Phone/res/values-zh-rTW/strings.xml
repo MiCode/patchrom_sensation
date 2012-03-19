@@ -238,8 +238,8 @@
     <string name="htc_preferred_network_global_mode">全球模式</string>
     <string name="htc_preferred_network_cdma_evdo_aut_mode">CDMA 模式</string>
     <string name="htc_preferred_network_gsm_wcdma_aut_mode">GSM/UMTS 模式</string>
-    <string name="htc_preferred_network_lte_mode">LTE Mode</string>
-    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM / UMTS / LTE Mode</string>
+    <string name="htc_preferred_network_lte_mode">LTE 模式</string>
+    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM/UMTS/LTE 模式</string>
     <string name="title_gsm_preferred_network_options">GSM/UMTS 模式</string>
     <string name="btn_Menu_Edit">編輯</string>
     <string name="btn_Menu_Set_Done">完成</string>

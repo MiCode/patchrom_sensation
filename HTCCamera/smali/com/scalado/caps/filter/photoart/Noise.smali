@@ -25,7 +25,7 @@
     invoke-direct {p0, p1, v1}, Lcom/scalado/caps/Filter;-><init>(Lcom/scalado/caps/Session;Z)V
 
     .line 36
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Noise;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -98,7 +98,7 @@
 
     .prologue
     .line 79
-    iget-object v0, p0, Lcom/scalado/caps/filter/photoart/Noise;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -116,7 +116,7 @@
 
     .prologue
     .line 50
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Noise;->isCommitted:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v1, :cond_0
 
@@ -131,7 +131,7 @@
 
     .line 54
     :cond_0
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Noise;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -145,7 +145,7 @@
     .local v0, error:I
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Noise;->isSet:Z
+    iput-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 56
     iput p1, p0, Lcom/scalado/caps/filter/photoart/Noise;->level:I

@@ -172,7 +172,7 @@
     iput-boolean v8, p0, Lcom/htc/widget/HtcReorderListView;->isLowerAlpha:Z
 
     .line 120
-    iget-object v6, p0, Lcom/htc/widget/HtcReorderListView;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/htc/widget/HtcAbsListView;->mContext:Landroid/content/Context;
 
     const-string v7, "layout_inflater"
 
@@ -210,7 +210,7 @@
     if-eqz v1, :cond_0
 
     .line 125
-    iget-object v6, p0, Lcom/htc/widget/HtcReorderListView;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/htc/widget/HtcAbsListView;->mContext:Landroid/content/Context;
 
     const-string v7, "common_rearrange_frame"
 
@@ -397,7 +397,7 @@
 
     .prologue
     .line 50
-    iget-object v0, p0, Lcom/htc/widget/HtcReorderListView;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/htc/widget/HtcAbsListView;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -1462,7 +1462,7 @@
 
     aget v2, v0, v2
 
-    iget v3, p0, Lcom/htc/widget/HtcReorderListView;->mPaddingLeft:I
+    iget v3, p0, Lcom/htc/widget/HtcAbsListView;->mPaddingLeft:I
 
     add-int/2addr v2, v3
 
@@ -1498,7 +1498,7 @@
 
     add-int/2addr v2, v3
 
-    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 840
     iget-object v1, p0, Lcom/htc/widget/HtcReorderListView;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
@@ -1507,7 +1507,7 @@
 
     move-result v2
 
-    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 841
     iget-object v1, p0, Lcom/htc/widget/HtcReorderListView;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
@@ -1602,7 +1602,7 @@
     if-nez v1, :cond_2
 
     .line 869
-    iget-object v1, p0, Lcom/htc/widget/HtcReorderListView;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/htc/widget/HtcAbsListView;->mContext:Landroid/content/Context;
 
     const-string v2, "window"
 
@@ -1673,7 +1673,7 @@
     if-nez v0, :cond_0
 
     .line 902
-    iget-object v0, p0, Lcom/htc/widget/HtcReorderListView;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/htc/widget/HtcAbsListView;->mContext:Landroid/content/Context;
 
     const-string v1, "window"
 
@@ -3183,7 +3183,7 @@
 
     .line 157
     :pswitch_0
-    iget v10, p0, Lcom/htc/widget/HtcReorderListView;->mTouchMode:I
+    iget v10, p0, Lcom/htc/widget/HtcAbsListView;->mTouchMode:I
 
     const/4 v11, 0x4
 

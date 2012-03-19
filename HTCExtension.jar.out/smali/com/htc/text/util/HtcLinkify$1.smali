@@ -22,8 +22,8 @@
     .locals 0
 
     .prologue
-    .line 104
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 118
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -39,15 +39,15 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 106
+    .line 120
     if-nez p2, :cond_1
 
-    .line 114
+    .line 128
     :cond_0
     :goto_0
     return v0
 
-    .line 110
+    .line 124
     :cond_1
     add-int/lit8 v1, p2, -0x1
 
@@ -59,7 +59,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 111
+    .line 125
     const/4 v0, 0x0
 
     goto :goto_0

@@ -70,9 +70,9 @@
 
     .prologue
     .line 83
-    iget-object v0, p0, Lcom/htc/painting/engine/Request$SaveStrokeGroupRequest;->mHost:Lcom/htc/painting/engine/HtcPainting;
+    iget-object v0, p0, Lcom/htc/painting/engine/Request$PaintingRequest;->mHost:Lcom/htc/painting/engine/HtcPainting;
 
-    iget-object v1, p0, Lcom/htc/painting/engine/Request$SaveStrokeGroupRequest;->mGroupIds:[I
+    iget-object v1, p0, Lcom/htc/painting/engine/Request$PaintingRequest;->mGroupIds:[I
 
     iget-boolean v2, p0, Lcom/htc/painting/engine/Request$SaveStrokeGroupRequest;->mContainIneffectiveStrokes:Z
 

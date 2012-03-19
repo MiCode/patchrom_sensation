@@ -120,7 +120,7 @@
     const/4 v1, 0x1
 
     .line 190
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 71
     const/16 v2, 0x3c

@@ -31,7 +31,7 @@
     const/4 v0, 0x0
 
     .line 187
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 188
     iput-object v0, p0, Landroid/content/ClipData$Item;->mText:Ljava/lang/CharSequence;
@@ -54,7 +54,7 @@
     const/4 v0, 0x0
 
     .line 196
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 197
     iput-object v0, p0, Landroid/content/ClipData$Item;->mText:Ljava/lang/CharSequence;
@@ -77,7 +77,7 @@
     const/4 v0, 0x0
 
     .line 178
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 179
     iput-object p1, p0, Landroid/content/ClipData$Item;->mText:Ljava/lang/CharSequence;
@@ -100,7 +100,7 @@
 
     .prologue
     .line 206
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 207
     iput-object p1, p0, Landroid/content/ClipData$Item;->mText:Ljava/lang/CharSequence;

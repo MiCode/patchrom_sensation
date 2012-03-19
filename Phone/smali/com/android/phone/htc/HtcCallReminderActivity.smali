@@ -7,7 +7,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final DEFAULT_SNOOZE_TIMEOUT:J = 0x927c0L
 
@@ -39,13 +39,13 @@
 
     .prologue
     .line 94
-    iget-object v0, p0, Lcom/android/phone/htc/HtcCallReminderActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v0, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     invoke-static {v0, p1}, Lcom/android/phone/util/CallDeferUtils;->initFromIntent(Lcom/android/internal/telephony/CallerInfo;Landroid/content/Intent;)Lcom/android/internal/telephony/CallerInfo;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/phone/htc/HtcCallReminderActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iput-object v0, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     .line 95
     return-void
@@ -55,17 +55,10 @@
     .locals 3
 
     .prologue
-    .line 159
-    const-string v1, "HtcCallReminderActivity"
-
-    const-string v2, "onCallClick"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 160
-    iget-object v1, p0, Lcom/android/phone/htc/HtcCallReminderActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v1, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
-    iget-boolean v2, p0, Lcom/android/phone/htc/HtcCallReminderActivity;->mHasPhoto:Z
+    iget-boolean v2, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mHasPhoto:Z
 
     invoke-static {v1, v2}, Lcom/android/phone/util/CallDeferUtils;->createDialIntent(Lcom/android/internal/telephony/CallerInfo;Z)Landroid/content/Intent;
 
@@ -75,37 +68,31 @@
     .local v0, dialIntent:Landroid/content/Intent;
     if-nez v0, :cond_0
 
-    .line 164
-    new-instance v1, Ljava/lang/UnsupportedOperationException;
+    .line 166
+    const-string v1, "HtcCallReminderActivity"
 
-    const-string v2, "make call without correct intent"
+    const-string v2, ""
 
-    invoke-direct {v1, v2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    throw v1
+    .line 171
+    :goto_0
+    invoke-virtual {p0}, Lcom/android/phone/htc/HtcCallReminderActivity;->finish()V
+
+    .line 172
+    return-void
 
     .line 169
     :cond_0
     invoke-static {v0}, Lcom/htc/util/phone/DialUtils;->callDirectly(Landroid/content/Intent;)Z
 
-    .line 171
-    invoke-virtual {p0}, Lcom/android/phone/htc/HtcCallReminderActivity;->finish()V
-
-    .line 172
-    return-void
+    goto :goto_0
 .end method
 
 .method private onDismissClick()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 193
-    const-string v0, "HtcCallReminderActivity"
-
-    const-string v1, "onDismissClick"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 194
     invoke-virtual {p0}, Lcom/android/phone/htc/HtcCallReminderActivity;->finish()V
 
@@ -117,15 +104,8 @@
     .locals 8
 
     .prologue
-    .line 175
-    const-string v4, "HtcCallReminderActivity"
-
-    const-string v5, "onSnoozeClick"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 176
-    iget-object v4, p0, Lcom/android/phone/htc/HtcCallReminderActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v4, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     invoke-static {v4}, Lcom/android/phone/util/CallDeferUtils;->launchCallReminder(Lcom/android/internal/telephony/CallerInfo;)Landroid/content/Intent;
 
@@ -152,7 +132,7 @@
 
     .line 182
     .local v2, triggerTime:J
-    iget-object v4, p0, Lcom/android/phone/htc/HtcCallReminderActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v4, p0, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/android/phone/util/CallDeferUtils;->schduleDeferReminder(Landroid/content/Context;Landroid/content/Intent;JLcom/android/internal/telephony/CallerInfo;)Z
 

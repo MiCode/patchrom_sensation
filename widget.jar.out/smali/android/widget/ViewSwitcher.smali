@@ -123,7 +123,7 @@
 
     .prologue
     .line 75
-    iget v1, p0, Landroid/widget/ViewSwitcher;->mWhichChild:I
+    iget v1, p0, Landroid/widget/ViewAnimator;->mWhichChild:I
 
     if-nez v1, :cond_0
 
@@ -155,7 +155,7 @@
     const/4 v2, 0x1
 
     .line 108
-    iput-boolean v2, p0, Landroid/widget/ViewSwitcher;->mFirstTime:Z
+    iput-boolean v2, p0, Landroid/widget/ViewAnimator;->mFirstTime:Z
 
     .line 110
     const/4 v1, 0x0

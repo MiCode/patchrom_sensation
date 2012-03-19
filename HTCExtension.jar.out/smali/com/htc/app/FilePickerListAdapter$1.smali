@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 849
+    .line 850
     iput-object p1, p0, Lcom/htc/app/FilePickerListAdapter$1;->this$0:Lcom/htc/app/FilePickerListAdapter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,20 +41,10 @@
     .locals 1
 
     .prologue
-    .line 851
-    iget-object v0, p0, Lcom/htc/app/FilePickerListAdapter$1;->this$0:Lcom/htc/app/FilePickerListAdapter;
-
-    invoke-virtual {v0}, Lcom/htc/app/FilePickerListAdapter;->notifyDataSetChanged()V
-
     .line 852
     iget-object v0, p0, Lcom/htc/app/FilePickerListAdapter$1;->this$0:Lcom/htc/app/FilePickerListAdapter;
 
-    #getter for: Lcom/htc/app/FilePickerListAdapter;->mDataSetChangedListener:Lcom/htc/app/FilePickerListAdapter$onDataSetChangedListener;
-    invoke-static {v0}, Lcom/htc/app/FilePickerListAdapter;->access$500(Lcom/htc/app/FilePickerListAdapter;)Lcom/htc/app/FilePickerListAdapter$onDataSetChangedListener;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, Lcom/htc/app/FilePickerListAdapter;->notifyDataSetChanged()V
 
     .line 853
     iget-object v0, p0, Lcom/htc/app/FilePickerListAdapter$1;->this$0:Lcom/htc/app/FilePickerListAdapter;
@@ -64,9 +54,19 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/htc/app/FilePickerListAdapter$onDataSetChangedListener;->onDataSetChanged()V
+    if-eqz v0, :cond_0
 
     .line 854
+    iget-object v0, p0, Lcom/htc/app/FilePickerListAdapter$1;->this$0:Lcom/htc/app/FilePickerListAdapter;
+
+    #getter for: Lcom/htc/app/FilePickerListAdapter;->mDataSetChangedListener:Lcom/htc/app/FilePickerListAdapter$onDataSetChangedListener;
+    invoke-static {v0}, Lcom/htc/app/FilePickerListAdapter;->access$500(Lcom/htc/app/FilePickerListAdapter;)Lcom/htc/app/FilePickerListAdapter$onDataSetChangedListener;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/htc/app/FilePickerListAdapter$onDataSetChangedListener;->onDataSetChanged()V
+
+    .line 855
     :cond_0
     return-void
 .end method

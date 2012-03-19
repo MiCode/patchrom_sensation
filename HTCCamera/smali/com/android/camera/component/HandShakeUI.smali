@@ -338,7 +338,7 @@
     if-nez v0, :cond_0
 
     .line 151
-    iget-object v1, p0, Lcom/android/camera/component/HandShakeUI;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "eventManager == null"
 
@@ -562,12 +562,12 @@
     .line 366
     iget v2, p0, Lcom/android/camera/component/HandShakeUI;->m_marginTop:I
 
-    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
+    iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     .line 367
     iget v2, p0, Lcom/android/camera/component/HandShakeUI;->m_marginRight:I
 
-    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->rightMargin:I
+    iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     .line 368
     invoke-virtual {p1, v0}, Lcom/android/camera/rotate/RotateRelativeLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -673,7 +673,7 @@
 
     sub-int/2addr v1, v2
 
-    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
+    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     .line 382
     :goto_0
@@ -691,7 +691,7 @@
     :cond_1
     iget v1, p0, Lcom/android/camera/component/HandShakeUI;->m_marginTop:I
 
-    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
+    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     goto :goto_0
 .end method

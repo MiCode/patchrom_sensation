@@ -1416,7 +1416,7 @@
 
     move-result v4
 
-    iput v4, p0, Lcom/htc/util/weather/WSPPData;->type:I
+    iput v4, p0, Lcom/htc/util/weather/WSPData;->type:I
 
     .line 128
     const/4 v4, 0x1
@@ -1425,7 +1425,7 @@
 
     move-result-object v4
 
-    iput-object v4, p0, Lcom/htc/util/weather/WSPPData;->param1:Ljava/lang/String;
+    iput-object v4, p0, Lcom/htc/util/weather/WSPData;->param1:Ljava/lang/String;
 
     .line 129
     const/4 v4, 0x2
@@ -1434,7 +1434,7 @@
 
     move-result-object v4
 
-    iput-object v4, p0, Lcom/htc/util/weather/WSPPData;->param2:Ljava/lang/String;
+    iput-object v4, p0, Lcom/htc/util/weather/WSPData;->param2:Ljava/lang/String;
 
     .line 130
     const/4 v4, 0x3
@@ -1443,7 +1443,7 @@
 
     move-result-wide v4
 
-    iput-wide v4, p0, Lcom/htc/util/weather/WSPPData;->lastUpdate:J
+    iput-wide v4, p0, Lcom/htc/util/weather/WSPData;->lastUpdate:J
 
     .line 131
     const/4 v4, 0x4
@@ -1452,7 +1452,7 @@
 
     move-result v4
 
-    iput v4, p0, Lcom/htc/util/weather/WSPPData;->curTempC:I
+    iput v4, p0, Lcom/htc/util/weather/WSPData;->curTempC:I
 
     .line 132
     const/4 v4, 0x5
@@ -1461,7 +1461,7 @@
 
     move-result v4
 
-    iput v4, p0, Lcom/htc/util/weather/WSPPData;->curTempF:I
+    iput v4, p0, Lcom/htc/util/weather/WSPData;->curTempF:I
 
     .line 133
     const/4 v4, 0x6
@@ -1470,10 +1470,10 @@
 
     move-result-object v4
 
-    iput-object v4, p0, Lcom/htc/util/weather/WSPPData;->curConditionId:Ljava/lang/String;
+    iput-object v4, p0, Lcom/htc/util/weather/WSPData;->curConditionId:Ljava/lang/String;
 
     .line 135
-    iget-object v4, p0, Lcom/htc/util/weather/WSPPData;->fstName:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/weather/WSPData;->fstName:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
@@ -1504,7 +1504,7 @@
 
     .line 137
     .local v2, item:Ljava/lang/String;
-    iget-object v4, p0, Lcom/htc/util/weather/WSPPData;->fstName:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/weather/WSPData;->fstName:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1516,7 +1516,7 @@
     .line 140
     .end local v2           #item:Ljava/lang/String;
     :cond_0
-    iget-object v4, p0, Lcom/htc/util/weather/WSPPData;->fstDate:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/weather/WSPData;->fstDate:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
@@ -1544,7 +1544,7 @@
 
     .line 142
     .restart local v2       #item:Ljava/lang/String;
-    iget-object v4, p0, Lcom/htc/util/weather/WSPPData;->fstDate:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/weather/WSPData;->fstDate:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1556,7 +1556,7 @@
     .line 145
     .end local v2           #item:Ljava/lang/String;
     :cond_1
-    iget-object v4, p0, Lcom/htc/util/weather/WSPPData;->fstConditionId:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/weather/WSPData;->fstConditionId:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
@@ -1584,7 +1584,7 @@
 
     .line 147
     .restart local v2       #item:Ljava/lang/String;
-    iget-object v4, p0, Lcom/htc/util/weather/WSPPData;->fstConditionId:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/weather/WSPData;->fstConditionId:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1596,7 +1596,7 @@
     .line 150
     .end local v2           #item:Ljava/lang/String;
     :cond_2
-    iget-object v4, p0, Lcom/htc/util/weather/WSPPData;->fstHighTempC:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/weather/WSPData;->fstHighTempC:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
@@ -1624,7 +1624,7 @@
 
     .line 152
     .restart local v2       #item:Ljava/lang/String;
-    iget-object v4, p0, Lcom/htc/util/weather/WSPPData;->fstHighTempC:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/weather/WSPData;->fstHighTempC:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1636,7 +1636,7 @@
     .line 155
     .end local v2           #item:Ljava/lang/String;
     :cond_3
-    iget-object v4, p0, Lcom/htc/util/weather/WSPPData;->fstHighTempF:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/weather/WSPData;->fstHighTempF:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
@@ -1664,7 +1664,7 @@
 
     .line 157
     .restart local v2       #item:Ljava/lang/String;
-    iget-object v4, p0, Lcom/htc/util/weather/WSPPData;->fstHighTempF:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/weather/WSPData;->fstHighTempF:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1676,7 +1676,7 @@
     .line 160
     .end local v2           #item:Ljava/lang/String;
     :cond_4
-    iget-object v4, p0, Lcom/htc/util/weather/WSPPData;->fstLowTempC:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/weather/WSPData;->fstLowTempC:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
@@ -1704,7 +1704,7 @@
 
     .line 162
     .restart local v2       #item:Ljava/lang/String;
-    iget-object v4, p0, Lcom/htc/util/weather/WSPPData;->fstLowTempC:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/weather/WSPData;->fstLowTempC:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1716,7 +1716,7 @@
     .line 165
     .end local v2           #item:Ljava/lang/String;
     :cond_5
-    iget-object v4, p0, Lcom/htc/util/weather/WSPPData;->fstLowTempF:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/weather/WSPData;->fstLowTempF:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
@@ -1744,7 +1744,7 @@
 
     .line 167
     .restart local v2       #item:Ljava/lang/String;
-    iget-object v4, p0, Lcom/htc/util/weather/WSPPData;->fstLowTempF:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/htc/util/weather/WSPData;->fstLowTempF:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1762,7 +1762,7 @@
 
     move-result-object v4
 
-    iput-object v4, p0, Lcom/htc/util/weather/WSPPData;->curLocLat:Ljava/lang/String;
+    iput-object v4, p0, Lcom/htc/util/weather/WSPData;->curLocLat:Ljava/lang/String;
 
     .line 171
     const/16 v4, 0xf
@@ -1771,7 +1771,7 @@
 
     move-result-object v4
 
-    iput-object v4, p0, Lcom/htc/util/weather/WSPPData;->curLocLng:Ljava/lang/String;
+    iput-object v4, p0, Lcom/htc/util/weather/WSPData;->curLocLng:Ljava/lang/String;
 
     .line 172
     const/16 v4, 0x10
@@ -1780,7 +1780,7 @@
 
     move-result-object v4
 
-    iput-object v4, p0, Lcom/htc/util/weather/WSPPData;->curLocLatTrim:Ljava/lang/String;
+    iput-object v4, p0, Lcom/htc/util/weather/WSPData;->curLocLatTrim:Ljava/lang/String;
 
     .line 173
     const/16 v4, 0x11
@@ -1789,7 +1789,7 @@
 
     move-result-object v4
 
-    iput-object v4, p0, Lcom/htc/util/weather/WSPPData;->curLocLngTrim:Ljava/lang/String;
+    iput-object v4, p0, Lcom/htc/util/weather/WSPData;->curLocLngTrim:Ljava/lang/String;
 
     .line 174
     const/16 v4, 0x12
@@ -1798,7 +1798,7 @@
 
     move-result-object v4
 
-    iput-object v4, p0, Lcom/htc/util/weather/WSPPData;->curLocName:Ljava/lang/String;
+    iput-object v4, p0, Lcom/htc/util/weather/WSPData;->curLocName:Ljava/lang/String;
 
     .line 175
     const/16 v4, 0x13
@@ -1807,7 +1807,7 @@
 
     move-result-object v4
 
-    iput-object v4, p0, Lcom/htc/util/weather/WSPPData;->curLocState:Ljava/lang/String;
+    iput-object v4, p0, Lcom/htc/util/weather/WSPData;->curLocState:Ljava/lang/String;
 
     .line 176
     const/16 v4, 0x14
@@ -1816,7 +1816,7 @@
 
     move-result-object v4
 
-    iput-object v4, p0, Lcom/htc/util/weather/WSPPData;->curLocCountry:Ljava/lang/String;
+    iput-object v4, p0, Lcom/htc/util/weather/WSPData;->curLocCountry:Ljava/lang/String;
 
     .line 177
     const/16 v4, 0x15
@@ -1825,7 +1825,7 @@
 
     move-result-object v4
 
-    iput-object v4, p0, Lcom/htc/util/weather/WSPPData;->curLocTimezoneId:Ljava/lang/String;
+    iput-object v4, p0, Lcom/htc/util/weather/WSPData;->curLocTimezoneId:Ljava/lang/String;
 
     .line 179
     sget-object v4, Lcom/htc/util/weather/WSPPUtility$TABLE_DATA_COLUMNS;->cityLocalTime:Lcom/htc/util/weather/WSPPUtility$TABLE_DATA_COLUMNS;
@@ -3457,82 +3457,82 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/htc/util/weather/WSPPData;->type:I
+    iput v0, p0, Lcom/htc/util/weather/WSPData;->type:I
 
     .line 298
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/util/weather/WSPPData;->param1:Ljava/lang/String;
+    iput-object v0, p0, Lcom/htc/util/weather/WSPData;->param1:Ljava/lang/String;
 
     .line 299
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/util/weather/WSPPData;->param2:Ljava/lang/String;
+    iput-object v0, p0, Lcom/htc/util/weather/WSPData;->param2:Ljava/lang/String;
 
     .line 300
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/htc/util/weather/WSPPData;->lastUpdate:J
+    iput-wide v0, p0, Lcom/htc/util/weather/WSPData;->lastUpdate:J
 
     .line 301
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Lcom/htc/util/weather/WSPPData;->curTempC:I
+    iput v0, p0, Lcom/htc/util/weather/WSPData;->curTempC:I
 
     .line 302
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Lcom/htc/util/weather/WSPPData;->curTempF:I
+    iput v0, p0, Lcom/htc/util/weather/WSPData;->curTempF:I
 
     .line 303
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/util/weather/WSPPData;->curConditionId:Ljava/lang/String;
+    iput-object v0, p0, Lcom/htc/util/weather/WSPData;->curConditionId:Ljava/lang/String;
 
     .line 304
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->fstName:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->fstName:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readStringList(Ljava/util/List;)V
 
     .line 305
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->fstDate:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->fstDate:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readStringList(Ljava/util/List;)V
 
     .line 306
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->fstConditionId:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->fstConditionId:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readStringList(Ljava/util/List;)V
 
     .line 307
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->fstHighTempC:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->fstHighTempC:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readStringList(Ljava/util/List;)V
 
     .line 308
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->fstHighTempF:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->fstHighTempF:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readStringList(Ljava/util/List;)V
 
     .line 309
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->fstLowTempC:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->fstLowTempC:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readStringList(Ljava/util/List;)V
 
     .line 310
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->fstLowTempF:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->fstLowTempF:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readStringList(Ljava/util/List;)V
 
@@ -3541,56 +3541,56 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocLat:Ljava/lang/String;
+    iput-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocLat:Ljava/lang/String;
 
     .line 312
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocLng:Ljava/lang/String;
+    iput-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocLng:Ljava/lang/String;
 
     .line 313
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocLatTrim:Ljava/lang/String;
+    iput-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocLatTrim:Ljava/lang/String;
 
     .line 314
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocLngTrim:Ljava/lang/String;
+    iput-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocLngTrim:Ljava/lang/String;
 
     .line 315
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocName:Ljava/lang/String;
+    iput-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocName:Ljava/lang/String;
 
     .line 316
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocState:Ljava/lang/String;
+    iput-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocState:Ljava/lang/String;
 
     .line 317
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocCountry:Ljava/lang/String;
+    iput-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocCountry:Ljava/lang/String;
 
     .line 318
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocTimezoneId:Ljava/lang/String;
+    iput-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocTimezoneId:Ljava/lang/String;
 
     .line 320
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -5676,112 +5676,112 @@
 
     .line 363
     .local v0, data:Lcom/htc/util/weather/WSPData;
-    iget v1, p0, Lcom/htc/util/weather/WSPPData;->type:I
+    iget v1, p0, Lcom/htc/util/weather/WSPData;->type:I
 
     iput v1, v0, Lcom/htc/util/weather/WSPData;->type:I
 
     .line 364
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->param1:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->param1:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->param1:Ljava/lang/String;
 
     .line 365
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->param2:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->param2:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->param2:Ljava/lang/String;
 
     .line 366
-    iget-wide v1, p0, Lcom/htc/util/weather/WSPPData;->lastUpdate:J
+    iget-wide v1, p0, Lcom/htc/util/weather/WSPData;->lastUpdate:J
 
     iput-wide v1, v0, Lcom/htc/util/weather/WSPData;->lastUpdate:J
 
     .line 367
-    iget v1, p0, Lcom/htc/util/weather/WSPPData;->curTempC:I
+    iget v1, p0, Lcom/htc/util/weather/WSPData;->curTempC:I
 
     iput v1, v0, Lcom/htc/util/weather/WSPData;->curTempC:I
 
     .line 368
-    iget v1, p0, Lcom/htc/util/weather/WSPPData;->curTempF:I
+    iget v1, p0, Lcom/htc/util/weather/WSPData;->curTempF:I
 
     iput v1, v0, Lcom/htc/util/weather/WSPData;->curTempF:I
 
     .line 369
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->curConditionId:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->curConditionId:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->curConditionId:Ljava/lang/String;
 
     .line 370
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->fstName:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->fstName:Ljava/util/ArrayList;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->fstName:Ljava/util/ArrayList;
 
     .line 371
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->fstDate:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->fstDate:Ljava/util/ArrayList;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->fstDate:Ljava/util/ArrayList;
 
     .line 372
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->fstConditionId:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->fstConditionId:Ljava/util/ArrayList;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->fstConditionId:Ljava/util/ArrayList;
 
     .line 373
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->fstHighTempC:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->fstHighTempC:Ljava/util/ArrayList;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->fstHighTempC:Ljava/util/ArrayList;
 
     .line 374
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->fstHighTempF:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->fstHighTempF:Ljava/util/ArrayList;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->fstHighTempF:Ljava/util/ArrayList;
 
     .line 375
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->fstLowTempC:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->fstLowTempC:Ljava/util/ArrayList;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->fstLowTempC:Ljava/util/ArrayList;
 
     .line 376
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->fstLowTempF:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->fstLowTempF:Ljava/util/ArrayList;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->fstLowTempF:Ljava/util/ArrayList;
 
     .line 377
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->curLocLat:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->curLocLat:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->curLocLat:Ljava/lang/String;
 
     .line 378
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->curLocLng:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->curLocLng:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->curLocLng:Ljava/lang/String;
 
     .line 379
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->curLocLatTrim:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->curLocLatTrim:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->curLocLatTrim:Ljava/lang/String;
 
     .line 380
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->curLocLngTrim:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->curLocLngTrim:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->curLocLngTrim:Ljava/lang/String;
 
     .line 381
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->curLocName:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->curLocName:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->curLocName:Ljava/lang/String;
 
     .line 382
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->curLocState:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->curLocState:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->curLocState:Ljava/lang/String;
 
     .line 383
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->curLocCountry:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->curLocCountry:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->curLocCountry:Ljava/lang/String;
 
     .line 384
-    iget-object v1, p0, Lcom/htc/util/weather/WSPPData;->curLocTimezoneId:Ljava/lang/String;
+    iget-object v1, p0, Lcom/htc/util/weather/WSPData;->curLocTimezoneId:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/htc/util/weather/WSPData;->curLocTimezoneId:Ljava/lang/String;
 
@@ -5796,112 +5796,112 @@
 
     .prologue
     .line 402
-    iget v0, p0, Lcom/htc/util/weather/WSPPData;->type:I
+    iget v0, p0, Lcom/htc/util/weather/WSPData;->type:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 403
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->param1:Ljava/lang/String;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->param1:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 404
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->param2:Ljava/lang/String;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->param2:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 405
-    iget-wide v0, p0, Lcom/htc/util/weather/WSPPData;->lastUpdate:J
+    iget-wide v0, p0, Lcom/htc/util/weather/WSPData;->lastUpdate:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
     .line 406
-    iget v0, p0, Lcom/htc/util/weather/WSPPData;->curTempC:I
+    iget v0, p0, Lcom/htc/util/weather/WSPData;->curTempC:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 407
-    iget v0, p0, Lcom/htc/util/weather/WSPPData;->curTempF:I
+    iget v0, p0, Lcom/htc/util/weather/WSPData;->curTempF:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 408
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->curConditionId:Ljava/lang/String;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->curConditionId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 409
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->fstName:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->fstName:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
     .line 410
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->fstDate:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->fstDate:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
     .line 411
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->fstConditionId:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->fstConditionId:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
     .line 412
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->fstHighTempC:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->fstHighTempC:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
     .line 413
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->fstHighTempF:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->fstHighTempF:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
     .line 414
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->fstLowTempC:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->fstLowTempC:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
     .line 415
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->fstLowTempF:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->fstLowTempF:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
     .line 416
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocLat:Ljava/lang/String;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocLat:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 417
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocLng:Ljava/lang/String;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocLng:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 418
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocLatTrim:Ljava/lang/String;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocLatTrim:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 419
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocLngTrim:Ljava/lang/String;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocLngTrim:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 420
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocName:Ljava/lang/String;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 421
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocState:Ljava/lang/String;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocState:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 422
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocCountry:Ljava/lang/String;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocCountry:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 423
-    iget-object v0, p0, Lcom/htc/util/weather/WSPPData;->curLocTimezoneId:Ljava/lang/String;
+    iget-object v0, p0, Lcom/htc/util/weather/WSPData;->curLocTimezoneId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 

@@ -27,7 +27,7 @@
 
     .prologue
     .line 414
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 415
     const-string v1, ","

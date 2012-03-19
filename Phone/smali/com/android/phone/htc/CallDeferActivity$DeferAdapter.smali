@@ -66,13 +66,6 @@
     .line 623
     if-nez p1, :cond_0
 
-    .line 624
-    const-string v1, "CallDefer"
-
-    const-string v2, "bindLabel: view is null"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 633
     :goto_0
     return-void
@@ -122,13 +115,6 @@
 
     .line 636
     if-nez p1, :cond_0
-
-    .line 637
-    const-string v4, "CallDefer"
-
-    const-string v5, "bindMessage: view is null"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 672
     :goto_0
@@ -183,7 +169,7 @@
     :cond_1
     iget-object v4, p0, Lcom/android/phone/htc/CallDeferActivity$DeferAdapter;->this$0:Lcom/android/phone/htc/CallDeferActivity;
 
-    iget-object v4, v4, Lcom/android/phone/htc/CallDeferActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v4, v4, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     iget-object v4, v4, Lcom/android/internal/telephony/CallerInfo;->name:Ljava/lang/String;
 
@@ -227,7 +213,7 @@
 
     iget-object v6, p0, Lcom/android/phone/htc/CallDeferActivity$DeferAdapter;->this$0:Lcom/android/phone/htc/CallDeferActivity;
 
-    iget-object v6, v6, Lcom/android/phone/htc/CallDeferActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+    iget-object v6, v6, Lcom/android/phone/htc/HtcDeferPersonActivity;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
     iget-object v6, v6, Lcom/android/internal/telephony/CallerInfo;->name:Ljava/lang/String;
 
@@ -310,13 +296,6 @@
     .prologue
     .line 675
     if-nez p1, :cond_0
-
-    .line 676
-    const-string v3, "CallDefer"
-
-    const-string v4, "bind reminder: view is null"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 706
     :goto_0
@@ -634,50 +613,31 @@
     .parameter "position"
 
     .prologue
-    const/4 v0, 0x1
+    const/4 v1, 0x1
+
+    const/4 v0, 0x0
 
     .line 524
     if-nez p1, :cond_1
 
-    .line 525
-    const/4 v0, 0x0
-
-    .line 528
+    .line 533
     :cond_0
+    :goto_0
     return v0
 
     .line 526
     :cond_1
-    if-le v0, p1, :cond_0
+    if-le v1, p1, :cond_2
 
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
-    if-le p1, v1, :cond_0
+    if-gt p1, v2, :cond_0
 
-    .line 531
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    :cond_2
+    move v0, v1
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "position: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    .line 528
+    goto :goto_0
 .end method
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;

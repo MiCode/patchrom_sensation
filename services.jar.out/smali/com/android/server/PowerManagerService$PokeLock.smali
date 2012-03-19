@@ -42,7 +42,7 @@
     iput-object p1, p0, Lcom/android/server/PowerManagerService$PokeLock;->this$0:Lcom/android/server/PowerManagerService;
 
     .line 1558
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1559
     iput p2, p0, Lcom/android/server/PowerManagerService$PokeLock;->pokey:I

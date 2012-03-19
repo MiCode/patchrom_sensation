@@ -40,7 +40,7 @@
     .line 512
     iput-object p1, p0, Lcom/htc/net/FourG/FourGManager$FourGLock;->this$0:Lcom/htc/net/FourG/FourGManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 513
     iput-object p2, p0, Lcom/htc/net/FourG/FourGManager$FourGLock;->mTag:Ljava/lang/String;

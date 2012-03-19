@@ -130,7 +130,7 @@
 .end method
 
 .method private constructor <init>()V
-    .locals 3
+    .locals 2
 
     .prologue
     const/4 v1, -0x1
@@ -200,31 +200,6 @@
     div-int/lit8 v0, v0, 0x2
 
     sput v0, Lcom/android/server/Watchdog;->TIME_TO_WAIT:I
-
-    .line 193
-    const-string v0, "Watchdog"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "For pyramid CRC, set TIME_TO_RESTART to be "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    sget v2, Lcom/android/server/Watchdog;->TIME_TO_RESTART:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 198
     :cond_0

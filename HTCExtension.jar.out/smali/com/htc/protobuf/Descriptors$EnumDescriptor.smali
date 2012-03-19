@@ -60,7 +60,7 @@
     const/4 v5, 0x0
 
     .line 1204
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1205
     iput p4, p0, Lcom/htc/protobuf/Descriptors$EnumDescriptor;->index:I

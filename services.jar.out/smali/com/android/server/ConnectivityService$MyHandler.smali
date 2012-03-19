@@ -1804,53 +1804,6 @@
 
     if-nez v24, :cond_0
 
-    .line 4564
-    invoke-static {}, Lcom/android/server/ConnectivityService;->access$3400()Ljava/lang/String;
-
-    move-result-object v24
-
-    new-instance v25, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v25 .. v25}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v26, "Unable to reconnect "
-
-    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v25
-
-    move-object/from16 v0, p1
-
-    iget v0, v0, Landroid/os/Message;->arg1:I
-
-    move/from16 v26, v0
-
-    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v25
-
-    const-string v26, " type "
-
-    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v25
-
-    move-object/from16 v0, p1
-
-    iget v0, v0, Landroid/os/Message;->arg2:I
-
-    move/from16 v26, v0
-
-    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v25
-
-    invoke-virtual/range {v25 .. v25}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v25
-
-    invoke-static/range {v24 .. v25}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 4567
     const/16 v24, 0x2
 
@@ -1903,7 +1856,7 @@
     move/from16 v1, v25
 
     #calls: Lcom/android/server/ConnectivityService;->addToHtcConnSrvHistory(I[Ljava/lang/Object;)V
-    invoke-static {v0, v1, v13}, Lcom/android/server/ConnectivityService;->access$3500(Lcom/android/server/ConnectivityService;I[Ljava/lang/Object;)V
+    invoke-static {v0, v1, v13}, Lcom/android/server/ConnectivityService;->access$3400(Lcom/android/server/ConnectivityService;I[Ljava/lang/Object;)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
@@ -2015,7 +1968,7 @@
     move-object/from16 v1, v24
 
     #calls: Lcom/android/server/ConnectivityService;->teardown(Landroid/net/NetworkStateTracker;)Z
-    invoke-static {v0, v1}, Lcom/android/server/ConnectivityService;->access$3600(Lcom/android/server/ConnectivityService;Landroid/net/NetworkStateTracker;)Z
+    invoke-static {v0, v1}, Lcom/android/server/ConnectivityService;->access$3500(Lcom/android/server/ConnectivityService;Landroid/net/NetworkStateTracker;)Z
 
     goto/16 :goto_0
 
@@ -2179,7 +2132,7 @@
     move-object/from16 v1, p1
 
     #calls: Lcom/android/server/ConnectivityService$DualMode;->handleDualModeSwitch(Landroid/os/Message;)V
-    invoke-static {v0, v1}, Lcom/android/server/ConnectivityService$DualMode;->access$3700(Lcom/android/server/ConnectivityService$DualMode;Landroid/os/Message;)V
+    invoke-static {v0, v1}, Lcom/android/server/ConnectivityService$DualMode;->access$3600(Lcom/android/server/ConnectivityService$DualMode;Landroid/os/Message;)V
 
     goto/16 :goto_0
 
@@ -2380,33 +2333,6 @@
 
     if-nez v24, :cond_13
 
-    .line 4627
-    invoke-static {}, Lcom/android/server/ConnectivityService;->access$3400()Ljava/lang/String;
-
-    move-result-object v24
-
-    new-instance v25, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v25 .. v25}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v26, "Unable to reconnect avaliable net : "
-
-    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v25
-
-    move-object/from16 v0, v25
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v25
-
-    invoke-virtual/range {v25 .. v25}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v25
-
-    invoke-static/range {v24 .. v25}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 4630
     move-object/from16 v0, p0
 
@@ -2560,7 +2486,7 @@
     move-object/from16 v24, v0
 
     #calls: Lcom/android/server/ConnectivityService;->handleSystemReady()V
-    invoke-static/range {v24 .. v24}, Lcom/android/server/ConnectivityService;->access$3800(Lcom/android/server/ConnectivityService;)V
+    invoke-static/range {v24 .. v24}, Lcom/android/server/ConnectivityService;->access$3700(Lcom/android/server/ConnectivityService;)V
 
     goto/16 :goto_0
 

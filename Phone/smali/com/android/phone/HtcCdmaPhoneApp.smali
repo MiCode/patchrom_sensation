@@ -344,7 +344,7 @@
     const/4 v3, 0x0
 
     .line 188
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 176
     const/4 v1, -0x1
@@ -357,7 +357,7 @@
     .line 178
     new-instance v1, Ljava/lang/Object;
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v1 .. v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, p0, Lcom/android/phone/HtcCdmaPhoneApp;->mOTAToneLock:Ljava/lang/Object;
 
@@ -2755,10 +2755,10 @@
 
     .line 1213
     .local v0, mParams:Landroid/view/WindowManager$LayoutParams;
-    iput v2, v0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 1214
-    iput v2, v0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 1215
     const/16 v1, 0x98

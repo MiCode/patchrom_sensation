@@ -40,7 +40,7 @@
     .line 3700
     iput-object p1, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 3674
     new-instance v0, Landroid/widget/AbsListView$FlingRunnable$1;
@@ -348,7 +348,7 @@
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    iget-boolean v2, v2, Landroid/widget/AbsListView;->mDataChanged:Z
+    iget-boolean v2, v2, Landroid/widget/AdapterView;->mDataChanged:Z
 
     if-eqz v2, :cond_1
 
@@ -365,7 +365,7 @@
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    iget v2, v2, Landroid/widget/AbsListView;->mItemCount:I
+    iget v2, v2, Landroid/widget/AdapterView;->mItemCount:I
 
     if-eqz v2, :cond_2
 
@@ -426,7 +426,7 @@
 
     iget-object v3, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    iget v3, v3, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v3, v3, Landroid/widget/AdapterView;->mFirstPosition:I
 
     iput v3, v2, Landroid/widget/AbsListView;->mMotionPosition:I
 
@@ -509,7 +509,7 @@
 
     iget-object v5, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    iget v5, v5, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v5, v5, Landroid/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v3, v5
 
@@ -644,7 +644,7 @@
 
     iget-object v3, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
-    iget v3, v3, Landroid/widget/AbsListView;->mFirstPosition:I
+    iget v3, v3, Landroid/widget/AdapterView;->mFirstPosition:I
 
     add-int v3, v3, v24
 

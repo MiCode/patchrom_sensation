@@ -201,7 +201,7 @@
     .line 52
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/os/memory/RunningState;->sGlobalLock:Ljava/lang/Object;
 
@@ -216,7 +216,7 @@
     const/4 v2, 0x0
 
     .line 569
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 71
     new-instance v0, Landroid/os/memory/InterestingConfigChanges;
@@ -287,7 +287,7 @@
     .line 122
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/os/memory/RunningState;->mLock:Ljava/lang/Object;
 
@@ -1246,7 +1246,7 @@
     :cond_d
     move-object/from16 v0, v41
 
-    iget v0, v0, Landroid/os/memory/RunningState$ProcessItem;->mCurSeq:I
+    iget v0, v0, Landroid/os/memory/RunningState$BaseItem;->mCurSeq:I
 
     move/from16 v54, v0
 
@@ -1384,7 +1384,7 @@
 
     move-object/from16 v1, v41
 
-    iput v0, v1, Landroid/os/memory/RunningState$ProcessItem;->mCurSeq:I
+    iput v0, v1, Landroid/os/memory/RunningState$BaseItem;->mCurSeq:I
 
     .line 777
     .end local v37           #pid:I
@@ -1611,7 +1611,7 @@
 
     move-object/from16 v1, v41
 
-    iput v0, v1, Landroid/os/memory/RunningState$ProcessItem;->mCurSeq:I
+    iput v0, v1, Landroid/os/memory/RunningState$BaseItem;->mCurSeq:I
 
     .line 805
     const/16 v54, 0x1
@@ -2000,7 +2000,7 @@
     .restart local v41       #proc:Landroid/os/memory/RunningState$ProcessItem;
     move-object/from16 v0, v41
 
-    iget v0, v0, Landroid/os/memory/RunningState$ProcessItem;->mCurSeq:I
+    iget v0, v0, Landroid/os/memory/RunningState$BaseItem;->mCurSeq:I
 
     move/from16 v54, v0
 
@@ -2117,7 +2117,7 @@
     .local v36, pi:Landroid/os/memory/RunningState$ProcessItem;
     move-object/from16 v0, v36
 
-    iget v0, v0, Landroid/os/memory/RunningState$ProcessItem;->mCurSeq:I
+    iget v0, v0, Landroid/os/memory/RunningState$BaseItem;->mCurSeq:I
 
     move/from16 v54, v0
 
@@ -2195,7 +2195,7 @@
     .local v48, si:Landroid/os/memory/RunningState$ServiceItem;
     move-object/from16 v0, v48
 
-    iget v0, v0, Landroid/os/memory/RunningState$ServiceItem;->mCurSeq:I
+    iget v0, v0, Landroid/os/memory/RunningState$BaseItem;->mCurSeq:I
 
     move/from16 v54, v0
 
@@ -2500,7 +2500,7 @@
 
     move-object/from16 v0, v54
 
-    iget-object v0, v0, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     move-object/from16 v54, v0
 
@@ -2687,7 +2687,7 @@
 
     move-object/from16 v1, v36
 
-    iput-boolean v0, v1, Landroid/os/memory/RunningState$ProcessItem;->mNeedDivider:Z
+    iput-boolean v0, v1, Landroid/os/memory/RunningState$BaseItem;->mNeedDivider:Z
 
     .line 946
     move-object/from16 v0, p0
@@ -2793,7 +2793,7 @@
 
     move-object/from16 v1, v48
 
-    iput-boolean v0, v1, Landroid/os/memory/RunningState$ServiceItem;->mNeedDivider:Z
+    iput-boolean v0, v1, Landroid/os/memory/RunningState$BaseItem;->mNeedDivider:Z
 
     .line 961
     const/16 v27, 0x1
@@ -3297,7 +3297,7 @@
     .restart local v41       #proc:Landroid/os/memory/RunningState$ProcessItem;
     move-object/from16 v0, v41
 
-    iget v0, v0, Landroid/os/memory/RunningState$ProcessItem;->mCurSeq:I
+    iget v0, v0, Landroid/os/memory/RunningState$BaseItem;->mCurSeq:I
 
     move/from16 v54, v0
 
@@ -3640,7 +3640,7 @@
     .line 1060
     move-object/from16 v0, v41
 
-    iget v0, v0, Landroid/os/memory/RunningState$ProcessItem;->mCurSeq:I
+    iget v0, v0, Landroid/os/memory/RunningState$BaseItem;->mCurSeq:I
 
     move/from16 v54, v0
 
@@ -3659,7 +3659,7 @@
     .line 1061
     move-object/from16 v0, v41
 
-    iget-wide v0, v0, Landroid/os/memory/RunningState$ProcessItem;->mSize:J
+    iget-wide v0, v0, Landroid/os/memory/RunningState$BaseItem;->mSize:J
 
     move-wide/from16 v54, v0
 
@@ -3704,7 +3704,7 @@
     .line 1064
     move-object/from16 v0, v41
 
-    iget-wide v0, v0, Landroid/os/memory/RunningState$ProcessItem;->mSize:J
+    iget-wide v0, v0, Landroid/os/memory/RunningState$BaseItem;->mSize:J
 
     move-wide/from16 v54, v0
 
@@ -4044,7 +4044,7 @@
     .line 1089
     move-object/from16 v0, v41
 
-    iget-wide v0, v0, Landroid/os/memory/RunningState$ProcessItem;->mSize:J
+    iget-wide v0, v0, Landroid/os/memory/RunningState$BaseItem;->mSize:J
 
     move-wide/from16 v54, v0
     :try_end_7

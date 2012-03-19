@@ -29,7 +29,7 @@
     .line 154
     .local p1, cls:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     .local p3, param:[Ljava/lang/Class;,"[Ljava/lang/Class<*>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 152
     const/4 v1, 0x0

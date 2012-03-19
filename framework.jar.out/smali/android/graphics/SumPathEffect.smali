@@ -22,7 +22,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/SumPathEffect;->native_instance:I
+    iput v0, p0, Landroid/graphics/PathEffect;->native_instance:I
 
     .line 28
     return-void

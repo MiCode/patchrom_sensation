@@ -26,7 +26,7 @@
 
     .prologue
     .line 375
-    iput-object p1, p0, Lcom/android/phone/HtcDeactiveAllCallBarring;->tcpListener:Lcom/android/phone/TimeConsumingPreferenceListener;
+    iput-object p1, p0, Lcom/android/phone/HtcCallBarringEditPreference;->tcpListener:Lcom/android/phone/TimeConsumingPreferenceListener;
 
     .line 376
     return-void

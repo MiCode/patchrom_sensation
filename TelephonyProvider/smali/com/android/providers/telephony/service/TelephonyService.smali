@@ -14,7 +14,7 @@
 # static fields
 .field public static ACTION_CHECK_DB_LOADABLE:Ljava/lang/String; = null
 
-.field public static final HTC_DEBUG:Z = true
+.field public static final HTC_DEBUG:Z = false
 
 .field private static final TAG:Ljava/lang/String; = "TelephonyService"
 
@@ -267,34 +267,11 @@
 .end method
 
 .method public onStart(Landroid/content/Intent;I)V
-    .locals 4
+    .locals 2
     .parameter "intent"
     .parameter "startId"
 
     .prologue
-    .line 101
-    const-string v1, "TelephonyService"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "onStart> "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 102
     iget-object v1, p0, Lcom/android/providers/telephony/service/TelephonyService;->mServiceHandler:Lcom/android/providers/telephony/service/TelephonyService$ServiceHandler;
 
@@ -357,33 +334,10 @@
 .end method
 
 .method public stopService(I)V
-    .locals 3
+    .locals 0
     .parameter "startId"
 
     .prologue
-    .line 126
-    const-string v0, "TelephonyService"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "stopSelf> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 127
     invoke-virtual {p0, p1}, Lcom/android/providers/telephony/service/TelephonyService;->stopSelf(I)V
 

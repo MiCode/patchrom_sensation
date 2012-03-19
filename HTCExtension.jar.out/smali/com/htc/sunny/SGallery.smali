@@ -391,7 +391,7 @@
     .line 240
     new-instance v0, Landroid/view/GestureDetector;
 
-    iget-object v1, p0, Lcom/htc/sunny/SGallery;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1, p0}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V
 
@@ -940,7 +940,7 @@
     invoke-super {p0}, Lcom/htc/sunny/SAdapterView;->createResource()V
 
     .line 1100
-    iget-boolean v0, p0, Lcom/htc/sunny/SGallery;->mIsSurfaceBinded:Z
+    iget-boolean v0, p0, Lcom/htc/sunny/SView;->mIsSurfaceBinded:Z
 
     if-nez v0, :cond_0
 
@@ -1225,7 +1225,7 @@
     iput v7, v6, Lcom/htc/sunny/SGallery$AnimationInfo;->type:I
 
     .line 899
-    iget-object v6, p0, Lcom/htc/sunny/SGallery;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     invoke-static {v6}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
@@ -1470,7 +1470,7 @@
     const/4 v2, 0x0
 
     .line 455
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     if-nez v0, :cond_0
 
@@ -1480,7 +1480,7 @@
 
     .line 457
     :cond_0
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v1, p0, Lcom/htc/sunny/SGallery;->mItemBackgroundPressTextureId:I
 
@@ -1490,7 +1490,7 @@
     iput v2, p0, Lcom/htc/sunny/SGallery;->mItemBackgroundPressTextureId:I
 
     .line 460
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v1, p0, Lcom/htc/sunny/SGallery;->mItemBackgroundRestTextureId:I
 
@@ -1500,7 +1500,7 @@
     iput v2, p0, Lcom/htc/sunny/SGallery;->mItemBackgroundRestTextureId:I
 
     .line 463
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v1, p0, Lcom/htc/sunny/SGallery;->mDividerTextureId:I
 
@@ -1631,7 +1631,7 @@
     const/4 v2, -0x1
 
     .line 1376
-    iget-object v3, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v3, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     if-nez v3, :cond_1
 
@@ -1644,7 +1644,7 @@
 
     .line 1378
     :cond_1
-    iget-object v3, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v3, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     invoke-virtual {v3, p1, p2}, Lcom/htc/sunny/SunnyEngine;->getHitSprite(II)I
 
@@ -1661,7 +1661,7 @@
 
     .line 1383
     :cond_2
-    iget-object v3, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v3, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     invoke-virtual {v3, v0, v2}, Lcom/htc/sunny/SunnyEngine;->getTag(II)I
 
@@ -2095,7 +2095,7 @@
     const/4 v9, 0x1
 
     .line 274
-    iget-object v5, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v5, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     if-nez v5, :cond_0
 
@@ -2125,7 +2125,7 @@
 
     if-eqz v5, :cond_1
 
-    iget v5, p0, Lcom/htc/sunny/SGallery;->mViewNodeId:I
+    iget v5, p0, Lcom/htc/sunny/SView;->mViewNodeId:I
 
     if-nez v5, :cond_2
 
@@ -2294,9 +2294,9 @@
 
     new-instance v0, Lcom/htc/sunny/SGallery$ItemContainer;
 
-    iget-object v6, p0, Lcom/htc/sunny/SGallery;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
-    iget-object v7, p0, Lcom/htc/sunny/SGallery;->mSurfaceView:Lcom/htc/sunny/SSurfaceView;
+    iget-object v7, p0, Lcom/htc/sunny/SView;->mSurfaceView:Lcom/htc/sunny/SSurfaceView;
 
     invoke-direct {v0, p0, v6, v7}, Lcom/htc/sunny/SGallery$ItemContainer;-><init>(Lcom/htc/sunny/SGallery;Landroid/content/Context;Lcom/htc/sunny/SSurfaceView;)V
 
@@ -2339,9 +2339,9 @@
     invoke-virtual {v0, v9}, Lcom/htc/sunny/SGallery$ItemContainer;->setTouchable(Z)V
 
     .line 327
-    iget-object v5, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v5, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
-    iget v6, v0, Lcom/htc/sunny/SGallery$ItemContainer;->mTouchSensorSpriteId:I
+    iget v6, v0, Lcom/htc/sunny/SView;->mTouchSensorSpriteId:I
 
     invoke-direct {p0, v2}, Lcom/htc/sunny/SGallery;->getSpriteTag(I)I
 
@@ -2371,9 +2371,9 @@
     .line 336
     new-instance v1, Lcom/htc/sunny/SView;
 
-    iget-object v5, p0, Lcom/htc/sunny/SGallery;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
-    iget-object v6, p0, Lcom/htc/sunny/SGallery;->mSurfaceView:Lcom/htc/sunny/SSurfaceView;
+    iget-object v6, p0, Lcom/htc/sunny/SView;->mSurfaceView:Lcom/htc/sunny/SSurfaceView;
 
     invoke-direct {v1, v5, v6}, Lcom/htc/sunny/SView;-><init>(Landroid/content/Context;Lcom/htc/sunny/SSurfaceView;)V
 
@@ -2504,7 +2504,7 @@
 
     .line 418
     .local v4, itemBackgroundBitmapPress:Lcom/htc/sunny/SBitmap;
-    iget-object v8, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v8, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     invoke-virtual {v8}, Lcom/htc/sunny/SunnyEngine;->createTexture()I
 
@@ -2513,7 +2513,7 @@
     iput v8, p0, Lcom/htc/sunny/SGallery;->mItemBackgroundPressTextureId:I
 
     .line 419
-    iget-object v8, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v8, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v9, p0, Lcom/htc/sunny/SGallery;->mItemBackgroundPressTextureId:I
 
@@ -2552,7 +2552,7 @@
 
     .line 431
     .local v5, itemBackgroundBitmapRest:Lcom/htc/sunny/SBitmap;
-    iget-object v8, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v8, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     invoke-virtual {v8}, Lcom/htc/sunny/SunnyEngine;->createTexture()I
 
@@ -2561,7 +2561,7 @@
     iput v8, p0, Lcom/htc/sunny/SGallery;->mItemBackgroundRestTextureId:I
 
     .line 432
-    iget-object v8, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v8, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v9, p0, Lcom/htc/sunny/SGallery;->mItemBackgroundRestTextureId:I
 
@@ -2592,7 +2592,7 @@
 
     .line 441
     .local v2, divider:Landroid/graphics/drawable/Drawable;
-    iget-object v8, p0, Lcom/htc/sunny/SGallery;->mContext:Landroid/content/Context;
+    iget-object v8, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -2627,7 +2627,7 @@
 
     .line 446
     .local v3, dividerBmp:Lcom/htc/sunny/SBitmap;
-    iget-object v8, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v8, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     invoke-virtual {v8}, Lcom/htc/sunny/SunnyEngine;->createTexture()I
 
@@ -2636,7 +2636,7 @@
     iput v8, p0, Lcom/htc/sunny/SGallery;->mDividerTextureId:I
 
     .line 447
-    iget-object v8, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v8, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v9, p0, Lcom/htc/sunny/SGallery;->mDividerTextureId:I
 
@@ -2657,7 +2657,7 @@
 
     .line 409
     :cond_3
-    iget-object v8, p0, Lcom/htc/sunny/SGallery;->mContext:Landroid/content/Context;
+    iget-object v8, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -2677,7 +2677,7 @@
 
     .line 411
     .local v7, resId:I
-    iget-object v8, p0, Lcom/htc/sunny/SGallery;->mContext:Landroid/content/Context;
+    iget-object v8, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     const-string v9, "list_selector_background_pressed"
 
@@ -2696,7 +2696,7 @@
     .line 413
     .end local v0           #backgroundPress:Landroid/graphics/drawable/Drawable;
     :cond_4
-    iget-object v8, p0, Lcom/htc/sunny/SGallery;->mContext:Landroid/content/Context;
+    iget-object v8, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -2741,9 +2741,9 @@
     .line 250
     new-instance v0, Lcom/htc/sunny/SScrollBarView;
 
-    iget-object v1, p0, Lcom/htc/sunny/SGallery;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/htc/sunny/SGallery;->mSurfaceView:Lcom/htc/sunny/SSurfaceView;
+    iget-object v2, p0, Lcom/htc/sunny/SView;->mSurfaceView:Lcom/htc/sunny/SSurfaceView;
 
     invoke-direct {v0, v1, v2}, Lcom/htc/sunny/SScrollBarView;-><init>(Landroid/content/Context;Lcom/htc/sunny/SSurfaceView;)V
 
@@ -2997,12 +2997,12 @@
 
     if-ne v0, p1, :cond_0
 
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     if-eqz v0, :cond_0
 
     .line 1149
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     invoke-virtual {v0}, Lcom/htc/sunny/SunnyEngine;->logStatus()V
 
@@ -4126,7 +4126,7 @@
     .line 766
     iget-object v0, p0, Lcom/htc/sunny/SGallery;->mAdapter:Lcom/htc/sunny/SGalleryAdapter;
 
-    iget-object v1, p0, Lcom/htc/sunny/SGallery;->mDataSetObserver:Lcom/htc/sunny/SAdapterView$SAdapterDataSetObserver;
+    iget-object v1, p0, Lcom/htc/sunny/SAdapterView;->mDataSetObserver:Lcom/htc/sunny/SAdapterView$SAdapterDataSetObserver;
 
     invoke-virtual {v0, v1}, Lcom/htc/sunny/SGalleryAdapter;->unregisterDataSetObserver(Lcom/htc/sunny/SDataSetObserver;)V
 
@@ -4144,12 +4144,12 @@
 
     invoke-direct {v0, p0}, Lcom/htc/sunny/SAdapterView$SAdapterDataSetObserver;-><init>(Lcom/htc/sunny/SAdapterView;)V
 
-    iput-object v0, p0, Lcom/htc/sunny/SGallery;->mDataSetObserver:Lcom/htc/sunny/SAdapterView$SAdapterDataSetObserver;
+    iput-object v0, p0, Lcom/htc/sunny/SAdapterView;->mDataSetObserver:Lcom/htc/sunny/SAdapterView$SAdapterDataSetObserver;
 
     .line 771
     iget-object v0, p0, Lcom/htc/sunny/SGallery;->mAdapter:Lcom/htc/sunny/SGalleryAdapter;
 
-    iget-object v1, p0, Lcom/htc/sunny/SGallery;->mDataSetObserver:Lcom/htc/sunny/SAdapterView$SAdapterDataSetObserver;
+    iget-object v1, p0, Lcom/htc/sunny/SAdapterView;->mDataSetObserver:Lcom/htc/sunny/SAdapterView$SAdapterDataSetObserver;
 
     invoke-virtual {v0, v1}, Lcom/htc/sunny/SGalleryAdapter;->registerDataSetObserver(Lcom/htc/sunny/SDataSetObserver;)V
 
@@ -4802,7 +4802,7 @@
     invoke-super {p0}, Lcom/htc/sunny/SAdapterView;->updateViewLayout()V
 
     .line 668
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     if-nez v0, :cond_1
 
@@ -4817,11 +4817,11 @@
 
     .line 671
     .local v9, nOffset:I
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mAnimationController:Lcom/htc/sunny/SAnimationController;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mAnimationController:Lcom/htc/sunny/SAnimationController;
 
     if-eqz v0, :cond_6
 
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mAnimationController:Lcom/htc/sunny/SAnimationController;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mAnimationController:Lcom/htc/sunny/SAnimationController;
 
     invoke-virtual {v0}, Lcom/htc/sunny/SAnimationController;->isEnded()Z
 
@@ -4829,7 +4829,7 @@
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mAnimationController:Lcom/htc/sunny/SAnimationController;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mAnimationController:Lcom/htc/sunny/SAnimationController;
 
     invoke-virtual {v0}, Lcom/htc/sunny/SAnimationController;->isFillAfter()Z
 
@@ -4837,7 +4837,7 @@
 
     if-eqz v0, :cond_6
 
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mAnimationController:Lcom/htc/sunny/SAnimationController;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mAnimationController:Lcom/htc/sunny/SAnimationController;
 
     invoke-virtual {v0}, Lcom/htc/sunny/SAnimationController;->isEnded()Z
 
@@ -4847,7 +4847,7 @@
 
     .line 672
     :cond_2
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mAnimationController:Lcom/htc/sunny/SAnimationController;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mAnimationController:Lcom/htc/sunny/SAnimationController;
 
     invoke-virtual {v0}, Lcom/htc/sunny/SAnimationController;->isPositionAnimation()Z
 
@@ -4856,7 +4856,7 @@
     if-ne v11, v0, :cond_3
 
     .line 673
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mAnimationController:Lcom/htc/sunny/SAnimationController;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mAnimationController:Lcom/htc/sunny/SAnimationController;
 
     invoke-virtual {v0}, Lcom/htc/sunny/SAnimationController;->getCurrentPosition()Lcom/htc/sunny/Vector3F;
 
@@ -4887,9 +4887,9 @@
     if-ne v11, v0, :cond_8
 
     .line 691
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
-    iget v1, p0, Lcom/htc/sunny/SGallery;->mViewNodeId:I
+    iget v1, p0, Lcom/htc/sunny/SView;->mViewNodeId:I
 
     iget v3, p0, Lcom/htc/sunny/SGallery;->mClipSize:I
 
@@ -4975,7 +4975,7 @@
     if-ne v11, v0, :cond_7
 
     .line 682
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mTranslation:Lcom/htc/sunny/Vector3F;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mTranslation:Lcom/htc/sunny/Vector3F;
 
     iget v0, v0, Lcom/htc/sunny/Vector3F;->mY:F
 
@@ -4983,19 +4983,19 @@
 
     .line 686
     :goto_3
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
-    iget v1, p0, Lcom/htc/sunny/SGallery;->mViewNodeId:I
+    iget v1, p0, Lcom/htc/sunny/SView;->mViewNodeId:I
 
-    iget-object v3, p0, Lcom/htc/sunny/SGallery;->mTranslation:Lcom/htc/sunny/Vector3F;
+    iget-object v3, p0, Lcom/htc/sunny/SView;->mTranslation:Lcom/htc/sunny/Vector3F;
 
     iget v3, v3, Lcom/htc/sunny/Vector3F;->mX:F
 
-    iget-object v4, p0, Lcom/htc/sunny/SGallery;->mTranslation:Lcom/htc/sunny/Vector3F;
+    iget-object v4, p0, Lcom/htc/sunny/SView;->mTranslation:Lcom/htc/sunny/Vector3F;
 
     iget v4, v4, Lcom/htc/sunny/Vector3F;->mY:F
 
-    iget-object v5, p0, Lcom/htc/sunny/SGallery;->mTranslation:Lcom/htc/sunny/Vector3F;
+    iget-object v5, p0, Lcom/htc/sunny/SView;->mTranslation:Lcom/htc/sunny/Vector3F;
 
     iget v5, v5, Lcom/htc/sunny/Vector3F;->mZ:F
 
@@ -5005,7 +5005,7 @@
 
     .line 684
     :cond_7
-    iget-object v0, p0, Lcom/htc/sunny/SGallery;->mTranslation:Lcom/htc/sunny/Vector3F;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mTranslation:Lcom/htc/sunny/Vector3F;
 
     iget v0, v0, Lcom/htc/sunny/Vector3F;->mX:F
 
@@ -5015,9 +5015,9 @@
 
     .line 693
     :cond_8
-    iget-object v3, p0, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v3, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
-    iget v4, p0, Lcom/htc/sunny/SGallery;->mViewNodeId:I
+    iget v4, p0, Lcom/htc/sunny/SView;->mViewNodeId:I
 
     iget v0, p0, Lcom/htc/sunny/SGallery;->mClipSize:I
 

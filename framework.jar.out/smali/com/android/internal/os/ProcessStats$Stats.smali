@@ -93,7 +93,7 @@
     const/4 v4, 0x0
 
     .line 206
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 207
     iput p1, p0, Lcom/android/internal/os/ProcessStats$Stats;->pid:I

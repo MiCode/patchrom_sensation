@@ -30,12 +30,12 @@
     .parameter
 
     .prologue
-    .line 1112
+    .line 1113
     iput-object p1, p0, Lcom/android/camera/component/PanoramaController$6$1;->this$1:Lcom/android/camera/component/PanoramaController$6;
 
     iput-object p2, p0, Lcom/android/camera/component/PanoramaController$6$1;->val$jpegData:[B
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,7 +46,7 @@
     .locals 6
 
     .prologue
-    .line 1116
+    .line 1117
     iget-object v2, p0, Lcom/android/camera/component/PanoramaController$6$1;->this$1:Lcom/android/camera/component/PanoramaController$6;
 
     iget-object v2, v2, Lcom/android/camera/component/PanoramaController$6;->val$cameraController:Lcom/android/camera/CameraController;
@@ -57,12 +57,12 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/android/camera/CameraController;->setCameraParameter(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1119
+    .line 1120
     new-instance v0, Lcom/android/camera/component/PanoramaController$6$1$1;
 
     invoke-direct {v0, p0}, Lcom/android/camera/component/PanoramaController$6$1$1;-><init>(Lcom/android/camera/component/PanoramaController$6$1;)V
 
-    .line 1259
+    .line 1260
     .local v0, callback:Lcom/android/camera/CameraThread$StorePictureCallback;
     iget-object v2, p0, Lcom/android/camera/component/PanoramaController$6$1;->this$1:Lcom/android/camera/component/PanoramaController$6;
 
@@ -85,14 +85,14 @@
 
     invoke-virtual {v3, v4, v0, v2, v5}, Lcom/android/camera/CameraThread;->storeTakenPicture([BLcom/android/camera/CameraThread$StorePictureCallback;Lcom/android/camera/DCFInfo;Z)V
 
-    .line 1260
+    .line 1261
     iget-object v2, p0, Lcom/android/camera/component/PanoramaController$6$1;->this$1:Lcom/android/camera/component/PanoramaController$6;
 
     iget-object v2, v2, Lcom/android/camera/component/PanoramaController$6;->val$cameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v2}, Lcom/android/camera/CameraThread;->endTakePicture()V
 
-    .line 1263
+    .line 1264
     iget-object v2, p0, Lcom/android/camera/component/PanoramaController$6$1;->this$1:Lcom/android/camera/component/PanoramaController$6;
 
     iget-object v2, v2, Lcom/android/camera/component/PanoramaController$6;->this$0:Lcom/android/camera/component/PanoramaController;
@@ -104,7 +104,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 1264
+    .line 1265
     iget-object v2, p0, Lcom/android/camera/component/PanoramaController$6$1;->this$1:Lcom/android/camera/component/PanoramaController$6;
 
     iget-object v2, v2, Lcom/android/camera/component/PanoramaController$6;->this$0:Lcom/android/camera/component/PanoramaController;
@@ -122,7 +122,7 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/android/camera/component/PanoramaController;->sendMessage(Lcom/android/camera/component/Component;I)Z
 
-    .line 1269
+    .line 1270
     :goto_1
     iget-object v2, p0, Lcom/android/camera/component/PanoramaController$6$1;->this$1:Lcom/android/camera/component/PanoramaController$6;
 
@@ -135,7 +135,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1271
+    .line 1272
     iget-object v2, p0, Lcom/android/camera/component/PanoramaController$6$1;->this$1:Lcom/android/camera/component/PanoramaController$6;
 
     iget-object v2, v2, Lcom/android/camera/component/PanoramaController$6;->this$0:Lcom/android/camera/component/PanoramaController;
@@ -149,7 +149,7 @@
 
     move-result-object v1
 
-    .line 1272
+    .line 1273
     .local v1, cameraActivity:Lcom/android/camera/HTCCamera;
     invoke-virtual {v1}, Lcom/android/camera/HTCCamera;->needsActionScreen()Z
 
@@ -163,7 +163,7 @@
 
     if-nez v2, :cond_0
 
-    .line 1273
+    .line 1274
     iget-object v2, p0, Lcom/android/camera/component/PanoramaController$6$1;->this$1:Lcom/android/camera/component/PanoramaController$6;
 
     iget-object v2, v2, Lcom/android/camera/component/PanoramaController$6;->val$cameraThread:Lcom/android/camera/CameraThread;
@@ -172,24 +172,24 @@
 
     invoke-virtual {v2, v3}, Lcom/android/camera/CameraThread;->startPreview(I)V
 
-    .line 1275
+    .line 1276
     .end local v1           #cameraActivity:Lcom/android/camera/HTCCamera;
     :cond_0
     return-void
 
-    .line 1259
+    .line 1260
     :cond_1
     sget-object v2, Lcom/android/camera/DCFRuler;->DefaultDCFInfo:Lcom/android/camera/DCFInfo;
 
     goto :goto_0
 
-    .line 1266
+    .line 1267
     :cond_2
     iget-object v2, p0, Lcom/android/camera/component/PanoramaController$6$1;->this$1:Lcom/android/camera/component/PanoramaController$6;
 
     iget-object v2, v2, Lcom/android/camera/component/PanoramaController$6;->this$0:Lcom/android/camera/component/PanoramaController;
 
-    #getter for: Lcom/android/camera/component/PanoramaController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v2}, Lcom/android/camera/component/PanoramaController;->access$5600(Lcom/android/camera/component/PanoramaController;)Ljava/lang/String;
 
     move-result-object v2

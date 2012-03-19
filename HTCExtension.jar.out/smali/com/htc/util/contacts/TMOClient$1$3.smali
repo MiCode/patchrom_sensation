@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/htc/util/contacts/TMOClient$1$3;->val$myGroups:Ljava/util/List;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -53,7 +53,7 @@
     .line 166
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/component/ReviewAnimationController;->TAG:Ljava/lang/String;
+    iget-object v2, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "createThumbnailImage  start"
 
@@ -77,7 +77,7 @@
     .line 182
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/component/ReviewAnimationController;->TAG:Ljava/lang/String;
+    iget-object v2, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -490,7 +490,7 @@
     .line 316
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/component/ReviewAnimationController;->TAG:Ljava/lang/String;
+    iget-object v2, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -554,7 +554,7 @@
     .line 322
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/component/ReviewAnimationController;->TAG:Ljava/lang/String;
+    iget-object v2, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -609,7 +609,7 @@
     :cond_4
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/component/ReviewAnimationController;->TAG:Ljava/lang/String;
+    iget-object v2, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "createThumbnailImage() - end"
 
@@ -652,7 +652,7 @@
     :try_start_5
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/component/ReviewAnimationController;->TAG:Ljava/lang/String;
+    iget-object v2, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "Exception occurred while querying image file"
 
@@ -673,7 +673,7 @@
     .local v13, ex:Ljava/lang/Exception;
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/component/ReviewAnimationController;->TAG:Ljava/lang/String;
+    iget-object v2, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "Exception occurred while querying image file"
 
@@ -713,7 +713,7 @@
     :try_start_6
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/component/ReviewAnimationController;->TAG:Ljava/lang/String;
+    iget-object v2, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "Exception occurred while querying video file"
 
@@ -734,7 +734,7 @@
     .local v13, ex:Ljava/lang/Exception;
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/component/ReviewAnimationController;->TAG:Ljava/lang/String;
+    iget-object v2, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "Exception occurred while querying video file"
 
@@ -869,7 +869,7 @@
     .restart local v13       #ex:Ljava/lang/Exception;
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/component/ReviewAnimationController;->TAG:Ljava/lang/String;
+    iget-object v2, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "Exception occurred while creating thumbnail image"
 
@@ -931,7 +931,7 @@
     :cond_e
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/component/ReviewAnimationController;->TAG:Ljava/lang/String;
+    iget-object v2, v0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v4, "No media path retrieved, no thumbnail image created"
 

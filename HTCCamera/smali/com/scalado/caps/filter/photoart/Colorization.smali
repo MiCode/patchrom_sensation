@@ -27,7 +27,7 @@
     invoke-direct {p0, p1, v1}, Lcom/scalado/caps/Filter;-><init>(Lcom/scalado/caps/Session;Z)V
 
     .line 30
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Colorization;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -150,7 +150,7 @@
 
     .prologue
     .line 128
-    iget-object v0, p0, Lcom/scalado/caps/filter/photoart/Colorization;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -174,7 +174,7 @@
     const/16 v1, 0xff
 
     .line 52
-    iget-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Colorization;->isCommitted:Z
+    iget-boolean v0, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v0, :cond_0
 
@@ -211,7 +211,7 @@
 
     .line 61
     :cond_2
-    iget-object v0, p0, Lcom/scalado/caps/filter/photoart/Colorization;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -237,7 +237,7 @@
     .local v7, error:I
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/scalado/caps/filter/photoart/Colorization;->isSet:Z
+    iput-boolean v0, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 64
     iput p1, p0, Lcom/scalado/caps/filter/photoart/Colorization;->r:I

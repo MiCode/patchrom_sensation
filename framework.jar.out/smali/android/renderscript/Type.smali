@@ -254,7 +254,7 @@
 
     .line 178
     .local v0, dataBuffer:[I
-    iget-object v2, p0, Landroid/renderscript/Type;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v2, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {p0}, Landroid/renderscript/Type;->getID()I
 
@@ -313,7 +313,7 @@
     .line 188
     new-instance v2, Landroid/renderscript/Element;
 
-    iget-object v3, p0, Landroid/renderscript/Type;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v3, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {v2, v1, v3}, Landroid/renderscript/Element;-><init>(ILandroid/renderscript/RenderScript;)V
 

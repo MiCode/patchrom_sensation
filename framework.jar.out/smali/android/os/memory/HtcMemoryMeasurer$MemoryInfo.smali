@@ -45,9 +45,9 @@
     invoke-direct {p0}, Landroid/app/ActivityManager$MemoryInfo;-><init>()V
 
     .line 62
-    iget-wide v0, p1, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->availMem:J
+    iget-wide v0, p1, Landroid/app/ActivityManager$MemoryInfo;->availMem:J
 
-    iput-wide v0, p0, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->availMem:J
+    iput-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->availMem:J
 
     .line 63
     iget-wide v0, p1, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->cacheMem:J
@@ -55,9 +55,9 @@
     iput-wide v0, p0, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->cacheMem:J
 
     .line 64
-    iget-wide v0, p1, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->foregroundAppThreshold:J
+    iget-wide v0, p1, Landroid/app/ActivityManager$MemoryInfo;->foregroundAppThreshold:J
 
-    iput-wide v0, p0, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->foregroundAppThreshold:J
+    iput-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->foregroundAppThreshold:J
 
     .line 65
     iget-wide v0, p1, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->freeMem:J
@@ -65,19 +65,19 @@
     iput-wide v0, p0, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->freeMem:J
 
     .line 66
-    iget-wide v0, p1, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->hiddenAppThreshold:J
+    iget-wide v0, p1, Landroid/app/ActivityManager$MemoryInfo;->hiddenAppThreshold:J
 
-    iput-wide v0, p0, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->hiddenAppThreshold:J
+    iput-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->hiddenAppThreshold:J
 
     .line 67
-    iget-wide v0, p1, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->secondaryServerThreshold:J
+    iget-wide v0, p1, Landroid/app/ActivityManager$MemoryInfo;->secondaryServerThreshold:J
 
-    iput-wide v0, p0, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->secondaryServerThreshold:J
+    iput-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->secondaryServerThreshold:J
 
     .line 68
-    iget-wide v0, p1, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->threshold:J
+    iget-wide v0, p1, Landroid/app/ActivityManager$MemoryInfo;->threshold:J
 
-    iput-wide v0, p0, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->threshold:J
+    iput-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->threshold:J
 
     .line 69
     iget-wide v0, p1, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->totalMem:J
@@ -90,9 +90,9 @@
     iput-wide v0, p0, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->usedMem:J
 
     .line 71
-    iget-wide v0, p1, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->visibleAppThreshold:J
+    iget-wide v0, p1, Landroid/app/ActivityManager$MemoryInfo;->visibleAppThreshold:J
 
-    iput-wide v0, p0, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->visibleAppThreshold:J
+    iput-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->visibleAppThreshold:J
 
     .line 72
     return-void
@@ -294,7 +294,7 @@
 
     move-result-object v1
 
-    iget-wide v2, p0, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->availMem:J
+    iget-wide v2, p0, Landroid/app/ActivityManager$MemoryInfo;->availMem:J
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -352,7 +352,7 @@
 
     move-result-object v1
 
-    iget-wide v2, p0, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->secondaryServerThreshold:J
+    iget-wide v2, p0, Landroid/app/ActivityManager$MemoryInfo;->secondaryServerThreshold:J
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -528,7 +528,7 @@
 
     move-result-object v1
 
-    iget-wide v2, p0, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->availMem:J
+    iget-wide v2, p0, Landroid/app/ActivityManager$MemoryInfo;->availMem:J
 
     invoke-static {p1, v2, v3}, Landroid/text/format/Formatter;->formatShortFileSize(Landroid/content/Context;J)Ljava/lang/String;
 
@@ -594,7 +594,7 @@
 
     move-result-object v1
 
-    iget-wide v2, p0, Landroid/os/memory/HtcMemoryMeasurer$MemoryInfo;->secondaryServerThreshold:J
+    iget-wide v2, p0, Landroid/app/ActivityManager$MemoryInfo;->secondaryServerThreshold:J
 
     invoke-static {p1, v2, v3}, Landroid/text/format/Formatter;->formatShortFileSize(Landroid/content/Context;J)Ljava/lang/String;
 

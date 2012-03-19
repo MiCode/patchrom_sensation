@@ -62,7 +62,7 @@
     const/4 v0, -0x1
 
     .line 833
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 834
     iput v0, p0, Lcom/htc/net/FourG/FourGManager$RadioInfoTemperature;->current:I
@@ -88,7 +88,7 @@
 
     .prologue
     .line 944
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 945
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I

@@ -147,7 +147,7 @@
 
     move-result-object v6
 
-    iput-object v6, p0, Lcom/htc/urlshortener/ShortenUrl;->mShortenServer:Ljava/lang/String;
+    iput-object v6, p0, Lcom/htc/urlshortener/UrlShorteningOperation;->mShortenServer:Ljava/lang/String;
 
     .line 52
     new-instance v4, Ljava/lang/StringBuilder;
@@ -158,7 +158,7 @@
     .local v4, sb:Ljava/lang/StringBuilder;
     const-string v6, "is.gd"
 
-    iget-object v7, p0, Lcom/htc/urlshortener/ShortenUrl;->mShortenServer:Ljava/lang/String;
+    iget-object v7, p0, Lcom/htc/urlshortener/UrlShorteningOperation;->mShortenServer:Ljava/lang/String;
 
     invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -217,7 +217,7 @@
     :cond_3
     const-string v6, "TinyURL"
 
-    iget-object v7, p0, Lcom/htc/urlshortener/ShortenUrl;->mShortenServer:Ljava/lang/String;
+    iget-object v7, p0, Lcom/htc/urlshortener/UrlShorteningOperation;->mShortenServer:Ljava/lang/String;
 
     invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -260,7 +260,7 @@
     :cond_4
     const-string v6, "t.cn"
 
-    iget-object v7, p0, Lcom/htc/urlshortener/ShortenUrl;->mShortenServer:Ljava/lang/String;
+    iget-object v7, p0, Lcom/htc/urlshortener/UrlShorteningOperation;->mShortenServer:Ljava/lang/String;
 
     invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -630,7 +630,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/urlshortener/ShortenUrl;->mShortenServer:Ljava/lang/String;
+    iget-object v0, v0, Lcom/htc/urlshortener/UrlShorteningOperation;->mShortenServer:Ljava/lang/String;
 
     move-object/from16 v21, v0
 
@@ -644,7 +644,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/urlshortener/ShortenUrl;->mShortenServer:Ljava/lang/String;
+    iget-object v0, v0, Lcom/htc/urlshortener/UrlShorteningOperation;->mShortenServer:Ljava/lang/String;
 
     move-object/from16 v21, v0
 
@@ -707,7 +707,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/urlshortener/ShortenUrl;->mShortenServer:Ljava/lang/String;
+    iget-object v0, v0, Lcom/htc/urlshortener/UrlShorteningOperation;->mShortenServer:Ljava/lang/String;
 
     move-object/from16 v21, v0
 

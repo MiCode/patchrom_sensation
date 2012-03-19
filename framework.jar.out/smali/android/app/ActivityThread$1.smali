@@ -22,8 +22,8 @@
     .locals 0
 
     .prologue
-    .line 3505
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 3555
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -34,10 +34,10 @@
     .locals 2
 
     .prologue
-    .line 3507
+    .line 3557
     invoke-static {}, Landroid/graphics/Canvas;->freeCaches()V
 
-    .line 3508
+    .line 3558
     invoke-static {}, Ldalvik/system/VMRuntime;->getRuntime()Ldalvik/system/VMRuntime;
 
     move-result-object v0
@@ -46,6 +46,6 @@
 
     invoke-virtual {v0, v1}, Ldalvik/system/VMRuntime;->gcSoftReferences(Z)V
 
-    .line 3509
+    .line 3559
     return-void
 .end method

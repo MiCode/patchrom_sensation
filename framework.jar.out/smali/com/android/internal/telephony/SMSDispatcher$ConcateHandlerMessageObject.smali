@@ -40,7 +40,7 @@
     iput-object p1, p0, Lcom/android/internal/telephony/SMSDispatcher$ConcateHandlerMessageObject;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
     .line 3056
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 3057
     iput-object p2, p0, Lcom/android/internal/telephony/SMSDispatcher$ConcateHandlerMessageObject;->tContext:Landroid/content/Context;

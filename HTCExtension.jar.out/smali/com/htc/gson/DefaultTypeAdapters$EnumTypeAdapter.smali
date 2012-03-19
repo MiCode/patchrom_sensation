@@ -38,7 +38,7 @@
     .prologue
     .line 327
     .local p0, this:Lcom/htc/gson/DefaultTypeAdapters$EnumTypeAdapter;,"Lcom/htc/gson/DefaultTypeAdapters$EnumTypeAdapter<TT;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

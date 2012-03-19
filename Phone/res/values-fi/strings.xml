@@ -238,8 +238,8 @@ Tämä voi kestää useita minuutteja."</string>
     <string name="htc_preferred_network_global_mode">Global-tila</string>
     <string name="htc_preferred_network_cdma_evdo_aut_mode">CDMA-tila</string>
     <string name="htc_preferred_network_gsm_wcdma_aut_mode">GSM/UMTS-tila</string>
-    <string name="htc_preferred_network_lte_mode">LTE Mode</string>
-    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM / UMTS / LTE Mode</string>
+    <string name="htc_preferred_network_lte_mode">LTE-tila</string>
+    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM/UMTS/LTE-tila</string>
     <string name="title_gsm_preferred_network_options">GSM/UMTS-tila</string>
     <string name="btn_Menu_Edit">Muokkaa</string>
     <string name="btn_Menu_Set_Done">Valmis</string>

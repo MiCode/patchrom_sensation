@@ -116,7 +116,7 @@
 
     .line 32
     :cond_0
-    iget-object v0, p0, Lcom/android/camera/effect/PanoramaScene;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Cannot link to panorama UI"
 
@@ -148,7 +148,7 @@
 
     .line 44
     :cond_0
-    iget-object v0, p0, Lcom/android/camera/effect/PanoramaScene;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Cannot link to panorama UI"
 
@@ -241,7 +241,7 @@
 
     .line 117
     :cond_2
-    iget-object v0, p0, Lcom/android/camera/effect/PanoramaScene;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Cannot link to panorama UI"
 
@@ -294,7 +294,7 @@
 
     .line 136
     :cond_2
-    iget-object v0, p0, Lcom/android/camera/effect/PanoramaScene;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v1, "Cannot link to panorama UI"
 

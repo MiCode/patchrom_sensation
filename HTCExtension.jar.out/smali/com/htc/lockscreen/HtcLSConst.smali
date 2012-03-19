@@ -112,7 +112,7 @@
 
 .field public static final SETTING_DB_IDLESCREEN_NORMAL:Ljava/lang/String; = "com.htc.idlescreen.style.normal"
 
-.field static final WAKE_LOCK_TIME:I = 0x3a98
+.field public static final WAKE_LOCK_TIME:I = 0x2ee0
 
 
 # direct methods
@@ -121,7 +121,7 @@
 
     .prologue
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

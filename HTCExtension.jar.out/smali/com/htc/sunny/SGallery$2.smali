@@ -35,7 +35,7 @@
 
     iput p2, p0, Lcom/htc/sunny/SGallery$2;->val$nOrder:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -49,7 +49,7 @@
     .line 380
     iget-object v1, p0, Lcom/htc/sunny/SGallery$2;->this$0:Lcom/htc/sunny/SGallery;
 
-    iget-object v1, v1, Lcom/htc/sunny/SGallery;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, v1, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     if-nez v1, :cond_1
 

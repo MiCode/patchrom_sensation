@@ -259,7 +259,7 @@
     .line 196
     .end local v1           #i:I
     :goto_1
-    iget-object v5, p0, Lcom/android/server/location/LocationBasedCountryDetector;->mDetectedCountry:Landroid/location/Country;
+    iget-object v5, p0, Lcom/android/server/location/CountryDetectorBase;->mDetectedCountry:Landroid/location/Country;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -293,7 +293,7 @@
     .local v7, country:Ljava/lang/String;
     new-instance v0, Landroid/location/Geocoder;
 
-    iget-object v1, p0, Lcom/android/server/location/LocationBasedCountryDetector;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/server/location/CountryDetectorBase;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/location/Geocoder;-><init>(Landroid/content/Context;)V
 

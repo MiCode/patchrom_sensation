@@ -326,9 +326,9 @@
     .locals 8
 
     .prologue
-    const/16 v7, 0x18
+    const/16 v7, 0x1e
 
-    const/4 v6, 0x5
+    const/16 v6, 0x18
 
     const/4 v1, 0x2
 
@@ -341,40 +341,10 @@
 
     sput-object v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->MONITOR_KEYS:Ljava/util/HashSet;
 
-    .line 147
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0, v6}, Ljava/util/HashSet;-><init>(I)V
-
-    sput-object v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    .line 148
-    sget-object v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    const-string v3, "screen_brightness"
-
-    invoke-virtual {v0, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    .line 149
-    sget-object v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    const-string v3, "screen_brightness_mode"
-
-    invoke-virtual {v0, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    .line 150
-    sget-object v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    const-string v3, "screen_off_timeout"
-
-    invoke-virtual {v0, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
     .line 153
     new-instance v0, Ljava/util/HashSet;
 
-    const/16 v3, 0x1e
-
-    invoke-direct {v0, v3}, Ljava/util/HashSet;-><init>(I)V
+    invoke-direct {v0, v7}, Ljava/util/HashSet;-><init>(I)V
 
     sput-object v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
@@ -576,7 +546,7 @@
     .line 485
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    if-eq v0, v7, :cond_0
+    if-eq v0, v6, :cond_0
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
@@ -622,7 +592,7 @@
     aput-object v4, v3, v5
 
     #calls: Lcom/htc/wrap/android/provider/HtcWrapSettings;->combineStringArrays([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
-    invoke-static {v0, v3}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$200([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
+    invoke-static {v0, v3}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$100([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
@@ -677,9 +647,11 @@
 
     aput-object v2, v3, v1
 
-    const-string v1, "notifications_use_ring_volume"
+    const/4 v1, 0x5
 
-    aput-object v1, v3, v6
+    const-string v2, "notifications_use_ring_volume"
+
+    aput-object v2, v3, v1
 
     const/4 v1, 0x6
 
@@ -791,7 +763,7 @@
 
     const-string v1, "transition_animation_scale"
 
-    aput-object v1, v3, v7
+    aput-object v1, v3, v6
 
     const/16 v1, 0x19
 
@@ -823,11 +795,9 @@
 
     aput-object v2, v3, v1
 
-    const/16 v1, 0x1e
+    const-string v1, "sd_card_notifications"
 
-    const-string v2, "sd_card_notifications"
-
-    aput-object v2, v3, v1
+    aput-object v1, v3, v7
 
     const/16 v1, 0x1f
 
@@ -962,7 +932,7 @@
     aput-object v2, v3, v1
 
     #calls: Lcom/htc/wrap/android/provider/HtcWrapSettings;->combineStringArrays([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
-    invoke-static {v0, v3}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$200([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
+    invoke-static {v0, v3}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$100([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
@@ -1008,9 +978,6 @@
 
     .line 373
     invoke-static {p0}, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->saveQuickTipState(Landroid/content/ContentResolver;)V
-
-    .line 376
-    invoke-static {p0}, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->printQuickTipState(Landroid/content/ContentResolver;)V
 
     .line 378
     return-void
@@ -1133,11 +1100,8 @@
     .line 357
     const/4 v0, 0x0
 
-    .line 361
-    :cond_0
-    invoke-static {p0}, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->printQuickTipState(Landroid/content/ContentResolver;)V
-
     .line 364
+    :cond_0
     return v0
 .end method
 
@@ -1148,9 +1112,6 @@
     .prologue
     .line 395
     invoke-static {p0}, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->loadQuickTipState(Landroid/content/ContentResolver;)V
-
-    .line 398
-    invoke-static {p0}, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->printQuickTipState(Landroid/content/ContentResolver;)V
 
     .line 401
     sget-boolean v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->sShowQuickTipFlag:Z
@@ -1318,12 +1279,6 @@
     .parameter "resolver"
 
     .prologue
-    .line 428
-    const-string v3, "loadQuickTipState()"
-
-    #calls: Lcom/htc/wrap/android/provider/HtcWrapSettings;->Log(Ljava/lang/String;)V
-    invoke-static {v3}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$000(Ljava/lang/String;)V
-
     .line 430
     new-instance v3, Ljava/util/HashSet;
 
@@ -1340,14 +1295,14 @@
 
     .line 434
     .local v2, value:Ljava/lang/String;
-    if-nez v2, :cond_0
+    if-nez v2, :cond_1
 
     .line 460
-    :goto_0
+    :cond_0
     return-void
 
     .line 438
-    :cond_0
+    :cond_1
     const-string v3, ";"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -1359,16 +1314,10 @@
     const/4 v0, 0x0
 
     .local v0, index:I
-    :goto_1
+    :goto_0
     array-length v3, v1
 
-    if-ge v0, v3, :cond_1
-
-    .line 441
-    aget-object v3, v1, v0
-
-    #calls: Lcom/htc/wrap/android/provider/HtcWrapSettings;->Log(Ljava/lang/String;)V
-    invoke-static {v3}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$000(Ljava/lang/String;)V
+    if-ge v0, v3, :cond_0
 
     .line 444
     packed-switch v0, :pswitch_data_0
@@ -1381,10 +1330,10 @@
     invoke-interface {v3, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     .line 439
-    :goto_2
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 446
     :pswitch_0
@@ -1402,7 +1351,7 @@
 
     sput-boolean v3, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->sGlobalQuickTipFlag:Z
 
-    goto :goto_2
+    goto :goto_1
 
     .line 449
     :pswitch_1
@@ -1420,13 +1369,7 @@
 
     sput-boolean v3, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->sShowQuickTipFlag:Z
 
-    goto :goto_2
-
-    .line 458
-    :cond_1
-    invoke-static {p0}, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->printQuickTipState(Landroid/content/ContentResolver;)V
-
-    goto :goto_0
+    goto :goto_1
 
     .line 444
     nop
@@ -1543,72 +1486,14 @@
     .parameter "value"
 
     .prologue
-    .line 237
-    sget-object v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 238
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "name: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    #calls: Lcom/htc/wrap/android/provider/HtcWrapSettings;->Log(Ljava/lang/String;)V
-    invoke-static {v0}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$000(Ljava/lang/String;)V
-
-    .line 239
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "value: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    #calls: Lcom/htc/wrap/android/provider/HtcWrapSettings;->Log(Ljava/lang/String;)V
-    invoke-static {v0}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$000(Ljava/lang/String;)V
-
-    .line 240
-    #calls: Lcom/htc/wrap/android/provider/HtcWrapSettings;->traceCallingStack()V
-    invoke-static {}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$100()V
-
     .line 244
-    :cond_0
     sget-object v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     .line 245
     const-string v0, "HtcWrapSettings"
@@ -1652,7 +1537,7 @@
     :goto_0
     return v0
 
-    :cond_1
+    :cond_0
     invoke-static {p0, p1, p2}, Lcom/htc/wrap/android/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
@@ -1666,12 +1551,6 @@
 
     .prologue
     const/16 v4, 0x3b
-
-    .line 406
-    const-string v3, "saveQuickTipState()"
-
-    #calls: Lcom/htc/wrap/android/provider/HtcWrapSettings;->Log(Ljava/lang/String;)V
-    invoke-static {v3}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$000(Ljava/lang/String;)V
 
     .line 409
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1764,9 +1643,6 @@
 
     .line 387
     invoke-static {p0}, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->saveQuickTipState(Landroid/content/ContentResolver;)V
-
-    .line 390
-    invoke-static {p0}, Lcom/htc/wrap/android/provider/HtcWrapSettings$System;->printQuickTipState(Landroid/content/ContentResolver;)V
 
     .line 392
     return-void

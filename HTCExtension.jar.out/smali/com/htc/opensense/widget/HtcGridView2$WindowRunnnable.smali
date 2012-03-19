@@ -30,7 +30,7 @@
     .local p0, this:Lcom/htc/opensense/widget/HtcGridView2$WindowRunnnable;,"Lcom/htc/opensense/widget/HtcGridView2<TT;>.WindowRunnnable;"
     iput-object p1, p0, Lcom/htc/opensense/widget/HtcGridView2$WindowRunnnable;->this$0:Lcom/htc/opensense/widget/HtcGridView2;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

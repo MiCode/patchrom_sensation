@@ -359,13 +359,13 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/io/OutputStream;->write([B)V
+    invoke-virtual {v2, v3}, Ljava/io/BufferedOutputStream;->write([B)V
 
     .line 175
     if-eqz v2, :cond_0
 
     .line 176
-    invoke-virtual {v2}, Ljava/io/OutputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/BufferedOutputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 

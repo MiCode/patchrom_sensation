@@ -181,7 +181,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1100(Landroid/net/sip/SipAudioCall;)Lcom/android/internal/telephony/Call$State;
+.method static synthetic access$1000(Landroid/net/sip/SipAudioCall;)Lcom/android/internal/telephony/Call$State;
     .locals 1
     .parameter "x0"
 
@@ -194,7 +194,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1200(Lcom/android/internal/telephony/sip/SipPhone;)Lcom/android/internal/telephony/sip/SipPhone$SipCall;
+.method static synthetic access$1100(Lcom/android/internal/telephony/sip/SipPhone;)Lcom/android/internal/telephony/sip/SipPhone$SipCall;
     .locals 1
     .parameter "x0"
 
@@ -205,7 +205,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1300(Lcom/android/internal/telephony/sip/SipPhone;Landroid/net/sip/SipProfile;)Ljava/lang/String;
+.method static synthetic access$1200(Lcom/android/internal/telephony/sip/SipPhone;Landroid/net/sip/SipProfile;)Ljava/lang/String;
     .locals 1
     .parameter "x0"
     .parameter "x1"
@@ -219,7 +219,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1400(Lcom/android/internal/telephony/sip/SipPhone;)Landroid/net/sip/SipManager;
+.method static synthetic access$1300(Lcom/android/internal/telephony/sip/SipPhone;)Landroid/net/sip/SipManager;
     .locals 1
     .parameter "x0"
 
@@ -259,7 +259,7 @@
 
     .prologue
     .line 55
-    iget-object v0, p0, Lcom/android/internal/telephony/sip/SipPhone;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneBase;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method

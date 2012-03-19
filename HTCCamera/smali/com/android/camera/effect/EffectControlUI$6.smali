@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 174
+    .line 177
     iput-object p1, p0, Lcom/android/camera/effect/EffectControlUI$6;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,7 +42,7 @@
     .parameter "event"
 
     .prologue
-    .line 178
+    .line 181
     check-cast p1, Lcom/android/camera/QueryEvent;
 
     .end local p1
@@ -59,6 +59,6 @@
 
     invoke-virtual {p1, v0}, Lcom/android/camera/QueryEvent;->setResult(Ljava/lang/Object;)V
 
-    .line 179
+    .line 182
     return-void
 .end method

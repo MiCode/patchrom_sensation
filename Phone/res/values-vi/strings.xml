@@ -111,7 +111,7 @@
     <string name="menu_unhold">Bỏ chờ</string>
     <string name="power_save_3g">Chọn luôn luôn mở kết nối data</string>
     <string name="power_save_3g_summary">Sử dụng nhiều pin hơn trên một số mạng di động</string>
-    <string name="power_save_3g_warning">Tắt luôn luôn mở kết nối data có thể gây ra lỗi kết nối cho một số ứng dụng. Hãy sử dụng tính năng làm mới thủ công trong các ứng dụng để cập nhật trực tuyến cho dữ liệu của bạn.</string>
+    <string name="power_save_3g_warning">Tắt luôn luôn mở kết nối data có thể gây ra lỗi kết nối cho một số ứng dụng. Hãy sử dụng tính cập nhật mới bằng tay trong các ứng dụng để cập nhật trực tuyến cho dữ liệu của bạn.</string>
     <string name="htc_reject_msg_is_send">Đã gửi tin nhắn</string>
     <string name="power_save_3g_title">Chú ý</string>
     <string name="dragDownHint">Kéo xuống để trả lời hoặc</string>
@@ -214,7 +214,7 @@ Việc này có thể mất vài phút."</string>
     <string name="end_voip_cs_call">Quay lại cuộc gọi VoIP</string>
     <string name="sim_swap_error">Không thể tìm thấy thẻ SIM của bạn. Vui lòng chắc rằng thẻ SIM đã được lắp chặt vào khe SIM và khởi động máy của bạn lại.</string>
     <string name="entitlement_check_fail">Để kích hoạt tethering trên thiết bị này, xin vui lòng vào att.com/mywireless hoặc quay số 611.</string>
-    <string name="entitlement_check_fail_others">Có vấn đề mạng tạm thời ngăn chặn việc bật chức năng Trạm phát di động. Hãy thử lại sau.</string>
+    <string name="entitlement_check_fail_others">Có lỗi với mạng tạm thời ngăn chặn việc bật chức năng Trạm phát di động. Hãy thử lại sau.</string>
     <string name="entitlement_check_conn_fail">Kết nối không thành công</string>
     <string name="tmo_roaming_msg_title">Bạn có muốn bật kết nối data trong khi chuyển vùng? (Sẽ bị tính phí Chuyển Vùng Quốc Tế)</string>
     <string name="htc_cdma_network_busy_title">Tình trạng mạng</string>
@@ -238,8 +238,8 @@ Việc này có thể mất vài phút."</string>
     <string name="htc_preferred_network_global_mode">Chế Độ Toàn Cầu</string>
     <string name="htc_preferred_network_cdma_evdo_aut_mode">Chế Độ CDMA</string>
     <string name="htc_preferred_network_gsm_wcdma_aut_mode">Chế Độ GSM / UMTS</string>
-    <string name="htc_preferred_network_lte_mode">LTE Mode</string>
-    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM / UMTS / LTE Mode</string>
+    <string name="htc_preferred_network_lte_mode">Chế độ LTE</string>
+    <string name="htc_preferred_network_gsm_umts_lte_mode">Chế độ GSM / UMTS / LTE</string>
     <string name="title_gsm_preferred_network_options">Chế Độ GSM / UMTS</string>
     <string name="btn_Menu_Edit">Chỉnh sửa</string>
     <string name="btn_Menu_Set_Done">Thực hiện</string>
@@ -426,15 +426,15 @@ Chọn \"Có\" để chuyển sang chế độ toàn cầu hoặc Chọn
     <string name="network_mode_title">Chế độ mạng</string>
     <string name="network_mode_summary_select_lte_cdma">Thay đổi sang chế độ mạng LTE/CDMA hoặc chỉ chế độ CDMA</string>
     <string name="network_mode_dialogtitle">Chế độ mạng ưu tiên</string>
-    <string name="description_global_roaming_option">Truy cập dữ liệu trong chuyến đi ngoài nước Mỹ có thể mất khoản phí đáng kể.</string>
-    <string name="global_roaming_option_all_trips">Cho phép truy cập cho tất cả các chuyến đi</string>
-    <string name="global_roaming_option_this_trips">Chỉ cho phép truy cập cho chuyến đi này</string>
-    <string name="global_roaming_option_deny">Từ chối truy cập chuyển vùng dữ liệu</string>
-    <string name="description_global_roaming_option_2">Bất kỳ truy cập dữ liệu nào trong chuyến đi bên ngoài nước Mỹ có thể mất khoản phí đáng kể.</string>
-    <string name="global_roaming_option_this_trips_2">Chỉ cho phép truy cập cho chuyến đi này</string>
-    <string name="global_roaming_option_deny_2">Từ chối truy cập dữ liệu cho chuyến đi này</string>
-    <string name="description_allow_global_roaming">"Được phép truy cập chuyển vùng dữ liệu toàn cầu .
-Có thể bị mất phí cao hơn."</string>
+    <string name="description_global_roaming_option">Truy cập data trong các hành trình ngoài nước Mỹ có thể phải trả phí rất cao.</string>
+    <string name="global_roaming_option_all_trips">Cho phép truy cập cho tất cả các hành trình</string>
+    <string name="global_roaming_option_this_trips">Chỉ cho phép truy cập cho hành trình này</string>
+    <string name="global_roaming_option_deny">Từ chối truy cập chuyển vùng data</string>
+    <string name="description_global_roaming_option_2">Bất kỳ truy cập data nào trong hành trình bên ngoài nước Mỹ có thể phải trả phí rất cao.</string>
+    <string name="global_roaming_option_this_trips_2">Chỉ cho phép truy cập cho hành trình này</string>
+    <string name="global_roaming_option_deny_2">Từ chối truy cập data cho hành trình này</string>
+    <string name="description_allow_global_roaming">"Được phép truy cập chuyển vùng data toàn cầu .
+Có thể phải trả phí rất cao."</string>
     <string name="defer_and_send_message">Hoãn và gửi tin nhắn</string>
     <string name="callDisconnect_userBusy">Người nghe bận máy</string>
     <string name="task_button_contact">Danh bạ</string>
@@ -452,12 +452,12 @@ Có thể bị mất phí cao hơn."</string>
     <string name="dial_in_voicemail_title">Nghe tin nhắn thoại</string>
     <string name="always_call_fwd_to_voicemail_title">Luôn luôn chuyển hướng</string>
     <string name="always_call_fwd_to_voicemail_summary">Tất cả các cuộc gọi đến sẽ chuyển tiếp vào hộp thư thoại</string>
-    <string name="call_fwd_to_voicemail_title">Chuyển hướng khi bận</string>
+    <string name="call_fwd_to_voicemail_title">Chuyển hướng khi bận máy</string>
     <string name="call_fwd_to_voicemail_summary">Cuộc gọi đến sẽ chuyển tiếp vào hộp thư thoại khi bận</string>
     <string name="voice_roaming_title">Nhận cuộc gọi khi đang chuyển vùng</string>
     <string name="skt_mobile_data_on_warning">Connecting to Mobile network. You might be charged for data usage.</string>
     <string name="prefer_networks">Ưu tiên mạng</string>
-    <string name="sum_prefer_networks">Bấm để đặt ưu tiên mạng</string>
+    <string name="sum_prefer_networks">Chạm để đặt ưu tiên mạng</string>
     <string name="app_name_switch">Đặt ưu tiên mạng</string>
     <string name="app_name_list">Danh sách ưu tiên mạng</string>
     <string name="menu_add_operator">Thêm</string>
@@ -470,7 +470,7 @@ Có thể bị mất phí cao hơn."</string>
     <string name="arrange_network_list_title">Sắp xếp lại ưu tiên mạng</string>
     <string name="add_network_title">Thêm mạng</string>
     <string name="network_code_format">Nhập mã mạng (định dạng:MCCMNC)</string>
-    <string name="network_code_error">Mã bạn gõ vào không hợp lệ, vui lòng thử lại.</string>
+    <string name="network_code_error">Mã bạn nhập vào không hợp lệ, vui lòng thử lại.</string>
     <string name="network_mode_both">Cả hai</string>
     <string name="sim_error_warning">Đảm bảo có thẻ SIM hợp lệ trong điện thoại.</string>
     <string name="phone_number_option_title">Số điện thoại</string>
@@ -479,13 +479,13 @@ Có thể bị mất phí cao hơn."</string>
     <string name="phone_number_updated">Số điện thoại được cập nhật.</string>
     <string name="phone_number_sim_error">Số điện thoại không được cập nhật: lỗi thẻ SIM.</string>
     <string name="phone_number_invalid_name">Tên không thể vượt quá %s ký tự.</string>
-    <string name="diable_3_way_call">Xin lỗi, mạng hiện tại không hỗ trợ cuộc gọi hội nghị.</string>
+    <string name="diable_3_way_call">Rất tiếc, mạng hiện tại không hỗ trợ cuộc gọi hội nghị.</string>
     <string name="charm_notification">Thông báo đèn báo</string>
-    <string name="charm_notification_summary">Bật sáng đèn báo cho tất cả các cuộc gọi đến và các cuộc gọi nhỡ</string>
+    <string name="charm_notification_summary">Nháy sáng đèn báo cho tất cả các cuộc gọi đến và các cuộc gọi nhỡ</string>
     <string name="phono_notification_preview">Xem trước thông báo điện thoại</string>
     <string name="phono_notification_preview_summary">Hiện Số người gọi cho các cuộc gọi nhỡ và thư thoại trên màn hình khóa và thanh trạng thái</string>
     <string name="title_bar_volume_control">Âm lượng</string>
-    <string name="ota_complete_need_reboot">Thông tin đăng ký trên thẻ USIM, xin vui lòng reset điện thoại</string>
+    <string name="ota_complete_need_reboot">Đã đăng ký thông tin trên thẻ USIM, xin vui lòng khởi động điện thoại</string>
     <string name="contact_status_update_attribution">via %1$s</string>
     <string name="contact_status_update_attribution_with_date">%1$s via %2$s</string>
     <string name="htc_emergency_hint">Chế Độ Khẩn Cấp</string>
@@ -1120,7 +1120,7 @@ kết thúc cuộc gọi đang chờ"</string>
     <string name="advanced_settings_container">advanced settings container</string>
     <string name="auth_username">AuthUserName</string>
     <string name="accessibility_speakerphone_enabled">Đã bật loa ngoài.</string>
-    <string name="accessibility_call_muted">Đã tắt tiếng cuộc gọi.</string>
+    <string name="accessibility_call_muted">Đã tắt tiếng cho cuộc gọi.</string>
     <string name="htc_cdma_network_busy_message_1">Mạng bận. Vui lòng thử lại sau.</string>
     <string name="htc_cdma_network_busy_message_2">Bận</string>
     <string name="home_dialing_title">Quay số nhà</string>

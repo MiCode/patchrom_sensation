@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2033
+    .line 2106
     iput-object p1, p0, Landroid/webkit/EditableWebView$EditableQuickActions$8;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,14 +43,14 @@
     .parameter "which"
 
     .prologue
-    .line 2036
+    .line 2109
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$8;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_fontcolor:Lcom/htc/dialog/HtcAlertDialog;
 
     invoke-virtual {v0}, Lcom/htc/dialog/HtcAlertDialog;->dismiss()V
 
-    .line 2037
+    .line 2110
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$8;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
     iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->this$0:Landroid/webkit/EditableWebView;
@@ -59,14 +59,14 @@
 
     iput-boolean v1, v0, Landroid/webkit/EditableWebView;->m_bRemoveSelectRangeDuringUpdateContent:Z
 
-    .line 2039
+    .line 2112
     packed-switch p2, :pswitch_data_0
 
-    .line 2065
+    .line 2138
     :goto_0
     return-void
 
-    .line 2041
+    .line 2114
     :pswitch_0
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$8;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -83,7 +83,7 @@
 
     goto :goto_0
 
-    .line 2044
+    .line 2117
     :pswitch_1
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$8;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -100,7 +100,7 @@
 
     goto :goto_0
 
-    .line 2047
+    .line 2120
     :pswitch_2
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$8;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -117,7 +117,7 @@
 
     goto :goto_0
 
-    .line 2050
+    .line 2123
     :pswitch_3
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$8;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -134,7 +134,7 @@
 
     goto :goto_0
 
-    .line 2053
+    .line 2126
     :pswitch_4
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$8;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -151,7 +151,7 @@
 
     goto :goto_0
 
-    .line 2056
+    .line 2129
     :pswitch_5
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$8;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -168,7 +168,7 @@
 
     goto :goto_0
 
-    .line 2059
+    .line 2132
     :pswitch_6
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$8;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
@@ -185,7 +185,7 @@
 
     goto :goto_0
 
-    .line 2039
+    .line 2112
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

@@ -75,7 +75,7 @@
 
     .prologue
     .line 61
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 62
     iput p1, p0, Landroid/bluetooth/BluetoothClass;->mClass:I

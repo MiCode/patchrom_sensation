@@ -84,7 +84,7 @@
     const/4 v0, 0x0
 
     .line 16
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 34
     iput v1, p0, Lcom/htc/home/AbstractWidgetView;->mLastWhat:I
@@ -169,13 +169,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 163
-    const-string v0, "pico922"
-
-    const-string v1, "AbstractWidgetView.createHander: with shared thread"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 165
     new-instance v0, Lcom/htc/home/AbstractWidgetView$WidgetHandler;
 
@@ -251,13 +244,6 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/htc/home/AbstractWidgetView;->mLooper:Landroid/os/Looper;
-
-    .line 172
-    const-string v0, "pico922"
-
-    const-string v1, "AbstractWidgetView.createHander: with dedicated thread"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 174
     new-instance v0, Lcom/htc/home/AbstractWidgetView$WidgetHandler;
@@ -357,47 +343,8 @@
 
     if-ne v1, v3, :cond_1
 
-    .line 231
-    :cond_0
-    const-string v1, "pico922"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "AbstractWidgetView.fireOnPause: return. mLastWhat="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget v3, p0, Lcom/htc/home/AbstractWidgetView;->mLastWhat:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " notifyType="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {p0}, Lcom/htc/home/AbstractWidgetView;->getNotifyType()I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 242
+    :cond_0
     :goto_0
     return-void
 
@@ -420,31 +367,6 @@
 
     .line 238
     iput v3, p0, Lcom/htc/home/AbstractWidgetView;->mLastWhat:I
-
-    .line 240
-    const-string v1, "pico922"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "AbstractWidgetView.fireOnPause: msg sent. mHandler="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/htc/home/AbstractWidgetView;->mHandler:Lcom/htc/home/AbstractWidgetView$WidgetHandler;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method
@@ -472,47 +394,8 @@
 
     if-ne v1, v3, :cond_1
 
-    .line 215
-    :cond_0
-    const-string v1, "pico922"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "AbstractWidgetView.fireOnResume: return. mLastWhat="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget v3, p0, Lcom/htc/home/AbstractWidgetView;->mLastWhat:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " notifyType="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {p0}, Lcom/htc/home/AbstractWidgetView;->getNotifyType()I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 225
+    :cond_0
     :goto_0
     return-void
 
@@ -532,31 +415,6 @@
 
     .line 221
     iput v3, p0, Lcom/htc/home/AbstractWidgetView;->mLastWhat:I
-
-    .line 223
-    const-string v1, "pico922"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "AbstractWidgetView.fireOnResume: msg sent. mHandler="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/htc/home/AbstractWidgetView;->mHandler:Lcom/htc/home/AbstractWidgetView$WidgetHandler;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method

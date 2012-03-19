@@ -29,7 +29,7 @@
     .line 15
     iput-object p1, p0, Lcom/htc/wrap/com/android/internal/telephony/cat/HtcWrapCatCmdMessage$EventSettings;->this$0:Lcom/htc/wrap/com/android/internal/telephony/cat/HtcWrapCatCmdMessage;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

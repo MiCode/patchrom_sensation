@@ -62,7 +62,7 @@
     const/4 v8, 0x0
 
     .line 351
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 356
     float-to-double v5, p2

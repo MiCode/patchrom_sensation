@@ -44,7 +44,7 @@
     .line 2787
     iput-object p1, p0, Lcom/htc/view/table/AbstractTableView$FlingRunnable;->this$0:Lcom/htc/view/table/AbstractTableView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 2789
     new-instance v0, Landroid/widget/Scroller;
@@ -152,7 +152,7 @@
     .line 2876
     iget-object v6, p0, Lcom/htc/view/table/AbstractTableView$FlingRunnable;->this$0:Lcom/htc/view/table/AbstractTableView;
 
-    iget v6, v6, Lcom/htc/view/table/AbstractTableView;->mItemCount:I
+    iget v6, v6, Lcom/htc/view/table/AbstractAdapterView;->mItemCount:I
 
     if-nez v6, :cond_0
 

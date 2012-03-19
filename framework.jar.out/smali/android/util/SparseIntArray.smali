@@ -34,7 +34,7 @@
 
     .prologue
     .line 44
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 45
     invoke-static {p1}, Lcom/android/internal/util/ArrayUtils;->idealIntArraySize(I)I

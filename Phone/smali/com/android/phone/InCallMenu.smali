@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final LOG_TAG:Ljava/lang/String; = "PHONE/InCallMenu"
 
@@ -106,17 +106,12 @@
 .end method
 
 .method constructor <init>(Lcom/android/phone/InCallScreen;)V
-    .locals 1
+    .locals 0
     .parameter "inCallScreen"
 
     .prologue
     .line 112
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 113
-    const-string v0, "InCallMenu constructor..."
-
-    invoke-direct {p0, v0}, Lcom/android/phone/InCallMenu;->log(Ljava/lang/String;)V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 114
     iput-object p1, p0, Lcom/android/phone/InCallMenu;->mInCallScreen:Lcom/android/phone/InCallScreen;
@@ -623,11 +618,6 @@
     const/4 v5, 0x2
 
     const/4 v4, 0x1
-
-    .line 143
-    const-string v2, "initMenu()..."
-
-    invoke-direct {p0, v2}, Lcom/android/phone/InCallMenu;->log(Ljava/lang/String;)V
 
     .line 146
     new-instance v1, Landroid/view/ContextThemeWrapper;
@@ -1254,15 +1244,6 @@
     .parameter "cm"
 
     .prologue
-    .line 376
-    const-string v25, "updateItems()..."
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v25
-
-    invoke-direct {v0, v1}, Lcom/android/phone/InCallMenu;->log(Ljava/lang/String;)V
-
     .line 381
     invoke-virtual/range {p1 .. p1}, Lcom/android/internal/telephony/CallManager;->getState()Lcom/android/internal/telephony/Phone$State;
 
@@ -1275,15 +1256,6 @@
     move-object/from16 v1, v26
 
     if-ne v0, v1, :cond_0
-
-    .line 382
-    const-string v25, "- Phone is idle!  Don\'t show the menu..."
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v25
-
-    invoke-direct {v0, v1}, Lcom/android/phone/InCallMenu;->log(Ljava/lang/String;)V
 
     .line 383
     const/16 v25, 0x0

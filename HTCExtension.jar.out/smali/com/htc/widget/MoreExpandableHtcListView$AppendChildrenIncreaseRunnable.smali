@@ -76,7 +76,7 @@
     .line 646
     iput-object p1, p0, Lcom/htc/widget/MoreExpandableHtcListView$AppendChildrenIncreaseRunnable;->this$0:Lcom/htc/widget/MoreExpandableHtcListView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 651
     iput v2, p0, Lcom/htc/widget/MoreExpandableHtcListView$AppendChildrenIncreaseRunnable;->mPosition:I

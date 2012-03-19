@@ -10,7 +10,7 @@
 
 .field static final TAG:Ljava/lang/String; = "ActivityManager"
 
-.field static final htcDebugFlag:Z = true
+.field static final htcDebugFlag:Z
 
 
 # instance fields
@@ -41,7 +41,7 @@
 
     .prologue
     .line 50
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 51
     iput-object p1, p0, Lcom/android/server/am/HtcErrorReportManager;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -1056,28 +1056,19 @@
     const/4 v4, 0x1
 
     invoke-static {p2, v4, v1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
 
     move-result-object v2
 
     .line 408
     .end local v1           #loader:Ljava/lang/ClassLoader;
     .end local v3           #newContext:Landroid/content/Context;
+    :cond_0
     :goto_0
     return-object v2
-
-    .line 399
-    :cond_0
-    const-string v4, "ActivityManager"
-
-    const-string v5, "context is null"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
-
-    goto :goto_0
 
     .line 401
     :catch_0
@@ -3585,7 +3576,7 @@
 
     .line 340
     :cond_18
-    invoke-virtual {v3}, Ljava/lang/Thread;->run()V
+    invoke-virtual {v3}, Lcom/android/server/am/HtcErrorReportManager$2;->run()V
 
     goto/16 :goto_1
 

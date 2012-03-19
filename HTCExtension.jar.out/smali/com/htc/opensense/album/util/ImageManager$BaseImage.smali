@@ -69,7 +69,7 @@
     .line 249
     iput-object p1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->this$0:Lcom/htc/opensense/album/util/ImageManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1081
     const-wide/16 v0, -0x1

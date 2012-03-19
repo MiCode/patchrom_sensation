@@ -25,7 +25,7 @@
 
     .prologue
     .line 41
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -1827,7 +1827,7 @@
 
     move-result-object v2
 
-    iget v3, v0, Lcom/android/internal/telephony/cdma/SmsMessage;->messageRef:I
+    iget v3, v0, Lcom/android/internal/telephony/SmsMessageBase;->messageRef:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1854,7 +1854,7 @@
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 577
-    iget v1, v0, Lcom/android/internal/telephony/cdma/SmsMessage;->messageRef:I
+    iget v1, v0, Lcom/android/internal/telephony/SmsMessageBase;->messageRef:I
 
     sget v2, Lcom/android/internal/telephony/HtcMessageHelper;->mKddiMessageId:I
 
@@ -1898,7 +1898,7 @@
 
     .line 582
     :cond_0
-    iget v1, v0, Lcom/android/internal/telephony/cdma/SmsMessage;->messageRef:I
+    iget v1, v0, Lcom/android/internal/telephony/SmsMessageBase;->messageRef:I
 
     sput v1, Lcom/android/internal/telephony/HtcMessageHelper;->mKddiMessageId:I
 

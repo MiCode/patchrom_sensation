@@ -57,7 +57,7 @@
     packed-switch v1, :pswitch_data_0
 
     .line 43
-    iget-object v1, p0, Lcom/android/camera/component/BurstResolutionHandler;->TAG:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/camera/SubsetResolutionHandler;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
 

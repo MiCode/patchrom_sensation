@@ -170,7 +170,7 @@
     invoke-super {p0}, Lcom/htc/sunny/SView;->createResource()V
 
     .line 302
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     if-nez v1, :cond_1
 
@@ -181,7 +181,7 @@
 
     .line 303
     :cond_1
-    iget-boolean v1, p0, Lcom/htc/sunny/SImageView;->mIsSurfaceBinded:Z
+    iget-boolean v1, p0, Lcom/htc/sunny/SView;->mIsSurfaceBinded:Z
 
     if-eqz v1, :cond_0
 
@@ -266,9 +266,9 @@
     if-nez v1, :cond_6
 
     .line 325
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
-    iget v2, p0, Lcom/htc/sunny/SImageView;->mViewNodeId:I
+    iget v2, p0, Lcom/htc/sunny/SView;->mViewNodeId:I
 
     invoke-virtual {v1, v2, v7}, Lcom/htc/sunny/SunnyEngine;->createSprite(II)I
 
@@ -284,7 +284,7 @@
     invoke-virtual {p0, v1, v2}, Lcom/htc/sunny/SImageView;->setIconDisplaySize(II)V
 
     .line 327
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v2, p0, Lcom/htc/sunny/SImageView;->mIconSpriteId:I
 
@@ -303,7 +303,7 @@
     invoke-virtual {v1, v2, v3, v4, v5}, Lcom/htc/sunny/SunnyEngine;->setNodePosition(IFFF)V
 
     .line 328
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v2, p0, Lcom/htc/sunny/SImageView;->mIconSpriteId:I
 
@@ -316,7 +316,7 @@
     if-nez v1, :cond_7
 
     .line 332
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     invoke-virtual {v1}, Lcom/htc/sunny/SunnyEngine;->createTexture()I
 
@@ -326,7 +326,7 @@
 
     .line 334
     :cond_7
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v2, p0, Lcom/htc/sunny/SImageView;->mIconSpriteId:I
 
@@ -344,7 +344,7 @@
     if-nez v1, :cond_8
 
     .line 337
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v2, p0, Lcom/htc/sunny/SImageView;->mIconRestTextureId:I
 
@@ -384,7 +384,7 @@
     if-nez v1, :cond_9
 
     .line 349
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     invoke-virtual {v1}, Lcom/htc/sunny/SunnyEngine;->createTexture()I
 
@@ -408,7 +408,7 @@
     if-nez v1, :cond_a
 
     .line 354
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v2, p0, Lcom/htc/sunny/SImageView;->mIconPressTextureId:I
 
@@ -438,7 +438,7 @@
     if-ne v7, v0, :cond_b
 
     .line 364
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v2, p0, Lcom/htc/sunny/SImageView;->mIconSpriteId:I
 
@@ -446,7 +446,7 @@
 
     .line 369
     :goto_1
-    iget-boolean v1, p0, Lcom/htc/sunny/SImageView;->mTouchable:Z
+    iget-boolean v1, p0, Lcom/htc/sunny/SView;->mTouchable:Z
 
     invoke-virtual {p0, v1}, Lcom/htc/sunny/SImageView;->setTouchable(Z)V
 
@@ -457,7 +457,7 @@
 
     .line 366
     :cond_b
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v2, p0, Lcom/htc/sunny/SImageView;->mIconSpriteId:I
 
@@ -479,7 +479,7 @@
     invoke-super {p0, p1}, Lcom/htc/sunny/SView;->dispatchTouchEvent(Landroid/view/MotionEvent;)V
 
     .line 207
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     if-nez v1, :cond_1
 
@@ -497,7 +497,7 @@
     if-nez v1, :cond_2
 
     .line 210
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -524,7 +524,7 @@
     if-eqz v0, :cond_2
 
     .line 212
-    iput-boolean v4, p0, Lcom/htc/sunny/SImageView;->mIsPressed:Z
+    iput-boolean v4, p0, Lcom/htc/sunny/SView;->mIsPressed:Z
 
     .line 213
     invoke-virtual {p0, v4}, Lcom/htc/sunny/SImageView;->onFocusChanged(Z)V
@@ -539,19 +539,19 @@
     if-ne v4, v1, :cond_0
 
     .line 219
-    iget-boolean v1, p0, Lcom/htc/sunny/SImageView;->mIsPressed:Z
+    iget-boolean v1, p0, Lcom/htc/sunny/SView;->mIsPressed:Z
 
     if-ne v4, v1, :cond_3
 
     .line 220
-    iput-boolean v5, p0, Lcom/htc/sunny/SImageView;->mIsPressed:Z
+    iput-boolean v5, p0, Lcom/htc/sunny/SView;->mIsPressed:Z
 
     .line 221
     invoke-virtual {p0, v5}, Lcom/htc/sunny/SImageView;->onFocusChanged(Z)V
 
     .line 224
     :cond_3
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -578,12 +578,12 @@
     if-eqz v0, :cond_0
 
     .line 226
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mClickListener:Lcom/htc/sunny/SView$OnClickListener;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mClickListener:Lcom/htc/sunny/SView$OnClickListener;
 
     if-eqz v1, :cond_0
 
     .line 227
-    iget-object v1, p0, Lcom/htc/sunny/SImageView;->mClickListener:Lcom/htc/sunny/SView$OnClickListener;
+    iget-object v1, p0, Lcom/htc/sunny/SView;->mClickListener:Lcom/htc/sunny/SView$OnClickListener;
 
     invoke-interface {v1}, Lcom/htc/sunny/SView$OnClickListener;->onClick()V
 
@@ -599,7 +599,7 @@
     const/4 v2, 0x0
 
     .line 375
-    iget-object v0, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     if-nez v0, :cond_0
 
@@ -645,7 +645,7 @@
 
     .line 388
     :cond_2
-    iget-object v0, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v1, p0, Lcom/htc/sunny/SImageView;->mIconRestTextureId:I
 
@@ -655,7 +655,7 @@
     iput v2, p0, Lcom/htc/sunny/SImageView;->mIconRestTextureId:I
 
     .line 391
-    iget-object v0, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v1, p0, Lcom/htc/sunny/SImageView;->mIconSpriteId:I
 
@@ -665,7 +665,7 @@
     iput v2, p0, Lcom/htc/sunny/SImageView;->mIconSpriteId:I
 
     .line 394
-    iget-object v0, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v1, p0, Lcom/htc/sunny/SImageView;->mIconPressTextureId:I
 
@@ -693,7 +693,7 @@
     invoke-super {p0, p1}, Lcom/htc/sunny/SView;->onFocusChanged(Z)V
 
     .line 184
-    iget-object v0, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     if-nez v0, :cond_0
 
@@ -703,12 +703,12 @@
 
     .line 186
     :cond_0
-    iget-boolean v0, p0, Lcom/htc/sunny/SImageView;->mIsPressed:Z
+    iget-boolean v0, p0, Lcom/htc/sunny/SView;->mIsPressed:Z
 
     if-ne v4, v0, :cond_2
 
     .line 187
-    iget-object v0, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v1, p0, Lcom/htc/sunny/SImageView;->mIconSpriteId:I
 
@@ -726,7 +726,7 @@
     if-eqz v0, :cond_1
 
     .line 189
-    iget-object v0, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v1, p0, Lcom/htc/sunny/SImageView;->mIconSpriteId:I
 
@@ -740,7 +740,7 @@
 
     .line 191
     :cond_1
-    iget-object v0, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v1, p0, Lcom/htc/sunny/SImageView;->mIconSpriteId:I
 
@@ -750,7 +750,7 @@
 
     .line 194
     :cond_2
-    iget-object v0, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v1, p0, Lcom/htc/sunny/SImageView;->mIconSpriteId:I
 
@@ -768,7 +768,7 @@
     if-eqz v0, :cond_3
 
     .line 196
-    iget-object v0, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v1, p0, Lcom/htc/sunny/SImageView;->mIconSpriteId:I
 
@@ -778,7 +778,7 @@
 
     .line 198
     :cond_3
-    iget-object v0, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v1, p0, Lcom/htc/sunny/SImageView;->mIconSpriteId:I
 
@@ -798,7 +798,7 @@
     const/4 v1, -0x1
 
     .line 236
-    iget-object v0, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     if-nez v0, :cond_1
 
@@ -861,7 +861,7 @@
     if-eqz v0, :cond_0
 
     .line 274
-    iget-object v0, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v1, p0, Lcom/htc/sunny/SImageView;->mIconSpriteId:I
 
@@ -1126,7 +1126,7 @@
     invoke-super {p0}, Lcom/htc/sunny/SView;->updateViewLayout()V
 
     .line 158
-    iget-object v0, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     if-nez v0, :cond_0
 
@@ -1136,7 +1136,7 @@
 
     .line 160
     :cond_0
-    iget-object v0, p0, Lcom/htc/sunny/SImageView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
+    iget-object v0, p0, Lcom/htc/sunny/SView;->mSunnyEngine:Lcom/htc/sunny/SunnyEngine;
 
     iget v1, p0, Lcom/htc/sunny/SImageView;->mIconSpriteId:I
 

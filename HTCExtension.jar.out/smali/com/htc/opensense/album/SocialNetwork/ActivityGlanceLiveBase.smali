@@ -91,7 +91,7 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iput-object v2, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     if-nez v2, :cond_0
 
@@ -107,7 +107,7 @@
     .end local v1           #bResult:I
     .restart local v0       #bResult:Z
     :cond_0
-    iget-object v2, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v2, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v2, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
@@ -215,7 +215,7 @@
     if-ne v2, v4, :cond_6
 
     .line 35
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
@@ -226,28 +226,28 @@
     .line 43
     .end local v0           #adapter:Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
     :goto_0
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v4, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     const v5, 0x20200dd
 
     invoke-virtual {v4, v5}, Lcom/htc/opensense/album/DisplayManager;->setMainViewContainerId(I)V
 
     .line 44
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v4, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     const v5, 0x20200de
 
     invoke-virtual {v4, v5}, Lcom/htc/opensense/album/DisplayManager;->setControlBarViewContainerId(I)V
 
     .line 45
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v4, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     const v5, 0x20200df
 
     invoke-virtual {v4, v5}, Lcom/htc/opensense/album/DisplayManager;->setControlBarViewContainerId(I)V
 
     .line 46
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v4, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     const v5, 0x20200dc
 
@@ -263,7 +263,7 @@
     if-eqz v4, :cond_0
 
     .line 49
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v4, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mLiveGridviewTemplate:Lcom/htc/opensense/album/ViewTemplateBase;
 
@@ -280,7 +280,7 @@
     if-eqz v4, :cond_1
 
     .line 52
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v4, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mLiveFilmstripTemplate:Lcom/htc/opensense/album/ViewTemplateBase;
 
@@ -297,7 +297,7 @@
     if-eqz v4, :cond_2
 
     .line 55
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v4, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mLiveFullscreenTemplate:Lcom/htc/opensense/album/ViewTemplateBase;
 
@@ -381,7 +381,7 @@
     if-eqz v4, :cond_9
 
     .line 66
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v4, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mLiveFilmstripTemplate:Lcom/htc/opensense/album/ViewTemplateBase;
 
@@ -389,7 +389,7 @@
 
     move-result v5
 
-    iget-object v6, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mStartBundle:Landroid/os/Bundle;
+    iget-object v6, p0, Lcom/htc/opensense/album/PresentationActivityBase;->mStartBundle:Landroid/os/Bundle;
 
     const-string v7, "com.htc.album.action.VIEW_FOLDER"
 
@@ -424,7 +424,7 @@
     if-eqz v4, :cond_b
 
     .line 68
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v4, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mLiveGridviewTemplate:Lcom/htc/opensense/album/ViewTemplateBase;
 
@@ -432,7 +432,7 @@
 
     move-result v5
 
-    iget-object v6, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mStartBundle:Landroid/os/Bundle;
+    iget-object v6, p0, Lcom/htc/opensense/album/PresentationActivityBase;->mStartBundle:Landroid/os/Bundle;
 
     const-string v7, "com.htc.album.action.VIEW_FOLDER"
 
@@ -467,7 +467,7 @@
     if-eqz v4, :cond_5
 
     .line 70
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v4, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mLiveFullscreenTemplate:Lcom/htc/opensense/album/ViewTemplateBase;
 
@@ -475,7 +475,7 @@
 
     move-result v5
 
-    iget-object v6, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mStartBundle:Landroid/os/Bundle;
+    iget-object v6, p0, Lcom/htc/opensense/album/PresentationActivityBase;->mStartBundle:Landroid/os/Bundle;
 
     const-string v7, "com.htc.album.action.VIEW_FOLDER"
 
@@ -510,7 +510,7 @@
     if-eqz v4, :cond_e
 
     .line 75
-    iget-object v4, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
+    iget-object v4, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mDispMgr:Lcom/htc/opensense/album/DisplayManager;
 
     iget-object v5, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mLiveFullscreenTemplate:Lcom/htc/opensense/album/ViewTemplateBase;
 
@@ -518,7 +518,7 @@
 
     move-result v5
 
-    iget-object v6, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mStartBundle:Landroid/os/Bundle;
+    iget-object v6, p0, Lcom/htc/opensense/album/PresentationActivityBase;->mStartBundle:Landroid/os/Bundle;
 
     const-string v7, "com.htc.album.action.VIEW_FOLDER"
 
@@ -588,14 +588,14 @@
     invoke-super {p0}, Lcom/htc/opensense/album/PresentationActivityBase;->onDestroy()V
 
     .line 147
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     instance-of v1, v1, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
     if-eqz v1, :cond_0
 
     .line 149
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
@@ -652,14 +652,14 @@
     invoke-super {p0}, Lcom/htc/opensense/album/PresentationActivityBase;->onPause()V
 
     .line 131
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     instance-of v1, v1, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
     if-eqz v1, :cond_0
 
     .line 133
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
@@ -710,14 +710,14 @@
 
     .line 99
     :cond_1
-    iget-object v1, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v1, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     instance-of v1, v1, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 
     if-eqz v1, :cond_0
 
     .line 101
-    iget-object v0, p0, Lcom/htc/opensense/album/SocialNetwork/ActivityGlanceLiveBase;->mAdapter:Landroid/widget/BaseAdapter;
+    iget-object v0, p0, Lcom/htc/opensense/album/TemplateActivityBase;->mAdapter:Landroid/widget/BaseAdapter;
 
     check-cast v0, Lcom/htc/opensense/album/SocialNetwork/LivePhotoAdapterBase;
 

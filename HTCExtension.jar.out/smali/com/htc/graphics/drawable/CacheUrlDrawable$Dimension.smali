@@ -26,7 +26,7 @@
 
     .prologue
     .line 233
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 234
     invoke-virtual {p0}, Lcom/htc/graphics/drawable/CacheUrlDrawable$Dimension;->reset()V
@@ -42,7 +42,7 @@
 
     .prologue
     .line 237
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 238
     iput p1, p0, Lcom/htc/graphics/drawable/CacheUrlDrawable$Dimension;->width:I

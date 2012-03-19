@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/android/phone/sip/SipSettings$7;->val$profile:Landroid/net/sip/SipProfile;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

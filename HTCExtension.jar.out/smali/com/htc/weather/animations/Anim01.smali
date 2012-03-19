@@ -20,7 +20,7 @@
     .line 13
     new-instance v0, Lcom/htc/weather/animations/Sun;
 
-    iget-object v1, p0, Lcom/htc/weather/animations/Anim01;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/htc/weather/animations/WeatherAnimationData;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1, p2}, Lcom/htc/weather/animations/Sun;-><init>(Landroid/content/Context;Lcom/htc/weather/EnvSetting$Env;)V
 

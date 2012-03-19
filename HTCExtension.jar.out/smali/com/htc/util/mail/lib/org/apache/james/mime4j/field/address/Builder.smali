@@ -35,7 +35,7 @@
 
     .prologue
     .line 48
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 215
     return-void
@@ -656,11 +656,11 @@
 
     .prologue
     .line 193
-    iget-object v0, p1, Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/SimpleNode;->firstToken:Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/Token;
+    iget-object v0, p1, Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/BaseNode;->firstToken:Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/Token;
 
     .line 194
     .local v0, head:Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/Token;
-    iget-object v2, p1, Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/SimpleNode;->lastToken:Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/Token;
+    iget-object v2, p1, Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/BaseNode;->lastToken:Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/Token;
 
     .line 195
     .local v2, tail:Lcom/htc/util/mail/lib/org/apache/james/mime4j/field/address/parser/Token;

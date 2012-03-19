@@ -195,7 +195,7 @@
 
     .prologue
     .line 28
-    iget-object v0, p0, Lcom/android/camera/component/ZoomBarUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -206,7 +206,7 @@
 
     .prologue
     .line 28
-    iget-object v0, p0, Lcom/android/camera/component/ZoomBarUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -217,7 +217,7 @@
 
     .prologue
     .line 28
-    iget-object v0, p0, Lcom/android/camera/component/ZoomBarUI;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -461,12 +461,12 @@
     .local v0, params:Landroid/widget/RelativeLayout$LayoutParams;
     const/16 v1, 0x46
 
-    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->width:I
+    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 385
     const/16 v1, 0x22b
 
-    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->height:I
+    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 386
     const/4 v1, 0x3
@@ -503,10 +503,10 @@
 
     .line 393
     .restart local v0       #params:Landroid/widget/RelativeLayout$LayoutParams;
-    iput v4, v0, Landroid/widget/RelativeLayout$LayoutParams;->width:I
+    iput v4, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 394
-    iput v4, v0, Landroid/widget/RelativeLayout$LayoutParams;->height:I
+    iput v4, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 395
     const/16 v1, 0x1e

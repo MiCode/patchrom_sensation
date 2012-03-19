@@ -87,13 +87,13 @@
 
     .prologue
     .line 68
-    iget-boolean v0, p0, Landroid/net/dhcp/DhcpDiscoverPacket;->mBroadcast:Z
+    iget-boolean v0, p0, Landroid/net/dhcp/DhcpPacket;->mBroadcast:Z
 
-    iget v1, p0, Landroid/net/dhcp/DhcpDiscoverPacket;->mTransId:I
+    iget v1, p0, Landroid/net/dhcp/DhcpPacket;->mTransId:I
 
-    iget-object v2, p0, Landroid/net/dhcp/DhcpDiscoverPacket;->mClientMac:[B
+    iget-object v2, p0, Landroid/net/dhcp/DhcpPacket;->mClientMac:[B
 
-    iget-object v3, p0, Landroid/net/dhcp/DhcpDiscoverPacket;->mRequestedParams:[B
+    iget-object v3, p0, Landroid/net/dhcp/DhcpPacket;->mRequestedParams:[B
 
     invoke-interface {p1, v0, v1, v2, v3}, Landroid/net/dhcp/DhcpStateMachine;->onDiscoverReceived(ZI[B[B)V
 
@@ -116,7 +116,7 @@
     .line 59
     const/16 v0, 0x37
 
-    iget-object v1, p0, Landroid/net/dhcp/DhcpDiscoverPacket;->mRequestedParams:[B
+    iget-object v1, p0, Landroid/net/dhcp/DhcpPacket;->mRequestedParams:[B
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpDiscoverPacket;->addTlv(Ljava/nio/ByteBuffer;B[B)V
 
@@ -152,7 +152,7 @@
 
     move-result-object v2
 
-    iget-boolean v1, p0, Landroid/net/dhcp/DhcpDiscoverPacket;->mBroadcast:Z
+    iget-boolean v1, p0, Landroid/net/dhcp/DhcpPacket;->mBroadcast:Z
 
     if-eqz v1, :cond_0
 

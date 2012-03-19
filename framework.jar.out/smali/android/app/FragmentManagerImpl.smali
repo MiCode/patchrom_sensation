@@ -157,7 +157,7 @@
 
     .prologue
     .line 388
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     sput-boolean v0, Landroid/app/FragmentManagerImpl;->DEBUG:Z
 

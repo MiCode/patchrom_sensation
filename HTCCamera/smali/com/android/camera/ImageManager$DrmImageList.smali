@@ -158,7 +158,7 @@
 
     .prologue
     .line 3201
-    iget v1, p0, Lcom/android/camera/ImageManager$DrmImageList;->mSort:I
+    iget v1, p0, Lcom/android/camera/ImageManager$BaseImageList;->mSort:I
 
     const/4 v2, 0x1
 
@@ -240,9 +240,9 @@
     const/4 v3, 0x0
 
     .line 3036
-    iget-object v0, p0, Lcom/android/camera/ImageManager$DrmImageList;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
-    iget-object v1, p0, Lcom/android/camera/ImageManager$DrmImageList;->mBaseUri:Landroid/net/Uri;
+    iget-object v1, p0, Lcom/android/camera/ImageManager$BaseImageList;->mBaseUri:Landroid/net/Uri;
 
     iget-object v2, p0, Lcom/android/camera/ImageManager$DrmImageList;->DRM_IMAGE_PROJECTION:[Ljava/lang/String;
 
@@ -256,10 +256,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/camera/ImageManager$DrmImageList;->mCursor:Landroid/database/Cursor;
+    iput-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     .line 3037
-    iget-object v0, p0, Lcom/android/camera/ImageManager$DrmImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     return-object v0
 .end method
@@ -301,7 +301,7 @@
 
     .line 3063
     .local v1, id:J
-    iget-object v0, p0, Lcom/android/camera/ImageManager$DrmImageList;->mCache:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCache:Ljava/util/HashMap;
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -320,7 +320,7 @@
     .line 3065
     const-wide/16 v3, 0x0
 
-    iget-object v5, p0, Lcom/android/camera/ImageManager$DrmImageList;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v5, p0, Lcom/android/camera/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
     const-wide/16 v7, 0x0
 
@@ -335,7 +335,7 @@
     move-result-object v12
 
     .line 3066
-    iget-object v0, p0, Lcom/android/camera/ImageManager$DrmImageList;->mCache:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCache:Ljava/util/HashMap;
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -620,7 +620,7 @@
     .line 3179
     new-instance v0, Lcom/android/camera/ImageManager$DrmImageList$DrmImage;
 
-    iget-object v4, p0, Lcom/android/camera/ImageManager$DrmImageList;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v4, p0, Lcom/android/camera/ImageManager$BaseImageList;->mContentResolver:Landroid/content/ContentResolver;
 
     move-object v1, p0
 

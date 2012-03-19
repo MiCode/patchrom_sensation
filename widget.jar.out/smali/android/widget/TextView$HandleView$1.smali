@@ -30,12 +30,12 @@
     .parameter
 
     .prologue
-    .line 11517
+    .line 11557
     iput-object p1, p0, Landroid/widget/TextView$HandleView$1;->this$1:Landroid/widget/TextView$HandleView;
 
     iput-object p2, p0, Landroid/widget/TextView$HandleView$1;->val$view:Landroid/view/View;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,19 +46,19 @@
     .locals 6
 
     .prologue
-    .line 11519
+    .line 11559
     iget-object v0, p0, Landroid/widget/TextView$HandleView$1;->this$1:Landroid/widget/TextView$HandleView;
 
     iget-object v0, v0, Landroid/widget/TextView$HandleView;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->useHtcTextSelection()Z
-    invoke-static {v0}, Landroid/widget/TextView;->access$2800(Landroid/widget/TextView;)Z
+    invoke-static {v0}, Landroid/widget/TextView;->access$2900(Landroid/widget/TextView;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 11520
+    .line 11560
     iget-object v0, p0, Landroid/widget/TextView$HandleView$1;->this$1:Landroid/widget/TextView$HandleView;
 
     iget-boolean v0, v0, Landroid/widget/TextView$HandleView;->mIsInsertionHandle:Z
@@ -70,13 +70,13 @@
     iget-object v0, v0, Landroid/widget/TextView$HandleView;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->canPaste()Z
-    invoke-static {v0}, Landroid/widget/TextView;->access$5800(Landroid/widget/TextView;)Z
+    invoke-static {v0}, Landroid/widget/TextView;->access$5900(Landroid/widget/TextView;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 11521
+    .line 11561
     iget-object v0, p0, Landroid/widget/TextView$HandleView$1;->this$1:Landroid/widget/TextView$HandleView;
 
     iget-object v0, v0, Landroid/widget/TextView$HandleView;->this$0:Landroid/widget/TextView;
@@ -90,14 +90,14 @@
     iget-object v2, v2, Landroid/widget/TextView$HandleView;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mMenuWrapper:Landroid/widget/TextView$MenuWrapper;
-    invoke-static {v2}, Landroid/widget/TextView;->access$7200(Landroid/widget/TextView;)Landroid/widget/TextView$MenuWrapper;
+    invoke-static {v2}, Landroid/widget/TextView;->access$7300(Landroid/widget/TextView;)Landroid/widget/TextView$MenuWrapper;
 
     move-result-object v2
 
     iget-object v3, p0, Landroid/widget/TextView$HandleView$1;->this$1:Landroid/widget/TextView$HandleView;
 
     #getter for: Landroid/widget/TextView$HandleView;->mContext:Landroid/content/Context;
-    invoke-static {v3}, Landroid/widget/TextView$HandleView;->access$7300(Landroid/widget/TextView$HandleView;)Landroid/content/Context;
+    invoke-static {v3}, Landroid/widget/TextView$HandleView;->access$7400(Landroid/widget/TextView$HandleView;)Landroid/content/Context;
 
     move-result-object v3
 
@@ -106,7 +106,7 @@
     iget-object v4, v4, Landroid/widget/TextView$HandleView;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->canPaste()Z
-    invoke-static {v4}, Landroid/widget/TextView;->access$5800(Landroid/widget/TextView;)Z
+    invoke-static {v4}, Landroid/widget/TextView;->access$5900(Landroid/widget/TextView;)Z
 
     move-result v4
 
@@ -114,11 +114,11 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/htc/textselection/HtcTextSelectionManager;->prepareHtcPasteWindow(Landroid/view/View;Landroid/view/View$OnClickListener;Landroid/content/Context;ZZ)V
 
-    .line 11522
+    .line 11562
     iget-object v0, p0, Landroid/widget/TextView$HandleView$1;->this$1:Landroid/widget/TextView$HandleView;
 
     #getter for: Landroid/widget/TextView$HandleView;->mIsDragging:Z
-    invoke-static {v0}, Landroid/widget/TextView$HandleView;->access$7400(Landroid/widget/TextView$HandleView;)Z
+    invoke-static {v0}, Landroid/widget/TextView$HandleView;->access$7500(Landroid/widget/TextView$HandleView;)Z
 
     move-result v0
 
@@ -129,14 +129,14 @@
     iget-object v0, v0, Landroid/widget/TextView$HandleView;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->showQuickAction()V
-    invoke-static {v0}, Landroid/widget/TextView;->access$3000(Landroid/widget/TextView;)V
+    invoke-static {v0}, Landroid/widget/TextView;->access$3100(Landroid/widget/TextView;)V
 
-    .line 11526
+    .line 11566
     :cond_0
     :goto_0
     return-void
 
-    .line 11525
+    .line 11565
     :cond_1
     iget-object v0, p0, Landroid/widget/TextView$HandleView$1;->this$1:Landroid/widget/TextView$HandleView;
 

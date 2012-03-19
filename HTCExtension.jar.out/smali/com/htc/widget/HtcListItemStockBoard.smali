@@ -998,7 +998,7 @@
 
     .prologue
     .line 178
-    iget-boolean v0, p0, Lcom/htc/widget/HtcListItemStockBoard;->mIsRevert:Z
+    iget-boolean v0, p0, Lcom/htc/widget/HtcListItemComponent;->mIsRevert:Z
 
     if-eqz v0, :cond_0
 

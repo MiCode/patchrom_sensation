@@ -30,18 +30,18 @@
     .parameter "companyId"
 
     .prologue
-    .line 4165
+    .line 4209
     iput-object p1, p0, Lcom/android/phone/BluetoothHandsfree$VendorSpecificCommandHandler;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     invoke-direct {p0}, Landroid/bluetooth/AtCommandHandler;-><init>()V
 
-    .line 4166
+    .line 4210
     iput-object p2, p0, Lcom/android/phone/BluetoothHandsfree$VendorSpecificCommandHandler;->mCommandName:Ljava/lang/String;
 
-    .line 4167
+    .line 4211
     iput p3, p0, Lcom/android/phone/BluetoothHandsfree$VendorSpecificCommandHandler;->mCompanyId:I
 
-    .line 4168
+    .line 4212
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .parameter "x3"
 
     .prologue
-    .line 4159
+    .line 4203
     invoke-direct {p0, p1, p2, p3}, Lcom/android/phone/BluetoothHandsfree$VendorSpecificCommandHandler;-><init>(Lcom/android/phone/BluetoothHandsfree;Ljava/lang/String;I)V
 
     return-void
@@ -65,7 +65,7 @@
     .locals 2
 
     .prologue
-    .line 4182
+    .line 4226
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     const/4 v1, 0x1
@@ -79,7 +79,7 @@
     .locals 2
 
     .prologue
-    .line 4172
+    .line 4216
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     const/4 v1, 0x1
@@ -94,7 +94,7 @@
     .parameter "arguments"
 
     .prologue
-    .line 4187
+    .line 4231
     iget-object v0, p0, Lcom/android/phone/BluetoothHandsfree$VendorSpecificCommandHandler;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     iget-object v1, p0, Lcom/android/phone/BluetoothHandsfree$VendorSpecificCommandHandler;->mCommandName:Ljava/lang/String;
@@ -119,7 +119,7 @@
     #calls: Lcom/android/phone/BluetoothHandsfree;->broadcastVendorSpecificEventIntent(Ljava/lang/String;II[Ljava/lang/Object;Landroid/bluetooth/BluetoothDevice;)V
     invoke-static/range {v0 .. v5}, Lcom/android/phone/BluetoothHandsfree;->access$9900(Lcom/android/phone/BluetoothHandsfree;Ljava/lang/String;II[Ljava/lang/Object;Landroid/bluetooth/BluetoothDevice;)V
 
-    .line 4192
+    .line 4236
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     const/4 v1, 0x0
@@ -133,7 +133,7 @@
     .locals 2
 
     .prologue
-    .line 4177
+    .line 4221
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     const/4 v1, 0x1

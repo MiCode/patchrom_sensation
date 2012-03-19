@@ -84,7 +84,7 @@
 
     .line 2889
     :try_start_1
-    iget-object v4, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
+    iget-object v4, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContainer:Lcom/htc/opensense/album/util/ImageManager$BaseImageList;
 
     invoke-virtual {v4}, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->indexData()I
 
@@ -116,7 +116,7 @@
 
     move-result-object v4
 
-    iput-object v4, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iput-object v4, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     .line 2893
     if-gez p1, :cond_1
@@ -166,7 +166,7 @@
     invoke-virtual {p0, v4, v6}, Lcom/htc/opensense/album/util/ImageManager$Image;->replaceExifTag(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 2914
-    iget-object v4, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v4, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     invoke-static {v2, v4}, Lcom/htc/opensense/album/util/ExifUtil;->modifiedExifData(Ljava/lang/String;Ljava/util/HashMap;)V
 
@@ -290,7 +290,7 @@
 
     .prologue
     .line 2653
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     if-nez v0, :cond_0
 
@@ -299,11 +299,11 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     .line 2656
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -312,7 +312,7 @@
     if-nez v0, :cond_1
 
     .line 2657
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -826,12 +826,12 @@
 
     .prologue
     .line 2669
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     if-eqz v1, :cond_0
 
     .line 2670
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1180,7 +1180,7 @@
 
     .prologue
     .line 2713
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     if-nez v0, :cond_0
 
@@ -1189,11 +1189,11 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     .line 2716
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1208,7 +1208,7 @@
 
     .prologue
     .line 2725
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     if-nez v0, :cond_0
 
@@ -1217,11 +1217,11 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     .line 2728
     :cond_0
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -1230,13 +1230,13 @@
     if-nez v0, :cond_1
 
     .line 2729
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2731
     :cond_1
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mExifData:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mExifData:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1378,7 +1378,7 @@
     invoke-virtual {v2, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
     .line 2627
-    iget-object v3, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v3, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {p0}, Lcom/htc/opensense/album/util/ImageManager$Image;->fullSizeImageUri()Landroid/net/Uri;
 
@@ -1454,12 +1454,12 @@
     .line 2603
     iget v3, v1, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    iput v3, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mWidth:I
+    iput v3, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mWidth:I
 
     .line 2604
     iget v3, v1, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
-    iput v3, p0, Lcom/htc/opensense/album/util/ImageManager$Image;->mHeight:I
+    iput v3, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImage;->mHeight:I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

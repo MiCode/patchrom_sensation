@@ -135,7 +135,7 @@
 .end method
 
 .method public static isDebuggingPolicyEnabledBySystemProperty()Z
-    .locals 4
+    .locals 3
 
     .prologue
     .line 107
@@ -147,31 +147,8 @@
 
     move-result v0
 
-    .line 108
-    .local v0, isDebuggingLogsEnabled:Z
-    const-string v1, "ULog.util"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "ulog.enable_debugging_policy: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 109
+    .local v0, isDebuggingLogsEnabled:Z
     return v0
 .end method
 

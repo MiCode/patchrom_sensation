@@ -41,7 +41,7 @@
     .local p0, this:Lcom/htc/socialnetwork/account/BaseLoginActivity$LoginFuture;,"Lcom/htc/socialnetwork/account/BaseLoginActivity$LoginFuture<TT;>;"
     iput-object p1, p0, Lcom/htc/socialnetwork/account/BaseLoginActivity$LoginFuture;->this$0:Lcom/htc/socialnetwork/account/BaseLoginActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 653
     const/4 v0, 0x0

@@ -61,7 +61,7 @@
     const/4 v1, 0x0
 
     .line 59
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 38
     const-string v0, "text/plain"

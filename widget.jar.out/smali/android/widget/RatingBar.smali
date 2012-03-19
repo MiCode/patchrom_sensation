@@ -91,7 +91,7 @@
     .local v1, numStars:I
     const/4 v6, 0x3
 
-    iget-boolean v7, p0, Landroid/widget/RatingBar;->mIsUserSeekable:Z
+    iget-boolean v7, p0, Landroid/widget/AbsSeekBar;->mIsUserSeekable:Z
 
     if-nez v7, :cond_0
 
@@ -153,7 +153,7 @@
     :cond_2
     const v4, 0x3f8ccccd
 
-    iput v4, p0, Landroid/widget/RatingBar;->mTouchProgressOffset:F
+    iput v4, p0, Landroid/widget/AbsSeekBar;->mTouchProgressOffset:F
 
     .line 114
     return-void
@@ -351,7 +351,7 @@
 
     .prologue
     .line 156
-    iget-boolean v0, p0, Landroid/widget/RatingBar;->mIsUserSeekable:Z
+    iget-boolean v0, p0, Landroid/widget/AbsSeekBar;->mIsUserSeekable:Z
 
     if-nez v0, :cond_0
 
@@ -395,12 +395,12 @@
     invoke-super {p0, p1, p2}, Landroid/widget/AbsSeekBar;->onMeasure(II)V
 
     .line 279
-    iget-object v1, p0, Landroid/widget/RatingBar;->mSampleTile:Landroid/graphics/Bitmap;
+    iget-object v1, p0, Landroid/widget/ProgressBar;->mSampleTile:Landroid/graphics/Bitmap;
 
     if-eqz v1, :cond_0
 
     .line 282
-    iget-object v1, p0, Landroid/widget/RatingBar;->mSampleTile:Landroid/graphics/Bitmap;
+    iget-object v1, p0, Landroid/widget/ProgressBar;->mSampleTile:Landroid/graphics/Bitmap;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -530,7 +530,7 @@
     move v0, v1
 
     :goto_0
-    iput-boolean v0, p0, Landroid/widget/RatingBar;->mIsUserSeekable:Z
+    iput-boolean v0, p0, Landroid/widget/AbsSeekBar;->mIsUserSeekable:Z
 
     .line 149
     if-nez p1, :cond_1

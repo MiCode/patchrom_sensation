@@ -34,7 +34,7 @@
 
     .prologue
     .line 1737
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1738
     iput-object p3, p0, Lcom/htc/protobuf/Descriptors$DescriptorPool$PackageDescriptor;->file:Lcom/htc/protobuf/Descriptors$FileDescriptor;

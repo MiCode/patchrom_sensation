@@ -142,7 +142,7 @@
 
     .line 67
     .local v0, surface:Landroid/view/Surface;
-    iget-object v2, p0, Landroid/webkit/HTML5VideoInline;->mPlayer:Landroid/media/MediaPlayer;
+    iget-object v2, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v2, v0}, Landroid/media/MediaPlayer;->setSurface(Landroid/view/Surface;)V
 
@@ -324,7 +324,7 @@
     invoke-direct {p0, p1}, Landroid/webkit/HTML5VideoInline;->setFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
 
     .line 79
-    iget-object v0, p0, Landroid/webkit/HTML5VideoInline;->mProxy:Landroid/webkit/HTML5VideoViewProxy;
+    iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mProxy:Landroid/webkit/HTML5VideoViewProxy;
 
     invoke-virtual {v0}, Landroid/webkit/HTML5VideoViewProxy;->getContext()Landroid/content/Context;
 
@@ -339,7 +339,7 @@
     if-nez v0, :cond_0
 
     .line 81
-    iget-object v0, p0, Landroid/webkit/HTML5VideoInline;->mPlayer:Landroid/media/MediaPlayer;
+    iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {p1}, Landroid/webkit/HTML5VideoViewProxy;->getContext()Landroid/content/Context;
 
@@ -374,7 +374,7 @@
     if-nez v1, :cond_0
 
     .line 40
-    iget-object v1, p0, Landroid/webkit/HTML5VideoInline;->mProxy:Landroid/webkit/HTML5VideoViewProxy;
+    iget-object v1, p0, Landroid/webkit/HTML5VideoView;->mProxy:Landroid/webkit/HTML5VideoViewProxy;
 
     invoke-virtual {v1}, Landroid/webkit/HTML5VideoViewProxy;->getContext()Landroid/content/Context;
 

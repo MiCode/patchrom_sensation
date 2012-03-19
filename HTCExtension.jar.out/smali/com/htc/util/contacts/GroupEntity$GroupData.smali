@@ -46,7 +46,7 @@
 
     .prologue
     .line 1452
-    iget-boolean v1, p0, Lcom/htc/util/contacts/GroupEntity$GroupData;->isFallback:Z
+    iget-boolean v1, p0, Lcom/htc/util/contacts/GroupEntity$AccountData;->isFallback:Z
 
     if-eqz v1, :cond_0
 
@@ -106,7 +106,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/htc/util/contacts/GroupEntity$GroupData;->accountName:Ljava/lang/String;
+    iget-object v2, p0, Lcom/htc/util/contacts/GroupEntity$AccountData;->accountName:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -118,7 +118,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/htc/util/contacts/GroupEntity$GroupData;->accountType:Ljava/lang/String;
+    iget-object v2, p0, Lcom/htc/util/contacts/GroupEntity$AccountData;->accountType:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

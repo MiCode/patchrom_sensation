@@ -256,7 +256,7 @@
     invoke-virtual {p0, v0, v1}, Lcom/htc/widget/HtcListItemTileImage;->setLayerType(ILandroid/graphics/Paint;)V
 
     .line 46
-    iput-object p1, p0, Lcom/htc/widget/HtcListItemTileImage;->mContext:Landroid/content/Context;
+    iput-object p1, p0, Lcom/htc/widget/HtcListItemImageComponent;->mContext:Landroid/content/Context;
 
     .line 48
     new-instance v0, Lcom/htc/widget/HtcListItemTileImage$MaskImageView;
@@ -266,7 +266,7 @@
     iput-object v0, p0, Lcom/htc/widget/HtcListItemTileImage;->mBadge:Lcom/htc/widget/HtcListItemTileImage$MaskImageView;
 
     .line 49
-    iget-object v0, p0, Lcom/htc/widget/HtcListItemTileImage;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItemImageComponent;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -281,7 +281,7 @@
     iput v0, p0, Lcom/htc/widget/HtcListItemTileImage;->mBadgeSize:I
 
     .line 50
-    iget-object v0, p0, Lcom/htc/widget/HtcListItemTileImage;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItemImageComponent;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -296,7 +296,7 @@
     iput v0, p0, Lcom/htc/widget/HtcListItemTileImage;->mImageSize:I
 
     .line 51
-    iget-object v0, p0, Lcom/htc/widget/HtcListItemTileImage;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/htc/widget/HtcListItemImageComponent;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -558,7 +558,7 @@
 
     move-result v4
 
-    iget v5, p0, Lcom/htc/widget/HtcListItemTileImage;->mIndicatorLeftShift:I
+    iget v5, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorLeftShift:I
 
     sub-int v2, v4, v5
 
@@ -599,7 +599,7 @@
     invoke-virtual {v4, v1, v3, v5, v6}, Lcom/htc/widget/HtcListItemTileImage$MaskImageView;->layout(IIII)V
 
     .line 149
-    iget v4, p0, Lcom/htc/widget/HtcListItemTileImage;->mMode:I
+    iget v4, p0, Lcom/htc/widget/HtcListItemImageComponent;->mMode:I
 
     packed-switch v4, :pswitch_data_0
 
@@ -609,13 +609,13 @@
 
     .line 151
     :pswitch_0
-    iget-object v4, p0, Lcom/htc/widget/HtcListItemTileImage;->mBubbleCount:Lcom/htc/widget/HtcListItemBubbleCount;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItemImageComponent;->mBubbleCount:Lcom/htc/widget/HtcListItemBubbleCount;
 
-    iget v5, p0, Lcom/htc/widget/HtcListItemTileImage;->mBubbleSize:I
+    iget v5, p0, Lcom/htc/widget/HtcListItemImageComponent;->mBubbleSize:I
 
     sub-int v5, v2, v5
 
-    iget v6, p0, Lcom/htc/widget/HtcListItemTileImage;->mBubbleSize:I
+    iget v6, p0, Lcom/htc/widget/HtcListItemImageComponent;->mBubbleSize:I
 
     sub-int v6, v0, v6
 
@@ -625,25 +625,25 @@
 
     .line 154
     :pswitch_1
-    iget-object v4, p0, Lcom/htc/widget/HtcListItemTileImage;->mIndicator:Landroid/widget/ImageView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicator:Landroid/widget/ImageView;
 
-    iget v5, p0, Lcom/htc/widget/HtcListItemTileImage;->mIndicatorSize:I
+    iget v5, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     sub-int v5, v2, v5
 
-    iget v6, p0, Lcom/htc/widget/HtcListItemTileImage;->mIndicatorSize:I
+    iget v6, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     sub-int v6, v0, v6
 
     div-int/lit8 v6, v6, 0x2
 
-    iget v7, p0, Lcom/htc/widget/HtcListItemTileImage;->mIndicatorSize:I
+    iget v7, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     sub-int v7, v0, v7
 
     div-int/lit8 v7, v7, 0x2
 
-    iget v8, p0, Lcom/htc/widget/HtcListItemTileImage;->mIndicatorSize:I
+    iget v8, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     add-int/2addr v7, v8
 
@@ -676,7 +676,7 @@
 
     .line 162
     .local v0, parentBottom:I
-    iget v4, p0, Lcom/htc/widget/HtcListItemTileImage;->mIndicatorLeftShift:I
+    iget v4, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorLeftShift:I
 
     add-int/lit8 v1, v4, 0x0
 
@@ -707,7 +707,7 @@
     invoke-virtual {v4, v5, v3, v2, v6}, Lcom/htc/widget/HtcListItemTileImage$MaskImageView;->layout(IIII)V
 
     .line 166
-    iget v4, p0, Lcom/htc/widget/HtcListItemTileImage;->mMode:I
+    iget v4, p0, Lcom/htc/widget/HtcListItemImageComponent;->mMode:I
 
     packed-switch v4, :pswitch_data_0
 
@@ -717,13 +717,13 @@
 
     .line 168
     :pswitch_0
-    iget-object v4, p0, Lcom/htc/widget/HtcListItemTileImage;->mBubbleCount:Lcom/htc/widget/HtcListItemBubbleCount;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItemImageComponent;->mBubbleCount:Lcom/htc/widget/HtcListItemBubbleCount;
 
-    iget v5, p0, Lcom/htc/widget/HtcListItemTileImage;->mBubbleSize:I
+    iget v5, p0, Lcom/htc/widget/HtcListItemImageComponent;->mBubbleSize:I
 
     sub-int v5, v0, v5
 
-    iget v6, p0, Lcom/htc/widget/HtcListItemTileImage;->mBubbleSize:I
+    iget v6, p0, Lcom/htc/widget/HtcListItemImageComponent;->mBubbleSize:I
 
     add-int/2addr v6, v1
 
@@ -733,25 +733,25 @@
 
     .line 171
     :pswitch_1
-    iget-object v4, p0, Lcom/htc/widget/HtcListItemTileImage;->mIndicator:Landroid/widget/ImageView;
+    iget-object v4, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicator:Landroid/widget/ImageView;
 
-    iget v5, p0, Lcom/htc/widget/HtcListItemTileImage;->mIndicatorSize:I
+    iget v5, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     sub-int v5, v0, v5
 
     div-int/lit8 v5, v5, 0x2
 
-    iget v6, p0, Lcom/htc/widget/HtcListItemTileImage;->mIndicatorSize:I
+    iget v6, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     add-int/2addr v6, v1
 
-    iget v7, p0, Lcom/htc/widget/HtcListItemTileImage;->mIndicatorSize:I
+    iget v7, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     sub-int v7, v0, v7
 
     div-int/lit8 v7, v7, 0x2
 
-    iget v8, p0, Lcom/htc/widget/HtcListItemTileImage;->mIndicatorSize:I
+    iget v8, p0, Lcom/htc/widget/HtcListItemImageComponent;->mIndicatorSize:I
 
     add-int/2addr v7, v8
 
@@ -814,15 +814,15 @@
     :cond_0
     new-instance v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    iget v1, p0, Lcom/htc/widget/HtcListItemTileImage;->mComponentWidth:I
+    iget v1, p0, Lcom/htc/widget/HtcListItemImageComponent;->mComponentWidth:I
 
-    iget v2, p0, Lcom/htc/widget/HtcListItemTileImage;->mComponentHeight:I
+    iget v2, p0, Lcom/htc/widget/HtcListItemImageComponent;->mComponentHeight:I
 
     invoke-direct {v0, v1, v2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
     .line 118
     .local v0, params:Landroid/view/ViewGroup$MarginLayoutParams;
-    iget v1, p0, Lcom/htc/widget/HtcListItemTileImage;->mLeftMargin:I
+    iget v1, p0, Lcom/htc/widget/HtcListItemImageComponent;->mLeftMargin:I
 
     invoke-virtual {v0, v1, v3, v3, v3}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
@@ -856,7 +856,7 @@
 
     .prologue
     .line 135
-    iget-boolean v0, p0, Lcom/htc/widget/HtcListItemTileImage;->mIsRevert:Z
+    iget-boolean v0, p0, Lcom/htc/widget/HtcListItemComponent;->mIsRevert:Z
 
     if-eqz v0, :cond_0
 
@@ -970,18 +970,18 @@
     .line 103
     check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    iget v1, p0, Lcom/htc/widget/HtcListItemTileImage;->mLeftMargin:I
+    iget v1, p0, Lcom/htc/widget/HtcListItemImageComponent;->mLeftMargin:I
 
     invoke-virtual {v0, v1, v2, v2, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
     .line 106
     :cond_0
-    iget v0, p0, Lcom/htc/widget/HtcListItemTileImage;->mComponentWidth:I
+    iget v0, p0, Lcom/htc/widget/HtcListItemImageComponent;->mComponentWidth:I
 
     iput v0, p1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 107
-    iget v0, p0, Lcom/htc/widget/HtcListItemTileImage;->mComponentHeight:I
+    iget v0, p0, Lcom/htc/widget/HtcListItemImageComponent;->mComponentHeight:I
 
     iput v0, p1, Landroid/view/ViewGroup$LayoutParams;->height:I
 

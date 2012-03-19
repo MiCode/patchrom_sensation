@@ -206,7 +206,7 @@
     :goto_1
     move-object/from16 v0, p0
 
-    iput-boolean v2, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mIsEffective:Z
+    iput-boolean v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mIsEffective:Z
 
     .line 257
     move-object/from16 v0, p1
@@ -228,7 +228,7 @@
 
     move-object/from16 v0, p0
 
-    iput-object v2, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iput-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     .line 261
     new-instance v2, Landroid/graphics/Path;
@@ -237,7 +237,7 @@
 
     move-object/from16 v0, p0
 
-    iput-object v2, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPath:Landroid/graphics/Path;
+    iput-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPath:Landroid/graphics/Path;
 
     .line 264
     const/16 v21, 0x0
@@ -367,7 +367,7 @@
     .line 294
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPath:Landroid/graphics/Path;
+    iget-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPath:Landroid/graphics/Path;
 
     move/from16 v0, v41
 
@@ -379,7 +379,7 @@
     :goto_3
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v43, v0
 
@@ -473,7 +473,7 @@
     .line 296
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPath:Landroid/graphics/Path;
+    iget-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPath:Landroid/graphics/Path;
 
     move/from16 v0, v41
 
@@ -487,7 +487,7 @@
     :cond_3
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPath:Landroid/graphics/Path;
+    iget-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPath:Landroid/graphics/Path;
 
     add-float v3, v41, v21
 
@@ -675,7 +675,7 @@
 
     move-object/from16 v0, p0
 
-    iput-wide v2, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mCreationTime:J
+    iput-wide v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mCreationTime:J
 
     .line 343
     new-instance v23, Lcom/htc/painting/engine/StrokeProperties;
@@ -814,7 +814,7 @@
 
     move-object/from16 v0, p0
 
-    iput-object v2, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mRectF:Landroid/graphics/RectF;
+    iput-object v2, v0, Lcom/htc/painting/engine/stroke/Stroke;->mRectF:Landroid/graphics/RectF;
 
     .line 370
     move-object/from16 v0, p1
@@ -839,7 +839,7 @@
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
+    iput-object v0, v1, Lcom/htc/painting/engine/stroke/Stroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
 
     .line 375
     invoke-virtual/range {p0 .. p0}, Lcom/htc/painting/engine/stroke/HtcPenStroke;->getId()I
@@ -859,11 +859,11 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -887,7 +887,7 @@
 
     const/4 v3, 0x0
 
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -924,13 +924,13 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
     if-ltz p2, :cond_0
 
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -985,11 +985,11 @@
     add-int/lit8 v0, v0, 0x2a
 
     .line 233
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -998,7 +998,7 @@
     if-lez v1, :cond_0
 
     .line 234
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -1025,11 +1025,11 @@
     if-eqz v0, :cond_1
 
     .line 94
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -1042,7 +1042,7 @@
     .line 95
     iget-object v0, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mEngine:Lcom/htc/painting/engine/render/IRenderEngine;
 
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -1050,7 +1050,7 @@
 
     add-int/lit8 v3, v1, -0x2
 
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -1092,11 +1092,11 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -1109,7 +1109,7 @@
     .line 86
     iget-object v0, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mEngine:Lcom/htc/painting/engine/render/IRenderEngine;
 
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -1117,7 +1117,7 @@
 
     add-int/lit8 v3, v1, -0x2
 
-    iget-object v1, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v1, p0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -1183,7 +1183,7 @@
     :cond_0
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v23, v0
 
@@ -1229,7 +1229,7 @@
     .line 136
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v23, v0
 
@@ -1269,7 +1269,7 @@
     .local v15, preT:J
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v23, v0
 
@@ -1282,7 +1282,7 @@
     :goto_2
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v23, v0
 
@@ -1297,7 +1297,7 @@
     .line 149
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v23, v0
 
@@ -1317,7 +1317,7 @@
     .local v21, x:I
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v23, v0
 
@@ -1337,7 +1337,7 @@
     .local v22, y:I
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v23, v0
 
@@ -1357,7 +1357,7 @@
     .local v9, p:F
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v23, v0
 
@@ -1377,7 +1377,7 @@
     .local v3, d:F
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mPoints:Ljava/util/List;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mPoints:Ljava/util/List;
 
     move-object/from16 v23, v0
 
@@ -1878,7 +1878,7 @@
     .line 205
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
 
     move-object/from16 v23, v0
 
@@ -1918,7 +1918,7 @@
     .line 209
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mRectF:Landroid/graphics/RectF;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mRectF:Landroid/graphics/RectF;
 
     move-object/from16 v23, v0
 
@@ -1954,7 +1954,7 @@
     .line 212
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mRectF:Landroid/graphics/RectF;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mRectF:Landroid/graphics/RectF;
 
     move-object/from16 v23, v0
 
@@ -1990,7 +1990,7 @@
     .line 215
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mRectF:Landroid/graphics/RectF;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mRectF:Landroid/graphics/RectF;
 
     move-object/from16 v23, v0
 
@@ -2026,7 +2026,7 @@
     .line 218
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mRectF:Landroid/graphics/RectF;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mRectF:Landroid/graphics/RectF;
 
     move-object/from16 v23, v0
 
@@ -2062,7 +2062,7 @@
     .line 221
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
+    iget-object v0, v0, Lcom/htc/painting/engine/stroke/Stroke;->mStrokeProperties:Lcom/htc/painting/engine/StrokeProperties;
 
     move-object/from16 v23, v0
 
@@ -2099,14 +2099,14 @@
 
     .prologue
     .line 104
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mRectF:Landroid/graphics/RectF;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mRectF:Landroid/graphics/RectF;
 
     if-eqz v0, :cond_0
 
     if-eqz p1, :cond_0
 
     .line 105
-    iget-object v0, p0, Lcom/htc/painting/engine/stroke/HtcPenStroke;->mRectF:Landroid/graphics/RectF;
+    iget-object v0, p0, Lcom/htc/painting/engine/stroke/Stroke;->mRectF:Landroid/graphics/RectF;
 
     invoke-virtual {v0, p1}, Landroid/graphics/RectF;->union(Landroid/graphics/RectF;)V
 

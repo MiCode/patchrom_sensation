@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final EVENT_LOOPBACK_MODE_TIMER:I = 0x0
 
@@ -34,7 +34,7 @@
 
     .prologue
     .line 28
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 22
     const-wide/16 v0, 0x3e8
@@ -429,31 +429,6 @@
 
     :goto_1
     iput-boolean v1, p0, Lcom/android/phone/HtcCdmaLoopbackUtils;->inLoopbackMode:Z
-
-    .line 46
-    const-string v1, "HtcCdmaLoopbackUtils"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Loob back mode:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-boolean v3, p0, Lcom/android/phone/HtcCdmaLoopbackUtils;->inLoopbackMode:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 48
     iget-boolean v1, p0, Lcom/android/phone/HtcCdmaLoopbackUtils;->inLoopbackMode:Z

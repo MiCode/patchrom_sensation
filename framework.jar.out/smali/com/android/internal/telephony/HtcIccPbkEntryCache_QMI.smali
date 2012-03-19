@@ -1177,7 +1177,7 @@
 
     .prologue
     .line 1295
-    const-string/jumbo v4, "handleExt1loaded"
+    const-string v4, "handleExt1loaded"
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/HtcIccPbkEntryCache_QMI;->log(Ljava/lang/String;)V
 

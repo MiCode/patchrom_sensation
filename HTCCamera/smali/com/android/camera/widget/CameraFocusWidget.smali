@@ -427,7 +427,7 @@
     .restart local v0       #scaleAnimation:Landroid/view/animation/Animation;
     const-wide/16 v3, 0x64
 
-    invoke-virtual {v0, v3, v4}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v3, v4}, Landroid/view/animation/ScaleAnimation;->setDuration(J)V
 
     .line 180
     invoke-virtual {v0, v10}, Landroid/view/animation/Animation;->setRepeatCount(I)V
@@ -464,7 +464,7 @@
     .restart local v0       #scaleAnimation:Landroid/view/animation/Animation;
     const-wide/16 v3, 0x12c
 
-    invoke-virtual {v0, v3, v4}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v3, v4}, Landroid/view/animation/ScaleAnimation;->setDuration(J)V
 
     .line 186
     invoke-virtual {v0, v10}, Landroid/view/animation/Animation;->setRepeatCount(I)V
@@ -513,7 +513,7 @@
     .restart local v2       #rotateAnimation:Landroid/view/animation/Animation;
     const-wide/16 v3, 0x64
 
-    invoke-virtual {v2, v3, v4}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v2, v3, v4}, Landroid/view/animation/RotateAnimation;->setDuration(J)V
 
     .line 200
     invoke-virtual {v2, v10}, Landroid/view/animation/Animation;->setRepeatCount(I)V

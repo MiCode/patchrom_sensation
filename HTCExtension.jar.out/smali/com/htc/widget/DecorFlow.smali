@@ -496,7 +496,7 @@
 
     .prologue
     .line 64
-    iget v0, p0, Lcom/htc/widget/DecorFlow;->mPaddingLeft:I
+    iget v0, p0, Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
 
     return v0
 .end method
@@ -507,7 +507,7 @@
 
     .prologue
     .line 64
-    iget v0, p0, Lcom/htc/widget/DecorFlow;->mPaddingRight:I
+    iget v0, p0, Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
 
     return v0
 .end method
@@ -518,7 +518,7 @@
 
     .prologue
     .line 64
-    iget v0, p0, Lcom/htc/widget/DecorFlow;->mPaddingRight:I
+    iget v0, p0, Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
 
     return v0
 .end method
@@ -529,7 +529,7 @@
 
     .prologue
     .line 64
-    iget v0, p0, Lcom/htc/widget/DecorFlow;->mPaddingLeft:I
+    iget v0, p0, Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
 
     return v0
 .end method
@@ -675,7 +675,7 @@
     .restart local v1       #childHeight:I
     .restart local v2       #childTop:I
     :sswitch_0
-    iget-object v4, p0, Lcom/htc/widget/DecorFlow;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v2, v4, Landroid/graphics/Rect;->top:I
 
@@ -684,13 +684,13 @@
 
     .line 1008
     :sswitch_1
-    iget-object v4, p0, Lcom/htc/widget/DecorFlow;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->bottom:I
 
     sub-int v4, v3, v4
 
-    iget-object v5, p0, Lcom/htc/widget/DecorFlow;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->top:I
 
@@ -700,7 +700,7 @@
 
     .line 1010
     .local v0, availableSpace:I
-    iget-object v4, p0, Lcom/htc/widget/DecorFlow;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->top:I
 
@@ -714,7 +714,7 @@
     .line 1013
     .end local v0           #availableSpace:I
     :sswitch_2
-    iget-object v4, p0, Lcom/htc/widget/DecorFlow;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->bottom:I
 
@@ -747,7 +747,7 @@
 
     .line 598
     .local v6, numChildren:I
-    iget v2, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iget v2, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     .line 599
     .local v2, firstPosition:I
@@ -762,7 +762,7 @@
     if-eqz p1, :cond_3
 
     .line 603
-    iget v8, p0, Lcom/htc/widget/DecorFlow;->mPaddingLeft:I
+    iget v8, p0, Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
 
     iget v9, p0, Lcom/htc/widget/DecorFlow;->EXPAND_UNIT:I
 
@@ -799,11 +799,11 @@
     if-eqz p1, :cond_1
 
     .line 630
-    iget v8, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iget v8, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     add-int/2addr v8, v1
 
-    iput v8, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iput v8, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     .line 632
     :cond_1
@@ -816,7 +816,7 @@
     add-int/lit8 v1, v1, 0x1
 
     .line 610
-    iget-object v8, p0, Lcom/htc/widget/DecorFlow;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
+    iget-object v8, p0, Lcom/htc/widget/AbsSpinner;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
 
     add-int v9, v2, v5
 
@@ -836,7 +836,7 @@
 
     move-result v8
 
-    iget v9, p0, Lcom/htc/widget/DecorFlow;->mPaddingRight:I
+    iget v9, p0, Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
 
     sub-int/2addr v8, v9
 
@@ -872,7 +872,7 @@
     add-int/lit8 v1, v1, 0x1
 
     .line 622
-    iget-object v8, p0, Lcom/htc/widget/DecorFlow;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
+    iget-object v8, p0, Lcom/htc/widget/AbsSpinner;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
 
     add-int v9, v2, v5
 
@@ -896,12 +896,12 @@
 
     .line 1281
     .local v6, handled:Z
-    iget-object v0, p0, Lcom/htc/widget/DecorFlow;->mOnItemLongClickListener:Lcom/htc/widget/AdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Lcom/htc/widget/AdapterView;->mOnItemLongClickListener:Lcom/htc/widget/AdapterView$OnItemLongClickListener;
 
     if-eqz v0, :cond_0
 
     .line 1282
-    iget-object v0, p0, Lcom/htc/widget/DecorFlow;->mOnItemLongClickListener:Lcom/htc/widget/AdapterView$OnItemLongClickListener;
+    iget-object v0, p0, Lcom/htc/widget/AdapterView;->mOnItemLongClickListener:Lcom/htc/widget/AdapterView$OnItemLongClickListener;
 
     iget-object v2, p0, Lcom/htc/widget/DecorFlow;->mDownTouchView:Landroid/view/View;
 
@@ -1040,7 +1040,7 @@
 
     .line 830
     .local v3, itemSpacing:I
-    iget v5, p0, Lcom/htc/widget/DecorFlow;->mPaddingLeft:I
+    iget v5, p0, Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
 
     iget v6, p0, Lcom/htc/widget/DecorFlow;->EXPAND_UNIT:I
 
@@ -1057,7 +1057,7 @@
     if-eqz v4, :cond_0
 
     .line 838
-    iget v5, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iget v5, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     add-int/lit8 v0, v5, -0x1
 
@@ -1077,7 +1077,7 @@
     if-ltz v0, :cond_1
 
     .line 848
-    iget v5, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v5, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     sub-int v5, v0, v5
 
@@ -1086,7 +1086,7 @@
     move-result-object v4
 
     .line 852
-    iput v0, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iput v0, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     .line 855
     invoke-virtual {v4}, Landroid/view/View;->getLeft()I
@@ -1108,13 +1108,13 @@
 
     .line 843
     .restart local v0       #curPosition:I
-    iget v5, p0, Lcom/htc/widget/DecorFlow;->mRight:I
+    iget v5, p0, Lcom/htc/widget/AdapterView;->mRight:I
 
-    iget v6, p0, Lcom/htc/widget/DecorFlow;->mLeft:I
+    iget v6, p0, Lcom/htc/widget/AdapterView;->mLeft:I
 
     sub-int/2addr v5, v6
 
-    iget v6, p0, Lcom/htc/widget/DecorFlow;->mPaddingRight:I
+    iget v6, p0, Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
 
     sub-int v1, v5, v6
 
@@ -1142,13 +1142,13 @@
 
     .line 862
     .local v3, itemSpacing:I
-    iget v7, p0, Lcom/htc/widget/DecorFlow;->mRight:I
+    iget v7, p0, Lcom/htc/widget/AdapterView;->mRight:I
 
-    iget v8, p0, Lcom/htc/widget/DecorFlow;->mLeft:I
+    iget v8, p0, Lcom/htc/widget/AdapterView;->mLeft:I
 
     sub-int/2addr v7, v8
 
-    iget v8, p0, Lcom/htc/widget/DecorFlow;->mPaddingRight:I
+    iget v8, p0, Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
 
     sub-int/2addr v7, v8
 
@@ -1164,7 +1164,7 @@
 
     .line 864
     .local v4, numChildren:I
-    iget v5, p0, Lcom/htc/widget/DecorFlow;->mItemCount:I
+    iget v5, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     .line 867
     .local v5, numItems:I
@@ -1179,7 +1179,7 @@
     if-eqz v6, :cond_0
 
     .line 872
-    iget v7, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iget v7, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     add-int v1, v7, v4
 
@@ -1199,7 +1199,7 @@
     if-ge v1, v5, :cond_1
 
     .line 881
-    iget v7, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v7, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     sub-int v7, v1, v7
 
@@ -1223,15 +1223,15 @@
     .end local v0           #curLeftEdge:I
     .end local v1           #curPosition:I
     :cond_0
-    iget v7, p0, Lcom/htc/widget/DecorFlow;->mItemCount:I
+    iget v7, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     add-int/lit8 v1, v7, -0x1
 
     .restart local v1       #curPosition:I
-    iput v1, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iput v1, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     .line 876
-    iget v0, p0, Lcom/htc/widget/DecorFlow;->mPaddingLeft:I
+    iget v0, p0, Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
 
     .line 877
     .restart local v0       #curLeftEdge:I
@@ -1888,12 +1888,12 @@
 
     .prologue
     .line 910
-    iget-boolean v3, p0, Lcom/htc/widget/DecorFlow;->mDataChanged:Z
+    iget-boolean v3, p0, Lcom/htc/widget/AdapterView;->mDataChanged:Z
 
     if-nez v3, :cond_0
 
     .line 911
-    iget-object v3, p0, Lcom/htc/widget/DecorFlow;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
+    iget-object v3, p0, Lcom/htc/widget/AbsSpinner;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
 
     invoke-virtual {v3, p1}, Lcom/htc/widget/AbsSpinner$RecycleBin;->get(I)Landroid/view/View;
 
@@ -1948,7 +1948,7 @@
     .line 929
     .end local v1           #child:Landroid/view/View;
     :cond_0
-    iget-object v3, p0, Lcom/htc/widget/DecorFlow;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v3, p0, Lcom/htc/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     const/4 v4, 0x0
 
@@ -2333,13 +2333,13 @@
     .line 745
     .end local v0           #child:Landroid/view/View;
     :cond_3
-    iget v8, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iget v8, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     add-int v5, v8, v6
 
     .line 747
     .local v5, newPos:I
-    iget v8, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v8, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     if-eq v5, v8, :cond_0
 
@@ -2445,19 +2445,19 @@
     invoke-virtual {p1, v8}, Landroid/view/View;->setSelected(Z)V
 
     .line 964
-    iget v8, p0, Lcom/htc/widget/DecorFlow;->mHeightMeasureSpec:I
+    iget v8, p0, Lcom/htc/widget/AbsSpinner;->mHeightMeasureSpec:I
 
-    iget-object v9, p0, Lcom/htc/widget/DecorFlow;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->top:I
 
-    iget-object v10, p0, Lcom/htc/widget/DecorFlow;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->bottom:I
 
     add-int/2addr v9, v10
 
-    iget v10, v6, Lcom/htc/widget/DecorFlow$LayoutParams;->height:I
+    iget v10, v6, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-static {v8, v9, v10}, Landroid/view/ViewGroup;->getChildMeasureSpec(III)I
 
@@ -2465,19 +2465,19 @@
 
     .line 966
     .local v1, childHeightSpec:I
-    iget v8, p0, Lcom/htc/widget/DecorFlow;->mWidthMeasureSpec:I
+    iget v8, p0, Lcom/htc/widget/AbsSpinner;->mWidthMeasureSpec:I
 
-    iget-object v9, p0, Lcom/htc/widget/DecorFlow;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->left:I
 
-    iget-object v10, p0, Lcom/htc/widget/DecorFlow;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->right:I
 
     add-int/2addr v9, v10
 
-    iget v10, v6, Lcom/htc/widget/DecorFlow$LayoutParams;->width:I
+    iget v10, v6, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     invoke-static {v8, v9, v10}, Landroid/view/ViewGroup;->getChildMeasureSpec(III)I
 
@@ -2576,9 +2576,9 @@
 
     .line 1407
     .local v1, oldSelectedChild:Landroid/view/View;
-    iget v2, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
-    iget v3, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v2, v3
 
@@ -2655,7 +2655,7 @@
 
     .prologue
     .line 423
-    iget v0, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     return v0
 .end method
@@ -2665,7 +2665,7 @@
 
     .prologue
     .line 429
-    iget v0, p0, Lcom/htc/widget/DecorFlow;->mItemCount:I
+    iget v0, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     return v0
 .end method
@@ -2904,17 +2904,17 @@
 
     move-result v0
 
-    iget v1, p0, Lcom/htc/widget/DecorFlow;->mPaddingLeft:I
+    iget v1, p0, Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
 
     sub-int/2addr v0, v1
 
-    iget v1, p0, Lcom/htc/widget/DecorFlow;->mPaddingRight:I
+    iget v1, p0, Lcom/htc/widget/AbsSpinner;->mPaddingRight:I
 
     sub-int/2addr v0, v1
 
     div-int/lit8 v0, v0, 0x2
 
-    iget v1, p0, Lcom/htc/widget/DecorFlow;->mPaddingLeft:I
+    iget v1, p0, Lcom/htc/widget/AbsSpinner;->mPaddingLeft:I
 
     add-int/2addr v0, v1
 
@@ -3608,14 +3608,14 @@
     .line 515
     if-eqz p1, :cond_0
 
-    iget v6, p0, Lcom/htc/widget/DecorFlow;->mItemCount:I
+    iget v6, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     add-int/lit8 v3, v6, -0x1
 
     .line 516
     .local v3, extremeItemPosition:I
     :goto_0
-    iget v6, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iget v6, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int v6, v3, v6
 
@@ -3782,25 +3782,25 @@
     const/4 v6, 0x0
 
     .line 767
-    iget-object v4, p0, Lcom/htc/widget/DecorFlow;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v0, v4, Landroid/graphics/Rect;->left:I
 
     .line 768
     .local v0, childrenLeft:I
-    iget v4, p0, Lcom/htc/widget/DecorFlow;->mRight:I
+    iget v4, p0, Lcom/htc/widget/AdapterView;->mRight:I
 
-    iget v5, p0, Lcom/htc/widget/DecorFlow;->mLeft:I
+    iget v5, p0, Lcom/htc/widget/AdapterView;->mLeft:I
 
     sub-int/2addr v4, v5
 
-    iget-object v5, p0, Lcom/htc/widget/DecorFlow;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v4, v5
 
-    iget-object v5, p0, Lcom/htc/widget/DecorFlow;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/htc/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->right:I
 
@@ -3808,7 +3808,7 @@
 
     .line 770
     .local v1, childrenWidth:I
-    iget-boolean v4, p0, Lcom/htc/widget/DecorFlow;->mDataChanged:Z
+    iget-boolean v4, p0, Lcom/htc/widget/AdapterView;->mDataChanged:Z
 
     if-eqz v4, :cond_0
 
@@ -3817,7 +3817,7 @@
 
     .line 775
     :cond_0
-    iget v4, p0, Lcom/htc/widget/DecorFlow;->mItemCount:I
+    iget v4, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     if-nez v4, :cond_1
 
@@ -3830,12 +3830,12 @@
 
     .line 781
     :cond_1
-    iget v4, p0, Lcom/htc/widget/DecorFlow;->mNextSelectedPosition:I
+    iget v4, p0, Lcom/htc/widget/AdapterView;->mNextSelectedPosition:I
 
     if-ltz v4, :cond_2
 
     .line 782
-    iget v4, p0, Lcom/htc/widget/DecorFlow;->mNextSelectedPosition:I
+    iget v4, p0, Lcom/htc/widget/AdapterView;->mNextSelectedPosition:I
 
     invoke-virtual {p0, v4}, Lcom/htc/widget/DecorFlow;->setSelectedPositionInt(I)V
 
@@ -3853,12 +3853,12 @@
     iput v6, p0, Lcom/htc/widget/DecorFlow;->mLeftMost:I
 
     .line 805
-    iget v4, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v4, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
-    iput v4, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iput v4, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     .line 806
-    iget v4, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v4, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     const/4 v5, 0x1
 
@@ -3891,7 +3891,7 @@
     invoke-direct {p0}, Lcom/htc/widget/DecorFlow;->fillToGalleryLeft()V
 
     .line 816
-    iget-object v4, p0, Lcom/htc/widget/DecorFlow;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
+    iget-object v4, p0, Lcom/htc/widget/AbsSpinner;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
 
     invoke-virtual {v4}, Lcom/htc/widget/AbsSpinner$RecycleBin;->clear()V
 
@@ -3902,13 +3902,13 @@
     invoke-virtual {p0}, Lcom/htc/widget/DecorFlow;->checkSelectionChanged()V
 
     .line 821
-    iput-boolean v6, p0, Lcom/htc/widget/DecorFlow;->mDataChanged:Z
+    iput-boolean v6, p0, Lcom/htc/widget/AdapterView;->mDataChanged:Z
 
     .line 822
-    iput-boolean v6, p0, Lcom/htc/widget/DecorFlow;->mNeedSync:Z
+    iput-boolean v6, p0, Lcom/htc/widget/AdapterView;->mNeedSync:Z
 
     .line 823
-    iget v4, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v4, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     invoke-virtual {p0, v4}, Lcom/htc/widget/DecorFlow;->setNextSelectedPositionInt(I)V
 
@@ -3923,22 +3923,22 @@
 
     .prologue
     .line 1375
-    iget v0, p0, Lcom/htc/widget/DecorFlow;->mItemCount:I
+    iget v0, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     if-lez v0, :cond_0
 
-    iget v0, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
-    iget v1, p0, Lcom/htc/widget/DecorFlow;->mItemCount:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     add-int/lit8 v1, v1, -0x1
 
     if-ge v0, v1, :cond_0
 
     .line 1376
-    iget v0, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
-    iget v1, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v0, v1
 
@@ -3964,18 +3964,18 @@
 
     .prologue
     .line 1366
-    iget v0, p0, Lcom/htc/widget/DecorFlow;->mItemCount:I
+    iget v0, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     if-lez v0, :cond_0
 
-    iget v0, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     if-lez v0, :cond_0
 
     .line 1367
-    iget v0, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v0, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
-    iget v1, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v0, v1
 
@@ -4048,7 +4048,7 @@
     .line 1144
     iget v0, p0, Lcom/htc/widget/DecorFlow;->mDownTouchPosition:I
 
-    iget v1, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v0, v1
 
@@ -4234,7 +4234,7 @@
     if-eqz v1, :cond_0
 
     .line 1340
-    iget v1, p0, Lcom/htc/widget/DecorFlow;->mItemCount:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mItemCount:I
 
     if-lez v1, :cond_0
 
@@ -4257,9 +4257,9 @@
     invoke-virtual {p0, v1, v2, v3}, Lcom/htc/widget/DecorFlow;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 1349
-    iget v1, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
-    iget v2, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iget v2, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int v0, v1, v2
 
@@ -4269,11 +4269,11 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
-    iget-object v3, p0, Lcom/htc/widget/DecorFlow;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v3, p0, Lcom/htc/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
-    iget v4, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v4, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     invoke-interface {v3, v4}, Landroid/widget/SpinnerAdapter;->getItemId(I)J
 
@@ -4318,13 +4318,13 @@
     .line 464
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/htc/widget/DecorFlow;->mInLayout:Z
+    iput-boolean v0, p0, Lcom/htc/widget/AdapterView;->mInLayout:Z
 
     .line 465
     invoke-virtual {p0, v1, v1}, Lcom/htc/widget/DecorFlow;->layout(IZ)V
 
     .line 466
-    iput-boolean v1, p0, Lcom/htc/widget/DecorFlow;->mInLayout:Z
+    iput-boolean v1, p0, Lcom/htc/widget/AdapterView;->mInLayout:Z
 
     .line 467
     return-void
@@ -4353,7 +4353,7 @@
 
     iget v2, p0, Lcom/htc/widget/DecorFlow;->mDownTouchPosition:I
 
-    iget v3, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v3, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     if-ne v2, v3, :cond_0
 
@@ -4508,7 +4508,7 @@
     .line 1044
     iget v0, p0, Lcom/htc/widget/DecorFlow;->mDownTouchPosition:I
 
-    iget v1, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int/2addr v0, v1
 
@@ -4521,7 +4521,7 @@
 
     iget v0, p0, Lcom/htc/widget/DecorFlow;->mDownTouchPosition:I
 
-    iget v1, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v1, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     if-ne v0, v1, :cond_1
 
@@ -4531,7 +4531,7 @@
 
     iget v1, p0, Lcom/htc/widget/DecorFlow;->mDownTouchPosition:I
 
-    iget-object v2, p0, Lcom/htc/widget/DecorFlow;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v2, p0, Lcom/htc/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     iget v3, p0, Lcom/htc/widget/DecorFlow;->mDownTouchPosition:I
 
@@ -4885,14 +4885,14 @@
 
     if-eqz v2, :cond_0
 
-    iget v2, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
     if-ltz v2, :cond_0
 
     .line 1270
-    iget v2, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
-    iget v3, p0, Lcom/htc/widget/DecorFlow;->mFirstPosition:I
+    iget v3, p0, Lcom/htc/widget/AdapterView;->mFirstPosition:I
 
     sub-int v0, v2, v3
 
@@ -4904,9 +4904,9 @@
 
     .line 1272
     .local v1, v:Landroid/view/View;
-    iget v2, p0, Lcom/htc/widget/DecorFlow;->mSelectedPosition:I
+    iget v2, p0, Lcom/htc/widget/AdapterView;->mSelectedPosition:I
 
-    iget-wide v3, p0, Lcom/htc/widget/DecorFlow;->mSelectedRowId:J
+    iget-wide v3, p0, Lcom/htc/widget/AdapterView;->mSelectedRowId:J
 
     invoke-direct {p0, v1, v2, v3, v4}, Lcom/htc/widget/DecorFlow;->dispatchLongPress(Landroid/view/View;IJ)Z
 
@@ -4947,7 +4947,7 @@
 
     .line 1262
     :cond_0
-    iget-object v3, p0, Lcom/htc/widget/DecorFlow;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v3, p0, Lcom/htc/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     invoke-interface {v3, v2}, Landroid/widget/SpinnerAdapter;->getItemId(I)J
 
@@ -5021,7 +5021,7 @@
 
     .line 507
     :goto_2
-    iget-object v2, p0, Lcom/htc/widget/DecorFlow;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
+    iget-object v2, p0, Lcom/htc/widget/AbsSpinner;->mRecycler:Lcom/htc/widget/AbsSpinner$RecycleBin;
 
     invoke-virtual {v2}, Lcom/htc/widget/AbsSpinner$RecycleBin;->clear()V
 

@@ -58,7 +58,7 @@
     const/4 v0, 0x1
 
     .line 89
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 90
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -142,7 +142,7 @@
     const/4 v1, 0x0
 
     .line 79
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 80
     iput-object p1, p0, Landroid/accounts/AuthenticatorDescription;->type:Ljava/lang/String;
@@ -216,7 +216,7 @@
 
     .prologue
     .line 52
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 53
     if-nez p1, :cond_0

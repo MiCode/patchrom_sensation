@@ -62,7 +62,7 @@
     .line 2215
     iput-object p1, p0, Lcom/htc/view/table/AbstractTableView$RecycleBin;->this$0:Lcom/htc/view/table/AbstractTableView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 2229
     const/4 v0, 0x0

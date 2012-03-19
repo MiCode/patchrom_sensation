@@ -308,7 +308,7 @@
     invoke-virtual {v8, v3}, Lcom/htc/widget/HeaderBarText;->setPrimaryVisibility(I)V
 
     .line 104
-    const v0, 0x7f080078
+    const v0, 0x7f080079
 
     invoke-virtual {p0, v0}, Lcom/android/phone/prefernetwork/OperatorSelectActivity;->findViewById(I)Landroid/view/View;
 
@@ -349,7 +349,7 @@
 
     .line 114
     :cond_0
-    const v0, 0x7f080079
+    const v0, 0x7f080078
 
     invoke-virtual {p0, v0}, Lcom/android/phone/prefernetwork/OperatorSelectActivity;->findViewById(I)Landroid/view/View;
 

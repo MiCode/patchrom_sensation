@@ -29,7 +29,7 @@
     const/high16 v1, 0x3f80
 
     .line 66
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 32
     new-instance v0, Lcom/htc/sunny/Vector3F;

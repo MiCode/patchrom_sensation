@@ -43,7 +43,7 @@
 
     const/4 v1, -0x1
 
-    #setter for: Lcom/android/internal/database/SortCursor;->mPos:I
+    #setter for: Landroid/database/AbstractCursor;->mPos:I
     invoke-static {v0, v1}, Lcom/android/internal/database/SortCursor;->access$002(Lcom/android/internal/database/SortCursor;I)I
 
     .line 47
@@ -59,7 +59,7 @@
 
     const/4 v1, -0x1
 
-    #setter for: Lcom/android/internal/database/SortCursor;->mPos:I
+    #setter for: Landroid/database/AbstractCursor;->mPos:I
     invoke-static {v0, v1}, Lcom/android/internal/database/SortCursor;->access$102(Lcom/android/internal/database/SortCursor;I)I
 
     .line 52

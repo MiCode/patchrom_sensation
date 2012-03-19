@@ -30,7 +30,7 @@
     .line 267
     iput-object p1, p0, Lcom/android/phone/NetworkSimLock$5;->this$0:Lcom/android/phone/NetworkSimLock;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

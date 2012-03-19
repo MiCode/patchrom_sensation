@@ -81,7 +81,7 @@
     .line 21
     const/16 v0, 0xf
 
-    iput v0, p0, Lcom/htc/weather/animations/Anim08;->shift_x_:I
+    iput v0, p0, Lcom/htc/weather/animations/WeatherAnimationData;->shift_x_:I
 
     .line 22
     return-void

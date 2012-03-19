@@ -84,7 +84,7 @@
 
     iget-object v4, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    iget-object v4, v4, Lcom/htc/widget/BouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v4, v4, Lcom/htc/widget/HtcAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->top:I
 
@@ -137,7 +137,7 @@
 
     iget-object v4, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    iget-object v4, v4, Lcom/htc/widget/BouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v4, v4, Lcom/htc/widget/HtcAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->bottom:I
 
@@ -202,7 +202,7 @@
 
     iget-object v4, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    iget-object v4, v4, Lcom/htc/widget/BouncingGridView;->mListPadding:Landroid/graphics/Rect;
+    iget-object v4, v4, Lcom/htc/widget/HtcAbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->top:I
 
@@ -246,7 +246,7 @@
 
     const/4 v4, -0x1
 
-    iput v4, v3, Lcom/htc/widget/BouncingGridView;->mTouchMode:I
+    iput v4, v3, Lcom/htc/widget/HtcAbsListView;->mTouchMode:I
 
     .line 397
     iget-object v3, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
@@ -276,7 +276,7 @@
     .line 299
     iget-object v8, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    iget v8, v8, Lcom/htc/widget/BouncingGridView;->mTouchMode:I
+    iget v8, v8, Lcom/htc/widget/HtcAbsListView;->mTouchMode:I
 
     const/4 v9, 0x4
 
@@ -290,7 +290,7 @@
     :cond_0
     iget-object v8, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    iget v8, v8, Lcom/htc/widget/BouncingGridView;->mItemCount:I
+    iget v8, v8, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     if-eqz v8, :cond_1
 
@@ -332,7 +332,7 @@
 
     .line 314
     :cond_3
-    iget-object v6, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->mScroller:Lcom/htc/widget/HtcScroller;
+    iget-object v6, p0, Lcom/htc/widget/HtcAbsListView$FlingRunnable;->mScroller:Lcom/htc/widget/HtcScroller;
 
     .line 315
     .local v6, scroller:Lcom/htc/widget/HtcScroller;
@@ -348,7 +348,7 @@
 
     .line 321
     .local v7, y:I
-    iget v8, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->mLastFlingY:I
+    iget v8, p0, Lcom/htc/widget/HtcAbsListView$FlingRunnable;->mLastFlingY:I
 
     sub-int v0, v8, v7
 
@@ -361,9 +361,9 @@
 
     iget-object v9, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    iget v9, v9, Lcom/htc/widget/BouncingGridView;->mFirstPosition:I
+    iget v9, v9, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
-    iput v9, v8, Lcom/htc/widget/BouncingGridView;->mMotionPosition:I
+    iput v9, v8, Lcom/htc/widget/HtcAbsListView;->mMotionPosition:I
 
     .line 328
     iget-object v8, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
@@ -380,7 +380,7 @@
 
     move-result v9
 
-    iput v9, v8, Lcom/htc/widget/BouncingGridView;->mMotionViewOriginalTop:I
+    iput v9, v8, Lcom/htc/widget/HtcAbsListView;->mMotionViewOriginalTop:I
 
     .line 332
     iget-object v8, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
@@ -391,7 +391,7 @@
 
     iget-object v9, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    #getter for: Lcom/htc/widget/BouncingGridView;->mPaddingBottom:I
+    #getter for: Lcom/htc/widget/HtcAbsListView;->mPaddingBottom:I
     invoke-static {v9}, Lcom/htc/widget/BouncingGridView;->access$200(Lcom/htc/widget/BouncingGridView;)I
 
     move-result v9
@@ -400,7 +400,7 @@
 
     iget-object v9, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    #getter for: Lcom/htc/widget/BouncingGridView;->mPaddingTop:I
+    #getter for: Lcom/htc/widget/HtcAbsListView;->mPaddingTop:I
     invoke-static {v9}, Lcom/htc/widget/BouncingGridView;->access$300(Lcom/htc/widget/BouncingGridView;)I
 
     move-result v9
@@ -418,14 +418,14 @@
     :goto_1
     iget-object v8, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    iget-object v8, v8, Lcom/htc/widget/BouncingGridView;->mSelectionMethod:Landroid/text/method/TextSelectionMovementMethod;
+    iget-object v8, v8, Lcom/htc/widget/HtcAbsListView;->mSelectionMethod:Landroid/text/method/TextSelectionMovementMethod;
 
     if-eqz v8, :cond_4
 
     .line 350
     iget-object v8, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    iget-object v8, v8, Lcom/htc/widget/BouncingGridView;->mSelectionMethod:Landroid/text/method/TextSelectionMovementMethod;
+    iget-object v8, v8, Lcom/htc/widget/HtcAbsListView;->mSelectionMethod:Landroid/text/method/TextSelectionMovementMethod;
 
     invoke-interface {v8, v10, v0, v10, v10}, Landroid/text/method/TextSelectionMovementMethod;->onScrollChanged(IIII)V
 
@@ -440,11 +440,11 @@
 
     iget-object v9, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    iget v9, v9, Lcom/htc/widget/BouncingGridView;->mMotionPosition:I
+    iget v9, v9, Lcom/htc/widget/HtcAbsListView;->mMotionPosition:I
 
     iget-object v10, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    iget v10, v10, Lcom/htc/widget/BouncingGridView;->mFirstPosition:I
+    iget v10, v10, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     sub-int/2addr v9, v10
 
@@ -463,7 +463,7 @@
 
     iget-object v9, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    iget v9, v9, Lcom/htc/widget/BouncingGridView;->mMotionViewNewTop:I
+    iget v9, v9, Lcom/htc/widget/HtcAbsListView;->mMotionViewNewTop:I
 
     if-eq v8, v9, :cond_5
 
@@ -475,7 +475,7 @@
     if-eqz v3, :cond_7
 
     .line 366
-    iput v7, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->mLastFlingY:I
+    iput v7, p0, Lcom/htc/widget/HtcAbsListView$FlingRunnable;->mLastFlingY:I
 
     .line 367
     iget-object v8, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
@@ -501,11 +501,11 @@
 
     iget-object v9, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    iget v9, v9, Lcom/htc/widget/BouncingGridView;->mFirstPosition:I
+    iget v9, v9, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     add-int/2addr v9, v5
 
-    iput v9, v8, Lcom/htc/widget/BouncingGridView;->mMotionPosition:I
+    iput v9, v8, Lcom/htc/widget/HtcAbsListView;->mMotionPosition:I
 
     .line 340
     iget-object v8, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
@@ -522,7 +522,7 @@
 
     move-result v9
 
-    iput v9, v8, Lcom/htc/widget/BouncingGridView;->mMotionViewOriginalTop:I
+    iput v9, v8, Lcom/htc/widget/HtcAbsListView;->mMotionViewOriginalTop:I
 
     .line 344
     iget-object v8, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
@@ -533,7 +533,7 @@
 
     iget-object v9, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    #getter for: Lcom/htc/widget/BouncingGridView;->mPaddingBottom:I
+    #getter for: Lcom/htc/widget/HtcAbsListView;->mPaddingBottom:I
     invoke-static {v9}, Lcom/htc/widget/BouncingGridView;->access$400(Lcom/htc/widget/BouncingGridView;)I
 
     move-result v9
@@ -542,7 +542,7 @@
 
     iget-object v9, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
 
-    #getter for: Lcom/htc/widget/BouncingGridView;->mPaddingTop:I
+    #getter for: Lcom/htc/widget/HtcAbsListView;->mPaddingTop:I
     invoke-static {v9}, Lcom/htc/widget/BouncingGridView;->access$500(Lcom/htc/widget/BouncingGridView;)I
 
     move-result v9
@@ -659,12 +659,12 @@
 
     .line 251
     :cond_0
-    iput v1, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->mLastFlingY:I
+    iput v1, p0, Lcom/htc/widget/HtcAbsListView$FlingRunnable;->mLastFlingY:I
 
     .line 252
-    iget-object v0, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->mScroller:Lcom/htc/widget/HtcScroller;
+    iget-object v0, p0, Lcom/htc/widget/HtcAbsListView$FlingRunnable;->mScroller:Lcom/htc/widget/HtcScroller;
 
-    iget v2, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->mLastFlingY:I
+    iget v2, p0, Lcom/htc/widget/HtcAbsListView$FlingRunnable;->mLastFlingY:I
 
     const/16 v5, 0x1f4
 
@@ -679,7 +679,7 @@
 
     const/4 v1, 0x4
 
-    iput v1, v0, Lcom/htc/widget/BouncingGridView;->mTouchMode:I
+    iput v1, v0, Lcom/htc/widget/HtcAbsListView;->mTouchMode:I
 
     .line 254
     iget-object v0, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;
@@ -725,7 +725,7 @@
     const/4 v1, 0x0
 
     .line 281
-    iput v1, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->mLastFlingY:I
+    iput v1, p0, Lcom/htc/widget/HtcAbsListView$FlingRunnable;->mLastFlingY:I
 
     .line 282
     invoke-static {}, Lcom/htc/widget/BouncingGridView;->access$000()Z
@@ -758,9 +758,9 @@
 
     .line 283
     :cond_0
-    iget-object v0, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->mScroller:Lcom/htc/widget/HtcScroller;
+    iget-object v0, p0, Lcom/htc/widget/HtcAbsListView$FlingRunnable;->mScroller:Lcom/htc/widget/HtcScroller;
 
-    iget v2, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->mLastFlingY:I
+    iget v2, p0, Lcom/htc/widget/HtcAbsListView$FlingRunnable;->mLastFlingY:I
 
     invoke-static {p1}, Ljava/lang/Math;->abs(I)I
 
@@ -783,7 +783,7 @@
 
     const/4 v1, 0x4
 
-    iput v1, v0, Lcom/htc/widget/BouncingGridView;->mTouchMode:I
+    iput v1, v0, Lcom/htc/widget/HtcAbsListView;->mTouchMode:I
 
     .line 285
     iget-object v0, p0, Lcom/htc/widget/BouncingGridView$BouncingFlingRunnable;->this$0:Lcom/htc/widget/BouncingGridView;

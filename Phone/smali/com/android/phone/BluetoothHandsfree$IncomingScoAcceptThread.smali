@@ -30,20 +30,20 @@
     .parameter
 
     .prologue
-    .line 364
+    .line 367
     iput-object p1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 362
+    .line 365
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->stopped:Z
 
-    .line 365
+    .line 369
     const/4 v1, 0x0
 
-    .line 367
+    .line 371
     .local v1, serverSocket:Landroid/bluetooth/BluetoothServerSocket;
     :try_start_0
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->listenUsingScoOn()Landroid/bluetooth/BluetoothServerSocket;
@@ -52,18 +52,18 @@
 
     move-result-object v1
 
-    .line 372
+    .line 376
     :goto_0
     iput-object v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->mIncomingServerSocket:Landroid/bluetooth/BluetoothServerSocket;
 
-    .line 373
+    .line 377
     return-void
 
-    .line 368
+    .line 372
     :catch_0
     move-exception v0
 
-    .line 369
+    .line 373
     .local v0, e:Ljava/io/IOException;
     const-string v2, "Bluetooth HS/HF"
 
@@ -71,7 +71,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 370
+    .line 374
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->stopped:Z
@@ -83,12 +83,12 @@
     .locals 6
 
     .prologue
-    .line 391
+    .line 408
     iget-object v2, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     monitor-enter v2
 
-    .line 392
+    .line 410
     :try_start_0
     invoke-static {}, Ljava/lang/Thread;->interrupted()Z
 
@@ -132,14 +132,14 @@
 
     if-nez v1, :cond_2
 
-    .line 395
+    .line 413
     const-string v1, "Bluetooth HS/HF"
 
     const-string v3, "Routing audio for incoming SCO connection"
 
     invoke-static {v1, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 396
+    .line 414
     iget-object v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     iget-object v3, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->mIncomingSco:Landroid/bluetooth/BluetoothSocket;
@@ -147,7 +147,7 @@
     #setter for: Lcom/android/phone/BluetoothHandsfree;->mConnectedSco:Landroid/bluetooth/BluetoothSocket;
     invoke-static {v1, v3}, Lcom/android/phone/BluetoothHandsfree;->access$502(Lcom/android/phone/BluetoothHandsfree;Landroid/bluetooth/BluetoothSocket;)Landroid/bluetooth/BluetoothSocket;
 
-    .line 397
+    .line 415
     iget-object v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #getter for: Lcom/android/phone/BluetoothHandsfree;->mAudioManager:Landroid/media/AudioManager;
@@ -159,7 +159,7 @@
 
     invoke-virtual {v1, v3}, Landroid/media/AudioManager;->setBluetoothScoOn(Z)V
 
-    .line 398
+    .line 416
     iget-object v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     const/16 v3, 0xc
@@ -178,7 +178,7 @@
     #calls: Lcom/android/phone/BluetoothHandsfree;->setAudioState(ILandroid/bluetooth/BluetoothDevice;)V
     invoke-static {v1, v3, v4}, Lcom/android/phone/BluetoothHandsfree;->access$800(Lcom/android/phone/BluetoothHandsfree;ILandroid/bluetooth/BluetoothDevice;)V
 
-    .line 401
+    .line 419
     iget-object v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #getter for: Lcom/android/phone/BluetoothHandsfree;->mSignalScoCloseThread:Lcom/android/phone/BluetoothHandsfree$SignalScoCloseThread;
@@ -188,7 +188,7 @@
 
     if-nez v1, :cond_1
 
-    .line 402
+    .line 420
     iget-object v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     new-instance v3, Lcom/android/phone/BluetoothHandsfree$SignalScoCloseThread;
@@ -202,7 +202,7 @@
     #setter for: Lcom/android/phone/BluetoothHandsfree;->mSignalScoCloseThread:Lcom/android/phone/BluetoothHandsfree$SignalScoCloseThread;
     invoke-static {v1, v3}, Lcom/android/phone/BluetoothHandsfree;->access$902(Lcom/android/phone/BluetoothHandsfree;Lcom/android/phone/BluetoothHandsfree$SignalScoCloseThread;)Lcom/android/phone/BluetoothHandsfree$SignalScoCloseThread;
 
-    .line 403
+    .line 421
     iget-object v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #getter for: Lcom/android/phone/BluetoothHandsfree;->mSignalScoCloseThread:Lcom/android/phone/BluetoothHandsfree$SignalScoCloseThread;
@@ -214,7 +214,7 @@
 
     invoke-virtual {v1, v3}, Lcom/android/phone/BluetoothHandsfree$SignalScoCloseThread;->setName(Ljava/lang/String;)V
 
-    .line 404
+    .line 422
     iget-object v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     #getter for: Lcom/android/phone/BluetoothHandsfree;->mSignalScoCloseThread:Lcom/android/phone/BluetoothHandsfree$SignalScoCloseThread;
@@ -224,15 +224,15 @@
 
     invoke-virtual {v1}, Lcom/android/phone/BluetoothHandsfree$SignalScoCloseThread;->start()V
 
-    .line 415
+    .line 433
     :cond_1
     :goto_0
     monitor-exit v2
 
-    .line 416
+    .line 434
     return-void
 
-    .line 407
+    .line 425
     :cond_2
     const-string v1, "Bluetooth HS/HF"
 
@@ -242,7 +242,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 409
+    .line 427
     :try_start_1
     iget-object v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->mIncomingSco:Landroid/bluetooth/BluetoothSocket;
 
@@ -251,7 +251,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 413
+    .line 431
     :goto_1
     const/4 v1, 0x0
 
@@ -260,7 +260,7 @@
 
     goto :goto_0
 
-    .line 415
+    .line 433
     :catchall_0
     move-exception v1
 
@@ -270,11 +270,11 @@
 
     throw v1
 
-    .line 410
+    .line 428
     :catch_0
     move-exception v0
 
-    .line 411
+    .line 429
     .local v0, e:Ljava/io/IOException;
     :try_start_3
     const-string v1, "Bluetooth HS/HF"
@@ -288,20 +288,52 @@
     goto :goto_1
 .end method
 
+.method private delay(I)V
+    .locals 3
+    .parameter "ms"
+
+    .prologue
+    .line 401
+    int-to-long v1, p1
+
+    :try_start_0
+    invoke-static {v1, v2}, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->sleep(J)V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 405
+    :goto_0
+    return-void
+
+    .line 402
+    :catch_0
+    move-exception v0
+
+    .line 403
+    .local v0, e:Ljava/lang/InterruptedException;
+    const-string v1, "Bluetooth HS/HF"
+
+    const-string v2, "thread is interrupted!"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+.end method
+
 
 # virtual methods
 .method public run()V
     .locals 3
 
     .prologue
-    .line 377
+    .line 382
     :cond_0
     :goto_0
     iget-boolean v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->stopped:Z
 
     if-nez v1, :cond_1
 
-    .line 379
+    .line 385
     :try_start_0
     iget-object v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->mIncomingServerSocket:Landroid/bluetooth/BluetoothServerSocket;
 
@@ -313,22 +345,22 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 384
+    .line 392
     :goto_1
     iget-object v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->mIncomingSco:Landroid/bluetooth/BluetoothSocket;
 
     if-eqz v1, :cond_0
 
-    .line 385
+    .line 393
     invoke-direct {p0}, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->connectSco()V
 
     goto :goto_0
 
-    .line 380
+    .line 387
     :catch_0
     move-exception v0
 
-    .line 381
+    .line 388
     .local v0, e:Ljava/io/IOException;
     const-string v1, "Bluetooth HS/HF"
 
@@ -336,9 +368,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 389
+    const/16 v1, 0x3e8
+
+    invoke-direct {p0, v1}, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->delay(I)V
+
     goto :goto_1
 
-    .line 388
+    .line 397
     .end local v0           #e:Ljava/io/IOException;
     :cond_1
     return-void
@@ -348,36 +385,43 @@
     .locals 3
 
     .prologue
-    .line 421
+    .line 439
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->stopped:Z
+
+    .line 441
     iget-object v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->mIncomingServerSocket:Landroid/bluetooth/BluetoothServerSocket;
 
     if-eqz v1, :cond_0
 
-    .line 423
+    .line 443
     :try_start_0
+    const-string v1, "Bluetooth HS/HF"
+
+    const-string v2, "shutdown(): Calling mIncomingServerSocket.close()"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 444
     iget-object v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->mIncomingServerSocket:Landroid/bluetooth/BluetoothServerSocket;
 
     invoke-virtual {v1}, Landroid/bluetooth/BluetoothServerSocket;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 430
+    .line 452
     :goto_0
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->stopped:Z
-
-    .line 431
     invoke-virtual {p0}, Lcom/android/phone/BluetoothHandsfree$IncomingScoAcceptThread;->interrupt()V
 
-    .line 432
+    .line 453
     return-void
 
-    .line 424
+    .line 445
     :catch_0
     move-exception v0
 
-    .line 425
+    .line 446
     .local v0, e:Ljava/io/IOException;
     const-string v1, "Bluetooth HS/HF"
 
@@ -387,7 +431,7 @@
 
     goto :goto_0
 
-    .line 428
+    .line 449
     .end local v0           #e:Ljava/io/IOException;
     :cond_0
     const-string v1, "Bluetooth HS/HF"

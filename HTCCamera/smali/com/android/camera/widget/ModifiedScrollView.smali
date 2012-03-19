@@ -2381,7 +2381,7 @@
 
     add-int/2addr v3, p3
 
-    iget v4, v2, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
+    iget v4, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     invoke-static {p2, v3, v4}, Lcom/android/camera/widget/ModifiedScrollView;->getChildMeasureSpec(III)I
 
@@ -2712,7 +2712,7 @@
 
     add-int/2addr v6, v7
 
-    iget v7, v5, Landroid/widget/FrameLayout$LayoutParams;->width:I
+    iget v7, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     invoke-static {p1, v6, v7}, Lcom/android/camera/widget/ModifiedScrollView;->getChildMeasureSpec(III)I
 

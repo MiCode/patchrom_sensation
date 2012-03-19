@@ -177,15 +177,15 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList;->mCursor:Landroid/database/Cursor;
+    iput-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     .line 6987
     :cond_2
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
 
@@ -396,10 +396,10 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList;->mCursor:Landroid/database/Cursor;
+    iput-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     .line 7020
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     if-nez v1, :cond_0
 
@@ -590,7 +590,7 @@
 
     .line 7064
     :cond_0
-    iget v1, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList;->mSort:I
+    iget v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mSort:I
 
     const/4 v2, 0x1
 
@@ -670,19 +670,19 @@
 
     .prologue
     .line 7116
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     if-eqz v0, :cond_0
 
     .line 7117
-    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     .line 7118
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList;->mCursor:Landroid/database/Cursor;
+    iput-object v0, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     .line 7120
     :cond_0
@@ -810,12 +810,12 @@
 
     if-eqz v1, :cond_2
 
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     if-eqz v1, :cond_2
 
     .line 7135
-    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$SingleImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v1}, Landroid/database/Cursor;->getCount()I
 

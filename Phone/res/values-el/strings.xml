@@ -236,8 +236,8 @@
     <string name="htc_preferred_network_global_mode">Παγκόσμια λειτουργία</string>
     <string name="htc_preferred_network_cdma_evdo_aut_mode">Λειτουργία CDMA</string>
     <string name="htc_preferred_network_gsm_wcdma_aut_mode">Λειτουργία GSM / UMTS</string>
-    <string name="htc_preferred_network_lte_mode">LTE Mode</string>
-    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM / UMTS / LTE Mode</string>
+    <string name="htc_preferred_network_lte_mode">Λειτουργία LTE</string>
+    <string name="htc_preferred_network_gsm_umts_lte_mode">Λειτουργία GSM/UMTS/LTE</string>
     <string name="title_gsm_preferred_network_options">Λειτουργία GSM / UMTS</string>
     <string name="btn_Menu_Edit">Επεξεργασία</string>
     <string name="btn_Menu_Set_Done">Τέλος</string>

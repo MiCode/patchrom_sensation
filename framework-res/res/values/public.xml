@@ -4036,17 +4036,6 @@
     <public type="string" name="font_settings" id="0x01040553" />
     <public type="string" name="font_alignment" id="0x01040554" />
     <public type="string" name="configure_input_methods_short" id="0x01040555" />
-    <public type="string" name="reboot_system" id="0x01040556" />
-    <public type="string" name="global_action_screenshot" id="0x01040557" />
-    <public type="string" name="reboot_reboot" id="0x01040558" />
-    <public type="string" name="reboot_recovery" id="0x01040559" />
-    <public type="string" name="reboot_bootloader" id="0x0104055a" />
-    <public type="string" name="reboot_bootmenu" id="0x0104055b" />
-    <public type="string" name="reboot_fastboot" id="0x0104055c" />
-    <public type="string" name="reboot_download" id="0x0104055d" />
-    <public type="string" name="reboot_progress" id="0x0104055e" />
-    <public type="string" name="reboot_confirm" id="0x0104055f" />
-    <public type="string" name="global_action_reboot" id="0x01040560" />
     <public type="dimen" name="app_icon_size" id="0x01050000" />
     <public type="dimen" name="thumbnail_height" id="0x01050001" />
     <public type="dimen" name="thumbnail_width" id="0x01050002" />
@@ -4342,12 +4331,6 @@
     <public type="color" name="tertiary_text_holo_light" id="0x01060077" />
     <public type="color" name="zzz_primary_text_dark_1" id="0x01060078" />
     <public type="color" name="zzz_secondary_text_dark_1" id="0x01060079" />
-    <public type="color" name="menu_text_color" id="0x0106007a" />
-    <public type="color" name="tab_text_color" id="0x0106007b" />
-    <public type="color" name="tab_pressed_text_color" id="0x0106007c" />
-    <public type="color" name="edit_text_color" id="0x0106007d" />
-    <public type="color" name="list_separator_foreground_holo_light" id="0x0106007e" />
-    <public type="color" name="listseparator_text_holo_light" id="0x0106007f" />
     <public type="array" name="emailAddressTypes" id="0x01070000" />
     <public type="array" name="imProtocols" id="0x01070001" />
     <public type="array" name="organizationTypes" id="0x01070002" />
@@ -4413,8 +4396,6 @@
     <public type="array" name="select_font_color_items" id="0x0107003e" />
     <public type="array" name="select_font_settings_items" id="0x0107003f" />
     <public type="array" name="select_font_alignment_items" id="0x01070040" />
-    <public type="array" name="shutdown_reboot_options" id="0x01070041" />
-    <public type="array" name="shutdown_reboot_actions" id="0x01070042" />
     <public type="drawable" name="background_holo_dark" id="0x010800c9" />
     <public type="drawable" name="background_holo_light" id="0x010800ca" />
     <public type="drawable" name="blank_tile" id="0x010800cc" />
@@ -4529,7 +4510,6 @@
     <public type="drawable" name="ic_btn_square_browser_zoom_page_overview" id="0x010802a5" />
     <public type="drawable" name="ic_clear" id="0x010802ad" />
     <public type="drawable" name="ic_clear_holo_light" id="0x010802af" />
-    <public type="drawable" name="APKTOOL_DUMMY_02b3" id="0x010802b3" />
     <public type="drawable" name="ic_lockscreen_answer" id="0x010802d3" />
     <public type="drawable" name="ic_lockscreen_camera" id="0x010802d7" />
     <public type="drawable" name="ic_lockscreen_decline" id="0x010802de" />
@@ -4646,7 +4626,6 @@
     <public type="drawable" name="switch_inner_holo_light" id="0x0108054e" />
     <public type="drawable" name="switch_track_holo_dark" id="0x01080557" />
     <public type="drawable" name="switch_track_holo_light" id="0x01080558" />
-    <public type="drawable" name="APKTOOL_DUMMY_055d" id="0x0108055d" />
     <public type="drawable" name="tab_bottom_left" id="0x01080575" />
     <public type="drawable" name="tab_bottom_left_v4" id="0x01080576" />
     <public type="drawable" name="tab_bottom_right" id="0x01080577" />
@@ -6295,192 +6274,13 @@
     <public type="drawable" name="zzzz_stat_notify_mobile_hotspot_suspended" id="0x01080751" />
     <public type="drawable" name="zzzz_stat_notify_wifi_router_in_range" id="0x01080752" />
     <public type="drawable" name="zzzz_stat_sys_wifi_router" id="0x01080753" />
-    <public type="drawable" name="ic_lock_reboot" id="0x0108075d" />
-    <public type="drawable" name="ic_lock_screenshot" id="0x0108075e" />
-    <public type="drawable" name="stat_sys_battery_11" id="0x0108075f" />
-    <public type="drawable" name="stat_sys_battery_12" id="0x01080760" />
-    <public type="drawable" name="stat_sys_battery_13" id="0x01080761" />
-    <public type="drawable" name="stat_sys_battery_14" id="0x01080762" />
-    <public type="drawable" name="stat_sys_battery_16" id="0x01080763" />
-    <public type="drawable" name="stat_sys_battery_17" id="0x01080764" />
-    <public type="drawable" name="stat_sys_battery_18" id="0x01080765" />
-    <public type="drawable" name="stat_sys_battery_19" id="0x01080766" />
-    <public type="drawable" name="stat_sys_battery_2" id="0x01080767" />
-    <public type="drawable" name="stat_sys_battery_21" id="0x01080768" />
-    <public type="drawable" name="stat_sys_battery_22" id="0x01080769" />
-    <public type="drawable" name="stat_sys_battery_23" id="0x0108076a" />
-    <public type="drawable" name="stat_sys_battery_24" id="0x0108076b" />
-    <public type="drawable" name="stat_sys_battery_25" id="0x0108076c" />
-    <public type="drawable" name="stat_sys_battery_26" id="0x0108076d" />
-    <public type="drawable" name="stat_sys_battery_27" id="0x0108076e" />
-    <public type="drawable" name="stat_sys_battery_29" id="0x0108076f" />
-    <public type="drawable" name="stat_sys_battery_3" id="0x01080770" />
-    <public type="drawable" name="stat_sys_battery_30" id="0x01080771" />
-    <public type="drawable" name="stat_sys_battery_31" id="0x01080772" />
-    <public type="drawable" name="stat_sys_battery_32" id="0x01080773" />
-    <public type="drawable" name="stat_sys_battery_33" id="0x01080774" />
-    <public type="drawable" name="stat_sys_battery_34" id="0x01080775" />
-    <public type="drawable" name="stat_sys_battery_35" id="0x01080776" />
-    <public type="drawable" name="stat_sys_battery_36" id="0x01080777" />
-    <public type="drawable" name="stat_sys_battery_37" id="0x01080778" />
-    <public type="drawable" name="stat_sys_battery_38" id="0x01080779" />
-    <public type="drawable" name="stat_sys_battery_39" id="0x0108077a" />
-    <public type="drawable" name="stat_sys_battery_4" id="0x0108077b" />
-    <public type="drawable" name="stat_sys_battery_41" id="0x0108077c" />
-    <public type="drawable" name="stat_sys_battery_42" id="0x0108077d" />
-    <public type="drawable" name="stat_sys_battery_44" id="0x0108077e" />
-    <public type="drawable" name="stat_sys_battery_45" id="0x0108077f" />
-    <public type="drawable" name="stat_sys_battery_46" id="0x01080780" />
-    <public type="drawable" name="stat_sys_battery_47" id="0x01080781" />
-    <public type="drawable" name="stat_sys_battery_48" id="0x01080782" />
-    <public type="drawable" name="stat_sys_battery_49" id="0x01080783" />
-    <public type="drawable" name="stat_sys_battery_5" id="0x01080784" />
-    <public type="drawable" name="stat_sys_battery_50" id="0x01080785" />
-    <public type="drawable" name="stat_sys_battery_51" id="0x01080786" />
-    <public type="drawable" name="stat_sys_battery_52" id="0x01080787" />
-    <public type="drawable" name="stat_sys_battery_53" id="0x01080788" />
-    <public type="drawable" name="stat_sys_battery_54" id="0x01080789" />
-    <public type="drawable" name="stat_sys_battery_55" id="0x0108078a" />
-    <public type="drawable" name="stat_sys_battery_56" id="0x0108078b" />
-    <public type="drawable" name="stat_sys_battery_58" id="0x0108078c" />
-    <public type="drawable" name="stat_sys_battery_59" id="0x0108078d" />
-    <public type="drawable" name="stat_sys_battery_6" id="0x0108078e" />
-    <public type="drawable" name="stat_sys_battery_61" id="0x0108078f" />
-    <public type="drawable" name="stat_sys_battery_62" id="0x01080790" />
-    <public type="drawable" name="stat_sys_battery_63" id="0x01080791" />
-    <public type="drawable" name="stat_sys_battery_64" id="0x01080792" />
-    <public type="drawable" name="stat_sys_battery_65" id="0x01080793" />
-    <public type="drawable" name="stat_sys_battery_66" id="0x01080794" />
-    <public type="drawable" name="stat_sys_battery_67" id="0x01080795" />
-    <public type="drawable" name="stat_sys_battery_68" id="0x01080796" />
-    <public type="drawable" name="stat_sys_battery_69" id="0x01080797" />
-    <public type="drawable" name="stat_sys_battery_7" id="0x01080798" />
-    <public type="drawable" name="stat_sys_battery_70" id="0x01080799" />
-    <public type="drawable" name="stat_sys_battery_72" id="0x0108079a" />
-    <public type="drawable" name="stat_sys_battery_73" id="0x0108079b" />
-    <public type="drawable" name="stat_sys_battery_74" id="0x0108079c" />
-    <public type="drawable" name="stat_sys_battery_75" id="0x0108079d" />
-    <public type="drawable" name="stat_sys_battery_76" id="0x0108079e" />
-    <public type="drawable" name="stat_sys_battery_77" id="0x0108079f" />
-    <public type="drawable" name="stat_sys_battery_78" id="0x010807a0" />
-    <public type="drawable" name="stat_sys_battery_79" id="0x010807a1" />
-    <public type="drawable" name="stat_sys_battery_8" id="0x010807a2" />
-    <public type="drawable" name="stat_sys_battery_81" id="0x010807a3" />
-    <public type="drawable" name="stat_sys_battery_82" id="0x010807a4" />
-    <public type="drawable" name="stat_sys_battery_83" id="0x010807a5" />
-    <public type="drawable" name="stat_sys_battery_84" id="0x010807a6" />
-    <public type="drawable" name="stat_sys_battery_86" id="0x010807a7" />
-    <public type="drawable" name="stat_sys_battery_87" id="0x010807a8" />
-    <public type="drawable" name="stat_sys_battery_88" id="0x010807a9" />
-    <public type="drawable" name="stat_sys_battery_89" id="0x010807aa" />
-    <public type="drawable" name="stat_sys_battery_9" id="0x010807ab" />
-    <public type="drawable" name="stat_sys_battery_90" id="0x010807ac" />
-    <public type="drawable" name="stat_sys_battery_91" id="0x010807ad" />
-    <public type="drawable" name="stat_sys_battery_92" id="0x010807ae" />
-    <public type="drawable" name="stat_sys_battery_93" id="0x010807af" />
-    <public type="drawable" name="stat_sys_battery_94" id="0x010807b0" />
-    <public type="drawable" name="stat_sys_battery_95" id="0x010807b1" />
-    <public type="drawable" name="stat_sys_battery_96" id="0x010807b2" />
-    <public type="drawable" name="stat_sys_battery_97" id="0x010807b3" />
-    <public type="drawable" name="stat_sys_battery_98" id="0x010807b4" />
-    <public type="drawable" name="stat_sys_battery_99" id="0x010807b5" />
-    <public type="drawable" name="stat_sys_battery_charge_anim10" id="0x010807b6" />
-    <public type="drawable" name="stat_sys_battery_charge_anim11" id="0x010807b7" />
-    <public type="drawable" name="stat_sys_battery_charge_anim12" id="0x010807b8" />
-    <public type="drawable" name="stat_sys_battery_charge_anim13" id="0x010807b9" />
-    <public type="drawable" name="stat_sys_battery_charge_anim14" id="0x010807ba" />
-    <public type="drawable" name="stat_sys_battery_charge_anim16" id="0x010807bb" />
-    <public type="drawable" name="stat_sys_battery_charge_anim17" id="0x010807bc" />
-    <public type="drawable" name="stat_sys_battery_charge_anim18" id="0x010807bd" />
-    <public type="drawable" name="stat_sys_battery_charge_anim19" id="0x010807be" />
-    <public type="drawable" name="stat_sys_battery_charge_anim20" id="0x010807bf" />
-    <public type="drawable" name="stat_sys_battery_charge_anim21" id="0x010807c0" />
-    <public type="drawable" name="stat_sys_battery_charge_anim22" id="0x010807c1" />
-    <public type="drawable" name="stat_sys_battery_charge_anim23" id="0x010807c2" />
-    <public type="drawable" name="stat_sys_battery_charge_anim24" id="0x010807c3" />
-    <public type="drawable" name="stat_sys_battery_charge_anim25" id="0x010807c4" />
-    <public type="drawable" name="stat_sys_battery_charge_anim26" id="0x010807c5" />
-    <public type="drawable" name="stat_sys_battery_charge_anim27" id="0x010807c6" />
-    <public type="drawable" name="stat_sys_battery_charge_anim29" id="0x010807c7" />
-    <public type="drawable" name="stat_sys_battery_charge_anim30" id="0x010807c8" />
-    <public type="drawable" name="stat_sys_battery_charge_anim31" id="0x010807c9" />
-    <public type="drawable" name="stat_sys_battery_charge_anim32" id="0x010807ca" />
-    <public type="drawable" name="stat_sys_battery_charge_anim33" id="0x010807cb" />
-    <public type="drawable" name="stat_sys_battery_charge_anim34" id="0x010807cc" />
-    <public type="drawable" name="stat_sys_battery_charge_anim35" id="0x010807cd" />
-    <public type="drawable" name="stat_sys_battery_charge_anim36" id="0x010807ce" />
-    <public type="drawable" name="stat_sys_battery_charge_anim37" id="0x010807cf" />
-    <public type="drawable" name="stat_sys_battery_charge_anim38" id="0x010807d0" />
-    <public type="drawable" name="stat_sys_battery_charge_anim39" id="0x010807d1" />
-    <public type="drawable" name="stat_sys_battery_charge_anim40" id="0x010807d2" />
-    <public type="drawable" name="stat_sys_battery_charge_anim41" id="0x010807d3" />
-    <public type="drawable" name="stat_sys_battery_charge_anim42" id="0x010807d4" />
-    <public type="drawable" name="stat_sys_battery_charge_anim44" id="0x010807d5" />
-    <public type="drawable" name="stat_sys_battery_charge_anim45" id="0x010807d6" />
-    <public type="drawable" name="stat_sys_battery_charge_anim46" id="0x010807d7" />
-    <public type="drawable" name="stat_sys_battery_charge_anim47" id="0x010807d8" />
-    <public type="drawable" name="stat_sys_battery_charge_anim48" id="0x010807d9" />
-    <public type="drawable" name="stat_sys_battery_charge_anim49" id="0x010807da" />
-    <public type="drawable" name="stat_sys_battery_charge_anim50" id="0x010807db" />
-    <public type="drawable" name="stat_sys_battery_charge_anim51" id="0x010807dc" />
-    <public type="drawable" name="stat_sys_battery_charge_anim52" id="0x010807dd" />
-    <public type="drawable" name="stat_sys_battery_charge_anim53" id="0x010807de" />
-    <public type="drawable" name="stat_sys_battery_charge_anim54" id="0x010807df" />
-    <public type="drawable" name="stat_sys_battery_charge_anim55" id="0x010807e0" />
-    <public type="drawable" name="stat_sys_battery_charge_anim56" id="0x010807e1" />
-    <public type="drawable" name="stat_sys_battery_charge_anim58" id="0x010807e2" />
-    <public type="drawable" name="stat_sys_battery_charge_anim59" id="0x010807e3" />
-    <public type="drawable" name="stat_sys_battery_charge_anim6" id="0x010807e4" />
-    <public type="drawable" name="stat_sys_battery_charge_anim60" id="0x010807e5" />
-    <public type="drawable" name="stat_sys_battery_charge_anim61" id="0x010807e6" />
-    <public type="drawable" name="stat_sys_battery_charge_anim62" id="0x010807e7" />
-    <public type="drawable" name="stat_sys_battery_charge_anim63" id="0x010807e8" />
-    <public type="drawable" name="stat_sys_battery_charge_anim64" id="0x010807e9" />
-    <public type="drawable" name="stat_sys_battery_charge_anim65" id="0x010807ea" />
-    <public type="drawable" name="stat_sys_battery_charge_anim66" id="0x010807eb" />
-    <public type="drawable" name="stat_sys_battery_charge_anim67" id="0x010807ec" />
-    <public type="drawable" name="stat_sys_battery_charge_anim68" id="0x010807ed" />
-    <public type="drawable" name="stat_sys_battery_charge_anim69" id="0x010807ee" />
-    <public type="drawable" name="stat_sys_battery_charge_anim7" id="0x010807ef" />
-    <public type="drawable" name="stat_sys_battery_charge_anim70" id="0x010807f0" />
-    <public type="drawable" name="stat_sys_battery_charge_anim72" id="0x010807f1" />
-    <public type="drawable" name="stat_sys_battery_charge_anim73" id="0x010807f2" />
-    <public type="drawable" name="stat_sys_battery_charge_anim74" id="0x010807f3" />
-    <public type="drawable" name="stat_sys_battery_charge_anim75" id="0x010807f4" />
-    <public type="drawable" name="stat_sys_battery_charge_anim76" id="0x010807f5" />
-    <public type="drawable" name="stat_sys_battery_charge_anim77" id="0x010807f6" />
-    <public type="drawable" name="stat_sys_battery_charge_anim78" id="0x010807f7" />
-    <public type="drawable" name="stat_sys_battery_charge_anim79" id="0x010807f8" />
-    <public type="drawable" name="stat_sys_battery_charge_anim8" id="0x010807f9" />
-    <public type="drawable" name="stat_sys_battery_charge_anim80" id="0x010807fa" />
-    <public type="drawable" name="stat_sys_battery_charge_anim81" id="0x010807fb" />
-    <public type="drawable" name="stat_sys_battery_charge_anim82" id="0x010807fc" />
-    <public type="drawable" name="stat_sys_battery_charge_anim83" id="0x010807fd" />
-    <public type="drawable" name="stat_sys_battery_charge_anim84" id="0x010807fe" />
-    <public type="drawable" name="stat_sys_battery_charge_anim86" id="0x010807ff" />
-    <public type="drawable" name="stat_sys_battery_charge_anim87" id="0x01080800" />
-    <public type="drawable" name="stat_sys_battery_charge_anim88" id="0x01080801" />
-    <public type="drawable" name="stat_sys_battery_charge_anim89" id="0x01080802" />
-    <public type="drawable" name="stat_sys_battery_charge_anim9" id="0x01080803" />
-    <public type="drawable" name="stat_sys_battery_charge_anim90" id="0x01080804" />
-    <public type="drawable" name="stat_sys_battery_charge_anim91" id="0x01080805" />
-    <public type="drawable" name="stat_sys_battery_charge_anim92" id="0x01080806" />
-    <public type="drawable" name="stat_sys_battery_charge_anim93" id="0x01080807" />
-    <public type="drawable" name="stat_sys_battery_charge_anim94" id="0x01080808" />
-    <public type="drawable" name="stat_sys_battery_charge_anim95" id="0x01080809" />
-    <public type="drawable" name="stat_sys_battery_charge_anim96" id="0x0108080a" />
-    <public type="drawable" name="stat_sys_battery_charge_anim97" id="0x0108080b" />
-    <public type="drawable" name="stat_sys_battery_charge_anim98" id="0x0108080c" />
-    <public type="drawable" name="stat_sys_battery_charge_anim99" id="0x0108080d" />
-    <public type="drawable" name="stat_sys_battery_charge_animfull" id="0x0108080e" />
-    <public type="drawable" name="battery_low_battery" id="0x0108080f" />
-    <public type="drawable" name="stat_sys_battery_1" id="0x01080810" />
-    <public type="drawable" name="tab_bg" id="0x01080811" />
     <public type="drawable" name="unlock_default" id="0x010805d3" />
     <public type="drawable" name="unlock_halo" id="0x010805d4" />
     <public type="drawable" name="unlock_ring" id="0x010805d5" />
     <public type="drawable" name="unlock_wave" id="0x010805d6" />
     <public type="drawable" name="btn_lock_normal" id="0x01080168" />
+    <public type="drawable" name="APKTOOL_DUMMY_02b3" id="0x010802b3" />
+    <public type="drawable" name="APKTOOL_DUMMY_055d" id="0x0108055d" />
     <public type="layout" name="activity_list_item" id="0x01090000" />
     <public type="layout" name="expandable_list_content" id="0x01090001" />
     <public type="layout" name="preference_category" id="0x01090002" />
@@ -6770,19 +6570,6 @@
     <public type="anim" name="window_move_from_decor" id="0x010a0052" />
     <public type="anim" name="zzz_htc_ime_decelerate_interpolator" id="0x010a0053" />
     <public type="anim" name="htc_ime_decelerate_interpolator" id="0x010a0054" />
-    <public type="anim" name="accelerate_cubic" id="0x010a0055" />
-    <public type="anim" name="accelerate_decelerate" id="0x010a0056" />
-    <public type="anim" name="accelerate_quad" id="0x010a0057" />
-    <public type="anim" name="accelerate_quint" id="0x010a0058" />
-    <public type="anim" name="anticipate" id="0x010a0059" />
-    <public type="anim" name="anticipate_overshoot" id="0x010a005a" />
-    <public type="anim" name="bounce" id="0x010a005b" />
-    <public type="anim" name="cycle" id="0x010a005c" />
-    <public type="anim" name="decelerate_cubic" id="0x010a005d" />
-    <public type="anim" name="decelerate_quad" id="0x010a005e" />
-    <public type="anim" name="decelerate_quint" id="0x010a005f" />
-    <public type="anim" name="linear" id="0x010a0060" />
-    <public type="anim" name="overshoot" id="0x010a0061" />
     <public type="animator" name="fade_in" id="0x010b0000" />
     <public type="animator" name="fade_out" id="0x010b0001" />
     <public type="animator" name="fragment_close_enter" id="0x010b0002" />

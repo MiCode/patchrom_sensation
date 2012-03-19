@@ -309,7 +309,7 @@
 
     .prologue
     .line 168
-    iget-object v0, p0, Landroid/renderscript/FileA3D;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v0, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {p0}, Landroid/renderscript/FileA3D;->getID()I
 
@@ -342,7 +342,7 @@
 
     .line 177
     .local v7, names:[Ljava/lang/String;
-    iget-object v0, p0, Landroid/renderscript/FileA3D;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v0, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {p0}, Landroid/renderscript/FileA3D;->getID()I
 
@@ -362,7 +362,7 @@
 
     new-instance v0, Landroid/renderscript/FileA3D$IndexEntry;
 
-    iget-object v1, p0, Landroid/renderscript/FileA3D;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v1, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {p0}, Landroid/renderscript/FileA3D;->getID()I
 

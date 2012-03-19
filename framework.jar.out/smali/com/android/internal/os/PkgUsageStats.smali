@@ -60,7 +60,7 @@
 
     .prologue
     .line 60
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 61
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -142,7 +142,7 @@
 
     .prologue
     .line 73
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 74
     iget-object v0, p1, Lcom/android/internal/os/PkgUsageStats;->packageName:Ljava/lang/String;
@@ -194,7 +194,7 @@
     .prologue
     .line 53
     .local p5, lastResumeTimes:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/Long;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
     iput-object p1, p0, Lcom/android/internal/os/PkgUsageStats;->packageName:Ljava/lang/String;

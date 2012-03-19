@@ -153,7 +153,7 @@
 
     .prologue
     .line 2073
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 2078
     invoke-direct {p0, p1}, Landroid/os/Parcel;->init(I)V

@@ -46,7 +46,7 @@
     const/4 v7, 0x0
 
     .line 61
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 51
     iput-object v7, p0, Lcom/htc/autotest/RecordManager;->aTRunRecorder:Lcom/htc/autotest/MethodReflection;

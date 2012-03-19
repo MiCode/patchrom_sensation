@@ -164,7 +164,7 @@
 
     .prologue
     .line 258
-    iput p1, p0, Lcom/htc/net/wimax/Wimax4GManager;->logLevel:I
+    iput p1, p0, Lcom/htc/net/FourG/FourGManager;->logLevel:I
 
     .line 260
     :try_start_0

@@ -104,7 +104,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/RadioGroup$LayoutParams;->width:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 305
     :goto_0
@@ -121,7 +121,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/RadioGroup$LayoutParams;->height:I
+    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 310
     :goto_1
@@ -129,13 +129,13 @@
 
     .line 302
     :cond_0
-    iput v1, p0, Landroid/widget/RadioGroup$LayoutParams;->width:I
+    iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     goto :goto_0
 
     .line 308
     :cond_1
-    iput v1, p0, Landroid/widget/RadioGroup$LayoutParams;->height:I
+    iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     goto :goto_1
 .end method

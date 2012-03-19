@@ -33,7 +33,7 @@
     .line 960
     iput-object p1, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy$StreamablePbReliableMessages;->this$0:Lcom/htc/cscore/restapi/proxy/RestServicesProxy;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 961
     return-void
@@ -48,7 +48,7 @@
     .line 964
     iput-object p1, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy$StreamablePbReliableMessages;->this$0:Lcom/htc/cscore/restapi/proxy/RestServicesProxy;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 965
     iput-object p2, p0, Lcom/htc/cscore/restapi/proxy/RestServicesProxy$StreamablePbReliableMessages;->_m:Lcom/htc/cscore/transport/ReliableMessaging$PbReliableMessages;

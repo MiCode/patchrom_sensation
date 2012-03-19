@@ -72,7 +72,7 @@
 
     .prologue
     .line 178
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 179
     return-void
@@ -85,7 +85,7 @@
 
     .prologue
     .line 181
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 182
     iput-object p1, p0, Lcom/htc/net/usbnet/UsbnetController;->mService:Lcom/htc/net/usbnet/IUsbnetController;

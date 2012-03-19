@@ -56,7 +56,7 @@
     .line 57
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/HtcCdmaTty;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v1, 0x1
 
@@ -282,7 +282,7 @@
     if-eqz v3, :cond_1
 
     .line 162
-    invoke-virtual {v3}, Ljava/io/FileWriter;->close()V
+    throw v3
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
@@ -350,7 +350,7 @@
     if-eqz v3, :cond_1
 
     .line 162
-    invoke-virtual {v3}, Ljava/io/FileWriter;->close()V
+    throw v3
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
 
@@ -385,7 +385,7 @@
     if-eqz v3, :cond_9
 
     .line 162
-    invoke-virtual {v3}, Ljava/io/FileWriter;->close()V
+    throw v3
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_4
 
@@ -483,7 +483,7 @@
     .line 62
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/HtcCdmaTty;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForOn(Landroid/os/Handler;)V
 
@@ -579,7 +579,7 @@
     :pswitch_1
     iget-object v2, p0, Lcom/android/internal/telephony/cdma/HtcCdmaTty;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    iget-object v2, v2, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v2, v2, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v3, 0x3
 

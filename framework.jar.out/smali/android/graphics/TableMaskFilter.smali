@@ -13,7 +13,7 @@
     invoke-direct {p0}, Landroid/graphics/MaskFilter;-><init>()V
 
     .line 32
-    iput p1, p0, Landroid/graphics/TableMaskFilter;->native_instance:I
+    iput p1, p0, Landroid/graphics/MaskFilter;->native_instance:I
 
     .line 33
     return-void
@@ -49,7 +49,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/TableMaskFilter;->native_instance:I
+    iput v0, p0, Landroid/graphics/MaskFilter;->native_instance:I
 
     .line 29
     return-void

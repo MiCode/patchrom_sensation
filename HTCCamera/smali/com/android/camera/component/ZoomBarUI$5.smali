@@ -30,7 +30,7 @@
     .line 194
     iput-object p1, p0, Lcom/android/camera/component/ZoomBarUI$5;->this$0:Lcom/android/camera/component/ZoomBarUI;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -109,7 +109,7 @@
     .line 208
     iget-object v0, p0, Lcom/android/camera/component/ZoomBarUI$5;->this$0:Lcom/android/camera/component/ZoomBarUI;
 
-    #getter for: Lcom/android/camera/component/ZoomBarUI;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/ZoomBarUI;->access$500(Lcom/android/camera/component/ZoomBarUI;)Ljava/lang/String;
 
     move-result-object v0
@@ -131,7 +131,7 @@
     .line 210
     iget-object v0, p0, Lcom/android/camera/component/ZoomBarUI$5;->this$0:Lcom/android/camera/component/ZoomBarUI;
 
-    #getter for: Lcom/android/camera/component/ZoomBarUI;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/ZoomBarUI;->access$600(Lcom/android/camera/component/ZoomBarUI;)Ljava/lang/String;
 
     move-result-object v0
@@ -184,7 +184,7 @@
     :cond_3
     iget-object v0, p0, Lcom/android/camera/component/ZoomBarUI$5;->this$0:Lcom/android/camera/component/ZoomBarUI;
 
-    #getter for: Lcom/android/camera/component/ZoomBarUI;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/ZoomBarUI;->access$700(Lcom/android/camera/component/ZoomBarUI;)Ljava/lang/String;
 
     move-result-object v0

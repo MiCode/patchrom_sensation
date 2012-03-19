@@ -32,7 +32,7 @@
     .prologue
     .line 156
     .local p0, this:Lcom/htc/opensense/social/DataOp$OpCreator;,"Lcom/htc/opensense/social/DataOp$OpCreator<TT;TE;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -122,7 +122,7 @@
     .prologue
     .line 219
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1, p1, p2, p3}, Lcom/htc/net/wimax/IWimaxController;->addFrequency(III)Z
     :try_end_0
@@ -152,7 +152,7 @@
     .prologue
     .line 349
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1, p1}, Lcom/htc/net/wimax/IWimaxController;->changeToCorpNapid(I)Z
     :try_end_0
@@ -181,7 +181,7 @@
     .prologue
     .line 208
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1}, Lcom/htc/net/wimax/IWimaxController;->clearChannelList()Z
     :try_end_0
@@ -211,7 +211,7 @@
     .prologue
     .line 397
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1, p1}, Lcom/htc/net/wimax/IWimaxController;->cli(Ljava/lang/String;)Ljava/lang/String;
     :try_end_0
@@ -252,7 +252,7 @@
     .prologue
     .line 327
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1}, Lcom/htc/net/wimax/IWimaxController;->getLastAkaNotificationCode()I
     :try_end_0
@@ -281,7 +281,7 @@
     .prologue
     .line 338
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1}, Lcom/htc/net/wimax/IWimaxController;->getLastEapNotificationMsg()Ljava/lang/String;
     :try_end_0
@@ -310,7 +310,7 @@
     .prologue
     .line 387
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1}, Lcom/htc/net/wimax/IWimaxController;->getNetworkInfo()Landroid/net/NetworkInfo;
     :try_end_0
@@ -339,7 +339,7 @@
     .prologue
     .line 254
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1}, Lcom/htc/net/wimax/IWimaxController;->getSettingAuthMode()I
     :try_end_0
@@ -368,7 +368,7 @@
     .prologue
     .line 229
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1}, Lcom/htc/net/wimax/IWimaxController;->getSettingChannelList()[I
     :try_end_0
@@ -397,7 +397,7 @@
     .prologue
     .line 297
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1}, Lcom/htc/net/wimax/IWimaxController;->getSettingIdleModeTimer()I
     :try_end_0
@@ -426,7 +426,7 @@
     .prologue
     .line 276
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1}, Lcom/htc/net/wimax/IWimaxController;->getSettingTxPower()F
     :try_end_0
@@ -456,7 +456,7 @@
     .prologue
     .line 406
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1, p1}, Lcom/htc/net/wimax/IWimaxController;->getWimaxProp(Ljava/lang/String;)Ljava/lang/String;
     :try_end_0
@@ -485,7 +485,7 @@
     .prologue
     .line 198
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1}, Lcom/htc/net/wimax/IWimaxController;->isAvailable()Z
     :try_end_0
@@ -514,7 +514,7 @@
     .prologue
     .line 367
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1}, Lcom/htc/net/wimax/IWimaxController;->isPrivateNetwork()Z
     :try_end_0
@@ -543,7 +543,7 @@
     .prologue
     .line 307
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1}, Lcom/htc/net/wimax/IWimaxController;->resetPacketErrorRate()Z
     :try_end_0
@@ -572,7 +572,7 @@
     .prologue
     .line 358
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1}, Lcom/htc/net/wimax/IWimaxController;->revertToSprintNapid()Z
     :try_end_0
@@ -602,7 +602,7 @@
     .prologue
     .line 244
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1, p1}, Lcom/htc/net/wimax/IWimaxController;->setAuthMode(I)Z
     :try_end_0
@@ -632,7 +632,7 @@
     .prologue
     .line 287
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1, p1}, Lcom/htc/net/wimax/IWimaxController;->setIdleModeTimer(I)Z
     :try_end_0
@@ -662,7 +662,7 @@
     .prologue
     .line 376
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1, p1}, Lcom/htc/net/wimax/IWimaxController;->setToggling(Z)Z
     :try_end_0
@@ -692,7 +692,7 @@
     .prologue
     .line 265
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1, p1}, Lcom/htc/net/wimax/IWimaxController;->setTxPower(F)Z
     :try_end_0
@@ -723,7 +723,7 @@
     .prologue
     .line 415
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1, p1, p2}, Lcom/htc/net/wimax/IWimaxController;->setWimaxProp(Ljava/lang/String;Ljava/lang/String;)Z
     :try_end_0
@@ -752,7 +752,7 @@
     .prologue
     .line 316
     :try_start_0
-    iget-object v1, p0, Lcom/htc/net/wimax/HTCWimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
+    iget-object v1, p0, Lcom/htc/net/wimax/Wimax4GManager;->mService:Lcom/htc/net/wimax/IWimaxController;
 
     invoke-interface {v1}, Lcom/htc/net/wimax/IWimaxController;->wimaxRescan()I
     :try_end_0

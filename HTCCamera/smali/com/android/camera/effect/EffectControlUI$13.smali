@@ -3,7 +3,7 @@
 .source "EffectControlUI.java"
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
 
 # annotations
@@ -27,78 +27,47 @@
     .parameter
 
     .prologue
-    .line 363
+    .line 364
     iput-object p1, p0, Lcom/android/camera/effect/EffectControlUI$13;->this$0:Lcom/android/camera/effect/EffectControlUI;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 4
-    .parameter "view"
-    .parameter "mv"
+.method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
+    .locals 1
+    .parameter "bar"
+    .parameter "progress"
+    .parameter "fromUser"
+
+    .prologue
+    .line 373
+    iget-object v0, p0, Lcom/android/camera/effect/EffectControlUI$13;->this$0:Lcom/android/camera/effect/EffectControlUI;
+
+    #calls: Lcom/android/camera/effect/EffectControlUI;->onControlBarProgressChanged(I)V
+    invoke-static {v0, p2}, Lcom/android/camera/effect/EffectControlUI;->access$1300(Lcom/android/camera/effect/EffectControlUI;I)V
+
+    .line 374
+    return-void
+.end method
+
+.method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
+    .locals 0
+    .parameter "arg0"
+
+    .prologue
+    .line 369
+    return-void
+.end method
+
+.method public onStopTrackingTouch(Landroid/widget/SeekBar;)V
+    .locals 0
+    .parameter "arg0"
 
     .prologue
     .line 366
-    iget-object v2, p0, Lcom/android/camera/effect/EffectControlUI$13;->this$0:Lcom/android/camera/effect/EffectControlUI;
-
-    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_ControlBar:Landroid/widget/SeekBar;
-    invoke-static {v2}, Lcom/android/camera/effect/EffectControlUI;->access$800(Lcom/android/camera/effect/EffectControlUI;)Landroid/widget/SeekBar;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/widget/SeekBar;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
-
-    move-result v0
-
-    .line 367
-    .local v0, containerWidth:I
-    iget-object v2, p0, Lcom/android/camera/effect/EffectControlUI$13;->this$0:Lcom/android/camera/effect/EffectControlUI;
-
-    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_ControlBar:Landroid/widget/SeekBar;
-    invoke-static {v2}, Lcom/android/camera/effect/EffectControlUI;->access$800(Lcom/android/camera/effect/EffectControlUI;)Landroid/widget/SeekBar;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/widget/SeekBar;->getWidth()I
-
-    move-result v2
-
-    sub-int v2, v0, v2
-
-    div-int/lit8 v1, v2, 0x2
-
-    .line 368
-    .local v1, marginLeft:I
-    neg-int v2, v1
-
-    int-to-float v2, v2
-
-    const/4 v3, 0x0
-
-    invoke-virtual {p2, v2, v3}, Landroid/view/MotionEvent;->offsetLocation(FF)V
-
-    .line 369
-    iget-object v2, p0, Lcom/android/camera/effect/EffectControlUI$13;->this$0:Lcom/android/camera/effect/EffectControlUI;
-
-    #getter for: Lcom/android/camera/effect/EffectControlUI;->m_ControlBar:Landroid/widget/SeekBar;
-    invoke-static {v2}, Lcom/android/camera/effect/EffectControlUI;->access$800(Lcom/android/camera/effect/EffectControlUI;)Landroid/widget/SeekBar;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p2}, Landroid/widget/SeekBar;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result v2
-
-    return v2
+    return-void
 .end method

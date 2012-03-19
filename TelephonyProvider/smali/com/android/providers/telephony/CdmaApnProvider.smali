@@ -115,7 +115,7 @@
     const/4 v3, 0x0
 
     .line 102
-    sput-boolean v2, Lcom/android/providers/telephony/CdmaApnProvider;->DBG:Z
+    sput-boolean v3, Lcom/android/providers/telephony/CdmaApnProvider;->DBG:Z
 
     .line 126
     new-instance v1, Landroid/content/UriMatcher;

@@ -171,15 +171,6 @@
     .line 4161
     sput-object v2, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->MONITOR_KEYS:Ljava/util/HashSet;
 
-    .line 4166
-    new-instance v0, Ljava/util/HashSet;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(I)V
-
-    sput-object v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->MONITOR_KEYS:Ljava/util/HashSet;
-
     .line 4169
     return-void
 .end method
@@ -408,47 +399,8 @@
 
     sput-object v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->sNameValueCache:Lcom/htc/wrap/android/provider/Settings$NameValueCache;
 
-    .line 4191
-    :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "SELECT * FROM "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    sget-object v2, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->TABLE_NAME:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, " WHERE name=\""
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "\";"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->Log(Ljava/lang/String;)V
-
     .line 4194
+    :cond_0
     sget-object v0, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->sNameValueCache:Lcom/htc/wrap/android/provider/Settings$NameValueCache;
 
     invoke-virtual {v0, p0, p1}, Lcom/htc/wrap/android/provider/Settings$NameValueCache;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
@@ -515,170 +467,20 @@
 .end method
 
 .method public static putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
-    .locals 3
+    .locals 2
     .parameter "resolver"
     .parameter "name"
     .parameter "value"
 
     .prologue
-    .line 4209
-    sget-object v1, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->MONITOR_KEYS:Ljava/util/HashSet;
-
-    invoke-virtual {v1, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 4210
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-object v2, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->TABLE_NAME:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ":name: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->Log(Ljava/lang/String;)V
-
-    .line 4211
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-object v2, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->TABLE_NAME:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ":value: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->Log(Ljava/lang/String;)V
-
-    .line 4212
-    #calls: Lcom/htc/wrap/android/provider/HtcWrapSettings;->traceCallingStack()V
-    invoke-static {}, Lcom/htc/wrap/android/provider/HtcWrapSettings;->access$100()V
-
     .line 4216
-    :cond_0
     sget-object v1, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {p0, v1, p1, p2}, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->putString(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 4220
-    .local v0, successful:Z
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "UPDATE "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->TABLE_NAME:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " SET "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "value=\""
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "\" "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "WHERE name=\""
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "\";"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->Log(Ljava/lang/String;)V
-
-    .line 4223
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "successful: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/htc/wrap/android/provider/HtcWrapSettings$Profile;->Log(Ljava/lang/String;)V
-
     .line 4225
+    .local v0, successful:Z
     return v0
 .end method

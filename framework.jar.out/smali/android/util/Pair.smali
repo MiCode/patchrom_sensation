@@ -50,7 +50,7 @@
     .local p0, this:Landroid/util/Pair;,"Landroid/util/Pair<TF;TS;>;"
     .local p1, first:Ljava/lang/Object;,"TF;"
     .local p2, second:Ljava/lang/Object;,"TS;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 35
     iput-object p1, p0, Landroid/util/Pair;->first:Ljava/lang/Object;

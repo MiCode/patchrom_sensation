@@ -30,12 +30,12 @@
     .parameter
 
     .prologue
-    .line 2644
+    .line 2688
     iput-object p1, p0, Lcom/android/phone/BluetoothHandsfree$4;->this$0:Lcom/android/phone/BluetoothHandsfree;
 
     iput-object p2, p0, Lcom/android/phone/BluetoothHandsfree$4;->val$number:Ljava/lang/String;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,7 +46,7 @@
     .locals 5
 
     .prologue
-    .line 2646
+    .line 2690
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.CALL_PRIVILEGED"
@@ -63,13 +63,13 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 2648
+    .line 2692
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 2649
+    .line 2693
     iget-object v1, p0, Lcom/android/phone/BluetoothHandsfree$4;->val$number:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -84,10 +84,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2650
+    .line 2694
     :cond_0
     invoke-static {v0}, Lcom/htc/util/phone/DialUtils;->callDirectly(Landroid/content/Intent;)Z
 
-    .line 2651
+    .line 2695
     return-void
 .end method

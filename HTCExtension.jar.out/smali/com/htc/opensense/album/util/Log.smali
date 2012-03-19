@@ -31,13 +31,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 24
-    const/4 v0, 0x1
+    const/4 v1, 0x0
 
-    sput-boolean v0, Lcom/htc/opensense/album/util/Log;->gEnableLog:Z
+    .line 24
+    sput-boolean v1, Lcom/htc/opensense/album/util/Log;->gEnableLog:Z
 
     .line 25
     const/4 v0, 0x2
@@ -45,9 +45,7 @@
     sput v0, Lcom/htc/opensense/album/util/Log;->gSeverity:I
 
     .line 26
-    const/4 v0, 0x0
-
-    sput-boolean v0, Lcom/htc/opensense/album/util/Log;->gInitialized:Z
+    sput-boolean v1, Lcom/htc/opensense/album/util/Log;->gInitialized:Z
 
     return-void
 .end method
@@ -57,7 +55,7 @@
 
     .prologue
     .line 12
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

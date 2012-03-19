@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 347
+    .line 348
     iput-object p1, p0, Lcom/android/camera/component/BurstController$4;->this$0:Lcom/android/camera/component/BurstController;
 
     iput-object p2, p0, Lcom/android/camera/component/BurstController$4;->val$cameraThread:Lcom/android/camera/CameraThread;
@@ -45,7 +45,7 @@
 
     iput-object p4, p0, Lcom/android/camera/component/BurstController$4;->val$mediaPlayer:Landroid/media/MediaPlayer;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -62,10 +62,10 @@
 
     const/4 v1, 0x0
 
-    .line 350
+    .line 351
     iget-object v0, p0, Lcom/android/camera/component/BurstController$4;->this$0:Lcom/android/camera/component/BurstController;
 
-    #getter for: Lcom/android/camera/component/BurstController;->TAG:Ljava/lang/String;
+    #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/component/BurstController;->access$1000(Lcom/android/camera/component/BurstController;)Ljava/lang/String;
 
     move-result-object v3
@@ -95,7 +95,7 @@
 
     invoke-static {v3, v0}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 351
+    .line 352
     iget-object v0, p0, Lcom/android/camera/component/BurstController$4;->val$cameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->isShutterSoundNeeded()Z
@@ -104,7 +104,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 353
+    .line 354
     iget-object v3, p0, Lcom/android/camera/component/BurstController$4;->val$cameraActivity:Lcom/android/camera/HTCCamera;
 
     iget-object v4, p0, Lcom/android/camera/component/BurstController$4;->val$mediaPlayer:Landroid/media/MediaPlayer;
@@ -135,20 +135,20 @@
     :goto_2
     invoke-virtual {v3, v4, v1, v0, v2}, Lcom/android/camera/HTCCamera;->playSound(Landroid/media/MediaPlayer;ZZZ)V
 
-    .line 356
+    .line 357
     :cond_0
     return-void
 
     :cond_1
     move v0, v1
 
-    .line 350
+    .line 351
     goto :goto_0
 
     :cond_2
     move v0, v1
 
-    .line 353
+    .line 354
     goto :goto_1
 
     :cond_3

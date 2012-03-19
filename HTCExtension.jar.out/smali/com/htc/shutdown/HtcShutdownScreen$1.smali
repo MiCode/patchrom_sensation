@@ -30,7 +30,7 @@
     .line 243
     iput-object p1, p0, Lcom/htc/shutdown/HtcShutdownScreen$1;->this$0:Lcom/htc/shutdown/HtcShutdownScreen;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -96,16 +96,9 @@
 .end method
 
 .method public onAnimationReady()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 247
-    const-string v0, "HtcShutdownScreen"
-
-    const-string v1, "onAnimationReady"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 248
     iget-object v0, p0, Lcom/htc/shutdown/HtcShutdownScreen$1;->this$0:Lcom/htc/shutdown/HtcShutdownScreen;
 

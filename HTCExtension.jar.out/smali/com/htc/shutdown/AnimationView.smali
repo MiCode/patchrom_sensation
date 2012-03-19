@@ -45,7 +45,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)V
-    .locals 7
+    .locals 5
     .parameter "context"
     .parameter "pathname"
     .parameter "landPath"
@@ -54,7 +54,7 @@
     .prologue
     const/4 v3, 0x0
 
-    const/4 v6, 0x0
+    const/4 v4, 0x0
 
     .line 57
     invoke-direct {p0, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
@@ -66,7 +66,7 @@
     iput v3, p0, Lcom/htc/shutdown/AnimationView;->nFramesDrawn:I
 
     .line 253
-    iput-object v6, p0, Lcom/htc/shutdown/AnimationView;->mAnimationListener:Lcom/htc/shutdown/AnimationView$OnAnimationListener;
+    iput-object v4, p0, Lcom/htc/shutdown/AnimationView;->mAnimationListener:Lcom/htc/shutdown/AnimationView$OnAnimationListener;
 
     .line 296
     new-instance v3, Lcom/htc/shutdown/AnimationView$1;
@@ -98,88 +98,11 @@
 
     iput-object v3, p0, Lcom/htc/shutdown/AnimationView;->mDisplay:Landroid/view/Display;
 
-    .line 67
-    const-string v3, "AnimationView"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Image PNG = "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 68
-    const-string v3, "AnimationView"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Image PNG land = "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 69
-    const-string v3, "AnimationView"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Cust_Shutdown_animation: FPS> \""
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget v5, p0, Lcom/htc/shutdown/AnimationView;->mFPS:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "\""
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 72
-    iput-object v6, p0, Lcom/htc/shutdown/AnimationView;->curname:Ljava/lang/String;
+    iput-object v4, p0, Lcom/htc/shutdown/AnimationView;->curname:Ljava/lang/String;
 
     .line 73
-    iput-object v6, p0, Lcom/htc/shutdown/AnimationView;->zipLandFile:Ljava/util/zip/ZipFile;
+    iput-object v4, p0, Lcom/htc/shutdown/AnimationView;->zipLandFile:Ljava/util/zip/ZipFile;
 
     .line 75
     :try_start_0
@@ -251,35 +174,35 @@
 .end method
 
 .method private controlFPS(JJ)V
-    .locals 9
+    .locals 7
     .parameter "mStartTime"
     .parameter "mEndTime"
 
     .prologue
-    const/16 v8, 0x3e8
+    const/16 v6, 0x3e8
 
     .line 219
     sub-long v0, p3, p1
 
     .line 224
     .local v0, cost:J
-    iget v5, p0, Lcom/htc/shutdown/AnimationView;->mFPS:I
+    iget v4, p0, Lcom/htc/shutdown/AnimationView;->mFPS:I
 
-    div-int v5, v8, v5
+    div-int v4, v6, v4
 
-    long-to-int v6, v0
+    long-to-int v5, v0
 
-    sub-int v2, v5, v6
+    sub-int v2, v4, v5
 
     .line 226
     .local v2, delay:I
     if-lez v2, :cond_0
 
     .line 229
-    int-to-long v5, v2
+    int-to-long v4, v2
 
     :try_start_0
-    invoke-static {v5, v6}, Ljava/lang/Thread;->sleep(J)V
+    invoke-static {v4, v5}, Ljava/lang/Thread;->sleep(J)V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -293,161 +216,107 @@
     sub-long v0, p3, p1
 
     .line 242
-    long-to-int v5, v0
+    long-to-int v4, v0
 
-    div-int v4, v8, v5
+    div-int v3, v6, v4
 
     .line 245
-    .local v4, fps:I
+    .local v3, fps:I
     return-void
 
-    .line 230
-    .end local v4           #fps:I
-    :catch_0
-    move-exception v3
-
-    .line 232
-    .local v3, e:Ljava/lang/InterruptedException;
-    const-string v5, "AnimationView"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "delay time fail: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v3}, Ljava/lang/InterruptedException;->getMessage()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    .line 235
+    .end local v3           #fps:I
+    :cond_0
+    const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 235
-    .end local v3           #e:Ljava/lang/InterruptedException;
-    :cond_0
-    const/4 v2, 0x0
+    .line 230
+    :catch_0
+    move-exception v4
 
     goto :goto_0
 .end method
 
 .method private prepareDraw()V
-    .locals 9
+    .locals 7
 
     .prologue
     .line 260
-    const-wide/16 v4, 0x0
+    const-wide/16 v3, 0x0
 
     .line 261
-    .local v4, mStartTime:J
-    const/4 v1, 0x0
-
-    .line 264
-    .local v1, is:Ljava/io/InputStream;
-    const-string v6, "AnimationView"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "nFramesDrawn = "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget v8, p0, Lcom/htc/shutdown/AnimationView;->nFramesDrawn:I
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    .local v3, mStartTime:J
+    const/4 v0, 0x0
 
     .line 266
-    iget v6, p0, Lcom/htc/shutdown/AnimationView;->nFramesDrawn:I
+    .local v0, is:Ljava/io/InputStream;
+    iget v5, p0, Lcom/htc/shutdown/AnimationView;->nFramesDrawn:I
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    if-ne v6, v7, :cond_0
+    if-ne v5, v6, :cond_0
 
-    iget-object v6, p0, Lcom/htc/shutdown/AnimationView;->nowBitmap:Landroid/graphics/Bitmap;
+    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->nowBitmap:Landroid/graphics/Bitmap;
 
-    if-eqz v6, :cond_0
+    if-eqz v5, :cond_0
 
     .line 267
-    iget-object v6, p0, Lcom/htc/shutdown/AnimationView;->mAnimationListener:Lcom/htc/shutdown/AnimationView$OnAnimationListener;
+    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->mAnimationListener:Lcom/htc/shutdown/AnimationView$OnAnimationListener;
 
-    invoke-interface {v6}, Lcom/htc/shutdown/AnimationView$OnAnimationListener;->onAnimationReady()V
+    invoke-interface {v5}, Lcom/htc/shutdown/AnimationView$OnAnimationListener;->onAnimationReady()V
 
     .line 270
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v3
 
     .line 273
-    iget-object v6, p0, Lcom/htc/shutdown/AnimationView;->zipLandFile:Ljava/util/zip/ZipFile;
+    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->zipLandFile:Ljava/util/zip/ZipFile;
 
-    if-eqz v6, :cond_1
+    if-eqz v5, :cond_1
 
-    iget-object v6, p0, Lcom/htc/shutdown/AnimationView;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v6}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    invoke-virtual {v5}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    move-result-object v6
+    move-result-object v5
 
-    iget v6, v6, Landroid/content/res/Configuration;->orientation:I
+    iget v5, v5, Landroid/content/res/Configuration;->orientation:I
 
-    const/4 v7, 0x2
+    const/4 v6, 0x2
 
-    if-ne v6, v7, :cond_1
+    if-ne v5, v6, :cond_1
 
     .line 274
     invoke-direct {p0}, Lcom/htc/shutdown/AnimationView;->readNextTextureLand()Ljava/io/BufferedInputStream;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 278
     :goto_0
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
     .line 279
-    iget-object v6, p0, Lcom/htc/shutdown/AnimationView;->nowBitmap:Landroid/graphics/Bitmap;
+    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->nowBitmap:Landroid/graphics/Bitmap;
 
-    iput-object v6, p0, Lcom/htc/shutdown/AnimationView;->lastBitmap:Landroid/graphics/Bitmap;
+    iput-object v5, p0, Lcom/htc/shutdown/AnimationView;->lastBitmap:Landroid/graphics/Bitmap;
 
     .line 280
-    invoke-static {v1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
+    invoke-static {v0}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, p0, Lcom/htc/shutdown/AnimationView;->nowBitmap:Landroid/graphics/Bitmap;
+    iput-object v5, p0, Lcom/htc/shutdown/AnimationView;->nowBitmap:Landroid/graphics/Bitmap;
 
     .line 282
     :try_start_0
-    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v0}, Ljava/io/BufferedInputStream;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -455,11 +324,11 @@
     :goto_1
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v2
+    move-result-wide v1
 
     .line 292
-    .local v2, mEndTime:J
-    invoke-direct {p0, v4, v5, v2, v3}, Lcom/htc/shutdown/AnimationView;->controlFPS(JJ)V
+    .local v1, mEndTime:J
+    invoke-direct {p0, v3, v4, v1, v2}, Lcom/htc/shutdown/AnimationView;->controlFPS(JJ)V
 
     .line 293
     invoke-virtual {p0}, Lcom/htc/shutdown/AnimationView;->invalidate()V
@@ -468,356 +337,257 @@
     return-void
 
     .line 276
-    .end local v2           #mEndTime:J
+    .end local v1           #mEndTime:J
     :cond_1
     invoke-direct {p0}, Lcom/htc/shutdown/AnimationView;->readNextTexture()Ljava/io/BufferedInputStream;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_0
 
-    .line 283
-    :catch_0
-    move-exception v0
+    .line 288
+    :cond_2
+    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->mAnimationListener:Lcom/htc/shutdown/AnimationView$OnAnimationListener;
 
-    .line 285
-    .local v0, e:Ljava/io/IOException;
-    const-string v6, "AnimationView"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "close texture fail: "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-interface {v5}, Lcom/htc/shutdown/AnimationView$OnAnimationListener;->onAnimationFinished()V
 
     goto :goto_1
 
-    .line 288
-    .end local v0           #e:Ljava/io/IOException;
-    :cond_2
-    iget-object v6, p0, Lcom/htc/shutdown/AnimationView;->mAnimationListener:Lcom/htc/shutdown/AnimationView$OnAnimationListener;
-
-    invoke-interface {v6}, Lcom/htc/shutdown/AnimationView$OnAnimationListener;->onAnimationFinished()V
+    .line 283
+    :catch_0
+    move-exception v5
 
     goto :goto_1
 .end method
 
 .method private readNextTexture()Ljava/io/BufferedInputStream;
-    .locals 8
+    .locals 7
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     .line 146
     :try_start_0
-    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->zipFile:Ljava/util/zip/ZipFile;
+    iget-object v4, p0, Lcom/htc/shutdown/AnimationView;->zipFile:Ljava/util/zip/ZipFile;
 
-    if-nez v5, :cond_1
-
-    .line 148
-    const-string v5, "AnimationView"
-
-    const-string v6, "The png zip file doesn\'t exist, please check resource path."
-
-    invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    if-nez v4, :cond_1
 
     .line 176
     :cond_0
     :goto_0
-    return-object v4
+    return-object v3
 
     .line 152
     :cond_1
-    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->zipFile:Ljava/util/zip/ZipFile;
+    iget-object v4, p0, Lcom/htc/shutdown/AnimationView;->zipFile:Ljava/util/zip/ZipFile;
 
-    invoke-virtual {v5}, Ljava/util/zip/ZipFile;->entries()Ljava/util/Enumeration;
-
-    move-result-object v2
-
-    .line 154
-    .local v2, entry_list:Ljava/util/Enumeration;
-    const/4 v3, 0x0
-
-    .line 155
-    .local v3, isNext:Z
-    :cond_2
-    :goto_1
-    invoke-interface {v2}, Ljava/util/Enumeration;->hasMoreElements()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    .line 157
-    invoke-interface {v2}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
+    invoke-virtual {v4}, Ljava/util/zip/ZipFile;->entries()Ljava/util/Enumeration;
 
     move-result-object v1
 
-    check-cast v1, Ljava/util/zip/ZipEntry;
+    .line 154
+    .local v1, entry_list:Ljava/util/Enumeration;
+    const/4 v2, 0x0
+
+    .line 155
+    .local v2, isNext:Z
+    :cond_2
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Enumeration;->hasMoreElements()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    .line 157
+    invoke-interface {v1}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/zip/ZipEntry;
 
     .line 159
-    .local v1, entry:Ljava/util/zip/ZipEntry;
-    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->curname:Ljava/lang/String;
+    .local v0, entry:Ljava/util/zip/ZipEntry;
+    iget-object v4, p0, Lcom/htc/shutdown/AnimationView;->curname:Ljava/lang/String;
 
-    if-eqz v5, :cond_3
+    if-eqz v4, :cond_3
 
-    if-eqz v3, :cond_4
+    if-eqz v2, :cond_4
 
     :cond_3
-    invoke-virtual {v1}, Ljava/util/zip/ZipEntry;->isDirectory()Z
+    invoke-virtual {v0}, Ljava/util/zip/ZipEntry;->isDirectory()Z
 
-    move-result v5
+    move-result v4
 
-    if-nez v5, :cond_4
+    if-nez v4, :cond_4
 
     .line 160
-    invoke-virtual {v1}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+
+    move-result-object v4
+
+    iput-object v4, p0, Lcom/htc/shutdown/AnimationView;->curname:Ljava/lang/String;
+
+    .line 161
+    new-instance v4, Ljava/io/BufferedInputStream;
+
+    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->zipFile:Ljava/util/zip/ZipFile;
+
+    invoke-virtual {v5, v0}, Ljava/util/zip/ZipFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
 
     move-result-object v5
 
-    iput-object v5, p0, Lcom/htc/shutdown/AnimationView;->curname:Ljava/lang/String;
+    const/16 v6, 0x2000
 
-    .line 161
-    new-instance v5, Ljava/io/BufferedInputStream;
+    invoke-direct {v4, v5, v6}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;I)V
 
-    iget-object v6, p0, Lcom/htc/shutdown/AnimationView;->zipFile:Ljava/util/zip/ZipFile;
-
-    invoke-virtual {v6, v1}, Ljava/util/zip/ZipFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
-
-    move-result-object v6
-
-    const/16 v7, 0x2000
-
-    invoke-direct {v5, v6, v7}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;I)V
-
-    move-object v4, v5
+    move-object v3, v4
 
     goto :goto_0
 
     .line 165
     :cond_4
-    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->curname:Ljava/lang/String;
+    iget-object v4, p0, Lcom/htc/shutdown/AnimationView;->curname:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_2
+    if-eqz v4, :cond_2
 
     .line 166
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     goto :goto_1
 
     .line 171
-    .end local v1           #entry:Ljava/util/zip/ZipEntry;
-    .end local v2           #entry_list:Ljava/util/Enumeration;
-    .end local v3           #isNext:Z
+    .end local v0           #entry:Ljava/util/zip/ZipEntry;
+    .end local v1           #entry_list:Ljava/util/Enumeration;
+    .end local v2           #isNext:Z
     :catch_0
-    move-exception v0
-
-    .line 173
-    .local v0, e:Ljava/io/IOException;
-    const-string v5, "AnimationView"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "readNextTexture fail: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    move-exception v4
 
     goto :goto_0
 .end method
 
 .method private readNextTextureLand()Ljava/io/BufferedInputStream;
-    .locals 8
+    .locals 7
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     .line 182
     :try_start_0
-    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->zipLandFile:Ljava/util/zip/ZipFile;
+    iget-object v4, p0, Lcom/htc/shutdown/AnimationView;->zipLandFile:Ljava/util/zip/ZipFile;
 
-    if-nez v5, :cond_1
-
-    .line 184
-    const-string v5, "AnimationView"
-
-    const-string v6, "The png land zip file doesn\'t exist, please check resource path."
-
-    invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    if-nez v4, :cond_1
 
     .line 212
     :cond_0
     :goto_0
-    return-object v4
+    return-object v3
 
     .line 188
     :cond_1
-    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->zipLandFile:Ljava/util/zip/ZipFile;
+    iget-object v4, p0, Lcom/htc/shutdown/AnimationView;->zipLandFile:Ljava/util/zip/ZipFile;
 
-    invoke-virtual {v5}, Ljava/util/zip/ZipFile;->entries()Ljava/util/Enumeration;
-
-    move-result-object v2
-
-    .line 190
-    .local v2, entry_list:Ljava/util/Enumeration;
-    const/4 v3, 0x0
-
-    .line 191
-    .local v3, isNext:Z
-    :cond_2
-    :goto_1
-    invoke-interface {v2}, Ljava/util/Enumeration;->hasMoreElements()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    .line 193
-    invoke-interface {v2}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
+    invoke-virtual {v4}, Ljava/util/zip/ZipFile;->entries()Ljava/util/Enumeration;
 
     move-result-object v1
 
-    check-cast v1, Ljava/util/zip/ZipEntry;
+    .line 190
+    .local v1, entry_list:Ljava/util/Enumeration;
+    const/4 v2, 0x0
+
+    .line 191
+    .local v2, isNext:Z
+    :cond_2
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Enumeration;->hasMoreElements()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    .line 193
+    invoke-interface {v1}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/zip/ZipEntry;
 
     .line 195
-    .local v1, entry:Ljava/util/zip/ZipEntry;
-    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->curname:Ljava/lang/String;
+    .local v0, entry:Ljava/util/zip/ZipEntry;
+    iget-object v4, p0, Lcom/htc/shutdown/AnimationView;->curname:Ljava/lang/String;
 
-    if-eqz v5, :cond_3
+    if-eqz v4, :cond_3
 
-    if-eqz v3, :cond_4
+    if-eqz v2, :cond_4
 
     :cond_3
-    invoke-virtual {v1}, Ljava/util/zip/ZipEntry;->isDirectory()Z
+    invoke-virtual {v0}, Ljava/util/zip/ZipEntry;->isDirectory()Z
 
-    move-result v5
+    move-result v4
 
-    if-nez v5, :cond_4
+    if-nez v4, :cond_4
 
     .line 196
-    invoke-virtual {v1}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+
+    move-result-object v4
+
+    iput-object v4, p0, Lcom/htc/shutdown/AnimationView;->curname:Ljava/lang/String;
+
+    .line 197
+    new-instance v4, Ljava/io/BufferedInputStream;
+
+    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->zipLandFile:Ljava/util/zip/ZipFile;
+
+    invoke-virtual {v5, v0}, Ljava/util/zip/ZipFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
 
     move-result-object v5
 
-    iput-object v5, p0, Lcom/htc/shutdown/AnimationView;->curname:Ljava/lang/String;
+    const/16 v6, 0x2000
 
-    .line 197
-    new-instance v5, Ljava/io/BufferedInputStream;
+    invoke-direct {v4, v5, v6}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;I)V
 
-    iget-object v6, p0, Lcom/htc/shutdown/AnimationView;->zipLandFile:Ljava/util/zip/ZipFile;
-
-    invoke-virtual {v6, v1}, Ljava/util/zip/ZipFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
-
-    move-result-object v6
-
-    const/16 v7, 0x2000
-
-    invoke-direct {v5, v6, v7}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;I)V
-
-    move-object v4, v5
+    move-object v3, v4
 
     goto :goto_0
 
     .line 201
     :cond_4
-    iget-object v5, p0, Lcom/htc/shutdown/AnimationView;->curname:Ljava/lang/String;
+    iget-object v4, p0, Lcom/htc/shutdown/AnimationView;->curname:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_2
+    if-eqz v4, :cond_2
 
     .line 202
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     goto :goto_1
 
     .line 207
-    .end local v1           #entry:Ljava/util/zip/ZipEntry;
-    .end local v2           #entry_list:Ljava/util/Enumeration;
-    .end local v3           #isNext:Z
+    .end local v0           #entry:Ljava/util/zip/ZipEntry;
+    .end local v1           #entry_list:Ljava/util/Enumeration;
+    .end local v2           #isNext:Z
     :catch_0
-    move-exception v0
-
-    .line 209
-    .local v0, e:Ljava/io/IOException;
-    const-string v5, "AnimationView"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "readNextTextureLand fail: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    move-exception v4
 
     goto :goto_0
 .end method

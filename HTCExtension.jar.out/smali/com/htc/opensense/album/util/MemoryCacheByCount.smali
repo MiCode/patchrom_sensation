@@ -220,7 +220,7 @@
     .line 45
     :cond_3
     :try_start_1
-    iget-object v4, p0, Lcom/htc/opensense/album/util/MemoryCacheByCount;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v4, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v4, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -378,7 +378,7 @@
 
     .line 122
     :cond_1
-    iget-object v1, p0, Lcom/htc/opensense/album/util/MemoryCacheByCount;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v1, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -441,7 +441,7 @@
     const/4 v3, 0x0
 
     .line 96
-    iget-object v2, p0, Lcom/htc/opensense/album/util/MemoryCacheByCount;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v2}, Ljava/util/concurrent/ConcurrentHashMap;->size()I
 
@@ -472,7 +472,7 @@
 
     .line 99
     .local v1, key:Ljava/lang/Object;,"TKEY;"
-    iget-object v2, p0, Lcom/htc/opensense/album/util/MemoryCacheByCount;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v2, v1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -493,7 +493,7 @@
 
     .line 105
     :cond_2
-    iget-object v2, p0, Lcom/htc/opensense/album/util/MemoryCacheByCount;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v2, p0, Lcom/htc/opensense/album/util/MemoryCacheBase;->mItems:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v2, v1}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 

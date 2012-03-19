@@ -67,7 +67,7 @@
     const-wide/high16 v0, -0x8000
 
     .line 47
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 48
     iput v2, p0, Lcom/htc/net/FourG/QosStatistics;->localId:I
@@ -112,7 +112,7 @@
 
     .prologue
     .line 261
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 262
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I

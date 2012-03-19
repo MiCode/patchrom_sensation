@@ -246,10 +246,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/camera/ImageManager$SingleImageList;->mCursor:Landroid/database/Cursor;
+    iput-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     .line 3849
-    iget-object v0, p0, Lcom/android/camera/ImageManager$SingleImageList;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/android/camera/ImageManager$BaseImageList;->mCursor:Landroid/database/Cursor;
 
     if-nez v0, :cond_0
 
@@ -371,7 +371,7 @@
 
     .prologue
     .line 3884
-    iget v1, p0, Lcom/android/camera/ImageManager$SingleImageList;->mSort:I
+    iget v1, p0, Lcom/android/camera/ImageManager$BaseImageList;->mSort:I
 
     const/4 v2, 0x1
 

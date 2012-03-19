@@ -238,8 +238,8 @@ To bo morda trajalo nekaj minut."</string>
     <string name="htc_preferred_network_global_mode">Globalni način</string>
     <string name="htc_preferred_network_cdma_evdo_aut_mode">Način CDMA</string>
     <string name="htc_preferred_network_gsm_wcdma_aut_mode">Način GSM / UMTS</string>
-    <string name="htc_preferred_network_lte_mode">LTE Mode</string>
-    <string name="htc_preferred_network_gsm_umts_lte_mode">GSM / UMTS / LTE Mode</string>
+    <string name="htc_preferred_network_lte_mode">Način LTE</string>
+    <string name="htc_preferred_network_gsm_umts_lte_mode">Način GSM/UMTS/LTE</string>
     <string name="title_gsm_preferred_network_options">Način GSM / UMTS</string>
     <string name="btn_Menu_Edit">Uredi</string>
     <string name="btn_Menu_Set_Done">Končano</string>

@@ -49,7 +49,7 @@
     const/4 v0, 0x0
 
     .line 88
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 48
     iput-object v0, p0, Lcom/android/phone/DataUsageListener;->mCurrentUsagePref:Lcom/htc/preference/HtcPreference;
@@ -100,7 +100,7 @@
     const/4 v0, 0x0
 
     .line 73
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 48
     iput-object v0, p0, Lcom/android/phone/DataUsageListener;->mCurrentUsagePref:Lcom/htc/preference/HtcPreference;

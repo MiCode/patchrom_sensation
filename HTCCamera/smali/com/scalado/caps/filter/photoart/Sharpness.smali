@@ -96,7 +96,7 @@
 
     .prologue
     .line 80
-    iget-object v0, p0, Lcom/scalado/caps/filter/photoart/Sharpness;->session:Lcom/scalado/caps/Session;
+    iget-object v0, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v0}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -114,7 +114,7 @@
 
     .prologue
     .line 52
-    iget-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Sharpness;->isCommitted:Z
+    iget-boolean v1, p0, Lcom/scalado/caps/Filter;->isCommitted:Z
 
     if-eqz v1, :cond_0
 
@@ -129,7 +129,7 @@
 
     .line 56
     :cond_0
-    iget-object v1, p0, Lcom/scalado/caps/filter/photoart/Sharpness;->session:Lcom/scalado/caps/Session;
+    iget-object v1, p0, Lcom/scalado/caps/Filter;->session:Lcom/scalado/caps/Session;
 
     invoke-virtual {v1}, Lcom/scalado/caps/Session;->getDecoder()Lcom/scalado/caps/Decoder;
 
@@ -143,7 +143,7 @@
     .local v0, error:I
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/scalado/caps/filter/photoart/Sharpness;->isSet:Z
+    iput-boolean v1, p0, Lcom/scalado/caps/Filter;->isSet:Z
 
     .line 58
     iput p1, p0, Lcom/scalado/caps/filter/photoart/Sharpness;->level:I

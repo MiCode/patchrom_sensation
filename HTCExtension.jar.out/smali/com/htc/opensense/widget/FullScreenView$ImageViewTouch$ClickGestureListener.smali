@@ -57,7 +57,7 @@
     .line 1558
     iget-object v1, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch$ClickGestureListener;->this$0:Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;
 
-    iget-object v1, v1, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v1, v1, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     if-nez v1, :cond_0
 
@@ -164,7 +164,7 @@
     .local v10, m:Landroid/graphics/Matrix;
     iget-object v1, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch$ClickGestureListener;->this$0:Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;
 
-    iget-object v1, v1, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v1, v1, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -190,7 +190,7 @@
     .local v7, maxX:I
     iget-object v1, p0, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch$ClickGestureListener;->this$0:Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;
 
-    iget-object v1, v1, Lcom/htc/opensense/widget/FullScreenView$ImageViewTouch;->mBitmapDisplayed:Landroid/graphics/Bitmap;
+    iget-object v1, v1, Lcom/htc/opensense/widget/ImageViewTouchBase;->mBitmapDisplayed:Landroid/graphics/Bitmap;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
 

@@ -108,12 +108,12 @@
 
     .prologue
     .line 175
-    iget-boolean v2, p0, Lcom/htc/widget/HtcSpinner;->mDataChanged:Z
+    iget-boolean v2, p0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     if-nez v2, :cond_0
 
     .line 176
-    iget-object v2, p0, Lcom/htc/widget/HtcSpinner;->mRecycler:Lcom/htc/widget/HtcAbsSpinner$RecycleBin;
+    iget-object v2, p0, Lcom/htc/widget/HtcAbsSpinner;->mRecycler:Lcom/htc/widget/HtcAbsSpinner$RecycleBin;
 
     invoke-virtual {v2, p1}, Lcom/htc/widget/HtcAbsSpinner$RecycleBin;->get(I)Landroid/view/View;
 
@@ -137,7 +137,7 @@
     .line 186
     .end local v1           #child:Landroid/view/View;
     :cond_0
-    iget-object v2, p0, Lcom/htc/widget/HtcSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v2, p0, Lcom/htc/widget/HtcAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     const/4 v3, 0x0
 
@@ -190,13 +190,13 @@
     invoke-virtual {p1, v8}, Landroid/view/View;->setSelected(Z)V
 
     .line 216
-    iget v8, p0, Lcom/htc/widget/HtcSpinner;->mHeightMeasureSpec:I
+    iget v8, p0, Lcom/htc/widget/HtcAbsSpinner;->mHeightMeasureSpec:I
 
-    iget-object v9, p0, Lcom/htc/widget/HtcSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Lcom/htc/widget/HtcAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->top:I
 
-    iget-object v10, p0, Lcom/htc/widget/HtcSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Lcom/htc/widget/HtcAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->bottom:I
 
@@ -210,13 +210,13 @@
 
     .line 218
     .local v1, childHeightSpec:I
-    iget v8, p0, Lcom/htc/widget/HtcSpinner;->mWidthMeasureSpec:I
+    iget v8, p0, Lcom/htc/widget/HtcAbsSpinner;->mWidthMeasureSpec:I
 
-    iget-object v9, p0, Lcom/htc/widget/HtcSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Lcom/htc/widget/HtcAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->left:I
 
-    iget-object v10, p0, Lcom/htc/widget/HtcSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Lcom/htc/widget/HtcAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->right:I
 
@@ -233,7 +233,7 @@
     invoke-virtual {p1, v5, v1}, Landroid/view/View;->measure(II)V
 
     .line 228
-    iget-object v8, p0, Lcom/htc/widget/HtcSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v8, p0, Lcom/htc/widget/HtcAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v8, v8, Landroid/graphics/Rect;->top:I
 
@@ -241,13 +241,13 @@
 
     move-result v9
 
-    iget-object v10, p0, Lcom/htc/widget/HtcSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Lcom/htc/widget/HtcAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->bottom:I
 
     sub-int/2addr v9, v10
 
-    iget-object v10, p0, Lcom/htc/widget/HtcSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Lcom/htc/widget/HtcAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->top:I
 
@@ -339,11 +339,11 @@
 
     .line 76
     :cond_1
-    iget-object v1, p0, Lcom/htc/widget/HtcSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v1, p0, Lcom/htc/widget/HtcAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/htc/widget/HtcSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v1, p0, Lcom/htc/widget/HtcAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     invoke-interface {v1}, Landroid/widget/SpinnerAdapter;->getCount()I
 
@@ -384,25 +384,25 @@
     const/4 v7, 0x0
 
     .line 121
-    iget-object v5, p0, Lcom/htc/widget/HtcSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Lcom/htc/widget/HtcAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v0, v5, Landroid/graphics/Rect;->left:I
 
     .line 122
     .local v0, childrenLeft:I
-    iget v5, p0, Lcom/htc/widget/HtcSpinner;->mRight:I
+    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mRight:I
 
-    iget v6, p0, Lcom/htc/widget/HtcSpinner;->mLeft:I
+    iget v6, p0, Lcom/htc/widget/HtcAdapterView;->mLeft:I
 
     sub-int/2addr v5, v6
 
-    iget-object v6, p0, Lcom/htc/widget/HtcSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v6, p0, Lcom/htc/widget/HtcAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v5, v6
 
-    iget-object v6, p0, Lcom/htc/widget/HtcSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v6, p0, Lcom/htc/widget/HtcAbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->right:I
 
@@ -410,7 +410,7 @@
 
     .line 124
     .local v1, childrenWidth:I
-    iget-boolean v5, p0, Lcom/htc/widget/HtcSpinner;->mDataChanged:Z
+    iget-boolean v5, p0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     if-eqz v5, :cond_0
 
@@ -419,7 +419,7 @@
 
     .line 129
     :cond_0
-    iget v5, p0, Lcom/htc/widget/HtcSpinner;->mItemCount:I
+    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mItemCount:I
 
     if-nez v5, :cond_1
 
@@ -432,12 +432,12 @@
 
     .line 134
     :cond_1
-    iget v5, p0, Lcom/htc/widget/HtcSpinner;->mNextSelectedPosition:I
+    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mNextSelectedPosition:I
 
     if-ltz v5, :cond_2
 
     .line 135
-    iget v5, p0, Lcom/htc/widget/HtcSpinner;->mNextSelectedPosition:I
+    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mNextSelectedPosition:I
 
     invoke-virtual {p0, v5}, Lcom/htc/widget/HtcSpinner;->setSelectedPositionInt(I)V
 
@@ -449,12 +449,12 @@
     invoke-virtual {p0}, Lcom/htc/widget/HtcSpinner;->removeAllViewsInLayout()V
 
     .line 144
-    iget v5, p0, Lcom/htc/widget/HtcSpinner;->mSelectedPosition:I
+    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
-    iput v5, p0, Lcom/htc/widget/HtcSpinner;->mFirstPosition:I
+    iput v5, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
 
     .line 145
-    iget v5, p0, Lcom/htc/widget/HtcSpinner;->mSelectedPosition:I
+    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     invoke-direct {p0, v5}, Lcom/htc/widget/HtcSpinner;->makeAndAddView(I)Landroid/view/View;
 
@@ -481,7 +481,7 @@
     invoke-virtual {v2, v3}, Landroid/view/View;->offsetLeftAndRight(I)V
 
     .line 151
-    iget-object v5, p0, Lcom/htc/widget/HtcSpinner;->mRecycler:Lcom/htc/widget/HtcAbsSpinner$RecycleBin;
+    iget-object v5, p0, Lcom/htc/widget/HtcAbsSpinner;->mRecycler:Lcom/htc/widget/HtcAbsSpinner$RecycleBin;
 
     invoke-virtual {v5}, Lcom/htc/widget/HtcAbsSpinner$RecycleBin;->clear()V
 
@@ -492,13 +492,13 @@
     invoke-virtual {p0}, Lcom/htc/widget/HtcSpinner;->checkSelectionChanged()V
 
     .line 157
-    iput-boolean v7, p0, Lcom/htc/widget/HtcSpinner;->mDataChanged:Z
+    iput-boolean v7, p0, Lcom/htc/widget/HtcAdapterView;->mDataChanged:Z
 
     .line 158
-    iput-boolean v7, p0, Lcom/htc/widget/HtcSpinner;->mNeedSync:Z
+    iput-boolean v7, p0, Lcom/htc/widget/HtcAdapterView;->mNeedSync:Z
 
     .line 159
-    iget v5, p0, Lcom/htc/widget/HtcSpinner;->mSelectedPosition:I
+    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mSelectedPosition:I
 
     invoke-virtual {p0, v5}, Lcom/htc/widget/HtcSpinner;->setNextSelectedPositionInt(I)V
 
@@ -538,13 +538,13 @@
     .line 108
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/htc/widget/HtcSpinner;->mInLayout:Z
+    iput-boolean v0, p0, Lcom/htc/widget/HtcAdapterView;->mInLayout:Z
 
     .line 109
     invoke-virtual {p0, v1, v1}, Lcom/htc/widget/HtcSpinner;->layout(IZ)V
 
     .line 110
-    iput-boolean v1, p0, Lcom/htc/widget/HtcSpinner;->mInLayout:Z
+    iput-boolean v1, p0, Lcom/htc/widget/HtcAdapterView;->mInLayout:Z
 
     .line 111
     return-void
