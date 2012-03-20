@@ -367,7 +367,7 @@
 
     iput-object v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mUnlockScreenMode:Lcom/android/internal/policy/impl/LockPatternKeyguardView$UnlockMode;
 
-    invoke-direct {p0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->getInitialMode()Lcom/android/internal/policy/impl/LockPatternKeyguardView$Mode;
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->getInitialMode()Lcom/android/internal/policy/impl/LockPatternKeyguardView$Mode;
 
     move-result-object v1
 
@@ -702,7 +702,7 @@
 
     .prologue
     .line 108
-    invoke-direct {p0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->getInitialMode()Lcom/android/internal/policy/impl/LockPatternKeyguardView$Mode;
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->getInitialMode()Lcom/android/internal/policy/impl/LockPatternKeyguardView$Mode;
 
     move-result-object v0
 
@@ -3568,7 +3568,7 @@
     goto :goto_0
 .end method
 
-.method private getInitialMode()Lcom/android/internal/policy/impl/LockPatternKeyguardView$Mode;
+.method getInitialMode()Lcom/android/internal/policy/impl/LockPatternKeyguardView$Mode;
     .locals 4
 
     .prologue
