@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <drawable name="incall_screen_bk">@com.htc:drawable/common_glance_bkg</drawable>
+    <drawable name="incall_screen_bk">@drawable/common_glance_bkg</drawable>
     <drawable name="listview_listbackground">@com.htc:drawable/listview_listbackground</drawable>
     <drawable name="phone_btn_contorl_left">@drawable/phone_btn_contorl</drawable>
     <drawable name="phone_btn_contorl_right">@drawable/phone_btn_contorl</drawable>
