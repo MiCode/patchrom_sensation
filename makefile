@@ -79,6 +79,10 @@ local-zip-misc: add-lbesec-miui
 	cp other/lock_wallpaper $(ZIP_DIR)/system/media/theme/default/lock_wallpaper
 	@echo CID default xml
 	cp other/default.xml $(ZIP_DIR)/system/customize/CID/default.xml
+	@echo update bootanimation
+	rm $(ZIP_DIR)/system/bin/bootanimation
+	cp other/bootanimation $(ZIP_DIR)/system/bin/bootanimation
+
 local-test:
 #	rm -f $(local-out-zip-file)
 #	cp .build/$(local-out-zip-file) .
