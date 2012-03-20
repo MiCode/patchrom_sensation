@@ -81,8 +81,7 @@ ro.board.platform=msm8660
 # ro.build.product is obsolete; use ro.product.device
 ro.build.product=pyramid
 # Do not try to parse ro.build.description or .fingerprint
-ro.build.description=3.32.401.105 CL309896 release-keys
-ro.build.description=3.32.401.105 CL309896 release-keys
+ro.build.description=3.32.401.105 4.0.3 IML74K CL309896 release-keys
 ro.build.changelist=309896
 ro.build.fingerprint=htc_europe/htc_pyramid/pyramid:4.0.3/IML74K/309896.105:user/release-keys
 ro.build.characteristics=default
