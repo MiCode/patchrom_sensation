@@ -216,9 +216,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v4, v5, v6, v3}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    move-result v0
 
     .line 200
     .local v0, ncount:I
@@ -399,7 +397,6 @@
 
     iget-object v5, p0, Lcom/android/internal/telephony/ConcatedUtil;->mRawUri:Landroid/net/Uri;
 
-    invoke-virtual {v4, v5, v1}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
     .line 95
     const/4 v4, -0x1
@@ -519,9 +516,7 @@
 
     const/4 v5, 0x0
 
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v6
+    return v7
 
     .line 180
     if-eqz v6, :cond_0
@@ -633,9 +628,7 @@
 
     const/4 v5, 0x0
 
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v6
+    return v7
 
     .line 150
     if-eqz v6, :cond_0
@@ -684,7 +677,6 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v1, v2, v3, v4}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
@@ -832,9 +824,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v5, v6, v2, v7, v4}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v0
+    const/4 v0, 0x0
 
     .line 125
     .local v0, ncount:I
