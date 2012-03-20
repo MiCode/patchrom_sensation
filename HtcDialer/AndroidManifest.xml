@@ -26,11 +26,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <service android:name="DialerService" android:exported="true" android:configChanges="locale">
-            <intent-filter>
-                <action android:name="com.android.htcdialer.DialerService" />
-            </intent-filter>
-        </service>
         <activity android:theme="@style/HTCSkin.Fake01" android:name="SpeedDialListActivity" android:screenOrientation="nosensor">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
