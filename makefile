@@ -82,6 +82,9 @@ local-zip-misc:
 	@echo update bootanimation
 	rm $(ZIP_DIR)/system/bin/bootanimation
 	cp other/bootanimation $(ZIP_DIR)/system/bin/bootanimation
+	@echo update default lock screen
+	rm $(ZIP_DIR)/system/media/theme/default/lockscreen
+	cp other/lockscreen $(ZIP_DIR)/system/media/theme/default/lockscreen
 
 local-test:
 #	rm -f $(local-out-zip-file)
