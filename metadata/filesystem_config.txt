@@ -314,7 +314,6 @@ system/bin/stagefright 0 2000 755
 system/bin/start 0 2000 6755
 system/bin/stop 0 2000 6755
 system/bin/stream 0 2000 755
-system/bin/su 0 0 6755
 system/bin/surfaceflinger 0 2000 755
 system/bin/svc 0 2000 755
 system/bin/sync 0 2000 6755
@@ -1662,7 +1661,6 @@ system/xbin/id 0 0 4755
 system/xbin/ifconfig 0 0 4755
 system/xbin/insmod 0 0 4755
 system/xbin/install 0 0 4755
-system/xbin/invoke-as 0 0 6755
 system/xbin/ip 0 0 4755
 system/xbin/kill 0 0 4755
 system/xbin/killall 0 0 4755
