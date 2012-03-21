@@ -1458,13 +1458,13 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x1040318
+    const v0, 0x30c018c
 
     :goto_0
     return v0
 
     :cond_0
-    const v0, 0x1040124
+    const v0, 0x30c0191
 
     goto :goto_0
 .end method
