@@ -633,10 +633,10 @@
     .line 288
     iput-wide v7, p0, Landroid/view/ViewRootImpl;->mFpsPrevTime:J
 
+    iput-boolean v4, p0, Landroid/view/ViewRootImpl;->mSkipResizedMsg:Z
+
     .line 309
     invoke-static {}, Landroid/view/InputEventConsistencyVerifier;->isInstrumentationEnabled()Z
-
-    iput-boolean v4, p0, Landroid/view/ViewRootImpl;->mSkipResizedMsg:Z
 
     move-result v0
 
