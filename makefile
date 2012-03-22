@@ -9,7 +9,7 @@ local-zip-file     := sensation_3.32.zip
 # local-out-zip-file :=
 
 # All apps from original ZIP, but has smali files chanded
-local-modified-apps := Phone HTCCamera
+local-modified-apps := Phone HTCCamera HtcDialer
 
 local-modified-jars := HTCExtension
 
@@ -18,7 +18,7 @@ local-miui-modified-apps := ThemeManager Mms MiuiHome TelephonyProvider MiuiSyst
 local-miui-removed-apps  := Phone AntiSpam LatinIME
 
 # All apps need to be removed from original ZIP file
-local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FMRadioWidget HtcDialer com.htc.FriendStream3DWidget \
+local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FMRadioWidget com.htc.FriendStream3DWidget \
 	com.htc.MusicWidget com.htc.Sync3DWidget com.htc.Task3DWidget com.htc.TrendsWidget com.htc.Twitter3DWidget \
 	com.htc.htcmsgwidgets3d com.htc.idlescreen_SN DCSStock EReader Facebook Flickr FriendStream FusionStockWidget \
 	GenieWidget GoogleFeedback GoogleQuickSearchBox GSD HtcConnectedMedia \
