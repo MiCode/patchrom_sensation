@@ -3058,7 +3058,6 @@
 
     .line 408
     :cond_3
-    invoke-virtual {p0}, Lcom/android/internal/app/ActionBarImpl;->show()V
 
     .line 411
     .end local v0           #mode:Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;
