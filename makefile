@@ -13,7 +13,7 @@ local-modified-apps := Phone HTCCamera HtcDialer
 
 local-modified-jars := HTCExtension
 
-local-miui-modified-apps := ThemeManager Mms MiuiHome TelephonyProvider MiuiSystemUI
+local-miui-modified-apps := ThemeManager Mms MiuiHome TelephonyProvider MiuiSystemUI Settings
 # All apks from MIUI
 local-miui-removed-apps  := Phone AntiSpam LatinIME
 
@@ -30,7 +30,7 @@ local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FM
 	htccontactwidgets3D  htcbookmarkwidget3d \
 	Idlescreen_Base  idlescreen_photo idlescreen_shortcut \
 	Weather IdleScreen_Weather HtcWeather3DWidget HtcWeatherWallpaper WeatherLiveWallpaper WeatherVideo \
-	HTCSetupWizard SetupWizard Superuser Mail HomePersonalize DockMode WifiRouter \
+	HTCSetupWizard SetupWizard Superuser Mail HomePersonalize DockMode \
 	Videos WorldClock HtcClock3DWidget HtcCalculatorWidget htccalendarwidgets3d htcmailwidgets3d htcsettingwidgets \
 	BlueSky WeatherSyncProvider WeatherProvider VpnDialogs VisualizationWallpapers \
 	MagicSmokeWallpapers Mode10Wallpapers Burgundy FaceLock HtcCompressViewer HtcAutoRotateWidget HtcDataRoamingWidget\

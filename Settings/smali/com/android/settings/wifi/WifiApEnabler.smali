@@ -731,7 +731,14 @@
     .line 153
     .restart local v0       #s:Ljava/lang/String;
     :cond_0
-    iget-object v0, p1, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
+
+    invoke-static {p1}, Lcom/htc/wrap/android/net/wifi/HtcWrapWifiConfiguration;->getHtcWrapWifiApProfile(Landroid/net/wifi/WifiConfiguration;)Lcom/htc/wrap/android/net/wifi/HtcWrapWifiConfiguration$HtcWrapHotspotProfile;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/htc/wrap/android/net/wifi/HtcWrapWifiConfiguration$HtcWrapHotspotProfile;->getSSID()Ljava/lang/String;
+
+    move-result-object v0
 
     goto :goto_0
 .end method

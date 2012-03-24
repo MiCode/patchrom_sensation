@@ -345,7 +345,7 @@
     iget-object v3, p0, Lcom/android/settings/TetherSettings;->mWifiConfig:Landroid/net/wifi/WifiConfiguration;
 
     if-nez v3, :cond_0
-
+    goto :cond_0
     .line 189
     const v3, 0x30c0198
 
@@ -402,7 +402,13 @@
 
     iget-object v6, p0, Lcom/android/settings/TetherSettings;->mWifiConfig:Landroid/net/wifi/WifiConfiguration;
 
-    iget-object v6, v6, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
+    invoke-static {v6}, Lcom/htc/wrap/android/net/wifi/HtcWrapWifiConfiguration;->getHtcWrapWifiApProfile(Landroid/net/wifi/WifiConfiguration;)Lcom/htc/wrap/android/net/wifi/HtcWrapWifiConfiguration$HtcWrapHotspotProfile;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lcom/htc/wrap/android/net/wifi/HtcWrapWifiConfiguration$HtcWrapHotspotProfile;->getSSID()Ljava/lang/String;
+
+    move-result-object v6
 
     aput-object v6, v5, v7
 
@@ -2424,13 +2430,11 @@
 .end method
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
-    .locals 9
+    .locals 8
     .parameter "screen"
     .parameter "preference"
 
     .prologue
-    const/4 v8, 0x2
-
     const/4 v6, 0x1
 
     .line 560
@@ -2499,7 +2503,9 @@
     if-eqz v1, :cond_3
 
     .line 575
-    invoke-direct {p0, v8}, Lcom/android/settings/TetherSettings;->startProvisioningIfNecessary(I)V
+    const/4 v6, 0x2
+
+    invoke-direct {p0, v6}, Lcom/android/settings/TetherSettings;->startProvisioningIfNecessary(I)V
 
     goto :goto_0
 
@@ -2584,9 +2590,6 @@
     iget-object v6, p0, Lcom/android/settings/TetherSettings;->mCreateNetwork:Landroid/preference/Preference;
 
     if-ne p2, v6, :cond_0
-
-    .line 597
-    invoke-virtual {p0, v8}, Lcom/android/settings/TetherSettings;->showDialog(I)V
 
     goto :goto_0
 .end method
