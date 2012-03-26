@@ -221,11 +221,11 @@ ro.qualcomm.cabl=1
 # ADDITIONAL_BUILD_PROPERTIES
 #
 ro.setupwizard.mode=OPTIONAL
-ro.config.ringtone=QuietlyBrilliant.mp3
-ro.config.notification_sound=Zeta.mp3
-ro.config.alarm_alert=NewDay.mp3
-ro.config.cal_notification=Epsilon.mp3
-ro.config.msg_notification=Gamma.mp3
+ro.config.ringtone=MI.ogg
+ro.config.notification_sound=FadeIn.ogg
+ro.config.alarm_alert=FadeIn.ogg
+ro.config.cal_notification=FadeIn.ogg
+ro.config.msg_notification=FadeIn.ogg
 drm.service.enabled=true
 ro.com.google.gmsversion=4.0.3_r0
 media.a1026.nsForVoiceRec=0
