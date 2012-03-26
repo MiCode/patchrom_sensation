@@ -13,3 +13,7 @@ fi
 if [ $1 = "Mms" ];then
 	$XMLMERGYTOOL $1/res/values $2/res/values
 fi
+
+if [ $1 = "Contacts" ];then
+	$XMLMERGYTOOL $1/res/values $2/res/values
+fi

@@ -13,7 +13,7 @@ local-modified-apps := Phone HTCCamera HtcDialer
 
 local-modified-jars := HTCExtension
 
-local-miui-modified-apps := ThemeManager Mms MiuiHome TelephonyProvider MiuiSystemUI Settings
+local-miui-modified-apps := ThemeManager Mms MiuiHome TelephonyProvider MiuiSystemUI Settings Contacts
 # All apks from MIUI
 local-miui-removed-apps  := Phone AntiSpam LatinIME
 
