@@ -42,7 +42,7 @@ local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FM
 	HtcSettingsProvider Rosie fusion \
 	Dropbox Facebook_Client HtcCOTAClient HtcGreader HtcGreaderWidget HtcLocationPicker HtcNotes HtcNotesProvider HtcResetNotify HtcRichNotesWidget3D \
 	htcwatchwidget3d Phonesky PlusOne PrivInit QXDM2SD RebootWarningWin Smith Street Transfer-pyramid-8.35.0.32-ICS-S35-released Uninstall_LinkedIn_FSPlugin \
-	UpgradeSetup WatchApp
+	UpgradeSetup WatchApp MyPen MyHTCCSEngine CustomizationSetup
 # To include the local targets before and after zip the final ZIP file, 
 # and the local-targets should:
 # (1) be defined after including porting.mk if using any global variable(see porting.mk)
