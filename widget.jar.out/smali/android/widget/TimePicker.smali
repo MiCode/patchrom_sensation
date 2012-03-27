@@ -493,7 +493,7 @@
 
     .prologue
     .line 55
-    invoke-direct {p0}, Landroid/widget/TimePicker;->onTimeChanged()V
+    invoke-virtual {p0}, Landroid/widget/TimePicker;->onTimeChanged()V
 
     return-void
 .end method
@@ -520,7 +520,7 @@
     return-object v0
 .end method
 
-.method private onTimeChanged()V
+.method onTimeChanged()V
     .locals 3
 
     .prologue
@@ -1344,7 +1344,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/NumberPicker;->setValue(I)V
 
     .line 405
-    invoke-direct {p0}, Landroid/widget/TimePicker;->onTimeChanged()V
+    invoke-virtual {p0}, Landroid/widget/TimePicker;->onTimeChanged()V
 
     goto :goto_0
 
@@ -1396,7 +1396,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/NumberPicker;->setValue(I)V
 
     .line 448
-    invoke-direct {p0}, Landroid/widget/TimePicker;->onTimeChanged()V
+    invoke-virtual {p0}, Landroid/widget/TimePicker;->onTimeChanged()V
 
     goto :goto_0
 .end method
