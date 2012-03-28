@@ -4061,7 +4061,7 @@
     sget-boolean v4, Lcom/android/providers/telephony/TelephonyProvider;->mIsCarriersCacheReady:Z
 
     if-eqz v4, :cond_1
-
+    goto :cond_1
     .line 827
     const-string v4, "carriers_cache"
 
