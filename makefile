@@ -15,7 +15,7 @@ local-modified-jars := HTCExtension
 
 local-miui-modified-apps := ThemeManager Mms MiuiHome TelephonyProvider MiuiSystemUI Settings Contacts
 # All apks from MIUI
-local-miui-removed-apps  := Phone LatinIME
+local-miui-removed-apps  := Phone AntiSpam LatinIME
 
 # All apps need to be removed from original ZIP file
 local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FMRadioWidget com.htc.FriendStream3DWidget \
