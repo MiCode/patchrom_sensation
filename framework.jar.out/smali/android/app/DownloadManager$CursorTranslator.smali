@@ -398,7 +398,7 @@
 
     .prologue
     .line 1352
-    packed-switch p1, :pswitch_data_0
+    packed-switch p0, :pswitch_data_0
 
     .line 1369
     :pswitch_0
@@ -406,7 +406,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-static {p1}, Landroid/provider/Downloads$Impl;->isStatusError(I)Z
+    invoke-static {p0}, Landroid/provider/Downloads$Impl;->isStatusError(I)Z
 
     move-result v0
 
