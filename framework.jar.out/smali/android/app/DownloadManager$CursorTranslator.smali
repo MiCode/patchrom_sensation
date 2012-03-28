@@ -358,20 +358,17 @@
     .parameter "status"
 
     .prologue
-    .line 1273
-    invoke-direct {p0, p1}, Landroid/app/DownloadManager$CursorTranslator;->translateStatus(I)I
+    invoke-static {p1}, Landroid/app/DownloadManager$CursorTranslator;->translateStatus(I)I
 
     move-result v0
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 1281
     const-wide/16 v0, 0x0
 
     :goto_0
     return-wide v0
 
-    .line 1275
     :sswitch_0
     invoke-direct {p0, p1}, Landroid/app/DownloadManager$CursorTranslator;->getErrorCode(I)J
 
@@ -395,7 +392,7 @@
     .end sparse-switch
 .end method
 
-.method private translateStatus(I)I
+.method static translateStatus(I)I
     .locals 1
     .parameter "status"
 
@@ -551,7 +548,7 @@
 
     move-result v0
 
-    invoke-direct {p0, v0}, Landroid/app/DownloadManager$CursorTranslator;->translateStatus(I)I
+    invoke-static {v0}, Landroid/app/DownloadManager$CursorTranslator;->translateStatus(I)I
 
     move-result v0
 
