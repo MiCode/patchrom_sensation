@@ -40,28 +40,38 @@ include $(PORT_BUILD)/porting.mk
 local-zip-misc:
 	@echo Update boot image
 	cp other/boot.img $(ZIP_DIR)/boot.img
+
 	@echo Update build.prop
 	cp other/build.prop $(ZIP_DIR)/system/build.prop
+
 	@echo Update htc resources
 	$(APKTOOL) d -f $(ZIP_DIR)/system/framework/com.htc.resources.apk $(TMP_DIR)/com.htc.resources
 	rm $(ZIP_DIR)/system/framework/com.htc.resources.apk
 	cp other/com.htc.resources/res/drawable-hdpi/* $(TMP_DIR)/com.htc.resources/res/drawable-hdpi
 	$(APKTOOL) b $(TMP_DIR)/com.htc.resources $(TMP_DIR)/com.htc.resources.apk
 	cp $(TMP_DIR)/com.htc.resources.apk $(ZIP_DIR)/system/framework/com.htc.resources.apk
+
 	@echo update default theme icons
 	mv $(ZIP_DIR)/system/media/theme/default/icons $(TMP_DIR)/icons.zip
 	$(UNZIP) $(TMP_DIR)/icons.zip -d $(TMP_DIR)/default_theme_icons
 	cp other/default_theme_icons/* $(TMP_DIR)/default_theme_icons
 	$(ZIP) -j $(ZIP_DIR)/system/media/theme/default/icons.zip $(TMP_DIR)/default_theme_icons/*
 	mv $(ZIP_DIR)/system/media/theme/default/icons.zip $(ZIP_DIR)/system/media/theme/default/icons
+
 	@echo CID default xml
 	cp other/default.xml $(ZIP_DIR)/system/customize/CID/default.xml
+
 	@echo update bootanimation
 	rm $(ZIP_DIR)/system/bin/bootanimation
 	cp other/bootanimation $(ZIP_DIR)/system/bin/bootanimation
+
+	@echo update default lock wallpaper
+	cp other/lock_wallpaper $(ZIP_DIR)/system/media/theme/default/lock_wallpaper
+
 	@echo update default lock screen
 	rm $(ZIP_DIR)/system/media/theme/default/lockscreen
 	cp other/lockscreen $(ZIP_DIR)/system/media/theme/default/lockscreen
+
 	@echo add LiveWallpaperPicker
 	cp other/LiveWallpapersPicker.apk $(ZIP_DIR)/system/app/LiveWallpapersPicker.apk
 local-test:
