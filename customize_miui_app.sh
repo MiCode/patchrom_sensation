@@ -15,6 +15,7 @@ if [ $1 = "Phone" ];then
         dstfile="out/$filepath/$filename"
         cat $file >> $dstfile
     done
+    $XMLMERGYTOOL $1/res/values $2/res/values
 fi
 
 if [ $1 = "Mms" ];then
