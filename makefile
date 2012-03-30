@@ -9,40 +9,21 @@ local-zip-file     := sensation_3.32.zip
 # local-out-zip-file :=
 
 # All apps from original ZIP, but has smali files chanded
-local-modified-apps := Phone HTCCamera HtcDialer
+local-modified-apps := HTCCamera
 
 local-modified-jars := HTCExtension
 
-local-miui-modified-apps := ThemeManager Mms MiuiHome TelephonyProvider MiuiSystemUI Settings Contacts
+local-miui-modified-apps := Phone ThemeManager Mms MiuiHome Settings
 # All apks from MIUI
-local-miui-removed-apps  := Phone AntiSpam LatinIME
+local-miui-removed-apps  := LatinIME
 
-# All apps need to be removed from original ZIP file
-local-remove-apps	:= SystemUI HtcContacts AdobeReader CheckinProvider com.htc.FMRadioWidget com.htc.FriendStream3DWidget \
-	com.htc.MusicWidget com.htc.Sync3DWidget com.htc.Task3DWidget com.htc.TrendsWidget com.htc.Twitter3DWidget \
-	com.htc.htcmsgwidgets3d com.htc.idlescreen_SN DCSStock EReader Facebook Flickr FriendStream FusionStockWidget \
-	GenieWidget GoogleFeedback GoogleQuickSearchBox GSD HtcConnectedMedia \
-	HtcFacebook HtcFacebookChat HtcFacebookChatWidget HtcFeedback HtcLaputa HtcLaputaInstaller HtcLocationsWidget3d \
-	HtcNavigateWidget3d HtcTwitter IdleScreen_Stock JETCET_PRINT JETCET_PRINT_Resources MyHTC MyReportAgent \
-	MyShelf_Widget MySketcher picasapryramid PolarisOffice SoundHound_Freemium Stock teeter TripWidget3D Twitter \
-	YouTube Flashlight \
-	dice_ml TaskManager Tweaks HtcStore HtcStoreWidget MyTask HtcSoundRecorder HtcLockScreen \
-	htccontactwidgets3D  htcbookmarkwidget3d \
-	Idlescreen_Base  idlescreen_photo idlescreen_shortcut \
-	Weather IdleScreen_Weather HtcWeather3DWidget HtcWeatherWallpaper WeatherLiveWallpaper WeatherVideo \
-	HTCSetupWizard SetupWizard Superuser Mail HomePersonalize DockMode \
-	Videos WorldClock HtcClock3DWidget HtcCalculatorWidget htccalendarwidgets3d htcmailwidgets3d htcsettingwidgets \
-	BlueSky WeatherSyncProvider WeatherProvider VpnDialogs VisualizationWallpapers \
-	MagicSmokeWallpapers Mode10Wallpapers Burgundy FaceLock HtcCompressViewer HtcAutoRotateWidget HtcDataRoamingWidget\
-	HtcDataStripWidget HtcImageWallpaper HTCLivewallpaperStreak HtcProfileWidget HtcPowerStripWidget HtcPhotoWidget \
-	HtcRingtoneWidget HtcRingtoneTrimmer HtcScreenBrightnessWidget HtcScreenTimeoutWidget HTCAlbum Galaxy4 com.htc.SN Tweaks dice_ml \
-	HTCSync PCSC HtcSoundSetDownloadManager \
-	HTCMediaAutoUploadSetting HtcBackgroundDataWidget HtcStreamPlayer HtcVideoPlayer HtcPowerSaverWidget HtcPainterView HtcMusicEnhancer \
-	HtcMessageUploader HtcMessageProvider HtcLocationService HtcMediaCacheService HtcDLNAMiddleLayer HtcDMC HoloSpiralWallpaper MediaUploader \
-	HtcSettingsProvider Rosie fusion \
-	Dropbox Facebook_Client HtcCOTAClient HtcGreader HtcGreaderWidget HtcLocationPicker HtcNotes HtcNotesProvider HtcResetNotify HtcRichNotesWidget3D \
-	htcwatchwidget3d Phonesky PlusOne PrivInit QXDM2SD RebootWarningWin Smith Street Transfer-pyramid-8.35.0.32-ICS-S35-released Uninstall_LinkedIn_FSPlugin \
-	UpgradeSetup WatchApp MyPen MyHTCCSEngine CustomizationSetup
+# All apps need to be reserved from original ZIP file
+local-phone-apps := ApplicationsProvider AppSharing BackupRestoreConfirmation Bluetooth BrcmBluetoothServices \
+	CertInstaller CustomizationSettingsProvider DefaultContainerService DFPI DrmProvider FilePicker GoogleTTS \
+	HTC_IME HtcBeatsNotify HTCCamera HtcFMRadio HtcListen HTMLViewer KeyChain LiveWallpapers LMW MarketUpdater \
+	NoiseField OneTimeInitializer PhaseBeam PluginManager SDCardWizard SharedStorageBackup SmartNetwork Stk \
+	talkback TrimIt UploadProvider Usage UserDictionaryProvider WifiRouter
+
 # To include the local targets before and after zip the final ZIP file, 
 # and the local-targets should:
 # (1) be defined after including porting.mk if using any global variable(see porting.mk)
@@ -61,8 +42,6 @@ local-zip-misc:
 	cp other/boot.img $(ZIP_DIR)/boot.img
 	@echo Update build.prop
 	cp other/build.prop $(ZIP_DIR)/system/build.prop
-	@echo add tel location
-	cp other/CallerLocation.apk $(ZIP_DIR)/system/app/CallerLocation.apk
 	@echo Update htc resources
 	$(APKTOOL) d -f $(ZIP_DIR)/system/framework/com.htc.resources.apk $(TMP_DIR)/com.htc.resources
 	rm $(ZIP_DIR)/system/framework/com.htc.resources.apk
@@ -75,8 +54,6 @@ local-zip-misc:
 	cp other/default_theme_icons/* $(TMP_DIR)/default_theme_icons
 	$(ZIP) -j $(ZIP_DIR)/system/media/theme/default/icons.zip $(TMP_DIR)/default_theme_icons/*
 	mv $(ZIP_DIR)/system/media/theme/default/icons.zip $(ZIP_DIR)/system/media/theme/default/icons
-	@echo update default lock wallpaper
-	cp other/lock_wallpaper $(ZIP_DIR)/system/media/theme/default/lock_wallpaper
 	@echo CID default xml
 	cp other/default.xml $(ZIP_DIR)/system/customize/CID/default.xml
 	@echo update bootanimation
