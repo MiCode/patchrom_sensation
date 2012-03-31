@@ -1493,7 +1493,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     .line 735
     :cond_0
@@ -10148,6 +10148,8 @@
     move-result v19
 
     if-eqz v19, :cond_31
+
+    goto/16 :cond_31
 
     .line 3810
     const/16 v19, 0x1
