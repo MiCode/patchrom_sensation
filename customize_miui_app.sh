@@ -29,3 +29,15 @@ fi
 if [ $1 = "MiuiHome" ];then
     $XMLMERGYTOOL $1/res/values $2/res/values
 fi
+
+if [ $1 = "Settings" ];then
+    cp $1/Settings.part out/
+    cd out
+    git.apply Settings.part
+    cd ..
+    for file in `find $2 -name *.rej`
+    do
+	echo "Settings patch fail"
+        exit 1
+    done
+fi

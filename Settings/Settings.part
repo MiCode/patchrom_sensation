@@ -1,0 +1,89 @@
+From 3fe6a93b4a86209695588655d143df3be4cdc330 Mon Sep 17 00:00:00 2001
+From: wangwei_b <wangwei_b@xiaomi.com>
+Date: Sat, 24 Mar 2012 18:23:45 +0800
+Subject: [PATCH] fix soft wifi ap can't work bug
+
+N/A
+
+htc modify android wifi implement include wifi state machine,
+and add special app named by WifiRouter.apk.
+we add the apk,and port htc SSID implement to  miui Setting.
+Signed-off-by: wangwei_b <wangwei_b@xiaomi.com>
+
+Change-Id: I71c7c2e13eb74fce9b9a915739b4aacfadabfc07
+---
+ Settings/res/xml/tether_prefs.xml                  |    4 ++-
+ .../com/android/settings/TetherSettings.smali      |   15 +++++++++----
+ .../com/android/settings/wifi/WifiApEnabler.smali  |    9 +++++++-
+ 4 files changed, 22 insertions(+), 9 deletions(-)
+
+--- a/Settings/res/xml/tether_prefs.xml
++++ b/Settings/res/xml/tether_prefs.xml
+@@ -3,7 +3,9 @@
+   xmlns:android="http://schemas.android.com/apk/res/android">
+     <CheckBoxPreference android:persistent="false" android:title="@string/usb_tethering_button_text" android:key="usb_tether_settings" />
+     <CheckBoxPreference android:persistent="false" android:title="@string/wifi_tether_checkbox_text" android:key="enable_wifi_ap" />
+-    <Preference android:persistent="false" android:title="@string/wifi_tether_configure_ap_text" android:key="wifi_ap_ssid_and_security" />
++    <Preference android:persistent="false" android:title="@string/wifi_tether_configure_ap_text" android:key="wifi_ap_ssid_and_security">
++        <intent android:targetPackage="com.htc.WifiRouter" android:targetClass="com.htc.WifiRouter.WifiRouter" />
++    </Preference>
+     <CheckBoxPreference android:persistent="false" android:title="@string/bluetooth_tether_checkbox_text" android:key="enable_bluetooth_tethering" />
+     <PreferenceScreen android:title="@string/tethering_help_button_text" android:key="tethering_help" />
+ </PreferenceScreen>
+--- a/Settings/smali/com/android/settings/TetherSettings.smali
++++ b/Settings/smali/com/android/settings/TetherSettings.smali
+@@ -371,7 +371,13 @@
+ 
+     iget-object v6, p0, Lcom/android/settings/TetherSettings;->mWifiConfig:Landroid/net/wifi/WifiConfiguration;
+ 
+-    iget-object v6, v6, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
++    invoke-static {v6}, Lcom/htc/wrap/android/net/wifi/HtcWrapWifiConfiguration;->getHtcWrapWifiApProfile(Landroid/net/wifi/WifiConfiguration;)Lcom/htc/wrap/android/net/wifi/HtcWrapWifiConfiguration$HtcWrapHotspotProfile;
++
++    move-result-object v6
++
++    invoke-virtual {v6}, Lcom/htc/wrap/android/net/wifi/HtcWrapWifiConfiguration$HtcWrapHotspotProfile;->getSSID()Ljava/lang/String;
++
++    move-result-object v6
+ 
+     aput-object v6, v5, v7
+ 
+@@ -2242,7 +2246,9 @@
+     .local v1, bluetoothTetherState:Z
+     if-eqz v1, :cond_3
+ 
+-    invoke-direct {p0, v8}, Lcom/android/settings/TetherSettings;->startProvisioningIfNecessary(I)V
++    const/4 v6, 0x2
++
++    invoke-direct {p0, v6}, Lcom/android/settings/TetherSettings;->startProvisioningIfNecessary(I)V
+ 
+     goto :goto_0
+ 
+@@ -2316,8 +2322,6 @@
+ 
+     if-ne p2, v6, :cond_0
+ 
+-    invoke-virtual {p0, v8}, Lcom/android/settings/TetherSettings;->showDialog(I)V
+-
+     goto :goto_0
+ .end method
+ 
+--- a/Settings/smali/com/android/settings/wifi/WifiApEnabler.smali
++++ b/Settings/smali/com/android/settings/wifi/WifiApEnabler.smali
+@@ -648,7 +648,14 @@
+ 
+     .restart local v0       #s:Ljava/lang/String;
+     :cond_0
+-    iget-object v0, p1, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
++
++    invoke-static {p1}, Lcom/htc/wrap/android/net/wifi/HtcWrapWifiConfiguration;->getHtcWrapWifiApProfile(Landroid/net/wifi/WifiConfiguration;)Lcom/htc/wrap/android/net/wifi/HtcWrapWifiConfiguration$HtcWrapHotspotProfile;
++
++    move-result-object v0
++
++    invoke-virtual {v0}, Lcom/htc/wrap/android/net/wifi/HtcWrapWifiConfiguration$HtcWrapHotspotProfile;->getSSID()Ljava/lang/String;
++
++    move-result-object v0
+ 
+     goto :goto_0
+ .end method
+1.7.1
+
