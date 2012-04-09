@@ -10,7 +10,7 @@
     <favorite launcher:className="com.miui.player.ui.MusicBrowserActivity" launcher:packageName="com.miui.player" launcher:screen="1" launcher:x="2" launcher:y="2" />
     <favorite launcher:className="com.android.thememanager.ThemeResourceTabActivity" launcher:packageName="com.android.thememanager" launcher:screen="1" launcher:x="3" launcher:y="2" />
     <favorite launcher:className="com.android.settings.MiuiSettings" launcher:packageName="com.android.settings" launcher:screen="1" launcher:x="0" launcher:y="3" />
-    <favorite launcher:className="com.miui.supermarket.MainTabActivity" launcher:packageName="com.miui.supermarket" launcher:screen="1" launcher:x="1" launcher:y="3" />
+    <favorite launcher:className="com.miui.supermarket.MainTabActivity" launcher:packageName="com.xiaomi.market" launcher:screen="1" launcher:x="1" launcher:y="3" />
     <favorite launcher:className="com.android.deskclock.DeskClock" launcher:packageName="com.android.deskclock" launcher:container="1" launcher:x="0" launcher:y="0" />
     <favorite launcher:className="com.android.calculator2.Calculator" launcher:packageName="com.android.calculator2" launcher:container="1" launcher:x="0" launcher:y="0" />
     <favorite launcher:className="com.android.soundrecorder.SoundRecorder" launcher:packageName="com.android.soundrecorder" launcher:container="1" launcher:x="0" launcher:y="0" />
