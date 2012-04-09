@@ -40,4 +40,6 @@ if [ $1 = "Settings" ];then
 	echo "Settings patch fail"
         exit 1
     done
+
+    $XMLMERGYTOOL $1/res/values $2/res/values
 fi
