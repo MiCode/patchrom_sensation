@@ -133,8 +133,9 @@ ro.opengles.version = 131072
 
 # This is a high density device with more memory, so larger vm heaps for it.
 # For ICS project, default 32m/48m
-dalvik.vm.heapsize=128m
-dalvik.vm.heapgrowthlimit=48m
+dalvik.vm.heapsize=256m
+dalvik.vm.heapgrowthlimit=64m
+dalvik.vm.heapstartsize=8m
 
 # unlock keyguard when SIM is non-inserted
 keyguard.no_require_sim=1
