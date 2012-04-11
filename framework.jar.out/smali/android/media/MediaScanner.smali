@@ -6292,9 +6292,6 @@
 
     .prologue
     .line 1310
-    sget-object v0, Landroid/media/MediaFile;->sFileExtensions:Ljava/lang/String;
-
-    invoke-direct {p0, p1, v0, p2}, Landroid/media/MediaScanner;->scanDirectoriesInternal([Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1311
     const-string v0, "AllFile"
