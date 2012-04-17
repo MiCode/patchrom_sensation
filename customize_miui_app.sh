@@ -5,6 +5,8 @@
 #
 
 XMLMERGYTOOL=$PORT_ROOT/tools/ResValuesModify/jar/ResValuesModify
+GIT_APPLY=$PORT_ROOT/tools/git.apply
+
 curdir=`pwd`
 
 if [ $1 = "Phone" ];then
@@ -33,7 +35,7 @@ fi
 if [ $1 = "Settings" ];then
     cp $1/Settings.part out/
     cd out
-    git.apply Settings.part
+    $GIT_APPLY Settings.part
     cd ..
     for file in `find $2 -name *.rej`
     do
