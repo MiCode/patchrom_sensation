@@ -182,7 +182,7 @@
 
     if-eqz v3, :cond_2
 
-    new-instance v20, Lcom/android/server/am/HtcAppErrorDialog;
+    new-instance v20, Lcom/android/server/am/AppErrorDialog;
 
     move-object/from16 v0, p0
 
