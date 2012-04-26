@@ -28997,9 +28997,11 @@
     .line 10868
     .local v0, action:Ljava/lang/String;
     :goto_0
-    invoke-static {}, Lcom/android/camera/CameraThread;->getLastContentUri()Landroid/net/Uri;
+    #invoke-static {}, Lcom/android/camera/CameraThread;->getLastContentUri()Landroid/net/Uri;
 
-    move-result-object v1
+    #move-result-object v1
+
+    const/4 v1, 0x0
 
     const-string v2, "image/jpeg"
 
