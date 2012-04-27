@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<spnOverrides>
+    <spnOverride
+        numeric="46000"
+        spn="中国移动"/>
+    <spnOverride
+        numeric="46001"
+        spn="中国联通"/>
+    <spnOverride
+        numeric="46002"
+        spn="中国移动"/>
+    <spnOverride
+        numeric="46003"
+        spn="中国电信"/>
+    <spnOverride
+        numeric="46007"
+        spn="中国移动"/>
+    <spnOverride
+        numeric="46009"
+        spn="中国电信"/>
+</spnOverrides>

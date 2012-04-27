@@ -74,6 +74,10 @@ local-zip-misc:
 
 	@echo add LiveWallpaperPicker
 	cp other/LiveWallpapersPicker.apk $(ZIP_DIR)/system/app/LiveWallpapersPicker.apk
+
+	@echo add system config
+	cp other/system_etc/* $(ZIP_DIR)/system/etc/
+
 local-test:
 #	rm -f $(local-out-zip-file)
 #	cp .build/$(local-out-zip-file) .
