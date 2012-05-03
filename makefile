@@ -15,7 +15,7 @@ local-modified-jars := HTCExtension
 
 local-miui-modified-apps := Phone ThemeManager Mms MiuiHome Settings MiuiGallery
 # All apks from MIUI
-local-miui-removed-apps  := LatinIME
+local-miui-removed-apps  := LatinIME Stk Bluetooth
 
 # All apps need to be reserved from original ZIP file
 local-phone-apps := ApplicationsProvider AppSharing BackupRestoreConfirmation Bluetooth BrcmBluetoothServices \
