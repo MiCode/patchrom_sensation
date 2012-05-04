@@ -13,7 +13,7 @@ local-modified-apps := HTCCamera
 
 local-modified-jars := HTCExtension
 
-local-miui-modified-apps := Phone ThemeManager Mms MiuiHome Settings MiuiGallery
+local-miui-modified-apps := Phone ThemeManager Mms MiuiHome Settings MiuiGallery DeskClock
 # All apks from MIUI
 local-miui-removed-apps  := LatinIME Stk Bluetooth
 
