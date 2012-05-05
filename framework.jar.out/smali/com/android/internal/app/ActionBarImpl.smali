@@ -1698,23 +1698,6 @@
 
     .prologue
 
-    iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mActivity:Landroid/app/Activity;
-
-    invoke-virtual {v0}, Landroid/app/Activity;->isResumed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
-
-    invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarContainer;->dispatchConfigurationChanged(Landroid/content/res/Configuration;)V
-
-    iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
-
-    invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarContainer;->dispatchConfigurationChanged(Landroid/content/res/Configuration;)V
-
-    :cond_0
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2555,7 +2538,6 @@
     .parameter "resId"
 
     .prologue
-    .line 177
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -2576,7 +2558,6 @@
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarView;->setSubtitle(Ljava/lang/CharSequence;)V
 
-    .line 179
     return-void
 .end method
 
@@ -2585,6 +2566,7 @@
     .parameter "resId"
 
     .prologue
+    .line 177
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -2605,6 +2587,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarView;->setTitle(Ljava/lang/CharSequence;)V
 
+    .line 179
     return-void
 .end method
 

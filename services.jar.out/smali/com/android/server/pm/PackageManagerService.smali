@@ -30760,7 +30760,7 @@
 
     move-result v10
 
-    if-nez v10, :cond_6
+    if-eqz v10, :cond_6
 
     .line 2941
     .end local v1           #ai:Landroid/content/pm/ApplicationInfo;
