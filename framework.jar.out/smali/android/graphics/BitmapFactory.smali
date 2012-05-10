@@ -258,131 +258,150 @@
 .end method
 
 .method public static decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-    .locals 4
+    .locals 5
     .parameter "pathName"
     .parameter "opts"
 
     .prologue
-    const/4 v3, 0x0
-
-    .line 361
+    .line 295
     const/4 v0, 0x0
 
-    .line 363
+    .line 296
     .local v0, bm:Landroid/graphics/Bitmap;
+    const/4 v1, 0x0
+
+    .line 298
+    .local v1, stream:Ljava/io/InputStream;
     :try_start_0
-    sget-boolean v2, Landroid/graphics/BitmapFactory;->enable_restorable:Z
+    new-instance v2, Ljava/io/FileInputStream;
 
-    if-eqz v2, :cond_0
-
-    invoke-static {}, Lcom/htc/htcjavaflag/HtcUtility;->isBitmapReleaseEnabled()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-static {p0}, Landroid/graphics/BitmapFactory;->isStorageUnmountable(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    .line 364
-    if-nez p1, :cond_2
-
-    .line 365
-    new-instance v1, Landroid/graphics/BitmapFactory$Options;
-
-    invoke-direct {v1}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+    invoke-direct {v2, p0}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 366
-    .end local p1
-    .local v1, opts:Landroid/graphics/BitmapFactory$Options;
-    const/4 v2, 0x1
+    .line 299
+    .end local v1           #stream:Ljava/io/InputStream;
+    .local v2, stream:Ljava/io/InputStream;
+    const/4 v3, 0x0
 
     :try_start_1
-    #setter for: Landroid/graphics/BitmapFactory$Options;->isRestorable:Z
-    invoke-static {v1, v2}, Landroid/graphics/BitmapFactory$Options;->access$002(Landroid/graphics/BitmapFactory$Options;Z)Z
+    invoke-static {v2, v3, p1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_4
 
-    move-object p1, v1
+    move-result-object v0
 
-    .line 373
-    .end local v1           #opts:Landroid/graphics/BitmapFactory$Options;
-    .restart local p1
+    .line 305
+    if-eqz v2, :cond_2
+
+    .line 307
+    :try_start_2
+    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+
+    move-object v1, v2
+
+    .line 313
+    .end local v2           #stream:Ljava/io/InputStream;
+    .restart local v1       #stream:Ljava/io/InputStream;
     :cond_0
     :goto_0
-    const/4 v2, 0x0
-
-    :try_start_2
-    invoke-static {p0, v2, p1}, Landroid/graphics/BitmapFactory;->nativeDecodeFile(Ljava/lang/String;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
-
-    move-result-object v0
-
-    .line 379
-    :goto_1
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->isRestorable()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 380
-    invoke-virtual {v0, p0}, Landroid/graphics/Bitmap;->setRestoreInfo(Ljava/lang/String;)V
-
-    .line 382
-    :cond_1
-    invoke-static {v0, v3, p1}, Landroid/graphics/BitmapFactory;->finishDecode(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 386
     return-object v0
 
-    .line 368
-    :cond_2
+    .line 308
+    .end local v1           #stream:Ljava/io/InputStream;
+    .restart local v2       #stream:Ljava/io/InputStream;
+    :catch_0
+    move-exception v3
+
+    move-object v1, v2
+
+    .line 310
+    .end local v2           #stream:Ljava/io/InputStream;
+    .restart local v1       #stream:Ljava/io/InputStream;
+    goto :goto_0
+
+    .line 300
+    :catch_1
+    move-exception v3
+
+    .line 305
+    :goto_1
+    if-eqz v1, :cond_0
+
+    .line 307
     :try_start_3
-    iget-boolean v2, p1, Landroid/graphics/BitmapFactory$Options;->inPurgeable:Z
-
-    if-nez v2, :cond_0
-
-    iget-boolean v2, p1, Landroid/graphics/BitmapFactory$Options;->inNativeAlloc:Z
-
-    if-nez v2, :cond_0
-
-    .line 369
-    const/4 v2, 0x1
-
-    #setter for: Landroid/graphics/BitmapFactory$Options;->isRestorable:Z
-    invoke-static {p1, v2}, Landroid/graphics/BitmapFactory$Options;->access$002(Landroid/graphics/BitmapFactory$Options;Z)Z
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
     goto :goto_0
 
-    .line 374
-    :catch_0
-    move-exception v2
+    .line 308
+    :catch_2
+    move-exception v3
 
+    goto :goto_0
+
+    .line 305
+    :catchall_0
+    move-exception v3
+
+    :goto_2
+    if-eqz v1, :cond_1
+
+    .line 307
+    :try_start_4
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
+
+    .line 310
+    :cond_1
+    :goto_3
+    throw v3
+
+    .line 308
+    :catch_3
+    move-exception v4
+
+    goto :goto_3
+
+    .line 305
+    .end local v1           #stream:Ljava/io/InputStream;
+    .restart local v2       #stream:Ljava/io/InputStream;
+    :catchall_1
+    move-exception v3
+
+    move-object v1, v2
+
+    .end local v2           #stream:Ljava/io/InputStream;
+    .restart local v1       #stream:Ljava/io/InputStream;
+    goto :goto_2
+
+    .line 300
+    .end local v1           #stream:Ljava/io/InputStream;
+    .restart local v2       #stream:Ljava/io/InputStream;
+    :catch_4
+    move-exception v3
+
+    move-object v1, v2
+
+    .end local v2           #stream:Ljava/io/InputStream;
+    .restart local v1       #stream:Ljava/io/InputStream;
     goto :goto_1
 
-    .end local p1
-    .restart local v1       #opts:Landroid/graphics/BitmapFactory$Options;
-    :catch_1
-    move-exception v2
+    .end local v1           #stream:Ljava/io/InputStream;
+    .restart local v2       #stream:Ljava/io/InputStream;
+    :cond_2
+    move-object v1, v2
 
-    move-object p1, v1
-
-    .end local v1           #opts:Landroid/graphics/BitmapFactory$Options;
-    .restart local p1
-    goto :goto_1
+    .end local v2           #stream:Ljava/io/InputStream;
+    .restart local v1       #stream:Ljava/io/InputStream;
+    goto :goto_0
 .end method
 
 .method public static decodeFileDescriptor(Ljava/io/FileDescriptor;)Landroid/graphics/Bitmap;
@@ -588,348 +607,124 @@
 .end method
 
 .method public static decodeResource(Landroid/content/res/Resources;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-    .locals 13
+    .locals 5
     .parameter "res"
     .parameter "id"
     .parameter "opts"
 
     .prologue
-    .line 526
-    const/4 v2, 0x0
+    .line 367
+    const/4 v0, 0x0
 
-    .line 549
-    .local v2, bm:Landroid/graphics/Bitmap;
-    const/4 v7, 0x0
+    .line 368
+    .local v0, bm:Landroid/graphics/Bitmap;
+    const/4 v1, 0x0
 
-    .line 550
-    .local v7, file:Ljava/lang/String;
-    const/4 v8, 0x0
-
-    .line 553
-    .local v8, folder:Ljava/lang/String;
-    iget-object v11, p0, Landroid/content/res/Resources;->mTmpValue:Landroid/util/TypedValue;
-
-    monitor-enter v11
-
-    .line 554
+    .line 371
+    .local v1, is:Ljava/io/InputStream;
     :try_start_0
-    iget-object v10, p0, Landroid/content/res/Resources;->mTmpValue:Landroid/util/TypedValue;
+    new-instance v2, Landroid/util/TypedValue;
 
-    const/4 v12, 0x1
+    invoke-direct {v2}, Landroid/util/TypedValue;-><init>()V
 
-    invoke-virtual {p0, p1, v10, v12}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
-
-    .line 556
-    iget-object v10, p0, Landroid/content/res/Resources;->mTmpValue:Landroid/util/TypedValue;
-
-    iget-object v10, v10, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
-
-    if-eqz v10, :cond_5
-
-    .line 557
-    iget-object v10, p0, Landroid/content/res/Resources;->mTmpValue:Landroid/util/TypedValue;
-
-    iget-object v10, v10, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
-
-    invoke-virtual {v10}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 564
-    invoke-virtual {p0}, Landroid/content/res/Resources;->getAssets()Landroid/content/res/AssetManager;
-
-    move-result-object v10
-
-    iget-object v12, p0, Landroid/content/res/Resources;->mTmpValue:Landroid/util/TypedValue;
-
-    iget v12, v12, Landroid/util/TypedValue;->assetCookie:I
-
-    invoke-virtual {v10, v12}, Landroid/content/res/AssetManager;->getCookieName(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 565
-    iget-object v10, p0, Landroid/content/res/Resources;->mTmpValue:Landroid/util/TypedValue;
-
-    iget v4, v10, Landroid/util/TypedValue;->assetCookie:I
-
-    .line 567
-    .local v4, cookie:I
-    if-nez p2, :cond_0
-
-    .line 568
-    new-instance v9, Landroid/graphics/BitmapFactory$Options;
-
-    invoke-direct {v9}, Landroid/graphics/BitmapFactory$Options;-><init>()V
-
-    .end local p2
-    .local v9, opts:Landroid/graphics/BitmapFactory$Options;
-    move-object p2, v9
-
-    .line 571
-    .end local v9           #opts:Landroid/graphics/BitmapFactory$Options;
-    .restart local p2
-    :cond_0
-    iget v10, p2, Landroid/graphics/BitmapFactory$Options;->inDensity:I
-
-    if-nez v10, :cond_1
-
-    iget-object v10, p0, Landroid/content/res/Resources;->mTmpValue:Landroid/util/TypedValue;
-
-    if-eqz v10, :cond_1
-
-    .line 572
-    iget-object v10, p0, Landroid/content/res/Resources;->mTmpValue:Landroid/util/TypedValue;
-
-    iget v5, v10, Landroid/util/TypedValue;->density:I
-
-    .line 573
-    .local v5, density:I
-    if-nez v5, :cond_6
-
-    .line 574
-    const/16 v10, 0xa0
-
-    iput v10, p2, Landroid/graphics/BitmapFactory$Options;->inDensity:I
-
-    .line 579
-    .end local v5           #density:I
-    :cond_1
-    :goto_0
-    monitor-exit v11
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 581
-    iget v10, p2, Landroid/graphics/BitmapFactory$Options;->inTargetDensity:I
-
-    if-nez v10, :cond_2
-
-    if-eqz p0, :cond_2
-
-    .line 582
-    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v10
-
-    iget v10, v10, Landroid/util/DisplayMetrics;->densityDpi:I
-
-    iput v10, p2, Landroid/graphics/BitmapFactory$Options;->inTargetDensity:I
-
-    .line 585
-    :cond_2
-    invoke-virtual {p0}, Landroid/content/res/Resources;->getAssets()Landroid/content/res/AssetManager;
+    .line 372
+    .local v2, value:Landroid/util/TypedValue;
+    invoke-virtual {p0, p1, v2}, Landroid/content/res/Resources;->openRawResource(ILandroid/util/TypedValue;)Ljava/io/InputStream;
 
     move-result-object v1
 
-    .line 586
-    .local v1, assetManager:Landroid/content/res/AssetManager;
-    const/4 v0, 0x0
+    .line 374
+    const/4 v3, 0x0
 
-    .line 588
-    .local v0, asset:I
+    invoke-static {p0, v2, v1, v3, p2}, Landroid/graphics/BitmapFactory;->decodeResourceStream(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    .line 382
+    if-eqz v1, :cond_0
+
     :try_start_1
-    invoke-virtual {v1, v4, v7}, Landroid/content/res/AssetManager;->openNativeNonAsset(ILjava/lang/String;)I
-
-    move-result v0
-
-    .line 589
-    invoke-virtual {p0}, Landroid/content/res/Resources;->isPreloading()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_7
-
-    .line 590
-    const/4 v10, 0x1
-
-    #setter for: Landroid/graphics/BitmapFactory$Options;->isPreloading:Z
-    invoke-static {p2, v10}, Landroid/graphics/BitmapFactory$Options;->access$102(Landroid/graphics/BitmapFactory$Options;Z)Z
-
-    .line 595
-    :cond_3
-    :goto_1
-    const/4 v10, 0x0
-
-    invoke-static {v0, v10, p2}, Landroid/graphics/BitmapFactory;->nativeDecodeAsset(ILandroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-
-    move-result-object v2
-
-    .line 596
-    if-eqz v2, :cond_4
-
-    .line 597
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v10, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-virtual {v2, v10}, Landroid/graphics/Bitmap;->setRestoreInfo(Ljava/lang/String;)V
-
-    .line 599
-    :cond_4
-    const/4 v10, 0x0
-
-    invoke-static {v2, v10, p2}, Landroid/graphics/BitmapFactory;->finishDecode(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
 
-    move-result-object v2
+    .line 388
+    .end local v2           #value:Landroid/util/TypedValue;
+    :cond_0
+    :goto_0
+    if-nez v0, :cond_2
 
-    .line 610
-    :goto_2
-    invoke-virtual {v1, v0}, Landroid/content/res/AssetManager;->closeNativeNonAsset(I)V
+    if-eqz p2, :cond_2
 
-    .line 614
-    if-nez v2, :cond_8
+    iget-object v3, p2, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
 
-    if-eqz p2, :cond_8
+    if-eqz v3, :cond_2
 
-    iget-object v10, p2, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
+    .line 389
+    new-instance v3, Ljava/lang/IllegalArgumentException;
 
-    if-eqz v10, :cond_8
+    const-string v4, "Problem decoding into existing bitmap"
 
-    .line 615
-    new-instance v10, Ljava/lang/IllegalArgumentException;
+    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    const-string v11, "Problem decoding into existing bitmap"
+    throw v3
 
-    invoke-direct {v10, v11}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    .line 375
+    :catch_0
+    move-exception v3
 
-    throw v10
+    .line 382
+    if-eqz v1, :cond_0
 
-    .line 560
-    .end local v0           #asset:I
-    .end local v1           #assetManager:Landroid/content/res/AssetManager;
-    .end local v4           #cookie:I
-    :cond_5
     :try_start_2
-    const-string v10, "BitmapFactory"
-
-    const-string/jumbo v12, "res.mTmpValue.string is null, return null bitmap"
-
-    invoke-static {v10, v12}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 561
-    monitor-exit v11
-
-    move-object v3, v2
-
-    .line 618
-    .end local v2           #bm:Landroid/graphics/Bitmap;
-    .local v3, bm:Landroid/graphics/Bitmap;
-    :goto_3
-    return-object v3
-
-    .line 575
-    .end local v3           #bm:Landroid/graphics/Bitmap;
-    .restart local v2       #bm:Landroid/graphics/Bitmap;
-    .restart local v4       #cookie:I
-    .restart local v5       #density:I
-    :cond_6
-    const v10, 0xffff
-
-    if-eq v5, v10, :cond_1
-
-    .line 576
-    iput v5, p2, Landroid/graphics/BitmapFactory$Options;->inDensity:I
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
     goto :goto_0
 
-    .line 579
-    .end local v4           #cookie:I
-    .end local v5           #density:I
+    .line 383
+    :catch_1
+    move-exception v3
+
+    goto :goto_0
+
+    .line 381
     :catchall_0
-    move-exception v10
+    move-exception v3
 
-    monitor-exit v11
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    .line 382
+    if-eqz v1, :cond_1
 
-    throw v10
-
-    .line 591
-    .restart local v0       #asset:I
-    .restart local v1       #assetManager:Landroid/content/res/AssetManager;
-    .restart local v4       #cookie:I
-    :cond_7
     :try_start_3
-    sget-boolean v10, Landroid/graphics/BitmapFactory;->enable_restorable:Z
-
-    if-eqz v10, :cond_3
-
-    iget-boolean v10, p2, Landroid/graphics/BitmapFactory$Options;->inPurgeable:Z
-
-    if-nez v10, :cond_3
-
-    invoke-static {}, Lcom/htc/htcjavaflag/HtcUtility;->isBitmapReleaseEnabled()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_3
-
-    iget-boolean v10, p2, Landroid/graphics/BitmapFactory$Options;->inNativeAlloc:Z
-
-    if-nez v10, :cond_3
-
-    .line 592
-    const/4 v10, 0x1
-
-    #setter for: Landroid/graphics/BitmapFactory$Options;->isRestorable:Z
-    invoke-static {p2, v10}, Landroid/graphics/BitmapFactory$Options;->access$002(Landroid/graphics/BitmapFactory$Options;Z)Z
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
+
+    .line 385
+    :cond_1
+    :goto_1
+    throw v3
+
+    .line 383
+    .restart local v2       #value:Landroid/util/TypedValue;
+    :catch_2
+    move-exception v3
+
+    goto :goto_0
+
+    .end local v2           #value:Landroid/util/TypedValue;
+    :catch_3
+    move-exception v4
 
     goto :goto_1
 
-    .line 607
-    :catch_0
-    move-exception v6
-
-    .line 608
-    .local v6, e:Ljava/lang/Exception;
-    :try_start_4
-    const-string v10, "BitmapFactory"
-
-    invoke-virtual {v6}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v10, v11}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    goto :goto_2
-
-    .line 610
-    .end local v6           #e:Ljava/lang/Exception;
-    :catchall_1
-    move-exception v10
-
-    invoke-virtual {v1, v0}, Landroid/content/res/AssetManager;->closeNativeNonAsset(I)V
-
-    throw v10
-
-    :cond_8
-    move-object v3, v2
-
-    .line 618
-    .end local v2           #bm:Landroid/graphics/Bitmap;
-    .restart local v3       #bm:Landroid/graphics/Bitmap;
-    goto :goto_3
+    .line 392
+    :cond_2
+    return-object v0
 .end method
 
 .method public static decodeResourceStream(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
@@ -1158,46 +953,31 @@
 
     const/high16 v9, 0x3f00
 
-    .line 739
-    if-eqz p0, :cond_1
+    .line 503
+    if-eqz p0, :cond_0
 
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->isPurgeable()Z
+    if-nez p2, :cond_1
 
-    move-result v7
-
-    if-nez v7, :cond_1
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->isRestorable()Z
-
-    move-result v7
-
-    if-nez v7, :cond_1
-
-    .line 777
+    .line 535
     :cond_0
     :goto_0
     return-object p0
 
-    .line 745
+    .line 507
     :cond_1
-    if-eqz p0, :cond_0
-
-    if-eqz p2, :cond_0
-
-    .line 749
     iget v0, p2, Landroid/graphics/BitmapFactory$Options;->inDensity:I
 
-    .line 750
+    .line 508
     .local v0, density:I
     if-eqz v0, :cond_0
 
-    .line 754
+    .line 512
     invoke-virtual {p0, v0}, Landroid/graphics/Bitmap;->setDensity(I)V
 
-    .line 755
+    .line 513
     iget v5, p2, Landroid/graphics/BitmapFactory$Options;->inTargetDensity:I
 
-    .line 756
+    .line 514
     .local v5, targetDensity:I
     if-eqz v5, :cond_0
 
@@ -1207,12 +987,12 @@
 
     if-eq v0, v7, :cond_0
 
-    .line 760
+    .line 518
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getNinePatchChunk()[B
 
     move-result-object v2
 
-    .line 761
+    .line 519
     .local v2, np:[B
     if-eqz v2, :cond_4
 
