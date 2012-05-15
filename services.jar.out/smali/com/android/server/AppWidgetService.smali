@@ -5857,24 +5857,32 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 184
     iput-boolean p1, p0, Lcom/android/server/AppWidgetService;->mSafeMode:Z
 
-    .line 186
     iget-object v3, p0, Lcom/android/server/AppWidgetService;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v3
 
-    .line 187
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetService;->ensureStateLoadedLocked()V
 
-    .line 188
     monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    
+    iget-object v2, p0, Lcom/android/server/AppWidgetService;->mContext:Landroid/content/Context;
 
-    .line 193
+    iget-object v3, p0, Lcom/android/server/AppWidgetService;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
+
+    new-instance v4, Landroid/content/IntentFilter;
+
+    const-string v5, "android.intent.action.RESTORE_FINISH"
+
+    invoke-direct {v4, v5}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v3, v4, v6, v6}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+
+    .line 198
     iget-object v2, p0, Lcom/android/server/AppWidgetService;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/android/server/AppWidgetService;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
@@ -5887,7 +5895,6 @@
 
     invoke-virtual {v2, v3, v4, v6, v6}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 198
     iget-object v2, p0, Lcom/android/server/AppWidgetService;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/android/server/AppWidgetService;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
