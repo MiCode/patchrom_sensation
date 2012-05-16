@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="drawableActivityTopRound">@com.htc:drawable/topround_v1</drawable>
+    <drawable name="drawableActivityBackground">@com.htc:drawable/fill_4round</drawable>
+    <drawable name="drawableActivityBottomRound">@com.htc:drawable/bottomround_v1</drawable>
+    <drawable name="drawableTabArtistRest">@com.htc:drawable/common_icon_artist_rest</drawable>
+    <drawable name="drawableTabAlbumsRest">@com.htc:drawable/common_icon_albums_rest</drawable>
+    <drawable name="drawableTabAllSongsRest">@com.htc:drawable/common_icon_all_songs_rest</drawable>
+    <drawable name="drawableTabPlayListRest">@com.htc:drawable/common_icon_playlist_rest</drawable>
+    <drawable name="drawableTabGenresRest">@com.htc:drawable/common_icon_genres_rest</drawable>
+    <drawable name="drawableTabComposerRest">@com.htc:drawable/common_icon_composer_rest</drawable>
+    <drawable name="drawableTabPurchasedRest">@com.htc:drawable/common_icon_purchased_rest</drawable>
+    <drawable name="drawableMMCbuttonOn">@com.htc:drawable/common_icon_glance_right_now_playing</drawable>
+    <drawable name="drawableNowPlayingOverlay">@com.htc:drawable/common_icon_now_playing</drawable>
+</resources>
