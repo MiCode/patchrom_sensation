@@ -287,9 +287,6 @@
             <intent-filter>
                 <action android:name="android.bluetooth.avrcp.intent.action.AVRCP_PANEL_OPERATION" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
         </receiver>
         <activity android:theme="@style/Theme.CommonBackgroundNoTitle" android:name=".browserlayer.ArtistBrowserActivityExp" android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
