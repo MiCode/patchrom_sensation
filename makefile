@@ -9,7 +9,7 @@ local-zip-file     := sensation_3.32.zip
 # local-out-zip-file :=
 
 # All apps from original ZIP, but has smali files chanded
-local-modified-apps := HTCCamera HtcListen
+local-modified-apps := HTCCamera
 
 local-modified-jars := HTCExtension
 

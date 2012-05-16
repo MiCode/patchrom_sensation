@@ -213,8 +213,7 @@
 
     .prologue
     const/4 v4, 0x5
-    
-    return-void
+
     .line 425
     sget-object v1, Lcom/htc/music/MediaButtonIntentReceiver;->mContext:Landroid/content/Context;
 
