@@ -71,7 +71,6 @@ local-zip-misc:
 	@echo update default lock screen
 	rm $(ZIP_DIR)/system/media/theme/default/lockscreen
 	cp other/lockscreen $(ZIP_DIR)/system/media/theme/default/lockscreen
-	cp other/framework-res $(ZIP_DIR)/system/media/theme/default/framework-res
 
 	@echo add LiveWallpaperPicker
 	cp other/LiveWallpapersPicker.apk $(ZIP_DIR)/system/app/LiveWallpapersPicker.apk
