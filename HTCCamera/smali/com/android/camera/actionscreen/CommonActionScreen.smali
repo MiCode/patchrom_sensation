@@ -2191,7 +2191,6 @@
 
     invoke-direct {v9, p0}, Lcom/android/camera/actionscreen/CommonActionScreen$22;-><init>(Lcom/android/camera/actionscreen/CommonActionScreen;)V
 
-    invoke-virtual {v8, v9}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 980
     const v8, 0x7f08008e
