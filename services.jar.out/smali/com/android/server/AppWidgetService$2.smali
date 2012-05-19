@@ -79,7 +79,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/android/server/AppWidgetService$3;->this$0:Lcom/android/server/AppWidgetService;
+    iget-object v15, v0, Lcom/android/server/AppWidgetService$2;->this$0:Lcom/android/server/AppWidgetService;
 
     const/16 v16, 0x0
 
@@ -89,7 +89,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/android/server/AppWidgetService$3;->this$0:Lcom/android/server/AppWidgetService;
+    iget-object v15, v0, Lcom/android/server/AppWidgetService$2;->this$0:Lcom/android/server/AppWidgetService;
 
     invoke-virtual {v15}, Lcom/android/server/AppWidgetService;->sendInitialBroadcasts()V
 
