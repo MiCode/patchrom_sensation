@@ -65,9 +65,6 @@ local-zip-misc:
 	rm $(ZIP_DIR)/system/bin/bootanimation
 	cp other/bootanimation $(ZIP_DIR)/system/bin/bootanimation
 
-	@echo update default lock wallpaper
-	cp other/lock_wallpaper $(ZIP_DIR)/system/media/theme/default/lock_wallpaper
-
 	@echo update default lock screen
 	rm $(ZIP_DIR)/system/media/theme/default/lockscreen
 	cp other/lockscreen $(ZIP_DIR)/system/media/theme/default/lockscreen
