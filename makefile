@@ -22,7 +22,7 @@ local-phone-apps := ApplicationsProvider AppSharing BackupRestoreConfirmation Bl
 	CertInstaller CustomizationSettingsProvider DefaultContainerService DFPI DrmProvider FilePicker GoogleTTS \
 	HTC_IME HtcBeatsNotify HTCCamera HtcFMRadio HtcListen HTMLViewer KeyChain LiveWallpapers LMW MarketUpdater \
 	NoiseField OneTimeInitializer PhaseBeam PluginManager SDCardWizard SharedStorageBackup SmartNetwork Stk \
-	talkback TrimIt UploadProvider Usage UserDictionaryProvider WifiRouter
+	talkback TrimIt UploadProvider Usage UserDictionaryProvider WifiRouter FaceLock
 
 # To include the local targets before and after zip the final ZIP file, 
 # and the local-targets should:
