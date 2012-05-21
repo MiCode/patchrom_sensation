@@ -1190,7 +1190,7 @@
 
     move-result v1
 
-    if-le v1, v2, :cond_0
+    if-gt v1, v2, :cond_2
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
