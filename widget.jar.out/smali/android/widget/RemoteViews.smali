@@ -65,6 +65,8 @@
 
 .field private final mPackage:Ljava/lang/String;
 
+.field mDefaultTheme:I
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -490,8 +492,6 @@
 
     :try_start_0
     invoke-virtual {p1, v2, v3}, Landroid/content/Context;->createPackageContext(Ljava/lang/String;I)Landroid/content/Context;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
@@ -638,6 +638,11 @@
 
     .line 1574
     .local v0, c:Landroid/content/Context;
+
+    iget v3, p0, Landroid/widget/RemoteViews;->mDefaultTheme:I
+
+    invoke-virtual {v0, v3}, Landroid/content/Context;->setTheme(I)V
+    
     const-string v3, "layout_inflater"
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1715,5 +1720,18 @@
     .line 1656
     .restart local v2       #i:I
     :cond_2
+    return-void
+.end method
+
+.method public setDefaultTheme(I)V
+    .locals 0
+    .parameter "id"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iput p1, p0, Landroid/widget/RemoteViews;->mDefaultTheme:I
+
     return-void
 .end method
