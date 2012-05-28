@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="stock_settings">"原厂设置"</string>
+    <string name="htc_fastboot_title">"快速启动"</string>
+    <string name="htc_fastboot_summary">"不推荐使用在某些电子市场应用程序上"</string>
+</resources>
+

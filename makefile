@@ -69,8 +69,8 @@ local-zip-misc:
 	rm $(ZIP_DIR)/system/media/theme/default/lockscreen
 	cp other/lockscreen $(ZIP_DIR)/system/media/theme/default/lockscreen
 
-	@echo add LiveWallpaperPicker
-	cp other/LiveWallpapersPicker.apk $(ZIP_DIR)/system/app/LiveWallpapersPicker.apk
+	@echo add system app
+	cp other/system_app/* $(ZIP_DIR)/system/app/
 
 	@echo add system config
 	cp other/system_etc/* $(ZIP_DIR)/system/etc/

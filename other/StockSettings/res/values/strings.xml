@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="stock_settings">"Stock Settings"</string>
+    <string name="htc_fastboot_title">"Fast boot"</string>
+    <string name="htc_fastboot_summary">"Not recommended with some Market apps"</string>
+</resources>
+
