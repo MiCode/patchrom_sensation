@@ -155,7 +155,7 @@
     
     .local v1, pd:Landroid/app/ProgressDialog;
 
-    const v2, 0x1040124
+    const v2, 0x60c0191
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -163,7 +163,7 @@
 
     invoke-virtual {v1, v2}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    const v2, 0x1040128
+    const v2, 0x60c01aa
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1568,7 +1568,7 @@
 
     .end local v0           #animationDrawable:Landroid/graphics/drawable/AnimationDrawable;
     :cond_0
-    const v6, 0x1040128
+    const v6, 0x60c01aa
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(I)V
 
