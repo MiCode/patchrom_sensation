@@ -917,6 +917,14 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
+    const-string v21, "address"
+
+    move-object/from16 v0, v21
+
+    move-object/from16 v1, p2
+
+    invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
     .line 330
     if-eqz p2, :cond_d
 
