@@ -1731,7 +1731,6 @@
     .end annotation
 
     .prologue
-    iput p1, p0, Landroid/widget/RemoteViews;->mDefaultTheme:I
 
     return-void
 .end method
