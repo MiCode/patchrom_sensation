@@ -13,7 +13,7 @@ local-modified-apps := HTCCamera HtcListen
 
 local-modified-jars := HTCExtension
 
-local-miui-modified-apps := Phone ThemeManager Mms MiuiHome Settings MiuiGallery DeskClock
+local-miui-modified-apps := Phone ThemeManager Mms MiuiHome Settings MiuiGallery DeskClock MiuiSystemUI
 # All apks from MIUI
 local-miui-removed-apps  := LatinIME
 
