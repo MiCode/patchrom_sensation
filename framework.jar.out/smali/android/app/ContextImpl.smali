@@ -4491,11 +4491,7 @@
     .line 1750
     iget-object v0, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
 
-    iget-object v1, p1, Landroid/app/LoadedApk;->mApplicationInfo:Landroid/content/pm/ApplicationInfo;
-
-    iget-boolean v1, v1, Landroid/content/pm/ApplicationInfo;->allowSkinChange:Z
-
-    invoke-virtual {v0, p3, v1}, Landroid/app/LoadedApk;->getResources(Landroid/app/ActivityThread;Z)Landroid/content/res/Resources;
+    invoke-virtual {v0, p3}, Landroid/app/LoadedApk;->getResources(Landroid/app/ActivityThread;)Landroid/content/res/Resources;
 
     move-result-object v0
 
