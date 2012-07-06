@@ -509,6 +509,11 @@
         <item>@null</item>
     </array>
     <string-array name="config_statusBarIcons">
+        <!-- Defines the slots for miui icons. -->
+        <item>headset</item>
+        <item>call_record</item>
+        <item>privacy_mode</item>
+
         <item>hac_status</item>
         <item>headset_plug</item>
         <item>ime</item>
@@ -520,12 +525,14 @@
         <item>wimax</item>
         <item>gps</item>
         <item>bluetooth</item>
+        <item>bluetooth_handsfree_battery</item>
         <item>nfc</item>
         <item>tty</item>
         <item>speakerphone</item>
         <item>mute</item>
         <item>volume</item>
         <item>wifi</item>
+        <item>wimax</item>
         <item>cwwifi</item>
         <item>cdma_eri</item>
         <item>data_connection</item>
