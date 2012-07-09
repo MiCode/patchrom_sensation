@@ -98,6 +98,7 @@
 
 .field public static final VOICEMAIL_URI:Ljava/lang/String; = "voicemail_uri"
 
+.field private static sExtraCallLogValues:Landroid/content/ContentValues;
 
 # direct methods
 .method static constructor <clinit>()V
@@ -151,6 +152,10 @@
     move-result-object v0
 
     sput-object v0, Landroid/provider/CallLog$Calls;->CONTENT_URI_WITH_PHOTO:Landroid/net/Uri;
+
+    const/4 v0, 0x0
+
+    sput-object v0, Landroid/provider/CallLog$Calls;->sExtraCallLogValues:Landroid/content/ContentValues;
 
     return-void
 .end method
@@ -240,13 +245,9 @@
     .line 379
     :cond_0
     :goto_0
-    new-instance v17, Landroid/content/ContentValues;
+    invoke-static {}, Landroid/provider/CallLog$Calls;->getExtraCallLogValues()Landroid/content/ContentValues;
 
-    const/4 v4, 0x5
-
-    move-object/from16 v0, v17
-
-    invoke-direct {v0, v4}, Landroid/content/ContentValues;-><init>(I)V
+    move-result-object v17
 
     .line 381
     .local v17, values:Landroid/content/ContentValues;
@@ -1026,3 +1027,51 @@
     .line 511
     return-void
 .end method
+
+
+.method private static getExtraCallLogValues()Landroid/content/ContentValues;
+    .locals 2
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    sget-object v1, Landroid/provider/CallLog$Calls;->sExtraCallLogValues:Landroid/content/ContentValues;
+
+    if-nez v1, :cond_0
+
+    new-instance v0, Landroid/content/ContentValues;
+
+    const/4 v1, 0x5
+
+    invoke-direct {v0, v1}, Landroid/content/ContentValues;-><init>(I)V
+
+    .local v0, values:Landroid/content/ContentValues;
+    :goto_0
+    return-object v0
+
+    .end local v0           #values:Landroid/content/ContentValues;
+    :cond_0
+    sget-object v0, Landroid/provider/CallLog$Calls;->sExtraCallLogValues:Landroid/content/ContentValues;
+
+    .restart local v0       #values:Landroid/content/ContentValues;
+    const/4 v1, 0x0
+
+    sput-object v1, Landroid/provider/CallLog$Calls;->sExtraCallLogValues:Landroid/content/ContentValues;
+
+    goto :goto_0
+.end method
+
+.method public static setExtraCallLogValues(Landroid/content/ContentValues;)V
+    .locals 0
+    .parameter "extraCallLogValues"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    sput-object p0, Landroid/provider/CallLog$Calls;->sExtraCallLogValues:Landroid/content/ContentValues;
+
+    return-void
+.end method
+
