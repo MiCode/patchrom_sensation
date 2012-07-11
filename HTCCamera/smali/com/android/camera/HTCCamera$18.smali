@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3888
+    .line 3894
     iput-object p1, p0, Lcom/android/camera/HTCCamera$18;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -45,14 +45,14 @@
 
     const/4 v2, 0x0
 
-    .line 3891
+    .line 3897
     const-string v0, "HTCCamera"
 
     const-string v1, "Panel is opened"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3893
+    .line 3899
     iget-object v0, p0, Lcom/android/camera/HTCCamera$18;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mMainBar_receiver:Landroid/view/View;
@@ -62,7 +62,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3894
+    .line 3900
     iget-object v0, p0, Lcom/android/camera/HTCCamera$18;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mMainBar_receiver:Landroid/view/View;
@@ -74,19 +74,19 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3896
+    .line 3902
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera$18;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v0, v2, v2}, Lcom/android/camera/HTCCamera;->showMainBarItems(ZZ)V
 
-    .line 3900
+    .line 3906
     iget-object v0, p0, Lcom/android/camera/HTCCamera$18;->this$0:Lcom/android/camera/HTCCamera;
 
     #calls: Lcom/android/camera/HTCCamera;->checkFaceDetection()V
     invoke-static {v0}, Lcom/android/camera/HTCCamera;->access$6300(Lcom/android/camera/HTCCamera;)V
 
-    .line 3901
+    .line 3907
     iget-object v0, p0, Lcom/android/camera/HTCCamera$18;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
@@ -96,7 +96,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3902
+    .line 3908
     iget-object v0, p0, Lcom/android/camera/HTCCamera$18;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
@@ -106,7 +106,7 @@
 
     invoke-virtual {v0}, Lcom/android/camera/FaceDetection;->stopCheckLoop()V
 
-    .line 3904
+    .line 3910
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera$18;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -117,7 +117,7 @@
 
     invoke-static {v0, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 3905
+    .line 3911
     iget-object v0, p0, Lcom/android/camera/HTCCamera$18;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
@@ -129,7 +129,7 @@
 
     invoke-static {v0, v3, v1, v2}, Lcom/android/camera/MessageHandler;->sendEmptyMessageDelayed(Landroid/os/Handler;IJ)V
 
-    .line 3908
+    .line 3914
     iget-object v0, p0, Lcom/android/camera/HTCCamera$18;->this$0:Lcom/android/camera/HTCCamera;
 
     iget-object v0, v0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
@@ -138,6 +138,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/widget/SlidingDrawer;->setDescendantFocusability(I)V
 
-    .line 3915
+    .line 3921
     return-void
 .end method

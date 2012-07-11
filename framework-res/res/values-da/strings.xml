@@ -269,9 +269,9 @@
     <string name="turn_off_radio">Slå trådløs fra</string>
     <string name="screen_lock">Skærmlås</string>
     <string name="power_off">Sluk</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Ringetone fra</string>
+    <string name="silent_mode_vibrate">Ringetone vibrerer</string>
+    <string name="silent_mode_ring">Ringetone til</string>
     <string name="shutdown_progress">Lukker ned ...</string>
     <string name="shutdown_confirm">Din telefon lukkes ned.</string>
     <string name="shutdown_confirm_question">Vil du slukke?</string>
@@ -323,11 +323,11 @@
     <string name="permlab_receiveMms">modtag MMS</string>
     <string name="permdesc_receiveMms">Tillader et program at modtage og behandle MMS-beskeder. Ondsindede programmer kan overvåge dine beskeder eller slette dem uden at vise dem til dig.</string>
     <string name="permlab_receiveEmergencyBroadcast">modtage nødudsendelser</string>
-    <string name="permdesc_receiveEmergencyBroadcast">Tillader, at en applikation kan modtage og behandle nødudsendelser. Denne tilladelse er kun tilgængelig for systemapplikationer.</string>
+    <string name="permdesc_receiveEmergencyBroadcast">Tillader, at en app. kan modtage og behandle nødudsendelser. Denne tilladelse er kun tilgængelig for systemapps.</string>
     <string name="permlab_sendSms">Send SMS</string>
     <string name="permdesc_sendSms">Tillader et program at sende SMS-beskeder. Ondsindede programmer kan eventuelt koste dig penge ved at sende beskeder uden din bekræftelse.</string>
     <string name="permlab_sendSmsNoConfirmation">sende sms-meddelelser uden bekræftelse</string>
-    <string name="permdesc_sendSmsNoConfirmation">Tillader, at en applikation sender sms-meddelelser. Ondsindede applikationer kan eventuelt koste dig penge ved at sende meddelelser uden din bekræftelse.</string>
+    <string name="permdesc_sendSmsNoConfirmation">Tillader, at en app. sender sms-meddelelser. Ondsindede apps. kan eventuelt koste dig penge ved at sende meddelelser uden din bekræftelse.</string>
     <string name="permlab_readSms">læs SMS eller MMS</string>
     <string name="permdesc_readSms">Tillader et program at læse SMS-beskeder, der er gemt på din telefon eller dit SIM-kort. Ondsindede programmer kan eventuelt læse dine fortrolige beskeder.</string>
     <string name="permlab_writeSms">rediger SMS eller MMS</string>
@@ -338,8 +338,8 @@
     <string name="permdesc_getTasks">Tillader et program at hente oplysninger om nuværende og for nyligt kørende opgaver. Tillader eventuelt ondsindede programmer at finde private oplysninger om andre programmer.</string>
     <string name="permlab_reorderTasks">omorganiser kørende programmer</string>
     <string name="permdesc_reorderTasks">Tillader et program at flytte opgaver til forgrunden og baggrunden. Ondsindede programmer kan tvinge dem selv til forgrunden uden din kontrol.</string>
-    <string name="permlab_removeTasks">stop kørende applikationer</string>
-    <string name="permdesc_removeTasks">Tillader, at en applikation fjerner opgaver og standser deres applikationer. Ondsindede applikationer kan forstyrre andre applikationers opførsel.</string>
+    <string name="permlab_removeTasks">stop kørende apps.</string>
+    <string name="permdesc_removeTasks">Tillader, at en app. fjerner opgaver og standser deres apps. Ondsindede apps kan forstyrre andre apps. opførsel.</string>
     <string name="permlab_setDebugApp">aktiver programfejlretning</string>
     <string name="permdesc_setDebugApp">Tillader et program at slå fejlretning af andet program til. Ondsindede programmer kan bruge dette til at standse andre programmer.</string>
     <string name="permlab_changeConfiguration">skift dine UI-indstillinger</string>
@@ -355,13 +355,13 @@
     <string name="permlab_dump">hent intern systemtilstand</string>
     <string name="permdesc_dump">Tillader et program at hente systemets interne tilstand. Ondsindede programmer kan hente en række private og sikre oplysninger, som de normalt aldrig bør have brug for.</string>
     <string name="permlab_retrieve_window_content">hente skærmindhold</string>
-    <string name="permdesc_retrieve_window_content">Tillader, at en applikation kan hente indholdet i det aktive vindue. Ondsindede applikationer kan hente hele vinduets indhold og undersøge al tekst undtagen adgangskoder.</string>
+    <string name="permdesc_retrieve_window_content">Tillader, at en app. kan hente indholdet i det aktive vindue. Ondsindede apps. kan hente hele vinduets indhold og undersøge al tekst undtagen adgangskoder.</string>
     <string name="permlab_shutdown">delvis lukning</string>
     <string name="permdesc_shutdown">Sætter aktivitetsadministratoren i en lukketilstand. Udfører ikke en fuld lukning.</string>
     <string name="permlab_stopAppSwitches">forhindr programskifter</string>
     <string name="permdesc_stopAppSwitches">Forhindrer brugeren i at skifte til et andet program.</string>
     <string name="permlab_runSetActivityWatcher">overvåg og kontroller start af alle programmer</string>
-    <string name="permdesc_runSetActivityWatcher">Tillader, at en applikation overvåger og kontrollerer, hvordan systemet starter aktiviteter. Ondsindede applikationer kan fuldstændigt kompromittere systemet. Denne tilladelse er kun nødvendig til udvikling, aldrig til normal brug.</string>
+    <string name="permdesc_runSetActivityWatcher">Tillader, at en app. overvåger og kontrollerer, hvordan systemet starter aktiviteter. Ondsindede apps. kan fuldstændigt kompromittere systemet. Denne tilladelse er kun nødvendig til udvikling, aldrig til normal brug.</string>
     <string name="permlab_broadcastPackageRemoved">send udsendelse om fjernet pakke</string>
     <string name="permdesc_broadcastPackageRemoved">Tillader et program at udsende en meddelelse om, at en programpakke er fjernet. Ondsindede programmer kan bruge dette til at afslutte et andet kørende program.</string>
     <string name="permlab_broadcastSmsReceived">send SMS-modtaget udsendelse</string>
@@ -377,11 +377,11 @@
     <string name="permlab_backup">kontroller systemsikkerhedskopiering og -gendannelse</string>
     <string name="permdesc_backup">Tillader, at et program kontrollerer systemets sikkerhedskopierings- og gendannelsesfunktion. Ikke til brug til normale programmer.</string>
     <string name="permlab_confirm_full_backup">bekræfte en komplet sikkerhedskopi, eller gendan drift</string>
-    <string name="permdesc_confirm_full_backup">Tillader, at applikationen starter brugergrænsefladen til bekræftelse af komplet backup. Må ikke anvendes af en applikation.</string>
+    <string name="permdesc_confirm_full_backup">Tillader, at app. starter brugergrænsefladen til bekræftelse af komplet backup. Må ikke anvendes af en app.</string>
     <string name="permlab_internalSystemWindow">vis uautoriserede vinduer</string>
     <string name="permdesc_internalSystemWindow">Tillader oprettelse af vinduer, der er beregnet til at blive brugt af den interne systembrugergrænseflade. Ikke til brug for normale programmer.</string>
     <string name="permlab_systemAlertWindow">vis underretninger på systemniveau</string>
-    <string name="permdesc_systemAlertWindow">Tillader, at en applikation viser vinduer med systemunderretninger. Ondsindede applikationer kan overtage hele skærmen.</string>
+    <string name="permdesc_systemAlertWindow">Tillader, at en app. viser vinduer med systemunderretninger. Ondsindede apps. kan overtage hele skærmen.</string>
     <string name="permlab_setAnimationScale">rediger global animationshastighed</string>
     <string name="permdesc_setAnimationScale">Tillader et program at ændre den globale animationshastighed (hurtigere eller langsommere animationer) når som helst.</string>
     <string name="permlab_manageAppTokens">administrer programtokens</string>
@@ -393,19 +393,19 @@
     <string name="permlab_bindInputMethod">forpligt til en inputmetode</string>
     <string name="permdesc_bindInputMethod">Tillader brugeren at forpligte sig på en inputmetodes grænseflade på øverste niveau. Bør aldrig være nødvendig til normale programmer.</string>
     <string name="permlab_bindTextService">forpligte sig til en sms-tjeneste</string>
-    <string name="permdesc_bindTextService">Tillader brugeren at forpligte sig på en teksttjenestes grænseflade (f. eks. SpellCheckerService) på øverste niveau. Bør aldrig være nødvendig til almindelige applikationer.</string>
+    <string name="permdesc_bindTextService">Tillader brugeren at forpligte sig på en teksttjenestes grænseflade (f. eks. SpellCheckerService) på øverste niveau. Bør aldrig være nødvendig til almindelige apps.</string>
     <string name="permlab_bindVpnService">bind til en VPN-tjeneste</string>
-    <string name="permdesc_bindVpnService">Tillader brugeren at forpligte sig på en Vpn-tjenestes grænseflade på øverste niveau. Bør aldrig være nødvendig til normale applikationer.</string>
+    <string name="permdesc_bindVpnService">Tillader brugeren at forpligte sig på en Vpn-tjenestes grænseflade på øverste niveau. Bør aldrig være nødvendig til normale apps.</string>
     <string name="permlab_bindWallpaper">Forbind til baggrundsbillede</string>
     <string name="permdesc_bindWallpaper">Tillader, at brugeren forbinder til baggrundsbilledets grænseflade på øverste niveau. Bør aldrig være nødvendig til normale programmer.</string>
     <string name="permlab_bindRemoteViews">forpligt til en widgettjeneste</string>
-    <string name="permdesc_bindRemoteViews">Tillader, at brugeren forpligter sig til en widgettjenestes grænseflade på øverste niveau. Bør aldrig være nødvendigt til almindelige applikationer.</string>
+    <string name="permdesc_bindRemoteViews">Tillader, at brugeren forpligter sig til en widgettjenestes grænseflade på øverste niveau. Bør aldrig være nødvendigt til almindelige apps.</string>
     <string name="permlab_bindDeviceAdmin">kommunikere med en mobilsadministrator</string>
     <string name="permdesc_bindDeviceAdmin">Tillader brugeren at sende hensigter til en enhedsadministrator. Bør aldrig være nødvendigt for almindelige programmer.</string>
     <string name="permlab_setOrientation">skift skærmretning</string>
     <string name="permdesc_setOrientation">Tillader et program at ændre rotationen af skærmen når som helst. Bør aldrig være nødvendigt til normale programmer.</string>
     <string name="permlab_setPointerSpeed">ændre markørens hastighed</string>
-    <string name="permdesc_setPointerSpeed">Tillader, at en applikation altid kan ændre muse- eller pegefeltmarkørens hastighed. Burde ikke være nødvendigt i normale applikationer.</string>
+    <string name="permdesc_setPointerSpeed">Tillader, at en app. altid kan ændre muse- eller pegefeltmarkørens hastighed. Burde ikke være nødvendigt i normale apps.</string>
     <string name="permlab_signalPersistentProcesses">send Linux-signaler til programmer</string>
     <string name="permdesc_signalPersistentProcesses">Tillader program at anmode om, at det leverede signal sendes til alle vedholdende processer.</string>
     <string name="permlab_persistentActivity">lad altid programmet køre</string>
@@ -422,18 +422,18 @@
     <string name="permdesc_installPackages">Tillader et program at installere nye eller opdaterede Android-pakker. Ondsindede programmer kan bruge dette til at tilføje nye programmer med vilkårlige, effektive tilladelser.</string>
     <string name="permlab_clearAppCache">slet alle cachedata for programmet</string>
     <string name="permdesc_clearAppCache">Tillader et program at frigøre plads på telefonen ved at slette filer i programmets cachemappe. Adgang er normalt meget begrænset til systemprocesser.</string>
-    <string name="permlab_movePackage">Flyt applikationressourcer</string>
-    <string name="permdesc_movePackage">Tillader, at et program flytter applikationressourcer fra interne til eksterne medier og omvendt.</string>
+    <string name="permlab_movePackage">Flyt app. ressourcer</string>
+    <string name="permdesc_movePackage">Tillader, at et program flytter app. ressourcer fra interne til eksterne medier og omvendt.</string>
     <string name="permlab_readLogs">læs følsomme logdata</string>
     <string name="permdesc_readLogs">Tillader, at et program læser fra systemets forskellige logfiler. Dermed kan generelle oplysninger om, hvad du laver med telefonen registreres, også personlige eller private oplysninger.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">brug en medieafkoder til afspilning</string>
+    <string name="permdesc_anyCodecForPlayback">Tillader et program at bruge en installeret medieafkoder til at afkode til afspilning.</string>
+    <string name="permlab_readWriteOmaDrm">få adgang til mappen om oma DRM</string>
+    <string name="permdesc_readWriteOmaDrm">Gør det muligt for et program at læse eller skrive til mappen om OMA DRM.</string>
     <string name="permlab_diagnostic">læs/skriv til ressourcer ejet af diag</string>
     <string name="permdesc_diagnostic">Tillader et program at læse og skrive til alle ressourcer, der ejes af diag-gruppen, som f.eks. flier i /dev. Dette kan muligvis påvirke systemets stabilitet og sikkerhed. Dette bør KUN bruges til hardwarespecifikke diagnosticeringer foretaget af producent eller udbyder.</string>
     <string name="permlab_changeComponentState">aktiver eller deaktiver programkomponenter</string>
-    <string name="permdesc_changeComponentState">Tillader, at en applikation ændrer, om en komponent fra en anden applikation er aktiveret eller ej. Ondsindede applikationer kan bruge dette til at deaktivere vigtige funktioner på telefonen. Denne tilladelse skal anvendes med forsigtighed, da det kan forårsage ubrugelige eller ustabile programkomponenter.</string>
+    <string name="permdesc_changeComponentState">Tillader, at en app. ændrer, om en komponent fra en anden app. er aktiveret eller ej. Ondsindede apps. kan bruge dette til at deaktivere vigtige funktioner på telefonen. Denne tilladelse skal anvendes med forsigtighed, da det kan forårsage ubrugelige eller ustabile programkomponenter.</string>
     <string name="permlab_setPreferredApplications">indstil foretrukne programmer</string>
     <string name="permdesc_setPreferredApplications">Tillader et program at ændre dine foretrukne programmer. Dette kan tillade, at ondsindede programmer ændrer kørende programmer i det skjulte og narrer dine eksisterende programmer til at indsamle personlige data fra dig.</string>
     <string name="permlab_writeSettings">rediger globale systemindstillinger</string>
@@ -451,17 +451,17 @@
     <string name="permlab_writeContacts">skriv kontaktdata</string>
     <string name="permdesc_writeContacts">Tillader et program at ændre telefonens kontaktdata (adresse), der er gemt på din telefon. Ondsindede programmer kan bruge dette til at slette eller ændre kontaktdata.</string>
     <string name="permlab_readProfile">læse dine profildata</string>
-    <string name="permdesc_readProfile">Tillader programmet at læse personlige profiloplysninger, som er gemt på din enhed. Disse kan f.eks. være dit navn og dine kontaktoplysninger. Dette betyder, at applikationen kan identificere dig og sende dine profiloplysninger til andre.</string>
+    <string name="permdesc_readProfile">"Tillader programmet at læse personlige profiloplysninger, som er gemt på din enhed. Disse kan f.eks. være dit navn og dine kontaktoplysninger. Dette betyder, at app'en kan identificere dig og sende dine profiloplysninger til andre."</string>
     <string name="permlab_writeProfile">skrive til dine profildata</string>
-    <string name="permdesc_writeProfile">Tillader programmet at ændre eller føje til personlige profiloplysninger, som er gemt på din enhed. Disse kan f.eks. være dit navn og dine kontaktoplysninger. Dette betyder, at andre applikationer kan identificere dig og sende dine profiloplysninger til andre.</string>
+    <string name="permdesc_writeProfile">Tillader programmet at ændre eller føje til personlige profiloplysninger, som er gemt på din enhed. Disse kan f.eks. være dit navn og dine kontaktoplysninger. Dette betyder, at andre apps. kan identificere dig og sende dine profiloplysninger til andre.</string>
     <string name="permlab_readSocialStream">læs din sociale strøm</string>
-    <string name="permdesc_readSocialStream">Tillader, at applikationen får adgang til og synkroniserer sociale opdateringer fra dig og dine venner. Ondsindede apps kan bruge dette til at læse privat kommunikation mellem dig og dine venner på sociale netværk.</string>
+    <string name="permdesc_readSocialStream">"Tillader, at app'en får adgang til og synkroniserer sociale opdateringer fra dig og dine venner. Ondsindede apps kan bruge dette til at læse privat kommunikation mellem dig og dine venner på sociale netværk."</string>
     <string name="permlab_writeSocialStream">skriv i din sociale strøm</string>
-    <string name="permdesc_writeSocialStream">Tillader, at applikationen viser sociale opdateringer fra dine venner. Ondsindede apps kan bruge dette til at foregive at være en ven og narre dig til at afsløre adgangskoder eller andre fortrolige oplysninger.</string>
+    <string name="permdesc_writeSocialStream">"Tillader, at app'en viser sociale opdateringer fra dine venner. Ondsindede apps kan bruge dette til at foregive at være en ven og narre dig til at afsløre adgangskoder eller andre fortrolige oplysninger."</string>
     <string name="permlab_readCalendar">læs kalenderbegivenheder plus fortrolige oplysninger</string>
-    <string name="permdesc_readCalendar">Tillader, at en applikation kan læse alle kalenderbegivenheder gemt på din telefon, herunder dem af venner eller kolleger. En ondsindet applikation med denne tilladelse kan udtrække personlige oplysninger fra disse kalendere uden ejernes viden.</string>
+    <string name="permdesc_readCalendar">Tillader, at en app. kan læse alle kalenderbegivenheder gemt på din telefon, herunder dem af venner eller kolleger. En ondsindet app. med denne tilladelse kan udtrække personlige oplysninger fra disse kalendere uden ejernes viden.</string>
     <string name="permlab_writeCalendar">tilføje eller ændre kalenderbegivenheder og sende e-mail til gæster uden ejerens viden</string>
-    <string name="permdesc_writeCalendar">Tillader, at en applikation kan sende invitationer som ejeren af kalenderen og tilføje, fjerne og ændre begivenheder, som du kan ændre på din enhed, herunder venners eller kollegers. En ondsindet applikation med denne tilladelse kan sende spam-e-mails, der synes at komme fra ejeren af kalenderen, ændre begivenheder uden ejerens viden eller tilføje falske begivenheder.</string>
+    <string name="permdesc_writeCalendar">Tillader, at en app. kan sende invitationer som ejeren af kalenderen og tilføje, fjerne og ændre begivenheder, som du kan ændre på din enhed, herunder venners eller kollegers. En ondsindet app. med denne tilladelse kan sende spam-e-mails, der synes at komme fra ejeren af kalenderen, ændre begivenheder uden ejerens viden eller tilføje falske begivenheder.</string>
     <string name="permlab_accessMockLocation">imiterede placeringskilder til test</string>
     <string name="permdesc_accessMockLocation">Opret imiterede placeringskilder til testning. Ondsindede programmer kan bruge dette til at tilsidesætte den returnerede placering og/eller status fra rigtige placeringskilder som f.eks. GPS eller netværksudbydere.</string>
     <string name="permlab_accessLocationExtraCommands">få adgang til ekstra kommandoer for placeringsudbyder</string>
@@ -505,7 +505,7 @@
     <string name="permlab_flashlight">kontroller lommelygte</string>
     <string name="permdesc_flashlight">Tillader programmet at kontrollere lommelygten.</string>
     <string name="permlab_manageUsb">administrer præferencer og tilladelser for USB-enheder</string>
-    <string name="permdesc_manageUsb">Tillader, at applikationen administrerer præferencer og tilladelser for USB-enheder.</string>
+    <string name="permdesc_manageUsb">"Tillader, at app'en administrerer præferencer og tilladelser for USB-enheder."</string>
     <string name="permlab_accessMtp">implementere MTP-protokol</string>
     <string name="permdesc_accessMtp">Tillader adgang til kerne-MTP-driveren for at implementere MTB USB-protokollen.</string>
     <string name="permlab_hardware_test">test hardware</string>
@@ -557,7 +557,7 @@
     <string name="permlab_createNetworkSockets">Fuld internetadgang</string>
     <string name="permdesc_createNetworkSockets">Tillader et program at oprette netværks-sockets.</string>
     <string name="permlab_writeApnSettings">ændre/opfange netværksindstillinger og trafik</string>
-    <string name="permdesc_writeApnSettings">Tillader, at en applikation opfanger og kontrollerer al netværkstrafik for f.eks. at ændre proxy og port for en APN. Ondsindede applikationer kan overvåge, omdirigere eller ændre netværkspakker uden din viden.</string>
+    <string name="permdesc_writeApnSettings">Tillader, at en app. opfanger og kontrollerer al netværkstrafik for f.eks. at ændre proxy og port for en APN. Ondsindede apps. kan overvåge, omdirigere eller ændre netværkspakker uden din viden.</string>
     <string name="permlab_changeNetworkState">skift netværksforbindelse</string>
     <string name="permdesc_changeNetworkState">Tillader, at et program ændrer netværksforbindelsens tilstand.</string>
     <string name="permlab_changeTetherState">Skift tethering-forbindelse</string>
@@ -573,7 +573,7 @@
     <string name="permlab_accessWimaxState">vis WiMAX-tilstand</string>
     <string name="permdesc_accessWimaxState">Sætter et program i stand til at se oplysninger om tilstanden for WiMAX.</string>
     <string name="permlab_changeWimaxState">skift WiMAX-tilstand</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">Tillader et program at forbinde til og afbryde forbindelse til WiMAX-netværk.</string>
     <string name="permlab_bluetoothAdmin">bluetooth-administration</string>
     <string name="permdesc_bluetoothAdmin">Tillader et program at konfigurere den lokale Bluetooth-telefon samt at opdage og parre med fjerne enheder.</string>
     <string name="permlab_bluetooth">opret Bluetooth-forbindelser</string>
@@ -599,17 +599,17 @@
     <string name="permlab_sdcardWrite">ret/slet indholdet på SD-kortet</string>
     <string name="permdesc_sdcardWrite">Tillader, at et program skriver til SD-kortet.</string>
     <string name="permlab_mediaStorageWrite">Rediger/slet internt medielagringsindhold</string>
-    <string name="permdesc_mediaStorageWrite">Tillader, at applikationen ændrer indholdet af det interne medielagringsindhold.</string>
+    <string name="permdesc_mediaStorageWrite">"Tillader, at app'en ændrer indholdet af det interne medielagringsindhold."</string>
     <string name="permlab_cache_filesystem">få adgang til cache-filsystemet</string>
     <string name="permdesc_cache_filesystem">Tillader, at et program læser og skriver til cache-filsystemet.</string>
     <string name="permlab_use_sip">foretage/modtage internetopkald</string>
     <string name="permdesc_use_sip">Tillader, at et program anvender SIP-tjenesten til at foretage/modtage internetopkald.</string>
     <string name="permlab_readNetworkUsageHistory">læse oversigt over netværksbrug</string>
-    <string name="permdesc_readNetworkUsageHistory">Tillader, at en applikation kan læse en oversigt over netværksbrug for specifikke netværk og applikationer.</string>
+    <string name="permdesc_readNetworkUsageHistory">Tillader, at en app.kan læse en oversigt over netværksbrug for specifikke netværk og apps..</string>
     <string name="permlab_manageNetworkPolicy">administrer netværkspolitik</string>
-    <string name="permdesc_manageNetworkPolicy">Tillader, at en applikation kan administrere netværkspolitikker og definere applikationsspecifikke regler.</string>
+    <string name="permdesc_manageNetworkPolicy">Tillader, at en app. kan administrere netværkspolitikker og definere app. specifikke regler.</string>
     <string name="permlab_modifyNetworkAccounting">skift afregning af netværksbrug</string>
-    <string name="permdesc_modifyNetworkAccounting">Tillader ændring af, hvordan netværksbrug afregnes i forhold til applikationer. Ikke til brug for almindelige applikationer.</string>
+    <string name="permdesc_modifyNetworkAccounting">Tillader ændring af, hvordan netværksbrug afregnes i forhold til apps. Ikke til brug for almindelige apps.</string>
     <string name="policylab_limitPassword">Indstil regler for adgangskode</string>
     <string name="policydesc_limitPassword">Kontroller længden samt tilladte tegn i adgangskoder til oplåsning af skærm</string>
     <string name="policylab_watchLogin">Overvåg forsøg på oplåsning af skærm</string>
@@ -624,7 +624,7 @@
     <string name="policydesc_setGlobalProxy">Angiv enhedens globale proxy, der skal bruges, mens politikken er aktiveret. Kun den første enhedsadministrator angiver den effektive globale proxy.</string>
     <string name="policylab_expirePassword">Angiv udløb for skærmlåskoden</string>
     <string name="policydesc_expirePassword">Administrer, hvor tit skærmlåsens adgangskode skal skiftes</string>
-    <string name="policylab_encryptedStorage">Angiv kryptering af lager</string>
+    <string name="policylab_encryptedStorage">Angiv kryptering af hukommelsen</string>
     <string name="policydesc_encryptedStorage">Kræv, at gemte programdata krypteres</string>
     <string name="policylab_disableCamera">Deaktiver kameraer</string>
     <string name="policydesc_disableCamera">Bloker brug af alle kameraer på enheden</string>
@@ -748,7 +748,7 @@ Prøv igen om %d sekunder."</string>
     <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Du har indtastet din pinkode forkert %d gange. 
 
 Prøv igen om %d sekunder."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Du har tegnet dit oplåsningsmønster forkert %d gange. Efter %d forsøg mere vil du blive bedt om at låse din telefon op ved hjælp af dit Google-login
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Du har tegnet dit mønster til at låse op forkert %d gange. Efter %d forsøg mere vil du blive bedt om at låse din telefon op ved hjælp af dit Google-login
 
  Prøv igen om %d sekunder."</string>
     <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Du har forsøgt at låse telefonen op forkert %d gange. Efter yderligere %d mislykkede forsøg, nulstilles telefonen til fabriksindstillingerne, og alle brugerdata mistes.</string>
@@ -838,13 +838,13 @@ Besøg "<b>google.com/accounts/recovery</b></string>
     <string name="permlab_setAlarm">angiv alarm i alarmprogram</string>
     <string name="permdesc_setAlarm">Tillader, at programmet angiver en alarm i et installeret alarmprogram. Nogle alarmprogrammer kan ikke implementere denne funktion.</string>
     <string name="permlab_addVoicemail">tilføj telefonsvarer</string>
-    <string name="permdesc_addVoicemail">Tillader, at applikationen kan føje meddelelser til din telefonsvarers indbakke.</string>
+    <string name="permdesc_addVoicemail">Tillader, at apps. kan føje meddelelser til din telefonsvarers indbakke.</string>
     <string name="permlab_writeGeolocationPermissions">Skift browsertilladelser for geo-placering</string>
     <string name="permdesc_writeGeolocationPermissions">Giver et program tilladelse til at ændre browserens tilladelser for geografisk placering. Skadelige programmer kan bruge dette til at tillade, at placeringsoplysninger sendes til vilkårlige websteder.</string>
     <string name="permlab_packageVerificationAgent">bekræft pakker</string>
-    <string name="permdesc_packageVerificationAgent">Tillader, at applikationen bekræfter, at en pakke kan installeres.</string>
+    <string name="permdesc_packageVerificationAgent">"Tillader, at app'en bekræfter, at en pakke kan installeres."</string>
     <string name="permlab_bindPackageVerifier">bind til en bekræftelse af pakker</string>
-    <string name="permdesc_bindPackageVerifier">Giver indehaveren ret til at sende anmodninger om bekræftelse af pakker. Dette bør aldrig være nødvendigt for almindelige applikationer.</string>
+    <string name="permdesc_bindPackageVerifier">Giver indehaveren ret til at sende anmodninger om bekræftelse af pakker. Dette bør aldrig være nødvendigt for almindelige apps.</string>
     <string name="save_password_message">Skal browseren huske denne adgangskode?</string>
     <string name="save_password_notnow">Ikke nu</string>
     <string name="save_password_remember">Husk</string>
@@ -903,10 +903,10 @@ Besøg "<b>google.com/accounts/recovery</b></string>
     <string name="alwaysUse">Brug som standard til denne handling.</string>
     <string name="clearDefaultHintMsg">Slet standard i Startindstillinger > Programmer > Administrer programmer.</string>
     <string name="chooseActivity">Vælg en handling</string>
-    <string name="chooseUsbActivity">Vælg en applikation for USB-enheden</string>
+    <string name="chooseUsbActivity">Vælg en app. for USB-enheden</string>
     <string name="noApplications">Der er ingen programmer, der kan foretage denne handling.</string>
     <string name="aerr_title" />
-    <string name="aerr_application">Applikationen %1$s er desværre stoppet.</string>
+    <string name="aerr_application">"App'en %1$s er desværre stoppet."</string>
     <string name="aerr_process">Processen %1$s er desværre stoppet.</string>
     <string name="anr_title" />
     <string name="anr_activity_application">"%2$s svarer ikke.
@@ -927,12 +927,12 @@ Vil du lukke den?"</string>
     <string name="launch_warning_original">%1$s blev oprindeligt åbnet.</string>
     <string name="screen_compat_mode_scale">Skaler</string>
     <string name="screen_compat_mode_show">Vis altid</string>
-    <string name="screen_compat_mode_hint">Genaktivere det med Indstillinger > Applikationer > Administrer applikationer.</string>
+    <string name="screen_compat_mode_hint">Genaktivere det med Indstillinger > apps. > Administrer apps.</string>
     <string name="smv_application">Programmet %1$s (proces %2$s) har overtrådt sin egen StrictMode-politik.</string>
     <string name="smv_process">Processen %1$s har overtrådt sin egen StrictMode-politik.</string>
     <string name="android_upgrading_title">Android opgraderes...</string>
-    <string name="android_upgrading_apk">Optimerer applikation %1$d ud af %2$d.</string>
-    <string name="android_upgrading_starting_apps">Starter applikationer.</string>
+    <string name="android_upgrading_apk">Optimerer app %1$d ud af %2$d</string>
+    <string name="android_upgrading_starting_apps">Starter apps.</string>
     <string name="android_upgrading_complete">Gennemfører start.</string>
     <string name="heavy_weight_notification">%1$s er i gang</string>
     <string name="heavy_weight_notification_detail">Vælg for at skifte til program</string>
@@ -962,7 +962,7 @@ Vil du lukke den?"</string>
     <string name="ringtone_silent">Lydløs</string>
     <string name="ringtone_picker_title">Ringetoner</string>
     <string name="ringtone_unknown">Ukendt ringetone</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Log på Wi-Fi netværk</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Kunne ikke oprette forbindelse til Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" har en dårlig internetforbindelse."</string>
@@ -1148,7 +1148,7 @@ til kontoen %s"</string>
     <string name="keyboardview_keycode_mode_change">Ændring af tilstand</string>
     <string name="keyboardview_keycode_shift">Shift</string>
     <string name="keyboardview_keycode_enter">Angiv</string>
-    <string name="activitychooserview_choose_application">Vælg en applikation</string>
+    <string name="activitychooserview_choose_application">Vælg en app</string>
     <string name="shareactionprovider_share_with">Del med</string>
     <string name="shareactionprovider_share_with_application">Del med %s</string>
     <string name="content_description_sliding_handle">Glidende håndtag. Tryk og hold nede.</string>
@@ -1160,15 +1160,15 @@ til kontoen %s"</string>
     <string name="description_target_camera">Kamera</string>
     <string name="description_target_silent">Lydløs</string>
     <string name="description_target_soundon">Lyd slået til</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">Glid for at låse op.</string>
     <string name="keyboard_headset_required_to_hear_password">Tilslut et headset for at få læst taster højt, når du indtaster en adgangskode.</string>
     <string name="keyboard_password_character_no_headset">Punktum.</string>
     <string name="action_bar_home_description">Naviger hjem</string>
     <string name="action_bar_up_description">Naviger op</string>
     <string name="action_menu_overflow_description">Flere valgmuligheder</string>
-    <string name="storage_internal">Internt lager</string>
+    <string name="storage_internal">Intern hukommelse</string>
     <string name="storage_sd_card">SD-kort</string>
-    <string name="storage_usb">USB-lager</string>
+    <string name="storage_usb">USB-hukommelse</string>
     <string name="extract_edit_menu_button">Rediger...</string>
     <string name="data_usage_warning_title">Advarsel om dataforbrug</string>
     <string name="data_usage_warning_body">Tryk for at få vist brug og indstillinger</string>
@@ -1203,9 +1203,9 @@ til kontoen %s"</string>
     <string name="share_action_provider_share_with">Del med:</string>
     <string name="status_bar_device_locked">Enhed låst.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Sender...</string>
+    <string name="launchBrowserDefault">Start Browser?</string>
+    <string name="SetupCallDefault">Accepter opkald?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">Adgang til 4G</string>
     <string name="permlab_changeWimaxMulticastState">tillader WiMAX-multicast-modtagelse</string>
@@ -1223,7 +1223,7 @@ til kontoen %s"</string>
     <string name="permlab_fm_receiver">få adgang til FM-modtager</string>
     <string name="permdesc_fm_receiver">Sætter et program i stand til at få adgang til FM-modtagerfunktioner.</string>
     <string name="permlab_fm_transmitter">få adgang til FM-sender</string>
-    <string name="permdesc_fm_transmitter">Sætter et program i stand til at få adgang til FM-senderfunktioner.</string>
+    <string name="permdesc_fm_transmitter">Tillader at applikationen får adgang til FM-senderfunktioner.</string>
     <string name="permlab_obex">få adgang til OBEX-tjeneste</string>
     <string name="permdesc_obex">Sætter et program i stand til at få adgang til Obex-servicefunktioner.</string>
     <string name="permlab_bluetooth_printer">få adgang til bluetooth-printere</string>
@@ -1267,11 +1267,12 @@ til kontoen %s"</string>
     <string name="install_notify_title">IT blokerede installation:</string>
     <string name="uninstall_notify_title">IT blokerede fjernelse:</string>
     <string name="wifi_notify_title">IT deaktiverede WiFi</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Ryd standard i Startsideindstillinger > Programmer.</string>
+    <string name="sim_puk_contact_customer_care_information">Kontakt Kundeservice for at få PUK-koden</string>
     <string name="permlab_accessCWFolder">Få adgang til funktionsmappen for tilpasningsguiden</string>
     <string name="permdesc_accessCWFolder">Tillader et program at få adgang til funktionsmappen for tilpasningsguiden</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Adgang til gendannelsesmappe</string>
+    <string name="permdesc_accessRecoveryFolder">Giver et program adgang til gendannelsesmappen</string>
     <string name="permlab_setappname">Dynamisk ændring af programnavn</string>
     <string name="permdesc_setappname">Tillader et program at ændre programnavn dynamisk.</string>
     <string name="text_limitation">Kan ikke vælge for mange ord til deling.</string>
@@ -1311,5 +1312,5 @@ til kontoen %s"</string>
     <string name="font_color">Skrifttypefarve</string>
     <string name="font_settings">Indstillinger for skrifttype</string>
     <string name="font_alignment">Justering af skrifttype</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Konfigurer</string>
 </resources>

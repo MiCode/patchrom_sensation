@@ -309,6 +309,10 @@
 
 .field public static final file_item:I = 0x20200e8
 
+.field public static final file_item_2line_text:I = 0x2020260
+
+.field public static final file_item_view:I = 0x202025f
+
 .field public static final file_picker_list_view:I = 0x20200f2
 
 .field public static final filename:I = 0x202021b
@@ -320,6 +324,8 @@
 .field public static final folderName:I = 0x20201cf
 
 .field public static final folder_item:I = 0x20200f8
+
+.field public static final folder_item_view:I = 0x2020261
 
 .field public static final footer:I = 0x2020190
 
@@ -363,7 +369,7 @@
 
 .field public static final header_view_text:I = 0x20200ec
 
-.field public static final headerbar:I = 0x202025f
+.field public static final headerbar:I = 0x2020262
 
 .field public static final hint_msg:I = 0x2020161
 
@@ -439,7 +445,7 @@
 
 .field public static final infoBlock:I = 0x2020031
 
-.field public static final input:I = 0x2020263
+.field public static final input:I = 0x2020266
 
 .field public static final instructions:I = 0x202015b
 
@@ -457,7 +463,7 @@
 
 .field public static final keyboard2:I = 0x2020162
 
-.field public static final label:I = 0x2020262
+.field public static final label:I = 0x2020265
 
 .field public static final label_mhz:I = 0x202010d
 
@@ -673,7 +679,7 @@
 
 .field public static final presence:I = 0x2020087
 
-.field public static final primary:I = 0x2020260
+.field public static final primary:I = 0x2020263
 
 .field public static final progress:I = 0x202025b
 
@@ -755,7 +761,7 @@
 
 .field public static final second_table_view:I = 0x20201a6
 
-.field public static final secondary:I = 0x2020261
+.field public static final secondary:I = 0x2020264
 
 .field public static final select_dialog_listview:I = 0x202019d
 
@@ -843,9 +849,9 @@
 
 .field public static final text_down:I = 0x2020155
 
-.field public static final text_off:I = 0x2020264
+.field public static final text_off:I = 0x2020267
 
-.field public static final text_on:I = 0x2020265
+.field public static final text_on:I = 0x2020268
 
 .field public static final text_up:I = 0x2020154
 
@@ -1249,7 +1255,7 @@
     .locals 0
 
     .prologue
-    .line 7159
+    .line 7236
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

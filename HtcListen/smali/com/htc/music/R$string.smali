@@ -49,19 +49,15 @@
 
 .field public static final add_to_queue:I = 0x7f070050
 
-.field public static final albums_menu:I = 0x7f0701c3
-
 .field public static final albums_title:I = 0x7f07001e
 
-.field public static final albumsongseparator:I = 0x7f070214
+.field public static final albumsongseparator:I = 0x7f0701b2
 
 .field public static final all_music:I = 0x7f0700d3
 
-.field public static final all_title:I = 0x7f0701c7
+.field public static final ap_version_id:I = 0x7f0701be
 
-.field public static final ap_version_id:I = 0x7f070220
-
-.field public static final ap_version_name:I = 0x7f070221
+.field public static final ap_version_name:I = 0x7f0701bf
 
 .field public static final artist_bio_summary:I = 0x7f0700f6
 
@@ -111,8 +107,6 @@
 
 .field public static final both_storage_error:I = 0x7f07003d
 
-.field public static final browse_menu:I = 0x7f0701c8
-
 .field public static final btn_caption_accept:I = 0x7f0701a9
 
 .field public static final btn_caption_decline:I = 0x7f0701aa
@@ -124,8 +118,6 @@
 .field public static final btn_caption_download_now:I = 0x7f0701a2
 
 .field public static final btn_glance_store_verizon:I = 0x7f0701ab
-
-.field public static final cancel:I = 0x7f0701ec
 
 .field public static final caption_buy:I = 0x7f07015b
 
@@ -175,37 +167,21 @@
 
 .field public static final content_source:I = 0x7f0700d0
 
-.field public static final create_playlist_create_text:I = 0x7f0701e4
-
 .field public static final create_playlist_create_text_prompt:I = 0x7f0701b1
-
-.field public static final create_playlist_overwrite_text:I = 0x7f0701e5
 
 .field public static final delete_album_desc:I = 0x7f07000e
 
 .field public static final delete_album_desc_phone_storage:I = 0x7f07000f
 
-.field public static final delete_album_from_storage_desc:I = 0x7f0701b6
-
 .field public static final delete_artist_desc:I = 0x7f07000c
 
 .field public static final delete_artist_desc_phone_storage:I = 0x7f07000d
 
-.field public static final delete_artist_from_storage_desc:I = 0x7f0701b5
-
 .field public static final delete_card:I = 0x7f07016f
-
-.field public static final delete_confirm_button_text:I = 0x7f0701c1
-
-.field public static final delete_item:I = 0x7f0701b4
-
-.field public static final delete_playlist_menu:I = 0x7f0701d4
 
 .field public static final delete_song_desc:I = 0x7f070010
 
 .field public static final delete_song_desc_phone_storage:I = 0x7f070011
-
-.field public static final delete_song_from_storage_desc:I = 0x7f0701b7
 
 .field public static final device_info_default:I = 0x7f0700dd
 
@@ -231,8 +207,6 @@
 
 .field public static final drm_interval_type_msg_in_endtime:I = 0x7f0700b6
 
-.field public static final drm_normal_type_msg:I = 0x7f070213
-
 .field public static final drm_onetime_type_msg:I = 0x7f0700b2
 
 .field public static final durationformat:I = 0x7f070004
@@ -242,8 +216,6 @@
 .field public static final edit_account_loading:I = 0x7f07013f
 
 .field public static final edit_card_info_header:I = 0x7f07014a
-
-.field public static final edit_playlist_menu:I = 0x7f0701d5
 
 .field public static final edit_queue:I = 0x7f07000b
 
@@ -258,8 +230,6 @@
 .field public static final first_name:I = 0x7f070133
 
 .field public static final firstname_missing:I = 0x7f070143
-
-.field public static final gadget_track:I = 0x7f0701fb
 
 .field public static final genre_name_albums:I = 0x7f070175
 
@@ -301,8 +271,6 @@
 
 .field public static final htc_album_picker_title:I = 0x7f070067
 
-.field public static final htc_all_songs:I = 0x7f070208
-
 .field public static final htc_all_tracks_title:I = 0x7f070020
 
 .field public static final htc_artist_not_found:I = 0x7f07002b
@@ -323,31 +291,19 @@
 
 .field public static final htc_contact_ringtone_menu:I = 0x7f0700aa
 
-.field public static final htc_corp:I = 0x7f070212
-
 .field public static final htc_create_playlist_title:I = 0x7f07006c
-
-.field public static final htc_delete:I = 0x7f0701ee
 
 .field public static final htc_delete_album_songs_desc:I = 0x7f070017
 
 .field public static final htc_delete_album_songs_desc_phone_storage:I = 0x7f070018
 
-.field public static final htc_delete_album_songs_from_storage_desc:I = 0x7f0701bb
-
 .field public static final htc_delete_artist_songs_desc:I = 0x7f070015
 
 .field public static final htc_delete_artist_songs_desc_phone_storage:I = 0x7f070016
 
-.field public static final htc_delete_artist_songs_from_storage_desc:I = 0x7f0701ba
-
 .field public static final htc_delete_composer_desc:I = 0x7f070012
 
-.field public static final htc_delete_composer_from_storage_desc:I = 0x7f0701b8
-
 .field public static final htc_delete_composer_songs_desc:I = 0x7f070019
-
-.field public static final htc_delete_composer_songs_from_storage_desc:I = 0x7f0701bc
 
 .field public static final htc_delete_drm_file:I = 0x7f070095
 
@@ -355,23 +311,9 @@
 
 .field public static final htc_delete_genre_desc_phone_storage:I = 0x7f070014
 
-.field public static final htc_delete_genre_from_storage_desc:I = 0x7f0701b9
-
-.field public static final htc_delete_genre_songs_desc:I = 0x7f0701bd
-
-.field public static final htc_delete_genre_songs_from_storage_desc:I = 0x7f0701be
-
 .field public static final htc_delete_playlist:I = 0x7f07008f
 
 .field public static final htc_delete_playlists:I = 0x7f07008e
-
-.field public static final htc_delete_playlists_song_title:I = 0x7f0701d2
-
-.field public static final htc_delete_playlists_title:I = 0x7f0701d1
-
-.field public static final htc_delete_songs_desc:I = 0x7f0701bf
-
-.field public static final htc_delete_songs_from_storage_desc:I = 0x7f0701c0
 
 .field public static final htc_deleting_songs:I = 0x7f0700a6
 
@@ -397,8 +339,6 @@
 
 .field public static final htc_drm_information:I = 0x7f070086
 
-.field public static final htc_drm_interval:I = 0x7f0701ff
-
 .field public static final htc_drm_license_expire:I = 0x7f070089
 
 .field public static final htc_drm_no_rights_WMDRM_object:I = 0x7f070088
@@ -406,8 +346,6 @@
 .field public static final htc_drm_no_rights_object:I = 0x7f070087
 
 .field public static final htc_drm_playback_failed:I = 0x7f07008b
-
-.field public static final htc_drm_renew:I = 0x7f070200
 
 .field public static final htc_drm_sd:I = 0x7f070085
 
@@ -439,21 +377,9 @@
 
 .field public static final htc_genre_title:I = 0x7f070024
 
-.field public static final htc_new_playlist:I = 0x7f070211
-
 .field public static final htc_new_songs_playlist:I = 0x7f070036
 
-.field public static final htc_no_albums_title:I = 0x7f0701cd
-
-.field public static final htc_no_artists_title:I = 0x7f0701cc
-
-.field public static final htc_no_composer_title:I = 0x7f0701ce
-
-.field public static final htc_no_genre_title:I = 0x7f0701cf
-
 .field public static final htc_no_name_for_playlist:I = 0x7f0700af
-
-.field public static final htc_no_purchase_title:I = 0x7f0701d0
 
 .field public static final htc_no_songs_to_playlist:I = 0x7f0700ae
 
@@ -467,25 +393,9 @@
 
 .field public static final htc_notification_ringtone_set:I = 0x7f0700a7
 
-.field public static final htc_ok:I = 0x7f0701ed
-
 .field public static final htc_phone_ringtone_menu:I = 0x7f0700a9
 
-.field public static final htc_play_by_album:I = 0x7f070202
-
-.field public static final htc_play_by_artist:I = 0x7f070201
-
-.field public static final htc_play_by_composer:I = 0x7f070205
-
-.field public static final htc_play_by_genre:I = 0x7f070204
-
-.field public static final htc_play_by_playlist:I = 0x7f070203
-
-.field public static final htc_playback_artist_album:I = 0x7f070209
-
 .field public static final htc_playlist_add_songs:I = 0x7f070090
-
-.field public static final htc_playlist_change_order:I = 0x7f070207
 
 .field public static final htc_playlist_del_songs:I = 0x7f070091
 
@@ -502,8 +412,6 @@
 .field public static final htc_plug_BTheadset_with_eq:I = 0x7f070097
 
 .field public static final htc_private_app:I = 0x7f0700b1
-
-.field public static final htc_properties:I = 0x7f0701fd
 
 .field public static final htc_property_album:I = 0x7f070077
 
@@ -533,21 +441,13 @@
 
 .field public static final htc_purchase_title:I = 0x7f070025
 
-.field public static final htc_purchased_picker_title:I = 0x7f0701fa
-
 .field public static final htc_queue_not_found:I = 0x7f070030
 
 .field public static final htc_remove:I = 0x7f070060
 
-.field public static final htc_remove_playlists_song_title:I = 0x7f0701d3
-
 .field public static final htc_repeat:I = 0x7f07006d
 
 .field public static final htc_repeatall:I = 0x7f07006f
-
-.field public static final htc_repeatcurrent:I = 0x7f070210
-
-.field public static final htc_repeatnone:I = 0x7f0701fc
 
 .field public static final htc_repeatoff:I = 0x7f0700ac
 
@@ -555,31 +455,13 @@
 
 .field public static final htc_save:I = 0x7f07005e
 
-.field public static final htc_save_to_playlist:I = 0x7f070206
-
-.field public static final htc_sdcard_ejected_message:I = 0x7f07020e
-
 .field public static final htc_searching:I = 0x7f070037
 
-.field public static final htc_select_all:I = 0x7f07020a
-
 .field public static final htc_server_not_found:I = 0x7f07002f
-
-.field public static final htc_set_as_contact_ringtone_menu:I = 0x7f07020c
-
-.field public static final htc_set_as_menu:I = 0x7f07020d
-
-.field public static final htc_share:I = 0x7f0701fe
-
-.field public static final htc_song_picker_title:I = 0x7f0701f8
-
-.field public static final htc_songs_picker_title:I = 0x7f0701f9
 
 .field public static final htc_sound_effect_warning_hdmi_plugged:I = 0x7f0700dc
 
 .field public static final htc_sound_effect_warning_speaker_out:I = 0x7f070098
-
-.field public static final htc_storage_ejected_message:I = 0x7f07020f
 
 .field public static final htc_togglesuffle:I = 0x7f070070
 
@@ -593,17 +475,11 @@
 
 .field public static final htc_unplug_headset_with_eqdialog:I = 0x7f070096
 
-.field public static final htc_unselect_all:I = 0x7f07020b
-
 .field public static final htc_use_as_ringtone_file_protected_msg:I = 0x7f0700a4
 
 .field public static final htc_use_as_ringtone_size_limit_msg:I = 0x7f0700a3
 
 .field public static final htc_vmm_title:I = 0x7f070002
-
-.field public static final htc_working_composer:I = 0x7f0701f5
-
-.field public static final htc_working_genre:I = 0x7f0701f6
 
 .field public static final image_button_category_switcher:I = 0x7f070106
 
@@ -637,8 +513,6 @@
 
 .field public static final listen_title:I = 0x7f0700ed
 
-.field public static final loading:I = 0x7f0701f7
-
 .field public static final login_activity_confirm_password_label:I = 0x7f070132
 
 .field public static final login_activity_confirm_username_label:I = 0x7f07012e
@@ -652,8 +526,6 @@
 .field public static final login_activity_username_label:I = 0x7f07012d
 
 .field public static final media_playlist_label:I = 0x7f0700e7
-
-.field public static final mediapickerlabel:I = 0x7f0701eb
 
 .field public static final mediaplaybacklabel:I = 0x7f07005b
 
@@ -765,8 +637,6 @@
 
 .field public static final music_picker_title:I = 0x7f070065
 
-.field public static final musicbrowserlabel:I = 0x7f0701e9
-
 .field public static final musicshortcutlabel:I = 0x7f07005a
 
 .field public static final n_albums:I = 0x7f0700fb
@@ -781,8 +651,6 @@
 
 .field public static final no_payment_method:I = 0x7f070170
 
-.field public static final no_playlists_title:I = 0x7f0701cb
-
 .field public static final no_similar_albums:I = 0x7f070104
 
 .field public static final no_similar_artists:I = 0x7f070103
@@ -791,9 +659,7 @@
 
 .field public static final no_tracks_title:I = 0x7f070022
 
-.field public static final no_videos_title:I = 0x7f0701ca
-
-.field public static final notification_artist_album:I = 0x7f070215
+.field public static final notification_artist_album:I = 0x7f0701b3
 
 .field public static final notification_download_complete:I = 0x7f070113
 
@@ -827,10 +693,6 @@
 
 .field public static final options_menu_my_purchases:I = 0x7f07017e
 
-.field public static final party_shuffle:I = 0x7f0701b2
-
-.field public static final party_shuffle_off:I = 0x7f0701b3
-
 .field public static final partyshuffle_title:I = 0x7f07001c
 
 .field public static final password_match:I = 0x7f070142
@@ -845,8 +707,6 @@
 
 .field public static final phone_storage_error:I = 0x7f07003b
 
-.field public static final phone_storage_error_message:I = 0x7f0701e2
-
 .field public static final phone_storage_error_title:I = 0x7f070042
 
 .field public static final play_all:I = 0x7f070009
@@ -859,15 +719,11 @@
 
 .field public static final playlist_renamed_message:I = 0x7f070034
 
-.field public static final playlists_menu:I = 0x7f0701c5
-
 .field public static final playlists_title:I = 0x7f070021
 
 .field public static final please_enter_a_valid:I = 0x7f070147
 
 .field public static final podcasts_listitem:I = 0x7f070035
-
-.field public static final podcasts_title:I = 0x7f0701d8
 
 .field public static final purchase_history_empty:I = 0x7f070168
 
@@ -885,12 +741,6 @@
 
 .field public static final recent_played:I = 0x7f070102
 
-.field public static final recentlyadded:I = 0x7f0701d6
-
-.field public static final recentlyadded_title:I = 0x7f0701d7
-
-.field public static final remove_from_playlist:I = 0x7f0701ef
-
 .field public static final rename_playlist_diff_prompt:I = 0x7f0700d5
 
 .field public static final rename_playlist_menu:I = 0x7f070032
@@ -905,8 +755,6 @@
 
 .field public static final reset_current_albumart:I = 0x7f0700da
 
-.field public static final ringtone_menu:I = 0x7f0701e3
-
 .field public static final ringtone_menu_short:I = 0x7f07004c
 
 .field public static final ringtone_set:I = 0x7f07004d
@@ -917,25 +765,15 @@
 
 .field public static final scanning:I = 0x7f07001a
 
-.field public static final scanning_storage:I = 0x7f0701c2
-
 .field public static final sdcard_busy_message:I = 0x7f07003e
 
 .field public static final sdcard_busy_title:I = 0x7f070038
 
 .field public static final sdcard_error:I = 0x7f07003c
 
-.field public static final sdcard_error_message:I = 0x7f0701e1
-
 .field public static final sdcard_error_title:I = 0x7f070041
 
-.field public static final sdcard_missing_message:I = 0x7f0701db
-
-.field public static final sdcard_missing_title:I = 0x7f0701d9
-
 .field public static final sdcard_unmounted:I = 0x7f07003a
-
-.field public static final sdcard_unmounted_title:I = 0x7f0701df
 
 .field public static final search_music:I = 0x7f0700ba
 
@@ -943,35 +781,31 @@
 
 .field public static final search_settings_description:I = 0x7f070066
 
-.field public static final search_title:I = 0x7f0701c9
-
 .field public static final search_youtube:I = 0x7f0700ca
-
-.field public static final service_start_error_button:I = 0x7f0701e6
 
 .field public static final service_start_error_msg:I = 0x7f070057
 
 .field public static final service_start_error_title:I = 0x7f070056
 
-.field public static final settings_enable_dlna_tab:I = 0x7f07021d
+.field public static final settings_enable_dlna_tab:I = 0x7f0701bb
 
-.field public static final settings_enable_drm_warning:I = 0x7f07021b
+.field public static final settings_enable_drm_warning:I = 0x7f0701b9
 
-.field public static final settings_enable_enhancer:I = 0x7f07021e
+.field public static final settings_enable_enhancer:I = 0x7f0701bc
 
-.field public static final settings_enable_exp_list:I = 0x7f070219
+.field public static final settings_enable_exp_list:I = 0x7f0701b7
 
-.field public static final settings_enable_ff_rw:I = 0x7f07021a
+.field public static final settings_enable_ff_rw:I = 0x7f0701b8
 
-.field public static final settings_enable_landscape_horizontal_sd_error:I = 0x7f07021f
+.field public static final settings_enable_landscape_horizontal_sd_error:I = 0x7f0701bd
 
-.field public static final settings_enable_show_3party_tabs_first:I = 0x7f07021c
+.field public static final settings_enable_show_3party_tabs_first:I = 0x7f0701ba
 
-.field public static final settings_enable_use_as_notification_rintone:I = 0x7f070218
+.field public static final settings_enable_use_as_notification_rintone:I = 0x7f0701b6
 
-.field public static final settings_max_ringtone_size:I = 0x7f070217
+.field public static final settings_max_ringtone_size:I = 0x7f0701b5
 
-.field public static final settings_project_name:I = 0x7f070216
+.field public static final settings_project_name:I = 0x7f0701b4
 
 .field public static final share_album_info_post:I = 0x7f07010a
 
@@ -1005,16 +839,6 @@
 
 .field public static final sort_by_track:I = 0x7f070062
 
-.field public static final storage_busy_message:I = 0x7f0701de
-
-.field public static final storage_busy_title:I = 0x7f0701dd
-
-.field public static final storage_error_title:I = 0x7f0701e0
-
-.field public static final storage_missing_message:I = 0x7f0701dc
-
-.field public static final storage_missing_title:I = 0x7f0701da
-
 .field public static final store_front_browseby:I = 0x7f0700ec
 
 .field public static final store_front_feature:I = 0x7f0700ea
@@ -1026,8 +850,6 @@
 .field public static final store_front_title:I = 0x7f0700e8
 
 .field public static final store_splash_msg:I = 0x7f0701ae
-
-.field public static final streamloadingtext:I = 0x7f0701f0
 
 .field public static final terms_and_conditions:I = 0x7f070145
 
@@ -1061,8 +883,6 @@
 
 .field public static final track_list_title:I = 0x7f0700f7
 
-.field public static final tracks_menu:I = 0x7f0701c4
-
 .field public static final tracks_title:I = 0x7f07001f
 
 .field public static final transaction_id:I = 0x7f07016a
@@ -1085,27 +905,11 @@
 
 .field public static final verizon_store_title:I = 0x7f0701ad
 
-.field public static final videobrowserlabel:I = 0x7f0701ea
-
-.field public static final videos_title:I = 0x7f0701c6
-
-.field public static final weekpicker_set:I = 0x7f0701e7
-
-.field public static final weekpicker_title:I = 0x7f0701e8
-
 .field public static final what_hot_title:I = 0x7f0700c9
 
 .field public static final what_hot_unavailable_content:I = 0x7f0700cd
 
 .field public static final what_hot_unavailable_title:I = 0x7f0700cc
-
-.field public static final working_albums:I = 0x7f0701f2
-
-.field public static final working_artists:I = 0x7f0701f1
-
-.field public static final working_playlists:I = 0x7f0701f4
-
-.field public static final working_songs:I = 0x7f0701f3
 
 
 # direct methods
@@ -1113,7 +917,7 @@
     .locals 0
 
     .prologue
-    .line 2221
+    .line 2190
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

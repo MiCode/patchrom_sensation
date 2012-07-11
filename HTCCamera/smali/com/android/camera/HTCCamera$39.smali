@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 5520
+    .line 5526
     invoke-static {}, Lcom/android/camera/Global$REQUEST_CODE;->values()[Lcom/android/camera/Global$REQUEST_CODE;
 
     move-result-object v0

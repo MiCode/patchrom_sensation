@@ -269,9 +269,9 @@
     <string name="turn_off_radio">Wyłącz połączenia bezprzewodowe</string>
     <string name="screen_lock">Blokada ekranu</string>
     <string name="power_off">Wyłącz</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Dzwonek wyłączony</string>
+    <string name="silent_mode_vibrate">Wibracja dzwonka</string>
+    <string name="silent_mode_ring">Dzwonek włączony</string>
     <string name="shutdown_progress">Wyłączanie...</string>
     <string name="shutdown_confirm">Telefon zostanie wyłączony</string>
     <string name="shutdown_confirm_question">Czy chcesz wyłączyć?</string>
@@ -427,9 +427,9 @@
     <string name="permlab_readLogs">odczyt wrażliwych danych dziennika</string>
     <string name="permdesc_readLogs">Umożliwia aplikacjom odczyt z różnych plików dzienników systemowych. Pozwala to poznać ogólne informacje na temat korzystania z telefonu, co potencjalnie może obejmować również informacje prywatne lub osobiste.</string>
     <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permdesc_anyCodecForPlayback">Zezwala aplikacji na korzystanie z dowolnego zainstalowanego dekodera multimediów w celu dekodowania i odtwarzania zawartości.</string>
+    <string name="permlab_readWriteOmaDrm">dostęp do folderu informacji OMA DRM</string>
+    <string name="permdesc_readWriteOmaDrm">Umożliwia aplikacji odczytywanie lub zapisywanie do folderu informacji OMA DRM.</string>
     <string name="permlab_diagnostic">czytanie/zapisywanie w zasobach należących do diagnostyki</string>
     <string name="permdesc_diagnostic">Pozwala aplikacji na czytanie i zapisywanie we wszystkich zasobach posiadanych przez diagnozowaną grupę, jak na przykład pliki w katalogu /dev. Może to potencjalnie wpłynąć na stabilność i bezpieczeństwo systemu. Powinno być wykorzystywane TYLKO w celach diagnozowania sprzętu przez producenta lub operatora.</string>
     <string name="permlab_changeComponentState">włączanie lub wyłączanie składników aplikacji</string>
@@ -481,7 +481,7 @@
     <string name="permlab_recordAudio">nagrywanie dźwięku</string>
     <string name="permdesc_recordAudio">Pozwala aplikacji na dostęp do ścieżki nagrywania dźwięku.</string>
     <string name="permlab_camera">wykonywanie zdjęć i filmów</string>
-    <string name="permdesc_camera">Zezwala aplikacji na wykonywanie zdjęć i rejestrowanie filmów wideo przy użyciu aparatu fotograficznego. Umożliwia to aplikacji gromadzenie w dowolnym momencie zdjęć tego, na co skierowany jest obiektyw aparatu.</string>
+    <string name="permdesc_camera">Zezwala aplikacji na wykonywanie zdjęć i rejestrowanie filmów przy użyciu aparatu fotograficznego. Umożliwia to aplikacji gromadzenie w dowolnym momencie zdjęć tego, na co skierowany jest obiektyw aparatu.</string>
     <string name="permlab_brick">wyłączenie telefonu na stałe</string>
     <string name="permdesc_brick">Pozwala aplikacji na wyłączenie całego telefonu na stałe. Jest to bardzo niebezpieczne.</string>
     <string name="permlab_reboot">wymuszanie ponownego uruchomienia telefonu</string>
@@ -538,7 +538,7 @@
     <string name="permdesc_setWallpaperHints">Pozwala aplikacji na ustawianie wskazówek dotyczących rozmiaru tapety.</string>
     <string name="permlab_masterClear">resetowanie systemu do ustawień fabrycznych</string>
     <string name="permdesc_masterClear">Pozwala aplikacji na całkowite zresetowanie systemu do ustawień fabrycznych, z wymazaniem wszystkich danych, konfiguracji oraz zainstalowanych aplikacji.</string>
-    <string name="permlab_setTime">ustawianie godziny</string>
+    <string name="permlab_setTime">ustaw czas</string>
     <string name="permdesc_setTime">Zezwala aplikacji na zmianę ustawienia zegara w telefonie.</string>
     <string name="permlab_setTimeZone">ustawianie strefy czasowej</string>
     <string name="permdesc_setTimeZone">Pozwala aplikacji na zmianę strefy czasowej w telefonie.</string>
@@ -573,7 +573,7 @@
     <string name="permlab_accessWimaxState">wyświetlanie stan WiMAX</string>
     <string name="permdesc_accessWimaxState">Umożliwia aplikacji pobieranie informacji o stanie modułu WiMAX.</string>
     <string name="permlab_changeWimaxState">zmiana stanu WiMAX</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">Zezwala aplikacji na połączenie się i rozłączenie z siecią WiMAX.</string>
     <string name="permlab_bluetoothAdmin">administrowanie Bluetooth</string>
     <string name="permdesc_bluetoothAdmin">Pozwala aplikacji na konfigurowanie lokalnego telefonu Bluetooth, wyszukiwanie urządzeń zdalnych i łączenie się z nimi.</string>
     <string name="permlab_bluetooth">tworzenie połączeń Bluetooth</string>
@@ -873,7 +873,7 @@ Wybierz opcję OK, aby kontynuować, lub opcję Anuluj, aby pozostać na tej str
     <string name="hour">godzina</string>
     <string name="hours">godzin</string>
     <string name="minute">min</string>
-    <string name="minutes">minut</string>
+    <string name="minutes">min.</string>
     <string name="second">s</string>
     <string name="seconds">S</string>
     <string name="week">tydzień</string>
@@ -962,7 +962,7 @@ Czy chcesz go zakończyć?"</string>
     <string name="ringtone_silent">Cichy</string>
     <string name="ringtone_picker_title">Dzwonki</string>
     <string name="ringtone_unknown">Nieznany dzwonek</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Zaloguj się do sieci Wi-Fi</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Nie można połączyć się z siecią Wi-Fi.</string>
     <string name="wifi_watchdog_network_disabled_detailed">" ma powolne połączenie internetowe."</string>
@@ -1078,7 +1078,7 @@ dotyczące konta %s"</string>
     <string name="no_file_chosen">Nie wybrano pliku</string>
     <string name="reset">Resetuj</string>
     <string name="submit">Prześlij</string>
-    <string name="car_mode_disable_notification_title">Tryb samochodowy włączony</string>
+    <string name="car_mode_disable_notification_title">Tryb samochodowy wł.</string>
     <string name="car_mode_disable_notification_message">Wybierz, aby zakończyć tryb samochodowy.</string>
     <string name="tethered_notification_title">Jest aktywne powiązanie lub punkt dostępu</string>
     <string name="tethered_notification_message">Dotknij, aby skonfigurować</string>
@@ -1160,7 +1160,7 @@ dotyczące konta %s"</string>
     <string name="description_target_camera">Aparat</string>
     <string name="description_target_silent">Wyciszenie</string>
     <string name="description_target_soundon">Włącz dźwięk</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">Przesuń, aby odblokować.</string>
     <string name="keyboard_headset_required_to_hear_password">Podłącz zestaw słuchawkowy, aby usłyszeć znaki hasła wypowiadane na głos.</string>
     <string name="keyboard_password_character_no_headset">Kropka</string>
     <string name="action_bar_home_description">Przejdź do strony głównej</string>
@@ -1203,9 +1203,9 @@ dotyczące konta %s"</string>
     <string name="share_action_provider_share_with">Udostępnij...</string>
     <string name="status_bar_device_locked">Urządzenie zablokowane.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Wysyłanie...</string>
+    <string name="launchBrowserDefault">Uruchomić przeglądarkę?</string>
+    <string name="SetupCallDefault">Zaakceptować połączenie?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">Dostęp do 4G</string>
     <string name="permlab_changeWimaxMulticastState">zezwolenie na odbiór sygnałów WiMAX w trybie multicast</string>
@@ -1267,11 +1267,12 @@ dotyczące konta %s"</string>
     <string name="install_notify_title">Instalacja zablokowana przez TI:</string>
     <string name="uninstall_notify_title">Deinstalacja zablokowana przez TI:</string>
     <string name="wifi_notify_title">IT wyłączył Wi-Fi</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Wyczyść domyślne w Ustawienia strony głównej > Aplikacje.</string>
+    <string name="sim_puk_contact_customer_care_information">Skontaktuj się z Biurem Obsługi Klienta, aby uzyskać kod PUK</string>
     <string name="permlab_accessCWFolder">Przejdź do folderu funkcji kreatora dostosowywania</string>
     <string name="permdesc_accessCWFolder">Umożliwia aplikacji dostęp do folderu funkcji kreatora dostosowywania</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Uzyskaj dostęp do folderu przywracanych plików</string>
+    <string name="permdesc_accessRecoveryFolder">Zapewnia aplikacji dostęp do folderu przywracanych plików</string>
     <string name="permlab_setappname">Dynamiczna zmiana nazwy aplikacji</string>
     <string name="permdesc_setappname">Umożliwia aplikacji dynamiczną zmianę określonej nazwy.</string>
     <string name="text_limitation">Nie można udostępniać zbyt wielu słów.</string>
@@ -1311,5 +1312,5 @@ dotyczące konta %s"</string>
     <string name="font_color">Kolor czcionki</string>
     <string name="font_settings">Ustawienia czcionki</string>
     <string name="font_alignment">Wyrównanie czcionki</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Konfiguruj</string>
 </resources>

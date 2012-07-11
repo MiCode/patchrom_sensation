@@ -85,7 +85,7 @@
     .locals 2
 
     .prologue
-    .line 946
+    .line 1006
     sget-object v0, Lcom/htc/provider/HtcContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "data"
@@ -109,7 +109,7 @@
     .locals 0
 
     .prologue
-    .line 931
+    .line 991
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -122,15 +122,15 @@
     .prologue
     const v0, 0x10402a4
 
-    .line 1059
+    .line 1119
     if-nez p0, :cond_0
 
-    .line 1067
+    .line 1127
     :goto_0
     :pswitch_0
     return v0
 
-    .line 1062
+    .line 1122
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
@@ -140,19 +140,19 @@
 
     goto :goto_0
 
-    .line 1065
+    .line 1125
     :pswitch_1
     const v0, 0x10402a2
 
     goto :goto_0
 
-    .line 1064
+    .line 1124
     :pswitch_2
     const v0, 0x10402a3
 
     goto :goto_0
 
-    .line 1062
+    .line 1122
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1

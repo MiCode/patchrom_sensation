@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 6241
+    .line 6251
     iput-object p1, p0, Lcom/android/camera/HTCCamera$28;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .parameter "intent"
 
     .prologue
-    .line 6244
+    .line 6254
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 6245
+    .line 6255
     .local v0, action:Ljava/lang/String;
     const-string v1, "HTCCamera"
 
@@ -69,6 +69,6 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6253
+    .line 6263
     return-void
 .end method

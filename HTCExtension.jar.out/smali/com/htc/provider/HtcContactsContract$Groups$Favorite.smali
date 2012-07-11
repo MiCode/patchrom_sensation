@@ -25,7 +25,7 @@
     .locals 2
 
     .prologue
-    .line 1927
+    .line 1987
     sget-object v0, Lcom/htc/provider/HtcContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "groups_favorite"
@@ -43,7 +43,7 @@
     .locals 0
 
     .prologue
-    .line 1919
+    .line 1979
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -54,10 +54,10 @@
     .parameter "userId"
 
     .prologue
-    .line 1937
+    .line 1997
     const/4 v0, 0x0
 
-    .line 1938
+    .line 1998
     .local v0, intent:Landroid/content/Intent;
     const-wide/16 v1, 0x0
 
@@ -65,13 +65,13 @@
 
     if-lez v1, :cond_0
 
-    .line 1939
+    .line 1999
     new-instance v0, Landroid/content/Intent;
 
     .end local v0           #intent:Landroid/content/Intent;
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 1940
+    .line 2000
     .restart local v0       #intent:Landroid/content/Intent;
     const-string v1, "com.android.htccontacts"
 
@@ -79,19 +79,19 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1942
+    .line 2002
     const-string v1, "person_id"
 
     invoke-virtual {v0, v1, p0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 1944
+    .line 2004
     const-string v1, "default_action_for_group"
 
     const-string v2, "Favorite_8656150684447252476_6727701920173350445"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1946
+    .line 2006
     sget-object v1, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v1, p0, p1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
@@ -100,7 +100,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 1949
+    .line 2009
     :cond_0
     return-object v0
 .end method

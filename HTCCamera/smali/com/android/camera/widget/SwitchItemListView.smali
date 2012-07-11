@@ -183,27 +183,27 @@
     .locals 3
 
     .prologue
-    .line 168
+    .line 169
     const/4 v0, 0x1
 
-    .line 169
+    .line 170
     .local v0, newCameraType:I
     const/4 v1, 0x0
 
-    .line 171
+    .line 172
     .local v1, newMode:I
     iget-object v2, p0, Lcom/android/camera/widget/SwitchItemListView;->m_CameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v2, :cond_0
 
-    .line 172
+    .line 173
     iget-object v2, p0, Lcom/android/camera/widget/SwitchItemListView;->m_CameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v2}, Lcom/android/camera/CameraThread;->getMode()I
 
     move-result v1
 
-    .line 173
+    .line 174
     iget-object v2, p0, Lcom/android/camera/widget/SwitchItemListView;->m_CameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v2}, Lcom/android/camera/CameraThread;->is2ndCamera()Z
@@ -214,15 +214,15 @@
 
     const/4 v0, 0x2
 
-    .line 176
+    .line 177
     :cond_0
     :goto_0
     invoke-direct {p0, v0, v1}, Lcom/android/camera/widget/SwitchItemListView;->updateStateForNewMode(II)V
 
-    .line 177
+    .line 178
     return-void
 
-    .line 173
+    .line 174
     :cond_1
     const/4 v0, 0x1
 
@@ -239,32 +239,32 @@
 
     const/4 v1, 0x0
 
-    .line 155
+    .line 156
     if-nez p2, :cond_0
 
-    .line 156
+    .line 157
     iput-boolean v2, p0, Lcom/android/camera/widget/SwitchItemListView;->isCameraMode:Z
 
-    .line 160
+    .line 161
     :goto_0
     const/4 v0, 0x2
 
     if-ne p1, v0, :cond_1
 
-    .line 161
+    .line 162
     iput-boolean v2, p0, Lcom/android/camera/widget/SwitchItemListView;->is2ndCam:Z
 
-    .line 164
+    .line 165
     :goto_1
     return-void
 
-    .line 158
+    .line 159
     :cond_0
     iput-boolean v1, p0, Lcom/android/camera/widget/SwitchItemListView;->isCameraMode:Z
 
     goto :goto_0
 
-    .line 163
+    .line 164
     :cond_1
     iput-boolean v1, p0, Lcom/android/camera/widget/SwitchItemListView;->is2ndCam:Z
 
@@ -363,7 +363,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 135
+    .line 136
     iget-object v1, p0, Lcom/android/camera/widget/SwitchItemListView;->mMainList:Landroid/widget/ListView;
 
     new-instance v2, Lcom/android/camera/widget/SwitchItemListView$4;
@@ -372,7 +372,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ListView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 146
+    .line 147
     iget-object v1, p0, Lcom/android/camera/widget/SwitchItemListView;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v2, "Mode.Switching"
@@ -381,7 +381,7 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 147
+    .line 148
     iget-object v1, p0, Lcom/android/camera/widget/SwitchItemListView;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v2, "CameraActivity.PreviewStarted"
@@ -390,6 +390,6 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 148
+    .line 149
     return-void
 .end method

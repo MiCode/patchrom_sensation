@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 366
+    .line 375
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$2;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .parameter "intent"
 
     .prologue
-    .line 369
+    .line 378
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$2;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mRulesLock:Ljava/lang/Object;
@@ -50,20 +50,20 @@
 
     monitor-enter v1
 
-    .line 372
+    .line 381
     :try_start_0
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$2;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     #calls: Lcom/android/server/net/NetworkPolicyManagerService;->updateScreenOn()V
     invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$200(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    .line 373
+    .line 382
     monitor-exit v1
 
-    .line 374
+    .line 383
     return-void
 
-    .line 373
+    .line 382
     :catchall_0
     move-exception v0
 

@@ -55,7 +55,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mAdapter:Lcom/htc/app/FilePickerListAdapter;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2100(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2000(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
 
     move-result-object v1
 
@@ -65,7 +65,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mAdapter:Lcom/htc/app/FilePickerListAdapter;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2100(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2000(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
 
     move-result-object v1
 
@@ -83,7 +83,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mCurrentViewType:I
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$1300(Lcom/htc/app/FilePickerActivity;)I
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$1200(Lcom/htc/app/FilePickerActivity;)I
 
     move-result v1
 
@@ -150,13 +150,13 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #setter for: Lcom/htc/app/FilePickerActivity;->mSortSelectedItem:I
-    invoke-static {v1, p2}, Lcom/htc/app/FilePickerActivity;->access$3702(Lcom/htc/app/FilePickerActivity;I)I
+    invoke-static {v1, p2}, Lcom/htc/app/FilePickerActivity;->access$3602(Lcom/htc/app/FilePickerActivity;I)I
 
     .line 1570
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #setter for: Lcom/htc/app/FilePickerActivity;->mIsShowDialog:Z
-    invoke-static {v1, v3}, Lcom/htc/app/FilePickerActivity;->access$3602(Lcom/htc/app/FilePickerActivity;Z)Z
+    invoke-static {v1, v3}, Lcom/htc/app/FilePickerActivity;->access$3502(Lcom/htc/app/FilePickerActivity;Z)Z
 
     .line 1571
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
@@ -181,7 +181,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mIsStopScan:Z
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2800(Lcom/htc/app/FilePickerActivity;)Z
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2700(Lcom/htc/app/FilePickerActivity;)Z
 
     move-result v1
 
@@ -191,7 +191,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mFileSorter:Lcom/htc/app/FileSorter;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3500(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
 
     move-result-object v1
 
@@ -201,7 +201,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mFileSorter:Lcom/htc/app/FileSorter;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3500(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
 
     move-result-object v1
 
@@ -214,7 +214,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mAdapter:Lcom/htc/app/FilePickerListAdapter;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2100(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2000(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
 
     move-result-object v1
 
@@ -232,7 +232,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mCurrentViewType:I
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$1300(Lcom/htc/app/FilePickerActivity;)I
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$1200(Lcom/htc/app/FilePickerActivity;)I
 
     move-result v1
 
@@ -262,7 +262,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mIsStopScan:Z
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2800(Lcom/htc/app/FilePickerActivity;)Z
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2700(Lcom/htc/app/FilePickerActivity;)Z
 
     move-result v1
 
@@ -272,7 +272,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mFileSorter:Lcom/htc/app/FileSorter;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3500(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
 
     move-result-object v1
 
@@ -282,7 +282,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mFileSorter:Lcom/htc/app/FileSorter;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3500(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
 
     move-result-object v1
 
@@ -295,7 +295,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mAdapter:Lcom/htc/app/FilePickerListAdapter;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2100(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2000(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
 
     move-result-object v1
 
@@ -313,7 +313,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mCurrentViewType:I
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$1300(Lcom/htc/app/FilePickerActivity;)I
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$1200(Lcom/htc/app/FilePickerActivity;)I
 
     move-result v1
 
@@ -343,7 +343,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mIsStopScan:Z
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2800(Lcom/htc/app/FilePickerActivity;)Z
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2700(Lcom/htc/app/FilePickerActivity;)Z
 
     move-result v1
 
@@ -353,7 +353,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mFileSorter:Lcom/htc/app/FileSorter;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3500(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
 
     move-result-object v1
 
@@ -363,7 +363,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mFileSorter:Lcom/htc/app/FileSorter;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3500(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
 
     move-result-object v1
 
@@ -376,7 +376,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mAdapter:Lcom/htc/app/FilePickerListAdapter;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2100(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2000(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
 
     move-result-object v1
 
@@ -394,7 +394,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mCurrentViewType:I
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$1300(Lcom/htc/app/FilePickerActivity;)I
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$1200(Lcom/htc/app/FilePickerActivity;)I
 
     move-result v1
 
@@ -424,7 +424,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mIsStopScan:Z
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2800(Lcom/htc/app/FilePickerActivity;)Z
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2700(Lcom/htc/app/FilePickerActivity;)Z
 
     move-result v1
 
@@ -434,7 +434,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mFileSorter:Lcom/htc/app/FileSorter;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3500(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
 
     move-result-object v1
 
@@ -444,7 +444,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mFileSorter:Lcom/htc/app/FileSorter;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3500(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$3400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
 
     move-result-object v1
 
@@ -457,7 +457,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mAdapter:Lcom/htc/app/FilePickerListAdapter;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2100(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$2000(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
 
     move-result-object v1
 
@@ -475,7 +475,7 @@
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$13;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mCurrentViewType:I
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$1300(Lcom/htc/app/FilePickerActivity;)I
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$1200(Lcom/htc/app/FilePickerActivity;)I
 
     move-result v1
 

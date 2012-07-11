@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 7946
+    .line 8008
     iput-object p1, p0, Lcom/android/camera/HTCCamera$33;->this$0:Lcom/android/camera/HTCCamera;
 
     iput-boolean p2, p0, Lcom/android/camera/HTCCamera$33;->val$isLastPlay:Z
@@ -47,22 +47,22 @@
     .parameter "mp"
 
     .prologue
-    .line 7949
+    .line 8011
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera$33;->val$isLastPlay:Z
 
     if-eqz v0, :cond_0
 
-    .line 7951
+    .line 8013
     const-string v0, "HTCCamera"
 
     const-string v1, "Release media player"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7952
+    .line 8014
     invoke-virtual {p1}, Landroid/media/MediaPlayer;->release()V
 
-    .line 7954
+    .line 8016
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera$33;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -73,7 +73,7 @@
 
     monitor-enter v1
 
-    .line 7956
+    .line 8018
     :try_start_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera$33;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -84,7 +84,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 7959
+    .line 8021
     iget-object v0, p0, Lcom/android/camera/HTCCamera$33;->this$0:Lcom/android/camera/HTCCamera;
 
     const/4 v2, 0x0
@@ -92,24 +92,24 @@
     #setter for: Lcom/android/camera/HTCCamera;->mAudioPlayer:Landroid/media/MediaPlayer;
     invoke-static {v0, v2}, Lcom/android/camera/HTCCamera;->access$202(Lcom/android/camera/HTCCamera;Landroid/media/MediaPlayer;)Landroid/media/MediaPlayer;
 
-    .line 7962
+    .line 8024
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera$33;->val$isLastPlay:Z
 
     if-eqz v0, :cond_1
 
-    .line 7963
+    .line 8025
     iget-object v0, p0, Lcom/android/camera/HTCCamera$33;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->abandonAudioFocus()V
 
-    .line 7965
+    .line 8027
     :cond_1
     monitor-exit v1
 
-    .line 7966
+    .line 8028
     return-void
 
-    .line 7965
+    .line 8027
     :catchall_0
     move-exception v0
 

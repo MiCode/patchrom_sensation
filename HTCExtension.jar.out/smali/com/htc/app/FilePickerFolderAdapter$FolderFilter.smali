@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 430
+    .line 423
     iput-object p1, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderFilter;->this$0:Lcom/htc/app/FilePickerFolderAdapter;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -46,17 +46,17 @@
     .parameter "file"
 
     .prologue
-    .line 434
+    .line 427
     invoke-virtual {p1}, Ljava/io/File;->isDirectory()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 438
+    .line 431
     const/4 v0, 0x1
 
-    .line 441
+    .line 434
     :goto_0
     return v0
 

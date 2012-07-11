@@ -187,37 +187,37 @@
 
     const/16 v1, 0x1c
 
-    const-string v2, "image/*"
+    const-string/jumbo v2, "image/*"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1d
 
-    const-string v2, "image/gif"
+    const-string/jumbo v2, "image/gif"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1e
 
-    const-string v2, "image/jpeg"
+    const-string/jumbo v2, "image/jpeg"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1f
 
-    const-string v2, "image/tiff"
+    const-string/jumbo v2, "image/tiff"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x20
 
-    const-string v2, "image/png"
+    const-string/jumbo v2, "image/png"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x21
 
-    const-string v2, "image/vnd.wap.wbmp"
+    const-string/jumbo v2, "image/vnd.wap.wbmp"
 
     aput-object v2, v0, v1
 
@@ -524,7 +524,6 @@
     .locals 0
 
     .prologue
-    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

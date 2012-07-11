@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 718
+    .line 778
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,28 +43,28 @@
     .parameter "number"
 
     .prologue
-    .line 747
+    .line 807
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 748
+    .line 808
     .local v0, actionIntent:Landroid/content/Intent;
     const-string v1, "android.intent.action.INSERT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 749
+    .line 809
     sget-object v1, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 751
+    .line 811
     const-string v1, "phone"
 
     invoke-virtual {v0, v1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 752
+    .line 812
     return-object v0
 .end method
 
@@ -73,24 +73,24 @@
     .parameter "number"
 
     .prologue
-    .line 762
+    .line 822
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.INSERT_OR_EDIT"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 763
+    .line 823
     .local v0, actionIntent:Landroid/content/Intent;
     const-string v1, "vnd.android.cursor.item/contact"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 765
+    .line 825
     const-string v1, "phone"
 
     invoke-virtual {v0, v1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 766
+    .line 826
     return-object v0
 .end method

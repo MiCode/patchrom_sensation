@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 4516
+    .line 4540
     iput-object p1, p0, Lcom/android/camera/CameraThread$ErrorListener;->this$0:Lcom/android/camera/CameraThread;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 4516
+    .line 4540
     invoke-direct {p0, p1}, Lcom/android/camera/CameraThread$ErrorListener;-><init>(Lcom/android/camera/CameraThread;)V
 
     return-void
@@ -56,26 +56,26 @@
     .parameter "extra"
 
     .prologue
-    .line 4519
+    .line 4543
     const/16 v0, 0x3d0
 
     if-ne p2, v0, :cond_0
 
-    .line 4520
+    .line 4544
     const-string v0, "CameraThread"
 
     const-string v1, "*********** MediaRecorder.CAMERA_STEREO_PROHIBIT"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4521
+    .line 4545
     iget-object v0, p0, Lcom/android/camera/CameraThread$ErrorListener;->this$0:Lcom/android/camera/CameraThread;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/camera/CameraThread;->setRecPowerWarning(Z)V
 
-    .line 4522
+    .line 4546
     iget-object v0, p0, Lcom/android/camera/CameraThread$ErrorListener;->this$0:Lcom/android/camera/CameraThread;
 
     const/4 v1, 0x0
@@ -83,7 +83,7 @@
     #setter for: Lcom/android/camera/CameraThread;->mPreviewing:Z
     invoke-static {v0, v1}, Lcom/android/camera/CameraThread;->access$902(Lcom/android/camera/CameraThread;Z)Z
 
-    .line 4523
+    .line 4547
     iget-object v0, p0, Lcom/android/camera/CameraThread$ErrorListener;->this$0:Lcom/android/camera/CameraThread;
 
     iget-object v0, v0, Lcom/android/camera/CameraThread;->mUIHandler:Landroid/os/Handler;
@@ -92,7 +92,7 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 4524
+    .line 4548
     iget-object v0, p0, Lcom/android/camera/CameraThread$ErrorListener;->this$0:Lcom/android/camera/CameraThread;
 
     iget-object v0, v0, Lcom/android/camera/CameraThread;->mCameraHandler:Lcom/android/camera/CameraThread$MainHandler;
@@ -101,7 +101,7 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 4525
+    .line 4549
     iget-object v0, p0, Lcom/android/camera/CameraThread$ErrorListener;->this$0:Lcom/android/camera/CameraThread;
 
     iget-object v0, v0, Lcom/android/camera/CameraThread;->mUIHandler:Landroid/os/Handler;
@@ -110,7 +110,7 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 4526
+    .line 4550
     iget-object v0, p0, Lcom/android/camera/CameraThread$ErrorListener;->this$0:Lcom/android/camera/CameraThread;
 
     #getter for: Lcom/android/camera/CameraThread;->m_EventManager:Lcom/android/camera/EventManager;
@@ -122,11 +122,11 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 4532
+    .line 4556
     :goto_0
     return-void
 
-    .line 4530
+    .line 4554
     :cond_0
     const-string v0, "CameraThread"
 

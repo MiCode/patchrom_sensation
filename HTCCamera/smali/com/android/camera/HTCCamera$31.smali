@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 7224
+    .line 7283
     iput-object p1, p0, Lcom/android/camera/HTCCamera$31;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 7227
+    .line 7286
     iget-object v0, p0, Lcom/android/camera/HTCCamera$31;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->updateFlashMode()V
 
-    .line 7228
+    .line 7287
     return-void
 .end method

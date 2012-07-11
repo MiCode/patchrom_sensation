@@ -27,7 +27,7 @@
     .locals 2
 
     .prologue
-    .line 3080
+    .line 3140
     sget-object v0, Lcom/htc/provider/HtcContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "blacklist_password"
@@ -45,7 +45,7 @@
     .locals 0
 
     .prologue
-    .line 3075
+    .line 3135
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

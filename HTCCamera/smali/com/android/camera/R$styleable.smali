@@ -49,7 +49,7 @@
     .locals 3
 
     .prologue
-    .line 35487
+    .line 36475
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -58,7 +58,7 @@
 
     sput-object v0, Lcom/android/camera/R$styleable;->IconIndicator:[I
 
-    .line 35520
+    .line 36508
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/android/camera/R$styleable;->IconListPreference:[I
 
-    .line 35557
+    .line 36545
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -82,14 +82,14 @@
 
     return-void
 
-    .line 35487
+    .line 36475
     :array_0
     .array-data 0x4
         0x0t 0x0t 0x1t 0x7ft
         0x1t 0x0t 0x1t 0x7ft
     .end array-data
 
-    .line 35557
+    .line 36545
     :array_1
     .array-data 0x4
         0x2t 0x0t 0x1t 0x7ft
@@ -107,7 +107,7 @@
     .locals 0
 
     .prologue
-    .line 35474
+    .line 36462
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -25,8 +25,6 @@
 
 .field public static final Nsongs:I = 0x7f0d0000
 
-.field public static final Nsongscomp:I = 0x7f0d0007
-
 .field public static final htc_NNNdelteplaylists:I = 0x7f0d0005
 
 .field public static final htc_NNNremovefromplaylist:I = 0x7f0d0006
@@ -37,7 +35,7 @@
     .locals 0
 
     .prologue
-    .line 1476
+    .line 1467
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

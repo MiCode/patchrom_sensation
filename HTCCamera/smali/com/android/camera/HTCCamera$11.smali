@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3463
+    .line 3460
     iput-object p1, p0, Lcom/android/camera/HTCCamera$11;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -46,14 +46,14 @@
 
     const/4 v2, 0x1
 
-    .line 3465
+    .line 3462
     const-string v0, "HTCCamera"
 
     const-string v1, "Click button to change flash mode"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3468
+    .line 3465
     iget-object v0, p0, Lcom/android/camera/HTCCamera$11;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mFlashRestriction:Lcom/android/camera/FlashRestriction;
@@ -94,7 +94,7 @@
 
     if-nez v0, :cond_1
 
-    .line 3469
+    .line 3466
     iget-object v0, p0, Lcom/android/camera/HTCCamera$11;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
@@ -104,7 +104,7 @@
 
     invoke-static {v0, v4}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 3470
+    .line 3467
     iget-object v0, p0, Lcom/android/camera/HTCCamera$11;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
@@ -129,12 +129,12 @@
 
     invoke-static {v0, v4, v1, v2, v3}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 3481
+    .line 3478
     :cond_0
     :goto_0
     return-void
 
-    .line 3477
+    .line 3474
     :cond_1
     invoke-static {}, Lcom/android/camera/HTCCamera;->access$1200()Z
 
@@ -148,7 +148,7 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 3480
+    .line 3477
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera$11;->this$0:Lcom/android/camera/HTCCamera;
 

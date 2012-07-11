@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 602
+    .line 603
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
     .locals 1
 
     .prologue
-    .line 605
+    .line 606
     invoke-static {}, Lcom/htc/util/contacts/BuildUtils$Customization;->isChinaCMCC()Z
 
     move-result v0

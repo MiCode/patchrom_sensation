@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 194
+    .line 199
     iput-object p1, p0, Lcom/android/camera/component/HdrController$1;->this$0:Lcom/android/camera/component/HdrController;
 
     iput-object p2, p0, Lcom/android/camera/component/HdrController$1;->val$cameraThread:Lcom/android/camera/CameraThread;
@@ -46,7 +46,7 @@
     .locals 3
 
     .prologue
-    .line 198
+    .line 203
     iget-object v0, p0, Lcom/android/camera/component/HdrController$1;->val$cameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->getCommonCaptureHandler()Lcom/android/camera/CameraThread$CommonCaptureHandler;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0}, Lcom/android/camera/CameraThread$CommonCaptureHandler;->onShutter()V
 
-    .line 201
+    .line 206
     iget-object v0, p0, Lcom/android/camera/component/HdrController$1;->this$0:Lcom/android/camera/component/HdrController;
 
     iget-object v1, p0, Lcom/android/camera/component/HdrController$1;->this$0:Lcom/android/camera/component/HdrController;
@@ -69,6 +69,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/camera/component/HdrController;->sendMessage(Lcom/android/camera/component/Component;I)Z
 
-    .line 202
+    .line 207
     return-void
 .end method

@@ -658,7 +658,7 @@
     .parameter "x"
 
     .prologue
-    .line 286
+    .line 296
     invoke-virtual {p1}, Landroid/widget/TextView;->getTotalPaddingLeft()I
 
     move-result v0
@@ -682,7 +682,7 @@
     .parameter "y"
 
     .prologue
-    .line 291
+    .line 301
     invoke-virtual {p1}, Landroid/widget/TextView;->getTotalPaddingTop()I
 
     move-result v0
@@ -706,7 +706,7 @@
     .locals 1
 
     .prologue
-    .line 295
+    .line 305
     iget-object v0, p0, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;
 
     if-eqz v0, :cond_0
@@ -719,18 +719,18 @@
 
     if-eqz v0, :cond_0
 
-    .line 296
+    .line 306
     iget-object v0, p0, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->dismiss()V
 
-    .line 297
+    .line 307
     :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/htc/textselection/Magnifier;->mTextView:Landroid/widget/TextView;
 
-    .line 298
+    .line 308
     return-void
 .end method
 
@@ -739,7 +739,7 @@
     .parameter "v"
 
     .prologue
-    .line 305
+    .line 315
     iget-object v0, p0, Lcom/htc/textselection/Magnifier;->mTextView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_0
@@ -763,7 +763,7 @@
     .locals 1
 
     .prologue
-    .line 301
+    .line 311
     iget-object v0, p0, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;
 
     if-eqz v0, :cond_0
@@ -784,7 +784,7 @@
 .end method
 
 .method public show(Landroid/widget/TextView;IIILcom/htc/textselection/Magnifier$TouchingMode;)V
-    .locals 26
+    .locals 25
     .parameter "tv"
     .parameter "x"
     .parameter "y"
@@ -797,15 +797,15 @@
 
     invoke-virtual/range {p1 .. p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
-    move-result-object v22
+    move-result-object v21
 
-    invoke-interface/range {v22 .. v22}, Ljava/lang/CharSequence;->length()I
+    invoke-interface/range {v21 .. v21}, Ljava/lang/CharSequence;->length()I
 
-    move-result v22
+    move-result v21
 
-    if-nez v22, :cond_1
+    if-nez v21, :cond_1
 
-    .line 264
+    .line 274
     .end local p3
     :cond_0
     :goto_0
@@ -816,9 +816,9 @@
     :cond_1
     invoke-virtual/range {p1 .. p1}, Landroid/widget/TextView;->willNotDraw()Z
 
-    move-result v22
+    move-result v21
 
-    if-nez v22, :cond_0
+    if-nez v21, :cond_0
 
     .line 134
     move-object/from16 v0, p1
@@ -838,11 +838,11 @@
 
     iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mLocationInWindow:[I
 
-    move-object/from16 v22, v0
+    move-object/from16 v21, v0
 
     move-object/from16 v0, p1
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v21
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->getLocationInWindow([I)V
 
@@ -867,9 +867,9 @@
 
     .line 146
     .local v9, lineBottom:I
-    sub-int v22, v9, v10
+    sub-int v21, v9, v10
 
-    move/from16 v0, v22
+    move/from16 v0, v21
 
     move-object/from16 v1, p0
 
@@ -878,17 +878,17 @@
     .line 148
     invoke-virtual/range {p1 .. p1}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
-    move-result-object v22
+    move-result-object v21
 
-    invoke-virtual/range {v22 .. v22}, Landroid/text/Layout;->getLineCount()I
+    invoke-virtual/range {v21 .. v21}, Landroid/text/Layout;->getLineCount()I
 
-    move-result v22
+    move-result v21
 
-    const/16 v23, 0x1
+    const/16 v22, 0x1
 
-    move/from16 v0, v22
+    move/from16 v0, v21
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     if-ne v0, v1, :cond_4
 
@@ -906,18 +906,30 @@
     .line 150
     if-nez v5, :cond_2
 
-    sget-object v22, Lcom/htc/textselection/Magnifier$TouchingMode;->TOUCHING_WORD:Lcom/htc/textselection/Magnifier$TouchingMode;
+    sget-object v21, Lcom/htc/textselection/Magnifier$TouchingMode;->TOUCHING_WORD:Lcom/htc/textselection/Magnifier$TouchingMode;
 
     move-object/from16 v0, p5
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v21
 
     if-eq v0, v1, :cond_3
 
     :cond_2
-    add-int v22, v10, v9
+    add-int v21, v10, v9
 
-    div-int/lit8 p3, v22, 0x2
+    div-int/lit8 v21, v21, 0x2
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mTextView:Landroid/widget/TextView;
+
+    move-object/from16 v22, v0
+
+    invoke-virtual/range {v22 .. v22}, Landroid/widget/TextView;->getTotalPaddingTop()I
+
+    move-result v22
+
+    add-int p3, v21, v22
 
     .end local p3
     :cond_3
@@ -932,38 +944,38 @@
 
     iget v0, v0, Lcom/htc/textselection/Magnifier;->mx:I
 
-    move/from16 v22, v0
+    move/from16 v21, v0
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
-    move/from16 v2, v22
+    move/from16 v2, v21
 
     invoke-direct {v0, v1, v2}, Lcom/htc/textselection/Magnifier;->getTextViewToWindowX(Landroid/widget/TextView;I)I
 
-    move-result v20
+    move-result v19
 
     .line 154
-    .local v20, xWnd:I
+    .local v19, xWnd:I
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/htc/textselection/Magnifier;->my:I
 
-    move/from16 v22, v0
+    move/from16 v21, v0
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
-    move/from16 v2, v22
+    move/from16 v2, v21
 
     invoke-direct {v0, v1, v2}, Lcom/htc/textselection/Magnifier;->getTextViewToWindowY(Landroid/widget/TextView;I)I
 
-    move-result v21
+    move-result v20
 
     .line 155
-    .local v21, yWnd:I
+    .local v20, yWnd:I
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -978,644 +990,96 @@
 
     iget v0, v0, Lcom/htc/textselection/Magnifier;->TOTAL_WIDTH:I
 
-    move/from16 v22, v0
+    move/from16 v21, v0
 
-    div-int/lit8 v22, v22, 0x2
+    div-int/lit8 v21, v21, 0x2
 
-    sub-int v15, v20, v22
+    sub-int v14, v19, v21
 
     .line 158
-    .local v15, paddingLeft:I
-    const/16 v16, 0x0
+    .local v14, paddingLeft:I
+    const/4 v15, 0x0
 
     .line 159
-    .local v16, paddingTop:I
+    .local v15, paddingTop:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mManager:Lcom/htc/textselection/HtcTextSelectionManager;
 
-    move-object/from16 v22, v0
+    move-object/from16 v21, v0
 
-    invoke-virtual/range {v22 .. v22}, Lcom/htc/textselection/HtcTextSelectionManager;->getStatusBarHeight()I
+    invoke-virtual/range {v21 .. v21}, Lcom/htc/textselection/HtcTextSelectionManager;->getStatusBarHeight()I
 
-    move-result v17
+    move-result v16
 
-    .line 161
-    .local v17, statusBarHeight:I
+    .line 162
+    .local v16, statusBarHeight:I
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/htc/textselection/Magnifier;->mTextHeight:I
 
-    move/from16 v22, v0
+    move/from16 v21, v0
 
-    add-int v22, v22, v17
+    add-int v21, v21, v16
 
-    move/from16 v0, v22
+    move/from16 v0, v21
 
     if-gt v11, v0, :cond_5
 
-    const/16 v22, 0x1
+    const/16 v21, 0x1
 
     :goto_2
-    move/from16 v0, v22
+    move/from16 v0, v21
 
     move-object/from16 v1, p0
 
     iput-boolean v0, v1, Lcom/htc/textselection/Magnifier;->mNoSpaceToShow:Z
 
-    .line 163
+    .line 164
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/htc/textselection/Magnifier;->mTextHeight:I
 
-    move/from16 v22, v0
+    move/from16 v21, v0
 
-    move/from16 v0, v22
+    move/from16 v0, v21
 
     if-gt v11, v0, :cond_6
 
-    const/16 v22, 0x1
+    const/16 v21, 0x1
 
     :goto_3
-    move/from16 v0, v22
+    move/from16 v0, v21
 
     move-object/from16 v1, p0
 
     iput-boolean v0, v1, Lcom/htc/textselection/Magnifier;->mSingleNoSpaceToShow:Z
 
-    .line 165
-    int-to-float v0, v11
-
-    move/from16 v22, v0
-
-    move/from16 v0, v17
-
-    int-to-float v0, v0
-
-    move/from16 v23, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/htc/textselection/Magnifier;->mTextHeight:I
-
-    move/from16 v24, v0
-
-    move/from16 v0, v24
-
-    int-to-float v0, v0
-
-    move/from16 v24, v0
-
-    const/high16 v25, 0x3fc0
-
-    mul-float v24, v24, v25
-
-    add-float v23, v23, v24
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mDrawablePadding:Landroid/graphics/Rect;
-
-    move-object/from16 v24, v0
-
-    move-object/from16 v0, v24
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    move/from16 v24, v0
-
-    move/from16 v0, v24
-
-    int-to-float v0, v0
-
-    move/from16 v24, v0
-
-    add-float v23, v23, v24
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/htc/textselection/Magnifier;->MAGNIFIER_TO_FINGER:I
-
-    move/from16 v24, v0
-
-    move/from16 v0, v24
-
-    int-to-float v0, v0
-
-    move/from16 v24, v0
-
-    add-float v23, v23, v24
-
-    cmpg-float v22, v22, v23
-
-    if-gtz v22, :cond_7
-
-    const/16 v22, 0x1
-
-    :goto_4
-    move/from16 v0, v22
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Lcom/htc/textselection/Magnifier;->mNoSpaceAdjust:Z
-
-    .line 168
-    if-eqz v5, :cond_e
-
-    .line 169
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/htc/textselection/Magnifier;->mSingleNoSpaceToShow:Z
-
-    move/from16 v22, v0
-
-    if-eqz v22, :cond_8
-
-    .line 170
-    invoke-virtual/range {p0 .. p0}, Lcom/htc/textselection/Magnifier;->dismiss()V
-
-    goto/16 :goto_0
-
-    .line 148
-    .end local v5           #isSingleLine:Z
-    .end local v11           #lineTopWnd:I
-    .end local v15           #paddingLeft:I
-    .end local v16           #paddingTop:I
-    .end local v17           #statusBarHeight:I
-    .end local v20           #xWnd:I
-    .end local v21           #yWnd:I
-    .restart local p3
-    :cond_4
-    const/4 v5, 0x0
-
-    goto/16 :goto_1
-
-    .line 161
-    .end local p3
-    .restart local v5       #isSingleLine:Z
-    .restart local v11       #lineTopWnd:I
-    .restart local v15       #paddingLeft:I
-    .restart local v16       #paddingTop:I
-    .restart local v17       #statusBarHeight:I
-    .restart local v20       #xWnd:I
-    .restart local v21       #yWnd:I
-    :cond_5
-    const/16 v22, 0x0
-
-    goto :goto_2
-
-    .line 163
-    :cond_6
-    const/16 v22, 0x0
-
-    goto :goto_3
-
-    .line 165
-    :cond_7
-    const/16 v22, 0x0
-
-    goto :goto_4
-
-    .line 172
-    :cond_8
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/htc/textselection/Magnifier;->mNoSpaceAdjust:Z
-
-    move/from16 v22, v0
-
-    if-eqz v22, :cond_c
-
-    .line 173
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/htc/textselection/Magnifier;->TOTAL_HEIGHT:I
-
-    move/from16 v22, v0
-
-    div-int/lit8 v22, v22, 0x2
-
-    sub-int v16, v21, v22
-
-    .line 193
-    :goto_5
-    const/16 v22, 0x2
-
-    move/from16 v0, v22
-
-    new-array v0, v0, [I
-
-    move-object/from16 v19, v0
-
-    fill-array-data v19, :array_0
-
-    .line 194
-    .local v19, windowPosition:[I
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, v19
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->getWindowPosition([I)V
-
-    .line 196
-    const/16 v22, 0x1
-
-    aget v22, v19, v22
-
-    if-eqz v22, :cond_12
-
-    sget-object v7, Lcom/htc/textselection/Magnifier$LayoutMode;->FILLWIDTH:Lcom/htc/textselection/Magnifier$LayoutMode;
-
-    .line 200
-    .local v7, layoutMode:Lcom/htc/textselection/Magnifier$LayoutMode;
-    :goto_6
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mLayoutMode:Lcom/htc/textselection/Magnifier$LayoutMode;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    if-eq v0, v7, :cond_a
-
-    .line 201
-    move-object/from16 v0, p0
-
-    iput-object v7, v0, Lcom/htc/textselection/Magnifier;->mLayoutMode:Lcom/htc/textselection/Magnifier$LayoutMode;
-
-    .line 204
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mImageView:Lcom/htc/textselection/Magnifier$MagnifierView;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {v22 .. v22}, Lcom/htc/textselection/Magnifier$MagnifierView;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v22
-
-    if-eqz v22, :cond_9
-
-    .line 205
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mImageView:Lcom/htc/textselection/Magnifier$MagnifierView;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {v22 .. v22}, Lcom/htc/textselection/Magnifier$MagnifierView;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v18
-
-    check-cast v18, Landroid/view/ViewGroup;
-
-    .line 206
-    .local v18, v:Landroid/view/ViewGroup;
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mImageView:Lcom/htc/textselection/Magnifier$MagnifierView;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
-
-    .line 210
-    .end local v18           #v:Landroid/view/ViewGroup;
-    :cond_9
-    sget-object v22, Lcom/htc/textselection/Magnifier$LayoutMode;->FILLWIDTH:Lcom/htc/textselection/Magnifier$LayoutMode;
-
-    move-object/from16 v0, v22
-
-    if-ne v7, v0, :cond_13
-
-    .line 211
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mLayoutFillWidth:Landroid/widget/LinearLayout;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mImageView:Lcom/htc/textselection/Magnifier$MagnifierView;
-
-    move-object/from16 v23, v0
-
-    invoke-virtual/range {v22 .. v23}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    .line 217
-    :cond_a
-    :goto_7
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mImageView:Lcom/htc/textselection/Magnifier$MagnifierView;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {v22 .. v22}, Lcom/htc/textselection/Magnifier$MagnifierView;->invalidate()V
-
-    .line 220
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mTextView:Landroid/widget/TextView;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {v22 .. v22}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
-
-    move-result-object v22
-
-    const-string v23, "window"
-
-    invoke-virtual/range {v22 .. v23}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v14
-
-    check-cast v14, Landroid/view/WindowManager;
-
-    .line 221
-    .local v14, mWindowManager:Landroid/view/WindowManager;
-    invoke-interface {v14}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
-
-    move-result-object v22
-
-    invoke-virtual/range {v22 .. v22}, Landroid/view/Display;->getRawWidth()I
-
-    move-result v13
-
-    .line 222
-    .local v13, mMagnifierWindowWidth:I
-    invoke-interface {v14}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
-
-    move-result-object v22
-
-    invoke-virtual/range {v22 .. v22}, Landroid/view/Display;->getRawHeight()I
-
-    move-result v12
-
-    .line 226
-    .local v12, mMagnifierWindowHeight:I
-    sget-object v22, Lcom/htc/textselection/Magnifier$LayoutMode;->FILLWIDTH:Lcom/htc/textselection/Magnifier$LayoutMode;
-
-    move-object/from16 v0, v22
-
-    if-ne v7, v0, :cond_15
-
-    .line 228
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFillWidth:Landroid/widget/PopupWindow;
-
-    move-object/from16 v22, v0
-
-    if-nez v22, :cond_b
-
-    .line 230
-    new-instance v22, Landroid/widget/PopupWindow;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mLayoutFillWidth:Landroid/widget/LinearLayout;
-
-    move-object/from16 v23, v0
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v23
-
-    invoke-direct {v0, v1, v13, v12}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;II)V
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, p0
-
-    iput-object v0, v1, Lcom/htc/textselection/Magnifier;->mWindowFillWidth:Landroid/widget/PopupWindow;
-
-    .line 232
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFillWidth:Landroid/widget/PopupWindow;
-
-    move-object/from16 v22, v0
-
-    const/16 v23, 0x3ea
-
-    invoke-virtual/range {v22 .. v23}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
-
-    .line 233
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFillWidth:Landroid/widget/PopupWindow;
-
-    move-object/from16 v22, v0
-
-    const/16 v23, 0x0
-
-    invoke-virtual/range {v22 .. v23}, Landroid/widget/PopupWindow;->setTouchable(Z)V
-
-    .line 234
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFillWidth:Landroid/widget/PopupWindow;
-
-    move-object/from16 v22, v0
-
-    const/16 v23, 0x0
-
-    invoke-virtual/range {v22 .. v23}, Landroid/widget/PopupWindow;->setFocusable(Z)V
-
-    .line 235
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFillWidth:Landroid/widget/PopupWindow;
-
-    move-object/from16 v22, v0
-
-    const/16 v23, 0x0
-
-    invoke-virtual/range {v22 .. v23}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
-
-    .line 238
-    :cond_b
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFillWidth:Landroid/widget/PopupWindow;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, p0
-
-    iput-object v0, v1, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;
-
-    .line 239
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mLayoutFillWidth:Landroid/widget/LinearLayout;
-
-    move-object/from16 v22, v0
-
-    const/16 v23, 0x0
-
-    const/16 v24, 0x0
-
-    const/16 v25, 0x0
-
-    move-object/from16 v0, v22
-
-    move/from16 v1, v23
-
-    move/from16 v2, v24
-
-    move/from16 v3, v25
-
-    invoke-virtual {v0, v15, v1, v2, v3}, Landroid/widget/LinearLayout;->setPadding(IIII)V
-
-    .line 241
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {v22 .. v22}, Landroid/widget/PopupWindow;->isShowing()Z
-
-    move-result v22
-
-    if-nez v22, :cond_14
-
-    .line 242
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;
-
-    move-object/from16 v22, v0
-
-    const/16 v23, 0x0
-
-    const/16 v24, 0x0
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, p1
-
-    move/from16 v2, v23
-
-    move/from16 v3, v24
-
-    move/from16 v4, v16
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
-
-    goto/16 :goto_0
-
-    .line 175
-    .end local v7           #layoutMode:Lcom/htc/textselection/Magnifier$LayoutMode;
-    .end local v12           #mMagnifierWindowHeight:I
-    .end local v13           #mMagnifierWindowWidth:I
-    .end local v14           #mWindowManager:Landroid/view/WindowManager;
-    .end local v19           #windowPosition:[I
-    :cond_c
-    sget-object v22, Lcom/htc/textselection/Magnifier$TouchingMode;->TOUCHING_UPPER_ANCHOR:Lcom/htc/textselection/Magnifier$TouchingMode;
+    .line 166
+    sget-object v21, Lcom/htc/textselection/Magnifier$TouchingMode;->TOUCHING_UPPER_ANCHOR:Lcom/htc/textselection/Magnifier$TouchingMode;
 
     move-object/from16 v0, p5
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v21
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_8
 
-    .line 176
-    move-object/from16 v0, p0
+    .line 167
+    int-to-float v0, v11
 
-    iget v0, v0, Lcom/htc/textselection/Magnifier;->TOTAL_HEIGHT:I
+    move/from16 v21, v0
 
-    move/from16 v22, v0
+    move/from16 v0, v16
 
-    sub-int v22, v21, v22
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/htc/textselection/Magnifier;->MAGNIFIER_TO_FINGER:I
-
-    move/from16 v23, v0
-
-    sub-int v22, v22, v23
-
-    sget v23, Lcom/htc/textselection/Magnifier;->mANCHOR_HEIGHT:I
-
-    sub-int v16, v22, v23
-
-    goto/16 :goto_5
-
-    .line 178
-    :cond_d
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/htc/textselection/Magnifier;->TOTAL_HEIGHT:I
+    int-to-float v0, v0
 
     move/from16 v22, v0
-
-    sub-int v22, v21, v22
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/htc/textselection/Magnifier;->MAGNIFIER_TO_FINGER:I
-
-    move/from16 v23, v0
-
-    sub-int v16, v22, v23
-
-    goto/16 :goto_5
-
-    .line 180
-    :cond_e
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/htc/textselection/Magnifier;->mNoSpaceToShow:Z
-
-    move/from16 v22, v0
-
-    if-eqz v22, :cond_f
-
-    .line 181
-    invoke-virtual/range {p0 .. p0}, Lcom/htc/textselection/Magnifier;->dismiss()V
-
-    goto/16 :goto_0
-
-    .line 183
-    :cond_f
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/htc/textselection/Magnifier;->mNoSpaceAdjust:Z
-
-    move/from16 v22, v0
-
-    if-eqz v22, :cond_10
-
-    .line 184
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/htc/textselection/Magnifier;->TOTAL_HEIGHT:I
-
-    move/from16 v22, v0
-
-    mul-int/lit8 v22, v22, -0x1
-
-    add-int v22, v22, v17
 
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/htc/textselection/Magnifier;->mTextHeight:I
 
     move/from16 v23, v0
-
-    mul-int/lit8 v23, v23, 0x2
 
     move/from16 v0, v23
 
@@ -1627,34 +1091,27 @@
 
     mul-float v23, v23, v24
 
-    move/from16 v0, v23
+    add-float v22, v22, v23
 
-    float-to-int v0, v0
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mDrawablePadding:Landroid/graphics/Rect;
+
+    move-object/from16 v23, v0
+
+    move-object/from16 v0, v23
+
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
 
     move/from16 v23, v0
 
-    add-int v16, v22, v23
+    move/from16 v0, v23
 
-    goto/16 :goto_5
+    int-to-float v0, v0
 
-    .line 186
-    :cond_10
-    sget-object v22, Lcom/htc/textselection/Magnifier$TouchingMode;->TOUCHING_UPPER_ANCHOR:Lcom/htc/textselection/Magnifier$TouchingMode;
+    move/from16 v23, v0
 
-    move-object/from16 v0, p5
-
-    move-object/from16 v1, v22
-
-    if-ne v0, v1, :cond_11
-
-    .line 187
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/htc/textselection/Magnifier;->TOTAL_HEIGHT:I
-
-    move/from16 v22, v0
-
-    sub-int v22, v21, v22
+    add-float v22, v22, v23
 
     move-object/from16 v0, p0
 
@@ -1662,23 +1119,144 @@
 
     move/from16 v23, v0
 
-    sub-int v22, v22, v23
+    move/from16 v0, v23
+
+    int-to-float v0, v0
+
+    move/from16 v23, v0
+
+    add-float v22, v22, v23
 
     sget v23, Lcom/htc/textselection/Magnifier;->mANCHOR_HEIGHT:I
 
-    sub-int v16, v22, v23
+    move/from16 v0, v23
 
-    goto/16 :goto_5
+    int-to-float v0, v0
 
-    .line 189
-    :cond_11
+    move/from16 v23, v0
+
+    add-float v22, v22, v23
+
+    cmpg-float v21, v21, v22
+
+    if-gtz v21, :cond_7
+
+    const/16 v21, 0x1
+
+    :goto_4
+    move/from16 v0, v21
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/htc/textselection/Magnifier;->mNoSpaceAdjust:Z
+
+    .line 174
+    :goto_5
+    if-eqz v5, :cond_12
+
+    .line 175
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/htc/textselection/Magnifier;->TOTAL_HEIGHT:I
+    iget-boolean v0, v0, Lcom/htc/textselection/Magnifier;->mSingleNoSpaceToShow:Z
+
+    move/from16 v21, v0
+
+    if-eqz v21, :cond_a
+
+    .line 176
+    invoke-virtual/range {p0 .. p0}, Lcom/htc/textselection/Magnifier;->dismiss()V
+
+    goto/16 :goto_0
+
+    .line 148
+    .end local v5           #isSingleLine:Z
+    .end local v11           #lineTopWnd:I
+    .end local v14           #paddingLeft:I
+    .end local v15           #paddingTop:I
+    .end local v16           #statusBarHeight:I
+    .end local v19           #xWnd:I
+    .end local v20           #yWnd:I
+    .restart local p3
+    :cond_4
+    const/4 v5, 0x0
+
+    goto/16 :goto_1
+
+    .line 162
+    .end local p3
+    .restart local v5       #isSingleLine:Z
+    .restart local v11       #lineTopWnd:I
+    .restart local v14       #paddingLeft:I
+    .restart local v15       #paddingTop:I
+    .restart local v16       #statusBarHeight:I
+    .restart local v19       #xWnd:I
+    .restart local v20       #yWnd:I
+    :cond_5
+    const/16 v21, 0x0
+
+    goto/16 :goto_2
+
+    .line 164
+    :cond_6
+    const/16 v21, 0x0
+
+    goto :goto_3
+
+    .line 167
+    :cond_7
+    const/16 v21, 0x0
+
+    goto :goto_4
+
+    .line 170
+    :cond_8
+    int-to-float v0, v11
+
+    move/from16 v21, v0
+
+    move/from16 v0, v16
+
+    int-to-float v0, v0
 
     move/from16 v22, v0
 
-    sub-int v22, v21, v22
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/htc/textselection/Magnifier;->mTextHeight:I
+
+    move/from16 v23, v0
+
+    move/from16 v0, v23
+
+    int-to-float v0, v0
+
+    move/from16 v23, v0
+
+    const/high16 v24, 0x3fc0
+
+    mul-float v23, v23, v24
+
+    add-float v22, v22, v23
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mDrawablePadding:Landroid/graphics/Rect;
+
+    move-object/from16 v23, v0
+
+    move-object/from16 v0, v23
+
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
+
+    move/from16 v23, v0
+
+    move/from16 v0, v23
+
+    int-to-float v0, v0
+
+    move/from16 v23, v0
+
+    add-float v22, v22, v23
 
     move-object/from16 v0, p0
 
@@ -1686,218 +1264,776 @@
 
     move/from16 v23, v0
 
-    sub-int v16, v22, v23
+    move/from16 v0, v23
 
-    goto/16 :goto_5
+    int-to-float v0, v0
 
-    .line 196
-    .restart local v19       #windowPosition:[I
-    :cond_12
-    sget-object v7, Lcom/htc/textselection/Magnifier$LayoutMode;->FULLSCREEN:Lcom/htc/textselection/Magnifier$LayoutMode;
+    move/from16 v23, v0
 
-    goto/16 :goto_6
+    add-float v22, v22, v23
 
-    .line 213
-    .restart local v7       #layoutMode:Lcom/htc/textselection/Magnifier$LayoutMode;
-    :cond_13
+    cmpg-float v21, v21, v22
+
+    if-gtz v21, :cond_9
+
+    const/16 v21, 0x1
+
+    :goto_6
+    move/from16 v0, v21
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/htc/textselection/Magnifier;->mNoSpaceAdjust:Z
+
+    goto :goto_5
+
+    :cond_9
+    const/16 v21, 0x0
+
+    goto :goto_6
+
+    .line 178
+    :cond_a
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mLayoutFullScreen:Landroid/widget/LinearLayout;
+    iget-boolean v0, v0, Lcom/htc/textselection/Magnifier;->mNoSpaceAdjust:Z
 
-    move-object/from16 v22, v0
+    move/from16 v21, v0
+
+    if-eqz v21, :cond_10
+
+    .line 179
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/htc/textselection/Magnifier;->TOTAL_HEIGHT:I
+
+    move/from16 v21, v0
+
+    div-int/lit8 v21, v21, 0x2
+
+    sub-int v15, v20, v21
+
+    .line 199
+    :goto_7
+    if-nez v5, :cond_b
+
+    sget-object v21, Lcom/htc/textselection/Magnifier$TouchingMode;->TOUCHING_WORD:Lcom/htc/textselection/Magnifier$TouchingMode;
+
+    move-object/from16 v0, p5
+
+    move-object/from16 v1, v21
+
+    if-eq v0, v1, :cond_c
+
+    .line 200
+    :cond_b
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mTextView:Landroid/widget/TextView;
+
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Landroid/widget/TextView;->getTotalPaddingTop()I
+
+    move-result v21
+
+    sub-int v15, v15, v21
+
+    .line 204
+    :cond_c
+    const/16 v21, 0x2
+
+    move/from16 v0, v21
+
+    new-array v0, v0, [I
+
+    move-object/from16 v18, v0
+
+    fill-array-data v18, :array_0
+
+    .line 205
+    .local v18, windowPosition:[I
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->getWindowPosition([I)V
+
+    .line 207
+    const/16 v21, 0x1
+
+    aget v21, v18, v21
+
+    if-eqz v21, :cond_16
+
+    sget-object v7, Lcom/htc/textselection/Magnifier$LayoutMode;->FILLWIDTH:Lcom/htc/textselection/Magnifier$LayoutMode;
+
+    .line 211
+    .local v7, layoutMode:Lcom/htc/textselection/Magnifier$LayoutMode;
+    :goto_8
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mLayoutMode:Lcom/htc/textselection/Magnifier$LayoutMode;
+
+    move-object/from16 v21, v0
+
+    move-object/from16 v0, v21
+
+    if-eq v0, v7, :cond_e
+
+    .line 212
+    move-object/from16 v0, p0
+
+    iput-object v7, v0, Lcom/htc/textselection/Magnifier;->mLayoutMode:Lcom/htc/textselection/Magnifier$LayoutMode;
+
+    .line 215
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mImageView:Lcom/htc/textselection/Magnifier$MagnifierView;
+
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Lcom/htc/textselection/Magnifier$MagnifierView;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v21
+
+    if-eqz v21, :cond_d
+
+    .line 216
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mImageView:Lcom/htc/textselection/Magnifier$MagnifierView;
+
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Lcom/htc/textselection/Magnifier$MagnifierView;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v17
+
+    check-cast v17, Landroid/view/ViewGroup;
+
+    .line 217
+    .local v17, v:Landroid/view/ViewGroup;
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mImageView:Lcom/htc/textselection/Magnifier$MagnifierView;
+
+    move-object/from16 v21, v0
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v21
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    .line 221
+    .end local v17           #v:Landroid/view/ViewGroup;
+    :cond_d
+    sget-object v21, Lcom/htc/textselection/Magnifier$LayoutMode;->FILLWIDTH:Lcom/htc/textselection/Magnifier$LayoutMode;
+
+    move-object/from16 v0, v21
+
+    if-ne v7, v0, :cond_17
+
+    .line 222
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mLayoutFillWidth:Landroid/widget/LinearLayout;
+
+    move-object/from16 v21, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mImageView:Lcom/htc/textselection/Magnifier$MagnifierView;
 
-    move-object/from16 v23, v0
+    move-object/from16 v22, v0
 
-    invoke-virtual/range {v22 .. v23}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual/range {v21 .. v22}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    goto/16 :goto_7
-
-    .line 244
-    .restart local v12       #mMagnifierWindowHeight:I
-    .restart local v13       #mMagnifierWindowWidth:I
-    .restart local v14       #mWindowManager:Landroid/view/WindowManager;
-    :cond_14
+    .line 228
+    :cond_e
+    :goto_9
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mImageView:Lcom/htc/textselection/Magnifier$MagnifierView;
+
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Lcom/htc/textselection/Magnifier$MagnifierView;->invalidate()V
+
+    .line 231
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mTextView:Landroid/widget/TextView;
+
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
+
+    move-result-object v21
+
+    const-string v22, "window"
+
+    invoke-virtual/range {v21 .. v22}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Landroid/view/WindowManager;
+
+    .line 232
+    .local v13, mWindowManager:Landroid/view/WindowManager;
+    invoke-interface {v13}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v21
+
+    invoke-virtual/range {v21 .. v21}, Landroid/view/Display;->getRawWidth()I
+
+    move-result v21
+
+    invoke-interface {v13}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v22
+
+    invoke-virtual/range {v22 .. v22}, Landroid/view/Display;->getRawHeight()I
+
+    move-result v22
+
+    invoke-static/range {v21 .. v22}, Ljava/lang/Math;->max(II)I
+
+    move-result v12
+
+    .line 236
+    .local v12, mMagnifierWindowHeight:I
+    sget-object v21, Lcom/htc/textselection/Magnifier$LayoutMode;->FILLWIDTH:Lcom/htc/textselection/Magnifier$LayoutMode;
+
+    move-object/from16 v0, v21
+
+    if-ne v7, v0, :cond_19
+
+    .line 238
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFillWidth:Landroid/widget/PopupWindow;
+
+    move-object/from16 v21, v0
+
+    if-nez v21, :cond_f
+
+    .line 240
+    new-instance v21, Landroid/widget/PopupWindow;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mLayoutFillWidth:Landroid/widget/LinearLayout;
 
     move-object/from16 v22, v0
 
-    const/16 v23, 0x0
+    move-object/from16 v0, v21
 
-    const/16 v24, -0x1
+    move-object/from16 v1, v22
 
-    const/16 v25, -0x1
+    invoke-direct {v0, v1, v12, v12}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;II)V
 
-    move-object/from16 v0, v22
-
-    move/from16 v1, v23
-
-    move/from16 v2, v16
-
-    move/from16 v3, v24
-
-    move/from16 v4, v25
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/PopupWindow;->update(IIII)V
-
-    goto/16 :goto_0
-
-    .line 248
-    :cond_15
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFullScreen:Landroid/widget/PopupWindow;
-
-    move-object/from16 v22, v0
-
-    if-nez v22, :cond_16
-
-    .line 250
-    new-instance v22, Landroid/widget/PopupWindow;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mLayoutFullScreen:Landroid/widget/LinearLayout;
-
-    move-object/from16 v23, v0
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v23
-
-    invoke-direct {v0, v1, v13, v12}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;II)V
-
-    move-object/from16 v0, v22
+    move-object/from16 v0, v21
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/htc/textselection/Magnifier;->mWindowFullScreen:Landroid/widget/PopupWindow;
+    iput-object v0, v1, Lcom/htc/textselection/Magnifier;->mWindowFillWidth:Landroid/widget/PopupWindow;
 
-    .line 252
+    .line 242
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFullScreen:Landroid/widget/PopupWindow;
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFillWidth:Landroid/widget/PopupWindow;
 
-    move-object/from16 v22, v0
+    move-object/from16 v21, v0
 
-    const/16 v23, 0x3ea
+    const/16 v22, 0x3ea
 
-    invoke-virtual/range {v22 .. v23}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
+    invoke-virtual/range {v21 .. v22}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
 
-    .line 253
+    .line 243
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFullScreen:Landroid/widget/PopupWindow;
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFillWidth:Landroid/widget/PopupWindow;
 
-    move-object/from16 v22, v0
+    move-object/from16 v21, v0
 
-    const/16 v23, 0x0
+    const/16 v22, 0x0
 
-    invoke-virtual/range {v22 .. v23}, Landroid/widget/PopupWindow;->setTouchable(Z)V
+    invoke-virtual/range {v21 .. v22}, Landroid/widget/PopupWindow;->setTouchable(Z)V
 
-    .line 254
+    .line 244
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFullScreen:Landroid/widget/PopupWindow;
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFillWidth:Landroid/widget/PopupWindow;
 
-    move-object/from16 v22, v0
+    move-object/from16 v21, v0
 
-    const/16 v23, 0x0
+    const/16 v22, 0x0
 
-    invoke-virtual/range {v22 .. v23}, Landroid/widget/PopupWindow;->setFocusable(Z)V
+    invoke-virtual/range {v21 .. v22}, Landroid/widget/PopupWindow;->setFocusable(Z)V
 
-    .line 255
+    .line 245
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFullScreen:Landroid/widget/PopupWindow;
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFillWidth:Landroid/widget/PopupWindow;
 
-    move-object/from16 v22, v0
+    move-object/from16 v21, v0
 
-    const/16 v23, 0x0
+    const/16 v22, 0x0
 
-    invoke-virtual/range {v22 .. v23}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
+    invoke-virtual/range {v21 .. v22}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
-    .line 258
-    :cond_16
+    .line 248
+    :cond_f
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFullScreen:Landroid/widget/PopupWindow;
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFillWidth:Landroid/widget/PopupWindow;
 
-    move-object/from16 v22, v0
+    move-object/from16 v21, v0
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v21
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;
 
-    .line 259
+    .line 249
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mLayoutFillWidth:Landroid/widget/LinearLayout;
+
+    move-object/from16 v21, v0
+
+    const/16 v22, 0x0
+
+    const/16 v23, 0x0
+
+    const/16 v24, 0x0
+
+    move-object/from16 v0, v21
+
+    move/from16 v1, v22
+
+    move/from16 v2, v23
+
+    move/from16 v3, v24
+
+    invoke-virtual {v0, v14, v1, v2, v3}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+
+    .line 251
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;
+
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Landroid/widget/PopupWindow;->isShowing()Z
+
+    move-result v21
+
+    if-nez v21, :cond_18
+
+    .line 252
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;
+
+    move-object/from16 v21, v0
+
+    const/16 v22, 0x0
+
+    const/16 v23, 0x0
+
+    move-object/from16 v0, v21
+
+    move-object/from16 v1, p1
+
+    move/from16 v2, v22
+
+    move/from16 v3, v23
+
+    invoke-virtual {v0, v1, v2, v3, v15}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
+
+    goto/16 :goto_0
+
+    .line 181
+    .end local v7           #layoutMode:Lcom/htc/textselection/Magnifier$LayoutMode;
+    .end local v12           #mMagnifierWindowHeight:I
+    .end local v13           #mWindowManager:Landroid/view/WindowManager;
+    .end local v18           #windowPosition:[I
+    :cond_10
+    sget-object v21, Lcom/htc/textselection/Magnifier$TouchingMode;->TOUCHING_UPPER_ANCHOR:Lcom/htc/textselection/Magnifier$TouchingMode;
+
+    move-object/from16 v0, p5
+
+    move-object/from16 v1, v21
+
+    if-ne v0, v1, :cond_11
+
+    .line 182
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/htc/textselection/Magnifier;->TOTAL_HEIGHT:I
+
+    move/from16 v21, v0
+
+    sub-int v21, v20, v21
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/htc/textselection/Magnifier;->MAGNIFIER_TO_FINGER:I
+
+    move/from16 v22, v0
+
+    sub-int v21, v21, v22
+
+    sget v22, Lcom/htc/textselection/Magnifier;->mANCHOR_HEIGHT:I
+
+    sub-int v15, v21, v22
+
+    goto/16 :goto_7
+
+    .line 184
+    :cond_11
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/htc/textselection/Magnifier;->TOTAL_HEIGHT:I
+
+    move/from16 v21, v0
+
+    sub-int v21, v20, v21
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/htc/textselection/Magnifier;->MAGNIFIER_TO_FINGER:I
+
+    move/from16 v22, v0
+
+    sub-int v15, v21, v22
+
+    goto/16 :goto_7
+
+    .line 186
+    :cond_12
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/htc/textselection/Magnifier;->mNoSpaceToShow:Z
+
+    move/from16 v21, v0
+
+    if-eqz v21, :cond_13
+
+    .line 187
+    invoke-virtual/range {p0 .. p0}, Lcom/htc/textselection/Magnifier;->dismiss()V
+
+    goto/16 :goto_0
+
+    .line 189
+    :cond_13
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/htc/textselection/Magnifier;->mNoSpaceAdjust:Z
+
+    move/from16 v21, v0
+
+    if-eqz v21, :cond_14
+
+    .line 190
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/htc/textselection/Magnifier;->TOTAL_HEIGHT:I
+
+    move/from16 v21, v0
+
+    mul-int/lit8 v21, v21, -0x1
+
+    add-int v21, v21, v16
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/htc/textselection/Magnifier;->mTextHeight:I
+
+    move/from16 v22, v0
+
+    mul-int/lit8 v22, v22, 0x2
+
+    move/from16 v0, v22
+
+    int-to-float v0, v0
+
+    move/from16 v22, v0
+
+    const/high16 v23, 0x3fc0
+
+    mul-float v22, v22, v23
+
+    move/from16 v0, v22
+
+    float-to-int v0, v0
+
+    move/from16 v22, v0
+
+    add-int v15, v21, v22
+
+    goto/16 :goto_7
+
+    .line 192
+    :cond_14
+    sget-object v21, Lcom/htc/textselection/Magnifier$TouchingMode;->TOUCHING_UPPER_ANCHOR:Lcom/htc/textselection/Magnifier$TouchingMode;
+
+    move-object/from16 v0, p5
+
+    move-object/from16 v1, v21
+
+    if-ne v0, v1, :cond_15
+
+    .line 193
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/htc/textselection/Magnifier;->TOTAL_HEIGHT:I
+
+    move/from16 v21, v0
+
+    sub-int v21, v20, v21
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/htc/textselection/Magnifier;->MAGNIFIER_TO_FINGER:I
+
+    move/from16 v22, v0
+
+    sub-int v21, v21, v22
+
+    sget v22, Lcom/htc/textselection/Magnifier;->mANCHOR_HEIGHT:I
+
+    sub-int v15, v21, v22
+
+    goto/16 :goto_7
+
+    .line 195
+    :cond_15
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/htc/textselection/Magnifier;->TOTAL_HEIGHT:I
+
+    move/from16 v21, v0
+
+    sub-int v21, v20, v21
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/htc/textselection/Magnifier;->MAGNIFIER_TO_FINGER:I
+
+    move/from16 v22, v0
+
+    sub-int v15, v21, v22
+
+    goto/16 :goto_7
+
+    .line 207
+    .restart local v18       #windowPosition:[I
+    :cond_16
+    sget-object v7, Lcom/htc/textselection/Magnifier$LayoutMode;->FULLSCREEN:Lcom/htc/textselection/Magnifier$LayoutMode;
+
+    goto/16 :goto_8
+
+    .line 224
+    .restart local v7       #layoutMode:Lcom/htc/textselection/Magnifier$LayoutMode;
+    :cond_17
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mLayoutFullScreen:Landroid/widget/LinearLayout;
+
+    move-object/from16 v21, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mImageView:Lcom/htc/textselection/Magnifier$MagnifierView;
+
+    move-object/from16 v22, v0
+
+    invoke-virtual/range {v21 .. v22}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    goto/16 :goto_9
+
+    .line 254
+    .restart local v12       #mMagnifierWindowHeight:I
+    .restart local v13       #mWindowManager:Landroid/view/WindowManager;
+    :cond_18
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;
+
+    move-object/from16 v21, v0
+
+    const/16 v22, 0x0
+
+    const/16 v23, -0x1
+
+    const/16 v24, -0x1
+
+    move-object/from16 v0, v21
+
+    move/from16 v1, v22
+
+    move/from16 v2, v23
+
+    move/from16 v3, v24
+
+    invoke-virtual {v0, v1, v15, v2, v3}, Landroid/widget/PopupWindow;->update(IIII)V
+
+    goto/16 :goto_0
+
+    .line 258
+    :cond_19
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFullScreen:Landroid/widget/PopupWindow;
+
+    move-object/from16 v21, v0
+
+    if-nez v21, :cond_1a
+
+    .line 260
+    new-instance v21, Landroid/widget/PopupWindow;
+
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mLayoutFullScreen:Landroid/widget/LinearLayout;
 
     move-object/from16 v22, v0
 
-    const/16 v23, 0x0
+    move-object/from16 v0, v21
 
-    const/16 v24, 0x0
+    move-object/from16 v1, v22
 
-    move-object/from16 v0, v22
+    invoke-direct {v0, v1, v12, v12}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;II)V
 
-    move/from16 v1, v16
+    move-object/from16 v0, v21
 
-    move/from16 v2, v23
+    move-object/from16 v1, p0
 
-    move/from16 v3, v24
-
-    invoke-virtual {v0, v15, v1, v2, v3}, Landroid/widget/LinearLayout;->setPadding(IIII)V
-
-    .line 261
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {v22 .. v22}, Landroid/widget/PopupWindow;->isShowing()Z
-
-    move-result v22
-
-    if-nez v22, :cond_0
+    iput-object v0, v1, Lcom/htc/textselection/Magnifier;->mWindowFullScreen:Landroid/widget/PopupWindow;
 
     .line 262
     move-object/from16 v0, p0
 
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFullScreen:Landroid/widget/PopupWindow;
+
+    move-object/from16 v21, v0
+
+    const/16 v22, 0x3ea
+
+    invoke-virtual/range {v21 .. v22}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
+
+    .line 263
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFullScreen:Landroid/widget/PopupWindow;
+
+    move-object/from16 v21, v0
+
+    const/16 v22, 0x0
+
+    invoke-virtual/range {v21 .. v22}, Landroid/widget/PopupWindow;->setTouchable(Z)V
+
+    .line 264
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFullScreen:Landroid/widget/PopupWindow;
+
+    move-object/from16 v21, v0
+
+    const/16 v22, 0x0
+
+    invoke-virtual/range {v21 .. v22}, Landroid/widget/PopupWindow;->setFocusable(Z)V
+
+    .line 265
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFullScreen:Landroid/widget/PopupWindow;
+
+    move-object/from16 v21, v0
+
+    const/16 v22, 0x0
+
+    invoke-virtual/range {v21 .. v22}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
+
+    .line 268
+    :cond_1a
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindowFullScreen:Landroid/widget/PopupWindow;
+
+    move-object/from16 v21, v0
+
+    move-object/from16 v0, v21
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;
+
+    .line 269
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mLayoutFullScreen:Landroid/widget/LinearLayout;
+
+    move-object/from16 v21, v0
+
+    const/16 v22, 0x0
+
+    const/16 v23, 0x0
+
+    move-object/from16 v0, v21
+
+    move/from16 v1, v22
+
+    move/from16 v2, v23
+
+    invoke-virtual {v0, v14, v15, v1, v2}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+
+    .line 271
+    move-object/from16 v0, p0
+
     iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;
 
-    move-object/from16 v22, v0
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Landroid/widget/PopupWindow;->isShowing()Z
+
+    move-result v21
+
+    if-nez v21, :cond_0
+
+    .line 272
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/htc/textselection/Magnifier;->mWindow:Landroid/widget/PopupWindow;
+
+    move-object/from16 v21, v0
+
+    const/16 v22, 0x0
 
     const/16 v23, 0x0
 
     const/16 v24, 0x0
 
-    const/16 v25, 0x0
-
-    move-object/from16 v0, v22
+    move-object/from16 v0, v21
 
     move-object/from16 v1, p1
 
-    move/from16 v2, v23
+    move/from16 v2, v22
 
-    move/from16 v3, v24
+    move/from16 v3, v23
 
-    move/from16 v4, v25
+    move/from16 v4, v24
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
     goto/16 :goto_0
 
-    .line 193
+    .line 204
     nop
 
     :array_0

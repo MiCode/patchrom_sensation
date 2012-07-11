@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 5625
+    .line 5653
     iput-object p1, p0, Lcom/android/camera/CameraThread$5;->this$0:Lcom/android/camera/CameraThread;
 
     iput-object p3, p0, Lcom/android/camera/CameraThread$5;->val$context:Landroid/content/Context;
@@ -53,7 +53,7 @@
 
     const/4 v8, 0x0
 
-    .line 5629
+    .line 5657
     iget-object v1, p0, Lcom/android/camera/CameraThread$5;->val$context:Landroid/content/Context;
 
     if-eqz v1, :cond_0
@@ -62,7 +62,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 5635
+    .line 5663
     :try_start_0
     const-string v1, "CameraThread"
 
@@ -94,7 +94,7 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5636
+    .line 5664
     iget-object v1, p0, Lcom/android/camera/CameraThread$5;->val$context:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -109,7 +109,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 5637
+    .line 5665
     new-instance v0, Lcom/android/camera/MediaDeletionCompletedEvent;
 
     const-string v1, "Media.DeletionCompleted"
@@ -128,12 +128,12 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5646
+    .line 5674
     .local v0, event:Lcom/android/camera/MediaDeletionCompletedEvent;
     :goto_0
     move-object v7, v0
 
-    .line 5647
+    .line 5675
     .local v7, raisingEvent:Lcom/android/camera/Event;
     iget-object v1, p0, Lcom/android/camera/CameraThread$5;->this$0:Lcom/android/camera/CameraThread;
 
@@ -141,7 +141,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 5649
+    .line 5677
     iget-object v1, p0, Lcom/android/camera/CameraThread$5;->this$0:Lcom/android/camera/CameraThread;
 
     iget-object v1, v1, Lcom/android/camera/CameraThread;->mCameraHandler:Lcom/android/camera/CameraThread$MainHandler;
@@ -152,17 +152,17 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraThread$MainHandler;->post(Ljava/lang/Runnable;)Z
 
-    .line 5658
+    .line 5686
     .end local v0           #event:Lcom/android/camera/MediaDeletionCompletedEvent;
     .end local v7           #raisingEvent:Lcom/android/camera/Event;
     :cond_0
     return-void
 
-    .line 5639
+    .line 5667
     :catch_0
     move-exception v6
 
-    .line 5641
+    .line 5669
     .local v6, ex:Ljava/lang/Throwable;
     const-string v1, "CameraThread"
 
@@ -194,7 +194,7 @@
 
     invoke-static {v1, v2, v6}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 5642
+    .line 5670
     new-instance v0, Lcom/android/camera/MediaDeletionCompletedEvent;
 
     const-string v1, "Media.DeletionCompleted"

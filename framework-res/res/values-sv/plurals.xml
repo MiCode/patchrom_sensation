@@ -77,7 +77,7 @@
     </plurals>
     <plurals name="matches_found">
         <item quantity="other">%1$d of %2$d</item>
-        <item quantity="one">1 match</item>
+        <item quantity="one">1 träff</item>
     </plurals>
     <plurals name="wimax_available">
         <item quantity="other">Tillgängliga WiMAX-nätverk</item>

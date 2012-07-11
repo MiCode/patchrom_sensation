@@ -94,7 +94,7 @@
 
     move-result-object v1
 
-    .line 173
+    .line 180
     .end local v1           #obj:Ljava/lang/Object;
     :cond_0
     :goto_0
@@ -107,9 +107,32 @@
 
     .line 170
     .local v0, e:Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_1
+
+    .line 172
     const-string v2, "ATRecorder"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    .line 176
+    :cond_1
+    const-string v2, "ATRecorder"
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Class;->toString()Ljava/lang/String;
 
     move-result-object v3
 

@@ -65,19 +65,19 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #calls: Lcom/htc/app/FilePickerActivity;->hideNoSdCard()V
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1100(Lcom/htc/app/FilePickerActivity;)V
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1000(Lcom/htc/app/FilePickerActivity;)V
 
     .line 1037
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #setter for: Lcom/htc/app/FilePickerActivity;->isSDCard:Z
-    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1202(Lcom/htc/app/FilePickerActivity;Z)Z
+    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1102(Lcom/htc/app/FilePickerActivity;Z)Z
 
     .line 1039
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mCurrentViewType:I
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1300(Lcom/htc/app/FilePickerActivity;)I
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1200(Lcom/htc/app/FilePickerActivity;)I
 
     move-result v2
 
@@ -87,13 +87,13 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #setter for: Lcom/htc/app/FilePickerActivity;->mNeedLoadFolders:Z
-    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1402(Lcom/htc/app/FilePickerActivity;Z)Z
+    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1302(Lcom/htc/app/FilePickerActivity;Z)Z
 
     .line 1041
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #calls: Lcom/htc/app/FilePickerActivity;->loadFolders()V
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1500(Lcom/htc/app/FilePickerActivity;)V
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1400(Lcom/htc/app/FilePickerActivity;)V
 
     .line 1045
     :goto_0
@@ -107,13 +107,13 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #calls: Lcom/htc/app/FilePickerActivity;->loadFiles()V
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1000(Lcom/htc/app/FilePickerActivity;)V
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$900(Lcom/htc/app/FilePickerActivity;)V
 
     .line 1048
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mMenu:Landroid/view/Menu;
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1600(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1500(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
 
     move-result-object v2
 
@@ -123,7 +123,7 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mMenu:Landroid/view/Menu;
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1600(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1500(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
 
     move-result-object v2
 
@@ -135,12 +135,12 @@
     iget-object v3, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mMenu:Landroid/view/Menu;
-    invoke-static {v3}, Lcom/htc/app/FilePickerActivity;->access$1600(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
+    invoke-static {v3}, Lcom/htc/app/FilePickerActivity;->access$1500(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
 
     move-result-object v3
 
     #calls: Lcom/htc/app/FilePickerActivity;->initOptionsMenu(Landroid/view/Menu;)V
-    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1700(Lcom/htc/app/FilePickerActivity;Landroid/view/Menu;)V
+    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1600(Lcom/htc/app/FilePickerActivity;Landroid/view/Menu;)V
 
     .line 1109
     :cond_0
@@ -152,7 +152,7 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #setter for: Lcom/htc/app/FilePickerActivity;->mNeedLoadFolders:Z
-    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1402(Lcom/htc/app/FilePickerActivity;Z)Z
+    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1302(Lcom/htc/app/FilePickerActivity;Z)Z
 
     goto :goto_0
 
@@ -187,19 +187,19 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #setter for: Lcom/htc/app/FilePickerActivity;->isSDCard:Z
-    invoke-static {v2, v5}, Lcom/htc/app/FilePickerActivity;->access$1202(Lcom/htc/app/FilePickerActivity;Z)Z
+    invoke-static {v2, v5}, Lcom/htc/app/FilePickerActivity;->access$1102(Lcom/htc/app/FilePickerActivity;Z)Z
 
     .line 1061
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #calls: Lcom/htc/app/FilePickerActivity;->hideSearchBar()V
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1800(Lcom/htc/app/FilePickerActivity;)V
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1700(Lcom/htc/app/FilePickerActivity;)V
 
     .line 1062
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #calls: Lcom/htc/app/FilePickerActivity;->hideDialog()V
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1900(Lcom/htc/app/FilePickerActivity;)V
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1800(Lcom/htc/app/FilePickerActivity;)V
 
     .line 1063
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
@@ -210,7 +210,7 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mMenu:Landroid/view/Menu;
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1600(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1500(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
 
     move-result-object v2
 
@@ -219,7 +219,7 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->isMultiPath:Z
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$2000(Lcom/htc/app/FilePickerActivity;)Z
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1900(Lcom/htc/app/FilePickerActivity;)Z
 
     move-result v2
 
@@ -234,7 +234,7 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mMenu:Landroid/view/Menu;
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1600(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1500(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
 
     move-result-object v2
 
@@ -245,7 +245,7 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mAdapter:Lcom/htc/app/FilePickerListAdapter;
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$2100(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$2000(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
 
     move-result-object v2
 
@@ -255,7 +255,7 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mAdapter:Lcom/htc/app/FilePickerListAdapter;
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$2100(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$2000(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
 
     move-result-object v2
 
@@ -272,7 +272,7 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->isMultiPath:Z
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$2000(Lcom/htc/app/FilePickerActivity;)Z
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1900(Lcom/htc/app/FilePickerActivity;)Z
 
     move-result v2
 
@@ -287,7 +287,7 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mEmptyView:Landroid/widget/TextView;
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$2200(Lcom/htc/app/FilePickerActivity;)Landroid/widget/TextView;
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$2100(Lcom/htc/app/FilePickerActivity;)Landroid/widget/TextView;
 
     move-result-object v2
 
@@ -301,7 +301,7 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mEmptyView:Landroid/widget/TextView;
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$2200(Lcom/htc/app/FilePickerActivity;)Landroid/widget/TextView;
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$2100(Lcom/htc/app/FilePickerActivity;)Landroid/widget/TextView;
 
     move-result-object v2
 
@@ -312,7 +312,7 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mCurrentViewType:I
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1300(Lcom/htc/app/FilePickerActivity;)I
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1200(Lcom/htc/app/FilePickerActivity;)I
 
     move-result v2
 
@@ -322,26 +322,26 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #setter for: Lcom/htc/app/FilePickerActivity;->mNeedLoadFolders:Z
-    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1402(Lcom/htc/app/FilePickerActivity;Z)Z
+    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1302(Lcom/htc/app/FilePickerActivity;Z)Z
 
     .line 1084
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #calls: Lcom/htc/app/FilePickerActivity;->loadFolders()V
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1500(Lcom/htc/app/FilePickerActivity;)V
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1400(Lcom/htc/app/FilePickerActivity;)V
 
     .line 1088
     :goto_2
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #calls: Lcom/htc/app/FilePickerActivity;->loadFiles()V
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1000(Lcom/htc/app/FilePickerActivity;)V
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$900(Lcom/htc/app/FilePickerActivity;)V
 
     .line 1089
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #setter for: Lcom/htc/app/FilePickerActivity;->isSDCard:Z
-    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1202(Lcom/htc/app/FilePickerActivity;Z)Z
+    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1102(Lcom/htc/app/FilePickerActivity;Z)Z
 
     .line 1090
     sget-boolean v2, Lcom/htc/app/FilePickerUtil;->IsSupportInternalStorage:Z
@@ -352,7 +352,7 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mMenu:Landroid/view/Menu;
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1600(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1500(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
 
     move-result-object v2
 
@@ -362,7 +362,7 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mMenu:Landroid/view/Menu;
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1600(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$1500(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
 
     move-result-object v2
 
@@ -374,19 +374,19 @@
     iget-object v3, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mMenu:Landroid/view/Menu;
-    invoke-static {v3}, Lcom/htc/app/FilePickerActivity;->access$1600(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
+    invoke-static {v3}, Lcom/htc/app/FilePickerActivity;->access$1500(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
 
     move-result-object v3
 
     #calls: Lcom/htc/app/FilePickerActivity;->initOptionsMenu(Landroid/view/Menu;)V
-    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1700(Lcom/htc/app/FilePickerActivity;Landroid/view/Menu;)V
+    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1600(Lcom/htc/app/FilePickerActivity;Landroid/view/Menu;)V
 
     .line 1098
     :cond_9
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->isSdcardRoot:Z
-    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$2300(Lcom/htc/app/FilePickerActivity;)Z
+    invoke-static {v2}, Lcom/htc/app/FilePickerActivity;->access$2200(Lcom/htc/app/FilePickerActivity;)Z
 
     move-result v2
 
@@ -407,7 +407,7 @@
     iget-object v3, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mHtcContext:Landroid/content/Context;
-    invoke-static {v3}, Lcom/htc/app/FilePickerActivity;->access$2400(Lcom/htc/app/FilePickerActivity;)Landroid/content/Context;
+    invoke-static {v3}, Lcom/htc/app/FilePickerActivity;->access$2300(Lcom/htc/app/FilePickerActivity;)Landroid/content/Context;
 
     move-result-object v3
 
@@ -422,7 +422,7 @@
     move-result-object v3
 
     #calls: Lcom/htc/app/FilePickerActivity;->showNoSdCard(Ljava/lang/String;)V
-    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$2500(Lcom/htc/app/FilePickerActivity;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$2400(Lcom/htc/app/FilePickerActivity;Ljava/lang/String;)V
 
     .line 1107
     :cond_a
@@ -438,7 +438,7 @@
     iget-object v2, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #setter for: Lcom/htc/app/FilePickerActivity;->mNeedLoadFolders:Z
-    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1402(Lcom/htc/app/FilePickerActivity;Z)Z
+    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$1302(Lcom/htc/app/FilePickerActivity;Z)Z
 
     goto :goto_2
 
@@ -458,7 +458,7 @@
     iget-object v3, p0, Lcom/htc/app/FilePickerActivity$10;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mHtcContext:Landroid/content/Context;
-    invoke-static {v3}, Lcom/htc/app/FilePickerActivity;->access$2400(Lcom/htc/app/FilePickerActivity;)Landroid/content/Context;
+    invoke-static {v3}, Lcom/htc/app/FilePickerActivity;->access$2300(Lcom/htc/app/FilePickerActivity;)Landroid/content/Context;
 
     move-result-object v3
 
@@ -473,7 +473,7 @@
     move-result-object v3
 
     #calls: Lcom/htc/app/FilePickerActivity;->showNoSdCard(Ljava/lang/String;)V
-    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$2500(Lcom/htc/app/FilePickerActivity;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/htc/app/FilePickerActivity;->access$2400(Lcom/htc/app/FilePickerActivity;Ljava/lang/String;)V
 
     goto :goto_3
 .end method

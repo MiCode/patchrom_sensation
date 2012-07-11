@@ -44,7 +44,7 @@
     .line 1754
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver$1;->this$1:Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
 
-    invoke-static {v0}, Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;->access$3808(Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;)I
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;->access$3708(Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;)I
 
     .line 1755
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver$1;->this$1:Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
@@ -52,7 +52,7 @@
     iget-object v0, v0, Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mInputManager:Landroid/view/inputmethod/InputMethodManager;
-    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$600(Lcom/htc/app/FilePickerActivity;)Landroid/view/inputmethod/InputMethodManager;
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$500(Lcom/htc/app/FilePickerActivity;)Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v0
 
@@ -76,7 +76,7 @@
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
     #setter for: Lcom/htc/app/FilePickerActivity;->mInputManager:Landroid/view/inputmethod/InputMethodManager;
-    invoke-static {v1, v0}, Lcom/htc/app/FilePickerActivity;->access$602(Lcom/htc/app/FilePickerActivity;Landroid/view/inputmethod/InputMethodManager;)Landroid/view/inputmethod/InputMethodManager;
+    invoke-static {v1, v0}, Lcom/htc/app/FilePickerActivity;->access$502(Lcom/htc/app/FilePickerActivity;Landroid/view/inputmethod/InputMethodManager;)Landroid/view/inputmethod/InputMethodManager;
 
     .line 1757
     :cond_0
@@ -85,7 +85,7 @@
     iget-object v0, v0, Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mLaunchIMEReceiver:Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
-    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$800(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$700(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
 
     move-result-object v0
 
@@ -105,7 +105,7 @@
     invoke-direct {v1, v2}, Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;-><init>(Lcom/htc/app/FilePickerActivity;)V
 
     #setter for: Lcom/htc/app/FilePickerActivity;->mLaunchIMEReceiver:Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
-    invoke-static {v0, v1}, Lcom/htc/app/FilePickerActivity;->access$802(Lcom/htc/app/FilePickerActivity;Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;)Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
+    invoke-static {v0, v1}, Lcom/htc/app/FilePickerActivity;->access$702(Lcom/htc/app/FilePickerActivity;Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;)Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
 
     .line 1760
     :cond_1
@@ -114,7 +114,7 @@
     iget-object v0, v0, Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mInputManager:Landroid/view/inputmethod/InputMethodManager;
-    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$600(Lcom/htc/app/FilePickerActivity;)Landroid/view/inputmethod/InputMethodManager;
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$500(Lcom/htc/app/FilePickerActivity;)Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v0
 
@@ -123,7 +123,7 @@
     iget-object v1, v1, Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mEditor:Landroid/widget/EditText;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$700(Lcom/htc/app/FilePickerActivity;)Landroid/widget/EditText;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$600(Lcom/htc/app/FilePickerActivity;)Landroid/widget/EditText;
 
     move-result-object v1
 
@@ -134,7 +134,7 @@
     iget-object v3, v3, Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mLaunchIMEReceiver:Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
-    invoke-static {v3}, Lcom/htc/app/FilePickerActivity;->access$800(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
+    invoke-static {v3}, Lcom/htc/app/FilePickerActivity;->access$700(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
 
     move-result-object v3
 
@@ -150,7 +150,7 @@
     iget-object v0, v0, Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mLaunchIMEReceiver:Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
-    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$800(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$700(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
 
     move-result-object v0
 

@@ -269,9 +269,9 @@
     <string name="turn_off_radio">Slå av trådløst nett</string>
     <string name="screen_lock">Lås skjermen</string>
     <string name="power_off">Slå av</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Ringesignal av</string>
+    <string name="silent_mode_vibrate">Ringer vibrasjon</string>
+    <string name="silent_mode_ring">Ringesignal på</string>
     <string name="shutdown_progress">Avslutter…</string>
     <string name="shutdown_confirm">Telefonen vil bli slått av.</string>
     <string name="shutdown_confirm_question">Vil du slå av?</string>
@@ -339,7 +339,7 @@
     <string name="permlab_reorderTasks">omordne kjørende applikasjoner</string>
     <string name="permdesc_reorderTasks">Tillater applikasjonen å flytte programmer til forgrunnen eller bakgrunnen. Ondsinnede applikasjoner kan tvinge seg selv til fronten.</string>
     <string name="permlab_removeTasks">stopp kjøring av applikasjoner</string>
-    <string name="permdesc_removeTasks">Gjør applikasjoner i stand til å fjerne og ødelegge for oppgaver. Skadelige applikasjoner kan forstyrre oppførselen til andre applikasjoner.</string>
+    <string name="permdesc_removeTasks">Gjør applikasjoner i stand til å fjerne og avslutte oppgaver. Skadelige applikasjoner kan forstyrre oppførselen til andre applikasjoner.</string>
     <string name="permlab_setDebugApp">aktiver applikasjonsdebugging</string>
     <string name="permdesc_setDebugApp">Lar applikasjonen skru på debugging for en annen applikasjon. Ondsinnede applikasjoner kan bruke dette til å lukke andre applikasjoner.</string>
     <string name="permlab_changeConfiguration">endre innstillingene for brukergrensesnitt</string>
@@ -426,10 +426,10 @@
     <string name="permdesc_movePackage">Gir et applikasjon tillatelse til å flytte applikasjon ressurser fra interne til eksterne medier og omvendt.</string>
     <string name="permlab_readLogs">les sensitive loggdata</string>
     <string name="permdesc_readLogs">Lar programmet lese fra diverse loggfiler på systemet. Disse inneholder generell informasjon om hva som gjøres med telefonen, og kan inneholde personlig eller privat informasjon.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">bruk valgfri mediedekoder for avspilling</string>
+    <string name="permdesc_anyCodecForPlayback">Tillater en applikasjon å bruke en hvilken som helst dekoder for å dekode media for avspilling.</string>
+    <string name="permlab_readWriteOmaDrm">tilgang til mappen om OMA DRM</string>
+    <string name="permdesc_readWriteOmaDrm">Tillater en applikasjon å lese eller skrive til mappen om OMA DRM.</string>
     <string name="permlab_diagnostic">lese/skrive ressurser eid av diag</string>
     <string name="permdesc_diagnostic">Lar applikasjonen lese og skrive enhver ressurs eid av gruppen diag; for eksempel, filer i /dev. Dette kan potensielt påvirke systemets sikkerhet og stabilitet. Dette bør KUN brukes for maskinvarespesifikke diagnoseverktøy laget av operatøren eller produsenten.</string>
     <string name="permlab_changeComponentState">aktivere eller deaktivere applikasjonskomponenter</string>
@@ -460,8 +460,8 @@
     <string name="permdesc_writeSocialStream">Gir tillatelse til at appen kan vise sosiale oppdateringer fra vennene dine. Apper med skadelig programvare kan utnytte denne tillatelsen gjennom å opptre som en venn og således lure deg til å oppgi passord eller annen konfidensiell informasjon.</string>
     <string name="permlab_readCalendar">les kalenderhendelser og konfidensiell informasjon</string>
     <string name="permdesc_readCalendar">Lar applikasjoner lese alle kalenderhendelser lagret på telefonen, herunder de som tilhører venner eller kollegaer. Skadelige applikasjon med denne tillatelsen kan trekke ut personlige opplysninger fra disse kalenderne uten eiernes viten.</string>
-    <string name="permlab_writeCalendar">legge til eller endre kalenderhendelser og sende e-post til gjester uten eiernes viten</string>
-    <string name="permdesc_writeCalendar">Lar en applikasjon sende hendelsesinvitasjoner som kalendereier, og legge til, fjerne og endre hendelser som du kan endre på enheten, herunder de som tilhører venner eller kollegaer. En skadelig applikasjon med denne tillatelsen kan sende nettsøppel-e-post som synes å komme fra kalendereieren, endre hendelser uten eiernes viten, eller legge til falske hendelser.</string>
+    <string name="permlab_writeCalendar">legge til eller endre kalenderhendelser og sende e-post til gjester uten eierens viten</string>
+    <string name="permdesc_writeCalendar">Lar en applikasjon sende hendelsesinvitasjoner som kalender-eier, og legge til, fjerne og endre hendelser som du kan endre på enheten, herunder de som tilhører venner eller kollegaer. En skadelig applikasjon med denne tillatelsen kan sende nettsøppel-e-post som synes å komme fra kalender-eieren, endre hendelser uten eierens viten, eller legge til falske hendelser.</string>
     <string name="permlab_accessMockLocation">lage falske plasseringskilder for testing</string>
     <string name="permdesc_accessMockLocation">Lage falske plasseringskilder for testing. Ondsinnede applikasjoner kan bruke dette for å overstyre plasseringen og/eller statusen rapportert av ekte plasseringskilder slik som GPS eller nettverksoperatører.</string>
     <string name="permlab_accessLocationExtraCommands">få tilgang til ekstra plasseringskommandoer</string>
@@ -571,9 +571,9 @@
     <string name="permlab_changeWifiMulticastState">tillat multicast for trådløse nettverk</string>
     <string name="permdesc_changeWifiMulticastState">Lar applikasjonen motta pakker som ikke er adressert til enheten selv. Dette kan være nyttig ved leting etter nærliggende tjenester, men bruker mer strøm enn ikke-multicast-modus.</string>
     <string name="permlab_accessWimaxState">vis WiMAX-tilstand</string>
-    <string name="permdesc_accessWimaxState">Lar et program få se informasjon om WiMAX-tilstanden.</string>
+    <string name="permdesc_accessWimaxState">Tillater en applikasjon å se informasjon om WiMAX-tilstanden.</string>
     <string name="permlab_changeWimaxState">endre WiMAX-tilstand</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">Tillater en applikasjon å koble til og fra WiMAX-nettverk.</string>
     <string name="permlab_bluetoothAdmin">Bluetooth-administrasjon</string>
     <string name="permdesc_bluetoothAdmin">Lar applikasjonen konfigurere den lokale Bluetooth-telefonen, og å oppdage og pare med andre enheter.</string>
     <string name="permlab_bluetooth">opprette Bluetooth-tilkoblinger</string>
@@ -608,7 +608,7 @@
     <string name="permdesc_readNetworkUsageHistory">Gir applikasjoner tillatelse til å lese tidligere nettverksbruk for bestemte nettverk og applikasjoner.</string>
     <string name="permlab_manageNetworkPolicy">administrer retningslinjene for nettverk</string>
     <string name="permdesc_manageNetworkPolicy">Gir applikasjoner tillatelse til å administrere retningslinjene for nettverket og definere appllikasjonsspesifikke regler.</string>
-    <string name="permlab_modifyNetworkAccounting">Modifisering av regnskapsføring av nettverksbruk</string>
+    <string name="permlab_modifyNetworkAccounting">Modifisering av oversikt over nettverksbruk</string>
     <string name="permdesc_modifyNetworkAccounting">Gir tillatelse til modifisering av hvordan nettverksbruk blir redegjort for i henhold til applikasjoner. Skal ikke brukes av normale applikasjoner.</string>
     <string name="policylab_limitPassword">Angi passordregler</string>
     <string name="policydesc_limitPassword">Kontroller tillatt lengde og tegn i passord for opplåsing av skjerm</string>
@@ -748,9 +748,9 @@ Prøv igjen om %d sekunder."</string>
     <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Du har oppgitt feil personlig kode %d ganger. 
 
 Prøv igjen om %d sekunder."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"You have incorrectly drawn your unlock pattern %d times. After %d more unsuccessful attempts, you will be asked to unlock your phone using your Google sign-in.
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Du har tegnet opplåsningsmønsteret feil %d ganger. Etter %d flere mislykkede forsøk vil du bli bedt om å låse opp telefonen ved hjelp av Google-påloggingsdetaljene.
 
- Please try again in %d seconds."</string>
+ Prøv igjen om %d sekunder."</string>
     <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Du har foretatt %d mislykkede opplåsinger av telefonen. Etter %d flere mislykkede forsøk, blir telefonen tilbakestilt til fabrikkinnstillingene, og alle brukerdata går tapt.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Du har foretatt %d mislykkede opplåsinger av telefonen. Telefonen blir nå tilbakestilt til fabrikkinnstillingene.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Prøv igjen om %d sekunder.</string>
@@ -962,7 +962,7 @@ Vil du lukke den?"</string>
     <string name="ringtone_silent">Stille</string>
     <string name="ringtone_picker_title">Ringetoner</string>
     <string name="ringtone_unknown">Ukjent ringetone</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Logg på Wi-Fi-nettverk</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Kan ikke koble til Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" har en dårlig Internett-tilkobling."</string>
@@ -1160,7 +1160,7 @@ for konto %s"</string>
     <string name="description_target_camera">Kamera</string>
     <string name="description_target_silent">Stille</string>
     <string name="description_target_soundon">Lyd på</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">Sveip for å låse opp.</string>
     <string name="keyboard_headset_required_to_hear_password">Koble til hodetelefoner for å høre hvilke taster som brukes for å skrive inn passordet.</string>
     <string name="keyboard_password_character_no_headset">Punktum.</string>
     <string name="action_bar_home_description">Gå til startsiden</string>
@@ -1203,9 +1203,9 @@ for konto %s"</string>
     <string name="share_action_provider_share_with">Del med</string>
     <string name="status_bar_device_locked">Enheten er låst.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Sender...</string>
+    <string name="launchBrowserDefault">Starte nettleser?</string>
+    <string name="SetupCallDefault">Godta anrop?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">Tilgang til 4G</string>
     <string name="permlab_changeWimaxMulticastState">tillate WiMAX Multicast-mottak</string>
@@ -1267,11 +1267,12 @@ for konto %s"</string>
     <string name="install_notify_title">IT-blokkert installering:</string>
     <string name="uninstall_notify_title">IT-blokkert avinstallering:</string>
     <string name="wifi_notify_title">IT deaktivert WiFi</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Fjern standardverdi i Startsideinnstillinger > Apper.</string>
+    <string name="sim_puk_contact_customer_care_information">Kontakt kundeservice for å få PUK-koden</string>
     <string name="permlab_accessCWFolder">Få tilgang til tilpasningsveileder for funksjonsmappe</string>
     <string name="permdesc_accessCWFolder">Lar en applikasjon få tilgang til tilpasningsveileder for funksjonsmappe</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Tilgang til gjenopprettingsmappe</string>
+    <string name="permdesc_accessRecoveryFolder">Lar et program få tilgang til gjenopprettingsmappe</string>
     <string name="permlab_setappname">Dynamisk for å endre applikasjonsnavn</string>
     <string name="permdesc_setappname">Lar en applikasjon endre det angitte applikasjonsnavnet dynamisk.</string>
     <string name="text_limitation">Kan ikke velge for mange ord å dele.</string>
@@ -1311,5 +1312,5 @@ for konto %s"</string>
     <string name="font_color">Skriftfarge</string>
     <string name="font_settings">Skriftinnstillinger</string>
     <string name="font_alignment">Skriftjustering</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Konfigurer</string>
 </resources>

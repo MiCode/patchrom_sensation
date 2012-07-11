@@ -27,7 +27,7 @@
     .locals 2
 
     .prologue
-    .line 3121
+    .line 3181
     sget-object v0, Lcom/htc/provider/HtcContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "vip"
@@ -38,7 +38,7 @@
 
     sput-object v0, Lcom/htc/provider/HtcContactsContract$VIP;->VIP_CONTENT_URI:Landroid/net/Uri;
 
-    .line 3126
+    .line 3186
     sget-object v0, Lcom/htc/provider/HtcContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "vip_candidate"
@@ -56,7 +56,7 @@
     .locals 0
 
     .prologue
-    .line 3117
+    .line 3177
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

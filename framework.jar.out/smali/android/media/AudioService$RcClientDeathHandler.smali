@@ -33,18 +33,18 @@
     .parameter "pi"
 
     .prologue
-    .line 3945
+    .line 3960
     iput-object p1, p0, Landroid/media/AudioService$RcClientDeathHandler;->this$0:Landroid/media/AudioService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3946
+    .line 3961
     iput-object p2, p0, Landroid/media/AudioService$RcClientDeathHandler;->mCb:Landroid/os/IBinder;
 
-    .line 3947
+    .line 3962
     iput-object p3, p0, Landroid/media/AudioService$RcClientDeathHandler;->mMediaIntent:Landroid/app/PendingIntent;
 
-    .line 3948
+    .line 3963
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3941
+    .line 3956
     iget-object v0, p0, Landroid/media/AudioService$RcClientDeathHandler;->mCb:Landroid/os/IBinder;
 
     return-object v0
@@ -67,21 +67,21 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 3951
+    .line 3966
     const-string v0, "AudioService"
 
     const-string v1, "  RemoteControlClient died"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3954
+    .line 3969
     iget-object v0, p0, Landroid/media/AudioService$RcClientDeathHandler;->this$0:Landroid/media/AudioService;
 
     iget-object v1, p0, Landroid/media/AudioService$RcClientDeathHandler;->mMediaIntent:Landroid/app/PendingIntent;
 
     invoke-virtual {v0, v1, v2, v2}, Landroid/media/AudioService;->registerRemoteControlClient(Landroid/app/PendingIntent;Landroid/media/IRemoteControlClient;Ljava/lang/String;)V
 
-    .line 3955
+    .line 3970
     return-void
 .end method
 
@@ -89,7 +89,7 @@
     .locals 1
 
     .prologue
-    .line 3958
+    .line 3973
     iget-object v0, p0, Landroid/media/AudioService$RcClientDeathHandler;->mCb:Landroid/os/IBinder;
 
     return-object v0

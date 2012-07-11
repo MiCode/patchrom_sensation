@@ -30,15 +30,15 @@
     .parameter "keyEvent"
 
     .prologue
-    .line 3196
+    .line 3198
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$PassCamKey;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3197
+    .line 3199
     iput-object p2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$PassCamKey;->mKeyEvent:Landroid/view/KeyEvent;
 
-    .line 3198
+    .line 3200
     return-void
 .end method
 
@@ -48,14 +48,14 @@
     .locals 3
 
     .prologue
-    .line 3201
+    .line 3203
     invoke-static {}, Landroid/app/ActivityManagerNative;->isSystemReady()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 3202
+    .line 3204
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.htc.intent.action.CAM_SWITCH_CHANGE"
@@ -64,7 +64,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 3203
+    .line 3205
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "android.intent.extra.KEY_EVENT"
 
@@ -72,14 +72,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 3204
+    .line 3206
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$PassCamKey;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 3206
+    .line 3208
     .end local v0           #intent:Landroid/content/Intent;
     :cond_0
     return-void

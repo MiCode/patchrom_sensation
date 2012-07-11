@@ -44,13 +44,22 @@
 
     .prologue
     .line 792
-    if-eqz p2, :cond_0
+    if-eqz p2, :cond_1
 
     .line 795
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity$7;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mHeaderBar:Lcom/htc/widget/HeaderBarMiddle;
-    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$500(Lcom/htc/app/FilePickerActivity;)Lcom/htc/widget/HeaderBarMiddle;
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/widget/HeaderBarMiddle;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/htc/app/FilePickerActivity$7;->this$0:Lcom/htc/app/FilePickerActivity;
+
+    #getter for: Lcom/htc/app/FilePickerActivity;->mHeaderBar:Lcom/htc/widget/HeaderBarMiddle;
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/widget/HeaderBarMiddle;
 
     move-result-object v0
 
@@ -59,10 +68,11 @@
     invoke-virtual {v0, v1}, Lcom/htc/widget/HeaderBarMiddle;->setFocusable(Z)V
 
     .line 796
+    :cond_0
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity$7;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->handler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$900(Lcom/htc/app/FilePickerActivity;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$800(Lcom/htc/app/FilePickerActivity;)Landroid/os/Handler;
 
     move-result-object v0
 
@@ -75,6 +85,6 @@
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 813
-    :cond_0
+    :cond_1
     return-void
 .end method

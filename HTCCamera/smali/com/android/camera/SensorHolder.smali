@@ -160,8 +160,13 @@
 
     goto :goto_1
 
-    .line 37
+    .line 39
     :cond_3
+    const/16 v2, 0x64
+
+    sput v2, Lcom/android/camera/SensorHolder;->THREE_D_CAM_ID:I
+
+    .line 40
     return-void
 .end method
 
@@ -179,7 +184,7 @@
     .locals 1
 
     .prologue
-    .line 71
+    .line 74
     sget v0, Lcom/android/camera/SensorHolder;->THREE_D_CAM_ID:I
 
     return v0
@@ -189,7 +194,7 @@
     .locals 1
 
     .prologue
-    .line 60
+    .line 63
     sget v0, Lcom/android/camera/SensorHolder;->MAIN_CAM_ID:I
 
     return v0
@@ -199,7 +204,7 @@
     .locals 1
 
     .prologue
-    .line 65
+    .line 68
     sget v0, Lcom/android/camera/SensorHolder;->SECOND_CAM_ID:I
 
     return v0

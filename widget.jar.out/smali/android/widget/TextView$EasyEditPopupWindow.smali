@@ -35,7 +35,7 @@
     .parameter
 
     .prologue
-    .line 8306
+    .line 8323
     iput-object p1, p0, Landroid/widget/TextView$EasyEditPopupWindow;->this$0:Landroid/widget/TextView;
 
     invoke-direct {p0, p1}, Landroid/widget/TextView$PinnedPopupWindow;-><init>(Landroid/widget/TextView;)V
@@ -49,7 +49,7 @@
     .parameter "x1"
 
     .prologue
-    .line 8306
+    .line 8323
     invoke-direct {p0, p1}, Landroid/widget/TextView$EasyEditPopupWindow;-><init>(Landroid/widget/TextView;)V
 
     return-void
@@ -62,7 +62,7 @@
     .parameter "positionY"
 
     .prologue
-    .line 8374
+    .line 8391
     return p1
 .end method
 
@@ -70,7 +70,7 @@
     .locals 4
 
     .prologue
-    .line 8315
+    .line 8332
     new-instance v0, Landroid/widget/PopupWindow;
 
     iget-object v1, p0, Landroid/widget/TextView$EasyEditPopupWindow;->this$0:Landroid/widget/TextView;
@@ -88,21 +88,21 @@
 
     iput-object v0, p0, Landroid/widget/TextView$PinnedPopupWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
-    .line 8317
+    .line 8334
     iget-object v0, p0, Landroid/widget/TextView$PinnedPopupWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    .line 8318
+    .line 8335
     iget-object v0, p0, Landroid/widget/TextView$PinnedPopupWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
-    .line 8319
+    .line 8336
     return-void
 .end method
 
@@ -110,7 +110,7 @@
     .locals 2
 
     .prologue
-    .line 8362
+    .line 8379
     iget-object v1, p0, Landroid/widget/TextView$EasyEditPopupWindow;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mText:Ljava/lang/CharSequence;
@@ -120,7 +120,7 @@
 
     check-cast v0, Landroid/text/Editable;
 
-    .line 8363
+    .line 8380
     .local v0, editable:Landroid/text/Editable;
     iget-object v1, p0, Landroid/widget/TextView$EasyEditPopupWindow;->mEasyEditSpan:Landroid/text/style/EasyEditSpan;
 
@@ -136,7 +136,7 @@
     .parameter "line"
 
     .prologue
-    .line 8368
+    .line 8385
     iget-object v0, p0, Landroid/widget/TextView$EasyEditPopupWindow;->this$0:Landroid/widget/TextView;
 
     iget-object v0, v0, Landroid/widget/TextView;->mLayout:Landroid/text/Layout;
@@ -154,7 +154,7 @@
     .prologue
     const/4 v5, -0x2
 
-    .line 8323
+    .line 8340
     new-instance v1, Landroid/widget/LinearLayout;
 
     iget-object v3, p0, Landroid/widget/TextView$EasyEditPopupWindow;->this$0:Landroid/widget/TextView;
@@ -165,23 +165,23 @@
 
     invoke-direct {v1, v3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 8324
+    .line 8341
     .local v1, linearLayout:Landroid/widget/LinearLayout;
     const/4 v3, 0x0
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 8325
+    .line 8342
     iput-object v1, p0, Landroid/widget/TextView$PinnedPopupWindow;->mContentView:Landroid/view/ViewGroup;
 
-    .line 8326
+    .line 8343
     iget-object v3, p0, Landroid/widget/TextView$PinnedPopupWindow;->mContentView:Landroid/view/ViewGroup;
 
     const v4, 0x1080595
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->setBackgroundResource(I)V
 
-    .line 8329
+    .line 8346
     iget-object v3, p0, Landroid/widget/TextView$EasyEditPopupWindow;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mContext:Landroid/content/Context;
@@ -197,13 +197,13 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    .line 8332
+    .line 8349
     .local v0, inflater:Landroid/view/LayoutInflater;
     new-instance v2, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-direct {v2, v5, v5}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    .line 8335
+    .line 8352
     .local v2, wrapContent:Landroid/view/ViewGroup$LayoutParams;
     const v3, 0x10900a0
 
@@ -217,31 +217,31 @@
 
     iput-object v3, p0, Landroid/widget/TextView$EasyEditPopupWindow;->mDeleteTextView:Landroid/widget/TextView;
 
-    .line 8336
+    .line 8353
     iget-object v3, p0, Landroid/widget/TextView$EasyEditPopupWindow;->mDeleteTextView:Landroid/widget/TextView;
 
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 8337
+    .line 8354
     iget-object v3, p0, Landroid/widget/TextView$EasyEditPopupWindow;->mDeleteTextView:Landroid/widget/TextView;
 
     const v4, 0x1040396
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 
-    .line 8338
+    .line 8355
     iget-object v3, p0, Landroid/widget/TextView$EasyEditPopupWindow;->mDeleteTextView:Landroid/widget/TextView;
 
     invoke-virtual {v3, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 8339
+    .line 8356
     iget-object v3, p0, Landroid/widget/TextView$PinnedPopupWindow;->mContentView:Landroid/view/ViewGroup;
 
     iget-object v4, p0, Landroid/widget/TextView$EasyEditPopupWindow;->mDeleteTextView:Landroid/widget/TextView;
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 8340
+    .line 8357
     return-void
 .end method
 
@@ -250,12 +250,12 @@
     .parameter "view"
 
     .prologue
-    .line 8349
+    .line 8366
     iget-object v3, p0, Landroid/widget/TextView$EasyEditPopupWindow;->mDeleteTextView:Landroid/widget/TextView;
 
     if-ne p1, v3, :cond_0
 
-    .line 8350
+    .line 8367
     iget-object v3, p0, Landroid/widget/TextView$EasyEditPopupWindow;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mText:Ljava/lang/CharSequence;
@@ -265,7 +265,7 @@
 
     check-cast v0, Landroid/text/Editable;
 
-    .line 8351
+    .line 8368
     .local v0, editable:Landroid/text/Editable;
     iget-object v3, p0, Landroid/widget/TextView$EasyEditPopupWindow;->mEasyEditSpan:Landroid/text/style/EasyEditSpan;
 
@@ -273,7 +273,7 @@
 
     move-result v2
 
-    .line 8352
+    .line 8369
     .local v2, start:I
     iget-object v3, p0, Landroid/widget/TextView$EasyEditPopupWindow;->mEasyEditSpan:Landroid/text/style/EasyEditSpan;
 
@@ -281,18 +281,18 @@
 
     move-result v1
 
-    .line 8353
+    .line 8370
     .local v1, end:I
     if-ltz v2, :cond_0
 
     if-ltz v1, :cond_0
 
-    .line 8354
+    .line 8371
     iget-object v3, p0, Landroid/widget/TextView$EasyEditPopupWindow;->this$0:Landroid/widget/TextView;
 
     invoke-virtual {v3, v2, v1}, Landroid/widget/TextView;->deleteText_internal(II)V
 
-    .line 8357
+    .line 8374
     .end local v0           #editable:Landroid/text/Editable;
     .end local v1           #end:I
     .end local v2           #start:I
@@ -305,12 +305,12 @@
     .parameter "easyEditSpan"
 
     .prologue
-    .line 8343
+    .line 8360
     iput-object p1, p0, Landroid/widget/TextView$EasyEditPopupWindow;->mEasyEditSpan:Landroid/text/style/EasyEditSpan;
 
-    .line 8344
+    .line 8361
     invoke-super {p0}, Landroid/widget/TextView$PinnedPopupWindow;->show()V
 
-    .line 8345
+    .line 8362
     return-void
 .end method

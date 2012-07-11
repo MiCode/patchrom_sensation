@@ -66,7 +66,7 @@
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "handleMessage Start EVENT["
+    const-string/jumbo v10, "handleMessage Start EVENT["
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -108,7 +108,7 @@
     .line 2420
     const-string v8, "KddiPacketSMSManager"
 
-    const-string v9, "handleMessage End"
+    const-string/jumbo v9, "handleMessage End"
 
     invoke-static {v8, v9}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 

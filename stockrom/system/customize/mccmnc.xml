@@ -1,0 +1,60 @@
+<customize_mccmnc version="1.00">
+	<mcc value="466">
+		<mnc value="92">
+			<module name="apn">
+				<item name="carrier">CHT MMS</item>
+				<item name="apn">emome</item>
+				<item name="proxy"></item>
+				<item name="port"></item>
+				<item name="mmsproxy"></item>
+				<item name="mmsport"></item>
+				<item name="server">*</item>
+				<item name="mmsc">http://mms.emome.net:8002</item>
+				<item name="user">*</item>
+				<item name="password">*</item>
+				<item name="type">mms</item>
+			</module>
+			<module name="apn">
+				<item name="carrier">CHT Internet</item>
+				<item name="apn">emome</item>
+				<item name="proxy"></item>
+				<item name="port"></item>
+				<item name="mmsproxy"></item>
+				<item name="mmsport"></item>
+				<item name="server">*</item>
+				<item name="mmsc">http://mms.emome.net:8002</item>
+				<item name="user">*</item>
+				<item name="password">*</item>
+				<item name="type">mms</item>
+			</module>
+		</mnc>
+		<mnc value="01">
+			<module name="apn">
+				<item name="carrier">FET Mobile</item>
+				<item name="apn">fetnet01</item>
+				<item name="proxy"></item>
+				<item name="port"></item>
+				<item name="mmsproxy"></item>
+				<item name="mmsport"></item>
+				<item name="server">*</item>
+				<item name="mmsc">http://mms.emome.net:8002</item>
+				<item name="user">*</item>
+				<item name="password">*</item>
+				<item name="type">mms</item>
+			</module>
+			<module name="apn">
+				<item name="carrier">FET New Cash</item>
+				<item name="apn">fetsclub</item>
+				<item name="proxy"></item>
+				<item name="port"></item>
+				<item name="mmsproxy"></item>
+				<item name="mmsport"></item>
+				<item name="server">*</item>
+				<item name="mmsc">http://mms.emome.net:8002</item>
+				<item name="user">*</item>
+				<item name="password">*</item>
+				<item name="type">default</item>
+			</module>
+		</mnc>
+	</mcc>
+</customize_mccmnc>

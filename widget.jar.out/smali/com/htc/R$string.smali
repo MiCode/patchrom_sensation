@@ -595,9 +595,9 @@
 
 .field public static final htctethered_notification_title:I = 0x20c00aa
 
-.field public static final htctoggle_off:I = 0x20c023e
+.field public static final htctoggle_off:I = 0x20c024a
 
-.field public static final htctoggle_on:I = 0x20c023d
+.field public static final htctoggle_on:I = 0x20c0249
 
 .field public static final imei_locked:I = 0x20c0198
 
@@ -800,6 +800,30 @@
 .field public static final my_photos:I = 0x20c01d7
 
 .field public static final next:I = 0x20c0124
+
+.field public static final ni_dialog_default_accept:I = 0x20c0242
+
+.field public static final ni_dialog_default_deny:I = 0x20c0243
+
+.field public static final ni_notification_tile:I = 0x20c0244
+
+.field public static final ni_phone_interaction_message:I = 0x20c0248
+
+.field public static final ni_timeout_default_accept:I = 0x20c023f
+
+.field public static final ni_timeout_default_deny:I = 0x20c0240
+
+.field public static final ni_timeout_dialog_title:I = 0x20c0241
+
+.field public static final ni_timeout_listview_item_title:I = 0x20c023e
+
+.field public static final ni_timeout_listview_title:I = 0x20c023d
+
+.field public static final ni_timeout_notification_message:I = 0x20c0246
+
+.field public static final ni_timeout_notification_tickerText:I = 0x20c0247
+
+.field public static final ni_timeout_notification_tile:I = 0x20c0245
 
 .field public static final no:I = 0x20c01db
 
@@ -1171,7 +1195,7 @@
     .locals 0
 
     .prologue
-    .line 8298
+    .line 8378
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

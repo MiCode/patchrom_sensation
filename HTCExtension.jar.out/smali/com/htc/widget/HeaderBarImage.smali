@@ -1166,7 +1166,7 @@
     invoke-virtual {v1, v2, p0, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 202
-    const v1, 0x2020262
+    const v1, 0x2020265
 
     invoke-virtual {p0, v1}, Lcom/htc/widget/HeaderBarImage;->findViewById(I)Landroid/view/View;
 

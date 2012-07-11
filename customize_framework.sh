@@ -10,18 +10,11 @@ ZIP_FILE=sensation_4.5.4.zip
 if [ $2 = "out/framework" ];then
 	echo "delete framework redundance files"
 	rm -rf "out/framework/smali/android/widget"
-	echo "make framework-miui.jar"
-	mkdir -p "out/framework-miui/smali"
-	touch "out/framework-miui/apktool.yml"
-	echo "version: 1.4.3" >> "out/framework-miui/apktool.yml"
-	echo "apkFileName: framework-miui.jar" >> "out/framework-miui/apktool.yml"
-	mv "out/framework/smali/miui" "out/framework-miui/smali"
-	$APKTOOL b "out/framework-miui" "out/framework-miui.jar"
-	mkdir -p "out/ZIP/system/framework"
-	cp "out/framework-miui.jar" "out/ZIP/system/framework/framework-miui.jar"
-	
+
 	echo "make widget.jar"
+	mkdir -p "out/ZIP/system/framework"
 	cp -r "widget.jar.out" "out/widget.jar.out" 
+	mv "out/framework/smali/miui" "out/widget.jar.out/smali"
 
 	for file in `find "$1/smali/android/widget" -name "*.smali"`
 	do

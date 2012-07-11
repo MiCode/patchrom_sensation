@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2428
+    .line 2531
     iput-object p1, p0, Landroid/server/BluetoothService$3;->this$0:Landroid/server/BluetoothService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,12 +43,12 @@
     .parameter "proxy"
 
     .prologue
-    .line 2430
+    .line 2533
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_1
 
-    .line 2431
+    .line 2534
     iget-object v0, p0, Landroid/server/BluetoothService$3;->this$0:Landroid/server/BluetoothService;
 
     check-cast p2, Landroid/bluetooth/BluetoothHeadset;
@@ -57,19 +57,19 @@
     #setter for: Landroid/server/BluetoothService;->mHeadsetProxy:Landroid/bluetooth/BluetoothHeadset;
     invoke-static {v0, p2}, Landroid/server/BluetoothService;->access$1602(Landroid/server/BluetoothService;Landroid/bluetooth/BluetoothHeadset;)Landroid/bluetooth/BluetoothHeadset;
 
-    .line 2437
+    .line 2540
     :cond_0
     :goto_0
     return-void
 
-    .line 2432
+    .line 2535
     .restart local p2
     :cond_1
     const/4 v0, 0x4
 
     if-ne p1, v0, :cond_2
 
-    .line 2433
+    .line 2536
     iget-object v0, p0, Landroid/server/BluetoothService$3;->this$0:Landroid/server/BluetoothService;
 
     check-cast p2, Landroid/bluetooth/BluetoothInputDevice;
@@ -80,14 +80,14 @@
 
     goto :goto_0
 
-    .line 2434
+    .line 2537
     .restart local p2
     :cond_2
     const/4 v0, 0x5
 
     if-ne p1, v0, :cond_0
 
-    .line 2435
+    .line 2538
     iget-object v0, p0, Landroid/server/BluetoothService$3;->this$0:Landroid/server/BluetoothService;
 
     check-cast p2, Landroid/bluetooth/BluetoothPan;
@@ -106,29 +106,29 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2439
+    .line 2542
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_1
 
-    .line 2440
+    .line 2543
     iget-object v0, p0, Landroid/server/BluetoothService$3;->this$0:Landroid/server/BluetoothService;
 
     #setter for: Landroid/server/BluetoothService;->mHeadsetProxy:Landroid/bluetooth/BluetoothHeadset;
     invoke-static {v0, v1}, Landroid/server/BluetoothService;->access$1602(Landroid/server/BluetoothService;Landroid/bluetooth/BluetoothHeadset;)Landroid/bluetooth/BluetoothHeadset;
 
-    .line 2446
+    .line 2549
     :cond_0
     :goto_0
     return-void
 
-    .line 2441
+    .line 2544
     :cond_1
     const/4 v0, 0x4
 
     if-ne p1, v0, :cond_2
 
-    .line 2442
+    .line 2545
     iget-object v0, p0, Landroid/server/BluetoothService$3;->this$0:Landroid/server/BluetoothService;
 
     #setter for: Landroid/server/BluetoothService;->mInputDevice:Landroid/bluetooth/BluetoothInputDevice;
@@ -136,13 +136,13 @@
 
     goto :goto_0
 
-    .line 2443
+    .line 2546
     :cond_2
     const/4 v0, 0x5
 
     if-ne p1, v0, :cond_0
 
-    .line 2444
+    .line 2547
     iget-object v0, p0, Landroid/server/BluetoothService$3;->this$0:Landroid/server/BluetoothService;
 
     #setter for: Landroid/server/BluetoothService;->mPan:Landroid/bluetooth/BluetoothPan;

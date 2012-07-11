@@ -894,3 +894,35 @@
 
     goto :goto_1
 .end method
+
+.method public updateUILevel()V
+    .locals 2
+
+    .prologue
+    .line 352
+    iget-object v0, p0, Lcom/android/camera/widget/ImagePropertyItem;->m_Degree:Landroid/widget/ImageView;
+
+    if-eqz v0, :cond_0
+
+    .line 353
+    invoke-virtual {p0}, Lcom/android/camera/widget/ImagePropertyItem;->updateLevel()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/camera/widget/ImagePropertyItem;->m_Level:I
+
+    .line 354
+    iget-object v0, p0, Lcom/android/camera/widget/ImagePropertyItem;->m_Degree:Landroid/widget/ImageView;
+
+    iget v1, p0, Lcom/android/camera/widget/ImagePropertyItem;->m_Level:I
+
+    invoke-virtual {p0, v1}, Lcom/android/camera/widget/ImagePropertyItem;->getDegreeImage(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 356
+    :cond_0
+    return-void
+.end method

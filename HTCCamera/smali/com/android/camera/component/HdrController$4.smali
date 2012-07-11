@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 223
+    .line 228
     iput-object p1, p0, Lcom/android/camera/component/HdrController$4;->this$0:Lcom/android/camera/component/HdrController;
 
     iput-object p2, p0, Lcom/android/camera/component/HdrController$4;->val$cameraThread:Lcom/android/camera/CameraThread;
@@ -50,7 +50,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 227
+    .line 232
     iget-object v0, p0, Lcom/android/camera/component/HdrController$4;->this$0:Lcom/android/camera/component/HdrController;
 
     iget-object v1, p0, Lcom/android/camera/component/HdrController$4;->this$0:Lcom/android/camera/component/HdrController;
@@ -68,7 +68,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/camera/component/HdrController;->sendMessage(Lcom/android/camera/component/Component;IIILjava/lang/Object;)Z
 
-    .line 230
+    .line 235
     iget-object v0, p0, Lcom/android/camera/component/HdrController$4;->val$cameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->getCommonCaptureHandler()Lcom/android/camera/CameraThread$CommonCaptureHandler;
@@ -77,6 +77,6 @@
 
     invoke-virtual {v0, p1, p2}, Lcom/android/camera/CameraThread$CommonCaptureHandler;->onJpegPictureTaken([BLandroid/hardware/Camera;)V
 
-    .line 231
+    .line 236
     return-void
 .end method

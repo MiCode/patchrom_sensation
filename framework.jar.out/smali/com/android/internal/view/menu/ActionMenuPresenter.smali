@@ -1193,15 +1193,12 @@
 
     const/4 v4, 0x0
 
-    .line 78
     invoke-super {p0, p1, p2}, Lcom/android/internal/view/menu/BaseMenuPresenter;->initForMenu(Landroid/content/Context;Lcom/android/internal/view/menu/MenuBuilder;)V
 
-    .line 80
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 82
     .local v0, res:Landroid/content/res/Resources;
     iget-boolean v3, p0, Lcom/android/internal/view/menu/ActionMenuPresenter;->mReserveOverflowSet:Z
 
@@ -1209,6 +1206,7 @@
 
     iput-boolean v4, p0, Lcom/android/internal/view/menu/ActionMenuPresenter;->mReserveOverflow:Z
 
+    .line 86
     :cond_0
     iget-boolean v3, p0, Lcom/android/internal/view/menu/ActionMenuPresenter;->mWidthLimitSet:Z
 
@@ -1305,10 +1303,8 @@
 
     iput v3, p0, Lcom/android/internal/view/menu/ActionMenuPresenter;->mMinCellSize:I
 
-    .line 112
     iput-object v6, p0, Lcom/android/internal/view/menu/ActionMenuPresenter;->mScrapActionButtonView:Landroid/view/View;
 
-    .line 113
     return-void
 
     :cond_5

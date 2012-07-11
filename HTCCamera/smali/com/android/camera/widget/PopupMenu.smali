@@ -198,7 +198,16 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 96
+    .line 95
+    iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_EventManager:Lcom/android/camera/EventManager;
+
+    const-string v1, "Mode.Switched"
+
+    iget-object v2, p0, Lcom/android/camera/widget/PopupMenu;->m_CloseEventHandler:Lcom/android/camera/IEventHandler;
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
+
+    .line 98
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v1, "Menu.Expanded"
@@ -207,7 +216,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 97
+    .line 99
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v1, "Menu.Collapsed"
@@ -216,7 +225,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/camera/EventManager;->addEventHandler(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 99
+    .line 101
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Context:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -231,15 +240,15 @@
 
     iput v0, p0, Lcom/android/camera/widget/PopupMenu;->m_menuPadding:I
 
-    .line 101
+    .line 103
     iput p2, p0, Lcom/android/camera/widget/PopupMenu;->m_Type:I
 
-    .line 103
+    .line 105
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/camera/widget/PopupMenu;->m_MenuState:I
 
-    .line 104
+    .line 106
     return-void
 .end method
 
@@ -307,22 +316,22 @@
     .locals 1
 
     .prologue
-    .line 152
+    .line 154
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
 
     if-eqz v0, :cond_0
 
-    .line 153
+    .line 155
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
 
     invoke-virtual {v0}, Lcom/htc/widget/PopupBubbleWindow;->dismiss()V
 
-    .line 154
+    .line 156
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/camera/widget/PopupMenu;->m_MenuState:I
 
-    .line 156
+    .line 158
     :cond_0
     return-void
 .end method
@@ -331,15 +340,15 @@
     .locals 4
 
     .prologue
-    .line 348
+    .line 350
     iget-object v2, p0, Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
 
     if-eqz v2, :cond_1
 
-    .line 349
+    .line 351
     const/4 v1, 0x0
 
-    .line 350
+    .line 352
     .local v1, padding:I
     iget-object v2, p0, Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
 
@@ -347,16 +356,16 @@
 
     move-result-object v0
 
-    .line 351
+    .line 353
     .local v0, background:Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_0
 
-    .line 352
+    .line 354
     iget-object v2, p0, Lcom/android/camera/widget/PopupMenu;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 353
+    .line 355
     iget-object v2, p0, Lcom/android/camera/widget/PopupMenu;->mTempRect:Landroid/graphics/Rect;
 
     iget v2, v2, Landroid/graphics/Rect;->top:I
@@ -367,7 +376,7 @@
 
     add-int v1, v2, v3
 
-    .line 355
+    .line 357
     :cond_0
     iget-object v2, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
@@ -383,7 +392,7 @@
 
     add-int/2addr v2, v3
 
-    .line 358
+    .line 360
     .end local v0           #background:Landroid/graphics/drawable/Drawable;
     .end local v1           #padding:I
     :goto_0
@@ -399,7 +408,7 @@
     .locals 1
 
     .prologue
-    .line 342
+    .line 344
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
 
     if-eqz v0, :cond_0
@@ -429,7 +438,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 108
+    .line 110
     new-instance v0, Lcom/htc/widget/PopupBubbleWindow;
 
     iget-object v1, p0, Lcom/android/camera/widget/PopupMenu;->m_Context:Landroid/content/Context;
@@ -438,7 +447,7 @@
 
     iput-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
 
-    .line 110
+    .line 112
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
 
     new-instance v1, Lcom/android/camera/widget/PopupMenu$3;
@@ -447,82 +456,82 @@
 
     invoke-virtual {v0, v1}, Lcom/htc/widget/PopupBubbleWindow;->setOnDismissListener(Lcom/htc/widget/PopupBubbleWindow$OnDismissListener;)V
 
-    .line 130
+    .line 132
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Container:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     if-eqz v0, :cond_0
 
-    .line 131
+    .line 133
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Container:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     iget v1, p0, Lcom/android/camera/widget/PopupMenu;->m_Orientation:I
 
     invoke-virtual {v0, v1}, Lcom/android/camera/rotate/RotateRelativeLayout;->setOrientation(I)V
 
-    .line 133
+    .line 135
     :cond_0
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
 
     invoke-virtual {v0, v2}, Lcom/htc/widget/PopupBubbleWindow;->setInputMethodMode(I)V
 
-    .line 134
+    .line 136
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
 
     iget-object v1, p0, Lcom/android/camera/widget/PopupMenu;->m_Container:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v0, v1}, Lcom/htc/widget/PopupBubbleWindow;->setContentView(Landroid/view/View;)V
 
-    .line 136
+    .line 138
     iget v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Orientation:I
 
     iget v1, p0, Lcom/android/camera/widget/PopupMenu;->m_Type:I
 
     invoke-virtual {p0, v0, v1}, Lcom/android/camera/widget/PopupMenu;->setMenuSizeByType(II)V
 
-    .line 138
+    .line 140
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
 
     iget v1, p0, Lcom/android/camera/widget/PopupMenu;->m_Width:I
 
     invoke-virtual {v0, v1}, Lcom/htc/widget/PopupBubbleWindow;->setWidth(I)V
 
-    .line 139
+    .line 141
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
 
     iget v1, p0, Lcom/android/camera/widget/PopupMenu;->m_Height:I
 
     invoke-virtual {v0, v1}, Lcom/htc/widget/PopupBubbleWindow;->setHeight(I)V
 
-    .line 141
+    .line 143
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
 
     invoke-virtual {v0, v2}, Lcom/htc/widget/PopupBubbleWindow;->setFocusable(Z)V
 
-    .line 142
+    .line 144
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
 
     invoke-virtual {v0, v2}, Lcom/htc/widget/PopupBubbleWindow;->setTouchable(Z)V
 
-    .line 143
+    .line 145
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
 
     iget-object v1, p0, Lcom/android/camera/widget/PopupMenu;->m_Anchor:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Lcom/htc/widget/PopupBubbleWindow;->showAsDropDown(Landroid/view/View;)V
 
-    .line 146
+    .line 148
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v1, "Menu.Opening"
 
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 148
+    .line 150
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/camera/widget/PopupMenu;->m_MenuState:I
 
-    .line 149
+    .line 151
     return-void
 .end method
 
@@ -532,13 +541,13 @@
     .parameter "height"
 
     .prologue
-    .line 164
+    .line 166
     iput p2, p0, Lcom/android/camera/widget/PopupMenu;->m_Height:I
 
-    .line 165
+    .line 167
     iput p1, p0, Lcom/android/camera/widget/PopupMenu;->m_Width:I
 
-    .line 166
+    .line 168
     return-void
 .end method
 
@@ -547,12 +556,12 @@
     .parameter "type"
 
     .prologue
-    .line 169
+    .line 171
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p1}, Lcom/android/camera/widget/PopupMenu;->setMenuSizeByType(II)V
 
-    .line 170
+    .line 172
     return-void
 .end method
 
@@ -566,16 +575,16 @@
 
     const/4 v8, 0x0
 
-    .line 174
+    .line 176
     iget-object v7, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     if-nez v7, :cond_0
 
-    .line 305
+    .line 307
     :goto_0
     return-void
 
-    .line 177
+    .line 179
     :cond_0
     iget-object v7, p0, Lcom/android/camera/widget/PopupMenu;->m_Context:Landroid/content/Context;
 
@@ -583,31 +592,31 @@
 
     move-result-object v5
 
-    .line 179
+    .line 181
     .local v5, res:Landroid/content/res/Resources;
     const/4 v0, 0x0
 
-    .line 180
+    .line 182
     .local v0, height:I
     const/4 v6, 0x0
 
-    .line 182
+    .line 184
     .local v6, width:I
     const/4 v1, 0x0
 
-    .line 183
+    .line 185
     .local v1, max_height:I
     const/4 v2, 0x0
 
-    .line 184
+    .line 186
     .local v2, max_width:I
     const/4 v3, 0x0
 
-    .line 185
+    .line 187
     .local v3, menu_height:I
     const/4 v4, 0x0
 
-    .line 187
+    .line 189
     .local v4, menu_width:I
     if-eqz p1, :cond_1
 
@@ -615,17 +624,17 @@
 
     if-ne p1, v7, :cond_5
 
-    .line 188
+    .line 190
     :cond_1
     packed-switch p2, :pswitch_data_0
 
-    .line 304
+    .line 306
     :goto_1
     invoke-virtual {p0, v6, v0}, Lcom/android/camera/widget/PopupMenu;->setMenuSize(II)V
 
     goto :goto_0
 
-    .line 190
+    .line 192
     :pswitch_0
     const v7, 0x7f0b0028
 
@@ -633,25 +642,25 @@
 
     move-result v1
 
-    .line 191
+    .line 193
     const v7, 0x7f0b0029
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v6
 
-    .line 192
+    .line 194
     invoke-virtual {p0}, Lcom/android/camera/widget/PopupMenu;->getViewHeight()I
 
     move-result v3
 
-    .line 193
+    .line 195
     if-le v3, v1, :cond_2
 
-    .line 194
+    .line 196
     move v0, v1
 
-    .line 195
+    .line 197
     iget-object v7, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     check-cast v7, Lcom/android/camera/widget/SettingsView;
@@ -664,11 +673,11 @@
 
     goto :goto_1
 
-    .line 199
+    .line 201
     :cond_2
     move v0, v3
 
-    .line 200
+    .line 202
     iget-object v7, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     check-cast v7, Lcom/android/camera/widget/SettingsView;
@@ -681,21 +690,21 @@
 
     goto :goto_1
 
-    .line 207
+    .line 209
     :pswitch_1
     const/4 v0, -0x2
 
-    .line 208
+    .line 210
     const v7, 0x7f0b002d
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v6
 
-    .line 209
+    .line 211
     goto :goto_1
 
-    .line 211
+    .line 213
     :pswitch_2
     const v7, 0x7f0b0034
 
@@ -703,25 +712,25 @@
 
     move-result v1
 
-    .line 212
+    .line 214
     const v7, 0x7f0b0035
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v6
 
-    .line 213
+    .line 215
     invoke-virtual {p0}, Lcom/android/camera/widget/PopupMenu;->getViewHeight()I
 
     move-result v3
 
-    .line 214
+    .line 216
     if-le v3, v1, :cond_3
 
-    .line 215
+    .line 217
     move v0, v1
 
-    .line 216
+    .line 218
     iget-object v7, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     check-cast v7, Lcom/android/camera/widget/ResolutionView;
@@ -734,11 +743,11 @@
 
     goto :goto_1
 
-    .line 220
+    .line 222
     :cond_3
     move v0, v3
 
-    .line 221
+    .line 223
     iget-object v7, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     check-cast v7, Lcom/android/camera/widget/ResolutionView;
@@ -751,7 +760,7 @@
 
     goto :goto_1
 
-    .line 227
+    .line 229
     :pswitch_3
     const v7, 0x7f0b0030
 
@@ -759,25 +768,25 @@
 
     move-result v1
 
-    .line 228
+    .line 230
     const v7, 0x7f0b0031
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v6
 
-    .line 229
+    .line 231
     invoke-virtual {p0}, Lcom/android/camera/widget/PopupMenu;->getViewHeight()I
 
     move-result v3
 
-    .line 230
+    .line 232
     if-le v3, v1, :cond_4
 
-    .line 231
+    .line 233
     move v0, v1
 
-    .line 232
+    .line 234
     iget-object v7, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     check-cast v7, Lcom/android/camera/widget/SceneListView;
@@ -790,11 +799,11 @@
 
     goto/16 :goto_1
 
-    .line 236
+    .line 238
     :cond_4
     move v0, v3
 
-    .line 237
+    .line 239
     iget-object v7, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     check-cast v7, Lcom/android/camera/widget/SceneListView;
@@ -807,13 +816,13 @@
 
     goto/16 :goto_1
 
-    .line 244
+    .line 246
     :cond_5
     packed-switch p2, :pswitch_data_1
 
     goto/16 :goto_1
 
-    .line 246
+    .line 248
     :pswitch_4
     const v7, 0x7f0b002a
 
@@ -821,25 +830,25 @@
 
     move-result v0
 
-    .line 247
+    .line 249
     const v7, 0x7f0b002b
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    .line 249
+    .line 251
     invoke-virtual {p0}, Lcom/android/camera/widget/PopupMenu;->getViewHeight()I
 
     move-result v4
 
-    .line 250
+    .line 252
     if-le v4, v2, :cond_6
 
-    .line 251
+    .line 253
     move v6, v2
 
-    .line 252
+    .line 254
     iget-object v7, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     check-cast v7, Lcom/android/camera/widget/SettingsView;
@@ -852,11 +861,11 @@
 
     goto/16 :goto_1
 
-    .line 256
+    .line 258
     :cond_6
     move v6, v4
 
-    .line 257
+    .line 259
     iget-object v7, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     check-cast v7, Lcom/android/camera/widget/SettingsView;
@@ -869,7 +878,7 @@
 
     goto/16 :goto_1
 
-    .line 264
+    .line 266
     :pswitch_5
     const v7, 0x7f0b002e
 
@@ -877,13 +886,13 @@
 
     move-result v0
 
-    .line 265
+    .line 267
     const/4 v6, -0x2
 
-    .line 266
+    .line 268
     goto/16 :goto_1
 
-    .line 268
+    .line 270
     :pswitch_6
     const v7, 0x7f0b0036
 
@@ -891,25 +900,25 @@
 
     move-result v0
 
-    .line 269
+    .line 271
     const v7, 0x7f0b0037
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    .line 271
+    .line 273
     invoke-virtual {p0}, Lcom/android/camera/widget/PopupMenu;->getViewHeight()I
 
     move-result v4
 
-    .line 272
+    .line 274
     if-le v4, v2, :cond_7
 
-    .line 273
+    .line 275
     move v6, v2
 
-    .line 274
+    .line 276
     iget-object v7, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     check-cast v7, Lcom/android/camera/widget/ResolutionView;
@@ -922,11 +931,11 @@
 
     goto/16 :goto_1
 
-    .line 278
+    .line 280
     :cond_7
     move v6, v4
 
-    .line 279
+    .line 281
     iget-object v7, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     check-cast v7, Lcom/android/camera/widget/ResolutionView;
@@ -939,7 +948,7 @@
 
     goto/16 :goto_1
 
-    .line 285
+    .line 287
     :pswitch_7
     const v7, 0x7f0b0032
 
@@ -947,25 +956,25 @@
 
     move-result v0
 
-    .line 287
+    .line 289
     const v7, 0x7f0b0033
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    .line 289
+    .line 291
     invoke-virtual {p0}, Lcom/android/camera/widget/PopupMenu;->getViewHeight()I
 
     move-result v4
 
-    .line 290
+    .line 292
     if-le v4, v2, :cond_8
 
-    .line 291
+    .line 293
     move v6, v2
 
-    .line 292
+    .line 294
     iget-object v7, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     check-cast v7, Lcom/android/camera/widget/SceneListView;
@@ -978,11 +987,11 @@
 
     goto/16 :goto_1
 
-    .line 296
+    .line 298
     :cond_8
     move v6, v4
 
-    .line 297
+    .line 299
     iget-object v7, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     check-cast v7, Lcom/android/camera/widget/SceneListView;
@@ -995,7 +1004,7 @@
 
     goto/16 :goto_1
 
-    .line 188
+    .line 190
     nop
 
     :pswitch_data_0
@@ -1006,7 +1015,7 @@
         :pswitch_3
     .end packed-switch
 
-    .line 244
+    .line 246
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_4
@@ -1024,13 +1033,13 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 329
+    .line 331
     iput p1, p0, Lcom/android/camera/widget/PopupMenu;->m_Orientation:I
 
-    .line 331
+    .line 333
     invoke-virtual {p0, p1, p2}, Lcom/android/camera/widget/PopupMenu;->setMenuSizeByType(II)V
 
-    .line 333
+    .line 335
     invoke-virtual {p0}, Lcom/android/camera/widget/PopupMenu;->isShowing()Z
 
     move-result v0
@@ -1041,13 +1050,13 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 334
+    .line 336
     iput-boolean v1, p0, Lcom/android/camera/widget/PopupMenu;->m_NeedReopen:Z
 
-    .line 335
+    .line 337
     invoke-virtual {p0}, Lcom/android/camera/widget/PopupMenu;->close()V
 
-    .line 337
+    .line 339
     :cond_0
     return-void
 .end method
@@ -1056,7 +1065,7 @@
     .locals 2
 
     .prologue
-    .line 159
+    .line 161
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Anchor:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -1065,14 +1074,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 160
+    .line 162
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Anchor:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/camera/widget/PopupMenu;->toggle(Landroid/view/View;Landroid/view/View;)V
 
-    .line 161
+    .line 163
     :cond_0
     return-void
 .end method
@@ -1085,24 +1094,24 @@
     .prologue
     const/4 v2, -0x2
 
-    .line 310
+    .line 312
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Anchor:Landroid/view/View;
 
     if-nez v0, :cond_0
 
-    .line 311
+    .line 313
     iput-object p1, p0, Lcom/android/camera/widget/PopupMenu;->m_Anchor:Landroid/view/View;
 
-    .line 313
+    .line 315
     :cond_0
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     if-nez v0, :cond_1
 
-    .line 314
+    .line 316
     iput-object p2, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
-    .line 315
+    .line 317
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Container:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     new-instance v1, Landroid/view/ViewGroup$MarginLayoutParams;
@@ -1111,34 +1120,34 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/rotate/RotateRelativeLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 316
+    .line 318
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Container:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     iget-object v1, p0, Lcom/android/camera/widget/PopupMenu;->m_View:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Lcom/android/camera/rotate/RotateRelativeLayout;->addView(Landroid/view/View;)V
 
-    .line 319
+    .line 321
     :cond_1
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/camera/widget/PopupMenu;->m_NeedReopen:Z
 
-    .line 321
+    .line 323
     invoke-virtual {p0}, Lcom/android/camera/widget/PopupMenu;->isShowing()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 322
+    .line 324
     invoke-virtual {p0}, Lcom/android/camera/widget/PopupMenu;->open()V
 
-    .line 325
+    .line 327
     :goto_0
     return-void
 
-    .line 324
+    .line 326
     :cond_2
     invoke-virtual {p0}, Lcom/android/camera/widget/PopupMenu;->close()V
 
@@ -1149,21 +1158,21 @@
     .locals 3
 
     .prologue
-    .line 363
+    .line 365
     invoke-virtual {p0}, Lcom/android/camera/widget/PopupMenu;->isShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 364
+    .line 366
     iget v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Orientation:I
 
     iget v1, p0, Lcom/android/camera/widget/PopupMenu;->m_Type:I
 
     invoke-virtual {p0, v0, v1}, Lcom/android/camera/widget/PopupMenu;->setMenuSizeByType(II)V
 
-    .line 365
+    .line 367
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
 
     iget v1, p0, Lcom/android/camera/widget/PopupMenu;->m_Width:I
@@ -1172,7 +1181,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/htc/widget/PopupBubbleWindow;->update(II)V
 
-    .line 367
+    .line 369
     :cond_0
     return-void
 .end method

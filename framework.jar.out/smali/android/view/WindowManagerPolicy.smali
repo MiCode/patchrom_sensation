@@ -195,6 +195,9 @@
 .method public abstract focusChangedLw(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/WindowManagerPolicy$WindowState;)I
 .end method
 
+.method public abstract forcePasswordTimeout()V
+.end method
+
 .method public abstract getConfigDisplayHeight(III)I
 .end method
 

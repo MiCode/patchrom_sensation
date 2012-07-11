@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 4426
+    .line 4432
     iput-object p1, p0, Lcom/android/camera/HTCCamera$25;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
     .prologue
     const/4 v1, 0x4
 
-    .line 4428
+    .line 4434
     iget-object v0, p0, Lcom/android/camera/HTCCamera$25;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mArrowImgLayoutPort:Lcom/android/camera/rotate/RotateRelativeLayout;
@@ -54,7 +54,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 4429
+    .line 4435
     iget-object v0, p0, Lcom/android/camera/HTCCamera$25;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mArrowImgLayoutLand:Lcom/android/camera/rotate/RotateRelativeLayout;
@@ -64,7 +64,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 4430
+    .line 4436
     iget-object v0, p0, Lcom/android/camera/HTCCamera$25;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mArrowTextLayoutPort:Lcom/android/camera/rotate/RotateRelativeLayout;
@@ -74,7 +74,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 4431
+    .line 4437
     iget-object v0, p0, Lcom/android/camera/HTCCamera$25;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mArrowTextLayoutLand:Lcom/android/camera/rotate/RotateRelativeLayout;
@@ -84,7 +84,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 4432
+    .line 4438
     return-void
 .end method
 
@@ -93,7 +93,7 @@
     .parameter "arg0"
 
     .prologue
-    .line 4433
+    .line 4439
     return-void
 .end method
 
@@ -102,6 +102,6 @@
     .parameter "arg0"
 
     .prologue
-    .line 4434
+    .line 4440
     return-void
 .end method

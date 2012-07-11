@@ -269,9 +269,9 @@
     <string name="turn_off_radio">Kablosuzu kapat</string>
     <string name="screen_lock">Ekran kilidi</string>
     <string name="power_off">Kapama</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Zil kapalı</string>
+    <string name="silent_mode_vibrate">Zil titreşimde</string>
+    <string name="silent_mode_ring">Zil açık</string>
     <string name="shutdown_progress">Kapanıyor…</string>
     <string name="shutdown_confirm">Telefonunuz kapanacak.</string>
     <string name="shutdown_confirm_question">Kapatmak istiyor musunuz?</string>
@@ -426,10 +426,10 @@
     <string name="permdesc_movePackage">Bir uygulamanın, uygulama kaynaklarını dahili ve harici ortamlar arasında taşımasına olanak tanır.</string>
     <string name="permlab_readLogs">hassas günlük verilerini okuma</string>
     <string name="permdesc_readLogs">Bir uygulamanın, sistemin çeşitli günlük dosyalarındaki bilgileri okumasına izin verir. Bu izin, uygulamanın, telefonda yaptıklarınızla ilgili genel bilgileri bulmasına olanak sağlar ve bunlar kişisel ve gizli bilgilerinizi de içerebilir.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">yürütme için herhangi bir medya dekoderi kullan</string>
+    <string name="permdesc_anyCodecForPlayback">Bir uygulamanın yürütme için şifre çözmek üzere yüklü herhangi bir medya dekoderini kullanmasına izin verir.</string>
+    <string name="permlab_readWriteOmaDrm">oma DRM ile ilgili klasöre eriş</string>
+    <string name="permdesc_readWriteOmaDrm">Bir uygulamanın, OMA DRM ile ilgili klasörü okuyup buraya yazmasını sağlar.</string>
     <string name="permlab_diagnostic">"diag'ın sahibi olduğu kaynakları okur/üzerilerine yazar"</string>
     <string name="permdesc_diagnostic">Bir uygulamanın, diag grubunun sahibi olduğu herhangi bir kaynakta okuma ve yazma yapabilmesine imkan verir; örneğin, /dev içindeki dosyalar. Bunun sistem dengesi ve güvenliğini etkileyebilme olasılığı vardır. Bu YALNIZCA imalatçi veya operatör tarafından donanıma özel tanı koyma amacıyla kullanılmalıdır.</string>
     <string name="permlab_changeComponentState">uygulama bileşenlerini etkinleştirir veya devre dışı bırakır</string>
@@ -571,9 +571,9 @@
     <string name="permlab_changeWifiMulticastState">Wi-Fi Multicast alımına izin verir</string>
     <string name="permdesc_changeWifiMulticastState">Bir uygulamanın, doğrudan aygıtınıza gönderilmemiş paketleri almasına izin verir. Bu özellik, yakınlarda sunulan hizmetleri keşfetmede yararlı olabilir. Multicast olmayan moda göre daha fazla güç kullanır.</string>
     <string name="permlab_accessWimaxState">WiMAX durumunu görüntüle</string>
-    <string name="permdesc_accessWimaxState">"Bir uygulamanın, WiMAX'ın durumuyla ilgili bilgileri görmesine imkan verir."</string>
+    <string name="permdesc_accessWimaxState">"Bir uygulamanın, WiMAX'ın durumuyla ilgili bilgileri görüntülemesine izin verir."</string>
     <string name="permlab_changeWimaxState">WiMAX durumunu değiştir</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">Uygulamanın WiMAX ağına bağlanmasını ve bağlantıyı kesmesini sağlar.</string>
     <string name="permlab_bluetoothAdmin">bluetooth idaresi</string>
     <string name="permdesc_bluetoothAdmin">Bir uygulamanın yerel Bluetooth telefonu yapılandırabilmesine ve uzak cihazları keşfedip onlarla eşleşme yapabilmesine imkan verir.</string>
     <string name="permlab_bluetooth">Bluetooth bağlantıları oluşturur</string>
@@ -748,9 +748,9 @@ Lütfen %d saniye içinde yeniden deneyin."</string>
     <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"PIN'inizi %d kez yanlış girdiniz. 
 
 Lütfen %d saniye içinde yeniden deneyin."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Kilit açma deseninizi %d kez yanlış çizdiniz. %d başarısız denemeden sonra telefonunuzu Google oturum açma bilgilerinizi kullanarak açmanız istenir.
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Kilit açma deseninizi %d kere yanlış çizdiniz. %d başarısız denemede daha bulunursanız, telefonunuzun kilidini Google oturum açma bilgilerinizi kullanarak açmanız istenecek.
 
- Lütfen %d saniye içinde yeniden deneyin."</string>
+ Lütfen %d saniye sonra yeniden deneyin."</string>
     <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Telefonun kilidini %d defa yanlış bir şekilde açmaya çalıştınız. %d defa daha başarısız deneme yapılırsa, telefon fabrika varsayılanına sıfırlanır ve tüm kullanıcı verileri kaybedilir.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Telefon kilidini %d defa yanlış bir şekilde açmaya çalıştınız. Telefon şimdi fabrika varsayılanına sıfırlanacak.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">%d saniye sonra yeniden deneyin.</string>
@@ -931,7 +931,7 @@ Bu işlemi kapatmak ister misiniz?"</string>
     <string name="smv_application">%1$s uygulaması (%2$s işlemi) kendiliğinden uyguladığı StrictMode politikasını ihlal etti.</string>
     <string name="smv_process">%1$s işlemi kendiliğinden uyguladığı StrictMode politikasını ihlal etti.</string>
     <string name="android_upgrading_title">Android yeni sürüme geçiriliyor...</string>
-    <string name="android_upgrading_apk">%1$d/%2$d uygulama optimize ediliyor.</string>
+    <string name="android_upgrading_apk">%1$d %2$d uygulama optimize ediliyor.</string>
     <string name="android_upgrading_starting_apps">Uygulamalar başlatılıyor.</string>
     <string name="android_upgrading_complete">Açılış tamamlanıyor.</string>
     <string name="heavy_weight_notification">%1$s çalışıyor</string>
@@ -962,7 +962,7 @@ Bu işlemi kapatmak ister misiniz?"</string>
     <string name="ringtone_silent">Sessiz</string>
     <string name="ringtone_picker_title">Zil sesleri</string>
     <string name="ringtone_unknown">Bilinmeyen zil sesi</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Wi-Fi ağına giriş yapın</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Kablosuz bağlantısı kurulamadı</string>
     <string name="wifi_watchdog_network_disabled_detailed">" internet bağlantısı zayıf."</string>
@@ -1072,8 +1072,8 @@ Bu işlemi kapatmak ister misiniz?"</string>
     <string name="alternate_eri_file">/data/eri.xml</string>
     <string name="vpn_title">VPN etkinleştirildi.</string>
     <string name="vpn_title_long">VPN, %s tarafından etkinleştirildi</string>
-    <string name="vpn_text">Ağı yönetmek için hafifçe vurun.</string>
-    <string name="vpn_text_long">%s oturumuna bağlı. Ağı yönetmek için hafifçe vurun.</string>
+    <string name="vpn_text">Ağı yönetmek için hafifçe dokunun.</string>
+    <string name="vpn_text_long">%s oturumuna bağlı. Ağı yönetmek için hafifçe dokunun.</string>
     <string name="upload_file">Dosya seç</string>
     <string name="no_file_chosen">Seçili dosya yok</string>
     <string name="reset">Sıfırla</string>
@@ -1151,7 +1151,7 @@ Bu işlemi kapatmak ister misiniz?"</string>
     <string name="activitychooserview_choose_application">Uygulama seçin</string>
     <string name="shareactionprovider_share_with">Şununla paylaş:</string>
     <string name="shareactionprovider_share_with_application">%s ile paylaş</string>
-    <string name="content_description_sliding_handle">Kayar tutma yeri. Hafifçe vurun ve basılı tutun.</string>
+    <string name="content_description_sliding_handle">Kayar tutma yeri. Hafifçe dokunun ve basılı tutun.</string>
     <string name="description_direction_up">%s için yukarı.</string>
     <string name="description_direction_down">%s için aşağı.</string>
     <string name="description_direction_left">%s için sola.</string>
@@ -1160,7 +1160,7 @@ Bu işlemi kapatmak ister misiniz?"</string>
     <string name="description_target_camera">Kamera</string>
     <string name="description_target_silent">Sessiz</string>
     <string name="description_target_soundon">Ses açık</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">Kilidi açmak için kaydırın.</string>
     <string name="keyboard_headset_required_to_hear_password">Şifre tuşlarının sesli okunmasını dinlemek için mikrofonlu kulaklık takın.</string>
     <string name="keyboard_password_character_no_headset">Nokta.</string>
     <string name="action_bar_home_description">Ana sayfaya git</string>
@@ -1203,9 +1203,9 @@ Bu işlemi kapatmak ister misiniz?"</string>
     <string name="share_action_provider_share_with">Şununla paylaş...</string>
     <string name="status_bar_device_locked">Cihaz kilitli.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Gönderiyor...</string>
+    <string name="launchBrowserDefault">Tarayıcıyı Başlat?</string>
+    <string name="SetupCallDefault">Aramayı Kabul Et?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">"4G'ye eriş"</string>
     <string name="permlab_changeWimaxMulticastState">WiMAX Multicast alımına izin ver</string>
@@ -1267,11 +1267,12 @@ Bu işlemi kapatmak ister misiniz?"</string>
     <string name="install_notify_title">IT yüklemeyi engelledi:</string>
     <string name="uninstall_notify_title">IT kaldırmayı engelledi:</string>
     <string name="wifi_notify_title">IT, WiFi devredışı bıraktı</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Giriş Ayarları > Uygulamalar içinde varsayılanı temizle.</string>
+    <string name="sim_puk_contact_customer_care_information">"Lütfen PUK kodunu almak için Müşteri Hizmetleri'ni arayın"</string>
     <string name="permlab_accessCWFolder">Özellştirme sihirbazı özelliği klasörüne erişim</string>
     <string name="permdesc_accessCWFolder">Bir uygulamanın özelleştirme sihirbazı özelliği klasörüne erişmesine izin verir</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Kurtarma klasörüne eriş</string>
+    <string name="permdesc_accessRecoveryFolder">Bir uygulamanın kurtarma klasörüne erişmesini sağlar</string>
     <string name="permlab_setappname">Uygulama adını değiştirmek için dinamik</string>
     <string name="permdesc_setappname">Uygulama adını dinamik olarak değiştirmeye izin verir.</string>
     <string name="text_limitation">Paylaşmak için çok fazla kelime seçilemiyor.</string>
@@ -1311,5 +1312,5 @@ Bu işlemi kapatmak ister misiniz?"</string>
     <string name="font_color">Yazı tipi rengi</string>
     <string name="font_settings">Yazı tipi ayarları</string>
     <string name="font_alignment">Yazı tipi hizalama</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Yapılandır</string>
 </resources>

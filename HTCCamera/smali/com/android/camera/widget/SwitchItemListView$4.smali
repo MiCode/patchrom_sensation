@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 135
+    .line 136
     iput-object p1, p0, Lcom/android/camera/widget/SwitchItemListView$4;->this$0:Lcom/android/camera/widget/SwitchItemListView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "mv"
 
     .prologue
-    .line 139
+    .line 140
     iget-object v0, p0, Lcom/android/camera/widget/SwitchItemListView$4;->this$0:Lcom/android/camera/widget/SwitchItemListView;
 
     #getter for: Lcom/android/camera/widget/SwitchItemListView;->m_Context:Landroid/content/Context;
@@ -63,7 +63,7 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/camera/MessageHandler;->sendUniqueEmptyMessageDelayed(Landroid/os/Handler;IJ)V
 
-    .line 140
+    .line 141
     const/4 v0, 0x0
 
     return v0

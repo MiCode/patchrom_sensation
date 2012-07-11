@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1647
+    .line 1660
     iput-object p1, p0, Lcom/android/server/net/NetworkStatsService$8;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -44,22 +44,22 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1650
+    .line 1663
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 1661
+    .line 1674
     const/4 v1, 0x0
 
     :goto_0
     return v1
 
-    .line 1652
+    .line 1665
     :pswitch_0
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 1653
+    .line 1666
     .local v0, flags:I
     iget-object v2, p0, Lcom/android/server/net/NetworkStatsService$8;->this$0:Lcom/android/server/net/NetworkStatsService;
 
@@ -68,7 +68,7 @@
 
     goto :goto_0
 
-    .line 1657
+    .line 1670
     .end local v0           #flags:I
     :pswitch_1
     iget-object v2, p0, Lcom/android/server/net/NetworkStatsService$8;->this$0:Lcom/android/server/net/NetworkStatsService;
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 1650
+    .line 1663
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

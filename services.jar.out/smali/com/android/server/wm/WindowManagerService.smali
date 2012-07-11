@@ -5686,15 +5686,20 @@
 
     iput-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mFxSession:Landroid/view/SurfaceSession;
 
+    .line 7846
     const/16 v41, 0x1
 
+    .line 7852
     :cond_4
     invoke-static {}, Landroid/view/Surface;->openTransaction()V
 
+    .line 7854
     if-eqz v41, :cond_5
 
+    .line 7855
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/WindowManagerService;->createWatermark()V
 
+    .line 7857
     :cond_5
     move-object/from16 v0, p0
 
@@ -7804,38 +7809,45 @@
 
     invoke-static {v5, v8, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 8993
     .end local v49           #e:Ljava/lang/RuntimeException;
     :cond_49
     :goto_1e
     invoke-static {}, Landroid/view/Surface;->closeTransaction()V
 
+    .line 8998
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mWatermark:Lcom/android/server/wm/Watermark;
 
     if-eqz v5, :cond_4a
 
+    .line 8999
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mWatermark:Lcom/android/server/wm/Watermark;
 
     invoke-virtual {v5}, Lcom/android/server/wm/Watermark;->drawIfNeeded()V
 
+    .line 9005
     :cond_4a
     if-eqz v69, :cond_4c
 
+    .line 9006
     move-object/from16 v0, p0
 
     iget-boolean v5, v0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:Z
 
     if-eqz v5, :cond_4b
 
+    .line 9007
     const/4 v5, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v5, v0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:Z
 
+    .line 9008
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
@@ -23050,6 +23062,19 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v3
+.end method
+
+.method public forcePasswordTimeout()V
+    .locals 1
+
+    .prologue
+    .line 10581
+    iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mPolicy:Landroid/view/WindowManagerPolicy;
+
+    invoke-interface {v0}, Landroid/view/WindowManagerPolicy;->forcePasswordTimeout()V
+
+    .line 10582
+    return-void
 .end method
 
 .method public freezeRotation(I)V
@@ -40488,4 +40513,3 @@
 
     return-object v0
 .end method
-

@@ -80,11 +80,11 @@
         <item quantity="one">1 match</item>
     </plurals>
     <plurals name="wimax_available">
-        <item quantity="other">WiMAX 네트워크 사용 가능</item>
-        <item quantity="one">WiMAX 네트워크 사용 가능</item>
+        <item quantity="other">WiMAX 네트워크 사용가능</item>
+        <item quantity="one">WiMAX 네트워크 사용가능</item>
     </plurals>
     <plurals name="wimax_available_detailed">
-        <item quantity="other">보안 설정 안된 WiMAX 네트워크 사용 가능</item>
-        <item quantity="one">보안 설정 안된 WiMAX 네트워크 사용 가능</item>
+        <item quantity="other">WiMAX 네트워크가 사용가능하도록 열기</item>
+        <item quantity="one">WiMAX 네트워크가 사용가능하도록 열기</item>
     </plurals>
 </resources>

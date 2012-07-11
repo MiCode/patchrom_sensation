@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 4321
+    .line 4345
     iput-object p1, p0, Lcom/android/camera/CameraThread$HtcCallback;->this$0:Lcom/android/camera/CameraThread;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 4321
+    .line 4345
     invoke-direct {p0, p1}, Lcom/android/camera/CameraThread$HtcCallback;-><init>(Lcom/android/camera/CameraThread;)V
 
     return-void
@@ -57,7 +57,7 @@
     .parameter "camera"
 
     .prologue
-    .line 4325
+    .line 4349
     const-string v0, "CameraThread"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -80,21 +80,21 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4329
+    .line 4353
     packed-switch p1, :pswitch_data_0
 
-    .line 4350
+    .line 4374
     const-string v0, "CameraThread"
 
     const-string v1, "Unknown HtcCallbackType !!!"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4353
+    .line 4377
     :goto_0
     return-void
 
-    .line 4331
+    .line 4355
     :pswitch_0
     iget-object v0, p0, Lcom/android/camera/CameraThread$HtcCallback;->this$0:Lcom/android/camera/CameraThread;
 
@@ -115,7 +115,7 @@
 
     goto :goto_0
 
-    .line 4334
+    .line 4358
     :pswitch_1
     iget-object v0, p0, Lcom/android/camera/CameraThread$HtcCallback;->this$0:Lcom/android/camera/CameraThread;
 
@@ -134,7 +134,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 4335
+    .line 4359
     iget-object v0, p0, Lcom/android/camera/CameraThread$HtcCallback;->this$0:Lcom/android/camera/CameraThread;
 
     iget-object v0, v0, Lcom/android/camera/CameraThread;->mUIHandler:Landroid/os/Handler;
@@ -145,7 +145,7 @@
 
     goto :goto_0
 
-    .line 4338
+    .line 4362
     :pswitch_2
     iget-object v0, p0, Lcom/android/camera/CameraThread$HtcCallback;->this$0:Lcom/android/camera/CameraThread;
 
@@ -166,7 +166,7 @@
 
     goto :goto_0
 
-    .line 4341
+    .line 4365
     :pswitch_3
     iget-object v0, p0, Lcom/android/camera/CameraThread$HtcCallback;->this$0:Lcom/android/camera/CameraThread;
 
@@ -187,7 +187,7 @@
 
     goto :goto_0
 
-    .line 4344
+    .line 4368
     :pswitch_4
     iget-object v0, p0, Lcom/android/camera/CameraThread$HtcCallback;->this$0:Lcom/android/camera/CameraThread;
 
@@ -208,7 +208,7 @@
 
     goto :goto_0
 
-    .line 4347
+    .line 4371
     :pswitch_5
     iget-object v0, p0, Lcom/android/camera/CameraThread$HtcCallback;->this$0:Lcom/android/camera/CameraThread;
 
@@ -229,7 +229,7 @@
 
     goto :goto_0
 
-    .line 4329
+    .line 4353
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

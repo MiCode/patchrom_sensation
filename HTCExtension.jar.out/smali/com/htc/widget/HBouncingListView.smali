@@ -506,32 +506,32 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 830
+    .line 846
     invoke-direct {p0, v0}, Lcom/htc/widget/HBouncingListView;->enableScrollOverTopBoundary(Z)V
 
-    .line 831
+    .line 847
     invoke-direct {p0, v0}, Lcom/htc/widget/HBouncingListView;->enableScrollOverBottomBoundary(Z)V
 
-    .line 833
+    .line 849
     invoke-direct {p0, v0}, Lcom/htc/widget/HBouncingListView;->enableScrollOverLeftBoundary(Z)V
 
-    .line 834
+    .line 850
     invoke-direct {p0, v0}, Lcom/htc/widget/HBouncingListView;->enableScrollOverRightBoundary(Z)V
 
-    .line 836
+    .line 852
     return-void
 .end method
 
 .method private doTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 11
+    .locals 13
     .parameter "ev"
 
     .prologue
-    const v10, 0x7fffffff
+    const v12, 0x7fffffff
 
-    const/4 v9, 0x0
+    const/4 v11, 0x1
 
-    const/4 v8, 0x1
+    const/4 v10, 0x0
 
     .line 672
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
@@ -540,519 +540,612 @@
 
     .line 673
     .local v0, action:I
-    if-nez v0, :cond_3
+    const/4 v7, 0x2
 
-    .line 675
-    invoke-direct {p0}, Lcom/htc/widget/HBouncingListView;->disableScrollOverBoundary()V
+    if-ne v0, v7, :cond_8
 
-    .line 676
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
-
-    move-result v5
-
-    if-lez v5, :cond_1
-
-    .line 679
+    .line 674
     invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->isHorizontalStyle()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_8
-
-    .line 680
-    iget-object v5, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
-
-    iget v5, v5, Landroid/graphics/Rect;->left:I
-
-    invoke-virtual {p0, v9}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/view/View;->getLeft()I
-
-    move-result v6
-
-    sub-int v3, v5, v6
-
-    .line 681
-    .local v3, spaceAbove:I
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
-
-    move-result v5
-
-    add-int/lit8 v5, v5, -0x1
-
-    invoke-virtual {p0, v5}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/view/View;->getRight()I
-
-    move-result v5
-
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getWidth()I
-
-    move-result v6
-
-    iget-object v7, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
-
-    iget v7, v7, Landroid/graphics/Rect;->right:I
-
-    sub-int/2addr v6, v7
-
-    sub-int v4, v5, v6
-
-    .line 684
-    .local v4, spaceBelow:I
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getFirstVisiblePosition()I
-
-    move-result v5
-
-    if-nez v5, :cond_0
-
-    if-gtz v3, :cond_0
-
-    .line 685
-    invoke-direct {p0, v8}, Lcom/htc/widget/HBouncingListView;->enableScrollOverLeftBoundary(Z)V
-
-    .line 687
-    :cond_0
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getLastVisiblePosition()I
-
-    move-result v5
-
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getCount()I
-
-    move-result v6
-
-    add-int/lit8 v6, v6, -0x1
-
-    if-ne v5, v6, :cond_1
-
-    if-gtz v4, :cond_1
-
-    .line 688
-    invoke-direct {p0, v8}, Lcom/htc/widget/HBouncingListView;->enableScrollOverRightBoundary(Z)V
-
-    .line 707
-    .end local v3           #spaceAbove:I
-    .end local v4           #spaceBelow:I
-    :cond_1
-    :goto_0
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->isHorizontalStyle()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_d
-
-    .line 708
-    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
-
-    if-eqz v5, :cond_a
-
-    .line 709
-    iput v10, p0, Lcom/htc/widget/HBouncingListView;->mChildrenTotalWidth:I
-
-    .line 724
-    :goto_1
-    sget-boolean v5, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
-
-    if-eqz v5, :cond_2
-
-    .line 725
-    const-string v5, "HtcBouncingList"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "mChildrenTotalHeight = "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    iget v7, p0, Lcom/htc/widget/HBouncingListView;->mChildrenTotalHeight:I
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, ", childrenCount = "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
 
     move-result v7
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    if-eqz v7, :cond_6
 
-    move-result-object v6
+    .line 675
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result v7
 
-    move-result-object v6
+    float-to-int v5, v7
 
-    invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    .line 676
+    .local v5, x:I
+    iget v7, p0, Lcom/htc/widget/HtcAbsListView2;->mMotionX:I
 
-    .line 750
+    if-le v7, v5, :cond_5
+
+    iget-boolean v7, p0, Lcom/htc/widget/HBouncingListView;->mEnableScrollOverLeftBoundary:Z
+
+    if-eqz v7, :cond_5
+
+    .line 677
+    invoke-direct {p0, v10}, Lcom/htc/widget/HBouncingListView;->enableScrollOverLeftBoundary(Z)V
+
+    .line 768
+    .end local v5           #x:I
+    :cond_0
+    :goto_0
+    if-ne v0, v11, :cond_1
+
+    .line 769
+    invoke-direct {p0}, Lcom/htc/widget/HBouncingListView;->disableScrollOverBoundary()V
+
+    .line 771
+    :cond_1
+    const/4 v7, 0x3
+
+    if-ne v0, v7, :cond_4
+
+    .line 772
+    invoke-direct {p0}, Lcom/htc/widget/HBouncingListView;->disableScrollOverBoundary()V
+
+    .line 773
+    sget-boolean v7, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
+
+    if-eqz v7, :cond_2
+
+    const-string v7, "HtcBouncingList"
+
+    const-string v8, "dispatchTouchEvent(ACTION_CANCEL)"
+
+    invoke-static {v7, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 776
     :cond_2
-    :goto_2
-    sget-boolean v5, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
-
-    if-eqz v5, :cond_3
-
-    const-string v5, "HtcBouncingList"
-
-    const-string v6, "dispatchTouchEvent(ACTION_DOWN)"
-
-    invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 752
-    :cond_3
-    if-ne v0, v8, :cond_4
-
-    .line 753
-    invoke-direct {p0}, Lcom/htc/widget/HBouncingListView;->disableScrollOverBoundary()V
-
-    .line 755
-    :cond_4
-    const/4 v5, 0x3
-
-    if-ne v0, v5, :cond_7
-
-    .line 756
-    invoke-direct {p0}, Lcom/htc/widget/HBouncingListView;->disableScrollOverBoundary()V
-
-    .line 757
-    sget-boolean v5, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
-
-    if-eqz v5, :cond_5
-
-    const-string v5, "HtcBouncingList"
-
-    const-string v6, "dispatchTouchEvent(ACTION_CANCEL)"
-
-    invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 760
-    :cond_5
     invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->isHorizontalStyle()Z
 
-    move-result v5
+    move-result v7
 
-    if-eqz v5, :cond_11
+    if-eqz v7, :cond_15
 
-    .line 761
+    .line 777
     invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->isAutoRelayoutOnActionCancel()Z
 
-    move-result v5
+    move-result v7
 
-    if-eqz v5, :cond_7
+    if-eqz v7, :cond_4
 
     invoke-direct {p0}, Lcom/htc/widget/HBouncingListView;->isOverLeftBoundary()Z
 
-    move-result v5
+    move-result v7
 
-    if-nez v5, :cond_6
+    if-nez v7, :cond_3
 
     invoke-direct {p0}, Lcom/htc/widget/HBouncingListView;->isOverRightBoundary()Z
 
-    move-result v5
+    move-result v7
 
-    if-eqz v5, :cond_7
+    if-eqz v7, :cond_4
 
-    .line 762
-    :cond_6
+    .line 778
+    :cond_3
     invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->requestLayout()V
 
-    .line 772
-    :cond_7
-    :goto_3
+    .line 788
+    :cond_4
+    :goto_1
     invoke-super {p0, p1}, Lcom/htc/widget/HtcListViewCore2;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    move-result v5
+    move-result v7
 
-    return v5
+    return v7
+
+    .line 678
+    .restart local v5       #x:I
+    :cond_5
+    iget v7, p0, Lcom/htc/widget/HtcAbsListView2;->mMotionX:I
+
+    if-ge v7, v5, :cond_0
+
+    iget-boolean v7, p0, Lcom/htc/widget/HBouncingListView;->mEnableScrollOverRightBoundary:Z
+
+    if-eqz v7, :cond_0
+
+    .line 679
+    invoke-direct {p0, v10}, Lcom/htc/widget/HBouncingListView;->enableScrollOverRightBoundary(Z)V
+
+    goto :goto_0
+
+    .line 682
+    .end local v5           #x:I
+    :cond_6
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v7
+
+    float-to-int v6, v7
+
+    .line 683
+    .local v6, y:I
+    iget v7, p0, Lcom/htc/widget/HtcAbsListView2;->mMotionY:I
+
+    if-le v7, v6, :cond_7
+
+    iget-boolean v7, p0, Lcom/htc/widget/HBouncingListView;->mEnableScrollOverTopBoundary:Z
+
+    if-eqz v7, :cond_7
+
+    .line 684
+    invoke-direct {p0, v10}, Lcom/htc/widget/HBouncingListView;->enableScrollOverTopBoundary(Z)V
+
+    goto :goto_0
+
+    .line 685
+    :cond_7
+    iget v7, p0, Lcom/htc/widget/HtcAbsListView2;->mMotionY:I
+
+    if-ge v7, v6, :cond_0
+
+    iget-boolean v7, p0, Lcom/htc/widget/HBouncingListView;->mEnableScrollOverBottomBoundary:Z
+
+    if-eqz v7, :cond_0
+
+    .line 686
+    invoke-direct {p0, v10}, Lcom/htc/widget/HBouncingListView;->enableScrollOverBottomBoundary(Z)V
+
+    goto :goto_0
+
+    .line 689
+    .end local v6           #y:I
+    :cond_8
+    if-nez v0, :cond_0
 
     .line 691
-    :cond_8
-    iget-object v5, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
-
-    iget v5, v5, Landroid/graphics/Rect;->top:I
-
-    invoke-virtual {p0, v9}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/view/View;->getTop()I
-
-    move-result v6
-
-    sub-int v3, v5, v6
+    invoke-direct {p0}, Lcom/htc/widget/HBouncingListView;->disableScrollOverBoundary()V
 
     .line 692
-    .restart local v3       #spaceAbove:I
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
-
-    move-result v5
-
-    add-int/lit8 v5, v5, -0x1
-
-    invoke-virtual {p0, v5}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/view/View;->getBottom()I
-
-    move-result v5
-
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getHeight()I
-
-    move-result v6
-
-    iget-object v7, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
-
-    iget v7, v7, Landroid/graphics/Rect;->bottom:I
-
-    sub-int/2addr v6, v7
-
-    sub-int v4, v5, v6
-
-    .line 695
-    .restart local v4       #spaceBelow:I
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getFirstVisiblePosition()I
-
-    move-result v5
-
-    if-nez v5, :cond_9
-
-    if-gtz v3, :cond_9
-
-    .line 696
-    invoke-direct {p0, v8}, Lcom/htc/widget/HBouncingListView;->enableScrollOverTopBoundary(Z)V
-
-    .line 698
-    :cond_9
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getLastVisiblePosition()I
-
-    move-result v5
-
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getCount()I
-
-    move-result v6
-
-    add-int/lit8 v6, v6, -0x1
-
-    if-ne v5, v6, :cond_1
-
-    if-gtz v4, :cond_1
-
-    .line 699
-    invoke-direct {p0, v8}, Lcom/htc/widget/HBouncingListView;->enableScrollOverBottomBoundary(Z)V
-
-    goto/16 :goto_0
-
-    .line 711
-    .end local v3           #spaceAbove:I
-    .end local v4           #spaceBelow:I
-    :cond_a
-    const/4 v2, 0x0
-
-    .line 712
-    .local v2, childrenWidth:I
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
-
-    move-result v5
-
-    if-lez v5, :cond_b
-
-    .line 713
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
-
-    move-result v5
-
-    add-int/lit8 v5, v5, -0x1
-
-    invoke-virtual {p0, v5}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/view/View;->getRight()I
-
-    move-result v5
-
-    invoke-virtual {p0, v9}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/view/View;->getLeft()I
-
-    move-result v6
-
-    sub-int v2, v5, v6
-
-    .line 716
-    :cond_b
-    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getWidth()I
-
-    move-result v5
-
-    if-ge v2, v5, :cond_c
-
-    .line 718
-    iput v2, p0, Lcom/htc/widget/HBouncingListView;->mChildrenTotalWidth:I
-
-    goto/16 :goto_1
-
-    .line 720
-    :cond_c
-    iput v10, p0, Lcom/htc/widget/HBouncingListView;->mChildrenTotalWidth:I
-
-    goto/16 :goto_1
-
-    .line 728
-    .end local v2           #childrenWidth:I
-    :cond_d
-    iget v5, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
-
-    if-eqz v5, :cond_e
-
-    .line 729
-    iput v10, p0, Lcom/htc/widget/HBouncingListView;->mChildrenTotalHeight:I
-
-    .line 744
-    :goto_4
-    sget-boolean v5, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
-
-    if-eqz v5, :cond_2
-
-    .line 745
-    const-string v5, "HtcBouncingList"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "mChildrenTotalWidth = "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    iget v7, p0, Lcom/htc/widget/HBouncingListView;->mChildrenTotalWidth:I
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, ", childrenCount = "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
     invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
 
     move-result v7
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    if-lez v7, :cond_a
 
-    move-result-object v6
+    .line 695
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->isHorizontalStyle()Z
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result v7
 
-    move-result-object v6
+    if-eqz v7, :cond_c
 
-    invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    .line 696
+    iget-object v7, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
+
+    iget v7, v7, Landroid/graphics/Rect;->left:I
+
+    invoke-virtual {p0, v10}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/view/View;->getLeft()I
+
+    move-result v8
+
+    sub-int v3, v7, v8
+
+    .line 697
+    .local v3, spaceAbove:I
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
+
+    move-result v7
+
+    add-int/lit8 v7, v7, -0x1
+
+    invoke-virtual {p0, v7}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Landroid/view/View;->getRight()I
+
+    move-result v7
+
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getWidth()I
+
+    move-result v8
+
+    iget-object v9, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
+
+    iget v9, v9, Landroid/graphics/Rect;->right:I
+
+    sub-int/2addr v8, v9
+
+    sub-int v4, v7, v8
+
+    .line 700
+    .local v4, spaceBelow:I
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getFirstVisiblePosition()I
+
+    move-result v7
+
+    if-nez v7, :cond_9
+
+    if-gtz v3, :cond_9
+
+    .line 701
+    invoke-direct {p0, v11}, Lcom/htc/widget/HBouncingListView;->enableScrollOverLeftBoundary(Z)V
+
+    .line 703
+    :cond_9
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getLastVisiblePosition()I
+
+    move-result v7
+
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getCount()I
+
+    move-result v8
+
+    add-int/lit8 v8, v8, -0x1
+
+    if-ne v7, v8, :cond_a
+
+    if-gtz v4, :cond_a
+
+    .line 704
+    invoke-direct {p0, v11}, Lcom/htc/widget/HBouncingListView;->enableScrollOverRightBoundary(Z)V
+
+    .line 723
+    .end local v3           #spaceAbove:I
+    .end local v4           #spaceBelow:I
+    :cond_a
+    :goto_2
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->isHorizontalStyle()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_11
+
+    .line 724
+    iget v7, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
+
+    if-eqz v7, :cond_e
+
+    .line 725
+    iput v12, p0, Lcom/htc/widget/HBouncingListView;->mChildrenTotalWidth:I
+
+    .line 740
+    :goto_3
+    sget-boolean v7, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
+
+    if-eqz v7, :cond_b
+
+    .line 741
+    const-string v7, "HtcBouncingList"
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "mChildrenTotalHeight = "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    iget v9, p0, Lcom/htc/widget/HBouncingListView;->mChildrenTotalHeight:I
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v9, ", childrenCount = "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
+
+    move-result v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 766
+    :cond_b
+    :goto_4
+    sget-boolean v7, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
+
+    if-eqz v7, :cond_0
+
+    const-string v7, "HtcBouncingList"
+
+    const-string v8, "dispatchTouchEvent(ACTION_DOWN)"
+
+    invoke-static {v7, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_0
+
+    .line 707
+    :cond_c
+    iget-object v7, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
+
+    iget v7, v7, Landroid/graphics/Rect;->top:I
+
+    invoke-virtual {p0, v10}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/view/View;->getTop()I
+
+    move-result v8
+
+    sub-int v3, v7, v8
+
+    .line 708
+    .restart local v3       #spaceAbove:I
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
+
+    move-result v7
+
+    add-int/lit8 v7, v7, -0x1
+
+    invoke-virtual {p0, v7}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Landroid/view/View;->getBottom()I
+
+    move-result v7
+
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getHeight()I
+
+    move-result v8
+
+    iget-object v9, p0, Lcom/htc/widget/HtcAbsListView2;->mListPadding:Landroid/graphics/Rect;
+
+    iget v9, v9, Landroid/graphics/Rect;->bottom:I
+
+    sub-int/2addr v8, v9
+
+    sub-int v4, v7, v8
+
+    .line 711
+    .restart local v4       #spaceBelow:I
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getFirstVisiblePosition()I
+
+    move-result v7
+
+    if-nez v7, :cond_d
+
+    if-gtz v3, :cond_d
+
+    .line 712
+    invoke-direct {p0, v11}, Lcom/htc/widget/HBouncingListView;->enableScrollOverTopBoundary(Z)V
+
+    .line 714
+    :cond_d
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getLastVisiblePosition()I
+
+    move-result v7
+
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getCount()I
+
+    move-result v8
+
+    add-int/lit8 v8, v8, -0x1
+
+    if-ne v7, v8, :cond_a
+
+    if-gtz v4, :cond_a
+
+    .line 715
+    invoke-direct {p0, v11}, Lcom/htc/widget/HBouncingListView;->enableScrollOverBottomBoundary(Z)V
 
     goto/16 :goto_2
 
-    .line 731
+    .line 727
+    .end local v3           #spaceAbove:I
+    .end local v4           #spaceBelow:I
     :cond_e
-    const/4 v1, 0x0
+    const/4 v2, 0x0
+
+    .line 728
+    .local v2, childrenWidth:I
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
+
+    move-result v7
+
+    if-lez v7, :cond_f
+
+    .line 729
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
+
+    move-result v7
+
+    add-int/lit8 v7, v7, -0x1
+
+    invoke-virtual {p0, v7}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Landroid/view/View;->getRight()I
+
+    move-result v7
+
+    invoke-virtual {p0, v10}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/view/View;->getLeft()I
+
+    move-result v8
+
+    sub-int v2, v7, v8
 
     .line 732
+    :cond_f
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getWidth()I
+
+    move-result v7
+
+    if-ge v2, v7, :cond_10
+
+    .line 734
+    iput v2, p0, Lcom/htc/widget/HBouncingListView;->mChildrenTotalWidth:I
+
+    goto/16 :goto_3
+
+    .line 736
+    :cond_10
+    iput v12, p0, Lcom/htc/widget/HBouncingListView;->mChildrenTotalWidth:I
+
+    goto/16 :goto_3
+
+    .line 744
+    .end local v2           #childrenWidth:I
+    :cond_11
+    iget v7, p0, Lcom/htc/widget/HtcAdapterView;->mFirstPosition:I
+
+    if-eqz v7, :cond_12
+
+    .line 745
+    iput v12, p0, Lcom/htc/widget/HBouncingListView;->mChildrenTotalHeight:I
+
+    .line 760
+    :goto_5
+    sget-boolean v7, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
+
+    if-eqz v7, :cond_b
+
+    .line 761
+    const-string v7, "HtcBouncingList"
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "mChildrenTotalWidth = "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    iget v9, p0, Lcom/htc/widget/HBouncingListView;->mChildrenTotalWidth:I
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v9, ", childrenCount = "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
+
+    move-result v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_4
+
+    .line 747
+    :cond_12
+    const/4 v1, 0x0
+
+    .line 748
     .local v1, childrenHeight:I
     invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
 
-    move-result v5
+    move-result v7
 
-    if-lez v5, :cond_f
+    if-lez v7, :cond_13
 
-    .line 733
+    .line 749
     invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getChildCount()I
 
-    move-result v5
+    move-result v7
 
-    add-int/lit8 v5, v5, -0x1
+    add-int/lit8 v7, v7, -0x1
 
-    invoke-virtual {p0, v5}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-virtual {v5}, Landroid/view/View;->getBottom()I
+    invoke-virtual {v7}, Landroid/view/View;->getBottom()I
 
-    move-result v5
+    move-result v7
 
-    invoke-virtual {p0, v9}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v10}, Lcom/htc/widget/HBouncingListView;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v6}, Landroid/view/View;->getTop()I
+    invoke-virtual {v8}, Landroid/view/View;->getTop()I
 
-    move-result v6
+    move-result v8
 
-    sub-int v1, v5, v6
+    sub-int v1, v7, v8
 
-    .line 736
-    :cond_f
+    .line 752
+    :cond_13
     invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->getHeight()I
 
-    move-result v5
+    move-result v7
 
-    if-ge v1, v5, :cond_10
+    if-ge v1, v7, :cond_14
 
-    .line 738
+    .line 754
     iput v1, p0, Lcom/htc/widget/HBouncingListView;->mChildrenTotalHeight:I
 
-    goto :goto_4
+    goto :goto_5
 
-    .line 740
-    :cond_10
-    iput v10, p0, Lcom/htc/widget/HBouncingListView;->mChildrenTotalHeight:I
+    .line 756
+    :cond_14
+    iput v12, p0, Lcom/htc/widget/HBouncingListView;->mChildrenTotalHeight:I
 
-    goto :goto_4
+    goto :goto_5
 
-    .line 765
+    .line 781
     .end local v1           #childrenHeight:I
-    :cond_11
+    :cond_15
     invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->isAutoRelayoutOnActionCancel()Z
 
-    move-result v5
+    move-result v7
 
-    if-eqz v5, :cond_7
+    if-eqz v7, :cond_4
 
     invoke-direct {p0}, Lcom/htc/widget/HBouncingListView;->isOverTopBoundary()Z
 
-    move-result v5
+    move-result v7
 
-    if-nez v5, :cond_12
+    if-nez v7, :cond_16
 
     invoke-direct {p0}, Lcom/htc/widget/HBouncingListView;->isOverBottomBoundary()Z
 
-    move-result v5
+    move-result v7
 
-    if-eqz v5, :cond_7
+    if-eqz v7, :cond_4
 
-    .line 766
-    :cond_12
+    .line 782
+    :cond_16
     invoke-virtual {p0}, Lcom/htc/widget/HBouncingListView;->requestLayout()V
 
-    goto/16 :goto_3
+    goto/16 :goto_1
 .end method
 
 .method private doTrackMotionScrollWithConstrain(II)V
@@ -1169,6 +1262,52 @@
     .parameter "enable"
 
     .prologue
+    .line 841
+    sget-boolean v0, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "enableScrollOverBoundary"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "enableScrollOverBoundary("
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ")"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 842
+    :cond_0
+    iput-boolean p1, p0, Lcom/htc/widget/HBouncingListView;->mEnableScrollOverBottomBoundary:Z
+
+    .line 843
+    return-void
+.end method
+
+.method private enableScrollOverLeftBoundary(Z)V
+    .locals 3
+    .parameter "enable"
+
+    .prologue
     .line 825
     sget-boolean v0, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
 
@@ -1204,55 +1343,9 @@
 
     .line 826
     :cond_0
-    iput-boolean p1, p0, Lcom/htc/widget/HBouncingListView;->mEnableScrollOverBottomBoundary:Z
-
-    .line 827
-    return-void
-.end method
-
-.method private enableScrollOverLeftBoundary(Z)V
-    .locals 3
-    .parameter "enable"
-
-    .prologue
-    .line 809
-    sget-boolean v0, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "enableScrollOverBoundary"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "enableScrollOverBoundary("
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ")"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 810
-    :cond_0
     iput-boolean p1, p0, Lcom/htc/widget/HBouncingListView;->mEnableScrollOverLeftBoundary:Z
 
-    .line 811
+    .line 827
     return-void
 .end method
 
@@ -1261,7 +1354,7 @@
     .parameter "enable"
 
     .prologue
-    .line 814
+    .line 830
     sget-boolean v0, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
 
     if-eqz v0, :cond_0
@@ -1294,11 +1387,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 815
+    .line 831
     :cond_0
     iput-boolean p1, p0, Lcom/htc/widget/HBouncingListView;->mEnableScrollOverRightBoundary:Z
 
-    .line 816
+    .line 832
     return-void
 .end method
 
@@ -1307,7 +1400,7 @@
     .parameter "enable"
 
     .prologue
-    .line 820
+    .line 836
     sget-boolean v0, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
 
     if-eqz v0, :cond_0
@@ -1340,11 +1433,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 821
+    .line 837
     :cond_0
     iput-boolean p1, p0, Lcom/htc/widget/HBouncingListView;->mEnableScrollOverTopBoundary:Z
 
-    .line 822
+    .line 838
     return-void
 .end method
 
@@ -2024,7 +2117,7 @@
     .locals 1
 
     .prologue
-    .line 777
+    .line 793
     invoke-super {p0}, Lcom/htc/widget/HtcListViewCore2;->enableStopScrollNow()Z
 
     move-result v0
@@ -2476,7 +2569,7 @@
     .locals 2
 
     .prologue
-    .line 782
+    .line 798
     sget-boolean v0, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
 
     if-eqz v0, :cond_0
@@ -2487,16 +2580,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 783
+    .line 799
     :cond_0
     iget-boolean v0, p0, Lcom/htc/widget/HBouncingListView;->mBouncingEnabled:Z
 
     if-eqz v0, :cond_2
 
-    .line 784
+    .line 800
     invoke-super {p0}, Lcom/htc/widget/HtcListViewCore2;->onScrollToBoundary()V
 
-    .line 785
+    .line 801
     iget-object v0, p0, Lcom/htc/widget/HtcAbsListView2;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
 
     if-eqz v0, :cond_1
@@ -2507,12 +2600,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 786
+    .line 802
     iget-object v0, p0, Lcom/htc/widget/HtcAbsListView2;->mFlingRunnable:Lcom/htc/widget/HtcAbsListView2$FlingRunnable;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcAbsListView2$FlingRunnable;->endFling()V
 
-    .line 787
+    .line 803
     sget-boolean v0, Lcom/htc/widget/HBouncingListView;->localLOGV:Z
 
     if-eqz v0, :cond_1
@@ -2523,12 +2616,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 793
+    .line 809
     :cond_1
     :goto_0
     return-void
 
-    .line 790
+    .line 806
     :cond_2
     invoke-super {p0}, Lcom/htc/widget/HtcListViewCore2;->onScrollToBoundary()V
 
@@ -2872,10 +2965,10 @@
     .locals 1
 
     .prologue
-    .line 840
+    .line 856
     invoke-direct {p0}, Lcom/htc/widget/HBouncingListView;->disableScrollOverBoundary()V
 
-    .line 841
+    .line 857
     invoke-super {p0}, Lcom/htc/widget/HtcListViewCore2;->resurrectSelection()Z
 
     move-result v0
@@ -2913,13 +3006,13 @@
     .parameter "x"
 
     .prologue
-    .line 804
+    .line 820
     invoke-direct {p0}, Lcom/htc/widget/HBouncingListView;->disableScrollOverBoundary()V
 
-    .line 805
+    .line 821
     invoke-super {p0, p1, p2}, Lcom/htc/widget/HtcListViewCore2;->setSelectionFromLeft(II)V
 
-    .line 806
+    .line 822
     return-void
 .end method
 
@@ -2929,13 +3022,13 @@
     .parameter "y"
 
     .prologue
-    .line 797
+    .line 813
     invoke-direct {p0}, Lcom/htc/widget/HBouncingListView;->disableScrollOverBoundary()V
 
-    .line 798
+    .line 814
     invoke-super {p0, p1, p2}, Lcom/htc/widget/HtcListViewCore2;->setSelectionFromTop(II)V
 
-    .line 799
+    .line 815
     return-void
 .end method
 

@@ -1674,6 +1674,9 @@
 .field public static final HTC_Bravo_CU_CHS_flag:Z = false
 
 #the value of this static final field might be set in the static constructor
+.field public static final HTC_DISCLOSE_FLAG:Z = false
+
+#the value of this static final field might be set in the static constructor
 .field public static final HTC_DRM_V2_FLAG:Z = false
 
 #the value of this static final field might be set in the static constructor
@@ -3871,6 +3874,13 @@
 
     sput-boolean v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->HTC_NEL_LAB_HSDPA:Z
 
+    .line 1909
+    invoke-static {}, Lcom/htc/htcjavaflag/HtcBuildFlag;->getHTC_DISCLOSE_FLAG()Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->HTC_DISCLOSE_FLAG:Z
+
     return-void
 .end method
 
@@ -3910,6 +3920,16 @@
     .prologue
     .line 1782
     const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public static final getHTC_DISCLOSE_FLAG()Z
+    .locals 1
+
+    .prologue
+    .line 1910
+    const/4 v0, 0x1
 
     return v0
 .end method

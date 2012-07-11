@@ -190,7 +190,7 @@
 
     .line 66
     :sswitch_0
-    const-string v2, "handleMessage EVENT_POLL_STATE_GPRS"
+    const-string/jumbo v2, "handleMessage EVENT_POLL_STATE_GPRS"
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->log(Ljava/lang/String;)V
 
@@ -210,7 +210,7 @@
     .line 71
     .end local v0           #ar:Landroid/os/AsyncResult;
     :sswitch_1
-    const-string v2, "handleMessage EVENT_SIM_READY"
+    const-string/jumbo v2, "handleMessage EVENT_SIM_READY"
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->log(Ljava/lang/String;)V
 

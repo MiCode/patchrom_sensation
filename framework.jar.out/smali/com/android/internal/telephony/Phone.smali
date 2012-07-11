@@ -110,6 +110,8 @@
 
 .field public static final CDMA_SUBSCRIPTION_RUIM_SIM:I = 0x0
 
+.field public static final DATA_APN_CARRIER_KEY:Ljava/lang/String; = "apnCarrier"
+
 .field public static final DATA_APN_KEY:Ljava/lang/String; = "apn"
 
 .field public static final DATA_APN_TYPE_KEY:Ljava/lang/String; = "apnType"
@@ -379,6 +381,9 @@
 .end method
 
 .method public abstract getActiveApn(Ljava/lang/String;Lcom/android/internal/telephony/Phone$IPVersion;)Ljava/lang/String;
+.end method
+
+.method public abstract getActiveApnCarrier(Ljava/lang/String;)Ljava/lang/String;
 .end method
 
 .method public abstract getActiveApnHost(Ljava/lang/String;)Ljava/lang/String;

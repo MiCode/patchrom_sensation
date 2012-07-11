@@ -33,27 +33,27 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 420
+    .line 448
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 409
+    .line 437
     iput v1, p0, Lcom/android/camera/CameraController$SettingInfo;->min_value:I
 
-    .line 411
+    .line 439
     iput v1, p0, Lcom/android/camera/CameraController$SettingInfo;->max_value:I
 
-    .line 413
+    .line 441
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/camera/CameraController$SettingInfo;->step:F
 
-    .line 415
+    .line 443
     iput v1, p0, Lcom/android/camera/CameraController$SettingInfo;->default_value:I
 
-    .line 417
+    .line 445
     iput v1, p0, Lcom/android/camera/CameraController$SettingInfo;->current_value:I
 
-    .line 422
+    .line 450
     return-void
 .end method
 
@@ -63,7 +63,7 @@
     .locals 1
 
     .prologue
-    .line 441
+    .line 469
     iget v0, p0, Lcom/android/camera/CameraController$SettingInfo;->current_value:I
 
     return v0
@@ -73,7 +73,7 @@
     .locals 1
 
     .prologue
-    .line 437
+    .line 465
     iget v0, p0, Lcom/android/camera/CameraController$SettingInfo;->default_value:I
 
     return v0
@@ -83,7 +83,7 @@
     .locals 1
 
     .prologue
-    .line 429
+    .line 457
     iget v0, p0, Lcom/android/camera/CameraController$SettingInfo;->max_value:I
 
     return v0
@@ -93,7 +93,7 @@
     .locals 1
 
     .prologue
-    .line 425
+    .line 453
     iget v0, p0, Lcom/android/camera/CameraController$SettingInfo;->min_value:I
 
     return v0
@@ -103,7 +103,7 @@
     .locals 1
 
     .prologue
-    .line 433
+    .line 461
     iget v0, p0, Lcom/android/camera/CameraController$SettingInfo;->step:F
 
     return v0
@@ -114,10 +114,10 @@
     .parameter "current_value"
 
     .prologue
-    .line 461
+    .line 489
     iput p1, p0, Lcom/android/camera/CameraController$SettingInfo;->current_value:I
 
-    .line 462
+    .line 490
     return-void
 .end method
 
@@ -126,10 +126,10 @@
     .parameter "default_value"
 
     .prologue
-    .line 457
+    .line 485
     iput p1, p0, Lcom/android/camera/CameraController$SettingInfo;->default_value:I
 
-    .line 458
+    .line 486
     return-void
 .end method
 
@@ -138,10 +138,10 @@
     .parameter "max_value"
 
     .prologue
-    .line 449
+    .line 477
     iput p1, p0, Lcom/android/camera/CameraController$SettingInfo;->max_value:I
 
-    .line 450
+    .line 478
     return-void
 .end method
 
@@ -150,10 +150,10 @@
     .parameter "min_value"
 
     .prologue
-    .line 445
+    .line 473
     iput p1, p0, Lcom/android/camera/CameraController$SettingInfo;->min_value:I
 
-    .line 446
+    .line 474
     return-void
 .end method
 
@@ -162,10 +162,10 @@
     .parameter "step"
 
     .prologue
-    .line 453
+    .line 481
     iput p1, p0, Lcom/android/camera/CameraController$SettingInfo;->step:F
 
-    .line 454
+    .line 482
     return-void
 .end method
 
@@ -173,7 +173,7 @@
     .locals 3
 
     .prologue
-    .line 465
+    .line 493
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -194,7 +194,7 @@
 
     move-result-object v0
 
-    .line 466
+    .line 494
     .local v0, str:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -220,7 +220,7 @@
 
     move-result-object v0
 
-    .line 467
+    .line 495
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -245,7 +245,7 @@
 
     move-result-object v0
 
-    .line 468
+    .line 496
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -270,7 +270,7 @@
 
     move-result-object v0
 
-    .line 469
+    .line 497
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -295,6 +295,6 @@
 
     move-result-object v0
 
-    .line 470
+    .line 498
     return-object v0
 .end method

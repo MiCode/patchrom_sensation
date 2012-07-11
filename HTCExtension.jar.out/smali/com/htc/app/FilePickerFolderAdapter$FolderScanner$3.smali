@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1065
+    .line 1058
     iput-object p1, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner$3;->this$1:Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,14 +39,14 @@
     .parameter "msg"
 
     .prologue
-    .line 1067
+    .line 1060
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/16 v1, 0xa5
 
     if-ne v0, v1, :cond_0
 
-    .line 1068
+    .line 1061
     iget-object v0, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner$3;->this$1:Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;
 
     #getter for: Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;->mHandler:Landroid/os/Handler;
@@ -63,7 +63,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1070
+    .line 1063
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -71,7 +71,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1071
+    .line 1064
     iget-object v0, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner$3;->this$1:Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;
 
     #getter for: Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;->mHandler:Landroid/os/Handler;
@@ -88,7 +88,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1073
+    .line 1066
     :cond_1
     return-void
 .end method

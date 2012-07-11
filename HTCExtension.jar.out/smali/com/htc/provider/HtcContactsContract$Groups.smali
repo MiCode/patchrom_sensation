@@ -108,7 +108,7 @@
     .locals 2
 
     .prologue
-    .line 1616
+    .line 1676
     sget-object v0, Lcom/htc/provider/HtcContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "groups_device"
@@ -119,7 +119,7 @@
 
     sput-object v0, Lcom/htc/provider/HtcContactsContract$Groups;->DELETE_CONTENT_URI:Landroid/net/Uri;
 
-    .line 1622
+    .line 1682
     sget-object v0, Lcom/htc/provider/HtcContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "groups_member"
@@ -130,7 +130,7 @@
 
     sput-object v0, Lcom/htc/provider/HtcContactsContract$Groups;->MEMBER_CONTENT_URI:Landroid/net/Uri;
 
-    .line 1628
+    .line 1688
     sget-object v0, Lcom/htc/provider/HtcContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "groups_name_summary"
@@ -141,7 +141,7 @@
 
     sput-object v0, Lcom/htc/provider/HtcContactsContract$Groups;->CONTENT_NAME_SUMMARY_URI:Landroid/net/Uri;
 
-    .line 1634
+    .line 1694
     sget-object v0, Lcom/htc/provider/HtcContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "groups_name_list"
@@ -152,7 +152,7 @@
 
     sput-object v0, Lcom/htc/provider/HtcContactsContract$Groups;->CONTENT_NAME_LIST_URI:Landroid/net/Uri;
 
-    .line 1637
+    .line 1697
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "groups_raw"
@@ -170,7 +170,7 @@
     .locals 0
 
     .prologue
-    .line 1594
+    .line 1654
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -181,22 +181,22 @@
     .parameter "name"
 
     .prologue
-    .line 1836
+    .line 1896
     const v0, 0x2080251
 
-    .line 1837
+    .line 1897
     .local v0, resId:I
     if-nez p0, :cond_0
 
     move v1, v0
 
-    .line 1865
+    .line 1925
     .end local v0           #resId:I
     .local v1, resId:I
     :goto_0
     return v1
 
-    .line 1841
+    .line 1901
     .end local v1           #resId:I
     .restart local v0       #resId:I
     :cond_0
@@ -208,19 +208,19 @@
 
     if-eqz v2, :cond_2
 
-    .line 1842
+    .line 1902
     const v0, 0x208024d
 
     :cond_1
     :goto_1
     move v1, v0
 
-    .line 1865
+    .line 1925
     .end local v0           #resId:I
     .restart local v1       #resId:I
     goto :goto_0
 
-    .line 1844
+    .line 1904
     .end local v1           #resId:I
     .restart local v0       #resId:I
     :cond_2
@@ -232,12 +232,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 1845
+    .line 1905
     const v0, 0x208025e
 
     goto :goto_1
 
-    .line 1847
+    .line 1907
     :cond_3
     const-string v2, "Family"
 
@@ -247,12 +247,12 @@
 
     if-eqz v2, :cond_4
 
-    .line 1848
+    .line 1908
     const v0, 0x208024c
 
     goto :goto_1
 
-    .line 1850
+    .line 1910
     :cond_4
     const-string v2, "Friends"
 
@@ -262,12 +262,12 @@
 
     if-eqz v2, :cond_5
 
-    .line 1851
+    .line 1911
     const v0, 0x2080250
 
     goto :goto_1
 
-    .line 1853
+    .line 1913
     :cond_5
     const-string v2, "Coworkers"
 
@@ -277,12 +277,12 @@
 
     if-eqz v2, :cond_6
 
-    .line 1854
+    .line 1914
     const v0, 0x2080240
 
     goto :goto_1
 
-    .line 1856
+    .line 1916
     :cond_6
     const-string v2, "Starred in Android"
 
@@ -292,12 +292,12 @@
 
     if-eqz v2, :cond_7
 
-    .line 1857
+    .line 1917
     const v0, 0x208024d
 
     goto :goto_1
 
-    .line 1859
+    .line 1919
     :cond_7
     const-string v2, "System Group: My Contacts"
 
@@ -307,12 +307,12 @@
 
     if-eqz v2, :cond_8
 
-    .line 1860
+    .line 1920
     const v0, 0x2080251
 
     goto :goto_1
 
-    .line 1862
+    .line 1922
     :cond_8
     const-string v2, "Frequent Contacts"
 
@@ -322,7 +322,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 1863
+    .line 1923
     const v0, 0x2080255
 
     goto :goto_1
@@ -344,12 +344,12 @@
     .prologue
     const v3, 0x208024d
 
-    .line 1869
+    .line 1929
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 1870
+    .line 1930
     .local v0, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Integer;>;"
     const-string v1, "Favorite_8656150684447252476_6727701920173350445"
 
@@ -359,7 +359,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1871
+    .line 1931
     const-string v1, "VIP"
 
     const v2, 0x208025e
@@ -370,7 +370,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1872
+    .line 1932
     const-string v1, "Family"
 
     const v2, 0x208024c
@@ -381,7 +381,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1873
+    .line 1933
     const-string v1, "Friends"
 
     const v2, 0x2080250
@@ -392,7 +392,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1874
+    .line 1934
     const-string v1, "Coworkers"
 
     const v2, 0x2080240
@@ -403,7 +403,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1875
+    .line 1935
     const-string v1, "Starred in Android"
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -412,7 +412,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1876
+    .line 1936
     const-string v1, "System Group: My Contacts"
 
     const v2, 0x2080251
@@ -423,7 +423,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1877
+    .line 1937
     const-string v1, "Frequent Contacts"
 
     const v2, 0x2080255
@@ -434,7 +434,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1878
+    .line 1938
     return-object v0
 .end method
 
@@ -443,22 +443,22 @@
     .parameter "name"
 
     .prologue
-    .line 1731
+    .line 1791
     if-nez p0, :cond_1
 
-    .line 1732
+    .line 1792
     const/4 v0, 0x0
 
-    .line 1759
+    .line 1819
     :cond_0
     :goto_0
     return v0
 
-    .line 1734
+    .line 1794
     :cond_1
     const/4 v0, 0x0
 
-    .line 1735
+    .line 1795
     .local v0, result:I
     const-string v1, "Favorite_8656150684447252476_6727701920173350445"
 
@@ -468,12 +468,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 1736
+    .line 1796
     const/4 v0, -0x5
 
     goto :goto_0
 
-    .line 1738
+    .line 1798
     :cond_2
     const-string v1, "VIP"
 
@@ -483,12 +483,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 1739
+    .line 1799
     const/16 v0, 0x32
 
     goto :goto_0
 
-    .line 1741
+    .line 1801
     :cond_3
     const-string v1, "Family"
 
@@ -498,12 +498,12 @@
 
     if-eqz v1, :cond_4
 
-    .line 1742
+    .line 1802
     const/16 v0, 0x28
 
     goto :goto_0
 
-    .line 1744
+    .line 1804
     :cond_4
     const-string v1, "Friends"
 
@@ -513,12 +513,12 @@
 
     if-eqz v1, :cond_5
 
-    .line 1745
+    .line 1805
     const/16 v0, 0x1e
 
     goto :goto_0
 
-    .line 1747
+    .line 1807
     :cond_5
     const-string v1, "Coworkers"
 
@@ -528,12 +528,12 @@
 
     if-eqz v1, :cond_6
 
-    .line 1748
+    .line 1808
     const/16 v0, 0x14
 
     goto :goto_0
 
-    .line 1750
+    .line 1810
     :cond_6
     const-string v1, "Starred in Android"
 
@@ -543,12 +543,12 @@
 
     if-eqz v1, :cond_7
 
-    .line 1751
+    .line 1811
     const/16 v0, -0xa
 
     goto :goto_0
 
-    .line 1753
+    .line 1813
     :cond_7
     const-string v1, "System Group: My Contacts"
 
@@ -558,12 +558,12 @@
 
     if-eqz v1, :cond_8
 
-    .line 1754
+    .line 1814
     const/16 v0, -0x14
 
     goto :goto_0
 
-    .line 1756
+    .line 1816
     :cond_8
     const-string v1, "Frequent Contacts"
 
@@ -573,7 +573,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1757
+    .line 1817
     const/16 v0, -0x1e
 
     goto :goto_0
@@ -585,7 +585,7 @@
     .parameter "account"
 
     .prologue
-    .line 1771
+    .line 1831
     move-object/from16 v0, p1
 
     iget-object v1, v0, Landroid/accounts/Account;->type:Ljava/lang/String;
@@ -610,20 +610,20 @@
 
     if-nez v1, :cond_2
 
-    .line 1772
+    .line 1832
     :cond_0
     const-wide/16 v12, -0x1
 
-    .line 1831
+    .line 1891
     :cond_1
     :goto_0
     return-wide v12
 
-    .line 1775
+    .line 1835
     :cond_2
     const-wide/16 v12, -0x1
 
-    .line 1776
+    .line 1836
     .local v12, id:J
     const/4 v1, 0x4
 
@@ -653,7 +653,7 @@
 
     aput-object v2, v3, v1
 
-    .line 1782
+    .line 1842
     .local v3, projection:[Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -775,7 +775,7 @@
 
     move-result-object v4
 
-    .line 1789
+    .line 1849
     .local v4, selection:Ljava/lang/String;
     sget-object v2, Landroid/provider/ContactsContract$Groups;->CONTENT_URI:Landroid/net/Uri;
 
@@ -789,24 +789,24 @@
 
     move-result-object v7
 
-    .line 1792
+    .line 1852
     .local v7, c:Landroid/database/Cursor;
     const/4 v10, -0x1
 
-    .line 1793
+    .line 1853
     .local v10, counts:I
     const-wide/16 v8, -0x1
 
-    .line 1794
+    .line 1854
     .local v8, checkId:J
     if-eqz v7, :cond_6
 
-    .line 1795
+    .line 1855
     invoke-interface {v7}, Landroid/database/Cursor;->getCount()I
 
     move-result v10
 
-    .line 1797
+    .line 1857
     :cond_3
     :try_start_0
     invoke-interface {v7}, Landroid/database/Cursor;->moveToNext()Z
@@ -815,14 +815,14 @@
 
     if-eqz v1, :cond_5
 
-    .line 1798
+    .line 1858
     const/4 v1, 0x1
 
     invoke-interface {v7, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v15
 
-    .line 1799
+    .line 1859
     .local v15, sourceId:Ljava/lang/String;
     const-wide/16 v1, -0x1
 
@@ -830,14 +830,14 @@
 
     if-nez v1, :cond_4
 
-    .line 1800
+    .line 1860
     const/4 v1, 0x0
 
     invoke-interface {v7, v1}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v8
 
-    .line 1802
+    .line 1862
     :cond_4
     invoke-static {v15}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -845,7 +845,7 @@
 
     if-nez v1, :cond_3
 
-    .line 1803
+    .line 1863
     const/4 v1, 0x0
 
     invoke-interface {v7, v1}, Landroid/database/Cursor;->getLong(I)J
@@ -854,24 +854,24 @@
 
     move-result-wide v8
 
-    .line 1809
+    .line 1869
     .end local v15           #sourceId:Ljava/lang/String;
     :cond_5
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 1813
+    .line 1873
     :cond_6
     move-wide v12, v8
 
-    .line 1814
+    .line 1874
     if-gez v10, :cond_7
 
-    .line 1815
+    .line 1875
     const-wide/16 v12, -0x1
 
     goto/16 :goto_0
 
-    .line 1809
+    .line 1869
     :catchall_0
     move-exception v1
 
@@ -879,16 +879,16 @@
 
     throw v1
 
-    .line 1817
+    .line 1877
     :cond_7
     if-nez v10, :cond_1
 
-    .line 1819
+    .line 1879
     new-instance v14, Landroid/content/ContentValues;
 
     invoke-direct {v14}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1820
+    .line 1880
     .local v14, newGroup:Landroid/content/ContentValues;
     const-string v1, "title"
 
@@ -896,7 +896,7 @@
 
     invoke-virtual {v14, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1821
+    .line 1881
     const-string v1, "account_name"
 
     move-object/from16 v0, p1
@@ -905,7 +905,7 @@
 
     invoke-virtual {v14, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1822
+    .line 1882
     const-string v1, "account_type"
 
     move-object/from16 v0, p1
@@ -914,28 +914,28 @@
 
     invoke-virtual {v14, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1823
+    .line 1883
     const-string v1, "group_visible"
 
     const-string v2, "1"
 
     invoke-virtual {v14, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1825
+    .line 1885
     const-string v1, "auto_add"
 
     const-string v2, "1"
 
     invoke-virtual {v14, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1826
+    .line 1886
     const-string v1, "group_is_read_only"
 
     const-string v2, "1"
 
     invoke-virtual {v14, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1828
+    .line 1888
     sget-object v1, Landroid/provider/ContactsContract$Groups;->CONTENT_URI:Landroid/net/Uri;
 
     move-object/from16 v0, p0
@@ -944,7 +944,7 @@
 
     move-result-object v11
 
-    .line 1829
+    .line 1889
     .local v11, groupUri:Landroid/net/Uri;
     invoke-static {v11}, Landroid/content/ContentUris;->parseId(Landroid/net/Uri;)J
 
@@ -957,14 +957,14 @@
     .locals 2
 
     .prologue
-    .line 1895
+    .line 1955
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.android.contacts.action.LIST_STARRED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1896
+    .line 1956
     .local v0, intent:Landroid/content/Intent;
     return-object v0
 .end method
@@ -974,20 +974,20 @@
     .parameter "name"
 
     .prologue
-    .line 1905
+    .line 1965
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.VIEW"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1906
+    .line 1966
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "GROUP_NAME"
 
     invoke-virtual {v0, v1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1907
+    .line 1967
     return-object v0
 .end method
 
@@ -998,15 +998,15 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1718
+    .line 1778
     if-nez p0, :cond_1
 
-    .line 1726
+    .line 1786
     :cond_0
     :goto_0
     return v0
 
-    .line 1721
+    .line 1781
     :cond_1
     const-string v1, "Favorite_8656150684447252476_6727701920173350445"
 
@@ -1056,7 +1056,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1724
+    .line 1784
     :cond_2
     const/4 v0, 0x1
 
@@ -1071,17 +1071,17 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1697
+    .line 1757
     const/4 v0, 0x0
 
-    .line 1698
+    .line 1758
     .local v0, firstResult:Z
     if-nez p0, :cond_0
 
-    .line 1699
+    .line 1759
     const/4 v0, 0x0
 
-    .line 1701
+    .line 1761
     :cond_0
     const-string v2, "Favorite_8656150684447252476_6727701920173350445"
 
@@ -1131,11 +1131,11 @@
 
     if-eqz v2, :cond_2
 
-    .line 1704
+    .line 1764
     :cond_1
     const/4 v0, 0x1
 
-    .line 1707
+    .line 1767
     :cond_2
     if-nez v0, :cond_3
 
@@ -1158,7 +1158,7 @@
     .end annotation
 
     .prologue
-    .line 1886
+    .line 1946
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "This API is replaced by an API in com.htc.contacts.ContactUtility"

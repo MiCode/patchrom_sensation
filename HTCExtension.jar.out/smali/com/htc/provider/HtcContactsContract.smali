@@ -69,6 +69,8 @@
 
 .field public static final ACCOUNT_TYPE_HTC_EXCHANGE:Ljava/lang/String; = "com.htc.android.mail.eas"
 
+.field public static final ACCOUNT_TYPE_KAIXIN:Ljava/lang/String; = "com.htc.KaixinFriendStream"
+
 .field public static final ACCOUNT_TYPE_MYPHONEBOOK:Ljava/lang/String; = "com.htc.android.myphonebook"
 
 .field public static final ACCOUNT_TYPE_ORIGINAL_FACEBOOK:Ljava/lang/String; = "com.facebook.auth.login"
@@ -79,7 +81,17 @@
 
 .field public static final ACCOUNT_TYPE_PLURK:Ljava/lang/String; = "com.htc.socialnetwork.plurk"
 
+.field public static final ACCOUNT_TYPE_QQIM:Ljava/lang/String; = "com.htc.socialnetwork.qqim"
+
+.field public static final ACCOUNT_TYPE_QQWEIBO:Ljava/lang/String; = "com.htc.socialnetwork.qqweibo"
+
+.field public static final ACCOUNT_TYPE_QZONE:Ljava/lang/String; = "com.htc.socialnetwork.chinasns"
+
+.field public static final ACCOUNT_TYPE_RENREN:Ljava/lang/String; = "com.htc.friendstream.renrenwebplugin"
+
 .field public static final ACCOUNT_TYPE_SIM:Ljava/lang/String; = "com.anddroid.contacts.sim"
+
+.field public static final ACCOUNT_TYPE_SINAWEIBO:Ljava/lang/String; = "com.htc.friendstream.sinaweiboplugin"
 
 .field public static final ACCOUNT_TYPE_TWITTER:Ljava/lang/String; = "com.htc.htctwitter"
 
@@ -99,11 +111,23 @@
 
 .field public static final DATA_MIMETYPE_FLICKR_SMALL_AVATAR:Ljava/lang/String; = "com.htc.socialnetwork.flickr/smallavatar"
 
+.field public static final DATA_MIMETYPE_KAIXIN_LOGIN:Ljava/lang/String; = "com.htc.KaixinFriendStream/login"
+
 .field public static final DATA_MIMETYPE_ORIGINAL_FACEBOOK_LOGIN:Ljava/lang/String; = "com.facebook.auth.login/login"
 
 .field public static final DATA_MIMETYPE_PLURK_LOGIN:Ljava/lang/String; = "com.htc.socialnetwork.plurk/login"
 
 .field public static final DATA_MIMETYPE_PLURK_SMALL_AVATAR:Ljava/lang/String; = "com.htc.socialnetwork.plurk/smallavatar"
+
+.field public static final DATA_MIMETYPE_QQIM_LOGIN:Ljava/lang/String; = "com.htc.socialnetwork.qqim/login"
+
+.field public static final DATA_MIMETYPE_QQWEIBO_LOGIN:Ljava/lang/String; = "com.htc.socialnetwork.qqweibo/login"
+
+.field public static final DATA_MIMETYPE_QZONE_LOGIN:Ljava/lang/String; = "com.htc.socialnetwork.chinasns/login"
+
+.field public static final DATA_MIMETYPE_RENREN_LOGIN:Ljava/lang/String; = "com.htc.friendstream.renrenwebplugin/login"
+
+.field public static final DATA_MIMETYPE_SINAWEIBO_LOGIN:Ljava/lang/String; = "com.htc.friendstream.sinaweiboplugin/login"
 
 .field public static final DATA_MIMETYPE_TWITTER_LOGIN:Ljava/lang/String; = "com.htc.htctwitter/login"
 
@@ -164,7 +188,7 @@
 
     sput-object v0, Lcom/htc/provider/HtcContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
-    .line 224
+    .line 284
     const-string v0, "content://com.htc.socialnetwork.facebook/rawquery"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -173,7 +197,7 @@
 
     sput-object v0, Lcom/htc/provider/HtcContactsContract;->FACEBOOK_RAWQUERY_CONTENT_URI:Landroid/net/Uri;
 
-    .line 225
+    .line 285
     const-string v0, "content://com.htc.chirp.provider.Tweet/rawQuery"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -182,7 +206,7 @@
 
     sput-object v0, Lcom/htc/provider/HtcContactsContract;->TWITTER_RAWQUERY_CONTENT_URI:Landroid/net/Uri;
 
-    .line 226
+    .line 286
     const-string v0, "content://com.htc.htctwitter/rawQuery"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -191,7 +215,7 @@
 
     sput-object v0, Lcom/htc/provider/HtcContactsContract;->TWITTER_RAWQUERY_CONTENT_URI_3_5:Landroid/net/Uri;
 
-    .line 227
+    .line 287
     const-string v0, "content://plurks/rawquery"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -200,7 +224,7 @@
 
     sput-object v0, Lcom/htc/provider/HtcContactsContract;->PLURK_RAWQUERY_CONTENT_URI:Landroid/net/Uri;
 
-    .line 3093
+    .line 3153
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x30
@@ -240,7 +264,7 @@
     .locals 0
 
     .prologue
-    .line 232
+    .line 292
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

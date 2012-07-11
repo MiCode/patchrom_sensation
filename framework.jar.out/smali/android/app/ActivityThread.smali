@@ -90,6 +90,8 @@
 
 .field private static sForceGcRunnable:Ljava/lang/Runnable;
 
+.field private static sIsSystemServer:Z
+
 .field private static sIsTopApp:Z
 
 .field static sMainThreadHandler:Landroid/os/Handler;
@@ -415,7 +417,10 @@
 
     sput-object v0, Landroid/app/ActivityThread;->sForceGcRunnable:Ljava/lang/Runnable;
 
-    .line 4951
+    .line 4952
+    sput-boolean v4, Landroid/app/ActivityThread;->sIsSystemServer:Z
+
+    .line 4960
     sput-boolean v4, Landroid/app/ActivityThread;->sIsTopApp:Z
 
     return-void
@@ -3638,17 +3643,17 @@
 
     const/4 v4, 0x1
 
-    .line 4958
+    .line 4967
     and-int/lit8 v1, p1, 0x1
 
     if-ne v1, v4, :cond_2
 
-    .line 4959
+    .line 4968
     and-int/lit8 v1, p1, 0x2
 
     if-nez v1, :cond_0
 
-    .line 4961
+    .line 4970
     :try_start_0
     invoke-static {}, Landroid/os/Process;->myPid()I
 
@@ -3662,38 +3667,38 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4965
+    .line 4974
     :goto_0
     invoke-static {v4}, Ljava/lang/Thread;->setTopApp(Z)V
 
-    .line 4967
+    .line 4976
     :cond_0
     sput-boolean v4, Landroid/app/ActivityThread;->sIsTopApp:Z
 
-    .line 4968
+    .line 4977
     invoke-static {}, Lcom/htc/htcjavaflag/HtcUtility;->isBitmapReleaseEnabled()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 4969
+    .line 4978
     iget-object v1, p0, Landroid/app/ActivityThread;->mH:Landroid/app/ActivityThread$H;
 
     sget-object v2, Landroid/app/ActivityThread;->sForceGcRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v1, v2}, Landroid/app/ActivityThread$H;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 4985
+    .line 4994
     :cond_1
     :goto_1
     return-void
 
-    .line 4962
+    .line 4971
     :catch_0
     move-exception v0
 
-    .line 4963
+    .line 4972
     .local v0, ex:Ljava/lang/Exception;
     const-string v1, "ActivityThread"
 
@@ -3703,14 +3708,14 @@
 
     goto :goto_0
 
-    .line 4972
+    .line 4981
     .end local v0           #ex:Ljava/lang/Exception;
     :cond_2
     and-int/lit8 v1, p1, 0x2
 
     if-nez v1, :cond_3
 
-    .line 4974
+    .line 4983
     :try_start_1
     invoke-static {}, Landroid/os/Process;->myPid()I
 
@@ -3724,22 +3729,22 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 4978
+    .line 4987
     :goto_2
     invoke-static {v5}, Ljava/lang/Thread;->setTopApp(Z)V
 
-    .line 4980
+    .line 4989
     :cond_3
     sput-boolean v5, Landroid/app/ActivityThread;->sIsTopApp:Z
 
-    .line 4981
+    .line 4990
     invoke-static {}, Lcom/htc/htcjavaflag/HtcUtility;->isBitmapReleaseEnabled()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 4982
+    .line 4991
     iget-object v1, p0, Landroid/app/ActivityThread;->mH:Landroid/app/ActivityThread$H;
 
     sget-object v2, Landroid/app/ActivityThread;->sForceGcRunnable:Ljava/lang/Runnable;
@@ -3750,11 +3755,11 @@
 
     goto :goto_1
 
-    .line 4975
+    .line 4984
     :catch_1
     move-exception v0
 
-    .line 4976
+    .line 4985
     .restart local v0       #ex:Ljava/lang/Exception;
     const-string v1, "ActivityThread"
 
@@ -8709,11 +8714,21 @@
     goto/16 :goto_0
 .end method
 
+.method public static isSystemServer()Z
+    .locals 1
+
+    .prologue
+    .line 4955
+    sget-boolean v0, Landroid/app/ActivityThread;->sIsSystemServer:Z
+
+    return v0
+.end method
+
 .method public static isTopApp()Z
     .locals 1
 
     .prologue
-    .line 4954
+    .line 4963
     sget-boolean v0, Landroid/app/ActivityThread;->sIsTopApp:Z
 
     return v0
@@ -8726,46 +8741,46 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 4922
+    .line 4923
     invoke-static {}, Lcom/android/internal/os/SamplingProfilerIntegration;->start()V
 
-    .line 4927
+    .line 4928
     invoke-static {v2}, Ldalvik/system/CloseGuard;->setEnabled(Z)V
 
-    .line 4929
+    .line 4930
     const-string v1, "<pre-initialized>"
 
     invoke-static {v1}, Landroid/os/Process;->setArgV0(Ljava/lang/String;)V
 
-    .line 4931
+    .line 4932
     invoke-static {}, Landroid/os/Looper;->prepareMainLooper()V
 
-    .line 4932
+    .line 4933
     sget-object v1, Landroid/app/ActivityThread;->sMainThreadHandler:Landroid/os/Handler;
 
     if-nez v1, :cond_0
 
-    .line 4933
+    .line 4934
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
     sput-object v1, Landroid/app/ActivityThread;->sMainThreadHandler:Landroid/os/Handler;
 
-    .line 4936
+    .line 4937
     :cond_0
     new-instance v0, Landroid/app/ActivityThread;
 
     invoke-direct {v0}, Landroid/app/ActivityThread;-><init>()V
 
-    .line 4937
+    .line 4938
     .local v0, thread:Landroid/app/ActivityThread;
     invoke-direct {v0, v2}, Landroid/app/ActivityThread;->attach(Z)V
 
-    .line 4944
+    .line 4945
     invoke-static {}, Landroid/os/Looper;->loop()V
 
-    .line 4946
+    .line 4947
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Main thread loop unexpectedly exited"
@@ -10980,18 +10995,21 @@
     const/4 v1, 0x1
 
     .line 4899
-    invoke-static {v1}, Landroid/view/HardwareRenderer;->disable(Z)V
+    sput-boolean v1, Landroid/app/ActivityThread;->sIsSystemServer:Z
 
     .line 4900
+    invoke-static {v1}, Landroid/view/HardwareRenderer;->disable(Z)V
+
+    .line 4901
     new-instance v0, Landroid/app/ActivityThread;
 
     invoke-direct {v0}, Landroid/app/ActivityThread;-><init>()V
 
-    .line 4901
+    .line 4902
     .local v0, thread:Landroid/app/ActivityThread;
     invoke-direct {v0, v1}, Landroid/app/ActivityThread;->attach(Z)V
 
-    .line 4902
+    .line 4903
     return-object v0
 .end method
 
@@ -12523,18 +12541,18 @@
     .parameter "defaultValue"
 
     .prologue
-    .line 4912
+    .line 4913
     iget-object v1, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v1
 
-    .line 4913
+    .line 4914
     :try_start_0
     iget-object v0, p0, Landroid/app/ActivityThread;->mCoreSettings:Landroid/os/Bundle;
 
     if-eqz v0, :cond_0
 
-    .line 4914
+    .line 4915
     iget-object v0, p0, Landroid/app/ActivityThread;->mCoreSettings:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
@@ -12544,7 +12562,7 @@
     .end local p2
     monitor-exit v1
 
-    .line 4916
+    .line 4917
     :goto_0
     return p2
 
@@ -12554,7 +12572,7 @@
 
     goto :goto_0
 
-    .line 4918
+    .line 4919
     .end local p2
     :catchall_0
     move-exception v0
@@ -14847,16 +14865,16 @@
     .end annotation
 
     .prologue
-    .line 4906
+    .line 4907
     .local p1, providers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ProviderInfo;>;"
     if-eqz p1, :cond_0
 
-    .line 4907
+    .line 4908
     iget-object v0, p0, Landroid/app/ActivityThread;->mInitialApplication:Landroid/app/Application;
 
     invoke-direct {p0, v0, p1}, Landroid/app/ActivityThread;->installContentProviders(Landroid/content/Context;Ljava/util/List;)V
 
-    .line 4909
+    .line 4910
     :cond_0
     return-void
 .end method

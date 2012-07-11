@@ -45,7 +45,7 @@
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity$9;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #calls: Lcom/htc/app/FilePickerActivity;->loadFiles()V
-    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$1000(Lcom/htc/app/FilePickerActivity;)V
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$900(Lcom/htc/app/FilePickerActivity;)V
 
     .line 994
     return-void

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 4786
+    .line 4810
     iput-object p1, p0, Lcom/android/camera/CameraThread$4;->this$0:Lcom/android/camera/CameraThread;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -45,39 +45,39 @@
 
     const/4 v4, 0x1
 
-    .line 4788
+    .line 4812
     sget v0, Lcom/android/camera/CameraThread;->Storage_Status:I
 
     if-eqz v0, :cond_1
 
-    .line 4789
+    .line 4813
     const-string v0, "CameraThread"
 
     const-string v1, "storage error"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4790
+    .line 4814
     iget-object v0, p0, Lcom/android/camera/CameraThread$4;->this$0:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0, v4}, Lcom/android/camera/CameraThread;->showStorageToast(Z)V
 
-    .line 4793
+    .line 4817
     sget v0, Lcom/android/camera/CameraThread;->Storage_Status:I
 
     if-eqz v0, :cond_0
 
-    .line 4794
+    .line 4818
     iget-object v0, p0, Lcom/android/camera/CameraThread$4;->this$0:Lcom/android/camera/CameraThread;
 
     #setter for: Lcom/android/camera/CameraThread;->mbCanTakePicture:Z
     invoke-static {v0, v5}, Lcom/android/camera/CameraThread;->access$2402(Lcom/android/camera/CameraThread;Z)Z
 
-    .line 4815
+    .line 4839
     :goto_0
     return-void
 
-    .line 4796
+    .line 4820
     :cond_0
     iget-object v0, p0, Lcom/android/camera/CameraThread$4;->this$0:Lcom/android/camera/CameraThread;
 
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 4800
+    .line 4824
     :cond_1
     iget-object v0, p0, Lcom/android/camera/CameraThread$4;->this$0:Lcom/android/camera/CameraThread;
 
@@ -108,7 +108,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/RecordLimitCheck;->setByteRate(Lcom/android/camera/HTCCamera;)V
 
-    .line 4801
+    .line 4825
     iget-object v0, p0, Lcom/android/camera/CameraThread$4;->this$0:Lcom/android/camera/CameraThread;
 
     #getter for: Lcom/android/camera/CameraThread;->mCameraActivity:Lcom/android/camera/HTCCamera;
@@ -129,7 +129,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/RecordLimitCheck;->setRecordingLength(Lcom/android/camera/HTCCamera;)V
 
-    .line 4802
+    .line 4826
     iget-object v0, p0, Lcom/android/camera/CameraThread$4;->this$0:Lcom/android/camera/CameraThread;
 
     #getter for: Lcom/android/camera/CameraThread;->mCameraActivity:Lcom/android/camera/HTCCamera;
@@ -151,22 +151,22 @@
 
     if-gez v0, :cond_3
 
-    .line 4803
+    .line 4827
     const/4 v0, 0x3
 
     sput v0, Lcom/android/camera/CameraThread;->Storage_Status:I
 
-    .line 4804
+    .line 4828
     iget-object v0, p0, Lcom/android/camera/CameraThread$4;->this$0:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0, v4}, Lcom/android/camera/CameraThread;->showStorageToast(Z)V
 
-    .line 4807
+    .line 4831
     sget v0, Lcom/android/camera/CameraThread;->Storage_Status:I
 
     if-eqz v0, :cond_2
 
-    .line 4808
+    .line 4832
     iget-object v0, p0, Lcom/android/camera/CameraThread$4;->this$0:Lcom/android/camera/CameraThread;
 
     #setter for: Lcom/android/camera/CameraThread;->mbCanTakePicture:Z
@@ -174,7 +174,7 @@
 
     goto :goto_0
 
-    .line 4810
+    .line 4834
     :cond_2
     iget-object v0, p0, Lcom/android/camera/CameraThread$4;->this$0:Lcom/android/camera/CameraThread;
 
@@ -183,7 +183,7 @@
 
     goto :goto_0
 
-    .line 4813
+    .line 4837
     :cond_3
     iget-object v0, p0, Lcom/android/camera/CameraThread$4;->this$0:Lcom/android/camera/CameraThread;
 

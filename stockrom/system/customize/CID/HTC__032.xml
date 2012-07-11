@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<customization_form>
+  <category name="system">
+    <module name="locale">
+      <function>
+        <set name="single">
+          <item name="total_list">bg_BG;bg_BY;bg_CS;bg_CZ;bg_EE;bg_HR;bg_HU;bg_LT;bg_LV;bg_PL;bg_RO;bg_SI;bg_SK;bg_UA;cs_BG;cs_BY;cs_CS;cs_CZ;cs_EE;cs_HR;cs_HU;cs_LT;cs_LV;cs_PL;cs_RO;cs_SI;cs_SK;cs_UA;en_BG;en_BY;en_CS;en_CZ;en_EE;en_HR;en_HU;en_LT;en_LV;en_PL;en_RO;en_SI;en_SK;en_UA;et_BG;et_BY;et_CS;et_CZ;et_EE;et_HR;et_HU;et_LT;et_LV;et_PL;et_RO;et_SI;et_SK;et_UA;hr_BG;hr_BY;hr_CS;hr_CZ;hr_EE;hr_HR;hr_HU;hr_LT;hr_LV;hr_PL;hr_RO;hr_SI;hr_SK;hr_UA;hu_BG;hu_BY;hu_CS;hu_CZ;hu_EE;hu_HR;hu_HU;hu_LT;hu_LV;hu_PL;hu_RO;hu_SI;hu_SK;hu_UA;lt_BG;lt_BY;lt_CS;lt_CZ;lt_EE;lt_HR;lt_HU;lt_LT;lt_LV;lt_PL;lt_RO;lt_SI;lt_SK;lt_UA;lv_BG;lv_BY;lv_CS;lv_CZ;lv_EE;lv_HR;lv_HU;lv_LT;lv_LV;lv_PL;lv_RO;lv_SI;lv_SK;lv_UA;pl_BG;pl_BY;pl_CS;pl_CZ;pl_EE;pl_HR;pl_HU;pl_LT;pl_LV;pl_PL;pl_RO;pl_SI;pl_SK;pl_UA;ro_BG;ro_BY;ro_CS;ro_CZ;ro_EE;ro_HR;ro_HU;ro_LT;ro_LV;ro_PL;ro_RO;ro_SI;ro_SK;ro_UA;ru_BG;ru_BY;ru_CS;ru_CZ;ru_EE;ru_HR;ru_HU;ru_LT;ru_LV;ru_PL;ru_RO;ru_SI;ru_SK;ru_UA;sk_BG;sk_BY;sk_CS;sk_CZ;sk_EE;sk_HR;sk_HU;sk_LT;sk_LV;sk_PL;sk_RO;sk_SI;sk_SK;sk_UA;sl_BG;sl_BY;sl_CS;sl_CZ;sl_EE;sl_HR;sl_HU;sl_LT;sl_LV;sl_PL;sl_RO;sl_SI;sl_SK;sl_UA;sr_BG;sr_BY;sr_CS;sr_CZ;sr_EE;sr_HR;sr_HU;sr_LT;sr_LV;sr_PL;sr_RO;sr_SI;sr_SK;sr_UA;</item>
+          <item type="boolean" name="bg_BG">yes</item>
+          <item type="boolean" name="bg_BY">yes</item>
+          <item type="boolean" name="bg_CS">yes</item>
+          <item type="boolean" name="bg_CZ">yes</item>
+          <item type="boolean" name="bg_EE">yes</item>
+          <item type="boolean" name="bg_HR">yes</item>
+          <item type="boolean" name="bg_HU">yes</item>
+          <item type="boolean" name="bg_LT">yes</item>
+          <item type="boolean" name="bg_LV">yes</item>
+          <item type="boolean" name="bg_PL">yes</item>
+          <item type="boolean" name="bg_RO">yes</item>
+          <item type="boolean" name="bg_SI">yes</item>
+          <item type="boolean" name="bg_SK">yes</item>
+          <item type="boolean" name="bg_UA">yes</item>
+          <item type="boolean" name="cs_BG">yes</item>
+          <item type="boolean" name="cs_BY">yes</item>
+          <item type="boolean" name="cs_CS">yes</item>
+          <item type="boolean" name="cs_CZ">yes</item>
+          <item type="boolean" name="cs_EE">yes</item>
+          <item type="boolean" name="cs_HR">yes</item>
+          <item type="boolean" name="cs_HU">yes</item>
+          <item type="boolean" name="cs_LT">yes</item>
+          <item type="boolean" name="cs_LV">yes</item>
+          <item type="boolean" name="cs_PL">yes</item>
+          <item type="boolean" name="cs_RO">yes</item>
+          <item type="boolean" name="cs_SI">yes</item>
+          <item type="boolean" name="cs_SK">yes</item>
+          <item type="boolean" name="cs_UA">yes</item>
+          <item type="boolean" name="en_BG">yes</item>
+          <item type="boolean" name="en_BY">yes</item>
+          <item type="boolean" name="en_CS">yes</item>
+          <item type="boolean" name="en_CZ">yes</item>
+          <item type="boolean" name="en_EE">yes</item>
+          <item type="boolean" name="en_HR">yes</item>
+          <item type="boolean" name="en_HU">yes</item>
+          <item type="boolean" name="en_LT">yes</item>
+          <item type="boolean" name="en_LV">yes</item>
+          <item type="boolean" name="en_PL">yes</item>
+          <item type="boolean" name="en_RO">yes</item>
+          <item type="boolean" name="en_SI">yes</item>
+          <item type="boolean" name="en_SK">yes</item>
+          <item type="boolean" name="en_UA">yes</item>
+          <item type="boolean" name="et_BG">yes</item>
+          <item type="boolean" name="et_BY">yes</item>
+          <item type="boolean" name="et_CS">yes</item>
+          <item type="boolean" name="et_CZ">yes</item>
+          <item type="boolean" name="et_EE">yes</item>
+          <item type="boolean" name="et_HR">yes</item>
+          <item type="boolean" name="et_HU">yes</item>
+          <item type="boolean" name="et_LT">yes</item>
+          <item type="boolean" name="et_LV">yes</item>
+          <item type="boolean" name="et_PL">yes</item>
+          <item type="boolean" name="et_RO">yes</item>
+          <item type="boolean" name="et_SI">yes</item>
+          <item type="boolean" name="et_SK">yes</item>
+          <item type="boolean" name="et_UA">yes</item>
+          <item type="boolean" name="hr_BG">yes</item>
+          <item type="boolean" name="hr_BY">yes</item>
+          <item type="boolean" name="hr_CS">yes</item>
+          <item type="boolean" name="hr_CZ">yes</item>
+          <item type="boolean" name="hr_EE">yes</item>
+          <item type="boolean" name="hr_HR">yes</item>
+          <item type="boolean" name="hr_HU">yes</item>
+          <item type="boolean" name="hr_LT">yes</item>
+          <item type="boolean" name="hr_LV">yes</item>
+          <item type="boolean" name="hr_PL">yes</item>
+          <item type="boolean" name="hr_RO">yes</item>
+          <item type="boolean" name="hr_SI">yes</item>
+          <item type="boolean" name="hr_SK">yes</item>
+          <item type="boolean" name="hr_UA">yes</item>
+          <item type="boolean" name="hu_BG">yes</item>
+          <item type="boolean" name="hu_BY">yes</item>
+          <item type="boolean" name="hu_CS">yes</item>
+          <item type="boolean" name="hu_CZ">yes</item>
+          <item type="boolean" name="hu_EE">yes</item>
+          <item type="boolean" name="hu_HR">yes</item>
+          <item type="boolean" name="hu_HU">yes</item>
+          <item type="boolean" name="hu_LT">yes</item>
+          <item type="boolean" name="hu_LV">yes</item>
+          <item type="boolean" name="hu_PL">yes</item>
+          <item type="boolean" name="hu_RO">yes</item>
+          <item type="boolean" name="hu_SI">yes</item>
+          <item type="boolean" name="hu_SK">yes</item>
+          <item type="boolean" name="hu_UA">yes</item>
+          <item type="boolean" name="lt_BG">yes</item>
+          <item type="boolean" name="lt_BY">yes</item>
+          <item type="boolean" name="lt_CS">yes</item>
+          <item type="boolean" name="lt_CZ">yes</item>
+          <item type="boolean" name="lt_EE">yes</item>
+          <item type="boolean" name="lt_HR">yes</item>
+          <item type="boolean" name="lt_HU">yes</item>
+          <item type="boolean" name="lt_LT">yes</item>
+          <item type="boolean" name="lt_LV">yes</item>
+          <item type="boolean" name="lt_PL">yes</item>
+          <item type="boolean" name="lt_RO">yes</item>
+          <item type="boolean" name="lt_SI">yes</item>
+          <item type="boolean" name="lt_SK">yes</item>
+          <item type="boolean" name="lt_UA">yes</item>
+          <item type="boolean" name="lv_BG">yes</item>
+          <item type="boolean" name="lv_BY">yes</item>
+          <item type="boolean" name="lv_CS">yes</item>
+          <item type="boolean" name="lv_CZ">yes</item>
+          <item type="boolean" name="lv_EE">yes</item>
+          <item type="boolean" name="lv_HR">yes</item>
+          <item type="boolean" name="lv_HU">yes</item>
+          <item type="boolean" name="lv_LT">yes</item>
+          <item type="boolean" name="lv_LV">yes</item>
+          <item type="boolean" name="lv_PL">yes</item>
+          <item type="boolean" name="lv_RO">yes</item>
+          <item type="boolean" name="lv_SI">yes</item>
+          <item type="boolean" name="lv_SK">yes</item>
+          <item type="boolean" name="lv_UA">yes</item>
+          <item type="boolean" name="pl_BG">yes</item>
+          <item type="boolean" name="pl_BY">yes</item>
+          <item type="boolean" name="pl_CS">yes</item>
+          <item type="boolean" name="pl_CZ">yes</item>
+          <item type="boolean" name="pl_EE">yes</item>
+          <item type="boolean" name="pl_HR">yes</item>
+          <item type="boolean" name="pl_HU">yes</item>
+          <item type="boolean" name="pl_LT">yes</item>
+          <item type="boolean" name="pl_LV">yes</item>
+          <item type="boolean" name="pl_PL">yes</item>
+          <item type="boolean" name="pl_RO">yes</item>
+          <item type="boolean" name="pl_SI">yes</item>
+          <item type="boolean" name="pl_SK">yes</item>
+          <item type="boolean" name="pl_UA">yes</item>
+          <item type="boolean" name="ro_BG">yes</item>
+          <item type="boolean" name="ro_BY">yes</item>
+          <item type="boolean" name="ro_CS">yes</item>
+          <item type="boolean" name="ro_CZ">yes</item>
+          <item type="boolean" name="ro_EE">yes</item>
+          <item type="boolean" name="ro_HR">yes</item>
+          <item type="boolean" name="ro_HU">yes</item>
+          <item type="boolean" name="ro_LT">yes</item>
+          <item type="boolean" name="ro_LV">yes</item>
+          <item type="boolean" name="ro_PL">yes</item>
+          <item type="boolean" name="ro_RO">yes</item>
+          <item type="boolean" name="ro_SI">yes</item>
+          <item type="boolean" name="ro_SK">yes</item>
+          <item type="boolean" name="ro_UA">yes</item>
+          <item type="boolean" name="ru_BG">yes</item>
+          <item type="boolean" name="ru_BY">yes</item>
+          <item type="boolean" name="ru_CS">yes</item>
+          <item type="boolean" name="ru_CZ">yes</item>
+          <item type="boolean" name="ru_EE">yes</item>
+          <item type="boolean" name="ru_HR">yes</item>
+          <item type="boolean" name="ru_HU">yes</item>
+          <item type="boolean" name="ru_LT">yes</item>
+          <item type="boolean" name="ru_LV">yes</item>
+          <item type="boolean" name="ru_PL">yes</item>
+          <item type="boolean" name="ru_RO">yes</item>
+          <item type="boolean" name="ru_SI">yes</item>
+          <item type="boolean" name="ru_SK">yes</item>
+          <item type="boolean" name="ru_UA">yes</item>
+          <item type="boolean" name="sk_BG">yes</item>
+          <item type="boolean" name="sk_BY">yes</item>
+          <item type="boolean" name="sk_CS">yes</item>
+          <item type="boolean" name="sk_CZ">yes</item>
+          <item type="boolean" name="sk_EE">yes</item>
+          <item type="boolean" name="sk_HR">yes</item>
+          <item type="boolean" name="sk_HU">yes</item>
+          <item type="boolean" name="sk_LT">yes</item>
+          <item type="boolean" name="sk_LV">yes</item>
+          <item type="boolean" name="sk_PL">yes</item>
+          <item type="boolean" name="sk_RO">yes</item>
+          <item type="boolean" name="sk_SI">yes</item>
+          <item type="boolean" name="sk_SK">yes</item>
+          <item type="boolean" name="sk_UA">yes</item>
+          <item type="boolean" name="sl_BG">yes</item>
+          <item type="boolean" name="sl_BY">yes</item>
+          <item type="boolean" name="sl_CS">yes</item>
+          <item type="boolean" name="sl_CZ">yes</item>
+          <item type="boolean" name="sl_EE">yes</item>
+          <item type="boolean" name="sl_HR">yes</item>
+          <item type="boolean" name="sl_HU">yes</item>
+          <item type="boolean" name="sl_LT">yes</item>
+          <item type="boolean" name="sl_LV">yes</item>
+          <item type="boolean" name="sl_PL">yes</item>
+          <item type="boolean" name="sl_RO">yes</item>
+          <item type="boolean" name="sl_SI">yes</item>
+          <item type="boolean" name="sl_SK">yes</item>
+          <item type="boolean" name="sl_UA">yes</item>
+          <item type="boolean" name="sr_BG">yes</item>
+          <item type="boolean" name="sr_BY">yes</item>
+          <item type="boolean" name="sr_CS">yes</item>
+          <item type="boolean" name="sr_CZ">yes</item>
+          <item type="boolean" name="sr_EE">yes</item>
+          <item type="boolean" name="sr_HR">yes</item>
+          <item type="boolean" name="sr_HU">yes</item>
+          <item type="boolean" name="sr_LT">yes</item>
+          <item type="boolean" name="sr_LV">yes</item>
+          <item type="boolean" name="sr_PL">yes</item>
+          <item type="boolean" name="sr_RO">yes</item>
+          <item type="boolean" name="sr_SI">yes</item>
+          <item type="boolean" name="sr_SK">yes</item>
+          <item type="boolean" name="sr_UA">yes</item>
+        </set>
+      </function>
+    </module>
+    <module name="deviceData">
+      <function>
+        <set name="single">
+          <item name="device_name">HTC Sensation XE with Beats Audio Z715e</item>
+        </set>
+      </function>
+    </module>
+    <module name="deviceData1">
+      <function>
+        <set name="single">
+          <item name="sw_number">NA</item>
+        </set>
+      </function>
+    </module>
+    <module name="Settings">
+      <function name="screen_timeout">
+        <set name="plenty">
+          <item name="value1">15000</item>
+          <item name="value2">30000</item>
+          <item name="value3">45000</item>
+          <item name="value4">60000</item>
+          <item name="value5">120000</item>
+          <item name="value6">600000</item>
+          <item name="value7">-1</item>
+        </set>
+      </function>
+    </module>
+    <module name="defaultTime1224">
+      <function>
+        <set name="single">
+          <item name="default">24</item>
+        </set>
+      </function>
+    </module>
+    <module name="InputMethod">
+      <function name="IME_language_set">
+        <set name="single">
+          <item type="boolean" name="English">yes</item>
+          <item type="boolean" name="German">yes</item>
+          <item type="boolean" name="France">yes</item>
+          <item type="boolean" name="Italian">yes</item>
+          <item type="boolean" name="Spanish">yes</item>
+          <item type="boolean" name="Russian">yes</item>
+          <item type="boolean" name="Czech">yes</item>
+          <item type="boolean" name="Danish">yes</item>
+          <item type="boolean" name="Swedish">yes</item>
+          <item type="boolean" name="Norwegian">yes</item>
+          <item type="boolean" name="Dutch">yes</item>
+          <item type="boolean" name="Polish">yes</item>
+          <item type="boolean" name="Portugal">yes</item>
+          <item type="boolean" name="Greek">yes</item>
+          <item type="boolean" name="Turkish">yes</item>
+          <item type="boolean" name="Finnish">yes</item>
+          <item type="boolean" name="Hungarian">yes</item>
+          <item type="boolean" name="Romanian">yes</item>
+          <item type="boolean" name="Slovak">yes</item>
+          <item type="boolean" name="Croatian">yes</item>
+          <item type="boolean" name="Slovenian">yes</item>
+          <item type="boolean" name="Serbian">yes</item>
+          <item type="boolean" name="Bulgarian">yes</item>
+          <item type="boolean" name="Estonian">yes</item>
+          <item type="boolean" name="Latvian">yes</item>
+          <item type="boolean" name="Lithuanian">yes</item>
+        </set>
+      </function>
+    </module>
+  </category>
+  <category name="application">
+    <module name="Crash_Report">
+      <function name="setting">
+        <set name="single">
+          <item name="turn_off_report" type="boolean">no</item>
+          <item name="turn_off_application_log" type="boolean">yes</item>
+        </set>
+      </function>
+    </module>
+    <module name="HtcPhone">
+      <function name="specificDialNumbers">
+        <set name="single">
+          <item name="numbers">92,93,94</item>
+        </set>
+      </function>
+    </module>
+    <module name="FOTA">
+      <function name="settings">
+        <set name="single">
+          <item name="Enable_FOTA_UI" type="boolean">yes</item>
+          <item name="Enable_Manual_Check" type="boolean">yes</item>
+          <item name="Default_Scheduled_Ckeck" type="boolean">yes</item>
+          <item name="Default_Download_Wifi" type="boolean">yes</item>
+        </set>
+      </function>
+    </module>
+  </category>
+  <BootConfiguration>
+    <BootAnimation animation="/system/customize/resource/bootanimation.zip" audio="/system/customize/resource/android_audio.mp3" />
+  </BootConfiguration>
+  <ShutdownConfiguration>
+    <ShutdownAnimation image_png="/system/customize/resource/downanimation.zip" image="" fps="15" />
+  </ShutdownConfiguration>
+  <category name="SettingsProvider">
+    <module name="res">
+      <function name="values">
+        <set name="single">
+          <item name="def_screen_off_timeout">45000</item>
+          <item name="def_2g_on">1</item>
+        </set>
+      </function>
+    </module>
+  </category>
+  <category name="Settings">
+    <module name="properties">
+      <function>
+        <set name="single">
+          <item name="market_name">HTC Sensation XE with Beats Audio</item>
+        </set>
+      </function>
+    </module>
+  </category>
+</customization_form>

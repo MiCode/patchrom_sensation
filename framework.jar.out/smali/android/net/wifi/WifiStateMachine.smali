@@ -1617,13 +1617,13 @@
     .locals 3
 
     .prologue
-    .line 2525
+    .line 2577
     invoke-direct {p0}, Landroid/net/wifi/WifiStateMachine;->setCountryCode()V
 
-    .line 2527
+    .line 2579
     invoke-direct {p0}, Landroid/net/wifi/WifiStateMachine;->setFrequencyBand()V
 
-    .line 2530
+    .line 2582
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1642,12 +1642,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 2532
+    .line 2584
     const/16 v0, 0x15
 
     invoke-static {v0}, Landroid/net/wifi/WifiNative;->setPowerModeCommand(I)Z
 
-    .line 2535
+    .line 2587
     :cond_0
     invoke-direct {p0}, Landroid/net/wifi/WifiStateMachine;->isMulticastEnabled()Z
 
@@ -1655,16 +1655,16 @@
 
     if-nez v0, :cond_1
 
-    .line 2537
+    .line 2589
     invoke-virtual {p0}, Landroid/net/wifi/WifiStateMachine;->startPacketFiltering_self()V
 
-    .line 2538
+    .line 2590
     invoke-virtual {p0}, Landroid/net/wifi/WifiStateMachine;->startFilteringMulticastV6Packets()V
 
-    .line 2539
+    .line 2591
     invoke-virtual {p0}, Landroid/net/wifi/WifiStateMachine;->startPacketFiltering_dhcpoffer()V
 
-    .line 2541
+    .line 2593
     :cond_1
     return-void
 .end method
@@ -4127,20 +4127,20 @@
     .parameter "byteArray"
 
     .prologue
-    .line 2502
+    .line 2554
     if-nez p1, :cond_0
 
     const/4 v4, 0x0
 
-    .line 2511
+    .line 2563
     :goto_0
     return-object v4
 
-    .line 2504
+    .line 2556
     :cond_0
     const-string v0, "0123456789ABCDEF"
 
-    .line 2505
+    .line 2557
     .local v0, HEX:Ljava/lang/String;
     new-instance v3, Ljava/lang/StringBuffer;
 
@@ -4150,7 +4150,7 @@
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuffer;-><init>(I)V
 
-    .line 2507
+    .line 2559
     .local v3, sb:Ljava/lang/StringBuffer;
     const/4 v2, 0x0
 
@@ -4160,10 +4160,10 @@
 
     if-ge v2, v4, :cond_1
 
-    .line 2508
+    .line 2560
     aget-byte v1, p1, v2
 
-    .line 2509
+    .line 2561
     .local v1, b:B
     const-string v4, "0123456789ABCDEF"
 
@@ -4189,12 +4189,12 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    .line 2507
+    .line 2559
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 2511
+    .line 2563
     .end local v1           #b:B
     :cond_1
     invoke-virtual {v3}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
@@ -4208,12 +4208,12 @@
     .locals 2
 
     .prologue
-    .line 2546
+    .line 2598
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mCm:Landroid/net/ConnectivityManager;
 
     if-nez v0, :cond_0
 
-    .line 2547
+    .line 2599
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     const-string v1, "connectivity"
@@ -4226,7 +4226,7 @@
 
     iput-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mCm:Landroid/net/ConnectivityManager;
 
-    .line 2549
+    .line 2601
     :cond_0
     return-void
 .end method
@@ -4239,7 +4239,7 @@
 
     const/4 v7, 0x0
 
-    .line 2377
+    .line 2429
     iget v3, p0, Landroid/net/wifi/WifiStateMachine;->mUser:I
 
     if-nez v3, :cond_4
@@ -4252,29 +4252,29 @@
 
     if-ne v3, v4, :cond_4
 
-    .line 2378
+    .line 2430
     const-string v3, "WifiStateMachine"
 
     const-string/jumbo v4, "set sleep policy"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2379
+    .line 2431
     iget-boolean v3, p0, Landroid/net/wifi/WifiStateMachine;->mResetWifiApSleepPolicy:Z
 
     if-eqz v3, :cond_1
 
-    .line 2380
+    .line 2432
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mAlarmManager:Landroid/app/AlarmManager;
 
     iget-object v4, p0, Landroid/net/wifi/WifiStateMachine;->mWifiApSleepIntent:Landroid/app/PendingIntent;
 
     invoke-virtual {v3, v4}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
-    .line 2382
+    .line 2434
     const/4 v0, 0x0
 
-    .line 2383
+    .line 2435
     .local v0, idleTimeMin:I
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mConfig:Landroid/net/wifi/WifiConfiguration;
 
@@ -4286,15 +4286,15 @@
 
     if-nez v3, :cond_2
 
-    .line 2384
+    .line 2436
     const/4 v0, 0x5
 
-    .line 2388
+    .line 2440
     :cond_0
     :goto_0
     if-eqz v0, :cond_3
 
-    .line 2389
+    .line 2441
     const-string v3, "WifiStateMachine"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -4323,7 +4323,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2390
+    .line 2442
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -4336,7 +4336,7 @@
 
     add-long v1, v3, v5
 
-    .line 2391
+    .line 2443
     .local v1, triggerTime:J
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mAlarmManager:Landroid/app/AlarmManager;
 
@@ -4344,18 +4344,18 @@
 
     invoke-virtual {v3, v7, v1, v2, v4}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
 
-    .line 2396
+    .line 2448
     .end local v0           #idleTimeMin:I
     .end local v1           #triggerTime:J
     :cond_1
     :goto_1
     iput-boolean v7, p0, Landroid/net/wifi/WifiStateMachine;->mResetWifiApSleepPolicy:Z
 
-    .line 2402
+    .line 2454
     :goto_2
     return-void
 
-    .line 2385
+    .line 2437
     .restart local v0       #idleTimeMin:I
     :cond_2
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mConfig:Landroid/net/wifi/WifiConfiguration;
@@ -4368,12 +4368,12 @@
 
     if-ne v3, v6, :cond_0
 
-    .line 2386
+    .line 2438
     const/16 v0, 0xa
 
     goto :goto_0
 
-    .line 2393
+    .line 2445
     :cond_3
     const-string v3, "WifiStateMachine"
 
@@ -4383,7 +4383,7 @@
 
     goto :goto_1
 
-    .line 2398
+    .line 2450
     .end local v0           #idleTimeMin:I
     :cond_4
     const-string v3, "WifiStateMachine"
@@ -4424,14 +4424,14 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2399
+    .line 2451
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mAlarmManager:Landroid/app/AlarmManager;
 
     iget-object v4, p0, Landroid/net/wifi/WifiStateMachine;->mWifiApSleepIntent:Landroid/app/PendingIntent;
 
     invoke-virtual {v3, v4}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
-    .line 2400
+    .line 2452
     iput-boolean v6, p0, Landroid/net/wifi/WifiStateMachine;->mResetWifiApSleepPolicy:Z
 
     goto :goto_2
@@ -4441,7 +4441,7 @@
     .locals 2
 
     .prologue
-    .line 3023
+    .line 3075
     iget v0, p0, Landroid/net/wifi/WifiStateMachine;->mLastNetworkId:I
 
     invoke-static {v0}, Landroid/net/wifi/WifiConfigStore;->isUsingStaticIp(I)Z
@@ -4450,7 +4450,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3024
+    .line 3076
     iget v0, p0, Landroid/net/wifi/WifiStateMachine;->mLastNetworkId:I
 
     invoke-static {v0}, Landroid/net/wifi/WifiConfigStore;->getLinkProperties(I)Landroid/net/LinkProperties;
@@ -4459,7 +4459,7 @@
 
     iput-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mLinkProperties:Landroid/net/LinkProperties;
 
-    .line 3031
+    .line 3083
     :goto_0
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mLinkProperties:Landroid/net/LinkProperties;
 
@@ -4467,16 +4467,16 @@
 
     invoke-virtual {v0, v1}, Landroid/net/LinkProperties;->setInterfaceName(Ljava/lang/String;)V
 
-    .line 3036
+    .line 3088
     return-void
 
-    .line 3026
+    .line 3078
     :cond_0
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mDhcpInfoInternal:Landroid/net/DhcpInfoInternal;
 
     monitor-enter v1
 
-    .line 3027
+    .line 3079
     :try_start_0
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mDhcpInfoInternal:Landroid/net/DhcpInfoInternal;
 
@@ -4486,12 +4486,12 @@
 
     iput-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mLinkProperties:Landroid/net/LinkProperties;
 
-    .line 3028
+    .line 3080
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3029
+    .line 3081
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mLinkProperties:Landroid/net/LinkProperties;
 
     iget v1, p0, Landroid/net/wifi/WifiStateMachine;->mLastNetworkId:I
@@ -4504,7 +4504,7 @@
 
     goto :goto_0
 
-    .line 3028
+    .line 3080
     :catchall_0
     move-exception v0
 
@@ -4520,31 +4520,31 @@
     .locals 13
 
     .prologue
-    .line 2920
+    .line 2972
     const/4 v6, -0x1
 
-    .line 2921
+    .line 2973
     .local v6, newRssi:I
     const/4 v5, -0x1
 
-    .line 2923
+    .line 2975
     .local v5, newLinkSpeed:I
     invoke-static {}, Landroid/net/wifi/WifiNative;->signalPoll()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 2925
+    .line 2977
     .local v9, signalPoll:Ljava/lang/String;
     if-eqz v9, :cond_3
 
-    .line 2926
+    .line 2978
     const-string v10, "\n"
 
     invoke-virtual {v9, v10}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v4
 
-    .line 2927
+    .line 2979
     .local v4, lines:[Ljava/lang/String;
     move-object v0, v4
 
@@ -4560,7 +4560,7 @@
 
     aget-object v3, v0, v1
 
-    .line 2928
+    .line 2980
     .local v3, line:Ljava/lang/String;
     const-string v10, "="
 
@@ -4568,7 +4568,7 @@
 
     move-result-object v8
 
-    .line 2929
+    .line 2981
     .local v8, prop:[Ljava/lang/String;
     array-length v10, v8
 
@@ -4576,14 +4576,14 @@
 
     if-ge v10, v11, :cond_1
 
-    .line 2927
+    .line 2979
     :cond_0
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2931
+    .line 2983
     :cond_1
     const/4 v10, 0x0
 
@@ -4598,7 +4598,7 @@
 
     if-eqz v10, :cond_2
 
-    .line 2932
+    .line 2984
     const/4 v10, 0x1
 
     aget-object v10, v8, v10
@@ -4609,7 +4609,7 @@
 
     goto :goto_1
 
-    .line 2933
+    .line 2985
     :cond_2
     const/4 v10, 0x0
 
@@ -4623,7 +4623,7 @@
 
     if-eqz v10, :cond_0
 
-    .line 2934
+    .line 2986
     const/4 v10, 0x1
 
     aget-object v10, v8, v10
@@ -4636,7 +4636,7 @@
 
     goto :goto_1
 
-    .line 2942
+    .line 2994
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v1           #i$:I
     .end local v2           #len$:I
@@ -4656,25 +4656,25 @@
 
     if-ge v6, v10, :cond_a
 
-    .line 2946
+    .line 2998
     if-lez v6, :cond_4
 
     add-int/lit16 v6, v6, -0x100
 
-    .line 2947
+    .line 2999
     :cond_4
     iget-object v10, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
     invoke-virtual {v10, v6}, Landroid/net/wifi/WifiInfo;->setRssi(I)V
 
-    .line 2961
+    .line 3013
     const/4 v10, 0x4
 
     invoke-static {v6, v10}, Landroid/net/wifi/WifiManager;->calculateSignalLevel(II)I
 
     move-result v7
 
-    .line 2963
+    .line 3015
     .local v7, newSignalLevel:I
     iget v10, p0, Landroid/net/wifi/WifiStateMachine;->mLastRSSI:I
 
@@ -4686,7 +4686,7 @@
 
     if-ne v10, v11, :cond_8
 
-    .line 2964
+    .line 3016
     const-string v10, "WifiStateMachine"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -4721,35 +4721,35 @@
 
     invoke-static {v10, v11}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2965
+    .line 3017
     const/4 v10, 0x0
 
     iput v10, p0, Landroid/net/wifi/WifiStateMachine;->SameSignalLevelCount:I
 
-    .line 2966
+    .line 3018
     invoke-direct {p0, v6}, Landroid/net/wifi/WifiStateMachine;->sendRssiChangeBroadcast(I)V
 
-    .line 2983
+    .line 3035
     :cond_5
     :goto_2
     iput v7, p0, Landroid/net/wifi/WifiStateMachine;->mLastSignalLevel:I
 
-    .line 2984
+    .line 3036
     iput v6, p0, Landroid/net/wifi/WifiStateMachine;->mLastRSSI:I
 
-    .line 2989
+    .line 3041
     .end local v7           #newSignalLevel:I
     :goto_3
     const/4 v10, -0x1
 
     if-eq v5, v10, :cond_6
 
-    .line 2990
+    .line 3042
     iget-object v10, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
     invoke-virtual {v10, v5}, Landroid/net/wifi/WifiInfo;->setLinkSpeed(I)V
 
-    .line 2994
+    .line 3046
     :cond_6
     iget-object v10, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
@@ -4761,14 +4761,14 @@
 
     if-ge v10, v11, :cond_b
 
-    .line 2995
+    .line 3047
     iget v10, p0, Landroid/net/wifi/WifiStateMachine;->mNoSignalCount:I
 
     add-int/lit8 v10, v10, 0x1
 
     iput v10, p0, Landroid/net/wifi/WifiStateMachine;->mNoSignalCount:I
 
-    .line 2999
+    .line 3051
     :goto_4
     iget v10, p0, Landroid/net/wifi/WifiStateMachine;->mNoSignalCount:I
 
@@ -4776,7 +4776,7 @@
 
     if-lt v10, v11, :cond_7
 
-    .line 3000
+    .line 3052
     const-string v10, "WifiStateMachine"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -4801,28 +4801,28 @@
 
     invoke-static {v10, v11}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3001
+    .line 3053
     const/4 v10, 0x0
 
     iput v10, p0, Landroid/net/wifi/WifiStateMachine;->mNoSignalCount:I
 
-    .line 3002
+    .line 3054
     const v10, 0x2004a
 
     invoke-virtual {p0, v10}, Landroid/net/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 3005
+    .line 3057
     :cond_7
     return-void
 
-    .line 2968
+    .line 3020
     .restart local v7       #newSignalLevel:I
     :cond_8
     iget v10, p0, Landroid/net/wifi/WifiStateMachine;->mLastSignalLevel:I
 
     if-eq v7, v10, :cond_9
 
-    .line 2970
+    .line 3022
     const-string v10, "WifiStateMachine"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -4857,37 +4857,37 @@
 
     invoke-static {v10, v11}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2971
+    .line 3023
     const/4 v10, 0x0
 
     iput v10, p0, Landroid/net/wifi/WifiStateMachine;->SameSignalLevelCount:I
 
-    .line 2973
+    .line 3025
     invoke-direct {p0, v6}, Landroid/net/wifi/WifiStateMachine;->sendRssiChangeBroadcast(I)V
 
     goto :goto_2
 
-    .line 2975
+    .line 3027
     :cond_9
     iget v10, p0, Landroid/net/wifi/WifiStateMachine;->mLastSignalLevel:I
 
     if-ne v7, v10, :cond_5
 
-    .line 2976
+    .line 3028
     iget v10, p0, Landroid/net/wifi/WifiStateMachine;->SameSignalLevelCount:I
 
     add-int/lit8 v10, v10, 0x1
 
     iput v10, p0, Landroid/net/wifi/WifiStateMachine;->SameSignalLevelCount:I
 
-    .line 2977
+    .line 3029
     iget v10, p0, Landroid/net/wifi/WifiStateMachine;->SameSignalLevelCount:I
 
     const/4 v11, 0x3
 
     if-ge v10, v11, :cond_5
 
-    .line 2978
+    .line 3030
     const-string v10, "WifiStateMachine"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -4912,12 +4912,12 @@
 
     invoke-static {v10, v11}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2979
+    .line 3031
     invoke-direct {p0, v6}, Landroid/net/wifi/WifiStateMachine;->sendRssiChangeBroadcast(I)V
 
     goto/16 :goto_2
 
-    .line 2986
+    .line 3038
     .end local v7           #newSignalLevel:I
     :cond_a
     iget-object v10, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
@@ -4928,7 +4928,7 @@
 
     goto/16 :goto_3
 
-    .line 2997
+    .line 3049
     :cond_b
     const/4 v10, 0x0
 
@@ -4936,7 +4936,7 @@
 
     goto/16 :goto_4
 
-    .line 2936
+    .line 2988
     .restart local v0       #arr$:[Ljava/lang/String;
     .restart local v1       #i$:I
     .restart local v2       #len$:I
@@ -4955,22 +4955,22 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 2884
+    .line 2936
     invoke-static {}, Landroid/net/wifi/WifiNative;->statusCommand()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 2885
+    .line 2937
     .local v7, status:Ljava/lang/String;
     if-nez v7, :cond_0
 
     move-object v8, v9
 
-    .line 2897
+    .line 2949
     :goto_0
     return-object v8
 
-    .line 2889
+    .line 2941
     :cond_0
     const-string v10, "\n"
 
@@ -4978,7 +4978,7 @@
 
     move-result-object v4
 
-    .line 2890
+    .line 2942
     .local v4, lines:[Ljava/lang/String;
     move-object v0, v4
 
@@ -4994,7 +4994,7 @@
 
     aget-object v3, v0, v1
 
-    .line 2891
+    .line 2943
     .local v3, line:Ljava/lang/String;
     const-string v10, " *= *"
 
@@ -5002,7 +5002,7 @@
 
     move-result-object v6
 
-    .line 2892
+    .line 2944
     .local v6, prop:[Ljava/lang/String;
     array-length v10, v6
 
@@ -5010,25 +5010,25 @@
 
     if-ge v10, v11, :cond_2
 
-    .line 2890
+    .line 2942
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 2893
+    .line 2945
     :cond_2
     const/4 v10, 0x0
 
     aget-object v5, v6, v10
 
-    .line 2894
+    .line 2946
     .local v5, name:Ljava/lang/String;
     const/4 v10, 0x1
 
     aget-object v8, v6, v10
 
-    .line 2895
+    .line 2947
     .local v8, value:Ljava/lang/String;
     const-string/jumbo v10, "ssid"
 
@@ -5047,7 +5047,7 @@
     :cond_3
     move-object v8, v9
 
-    .line 2897
+    .line 2949
     goto :goto_0
 .end method
 
@@ -5064,28 +5064,28 @@
     .prologue
     const/4 v13, 0x4
 
-    .line 2432
+    .line 2484
     if-nez p0, :cond_0
 
-    .line 2433
+    .line 2485
     new-instance v12, Ljava/net/UnknownHostException;
 
     invoke-direct {v12, p0}, Ljava/net/UnknownHostException;-><init>(Ljava/lang/String;)V
 
     throw v12
 
-    .line 2435
+    .line 2487
     :cond_0
     if-nez p1, :cond_1
 
-    .line 2436
+    .line 2488
     new-instance v12, Ljava/net/UnknownHostException;
 
     invoke-direct {v12, p1}, Ljava/net/UnknownHostException;-><init>(Ljava/lang/String;)V
 
     throw v12
 
-    .line 2440
+    .line 2492
     :cond_1
     :try_start_0
     const-string v12, "\\."
@@ -5094,13 +5094,13 @@
 
     move-result-object v10
 
-    .line 2441
+    .line 2493
     .local v10, parts:[Ljava/lang/String;
     array-length v12, v10
 
     if-eq v12, v13, :cond_2
 
-    .line 2442
+    .line 2494
     new-instance v12, Ljava/net/UnknownHostException;
 
     invoke-direct {v12, p0}, Ljava/net/UnknownHostException;-><init>(Ljava/lang/String;)V
@@ -5109,12 +5109,12 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2463
+    .line 2515
     .end local v10           #parts:[Ljava/lang/String;
     :catch_0
     move-exception v5
 
-    .line 2464
+    .line 2516
     .local v5, ex:Ljava/lang/NumberFormatException;
     new-instance v12, Ljava/net/UnknownHostException;
 
@@ -5122,7 +5122,7 @@
 
     throw v12
 
-    .line 2444
+    .line 2496
     .end local v5           #ex:Ljava/lang/NumberFormatException;
     .restart local v10       #parts:[Ljava/lang/String;
     :cond_2
@@ -5133,20 +5133,20 @@
 
     move-result-object v11
 
-    .line 2445
+    .line 2497
     .local v11, parts2:[Ljava/lang/String;
     array-length v12, v11
 
     if-eq v12, v13, :cond_3
 
-    .line 2446
+    .line 2498
     new-instance v12, Ljava/net/UnknownHostException;
 
     invoke-direct {v12, p1}, Ljava/net/UnknownHostException;-><init>(Ljava/lang/String;)V
 
     throw v12
 
-    .line 2448
+    .line 2500
     :cond_3
     const/4 v12, 0x0
 
@@ -5156,7 +5156,7 @@
 
     move-result v0
 
-    .line 2449
+    .line 2501
     .local v0, addr1:I
     const/4 v12, 0x1
 
@@ -5166,7 +5166,7 @@
 
     move-result v1
 
-    .line 2450
+    .line 2502
     .local v1, addr2:I
     const/4 v12, 0x2
 
@@ -5176,7 +5176,7 @@
 
     move-result v2
 
-    .line 2451
+    .line 2503
     .local v2, addr3:I
     const/4 v12, 0x3
 
@@ -5186,7 +5186,7 @@
 
     move-result v3
 
-    .line 2452
+    .line 2504
     .local v3, addr4:I
     const/4 v12, 0x0
 
@@ -5196,7 +5196,7 @@
 
     move-result v6
 
-    .line 2453
+    .line 2505
     .local v6, mask1:I
     const/4 v12, 0x1
 
@@ -5206,7 +5206,7 @@
 
     move-result v7
 
-    .line 2454
+    .line 2506
     .local v7, mask2:I
     const/4 v12, 0x2
 
@@ -5216,7 +5216,7 @@
 
     move-result v8
 
-    .line 2455
+    .line 2507
     .local v8, mask3:I
     const/4 v12, 0x3
 
@@ -5226,33 +5226,33 @@
 
     move-result v9
 
-    .line 2456
+    .line 2508
     .local v9, mask4:I
     xor-int/lit16 v12, v6, 0xff
 
     or-int/2addr v0, v12
 
-    .line 2457
+    .line 2509
     xor-int/lit16 v12, v7, 0xff
 
     or-int/2addr v1, v12
 
-    .line 2458
+    .line 2510
     xor-int/lit16 v12, v8, 0xff
 
     or-int/2addr v2, v12
 
-    .line 2459
+    .line 2511
     xor-int/lit16 v12, v9, 0xff
 
     or-int/2addr v3, v12
 
-    .line 2460
+    .line 2512
     if-eqz v3, :cond_4
 
     add-int/lit8 v3, v3, -0x1
 
-    .line 2461
+    .line 2513
     :cond_4
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -5314,7 +5314,7 @@
 
     move-result-object v4
 
-    .line 2462
+    .line 2514
     .local v4, endingIP:Ljava/lang/String;
     return-object v4
 .end method
@@ -5324,22 +5324,22 @@
     .parameter "config"
 
     .prologue
-    .line 2348
+    .line 2400
     if-nez p1, :cond_0
 
     const/4 v2, 0x0
 
-    .line 2358
+    .line 2410
     :goto_0
     return-object v2
 
-    .line 2350
+    .line 2402
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 2351
+    .line 2403
     .local v1, sbuilder:Ljava/lang/StringBuilder;
     const/4 v0, 0x0
 
@@ -5349,7 +5349,7 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 2352
+    .line 2404
     invoke-virtual {p1}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
 
     move-result-object v2
@@ -5360,7 +5360,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 2354
+    .line 2406
     invoke-virtual {p1}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
 
     move-result-object v2
@@ -5371,18 +5371,18 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2355
+    .line 2407
     const/16 v2, 0x2c
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 2351
+    .line 2403
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 2358
+    .line 2410
     :cond_2
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -5396,7 +5396,7 @@
     .parameter "seed"
 
     .prologue
-    .line 2490
+    .line 2542
     :try_start_0
     const-string v3, "AES"
 
@@ -5404,7 +5404,7 @@
 
     move-result-object v1
 
-    .line 2491
+    .line 2543
     .local v1, keyGen:Ljavax/crypto/KeyGenerator;
     const-string v3, "SHA1PRNG"
 
@@ -5412,16 +5412,16 @@
 
     move-result-object v2
 
-    .line 2492
+    .line 2544
     .local v2, random:Ljava/security/SecureRandom;
     invoke-virtual {v2, p1}, Ljava/security/SecureRandom;->setSeed([B)V
 
-    .line 2493
+    .line 2545
     const/16 v3, 0x80
 
     invoke-virtual {v1, v3, v2}, Ljavax/crypto/KeyGenerator;->init(ILjava/security/SecureRandom;)V
 
-    .line 2494
+    .line 2546
     invoke-virtual {v1}, Ljavax/crypto/KeyGenerator;->generateKey()Ljavax/crypto/SecretKey;
 
     move-result-object v3
@@ -5432,17 +5432,17 @@
 
     move-result-object v3
 
-    .line 2497
+    .line 2549
     .end local v1           #keyGen:Ljavax/crypto/KeyGenerator;
     .end local v2           #random:Ljava/security/SecureRandom;
     :goto_0
     return-object v3
 
-    .line 2495
+    .line 2547
     :catch_0
     move-exception v0
 
-    .line 2496
+    .line 2548
     .local v0, ex:Ljava/lang/Exception;
     const-string v3, "WifiStateMachine"
 
@@ -5470,7 +5470,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2497
+    .line 2549
     const/4 v3, 0x0
 
     goto :goto_0
@@ -5480,7 +5480,7 @@
     .locals 3
 
     .prologue
-    .line 3039
+    .line 3091
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -5502,7 +5502,7 @@
     .locals 1
 
     .prologue
-    .line 3129
+    .line 3181
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-virtual {v0}, Landroid/net/NetworkInfo;->getDetailedState()Landroid/net/NetworkInfo$DetailedState;
@@ -5517,20 +5517,20 @@
     .parameter "seed"
 
     .prologue
-    .line 2469
+    .line 2521
     if-nez p1, :cond_0
 
-    .line 2470
+    .line 2522
     const-string v2, "WifiStateMachine"
 
     const-string v3, "getRandomKey() ERROR: using default mac = 00:11:22:33:44:55"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2471
+    .line 2523
     const-string p1, "00:11:22:33:44:55"
 
-    .line 2475
+    .line 2527
     :cond_0
     :try_start_0
     invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
@@ -5541,26 +5541,26 @@
 
     move-result-object v1
 
-    .line 2476
+    .line 2528
     .local v1, key:[B
     if-nez v1, :cond_1
 
-    .line 2477
+    .line 2529
     const-string v2, "WifiStateMachine"
 
     const-string v3, "() ERROR: getKey() fails!"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2478
+    .line 2530
     const-string v2, "1234567890123"
 
-    .line 2484
+    .line 2536
     .end local v1           #key:[B
     :goto_0
     return-object v2
 
-    .line 2481
+    .line 2533
     .restart local v1       #key:[B
     :cond_1
     invoke-direct {p0, v1}, Landroid/net/wifi/WifiStateMachine;->byte2String([B)Ljava/lang/String;
@@ -5579,12 +5579,12 @@
 
     goto :goto_0
 
-    .line 2482
+    .line 2534
     .end local v1           #key:[B
     :catch_0
     move-exception v0
 
-    .line 2483
+    .line 2535
     .local v0, ex:Ljava/lang/Exception;
     const-string v2, "WifiStateMachine"
 
@@ -5612,7 +5612,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2484
+    .line 2536
     const-string v2, "1234567890123"
 
     goto :goto_0
@@ -5623,22 +5623,22 @@
     .parameter "config"
 
     .prologue
-    .line 2363
+    .line 2415
     if-nez p1, :cond_0
 
     const/4 v2, 0x0
 
-    .line 2373
+    .line 2425
     :goto_0
     return-object v2
 
-    .line 2365
+    .line 2417
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 2366
+    .line 2418
     .local v1, sbuilder:Ljava/lang/StringBuilder;
     const/4 v0, 0x0
 
@@ -5648,7 +5648,7 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 2367
+    .line 2419
     invoke-virtual {p1}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
 
     move-result-object v2
@@ -5659,7 +5659,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 2369
+    .line 2421
     invoke-virtual {p1}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
 
     move-result-object v2
@@ -5670,18 +5670,18 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2370
+    .line 2422
     const/16 v2, 0x2c
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 2366
+    .line 2418
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 2373
+    .line 2425
     :cond_2
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -5700,19 +5700,19 @@
 
     const/4 v2, 0x1
 
-    .line 3329
+    .line 3404
     const-string v0, "IP configuration failed"
 
     invoke-direct {p0, v0}, Landroid/net/wifi/WifiStateMachine;->loge(Ljava/lang/String;)V
 
-    .line 3331
+    .line 3406
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/net/wifi/WifiInfo;->setInetAddress(Ljava/net/InetAddress;)V
 
-    .line 3336
+    .line 3411
     iget v0, p0, Landroid/net/wifi/WifiStateMachine;->mReconnectCount:I
 
     add-int/lit8 v0, v0, 0x1
@@ -5725,7 +5725,7 @@
 
     if-le v0, v1, :cond_0
 
-    .line 3337
+    .line 3412
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -5760,89 +5760,89 @@
 
     invoke-direct {p0, v0}, Landroid/net/wifi/WifiStateMachine;->loge(Ljava/lang/String;)V
 
-    .line 3339
+    .line 3414
     iget v0, p0, Landroid/net/wifi/WifiStateMachine;->mLastNetworkId:I
 
     invoke-static {v0, v4, v3}, Landroid/net/wifi/WifiConfigStore;->disableNetwork(IIZ)Z
 
-    .line 3341
+    .line 3416
     iput v3, p0, Landroid/net/wifi/WifiStateMachine;->mReconnectCount:I
 
-    .line 3347
+    .line 3422
     :cond_0
     invoke-static {}, Landroid/net/wifi/WifiNative;->disconnectCommand()Z
 
-    .line 3348
+    .line 3423
     invoke-static {}, Landroid/net/wifi/WifiNative;->reconnectCommand()Z
 
-    .line 3350
+    .line 3425
     invoke-static {}, Landroid/net/wifi/WifiNative;->getIsWepCommand()Z
 
     move-result v0
 
     if-ne v0, v2, :cond_2
 
-    .line 3351
+    .line 3426
     iget-boolean v0, p0, Landroid/net/wifi/WifiStateMachine;->mIndicateWepError:Z
 
     if-nez v0, :cond_1
 
-    .line 3353
+    .line 3428
     invoke-virtual {p0, v2}, Landroid/net/wifi/WifiStateMachine;->setWepErrorNotificationVisible(Z)V
 
-    .line 3354
+    .line 3429
     const-string/jumbo v0, "set WEP_ERROR icon"
 
     invoke-direct {p0, v0}, Landroid/net/wifi/WifiStateMachine;->log(Ljava/lang/String;)V
 
-    .line 3355
+    .line 3430
     iput-boolean v2, p0, Landroid/net/wifi/WifiStateMachine;->mIndicateWepError:Z
 
-    .line 3357
+    .line 3432
     :cond_1
     invoke-direct {p0, v4}, Landroid/net/wifi/WifiStateMachine;->sendErrorBroadcast(I)V
 
-    .line 3360
+    .line 3435
     :cond_2
     return-void
 .end method
 
 .method private handleNetworkDisconnect()V
-    .locals 5
+    .locals 7
 
     .prologue
-    const/4 v4, -0x1
+    const/4 v6, -0x1
 
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
-    .line 3171
+    .line 3223
     const-string v1, "WifiStateMachine"
 
     const-string v2, "Reset connections and stopping DHCP"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3177
+    .line 3229
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mDhcpStateMachine:Landroid/net/DhcpStateMachine;
 
     if-eqz v1, :cond_0
 
-    .line 3178
+    .line 3230
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mDhcpStateMachine:Landroid/net/DhcpStateMachine;
 
     const v2, 0x30002
 
     invoke-virtual {v1, v2}, Landroid/net/DhcpStateMachine;->sendMessage(I)V
 
-    .line 3179
+    .line 3231
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mDhcpStateMachine:Landroid/net/DhcpStateMachine;
 
     invoke-virtual {v1}, Landroid/net/DhcpStateMachine;->quit()V
 
-    .line 3180
-    iput-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mDhcpStateMachine:Landroid/net/DhcpStateMachine;
+    .line 3232
+    iput-object v5, p0, Landroid/net/wifi/WifiStateMachine;->mDhcpStateMachine:Landroid/net/DhcpStateMachine;
 
-    .line 3184
+    .line 3236
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mNwService:Landroid/os/INetworkManagementService;
@@ -5851,7 +5851,7 @@
 
     invoke-interface {v1, v2}, Landroid/os/INetworkManagementService;->clearInterfaceAddresses(Ljava/lang/String;)V
 
-    .line 3185
+    .line 3237
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mNwService:Landroid/os/INetworkManagementService;
 
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mInterfaceName:Ljava/lang/String;
@@ -5860,62 +5860,73 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3191
+    .line 3243
     :goto_0
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
-    invoke-virtual {v1, v3}, Landroid/net/wifi/WifiInfo;->setInetAddress(Ljava/net/InetAddress;)V
+    invoke-virtual {v1, v5}, Landroid/net/wifi/WifiInfo;->setInetAddress(Ljava/net/InetAddress;)V
 
-    .line 3192
+    .line 3244
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
-    invoke-virtual {v1, v3}, Landroid/net/wifi/WifiInfo;->setBSSID(Ljava/lang/String;)V
+    invoke-virtual {v1, v5}, Landroid/net/wifi/WifiInfo;->setBSSID(Ljava/lang/String;)V
 
-    .line 3193
+    .line 3245
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
-    invoke-virtual {v1, v3}, Landroid/net/wifi/WifiInfo;->setSSID(Ljava/lang/String;)V
+    invoke-virtual {v1, v5}, Landroid/net/wifi/WifiInfo;->setSSID(Ljava/lang/String;)V
 
-    .line 3194
+    .line 3246
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
-    invoke-virtual {v1, v4}, Landroid/net/wifi/WifiInfo;->setNetworkId(I)V
+    invoke-virtual {v1, v6}, Landroid/net/wifi/WifiInfo;->setNetworkId(I)V
 
-    .line 3195
+    .line 3247
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
     const/16 v2, -0xc8
 
     invoke-virtual {v1, v2}, Landroid/net/wifi/WifiInfo;->setRssi(I)V
 
-    .line 3196
+    .line 3248
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
-    invoke-virtual {v1, v4}, Landroid/net/wifi/WifiInfo;->setLinkSpeed(I)V
+    invoke-virtual {v1, v6}, Landroid/net/wifi/WifiInfo;->setLinkSpeed(I)V
 
-    .line 3197
+    .line 3250
+    const-string v1, "all"
+
+    const-string v2, "all"
+
+    const-string/jumbo v3, "wifi"
+
+    const/16 v4, 0xbb9
+
+    invoke-static {v1, v2, v3, v4}, Landroid/net/NetworkUtils;->delRoutingRule(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)I
+
+    .line 3252
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/net/wifi/WifiInfo;->setExplicitConnect(Z)V
 
-    .line 3200
+    .line 3255
     sget-object v1, Landroid/net/NetworkInfo$DetailedState;->DISCONNECTED:Landroid/net/NetworkInfo$DetailedState;
 
     invoke-direct {p0, v1}, Landroid/net/wifi/WifiStateMachine;->setNetworkDetailedState(Landroid/net/NetworkInfo$DetailedState;)V
 
-    .line 3201
+    .line 3256
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mLastBssid:Ljava/lang/String;
 
     invoke-direct {p0, v1}, Landroid/net/wifi/WifiStateMachine;->sendNetworkStateChangeBroadcast(Ljava/lang/String;)V
 
-    .line 3204
+    .line 3259
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mLinkProperties:Landroid/net/LinkProperties;
 
     invoke-virtual {v1}, Landroid/net/LinkProperties;->clear()V
 
-    .line 3206
+    .line 3261
     iget v1, p0, Landroid/net/wifi/WifiStateMachine;->mLastNetworkId:I
 
     invoke-static {v1}, Landroid/net/wifi/WifiConfigStore;->isUsingStaticIp(I)Z
@@ -5924,26 +5935,26 @@
 
     if-nez v1, :cond_1
 
-    .line 3207
+    .line 3262
     iget v1, p0, Landroid/net/wifi/WifiStateMachine;->mLastNetworkId:I
 
     invoke-static {v1}, Landroid/net/wifi/WifiConfigStore;->clearIpConfiguration(I)V
 
-    .line 3210
+    .line 3265
     :cond_1
-    iput-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mLastBssid:Ljava/lang/String;
+    iput-object v5, p0, Landroid/net/wifi/WifiStateMachine;->mLastBssid:Ljava/lang/String;
 
-    .line 3211
-    iput v4, p0, Landroid/net/wifi/WifiStateMachine;->mLastNetworkId:I
+    .line 3266
+    iput v6, p0, Landroid/net/wifi/WifiStateMachine;->mLastNetworkId:I
 
-    .line 3212
+    .line 3267
     return-void
 
-    .line 3186
+    .line 3238
     :catch_0
     move-exception v0
 
-    .line 3187
+    .line 3239
     .local v0, e:Ljava/lang/Exception;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -5969,189 +5980,342 @@
 .end method
 
 .method private handleSuccessfulIpConfiguration(Landroid/net/DhcpInfoInternal;)V
-    .locals 5
+    .locals 11
     .parameter "dhcpInfoInternal"
 
     .prologue
-    const/4 v4, 0x0
+    const/16 v10, 0xbb9
 
-    .line 3277
-    iget-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mDhcpInfoInternal:Landroid/net/DhcpInfoInternal;
+    const/4 v9, 0x0
 
-    monitor-enter v3
+    .line 3332
+    iget-object v7, p0, Landroid/net/wifi/WifiStateMachine;->mDhcpInfoInternal:Landroid/net/DhcpInfoInternal;
 
-    .line 3278
+    monitor-enter v7
+
+    .line 3333
     :try_start_0
     iput-object p1, p0, Landroid/net/wifi/WifiStateMachine;->mDhcpInfoInternal:Landroid/net/DhcpInfoInternal;
 
-    .line 3279
-    monitor-exit v3
+    .line 3334
+    monitor-exit v7
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3280
-    const/4 v2, -0x1
+    .line 3335
+    const/4 v6, -0x1
 
-    iput v2, p0, Landroid/net/wifi/WifiStateMachine;->mLastSignalLevel:I
+    iput v6, p0, Landroid/net/wifi/WifiStateMachine;->mLastSignalLevel:I
 
-    .line 3282
-    iput v4, p0, Landroid/net/wifi/WifiStateMachine;->mNoSignalCount:I
+    .line 3337
+    iput v9, p0, Landroid/net/wifi/WifiStateMachine;->mNoSignalCount:I
 
-    .line 3284
-    const/16 v2, -0xc8
+    .line 3339
+    const/16 v6, -0xc8
 
-    iput v2, p0, Landroid/net/wifi/WifiStateMachine;->mLastRSSI:I
+    iput v6, p0, Landroid/net/wifi/WifiStateMachine;->mLastRSSI:I
 
-    .line 3285
-    iput v4, p0, Landroid/net/wifi/WifiStateMachine;->mReconnectCount:I
+    .line 3340
+    iput v9, p0, Landroid/net/wifi/WifiStateMachine;->mReconnectCount:I
 
-    .line 3286
-    iget v2, p0, Landroid/net/wifi/WifiStateMachine;->mLastNetworkId:I
+    .line 3341
+    iget v6, p0, Landroid/net/wifi/WifiStateMachine;->mLastNetworkId:I
 
-    invoke-static {v2, p1}, Landroid/net/wifi/WifiConfigStore;->setIpConfiguration(ILandroid/net/DhcpInfoInternal;)V
+    invoke-static {v6, p1}, Landroid/net/wifi/WifiConfigStore;->setIpConfiguration(ILandroid/net/DhcpInfoInternal;)V
 
-    .line 3287
-    iget-object v2, p1, Landroid/net/DhcpInfoInternal;->ipAddress:Ljava/lang/String;
+    .line 3342
+    iget-object v6, p1, Landroid/net/DhcpInfoInternal;->ipAddress:Ljava/lang/String;
 
-    invoke-static {v2}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
+    invoke-static {v6}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 3288
-    .local v0, addr:Ljava/net/InetAddress;
-    iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
+    .line 3343
+    .local v1, addr:Ljava/net/InetAddress;
+    iget-object v6, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
-    invoke-virtual {v2, v0}, Landroid/net/wifi/WifiInfo;->setInetAddress(Ljava/net/InetAddress;)V
+    invoke-virtual {v6, v1}, Landroid/net/wifi/WifiInfo;->setInetAddress(Ljava/net/InetAddress;)V
 
-    .line 3291
+    .line 3346
     invoke-virtual {p0}, Landroid/net/wifi/WifiStateMachine;->clearWepErrorNotification()V
 
-    .line 3294
-    monitor-enter p0
+    .line 3352
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    .line 3295
-    :try_start_1
-    iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mDhcpInfoInternal:Landroid/net/DhcpInfoInternal;
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2}, Landroid/net/DhcpInfoInternal;->makeDhcpInfo()Landroid/net/DhcpInfo;
+    const-string v7, "dhcp."
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    iget-object v7, p0, Landroid/net/wifi/WifiStateMachine;->mInterfaceName:Ljava/lang/String;
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, ".gateway"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 3353
+    .local v4, sDhcpGatewayPropNames:Ljava/lang/String;
+    invoke-static {v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    iget v2, v2, Landroid/net/DhcpInfo;->gateway:I
+    .line 3354
+    .local v2, gateway_value:Ljava/lang/String;
+    const-string v6, "0.0.0.0"
 
-    invoke-static {v2}, Landroid/net/wifi/WifiNative;->addGatewayCommand(I)Z
+    invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 3296
+    move-result v6
+
+    if-nez v6, :cond_0
+
+    const-string v6, ""
+
+    invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_1
+
+    .line 3355
+    :cond_0
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "dhcp."
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    iget-object v7, p0, Landroid/net/wifi/WifiStateMachine;->mInterfaceName:Ljava/lang/String;
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, ".gateway2"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 3356
+    .local v5, sDhcpPropNames:Ljava/lang/String;
+    invoke-static {v5}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 3357
+    .local v0, Gateway2:Ljava/lang/String;
+    move-object v2, v0
+
+    .line 3358
+    const-string v6, "WifiStateMachine"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "gateway from dhcp option 3 is wrong, use gateway2 dhcpcd set: "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 3360
+    .end local v0           #Gateway2:Ljava/lang/String;
+    .end local v5           #sDhcpPropNames:Ljava/lang/String;
+    :cond_1
+    const-string/jumbo v6, "wifi"
+
+    iget-object v7, p0, Landroid/net/wifi/WifiStateMachine;->mInterfaceName:Ljava/lang/String;
+
+    invoke-static {v6, v7, v2}, Landroid/net/NetworkUtils;->addRoutingTable(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 3363
+    const-string v6, "WifiStateMachine"
+
+    const-string v7, "adding routing rule table=>wifi fromIp=all, toIp=all priority=3001"
+
+    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 3364
+    const-string v6, "all"
+
+    const-string v7, "all"
+
+    const-string/jumbo v8, "wifi"
+
+    invoke-static {v6, v7, v8, v10}, Landroid/net/NetworkUtils;->delRoutingRule(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)I
+
+    .line 3365
+    const-string v6, "all"
+
+    const-string v7, "all"
+
+    const-string/jumbo v8, "wifi"
+
+    invoke-static {v6, v7, v8, v10}, Landroid/net/NetworkUtils;->addRoutingRule(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)I
+
+    .line 3369
+    monitor-enter p0
+
+    .line 3370
+    :try_start_1
+    iget-object v6, p0, Landroid/net/wifi/WifiStateMachine;->mDhcpInfoInternal:Landroid/net/DhcpInfoInternal;
+
+    invoke-virtual {v6}, Landroid/net/DhcpInfoInternal;->makeDhcpInfo()Landroid/net/DhcpInfo;
+
+    move-result-object v6
+
+    iget v6, v6, Landroid/net/DhcpInfo;->gateway:I
+
+    invoke-static {v6}, Landroid/net/wifi/WifiNative;->addGatewayCommand(I)Z
+
+    .line 3371
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 3300
+    .line 3375
     invoke-direct {p0}, Landroid/net/wifi/WifiStateMachine;->isMulticastEnabled()Z
 
-    move-result v2
+    move-result v6
 
-    if-nez v2, :cond_0
+    if-nez v6, :cond_2
 
-    .line 3301
+    .line 3376
     invoke-virtual {p0}, Landroid/net/wifi/WifiStateMachine;->startPacketFiltering_arp()V
 
-    .line 3302
-    iget-boolean v2, p0, Landroid/net/wifi/WifiStateMachine;->mIsSsdpFilterRuleEnabled:Z
+    .line 3377
+    iget-boolean v6, p0, Landroid/net/wifi/WifiStateMachine;->mIsSsdpFilterRuleEnabled:Z
 
-    if-eqz v2, :cond_0
+    if-eqz v6, :cond_2
 
-    .line 3303
-    invoke-virtual {p0, v4}, Landroid/net/wifi/WifiStateMachine;->startPacketFiltering_ssdp(Z)V
+    .line 3378
+    invoke-virtual {p0, v9}, Landroid/net/wifi/WifiStateMachine;->startPacketFiltering_ssdp(Z)V
 
-    .line 3308
-    :cond_0
+    .line 3383
+    :cond_2
     invoke-direct {p0}, Landroid/net/wifi/WifiStateMachine;->getNetworkDetailedState()Landroid/net/NetworkInfo$DetailedState;
 
-    move-result-object v2
+    move-result-object v6
 
-    sget-object v3, Landroid/net/NetworkInfo$DetailedState;->CONNECTED:Landroid/net/NetworkInfo$DetailedState;
+    sget-object v7, Landroid/net/NetworkInfo$DetailedState;->CONNECTED:Landroid/net/NetworkInfo$DetailedState;
 
-    if-ne v2, v3, :cond_2
+    if-ne v6, v7, :cond_4
 
-    .line 3310
+    .line 3385
     invoke-virtual {p1}, Landroid/net/DhcpInfoInternal;->makeLinkProperties()Landroid/net/LinkProperties;
 
-    move-result-object v1
+    move-result-object v3
 
-    .line 3311
-    .local v1, linkProperties:Landroid/net/LinkProperties;
-    iget v2, p0, Landroid/net/wifi/WifiStateMachine;->mLastNetworkId:I
+    .line 3386
+    .local v3, linkProperties:Landroid/net/LinkProperties;
+    iget v6, p0, Landroid/net/wifi/WifiStateMachine;->mLastNetworkId:I
 
-    invoke-static {v2}, Landroid/net/wifi/WifiConfigStore;->getProxyProperties(I)Landroid/net/ProxyProperties;
+    invoke-static {v6}, Landroid/net/wifi/WifiConfigStore;->getProxyProperties(I)Landroid/net/ProxyProperties;
 
-    move-result-object v2
+    move-result-object v6
 
-    invoke-virtual {v1, v2}, Landroid/net/LinkProperties;->setHttpProxy(Landroid/net/ProxyProperties;)V
+    invoke-virtual {v3, v6}, Landroid/net/LinkProperties;->setHttpProxy(Landroid/net/ProxyProperties;)V
 
-    .line 3312
-    iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mInterfaceName:Ljava/lang/String;
+    .line 3387
+    iget-object v6, p0, Landroid/net/wifi/WifiStateMachine;->mInterfaceName:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Landroid/net/LinkProperties;->setInterfaceName(Ljava/lang/String;)V
+    invoke-virtual {v3, v6}, Landroid/net/LinkProperties;->setInterfaceName(Ljava/lang/String;)V
 
-    .line 3313
-    iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mLinkProperties:Landroid/net/LinkProperties;
+    .line 3388
+    iget-object v6, p0, Landroid/net/wifi/WifiStateMachine;->mLinkProperties:Landroid/net/LinkProperties;
 
-    invoke-virtual {v1, v2}, Landroid/net/LinkProperties;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v6}, Landroid/net/LinkProperties;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v6
 
-    if-nez v2, :cond_1
+    if-nez v6, :cond_3
 
-    .line 3318
-    iput-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mLinkProperties:Landroid/net/LinkProperties;
+    .line 3393
+    iput-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mLinkProperties:Landroid/net/LinkProperties;
 
-    .line 3319
+    .line 3394
     invoke-direct {p0}, Landroid/net/wifi/WifiStateMachine;->sendLinkConfigurationChangedBroadcast()V
 
-    .line 3326
-    .end local v1           #linkProperties:Landroid/net/LinkProperties;
-    :cond_1
+    .line 3401
+    .end local v3           #linkProperties:Landroid/net/LinkProperties;
+    :cond_3
     :goto_0
     return-void
 
-    .line 3279
-    .end local v0           #addr:Ljava/net/InetAddress;
+    .line 3334
+    .end local v1           #addr:Ljava/net/InetAddress;
+    .end local v2           #gateway_value:Ljava/lang/String;
+    .end local v4           #sDhcpGatewayPropNames:Ljava/lang/String;
     :catchall_0
-    move-exception v2
+    move-exception v6
 
     :try_start_2
-    monitor-exit v3
+    monitor-exit v7
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    throw v2
+    throw v6
 
-    .line 3296
-    .restart local v0       #addr:Ljava/net/InetAddress;
+    .line 3371
+    .restart local v1       #addr:Ljava/net/InetAddress;
+    .restart local v2       #gateway_value:Ljava/lang/String;
+    .restart local v4       #sDhcpGatewayPropNames:Ljava/lang/String;
     :catchall_1
-    move-exception v2
+    move-exception v6
 
     :try_start_3
     monitor-exit p0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    throw v2
+    throw v6
 
-    .line 3322
-    :cond_2
+    .line 3397
+    :cond_4
     invoke-direct {p0}, Landroid/net/wifi/WifiStateMachine;->configureLinkProperties()V
 
-    .line 3323
-    sget-object v2, Landroid/net/NetworkInfo$DetailedState;->CONNECTED:Landroid/net/NetworkInfo$DetailedState;
+    .line 3398
+    sget-object v6, Landroid/net/NetworkInfo$DetailedState;->CONNECTED:Landroid/net/NetworkInfo$DetailedState;
 
-    invoke-direct {p0, v2}, Landroid/net/wifi/WifiStateMachine;->setNetworkDetailedState(Landroid/net/NetworkInfo$DetailedState;)V
+    invoke-direct {p0, v6}, Landroid/net/wifi/WifiStateMachine;->setNetworkDetailedState(Landroid/net/NetworkInfo$DetailedState;)V
 
-    .line 3324
-    iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mLastBssid:Ljava/lang/String;
+    .line 3399
+    iget-object v6, p0, Landroid/net/wifi/WifiStateMachine;->mLastBssid:Ljava/lang/String;
 
-    invoke-direct {p0, v2}, Landroid/net/wifi/WifiStateMachine;->sendNetworkStateChangeBroadcast(Ljava/lang/String;)V
+    invoke-direct {p0, v6}, Landroid/net/wifi/WifiStateMachine;->sendNetworkStateChangeBroadcast(Ljava/lang/String;)V
 
     goto :goto_0
 .end method
@@ -6161,16 +6325,16 @@
     .parameter "message"
 
     .prologue
-    .line 3134
+    .line 3186
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/net/wifi/StateChangeResult;
 
-    .line 3135
+    .line 3187
     .local v1, stateChangeResult:Landroid/net/wifi/StateChangeResult;
     iget-object v0, v1, Landroid/net/wifi/StateChangeResult;->state:Landroid/net/wifi/SupplicantState;
 
-    .line 3140
+    .line 3192
     .local v0, state:Landroid/net/wifi/SupplicantState;
     const v2, 0xc367
 
@@ -6180,39 +6344,39 @@
 
     invoke-static {v2, v3}, Landroid/util/EventLog;->writeEvent(II)I
 
-    .line 3141
+    .line 3193
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
     invoke-virtual {v2, v0}, Landroid/net/wifi/WifiInfo;->setSupplicantState(Landroid/net/wifi/SupplicantState;)V
 
-    .line 3143
+    .line 3195
     invoke-static {v0}, Landroid/net/wifi/SupplicantState;->isConnecting(Landroid/net/wifi/SupplicantState;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 3144
+    .line 3196
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
     iget v3, v1, Landroid/net/wifi/StateChangeResult;->networkId:I
 
     invoke-virtual {v2, v3}, Landroid/net/wifi/WifiInfo;->setNetworkId(I)V
 
-    .line 3149
+    .line 3201
     :goto_0
     sget-object v2, Landroid/net/wifi/SupplicantState;->ASSOCIATING:Landroid/net/wifi/SupplicantState;
 
     if-ne v0, v2, :cond_0
 
-    .line 3151
+    .line 3203
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
     iget-object v3, v1, Landroid/net/wifi/StateChangeResult;->BSSID:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Landroid/net/wifi/WifiInfo;->setBSSID(Ljava/lang/String;)V
 
-    .line 3153
+    .line 3205
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
     invoke-direct {p0}, Landroid/net/wifi/WifiStateMachine;->fetchSSID()Ljava/lang/String;
@@ -6221,7 +6385,7 @@
 
     invoke-virtual {v2, v3}, Landroid/net/wifi/WifiInfo;->setSSID(Ljava/lang/String;)V
 
-    .line 3157
+    .line 3209
     :cond_0
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mSupplicantStateTracker:Landroid/net/wifi/SupplicantStateTracker;
 
@@ -6231,7 +6395,7 @@
 
     invoke-virtual {v2, v3}, Landroid/net/wifi/SupplicantStateTracker;->sendMessage(Landroid/os/Message;)V
 
-    .line 3158
+    .line 3210
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mWpsStateMachine:Landroid/net/wifi/WpsStateMachine;
 
     invoke-static {p1}, Landroid/os/Message;->obtain(Landroid/os/Message;)Landroid/os/Message;
@@ -6240,10 +6404,10 @@
 
     invoke-virtual {v2, v3}, Landroid/net/wifi/WpsStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 3160
+    .line 3212
     return-object v0
 
-    .line 3146
+    .line 3198
     :cond_1
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
@@ -6258,7 +6422,7 @@
     .locals 1
 
     .prologue
-    .line 2093
+    .line 2145
     iget-boolean v0, p0, Landroid/net/wifi/WifiStateMachine;->mMulticastEnabled:Z
 
     return v0
@@ -6278,18 +6442,18 @@
     .end annotation
 
     .prologue
-    .line 2637
+    .line 2689
     .local p1, active:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-direct {p0}, Landroid/net/wifi/WifiStateMachine;->checkAndSetConnectivityInstance()V
 
-    .line 2639
+    .line 2691
     iget-object v7, p0, Landroid/net/wifi/WifiStateMachine;->mCm:Landroid/net/ConnectivityManager;
 
     invoke-virtual {v7}, Landroid/net/ConnectivityManager;->getTetherableWifiRegexs()[Ljava/lang/String;
 
     move-result-object v6
 
-    .line 2640
+    .line 2692
     .local v6, wifiRegexs:[Ljava/lang/String;
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -6308,7 +6472,7 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 2641
+    .line 2693
     .local v3, intf:Ljava/lang/String;
     move-object v0, v6
 
@@ -6324,7 +6488,7 @@
 
     aget-object v5, v0, v2
 
-    .line 2642
+    .line 2694
     .local v5, regex:Ljava/lang/String;
     invoke-virtual {v3, v5}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
 
@@ -6332,10 +6496,10 @@
 
     if-eqz v7, :cond_1
 
-    .line 2643
+    .line 2695
     const/4 v7, 0x1
 
-    .line 2648
+    .line 2700
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v2           #i$:I
     .end local v3           #intf:Ljava/lang/String;
@@ -6344,7 +6508,7 @@
     :goto_1
     return v7
 
-    .line 2641
+    .line 2693
     .restart local v0       #arr$:[Ljava/lang/String;
     .restart local v2       #i$:I
     .restart local v3       #intf:Ljava/lang/String;
@@ -6355,7 +6519,7 @@
 
     goto :goto_0
 
-    .line 2648
+    .line 2700
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v2           #i$:I
     .end local v3           #intf:Ljava/lang/String;
@@ -6372,12 +6536,12 @@
     .parameter "s"
 
     .prologue
-    .line 5830
+    .line 5909
     const-string v0, "WifiStateMachine"
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5831
+    .line 5910
     return-void
 .end method
 
@@ -6386,12 +6550,12 @@
     .parameter "s"
 
     .prologue
-    .line 5834
+    .line 5913
     const-string v0, "WifiStateMachine"
 
     invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5835
+    .line 5914
     return-void
 .end method
 
@@ -6400,19 +6564,19 @@
     .parameter "line"
 
     .prologue
-    .line 2762
+    .line 2814
     const/4 v0, 0x0
 
-    .line 2763
+    .line 2815
     .local v0, scanResult:Landroid/net/wifi/ScanResult;
     if-eqz p1, :cond_1
 
-    .line 2768
+    .line 2820
     iget-object v11, p0, Landroid/net/wifi/WifiStateMachine;->mScanResultCache:Landroid/util/LruCache;
 
     monitor-enter v11
 
-    .line 2769
+    .line 2821
     :try_start_0
     sget-object v10, Landroid/net/wifi/WifiStateMachine;->scanResultPattern:Ljava/util/regex/Pattern;
 
@@ -6420,7 +6584,7 @@
 
     move-result-object v8
 
-    .line 2770
+    .line 2822
     .local v8, result:[Ljava/lang/String;
     const/4 v10, 0x3
 
@@ -6434,14 +6598,14 @@
 
     if-gt v10, v12, :cond_6
 
-    .line 2771
+    .line 2823
     const/4 v10, 0x0
 
     aget-object v2, v8, v10
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2776
+    .line 2828
     .local v2, bssid:Ljava/lang/String;
     const/4 v10, 0x1
 
@@ -6452,7 +6616,7 @@
 
     move-result v5
 
-    .line 2777
+    .line 2829
     .local v5, frequency:I
     const/4 v10, 0x2
 
@@ -6465,13 +6629,13 @@
 
     move-result v4
 
-    .line 2781
+    .line 2833
     .local v4, level:I
     if-lez v4, :cond_0
 
     add-int/lit16 v4, v4, -0x100
 
-    .line 2797
+    .line 2849
     :cond_0
     :goto_0
     :try_start_2
@@ -6481,7 +6645,7 @@
 
     if-ne v10, v12, :cond_3
 
-    .line 2798
+    .line 2850
     const/4 v10, 0x3
 
     aget-object v10, v8, v10
@@ -6496,16 +6660,16 @@
 
     if-ne v10, v12, :cond_2
 
-    .line 2799
+    .line 2851
     const/4 v10, 0x3
 
     aget-object v3, v8, v10
 
-    .line 2800
+    .line 2852
     .local v3, flags:Ljava/lang/String;
     const-string v1, ""
 
-    .line 2816
+    .line 2868
     .local v1, ssid:Ljava/lang/String;
     :goto_1
     new-instance v10, Ljava/lang/StringBuilder;
@@ -6524,7 +6688,7 @@
 
     move-result-object v7
 
-    .line 2817
+    .line 2869
     .local v7, key:Ljava/lang/String;
     iget-object v10, p0, Landroid/net/wifi/WifiStateMachine;->mScanResultCache:Landroid/util/LruCache;
 
@@ -6536,29 +6700,29 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 2818
+    .line 2870
     .end local v0           #scanResult:Landroid/net/wifi/ScanResult;
     .local v9, scanResult:Landroid/net/wifi/ScanResult;
     if-eqz v9, :cond_5
 
-    .line 2819
+    .line 2871
     :try_start_3
     iput v4, v9, Landroid/net/wifi/ScanResult;->level:I
 
-    .line 2820
+    .line 2872
     iput-object v1, v9, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
-    .line 2821
+    .line 2873
     iput-object v3, v9, Landroid/net/wifi/ScanResult;->capabilities:Ljava/lang/String;
 
-    .line 2822
+    .line 2874
     iput v5, v9, Landroid/net/wifi/ScanResult;->frequency:I
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     move-object v0, v9
 
-    .line 2836
+    .line 2888
     .end local v1           #ssid:Ljava/lang/String;
     .end local v2           #bssid:Ljava/lang/String;
     .end local v3           #flags:Ljava/lang/String;
@@ -6571,34 +6735,34 @@
     :try_start_4
     monitor-exit v11
 
-    .line 2839
+    .line 2891
     .end local v8           #result:[Ljava/lang/String;
     :cond_1
     return-object v0
 
-    .line 2782
+    .line 2834
     .restart local v2       #bssid:Ljava/lang/String;
     .restart local v8       #result:[Ljava/lang/String;
     :catch_0
     move-exception v6
 
-    .line 2783
+    .line 2835
     .local v6, e:Ljava/lang/NumberFormatException;
     const/4 v5, 0x0
 
-    .line 2784
+    .line 2836
     .restart local v5       #frequency:I
     const/4 v4, 0x0
 
     .restart local v4       #level:I
     goto :goto_0
 
-    .line 2802
+    .line 2854
     .end local v6           #e:Ljava/lang/NumberFormatException;
     :cond_2
     const-string v3, ""
 
-    .line 2803
+    .line 2855
     .restart local v3       #flags:Ljava/lang/String;
     const/4 v10, 0x3
 
@@ -6607,7 +6771,7 @@
     .restart local v1       #ssid:Ljava/lang/String;
     goto :goto_1
 
-    .line 2805
+    .line 2857
     .end local v1           #ssid:Ljava/lang/String;
     .end local v3           #flags:Ljava/lang/String;
     :cond_3
@@ -6617,12 +6781,12 @@
 
     if-ne v10, v12, :cond_4
 
-    .line 2806
+    .line 2858
     const/4 v10, 0x3
 
     aget-object v3, v8, v10
 
-    .line 2807
+    .line 2859
     .restart local v3       #flags:Ljava/lang/String;
     const/4 v10, 0x4
 
@@ -6631,13 +6795,13 @@
     .restart local v1       #ssid:Ljava/lang/String;
     goto :goto_1
 
-    .line 2811
+    .line 2863
     .end local v1           #ssid:Ljava/lang/String;
     .end local v3           #flags:Ljava/lang/String;
     :cond_4
     const-string v3, ""
 
-    .line 2812
+    .line 2864
     .restart local v3       #flags:Ljava/lang/String;
     const-string v1, ""
     :try_end_4
@@ -6646,7 +6810,7 @@
     .restart local v1       #ssid:Ljava/lang/String;
     goto :goto_1
 
-    .line 2825
+    .line 2877
     .end local v0           #scanResult:Landroid/net/wifi/ScanResult;
     .restart local v7       #key:Ljava/lang/String;
     .restart local v9       #scanResult:Landroid/net/wifi/ScanResult;
@@ -6662,14 +6826,14 @@
 
     if-lez v10, :cond_7
 
-    .line 2826
+    .line 2878
     new-instance v0, Landroid/net/wifi/ScanResult;
 
     invoke-direct/range {v0 .. v5}, Landroid/net/wifi/ScanResult;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 2829
+    .line 2881
     .end local v9           #scanResult:Landroid/net/wifi/ScanResult;
     .restart local v0       #scanResult:Landroid/net/wifi/ScanResult;
     :try_start_6
@@ -6679,7 +6843,7 @@
 
     goto :goto_2
 
-    .line 2836
+    .line 2888
     .end local v1           #ssid:Ljava/lang/String;
     .end local v2           #bssid:Ljava/lang/String;
     .end local v3           #flags:Ljava/lang/String;
@@ -6697,7 +6861,7 @@
 
     throw v10
 
-    .line 2833
+    .line 2885
     .restart local v8       #result:[Ljava/lang/String;
     :cond_6
     :try_start_7
@@ -6737,7 +6901,7 @@
 
     goto :goto_2
 
-    .line 2836
+    .line 2888
     .end local v0           #scanResult:Landroid/net/wifi/ScanResult;
     .restart local v1       #ssid:Ljava/lang/String;
     .restart local v2       #bssid:Ljava/lang/String;
@@ -7201,30 +7365,30 @@
     .parameter "errorCode"
 
     .prologue
-    .line 3079
+    .line 3131
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.net.wifi.ERROR"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3080
+    .line 3132
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 3081
+    .line 3133
     const-string v1, "errorCode"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 3082
+    .line 3134
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 3083
+    .line 3135
     return-void
 .end method
 
@@ -7232,20 +7396,20 @@
     .locals 4
 
     .prologue
-    .line 3100
+    .line 3152
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.net.wifi.LINK_CONFIGURATION_CHANGED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3101
+    .line 3153
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 3102
+    .line 3154
     const-string/jumbo v1, "linkProperties"
 
     new-instance v2, Landroid/net/LinkProperties;
@@ -7256,12 +7420,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 3103
+    .line 3155
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 3104
+    .line 3156
     return-void
 .end method
 
@@ -7270,20 +7434,20 @@
     .parameter "bssid"
 
     .prologue
-    .line 3058
+    .line 3110
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.net.wifi.STATE_CHANGE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3059
+    .line 3111
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x3000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 3062
+    .line 3114
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -7306,7 +7470,7 @@
 
     invoke-direct {p0, v1}, Landroid/net/wifi/WifiStateMachine;->log(Ljava/lang/String;)V
 
-    .line 3068
+    .line 3120
     const-string/jumbo v1, "networkInfo"
 
     new-instance v2, Landroid/net/NetworkInfo;
@@ -7317,7 +7481,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 3070
+    .line 3122
     const-string/jumbo v1, "linkProperties"
 
     new-instance v2, Landroid/net/LinkProperties;
@@ -7328,15 +7492,15 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 3071
+    .line 3123
     if-eqz p1, :cond_0
 
-    .line 3072
+    .line 3124
     const-string v1, "bssid"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3073
+    .line 3125
     :cond_0
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mNetworkInfo:Landroid/net/NetworkInfo;
 
@@ -7348,7 +7512,7 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 3074
+    .line 3126
     const-string/jumbo v1, "wifiInfo"
 
     new-instance v2, Landroid/net/wifi/WifiInfo;
@@ -7359,13 +7523,13 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 3075
+    .line 3127
     :cond_1
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
 
-    .line 3076
+    .line 3128
     return-void
 .end method
 
@@ -7374,30 +7538,30 @@
     .parameter "newRssi"
 
     .prologue
-    .line 3051
+    .line 3103
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.net.wifi.RSSI_CHANGED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3052
+    .line 3104
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 3053
+    .line 3105
     const-string/jumbo v1, "newRssi"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 3054
+    .line 3106
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 3055
+    .line 3107
     return-void
 .end method
 
@@ -7405,25 +7569,25 @@
     .locals 2
 
     .prologue
-    .line 3045
+    .line 3097
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.net.wifi.SCAN_RESULTS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3046
+    .line 3098
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 3047
+    .line 3099
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 3048
+    .line 3100
     return-void
 .end method
 
@@ -7432,30 +7596,30 @@
     .parameter "connected"
 
     .prologue
-    .line 3107
+    .line 3159
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.net.wifi.supplicant.CONNECTION_CHANGE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3108
+    .line 3160
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 3109
+    .line 3161
     const-string v1, "connected"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 3110
+    .line 3162
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 3111
+    .line 3163
     return-void
 .end method
 
@@ -7463,27 +7627,27 @@
     .locals 3
 
     .prologue
-    .line 3093
+    .line 3145
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.net.wifi.WPS_FAIL"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3094
+    .line 3146
     .local v0, intent:Landroid/content/Intent;
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 3095
+    .line 3147
     const-string v1, "WifiStateMachine"
 
     const-string v2, "WPS: set intent WPS_FAIL_CHANGED_ACTION"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3096
+    .line 3148
     return-void
 .end method
 
@@ -7491,27 +7655,27 @@
     .locals 3
 
     .prologue
-    .line 3087
+    .line 3139
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.net.wifi.WPS_SUCCESS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3088
+    .line 3140
     .local v0, intent:Landroid/content/Intent;
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 3089
+    .line 3141
     const-string v1, "WifiStateMachine"
 
     const-string v2, "WPS: set intent WPS_SUCCESS_CHANGED_ACTION"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3090
+    .line 3142
     return-void
 .end method
 
@@ -7519,7 +7683,7 @@
     .locals 3
 
     .prologue
-    .line 2655
+    .line 2707
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -7532,7 +7696,7 @@
 
     move-result-object v0
 
-    .line 2657
+    .line 2709
     .local v0, countryCode:Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -7542,12 +7706,12 @@
 
     if-nez v1, :cond_0
 
-    .line 2658
+    .line 2710
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Landroid/net/wifi/WifiStateMachine;->setCountryCode(Ljava/lang/String;Z)V
 
-    .line 2662
+    .line 2714
     :cond_0
     return-void
 .end method
@@ -7558,7 +7722,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2668
+    .line 2720
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -7571,11 +7735,11 @@
 
     move-result v0
 
-    .line 2670
+    .line 2722
     .local v0, band:I
     invoke-virtual {p0, v0, v3}, Landroid/net/wifi/WifiStateMachine;->setFrequencyBand(IZ)V
 
-    .line 2671
+    .line 2723
     return-void
 .end method
 
@@ -7588,7 +7752,7 @@
 
     const/4 v2, 0x0
 
-    .line 3008
+    .line 3060
     if-nez p1, :cond_2
 
     move v0, v1
@@ -7600,28 +7764,28 @@
 
     if-nez v0, :cond_0
 
-    .line 3009
+    .line 3061
     const-string/jumbo v0, "set suspend optimizations failed!"
 
     invoke-direct {p0, v0}, Landroid/net/wifi/WifiStateMachine;->loge(Ljava/lang/String;)V
 
-    .line 3011
+    .line 3063
     :cond_0
     if-eqz p1, :cond_3
 
-    .line 3012
+    .line 3064
     invoke-static {v1}, Landroid/net/wifi/WifiNative;->setPowerModeCommand(I)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 3013
+    .line 3065
     const-string/jumbo v0, "set power mode active failed!"
 
     invoke-direct {p0, v0}, Landroid/net/wifi/WifiStateMachine;->loge(Ljava/lang/String;)V
 
-    .line 3020
+    .line 3072
     :cond_1
     :goto_1
     return-void
@@ -7629,10 +7793,10 @@
     :cond_2
     move v0, v2
 
-    .line 3008
+    .line 3060
     goto :goto_0
 
-    .line 3016
+    .line 3068
     :cond_3
     invoke-static {v2}, Landroid/net/wifi/WifiNative;->setPowerModeCommand(I)Z
 
@@ -7640,7 +7804,7 @@
 
     if-nez v0, :cond_1
 
-    .line 3017
+    .line 3069
     const-string/jumbo v0, "set power mode auto failed!"
 
     invoke-direct {p0, v0}, Landroid/net/wifi/WifiStateMachine;->loge(Ljava/lang/String;)V
@@ -7655,7 +7819,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 3123
+    .line 3175
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-virtual {v0}, Landroid/net/NetworkInfo;->getDetailedState()Landroid/net/NetworkInfo$DetailedState;
@@ -7664,12 +7828,12 @@
 
     if-eq p1, v0, :cond_0
 
-    .line 3124
+    .line 3176
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-virtual {v0, p1, v1, v1}, Landroid/net/NetworkInfo;->setDetailedState(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3126
+    .line 3178
     :cond_0
     return-void
 .end method
@@ -7679,30 +7843,30 @@
     .parameter "scanResults"
 
     .prologue
-    .line 2848
+    .line 2900
     if-nez p1, :cond_0
 
-    .line 2881
+    .line 2933
     :goto_0
     return-void
 
-    .line 2852
+    .line 2904
     :cond_0
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2854
+    .line 2906
     .local v4, scanList:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     const/4 v2, 0x0
 
-    .line 2856
+    .line 2908
     .local v2, lineCount:I
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v6
 
-    .line 2859
+    .line 2911
     .local v6, scanResultsLen:I
     const/4 v1, 0x0
 
@@ -7713,7 +7877,7 @@
     :goto_1
     if-gt v3, v6, :cond_5
 
-    .line 2860
+    .line 2912
     if-eq v3, v6, :cond_1
 
     invoke-virtual {p1, v3}, Ljava/lang/String;->charAt(I)C
@@ -7724,48 +7888,48 @@
 
     if-ne v7, v8, :cond_2
 
-    .line 2861
+    .line 2913
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    .line 2863
+    .line 2915
     const/4 v7, 0x1
 
     if-ne v2, v7, :cond_3
 
-    .line 2864
+    .line 2916
     add-int/lit8 v1, v3, 0x1
 
-    .line 2859
+    .line 2911
     :cond_2
     :goto_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 2867
+    .line 2919
     :cond_3
     if-le v3, v1, :cond_4
 
-    .line 2868
+    .line 2920
     invoke-virtual {p1, v1, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2869
+    .line 2921
     .local v0, line:Ljava/lang/String;
     invoke-direct {p0, v0}, Landroid/net/wifi/WifiStateMachine;->parseScanResult(Ljava/lang/String;)Landroid/net/wifi/ScanResult;
 
     move-result-object v5
 
-    .line 2870
+    .line 2922
     .local v5, scanResult:Landroid/net/wifi/ScanResult;
     if-eqz v5, :cond_4
 
-    .line 2871
+    .line 2923
     invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2876
+    .line 2928
     .end local v0           #line:Ljava/lang/String;
     .end local v5           #scanResult:Landroid/net/wifi/ScanResult;
     :cond_4
@@ -7773,7 +7937,7 @@
 
     goto :goto_2
 
-    .line 2880
+    .line 2932
     :cond_5
     iput-object v4, p0, Landroid/net/wifi/WifiStateMachine;->mScanResults:Ljava/util/List;
 
@@ -7791,14 +7955,14 @@
 
     const/4 v5, 0x0
 
-    .line 2405
+    .line 2457
     const-string v7, "WifiStateMachine"
 
     const-string/jumbo v8, "setTetheringSetting"
 
     invoke-static {v7, v8}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2406
+    .line 2458
     invoke-virtual {p1}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
 
     move-result-object v7
@@ -7807,7 +7971,7 @@
 
     if-ne v7, v0, :cond_1
 
-    .line 2407
+    .line 2459
     .local v0, dhcpEnable:Z
     :goto_0
     invoke-virtual {p1}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
@@ -7816,7 +7980,7 @@
 
     iget-object v4, v7, Landroid/net/wifi/WifiConfiguration$HotspotProfile;->startingIP:Ljava/lang/String;
 
-    .line 2408
+    .line 2460
     .local v4, startingIP:Ljava/lang/String;
     invoke-virtual {p1}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
 
@@ -7824,13 +7988,13 @@
 
     iget-object v2, v7, Landroid/net/wifi/WifiConfiguration$HotspotProfile;->dhcpSubnetMask:Ljava/lang/String;
 
-    .line 2409
+    .line 2461
     .local v2, dhcpSubnetMask:Ljava/lang/String;
     if-nez p1, :cond_2
 
     move v5, v6
 
-    .line 2428
+    .line 2480
     :cond_0
     :goto_1
     return v5
@@ -7841,10 +8005,10 @@
     :cond_1
     move v0, v5
 
-    .line 2406
+    .line 2458
     goto :goto_0
 
-    .line 2413
+    .line 2465
     .restart local v0       #dhcpEnable:Z
     .restart local v2       #dhcpSubnetMask:Ljava/lang/String;
     .restart local v4       #startingIP:Ljava/lang/String;
@@ -7854,23 +8018,23 @@
 
     invoke-interface {v7, v0}, Landroid/os/INetworkManagementService;->setTetheringDhcpEnabled(Z)V
 
-    .line 2414
+    .line 2466
     if-eqz v4, :cond_3
 
     if-eqz v2, :cond_3
 
-    .line 2415
+    .line 2467
     const/4 v6, 0x2
 
     new-array v1, v6, [Ljava/lang/String;
 
-    .line 2416
+    .line 2468
     .local v1, dhcpRange:[Ljava/lang/String;
     const/4 v6, 0x0
 
     aput-object v4, v1, v6
 
-    .line 2417
+    .line 2469
     const/4 v6, 0x1
 
     invoke-static {v4, v2}, Landroid/net/wifi/WifiStateMachine;->findEndIP(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -7879,7 +8043,7 @@
 
     aput-object v7, v1, v6
 
-    .line 2419
+    .line 2471
     iget-object v6, p0, Landroid/net/wifi/WifiStateMachine;->mNwService:Landroid/os/INetworkManagementService;
 
     invoke-interface {v6, v1}, Landroid/os/INetworkManagementService;->setTetheringHtcDhcpRange([Ljava/lang/String;)I
@@ -7890,7 +8054,7 @@
 
     if-eqz v6, :cond_0
 
-    .line 2420
+    .line 2472
     const/4 v5, -0x2
 
     goto :goto_1
@@ -7899,14 +8063,14 @@
     :cond_3
     move v5, v6
 
-    .line 2422
+    .line 2474
     goto :goto_1
 
-    .line 2424
+    .line 2476
     :catch_0
     move-exception v3
 
-    .line 2425
+    .line 2477
     .local v3, ee:Ljava/lang/Exception;
     const-string v5, "WifiStateMachine"
 
@@ -7914,7 +8078,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2426
+    .line 2478
     const/4 v5, -0x3
 
     goto :goto_1
@@ -7931,38 +8095,38 @@
 
     const/4 v4, 0x0
 
-    .line 2698
+    .line 2750
     iget-object v5, p0, Landroid/net/wifi/WifiStateMachine;->mWifiApState:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v2
 
-    .line 2701
+    .line 2753
     .local v2, previousWifiApState:I
     if-ne p1, v6, :cond_1
 
-    .line 2702
+    .line 2754
     :try_start_0
     iget-object v5, p0, Landroid/net/wifi/WifiStateMachine;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
     invoke-interface {v5}, Lcom/android/internal/app/IBatteryStats;->noteWifiOn()V
 
-    .line 2704
+    .line 2756
     const/4 v5, 0x1
 
     invoke-direct {p0, v5}, Landroid/net/wifi/WifiStateMachine;->writeWifiApStatusForFlashlight(Z)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2717
+    .line 2769
     :cond_0
     :goto_0
     iget-object v5, p0, Landroid/net/wifi/WifiStateMachine;->mWifiApState:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v5, p1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 2719
+    .line 2771
     :try_start_1
     iget-object v5, p0, Landroid/net/wifi/WifiStateMachine;->mNwService:Landroid/os/INetworkManagementService;
 
@@ -7973,7 +8137,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 2725
+    .line 2777
     :goto_2
     new-instance v1, Landroid/content/Intent;
 
@@ -7981,44 +8145,44 @@
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2726
+    .line 2778
     .local v1, intent:Landroid/content/Intent;
     const/high16 v3, 0x1000
 
     invoke-virtual {v1, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 2727
+    .line 2779
     const-string/jumbo v3, "wifi_state"
 
     invoke-virtual {v1, v3, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 2728
+    .line 2780
     const-string/jumbo v3, "previous_wifi_state"
 
     invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 2729
+    .line 2781
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3, v1}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
 
-    .line 2730
+    .line 2782
     return-void
 
-    .line 2706
+    .line 2758
     .end local v1           #intent:Landroid/content/Intent;
     :cond_1
     const/16 v5, 0xb
 
     if-ne p1, v5, :cond_0
 
-    .line 2707
+    .line 2759
     :try_start_2
     iget-object v5, p0, Landroid/net/wifi/WifiStateMachine;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
     invoke-interface {v5}, Lcom/android/internal/app/IBatteryStats;->noteWifiOff()V
 
-    .line 2709
+    .line 2761
     const/4 v5, 0x0
 
     invoke-direct {p0, v5}, Landroid/net/wifi/WifiStateMachine;->writeWifiApStatusForFlashlight(Z)V
@@ -8027,11 +8191,11 @@
 
     goto :goto_0
 
-    .line 2712
+    .line 2764
     :catch_0
     move-exception v0
 
-    .line 2713
+    .line 2765
     .local v0, e:Landroid/os/RemoteException;
     const-string v5, "Failed to note battery stats in wifi"
 
@@ -8043,10 +8207,10 @@
     :cond_2
     move v3, v4
 
-    .line 2719
+    .line 2771
     goto :goto_1
 
-    .line 2720
+    .line 2772
     :catch_1
     move-exception v3
 
@@ -8058,20 +8222,20 @@
     .parameter "wifiState"
 
     .prologue
-    .line 2674
+    .line 2726
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mWifiState:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v2
 
-    .line 2677
+    .line 2729
     .local v2, previousWifiState:I
     const/4 v3, 0x3
 
     if-ne p1, v3, :cond_1
 
-    .line 2678
+    .line 2730
     :try_start_0
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
@@ -8079,52 +8243,52 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2686
+    .line 2738
     :cond_0
     :goto_0
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mWifiState:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v3, p1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 2690
+    .line 2742
     new-instance v1, Landroid/content/Intent;
 
     const-string v3, "android.net.wifi.WIFI_STATE_CHANGED"
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2691
+    .line 2743
     .local v1, intent:Landroid/content/Intent;
     const/high16 v3, 0x1000
 
     invoke-virtual {v1, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 2692
+    .line 2744
     const-string/jumbo v3, "wifi_state"
 
     invoke-virtual {v1, v3, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 2693
+    .line 2745
     const-string/jumbo v3, "previous_wifi_state"
 
     invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 2694
+    .line 2746
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3, v1}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
 
-    .line 2695
+    .line 2747
     return-void
 
-    .line 2679
+    .line 2731
     .end local v1           #intent:Landroid/content/Intent;
     :cond_1
     const/4 v3, 0x1
 
     if-ne p1, v3, :cond_0
 
-    .line 2680
+    .line 2732
     :try_start_1
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
@@ -8134,11 +8298,11 @@
 
     goto :goto_0
 
-    .line 2682
+    .line 2734
     :catch_0
     move-exception v0
 
-    .line 2683
+    .line 2735
     .local v0, e:Landroid/os/RemoteException;
     const-string v3, "Failed to note battery stats in wifi"
 
@@ -8163,32 +8327,32 @@
 
     const/4 v0, 0x1
 
-    .line 2901
+    .line 2953
     if-eq p1, p2, :cond_5
 
-    .line 2902
+    .line 2954
     const/16 v2, -0xc8
 
     if-ne p2, v2, :cond_1
 
-    .line 2913
+    .line 2965
     :cond_0
     :goto_0
     return v0
 
-    .line 2904
+    .line 2956
     :cond_1
     if-le p1, v5, :cond_2
 
     if-le p2, v5, :cond_0
 
-    .line 2906
+    .line 2958
     :cond_2
     if-gt p1, v4, :cond_3
 
     if-gt p2, v4, :cond_0
 
-    .line 2908
+    .line 2960
     :cond_3
     if-gt p1, v3, :cond_4
 
@@ -8197,13 +8361,13 @@
     :cond_4
     move v0, v1
 
-    .line 2911
+    .line 2963
     goto :goto_0
 
     :cond_5
     move v0, v1
 
-    .line 2913
+    .line 2965
     goto :goto_0
 .end method
 
@@ -8212,7 +8376,7 @@
     .parameter "config"
 
     .prologue
-    .line 3380
+    .line 3455
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Landroid/net/wifi/WifiStateMachine$3;
@@ -8223,7 +8387,7 @@
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 3413
+    .line 3488
     return-void
 .end method
 
@@ -8241,33 +8405,33 @@
     .end annotation
 
     .prologue
-    .line 2553
+    .line 2605
     .local p1, available:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     const/4 v10, 0x0
 
-    .line 2556
+    .line 2608
     .local v10, wifiAvailable:Z
     new-instance v9, Landroid/net/wifi/WifiConfiguration;
 
     invoke-direct {v9}, Landroid/net/wifi/WifiConfiguration;-><init>()V
 
-    .line 2557
+    .line 2609
     .local v9, wifiAPConfig:Landroid/net/wifi/WifiConfiguration;
     invoke-virtual {p0}, Landroid/net/wifi/WifiStateMachine;->getWifiApConfiguration()Landroid/net/wifi/WifiConfiguration;
 
     move-result-object v9
 
-    .line 2559
+    .line 2611
     invoke-direct {p0}, Landroid/net/wifi/WifiStateMachine;->checkAndSetConnectivityInstance()V
 
-    .line 2561
+    .line 2613
     iget-object v12, p0, Landroid/net/wifi/WifiStateMachine;->mCm:Landroid/net/ConnectivityManager;
 
     invoke-virtual {v12}, Landroid/net/ConnectivityManager;->getTetherableWifiRegexs()[Ljava/lang/String;
 
     move-result-object v11
 
-    .line 2563
+    .line 2615
     .local v11, wifiRegexs:[Ljava/lang/String;
     invoke-virtual/range {p1 .. p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -8286,7 +8450,7 @@
 
     check-cast v5, Ljava/lang/String;
 
-    .line 2564
+    .line 2616
     .local v5, intf:Ljava/lang/String;
     move-object v0, v11
 
@@ -8302,7 +8466,7 @@
 
     aget-object v8, v0, v3
 
-    .line 2565
+    .line 2617
     .local v8, regex:Ljava/lang/String;
     invoke-virtual {v5, v8}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
 
@@ -8310,10 +8474,10 @@
 
     if-eqz v12, :cond_4
 
-    .line 2567
+    .line 2619
     const/4 v4, 0x0
 
-    .line 2569
+    .line 2621
     .local v4, ifcg:Landroid/net/InterfaceConfiguration;
     :try_start_0
     iget-object v12, p0, Landroid/net/wifi/WifiStateMachine;->mNwService:Landroid/os/INetworkManagementService;
@@ -8322,10 +8486,10 @@
 
     move-result-object v4
 
-    .line 2570
+    .line 2622
     if-eqz v4, :cond_1
 
-    .line 2573
+    .line 2625
     invoke-virtual {v9}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
 
     move-result-object v12
@@ -8334,14 +8498,14 @@
 
     if-eqz v12, :cond_2
 
-    .line 2574
+    .line 2626
     invoke-virtual {v9}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
 
     move-result-object v12
 
     iget-object v6, v12, Landroid/net/wifi/WifiConfiguration$HotspotProfile;->ipAddress:Ljava/lang/String;
 
-    .line 2575
+    .line 2627
     .local v6, ipAddress:Ljava/lang/String;
     const-string v12, "WifiStateMachine"
 
@@ -8365,7 +8529,7 @@
 
     invoke-static {v12, v13}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2576
+    .line 2628
     new-instance v12, Landroid/net/LinkAddress;
 
     invoke-static {v6}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
@@ -8378,26 +8542,26 @@
 
     iput-object v12, v4, Landroid/net/InterfaceConfiguration;->addr:Landroid/net/LinkAddress;
 
-    .line 2587
+    .line 2639
     .end local v6           #ipAddress:Ljava/lang/String;
     :goto_1
     const-string v12, "[up]"
 
     iput-object v12, v4, Landroid/net/InterfaceConfiguration;->interfaceFlags:Ljava/lang/String;
 
-    .line 2589
+    .line 2641
     iget-object v12, p0, Landroid/net/wifi/WifiStateMachine;->mNwService:Landroid/os/INetworkManagementService;
 
     invoke-interface {v12, v5, v4}, Landroid/os/INetworkManagementService;->setInterfaceConfig(Ljava/lang/String;Landroid/net/InterfaceConfiguration;)V
 
-    .line 2591
+    .line 2643
     iget-object v12, p0, Landroid/net/wifi/WifiStateMachine;->mNwService:Landroid/os/INetworkManagementService;
 
     invoke-interface {v12, v9}, Landroid/os/INetworkManagementService;->setMACList(Landroid/net/wifi/WifiConfiguration;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2599
+    .line 2651
     :cond_1
     iget-object v12, p0, Landroid/net/wifi/WifiStateMachine;->mCm:Landroid/net/ConnectivityManager;
 
@@ -8407,7 +8571,7 @@
 
     if-eqz v12, :cond_3
 
-    .line 2600
+    .line 2652
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -8428,10 +8592,10 @@
 
     invoke-direct {p0, v12}, Landroid/net/wifi/WifiStateMachine;->loge(Ljava/lang/String;)V
 
-    .line 2601
+    .line 2653
     const/4 v12, 0x0
 
-    .line 2609
+    .line 2661
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v3           #i$:I
     .end local v4           #ifcg:Landroid/net/InterfaceConfiguration;
@@ -8441,7 +8605,7 @@
     :goto_2
     return v12
 
-    .line 2581
+    .line 2633
     .restart local v0       #arr$:[Ljava/lang/String;
     .restart local v3       #i$:I
     .restart local v4       #ifcg:Landroid/net/InterfaceConfiguration;
@@ -8456,7 +8620,7 @@
 
     invoke-static {v12, v13}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2582
+    .line 2634
     new-instance v12, Landroid/net/LinkAddress;
 
     const-string v13, "192.168.43.1"
@@ -8475,11 +8639,11 @@
 
     goto :goto_1
 
-    .line 2594
+    .line 2646
     :catch_0
     move-exception v1
 
-    .line 2595
+    .line 2647
     .local v1, e:Ljava/lang/Exception;
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -8511,29 +8675,29 @@
 
     invoke-direct {p0, v12}, Landroid/net/wifi/WifiStateMachine;->loge(Ljava/lang/String;)V
 
-    .line 2596
+    .line 2648
     const/4 v12, 0x0
 
     goto :goto_2
 
-    .line 2603
+    .line 2655
     .end local v1           #e:Ljava/lang/Exception;
     :cond_3
     iput-object v5, p0, Landroid/net/wifi/WifiStateMachine;->mTetherInterfaceName:Ljava/lang/String;
 
-    .line 2604
+    .line 2656
     const/4 v12, 0x1
 
     goto :goto_2
 
-    .line 2564
+    .line 2616
     .end local v4           #ifcg:Landroid/net/InterfaceConfiguration;
     :cond_4
     add-int/lit8 v3, v3, 0x1
 
     goto/16 :goto_0
 
-    .line 2609
+    .line 2661
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v3           #i$:I
     .end local v5           #intf:Ljava/lang/String;
@@ -8549,13 +8713,13 @@
     .locals 5
 
     .prologue
-    .line 2614
+    .line 2666
     invoke-direct {p0}, Landroid/net/wifi/WifiStateMachine;->checkAndSetConnectivityInstance()V
 
-    .line 2618
+    .line 2670
     const/4 v1, 0x0
 
-    .line 2620
+    .line 2672
     .local v1, ifcg:Landroid/net/InterfaceConfiguration;
     :try_start_0
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mNwService:Landroid/os/INetworkManagementService;
@@ -8566,10 +8730,10 @@
 
     move-result-object v1
 
-    .line 2621
+    .line 2673
     if-eqz v1, :cond_0
 
-    .line 2622
+    .line 2674
     new-instance v2, Landroid/net/LinkAddress;
 
     const-string v3, "0.0.0.0"
@@ -8584,7 +8748,7 @@
 
     iput-object v2, v1, Landroid/net/InterfaceConfiguration;->addr:Landroid/net/LinkAddress;
 
-    .line 2624
+    .line 2676
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mNwService:Landroid/os/INetworkManagementService;
 
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine;->mInterfaceName:Ljava/lang/String;
@@ -8593,7 +8757,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2630
+    .line 2682
     :cond_0
     :goto_0
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mCm:Landroid/net/ConnectivityManager;
@@ -8606,20 +8770,20 @@
 
     if-eqz v2, :cond_1
 
-    .line 2631
+    .line 2683
     const-string v2, "Untether initiate failed!"
 
     invoke-direct {p0, v2}, Landroid/net/wifi/WifiStateMachine;->loge(Ljava/lang/String;)V
 
-    .line 2633
+    .line 2685
     :cond_1
     return-void
 
-    .line 2626
+    .line 2678
     :catch_0
     move-exception v0
 
-    .line 2627
+    .line 2679
     .local v0, e:Ljava/lang/Exception;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -8661,18 +8825,18 @@
     .parameter "hexString"
 
     .prologue
-    .line 2515
+    .line 2567
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v3
 
     div-int/lit8 v2, v3, 0x2
 
-    .line 2516
+    .line 2568
     .local v2, len:I
     new-array v0, v2, [B
 
-    .line 2517
+    .line 2569
     .local v0, byteArray:[B
     const/4 v1, 0x0
 
@@ -8680,7 +8844,7 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 2518
+    .line 2570
     mul-int/lit8 v3, v1, 0x2
 
     mul-int/lit8 v4, v1, 0x2
@@ -8703,12 +8867,12 @@
 
     aput-byte v3, v0, v1
 
-    .line 2517
+    .line 2569
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2520
+    .line 2572
     :cond_0
     return-object v0
 .end method
@@ -9710,9 +9874,6 @@
     if-gt v0, v3, :cond_0
 
     .line 1594
-    add-int/lit8 v0, v0, 0x1
-
-    .line 1595
     invoke-virtual {p2}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
 
     move-result-object v3
@@ -9724,6 +9885,9 @@
     move-result-object v4
 
     aput-object v4, v3, v0
+
+    .line 1595
+    add-int/lit8 v0, v0, 0x1
 
     .line 1596
     add-int/lit8 v2, v2, 0x1
@@ -9803,9 +9967,6 @@
     if-gt v0, v3, :cond_0
 
     .line 1568
-    add-int/lit8 v0, v0, 0x1
-
-    .line 1569
     invoke-virtual {p2}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
 
     move-result-object v3
@@ -9817,6 +9978,9 @@
     move-result-object v4
 
     aput-object v4, v3, v0
+
+    .line 1569
+    add-int/lit8 v0, v0, 0x1
 
     .line 1570
     add-int/lit8 v2, v2, 0x1
@@ -9832,10 +9996,10 @@
     .parameter "enable"
 
     .prologue
-    .line 2734
+    .line 2786
     const/4 v2, 0x0
 
-    .line 2736
+    .line 2788
     .local v2, fWriter:Ljava/io/FileWriter;
     :try_start_0
     new-instance v3, Ljava/io/FileWriter;
@@ -9847,7 +10011,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_4
 
-    .line 2737
+    .line 2789
     .end local v2           #fWriter:Ljava/io/FileWriter;
     .local v3, fWriter:Ljava/io/FileWriter;
     :try_start_1
@@ -9873,10 +10037,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2738
+    .line 2790
     if-eqz p1, :cond_1
 
-    .line 2739
+    .line 2791
     const-string v4, "1\n"
 
     invoke-virtual {v3, v4}, Ljava/io/FileWriter;->write(Ljava/lang/String;)V
@@ -9884,7 +10048,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 2747
+    .line 2799
     :goto_0
     if-eqz v3, :cond_0
 
@@ -9893,17 +10057,17 @@
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
 
-    .line 2751
+    .line 2803
     .end local v3           #fWriter:Ljava/io/FileWriter;
     :cond_0
     :goto_1
     const/4 v2, 0x0
 
-    .line 2753
+    .line 2805
     .restart local v2       #fWriter:Ljava/io/FileWriter;
     return-void
 
-    .line 2741
+    .line 2793
     .end local v2           #fWriter:Ljava/io/FileWriter;
     .restart local v3       #fWriter:Ljava/io/FileWriter;
     :cond_1
@@ -9917,13 +10081,13 @@
 
     goto :goto_0
 
-    .line 2743
+    .line 2795
     :catch_0
     move-exception v0
 
     move-object v2, v3
 
-    .line 2744
+    .line 2796
     .end local v3           #fWriter:Ljava/io/FileWriter;
     .local v0, e:Ljava/io/IOException;
     .restart local v2       #fWriter:Ljava/io/FileWriter;
@@ -9963,7 +10127,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 2747
+    .line 2799
     if-eqz v2, :cond_0
 
     :try_start_5
@@ -9973,11 +10137,11 @@
 
     goto :goto_1
 
-    .line 2748
+    .line 2800
     :catch_1
     move-exception v1
 
-    .line 2749
+    .line 2801
     .local v1, exception:Ljava/io/IOException;
     const-string v4, "WifiStateMachine"
 
@@ -10013,13 +10177,13 @@
 
     goto :goto_1
 
-    .line 2746
+    .line 2798
     .end local v0           #e:Ljava/io/IOException;
     .end local v1           #exception:Ljava/io/IOException;
     :catchall_0
     move-exception v4
 
-    .line 2747
+    .line 2799
     :goto_3
     if-eqz v2, :cond_2
 
@@ -10028,19 +10192,19 @@
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_2
 
-    .line 2751
+    .line 2803
     :cond_2
     :goto_4
     const/4 v2, 0x0
 
-    .line 2746
+    .line 2798
     throw v4
 
-    .line 2748
+    .line 2800
     :catch_2
     move-exception v1
 
-    .line 2749
+    .line 2801
     .restart local v1       #exception:Ljava/io/IOException;
     const-string v5, "WifiStateMachine"
 
@@ -10076,14 +10240,14 @@
 
     goto :goto_4
 
-    .line 2748
+    .line 2800
     .end local v1           #exception:Ljava/io/IOException;
     .end local v2           #fWriter:Ljava/io/FileWriter;
     .restart local v3       #fWriter:Ljava/io/FileWriter;
     :catch_3
     move-exception v1
 
-    .line 2749
+    .line 2801
     .restart local v1       #exception:Ljava/io/IOException;
     const-string v4, "WifiStateMachine"
 
@@ -10119,7 +10283,7 @@
 
     goto/16 :goto_1
 
-    .line 2746
+    .line 2798
     .end local v1           #exception:Ljava/io/IOException;
     :catchall_1
     move-exception v4
@@ -10130,7 +10294,7 @@
     .restart local v2       #fWriter:Ljava/io/FileWriter;
     goto :goto_3
 
-    .line 2743
+    .line 2795
     :catch_4
     move-exception v0
 
@@ -10249,7 +10413,7 @@
     .parameter "bssid"
 
     .prologue
-    .line 1928
+    .line 1980
     const v0, 0x20039
 
     invoke-virtual {p0, v0, p1}, Landroid/net/wifi/WifiStateMachine;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -10258,7 +10422,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 1929
+    .line 1981
     return-void
 .end method
 
@@ -10266,7 +10430,7 @@
     .locals 4
 
     .prologue
-    .line 2013
+    .line 2065
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mConfig:Landroid/net/wifi/WifiConfiguration;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
@@ -10277,16 +10441,16 @@
 
     if-nez v1, :cond_0
 
-    .line 2014
+    .line 2066
     invoke-virtual {p0}, Landroid/net/wifi/WifiStateMachine;->getCustomizedPassword()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2015
+    .line 2067
     .local v0, key:Ljava/lang/String;
     if-eqz v0, :cond_1
 
-    .line 2016
+    .line 2068
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mConfig:Landroid/net/wifi/WifiConfiguration;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
@@ -10295,7 +10459,7 @@
 
     iput-object v0, v1, Landroid/net/wifi/WifiConfiguration$HotspotProfile;->key:Ljava/lang/String;
 
-    .line 2020
+    .line 2072
     :goto_0
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
@@ -10315,12 +10479,12 @@
 
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 2022
+    .line 2074
     .end local v0           #key:Ljava/lang/String;
     :cond_0
     return-void
 
-    .line 2018
+    .line 2070
     .restart local v0       #key:Ljava/lang/String;
     :cond_1
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mConfig:Landroid/net/wifi/WifiConfiguration;
@@ -10340,7 +10504,7 @@
     .locals 4
 
     .prologue
-    .line 2025
+    .line 2077
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mConfig:Landroid/net/wifi/WifiConfiguration;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
@@ -10351,16 +10515,16 @@
 
     if-nez v1, :cond_0
 
-    .line 2026
+    .line 2078
     invoke-virtual {p0}, Landroid/net/wifi/WifiStateMachine;->getCustomizedSsid()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2027
+    .line 2079
     .local v0, ssid:Ljava/lang/String;
     if-eqz v0, :cond_1
 
-    .line 2028
+    .line 2080
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mConfig:Landroid/net/wifi/WifiConfiguration;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
@@ -10369,7 +10533,7 @@
 
     iput-object v0, v1, Landroid/net/wifi/WifiConfiguration$HotspotProfile;->SSID:Ljava/lang/String;
 
-    .line 2038
+    .line 2090
     :goto_0
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
@@ -10389,12 +10553,12 @@
 
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 2040
+    .line 2092
     .end local v0           #ssid:Ljava/lang/String;
     :cond_0
     return-void
 
-    .line 2030
+    .line 2082
     .restart local v0       #ssid:Ljava/lang/String;
     :cond_1
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
@@ -10403,7 +10567,7 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 2031
+    .line 2083
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mConfig:Landroid/net/wifi/WifiConfiguration;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
@@ -10428,7 +10592,7 @@
 
     goto :goto_1
 
-    .line 2032
+    .line 2084
     :cond_3
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
@@ -10436,7 +10600,7 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 2033
+    .line 2085
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mConfig:Landroid/net/wifi/WifiConfiguration;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
@@ -10449,7 +10613,7 @@
 
     goto :goto_0
 
-    .line 2035
+    .line 2087
     :cond_4
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mConfig:Landroid/net/wifi/WifiConfiguration;
 
@@ -10468,7 +10632,7 @@
     .locals 1
 
     .prologue
-    .line 1936
+    .line 1988
     const v0, 0x2003a
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->obtainMessage(I)Landroid/os/Message;
@@ -10477,7 +10641,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 1937
+    .line 1989
     return-void
 .end method
 
@@ -10515,7 +10679,7 @@
     .parameter "netId"
 
     .prologue
-    .line 1940
+    .line 1992
     const v0, 0x20056
 
     const/4 v1, 0x0
@@ -10526,7 +10690,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 1941
+    .line 1993
     return-void
 .end method
 
@@ -10535,7 +10699,7 @@
     .parameter "wifiConfig"
 
     .prologue
-    .line 1948
+    .line 2000
     const v0, 0x20056
 
     const/4 v1, -0x1
@@ -10548,7 +10712,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 1950
+    .line 2002
     return-void
 .end method
 
@@ -10559,21 +10723,21 @@
     .parameter "reason"
 
     .prologue
-    .line 1961
+    .line 2013
     const v1, 0x20038
 
     invoke-virtual {p0, v1, p2, p3}, Landroid/net/wifi/WifiStateMachine;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1962
+    .line 2014
     .local v0, message:Landroid/os/Message;
     iput-object p1, v0, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
-    .line 1963
+    .line 2015
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 1964
+    .line 2016
     return-void
 .end method
 
@@ -10581,12 +10745,12 @@
     .locals 1
 
     .prologue
-    .line 1847
+    .line 1899
     const v0, 0x2004a
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 1848
+    .line 1900
     return-void
 .end method
 
@@ -10594,12 +10758,12 @@
     .locals 1
 
     .prologue
-    .line 2054
+    .line 2106
     const v0, 0x20037
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 2055
+    .line 2107
     return-void
 .end method
 
@@ -10610,7 +10774,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2050
+    .line 2102
     const v2, 0x2005b
 
     if-eqz p1, :cond_0
@@ -10624,13 +10788,13 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2051
+    .line 2103
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 2050
+    .line 2102
     goto :goto_0
 .end method
 
@@ -10641,7 +10805,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2046
+    .line 2098
     const v2, 0x20052
 
     if-eqz p1, :cond_0
@@ -10655,13 +10819,13 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2047
+    .line 2099
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 2046
+    .line 2098
     goto :goto_0
 .end method
 
@@ -10670,7 +10834,7 @@
     .parameter "netId"
 
     .prologue
-    .line 1957
+    .line 2009
     const v0, 0x20058
 
     const/4 v1, 0x0
@@ -10681,7 +10845,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 1958
+    .line 2010
     return-void
 .end method
 
@@ -10842,7 +11006,7 @@
     .locals 1
 
     .prologue
-    .line 2259
+    .line 2311
     invoke-static {}, Landroid/net/wifi/WifiConfigStore;->getConfigFile()Ljava/lang/String;
 
     move-result-object v0
@@ -10854,12 +11018,12 @@
     .locals 4
 
     .prologue
-    .line 1981
+    .line 2033
     iget-boolean v1, p0, Landroid/net/wifi/WifiStateMachine;->mEnableImeiPassword:Z
 
     if-eqz v1, :cond_0
 
-    .line 1982
+    .line 2034
     const-string/jumbo v1, "ro.gsm.imei"
 
     const-string v2, ""
@@ -10868,7 +11032,7 @@
 
     move-result-object v0
 
-    .line 1983
+    .line 2035
     .local v0, imei:Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -10880,7 +11044,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 1984
+    .line 2036
     const-string v1, "WifiStateMachine"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -10903,7 +11067,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1988
+    .line 2040
     .end local v0           #imei:Ljava/lang/String;
     :goto_0
     return-object v0
@@ -10918,12 +11082,12 @@
     .locals 7
 
     .prologue
-    .line 1992
+    .line 2044
     iget-boolean v4, p0, Landroid/net/wifi/WifiStateMachine;->mEnableImeiSsid:Z
 
     if-eqz v4, :cond_2
 
-    .line 1993
+    .line 2045
     const-string/jumbo v4, "ro.gsm.imei"
 
     const-string v5, ""
@@ -10932,7 +11096,7 @@
 
     move-result-object v0
 
-    .line 1994
+    .line 2046
     .local v0, imei:Ljava/lang/String;
     if-eqz v0, :cond_2
 
@@ -10944,14 +11108,14 @@
 
     if-ne v4, v5, :cond_2
 
-    .line 1995
+    .line 2047
     sget-short v4, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v5, 0x9b
 
     if-ne v4, v5, :cond_1
 
-    .line 1996
+    .line 2048
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v4
@@ -10962,7 +11126,7 @@
 
     move-result-object v1
 
-    .line 1997
+    .line 2049
     .local v1, imei2:Ljava/lang/String;
     sget-short v4, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
@@ -10988,7 +11152,7 @@
 
     move-result-object v3
 
-    .line 1998
+    .line 2050
     .local v3, ssid:Ljava/lang/String;
     :goto_0
     const-string v4, "WifiStateMachine"
@@ -11013,14 +11177,14 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2008
+    .line 2060
     .end local v0           #imei:Ljava/lang/String;
     .end local v1           #imei2:Ljava/lang/String;
     .end local v3           #ssid:Ljava/lang/String;
     :goto_1
     return-object v3
 
-    .line 1997
+    .line 2049
     .restart local v0       #imei:Ljava/lang/String;
     .restart local v1       #imei2:Ljava/lang/String;
     :cond_0
@@ -11044,7 +11208,7 @@
 
     goto :goto_0
 
-    .line 2000
+    .line 2052
     .end local v1           #imei2:Ljava/lang/String;
     :cond_1
     sget-short v4, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
@@ -11053,7 +11217,7 @@
 
     if-ne v4, v5, :cond_2
 
-    .line 2001
+    .line 2053
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v4
@@ -11064,7 +11228,7 @@
 
     move-result-object v2
 
-    .line 2002
+    .line 2054
     .local v2, imei4:Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -11084,7 +11248,7 @@
 
     move-result-object v3
 
-    .line 2003
+    .line 2055
     .restart local v3       #ssid:Ljava/lang/String;
     const-string v4, "WifiStateMachine"
 
@@ -11110,7 +11274,7 @@
 
     goto :goto_1
 
-    .line 2008
+    .line 2060
     .end local v0           #imei:Ljava/lang/String;
     .end local v2           #imei4:Ljava/lang/String;
     .end local v3           #ssid:Ljava/lang/String;
@@ -11124,7 +11288,7 @@
     .locals 1
 
     .prologue
-    .line 2252
+    .line 2304
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mFrequencyBand:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -12371,7 +12535,7 @@
     .locals 3
 
     .prologue
-    .line 3259
+    .line 3314
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mWakeLock_DHCP:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
@@ -12380,19 +12544,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 3260
+    .line 3315
     const-string v0, "WifiStateMachine"
 
     const-string/jumbo v1, "handlePostDhcpSetup release wake lock during DHCP"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3261
+    .line 3316
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mWakeLock_DHCP:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 3263
+    .line 3318
     :cond_0
     iget v0, p0, Landroid/net/wifi/WifiStateMachine;->mPowerMode:I
 
@@ -12400,19 +12564,19 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 3264
+    .line 3319
     const-string v0, "WifiStateMachine"
 
     const-string/jumbo v1, "handlePostDhcpSetup PoerMode is active"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3265
+    .line 3320
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/net/wifi/WifiStateMachine;->mPowerMode:I
 
-    .line 3267
+    .line 3322
     :cond_1
     const-string v0, "WifiStateMachine"
 
@@ -12438,17 +12602,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3269
+    .line 3324
     iget v0, p0, Landroid/net/wifi/WifiStateMachine;->mPowerMode:I
 
     invoke-static {v0}, Landroid/net/wifi/WifiNative;->setPowerModeCommand(I)Z
 
-    .line 3272
+    .line 3327
     const/4 v0, 0x2
 
     invoke-static {v0}, Landroid/net/wifi/WifiNative;->setBluetoothCoexistenceModeCommand(I)Z
 
-    .line 3274
+    .line 3329
     return-void
 .end method
 
@@ -12458,7 +12622,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 3215
+    .line 3270
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mWakeLock_DHCP:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
@@ -12467,30 +12631,30 @@
 
     if-nez v0, :cond_0
 
-    .line 3216
+    .line 3271
     const-string v0, "WifiStateMachine"
 
     const-string/jumbo v1, "handlePreDhcpSetup Held wake lock during DHCP"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3217
+    .line 3272
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mWakeLock_DHCP:Landroid/os/PowerManager$WakeLock;
 
     const-wide/32 v1, 0xea60
 
     invoke-virtual {v0, v1, v2}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
-    .line 3221
+    .line 3276
     :cond_0
     iget-boolean v0, p0, Landroid/net/wifi/WifiStateMachine;->mBluetoothConnectionActive:Z
 
     if-nez v0, :cond_1
 
-    .line 3239
+    .line 3294
     invoke-static {v3}, Landroid/net/wifi/WifiNative;->setBluetoothCoexistenceModeCommand(I)Z
 
-    .line 3243
+    .line 3298
     :cond_1
     invoke-static {}, Landroid/net/wifi/WifiNative;->getPowerModeCommand()I
 
@@ -12498,7 +12662,7 @@
 
     iput v0, p0, Landroid/net/wifi/WifiStateMachine;->mPowerMode:I
 
-    .line 3244
+    .line 3299
     const-string v0, "WifiStateMachine"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -12523,26 +12687,26 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3245
+    .line 3300
     iget v0, p0, Landroid/net/wifi/WifiStateMachine;->mPowerMode:I
 
     if-gez v0, :cond_2
 
-    .line 3248
+    .line 3303
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/net/wifi/WifiStateMachine;->mPowerMode:I
 
-    .line 3250
+    .line 3305
     :cond_2
     iget v0, p0, Landroid/net/wifi/WifiStateMachine;->mPowerMode:I
 
     if-eq v0, v3, :cond_3
 
-    .line 3251
+    .line 3306
     invoke-static {v3}, Landroid/net/wifi/WifiNative;->setPowerModeCommand(I)Z
 
-    .line 3253
+    .line 3308
     :cond_3
     return-void
 .end method
@@ -12551,7 +12715,7 @@
     .locals 1
 
     .prologue
-    .line 2141
+    .line 2193
     iget-boolean v0, p0, Landroid/net/wifi/WifiStateMachine;->mIsSsdpFilterRuleEnabled:Z
 
     return v0
@@ -12593,7 +12757,7 @@
     .parameter "MsgDetail"
 
     .prologue
-    .line 3368
+    .line 3443
     const v0, 0x20021
 
     invoke-virtual {p0, v0, p1}, Landroid/net/wifi/WifiStateMachine;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -12602,7 +12766,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 3369
+    .line 3444
     return-void
 .end method
 
@@ -12610,12 +12774,12 @@
     .locals 1
 
     .prologue
-    .line 3364
+    .line 3439
     const v0, 0x20020
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 3365
+    .line 3440
     return-void
 .end method
 
@@ -12624,7 +12788,7 @@
     .parameter "phoneStatus"
 
     .prologue
-    .line 2187
+    .line 2239
     monitor-enter p0
 
     :try_start_0
@@ -12638,7 +12802,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 2188
+    .line 2240
     const-string v1, "WifiStateMachine"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -12669,16 +12833,16 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2189
+    .line 2241
     const/4 v0, 0x0
 
-    .line 2192
+    .line 2244
     :goto_0
     monitor-exit p0
 
     return v0
 
-    .line 2191
+    .line 2243
     :cond_0
     :try_start_1
     invoke-static {p1}, Landroid/net/wifi/WifiNative;->notifyPhoneCallStatus(I)Z
@@ -12687,11 +12851,11 @@
 
     move-result v0
 
-    .line 2192
+    .line 2244
     .local v0, bRtn:Z
     goto :goto_0
 
-    .line 2187
+    .line 2239
     .end local v0           #bRtn:Z
     :catchall_0
     move-exception v1
@@ -12973,12 +13137,12 @@
     .locals 1
 
     .prologue
-    .line 1861
+    .line 1913
     const v0, 0x2004c
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 1862
+    .line 1914
     return-void
 .end method
 
@@ -12986,12 +13150,12 @@
     .locals 1
 
     .prologue
-    .line 1854
+    .line 1906
     const v0, 0x2004b
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 1855
+    .line 1907
     return-void
 .end method
 
@@ -13120,7 +13284,7 @@
     .parameter "wifiConfig"
 
     .prologue
-    .line 1953
+    .line 2005
     const v0, 0x20057
 
     invoke-virtual {p0, v0, p1}, Landroid/net/wifi/WifiStateMachine;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -13129,7 +13293,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 1954
+    .line 2006
     return-void
 .end method
 
@@ -13138,7 +13302,7 @@
     .parameter "state"
 
     .prologue
-    .line 2266
+    .line 2318
     const v0, 0x2001f
 
     const/4 v1, 0x0
@@ -13149,7 +13313,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2267
+    .line 2319
     return-void
 .end method
 
@@ -13330,10 +13494,10 @@
     .parameter "persist"
 
     .prologue
-    .line 2226
+    .line 2278
     if-eqz p2, :cond_0
 
-    .line 2227
+    .line 2279
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -13344,7 +13508,7 @@
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 2231
+    .line 2283
     :cond_0
     const v0, 0x20050
 
@@ -13354,7 +13518,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2232
+    .line 2284
     return-void
 .end method
 
@@ -13366,19 +13530,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1807
+    .line 1859
     if-eqz p1, :cond_0
 
-    .line 1808
+    .line 1860
     const v0, 0x2000d
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 1812
+    .line 1864
     :goto_0
     return-void
 
-    .line 1810
+    .line 1862
     :cond_0
     const v2, 0x2000e
 
@@ -13407,10 +13571,10 @@
     .parameter "persist"
 
     .prologue
-    .line 2240
+    .line 2292
     if-eqz p2, :cond_0
 
-    .line 2241
+    .line 2293
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -13421,7 +13585,7 @@
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 2245
+    .line 2297
     :cond_0
     const v0, 0x2005a
 
@@ -13433,7 +13597,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2246
+    .line 2298
     return-void
 .end method
 
@@ -13444,7 +13608,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2217
+    .line 2269
     const v2, 0x2004d
 
     if-eqz p1, :cond_0
@@ -13458,13 +13622,13 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2218
+    .line 2270
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 2217
+    .line 2269
     goto :goto_0
 .end method
 
@@ -13473,7 +13637,7 @@
     .parameter "autoChannel"
 
     .prologue
-    .line 2198
+    .line 2250
     monitor-enter p0
 
     :try_start_0
@@ -13487,7 +13651,7 @@
 
     if-eq v0, p1, :cond_1
 
-    .line 2199
+    .line 2251
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mConfig:Landroid/net/wifi/WifiConfiguration;
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiConfiguration;->getWifiApProfile()Landroid/net/wifi/WifiConfiguration$HotspotProfile;
@@ -13496,7 +13660,7 @@
 
     iput p1, v0, Landroid/net/wifi/WifiConfiguration$HotspotProfile;->channel:I
 
-    .line 2200
+    .line 2252
     invoke-virtual {p0}, Landroid/net/wifi/WifiStateMachine;->syncGetWifiApState()I
 
     move-result v0
@@ -13513,7 +13677,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 2202
+    .line 2254
     :cond_0
     const-string v0, "WifiStateMachine"
 
@@ -13521,12 +13685,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2203
+    .line 2255
     const/4 v0, 0x1
 
     sput-boolean v0, Landroid/net/wifi/WifiStateMachine;->mSetAutoChannel:Z
 
-    .line 2204
+    .line 2256
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mConfig:Landroid/net/wifi/WifiConfiguration;
 
     const/4 v1, 0x1
@@ -13535,13 +13699,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2207
+    .line 2259
     :cond_1
     monitor-exit p0
 
     return-void
 
-    .line 2198
+    .line 2250
     :catchall_0
     move-exception v0
 
@@ -13555,10 +13719,10 @@
     .parameter "enable"
 
     .prologue
-    .line 2089
+    .line 2141
     iput-boolean p1, p0, Landroid/net/wifi/WifiStateMachine;->mMulticastEnabled:Z
 
-    .line 2090
+    .line 2142
     return-void
 .end method
 
@@ -13569,12 +13733,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 2164
+    .line 2216
     monitor-enter p0
 
     packed-switch p1, :pswitch_data_0
 
-    .line 2179
+    .line 2231
     :goto_0
     :try_start_0
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mWifiState:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -13587,7 +13751,7 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 2180
+    .line 2232
     const-string v1, "WifiStateMachine"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -13618,14 +13782,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2183
+    .line 2235
     :cond_0
     :goto_1
     monitor-exit p0
 
     return v0
 
-    .line 2166
+    .line 2218
     :pswitch_0
     :try_start_1
     iget v1, p0, Landroid/net/wifi/WifiStateMachine;->mPowerModeRefCount:I
@@ -13638,7 +13802,7 @@
 
     goto :goto_0
 
-    .line 2164
+    .line 2216
     :catchall_0
     move-exception v0
 
@@ -13646,7 +13810,7 @@
 
     throw v0
 
-    .line 2169
+    .line 2221
     :pswitch_1
     :try_start_2
     iget v1, p0, Landroid/net/wifi/WifiStateMachine;->mPowerModeRefCount:I
@@ -13655,19 +13819,19 @@
 
     iput v1, p0, Landroid/net/wifi/WifiStateMachine;->mPowerModeRefCount:I
 
-    .line 2170
+    .line 2222
     iget v1, p0, Landroid/net/wifi/WifiStateMachine;->mPowerModeRefCount:I
 
     if-gtz v1, :cond_0
 
-    .line 2174
+    .line 2226
     const/4 v1, 0x0
 
     iput v1, p0, Landroid/net/wifi/WifiStateMachine;->mPowerModeRefCount:I
 
     goto :goto_0
 
-    .line 2183
+    .line 2235
     :cond_1
     invoke-static {p1}, Landroid/net/wifi/WifiNative;->setPowerModeCommand(I)Z
     :try_end_2
@@ -13677,12 +13841,329 @@
 
     goto :goto_1
 
-    .line 2164
+    .line 2216
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
         :pswitch_0
     .end packed-switch
+.end method
+
+.method public declared-synchronized setRSSItoWifiInfo()Z
+    .locals 14
+
+    .prologue
+    const/4 v10, 0x1
+
+    const/16 v13, -0xc8
+
+    const/4 v9, 0x0
+
+    .line 1672
+    monitor-enter p0
+
+    const/4 v6, -0x1
+
+    .line 1673
+    .local v6, newRssi:I
+    const/4 v5, -0x1
+
+    .line 1676
+    .local v5, newLinkSpeed:I
+    :try_start_0
+    iget-object v11, p0, Landroid/net/wifi/WifiStateMachine;->mWifiState:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v11}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result v11
+
+    const/4 v12, 0x3
+
+    if-ne v11, v12, :cond_0
+
+    iget-boolean v11, p0, Landroid/net/wifi/WifiStateMachine;->mIsRunning:Z
+
+    if-nez v11, :cond_1
+
+    .line 1677
+    :cond_0
+    const-string v10, "WifiStateMachine"
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v12, "setRSSItoWifiInfo: wifistate="
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    iget-object v12, p0, Landroid/net/wifi/WifiStateMachine;->mWifiState:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v12}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result v12
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    const-string/jumbo v12, "mIsRunning="
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    iget-boolean v12, p0, Landroid/net/wifi/WifiStateMachine;->mIsRunning:Z
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 1716
+    :goto_0
+    monitor-exit p0
+
+    return v9
+
+    .line 1681
+    :cond_1
+    :try_start_1
+    invoke-direct {p0}, Landroid/net/wifi/WifiStateMachine;->getNetworkDetailedState()Landroid/net/NetworkInfo$DetailedState;
+
+    move-result-object v11
+
+    sget-object v12, Landroid/net/NetworkInfo$DetailedState;->CONNECTED:Landroid/net/NetworkInfo$DetailedState;
+
+    if-eq v11, v12, :cond_2
+
+    .line 1682
+    iget-object v10, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
+
+    const/16 v11, -0xc8
+
+    invoke-virtual {v10, v11}, Landroid/net/wifi/WifiInfo;->setRssi(I)V
+
+    .line 1683
+    const-string v10, "WifiStateMachine"
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v12, "setRSSItoWifiInfo: NetworkDetailedState="
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-direct {p0}, Landroid/net/wifi/WifiStateMachine;->getNetworkDetailedState()Landroid/net/NetworkInfo$DetailedState;
+
+    move-result-object v12
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 1672
+    :catchall_0
+    move-exception v9
+
+    monitor-exit p0
+
+    throw v9
+
+    .line 1687
+    :cond_2
+    :try_start_2
+    invoke-static {}, Landroid/net/wifi/WifiNative;->signalPoll()Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 1689
+    .local v8, signalPoll:Ljava/lang/String;
+    if-eqz v8, :cond_6
+
+    .line 1690
+    const-string v9, "\n"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 1691
+    .local v4, lines:[Ljava/lang/String;
+    move-object v0, v4
+
+    .local v0, arr$:[Ljava/lang/String;
+    array-length v2, v0
+
+    .local v2, len$:I
+    const/4 v1, 0x0
+
+    .local v1, i$:I
+    :goto_1
+    if-ge v1, v2, :cond_6
+
+    aget-object v3, v0, v1
+
+    .line 1692
+    .local v3, line:Ljava/lang/String;
+    const-string v9, "="
+
+    invoke-virtual {v3, v9}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 1693
+    .local v7, prop:[Ljava/lang/String;
+    array-length v9, v7
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    const/4 v11, 0x2
+
+    if-ge v9, v11, :cond_4
+
+    .line 1691
+    :cond_3
+    :goto_2
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    .line 1695
+    :cond_4
+    const/4 v9, 0x0
+
+    :try_start_3
+    aget-object v9, v7, v9
+
+    const-string v11, "RSSI"
+
+    invoke-virtual {v9, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_5
+
+    .line 1696
+    const/4 v9, 0x1
+
+    aget-object v9, v7, v9
+
+    invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v6
+
+    goto :goto_2
+
+    .line 1697
+    :cond_5
+    const/4 v9, 0x0
+
+    aget-object v9, v7, v9
+
+    const-string v11, "LINKSPEED"
+
+    invoke-virtual {v9, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_3
+
+    .line 1698
+    const/4 v9, 0x1
+
+    aget-object v9, v7, v9
+
+    invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_3 .. :try_end_3} :catch_0
+
+    move-result v5
+
+    goto :goto_2
+
+    .line 1706
+    .end local v0           #arr$:[Ljava/lang/String;
+    .end local v1           #i$:I
+    .end local v2           #len$:I
+    .end local v3           #line:Ljava/lang/String;
+    .end local v4           #lines:[Ljava/lang/String;
+    .end local v7           #prop:[Ljava/lang/String;
+    :cond_6
+    const/4 v9, -0x1
+
+    if-eq v6, v9, :cond_8
+
+    if-ge v13, v6, :cond_8
+
+    const/16 v9, 0x100
+
+    if-ge v6, v9, :cond_8
+
+    .line 1710
+    if-lez v6, :cond_7
+
+    add-int/lit16 v6, v6, -0x100
+
+    .line 1711
+    :cond_7
+    :try_start_4
+    iget-object v9, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
+
+    invoke-virtual {v9, v6}, Landroid/net/wifi/WifiInfo;->setRssi(I)V
+
+    :goto_3
+    move v9, v10
+
+    .line 1716
+    goto/16 :goto_0
+
+    .line 1713
+    :cond_8
+    iget-object v9, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
+
+    const/16 v11, -0xc8
+
+    invoke-virtual {v9, v11}, Landroid/net/wifi/WifiInfo;->setRssi(I)V
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    goto :goto_3
+
+    .line 1700
+    .restart local v0       #arr$:[Ljava/lang/String;
+    .restart local v1       #i$:I
+    .restart local v2       #len$:I
+    .restart local v3       #line:Ljava/lang/String;
+    .restart local v4       #lines:[Ljava/lang/String;
+    .restart local v7       #prop:[Ljava/lang/String;
+    :catch_0
+    move-exception v9
+
+    goto :goto_2
 .end method
 
 .method public setScanOnlyMode(Z)V
@@ -13694,10 +14175,10 @@
 
     const/4 v1, 0x0
 
-    .line 1818
+    .line 1870
     if-eqz p1, :cond_0
 
-    .line 1819
+    .line 1871
     const/4 v0, 0x2
 
     invoke-virtual {p0, v2, v0, v1}, Landroid/net/wifi/WifiStateMachine;->obtainMessage(III)Landroid/os/Message;
@@ -13706,11 +14187,11 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 1823
+    .line 1875
     :goto_0
     return-void
 
-    .line 1821
+    .line 1873
     :cond_0
     const/4 v0, 0x1
 
@@ -13732,10 +14213,10 @@
 
     const/4 v1, 0x0
 
-    .line 1829
+    .line 1881
     if-eqz p1, :cond_0
 
-    .line 1830
+    .line 1882
     const/4 v0, 0x1
 
     invoke-virtual {p0, v2, v0, v1}, Landroid/net/wifi/WifiStateMachine;->obtainMessage(III)Landroid/os/Message;
@@ -13744,11 +14225,11 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 1834
+    .line 1886
     :goto_0
     return-void
 
-    .line 1832
+    .line 1884
     :cond_0
     const/4 v0, 0x2
 
@@ -14068,14 +14549,14 @@
     .parameter "config"
 
     .prologue
-    .line 1723
+    .line 1772
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mWifiApConfigChannel:Lcom/android/internal/util/AsyncChannel;
 
     const v1, 0x20019
 
     invoke-virtual {v0, v1, p1}, Lcom/android/internal/util/AsyncChannel;->sendMessage(ILjava/lang/Object;)V
 
-    .line 1724
+    .line 1773
     return-void
 .end method
 
@@ -14087,7 +14568,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1710
+    .line 1759
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mLastApEnableUid:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
@@ -14096,10 +14577,10 @@
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 1711
+    .line 1760
     if-eqz p2, :cond_0
 
-    .line 1713
+    .line 1762
     const v0, 0x20001
 
     const/16 v1, 0xc
@@ -14110,7 +14591,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 1714
+    .line 1763
     const v0, 0x20015
 
     invoke-virtual {p0, v0, p1}, Landroid/net/wifi/WifiStateMachine;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -14119,17 +14600,17 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 1720
+    .line 1769
     :goto_0
     return-void
 
-    .line 1716
+    .line 1765
     :cond_0
     const v0, 0x20018
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 1718
+    .line 1767
     const v0, 0x20002
 
     const/16 v1, 0xb
@@ -14193,7 +14674,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1694
+    .line 1743
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mLastEnableUid:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
@@ -14202,10 +14683,10 @@
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 1695
+    .line 1744
     if-eqz p1, :cond_0
 
-    .line 1697
+    .line 1746
     const v0, 0x20001
 
     const/4 v1, 0x2
@@ -14216,22 +14697,22 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 1698
+    .line 1747
     const v0, 0x2000b
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 1704
+    .line 1753
     :goto_0
     return-void
 
-    .line 1700
+    .line 1749
     :cond_0
     const v0, 0x2000c
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 1702
+    .line 1751
     const v0, 0x20002
 
     const/4 v1, 0x1
@@ -14249,14 +14730,14 @@
     .locals 3
 
     .prologue
-    .line 2061
+    .line 2113
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mFilteringMulticastV4Packets:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 2062
+    .line 2114
     const v0, 0x20054
 
     const/4 v1, 0x2
@@ -14269,7 +14750,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2063
+    .line 2115
     return-void
 .end method
 
@@ -14277,7 +14758,7 @@
     .locals 3
 
     .prologue
-    .line 2077
+    .line 2129
     const v0, 0x20054
 
     const/4 v1, 0x3
@@ -14290,7 +14771,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2078
+    .line 2130
     return-void
 .end method
 
@@ -14298,7 +14779,7 @@
     .locals 3
 
     .prologue
-    .line 2097
+    .line 2149
     const v0, 0x20054
 
     const/4 v1, 0x5
@@ -14311,7 +14792,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2098
+    .line 2150
     return-void
 .end method
 
@@ -14319,7 +14800,7 @@
     .locals 3
 
     .prologue
-    .line 2111
+    .line 2163
     const v0, 0x20054
 
     const/4 v1, 0x4
@@ -14332,7 +14813,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2112
+    .line 2164
     return-void
 .end method
 
@@ -14342,7 +14823,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2115
+    .line 2167
     const v0, 0x20054
 
     invoke-virtual {p0, v0, v1, v1}, Landroid/net/wifi/WifiStateMachine;->obtainMessage(III)Landroid/os/Message;
@@ -14351,7 +14832,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2116
+    .line 2168
     return-void
 .end method
 
@@ -14360,14 +14841,14 @@
     .parameter "force"
 
     .prologue
-    .line 2101
+    .line 2153
     if-nez p1, :cond_0
 
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/net/wifi/WifiStateMachine;->mIsSsdpFilterRuleEnabled:Z
 
-    .line 2102
+    .line 2154
     :cond_0
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mWifiState:Ljava/util/concurrent/atomic/AtomicInteger;
 
@@ -14379,12 +14860,12 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 2108
+    .line 2160
     :cond_1
     :goto_0
     return-void
 
-    .line 2105
+    .line 2157
     :cond_2
     if-nez p1, :cond_3
 
@@ -14394,7 +14875,7 @@
 
     if-nez v0, :cond_1
 
-    .line 2106
+    .line 2158
     :cond_3
     const v0, 0x20054
 
@@ -14416,7 +14897,7 @@
     .parameter "forceActive"
 
     .prologue
-    .line 1686
+    .line 1735
     const v1, 0x20047
 
     if-eqz p1, :cond_0
@@ -14432,10 +14913,10 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 1688
+    .line 1737
     return-void
 
-    .line 1686
+    .line 1735
     :cond_0
     const/4 v0, 0x2
 
@@ -14461,21 +14942,21 @@
     .parameter "config"
 
     .prologue
-    .line 1967
+    .line 2019
     const v1, 0x20059
 
     invoke-virtual {p0, v1, p2}, Landroid/net/wifi/WifiStateMachine;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1968
+    .line 2020
     .local v0, msg:Landroid/os/Message;
     iput-object p1, v0, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
-    .line 1969
+    .line 2021
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 1970
+    .line 2022
     return-void
 .end method
 
@@ -14485,12 +14966,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2069
+    .line 2121
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mFilteringMulticastV4Packets:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 2070
+    .line 2122
     const v0, 0x20055
 
     const/4 v1, 0x2
@@ -14501,7 +14982,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2071
+    .line 2123
     return-void
 .end method
 
@@ -14509,7 +14990,7 @@
     .locals 3
 
     .prologue
-    .line 2084
+    .line 2136
     const v0, 0x20055
 
     const/4 v1, 0x3
@@ -14522,7 +15003,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2085
+    .line 2137
     return-void
 .end method
 
@@ -14530,7 +15011,7 @@
     .locals 3
 
     .prologue
-    .line 2119
+    .line 2171
     const v0, 0x20055
 
     const/4 v1, 0x5
@@ -14543,7 +15024,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2120
+    .line 2172
     return-void
 .end method
 
@@ -14551,7 +15032,7 @@
     .locals 3
 
     .prologue
-    .line 2133
+    .line 2185
     const v0, 0x20055
 
     const/4 v1, 0x4
@@ -14564,7 +15045,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2134
+    .line 2186
     return-void
 .end method
 
@@ -14574,7 +15055,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2137
+    .line 2189
     const v0, 0x20055
 
     invoke-virtual {p0, v0, v1, v1}, Landroid/net/wifi/WifiStateMachine;->obtainMessage(III)Landroid/os/Message;
@@ -14583,7 +15064,7 @@
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 2138
+    .line 2190
     return-void
 .end method
 
@@ -14594,12 +15075,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2123
+    .line 2175
     if-nez p1, :cond_0
 
     iput-boolean v2, p0, Landroid/net/wifi/WifiStateMachine;->mIsSsdpFilterRuleEnabled:Z
 
-    .line 2124
+    .line 2176
     :cond_0
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mWifiState:Ljava/util/concurrent/atomic/AtomicInteger;
 
@@ -14611,12 +15092,12 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 2130
+    .line 2182
     :cond_1
     :goto_0
     return-void
 
-    .line 2127
+    .line 2179
     :cond_2
     if-nez p1, :cond_3
 
@@ -14626,7 +15107,7 @@
 
     if-nez v0, :cond_1
 
-    .line 2128
+    .line 2180
     :cond_3
     const v0, 0x20055
 
@@ -14646,21 +15127,21 @@
     .parameter "replyTo"
 
     .prologue
-    .line 1974
+    .line 2026
     const v1, 0x2005d
 
     invoke-virtual {p0, v1}, Landroid/net/wifi/WifiStateMachine;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1975
+    .line 2027
     .local v0, msg:Landroid/os/Message;
     iput-object p1, v0, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
-    .line 1976
+    .line 2028
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiStateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 1977
+    .line 2029
     return-void
 .end method
 
@@ -14670,22 +15151,22 @@
     .parameter "config"
 
     .prologue
-    .line 1870
+    .line 1922
     const v2, 0x20034
 
     invoke-virtual {p1, v2, p2}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
-    .line 1871
+    .line 1923
     .local v1, resultMsg:Landroid/os/Message;
     iget v0, v1, Landroid/os/Message;->arg1:I
 
-    .line 1872
+    .line 1924
     .local v0, result:I
     invoke-virtual {v1}, Landroid/os/Message;->recycle()V
 
-    .line 1873
+    .line 1925
     return v0
 .end method
 
@@ -14697,14 +15178,14 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1914
+    .line 1966
     const v2, 0x20038
 
     invoke-virtual {p1, v2, p2, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(III)Landroid/os/Message;
 
     move-result-object v1
 
-    .line 1916
+    .line 1968
     .local v1, resultMsg:Landroid/os/Message;
     iget v2, v1, Landroid/os/Message;->arg1:I
 
@@ -14714,12 +15195,12 @@
 
     const/4 v0, 0x1
 
-    .line 1917
+    .line 1969
     .local v0, result:Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Message;->recycle()V
 
-    .line 1918
+    .line 1970
     return v0
 .end method
 
@@ -14734,7 +15215,7 @@
 
     const/4 v4, 0x0
 
-    .line 1900
+    .line 1952
     const v5, 0x20036
 
     if-eqz p3, :cond_0
@@ -14746,7 +15227,7 @@
 
     move-result-object v1
 
-    .line 1902
+    .line 1954
     .local v1, resultMsg:Landroid/os/Message;
     iget v2, v1, Landroid/os/Message;->arg1:I
 
@@ -14756,12 +15237,12 @@
 
     move v0, v3
 
-    .line 1903
+    .line 1955
     .local v0, result:Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Message;->recycle()V
 
-    .line 1904
+    .line 1956
     return v0
 
     .end local v0           #result:Z
@@ -14769,14 +15250,14 @@
     :cond_0
     move v2, v4
 
-    .line 1900
+    .line 1952
     goto :goto_0
 
     .restart local v1       #resultMsg:Landroid/os/Message;
     :cond_1
     move v0, v4
 
-    .line 1902
+    .line 1954
     goto :goto_1
 .end method
 
@@ -14793,7 +15274,7 @@
     .end annotation
 
     .prologue
-    .line 1877
+    .line 1929
     invoke-static {}, Landroid/net/wifi/WifiConfigStore;->getConfiguredNetworks()Ljava/util/List;
 
     move-result-object v0
@@ -14805,12 +15286,12 @@
     .locals 2
 
     .prologue
-    .line 1798
+    .line 1850
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mDhcpInfoInternal:Landroid/net/DhcpInfoInternal;
 
     monitor-enter v1
 
-    .line 1799
+    .line 1851
     :try_start_0
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mDhcpInfoInternal:Landroid/net/DhcpInfoInternal;
 
@@ -14822,7 +15303,7 @@
 
     return-object v0
 
-    .line 1800
+    .line 1852
     :catchall_0
     move-exception v0
 
@@ -14846,7 +15327,7 @@
     .end annotation
 
     .prologue
-    .line 1840
+    .line 1892
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mScanResults:Ljava/util/List;
 
     return-object v0
@@ -14856,7 +15337,7 @@
     .locals 4
 
     .prologue
-    .line 1727
+    .line 1776
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mWifiApConfigChannel:Lcom/android/internal/util/AsyncChannel;
 
     const v3, 0x2001b
@@ -14865,17 +15346,17 @@
 
     move-result-object v0
 
-    .line 1728
+    .line 1777
     .local v0, resultMsg:Landroid/os/Message;
     iget-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/net/wifi/WifiConfiguration;
 
-    .line 1729
+    .line 1778
     .local v1, ret:Landroid/net/wifi/WifiConfiguration;
     invoke-virtual {v0}, Landroid/os/Message;->recycle()V
 
-    .line 1730
+    .line 1779
     return-object v1
 .end method
 
@@ -14883,7 +15364,7 @@
     .locals 1
 
     .prologue
-    .line 1764
+    .line 1813
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mWifiApState:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -14897,7 +15378,7 @@
     .locals 1
 
     .prologue
-    .line 1771
+    .line 1820
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mWifiApState:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -14906,43 +15387,43 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1783
+    .line 1832
     const-string v0, "[invalid state]"
 
     :goto_0
     return-object v0
 
-    .line 1773
+    .line 1822
     :pswitch_0
     const-string v0, "disabling"
 
     goto :goto_0
 
-    .line 1775
+    .line 1824
     :pswitch_1
     const-string v0, "disabled"
 
     goto :goto_0
 
-    .line 1777
+    .line 1826
     :pswitch_2
     const-string v0, "enabling"
 
     goto :goto_0
 
-    .line 1779
+    .line 1828
     :pswitch_3
     const-string v0, "enabled"
 
     goto :goto_0
 
-    .line 1781
+    .line 1830
     :pswitch_4
     const-string v0, "failed"
 
     goto :goto_0
 
-    .line 1771
+    .line 1820
     nop
 
     :pswitch_data_0
@@ -14959,7 +15440,7 @@
     .locals 1
 
     .prologue
-    .line 1737
+    .line 1786
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mWifiState:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -14973,7 +15454,7 @@
     .locals 1
 
     .prologue
-    .line 1744
+    .line 1793
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mWifiState:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -14982,43 +15463,43 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1756
+    .line 1805
     const-string v0, "[invalid state]"
 
     :goto_0
     return-object v0
 
-    .line 1746
+    .line 1795
     :pswitch_0
     const-string v0, "disabling"
 
     goto :goto_0
 
-    .line 1748
+    .line 1797
     :pswitch_1
     const-string v0, "disabled"
 
     goto :goto_0
 
-    .line 1750
+    .line 1799
     :pswitch_2
     const-string v0, "enabling"
 
     goto :goto_0
 
-    .line 1752
+    .line 1801
     :pswitch_3
     const-string v0, "enabled"
 
     goto :goto_0
 
-    .line 1754
+    .line 1803
     :pswitch_4
     const-string/jumbo v0, "unknown state"
 
     goto :goto_0
 
-    .line 1744
+    .line 1793
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -15034,14 +15515,14 @@
     .parameter "channel"
 
     .prologue
-    .line 1676
+    .line 1725
     const v2, 0x20033
 
     invoke-virtual {p1, v2}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(I)Landroid/os/Message;
 
     move-result-object v1
 
-    .line 1677
+    .line 1726
     .local v1, resultMsg:Landroid/os/Message;
     iget v2, v1, Landroid/os/Message;->arg1:I
 
@@ -15051,15 +15532,15 @@
 
     const/4 v0, 0x1
 
-    .line 1678
+    .line 1727
     .local v0, result:Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Message;->recycle()V
 
-    .line 1679
+    .line 1728
     return v0
 
-    .line 1677
+    .line 1726
     .end local v0           #result:Z
     :cond_0
     const/4 v0, 0x0
@@ -15073,14 +15554,14 @@
     .parameter "networkId"
 
     .prologue
-    .line 1886
+    .line 1938
     const v2, 0x20035
 
     invoke-virtual {p1, v2, p2}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(II)Landroid/os/Message;
 
     move-result-object v1
 
-    .line 1887
+    .line 1939
     .local v1, resultMsg:Landroid/os/Message;
     iget v2, v1, Landroid/os/Message;->arg1:I
 
@@ -15090,15 +15571,15 @@
 
     const/4 v0, 0x1
 
-    .line 1888
+    .line 1940
     .local v0, result:Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Message;->recycle()V
 
-    .line 1889
+    .line 1941
     return v0
 
-    .line 1887
+    .line 1939
     .end local v0           #result:Z
     :cond_0
     const/4 v0, 0x0
@@ -15110,7 +15591,10 @@
     .locals 3
 
     .prologue
-    .line 1793
+    .line 1843
+    invoke-virtual {p0}, Landroid/net/wifi/WifiStateMachine;->setRSSItoWifiInfo()Z
+
+    .line 1845
     const-string v0, "WifiStateMachine"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -15135,7 +15619,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1794
+    .line 1846
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
 
     return-object v0
@@ -15146,14 +15630,14 @@
     .parameter "channel"
 
     .prologue
-    .line 2277
+    .line 2329
     const v2, 0x2003b
 
     invoke-virtual {p1, v2}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(I)Landroid/os/Message;
 
     move-result-object v1
 
-    .line 2278
+    .line 2330
     .local v1, resultMsg:Landroid/os/Message;
     iget v2, v1, Landroid/os/Message;->arg1:I
 
@@ -15163,15 +15647,15 @@
 
     const/4 v0, 0x1
 
-    .line 2279
+    .line 2331
     .local v0, result:Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Message;->recycle()V
 
-    .line 2280
+    .line 2332
     return v0
 
-    .line 2278
+    .line 2330
     .end local v0           #result:Z
     :cond_0
     const/4 v0, 0x0
@@ -15183,12 +15667,12 @@
     .locals 4
 
     .prologue
-    .line 2323
+    .line 2375
     new-instance v1, Ljava/lang/StringBuffer;
 
     invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 2324
+    .line 2376
     .local v1, sb:Ljava/lang/StringBuffer;
     const-string/jumbo v2, "line.separator"
 
@@ -15196,7 +15680,7 @@
 
     move-result-object v0
 
-    .line 2325
+    .line 2377
     .local v0, LS:Ljava/lang/String;
     const-string v2, "current HSM state: "
 
@@ -15218,7 +15702,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 2326
+    .line 2378
     const-string/jumbo v2, "mLinkProperties "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -15233,7 +15717,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 2327
+    .line 2379
     const-string/jumbo v2, "mWifiInfo "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -15248,7 +15732,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 2328
+    .line 2380
     const-string/jumbo v2, "mDhcpInfoInternal "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -15263,7 +15747,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 2329
+    .line 2381
     const-string/jumbo v2, "mNetworkInfo "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -15278,7 +15762,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 2330
+    .line 2382
     const-string/jumbo v2, "mLastSignalLevel "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -15293,7 +15777,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 2331
+    .line 2383
     const-string/jumbo v2, "mLastBssid "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -15308,7 +15792,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 2332
+    .line 2384
     const-string/jumbo v2, "mLastNetworkId "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -15323,7 +15807,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 2333
+    .line 2385
     const-string/jumbo v2, "mReconnectCount "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -15338,7 +15822,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 2334
+    .line 2386
     const-string/jumbo v2, "mIsScanMode "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -15353,7 +15837,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 2335
+    .line 2387
     const-string v2, "Supplicant status"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -15378,14 +15862,14 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 2338
+    .line 2390
     invoke-static {}, Landroid/net/wifi/WifiConfigStore;->dump()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 2339
+    .line 2391
     invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -15398,32 +15882,32 @@
     .parameter "newSource"
 
     .prologue
-    .line 2284
+    .line 2336
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mRunningWifiUids:Landroid/os/WorkSource;
 
     monitor-enter v1
 
-    .line 2286
+    .line 2338
     if-eqz p1, :cond_0
 
-    .line 2287
+    .line 2339
     :try_start_0
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mRunningWifiUids:Landroid/os/WorkSource;
 
     invoke-virtual {v0, p1}, Landroid/os/WorkSource;->set(Landroid/os/WorkSource;)V
 
-    .line 2289
+    .line 2341
     :cond_0
     iget-boolean v0, p0, Landroid/net/wifi/WifiStateMachine;->mIsRunning:Z
 
     if-eqz v0, :cond_3
 
-    .line 2290
+    .line 2342
     iget-boolean v0, p0, Landroid/net/wifi/WifiStateMachine;->mReportedRunning:Z
 
     if-eqz v0, :cond_2
 
-    .line 2293
+    .line 2345
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mLastRunningWifiUids:Landroid/os/WorkSource;
 
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mRunningWifiUids:Landroid/os/WorkSource;
@@ -15434,7 +15918,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2294
+    .line 2346
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mLastRunningWifiUids:Landroid/os/WorkSource;
@@ -15443,21 +15927,21 @@
 
     invoke-interface {v0, v2, v3}, Lcom/android/internal/app/IBatteryStats;->noteWifiRunningChanged(Landroid/os/WorkSource;Landroid/os/WorkSource;)V
 
-    .line 2296
+    .line 2348
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mLastRunningWifiUids:Landroid/os/WorkSource;
 
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mRunningWifiUids:Landroid/os/WorkSource;
 
     invoke-virtual {v0, v2}, Landroid/os/WorkSource;->set(Landroid/os/WorkSource;)V
 
-    .line 2312
+    .line 2364
     :cond_1
     :goto_0
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0, p1}, Landroid/os/PowerManager$WakeLock;->setWorkSource(Landroid/os/WorkSource;)V
 
-    .line 2314
+    .line 2366
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mWakeLock_DHCP:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0, p1}, Landroid/os/PowerManager$WakeLock;->setWorkSource(Landroid/os/WorkSource;)V
@@ -15465,17 +15949,17 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2318
+    .line 2370
     :goto_1
     :try_start_1
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2319
+    .line 2371
     return-void
 
-    .line 2300
+    .line 2352
     :cond_2
     :try_start_2
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
@@ -15484,45 +15968,45 @@
 
     invoke-interface {v0, v2}, Lcom/android/internal/app/IBatteryStats;->noteWifiRunning(Landroid/os/WorkSource;)V
 
-    .line 2301
+    .line 2353
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mLastRunningWifiUids:Landroid/os/WorkSource;
 
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mRunningWifiUids:Landroid/os/WorkSource;
 
     invoke-virtual {v0, v2}, Landroid/os/WorkSource;->set(Landroid/os/WorkSource;)V
 
-    .line 2302
+    .line 2354
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/net/wifi/WifiStateMachine;->mReportedRunning:Z
 
     goto :goto_0
 
-    .line 2316
+    .line 2368
     :catch_0
     move-exception v0
 
     goto :goto_1
 
-    .line 2305
+    .line 2357
     :cond_3
     iget-boolean v0, p0, Landroid/net/wifi/WifiStateMachine;->mReportedRunning:Z
 
     if-eqz v0, :cond_1
 
-    .line 2307
+    .line 2359
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine;->mLastRunningWifiUids:Landroid/os/WorkSource;
 
     invoke-interface {v0, v2}, Lcom/android/internal/app/IBatteryStats;->noteWifiStopped(Landroid/os/WorkSource;)V
 
-    .line 2308
+    .line 2360
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine;->mLastRunningWifiUids:Landroid/os/WorkSource;
 
     invoke-virtual {v0}, Landroid/os/WorkSource;->clear()V
 
-    .line 2309
+    .line 2361
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/net/wifi/WifiStateMachine;->mReportedRunning:Z
@@ -15532,7 +16016,7 @@
 
     goto :goto_0
 
-    .line 2318
+    .line 2370
     :catchall_0
     move-exception v0
 

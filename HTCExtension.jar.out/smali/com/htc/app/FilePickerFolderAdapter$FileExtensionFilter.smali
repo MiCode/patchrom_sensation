@@ -36,20 +36,20 @@
     .parameter "extensions"
 
     .prologue
-    .line 388
+    .line 381
     iput-object p1, p0, Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;->this$0:Lcom/htc/app/FilePickerFolderAdapter;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 389
+    .line 382
     iput-object p2, p0, Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;->mExtensionArray:[Ljava/lang/String;
 
-    .line 390
+    .line 383
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;->containFolder:Z
 
-    .line 391
+    .line 384
     return-void
 .end method
 
@@ -60,18 +60,18 @@
     .parameter "isContainFolder"
 
     .prologue
-    .line 383
+    .line 376
     iput-object p1, p0, Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;->this$0:Lcom/htc/app/FilePickerFolderAdapter;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 384
+    .line 377
     iput-object p2, p0, Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;->mExtensionArray:[Ljava/lang/String;
 
-    .line 385
+    .line 378
     iput-boolean p3, p0, Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;->containFolder:Z
 
-    .line 386
+    .line 379
     return-void
 .end method
 
@@ -87,12 +87,12 @@
 
     const/4 v2, 0x0
 
-    .line 395
+    .line 388
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p1, p2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 397
+    .line 390
     .local v0, file:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->isDirectory()Z
 
@@ -100,7 +100,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 398
+    .line 391
     invoke-virtual {v0}, Ljava/io/File;->canRead()Z
 
     move-result v3
@@ -113,7 +113,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 399
+    .line 392
     :cond_0
     iget-object v3, p0, Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;->this$0:Lcom/htc/app/FilePickerFolderAdapter;
 
@@ -132,21 +132,21 @@
 
     if-eqz v3, :cond_1
 
-    .line 400
+    .line 393
     iget-boolean v2, p0, Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;->containFolder:Z
 
-    .line 425
+    .line 418
     :cond_1
     :goto_0
     return v2
 
-    .line 403
+    .line 396
     :cond_2
     iget-boolean v2, p0, Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;->containFolder:Z
 
     goto :goto_0
 
-    .line 407
+    .line 400
     :cond_3
     iget-object v4, p0, Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;->this$0:Lcom/htc/app/FilePickerFolderAdapter;
 
@@ -161,12 +161,12 @@
 
     if-nez v4, :cond_1
 
-    .line 411
+    .line 404
     iget-object v4, p0, Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;->mExtensionArray:[Ljava/lang/String;
 
     if-eqz v4, :cond_5
 
-    .line 412
+    .line 405
     invoke-virtual {v0}, Ljava/io/File;->canRead()Z
 
     move-result v4
@@ -179,7 +179,7 @@
 
     if-nez v4, :cond_1
 
-    .line 415
+    .line 408
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -190,7 +190,7 @@
 
     if-ge v1, v4, :cond_1
 
-    .line 417
+    .line 410
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v4
@@ -211,10 +211,10 @@
 
     move v2, v3
 
-    .line 419
+    .line 412
     goto :goto_0
 
-    .line 415
+    .line 408
     :cond_4
     add-int/lit8 v1, v1, 0x1
 
@@ -224,6 +224,6 @@
     :cond_5
     move v2, v3
 
-    .line 425
+    .line 418
     goto :goto_0
 .end method

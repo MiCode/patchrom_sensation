@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 6205
+    .line 6215
     iput-object p1, p0, Lcom/android/camera/HTCCamera$27;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -44,12 +44,12 @@
 
     const/4 v4, 0x0
 
-    .line 6209
+    .line 6219
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 6210
+    .line 6220
     .local v0, action:Ljava/lang/String;
     const-string v1, "HTCCamera"
 
@@ -73,7 +73,7 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6211
+    .line 6221
     const-string v1, "android.intent.action.USER_PRESENT"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -82,24 +82,24 @@
 
     if-eqz v1, :cond_2
 
-    .line 6212
+    .line 6222
     const-string v1, "HTCCamera"
 
     const-string v2, "################ unlock screen !!"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6213
+    .line 6223
     invoke-static {}, Lcom/android/camera/HTCCamera;->access$12600()Z
 
     move-result v1
 
     if-ne v1, v5, :cond_2
 
-    .line 6214
+    .line 6224
     invoke-static {v4}, Lcom/android/camera/HTCCamera;->access$12602(Z)Z
 
-    .line 6217
+    .line 6227
     iget-object v1, p0, Lcom/android/camera/HTCCamera$27;->this$0:Lcom/android/camera/HTCCamera;
 
     iget-object v1, v1, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
@@ -114,14 +114,14 @@
 
     if-ne v1, v5, :cond_0
 
-    .line 6218
+    .line 6228
     invoke-static {}, Lcom/android/camera/HTCCamera;->access$12700()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 6219
+    .line 6229
     iget-object v1, p0, Lcom/android/camera/HTCCamera$27;->this$0:Lcom/android/camera/HTCCamera;
 
     iget-object v1, v1, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
@@ -132,7 +132,7 @@
 
     invoke-static {v1, v2, v4, v4, v3}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 6223
+    .line 6233
     :cond_0
     invoke-static {}, Lcom/android/camera/HTCCamera;->access$12800()Z
 
@@ -140,14 +140,14 @@
 
     if-ne v1, v5, :cond_1
 
-    .line 6226
+    .line 6236
     const-string v1, "HTCCamera"
 
     const-string v2, "unlock screen - can show UI"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6229
+    .line 6239
     iget-object v1, p0, Lcom/android/camera/HTCCamera$27;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mIdle:Z
@@ -157,7 +157,7 @@
 
     if-nez v1, :cond_3
 
-    .line 6230
+    .line 6240
     iget-object v1, p0, Lcom/android/camera/HTCCamera$27;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
@@ -169,16 +169,16 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 6234
+    .line 6244
     :cond_1
     :goto_0
     invoke-static {v4}, Lcom/android/camera/HTCCamera;->setWaitKeyguardBeforePreview(Z)V
 
-    .line 6237
+    .line 6247
     :cond_2
     return-void
 
-    .line 6232
+    .line 6242
     :cond_3
     iget-object v1, p0, Lcom/android/camera/HTCCamera$27;->this$0:Lcom/android/camera/HTCCamera;
 

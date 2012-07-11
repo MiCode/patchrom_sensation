@@ -28,15 +28,15 @@
     .parameter
 
     .prologue
-    .line 479
+    .line 489
     iput-object p1, p0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 480
+    .line 490
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->reset()V
 
-    .line 481
+    .line 491
     return-void
 .end method
 
@@ -47,18 +47,18 @@
     .parameter "rxPkts"
 
     .prologue
-    .line 483
+    .line 493
     iput-object p1, p0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 484
+    .line 494
     iput-wide p2, p0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->txPkts:J
 
-    .line 485
+    .line 495
     iput-wide p4, p0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->rxPkts:J
 
-    .line 486
+    .line 496
     return-void
 .end method
 
@@ -68,22 +68,22 @@
     .parameter "sum"
 
     .prologue
-    .line 488
+    .line 498
     iput-object p1, p0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 489
+    .line 499
     iget-wide v0, p2, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->txPkts:J
 
     iput-wide v0, p0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->txPkts:J
 
-    .line 490
+    .line 500
     iget-wide v0, p2, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->rxPkts:J
 
     iput-wide v0, p0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->rxPkts:J
 
-    .line 491
+    .line 501
     return-void
 .end method
 
@@ -95,13 +95,13 @@
     .prologue
     const-wide/16 v0, -0x1
 
-    .line 494
+    .line 504
     iput-wide v0, p0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->txPkts:J
 
-    .line 495
+    .line 505
     iput-wide v0, p0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->rxPkts:J
 
-    .line 496
+    .line 506
     return-void
 .end method
 
@@ -109,7 +109,7 @@
     .locals 3
 
     .prologue
-    .line 499
+    .line 509
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -155,20 +155,20 @@
     .locals 15
 
     .prologue
-    .line 503
+    .line 513
     const/4 v12, 0x0
 
     .local v12, txUpdated:Z
     const/4 v7, 0x0
 
-    .line 504
+    .line 514
     .local v7, rxUpdated:Z
     const-wide/16 v10, 0x0
 
     .local v10, txSum:J
     const-wide/16 v5, 0x0
 
-    .line 505
+    .line 515
     .local v5, rxSum:J
     iget-object v13, p0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
 
@@ -197,7 +197,7 @@
 
     check-cast v0, Lcom/android/internal/telephony/ApnContext;
 
-    .line 506
+    .line 516
     .local v0, apnContext:Lcom/android/internal/telephony/ApnContext;
     invoke-virtual {v0}, Lcom/android/internal/telephony/ApnContext;->getState()Lcom/android/internal/telephony/DataConnectionTracker$State;
 
@@ -207,39 +207,39 @@
 
     if-ne v13, v14, :cond_0
 
-    .line 507
+    .line 517
     invoke-virtual {v0}, Lcom/android/internal/telephony/ApnContext;->getDataConnectionAc()Lcom/android/internal/telephony/DataConnectionAc;
 
     move-result-object v1
 
-    .line 508
+    .line 518
     .local v1, dcac:Lcom/android/internal/telephony/DataConnectionAc;
     if-eqz v1, :cond_0
 
-    .line 510
+    .line 520
     invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionAc;->getLinkPropertiesSync()Landroid/net/LinkProperties;
 
     move-result-object v4
 
-    .line 511
+    .line 521
     .local v4, linkProp:Landroid/net/LinkProperties;
     if-eqz v4, :cond_0
 
-    .line 513
+    .line 523
     invoke-virtual {v4}, Landroid/net/LinkProperties;->getInterfaceName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 515
+    .line 525
     .local v3, iface:Ljava/lang/String;
     if-eqz v3, :cond_0
 
-    .line 516
+    .line 526
     invoke-static {v3}, Landroid/net/TrafficStats;->getTxPackets(Ljava/lang/String;)J
 
     move-result-wide v8
 
-    .line 517
+    .line 527
     .local v8, stats:J
     const-wide/16 v13, 0x0
 
@@ -247,34 +247,34 @@
 
     if-lez v13, :cond_1
 
-    .line 518
+    .line 528
     const/4 v12, 0x1
 
-    .line 519
+    .line 529
     add-long/2addr v10, v8
 
-    .line 521
+    .line 531
     :cond_1
     invoke-static {v3}, Landroid/net/TrafficStats;->getRxPackets(Ljava/lang/String;)J
 
     move-result-wide v8
 
-    .line 522
+    .line 532
     const-wide/16 v13, 0x0
 
     cmp-long v13, v8, v13
 
     if-lez v13, :cond_0
 
-    .line 523
+    .line 533
     const/4 v7, 0x1
 
-    .line 524
+    .line 534
     add-long/2addr v5, v8
 
     goto :goto_0
 
-    .line 529
+    .line 539
     .end local v0           #apnContext:Lcom/android/internal/telephony/ApnContext;
     .end local v1           #dcac:Lcom/android/internal/telephony/DataConnectionAc;
     .end local v3           #iface:Ljava/lang/String;
@@ -285,13 +285,13 @@
 
     iput-wide v10, p0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->txPkts:J
 
-    .line 530
+    .line 540
     :cond_3
     if-eqz v7, :cond_4
 
     iput-wide v5, p0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->rxPkts:J
 
-    .line 531
+    .line 541
     :cond_4
     return-void
 .end method

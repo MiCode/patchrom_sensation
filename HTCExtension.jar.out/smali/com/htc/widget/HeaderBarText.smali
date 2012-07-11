@@ -154,7 +154,7 @@
     invoke-virtual {v1, v2, p0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 58
-    const v1, 0x2020260
+    const v1, 0x2020263
 
     invoke-virtual {p0, v1}, Lcom/htc/widget/HeaderBarText;->findViewById(I)Landroid/view/View;
 
@@ -165,7 +165,7 @@
     iput-object v1, p0, Lcom/htc/widget/HeaderBarText;->primaryText:Landroid/widget/TextView;
 
     .line 59
-    const v1, 0x2020261
+    const v1, 0x2020264
 
     invoke-virtual {p0, v1}, Lcom/htc/widget/HeaderBarText;->findViewById(I)Landroid/view/View;
 

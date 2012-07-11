@@ -178,6 +178,8 @@
 
 .field public static final TONE_DTMF_D:I = 0xf
 
+.field public static final TONE_DTMF_GAN_LITE:I = 0x6f
+
 .field public static final TONE_DTMF_P:I = 0xb
 
 .field public static final TONE_DTMF_S:I = 0xa
@@ -242,13 +244,13 @@
     .parameter "volume"
 
     .prologue
-    .line 797
+    .line 804
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 798
+    .line 805
     invoke-direct {p0, p1, p2}, Landroid/media/ToneGenerator;->native_setup(II)V
 
-    .line 799
+    .line 806
     return-void
 .end method
 
@@ -264,7 +266,7 @@
     .locals 0
 
     .prologue
-    .line 937
+    .line 944
     invoke-direct {p0}, Landroid/media/ToneGenerator;->native_finalize()V
 
     return-void
@@ -278,7 +280,7 @@
     .parameter "toneType"
 
     .prologue
-    .line 908
+    .line 915
     const/4 v0, -0x1
 
     invoke-virtual {p0, p1, v0}, Landroid/media/ToneGenerator;->startTone(II)Z

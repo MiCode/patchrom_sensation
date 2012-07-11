@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 4117
+    .line 4123
     iput-object p1, p0, Lcom/android/camera/HTCCamera$22;->this$0:Lcom/android/camera/HTCCamera;
 
     iput p2, p0, Lcom/android/camera/HTCCamera$22;->val$threshold:I
@@ -53,7 +53,7 @@
 
     const/4 v5, 0x0
 
-    .line 4122
+    .line 4128
     iget-object v7, p0, Lcom/android/camera/HTCCamera$22;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v7}, Lcom/android/camera/HTCCamera;->isPanelReady()Z
@@ -72,12 +72,12 @@
 
     if-nez v7, :cond_1
 
-    .line 4161
+    .line 4167
     :cond_0
     :goto_0
     return v5
 
-    .line 4125
+    .line 4131
     :cond_1
     iget-object v7, p0, Lcom/android/camera/HTCCamera$22;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -90,7 +90,7 @@
 
     move-result-object v4
 
-    .line 4126
+    .line 4132
     .local v4, handle_area:Landroid/graphics/Rect;
     invoke-virtual {v4}, Landroid/graphics/Rect;->width()I
 
@@ -104,7 +104,7 @@
 
     if-ge p3, v7, :cond_2
 
-    .line 4127
+    .line 4133
     iget-object v7, p0, Lcom/android/camera/HTCCamera$22;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
@@ -114,7 +114,7 @@
 
     invoke-virtual {v7}, Lcom/android/camera/widget/SlidingDrawer;->setHandleSlideOpened()V
 
-    .line 4131
+    .line 4137
     :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -126,17 +126,17 @@
     :goto_1
     move v5, v6
 
-    .line 4161
+    .line 4167
     goto :goto_0
 
-    .line 4133
+    .line 4139
     :pswitch_0
     iget-object v5, p0, Lcom/android/camera/HTCCamera$22;->this$0:Lcom/android/camera/HTCCamera;
 
     #setter for: Lcom/android/camera/HTCCamera;->mTouchDown_X:I
     invoke-static {v5, p2}, Lcom/android/camera/HTCCamera;->access$11902(Lcom/android/camera/HTCCamera;I)I
 
-    .line 4134
+    .line 4140
     iget-object v5, p0, Lcom/android/camera/HTCCamera$22;->this$0:Lcom/android/camera/HTCCamera;
 
     #setter for: Lcom/android/camera/HTCCamera;->mTouchDown_Y:I
@@ -144,7 +144,7 @@
 
     goto :goto_1
 
-    .line 4139
+    .line 4145
     :pswitch_1
     iget-object v7, p0, Lcom/android/camera/HTCCamera$22;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -155,7 +155,7 @@
 
     sub-int v2, v7, p2
 
-    .line 4140
+    .line 4146
     .local v2, diff_x:I
     iget-object v7, p0, Lcom/android/camera/HTCCamera$22;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -166,7 +166,7 @@
 
     sub-int v3, v7, p3
 
-    .line 4141
+    .line 4147
     .local v3, diff_y:I
     mul-int v7, v2, v2
 
@@ -180,7 +180,7 @@
 
     move-result-wide v0
 
-    .line 4142
+    .line 4148
     .local v0, diff:D
     iget v7, p0, Lcom/android/camera/HTCCamera$22;->val$threshold:I
 
@@ -192,7 +192,7 @@
 
     goto :goto_0
 
-    .line 4148
+    .line 4154
     .end local v0           #diff:D
     .end local v2           #diff_x:I
     .end local v3           #diff_y:I
@@ -206,7 +206,7 @@
 
     invoke-virtual {v5}, Lcom/android/camera/widget/SlidingDrawer;->setHandleOpened()V
 
-    .line 4149
+    .line 4155
     iget-object v5, p0, Lcom/android/camera/HTCCamera$22;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mTouchDown_X:I
@@ -233,7 +233,7 @@
 
     if-ge v5, v7, :cond_3
 
-    .line 4150
+    .line 4156
     iget-object v5, p0, Lcom/android/camera/HTCCamera$22;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mTouchDown_X:I
@@ -243,7 +243,7 @@
 
     sub-int v2, v5, p2
 
-    .line 4151
+    .line 4157
     .restart local v2       #diff_x:I
     iget-object v5, p0, Lcom/android/camera/HTCCamera$22;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -254,7 +254,7 @@
 
     sub-int v3, v5, p3
 
-    .line 4152
+    .line 4158
     .restart local v3       #diff_y:I
     mul-int v5, v2, v2
 
@@ -268,7 +268,7 @@
 
     move-result-wide v0
 
-    .line 4153
+    .line 4159
     .restart local v0       #diff:D
     iget v5, p0, Lcom/android/camera/HTCCamera$22;->val$threshold:I
 
@@ -278,14 +278,14 @@
 
     if-gez v5, :cond_4
 
-    .line 4154
+    .line 4160
     iget-object v5, p0, Lcom/android/camera/HTCCamera$22;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v5}, Lcom/android/camera/HTCCamera;->closeSettingsPanel()V
 
     goto :goto_1
 
-    .line 4155
+    .line 4161
     :cond_4
     iget-object v5, p0, Lcom/android/camera/HTCCamera$22;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -296,7 +296,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 4156
+    .line 4162
     iget-object v5, p0, Lcom/android/camera/HTCCamera$22;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
@@ -308,7 +308,7 @@
 
     goto/16 :goto_1
 
-    .line 4131
+    .line 4137
     nop
 
     :pswitch_data_0

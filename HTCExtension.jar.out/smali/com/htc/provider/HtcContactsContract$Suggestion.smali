@@ -39,7 +39,7 @@
     .locals 2
 
     .prologue
-    .line 2935
+    .line 2995
     sget-object v0, Lcom/htc/provider/HtcContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "suggestion"
@@ -57,7 +57,7 @@
     .locals 0
 
     .prologue
-    .line 2925
+    .line 2985
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -37,7 +37,7 @@
     <string name="on_screen_btn_effects">Ефекти</string>
     <string name="on_screen_btn_gallery">Галерея</string>
     <string name="on_screen_btn_enhance_photo">Покращити</string>
-    <string name="on_screen_btn_trim_video">Обітнути</string>
+    <string name="on_screen_btn_trim_video">Обрізати</string>
     <string name="dialog_button_delete">Видалити</string>
     <string name="auto">Авто</string>
     <string name="on_capital">Увімкнено</string>
@@ -117,7 +117,7 @@
     <string name="setting_sharpness">Різкість</string>
     <string name="ui_none">Без ефектів</string>
     <string name="ui_effect_panorama">Панорамне фото</string>
-    <string name="ui_effect_hdr">Широкий динамічний діапазон</string>
+    <string name="ui_effect_hdr">HDR</string>
     <string name="ui_effect_burst">Вибух</string>
     <string name="ui_effect_grayscale">Відтінки сірого</string>
     <string name="ui_effect_sepia">Сепія</string>
@@ -187,8 +187,8 @@
     <string name="recording_limit_time">Maximum recording time is about %s.</string>
     <string name="action_screen_confirm_delete_message">Справді видалити %ss?</string>
     <string name="action_screen_confirm_delete_message_burst">Справді видалити зняті фото?</string>
-    <string name="action_screen_share_image">Вислати це зображення через</string>
-    <string name="action_screen_share_video">Вислати це відео через</string>
+    <string name="action_screen_share_image">Відправити це зображення через</string>
+    <string name="action_screen_share_video">Відправити це відео через</string>
     <string name="action_screen_button_delete">Видалити</string>
     <string name="action_screen_button_set_as">Установити як</string>
     <string name="action_screen_button_share">Вислати</string>
@@ -199,7 +199,7 @@
     <string name="text_title_location_disable">Джерела координатних даних вимкнено</string>
     <string name="text_message_location_disable">Для роботи цієї програми потрібен доступ до розташування. Для отримання поточного розташування увімкніть бездротову мережу або супутник GPS у налаштуваннях.</string>
     <string name="txt_query_switch_storage_title">Задайте місце збереження</string>
-    <string name="txt_query_switch_to_phone_storage">"Перемкнутися на пам'ять телефону?"</string>
+    <string name="txt_query_switch_to_phone_storage">"Переключитися на пам'ять телефону?"</string>
     <string name="txt_query_switch_to_sdcard">"Перейти до карти пам'яті?"</string>
     <string name="txt_switch_to_phone_storage">"Карта пам'яті заповнена або недоступна. Для збереження використовуватиметься пам'ять телефону."</string>
     <string name="txt_switch_to_sdcard">"Внутрішня пам'ять телефону заповнена або недоступна. Для збереження використовуватиметься карта пам'яті."</string>
@@ -295,7 +295,7 @@
     <string name="scene_description_portrait">Використовуйте, щоб робити фото <b>"окремого об'єкту"</b>", таким чином об'єкт залишається чітким і у фокусі за умов розмитого тла."</string>
     <string name="scene_description_lowlight">Використовуйте за умов <b>слабкого освітлення</b> під час ручного фотографування без спалаху для більш природнього вигляду.</string>
     <string name="scene_description_manual">Дозволяє змінювати додаткові налаштування. Щоб відкрити налаштування, натисніть клавішу меню.</string>
-    <string name="power_warning_msg">3D-камера недоступна через низький заряд акумулятора. Зарядіть телефон або перейдіть на 2D-камеру.</string>
+    <string name="power_warning_msg">3D-камера недоступна через низький заряд акумулятора. Підзарядіть телефон або перейдіть на 2D-камеру.</string>
     <string name="camera_page_title">Камера</string>
     <string name="camera_tutorial_text">Докладніше про розширені функції камери.</string>
     <string name="done_btn_label">Готово</string>

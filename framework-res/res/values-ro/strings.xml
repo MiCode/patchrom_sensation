@@ -183,7 +183,7 @@
     <string name="badPuk">Codul PUK tastat nu este corect.</string>
     <string name="mismatchPin">Codurile PIN introduse nu sunt identice.</string>
     <string name="invalidPin">Tastează un cod PIN din 4 până la 8 cifre.</string>
-    <string name="invalidPuk">Introduceţi un cod PUK care să aibă 8 cifre sau mai mult.</string>
+    <string name="invalidPuk">Introduceţi codul PUK care să aibă 8 cifre sau mai mult.</string>
     <string name="needPuk">Cartela SIM este blocată cu codul PUK. Tastează codul PUK pentru a o debloca.</string>
     <string name="needPuk2">Tastează codul PUK2 pentru a debloca cartela SIM.</string>
     <string name="ClipMmi">Identitate apelant primire</string>
@@ -269,9 +269,9 @@
     <string name="turn_off_radio">Oprire reţea fără fir</string>
     <string name="screen_lock">Blocare ecran</string>
     <string name="power_off">Oprire</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Sonerie oprită</string>
+    <string name="silent_mode_vibrate">Sonerie vibrare</string>
+    <string name="silent_mode_ring">Sonerie pornită</string>
     <string name="shutdown_progress">Se opreşte…</string>
     <string name="shutdown_confirm">Telefonul se va opri.</string>
     <string name="shutdown_confirm_question">Doriţi să închideţi?</string>
@@ -309,7 +309,7 @@
     <string name="permgrouplab_developmentTools">Instrumente dezvoltare</string>
     <string name="permgroupdesc_developmentTools">Funcţii necesare numai dezvoltatorilor de aplicaţii.</string>
     <string name="permgrouplab_storage">Stocare</string>
-    <string name="permgroupdesc_storage">Accesare card SD.</string>
+    <string name="permgroupdesc_storage">Accesare cartelă SD.</string>
     <string name="permlab_statusBar">dezactivare sau modificare bară de stare</string>
     <string name="permdesc_statusBar">Permite aplicaţiei să dezactiveze bara de stare sau să adauge şi să elimine pictograme de sistem.</string>
     <string name="permlab_statusBarService">bară de stare</string>
@@ -323,11 +323,11 @@
     <string name="permlab_receiveMms">primire MMS</string>
     <string name="permdesc_receiveMms">Permite aplicaţiei să primească şi să proceseze mesaje MMS. Aplicaţiile rău intenţionate îţi pot monitoriza mesajele sau le pot şterge fără a ţi le afişa.</string>
     <string name="permlab_receiveEmergencyBroadcast">primeşte mesaje difuzate de urgenţă</string>
-    <string name="permdesc_receiveEmergencyBroadcast">Permite aplicaţiei să primească şi să proceseze mesajele difuzate de urgenţă. Această permisiune este disponibil numai pentru aplicaţiile sistemului.</string>
+    <string name="permdesc_receiveEmergencyBroadcast">Permite aplicaţiei să primească şi să proceseze mesajele difuzate de urgenţă. Această permisiune este disponibilă numai pentru aplicaţiile sistemului.</string>
     <string name="permlab_sendSms">trimitere mesaje SMS</string>
     <string name="permdesc_sendSms">Permite aplicaţiei să trimită mesaje SMS. Aplicaţiile rău intenţionate îţi pot încărca factura trimiţând mesaje fără confirmarea ta.</string>
     <string name="permlab_sendSmsNoConfirmation">trimitere mesaje SMS fără confirmare</string>
-    <string name="permdesc_sendSmsNoConfirmation">Permite aplicaţiei să trimită mesaje SMS. Aplicaţiile rău intenţionate ar putea să genereze costuri, deoarece trimit mesaje fără confirmarea dvs.</string>
+    <string name="permdesc_sendSmsNoConfirmation">Permite aplicaţiei să trimită mesaje SMS. Aplicaţiile maliţioase ar putea să genereze costuri, deoarece trimit mesaje fără confirmarea dvs.</string>
     <string name="permlab_readSms">citire SMS sau MMS</string>
     <string name="permdesc_readSms">Permite aplicaţiei să citească mesajele SMS stocate pe telefon sau pe cartela SIM. Aplicaţiile rău intenţionate îţi pot citi mesajele confidenţiale.</string>
     <string name="permlab_writeSms">editare SMS sau MMS</string>
@@ -339,7 +339,7 @@
     <string name="permlab_reorderTasks">reordonare aplicaţii în execuţie</string>
     <string name="permdesc_reorderTasks">Permite unei aplicaţii să mute activităţi în prim plan şi în fundal. Aplicaţiile rău intenţionate se pot aduce forţat în prim plan fără controlul tău.</string>
     <string name="permlab_removeTasks">oprirea aplicaţiilor care rulează</string>
-    <string name="permdesc_removeTasks">Permite unei aplicaţii să elimine sarcini şi să închidă aplicaţiile corespunzătoare acestora. Aplicaţiile rău intenţionate pot perturba comportamentul altor aplicaţii.</string>
+    <string name="permdesc_removeTasks">Permite unei aplicaţii să elimine sarcini şi să închidă aplicaţiile corespunzătoare acestora. Aplicaţiile maliţioase pot perturba comportamentul altor aplicaţii.</string>
     <string name="permlab_setDebugApp">activare depanare aplicaţie</string>
     <string name="permdesc_setDebugApp">Permite aplicaţiei să activeze depanarea altei aplicaţii. Aplicaţiile rău intenţionate pot folosi această funcţie pentru a termina alte aplicaţii.</string>
     <string name="permlab_changeConfiguration">modificare setări interfaţă</string>
@@ -355,13 +355,13 @@
     <string name="permlab_dump">preluare stare internă sistem</string>
     <string name="permdesc_dump">Permite aplicaţiei să preia starea internă a sistemului. Aplicaţiile rău intenţionate pot prelua o gamă largă de informaţii private şi securizate de care nu ar avea nevoie în mod normal.</string>
     <string name="permlab_retrieve_window_content">preia conţinutul de pe ecran</string>
-    <string name="permdesc_retrieve_window_content">Permite aplicaţiei să preia conţinutul ferestrei active. Aplicaţiile rău intenţionate pot să preia întregul conţinut al ferestrei şi să examineze tot textul acesteia, cu excepţia parolelor.</string>
+    <string name="permdesc_retrieve_window_content">Permite aplicaţiei să preia conţinutul ferestrei active. Aplicaţiile maliţioase pot să preia întregul conţinut al ferestrei şi să examineze tot textul acesteia, cu excepţia parolelor.</string>
     <string name="permlab_shutdown">oprire parţială</string>
     <string name="permdesc_shutdown">Comută instrumentul de gestionare a activităţilor într-un mod de oprire. Nu efectuează oprirea completă.</string>
     <string name="permlab_stopAppSwitches">prevenire comutări aplicaţie</string>
     <string name="permdesc_stopAppSwitches">Împiedică utilizatorul să comute la altă aplicaţie.</string>
     <string name="permlab_runSetActivityWatcher">monitorizare şi control lansările tuturor aplicaţiilor</string>
-    <string name="permdesc_runSetActivityWatcher">Permite unei aplicaţii să monitorizeze şi să controleze modul în care sistemul lansează activităţi. Aplicaţiile rău-intenţionate ar putea să compromită sistemul în întregime. Această permisiune este necesară numai pentru dezvoltare şi nu este niciodată necesară pentru utilizarea normală a telefonului.</string>
+    <string name="permdesc_runSetActivityWatcher">Permite unei aplicaţii să monitorizeze şi să controleze modul în care sistemul lansează activităţi. Aplicaţiile maliţioase ar putea să compromită complet sistemul. Această permisiune este necesară numai pentru dezvoltare şi nu este niciodată necesară pentru utilizarea normală.</string>
     <string name="permlab_broadcastPackageRemoved">trimitere difuzare pachet eliminat</string>
     <string name="permdesc_broadcastPackageRemoved">Permite aplicaţiei să difuzeze o notificare de eliminare a unui pachet de aplicaţie. Aplicaţiile rău intenţionate pot folosi această funcţie pentru a termina orice altă aplicaţie în execuţie.</string>
     <string name="permlab_broadcastSmsReceived">trimitere difuzare primire SMS</string>
@@ -381,7 +381,7 @@
     <string name="permlab_internalSystemWindow">afişare ferestre neautorizate</string>
     <string name="permdesc_internalSystemWindow">Permite crearea de ferestre destinate utilizării de către interfaţa internă a sistemului. Nu este destinată aplicaţiilor normale.</string>
     <string name="permlab_systemAlertWindow">afişare alerte la nivel de sistem</string>
-    <string name="permdesc_systemAlertWindow">Permite unei aplicaţii să afişeze ferestre de alertă de sistem. Aplicaţiile rău-intenţionate ar putea să preia controlul asupra întregului ecran al telefonului.</string>
+    <string name="permdesc_systemAlertWindow">Permite unei aplicaţii să afişeze ferestre de alertă de sistem. Aplicaţiile maliţioase ar putea să preia controlul asupra întregului ecran al telefonului.</string>
     <string name="permlab_setAnimationScale">modificare viteză globală animaţie</string>
     <string name="permdesc_setAnimationScale">Permite unei aplicaţii să modifice oricând viteza de animaţie globală (animaţii mai lente sau mai rapide).</string>
     <string name="permlab_manageAppTokens">gestionare simboluri aplicaţii</string>
@@ -395,11 +395,11 @@
     <string name="permlab_bindTextService">conectare la un serviciu text</string>
     <string name="permdesc_bindTextService">Permite deţinătorului să se conecteze la o interfaţă de nivel superior a unui serviciu text (de ex., SpellCheckerService). Nu ar trebui să fie necesară pentru aplicaţiile obişnuite.</string>
     <string name="permlab_bindVpnService">conectare la un serviciu VPN</string>
-    <string name="permdesc_bindVpnService">Permite proprietarului să se conecteze la interfaţa de nivel superior a unui serviciu VPN. Nu ar trebui să fie niciodată necesară pentru aplicaţiile obişnuite.</string>
+    <string name="permdesc_bindVpnService">Permite deţinătorului să se conecteze la interfaţa de nivel superior a unui serviciu VPN. Nu ar trebui să fie niciodată necesară pentru aplicaţiile obişnuite.</string>
     <string name="permlab_bindWallpaper">legare de un fundal</string>
     <string name="permdesc_bindWallpaper">Permite deţinătorului să se lege de interfaţa de nivel superior a unui fundal. Nu este necesară aplicaţiilor normale.</string>
     <string name="permlab_bindRemoteViews">conectare la un serviciu widget</string>
-    <string name="permdesc_bindRemoteViews">Permite proprietarului să se conecteze la interfaţa de nivel superior a unui serviciu widget. Nu ar trebui să fie niciodată necesară pentru aplicaţiile obişnuite.</string>
+    <string name="permdesc_bindRemoteViews">Permite deţinătorului să se conecteze la interfaţa de nivel superior a unui serviciu widget. Nu ar trebui să fie niciodată necesară pentru aplicaţiile obişnuite.</string>
     <string name="permlab_bindDeviceAdmin">interacţiune cu administrator dispozitiv</string>
     <string name="permdesc_bindDeviceAdmin">Permite trimiterea de intent-uri către un administrator de dispozitiv. Nu ar trebui să fie necesară pentru aplicaţiile normale.</string>
     <string name="permlab_setOrientation">modificare orientare ecran</string>
@@ -421,19 +421,19 @@
     <string name="permlab_installPackages">instalare directă aplicaţii</string>
     <string name="permdesc_installPackages">Permite aplicaţiei să instaleze pachete Android noi sau actualizate. Aplicaţiile rău intenţionate pot folosi această funcţie pentru a adăuga aplicaţii noi cu permisiuni puternice atribuite arbitrar.</string>
     <string name="permlab_clearAppCache">ştergere toate datele cache pentru aplicaţii</string>
-    <string name="permdesc_clearAppCache">Permite aplicaţiei să elibereze spaţiu de stocare în telefon ştergând fişiere din directorul cache pentru aplicaţii. În mod normal, accesul este restricţionat cu stricteţe doar pentru procesele de sistem.</string>
+    <string name="permdesc_clearAppCache">Permite aplicaţiei să elibereze spaţiu de stocare în telefon ştergând fişiere din directorul cache pentru aplicaţii. În mod normal, accesul este restricţionat cu stricteţe numai pentru procesele de sistem.</string>
     <string name="permlab_movePackage">Mutare resurse aplicaţie</string>
     <string name="permdesc_movePackage">Permite unei aplicaţii să mute resursele acesteia de pe suportul media intern pe cel extern şi viceversa.</string>
     <string name="permlab_readLogs">citire date de jurnal sensibile</string>
     <string name="permdesc_readLogs">Permite aplicaţiei să citească diversele fişiere jurnal ale sistemului. Aceasta îi permite să descopere informaţii de ordin general despre modul în care folosiţi telefonul, existând posibilitatea să includă informaţii personale sau private.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">utilizează orice decodor media pentru redare</string>
+    <string name="permdesc_anyCodecForPlayback">Permite unei aplicaţii să utilizeze orice decodor media instalat pentru decodarea la redare.</string>
+    <string name="permlab_readWriteOmaDrm">accesare folder Despre oma DRM</string>
+    <string name="permdesc_readWriteOmaDrm">Permite unei aplicaţii să citească sau să scrie în folderul Despre OMA DRM.</string>
     <string name="permlab_diagnostic">citire/scriere resurse care aparţin diag</string>
     <string name="permdesc_diagnostic">Permite aplicaţiei să citească şi să scrie orice resursă care aparţine de grupul diag; de exemplu, fişierele din /dev. Aceasta poate afecta stabilitatea şi securitatea sistemului. Această funcţie trebuie folosită NUMAI pentru diagnostice specifice hardware de către fabricant sau operator.</string>
     <string name="permlab_changeComponentState">activare sau dezactivare componente aplicaţii</string>
-    <string name="permdesc_changeComponentState">Permite unei aplicaţii să modifice starea (activată sau dezactivată) a unei componente a altei aplicaţii. Aplicaţiile rău-intenţionate ar putea să utilizeze această permisiune pentru a dezactiva funcţii importante ale telefonului. Este necesar să utilizaţi cu atenţie această permisiune, deoarece este posibil să aduceţi componentele aplicaţiei într-o stare inutilizabilă, inconsecventă sau instabilă.</string>
+    <string name="permdesc_changeComponentState">Permite unei aplicaţii să modifice starea (activată sau dezactivată) a unei componente a altei aplicaţii. Aplicaţiile maliţioase ar putea să utilizeze această permisiune pentru a dezactiva funcţii importante ale telefonului. Trebuie să utilizaţi cu atenţie această permisiune, deoarece este posibil să aduceţi componentele aplicaţiei într-o stare inutilizabilă, inconsecventă sau instabilă.</string>
     <string name="permlab_setPreferredApplications">setare aplicaţii preferate</string>
     <string name="permdesc_setPreferredApplications">Permite aplicaţiei să modifice aplicaţiile tale preferate. Aplicaţiile rău intenţionate pot folosi această funcţie pentru a modifica fără notificare aplicaţiile executate, substituind aplicaţiile existente pentru a colecta datele tale private.</string>
     <string name="permlab_writeSettings">modificare setări globale sistem</string>
@@ -454,14 +454,14 @@
     <string name="permdesc_readProfile">Permite aplicaţiei să citească informaţiile din profilul personal stocate pe dispozitivul dvs., cum ar fi numele şi informaţiile dvs. de contact. Aceasta înseamnă că aplicaţia vă poate identifica şi poate trimite informaţiile din profilul dvs. altor persoane.</string>
     <string name="permlab_writeProfile">scriere date în profilul dvs.</string>
     <string name="permdesc_writeProfile">Permite aplicaţiei să schimbe sau să adauge conţinut în informaţiile din profilul personal stocate pe dispozitivul dvs., cum ar fi numele şi informaţiile dvs. de contact. Aceasta înseamnă că alte aplicaţii vă pot identifica şi pot trimite informaţiile din profilul dvs. altor persoane.</string>
-    <string name="permlab_readSocialStream">citeşte fluxul social</string>
-    <string name="permdesc_readSocialStream">Permite aplicaţiei să acceseze şi să sincronizeze actualizările sociale de la dvs. şi de la prietenii dvs. Aplicaţiile rău-intenţionate se pot folosi de această funcţie pentru a citi comunicările private dintre dvs. şi prietenii dvs. de pe reţelele sociale.</string>
-    <string name="permlab_writeSocialStream">scrie în fluxul social</string>
-    <string name="permdesc_writeSocialStream">Permite aplicaţiei să afişeze actualizări sociale de la prietenii dvs. Aplicaţiile rău-intenţionate se pot folosi de această funcţie pentru a simula un prieten, cu scopul de a vă păcăli să oferiţi parole sau alte informaţii confidenţiale.</string>
+    <string name="permlab_readSocialStream">citeşte fluxul dvs. social</string>
+    <string name="permdesc_readSocialStream">Permite aplicaţiei să acceseze şi să sincronizeze actualizările sociale de la dvs. şi de la prietenii dvs. Aplicaţiile maliţioase se pot folosi de această funcţie pentru a citi comunicările private dintre dvs. şi prietenii dvs. de pe reţelele sociale.</string>
+    <string name="permlab_writeSocialStream">scrie în fluxul dvs. social</string>
+    <string name="permdesc_writeSocialStream">Permite aplicaţiei să afişeze actualizări sociale de la prietenii dvs. Aplicaţiile maliţioase se pot folosi de această funcţie pentru a simula un prieten, cu scopul de a vă înşela pentru a dezvălui parole sau alte informaţii confidenţiale.</string>
     <string name="permlab_readCalendar">citirea evenimentelor din calendar şi a informaţiilor confidenţiale</string>
-    <string name="permdesc_readCalendar">Permite unei aplicaţii să citească toate evenimentele din calendar stocate pe telefonul dvs., inclusiv evenimentele prietenilor sau colegilor. O aplicaţie rău intenţionată care are această permisiune poate extrage informaţii cu caracter personal din aceste calendare fără ştirea proprietarului.</string>
+    <string name="permdesc_readCalendar">Permite unei aplicaţii să citească toate evenimentele din calendar stocate pe telefonul dvs., inclusiv evenimentele prietenilor sau colegilor. O aplicaţie maliţioasă care are această permisiune poate extrage informaţii cu caracter personal din aceste calendare fără ştirea proprietarului.</string>
     <string name="permlab_writeCalendar">adăugarea sau modificarea evenimentelor din calendar şi trimiterea de e-mailuri invitaţilor fără ştirea proprietarului</string>
-    <string name="permdesc_writeCalendar">Permite unei aplicaţii să trimită invitaţii pentru evenimente în numele proprietarului calendarului şi să adauge, să elimine sau să modifice evenimentele pe care le puteţi edita pe dispozitiv, inclusiv pe cele ale prietenilor sau colegilor dvs. O aplicaţie rău intenţionată care are această permisiune poate să trimită e-mailuri care conţin spam şi care par să provină de la proprietarul calendarului, să modifice evenimente fără ştirea acestuia sau să adauge evenimente false.</string>
+    <string name="permdesc_writeCalendar">Permite unei aplicaţii să trimită invitaţii pentru evenimente în numele proprietarului calendarului şi să adauge, să elimine sau să modifice evenimentele pe care le puteţi edita pe dispozitiv, inclusiv pe cele ale prietenilor sau colegilor dvs. O aplicaţie maliţioasă care are această permisiune poate să trimită e-mailuri care conţin spam şi care par să provină de la proprietarul calendarului, poate să modifice evenimente fără ştirea acestuia sau să adauge evenimente false.</string>
     <string name="permlab_accessMockLocation">surse de localizare fictive pentru testare</string>
     <string name="permdesc_accessMockLocation">Creare de surse de localizare fictive pentru testare. Aplicaţiile rău intenţionate pot folosi această funcţie pentru a suprascrie locaţia şi/sau starea oferită de surse de localizare reale, cum ar fi GPS-ul sau reţeaua.</string>
     <string name="permlab_accessLocationExtraCommands">acces la comenzi suplimentare furnizor localizare</string>
@@ -504,10 +504,10 @@
     <string name="permdesc_vibrate">Permite aplicaţiei să controleze vibrarea.</string>
     <string name="permlab_flashlight">control lanternă</string>
     <string name="permdesc_flashlight">Permite aplicaţiei să controleze lanterna.</string>
-    <string name="permlab_manageUsb">gestionaţi preferinţele şi permisiunile pentru dispozitivele USB</string>
-    <string name="permdesc_manageUsb">Permite aplicaţiei să gestioneze preferinţele şi permisiunile pentru dispozitivele USB.</string>
+    <string name="permlab_manageUsb">administraţi preferinţele şi permisiunile pentru dispozitivele USB</string>
+    <string name="permdesc_manageUsb">Permite aplicaţiei să administreze preferinţele şi permisiunile pentru dispozitivele USB.</string>
     <string name="permlab_accessMtp">implementare protocol MTP</string>
-    <string name="permdesc_accessMtp">Permite accesul la driverul MTP al nucleului pentru a implementa protocolul USB pentru MTP.</string>
+    <string name="permdesc_accessMtp">Permite accesul la nucleul driverului MTP pentru a implementa protocolul USB pentru MTP.</string>
     <string name="permlab_hardware_test">testare hardware</string>
     <string name="permdesc_hardware_test">Permite aplicaţiei să controleze diverse periferice în scopul testării hardware.</string>
     <string name="permlab_callPhone">apelare directă numere de telefon</string>
@@ -557,7 +557,7 @@
     <string name="permlab_createNetworkSockets">acces complet la Internet</string>
     <string name="permdesc_createNetworkSockets">Permite aplicaţiei să creeze socluri de reţea.</string>
     <string name="permlab_writeApnSettings">modificare/interceptare setări şi trafic de reţea</string>
-    <string name="permdesc_writeApnSettings">Permite unei aplicaţii să schimbe setările de reţea, să intercepteze şi să inspecteze tot traficul de reţea, de exemplu, să schimbe proxy-ul şi portul pentru orice APN. Aplicaţiile rău intenţionate ar putea să monitorizeze, să redirecţioneze sau să modifice pachetele de reţea fără ştirea dvs.</string>
+    <string name="permdesc_writeApnSettings">Permite unei aplicaţii să schimbe setările de reţea, să intercepteze şi să inspecteze tot traficul de reţea, de exemplu, să schimbe proxy-ul şi portul pentru orice APN. Aplicaţiile maliţioase ar putea să monitorizeze, să redirecţioneze sau să modifice pachetele de reţea fără ştirea dvs.</string>
     <string name="permlab_changeNetworkState">modificare conectare la reţea</string>
     <string name="permdesc_changeNetworkState">Permite aplicaţiei să modifice starea de conectare la reţea.</string>
     <string name="permlab_changeTetherState">Modificare conectare prin modem</string>
@@ -573,7 +573,7 @@
     <string name="permlab_accessWimaxState">vizualizare stare WiMAX</string>
     <string name="permdesc_accessWimaxState">Permite unei aplicaţii să vizualizeze informaţii despre starea WiMAX.</string>
     <string name="permlab_changeWimaxState">modificare stare WiMAX</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">Permite unei aplicaţii să se conecteze şi să se deconecteze la/de la reţeaua WiMAX.</string>
     <string name="permlab_bluetoothAdmin">administrare bluetooth</string>
     <string name="permdesc_bluetoothAdmin">Permite aplicaţiei să configureze telefonul Bluetooth local şi să descopere şi să cupleze dispozitive la distanţă.</string>
     <string name="permlab_bluetooth">creare conexiuni Bluetooth</string>
@@ -596,20 +596,20 @@
     <string name="permdesc_readDictionary">Permite aplicaţiei să citească cuvintele, numele şi frazele private stocate de utilizator în dicţionarul utilizatorului.</string>
     <string name="permlab_writeDictionary">scriere în dicţionarul definit de utilizator</string>
     <string name="permdesc_writeDictionary">Permite aplicaţiei să scrie cuvinte noi în dicţionarul utilizatorului.</string>
-    <string name="permlab_sdcardWrite">modificare/ştergere conţinut card SD</string>
-    <string name="permdesc_sdcardWrite">Permite aplicaţiei să scrie pe cardul SD.</string>
+    <string name="permlab_sdcardWrite">modificare/ştergere conţinut cartelă SD</string>
+    <string name="permdesc_sdcardWrite">Permite aplicaţiei să scrie pe cartela SD.</string>
     <string name="permlab_mediaStorageWrite">modif./şterg. conţinutul media stocat intern</string>
     <string name="permdesc_mediaStorageWrite">Permite unei aplicaţii să modifice conţinutul stocării media interne.</string>
     <string name="permlab_cache_filesystem">acesare sistem fişiere cache</string>
     <string name="permdesc_cache_filesystem">Permite aplicaţiei să citească şi să scrie în sistemul de fişiere cache.</string>
     <string name="permlab_use_sip">efectuare/primire apeluri prin Internet</string>
     <string name="permdesc_use_sip">Permite unei aplicaţii să utilizeze serviciul SIP pentru a efectua/primi apeluri prin Internet.</string>
-    <string name="permlab_readNetworkUsageHistory">citeşte utilizarea statistică a reţelei</string>
-    <string name="permdesc_readNetworkUsageHistory">Permite unei aplicaţii să citească utilizarea statistică a reţelei pentru anumite reţele şi aplicaţii.</string>
-    <string name="permlab_manageNetworkPolicy">gestionează politica de reţea</string>
-    <string name="permdesc_manageNetworkPolicy">Permite unei aplicaţii să gestioneze politicile de reţea şi să definească regulile specifice aplicaţiilor.</string>
+    <string name="permlab_readNetworkUsageHistory">citeşte statistica utilizării reţelei</string>
+    <string name="permdesc_readNetworkUsageHistory">Permite unei aplicaţii să citească statistica utilizării reţelei pentru anumite reţele şi aplicaţii.</string>
+    <string name="permlab_manageNetworkPolicy">administrează politica de reţea</string>
+    <string name="permdesc_manageNetworkPolicy">Permite unei aplicaţii să administreze politicile de reţea şi să definească regulile specifice aplicaţiilor.</string>
     <string name="permlab_modifyNetworkAccounting">modificaţi modul de calcul al utilizării reţelei</string>
-    <string name="permdesc_modifyNetworkAccounting">Permite modificarea modului în care este calculată utilizarea reţelei în privinţa aplicaţiilor. Nu se utilizează de aplicaţiile obişnuite.</string>
+    <string name="permdesc_modifyNetworkAccounting">Permite modificarea modului în care este calculată utilizarea reţelei în ceea ce priveşte aplicaţiile. Nu se utilizează de aplicaţiile obişnuite.</string>
     <string name="policylab_limitPassword">Setare reguli parolă</string>
     <string name="policydesc_limitPassword">Controlează lungimea şi caracterele permise în parolele pentru deblocarea ecranului</string>
     <string name="policylab_watchLogin">Monitorizare încercări de deblocare a ecranului</string>
@@ -622,12 +622,12 @@
     <string name="policydesc_wipeData">Şterge datele telefonului fără avertisment, efectuând o resetare la datele din fabricaţie</string>
     <string name="policylab_setGlobalProxy">Setaţi serverul proxy global pentru dispozitiv</string>
     <string name="policydesc_setGlobalProxy">Setaţi serverul proxy global pentru dispozitiv care să fie utilizat cât timp politica este activă. Numai primul administrator al dispozitivului poate seta serverul proxy global activ.</string>
-    <string name="policylab_expirePassword">Expirare parolă blocare ecran</string>
+    <string name="policylab_expirePassword">Set. expirare parolă blocare ecran</string>
     <string name="policydesc_expirePassword">Stabiliţi frecvenţa de schimbare a parolei de blocare a ecranului</string>
     <string name="policylab_encryptedStorage">Setaţi criptarea stocării</string>
     <string name="policydesc_encryptedStorage">Necesită ca datele aplicaţiei stocate să fie criptate</string>
     <string name="policylab_disableCamera">Dezactivaţi camerele foto</string>
-    <string name="policydesc_disableCamera">Împiedică utilizarea camerelor foto de pe dispozitiv</string>
+    <string name="policydesc_disableCamera">Împiedică utilizarea camerelor foto ale dispozitivului</string>
     <string name="phoneTypeCustom">Particularizat</string>
     <string name="phoneTypeHome">Domiciliu</string>
     <string name="phoneTypeMobile">Mobil</string>
@@ -683,7 +683,7 @@
     <string name="relationTypeAssistant">Asistent</string>
     <string name="relationTypeBrother">Frate</string>
     <string name="relationTypeChild">Copil</string>
-    <string name="relationTypeDomesticPartner">Partener domestic</string>
+    <string name="relationTypeDomesticPartner">Partener familial</string>
     <string name="relationTypeFather">Tată</string>
     <string name="relationTypeFriend">Prieten</string>
     <string name="relationTypeManager">Manager</string>
@@ -708,7 +708,7 @@
     <string name="keyguard_password_wrong_pin_code">Cod PIN incorect!</string>
     <string name="keyguard_label_text">Pentru deblocare, apasă Meniu, apoi 0.</string>
     <string name="emergency_call_dialog_number_for_display">Număr de urgenţă</string>
-    <string name="lockscreen_carrier_default">Fără serviciu.</string>
+    <string name="lockscreen_carrier_default">Niciun serviciu.</string>
     <string name="lockscreen_screen_locked">Ecran blocat.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Apasă Meniu pentru deblocare sau efectuare apel de urgenţă.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Apasă Meniu pentru deblocare.</string>
@@ -730,10 +730,10 @@
  Contactaţi furnizorul de servicii wireless pentru a obţine o altă cartelă SIM."</string>
     <string name="lockscreen_transport_prev_description">Butonul Melodia anterioară</string>
     <string name="lockscreen_transport_next_description">Butonul Melodia următoare</string>
-    <string name="lockscreen_transport_pause_description">Butonul Întrerupeţi</string>
-    <string name="lockscreen_transport_play_description">Butonul Redaţi</string>
-    <string name="lockscreen_transport_stop_description">Butonul Opriţi</string>
-    <string name="emergency_calls_only">Doar apeluri de urgenţă</string>
+    <string name="lockscreen_transport_pause_description">Butonul Pauză</string>
+    <string name="lockscreen_transport_play_description">Butonul Redare</string>
+    <string name="lockscreen_transport_stop_description">Butonul Stop</string>
+    <string name="emergency_calls_only">Numai apeluri de urgenţă</string>
     <string name="lockscreen_network_locked_message">Reţea blocată</string>
     <string name="lockscreen_sim_puk_locked_message">Cartelă SIM blocată cu PUK.</string>
     <string name="lockscreen_sim_puk_locked_instructions">Consultă Ghidul de utilizare sau contactează Serviciul Clienţi.</string>
@@ -742,15 +742,15 @@
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Ai desenat incorect modelul de deblocare de %d ori. 
 
 Încearcă din nou în %d secunde."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Aţi introdus în mod incorect parola de %d (de) ori. 
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Nu aţi introdus corect parola de %d ori. 
 
 Încercaţi din nou peste %d (de) secunde."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Aţi introdus în mod incorect codul PIN de %d (de) ori. 
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Nu aţi introdus corect codul PIN de %d ori. 
 
-Încercaţi din nou peste %d (de) secunde."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Aţi desenat incorect modelul pentru deblocare de %d de ori. După %d încercări nereuşite, vi se va solicita să deblocaţi telefonul cu ajutorul datelor de conectare la Google.
+Încercaţi din nou peste %d secunde."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Ai desenat incorect modelul de deblocare de %d ori. După încă %d încercări nereuşite, ţi se va solicita să deblochezi telefonul folosind datele de conectare Google.
 
- Încercaţi din nou în %d (de) secunde."</string>
+ Încearcă din nou în %d secunde."</string>
     <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Aţi efectuat %d încercări incorecte de deblocare a telefonului. După încă %d încercări nereuşite, acesta va fi resetat la setările prestabilite din fabrică, iar toate datele de utilizator vor fi pierdute.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Aţi efectuat %d încercări incorecte de deblocare a telefonului. Acesta va fi acum resetat la setările prestabilite din fabrică.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Încearcă din nou după %d secunde.</string>
@@ -927,10 +927,10 @@ Doriţi să îl închideţi?"</string>
     <string name="launch_warning_original">%1$s a fost lansată original.</string>
     <string name="screen_compat_mode_scale">Scară</string>
     <string name="screen_compat_mode_show">Afişaţi întotdeauna</string>
-    <string name="screen_compat_mode_hint">Reactivaţi această funcţie din Setări > Aplicaţii > Gestionaţi aplicaţii.</string>
+    <string name="screen_compat_mode_hint">Reactivaţi această funcţie din Setări > Aplicaţii > Administrare aplicaţii.</string>
     <string name="smv_application">Aplicaţia %1$s (proces %2$s) şi-a încălcat politica autoimpusă de StrictMode.</string>
     <string name="smv_process">Procesul %1$s şi-a încălcat politica autoimpusă de StrictMode.</string>
-    <string name="android_upgrading_title">Android trece la vers. superioară...</string>
+    <string name="android_upgrading_title">Android este actualizat...</string>
     <string name="android_upgrading_apk">Se optimizează aplicaţia %1$d din %2$d.</string>
     <string name="android_upgrading_starting_apps">Se pornesc aplicaţiile.</string>
     <string name="android_upgrading_complete">Se finalizează pornirea.</string>
@@ -956,18 +956,18 @@ Doriţi să îl închideţi?"</string>
     <string name="volume_icon_description_ringer">Volumul tonului de apel</string>
     <string name="volume_icon_description_incall">Volumul apelului</string>
     <string name="volume_icon_description_media">Volumul media</string>
-    <string name="volume_icon_description_notification">Volum notificare</string>
+    <string name="volume_icon_description_notification">Volumul notificării</string>
     <string name="ringtone_default">Ton de apel implicit</string>
     <string name="ringtone_default_with_actual">Ton de apel implicit (%1$s)</string>
     <string name="ringtone_silent">Silenţios</string>
     <string name="ringtone_picker_title">Tonuri de apel</string>
     <string name="ringtone_unknown">Ton de apel necunoscut</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Conectare la reţeaua Wi-Fi</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Nu se poate conecta la Wi-Fi</string>
-    <string name="wifi_watchdog_network_disabled_detailed">" are o conexiune la internet slabă."</string>
+    <string name="wifi_watchdog_network_disabled_detailed">are o conexiune la internet slabă.</string>
     <string name="wifi_p2p_dialog_title">Wi-Fi Direct</string>
-    <string name="wifi_p2p_turnon_message">Porniţi funcţionarea Wi-Fi Direct. Acest lucru va dezactiva funcţionarea clientului/hotspotului Wi-Fi.</string>
+    <string name="wifi_p2p_turnon_message">Porniţi operaţiunea Wi-Fi Direct. Acest lucru va dezactiva funcţionarea clientului/hotspotului Wi-Fi.</string>
     <string name="wifi_p2p_failed_message">Wi-Fi Direct nu a putut porni</string>
     <string name="wifi_p2p_pbc_go_negotiation_request_message">Solicitare de configurare a conexiunii pentru Wi-Fi Direct de la %1$s. Faceţi clic pe OK pentru a accepta.</string>
     <string name="wifi_p2p_pin_go_negotiation_request_message">Solicitare de configurare a conexiunii Wi-Fi Direct de la %1$s. Introduceţi codul PIN pentru a continua.</string>
@@ -980,10 +980,10 @@ Doriţi să îl închideţi?"</string>
     <string name="sms_control_message">Se trimite un număr mare de mesaje SMS. Selectează \"OK\" pentru a continua, sau \"Anulare\" pentru a opri trimiterea.</string>
     <string name="sms_control_yes">OK</string>
     <string name="sms_control_no">Anulare</string>
-    <string name="sim_removed_title">Card SIM eliminat</string>
-    <string name="sim_removed_message">Reţeaua mobilă va fi indisponibilă până când reporniţi cu o cartelă SIM validă introdusă.</string>
+    <string name="sim_removed_title">Cartelă SIM eliminată</string>
+    <string name="sim_removed_message">Reţeaua mobilă nu va fi disponibilă până când reporniţi cu o cartelă SIM validă introdusă.</string>
     <string name="sim_done_button">Terminat</string>
-    <string name="sim_added_title">Card SIM adăugat</string>
+    <string name="sim_added_title">Cartelă SIM adăugată</string>
     <string name="sim_added_message">Trebuie să reporniţi dispozitivul pentru a accesa reţeaua de telefonie mobilă.</string>
     <string name="sim_restart_button">Reporniţi</string>
     <string name="time_picker_dialog_title">Setaţi ora</string>
@@ -995,15 +995,15 @@ Doriţi să îl închideţi?"</string>
     <string name="perms_show_all"><b>Afişaţi-le pe toate</b></string>
     <string name="usb_storage_activity_title">Stocare în masă USB</string>
     <string name="usb_storage_title">USB conectat</string>
-    <string name="usb_storage_message">V-aţi conectat la computer prin USB. Atingeţi butonul de mai jos dacă doriţi să copiaţi fişiere de pe computer pe cardul SD Android sau invers.</string>
+    <string name="usb_storage_message">V-aţi conectat la computer prin USB. Atingeţi butonul de mai jos dacă doriţi să copiaţi fişiere de pe computer pe cartela SD Android sau invers.</string>
     <string name="usb_storage_button_mount">Pornire spaţiu de stocare USB</string>
-    <string name="usb_storage_error_message">A apărut o problemă la folosirea cardului SD ca stocare de masă USB.</string>
+    <string name="usb_storage_error_message">A apărut o problemă la folosirea cartelei SD ca stocare de masă USB.</string>
     <string name="usb_storage_notification_title">USB conectat</string>
     <string name="usb_storage_notification_message">Selectează pentru a copia fişiere pe / de pe computer.</string>
     <string name="usb_storage_stop_notification_title">Oprire spaţiu de stocare USB</string>
     <string name="usb_storage_stop_notification_message">Selectează pentru a opri spaţiul de stocare USB.</string>
     <string name="usb_storage_stop_title">Spaţiu de stocare USB în uz</string>
-    <string name="usb_storage_stop_message">Înainte de a opri spaţiul de stocare USB, asigură-te că ai decuplat (“scos”) cardul telefonului Android de la computer.</string>
+    <string name="usb_storage_stop_message">Înainte de a opri spaţiul de stocare USB, asiguraţi-vă că aţi decuplat (“scos”) cartela telefonului Android de la computer.</string>
     <string name="usb_storage_stop_button_mount">Oprire spaţiu de stocare USB</string>
     <string name="usb_storage_stop_error_message">A apărut o problemă la oprirea spaţiului de stocare USB. Verifică dacă ai decuplat gazda USB, apoi încearcă din nou.</string>
     <string name="dlg_confirm_kill_storage_users_title">Pornire spaţiu de stocare USB</string>
@@ -1015,8 +1015,8 @@ Doriţi să îl închideţi?"</string>
     <string name="usb_cd_installer_notification_title">Conectat ca program de instalare</string>
     <string name="usb_accessory_notification_title">Conectat la un accesoriu USB</string>
     <string name="usb_notification_message">Atingeţi pentru alte opţiuni USB</string>
-    <string name="extmedia_format_title">Formatare card SD</string>
-    <string name="extmedia_format_message">Sigur formatezi cardul SD? Toate datele de pe card se vor pierde.</string>
+    <string name="extmedia_format_title">Formatare cartelă SD</string>
+    <string name="extmedia_format_message">Sigur formataţi cartela SD? Toate datele de pe cartelă se vor pierde.</string>
     <string name="extmedia_format_button_format">Formatare</string>
     <string name="adb_active_notification_title">Depanare USB conectată</string>
     <string name="adb_active_notification_message">Selectaţi pentru a dezactiva depanarea USB.</string>
@@ -1026,18 +1026,18 @@ Doriţi să îl închideţi?"</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="candidates_style"><u>candidaţi</u></string>
-    <string name="ext_media_checking_notification_title">Se pregăteşte cardul SD</string>
+    <string name="ext_media_checking_notification_title">Se pregăteşte cartela SD</string>
     <string name="ext_media_checking_notification_message">Se verifică erorile.</string>
-    <string name="ext_media_nofs_notification_title">Card SD gol</string>
-    <string name="ext_media_nofs_notification_message">Cardul SD este gol sau are un sistem de fişiere neacceptat.</string>
-    <string name="ext_media_unmountable_notification_title">Card SD deteriorat</string>
-    <string name="ext_media_unmountable_notification_message">Card SD deteriorat. Este posibil să fie necesară reformatarea.</string>
-    <string name="ext_media_badremoval_notification_title">Card SD scos în mod neaşteptat</string>
-    <string name="ext_media_badremoval_notification_message">Deconectează cardul SD înainte de a-l scoate pentru a evita pierderea datelor.</string>
-    <string name="ext_media_safe_unmount_notification_title">Cardul SD poate fi scos în siguranţă</string>
-    <string name="ext_media_safe_unmount_notification_message">Poţi scoate în siguranţă cardul SD.</string>
-    <string name="ext_media_nomedia_notification_title">Cardul SD a fost scos</string>
-    <string name="ext_media_nomedia_notification_message">Card SD scos. Introdu un card nou.</string>
+    <string name="ext_media_nofs_notification_title">Cartelă SD goală</string>
+    <string name="ext_media_nofs_notification_message">Cartela SD este goală sau are un sistem de fişiere neacceptat.</string>
+    <string name="ext_media_unmountable_notification_title">Cartelă SD deteriorată</string>
+    <string name="ext_media_unmountable_notification_message">Cartelă SD deteriorată. Este posibil să fie necesară reformatarea.</string>
+    <string name="ext_media_badremoval_notification_title">Cartelă SD scoasă în mod neaşteptat</string>
+    <string name="ext_media_badremoval_notification_message">Deconectează cartela SD înainte de a o scoate pentru a evita pierderea datelor.</string>
+    <string name="ext_media_safe_unmount_notification_title">Cartela SD poate fi scoasă în siguranţă</string>
+    <string name="ext_media_safe_unmount_notification_message">Puteţi scoate în siguranţă cartela SD.</string>
+    <string name="ext_media_nomedia_notification_title">Cartela SD a fost scoasă</string>
+    <string name="ext_media_nomedia_notification_message">Cartela SD scoasă. Introduceţi o cartelă nouă.</string>
     <string name="activity_list_empty">Nu au fost găsite activităţi asociate</string>
     <string name="permlab_pkgUsageStats">actualizare statistici utilizare compuse</string>
     <string name="permdesc_pkgUsageStats">Permite modificarea statisticilor de utilizare compuse colectate. Nu este destinat aplicaţiilor normale.</string>
@@ -1072,8 +1072,8 @@ pentru contul %s"</string>
     <string name="alternate_eri_file">/data/eri.xml</string>
     <string name="vpn_title">VPN este activată.</string>
     <string name="vpn_title_long">VPN este activată de %s</string>
-    <string name="vpn_text">Apăsaţi pentru a gestiona reţeaua.</string>
-    <string name="vpn_text_long">Conectat la %s. Apăsaţi pentru a gestiona reţeaua.</string>
+    <string name="vpn_text">Apăsaţi pentru a administra reţeaua.</string>
+    <string name="vpn_text_long">Conectat la %s. Apăsaţi pentru a administra reţeaua.</string>
     <string name="upload_file">Alegere fişier</string>
     <string name="no_file_chosen">Nu au fost găsite fişiere</string>
     <string name="reset">Resetare</string>
@@ -1092,15 +1092,15 @@ pentru contul %s"</string>
     <string name="no_matches">Nicio potrivire</string>
     <string name="find_on_page">Găsiţi pe pagină</string>
     <string name="action_mode_done">Terminat</string>
-    <string name="progress_unmounting">Se demontează cardul SD...</string>
-    <string name="progress_erasing">Se şterge cardul SD...</string>
-    <string name="format_error">Nu s-a putut şterge cardul SD.</string>
-    <string name="media_bad_removal">Cardul SD a fost scos înainte de a fi demontat.</string>
-    <string name="media_checking">Cardul SD este în curs de verificare.</string>
-    <string name="media_removed">Cardul SD a fost scos.</string>
-    <string name="media_shared">Cardul SD este utilizat în prezent de un computer.</string>
+    <string name="progress_unmounting">Se demontează cartela SD...</string>
+    <string name="progress_erasing">Se şterge cartela SD...</string>
+    <string name="format_error">Nu s-a putut şterge cartela SD.</string>
+    <string name="media_bad_removal">Cartela SD a fost scoasă înainte de a fi demontată.</string>
+    <string name="media_checking">Cartela SD este în curs de verificare.</string>
+    <string name="media_removed">Cartela SD a fost scoasă.</string>
+    <string name="media_shared">Cartela SD este utilizată în prezent de un computer.</string>
     <string name="media_unknown_state">Suport media extern într-o stare necunoscută.</string>
-    <string name="share">Distribuiţi</string>
+    <string name="share">Partajaţi</string>
     <string name="find">Găsiţi</string>
     <string name="websearch">Căutare pe web</string>
     <string name="gpsNotifTicker">Solicitare de locaţie de la %s</string>
@@ -1149,8 +1149,8 @@ pentru contul %s"</string>
     <string name="keyboardview_keycode_shift">Shift</string>
     <string name="keyboardview_keycode_enter">Enter</string>
     <string name="activitychooserview_choose_application">Alegeţi o aplicaţie</string>
-    <string name="shareactionprovider_share_with">Permiteţi accesul pentru</string>
-    <string name="shareactionprovider_share_with_application">Permiteţi accesul pentru %s</string>
+    <string name="shareactionprovider_share_with">Partajaţi cu</string>
+    <string name="shareactionprovider_share_with_application">Partajaţi cu %s</string>
     <string name="content_description_sliding_handle">Mâner glisant. Apăsaţi şi ţineţi apăsat.</string>
     <string name="description_direction_up">În sus pentru %s.</string>
     <string name="description_direction_down">În jos pentru %s.</string>
@@ -1160,14 +1160,14 @@ pentru contul %s"</string>
     <string name="description_target_camera">Cameră foto</string>
     <string name="description_target_silent">Silenţios</string>
     <string name="description_target_soundon">Sunet activat</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
-    <string name="keyboard_headset_required_to_hear_password">Conectaţi un set căşti-microfon pentru a auzi tastele apăsate când introduceţi parola.</string>
+    <string name="description_target_unlock_tablet">Glisaţi pentru deblocare.</string>
+    <string name="keyboard_headset_required_to_hear_password">Conectaţi căştile pentru a auzi tastele apăsate când introduceţi parola.</string>
     <string name="keyboard_password_character_no_headset">Punct.</string>
     <string name="action_bar_home_description">Navigaţi la ecranul de pornire</string>
     <string name="action_bar_up_description">Navigaţi în sus</string>
     <string name="action_menu_overflow_description">Mai multe opţiuni</string>
     <string name="storage_internal">Stocare internă</string>
-    <string name="storage_sd_card">Card SD</string>
+    <string name="storage_sd_card">Cartelă SD</string>
     <string name="storage_usb">Dsipozitiv de stocare USB</string>
     <string name="extract_edit_menu_button">Editaţi...</string>
     <string name="data_usage_warning_title">Avertisment de utiliz. a datelor</string>
@@ -1186,26 +1186,26 @@ pentru contul %s"</string>
     <string name="data_usage_restricted_body">Atingeţi pt. a elimina limita</string>
     <string name="ssl_certificate">Certificat de securitate</string>
     <string name="ssl_certificate_is_valid">Certificatul este valid.</string>
-    <string name="issued_to">Emis către:</string>
+    <string name="issued_to">Emis pentru:</string>
     <string name="common_name">Nume comun:</string>
     <string name="org_name">Organizaţie:</string>
     <string name="org_unit">Unitate organizatorică:</string>
     <string name="issued_by">Emis de:</string>
     <string name="validity_period">Validitate:</string>
-    <string name="issued_on">Emis pe:</string>
-    <string name="expires_on">Expiră pe:</string>
+    <string name="issued_on">Emis la:</string>
+    <string name="expires_on">Expiră la:</string>
     <string name="serial_number">Număr de serie:</string>
     <string name="fingerprints">Amprente:</string>
     <string name="sha256_fingerprint">Amprentă SHA-256:</string>
     <string name="sha1_fingerprint">Amprentă SHA-1:</string>
     <string name="activity_chooser_view_see_all">Afişaţi-le pe toate...</string>
     <string name="activity_chooser_view_dialog_title_default">Selectaţi o activitate</string>
-    <string name="share_action_provider_share_with">Distribuiţi cu...</string>
+    <string name="share_action_provider_share_with">Partajaţi cu...</string>
     <string name="status_bar_device_locked">Dispozitiv blocat.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Se trimite...</string>
+    <string name="launchBrowserDefault">Lansare browser?</string>
+    <string name="SetupCallDefault">Acceptare apel?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">Acces 4G</string>
     <string name="permlab_changeWimaxMulticastState">se permite recepţie WiMAX Multicast</string>
@@ -1266,12 +1266,13 @@ pentru contul %s"</string>
     <string name="camera_notify_title">Aparat foto dezactivat de TI</string>
     <string name="install_notify_title">Instalare blocată de TI:</string>
     <string name="uninstall_notify_title">Dezinstalare blocată de TI:</string>
-    <string name="wifi_notify_title">Wi-Fi dezactivat de TI</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="wifi_notify_title">Wi-Fi dezactivat de IT</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Debifaţi caseta implicit din Setări ecran principal > Aplicaţii.</string>
+    <string name="sim_puk_contact_customer_care_information">Contactaţi Serviciul clienţi pentru a obţine codul PUK</string>
     <string name="permlab_accessCWFolder">Accesare folder cu funcţii al expertului de personalizare</string>
     <string name="permdesc_accessCWFolder">Permite unei aplicaţii să acceseze folderul cu funcţii al expertului de personalizare</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Accesare folder de recuperare</string>
+    <string name="permdesc_accessRecoveryFolder">Permite unei aplicaţii să acceseze folderul de recuperare</string>
     <string name="permlab_setappname">Schimbare dinamică a denumirii aplicaţiei</string>
     <string name="permdesc_setappname">Permite unei aplicaţii să specifice dinamic denumirea aplicaţiei.</string>
     <string name="text_limitation">Nu puteţi selecta prea multe cuvinte de partajat.</string>
@@ -1311,5 +1312,5 @@ pentru contul %s"</string>
     <string name="font_color">Culoare font</string>
     <string name="font_settings">Setări font</string>
     <string name="font_alignment">Aliniere font</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Configurare</string>
 </resources>

@@ -58,7 +58,7 @@
     .locals 2
 
     .prologue
-    .line 2583
+    .line 2643
     sget-object v0, Lcom/htc/provider/HtcContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "speed_dial"
@@ -69,7 +69,7 @@
 
     sput-object v0, Lcom/htc/provider/HtcContactsContract$SpeedDial;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 2638
+    .line 2698
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x3a
@@ -100,7 +100,7 @@
     .locals 0
 
     .prologue
-    .line 2573
+    .line 2633
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

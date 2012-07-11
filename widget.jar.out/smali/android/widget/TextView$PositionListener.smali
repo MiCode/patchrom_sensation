@@ -45,25 +45,25 @@
     .prologue
     const/4 v1, 0x7
 
-    .line 10064
+    .line 10116
     iput-object p1, p0, Landroid/widget/TextView$PositionListener;->this$0:Landroid/widget/TextView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 10068
+    .line 10120
     iput v1, p0, Landroid/widget/TextView$PositionListener;->MAXIMUM_NUMBER_OF_LISTENERS:I
 
-    .line 10069
+    .line 10121
     new-array v0, v1, [Landroid/widget/TextView$TextViewPositionListener;
 
     iput-object v0, p0, Landroid/widget/TextView$PositionListener;->mPositionListeners:[Landroid/widget/TextView$TextViewPositionListener;
 
-    .line 10071
+    .line 10123
     new-array v0, v1, [Z
 
     iput-object v0, p0, Landroid/widget/TextView$PositionListener;->mCanMove:[Z
 
-    .line 10072
+    .line 10124
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/TextView$PositionListener;->mPositionHasChanged:Z
@@ -77,7 +77,7 @@
     .parameter "x1"
 
     .prologue
-    .line 10064
+    .line 10116
     invoke-direct {p0, p1}, Landroid/widget/TextView$PositionListener;-><init>(Landroid/widget/TextView;)V
 
     return-void
@@ -91,7 +91,7 @@
 
     const/4 v1, 0x0
 
-    .line 10149
+    .line 10201
     iget-object v0, p0, Landroid/widget/TextView$PositionListener;->this$0:Landroid/widget/TextView;
 
     iget-object v3, p0, Landroid/widget/TextView$PositionListener;->this$0:Landroid/widget/TextView;
@@ -100,7 +100,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->getLocationInWindow([I)V
 
-    .line 10151
+    .line 10203
     iget-object v0, p0, Landroid/widget/TextView$PositionListener;->this$0:Landroid/widget/TextView;
 
     iget-object v0, v0, Landroid/widget/TextView;->mTempCoords:[I
@@ -127,7 +127,7 @@
     :goto_0
     iput-boolean v0, p0, Landroid/widget/TextView$PositionListener;->mPositionHasChanged:Z
 
-    .line 10153
+    .line 10205
     iget-object v0, p0, Landroid/widget/TextView$PositionListener;->this$0:Landroid/widget/TextView;
 
     iget-object v0, v0, Landroid/widget/TextView;->mTempCoords:[I
@@ -136,7 +136,7 @@
 
     iput v0, p0, Landroid/widget/TextView$PositionListener;->mPositionX:I
 
-    .line 10154
+    .line 10206
     iget-object v0, p0, Landroid/widget/TextView$PositionListener;->this$0:Landroid/widget/TextView;
 
     iget-object v0, v0, Landroid/widget/TextView;->mTempCoords:[I
@@ -145,13 +145,13 @@
 
     iput v0, p0, Landroid/widget/TextView$PositionListener;->mPositionY:I
 
-    .line 10155
+    .line 10207
     return-void
 
     :cond_1
     move v0, v1
 
-    .line 10151
+    .line 10203
     goto :goto_0
 .end method
 
@@ -163,31 +163,31 @@
     .parameter "canMove"
 
     .prologue
-    .line 10079
+    .line 10131
     iget v4, p0, Landroid/widget/TextView$PositionListener;->mNumberOfListeners:I
 
     if-nez v4, :cond_0
 
-    .line 10080
+    .line 10132
     invoke-direct {p0}, Landroid/widget/TextView$PositionListener;->updatePosition()V
 
-    .line 10081
+    .line 10133
     iget-object v4, p0, Landroid/widget/TextView$PositionListener;->this$0:Landroid/widget/TextView;
 
     invoke-virtual {v4}, Landroid/widget/TextView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v3
 
-    .line 10082
+    .line 10134
     .local v3, vto:Landroid/view/ViewTreeObserver;
     invoke-virtual {v3, p0}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 10085
+    .line 10137
     .end local v3           #vto:Landroid/view/ViewTreeObserver;
     :cond_0
     const/4 v0, -0x1
 
-    .line 10086
+    .line 10138
     .local v0, emptySlotIndex:I
     const/4 v1, 0x0
 
@@ -197,49 +197,49 @@
 
     if-ge v1, v4, :cond_3
 
-    .line 10087
+    .line 10139
     iget-object v4, p0, Landroid/widget/TextView$PositionListener;->mPositionListeners:[Landroid/widget/TextView$TextViewPositionListener;
 
     aget-object v2, v4, v1
 
-    .line 10088
+    .line 10140
     .local v2, listener:Landroid/widget/TextView$TextViewPositionListener;
     if-ne v2, p1, :cond_1
 
-    .line 10098
+    .line 10150
     .end local v2           #listener:Landroid/widget/TextView$TextViewPositionListener;
     :goto_1
     return-void
 
-    .line 10090
+    .line 10142
     .restart local v2       #listener:Landroid/widget/TextView$TextViewPositionListener;
     :cond_1
     if-gez v0, :cond_2
 
     if-nez v2, :cond_2
 
-    .line 10091
+    .line 10143
     move v0, v1
 
-    .line 10086
+    .line 10138
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 10095
+    .line 10147
     .end local v2           #listener:Landroid/widget/TextView$TextViewPositionListener;
     :cond_3
     iget-object v4, p0, Landroid/widget/TextView$PositionListener;->mPositionListeners:[Landroid/widget/TextView$TextViewPositionListener;
 
     aput-object p1, v4, v0
 
-    .line 10096
+    .line 10148
     iget-object v4, p0, Landroid/widget/TextView$PositionListener;->mCanMove:[Z
 
     aput-boolean p2, v4, v0
 
-    .line 10097
+    .line 10149
     iget v4, p0, Landroid/widget/TextView$PositionListener;->mNumberOfListeners:I
 
     add-int/lit8 v4, v4, 0x1
@@ -253,7 +253,7 @@
     .locals 1
 
     .prologue
-    .line 10116
+    .line 10168
     iget v0, p0, Landroid/widget/TextView$PositionListener;->mPositionX:I
 
     return v0
@@ -263,7 +263,7 @@
     .locals 1
 
     .prologue
-    .line 10120
+    .line 10172
     iget v0, p0, Landroid/widget/TextView$PositionListener;->mPositionY:I
 
     return v0
@@ -273,7 +273,7 @@
     .locals 1
 
     .prologue
-    .line 10162
+    .line 10214
     iget-boolean v0, p0, Landroid/widget/TextView$PositionListener;->mScrollHasChanged:Z
 
     return v0
@@ -283,10 +283,10 @@
     .locals 6
 
     .prologue
-    .line 10125
+    .line 10177
     invoke-direct {p0}, Landroid/widget/TextView$PositionListener;->updatePosition()V
 
-    .line 10127
+    .line 10179
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -295,7 +295,7 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 10128
+    .line 10180
     iget-boolean v2, p0, Landroid/widget/TextView$PositionListener;->mPositionHasChanged:Z
 
     if-nez v2, :cond_0
@@ -310,17 +310,17 @@
 
     if-eqz v2, :cond_1
 
-    .line 10129
+    .line 10181
     :cond_0
     iget-object v2, p0, Landroid/widget/TextView$PositionListener;->mPositionListeners:[Landroid/widget/TextView$TextViewPositionListener;
 
     aget-object v1, v2, v0
 
-    .line 10130
+    .line 10182
     .local v1, positionListener:Landroid/widget/TextView$TextViewPositionListener;
     if-eqz v1, :cond_1
 
-    .line 10131
+    .line 10183
     iget v2, p0, Landroid/widget/TextView$PositionListener;->mPositionX:I
 
     iget v3, p0, Landroid/widget/TextView$PositionListener;->mPositionY:I
@@ -331,14 +331,14 @@
 
     invoke-interface {v1, v2, v3, v4, v5}, Landroid/widget/TextView$TextViewPositionListener;->updatePosition(IIZZ)V
 
-    .line 10127
+    .line 10179
     .end local v1           #positionListener:Landroid/widget/TextView$TextViewPositionListener;
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 10138
+    .line 10190
     :cond_2
     iget-object v2, p0, Landroid/widget/TextView$PositionListener;->this$0:Landroid/widget/TextView;
 
@@ -379,19 +379,19 @@
 
     if-eqz v2, :cond_4
 
-    .line 10140
+    .line 10192
     iget-object v2, p0, Landroid/widget/TextView$PositionListener;->this$0:Landroid/widget/TextView;
 
     #calls: Landroid/widget/TextView;->showQuickAction()V
     invoke-static {v2}, Landroid/widget/TextView;->access$3100(Landroid/widget/TextView;)V
 
-    .line 10144
+    .line 10196
     :cond_4
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Landroid/widget/TextView$PositionListener;->mScrollHasChanged:Z
 
-    .line 10145
+    .line 10197
     const/4 v2, 0x1
 
     return v2
@@ -401,12 +401,12 @@
     .locals 1
 
     .prologue
-    .line 10158
+    .line 10210
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/TextView$PositionListener;->mScrollHasChanged:Z
 
-    .line 10159
+    .line 10211
     return-void
 .end method
 
@@ -415,7 +415,7 @@
     .parameter "positionListener"
 
     .prologue
-    .line 10101
+    .line 10153
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -424,50 +424,50 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 10102
+    .line 10154
     iget-object v2, p0, Landroid/widget/TextView$PositionListener;->mPositionListeners:[Landroid/widget/TextView$TextViewPositionListener;
 
     aget-object v2, v2, v0
 
     if-ne v2, p1, :cond_2
 
-    .line 10103
+    .line 10155
     iget-object v2, p0, Landroid/widget/TextView$PositionListener;->mPositionListeners:[Landroid/widget/TextView$TextViewPositionListener;
 
     const/4 v3, 0x0
 
     aput-object v3, v2, v0
 
-    .line 10104
+    .line 10156
     iget v2, p0, Landroid/widget/TextView$PositionListener;->mNumberOfListeners:I
 
     add-int/lit8 v2, v2, -0x1
 
     iput v2, p0, Landroid/widget/TextView$PositionListener;->mNumberOfListeners:I
 
-    .line 10109
+    .line 10161
     :cond_0
     iget v2, p0, Landroid/widget/TextView$PositionListener;->mNumberOfListeners:I
 
     if-nez v2, :cond_1
 
-    .line 10110
+    .line 10162
     iget-object v2, p0, Landroid/widget/TextView$PositionListener;->this$0:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v1
 
-    .line 10111
+    .line 10163
     .local v1, vto:Landroid/view/ViewTreeObserver;
     invoke-virtual {v1, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 10113
+    .line 10165
     .end local v1           #vto:Landroid/view/ViewTreeObserver;
     :cond_1
     return-void
 
-    .line 10101
+    .line 10153
     :cond_2
     add-int/lit8 v0, v0, 0x1
 

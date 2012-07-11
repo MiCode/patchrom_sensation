@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 361
+    .line 364
     iput-object p1, p0, Lcom/android/server/BatteryService$4;->this$0:Lcom/android/server/BatteryService;
 
     invoke-direct {p0}, Landroid/os/UEventObserver;-><init>()V
@@ -39,7 +39,7 @@
     .parameter "event"
 
     .prologue
-    .line 364
+    .line 367
     const-string v1, "1"
 
     const-string v2, "SWITCH_STATE"
@@ -56,7 +56,7 @@
 
     const/4 v0, 0x1
 
-    .line 365
+    .line 368
     .local v0, invalidCharger:I
     :goto_0
     iget-object v1, p0, Lcom/android/server/BatteryService$4;->this$0:Lcom/android/server/BatteryService;
@@ -68,23 +68,23 @@
 
     if-eq v1, v0, :cond_0
 
-    .line 366
+    .line 369
     iget-object v1, p0, Lcom/android/server/BatteryService$4;->this$0:Lcom/android/server/BatteryService;
 
     #setter for: Lcom/android/server/BatteryService;->mInvalidCharger:I
     invoke-static {v1, v0}, Lcom/android/server/BatteryService;->access$202(Lcom/android/server/BatteryService;I)I
 
-    .line 367
+    .line 370
     iget-object v1, p0, Lcom/android/server/BatteryService$4;->this$0:Lcom/android/server/BatteryService;
 
     #calls: Lcom/android/server/BatteryService;->update()V
     invoke-static {v1}, Lcom/android/server/BatteryService;->access$100(Lcom/android/server/BatteryService;)V
 
-    .line 369
+    .line 372
     :cond_0
     return-void
 
-    .line 364
+    .line 367
     .end local v0           #invalidCharger:I
     :cond_1
     const/4 v0, 0x0

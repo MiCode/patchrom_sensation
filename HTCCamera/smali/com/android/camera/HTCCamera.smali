@@ -1563,35 +1563,35 @@
     .line 1057
     iput-boolean v3, p0, Lcom/android/camera/HTCCamera;->mMenuIsOpening:Z
 
-    .line 6205
+    .line 6215
     new-instance v0, Lcom/android/camera/HTCCamera$27;
 
     invoke-direct {v0, p0}, Lcom/android/camera/HTCCamera$27;-><init>(Lcom/android/camera/HTCCamera;)V
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mKeyguardReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 6241
+    .line 6251
     new-instance v0, Lcom/android/camera/HTCCamera$28;
 
     invoke-direct {v0, p0}, Lcom/android/camera/HTCCamera$28;-><init>(Lcom/android/camera/HTCCamera;)V
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mPartitonReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 6256
+    .line 6266
     new-instance v0, Lcom/android/camera/HTCCamera$29;
 
     invoke-direct {v0, p0}, Lcom/android/camera/HTCCamera$29;-><init>(Lcom/android/camera/HTCCamera;)V
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mSIPReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 6278
+    .line 6288
     new-instance v0, Lcom/android/camera/HTCCamera$30;
 
     invoke-direct {v0, p0}, Lcom/android/camera/HTCCamera$30;-><init>(Lcom/android/camera/HTCCamera;)V
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->m3DKeySwitchReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 10234
+    .line 10324
     new-instance v0, Lcom/android/camera/HTCCamera$38;
 
     invoke-direct {v0, p0}, Lcom/android/camera/HTCCamera$38;-><init>(Lcom/android/camera/HTCCamera;)V
@@ -1605,10 +1605,10 @@
     .locals 4
 
     .prologue
-    .line 10188
+    .line 10278
     const-string v0, ""
 
-    .line 10189
+    .line 10279
     .local v0, szOut:Ljava/lang/String;
     invoke-static {}, Lcom/android/camera/DCFRuler$StorageCardControl;->getStorageType()I
 
@@ -1616,14 +1616,14 @@
 
     if-nez v1, :cond_0
 
-    .line 10190
+    .line 10280
     const v1, 0x7f0a0151
 
     invoke-virtual {p0, v1}, Lcom/android/camera/HTCCamera;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 10194
+    .line 10284
     :goto_0
     new-instance v1, Lcom/android/camera/rotate/RotateDialog$Builder;
 
@@ -1677,7 +1677,7 @@
 
     iput-object v1, p0, Lcom/android/camera/HTCCamera;->mCurrentDialog:Landroid/app/Dialog;
 
-    .line 10229
+    .line 10319
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCurrentDialog:Landroid/app/Dialog;
 
     check-cast v1, Lcom/android/camera/rotate/RotateDialog;
@@ -1688,15 +1688,15 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/rotate/RotateDialog;->setOrientation(I)V
 
-    .line 10230
+    .line 10320
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCurrentDialog:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->show()V
 
-    .line 10231
+    .line 10321
     return-void
 
-    .line 10192
+    .line 10282
     :cond_0
     const v1, 0x7f0a0150
 
@@ -1711,10 +1711,10 @@
     .locals 2
 
     .prologue
-    .line 5588
+    .line 5594
     const-string v0, "camera_capture_mode_photo"
 
-    .line 5589
+    .line 5595
     .local v0, mode:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -1726,19 +1726,19 @@
 
     if-nez v1, :cond_0
 
-    .line 5590
+    .line 5596
     const-string v0, "camera_capture_mode_photo"
 
-    .line 5594
+    .line 5600
     :goto_0
     const-string v1, "camera_capture_mode"
 
     invoke-static {p0, v1, v0}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 5595
+    .line 5601
     return-void
 
-    .line 5592
+    .line 5598
     :cond_0
     const-string v0, "camera_capture_mode_movie"
 
@@ -3562,7 +3562,7 @@
     .locals 0
 
     .prologue
-    .line 10140
+    .line 10230
     return-void
 .end method
 
@@ -3570,7 +3570,7 @@
     .locals 0
 
     .prologue
-    .line 10148
+    .line 10238
     return-void
 .end method
 
@@ -3578,21 +3578,21 @@
     .locals 3
 
     .prologue
-    .line 10125
+    .line 10215
     const-string v1, "HTCCamera"
 
     const-string v2, "!!!! @@@@ broadcastStopVoiceRecording() - start"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10126
+    .line 10216
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.htc.soundrecorder.recordingservicecommand"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 10127
+    .line 10217
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "command"
 
@@ -3600,17 +3600,17 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 10128
+    .line 10218
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 10129
+    .line 10219
     const-string v1, "HTCCamera"
 
     const-string v2, "!!!! @@@@ broadcastStopVoiceRecording() - end"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10131
+    .line 10221
     return-void
 .end method
 
@@ -3626,28 +3626,28 @@
 
     const/4 v4, 0x1
 
-    .line 9673
+    .line 9763
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v6, v7}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9675
+    .line 9765
     iget-boolean v6, p0, Lcom/android/camera/HTCCamera;->mActivityOnPause:Z
 
     if-ne v6, v4, :cond_1
 
-    .line 9739
+    .line 9829
     :cond_0
     :goto_0
     return-void
 
-    .line 9678
+    .line 9768
     :cond_1
     sget-boolean v6, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
     if-ne v6, v4, :cond_2
 
-    .line 9679
+    .line 9769
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const-wide/16 v5, 0x64
@@ -3656,7 +3656,7 @@
 
     goto :goto_0
 
-    .line 9683
+    .line 9773
     :cond_2
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportSensorFocus()Z
 
@@ -3670,7 +3670,7 @@
 
     if-eqz v6, :cond_0
 
-    .line 9686
+    .line 9776
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v6, :cond_8
@@ -3683,7 +3683,7 @@
 
     move v1, v4
 
-    .line 9687
+    .line 9777
     .local v1, bCamera:Z
     :goto_1
     const-string v6, "pref_camera_switch"
@@ -3696,7 +3696,7 @@
 
     move-result v3
 
-    .line 9690
+    .line 9780
     .local v3, bSwitch:Z
     sget-object v6, Lcom/android/camera/DisplayDevice;->CAPTURE_BUTTON:Lcom/android/camera/DisplayDevice$CaptureButton;
 
@@ -3719,7 +3719,7 @@
     :cond_3
     move v0, v4
 
-    .line 9693
+    .line 9783
     .local v0, bAuto:Z
     :goto_2
     const-string v6, "pref_face_detection"
@@ -3732,7 +3732,7 @@
 
     move-result v2
 
-    .line 9696
+    .line 9786
     .local v2, bDetect:Z
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getFaceNumber()I
 
@@ -3761,7 +3761,7 @@
 
     if-nez v6, :cond_a
 
-    .line 9699
+    .line 9789
     :cond_5
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getFaceNumber()I
 
@@ -3769,36 +3769,36 @@
 
     if-lez v5, :cond_6
 
-    .line 9706
+    .line 9796
     :cond_6
     iget-object v5, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     if-nez v5, :cond_7
 
-    .line 9707
+    .line 9797
     new-instance v5, Lcom/android/camera/FaceDetection;
 
     invoke-direct {v5}, Lcom/android/camera/FaceDetection;-><init>()V
 
     iput-object v5, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
-    .line 9708
+    .line 9798
     iget-object v5, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v5, p0, v6}, Lcom/android/camera/FaceDetection;->initFaceDetection(Lcom/android/camera/HTCCamera;Lcom/android/camera/CameraThread;)V
 
-    .line 9711
+    .line 9801
     :cond_7
     iput-object v8, p0, Lcom/android/camera/HTCCamera;->mFaces:[Landroid/hardware/Camera$Face;
 
-    .line 9712
+    .line 9802
     iget-object v5, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v5}, Lcom/android/camera/FaceDetection;->startFaceDetection()V
 
-    .line 9715
+    .line 9805
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isPanelReady()Z
 
     move-result v5
@@ -3813,12 +3813,12 @@
 
     if-nez v4, :cond_0
 
-    .line 9716
+    .line 9806
     sget v4, Lcom/android/camera/HTCCamera;->mFocusMode:I
 
     if-nez v4, :cond_0
 
-    .line 9717
+    .line 9807
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v4}, Lcom/android/camera/FaceDetection;->startCheckLoop()V
@@ -3832,7 +3832,7 @@
     :cond_8
     move v1, v5
 
-    .line 9686
+    .line 9776
     goto :goto_1
 
     .restart local v1       #bCamera:Z
@@ -3840,10 +3840,10 @@
     :cond_9
     move v0, v5
 
-    .line 9690
+    .line 9780
     goto :goto_2
 
-    .line 9721
+    .line 9811
     .restart local v0       #bAuto:Z
     .restart local v2       #bDetect:Z
     :cond_a
@@ -3851,27 +3851,27 @@
 
     if-eqz v4, :cond_0
 
-    .line 9723
+    .line 9813
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v4}, Lcom/android/camera/FaceDetection;->stopCheckLoop()V
 
-    .line 9724
+    .line 9814
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v4}, Lcom/android/camera/FaceDetection;->stopFaceDetection()V
 
-    .line 9725
+    .line 9815
     iput-object v8, p0, Lcom/android/camera/HTCCamera;->mFaces:[Landroid/hardware/Camera$Face;
 
-    .line 9727
+    .line 9817
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getFaceNumber()I
 
     move-result v4
 
     if-gtz v4, :cond_0
 
-    .line 9734
+    .line 9824
     invoke-virtual {p0, v5}, Lcom/android/camera/HTCCamera;->updateFaceIcon(I)V
 
     goto/16 :goto_0
@@ -3887,7 +3887,7 @@
 
     const/4 v7, 0x1
 
-    .line 9235
+    .line 9325
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v3, :cond_0
@@ -3898,36 +3898,36 @@
 
     if-ne v3, v7, :cond_1
 
-    .line 9268
+    .line 9358
     :cond_0
     :goto_0
     return-void
 
-    .line 9238
+    .line 9328
     :cond_1
     iget-boolean v3, p0, Lcom/android/camera/HTCCamera;->mStartTapCapture:Z
 
     if-eq v3, v7, :cond_0
 
-    .line 9241
+    .line 9331
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    .line 9242
+    .line 9332
     .local v2, rect:Landroid/graphics/Rect;
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v3, v2}, Landroid/view/SurfaceView;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 9243
+    .line 9333
     invoke-virtual {v2, p1, p2}, Landroid/graphics/Rect;->contains(II)Z
 
     move-result v3
 
     if-nez v3, :cond_2
 
-    .line 9244
+    .line 9334
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -3936,7 +3936,7 @@
 
     goto :goto_0
 
-    .line 9248
+    .line 9338
     :cond_2
     iget v3, p0, Lcom/android/camera/HTCCamera;->mFocusPos_X:I
 
@@ -3958,7 +3958,7 @@
 
     if-gt v3, v4, :cond_4
 
-    .line 9251
+    .line 9341
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -3967,7 +3967,7 @@
 
     sub-long v0, v3, v5
 
-    .line 9252
+    .line 9342
     .local v0, period:J
     const-wide/16 v3, 0x190
 
@@ -3975,46 +3975,46 @@
 
     if-ltz v3, :cond_0
 
-    .line 9253
+    .line 9343
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->canTriggerFocus()Z
 
     move-result v3
 
     if-nez v3, :cond_3
 
-    .line 9254
+    .line 9344
     invoke-direct {p0, p1, p2}, Lcom/android/camera/HTCCamera;->resetTapCapture(II)V
 
     goto :goto_0
 
-    .line 9256
+    .line 9346
     :cond_3
     iput-boolean v7, p0, Lcom/android/camera/HTCCamera;->mStartTapCapture:Z
 
-    .line 9257
+    .line 9347
     iput p1, p0, Lcom/android/camera/HTCCamera;->mFocusPos_X:I
 
-    .line 9258
+    .line 9348
     iput p2, p0, Lcom/android/camera/HTCCamera;->mFocusPos_Y:I
 
-    .line 9259
+    .line 9349
     const-string v3, "HTCCamera"
 
     const-string v4, "Tap & Capture - mFocusingState = FOCUSING_TAP_CAPTURE"
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9260
+    .line 9350
     const/4 v3, 0x2
 
     iput v3, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
-    .line 9261
+    .line 9351
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->triggerTakePicture()V
 
     goto :goto_0
 
-    .line 9266
+    .line 9356
     .end local v0           #period:J
     :cond_4
     invoke-direct {p0, p1, p2}, Lcom/android/camera/HTCCamera;->resetTapCapture(II)V
@@ -4030,106 +4030,106 @@
 
     const/4 v2, 0x0
 
-    .line 6600
+    .line 6617
     const-string v0, "HTCCamera"
 
     const-string v1, "closeCaptureUI()"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6601
+    .line 6618
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0xf
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 6603
+    .line 6620
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_layout:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 6604
+    .line 6621
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_layout:Landroid/view/View;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6607
+    .line 6624
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFpsText:Landroid/widget/TextView;
 
     if-eqz v0, :cond_1
 
-    .line 6608
+    .line 6625
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFpsText:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 6610
+    .line 6627
     :cond_1
     invoke-direct {p0, v2}, Lcom/android/camera/HTCCamera;->setPanelVisible(Z)V
 
-    .line 6612
+    .line 6629
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     if-eqz v0, :cond_2
 
-    .line 6613
+    .line 6630
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6615
+    .line 6632
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCapture_icon:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_3
 
-    .line 6616
+    .line 6633
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCapture_icon:Landroid/widget/ImageView;
 
     iget v1, p0, Lcom/android/camera/HTCCamera;->mCapture_rest:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 6618
+    .line 6635
     :cond_3
     invoke-direct {p0, v2}, Lcom/android/camera/HTCCamera;->closeSecondLayout(Z)V
 
-    .line 6621
+    .line 6638
     iput-boolean v2, p0, Lcom/android/camera/HTCCamera;->mIsCaptureUIOpen:Z
 
-    .line 6624
+    .line 6641
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v1, "CaptureUI.Closed"
 
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 6626
+    .line 6643
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->hide_gps_indicator()V
 
-    .line 6629
+    .line 6646
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    .line 6630
+    .line 6647
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->hideAllScene()V
 
-    .line 6631
+    .line 6648
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCapture_btn_ds:Landroid/widget/Button;
 
     if-eqz v0, :cond_4
 
-    .line 6632
+    .line 6649
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCapture_btn_ds:Landroid/widget/Button;
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 6639
+    .line 6656
     :cond_4
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -4137,7 +4137,7 @@
 
     invoke-virtual {p0, v2, v0}, Lcom/android/camera/HTCCamera;->updateDOTCaptureIcon(ZI)V
 
-    .line 6641
+    .line 6658
     :cond_5
     return-void
 .end method
@@ -4147,7 +4147,7 @@
     .parameter "hasAnim"
 
     .prologue
-    .line 6657
+    .line 6674
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSecondLayout:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -4160,23 +4160,23 @@
 
     if-eqz v0, :cond_1
 
-    .line 6666
+    .line 6683
     :cond_0
     :goto_0
     return-void
 
-    .line 6660
+    .line 6677
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSecondLayout:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    .line 6661
+    .line 6678
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_2
 
-    .line 6662
+    .line 6679
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSecondLayout:Landroid/view/View;
 
     const/high16 v1, 0x3f80
@@ -4189,7 +4189,7 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/android/camera/AnimationManager;->showAlphaAnimation(Landroid/view/View;FFII)Landroid/view/animation/AlphaAnimation;
 
-    .line 6663
+    .line 6680
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSecondLayout:Landroid/view/View;
 
@@ -4197,7 +4197,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6665
+    .line 6682
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v1, "SecondLayout.Closed"
@@ -4215,44 +4215,44 @@
 
     const/4 v3, 0x1
 
-    .line 7765
+    .line 7824
     const-string v1, "HTCCamera"
 
     const-string v2, "closeSelfTimer() - start"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7766
+    .line 7825
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/4 v2, 0x5
 
     invoke-static {v1, v2}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 7768
+    .line 7827
     iget-boolean v1, p0, Lcom/android/camera/HTCCamera;->mIsSelfTimerStarted:Z
 
     if-nez v1, :cond_0
 
-    .line 7770
+    .line 7829
     const-string v1, "HTCCamera"
 
     const-string v2, "Self timer is not started"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7800
+    .line 7859
     :goto_0
     return-void
 
-    .line 7773
+    .line 7832
     :cond_0
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsSelfTimerStarted:Z
 
-    .line 7775
+    .line 7834
     const/4 v0, 0x0
 
-    .line 7776
+    .line 7835
     .local v0, bGrid:Z
     sget-object v1, Lcom/android/camera/IntentManager$RequestName;->Contacts:Lcom/android/camera/IntentManager$RequestName;
 
@@ -4270,11 +4270,11 @@
 
     if-ne v1, v3, :cond_3
 
-    .line 7778
+    .line 7837
     :cond_1
     const/4 v0, 0x0
 
-    .line 7782
+    .line 7841
     :goto_1
     if-ne v0, v3, :cond_2
 
@@ -4282,45 +4282,45 @@
 
     if-eqz v1, :cond_2
 
-    .line 7783
+    .line 7842
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 7785
+    .line 7844
     :cond_2
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->openCaptureUI()V
 
-    .line 7787
+    .line 7846
     invoke-direct {p0, v3}, Lcom/android/camera/HTCCamera;->enableMainBarItems(Z)V
 
-    .line 7788
+    .line 7847
     invoke-virtual {p0, v3, v3}, Lcom/android/camera/HTCCamera;->showMainBarItems(ZZ)V
 
-    .line 7790
+    .line 7849
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->resetAutoCaptureTask()V
 
-    .line 7792
+    .line 7851
     const-string v1, "HTCCamera"
 
     const-string v2, "UnBlock Capture UI - close self timer"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7793
+    .line 7852
     sput-boolean v4, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 7794
+    .line 7853
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsCaptureTriggered:Z
 
-    .line 7797
+    .line 7856
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v2, "SelfTimer.Stopped"
 
     invoke-virtual {v1, v2}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 7799
+    .line 7858
     const-string v1, "HTCCamera"
 
     const-string v2, "closeSelfTimer() - end"
@@ -4329,7 +4329,7 @@
 
     goto :goto_0
 
-    .line 7780
+    .line 7839
     :cond_3
     const-string v1, "pref_grid"
 
@@ -4351,12 +4351,12 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 7412
+    .line 7471
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 7413
+    .line 7472
     .local v1, res:Landroid/content/res/Resources;
     const v3, 0x7f07000f
 
@@ -4364,7 +4364,7 @@
 
     move-result-object v0
 
-    .line 7414
+    .line 7473
     .local v0, icons:Landroid/content/res/TypedArray;
     const v3, 0x7f07000e
 
@@ -4372,22 +4372,22 @@
 
     move-result-object v2
 
-    .line 7417
+    .line 7476
     .local v2, values_text:[Ljava/lang/String;
     iget v3, p0, Lcom/android/camera/HTCCamera;->mScene_Idx:I
 
     packed-switch v3, :pswitch_data_0
 
-    .line 7430
+    .line 7489
     :goto_0
     iput p1, p0, Lcom/android/camera/HTCCamera;->mScene_Idx:I
 
-    .line 7433
+    .line 7492
     iget v3, p0, Lcom/android/camera/HTCCamera;->mScene_Idx:I
 
     if-nez v3, :cond_3
 
-    .line 7434
+    .line 7493
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     new-instance v4, Lcom/android/camera/BooleanEvent;
@@ -4400,11 +4400,11 @@
 
     invoke-virtual {v3, v4}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 7437
+    .line 7496
     :goto_1
     invoke-direct {p0, p1}, Lcom/android/camera/HTCCamera;->updateSceneGuide(I)V
 
-    .line 7440
+    .line 7499
     iget v3, p0, Lcom/android/camera/HTCCamera;->mScene_Idx:I
 
     if-eqz v3, :cond_0
@@ -4423,13 +4423,13 @@
 
     if-nez v3, :cond_0
 
-    .line 7467
+    .line 7526
     :cond_0
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     if-eqz v3, :cond_2
 
-    .line 7469
+    .line 7528
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     if-eqz v3, :cond_1
@@ -4442,23 +4442,23 @@
 
     if-nez v3, :cond_1
 
-    .line 7471
+    .line 7530
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v3}, Lcom/android/camera/MenuHandler;->exitMenuHandler()V
 
-    .line 7472
+    .line 7531
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v3}, Lcom/android/camera/MenuHandler;->resetMenuHandler()V
 
-    .line 7475
+    .line 7534
     :cond_1
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v3}, Lcom/android/camera/MenuHandler;->updateDisableItems()V
 
-    .line 7479
+    .line 7538
     :cond_2
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mScene_icon_ds:Landroid/widget/ImageView;
 
@@ -4468,14 +4468,14 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 7480
+    .line 7539
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mScene_text_ds:Landroid/widget/TextView;
 
     aget-object v4, v2, p1
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 7481
+    .line 7540
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mScene_icon_ds:Landroid/widget/ImageView;
 
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mScene_btn_ds:Landroid/widget/Button;
@@ -4484,31 +4484,31 @@
 
     invoke-static {v3, v4, v5}, Lcom/android/camera/ViewUtil;->enableMainButton(Landroid/widget/ImageView;Landroid/widget/Button;Landroid/widget/TextView;)V
 
-    .line 7482
+    .line 7541
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 7483
+    .line 7542
     return-void
 
-    .line 7420
+    .line 7479
     :pswitch_0
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->exitPanoramaMode()V
 
     goto :goto_0
 
-    .line 7423
+    .line 7482
     :pswitch_1
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->exitHdrMode()V
 
     goto :goto_0
 
-    .line 7426
+    .line 7485
     :pswitch_2
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->exitBurstMode()V
 
     goto :goto_0
 
-    .line 7436
+    .line 7495
     :cond_3
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
@@ -4522,7 +4522,7 @@
 
     goto :goto_1
 
-    .line 7417
+    .line 7476
     nop
 
     :pswitch_data_0
@@ -4537,36 +4537,36 @@
     .locals 14
 
     .prologue
-    .line 3260
+    .line 3257
     const-string v0, "HTCCamera"
 
     const-string v1, "doOnCreate_after_preview() - start"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3262
+    .line 3259
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mNeed_doOnCreate:Z
 
     if-nez v0, :cond_0
 
-    .line 3263
+    .line 3260
     const-string v0, "HTCCamera"
 
     const-string v1, "doOnCreate_after_preview() - not need to do"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4288
+    .line 4294
     :goto_0
     return-void
 
-    .line 3266
+    .line 3263
     :cond_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/camera/HTCCamera;->mNeed_doOnCreate:Z
 
-    .line 3268
+    .line 3265
     new-instance v0, Lcom/android/camera/RecordLimitCheck;
 
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
@@ -4575,14 +4575,14 @@
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mRecordLimitCheck:Lcom/android/camera/RecordLimitCheck;
 
-    .line 3269
+    .line 3266
     new-instance v0, Lcom/android/camera/LocationHandler;
 
     invoke-direct {v0, p0}, Lcom/android/camera/LocationHandler;-><init>(Lcom/android/camera/HTCCamera;)V
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mLocationHandler:Lcom/android/camera/LocationHandler;
 
-    .line 3271
+    .line 3268
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportSensorFocus()Z
 
     move-result v0
@@ -4599,20 +4599,20 @@
 
     if-ne v0, v1, :cond_14
 
-    .line 3272
+    .line 3269
     new-instance v0, Lcom/android/camera/SensorHandler;
 
     invoke-direct {v0, p0}, Lcom/android/camera/SensorHandler;-><init>(Lcom/android/camera/HTCCamera;)V
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mSensorHandler:Lcom/android/camera/SensorHandler;
 
-    .line 3276
+    .line 3273
     :goto_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_btn:Landroid/widget/ImageButton;
 
     if-eqz v0, :cond_1
 
-    .line 3277
+    .line 3274
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_btn:Landroid/widget/ImageButton;
 
     new-instance v1, Lcom/android/camera/HTCCamera$9;
@@ -4621,7 +4621,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 3352
+    .line 3349
     :cond_1
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportThumbnailAlbumButton()Z
 
@@ -4629,7 +4629,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 3354
+    .line 3351
     new-instance v0, Lcom/android/camera/ThumbnailController;
 
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getResources()Landroid/content/res/Resources;
@@ -4648,21 +4648,21 @@
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mThumbController:Lcom/android/camera/ThumbnailController;
 
-    .line 3357
+    .line 3354
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 3358
+    .line 3355
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDelayCreateImageThumb()Z
 
     move-result v0
 
     if-eqz v0, :cond_16
 
-    .line 3359
+    .line 3356
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
@@ -4678,7 +4678,7 @@
 
     invoke-static {v1, v0, v2, v3}, Lcom/android/camera/MessageHandler;->sendEmptyMessageDelayed(Landroid/os/Handler;IJ)V
 
-    .line 3442
+    .line 3439
     :cond_2
     :goto_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_btn:Landroid/widget/Button;
@@ -4689,12 +4689,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 3461
+    .line 3458
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_3
 
-    .line 3463
+    .line 3460
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
 
     new-instance v1, Lcom/android/camera/HTCCamera$11;
@@ -4703,13 +4703,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 3486
+    .line 3483
     :cond_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_4
 
-    .line 3488
+    .line 3485
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
     new-instance v1, Lcom/android/camera/HTCCamera$12;
@@ -4718,13 +4718,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 3588
+    .line 3594
     :cond_4
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mEffect_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_5
 
-    .line 3589
+    .line 3595
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mEffect_btn:Landroid/widget/Button;
 
     new-instance v1, Lcom/android/camera/HTCCamera$13;
@@ -4733,13 +4733,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 3617
+    .line 3623
     :cond_5
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSettings_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_6
 
-    .line 3618
+    .line 3624
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSettings_btn:Landroid/widget/Button;
 
     new-instance v1, Lcom/android/camera/HTCCamera$14;
@@ -4748,13 +4748,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 3647
+    .line 3653
     :cond_6
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_7
 
-    .line 3648
+    .line 3654
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
 
     new-instance v1, Lcom/android/camera/HTCCamera$15;
@@ -4763,13 +4763,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 3699
+    .line 3705
     :cond_7
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPhoto_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_8
 
-    .line 3700
+    .line 3706
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPhoto_btn:Landroid/widget/Button;
 
     new-instance v1, Lcom/android/camera/HTCCamera$16;
@@ -4778,57 +4778,57 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 3753
+    .line 3759
     :cond_8
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_layout:Landroid/view/View;
 
     if-eqz v0, :cond_9
 
-    .line 3754
+    .line 3760
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_btn:Landroid/widget/ImageButton;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setFocusable(Z)V
 
-    .line 3755
+    .line 3761
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_layout:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setFocusable(Z)V
 
-    .line 3759
+    .line 3765
     :cond_9
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_thumbnail:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_a
 
-    .line 3760
+    .line 3766
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_thumbnail:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setFocusable(Z)V
 
-    .line 3761
+    .line 3767
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_combine:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setFocusable(Z)V
 
-    .line 3765
+    .line 3771
     :cond_a
     const/4 v11, 0x0
 
-    .line 3775
+    .line 3781
     .local v11, stub:Landroid/view/ViewStub;
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mFpsText:Landroid/widget/TextView;
 
-    .line 3777
+    .line 3783
     const-string v0, ""
 
     const v1, 0x186a0
@@ -4839,14 +4839,14 @@
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mToast:Lcom/android/camera/rotate/RotateToast;
 
-    .line 3780
+    .line 3786
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-nez v0, :cond_18
 
-    .line 3782
+    .line 3788
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v1, 0x7f080103
@@ -4855,18 +4855,18 @@
 
     move-result-object v7
 
-    .line 3783
+    .line 3789
     .local v7, item:Landroid/view/View;
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_btn:Landroid/widget/Button;
 
     invoke-direct {p0, v7, v0}, Lcom/android/camera/HTCCamera;->enlargeTouchArea(Landroid/view/View;Landroid/view/View;)V
 
-    .line 3785
+    .line 3791
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_b
 
-    .line 3787
+    .line 3793
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v1, 0x7f080102
@@ -4875,18 +4875,18 @@
 
     move-result-object v7
 
-    .line 3788
+    .line 3794
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
     invoke-direct {p0, v7, v0}, Lcom/android/camera/HTCCamera;->enlargeTouchArea(Landroid/view/View;Landroid/view/View;)V
 
-    .line 3791
+    .line 3797
     :cond_b
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_c
 
-    .line 3793
+    .line 3799
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v1, 0x7f0800ff
@@ -4895,12 +4895,12 @@
 
     move-result-object v7
 
-    .line 3794
+    .line 3800
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
 
     invoke-direct {p0, v7, v0}, Lcom/android/camera/HTCCamera;->enlargeTouchArea(Landroid/view/View;Landroid/view/View;)V
 
-    .line 3803
+    .line 3809
     :cond_c
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
@@ -4910,12 +4910,12 @@
 
     move-result-object v7
 
-    .line 3804
+    .line 3810
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSettings_btn:Landroid/widget/Button;
 
     invoke-direct {p0, v7, v0}, Lcom/android/camera/HTCCamera;->enlargeTouchArea(Landroid/view/View;Landroid/view/View;)V
 
-    .line 3806
+    .line 3812
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v1, 0x7f080101
@@ -4924,17 +4924,17 @@
 
     move-result-object v7
 
-    .line 3807
+    .line 3813
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
 
     invoke-direct {p0, v7, v0}, Lcom/android/camera/HTCCamera;->enlargeTouchArea(Landroid/view/View;Landroid/view/View;)V
 
-    .line 3810
+    .line 3816
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPhoto_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_d
 
-    .line 3811
+    .line 3817
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v1, 0x7f0800fc
@@ -4943,12 +4943,12 @@
 
     move-result-object v7
 
-    .line 3812
+    .line 3818
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPhoto_btn:Landroid/widget/Button;
 
     invoke-direct {p0, v7, v0}, Lcom/android/camera/HTCCamera;->enlargeTouchArea(Landroid/view/View;Landroid/view/View;)V
 
-    .line 3815
+    .line 3821
     :cond_d
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_combine:Landroid/view/View;
 
@@ -4956,20 +4956,20 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/camera/HTCCamera;->enlargeTouchArea(Landroid/view/View;Landroid/view/View;)V
 
-    .line 3835
+    .line 3841
     :goto_4
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     if-nez v0, :cond_11
 
-    .line 3836
+    .line 3842
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-nez v0, :cond_1b
 
-    .line 3837
+    .line 3843
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v1, 0x7f0800f9
@@ -4981,27 +4981,27 @@
     .end local v11           #stub:Landroid/view/ViewStub;
     check-cast v11, Landroid/view/ViewStub;
 
-    .line 3842
+    .line 3848
     .restart local v11       #stub:Landroid/view/ViewStub;
     :goto_5
     invoke-virtual {v11}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
     move-result-object v9
 
-    .line 3843
+    .line 3849
     .local v9, settings_layout:Landroid/view/View;
     const/4 v0, 0x0
 
     invoke-virtual {v9, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3846
+    .line 3852
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-nez v0, :cond_e
 
-    .line 3847
+    .line 3853
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v1, 0x7f0800f8
@@ -5010,13 +5010,13 @@
 
     move-result-object v10
 
-    .line 3848
+    .line 3854
     .local v10, shutter_bar:Landroid/view/View;
     const/16 v0, 0x8
 
     invoke-virtual {v10, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3852
+    .line 3858
     .end local v10           #shutter_bar:Landroid/view/View;
     :cond_e
     const v0, 0x7f080132
@@ -5029,7 +5029,7 @@
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
-    .line 3854
+    .line 3860
     const v0, 0x7f080134
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -5040,7 +5040,7 @@
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
-    .line 3855
+    .line 3861
     const v0, 0x7f080136
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -5051,14 +5051,14 @@
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SubMenu_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
-    .line 3859
+    .line 3865
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-nez v0, :cond_f
 
-    .line 3860
+    .line 3866
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getResources()Landroid/content/res/Resources;
@@ -5109,7 +5109,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/camera/widget/SlidingDrawer;->setHandleDrawable(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 3867
+    .line 3873
     :cond_f
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -5119,21 +5119,21 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/widget/SlidingDrawer;->setOnDrawerOpenListener(Lcom/android/camera/widget/SlidingDrawer$OnDrawerOpenListener;)V
 
-    .line 3875
+    .line 3881
     new-instance v0, Lcom/android/camera/MenuHandler;
 
     invoke-direct {v0}, Lcom/android/camera/MenuHandler;-><init>()V
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
-    .line 3876
+    .line 3882
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0, p0, v1, v9}, Lcom/android/camera/MenuHandler;->initMenuHandler(Lcom/android/camera/HTCCamera;Lcom/android/camera/CameraThread;Landroid/view/View;)V
 
-    .line 3878
+    .line 3884
     const v0, 0x7f080130
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -5144,14 +5144,14 @@
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
-    .line 3880
+    .line 3886
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-nez v0, :cond_10
 
-    .line 3881
+    .line 3887
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getResources()Landroid/content/res/Resources;
@@ -5202,7 +5202,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/camera/widget/SlidingDrawer;->setHandleDrawable(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 3888
+    .line 3894
     :cond_10
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -5212,7 +5212,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/widget/SlidingDrawer;->setOnDrawerOpenListener(Lcom/android/camera/widget/SlidingDrawer$OnDrawerOpenListener;)V
 
-    .line 3918
+    .line 3924
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     new-instance v1, Lcom/android/camera/HTCCamera$19;
@@ -5221,7 +5221,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/widget/SlidingDrawer;->setOnDrawerCloseListener(Lcom/android/camera/widget/SlidingDrawer$OnDrawerCloseListener;)V
 
-    .line 3960
+    .line 3966
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     new-instance v1, Lcom/android/camera/HTCCamera$20;
@@ -5230,14 +5230,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/widget/SlidingDrawer;->setOnDrawerScrollListener(Lcom/android/camera/widget/SlidingDrawer$OnDrawerScrollListener;)V
 
-    .line 4014
+    .line 4020
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-nez v0, :cond_1c
 
-    .line 4015
+    .line 4021
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCapture_icon:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getWidth()I
@@ -5246,19 +5246,19 @@
 
     div-int/lit8 v12, v0, 0x8
 
-    .line 4016
+    .line 4022
     .local v12, threshold:I
     new-instance v8, Landroid/graphics/Rect;
 
     invoke-direct {v8}, Landroid/graphics/Rect;-><init>()V
 
-    .line 4017
+    .line 4023
     .local v8, rect:Landroid/graphics/Rect;
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCapture_icon:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v8}, Landroid/widget/ImageView;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 4019
+    .line 4025
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     new-instance v1, Lcom/android/camera/HTCCamera$21;
@@ -5267,7 +5267,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/widget/SlidingDrawer;->setOnCaptureListener(Lcom/android/camera/widget/SlidingDrawer$OnCaptureListener;)V
 
-    .line 4117
+    .line 4123
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
     new-instance v1, Lcom/android/camera/HTCCamera$22;
@@ -5276,7 +5276,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/widget/SlidingDrawer;->setOnCaptureListener(Lcom/android/camera/widget/SlidingDrawer$OnCaptureListener;)V
 
-    .line 4223
+    .line 4229
     .end local v8           #rect:Landroid/graphics/Rect;
     .end local v9           #settings_layout:Landroid/view/View;
     .end local v12           #threshold:I
@@ -5286,7 +5286,7 @@
 
     if-eqz v0, :cond_12
 
-    .line 4224
+    .line 4230
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SwitchBtn:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     const v1, 0x7f08001b
@@ -5297,7 +5297,7 @@
 
     check-cast v6, Landroid/widget/Button;
 
-    .line 4225
+    .line 4231
     .local v6, button:Landroid/widget/Button;
     const v0, 0x7f0a0010
 
@@ -5309,24 +5309,24 @@
 
     invoke-virtual {v6, v0}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 4226
+    .line 4232
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SwitchBtn:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-direct {p0, v0, v6}, Lcom/android/camera/HTCCamera;->enlargeTouchArea(Landroid/view/View;Landroid/view/View;)V
 
-    .line 4227
+    .line 4233
     const/4 v0, 0x0
 
     invoke-virtual {v6, v0}, Landroid/widget/Button;->setFocusable(Z)V
 
-    .line 4228
+    .line 4234
     new-instance v0, Lcom/android/camera/HTCCamera$24;
 
     invoke-direct {v0, p0}, Lcom/android/camera/HTCCamera$24;-><init>(Lcom/android/camera/HTCCamera;)V
 
     invoke-virtual {v6, v0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 4274
+    .line 4280
     .end local v6           #button:Landroid/widget/Button;
     :cond_12
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
@@ -5335,7 +5335,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 4275
+    .line 4281
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->getMode()I
@@ -5350,7 +5350,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/camera/HTCCamera;->enableSceneIcon(IZ)V
 
-    .line 4281
+    .line 4287
     :cond_13
     new-instance v0, Lcom/android/camera/widget/PopupMenu;
 
@@ -5360,7 +5360,7 @@
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mSettingMenu:Lcom/android/camera/widget/PopupMenu;
 
-    .line 4282
+    .line 4288
     new-instance v0, Lcom/android/camera/widget/PopupMenu;
 
     const/4 v1, 0x3
@@ -5369,7 +5369,7 @@
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneMenu:Lcom/android/camera/widget/PopupMenu;
 
-    .line 4283
+    .line 4289
     new-instance v0, Lcom/android/camera/widget/PopupMenu;
 
     const/4 v1, 0x2
@@ -5378,7 +5378,7 @@
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mQualityMenu:Lcom/android/camera/widget/PopupMenu;
 
-    .line 4284
+    .line 4290
     new-instance v0, Lcom/android/camera/widget/PopupMenu;
 
     const/4 v1, 0x1
@@ -5387,7 +5387,7 @@
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitchMenu:Lcom/android/camera/widget/PopupMenu;
 
-    .line 4287
+    .line 4293
     const-string v0, "HTCCamera"
 
     const-string v1, "doOnCreate_after_preview() - end"
@@ -5396,7 +5396,7 @@
 
     goto/16 :goto_0
 
-    .line 3274
+    .line 3271
     .end local v7           #item:Landroid/view/View;
     .end local v11           #stub:Landroid/view/ViewStub;
     :cond_14
@@ -5406,13 +5406,13 @@
 
     goto/16 :goto_1
 
-    .line 3359
+    .line 3356
     :cond_15
     const/16 v0, 0x1e
 
     goto/16 :goto_2
 
-    .line 3364
+    .line 3361
     :cond_16
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
@@ -5434,7 +5434,7 @@
 
     goto :goto_7
 
-    .line 3818
+    .line 3824
     .restart local v11       #stub:Landroid/view/ViewStub;
     :cond_18
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
@@ -5445,13 +5445,13 @@
 
     move-result-object v7
 
-    .line 3819
+    .line 3825
     .restart local v7       #item:Landroid/view/View;
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_btn:Landroid/widget/Button;
 
     invoke-direct {p0, v7, v0}, Lcom/android/camera/HTCCamera;->enlargeTouchArea(Landroid/view/View;Landroid/view/View;)V
 
-    .line 3820
+    .line 3826
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v1, 0x7f080118
@@ -5460,17 +5460,17 @@
 
     move-result-object v7
 
-    .line 3821
+    .line 3827
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_19
 
-    .line 3822
+    .line 3828
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
 
     invoke-direct {p0, v7, v0}, Lcom/android/camera/HTCCamera;->enlargeTouchArea(Landroid/view/View;Landroid/view/View;)V
 
-    .line 3823
+    .line 3829
     :cond_19
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
@@ -5480,17 +5480,17 @@
 
     move-result-object v7
 
-    .line 3824
+    .line 3830
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_1a
 
-    .line 3825
+    .line 3831
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
     invoke-direct {p0, v7, v0}, Lcom/android/camera/HTCCamera;->enlargeTouchArea(Landroid/view/View;Landroid/view/View;)V
 
-    .line 3826
+    .line 3832
     :cond_1a
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
@@ -5500,14 +5500,14 @@
 
     move-result-object v7
 
-    .line 3827
+    .line 3833
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mScene_btn_ds:Landroid/widget/Button;
 
     invoke-direct {p0, v7, v0}, Lcom/android/camera/HTCCamera;->enlargeTouchArea(Landroid/view/View;Landroid/view/View;)V
 
     goto/16 :goto_4
 
-    .line 3840
+    .line 3846
     :cond_1b
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
@@ -5523,7 +5523,7 @@
     .restart local v11       #stub:Landroid/view/ViewStub;
     goto/16 :goto_5
 
-    .line 4167
+    .line 4173
     .restart local v9       #settings_layout:Landroid/view/View;
     :cond_1c
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCapture_btn_ds:Landroid/widget/Button;
@@ -5543,19 +5543,19 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 5372
+    .line 5378
     const-string v0, "HTCCamera"
 
     const-string v1, "doOnDestroy() - start"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5375
+    .line 5381
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mComponentManager:Lcom/android/camera/component/ComponentManager;
 
     invoke-virtual {v0}, Lcom/android/camera/component/ComponentManager;->removeComponents()V
 
-    .line 5378
+    .line 5384
     :try_start_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -5563,148 +5563,148 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5383
+    .line 5389
     :goto_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     invoke-virtual {v0}, Lcom/android/camera/EventManager;->close()V
 
-    .line 5391
+    .line 5397
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     if-eqz v0, :cond_0
 
-    .line 5392
+    .line 5398
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/MenuHandler;->releaseMenuHandler()V
 
-    .line 5393
+    .line 5399
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
-    .line 5396
+    .line 5402
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mLocationHandler:Lcom/android/camera/LocationHandler;
 
     if-eqz v0, :cond_1
 
-    .line 5397
+    .line 5403
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mLocationHandler:Lcom/android/camera/LocationHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/LocationHandler;->releaseLocationHandler()V
 
-    .line 5398
+    .line 5404
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mLocationHandler:Lcom/android/camera/LocationHandler;
 
-    .line 5401
+    .line 5407
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSensorHandler:Lcom/android/camera/SensorHandler;
 
     if-eqz v0, :cond_2
 
-    .line 5402
+    .line 5408
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSensorHandler:Lcom/android/camera/SensorHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/SensorHandler;->releaseSensorHandler()V
 
-    .line 5403
+    .line 5409
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mSensorHandler:Lcom/android/camera/SensorHandler;
 
-    .line 5406
+    .line 5412
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
     if-eqz v0, :cond_3
 
-    .line 5407
+    .line 5413
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
     invoke-virtual {v0}, Lcom/android/camera/IntentManager;->releaseIntentManager()V
 
-    .line 5408
+    .line 5414
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
-    .line 5411
+    .line 5417
     :cond_3
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->closeActionScreen()V
 
-    .line 5412
+    .line 5418
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mActionScreen:Lcom/android/camera/actionscreen/ActionScreen;
 
-    .line 5415
+    .line 5421
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mThumbController:Lcom/android/camera/ThumbnailController;
 
     if-eqz v0, :cond_4
 
-    .line 5416
+    .line 5422
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mThumbController:Lcom/android/camera/ThumbnailController;
 
     invoke-virtual {v0}, Lcom/android/camera/ThumbnailController;->close()V
 
-    .line 5417
+    .line 5423
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mThumbController:Lcom/android/camera/ThumbnailController;
 
-    .line 5420
+    .line 5426
     :cond_4
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_5
 
-    .line 5421
+    .line 5427
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->releaseCameraThread()V
 
-    .line 5422
+    .line 5428
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
-    .line 5423
+    .line 5429
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
-    .line 5427
+    .line 5433
     :cond_5
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mAudioSyncRoot:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 5429
+    .line 5435
     :try_start_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mAudioManager:Landroid/media/AudioManager;
 
     if-eqz v0, :cond_6
 
-    .line 5431
+    .line 5437
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mAudioManager:Landroid/media/AudioManager;
 
     const-string v2, "CAMCORDER_MODE=OFF"
 
     invoke-virtual {v0, v2}, Landroid/media/AudioManager;->setParameters(Ljava/lang/String;)V
 
-    .line 5432
+    .line 5438
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mAudioManager:Landroid/media/AudioManager;
 
-    .line 5434
+    .line 5440
     :cond_6
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 5436
+    .line 5442
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mAutoUploader:Lcom/android/camera/AutoUploader;
 
     if-eqz v0, :cond_7
 
-    .line 5438
+    .line 5444
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mAutoUploader:Lcom/android/camera/AutoUploader;
 
     invoke-virtual {v0}, Lcom/android/camera/AutoUploader;->releaseResource()V
 
-    .line 5439
+    .line 5445
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mAutoUploader:Lcom/android/camera/AutoUploader;
 
-    .line 5442
+    .line 5448
     :cond_7
     const-string v0, "HTCCamera"
 
@@ -5712,10 +5712,10 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5443
+    .line 5449
     return-void
 
-    .line 5434
+    .line 5440
     :catchall_0
     move-exception v0
 
@@ -5726,7 +5726,7 @@
 
     throw v0
 
-    .line 5379
+    .line 5385
     :catch_0
     move-exception v0
 
@@ -5743,73 +5743,73 @@
 
     const/4 v6, 0x0
 
-    .line 4873
+    .line 4879
     const-string v4, "HTCCamera"
 
     const-string v5, "doOnResume_after_preview() - start"
 
     invoke-static {v4, v5}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4875
+    .line 4881
     iget-boolean v4, p0, Lcom/android/camera/HTCCamera;->mNeed_doOnResume:Z
 
     if-nez v4, :cond_0
 
-    .line 4876
+    .line 4882
     const-string v4, "HTCCamera"
 
     const-string v5, "doOnResume_after_preview() - not need to do"
 
     invoke-static {v4, v5}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4991
+    .line 4997
     :goto_0
     return-void
 
-    .line 4879
+    .line 4885
     :cond_0
     iput-boolean v6, p0, Lcom/android/camera/HTCCamera;->mNeed_doOnResume:Z
 
-    .line 4883
+    .line 4889
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
     invoke-virtual {v4}, Lcom/android/camera/IntentManager;->resetLaunchedby()V
 
-    .line 4885
+    .line 4891
     new-instance v1, Landroid/content/IntentFilter;
 
     const-string v4, "android.intent.action.DEVICE_STORAGE_LOW"
 
     invoke-direct {v1, v4}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 4886
+    .line 4892
     .local v1, partitionFilter:Landroid/content/IntentFilter;
     const-string v4, "android.intent.action.DEVICE_STORAGE_OK"
 
     invoke-virtual {v1, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 4887
+    .line 4893
     new-instance v2, Landroid/content/IntentFilter;
 
     const-string v4, "HTC_IME_CURRENT_STATE"
 
     invoke-direct {v2, v4}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 4891
+    .line 4897
     .local v2, sipFilter:Landroid/content/IntentFilter;
     :try_start_0
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mPartitonReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v4, v1}, Lcom/android/camera/HTCCamera;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 4892
+    .line 4898
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mSIPReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v4, v2}, Lcom/android/camera/HTCCamera;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4900
+    .line 4906
     :goto_1
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -5825,72 +5825,72 @@
 
     if-nez v4, :cond_a
 
-    .line 4902
+    .line 4908
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mLocationHandler:Lcom/android/camera/LocationHandler;
 
     invoke-virtual {v4}, Lcom/android/camera/LocationHandler;->startReceivingLocationUpdates()V
 
-    .line 4907
+    .line 4913
     :goto_2
     iput-boolean v6, p0, Lcom/android/camera/HTCCamera;->mEnableSensorFocus:Z
 
-    .line 4912
+    .line 4918
     invoke-virtual {p0, v7}, Lcom/android/camera/HTCCamera;->registerFocusSensor(Z)V
 
-    .line 4931
+    .line 4937
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v5, 0x34
 
     invoke-static {v4, v5}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 4934
+    .line 4940
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v5, 0x35
 
     invoke-static {v4, v5}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 4937
+    .line 4943
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->closeActionScreen()V
 
-    .line 4939
+    .line 4945
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->is3DCameraActivated()Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 4941
+    .line 4947
     invoke-virtual {p0, v7}, Lcom/android/camera/HTCCamera;->lockOrientation(I)V
 
-    .line 4944
+    .line 4950
     :cond_1
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->openCaptureUI()V
 
-    .line 4947
+    .line 4953
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mPreviewDuplicate:Landroid/widget/ImageView;
 
     if-eqz v4, :cond_2
 
-    .line 4948
+    .line 4954
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mPreviewDuplicate:Landroid/widget/ImageView;
 
     invoke-virtual {v4}, Landroid/widget/ImageView;->clearAnimation()V
 
-    .line 4949
+    .line 4955
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mPreviewDuplicate:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v8}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 4950
+    .line 4956
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mPreviewDuplicate:Landroid/widget/ImageView;
 
     const/16 v5, 0x8
 
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 4952
+    .line 4958
     :cond_2
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -5902,19 +5902,19 @@
 
     if-eqz v4, :cond_3
 
-    .line 4953
+    .line 4959
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget-object v4, v4, Lcom/android/camera/CameraThread;->mOneShotBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 4954
+    .line 4960
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iput-object v8, v4, Lcom/android/camera/CameraThread;->mOneShotBitmap:Landroid/graphics/Bitmap;
 
-    .line 4957
+    .line 4963
     :cond_3
     invoke-static {}, Lcom/android/camera/CameraController;->supportFlashLight()Z
 
@@ -5922,46 +5922,46 @@
 
     if-ne v4, v7, :cond_4
 
-    .line 4958
+    .line 4964
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mFlashRestriction:Lcom/android/camera/FlashRestriction;
 
     if-nez v4, :cond_4
 
-    .line 4959
+    .line 4965
     new-instance v4, Lcom/android/camera/FlashRestriction;
 
     invoke-direct {v4}, Lcom/android/camera/FlashRestriction;-><init>()V
 
     iput-object v4, p0, Lcom/android/camera/HTCCamera;->mFlashRestriction:Lcom/android/camera/FlashRestriction;
 
-    .line 4960
+    .line 4966
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mFlashRestriction:Lcom/android/camera/FlashRestriction;
 
     invoke-virtual {v4, p0}, Lcom/android/camera/FlashRestriction;->initFlashRestriction(Lcom/android/camera/HTCCamera;)V
 
-    .line 4964
+    .line 4970
     :cond_4
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mIndicatorLayout:Landroid/view/View;
 
     if-eqz v4, :cond_5
 
-    .line 4965
+    .line 4971
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mIndicatorLayout:Landroid/view/View;
 
     invoke-virtual {v4, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 4966
+    .line 4972
     :cond_5
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SwitchBtn:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     if-eqz v4, :cond_6
 
-    .line 4967
+    .line 4973
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SwitchBtn:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v4, v6}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 4969
+    .line 4975
     :cond_6
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportSecondCamera()Z
 
@@ -5969,10 +5969,10 @@
 
     if-nez v4, :cond_7
 
-    .line 4970
+    .line 4976
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->loadSoundPool()V
 
-    .line 4973
+    .line 4979
     :cond_7
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->IsFirstTimeLaunch()Z
 
@@ -5980,12 +5980,12 @@
 
     if-eqz v4, :cond_8
 
-    .line 4975
+    .line 4981
     const-string v4, "pref_first_time_launch"
 
     invoke-static {p0, v4, v6}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Z)Z
 
-    .line 4979
+    .line 4985
     :cond_8
     sget-boolean v4, Lcom/android/camera/DCFRuler$StorageCardControl;->bSupportPhoneStorage:Z
 
@@ -5997,14 +5997,14 @@
 
     if-nez v4, :cond_9
 
-    .line 4982
+    .line 4988
     const-string v4, "pref_sdcard_state"
 
     invoke-static {p0, v4}, Lcom/android/camera/HTCCameraAdvanceSetting;->getPrefenceValue(Landroid/app/Activity;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 4984
+    .line 4990
     .local v3, state:Ljava/lang/String;
     if-eqz v3, :cond_9
 
@@ -6028,15 +6028,15 @@
 
     if-eqz v4, :cond_9
 
-    .line 4986
+    .line 4992
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->QueryToggleStorage()V
 
-    .line 4988
+    .line 4994
     .end local v3           #state:Ljava/lang/String;
     :cond_9
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->saveSDCardState()V
 
-    .line 4990
+    .line 4996
     const-string v4, "HTCCamera"
 
     const-string v5, "doOnResume_after_preview() - end"
@@ -6045,11 +6045,11 @@
 
     goto/16 :goto_0
 
-    .line 4893
+    .line 4899
     :catch_0
     move-exception v0
 
-    .line 4894
+    .line 4900
     .local v0, ex:Ljava/lang/Exception;
     const-string v4, "HTCCamera"
 
@@ -6059,7 +6059,7 @@
 
     goto/16 :goto_1
 
-    .line 4904
+    .line 4910
     .end local v0           #ex:Ljava/lang/Exception;
     :cond_a
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->hide_gps_indicator()V
@@ -6076,17 +6076,17 @@
 
     const/4 v1, 0x1
 
-    .line 7804
+    .line 7863
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
     if-nez v0, :cond_1
 
-    .line 7851
+    .line 7910
     :cond_0
     :goto_0
     return-void
 
-    .line 7807
+    .line 7866
     :cond_1
     sget-object v0, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
@@ -6104,29 +6104,29 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 7809
+    .line 7868
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_3
 
-    .line 7810
+    .line 7869
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_btn:Landroid/widget/Button;
 
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 7811
+    .line 7870
     :cond_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPhoto_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_4
 
-    .line 7812
+    .line 7871
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPhoto_btn:Landroid/widget/Button;
 
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 7815
+    .line 7874
     :cond_4
     invoke-static {}, Lcom/android/camera/CameraController;->supportFlashLight()Z
 
@@ -6146,62 +6146,62 @@
 
     if-nez v0, :cond_6
 
-    .line 7818
+    .line 7877
     :cond_5
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_6
 
-    .line 7819
+    .line 7878
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
 
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 7823
+    .line 7882
     :cond_6
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_7
 
-    .line 7824
+    .line 7883
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 7828
+    .line 7887
     :cond_7
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mEffect_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_8
 
-    .line 7829
+    .line 7888
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mEffect_btn:Landroid/widget/Button;
 
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 7832
+    .line 7891
     :cond_8
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSettings_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_9
 
-    .line 7833
+    .line 7892
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSettings_btn:Landroid/widget/Button;
 
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 7834
+    .line 7893
     :cond_9
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_0
 
-    .line 7835
+    .line 7894
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
 
-    .line 7836
+    .line 7895
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->getMode()I
@@ -6210,7 +6210,7 @@
 
     if-nez v0, :cond_b
 
-    .line 7838
+    .line 7897
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->is2ndCamera()Z
@@ -6229,7 +6229,7 @@
 
     if-nez v0, :cond_0
 
-    .line 7839
+    .line 7898
     :cond_a
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
 
@@ -6237,7 +6237,7 @@
 
     goto :goto_0
 
-    .line 7841
+    .line 7900
     :cond_b
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -6259,14 +6259,14 @@
 
     if-nez v0, :cond_c
 
-    .line 7843
+    .line 7902
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setEnabled(Z)V
 
     goto/16 :goto_0
 
-    .line 7847
+    .line 7906
     :cond_c
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
 
@@ -6283,41 +6283,41 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 7042
+    .line 7101
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mScene_icon_ds:Landroid/widget/ImageView;
 
     if-nez v2, :cond_0
 
-    .line 7068
+    .line 7127
     :goto_0
     return-void
 
-    .line 7046
+    .line 7105
     :cond_0
     if-nez p1, :cond_3
 
     if-nez p2, :cond_3
 
-    .line 7049
+    .line 7108
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isServiceMode()Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 7050
+    .line 7109
     const-string v2, "pref_camera_scene_ds"
 
     invoke-static {p0, v2}, Lcom/android/camera/HTCCameraAdvanceSetting;->getPrefenceValue(Landroid/app/Activity;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 7054
+    .line 7113
     .local v1, mScene_str:Ljava/lang/String;
     :goto_1
     iput v3, p0, Lcom/android/camera/HTCCamera;->mScene_Idx:I
 
-    .line 7056
+    .line 7115
     :try_start_0
     const-string v2, "null"
 
@@ -6327,20 +6327,20 @@
 
     if-eqz v2, :cond_2
 
-    .line 7057
+    .line 7116
     const/4 v2, 0x0
 
     iput v2, p0, Lcom/android/camera/HTCCamera;->mScene_Idx:I
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 7061
+    .line 7120
     :goto_2
     iget v2, p0, Lcom/android/camera/HTCCamera;->mScene_Idx:I
 
     invoke-direct {p0, v2}, Lcom/android/camera/HTCCamera;->doAfterSceneSelect(I)V
 
-    .line 7062
+    .line 7121
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mScene_icon_ds:Landroid/widget/ImageView;
 
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mScene_btn_ds:Landroid/widget/Button;
@@ -6351,7 +6351,7 @@
 
     goto :goto_0
 
-    .line 7052
+    .line 7111
     .end local v1           #mScene_str:Ljava/lang/String;
     :cond_1
     const-string v2, "pref_camera_scene_service_ds"
@@ -6363,7 +6363,7 @@
     .restart local v1       #mScene_str:Ljava/lang/String;
     goto :goto_1
 
-    .line 7059
+    .line 7118
     :cond_2
     :try_start_1
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -6376,7 +6376,7 @@
 
     goto :goto_2
 
-    .line 7060
+    .line 7119
     :catch_0
     move-exception v0
 
@@ -6385,13 +6385,13 @@
 
     goto :goto_2
 
-    .line 7065
+    .line 7124
     .end local v0           #ex:Ljava/lang/NumberFormatException;
     .end local v1           #mScene_str:Ljava/lang/String;
     :cond_3
     invoke-direct {p0, v3}, Lcom/android/camera/HTCCamera;->doAfterSceneSelect(I)V
 
-    .line 7066
+    .line 7125
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mScene_icon_ds:Landroid/widget/ImageView;
 
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mScene_btn_ds:Landroid/widget/Button;
@@ -6409,27 +6409,27 @@
     .parameter "view"
 
     .prologue
-    .line 9927
+    .line 10017
     if-eqz p1, :cond_0
 
     if-nez p2, :cond_1
 
-    .line 9937
+    .line 10027
     :cond_0
     :goto_0
     return-void
 
-    .line 9930
+    .line 10020
     :cond_1
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 9931
+    .line 10021
     .local v0, rect:Landroid/graphics/Rect;
     invoke-virtual {p1, v0}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 9933
+    .line 10023
     new-instance v1, Landroid/view/TouchDelegate;
 
     invoke-direct {v1, v0, p2}, Landroid/view/TouchDelegate;-><init>(Landroid/graphics/Rect;Landroid/view/View;)V
@@ -6444,7 +6444,7 @@
     .parameter "max"
 
     .prologue
-    .line 8173
+    .line 8236
     invoke-static {}, Lcom/android/camera/DisplayDevice;->forceSutterSound()Z
 
     move-result v0
@@ -6464,7 +6464,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 8175
+    .line 8238
     int-to-double v0, p1
 
     const-wide v2, 0x3feccccccccccccdL
@@ -6477,11 +6477,11 @@
 
     double-to-int v0, v0
 
-    .line 8182
+    .line 8245
     :goto_0
     return v0
 
-    .line 8177
+    .line 8240
     :cond_1
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
@@ -6495,7 +6495,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 8179
+    .line 8242
     int-to-double v0, p1
 
     const-wide v2, 0x3fe999999999999aL
@@ -6510,7 +6510,7 @@
 
     goto :goto_0
 
-    .line 8182
+    .line 8245
     :cond_2
     int-to-double v0, p1
 
@@ -6532,12 +6532,12 @@
     .parameter "scene"
 
     .prologue
-    .line 11068
+    .line 11158
     invoke-virtual {p1}, Lcom/android/camera/effect/EffectBase;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 11069
+    .line 11159
     .local v0, name:Ljava/lang/String;
     const-string v1, "auto"
 
@@ -6547,18 +6547,18 @@
 
     if-eqz v1, :cond_0
 
-    .line 11070
+    .line 11160
     const v1, 0x7f020048
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    .line 11089
+    .line 11179
     :goto_0
     return-object v1
 
-    .line 11071
+    .line 11161
     :cond_0
     const-string v1, "portrait"
 
@@ -6568,7 +6568,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 11072
+    .line 11162
     const v1, 0x7f020071
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6577,7 +6577,7 @@
 
     goto :goto_0
 
-    .line 11073
+    .line 11163
     :cond_1
     const-string v1, "landscape"
 
@@ -6587,7 +6587,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 11074
+    .line 11164
     const v1, 0x7f020061
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6596,7 +6596,7 @@
 
     goto :goto_0
 
-    .line 11075
+    .line 11165
     :cond_2
     const-string v1, "burst"
 
@@ -6606,7 +6606,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 11076
+    .line 11166
     const v1, 0x7f02007f
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6615,7 +6615,7 @@
 
     goto :goto_0
 
-    .line 11077
+    .line 11167
     :cond_3
     const-string v1, "panorama"
 
@@ -6625,7 +6625,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 11078
+    .line 11168
     const v1, 0x7f02006d
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6634,7 +6634,7 @@
 
     goto :goto_0
 
-    .line 11079
+    .line 11169
     :cond_4
     const-string v1, "hdr"
 
@@ -6644,7 +6644,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 11080
+    .line 11170
     const v1, 0x7f02005e
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6653,7 +6653,7 @@
 
     goto :goto_0
 
-    .line 11081
+    .line 11171
     :cond_5
     const-string v1, "B_whiteboard"
 
@@ -6663,7 +6663,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 11082
+    .line 11172
     const v1, 0x7f020086
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6672,7 +6672,7 @@
 
     goto :goto_0
 
-    .line 11083
+    .line 11173
     :cond_6
     const-string v1, "flowers"
 
@@ -6682,7 +6682,7 @@
 
     if-eqz v1, :cond_7
 
-    .line 11084
+    .line 11174
     const v1, 0x7f020067
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6691,7 +6691,7 @@
 
     goto :goto_0
 
-    .line 11085
+    .line 11175
     :cond_7
     const-string v1, "backlight"
 
@@ -6701,7 +6701,7 @@
 
     if-eqz v1, :cond_8
 
-    .line 11086
+    .line 11176
     const v1, 0x7f02004b
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6710,7 +6710,7 @@
 
     goto :goto_0
 
-    .line 11087
+    .line 11177
     :cond_8
     const-string v1, "night"
 
@@ -6720,7 +6720,7 @@
 
     if-eqz v1, :cond_9
 
-    .line 11088
+    .line 11178
     const v1, 0x7f020065
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6729,7 +6729,7 @@
 
     goto/16 :goto_0
 
-    .line 11089
+    .line 11179
     :cond_9
     const/4 v1, 0x0
 
@@ -6753,22 +6753,22 @@
 
     const-wide/16 v8, 0x3c
 
-    .line 8276
+    .line 8339
     rem-long v4, p1, v8
 
-    .line 8277
+    .line 8340
     .local v4, sec:J
     div-long v6, p1, v8
 
     rem-long v2, v6, v8
 
-    .line 8278
+    .line 8341
     .local v2, min:J
     const-wide/16 v6, 0xe10
 
     div-long v0, p1, v6
 
-    .line 8279
+    .line 8342
     .local v0, hour:J
     const-wide/16 v6, 0x0
 
@@ -6776,7 +6776,7 @@
 
     if-nez v6, :cond_0
 
-    .line 8280
+    .line 8343
     const-string v6, "%02d:%02d"
 
     new-array v7, v12, [Ljava/lang/Object;
@@ -6797,7 +6797,7 @@
 
     move-result-object v6
 
-    .line 8282
+    .line 8345
     :goto_0
     return-object v6
 
@@ -6839,12 +6839,12 @@
     .parameter "text_hour"
 
     .prologue
-    .line 8286
+    .line 8349
     const-wide/16 v6, 0x3c
 
     rem-long v4, p1, v6
 
-    .line 8287
+    .line 8350
     .local v4, sec:J
     const-wide/16 v6, 0x3c
 
@@ -6854,13 +6854,13 @@
 
     rem-long v2, v6, v8
 
-    .line 8288
+    .line 8351
     .local v2, min:J
     const-wide/16 v6, 0xe10
 
     div-long v0, p1, v6
 
-    .line 8289
+    .line 8352
     .local v0, hour:J
     if-eqz p3, :cond_0
 
@@ -6870,7 +6870,7 @@
 
     if-lez v6, :cond_0
 
-    .line 8290
+    .line 8353
     const-string v6, "%d hr"
 
     const/4 v7, 0x1
@@ -6891,12 +6891,12 @@
 
     invoke-virtual {p3, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 8291
+    .line 8354
     const/4 v6, 0x0
 
     invoke-virtual {p3, v6}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 8294
+    .line 8357
     :cond_0
     const-string v6, "%02d:%02d"
 
@@ -6940,22 +6940,22 @@
 
     const-wide/16 v8, 0x3c
 
-    .line 8299
+    .line 8362
     rem-long v4, p1, v8
 
-    .line 8300
+    .line 8363
     .local v4, sec:J
     div-long v6, p1, v8
 
     rem-long v2, v6, v8
 
-    .line 8301
+    .line 8364
     .local v2, min:J
     const-wide/16 v6, 0xe10
 
     div-long v0, p1, v6
 
-    .line 8303
+    .line 8366
     .local v0, hour:J
     const-wide/16 v6, 0x0
 
@@ -6963,7 +6963,7 @@
 
     if-lez v6, :cond_0
 
-    .line 8304
+    .line 8367
     const-string v6, "%02d:%02d:%02d"
 
     const/4 v7, 0x3
@@ -6992,7 +6992,7 @@
 
     move-result-object v6
 
-    .line 8306
+    .line 8369
     :goto_0
     return-object v6
 
@@ -7026,103 +7026,103 @@
     .prologue
     const/4 v9, 0x1
 
-    .line 9378
+    .line 9468
     const-string v7, "HTCCamera"
 
     const-string v8, "handleSensorFocus() - start"
 
     invoke-static {v7, v8}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9380
+    .line 9470
     const-string v7, "HTCCamera"
 
     const-string v8, "Block Capture UI - take focus start"
 
     invoke-static {v7, v8}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9381
+    .line 9471
     sput-boolean v9, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 9383
+    .line 9473
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v8, 0x23
 
     invoke-static {v7, v8}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9384
+    .line 9474
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     if-eqz v7, :cond_0
 
-    .line 9385
+    .line 9475
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v7}, Lcom/android/camera/FaceDetection;->stopCheckLoop()V
 
-    .line 9386
+    .line 9476
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v7}, Lcom/android/camera/FaceDetection;->stopFaceDetection()V
 
-    .line 9387
+    .line 9477
     const/4 v7, 0x0
 
     iput-object v7, p0, Lcom/android/camera/HTCCamera;->mFaces:[Landroid/hardware/Camera$Face;
 
-    .line 9390
+    .line 9480
     :cond_0
     iget v7, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     if-nez v7, :cond_1
 
-    .line 9391
+    .line 9481
     const-string v7, "HTCCamera"
 
     const-string v8, "take focus - mFocusingState = FOCUSING_NO_ACTION"
 
     invoke-static {v7, v8}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9392
+    .line 9482
     iput v9, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
-    .line 9395
+    .line 9485
     :cond_1
     const/4 v7, 0x0
 
     sput v7, Lcom/android/camera/HTCCamera;->mFocusMode:I
 
-    .line 9397
+    .line 9487
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    .line 9398
+    .line 9488
     .local v2, rect:Landroid/graphics/Rect;
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v7, v2}, Landroid/view/SurfaceView;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 9400
+    .line 9490
     const/4 v4, 0x0
 
-    .line 9401
+    .line 9491
     .local v4, screen_width:I
     const/4 v3, 0x0
 
-    .line 9402
+    .line 9492
     .local v3, screen_height:I
     iget v7, p0, Lcom/android/camera/HTCCamera;->Display_Orientation:I
 
     if-ne v7, v9, :cond_2
 
-    .line 9403
+    .line 9493
     sget v4, Lcom/android/camera/DisplayDevice;->SCREEN_WIDTH:I
 
-    .line 9404
+    .line 9494
     sget v3, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
 
-    .line 9411
+    .line 9501
     :goto_0
     new-instance v1, Lcom/android/camera/QueryEvent;
 
@@ -7130,35 +7130,35 @@
 
     invoke-direct {v1, v7}, Lcom/android/camera/QueryEvent;-><init>(Ljava/lang/String;)V
 
-    .line 9412
+    .line 9502
     .local v1, queryEvent:Lcom/android/camera/QueryEvent;,"Lcom/android/camera/QueryEvent<Landroid/graphics/Point;>;"
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     invoke-virtual {v7, v1}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 9413
+    .line 9503
     invoke-virtual {v1}, Lcom/android/camera/QueryEvent;->hasResult()Z
 
     move-result v7
 
     if-nez v7, :cond_3
 
-    .line 9415
+    .line 9505
     div-int/lit8 v5, v4, 0x2
 
-    .line 9416
+    .line 9506
     .local v5, x:I
     div-int/lit8 v6, v3, 0x2
 
-    .line 9425
+    .line 9515
     .local v6, y:I
     :goto_1
     invoke-direct {p0, v5, v6}, Lcom/android/camera/HTCCamera;->updateFocusView(II)V
 
-    .line 9427
+    .line 9517
     invoke-direct {p0, v5, v6, v2}, Lcom/android/camera/HTCCamera;->mapFocusPoint_Screen2Preview(IILandroid/graphics/Rect;)V
 
-    .line 9429
+    .line 9519
     const-string v7, "HTCCamera"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -7197,22 +7197,22 @@
 
     invoke-static {v7, v8}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9430
+    .line 9520
     return-void
 
-    .line 9406
+    .line 9496
     .end local v1           #queryEvent:Lcom/android/camera/QueryEvent;,"Lcom/android/camera/QueryEvent<Landroid/graphics/Point;>;"
     .end local v5           #x:I
     .end local v6           #y:I
     :cond_2
     sget v4, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
 
-    .line 9407
+    .line 9497
     sget v3, Lcom/android/camera/DisplayDevice;->SCREEN_WIDTH:I
 
     goto :goto_0
 
-    .line 9420
+    .line 9510
     .restart local v1       #queryEvent:Lcom/android/camera/QueryEvent;,"Lcom/android/camera/QueryEvent<Landroid/graphics/Point;>;"
     :cond_3
     invoke-virtual {v1}, Lcom/android/camera/QueryEvent;->getResult()Ljava/lang/Object;
@@ -7221,11 +7221,11 @@
 
     check-cast v0, Landroid/graphics/Point;
 
-    .line 9421
+    .line 9511
     .local v0, effectCenter:Landroid/graphics/Point;
     iget v5, v0, Landroid/graphics/Point;->x:I
 
-    .line 9422
+    .line 9512
     .restart local v5       #x:I
     iget v6, v0, Landroid/graphics/Point;->y:I
 
@@ -7239,29 +7239,29 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 7752
+    .line 7811
     invoke-direct {p0, v2}, Lcom/android/camera/HTCCamera;->hideSunNightSceneGuide(Z)V
 
-    .line 7754
+    .line 7813
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRunnable_Swing:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 7755
+    .line 7814
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mRunnable_Swing:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 7756
+    .line 7815
     :cond_0
     iput-boolean v2, p0, Lcom/android/camera/HTCCamera;->mIS_LEVEL:Z
 
-    .line 7757
+    .line 7816
     iput-boolean v2, p0, Lcom/android/camera/HTCCamera;->mIS_LEVEL_PORT:Z
 
-    .line 7758
+    .line 7817
     return-void
 .end method
 
@@ -7269,19 +7269,19 @@
     .locals 2
 
     .prologue
-    .line 6825
+    .line 6885
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SelfPortrait:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     if-eqz v0, :cond_0
 
-    .line 6826
+    .line 6886
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SelfPortrait:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 6828
+    .line 6888
     :cond_0
     return-void
 .end method
@@ -7291,20 +7291,20 @@
     .parameter "isAni"
 
     .prologue
-    .line 7656
+    .line 7715
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneSunNightLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     if-nez v1, :cond_0
 
-    .line 7677
+    .line 7736
     :goto_0
     return-void
 
-    .line 7659
+    .line 7718
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 7660
+    .line 7719
     new-instance v0, Landroid/view/animation/AlphaAnimation;
 
     const/high16 v1, 0x3f80
@@ -7313,30 +7313,30 @@
 
     invoke-direct {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
 
-    .line 7661
+    .line 7720
     .local v0, fadeoutAni:Landroid/view/animation/Animation;
     const-wide/16 v1, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;->setStartOffset(J)V
 
-    .line 7662
+    .line 7721
     const-wide/16 v1, 0x190
 
     invoke-virtual {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
 
-    .line 7663
+    .line 7722
     new-instance v1, Lcom/android/camera/HTCCamera$32;
 
     invoke-direct {v1, p0}, Lcom/android/camera/HTCCamera$32;-><init>(Lcom/android/camera/HTCCamera;)V
 
     invoke-virtual {v0, v1}, Landroid/view/animation/AlphaAnimation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 7670
+    .line 7729
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneSunNightLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v1, v0}, Lcom/android/camera/rotate/RotateRelativeLayout;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 7675
+    .line 7734
     .end local v0           #fadeoutAni:Landroid/view/animation/Animation;
     :goto_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
@@ -7347,7 +7347,7 @@
 
     goto :goto_0
 
-    .line 7673
+    .line 7732
     :cond_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneSunNightLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
@@ -7391,7 +7391,7 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3078
+    .line 3075
     :goto_0
     return-void
 
@@ -7424,7 +7424,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_10
+    if-nez v2, :cond_f
 
     .line 2859
     const v2, 0x7f080057
@@ -7521,14 +7521,14 @@
     :cond_3
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_a
 
     .line 2912
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v2
 
-    if-nez v2, :cond_11
+    if-nez v2, :cond_10
 
     .line 2913
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
@@ -7599,13 +7599,6 @@
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mMode_btn:Landroid/widget/Button;
 
     .line 2923
-    invoke-static {}, Lcom/android/camera/DisplayDevice;->supportSecondCamera()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    .line 2925
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f08001c
@@ -7618,7 +7611,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitchBtn_icon:Lcom/android/camera/widget/ImageTextView;
 
-    .line 2926
+    .line 2924
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f08001b
@@ -7631,8 +7624,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
-    .line 2930
-    :cond_4
+    .line 2927
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f080100
@@ -7645,14 +7637,14 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mCapture_icon:Landroid/widget/ImageView;
 
-    .line 2933
+    .line 2930
     invoke-static {}, Lcom/android/camera/CameraController;->supportFlashLight()Z
 
     move-result v2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_4
 
-    .line 2935
+    .line 2932
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f0800f3
@@ -7665,7 +7657,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mFlash_icon:Lcom/android/camera/widget/ImageTextView;
 
-    .line 2936
+    .line 2933
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f0800f2
@@ -7678,8 +7670,8 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
 
-    .line 2940
-    :cond_5
+    .line 2937
+    :cond_4
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f0800ef
@@ -7692,7 +7684,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mEffect_icon:Landroid/widget/ImageView;
 
-    .line 2941
+    .line 2938
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f0800ee
@@ -7705,7 +7697,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mEffect_btn:Landroid/widget/Button;
 
-    .line 2944
+    .line 2941
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f0800f1
@@ -7718,7 +7710,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mSettings_icon:Lcom/android/camera/widget/ImageTextView;
 
-    .line 2945
+    .line 2942
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f0800f0
@@ -7731,7 +7723,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mSettings_btn:Landroid/widget/Button;
 
-    .line 2947
+    .line 2944
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f0800f5
@@ -7744,7 +7736,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
-    .line 2948
+    .line 2945
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f0800f4
@@ -7757,14 +7749,14 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
 
-    .line 2951
+    .line 2948
     invoke-static {p0}, Lcom/android/camera/component/ThumbnailController;->isSupported(Lcom/android/camera/HTCCamera;)Z
 
     move-result v2
 
-    if-nez v2, :cond_6
+    if-nez v2, :cond_5
 
-    .line 2952
+    .line 2949
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f0800ed
@@ -7777,7 +7769,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mPhoto_icon:Landroid/widget/ImageView;
 
-    .line 2953
+    .line 2950
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f0800ec
@@ -7790,8 +7782,8 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mPhoto_btn:Landroid/widget/Button;
 
-    .line 2956
-    :cond_6
+    .line 2953
+    :cond_5
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMode_btn:Landroid/widget/Button;
 
     invoke-static {p0, v4, v6}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
@@ -7800,37 +7792,37 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2957
+    .line 2954
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
+
+    if-eqz v2, :cond_6
+
+    .line 2955
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
+
+    invoke-static {p0, v4, v6}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 2956
+    :cond_6
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
     if-eqz v2, :cond_7
 
+    .line 2957
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
+
+    invoke-static {p0, v4, v6}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
     .line 2958
-    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
-
-    invoke-static {p0, v4, v6}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 2959
     :cond_7
-    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
-
-    if-eqz v2, :cond_8
-
-    .line 2960
-    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
-
-    invoke-static {p0, v4, v6}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 2961
-    :cond_8
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mEffect_btn:Landroid/widget/Button;
 
     invoke-static {p0, v4, v6}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
@@ -7839,13 +7831,28 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2963
+    .line 2960
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSettings_btn:Landroid/widget/Button;
+
+    if-eqz v2, :cond_8
+
+    .line 2961
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSettings_btn:Landroid/widget/Button;
+
+    invoke-static {p0, v4, v6}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 2962
+    :cond_8
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
 
     if-eqz v2, :cond_9
 
-    .line 2964
-    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSettings_btn:Landroid/widget/Button;
+    .line 2963
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
 
     invoke-static {p0, v4, v6}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
@@ -7855,12 +7862,12 @@
 
     .line 2965
     :cond_9
-    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mPhoto_btn:Landroid/widget/Button;
 
     if-eqz v2, :cond_a
 
     .line 2966
-    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mPhoto_btn:Landroid/widget/Button;
 
     invoke-static {p0, v4, v6}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
@@ -7868,36 +7875,21 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2968
+    .line 3022
     :cond_a
-    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mPhoto_btn:Landroid/widget/Button;
-
-    if-eqz v2, :cond_b
-
-    .line 2969
-    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mPhoto_btn:Landroid/widget/Button;
-
-    invoke-static {p0, v4, v6}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 3025
-    :cond_b
     :goto_2
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v2
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_b
 
-    .line 3026
+    .line 3023
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mArrowHintLayout:Landroid/view/View;
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_b
 
-    .line 3027
+    .line 3024
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
 
     const v3, 0x7f080126
@@ -7909,7 +7901,7 @@
     .end local v1           #stub:Landroid/view/ViewStub;
     check-cast v1, Landroid/view/ViewStub;
 
-    .line 3028
+    .line 3025
     .restart local v1       #stub:Landroid/view/ViewStub;
     invoke-virtual {v1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
@@ -7917,7 +7909,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mArrowHintLayout:Landroid/view/View;
 
-    .line 3029
+    .line 3026
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mArrowHintLayout:Landroid/view/View;
 
     const v3, 0x7f080014
@@ -7930,7 +7922,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mArrowImgLayoutPort:Lcom/android/camera/rotate/RotateRelativeLayout;
 
-    .line 3030
+    .line 3027
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mArrowHintLayout:Landroid/view/View;
 
     const v3, 0x7f080016
@@ -7943,7 +7935,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mArrowImgLayoutLand:Lcom/android/camera/rotate/RotateRelativeLayout;
 
-    .line 3031
+    .line 3028
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mArrowHintLayout:Landroid/view/View;
 
     const v3, 0x7f080015
@@ -7956,7 +7948,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mArrowTextLayoutPort:Lcom/android/camera/rotate/RotateRelativeLayout;
 
-    .line 3032
+    .line 3029
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mArrowHintLayout:Landroid/view/View;
 
     const v3, 0x7f080017
@@ -7969,27 +7961,27 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mArrowTextLayoutLand:Lcom/android/camera/rotate/RotateRelativeLayout;
 
-    .line 3038
-    :cond_c
+    .line 3035
+    :cond_b
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_btn:Landroid/widget/ImageButton;
 
-    if-nez v2, :cond_d
+    if-nez v2, :cond_c
 
-    .line 3039
+    .line 3036
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportThumbnailAlbumButton()Z
 
     move-result v2
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_c
 
-    .line 3040
+    .line 3037
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v2
 
-    if-nez v2, :cond_d
+    if-nez v2, :cond_c
 
-    .line 3041
+    .line 3038
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
 
     const v3, 0x7f08011e
@@ -8001,7 +7993,7 @@
     .end local v1           #stub:Landroid/view/ViewStub;
     check-cast v1, Landroid/view/ViewStub;
 
-    .line 3042
+    .line 3039
     .restart local v1       #stub:Landroid/view/ViewStub;
     invoke-virtual {v1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
@@ -8009,7 +8001,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_layout:Landroid/view/View;
 
-    .line 3043
+    .line 3040
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_layout:Landroid/view/View;
 
     const v3, 0x7f08001d
@@ -8022,7 +8014,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_btn:Landroid/widget/ImageButton;
 
-    .line 3044
+    .line 3041
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_layout:Landroid/view/View;
 
     const v3, 0x7f08001e
@@ -8035,7 +8027,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_thumbnail:Landroid/widget/ImageView;
 
-    .line 3045
+    .line 3042
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_btn:Landroid/widget/ImageButton;
 
     invoke-virtual {v2}, Landroid/widget/ImageButton;->getParent()Landroid/view/ViewParent;
@@ -8046,19 +8038,19 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_combine:Landroid/view/View;
 
-    .line 3053
-    :cond_d
+    .line 3050
+    :cond_c
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportSwitchButton()Z
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_d
 
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SwitchBtn:Lcom/android/camera/rotate/RotateRelativeLayout;
 
-    if-nez v2, :cond_e
+    if-nez v2, :cond_d
 
-    .line 3054
+    .line 3051
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSecondLayout:Landroid/view/View;
 
     const v3, 0x7f08018c
@@ -8070,7 +8062,7 @@
     .end local v1           #stub:Landroid/view/ViewStub;
     check-cast v1, Landroid/view/ViewStub;
 
-    .line 3055
+    .line 3052
     .restart local v1       #stub:Landroid/view/ViewStub;
     invoke-virtual {v1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
@@ -8086,7 +8078,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SwitchBtn:Lcom/android/camera/rotate/RotateRelativeLayout;
 
-    .line 3056
+    .line 3053
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SwitchBtn:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v2}, Lcom/android/camera/rotate/RotateRelativeLayout;->getCachePaint()Landroid/graphics/Paint;
@@ -8095,7 +8087,7 @@
 
     invoke-virtual {v2, v8}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
-    .line 3058
+    .line 3055
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SwitchBtn:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     const v3, 0x7f08001c
@@ -8108,27 +8100,27 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitchBtn_icon:Lcom/android/camera/widget/ImageTextView;
 
-    .line 3061
-    :cond_e
+    .line 3058
+    :cond_d
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_13
 
-    .line 3062
+    .line 3059
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget v2, v2, Lcom/android/camera/CameraThread;->mMode:I
 
     invoke-direct {p0, v2}, Lcom/android/camera/HTCCamera;->updateModeIcon(I)V
 
-    .line 3063
+    .line 3060
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget v2, v2, Lcom/android/camera/CameraThread;->mMode:I
 
     invoke-direct {p0, v2}, Lcom/android/camera/HTCCamera;->updateCaptureIcon(I)V
 
-    .line 3064
+    .line 3061
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget v2, v2, Lcom/android/camera/CameraThread;->mMode:I
@@ -8143,14 +8135,14 @@
 
     invoke-direct {p0, v2, v3, v4}, Lcom/android/camera/HTCCamera;->updateSceneQualityIcon(III)V
 
-    .line 3067
+    .line 3064
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v2
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_e
 
-    .line 3068
+    .line 3065
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget v2, v2, Lcom/android/camera/CameraThread;->mMode:I
@@ -8163,15 +8155,15 @@
 
     invoke-direct {p0, v2, v3}, Lcom/android/camera/HTCCamera;->enableSceneIcon(IZ)V
 
-    .line 3073
-    :cond_f
+    .line 3070
+    :cond_e
     :goto_3
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->openCaptureUI()V
 
-    .line 3075
+    .line 3072
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->updateFlashMode()V
 
-    .line 3077
+    .line 3074
     const-string v2, "HTCCamera"
 
     const-string v3, "initOnCreate_after_preview() - end"
@@ -8181,7 +8173,7 @@
     goto/16 :goto_0
 
     .line 2861
-    :cond_10
+    :cond_f
     const v2, 0x7f08005a
 
     invoke-virtual {p0, v2}, Lcom/android/camera/HTCCamera;->findViewById(I)Landroid/view/View;
@@ -8194,8 +8186,8 @@
     .restart local v1       #stub:Landroid/view/ViewStub;
     goto/16 :goto_1
 
-    .line 2972
-    :cond_11
+    .line 2969
+    :cond_10
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
 
     const v3, 0x7f080122
@@ -8207,7 +8199,7 @@
     .end local v1           #stub:Landroid/view/ViewStub;
     check-cast v1, Landroid/view/ViewStub;
 
-    .line 2973
+    .line 2970
     .restart local v1       #stub:Landroid/view/ViewStub;
     invoke-virtual {v1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
@@ -8215,7 +8207,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
-    .line 2974
+    .line 2971
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f080115
@@ -8226,7 +8218,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar_receiver:Landroid/view/View;
 
-    .line 2975
+    .line 2972
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f080104
@@ -8237,7 +8229,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
-    .line 2978
+    .line 2975
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f080107
@@ -8250,7 +8242,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
-    .line 2979
+    .line 2976
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f080105
@@ -8263,12 +8255,12 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mMode_btn:Landroid/widget/Button;
 
-    .line 2980
+    .line 2977
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMode_btn:Landroid/widget/Button;
 
     invoke-virtual {v2, v5}, Landroid/widget/Button;->setFocusable(Z)V
 
-    .line 2981
+    .line 2978
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f080108
@@ -8281,7 +8273,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mMode_text_ds:Landroid/widget/TextView;
 
-    .line 2982
+    .line 2979
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f080106
@@ -8294,7 +8286,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mMode_layout_ds:Landroid/widget/LinearLayout;
 
-    .line 2986
+    .line 2983
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f08010b
@@ -8307,7 +8299,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitchBtn_icon:Lcom/android/camera/widget/ImageTextView;
 
-    .line 2987
+    .line 2984
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f080109
@@ -8320,12 +8312,12 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
-    .line 2988
+    .line 2985
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
     invoke-virtual {v2, v5}, Landroid/widget/Button;->setFocusable(Z)V
 
-    .line 2989
+    .line 2986
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f08010c
@@ -8338,7 +8330,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitch_text_ds:Landroid/widget/TextView;
 
-    .line 2990
+    .line 2987
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f08010a
@@ -8351,7 +8343,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitch_layout_ds:Landroid/widget/LinearLayout;
 
-    .line 2993
+    .line 2990
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f08010f
@@ -8364,7 +8356,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mFlash_icon:Lcom/android/camera/widget/ImageTextView;
 
-    .line 2994
+    .line 2991
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f08010d
@@ -8377,12 +8369,12 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
 
-    .line 2995
+    .line 2992
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
 
     invoke-virtual {v2, v5}, Landroid/widget/Button;->setFocusable(Z)V
 
-    .line 2996
+    .line 2993
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f080110
@@ -8395,7 +8387,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mFlash_text_ds:Landroid/widget/TextView;
 
-    .line 2997
+    .line 2994
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f08010e
@@ -8408,7 +8400,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mFlash_layout_ds:Landroid/widget/LinearLayout;
 
-    .line 3001
+    .line 2998
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
 
     const v3, 0x7f080128
@@ -8421,7 +8413,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mCapture_combine_ds:Landroid/view/View;
 
-    .line 3002
+    .line 2999
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
 
     const v3, 0x7f080129
@@ -8434,12 +8426,12 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mCapture_btn_ds:Landroid/widget/Button;
 
-    .line 3003
+    .line 3000
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCapture_btn_ds:Landroid/widget/Button;
 
     invoke-virtual {v2, v5}, Landroid/widget/Button;->setFocusable(Z)V
 
-    .line 3006
+    .line 3003
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f080113
@@ -8452,7 +8444,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mScene_icon_ds:Landroid/widget/ImageView;
 
-    .line 3007
+    .line 3004
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f080111
@@ -8465,12 +8457,12 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mScene_btn_ds:Landroid/widget/Button;
 
-    .line 3008
+    .line 3005
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mScene_btn_ds:Landroid/widget/Button;
 
     invoke-virtual {v2, v5}, Landroid/widget/Button;->setFocusable(Z)V
 
-    .line 3009
+    .line 3006
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f080114
@@ -8483,7 +8475,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mScene_text_ds:Landroid/widget/TextView;
 
-    .line 3010
+    .line 3007
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v3, 0x7f080112
@@ -8496,7 +8488,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mScene_layout_ds:Landroid/widget/LinearLayout;
 
-    .line 3012
+    .line 3009
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMode_btn:Landroid/widget/Button;
 
     invoke-static {p0, v4, v7}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
@@ -8505,37 +8497,37 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 3013
+    .line 3010
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
+
+    if-eqz v2, :cond_11
+
+    .line 3011
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
+
+    invoke-static {p0, v4, v7}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 3012
+    :cond_11
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
 
     if-eqz v2, :cond_12
 
+    .line 3013
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
+
+    invoke-static {p0, v4, v7}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
     .line 3014
-    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
-
-    invoke-static {p0, v4, v7}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 3015
     :cond_12
-    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
-
-    if-eqz v2, :cond_13
-
-    .line 3016
-    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFlash_btn:Landroid/widget/Button;
-
-    invoke-static {p0, v4, v7}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 3017
-    :cond_13
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mScene_btn_ds:Landroid/widget/Button;
 
     invoke-static {p0, v4, v7}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
@@ -8546,8 +8538,8 @@
 
     goto/16 :goto_2
 
-    .line 3070
-    :cond_14
+    .line 3067
+    :cond_13
     const-string v2, "HTCCamera"
 
     const-string v3, "mCameraThread == null, can\'t update layout based on capture mode !!!"
@@ -8561,7 +8553,7 @@
     .locals 1
 
     .prologue
-    .line 6198
+    .line 6208
     sget-boolean v0, Lcom/android/camera/HTCCamera;->mIsKeyguardShow:Z
 
     return v0
@@ -8571,16 +8563,16 @@
     .locals 6
 
     .prologue
-    .line 8209
+    .line 8272
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSoundPool:Landroid/media/SoundPool;
 
     if-eqz v2, :cond_0
 
-    .line 8221
+    .line 8284
     :goto_0
     return-void
 
-    .line 8213
+    .line 8276
     :cond_0
     :try_start_0
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getAudioManager()Landroid/media/AudioManager;
@@ -8593,11 +8585,11 @@
 
     move-result v1
 
-    .line 8214
+    .line 8277
     .local v1, max:I
     iput v1, p0, Lcom/android/camera/HTCCamera;->mSoundPoolVolume:I
 
-    .line 8215
+    .line 8278
     new-instance v2, Landroid/media/SoundPool;
 
     const/4 v3, 0x2
@@ -8610,7 +8602,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mSoundPool:Landroid/media/SoundPool;
 
-    .line 8216
+    .line 8279
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSoundPool:Landroid/media/SoundPool;
 
     const/high16 v3, 0x7f06
@@ -8623,7 +8615,7 @@
 
     iput v2, p0, Lcom/android/camera/HTCCamera;->mSoundID_beep:I
 
-    .line 8217
+    .line 8280
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSoundPool:Landroid/media/SoundPool;
 
     const v3, 0x7f060002
@@ -8640,12 +8632,12 @@
 
     goto :goto_0
 
-    .line 8218
+    .line 8281
     .end local v1           #max:I
     :catch_0
     move-exception v0
 
-    .line 8219
+    .line 8282
     .local v0, ex:Ljava/lang/Exception;
     const-string v2, "HTCCamera"
 
@@ -8663,16 +8655,16 @@
     .parameter "rect"
 
     .prologue
-    .line 9546
+    .line 9636
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-nez v2, :cond_0
 
-    .line 9574
+    .line 9664
     :goto_0
     return-void
 
-    .line 9549
+    .line 9639
     :cond_0
     const-string v2, "HTCCamera"
 
@@ -8740,14 +8732,14 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9567
+    .line 9657
     move v0, p1
 
-    .line 9568
+    .line 9658
     .local v0, new_posX:I
     move v1, p2
 
-    .line 9569
+    .line 9659
     .local v1, new_posY:I
     const-string v2, "HTCCamera"
 
@@ -8781,7 +8773,7 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9572
+    .line 9662
     invoke-direct {p0, v0, v1}, Lcom/android/camera/HTCCamera;->sendFocusMessage(II)V
 
     goto :goto_0
@@ -8801,7 +8793,7 @@
     .end annotation
 
     .prologue
-    .line 11001
+    .line 11091
     .local p1, e:Lcom/android/camera/OneValueEvent;,"Lcom/android/camera/OneValueEvent<Ljava/lang/Integer;>;"
     invoke-virtual {p1}, Lcom/android/camera/OneValueEvent;->getValue()Ljava/lang/Object;
 
@@ -8813,7 +8805,7 @@
 
     move-result v0
 
-    .line 11002
+    .line 11092
     .local v0, status:I
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -8827,7 +8819,7 @@
 
     invoke-direct {p0, v1, v2, v0}, Lcom/android/camera/HTCCamera;->updateSceneQualityIcon(III)V
 
-    .line 11003
+    .line 11093
     return-void
 .end method
 
@@ -8838,17 +8830,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 10606
+    .line 10696
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-nez v0, :cond_1
 
-    .line 10633
+    .line 10723
     :cond_0
     :goto_0
     return-void
 
-    .line 10610
+    .line 10700
     :cond_1
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isPowerWarning()Z
 
@@ -8856,18 +8848,18 @@
 
     if-eqz v0, :cond_2
 
-    .line 10611
+    .line 10701
     sput-boolean v2, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
     goto :goto_0
 
-    .line 10616
+    .line 10706
     :cond_2
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mActivityOnPause:Z
 
     if-nez v0, :cond_0
 
-    .line 10620
+    .line 10710
     if-eqz p1, :cond_3
 
     invoke-virtual {p1}, Lcom/android/camera/actionscreen/ActionScreenEvent;->getCloseReason()I
@@ -8896,32 +8888,32 @@
 
     if-eqz v0, :cond_3
 
-    .line 10622
+    .line 10712
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mLastSavedMediaPath:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/android/camera/CameraThread;->startScaladoPostProcessing(Ljava/lang/String;)V
 
-    .line 10625
+    .line 10715
     :cond_3
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
     if-nez v0, :cond_4
 
-    .line 10627
+    .line 10717
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 10628
+    .line 10718
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v2, v2, v2, v1}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 10632
+    .line 10722
     :cond_4
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->openCaptureUI()V
 
@@ -8932,30 +8924,30 @@
     .locals 3
 
     .prologue
-    .line 11257
+    .line 11347
     const-string v1, "HTCCamera"
 
     const-string v2, "onCameraThreadRunning() - start"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11260
+    .line 11350
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-nez v1, :cond_0
 
-    .line 11262
+    .line 11352
     const-string v1, "HTCCamera"
 
     const-string v2, "There is no camera thread"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11280
+    .line 11370
     :goto_0
     return-void
 
-    .line 11267
+    .line 11357
     :cond_0
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -8963,25 +8955,25 @@
 
     move-result-object v0
 
-    .line 11268
+    .line 11358
     .local v0, eventManager:Lcom/android/camera/EventManager;
     if-eqz v0, :cond_1
 
-    .line 11270
+    .line 11360
     const-string v1, "Media.Saved"
 
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraThreadEventHandler:Lcom/android/camera/IEventHandler;
 
     invoke-virtual {v0, v1, v2}, Lcom/android/camera/EventManager;->addEventHandlerAsync(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 11271
+    .line 11361
     const-string v1, "Zoom.Changed"
 
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraThreadEventHandler:Lcom/android/camera/IEventHandler;
 
     invoke-virtual {v0, v1, v2}, Lcom/android/camera/EventManager;->addEventHandlerAsync(Ljava/lang/String;Lcom/android/camera/IEventHandler;)V
 
-    .line 11277
+    .line 11367
     :goto_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
@@ -8989,7 +8981,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 11279
+    .line 11369
     const-string v1, "HTCCamera"
 
     const-string v2, "onCameraThreadRunning() - end"
@@ -8998,7 +8990,7 @@
 
     goto :goto_0
 
-    .line 11274
+    .line 11364
     :cond_1
     const-string v1, "HTCCamera"
 
@@ -9014,7 +9006,7 @@
     .parameter "event"
 
     .prologue
-    .line 11044
+    .line 11134
     check-cast p1, Lcom/android/camera/effect/EffectEvent;
 
     .end local p1
@@ -9022,13 +9014,13 @@
 
     move-result-object v0
 
-    .line 11045
+    .line 11135
     .local v0, effect:Lcom/android/camera/effect/EffectBase;
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v1, :cond_0
 
-    .line 11046
+    .line 11136
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v1}, Lcom/android/camera/CameraThread;->getMode()I
@@ -9037,12 +9029,12 @@
 
     if-nez v1, :cond_0
 
-    .line 11047
+    .line 11137
     instance-of v1, v0, Lcom/android/camera/effect/IScene;
 
     if-eqz v1, :cond_1
 
-    .line 11049
+    .line 11139
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
     invoke-direct {p0, v0}, Lcom/android/camera/HTCCamera;->getMainbarSceneIcon(Lcom/android/camera/effect/EffectBase;)Ljava/lang/Integer;
@@ -9055,28 +9047,28 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/widget/ImageTextView;->setImageResource(I)V
 
-    .line 11050
+    .line 11140
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
     if-eqz v1, :cond_0
 
-    .line 11051
+    .line 11141
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->invalidate()V
 
-    .line 11062
+    .line 11152
     :cond_0
     :goto_0
     return-void
 
-    .line 11052
+    .line 11142
     :cond_1
     instance-of v1, v0, Lcom/android/camera/effect/IEffect;
 
     if-eqz v1, :cond_0
 
-    .line 11054
+    .line 11144
     instance-of v1, v0, Lcom/android/camera/effect/NoneEffect;
 
     if-eqz v1, :cond_2
@@ -9089,7 +9081,7 @@
 
     if-nez v1, :cond_2
 
-    .line 11055
+    .line 11145
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
@@ -9098,7 +9090,7 @@
 
     goto :goto_0
 
-    .line 11057
+    .line 11147
     :cond_2
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
@@ -9115,34 +9107,34 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 11141
+    .line 11231
     const-string v0, "HTCCamera"
 
     const-string v1, "Effect Panel is closed"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11144
+    .line 11234
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     if-eqz v0, :cond_0
 
-    .line 11146
+    .line 11236
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/MenuHandler;->exitMenuHandler()V
 
-    .line 11147
+    .line 11237
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/MenuHandler;->resetMenuHandler()V
 
-    .line 11148
+    .line 11238
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/MenuHandler;->updateDisableItems()V
 
-    .line 11153
+    .line 11243
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mEffect_btn:Landroid/widget/Button;
 
@@ -9156,10 +9148,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 11155
+    .line 11245
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->checkFaceDetection()V
 
-    .line 11156
+    .line 11246
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isPanelReady()Z
 
     move-result v0
@@ -9174,26 +9166,26 @@
 
     if-nez v0, :cond_1
 
-    .line 11157
+    .line 11247
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     if-eqz v0, :cond_1
 
-    .line 11158
+    .line 11248
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v0}, Lcom/android/camera/FaceDetection;->startCheckLoop()V
 
-    .line 11165
+    .line 11255
     :cond_1
     sget-boolean v0, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
     if-nez v0, :cond_2
 
-    .line 11166
+    .line 11256
     invoke-direct {p0, v3}, Lcom/android/camera/HTCCamera;->openSecondLayout(Z)V
 
-    .line 11170
+    .line 11260
     :cond_2
     return-void
 .end method
@@ -9202,20 +9194,20 @@
     .locals 1
 
     .prologue
-    .line 11097
+    .line 11187
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->checkFaceDetection()V
 
-    .line 11098
+    .line 11188
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     if-eqz v0, :cond_0
 
-    .line 11099
+    .line 11189
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v0}, Lcom/android/camera/FaceDetection;->stopCheckLoop()V
 
-    .line 11100
+    .line 11190
     :cond_0
     return-void
 .end method
@@ -9228,46 +9220,46 @@
 
     const/4 v2, 0x0
 
-    .line 11107
+    .line 11197
     const-string v0, "HTCCamera"
 
     const-string v1, "Effect Panel is opening"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11109
+    .line 11199
     iget v0, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     if-ne v0, v3, :cond_0
 
-    .line 11110
+    .line 11200
     invoke-static {}, Lcom/android/camera/DisplayDevice;->canCancelFocus()Z
 
     move-result v0
 
     if-ne v0, v3, :cond_2
 
-    .line 11111
+    .line 11201
     const-string v0, "HTCCamera"
 
     const-string v1, "onEffectPanelOpening when focusing, cancel focus"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11112
+    .line 11202
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->cancelAutoFocus()Z
 
-    .line 11113
+    .line 11203
     const-string v0, "HTCCamera"
 
     const-string v1, "UnBlock Capture UI - onEffectPanelOpening and cancel focus"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11114
+    .line 11204
     sput-boolean v2, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 11123
+    .line 11213
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mEffect_btn:Landroid/widget/Button;
 
@@ -9275,42 +9267,42 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setBackgroundResource(I)V
 
-    .line 11125
+    .line 11215
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x23
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 11126
+    .line 11216
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     if-eqz v0, :cond_1
 
-    .line 11127
+    .line 11217
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v0}, Lcom/android/camera/FaceDetection;->stopCheckLoop()V
 
-    .line 11128
+    .line 11218
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v0}, Lcom/android/camera/FaceDetection;->stopFaceDetection()V
 
-    .line 11129
+    .line 11219
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mFaces:[Landroid/hardware/Camera$Face;
 
-    .line 11133
+    .line 11223
     :cond_1
     invoke-direct {p0, v2}, Lcom/android/camera/HTCCamera;->closeSecondLayout(Z)V
 
-    .line 11134
+    .line 11224
     :goto_0
     return-void
 
-    .line 11116
+    .line 11206
     :cond_2
     const-string v0, "HTCCamera"
 
@@ -9325,22 +9317,22 @@
     .locals 2
 
     .prologue
-    .line 11023
+    .line 11113
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/camera/HTCCamera;->mMenuIsOpening:Z
 
-    .line 11024
+    .line 11114
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x16
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 11025
+    .line 11115
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->resetMainBarBtn()V
 
-    .line 11026
+    .line 11116
     return-void
 .end method
 
@@ -9348,7 +9340,7 @@
     .locals 4
 
     .prologue
-    .line 11010
+    .line 11100
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x16
@@ -9357,15 +9349,15 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/camera/MessageHandler;->sendUniqueEmptyMessageDelayed(Landroid/os/Handler;IJ)V
 
-    .line 11013
+    .line 11103
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIsSelfTimerStarted:Z
 
     if-eqz v0, :cond_0
 
-    .line 11014
+    .line 11104
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->closeSelfTimer()V
 
-    .line 11016
+    .line 11106
     :cond_0
     return-void
 .end method
@@ -9385,7 +9377,7 @@
     .end annotation
 
     .prologue
-    .line 10991
+    .line 11081
     .local p1, e:Lcom/android/camera/TwoValuesEvent;,"Lcom/android/camera/TwoValuesEvent<Ljava/lang/Integer;Ljava/lang/Integer;>;"
     invoke-virtual {p1}, Lcom/android/camera/TwoValuesEvent;->getValue1()Ljava/lang/Object;
 
@@ -9397,7 +9389,7 @@
 
     move-result v1
 
-    .line 10992
+    .line 11082
     .local v1, newCameraType:I
     invoke-virtual {p1}, Lcom/android/camera/TwoValuesEvent;->getValue2()Ljava/lang/Object;
 
@@ -9409,13 +9401,13 @@
 
     move-result v0
 
-    .line 10993
+    .line 11083
     .local v0, mode:I
     iget v2, p0, Lcom/android/camera/HTCCamera;->m3DButtonStatus:I
 
     invoke-direct {p0, v0, v1, v2}, Lcom/android/camera/HTCCamera;->updateSceneQualityIcon(III)V
 
-    .line 10994
+    .line 11084
     return-void
 .end method
 
@@ -9423,20 +9415,20 @@
     .locals 2
 
     .prologue
-    .line 11178
+    .line 11268
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/MenuHandler;->updateStorageLocationItem()V
 
-    .line 11180
+    .line 11270
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->saveSDCardState()V
 
-    .line 11183
+    .line 11273
     sget v0, Lcom/android/camera/CameraThread;->Storage_Status:I
 
     if-nez v0, :cond_0
 
-    .line 11186
+    .line 11276
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_1
@@ -9449,22 +9441,22 @@
 
     if-eqz v0, :cond_1
 
-    .line 11188
+    .line 11278
     const-string v0, "HTCCamera"
 
     const-string v1, "storage eject, Camera app finished on recording"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11189
+    .line 11279
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->finish()V
 
-    .line 11196
+    .line 11286
     :cond_0
     :goto_0
     return-void
 
-    .line 11194
+    .line 11284
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
@@ -9479,20 +9471,20 @@
     .locals 2
 
     .prologue
-    .line 11204
+    .line 11294
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/MenuHandler;->updateStorageLocationItem()V
 
-    .line 11206
+    .line 11296
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->saveSDCardState()V
 
-    .line 11209
+    .line 11299
     sget-boolean v0, Lcom/android/camera/DCFRuler$StorageCardControl;->bSupportPhoneStorage:Z
 
     if-eqz v0, :cond_0
 
-    .line 11211
+    .line 11301
     invoke-static {}, Lcom/android/camera/DCFRuler$StorageCardControl;->getStorageType()I
 
     move-result v0
@@ -9511,14 +9503,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 11213
+    .line 11303
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->QueryToggleStorage()V
 
-    .line 11220
+    .line 11310
     :goto_0
     return-void
 
-    .line 11219
+    .line 11309
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
@@ -9533,15 +9525,15 @@
     .locals 2
 
     .prologue
-    .line 11228
+    .line 11318
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/MenuHandler;->updateStorageLocationItem()V
 
-    .line 11230
+    .line 11320
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->saveSDCardState()V
 
-    .line 11233
+    .line 11323
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
@@ -9554,21 +9546,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 11235
+    .line 11325
     const-string v0, "HTCCamera"
 
     const-string v1, "storage unmounted, Camera app finished on recording"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11236
+    .line 11326
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->finish()V
 
-    .line 11242
+    .line 11332
     :goto_0
     return-void
 
-    .line 11241
+    .line 11331
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
@@ -9583,7 +9575,7 @@
     .locals 0
 
     .prologue
-    .line 11037
+    .line 11127
     return-void
 .end method
 
@@ -9602,7 +9594,7 @@
 
     const/4 v9, 0x1
 
-    .line 4300
+    .line 4306
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->is3DCameraActivated()Z
 
     move-result v0
@@ -9616,12 +9608,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 4415
+    .line 4421
     :cond_1
     :goto_0
     return-void
 
-    .line 4302
+    .line 4308
     :cond_2
     invoke-static {p1}, Lcom/android/camera/rotate/OrientationConfig;->isEqual_UIOrientation(I)Z
 
@@ -9629,7 +9621,7 @@
 
     if-nez v0, :cond_1
 
-    .line 4304
+    .line 4310
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -9666,81 +9658,81 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4305
+    .line 4311
     invoke-static {p1}, Lcom/android/camera/rotate/OrientationConfig;->animation_fromDegrees(I)F
 
     move-result v4
 
-    .line 4306
+    .line 4312
     .local v4, from_degree:F
     invoke-static {p1}, Lcom/android/camera/rotate/OrientationConfig;->animation_toDegrees(I)F
 
     move-result v5
 
-    .line 4308
+    .line 4314
     .local v5, to_degree:F
     invoke-direct {p0, v4, v5}, Lcom/android/camera/HTCCamera;->startRotateAnimation(FF)V
 
-    .line 4310
+    .line 4316
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isVirtualHWKeyRotated()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 4311
+    .line 4317
     invoke-direct {p0, p1, v9}, Lcom/android/camera/HTCCamera;->updateVirtualHwKeysOrientation(IZ)V
 
-    .line 4314
+    .line 4320
     :cond_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     if-eqz v0, :cond_8
 
-    .line 4316
+    .line 4322
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     if-eqz v0, :cond_4
 
-    .line 4317
+    .line 4323
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v0, p1}, Lcom/android/camera/MenuHandler;->updateOrientation(I)V
 
-    .line 4319
+    .line 4325
     :cond_4
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getResources()Landroid/content/res/Resources;
 
     move-result-object v8
 
-    .line 4320
+    .line 4326
     .local v8, res:Landroid/content/res/Resources;
     const/4 v7, 0x0
 
-    .line 4321
+    .line 4327
     .local v7, params:Landroid/view/ViewGroup$LayoutParams;
     const/4 v6, 0x0
 
-    .line 4322
+    .line 4328
     .local v6, panel_height:I
     if-eqz p1, :cond_5
 
     if-ne p1, v10, :cond_f
 
-    .line 4323
+    .line 4329
     :cond_5
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
     if-eqz v0, :cond_6
 
-    .line 4324
+    .line 4330
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
     invoke-virtual {v0}, Lcom/android/camera/rotate/RotateLinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v7
 
-    .line 4325
+    .line 4331
     invoke-virtual {v8, v13}, Landroid/content/res/Resources;->getDimension(I)F
 
     move-result v0
@@ -9749,30 +9741,30 @@
 
     iput v0, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 4326
+    .line 4332
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
     invoke-virtual {v0, v7}, Lcom/android/camera/rotate/RotateLinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4327
+    .line 4333
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
     invoke-virtual {v0, p1}, Lcom/android/camera/rotate/RotateLinearLayout;->setOrientation(I)V
 
-    .line 4330
+    .line 4336
     :cond_6
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SubMenu_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
     if-eqz v0, :cond_7
 
-    .line 4331
+    .line 4337
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SubMenu_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
     invoke-virtual {v0}, Lcom/android/camera/rotate/RotateLinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v7
 
-    .line 4332
+    .line 4338
     invoke-virtual {v8, v13}, Landroid/content/res/Resources;->getDimension(I)F
 
     move-result v0
@@ -9781,17 +9773,17 @@
 
     iput v0, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 4333
+    .line 4339
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SubMenu_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
     invoke-virtual {v0, v7}, Lcom/android/camera/rotate/RotateLinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4334
+    .line 4340
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SubMenu_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
     invoke-virtual {v0, p1}, Lcom/android/camera/rotate/RotateLinearLayout;->setOrientation(I)V
 
-    .line 4337
+    .line 4343
     :cond_7
     const v0, 0x7f0b00df
 
@@ -9801,7 +9793,7 @@
 
     float-to-int v6, v0
 
-    .line 4361
+    .line 4367
     :goto_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -9809,30 +9801,30 @@
 
     move-result-object v7
 
-    .line 4362
+    .line 4368
     iput v6, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 4363
+    .line 4369
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {v0, v7}, Lcom/android/camera/widget/SlidingDrawer;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4365
+    .line 4371
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {v0}, Lcom/android/camera/widget/SlidingDrawer;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v7
 
-    .line 4366
+    .line 4372
     iput v6, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 4367
+    .line 4373
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {v0, v7}, Lcom/android/camera/widget/SlidingDrawer;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4370
+    .line 4376
     .end local v6           #panel_height:I
     .end local v7           #params:Landroid/view/ViewGroup$LayoutParams;
     .end local v8           #res:Landroid/content/res/Resources;
@@ -9841,14 +9833,14 @@
 
     if-eqz v0, :cond_9
 
-    .line 4371
+    .line 4377
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_combine:Landroid/view/View;
 
     check-cast v0, Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v0, p1}, Lcom/android/camera/rotate/RotateRelativeLayout;->setOrientationDelay(I)V
 
-    .line 4375
+    .line 4381
     :cond_9
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -9856,74 +9848,74 @@
 
     if-eqz v0, :cond_a
 
-    .line 4376
+    .line 4382
     invoke-direct {p0, p1}, Lcom/android/camera/HTCCamera;->updateSceneGuideOrientation(I)V
 
-    .line 4385
+    .line 4391
     :cond_a
     invoke-direct {p0, p1}, Lcom/android/camera/HTCCamera;->updateSelfPortraitHint(I)V
 
-    .line 4387
+    .line 4393
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSettingMenu:Lcom/android/camera/widget/PopupMenu;
 
     if-eqz v0, :cond_b
 
-    .line 4388
+    .line 4394
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSettingMenu:Lcom/android/camera/widget/PopupMenu;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1}, Lcom/android/camera/widget/PopupMenu;->setOrientation(II)V
 
-    .line 4389
+    .line 4395
     :cond_b
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneMenu:Lcom/android/camera/widget/PopupMenu;
 
     if-eqz v0, :cond_c
 
-    .line 4390
+    .line 4396
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneMenu:Lcom/android/camera/widget/PopupMenu;
 
     const/4 v1, 0x3
 
     invoke-virtual {v0, p1, v1}, Lcom/android/camera/widget/PopupMenu;->setOrientation(II)V
 
-    .line 4391
+    .line 4397
     :cond_c
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitchMenu:Lcom/android/camera/widget/PopupMenu;
 
     if-eqz v0, :cond_d
 
-    .line 4392
+    .line 4398
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitchMenu:Lcom/android/camera/widget/PopupMenu;
 
     invoke-virtual {v0, p1, v9}, Lcom/android/camera/widget/PopupMenu;->setOrientation(II)V
 
-    .line 4393
+    .line 4399
     :cond_d
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mQualityMenu:Lcom/android/camera/widget/PopupMenu;
 
     if-eqz v0, :cond_e
 
-    .line 4394
+    .line 4400
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mQualityMenu:Lcom/android/camera/widget/PopupMenu;
 
     invoke-virtual {v0, p1, v10}, Lcom/android/camera/widget/PopupMenu;->setOrientation(II)V
 
-    .line 4396
+    .line 4402
     :cond_e
     invoke-direct {p0, p1}, Lcom/android/camera/HTCCamera;->updateRotateViews(I)V
 
-    .line 4398
+    .line 4404
     invoke-static {}, Lcom/android/camera/rotate/OrientationConfig;->getUIOrientation()I
 
     move-result v2
 
-    .line 4399
+    .line 4405
     .local v2, oldOrientation:I
     invoke-static {p1}, Lcom/android/camera/rotate/OrientationConfig;->setUIOrientation(I)V
 
-    .line 4402
+    .line 4408
     iget-object v9, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     new-instance v0, Lcom/android/camera/OrientationEvent;
@@ -9936,22 +9928,22 @@
 
     invoke-virtual {v9, v0}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 4405
+    .line 4411
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v0, v12}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 4406
+    .line 4412
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v0, v12}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 4408
+    .line 4414
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_1
 
-    .line 4409
+    .line 4415
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v11}, Landroid/os/Handler;->hasMessages(I)Z
@@ -9960,12 +9952,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 4410
+    .line 4416
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v0, v11}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 4411
+    .line 4417
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const-wide/16 v9, 0x1f40
@@ -9974,7 +9966,7 @@
 
     goto/16 :goto_0
 
-    .line 4340
+    .line 4346
     .end local v2           #oldOrientation:I
     .restart local v6       #panel_height:I
     .restart local v7       #params:Landroid/view/ViewGroup$LayoutParams;
@@ -9984,14 +9976,14 @@
 
     if-eqz v0, :cond_10
 
-    .line 4341
+    .line 4347
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
     invoke-virtual {v0}, Lcom/android/camera/rotate/RotateLinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v7
 
-    .line 4342
+    .line 4348
     const v0, 0x7f0b00e5
 
     invoke-virtual {v8, v0}, Landroid/content/res/Resources;->getDimension(I)F
@@ -10002,30 +9994,30 @@
 
     iput v0, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 4343
+    .line 4349
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
     invoke-virtual {v0, v7}, Lcom/android/camera/rotate/RotateLinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4344
+    .line 4350
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
     invoke-virtual {v0, p1}, Lcom/android/camera/rotate/RotateLinearLayout;->setOrientation(I)V
 
-    .line 4347
+    .line 4353
     :cond_10
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SubMenu_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
     if-eqz v0, :cond_11
 
-    .line 4348
+    .line 4354
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SubMenu_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
     invoke-virtual {v0}, Lcom/android/camera/rotate/RotateLinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v7
 
-    .line 4349
+    .line 4355
     const v0, 0x7f0b00e5
 
     invoke-virtual {v8, v0}, Landroid/content/res/Resources;->getDimension(I)F
@@ -10036,17 +10028,17 @@
 
     iput v0, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 4350
+    .line 4356
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SubMenu_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
     invoke-virtual {v0, v7}, Lcom/android/camera/rotate/RotateLinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4351
+    .line 4357
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SubMenu_Setting:Lcom/android/camera/rotate/RotateLinearLayout;
 
     invoke-virtual {v0, p1}, Lcom/android/camera/rotate/RotateLinearLayout;->setOrientation(I)V
 
-    .line 4355
+    .line 4361
     :cond_11
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -10054,7 +10046,7 @@
 
     if-nez v0, :cond_12
 
-    .line 4356
+    .line 4362
     const v0, 0x7f0b00e0
 
     invoke-virtual {v8, v0}, Landroid/content/res/Resources;->getDimension(I)F
@@ -10065,7 +10057,7 @@
 
     goto/16 :goto_1
 
-    .line 4358
+    .line 4364
     :cond_12
     const v0, 0x7f0b00e1
 
@@ -10086,22 +10078,22 @@
 
     const/4 v3, 0x1
 
-    .line 6493
+    .line 6503
     const-string v1, "HTCCamera"
 
     const-string v2, "Touch button to start video recording"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6495
+    .line 6505
     iput-boolean v3, p0, Lcom/android/camera/HTCCamera;->mIsCaptureTriggered:Z
 
-    .line 6496
+    .line 6506
     iget v1, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     if-ne v1, v3, :cond_1
 
-    .line 6499
+    .line 6509
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->is3DCameraActivated()Z
 
     move-result v1
@@ -10112,21 +10104,21 @@
 
     if-ne v1, v3, :cond_0
 
-    .line 6501
+    .line 6511
     const-string v1, "HTCCamera"
 
     const-string v2, "onTouchCapture_Camcorder, 3D portrait capture !!!"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6502
+    .line 6512
     iget v1, p0, Lcom/android/camera/HTCCamera;->mLastOrientation:I
 
     invoke-static {v1}, Lcom/android/camera/rotate/OrientationConfig;->mapOrientation_Event2UI(I)I
 
     move-result v0
 
-    .line 6503
+    .line 6513
     .local v0, orentation_mode:I
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -10138,16 +10130,16 @@
 
     invoke-static {v1, v2, v3, v0, v4}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 6534
+    .line 6544
     .end local v0           #orentation_mode:I
     :goto_0
     return-void
 
-    .line 6508
+    .line 6518
     :cond_0
     iput-boolean v3, p0, Lcom/android/camera/HTCCamera;->m3DTriggerCapture:Z
 
-    .line 6510
+    .line 6520
     invoke-static {}, Lcom/android/camera/DisplayDevice;->canCancelFocus()Z
 
     move-result v1
@@ -10166,20 +10158,20 @@
 
     if-eqz v1, :cond_2
 
-    .line 6512
+    .line 6522
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->cancelAutoFocus()Z
 
-    .line 6513
+    .line 6523
     const-string v1, "HTCCamera"
 
     const-string v2, "UnBlock Capture UI - stop recorder and cancel focus"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6514
+    .line 6524
     sput-boolean v4, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 6531
+    .line 6541
     :cond_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -10187,12 +10179,12 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 6533
+    .line 6543
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->triggerRecord()V
 
     goto :goto_0
 
-    .line 6516
+    .line 6526
     :cond_2
     const-string v1, "HTCCamera"
 
@@ -10200,28 +10192,28 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6517
+    .line 6527
     const/4 v1, 0x3
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
-    .line 6519
+    .line 6529
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->closeCaptureUI()V
 
-    .line 6521
+    .line 6531
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     if-eqz v1, :cond_3
 
-    .line 6522
+    .line 6532
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     invoke-virtual {v1, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6523
+    .line 6533
     invoke-direct {p0, v3}, Lcom/android/camera/HTCCamera;->setPanelVisible(Z)V
 
-    .line 6525
+    .line 6535
     :cond_3
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsCaptureTriggered:Z
 
@@ -10240,17 +10232,17 @@
 
     const/4 v4, 0x0
 
-    .line 6428
+    .line 6438
     const-string v2, "HTCCamera"
 
     const-string v3, "Touch button to take picture"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6429
+    .line 6439
     iput-boolean v5, p0, Lcom/android/camera/HTCCamera;->mIsCaptureTriggered:Z
 
-    .line 6431
+    .line 6441
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getFaceNumber()I
 
     move-result v2
@@ -10261,29 +10253,29 @@
 
     if-nez v2, :cond_0
 
-    .line 6434
+    .line 6444
     const v1, 0x7f0a014b
 
-    .line 6435
+    .line 6445
     .local v1, str:I
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v2, v6}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 6436
+    .line 6446
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v2, v6, v1, v4, v7}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 6437
+    .line 6447
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsCaptureTriggered:Z
 
-    .line 6489
+    .line 6499
     .end local v1           #str:I
     :goto_0
     return-void
 
-    .line 6442
+    .line 6452
     :cond_0
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->is3DCameraActivated()Z
 
@@ -10295,21 +10287,21 @@
 
     if-ne v2, v5, :cond_1
 
-    .line 6444
+    .line 6454
     const-string v2, "HTCCamera"
 
     const-string v3, "onTouchCapture_Camera, 3D portrait capture !!!"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6445
+    .line 6455
     iget v2, p0, Lcom/android/camera/HTCCamera;->mLastOrientation:I
 
     invoke-static {v2}, Lcom/android/camera/rotate/OrientationConfig;->mapOrientation_Event2UI(I)I
 
     move-result v0
 
-    .line 6446
+    .line 6456
     .local v0, orentation_mode:I
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -10321,91 +10313,91 @@
 
     goto :goto_0
 
-    .line 6451
+    .line 6461
     .end local v0           #orentation_mode:I
     :cond_1
     iput-boolean v5, p0, Lcom/android/camera/HTCCamera;->m3DTriggerCapture:Z
 
-    .line 6453
+    .line 6463
     iget v2, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     if-ne v2, v5, :cond_4
 
-    .line 6454
+    .line 6464
     const-string v2, "HTCCamera"
 
     const-string v3, "Press Capture when focusing - mFocusingState = FOCUSING_PRESS_CAPTURE"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6455
+    .line 6465
     const/4 v2, 0x3
 
     iput v2, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
-    .line 6457
+    .line 6467
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
     if-eqz v2, :cond_2
 
-    .line 6458
+    .line 6468
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
     const/4 v3, 0x4
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 6460
+    .line 6470
     :cond_2
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->closeCaptureUI()V
 
-    .line 6463
+    .line 6473
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v2
 
     if-nez v2, :cond_3
 
-    .line 6464
+    .line 6474
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     if-eqz v2, :cond_3
 
-    .line 6467
+    .line 6477
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6468
+    .line 6478
     invoke-direct {p0, v5}, Lcom/android/camera/HTCCamera;->setPanelVisible(Z)V
 
-    .line 6470
+    .line 6480
     invoke-direct {p0, v4}, Lcom/android/camera/HTCCamera;->enableMainBarItems(Z)V
 
-    .line 6471
+    .line 6481
     invoke-virtual {p0, v4, v5}, Lcom/android/camera/HTCCamera;->showMainBarItems(ZZ)V
 
-    .line 6474
+    .line 6484
     :cond_3
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsCaptureTriggered:Z
 
     goto :goto_0
 
-    .line 6479
+    .line 6489
     :cond_4
     iget-boolean v2, p0, Lcom/android/camera/HTCCamera;->mIsSelfTimerStarted:Z
 
     if-eqz v2, :cond_5
 
-    .line 6480
+    .line 6490
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->closeSelfTimer()V
 
-    .line 6481
+    .line 6491
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsCaptureTriggered:Z
 
     goto :goto_0
 
-    .line 6486
+    .line 6496
     :cond_5
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -10413,7 +10405,7 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 6488
+    .line 6498
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->triggerTakePicture()V
 
     goto :goto_0
@@ -10426,7 +10418,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 6644
+    .line 6661
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSecondLayout:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -10439,23 +10431,23 @@
 
     if-nez v0, :cond_1
 
-    .line 6654
+    .line 6671
     :cond_0
     :goto_0
     return-void
 
-    .line 6647
+    .line 6664
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSecondLayout:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    .line 6648
+    .line 6665
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_2
 
-    .line 6649
+    .line 6666
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSecondLayout:Landroid/view/View;
 
     const/4 v1, 0x0
@@ -10466,13 +10458,13 @@
 
     invoke-static {v0, v1, v2, v4, v3}, Lcom/android/camera/AnimationManager;->showAlphaAnimation(Landroid/view/View;FFII)Landroid/view/animation/AlphaAnimation;
 
-    .line 6650
+    .line 6667
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSecondLayout:Landroid/view/View;
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6653
+    .line 6670
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v1, "SecondLayout.Opened"
@@ -10487,47 +10479,47 @@
     .parameter "resID"
 
     .prologue
-    .line 8224
+    .line 8287
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSoundPool:Landroid/media/SoundPool;
 
     if-nez v0, :cond_0
 
-    .line 8225
+    .line 8288
     const-string v0, "HTCCamera"
 
     const-string v1, "playSoundPool() - mSoundPool = null"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8246
+    .line 8309
     :goto_0
     return-void
 
-    .line 8230
+    .line 8293
     :cond_0
     :try_start_0
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getAudioManager()Landroid/media/AudioManager;
 
-    .line 8231
+    .line 8294
     packed-switch p1, :pswitch_data_0
 
     :pswitch_0
     goto :goto_0
 
-    .line 8233
+    .line 8296
     :pswitch_1
     iget v0, p0, Lcom/android/camera/HTCCamera;->mStreamID_beep:I
 
     if-eqz v0, :cond_1
 
-    .line 8234
+    .line 8297
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSoundPool:Landroid/media/SoundPool;
 
     iget v1, p0, Lcom/android/camera/HTCCamera;->mStreamID_beep:I
 
     invoke-virtual {v0, v1}, Landroid/media/SoundPool;->stop(I)V
 
-    .line 8235
+    .line 8298
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSoundPool:Landroid/media/SoundPool;
 
@@ -10553,11 +10545,11 @@
 
     goto :goto_0
 
-    .line 8243
+    .line 8306
     :catch_0
     move-exception v7
 
-    .line 8244
+    .line 8307
     .local v7, ex:Ljava/lang/Exception;
     const-string v0, "HTCCamera"
 
@@ -10567,7 +10559,7 @@
 
     goto :goto_0
 
-    .line 8238
+    .line 8301
     .end local v7           #ex:Ljava/lang/Exception;
     :pswitch_2
     :try_start_1
@@ -10575,14 +10567,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 8239
+    .line 8302
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSoundPool:Landroid/media/SoundPool;
 
     iget v1, p0, Lcom/android/camera/HTCCamera;->mStreamID_beep2:I
 
     invoke-virtual {v0, v1}, Landroid/media/SoundPool;->stop(I)V
 
-    .line 8240
+    .line 8303
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSoundPool:Landroid/media/SoundPool;
 
@@ -10608,7 +10600,7 @@
 
     goto :goto_0
 
-    .line 8231
+    .line 8294
     :pswitch_data_0
     .packed-switch 0x7f060000
         :pswitch_1
@@ -10621,22 +10613,22 @@
     .locals 1
 
     .prologue
-    .line 8266
+    .line 8329
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSoundPool:Landroid/media/SoundPool;
 
     if-eqz v0, :cond_0
 
-    .line 8267
+    .line 8330
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSoundPool:Landroid/media/SoundPool;
 
     invoke-virtual {v0}, Landroid/media/SoundPool;->release()V
 
-    .line 8268
+    .line 8331
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mSoundPool:Landroid/media/SoundPool;
 
-    .line 8270
+    .line 8333
     :cond_0
     return-void
 .end method
@@ -10649,61 +10641,61 @@
 
     const/4 v2, 0x0
 
-    .line 9641
+    .line 9731
     const-string v0, "HTCCamera"
 
     const-string v1, "resetFocusView() - start"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9642
+    .line 9732
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/camera/HTCCamera;->mCanShowFocusView:Z
 
-    .line 9643
+    .line 9733
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x18
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9644
+    .line 9734
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x19
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9645
+    .line 9735
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x1a
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9646
+    .line 9736
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x1b
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9647
+    .line 9737
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x15
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9650
+    .line 9740
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 9651
+    .line 9741
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mivFocusingView:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_0
@@ -10712,17 +10704,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 9652
+    .line 9742
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mivFocusingView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 9653
+    .line 9743
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mivFocusedView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 9663
+    .line 9753
     :cond_0
     :goto_0
     const-string v0, "HTCCamera"
@@ -10731,21 +10723,21 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9664
+    .line 9754
     return-void
 
-    .line 9658
+    .line 9748
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFocusAnimation:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 9659
+    .line 9749
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->m_CancelFocusFromTouch:Z
 
     if-nez v0, :cond_0
 
-    .line 9660
+    .line 9750
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFocusAnimation:Landroid/view/View;
 
     check-cast v0, Lcom/android/camera/widget/CameraFocusWidget;
@@ -10763,10 +10755,10 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 6873
+    .line 6932
     const/4 v0, 0x0
 
-    .line 6874
+    .line 6933
     .local v0, bGrid:Z
     sget-object v3, Lcom/android/camera/IntentManager$RequestName;->Contacts:Lcom/android/camera/IntentManager$RequestName;
 
@@ -10784,11 +10776,11 @@
 
     if-ne v3, v4, :cond_3
 
-    .line 6876
+    .line 6935
     :cond_0
     const/4 v0, 0x0
 
-    .line 6880
+    .line 6939
     :goto_0
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -10802,12 +10794,12 @@
 
     if-eqz v0, :cond_5
 
-    .line 6882
+    .line 6941
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mGridLayout:Landroid/view/View;
 
     if-nez v3, :cond_1
 
-    .line 6883
+    .line 6942
     const v3, 0x7f080042
 
     invoke-virtual {p0, v3}, Lcom/android/camera/HTCCamera;->findViewById(I)Landroid/view/View;
@@ -10816,7 +10808,7 @@
 
     check-cast v2, Landroid/view/ViewStub;
 
-    .line 6884
+    .line 6943
     .local v2, stub:Landroid/view/ViewStub;
     invoke-virtual {v2}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
@@ -10824,21 +10816,21 @@
 
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mGridLayout:Landroid/view/View;
 
-    .line 6887
+    .line 6946
     .end local v2           #stub:Landroid/view/ViewStub;
     :cond_1
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
     if-eqz v3, :cond_2
 
-    .line 6888
+    .line 6947
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
     const/16 v4, 0x8
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 6890
+    .line 6949
     :cond_2
     const-string v3, "pref_camera_image_ratio"
 
@@ -10850,18 +10842,18 @@
 
     move-result v1
 
-    .line 6898
+    .line 6957
     .local v1, bWideScreen:Z
     if-eqz v1, :cond_4
 
-    .line 6899
+    .line 6958
     const-string v3, "HTCCamera"
 
     const-string v4, "Reset View: gridview_wide_landscape"
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6900
+    .line 6959
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mGridLayout:Landroid/view/View;
 
     const v4, 0x7f0800b1
@@ -10874,7 +10866,7 @@
 
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
-    .line 6908
+    .line 6967
     :goto_1
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
@@ -10882,19 +10874,19 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 6909
+    .line 6968
     const-string v3, "HTCCamera"
 
     const-string v4, "Reset View: Grid Visible"
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6915
+    .line 6974
     .end local v1           #bWideScreen:Z
     :goto_2
     return-void
 
-    .line 6878
+    .line 6937
     :cond_3
     const-string v3, "pref_grid"
 
@@ -10908,7 +10900,7 @@
 
     goto :goto_0
 
-    .line 6903
+    .line 6962
     .restart local v1       #bWideScreen:Z
     :cond_4
     const-string v3, "HTCCamera"
@@ -10917,7 +10909,7 @@
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6904
+    .line 6963
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mGridLayout:Landroid/view/View;
 
     const v4, 0x7f0800b2
@@ -10932,21 +10924,21 @@
 
     goto :goto_1
 
-    .line 6911
+    .line 6970
     .end local v1           #bWideScreen:Z
     :cond_5
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
     if-eqz v3, :cond_6
 
-    .line 6912
+    .line 6971
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
     const/4 v4, 0x4
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 6913
+    .line 6972
     :cond_6
     const-string v3, "HTCCamera"
 
@@ -10965,12 +10957,12 @@
 
     const v2, 0x7f020118
 
-    .line 11617
+    .line 11707
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSettings_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_0
 
-    .line 11618
+    .line 11708
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSettings_btn:Landroid/widget/Button;
 
     invoke-static {p0, v3, v2}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
@@ -10979,13 +10971,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 11620
+    .line 11710
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_1
 
-    .line 11621
+    .line 11711
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
     invoke-static {p0, v3, v2}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
@@ -10994,13 +10986,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 11623
+    .line 11713
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_2
 
-    .line 11624
+    .line 11714
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
 
     invoke-static {p0, v3, v2}, Lcom/android/camera/ViewUtil;->getCustomDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
@@ -11009,7 +11001,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 11625
+    .line 11715
     :cond_2
     return-void
 .end method
@@ -11020,25 +11012,25 @@
     .parameter "posY"
 
     .prologue
-    .line 9271
+    .line 9361
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/camera/HTCCamera;->mStartTime:J
 
-    .line 9272
+    .line 9362
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/camera/HTCCamera;->mStartTapCapture:Z
 
-    .line 9273
+    .line 9363
     iput p1, p0, Lcom/android/camera/HTCCamera;->mFocusPos_X:I
 
-    .line 9274
+    .line 9364
     iput p2, p0, Lcom/android/camera/HTCCamera;->mFocusPos_Y:I
 
-    .line 9275
+    .line 9365
     return-void
 .end method
 
@@ -11050,14 +11042,14 @@
     .prologue
     const/4 v4, -0x1
 
-    .line 6314
+    .line 6324
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v1}, Landroid/view/SurfaceView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 6316
+    .line 6326
     .local v0, lp:Landroid/view/ViewGroup$LayoutParams;
     const-string v1, "HTCCamera"
 
@@ -11095,27 +11087,27 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6317
+    .line 6327
     iput v4, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 6318
+    .line 6328
     iput v4, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 6319
+    .line 6329
     iget v1, p0, Lcom/android/camera/HTCCamera;->Display_Orientation:I
 
     const/4 v2, 0x1
 
     if-ne v1, v2, :cond_1
 
-    .line 6320
+    .line 6330
     const-string v1, "HTCCamera"
 
     const-string v2, "reset_surface_view - landscape"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6323
+    .line 6333
     sget v1, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
 
     mul-int/2addr v1, p1
@@ -11124,17 +11116,17 @@
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 6325
+    .line 6335
     iget v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mSurfaceWidth:I
 
-    .line 6326
+    .line 6336
     sget v1, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mSurfaceHeight:I
 
-    .line 6360
+    .line 6370
     :cond_0
     :goto_0
     const-string v1, "HTCCamera"
@@ -11193,15 +11185,15 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6362
+    .line 6372
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v1}, Landroid/view/SurfaceView;->requestLayout()V
 
-    .line 6363
+    .line 6373
     return-void
 
-    .line 6339
+    .line 6349
     :cond_1
     iget v1, p0, Lcom/android/camera/HTCCamera;->Display_Orientation:I
 
@@ -11213,7 +11205,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 6342
+    .line 6352
     :cond_2
     const-string v1, "HTCCamera"
 
@@ -11221,7 +11213,7 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6344
+    .line 6354
     sget v1, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
 
     mul-int/2addr v1, p1
@@ -11230,12 +11222,12 @@
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 6346
+    .line 6356
     sget v1, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mSurfaceWidth:I
 
-    .line 6347
+    .line 6357
     iget v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mSurfaceHeight:I
@@ -11251,18 +11243,18 @@
 
     const/4 v4, -0x1
 
-    .line 8189
+    .line 8252
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getAudioManager()Landroid/media/AudioManager;
 
     move-result-object v0
 
-    .line 8191
+    .line 8254
     .local v0, audioManager:Landroid/media/AudioManager;
     iget v1, p0, Lcom/android/camera/HTCCamera;->mOriginalVolume_Alarm:I
 
     if-eq v1, v4, :cond_0
 
-    .line 8192
+    .line 8255
     const-string v1, "HTCCamera"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -11287,23 +11279,23 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8195
+    .line 8258
     const/4 v1, 0x4
 
     iget v2, p0, Lcom/android/camera/HTCCamera;->mOriginalVolume_Alarm:I
 
     invoke-virtual {v0, v1, v2, v5}, Landroid/media/AudioManager;->setStreamVolume(III)V
 
-    .line 8196
+    .line 8259
     iput v4, p0, Lcom/android/camera/HTCCamera;->mOriginalVolume_Alarm:I
 
-    .line 8199
+    .line 8262
     :cond_0
     iget v1, p0, Lcom/android/camera/HTCCamera;->mOriginalVolume_Ring:I
 
     if-eq v1, v4, :cond_1
 
-    .line 8200
+    .line 8263
     const-string v1, "HTCCamera"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -11328,17 +11320,17 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8203
+    .line 8266
     const/4 v1, 0x2
 
     iget v2, p0, Lcom/android/camera/HTCCamera;->mOriginalVolume_Ring:I
 
     invoke-virtual {v0, v1, v2, v5}, Landroid/media/AudioManager;->setStreamVolume(III)V
 
-    .line 8204
+    .line 8267
     iput v4, p0, Lcom/android/camera/HTCCamera;->mOriginalVolume_Ring:I
 
-    .line 8206
+    .line 8269
     :cond_1
     return-void
 .end method
@@ -11349,10 +11341,10 @@
     .parameter "data"
 
     .prologue
-    .line 5826
+    .line 5836
     if-eqz p1, :cond_1
 
-    .line 5828
+    .line 5838
     const-string v2, "HTCCamera"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -11381,13 +11373,13 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5829
+    .line 5839
     if-eqz p2, :cond_0
 
-    .line 5831
+    .line 5841
     const/4 v1, 0x0
 
-    .line 5834
+    .line 5844
     .local v1, stream:Ljava/io/OutputStream;
     :try_start_0
     const-string v2, "HTCCamera"
@@ -11396,7 +11388,7 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5835
+    .line 5845
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
@@ -11405,17 +11397,17 @@
 
     move-result-object v1
 
-    .line 5836
+    .line 5846
     const-string v2, "HTCCamera"
 
     const-string v3, "saveAndFinish() - Writing data"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5837
+    .line 5847
     invoke-virtual {v1, p2}, Ljava/io/OutputStream;->write([B)V
 
-    .line 5838
+    .line 5848
     const-string v2, "HTCCamera"
 
     const-string v3, "saveAndFinish() - Writing completed"
@@ -11425,37 +11417,37 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5846
+    .line 5856
     const-string v2, "HTCCamera"
 
     const-string v3, "saveAndFinish() - Closing file"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5847
+    .line 5857
     invoke-static {v1}, Lcom/android/camera/FileUtility;->closeSilently(Ljava/io/Closeable;)V
 
-    .line 5848
+    .line 5858
     const-string v2, "HTCCamera"
 
     const-string v3, "saveAndFinish() - File closed"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5861
+    .line 5871
     .end local v1           #stream:Ljava/io/OutputStream;
     :goto_0
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->finish()V
 
-    .line 5862
+    .line 5872
     return-void
 
-    .line 5840
+    .line 5850
     .restart local v1       #stream:Ljava/io/OutputStream;
     :catch_0
     move-exception v0
 
-    .line 5842
+    .line 5852
     .local v0, ex:Ljava/lang/Throwable;
     :try_start_1
     const-string v2, "HTCCamera"
@@ -11488,17 +11480,17 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 5846
+    .line 5856
     const-string v2, "HTCCamera"
 
     const-string v3, "saveAndFinish() - Closing file"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5847
+    .line 5857
     invoke-static {v1}, Lcom/android/camera/FileUtility;->closeSilently(Ljava/io/Closeable;)V
 
-    .line 5848
+    .line 5858
     const-string v2, "HTCCamera"
 
     const-string v3, "saveAndFinish() - File closed"
@@ -11507,7 +11499,7 @@
 
     goto :goto_0
 
-    .line 5846
+    .line 5856
     .end local v0           #ex:Ljava/lang/Throwable;
     :catchall_0
     move-exception v2
@@ -11518,10 +11510,10 @@
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5847
+    .line 5857
     invoke-static {v1}, Lcom/android/camera/FileUtility;->closeSilently(Ljava/io/Closeable;)V
 
-    .line 5848
+    .line 5858
     const-string v3, "HTCCamera"
 
     const-string v4, "saveAndFinish() - File closed"
@@ -11530,7 +11522,7 @@
 
     throw v2
 
-    .line 5852
+    .line 5862
     .end local v1           #stream:Ljava/io/OutputStream;
     :cond_0
     const-string v2, "HTCCamera"
@@ -11541,7 +11533,7 @@
 
     goto :goto_0
 
-    .line 5855
+    .line 5865
     :cond_1
     const-string v2, "HTCCamera"
 
@@ -11556,7 +11548,7 @@
     .locals 2
 
     .prologue
-    .line 10919
+    .line 11009
     const-string v0, "pref_sdcard_state"
 
     invoke-static {}, Lcom/android/camera/DCFRuler$StorageCardControl;->getSDCardState()Ljava/lang/String;
@@ -11565,7 +11557,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 10920
+    .line 11010
     return-void
 .end method
 
@@ -11575,23 +11567,23 @@
     .parameter "focus_Y"
 
     .prologue
-    .line 9578
+    .line 9668
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSensorHandler:Lcom/android/camera/SensorHandler;
 
     if-eqz v0, :cond_0
 
-    .line 9579
+    .line 9669
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSensorHandler:Lcom/android/camera/SensorHandler;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/camera/SensorHandler;->setifWaitFocus(Z)V
 
-    .line 9581
+    .line 9671
     :cond_0
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->resetScreenSaveTimer()V
 
-    .line 9582
+    .line 9672
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const/4 v1, 0x4
@@ -11600,7 +11592,7 @@
 
     invoke-static {v0, v1, p1, p2, v2}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 9583
+    .line 9673
     return-void
 .end method
 
@@ -11608,7 +11600,7 @@
     .locals 0
 
     .prologue
-    .line 5873
+    .line 5883
     return-void
 .end method
 
@@ -11616,7 +11608,7 @@
     .locals 0
 
     .prologue
-    .line 5884
+    .line 5894
     return-void
 .end method
 
@@ -11625,22 +11617,22 @@
     .parameter "visible"
 
     .prologue
-    .line 10038
+    .line 10128
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     if-nez v0, :cond_0
 
-    .line 10050
+    .line 10140
     :goto_0
     return-void
 
-    .line 10041
+    .line 10131
     :cond_0
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_1
 
-    .line 10042
+    .line 10132
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     const/4 v1, 0x0
@@ -11649,7 +11641,7 @@
 
     goto :goto_0
 
-    .line 10044
+    .line 10134
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -11667,13 +11659,13 @@
 
     if-eqz v0, :cond_3
 
-    .line 10045
+    .line 10135
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {v0}, Lcom/android/camera/widget/SlidingDrawer;->close()V
 
-    .line 10046
+    .line 10136
     :cond_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -11681,7 +11673,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/widget/SlidingDrawer;->setVisibility(I)V
 
-    .line 10048
+    .line 10138
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x42
@@ -11707,69 +11699,69 @@
 
     const/4 v3, 0x0
 
-    .line 7681
+    .line 7740
     if-eqz p2, :cond_0
 
-    .line 7682
+    .line 7741
     invoke-virtual {p2}, Lcom/android/camera/rotate/RotateRelativeLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 7683
+    .line 7742
     .local v0, params:Landroid/widget/RelativeLayout$LayoutParams;
     packed-switch p1, :pswitch_data_0
 
-    .line 7705
+    .line 7764
     :goto_0
     invoke-virtual {p2, v0}, Lcom/android/camera/rotate/RotateRelativeLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 7706
+    .line 7765
     invoke-virtual {p2, p1}, Lcom/android/camera/rotate/RotateRelativeLayout;->setOrientation(I)V
 
-    .line 7708
+    .line 7767
     .end local v0           #params:Landroid/widget/RelativeLayout$LayoutParams;
     :cond_0
     return-void
 
-    .line 7685
+    .line 7744
     .restart local v0       #params:Landroid/widget/RelativeLayout$LayoutParams;
     :pswitch_0
     invoke-virtual {v0, v2, v1}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 7686
+    .line 7745
     invoke-virtual {v0, v4, v3}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 7687
+    .line 7746
     const/16 v1, 0x2a
 
     invoke-virtual {v0, v1, v5, v3, v3}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
     goto :goto_0
 
-    .line 7690
+    .line 7749
     :pswitch_1
     invoke-virtual {v0, v2, v1}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 7691
+    .line 7750
     invoke-virtual {v0, v4, v3}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 7692
+    .line 7751
     const/16 v1, -0xa
 
     invoke-virtual {v0, v3, v5, v1, v3}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
     goto :goto_0
 
-    .line 7695
+    .line 7754
     :pswitch_2
     invoke-virtual {v0, v2, v3}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 7696
+    .line 7755
     invoke-virtual {v0, v4, v1}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 7697
+    .line 7756
     const/16 v1, 0x28
 
     const/4 v2, 0x5
@@ -11778,21 +11770,21 @@
 
     goto :goto_0
 
-    .line 7700
+    .line 7759
     :pswitch_3
     invoke-virtual {v0, v2, v3}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 7701
+    .line 7760
     invoke-virtual {v0, v4, v1}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 7702
+    .line 7761
     const/16 v1, 0x18b
 
     invoke-virtual {v0, v1, v3, v3, v3}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
     goto :goto_0
 
-    .line 7683
+    .line 7742
     nop
 
     :pswitch_data_0
@@ -11810,17 +11802,17 @@
     .parameter "layout"
 
     .prologue
-    .line 7711
+    .line 7770
     if-eqz p2, :cond_1
 
-    .line 7712
+    .line 7771
     invoke-virtual {p2}, Landroid/widget/RelativeLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 7713
+    .line 7772
     .local v0, params:Landroid/widget/LinearLayout$LayoutParams;
     if-eqz p1, :cond_0
 
@@ -11828,22 +11820,22 @@
 
     if-ne p1, v1, :cond_2
 
-    .line 7714
+    .line 7773
     :cond_0
     const/16 v1, 0x46
 
     iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 7718
+    .line 7777
     :goto_0
     invoke-virtual {p2, v0}, Landroid/widget/RelativeLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 7720
+    .line 7779
     .end local v0           #params:Landroid/widget/LinearLayout$LayoutParams;
     :cond_1
     return-void
 
-    .line 7716
+    .line 7775
     .restart local v0       #params:Landroid/widget/LinearLayout$LayoutParams;
     :cond_2
     const/4 v1, 0x0
@@ -11858,7 +11850,7 @@
     .parameter "isWait"
 
     .prologue
-    .line 6202
+    .line 6212
     const-class v0, Lcom/android/camera/HTCCamera;
 
     monitor-enter v0
@@ -11868,12 +11860,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 6203
+    .line 6213
     monitor-exit v0
 
     return-void
 
-    .line 6202
+    .line 6212
     :catchall_0
     move-exception v1
 
@@ -11889,16 +11881,16 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 4420
+    .line 4426
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mArrowImgLayoutPort:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     if-nez v1, :cond_0
 
-    .line 4455
+    .line 4461
     :goto_0
     return-void
 
-    .line 4423
+    .line 4429
     :cond_0
     new-instance v0, Landroid/view/animation/AlphaAnimation;
 
@@ -11908,78 +11900,78 @@
 
     invoke-direct {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
 
-    .line 4424
+    .line 4430
     .local v0, fadeoutAni:Landroid/view/animation/Animation;
     const-wide/16 v1, 0x1388
 
     invoke-virtual {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;->setStartOffset(J)V
 
-    .line 4425
+    .line 4431
     const-wide/16 v1, 0x3e8
 
     invoke-virtual {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
 
-    .line 4426
+    .line 4432
     new-instance v1, Lcom/android/camera/HTCCamera$25;
 
     invoke-direct {v1, p0}, Lcom/android/camera/HTCCamera$25;-><init>(Lcom/android/camera/HTCCamera;)V
 
     invoke-virtual {v0, v1}, Landroid/view/animation/AlphaAnimation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 4437
+    .line 4443
     if-eqz p1, :cond_1
 
     const/4 v1, 0x2
 
     if-ne p1, v1, :cond_2
 
-    .line 4439
+    .line 4445
     :cond_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mArrowImgLayoutPort:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v1, v3}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 4440
+    .line 4446
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mArrowImgLayoutPort:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v1, v0}, Lcom/android/camera/rotate/RotateRelativeLayout;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 4441
+    .line 4447
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mArrowTextLayoutPort:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v1, v3}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 4442
+    .line 4448
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mArrowTextLayoutPort:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v1, v0}, Lcom/android/camera/rotate/RotateRelativeLayout;->startAnimation(Landroid/view/animation/Animation;)V
 
     goto :goto_0
 
-    .line 4447
+    .line 4453
     :cond_2
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mArrowImgLayoutLand:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v1, v3}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 4448
+    .line 4454
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mArrowImgLayoutLand:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v1, v0}, Lcom/android/camera/rotate/RotateRelativeLayout;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 4449
+    .line 4455
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mArrowTextLayoutLand:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Lcom/android/camera/rotate/RotateRelativeLayout;->setOrientation(I)V
 
-    .line 4450
+    .line 4456
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mArrowTextLayoutLand:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v1, v3}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 4451
+    .line 4457
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mArrowTextLayoutLand:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v1, v0}, Lcom/android/camera/rotate/RotateRelativeLayout;->startAnimation(Landroid/view/animation/Animation;)V
@@ -11991,23 +11983,23 @@
     .locals 4
 
     .prologue
-    .line 6807
+    .line 6867
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSecondLayout:Landroid/view/View;
 
     if-nez v2, :cond_1
 
-    .line 6822
+    .line 6882
     :cond_0
     :goto_0
     return-void
 
-    .line 6810
+    .line 6870
     :cond_1
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SelfPortrait:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     if-nez v2, :cond_2
 
-    .line 6811
+    .line 6871
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSecondLayout:Landroid/view/View;
 
     const v3, 0x7f08018e
@@ -12018,13 +12010,13 @@
 
     check-cast v1, Landroid/view/ViewStub;
 
-    .line 6812
+    .line 6872
     .local v1, stub:Landroid/view/ViewStub;
     invoke-virtual {v1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
     move-result-object v0
 
-    .line 6813
+    .line 6873
     .local v0, layout:Landroid/view/View;
     const v2, 0x7f080191
 
@@ -12036,7 +12028,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SelfPortrait:Lcom/android/camera/rotate/RotateRelativeLayout;
 
-    .line 6814
+    .line 6874
     const v2, 0x7f080192
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -12047,7 +12039,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mSelfPortraitHint_layout:Landroid/widget/LinearLayout;
 
-    .line 6817
+    .line 6877
     .end local v0           #layout:Landroid/view/View;
     .end local v1           #stub:Landroid/view/ViewStub;
     :cond_2
@@ -12059,14 +12051,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 6820
+    .line 6880
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SelfPortrait:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 6821
+    .line 6881
     invoke-static {}, Lcom/android/camera/rotate/OrientationConfig;->getUIOrientation()I
 
     move-result v2
@@ -12082,22 +12074,22 @@
     .prologue
     const/16 v5, 0x4b
 
-    .line 7640
+    .line 7699
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSceneGuideLayout:Landroid/view/View;
 
     if-nez v2, :cond_0
 
-    .line 7653
+    .line 7712
     :goto_0
     return-void
 
-    .line 7643
+    .line 7702
     :cond_0
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSceneSunNightLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     if-nez v2, :cond_1
 
-    .line 7644
+    .line 7703
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSceneGuideLayout:Landroid/view/View;
 
     const v3, 0x7f08016b
@@ -12108,13 +12100,13 @@
 
     check-cast v1, Landroid/view/ViewStub;
 
-    .line 7645
+    .line 7704
     .local v1, stub:Landroid/view/ViewStub;
     invoke-virtual {v1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
     move-result-object v0
 
-    .line 7646
+    .line 7705
     .local v0, layout:Landroid/view/View;
     const v2, 0x7f080189
 
@@ -12126,7 +12118,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mSceneSunNightLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
-    .line 7649
+    .line 7708
     .end local v0           #layout:Landroid/view/View;
     .end local v1           #stub:Landroid/view/ViewStub;
     :cond_1
@@ -12136,12 +12128,12 @@
 
     invoke-virtual {v2, v3}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 7651
+    .line 7710
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v2, v5}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 7652
+    .line 7711
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const-wide/16 v3, 0xbb8
@@ -12159,7 +12151,7 @@
 
     const/4 v2, 0x1
 
-    .line 9280
+    .line 9370
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
@@ -12170,40 +12162,40 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 9302
+    .line 9392
     :cond_0
     :goto_0
     return-void
 
-    .line 9283
+    .line 9373
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v0, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9284
+    .line 9374
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x20
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9285
+    .line 9375
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x21
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9287
+    .line 9377
     sput-boolean v2, Lcom/android/camera/HTCCamera;->bFocusFromPress:Z
 
-    .line 9289
+    .line 9379
     sget v0, Lcom/android/camera/HTCCamera;->mFocusMode:I
 
     if-ne v0, v2, :cond_2
 
-    .line 9290
+    .line 9380
     sget v0, Lcom/android/camera/HTCCamera;->mFocus_Screen_X:I
 
     sget v1, Lcom/android/camera/HTCCamera;->mFocus_Screen_Y:I
@@ -12212,7 +12204,7 @@
 
     goto :goto_0
 
-    .line 9294
+    .line 9384
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
@@ -12226,7 +12218,7 @@
 
     if-ne v0, v2, :cond_3
 
-    .line 9295
+    .line 9385
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v0}, Lcom/android/camera/FaceDetection;->quickFocus()Z
@@ -12235,18 +12227,18 @@
 
     if-eq v0, v2, :cond_0
 
-    .line 9299
+    .line 9389
     :cond_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v0, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9300
+    .line 9390
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v0, v3}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 9301
+    .line 9391
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->handleSensorFocus()V
 
     goto :goto_0
@@ -12264,7 +12256,7 @@
 
     const/4 v3, 0x0
 
-    .line 4468
+    .line 4474
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -12297,19 +12289,19 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4470
+    .line 4476
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 4472
+    .line 4478
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_combine:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 4473
+    .line 4479
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_combine:Landroid/view/View;
 
     const/4 v1, 0x0
@@ -12320,13 +12312,13 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/camera/AnimationManager;->showRotateAnimation(Landroid/view/View;FFIIZ)Landroid/view/animation/RotateAnimation;
 
-    .line 4479
+    .line 4485
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitchBtn_icon:Lcom/android/camera/widget/ImageTextView;
 
     if-eqz v0, :cond_1
 
-    .line 4480
+    .line 4486
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitchBtn_icon:Lcom/android/camera/widget/ImageTextView;
 
     move v1, p1
@@ -12337,13 +12329,13 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/camera/AnimationManager;->showRotateAnimation(Landroid/view/View;FFIIZ)Landroid/view/animation/RotateAnimation;
 
-    .line 4483
+    .line 4489
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_2
 
-    .line 4484
+    .line 4490
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
     move v1, p1
@@ -12354,13 +12346,13 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/camera/AnimationManager;->showRotateAnimation(Landroid/view/View;FFIIZ)Landroid/view/animation/RotateAnimation;
 
-    .line 4487
+    .line 4493
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFlash_icon:Lcom/android/camera/widget/ImageTextView;
 
     if-eqz v0, :cond_3
 
-    .line 4488
+    .line 4494
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFlash_icon:Lcom/android/camera/widget/ImageTextView;
 
     move v1, p1
@@ -12371,13 +12363,13 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/camera/AnimationManager;->showRotateAnimation(Landroid/view/View;FFIIZ)Landroid/view/animation/RotateAnimation;
 
-    .line 4491
+    .line 4497
     :cond_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mEffect_icon:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_4
 
-    .line 4492
+    .line 4498
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mEffect_icon:Landroid/widget/ImageView;
 
     move v1, p1
@@ -12388,13 +12380,13 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/camera/AnimationManager;->showRotateAnimation(Landroid/view/View;FFIIZ)Landroid/view/animation/RotateAnimation;
 
-    .line 4495
+    .line 4501
     :cond_4
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSettings_icon:Lcom/android/camera/widget/ImageTextView;
 
     if-eqz v0, :cond_5
 
-    .line 4496
+    .line 4502
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSettings_icon:Lcom/android/camera/widget/ImageTextView;
 
     move v1, p1
@@ -12405,13 +12397,13 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/camera/AnimationManager;->showRotateAnimation(Landroid/view/View;FFIIZ)Landroid/view/animation/RotateAnimation;
 
-    .line 4498
+    .line 4504
     :cond_5
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
     if-eqz v0, :cond_6
 
-    .line 4499
+    .line 4505
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
     move v1, p1
@@ -12422,13 +12414,13 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/camera/AnimationManager;->showRotateAnimation(Landroid/view/View;FFIIZ)Landroid/view/animation/RotateAnimation;
 
-    .line 4502
+    .line 4508
     :cond_6
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPhoto_icon:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_7
 
-    .line 4503
+    .line 4509
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPhoto_icon:Landroid/widget/ImageView;
 
     move v1, p1
@@ -12439,18 +12431,18 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/camera/AnimationManager;->showRotateAnimation(Landroid/view/View;FFIIZ)Landroid/view/animation/RotateAnimation;
 
-    .line 4529
+    .line 4535
     :cond_7
     :goto_0
     return-void
 
-    .line 4508
+    .line 4514
     :cond_8
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_layout_ds:Landroid/widget/LinearLayout;
 
     if-eqz v0, :cond_9
 
-    .line 4509
+    .line 4515
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_layout_ds:Landroid/widget/LinearLayout;
 
     move v1, p1
@@ -12461,13 +12453,13 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/camera/AnimationManager;->showRotateAnimation(Landroid/view/View;FFIIZ)Landroid/view/animation/RotateAnimation;
 
-    .line 4512
+    .line 4518
     :cond_9
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitch_layout_ds:Landroid/widget/LinearLayout;
 
     if-eqz v0, :cond_a
 
-    .line 4513
+    .line 4519
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitch_layout_ds:Landroid/widget/LinearLayout;
 
     move v1, p1
@@ -12478,13 +12470,13 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/camera/AnimationManager;->showRotateAnimation(Landroid/view/View;FFIIZ)Landroid/view/animation/RotateAnimation;
 
-    .line 4516
+    .line 4522
     :cond_a
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFlash_layout_ds:Landroid/widget/LinearLayout;
 
     if-eqz v0, :cond_b
 
-    .line 4517
+    .line 4523
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFlash_layout_ds:Landroid/widget/LinearLayout;
 
     move v1, p1
@@ -12495,13 +12487,13 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/camera/AnimationManager;->showRotateAnimation(Landroid/view/View;FFIIZ)Landroid/view/animation/RotateAnimation;
 
-    .line 4520
+    .line 4526
     :cond_b
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mScene_layout_ds:Landroid/widget/LinearLayout;
 
     if-eqz v0, :cond_c
 
-    .line 4521
+    .line 4527
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mScene_layout_ds:Landroid/widget/LinearLayout;
 
     move v1, p1
@@ -12512,13 +12504,13 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/camera/AnimationManager;->showRotateAnimation(Landroid/view/View;FFIIZ)Landroid/view/animation/RotateAnimation;
 
-    .line 4524
+    .line 4530
     :cond_c
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_combine:Landroid/view/View;
 
     if-eqz v0, :cond_7
 
-    .line 4525
+    .line 4531
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_combine:Landroid/view/View;
 
     move v1, p1
@@ -12536,14 +12528,14 @@
     .locals 3
 
     .prologue
-    .line 10909
+    .line 10999
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.htc.notes.notesrecordingstopped"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 10910
+    .line 11000
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "command"
 
@@ -12551,10 +12543,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 10911
+    .line 11001
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 10912
+    .line 11002
     return-void
 .end method
 
@@ -12564,41 +12556,41 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 8315
+    .line 8378
     const-string v0, "HTCCamera"
 
     const-string v1, "stopRecordingIndicator()"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8317
+    .line 8380
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/4 v1, 0x3
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 8318
+    .line 8381
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/4 v1, 0x2
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 8320
+    .line 8383
     invoke-direct {p0, v2}, Lcom/android/camera/HTCCamera;->closeSecondLayout(Z)V
 
-    .line 8322
+    .line 8385
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SwitchBtn:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     if-eqz v0, :cond_0
 
-    .line 8323
+    .line 8386
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SwitchBtn:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v0, v2}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 8324
+    .line 8387
     :cond_0
     return-void
 .end method
@@ -12607,44 +12599,44 @@
     .locals 3
 
     .prologue
-    .line 8249
+    .line 8312
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSoundPool:Landroid/media/SoundPool;
 
     if-nez v1, :cond_1
 
-    .line 8250
+    .line 8313
     const-string v1, "HTCCamera"
 
     const-string v2, "stopSoundPool() - mSoundPool = null"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8263
+    .line 8326
     :cond_0
     :goto_0
     return-void
 
-    .line 8255
+    .line 8318
     :cond_1
     :try_start_0
     iget v1, p0, Lcom/android/camera/HTCCamera;->mStreamID_beep:I
 
     if-eqz v1, :cond_2
 
-    .line 8256
+    .line 8319
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSoundPool:Landroid/media/SoundPool;
 
     iget v2, p0, Lcom/android/camera/HTCCamera;->mStreamID_beep:I
 
     invoke-virtual {v1, v2}, Landroid/media/SoundPool;->stop(I)V
 
-    .line 8258
+    .line 8321
     :cond_2
     iget v1, p0, Lcom/android/camera/HTCCamera;->mStreamID_beep2:I
 
     if-eqz v1, :cond_0
 
-    .line 8259
+    .line 8322
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSoundPool:Landroid/media/SoundPool;
 
     iget v2, p0, Lcom/android/camera/HTCCamera;->mStreamID_beep2:I
@@ -12655,11 +12647,11 @@
 
     goto :goto_0
 
-    .line 8260
+    .line 8323
     :catch_0
     move-exception v0
 
-    .line 8261
+    .line 8324
     .local v0, ex:Ljava/lang/Exception;
     const-string v1, "HTCCamera"
 
@@ -12678,26 +12670,26 @@
 
     const/4 v4, 0x1
 
-    .line 3214
+    .line 3211
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mForce2DMode:Z
 
     if-eqz v0, :cond_1
 
-    .line 3257
+    .line 3254
     :cond_0
     :goto_0
     return-void
 
-    .line 3216
+    .line 3213
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
 
-    .line 3219
+    .line 3216
     sput-boolean v4, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 3222
+    .line 3219
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     new-instance v1, Lcom/android/camera/OneValueEvent;
@@ -12714,36 +12706,36 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 3225
+    .line 3222
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->resetFocusMode()V
 
-    .line 3226
+    .line 3223
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->releaseFaceDetection()V
 
-    .line 3228
+    .line 3225
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mWaitResetSettings:Z
 
-    .line 3229
+    .line 3226
     const-string v0, "HTCCamera"
 
     const-string v1, "restartCamera() - set mWaitResetSettings to true"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3230
+    .line 3227
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->closeSettingsPanel()V
 
-    .line 3232
+    .line 3229
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->is3DCameraActivated()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 3234
+    .line 3231
     invoke-virtual {p0, v4}, Lcom/android/camera/HTCCamera;->lockOrientation(I)V
 
-    .line 3241
+    .line 3238
     :goto_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -12755,47 +12747,47 @@
 
     if-ne v0, v4, :cond_3
 
-    .line 3243
+    .line 3240
     const-string v0, "pref_camera_3D_status"
 
     invoke-static {p0, v0, v5}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Z)Z
 
-    .line 3247
+    .line 3244
     :goto_2
     iput-boolean v5, p0, Lcom/android/camera/HTCCamera;->m3DPreviewReady:Z
 
-    .line 3248
+    .line 3245
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
     if-nez v0, :cond_4
 
-    .line 3250
+    .line 3247
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const/4 v1, 0x2
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 3251
+    .line 3248
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const-string v1, "true"
 
     invoke-static {v0, v5, v4, v5, v1}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 3256
+    .line 3253
     :goto_3
     iput-boolean v5, p0, Lcom/android/camera/HTCCamera;->m3DOptimalLandscape:Z
 
     goto :goto_0
 
-    .line 3238
+    .line 3235
     :cond_2
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->unlockOrientation()V
 
     goto :goto_1
 
-    .line 3245
+    .line 3242
     :cond_3
     const-string v0, "pref_camera_3D_status"
 
@@ -12803,7 +12795,7 @@
 
     goto :goto_2
 
-    .line 3254
+    .line 3251
     :cond_4
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->activate()V
 
@@ -12814,7 +12806,7 @@
     .locals 2
 
     .prologue
-    .line 10830
+    .line 10920
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -12823,7 +12815,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 10831
+    .line 10921
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "cross-thread access"
@@ -12832,7 +12824,7 @@
 
     throw v0
 
-    .line 10832
+    .line 10922
     :cond_0
     return-void
 .end method
@@ -12841,24 +12833,24 @@
     .locals 4
 
     .prologue
-    .line 9982
+    .line 10072
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSettingMenu:Lcom/android/camera/widget/PopupMenu;
 
     if-nez v1, :cond_1
 
-    .line 9983
+    .line 10073
     const-string v1, "HTCCamera"
 
     const-string v2, "togglePanelState() - failed, mSettingMenu is null"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10023
+    .line 10113
     :cond_0
     :goto_0
     return-void
 
-    .line 9987
+    .line 10077
     :cond_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSettingMenu:Lcom/android/camera/widget/PopupMenu;
 
@@ -12868,23 +12860,23 @@
 
     if-nez v1, :cond_2
 
-    .line 9989
+    .line 10079
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     if-eqz v1, :cond_2
 
-    .line 9990
+    .line 10080
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v1}, Lcom/android/camera/MenuHandler;->updateDisableItems()V
 
-    .line 9993
+    .line 10083
     :cond_2
     iget-boolean v1, p0, Lcom/android/camera/HTCCamera;->mMenuIsOpening:Z
 
     if-eqz v1, :cond_3
 
-    .line 9994
+    .line 10084
     const-string v1, "HTCCamera"
 
     const-string v2, "togglePanelState() - failed, mMenuIsOpening is true"
@@ -12893,13 +12885,13 @@
 
     goto :goto_0
 
-    .line 9997
+    .line 10087
     :cond_3
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/camera/HTCCamera;->mMenuIsOpening:Z
 
-    .line 10000
+    .line 10090
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const v2, 0x7f0800fe
@@ -12908,7 +12900,7 @@
 
     move-result-object v0
 
-    .line 10001
+    .line 10091
     .local v0, item:Landroid/view/View;
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSettingMenu:Lcom/android/camera/widget/PopupMenu;
 
@@ -12920,12 +12912,12 @@
 
     invoke-virtual {v1, v0, v2}, Lcom/android/camera/widget/PopupMenu;->toggle(Landroid/view/View;Landroid/view/View;)V
 
-    .line 10004
+    .line 10094
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSettings_btn:Landroid/widget/Button;
 
     if-eqz v1, :cond_0
 
-    .line 10005
+    .line 10095
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSettings_btn:Landroid/widget/Button;
 
     const v2, 0x7f0a0003
@@ -12955,31 +12947,31 @@
 
     const/4 v4, 0x1
 
-    .line 8458
+    .line 8521
     const-string v1, "HTCCamera"
 
     const-string v2, "triggerRecord() - start"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8460
+    .line 8523
     sget-boolean v1, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
     if-ne v1, v4, :cond_1
 
-    .line 8461
+    .line 8524
     const-string v1, "HTCCamera"
 
     const-string v2, "triggerRecord() - end, UI Block !!!"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8590
+    .line 8653
     :cond_0
     :goto_0
     return-void
 
-    .line 8464
+    .line 8527
     :cond_1
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isActionScreenOpen()Z
 
@@ -12987,7 +12979,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 8466
+    .line 8529
     const-string v1, "HTCCamera"
 
     const-string v2, "triggerRecord() - end, action screen open !!!"
@@ -12996,7 +12988,7 @@
 
     goto :goto_0
 
-    .line 8471
+    .line 8534
     :cond_2
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->is3DCameraActivated()Z
 
@@ -13012,21 +13004,21 @@
 
     if-ne v1, v4, :cond_3
 
-    .line 8473
+    .line 8536
     const-string v1, "HTCCamera"
 
     const-string v2, "triggerRecord() - end, 3D portrait capture !!!"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8474
+    .line 8537
     iget v1, p0, Lcom/android/camera/HTCCamera;->mLastOrientation:I
 
     invoke-static {v1}, Lcom/android/camera/rotate/OrientationConfig;->mapOrientation_Event2UI(I)I
 
     move-result v0
 
-    .line 8475
+    .line 8538
     .local v0, orentation_mode:I
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -13038,12 +13030,12 @@
 
     goto :goto_0
 
-    .line 8479
+    .line 8542
     .end local v0           #orentation_mode:I
     :cond_3
     iput-boolean v5, p0, Lcom/android/camera/HTCCamera;->m3DTriggerCapture:Z
 
-    .line 8481
+    .line 8544
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v1, :cond_c
@@ -13056,14 +13048,14 @@
 
     if-nez v1, :cond_c
 
-    .line 8485
+    .line 8548
     const-string v1, "[ANALYTIC_com.android.camera]"
 
     const-string v2, "[press_jogball]recording"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->I(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8487
+    .line 8550
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     if-eqz v1, :cond_4
@@ -13076,7 +13068,7 @@
 
     if-nez v1, :cond_4
 
-    .line 8488
+    .line 8551
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {v1}, Lcom/android/camera/widget/SlidingDrawer;->isOpened()Z
@@ -13093,7 +13085,7 @@
 
     if-eq v1, v4, :cond_0
 
-    .line 8492
+    .line 8555
     :cond_4
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->checkInternalStorage()Z
 
@@ -13101,21 +13093,21 @@
 
     if-nez v1, :cond_5
 
-    .line 8493
+    .line 8556
     const-string v1, "HTCCamera"
 
     const-string v2, "low internal storage ..."
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8494
+    .line 8557
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v2, 0x25
 
     invoke-static {v1, v2}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 8495
+    .line 8558
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v2, 0x25
@@ -13124,7 +13116,7 @@
 
     invoke-static {v1, v2, v3, v5, v6}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 8499
+    .line 8562
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0xc8
@@ -13133,23 +13125,23 @@
 
     goto/16 :goto_0
 
-    .line 8503
+    .line 8566
     :cond_5
     sget v1, Lcom/android/camera/CameraThread;->Storage_Status:I
 
     if-eqz v1, :cond_7
 
-    .line 8504
+    .line 8567
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v1, :cond_6
 
-    .line 8505
+    .line 8568
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v1, v5}, Lcom/android/camera/CameraThread;->showStorageToast(Z)V
 
-    .line 8507
+    .line 8570
     :cond_6
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -13159,7 +13151,7 @@
 
     goto/16 :goto_0
 
-    .line 8512
+    .line 8575
     :cond_7
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isPowerWarning()Z
 
@@ -13167,7 +13159,7 @@
 
     if-eqz v1, :cond_8
 
-    .line 8513
+    .line 8576
     const-string v1, "HTCCamera"
 
     const-string v2, "triggerRecord() - end, PowerWarning !!!"
@@ -13176,50 +13168,50 @@
 
     goto/16 :goto_0
 
-    .line 8516
+    .line 8579
     :cond_8
     invoke-virtual {p0, v4}, Lcom/android/camera/HTCCamera;->setBlockPowerWarning(Z)V
 
-    .line 8518
+    .line 8581
     const-string v1, "HTCCamera"
 
     const-string v2, "Block Capture UI - Start Recorder"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8519
+    .line 8582
     sput-boolean v4, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 8520
+    .line 8583
     sput-boolean v4, Lcom/android/camera/HTCCamera;->mBlock3DSwitch:Z
 
-    .line 8521
+    .line 8584
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsCaptureTriggered:Z
 
-    .line 8522
+    .line 8585
     iput-object v6, p0, Lcom/android/camera/HTCCamera;->mLastSavedMediaPath:Ljava/lang/String;
 
-    .line 8523
+    .line 8586
     const-wide/16 v1, -0x1
 
     iput-wide v1, p0, Lcom/android/camera/HTCCamera;->mRecord_sec:J
 
-    .line 8531
+    .line 8594
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v2, "Recording.Starting"
 
     invoke-virtual {v1, v2}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 8533
+    .line 8596
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v1, v3, v5, v5, v6}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 8535
+    .line 8598
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->closeCaptureUI()V
 
-    .line 8538
+    .line 8601
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMode_btn:Landroid/widget/Button;
@@ -13228,40 +13220,40 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/camera/ViewUtil;->disableMainButton(Landroid/widget/ImageView;Landroid/widget/Button;Landroid/widget/TextView;)V
 
-    .line 8539
+    .line 8602
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mPhoto_icon:Landroid/widget/ImageView;
 
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mPhoto_btn:Landroid/widget/Button;
 
     invoke-static {v1, v2}, Lcom/android/camera/ViewUtil;->disableMainButton(Landroid/widget/ImageView;Landroid/widget/Button;)V
 
-    .line 8540
+    .line 8603
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mEffect_icon:Landroid/widget/ImageView;
 
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mEffect_btn:Landroid/widget/Button;
 
     invoke-static {v1, v2}, Lcom/android/camera/ViewUtil;->disableMainButton(Landroid/widget/ImageView;Landroid/widget/Button;)V
 
-    .line 8542
+    .line 8605
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSettings_icon:Lcom/android/camera/widget/ImageTextView;
 
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSettings_btn:Landroid/widget/Button;
 
     invoke-static {v1, v2}, Lcom/android/camera/ViewUtil;->disableMainButton(Lcom/android/camera/widget/ImageTextView;Landroid/widget/Button;)V
 
-    .line 8543
+    .line 8606
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
 
     invoke-static {v1, v2}, Lcom/android/camera/ViewUtil;->disableMainButton(Lcom/android/camera/widget/ImageTextView;Landroid/widget/Button;)V
 
-    .line 8546
+    .line 8609
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
     if-eqz v1, :cond_9
 
-    .line 8547
+    .line 8610
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSwitchBtn_icon:Lcom/android/camera/widget/ImageTextView;
 
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
@@ -13270,21 +13262,21 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/camera/ViewUtil;->disableMainButton(Lcom/android/camera/widget/ImageTextView;Landroid/widget/Button;Landroid/widget/TextView;)V
 
-    .line 8549
+    .line 8612
     :cond_9
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     if-eqz v1, :cond_a
 
-    .line 8550
+    .line 8613
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     invoke-virtual {v1, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8551
+    .line 8614
     invoke-direct {p0, v4}, Lcom/android/camera/HTCCamera;->setPanelVisible(Z)V
 
-    .line 8555
+    .line 8618
     :cond_a
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -13292,51 +13284,51 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 8556
+    .line 8619
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     if-eqz v1, :cond_b
 
-    .line 8557
+    .line 8620
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v1}, Lcom/android/camera/FaceDetection;->stopCheckLoop()V
 
-    .line 8558
+    .line 8621
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v1}, Lcom/android/camera/FaceDetection;->stopFaceDetection()V
 
-    .line 8559
+    .line 8622
     iput-object v6, p0, Lcom/android/camera/HTCCamera;->mFaces:[Landroid/hardware/Camera$Face;
 
-    .line 8563
+    .line 8626
     :cond_b
     invoke-virtual {p0, v5}, Lcom/android/camera/HTCCamera;->registerFocusSensor(Z)V
 
-    .line 8565
+    .line 8628
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v2, 0x3f
 
     invoke-static {v1, v2}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 8566
+    .line 8629
     const-string v1, "HTCCamera"
 
     const-string v2, "Freeze UI - Recorder"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8567
+    .line 8630
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mFreezeUI:Z
 
-    .line 8568
+    .line 8631
     iget v1, p0, Lcom/android/camera/HTCCamera;->mLastOrientation:I
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mFreezeOrientation:I
 
-    .line 8589
+    .line 8652
     :goto_1
     const-string v1, "HTCCamera"
 
@@ -13346,7 +13338,7 @@
 
     goto/16 :goto_0
 
-    .line 8574
+    .line 8637
     :cond_c
     const-string v1, "[ANALYTIC_com.android.camera]"
 
@@ -13354,32 +13346,32 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->I(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8577
+    .line 8640
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v2, "Recording.Stopping"
 
     invoke-virtual {v1, v2}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 8579
+    .line 8642
     const-string v1, "HTCCamera"
 
     const-string v2, "Block Capture UI - Stop Recorder"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8580
+    .line 8643
     sput-boolean v4, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 8581
+    .line 8644
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v1, v3, v5, v5, v6}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 8583
+    .line 8646
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->stopRecordingIndicator()V
 
-    .line 8586
+    .line 8649
     invoke-virtual {p0, v4}, Lcom/android/camera/HTCCamera;->registerFocusSensor(Z)V
 
     goto :goto_1
@@ -13399,38 +13391,38 @@
 
     const/4 v6, 0x0
 
-    .line 8330
+    .line 8393
     const-string v2, "[ANALYTIC_com.android.camera]"
 
     const-string v3, "[press_jogball]take_picture"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->I(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8332
+    .line 8395
     const-string v2, "HTCCamera"
 
     const-string v3, "triggerTakePicture() - start"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8334
+    .line 8397
     sget-boolean v2, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
     if-ne v2, v4, :cond_1
 
-    .line 8335
+    .line 8398
     const-string v2, "HTCCamera"
 
     const-string v3, "triggerTakePicture() - end, UI Block !!!"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8455
+    .line 8518
     :cond_0
     :goto_0
     return-void
 
-    .line 8339
+    .line 8402
     :cond_1
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -13444,7 +13436,7 @@
 
     if-nez v2, :cond_2
 
-    .line 8340
+    .line 8403
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {v2}, Lcom/android/camera/widget/SlidingDrawer;->isOpened()Z
@@ -13461,7 +13453,7 @@
 
     if-eq v2, v4, :cond_0
 
-    .line 8349
+    .line 8412
     :cond_2
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->is3DCameraActivated()Z
 
@@ -13477,21 +13469,21 @@
 
     if-ne v2, v4, :cond_3
 
-    .line 8351
+    .line 8414
     const-string v2, "HTCCamera"
 
     const-string v3, "triggerTakePicture() - end, 3D portrait capture !!!"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8352
+    .line 8415
     iget v2, p0, Lcom/android/camera/HTCCamera;->mLastOrientation:I
 
     invoke-static {v2}, Lcom/android/camera/rotate/OrientationConfig;->mapOrientation_Event2UI(I)I
 
     move-result v0
 
-    .line 8353
+    .line 8416
     .local v0, orentation_mode:I
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -13503,33 +13495,33 @@
 
     goto :goto_0
 
-    .line 8357
+    .line 8420
     .end local v0           #orentation_mode:I
     :cond_3
     iput-boolean v6, p0, Lcom/android/camera/HTCCamera;->m3DTriggerCapture:Z
 
-    .line 8359
+    .line 8422
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->checkInternalStorage()Z
 
     move-result v2
 
     if-nez v2, :cond_4
 
-    .line 8360
+    .line 8423
     const-string v2, "HTCCamera"
 
     const-string v3, "low internal storage ..."
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8361
+    .line 8424
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x25
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 8362
+    .line 8425
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x25
@@ -13538,7 +13530,7 @@
 
     invoke-static {v2, v3, v4, v6, v5}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 8366
+    .line 8429
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0xf
@@ -13547,22 +13539,22 @@
 
     invoke-static {v2, v3, v4, v5}, Lcom/android/camera/MessageHandler;->sendEmptyMessageDelayed(Landroid/os/Handler;IJ)V
 
-    .line 8368
+    .line 8431
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->resetAutoCaptureTask()V
 
-    .line 8371
+    .line 8434
     const-string v2, "HTCCamera"
 
     const-string v3, "low internal storage - mFocusingState = NO_FOCUSING"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8372
+    .line 8435
     iput v6, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     goto :goto_0
 
-    .line 8377
+    .line 8440
     :cond_4
     invoke-static {}, Lcom/android/camera/DisplayDevice;->contactsNoStorage()Z
 
@@ -13578,23 +13570,23 @@
 
     if-nez v2, :cond_7
 
-    .line 8379
+    .line 8442
     :cond_5
     sget v2, Lcom/android/camera/CameraThread;->Storage_Status:I
 
     if-eqz v2, :cond_7
 
-    .line 8380
+    .line 8443
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v2, :cond_6
 
-    .line 8381
+    .line 8444
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v2, v6}, Lcom/android/camera/CameraThread;->showStorageToast(Z)V
 
-    .line 8383
+    .line 8446
     :cond_6
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -13604,22 +13596,22 @@
 
     invoke-static {v2, v3, v4, v5}, Lcom/android/camera/MessageHandler;->sendEmptyMessageDelayed(Landroid/os/Handler;IJ)V
 
-    .line 8385
+    .line 8448
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->resetAutoCaptureTask()V
 
-    .line 8388
+    .line 8451
     const-string v2, "HTCCamera"
 
     const-string v3, "Storage_Status != STORAGE_OK - mFocusingState = NO_FOCUSING"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8389
+    .line 8452
     iput v6, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     goto/16 :goto_0
 
-    .line 8395
+    .line 8458
     :cond_7
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isPowerWarning()Z
 
@@ -13627,7 +13619,7 @@
 
     if-eqz v2, :cond_8
 
-    .line 8396
+    .line 8459
     const-string v2, "HTCCamera"
 
     const-string v3, "triggerTakePicture() - end, PowerWarning !!!"
@@ -13636,35 +13628,35 @@
 
     goto/16 :goto_0
 
-    .line 8399
+    .line 8462
     :cond_8
     invoke-virtual {p0, v4}, Lcom/android/camera/HTCCamera;->setBlockPowerWarning(Z)V
 
-    .line 8401
+    .line 8464
     const-string v2, "HTCCamera"
 
     const-string v3, "Block Capture UI - Take Picture"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8402
+    .line 8465
     sput-boolean v4, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 8403
+    .line 8466
     sput-boolean v4, Lcom/android/camera/HTCCamera;->mBlock3DSwitch:Z
 
-    .line 8404
+    .line 8467
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsCaptureTriggered:Z
 
-    .line 8405
+    .line 8468
     iput-object v5, p0, Lcom/android/camera/HTCCamera;->mLastSavedMediaPath:Ljava/lang/String;
 
-    .line 8408
+    .line 8471
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getSelfTimerInterval()I
 
     move-result v1
 
-    .line 8409
+    .line 8472
     .local v1, timer:I
     iget v2, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
@@ -13672,7 +13664,7 @@
 
     if-gtz v1, :cond_a
 
-    .line 8410
+    .line 8473
     :cond_9
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -13680,51 +13672,51 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 8411
+    .line 8474
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     if-eqz v2, :cond_a
 
-    .line 8412
+    .line 8475
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v2}, Lcom/android/camera/FaceDetection;->stopCheckLoop()V
 
-    .line 8413
+    .line 8476
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v2}, Lcom/android/camera/FaceDetection;->stopFaceDetection()V
 
-    .line 8414
+    .line 8477
     iput-object v5, p0, Lcom/android/camera/HTCCamera;->mFaces:[Landroid/hardware/Camera$Face;
 
-    .line 8418
+    .line 8481
     :cond_a
     iget v2, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     if-eq v2, v7, :cond_c
 
-    .line 8419
+    .line 8482
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
     if-eqz v2, :cond_b
 
-    .line 8420
+    .line 8483
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
     const/4 v3, 0x4
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 8422
+    .line 8485
     :cond_b
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->closeCaptureUI()V
 
-    .line 8425
+    .line 8488
     :cond_c
     if-lez v1, :cond_f
 
-    .line 8426
+    .line 8489
     iget v2, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     if-eq v2, v8, :cond_e
@@ -13733,34 +13725,34 @@
 
     if-eq v2, v7, :cond_e
 
-    .line 8427
+    .line 8490
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     if-eqz v2, :cond_d
 
-    .line 8428
+    .line 8491
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     invoke-virtual {v2, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8429
+    .line 8492
     :cond_d
     invoke-direct {p0, v4}, Lcom/android/camera/HTCCamera;->setPanelVisible(Z)V
 
-    .line 8431
+    .line 8494
     invoke-direct {p0, v6}, Lcom/android/camera/HTCCamera;->enableMainBarItems(Z)V
 
-    .line 8432
+    .line 8495
     invoke-virtual {p0, v6, v4}, Lcom/android/camera/HTCCamera;->showMainBarItems(ZZ)V
 
-    .line 8452
+    .line 8515
     :cond_e
     :goto_1
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v2, v7, v6, v6, v5}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 8454
+    .line 8517
     const-string v2, "HTCCamera"
 
     const-string v3, "triggerTakePicture() - end"
@@ -13769,30 +13761,30 @@
 
     goto/16 :goto_0
 
-    .line 8435
+    .line 8498
     :cond_f
     iget v2, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     if-eq v2, v8, :cond_e
 
-    .line 8437
+    .line 8500
     iget v2, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     if-ne v2, v7, :cond_10
 
-    .line 8438
+    .line 8501
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     if-eqz v2, :cond_10
 
-    .line 8439
+    .line 8502
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     const/4 v3, 0x4
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8443
+    .line 8506
     :cond_10
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -13800,14 +13792,14 @@
 
     if-eqz v2, :cond_11
 
-    .line 8444
+    .line 8507
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCapture_combine_ds:Landroid/view/View;
 
     const/4 v3, 0x4
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8446
+    .line 8509
     :cond_11
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -13815,14 +13807,14 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 8447
+    .line 8510
     const-string v2, "HTCCamera"
 
     const-string v3, "Freeze UI - Take Picture"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8448
+    .line 8511
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->lockOrientation()V
 
     goto :goto_1
@@ -13835,17 +13827,17 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 7122
+    .line 7181
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    .line 7123
+    .line 7182
     if-nez p1, :cond_1
 
-    .line 7124
+    .line 7183
     const/high16 v2, 0x7f0a
 
     const v3, 0x7f020191
@@ -13856,30 +13848,30 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mCapture_press:Landroid/graphics/drawable/Drawable;
 
-    .line 7125
+    .line 7184
     const v2, 0x7f020192
 
     iput v2, p0, Lcom/android/camera/HTCCamera;->mCapture_rest:I
 
-    .line 7131
+    .line 7190
     :goto_0
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCapture_icon:Landroid/widget/ImageView;
 
     if-eqz v2, :cond_0
 
-    .line 7132
+    .line 7191
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCapture_icon:Landroid/widget/ImageView;
 
     iget v3, p0, Lcom/android/camera/HTCCamera;->mCapture_rest:I
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 7157
+    .line 7216
     :cond_0
     :goto_1
     return-void
 
-    .line 7127
+    .line 7186
     :cond_1
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getResources()Landroid/content/res/Resources;
 
@@ -13893,25 +13885,25 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mCapture_press:Landroid/graphics/drawable/Drawable;
 
-    .line 7128
+    .line 7187
     const v2, 0x7f020174
 
     iput v2, p0, Lcom/android/camera/HTCCamera;->mCapture_rest:I
 
     goto :goto_0
 
-    .line 7136
+    .line 7195
     :cond_2
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCapture_btn_ds:Landroid/widget/Button;
 
     if-eqz v2, :cond_0
 
-    .line 7137
+    .line 7196
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 7138
+    .line 7197
     .local v1, resources:Landroid/content/res/Resources;
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCapture_btn_ds:Landroid/widget/Button;
 
@@ -13921,14 +13913,14 @@
 
     check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 7139
+    .line 7198
     .local v0, params:Landroid/view/ViewGroup$MarginLayoutParams;
     invoke-virtual {p0, v4, p1}, Lcom/android/camera/HTCCamera;->updateDOTCaptureIcon(ZI)V
 
-    .line 7140
+    .line 7199
     if-nez p1, :cond_3
 
-    .line 7141
+    .line 7200
     const v2, 0x7f0b010a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -13943,14 +13935,14 @@
 
     invoke-virtual {v0, v2, v3, v4, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 7146
+    .line 7205
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCapture_btn_ds:Landroid/widget/Button;
 
     invoke-virtual {v2, v0}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_1
 
-    .line 7148
+    .line 7207
     :cond_3
     const v2, 0x7f0b010c
 
@@ -13966,7 +13958,7 @@
 
     invoke-virtual {v0, v2, v3, v4, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 7153
+    .line 7212
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCapture_btn_ds:Landroid/widget/Button;
 
     invoke-virtual {v2, v0}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -13980,43 +13972,43 @@
     .parameter "posY"
 
     .prologue
-    .line 9587
+    .line 9677
     const-string v9, "HTCCamera"
 
     const-string v10, "updateFocusView - start"
 
     invoke-static {v9, v10}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9590
+    .line 9680
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->initFocusView()V
 
-    .line 9592
+    .line 9682
     sput p1, Lcom/android/camera/HTCCamera;->mFocus_Screen_X:I
 
-    .line 9593
+    .line 9683
     sput p2, Lcom/android/camera/HTCCamera;->mFocus_Screen_Y:I
 
-    .line 9595
+    .line 9685
     const/4 v9, 0x1
 
     iput-boolean v9, p0, Lcom/android/camera/HTCCamera;->mCanShowFocusView:Z
 
-    .line 9596
+    .line 9686
     const/4 v8, 0x0
 
-    .line 9597
+    .line 9687
     .local v8, screen_width:I
     const/4 v7, 0x0
 
-    .line 9598
+    .line 9688
     .local v7, screen_height:I
     const/4 v1, 0x0
 
-    .line 9599
+    .line 9689
     .local v1, focus_width:I
     const/4 v0, 0x0
 
-    .line 9600
+    .line 9690
     .local v0, focus_height:I
     iget v9, p0, Lcom/android/camera/HTCCamera;->Display_Orientation:I
 
@@ -14024,23 +14016,23 @@
 
     if-ne v9, v10, :cond_1
 
-    .line 9601
+    .line 9691
     sget v8, Lcom/android/camera/DisplayDevice;->SCREEN_WIDTH:I
 
-    .line 9602
+    .line 9692
     sget v7, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
 
-    .line 9603
+    .line 9693
     invoke-static {p0}, Lcom/android/camera/DisplayDevice;->getFocusWidth(Landroid/content/Context;)I
 
     move-result v1
 
-    .line 9604
+    .line 9694
     invoke-static {p0}, Lcom/android/camera/DisplayDevice;->getFocusHeight(Landroid/content/Context;)I
 
     move-result v0
 
-    .line 9613
+    .line 9703
     :goto_0
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -14048,18 +14040,18 @@
 
     if-nez v9, :cond_0
 
-    .line 9614
+    .line 9704
     div-int/lit8 v9, v1, 0x2
 
     sub-int v3, p1, v9
 
-    .line 9615
+    .line 9705
     .local v3, margin_left:I
     div-int/lit8 v9, v0, 0x2
 
     sub-int v5, p2, v9
 
-    .line 9616
+    .line 9706
     .local v5, margin_top:I
     sub-int v9, v8, p1
 
@@ -14067,7 +14059,7 @@
 
     sub-int v4, v9, v10
 
-    .line 9617
+    .line 9707
     .local v4, margin_right:I
     sub-int v9, v7, p2
 
@@ -14075,7 +14067,7 @@
 
     sub-int v2, v9, v10
 
-    .line 9618
+    .line 9708
     .local v2, margin_bottom:I
     iget-object v9, p0, Lcom/android/camera/HTCCamera;->mivFocusingView:Landroid/widget/ImageView;
 
@@ -14085,7 +14077,7 @@
 
     check-cast v6, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 9619
+    .line 9709
     .local v6, params:Landroid/widget/RelativeLayout$LayoutParams;
     const/16 v9, 0x9
 
@@ -14093,43 +14085,43 @@
 
     invoke-virtual {v6, v9, v10}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 9620
+    .line 9710
     const/16 v9, 0xa
 
     const/4 v10, -0x1
 
     invoke-virtual {v6, v9, v10}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 9621
+    .line 9711
     const/16 v9, 0xb
 
     const/4 v10, 0x0
 
     invoke-virtual {v6, v9, v10}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 9622
+    .line 9712
     const/16 v9, 0xc
 
     const/4 v10, 0x0
 
     invoke-virtual {v6, v9, v10}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 9623
+    .line 9713
     const/16 v9, 0xd
 
     const/4 v10, 0x0
 
     invoke-virtual {v6, v9, v10}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 9624
+    .line 9714
     invoke-virtual {v6, v3, v5, v4, v2}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 9625
+    .line 9715
     iget-object v9, p0, Lcom/android/camera/HTCCamera;->mivFocusingView:Landroid/widget/ImageView;
 
     invoke-virtual {v9, v6}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 9627
+    .line 9717
     iget-object v9, p0, Lcom/android/camera/HTCCamera;->mivFocusedView:Landroid/widget/ImageView;
 
     invoke-virtual {v9}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -14139,7 +14131,7 @@
     .end local v6           #params:Landroid/widget/RelativeLayout$LayoutParams;
     check-cast v6, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 9628
+    .line 9718
     .restart local v6       #params:Landroid/widget/RelativeLayout$LayoutParams;
     const/16 v9, 0x9
 
@@ -14147,50 +14139,50 @@
 
     invoke-virtual {v6, v9, v10}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 9629
+    .line 9719
     const/16 v9, 0xa
 
     const/4 v10, -0x1
 
     invoke-virtual {v6, v9, v10}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 9630
+    .line 9720
     const/16 v9, 0xb
 
     const/4 v10, 0x0
 
     invoke-virtual {v6, v9, v10}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 9631
+    .line 9721
     const/16 v9, 0xc
 
     const/4 v10, 0x0
 
     invoke-virtual {v6, v9, v10}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 9632
+    .line 9722
     const/16 v9, 0xd
 
     const/4 v10, 0x0
 
     invoke-virtual {v6, v9, v10}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 9633
+    .line 9723
     invoke-virtual {v6, v3, v5, v4, v2}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 9634
+    .line 9724
     iget-object v9, p0, Lcom/android/camera/HTCCamera;->mivFocusedView:Landroid/widget/ImageView;
 
     invoke-virtual {v9, v6}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 9635
+    .line 9725
     const-string v9, "HTCCamera"
 
     const-string v10, "updateFocusView - end"
 
     invoke-static {v9, v10}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9637
+    .line 9727
     .end local v2           #margin_bottom:I
     .end local v3           #margin_left:I
     .end local v4           #margin_right:I
@@ -14199,19 +14191,19 @@
     :cond_0
     return-void
 
-    .line 9606
+    .line 9696
     :cond_1
     sget v8, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
 
-    .line 9607
+    .line 9697
     sget v7, Lcom/android/camera/DisplayDevice;->SCREEN_WIDTH:I
 
-    .line 9608
+    .line 9698
     invoke-static {p0}, Lcom/android/camera/DisplayDevice;->getFocusHeight(Landroid/content/Context;)I
 
     move-result v1
 
-    .line 9609
+    .line 9699
     invoke-static {p0}, Lcom/android/camera/DisplayDevice;->getFocusWidth(Landroid/content/Context;)I
 
     move-result v0
@@ -14232,16 +14224,16 @@
 
     const v1, 0x7f020050
 
-    .line 6974
+    .line 7033
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
     if-nez v0, :cond_0
 
-    .line 7037
+    .line 7096
     :goto_0
     return-void
 
-    .line 6977
+    .line 7036
     :cond_0
     sget-object v0, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
@@ -14259,17 +14251,17 @@
 
     if-nez v0, :cond_8
 
-    .line 6980
+    .line 7039
     if-nez p1, :cond_6
 
-    .line 6981
+    .line 7040
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-nez v0, :cond_5
 
-    .line 6982
+    .line 7041
     sget-object v0, Lcom/android/camera/IntentManager$RequestName;->Contacts:Lcom/android/camera/IntentManager$RequestName;
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
@@ -14278,14 +14270,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 6983
+    .line 7042
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
     const v1, 0x7f02011c
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 6997
+    .line 7056
     :goto_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
@@ -14295,7 +14287,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/camera/ViewUtil;->disableMainButton(Landroid/widget/ImageView;Landroid/widget/Button;Landroid/widget/TextView;)V
 
-    .line 7008
+    .line 7067
     :goto_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPhoto_icon:Landroid/widget/ImageView;
 
@@ -14305,7 +14297,7 @@
 
     goto :goto_0
 
-    .line 6984
+    .line 7043
     :cond_1
     sget-object v0, Lcom/android/camera/IntentManager$RequestName;->Square:Lcom/android/camera/IntentManager$RequestName;
 
@@ -14315,7 +14307,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 6985
+    .line 7044
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
     const v1, 0x7f02011e
@@ -14324,7 +14316,7 @@
 
     goto :goto_1
 
-    .line 6986
+    .line 7045
     :cond_2
     sget-object v0, Lcom/android/camera/IntentManager$RequestName;->Mms:Lcom/android/camera/IntentManager$RequestName;
 
@@ -14342,7 +14334,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 6988
+    .line 7047
     :cond_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
@@ -14352,7 +14344,7 @@
 
     goto :goto_1
 
-    .line 6990
+    .line 7049
     :cond_4
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
@@ -14362,20 +14354,20 @@
 
     goto :goto_1
 
-    .line 6993
+    .line 7052
     :cond_5
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 6994
+    .line 7053
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_text_ds:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_1
 
-    .line 6999
+    .line 7058
     :cond_6
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -14383,14 +14375,14 @@
 
     if-nez v0, :cond_7
 
-    .line 7000
+    .line 7059
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
     const v1, 0x7f020120
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 7005
+    .line 7064
     :goto_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
@@ -14402,38 +14394,38 @@
 
     goto :goto_2
 
-    .line 7002
+    .line 7061
     :cond_7
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 7003
+    .line 7062
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_text_ds:Landroid/widget/TextView;
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_3
 
-    .line 7012
+    .line 7071
     :cond_8
     if-nez p1, :cond_a
 
-    .line 7013
+    .line 7072
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-nez v0, :cond_9
 
-    .line 7014
+    .line 7073
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
     const v1, 0x7f02011b
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 7019
+    .line 7078
     :goto_4
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
@@ -14443,7 +14435,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/camera/ViewUtil;->enableMainButton(Landroid/widget/ImageView;Landroid/widget/Button;Landroid/widget/TextView;)V
 
-    .line 7035
+    .line 7094
     :goto_5
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPhoto_icon:Landroid/widget/ImageView;
 
@@ -14453,20 +14445,20 @@
 
     goto/16 :goto_0
 
-    .line 7016
+    .line 7075
     :cond_9
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 7017
+    .line 7076
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_text_ds:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_4
 
-    .line 7021
+    .line 7080
     :cond_a
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -14474,14 +14466,14 @@
 
     if-nez v0, :cond_b
 
-    .line 7022
+    .line 7081
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
     const v1, 0x7f020121
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 7027
+    .line 7086
     :goto_6
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
@@ -14493,13 +14485,13 @@
 
     goto :goto_5
 
-    .line 7024
+    .line 7083
     :cond_b
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 7025
+    .line 7084
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_text_ds:Landroid/widget/TextView;
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setText(I)V
@@ -14512,7 +14504,7 @@
     .parameter "orientation"
 
     .prologue
-    .line 4458
+    .line 4464
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mToast:Lcom/android/camera/rotate/RotateToast;
 
     if-eqz v0, :cond_0
@@ -14525,22 +14517,22 @@
 
     if-eqz v0, :cond_0
 
-    .line 4460
+    .line 4466
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mToast:Lcom/android/camera/rotate/RotateToast;
 
     invoke-virtual {v0}, Lcom/android/camera/rotate/RotateToast;->cancel()V
 
-    .line 4461
+    .line 4467
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mToast:Lcom/android/camera/rotate/RotateToast;
 
     invoke-virtual {v0, p1}, Lcom/android/camera/rotate/RotateToast;->updateOrientation(I)V
 
-    .line 4462
+    .line 4468
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mToast:Lcom/android/camera/rotate/RotateToast;
 
     invoke-virtual {v0}, Lcom/android/camera/rotate/RotateToast;->show()V
 
-    .line 4464
+    .line 4470
     :cond_0
     return-void
 .end method
@@ -14554,38 +14546,38 @@
 
     const/4 v3, 0x0
 
-    .line 7552
+    .line 7611
     const/4 v0, 0x0
 
-    .line 7553
+    .line 7612
     .local v0, scene_mode:Ljava/lang/String;
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->hideAllScene()V
 
-    .line 7555
+    .line 7614
     packed-switch p1, :pswitch_data_0
 
-    .line 7601
+    .line 7660
     :pswitch_0
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v1, v4}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 7604
+    .line 7663
     packed-switch p1, :pswitch_data_1
 
-    .line 7636
+    .line 7695
     :cond_0
     :goto_0
     return-void
 
-    .line 7557
+    .line 7616
     :pswitch_1
     const-string v0, "auto"
 
-    .line 7558
+    .line 7617
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->enableFlash()V
 
-    .line 7633
+    .line 7692
     :goto_1
     invoke-static {}, Lcom/android/camera/rotate/OrientationConfig;->getUIOrientation()I
 
@@ -14593,67 +14585,67 @@
 
     invoke-direct {p0, v1}, Lcom/android/camera/HTCCamera;->updateSceneGuideOrientation(I)V
 
-    .line 7634
+    .line 7693
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v1, v4}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 7635
+    .line 7694
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v1, v4, v3, v3, v0}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
     goto :goto_0
 
-    .line 7561
+    .line 7620
     :pswitch_2
     const-string v0, "night"
 
-    .line 7562
+    .line 7621
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->disableFlash()V
 
-    .line 7563
+    .line 7622
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->showSunNightSceneGuide()V
 
     goto :goto_1
 
-    .line 7570
+    .line 7629
     :pswitch_3
     const-string v0, "action"
 
-    .line 7571
+    .line 7630
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->enableFlash()V
 
     goto :goto_1
 
-    .line 7581
+    .line 7640
     :pswitch_4
     const-string v0, "flowers"
 
-    .line 7582
+    .line 7641
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->enableFlash()V
 
     goto :goto_1
 
-    .line 7585
+    .line 7644
     :pswitch_5
     const-string v0, "portrait"
 
-    .line 7586
+    .line 7645
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->enableFlash()V
 
     goto :goto_1
 
-    .line 7594
+    .line 7653
     :pswitch_6
     const-string v0, "auto"
 
-    .line 7595
+    .line 7654
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->enableFlash()V
 
     goto :goto_1
 
-    .line 7606
+    .line 7665
     :pswitch_7
     const-string v1, "Panorama UI"
 
@@ -14669,22 +14661,22 @@
 
     if-nez v1, :cond_0
 
-    .line 7608
+    .line 7667
     const-string v0, "auto"
 
-    .line 7609
+    .line 7668
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const-string v2, "auto"
 
     invoke-static {v1, v4, v3, v3, v2}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 7610
+    .line 7669
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->enterPanoramaMode()V
 
     goto :goto_0
 
-    .line 7614
+    .line 7673
     :pswitch_8
     const-string v1, "HDR UI"
 
@@ -14700,22 +14692,22 @@
 
     if-nez v1, :cond_0
 
-    .line 7616
+    .line 7675
     const-string v0, "auto"
 
-    .line 7617
+    .line 7676
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const-string v2, "auto"
 
     invoke-static {v1, v4, v3, v3, v2}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 7618
+    .line 7677
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->enterHdrMode()V
 
     goto :goto_0
 
-    .line 7622
+    .line 7681
     :pswitch_9
     const-string v1, "Burst UI"
 
@@ -14731,22 +14723,22 @@
 
     if-nez v1, :cond_0
 
-    .line 7624
+    .line 7683
     const-string v0, "action"
 
-    .line 7625
+    .line 7684
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const-string v2, "action"
 
     invoke-static {v1, v4, v3, v3, v2}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 7626
+    .line 7685
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->enterBurstMode()V
 
     goto/16 :goto_0
 
-    .line 7555
+    .line 7614
     nop
 
     :pswitch_data_0
@@ -14762,7 +14754,7 @@
         :pswitch_6
     .end packed-switch
 
-    .line 7604
+    .line 7663
     :pswitch_data_1
     .packed-switch 0x1
         :pswitch_7
@@ -14782,7 +14774,7 @@
 
     const/4 v3, 0x0
 
-    .line 7723
+    .line 7782
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -14805,27 +14797,27 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7725
+    .line 7784
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mScenePortraitLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-direct {p0, p1, v0}, Lcom/android/camera/HTCCamera;->setSceneGuidePosition(ILcom/android/camera/rotate/RotateRelativeLayout;)V
 
-    .line 7726
+    .line 7785
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneSunNightLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-direct {p0, p1, v0}, Lcom/android/camera/HTCCamera;->setSceneGuidePosition(ILcom/android/camera/rotate/RotateRelativeLayout;)V
 
-    .line 7727
+    .line 7786
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneLandscapeTipLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-direct {p0, p1, v0}, Lcom/android/camera/HTCCamera;->setSceneGuidePosition(ILcom/android/camera/rotate/RotateRelativeLayout;)V
 
-    .line 7728
+    .line 7787
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneLandscapeTipTextLayout:Landroid/widget/RelativeLayout;
 
     invoke-direct {p0, p1, v0}, Lcom/android/camera/HTCCamera;->setTipTextPosition(ILandroid/widget/RelativeLayout;)V
 
-    .line 7730
+    .line 7789
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneLandscapeLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     if-eqz v0, :cond_2
@@ -14834,7 +14826,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 7732
+    .line 7791
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneLandscapeLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v0}, Lcom/android/camera/rotate/RotateRelativeLayout;->getVisibility()I
@@ -14851,50 +14843,50 @@
 
     if-nez v0, :cond_2
 
-    .line 7733
+    .line 7792
     :cond_0
     if-eqz p1, :cond_1
 
     if-ne p1, v4, :cond_3
 
-    .line 7734
+    .line 7793
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneLandscapeLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v0, v5}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 7735
+    .line 7794
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneLandscapePortLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v0, p1}, Lcom/android/camera/rotate/RotateRelativeLayout;->setOrientation(I)V
 
-    .line 7736
+    .line 7795
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneLandscapePortLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v0, v3}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 7748
+    .line 7807
     :cond_2
     :goto_0
     return-void
 
-    .line 7739
+    .line 7798
     :cond_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneLandscapePortLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v0, v5}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 7740
+    .line 7799
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_4
 
-    .line 7741
+    .line 7800
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneLandscapeLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v0, v3}, Lcom/android/camera/rotate/RotateRelativeLayout;->setOrientation(I)V
 
-    .line 7744
+    .line 7803
     :goto_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneLandscapeLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
@@ -14902,7 +14894,7 @@
 
     goto :goto_0
 
-    .line 7743
+    .line 7802
     :cond_4
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSceneLandscapeLayout:Lcom/android/camera/rotate/RotateRelativeLayout;
 
@@ -14926,44 +14918,44 @@
 
     const/4 v3, 0x1
 
-    .line 6920
+    .line 6979
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
     if-nez v1, :cond_1
 
-    .line 6970
+    .line 7029
     :cond_0
     :goto_0
     return-void
 
-    .line 6924
+    .line 6983
     :cond_1
     if-nez p1, :cond_6
 
-    .line 6925
+    .line 6984
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
     const v2, 0x7f0a01b7
 
     invoke-virtual {v1, v2}, Lcom/android/camera/widget/ImageTextView;->setText(I)V
 
-    .line 6926
+    .line 6985
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mEffectManager:Lcom/android/camera/effect/EffectManager;
 
     if-eqz v1, :cond_4
 
-    .line 6927
+    .line 6986
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mEffectManager:Lcom/android/camera/effect/EffectManager;
 
     invoke-virtual {v1}, Lcom/android/camera/effect/EffectManager;->getCurrentScene()Lcom/android/camera/effect/EffectBase;
 
     move-result-object v8
 
-    .line 6928
+    .line 6987
     .local v8, scene:Lcom/android/camera/effect/EffectBase;
     if-eqz v8, :cond_3
 
-    .line 6929
+    .line 6988
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
     invoke-direct {p0, v8}, Lcom/android/camera/HTCCamera;->getMainbarSceneIcon(Lcom/android/camera/effect/EffectBase;)Ljava/lang/Integer;
@@ -14976,25 +14968,25 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/widget/ImageTextView;->setImageResource(I)V
 
-    .line 6937
+    .line 6996
     .end local v8           #scene:Lcom/android/camera/effect/EffectBase;
     :goto_1
     if-eq p2, v5, :cond_5
 
-    .line 6938
+    .line 6997
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_btn:Landroid/widget/Button;
 
     invoke-static {v1, v2}, Lcom/android/camera/ViewUtil;->enableMainButton(Lcom/android/camera/widget/ImageTextView;Landroid/widget/Button;)V
 
-    .line 6957
+    .line 7016
     :goto_2
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
     if-eqz v1, :cond_2
 
-    .line 6959
+    .line 7018
     invoke-static {}, Lcom/android/camera/rotate/OrientationConfig;->getUIOrientation()I
 
     move-result v1
@@ -15003,7 +14995,7 @@
 
     mul-int/lit8 v7, v1, 0x5a
 
-    .line 6960
+    .line 7019
     .local v7, degrees:I
     new-instance v0, Landroid/view/animation/RotateAnimation;
 
@@ -15017,24 +15009,24 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/view/animation/RotateAnimation;-><init>(FFIFIF)V
 
-    .line 6961
+    .line 7020
     .local v0, rotateAnimation:Landroid/view/animation/RotateAnimation;
     const-wide/16 v1, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/view/animation/RotateAnimation;->setDuration(J)V
 
-    .line 6962
+    .line 7021
     invoke-virtual {v0, v3}, Landroid/view/animation/RotateAnimation;->setFillBefore(Z)V
 
-    .line 6963
+    .line 7022
     invoke-virtual {v0, v3}, Landroid/view/animation/RotateAnimation;->setFillAfter(Z)V
 
-    .line 6964
+    .line 7023
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
     invoke-virtual {v1, v0}, Lcom/android/camera/widget/ImageTextView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 6967
+    .line 7026
     .end local v0           #rotateAnimation:Landroid/view/animation/RotateAnimation;
     .end local v7           #degrees:I
     :cond_2
@@ -15042,14 +15034,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 6968
+    .line 7027
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->invalidate()V
 
     goto :goto_0
 
-    .line 6931
+    .line 6990
     .restart local v8       #scene:Lcom/android/camera/effect/EffectBase;
     :cond_3
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
@@ -15058,7 +15050,7 @@
 
     goto :goto_1
 
-    .line 6934
+    .line 6993
     .end local v8           #scene:Lcom/android/camera/effect/EffectBase;
     :cond_4
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
@@ -15067,7 +15059,7 @@
 
     goto :goto_1
 
-    .line 6940
+    .line 6999
     :cond_5
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
@@ -15077,7 +15069,7 @@
 
     goto :goto_2
 
-    .line 6943
+    .line 7002
     :cond_6
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
@@ -15085,19 +15077,19 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/widget/ImageTextView;->setText(I)V
 
-    .line 6944
+    .line 7003
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
     const v2, 0x7f020074
 
     invoke-virtual {v1, v2}, Lcom/android/camera/widget/ImageTextView;->setImageResource(I)V
 
-    .line 6946
+    .line 7005
     if-eq p3, v3, :cond_7
 
     if-ne p2, v5, :cond_8
 
-    .line 6948
+    .line 7007
     :cond_7
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
@@ -15107,7 +15099,7 @@
 
     goto :goto_2
 
-    .line 6952
+    .line 7011
     :cond_8
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneQuality_icon:Lcom/android/camera/widget/ImageTextView;
 
@@ -15119,190 +15111,154 @@
 .end method
 
 .method private updateSelfPortraitHint(I)V
-    .locals 8
+    .locals 9
     .parameter "orientation"
 
     .prologue
-    const/16 v7, 0xe
+    const/16 v8, 0xe
 
-    const/16 v6, 0xb
+    const/16 v7, 0xb
 
-    const/16 v5, 0x9
+    const/16 v6, 0x9
 
-    const/4 v2, -0x1
+    const/4 v5, -0x1
 
     const/4 v4, 0x0
 
-    .line 6831
-    iget-object v1, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SelfPortrait:Lcom/android/camera/rotate/RotateRelativeLayout;
+    .line 6891
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SelfPortrait:Lcom/android/camera/rotate/RotateRelativeLayout;
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    iget-object v1, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SelfPortrait:Lcom/android/camera/rotate/RotateRelativeLayout;
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SelfPortrait:Lcom/android/camera/rotate/RotateRelativeLayout;
 
-    invoke-virtual {v1}, Lcom/android/camera/rotate/RotateRelativeLayout;->getVisibility()I
+    invoke-virtual {v2}, Lcom/android/camera/rotate/RotateRelativeLayout;->getVisibility()I
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    .line 6869
+    .line 6928
     :cond_0
     :goto_0
     return-void
 
-    .line 6834
+    .line 6894
     :cond_1
-    iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSelfPortraitHint_layout:Landroid/widget/LinearLayout;
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSelfPortraitHint_layout:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v2}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
+    check-cast v1, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 6835
-    .local v0, params:Landroid/widget/RelativeLayout$LayoutParams;
+    .line 6895
+    .local v1, params:Landroid/widget/RelativeLayout$LayoutParams;
+    invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f0b00a5
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    .line 6896
+    .local v0, inTopMargins:I
     packed-switch p1, :pswitch_data_0
 
-    .line 6867
+    .line 6926
     :goto_1
-    iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSelfPortraitHint_layout:Landroid/widget/LinearLayout;
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSelfPortraitHint_layout:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6868
-    iget-object v1, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SelfPortrait:Lcom/android/camera/rotate/RotateRelativeLayout;
+    .line 6927
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SelfPortrait:Lcom/android/camera/rotate/RotateRelativeLayout;
 
-    invoke-virtual {v1, p1}, Lcom/android/camera/rotate/RotateRelativeLayout;->setOrientation(I)V
+    invoke-virtual {v2, p1}, Lcom/android/camera/rotate/RotateRelativeLayout;->setOrientation(I)V
 
     goto :goto_0
 
-    .line 6837
+    .line 6898
     :pswitch_0
-    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v5, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 6838
-    invoke-virtual {v0, v5, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
+    .line 6899
+    invoke-virtual {v1, v6, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 6839
-    invoke-virtual {v0, v6, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
+    .line 6900
+    invoke-virtual {v1, v7, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 6840
-    invoke-virtual {v0, v7, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
+    .line 6901
+    invoke-virtual {v1, v8, v5}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 6841
-    sget v1, Lcom/android/camera/DisplayDevice;->SELF_PORTRAIT_HINT_MARGIN_DEFAULT:I
-
-    invoke-virtual {v0, v4, v1, v4, v4}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
+    .line 6902
+    invoke-virtual {v1, v4, v0, v4, v4}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
     goto :goto_1
 
-    .line 6844
+    .line 6905
     :pswitch_1
-    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v5, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 6845
-    invoke-virtual {v0, v5, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
+    .line 6906
+    invoke-virtual {v1, v6, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 6846
-    invoke-virtual {v0, v6, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
+    .line 6907
+    invoke-virtual {v1, v7, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 6847
-    invoke-virtual {v0, v7, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
+    .line 6908
+    invoke-virtual {v1, v8, v5}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 6848
-    sget v1, Lcom/android/camera/DisplayDevice;->SELF_PORTRAIT_HINT_MARGIN_MAIN_BAR:I
-
-    invoke-virtual {v0, v4, v1, v4, v4}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
+    .line 6909
+    invoke-virtual {v1, v4, v0, v4, v4}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
     goto :goto_1
 
-    .line 6851
+    .line 6912
     :pswitch_2
-    iget v1, p0, Lcom/android/camera/HTCCamera;->mSurfaceHeight:I
+    iput v5, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    sget v3, Lcom/android/camera/DisplayDevice;->SCREEN_WIDTH:I
+    .line 6913
+    invoke-virtual {v1, v6, v5}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    if-ne v1, v3, :cond_2
+    .line 6914
+    invoke-virtual {v1, v7, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->hasPreviewFilterLayout()Z
+    .line 6915
+    invoke-virtual {v1, v8, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    move-result v1
+    .line 6916
+    sget v2, Lcom/android/camera/DisplayDevice;->SELF_PORTRAIT_HINT_MARGIN_DEFAULT:I
 
-    if-nez v1, :cond_2
-
-    sget v1, Lcom/android/camera/DisplayDevice;->SELF_PORTRAIT_HINT_WIDTH_FULL_SCREEN:I
-
-    :goto_2
-    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    .line 6853
-    invoke-virtual {v0, v5, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
-
-    .line 6854
-    invoke-virtual {v0, v6, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
-
-    .line 6855
-    invoke-virtual {v0, v7, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
-
-    .line 6856
-    sget v1, Lcom/android/camera/DisplayDevice;->SELF_PORTRAIT_HINT_MARGIN_DEFAULT:I
-
-    invoke-virtual {v0, v4, v1, v4, v4}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
+    invoke-virtual {v1, v4, v2, v4, v4}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
     goto :goto_1
 
-    :cond_2
-    move v1, v2
-
-    .line 6851
-    goto :goto_2
-
-    .line 6859
+    .line 6919
     :pswitch_3
-    iget v1, p0, Lcom/android/camera/HTCCamera;->mSurfaceHeight:I
+    iput v5, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    sget v3, Lcom/android/camera/DisplayDevice;->SCREEN_WIDTH:I
+    .line 6920
+    invoke-virtual {v1, v6, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    if-ne v1, v3, :cond_3
+    .line 6921
+    invoke-virtual {v1, v7, v5}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->hasPreviewFilterLayout()Z
+    .line 6922
+    invoke-virtual {v1, v8, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    move-result v1
+    .line 6923
+    sget v2, Lcom/android/camera/DisplayDevice;->SELF_PORTRAIT_HINT_MARGIN_DEFAULT:I
 
-    if-nez v1, :cond_3
-
-    sget v1, Lcom/android/camera/DisplayDevice;->SELF_PORTRAIT_HINT_WIDTH_FULL_SCREEN:I
-
-    :goto_3
-    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    .line 6861
-    invoke-virtual {v0, v5, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
-
-    .line 6862
-    invoke-virtual {v0, v6, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
-
-    .line 6863
-    invoke-virtual {v0, v7, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
-
-    .line 6864
-    sget v1, Lcom/android/camera/DisplayDevice;->SELF_PORTRAIT_HINT_MARGIN_DEFAULT:I
-
-    invoke-virtual {v0, v4, v1, v4, v4}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
+    invoke-virtual {v1, v4, v2, v4, v4}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
     goto :goto_1
 
-    :cond_3
-    move v1, v2
-
-    .line 6859
-    goto :goto_3
-
-    .line 6835
-    nop
-
+    .line 6896
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -15317,16 +15273,16 @@
     .parameter "mode"
 
     .prologue
-    .line 7081
+    .line 7140
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSwitchBtn_icon:Lcom/android/camera/widget/ImageTextView;
 
     if-nez v1, :cond_0
 
-    .line 7116
+    .line 7175
     :goto_0
     return-void
 
-    .line 7096
+    .line 7155
     :cond_0
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -15334,17 +15290,17 @@
 
     if-nez v1, :cond_2
 
-    .line 7098
+    .line 7157
     if-nez p1, :cond_1
 
-    .line 7099
+    .line 7158
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSwitchBtn_icon:Lcom/android/camera/widget/ImageTextView;
 
     const v2, 0x7f0200c2
 
     invoke-virtual {v1, v2}, Lcom/android/camera/widget/ImageTextView;->setImageResource(I)V
 
-    .line 7114
+    .line 7173
     :goto_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSwitchBtn_icon:Lcom/android/camera/widget/ImageTextView;
 
@@ -15356,7 +15312,7 @@
 
     goto :goto_0
 
-    .line 7101
+    .line 7160
     :cond_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSwitchBtn_icon:Lcom/android/camera/widget/ImageTextView;
 
@@ -15366,7 +15322,7 @@
 
     goto :goto_1
 
-    .line 7105
+    .line 7164
     :cond_2
     const-string v1, "pref_camera_switch"
 
@@ -15378,18 +15334,18 @@
 
     move-result v0
 
-    .line 7106
+    .line 7165
     .local v0, is2nd:Z
     if-eqz v0, :cond_3
 
-    .line 7107
+    .line 7166
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSwitchBtn_icon:Lcom/android/camera/widget/ImageTextView;
 
     const v2, 0x7f020059
 
     invoke-virtual {v1, v2}, Lcom/android/camera/widget/ImageTextView;->setImageResource(I)V
 
-    .line 7108
+    .line 7167
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSwitch_text_ds:Landroid/widget/TextView;
 
     const v2, 0x7f0a0171
@@ -15398,7 +15354,7 @@
 
     goto :goto_1
 
-    .line 7110
+    .line 7169
     :cond_3
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSwitchBtn_icon:Lcom/android/camera/widget/ImageTextView;
 
@@ -15406,7 +15362,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/widget/ImageTextView;->setImageResource(I)V
 
-    .line 7111
+    .line 7170
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSwitch_text_ds:Landroid/widget/TextView;
 
     const v2, 0x7f0a0170
@@ -15423,17 +15379,17 @@
     .parameter "mode"
 
     .prologue
-    .line 4534
+    .line 4540
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mThumbController:Lcom/android/camera/ThumbnailController;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/camera/ThumbnailController;->setData(Landroid/graphics/Bitmap;Ljava/lang/String;I)V
 
-    .line 4535
+    .line 4541
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mThumbController:Lcom/android/camera/ThumbnailController;
 
     invoke-virtual {v0}, Lcom/android/camera/ThumbnailController;->updateDisplayIfNeeded()V
 
-    .line 4536
+    .line 4542
     return-void
 .end method
 
@@ -15443,7 +15399,7 @@
     .parameter "enabled"
 
     .prologue
-    .line 10256
+    .line 10346
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "com.htc.content.intent.action.ORIENTATION_LIGHT"
@@ -15470,11 +15426,11 @@
 
     move-result-object v0
 
-    .line 10260
+    .line 10350
     .local v0, intent:Landroid/content/Intent;
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 10261
+    .line 10351
     return-void
 .end method
 
@@ -15486,7 +15442,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 5919
+    .line 5929
     const-string v1, "pref_first_time_launch"
 
     invoke-static {p0, v1}, Lcom/android/camera/HTCCameraAdvanceSetting;->ContainsKey(Landroid/app/Activity;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -15499,12 +15455,12 @@
 
     if-nez v1, :cond_1
 
-    .line 5926
+    .line 5936
     :cond_0
     :goto_0
     return v0
 
-    .line 5921
+    .line 5931
     :cond_1
     const-string v1, "pref_first_time_launch"
 
@@ -15518,7 +15474,7 @@
 
     if-eq v1, v0, :cond_0
 
-    .line 5926
+    .line 5936
     const/4 v0, 0x0
 
     goto :goto_0
@@ -15529,20 +15485,20 @@
     .parameter "id"
 
     .prologue
-    const/4 v12, 0x4
+    const/4 v12, 0x7
 
     const/4 v11, -0x1
 
     const/4 v10, 0x2
 
-    .line 8054
+    .line 8116
     const-string v1, "HTCCamera"
 
     const-string v2, "PlaySound() - start"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8055
+    .line 8117
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v1, :cond_0
@@ -15553,7 +15509,7 @@
 
     if-nez v1, :cond_0
 
-    .line 8056
+    .line 8118
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getAudioManager()Landroid/media/AudioManager;
 
     move-result-object v1
@@ -15564,52 +15520,52 @@
 
     invoke-virtual {v1, v2, v3, v10}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
 
-    .line 8060
+    .line 8122
     :cond_0
     iget-boolean v1, p0, Lcom/android/camera/HTCCamera;->mIsUIReady:Z
 
     if-nez v1, :cond_1
 
-    .line 8061
+    .line 8123
     const-string v1, "HTCCamera"
 
     const-string v2, "mIsUIReady = false - PlaySound return"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8168
+    .line 8231
     :goto_0
     return-void
 
-    .line 8066
+    .line 8128
     :cond_1
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mAudioSyncRoot:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 8068
+    .line 8130
     :try_start_0
     new-instance v0, Landroid/media/MediaPlayer;
 
     invoke-direct {v0}, Landroid/media/MediaPlayer;-><init>()V
 
-    .line 8070
+    .line 8132
     .local v0, mediaPlayer:Landroid/media/MediaPlayer;
     if-nez v0, :cond_2
 
-    .line 8071
+    .line 8133
     const-string v1, "HTCCamera"
 
     const-string v3, "PlaySound() - mAudioPlayer == null"
 
     invoke-static {v1, v3}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8072
+    .line 8134
     monitor-exit v2
 
     goto :goto_0
 
-    .line 8076
+    .line 8138
     .end local v0           #mediaPlayer:Landroid/media/MediaPlayer;
     :catchall_0
     move-exception v1
@@ -15620,18 +15576,18 @@
 
     throw v1
 
-    .line 8075
+    .line 8137
     .restart local v0       #mediaPlayer:Landroid/media/MediaPlayer;
     :cond_2
     :try_start_1
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mAudioPlayer:Landroid/media/MediaPlayer;
 
-    .line 8076
+    .line 8138
     monitor-exit v2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 8086
+    .line 8148
     :try_start_2
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getResources()Landroid/content/res/Resources;
 
@@ -15641,7 +15597,7 @@
 
     move-result-object v7
 
-    .line 8087
+    .line 8149
     .local v7, afd:Landroid/content/res/AssetFileDescriptor;
     const-string v1, "HTCCamera"
 
@@ -15649,7 +15605,7 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8088
+    .line 8150
     invoke-virtual {v7}, Landroid/content/res/AssetFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v1
@@ -15664,7 +15620,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/media/MediaPlayer;->setDataSource(Ljava/io/FileDescriptor;JJ)V
 
-    .line 8090
+    .line 8152
     invoke-static {}, Lcom/android/camera/DisplayDevice;->forceSutterSound()Z
 
     move-result v1
@@ -15677,46 +15633,46 @@
 
     if-eqz v1, :cond_7
 
-    .line 8093
+    .line 8154
     :cond_3
-    const/4 v1, 0x4
+    const/4 v1, 0x7
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mAudioStreamType:I
 
-    .line 8094
+    .line 8157
     const-string v1, "HTCCamera"
 
-    const-string v2, "PlaySound() - StreamType : STREAM_ALARM"
+    const-string v2, "PlaySound() - StreamType : STREAM_SYSTEM_ENFORCED"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8100
+    .line 8163
     :goto_1
     iget v1, p0, Lcom/android/camera/HTCCamera;->mAudioStreamType:I
 
     invoke-virtual {v0, v1}, Landroid/media/MediaPlayer;->setAudioStreamType(I)V
 
-    .line 8101
+    .line 8164
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mAudioCompletionListener:Landroid/media/MediaPlayer$OnCompletionListener;
 
     invoke-virtual {v0, v1}, Landroid/media/MediaPlayer;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
 
-    .line 8102
+    .line 8165
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mAudioErrorListener:Landroid/media/MediaPlayer$OnErrorListener;
 
     invoke-virtual {v0, v1}, Landroid/media/MediaPlayer;->setOnErrorListener(Landroid/media/MediaPlayer$OnErrorListener;)V
 
-    .line 8103
+    .line 8166
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->prepare()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 8116
+    .line 8179
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getAudioManager()Landroid/media/AudioManager;
 
     move-result-object v8
 
-    .line 8141
+    .line 8204
     .local v8, audioManager:Landroid/media/AudioManager;
     invoke-virtual {v8}, Landroid/media/AudioManager;->getRingerMode()I
 
@@ -15736,7 +15692,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 8144
+    .line 8207
     :cond_4
     const-string v1, "HTCCamera"
 
@@ -15744,25 +15700,25 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8146
+    .line 8209
     iget v1, p0, Lcom/android/camera/HTCCamera;->mAudioStreamType:I
 
     invoke-virtual {v8, v1}, Landroid/media/AudioManager;->getStreamMaxVolume(I)I
 
     move-result v6
 
-    .line 8149
+    .line 8212
     .local v6, MaxVolume:I
     iget v1, p0, Lcom/android/camera/HTCCamera;->mAudioStreamType:I
 
     if-ne v1, v12, :cond_9
 
-    .line 8150
+    .line 8213
     iget v1, p0, Lcom/android/camera/HTCCamera;->mOriginalVolume_Alarm:I
 
     if-ne v1, v11, :cond_5
 
-    .line 8151
+    .line 8214
     iget v1, p0, Lcom/android/camera/HTCCamera;->mAudioStreamType:I
 
     invoke-virtual {v8, v1}, Landroid/media/AudioManager;->getStreamVolume(I)I
@@ -15771,7 +15727,7 @@
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mOriginalVolume_Alarm:I
 
-    .line 8152
+    .line 8215
     const-string v1, "HTCCamera"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -15796,7 +15752,7 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8161
+    .line 8224
     :cond_5
     :goto_2
     iget v1, p0, Lcom/android/camera/HTCCamera;->mAudioStreamType:I
@@ -15809,12 +15765,12 @@
 
     invoke-virtual {v8, v1, v2, v3}, Landroid/media/AudioManager;->setStreamVolume(III)V
 
-    .line 8165
+    .line 8228
     .end local v6           #MaxVolume:I
     :cond_6
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->start()V
 
-    .line 8167
+    .line 8230
     const-string v1, "HTCCamera"
 
     const-string v2, "PlaySound() - end"
@@ -15823,7 +15779,7 @@
 
     goto/16 :goto_0
 
-    .line 8096
+    .line 8159
     .end local v8           #audioManager:Landroid/media/AudioManager;
     :cond_7
     const/4 v1, 0x2
@@ -15831,7 +15787,7 @@
     :try_start_3
     iput v1, p0, Lcom/android/camera/HTCCamera;->mAudioStreamType:I
 
-    .line 8097
+    .line 8160
     const-string v1, "HTCCamera"
 
     const-string v2, "PlaySound() - StreamType : STREAM_RING"
@@ -15842,12 +15798,12 @@
 
     goto :goto_1
 
-    .line 8105
+    .line 8168
     .end local v7           #afd:Landroid/content/res/AssetFileDescriptor;
     :catch_0
     move-exception v9
 
-    .line 8106
+    .line 8169
     .local v9, ex:Ljava/lang/Exception;
     const-string v1, "HTCCamera"
 
@@ -15855,26 +15811,26 @@
 
     invoke-static {v1, v2, v9}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 8107
+    .line 8170
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->release()V
 
-    .line 8108
+    .line 8171
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mAudioSyncRoot:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 8110
+    .line 8173
     :try_start_4
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mAudioPlayer:Landroid/media/MediaPlayer;
 
     if-ne v0, v1, :cond_8
 
-    .line 8111
+    .line 8174
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/camera/HTCCamera;->mAudioPlayer:Landroid/media/MediaPlayer;
 
-    .line 8112
+    .line 8175
     :cond_8
     monitor-exit v2
 
@@ -15889,7 +15845,7 @@
 
     throw v1
 
-    .line 8155
+    .line 8218
     .end local v9           #ex:Ljava/lang/Exception;
     .restart local v6       #MaxVolume:I
     .restart local v7       #afd:Landroid/content/res/AssetFileDescriptor;
@@ -15899,7 +15855,7 @@
 
     if-ne v1, v11, :cond_5
 
-    .line 8156
+    .line 8219
     iget v1, p0, Lcom/android/camera/HTCCamera;->mAudioStreamType:I
 
     invoke-virtual {v8, v1}, Landroid/media/AudioManager;->getStreamVolume(I)I
@@ -15908,7 +15864,7 @@
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mOriginalVolume_Ring:I
 
-    .line 8157
+    .line 8220
     const-string v1, "HTCCamera"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -15942,24 +15898,24 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 6136
+    .line 6146
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
     if-nez v1, :cond_1
 
-    .line 6137
+    .line 6147
     const-string v1, "HTCCamera"
 
     const-string v2, "isRequestHighQualityVideo() - mIntentManager == null"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6149
+    .line 6159
     :cond_0
     :goto_0
     return v0
 
-    .line 6141
+    .line 6151
     :cond_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
@@ -15985,7 +15941,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 6144
+    .line 6154
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
@@ -15995,12 +15951,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 6145
+    .line 6155
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 6147
+    .line 6157
     :cond_3
     const/4 v0, 0x0
 
@@ -16011,7 +15967,7 @@
     .locals 2
 
     .prologue
-    .line 7892
+    .line 7952
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
@@ -16024,7 +15980,7 @@
 
     if-nez v0, :cond_0
 
-    .line 7893
+    .line 7953
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getAudioManager()Landroid/media/AudioManager;
 
     move-result-object v0
@@ -16033,7 +15989,7 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->abandonAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I
 
-    .line 7894
+    .line 7954
     :cond_0
     return-void
 .end method
@@ -16046,14 +16002,14 @@
 
     const/4 v2, 0x0
 
-    .line 9762
+    .line 9852
     const-string v0, "HTCCamera"
 
     const-string v1, "activate!!!!"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9763
+    .line 9853
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
@@ -16062,7 +16018,7 @@
 
     if-nez v0, :cond_1
 
-    .line 9764
+    .line 9854
     :cond_0
     const-string v0, "HTCCamera"
 
@@ -16070,17 +16026,17 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9803
+    .line 9893
     :goto_0
     return-void
 
-    .line 9768
+    .line 9858
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     if-nez v0, :cond_2
 
-    .line 9769
+    .line 9859
     const-string v0, "HTCCamera"
 
     const-string v1, "activate - mUIHandler = null"
@@ -16089,13 +16045,13 @@
 
     goto :goto_0
 
-    .line 9773
+    .line 9863
     :cond_2
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
     if-nez v0, :cond_3
 
-    .line 9774
+    .line 9864
     const-string v0, "HTCCamera"
 
     const-string v1, "activate in mIdle == false"
@@ -16104,23 +16060,23 @@
 
     goto :goto_0
 
-    .line 9778
+    .line 9868
     :cond_3
     iput-boolean v2, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
-    .line 9779
+    .line 9869
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mScreensave:Landroid/view/View;
 
     if-eqz v0, :cond_4
 
-    .line 9780
+    .line 9870
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mScreensave:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 9782
+    .line 9872
     :cond_4
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getWindow()Landroid/view/Window;
 
@@ -16130,21 +16086,21 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->addFlags(I)V
 
-    .line 9783
+    .line 9873
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportShowWhenLock()Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    .line 9784
+    .line 9874
     const-string v0, "HTCCamera"
 
     const-string v1, "addFlags FLAG_SHOW_WHEN_LOCKED activate"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9785
+    .line 9875
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -16153,7 +16109,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->addFlags(I)V
 
-    .line 9790
+    .line 9880
     :cond_5
     const-string v0, "HTCCamera"
 
@@ -16161,26 +16117,26 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9791
+    .line 9881
     sput-boolean v3, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 9793
+    .line 9883
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v2, v3, v2, v1}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 9795
+    .line 9885
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->resetScreenSaveTimer()V
 
-    .line 9796
+    .line 9886
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->setMaxBrightness()V
 
-    .line 9799
+    .line 9889
     invoke-virtual {p0, v3}, Lcom/android/camera/HTCCamera;->registerFocusSensor(Z)V
 
-    .line 9802
+    .line 9892
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v1, "CameraActivity.Activate"
@@ -16198,30 +16154,30 @@
 
     const/4 v1, 0x0
 
-    .line 9198
+    .line 9288
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-nez v3, :cond_1
 
-    .line 9222
+    .line 9312
     :cond_0
     :goto_0
     return v1
 
-    .line 9201
+    .line 9291
     :cond_1
     iget v3, p0, Lcom/android/camera/HTCCamera;->mSensorFocusDisabledCounter:I
 
     if-gtz v3, :cond_0
 
-    .line 9205
+    .line 9295
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getFaceNumber()I
 
     move-result v3
 
     if-gtz v3, :cond_2
 
-    .line 9206
+    .line 9296
     const-string v3, "pref_camera_auto_focus"
 
     invoke-static {p0, v3}, Lcom/android/camera/HTCCameraAdvanceSetting;->getPrefenceBoolean(Landroid/app/Activity;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -16232,11 +16188,11 @@
 
     move-result v0
 
-    .line 9208
+    .line 9298
     .local v0, openAutoFocus:Z
     if-eqz v0, :cond_0
 
-    .line 9215
+    .line 9305
     .end local v0           #openAutoFocus:Z
     :cond_2
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->canTriggerFocus()Z
@@ -16245,7 +16201,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 9218
+    .line 9308
     iget-boolean v3, p0, Lcom/android/camera/HTCCamera;->mEnableSensorFocus:Z
 
     if-eqz v3, :cond_0
@@ -16263,7 +16219,7 @@
     :cond_3
     move v1, v2
 
-    .line 9222
+    .line 9312
     goto :goto_0
 .end method
 
@@ -16275,7 +16231,7 @@
 
     const/4 v2, 0x0
 
-    .line 9154
+    .line 9244
     invoke-static {}, Lcom/android/camera/DisplayDevice;->hasAutoFocus()Z
 
     move-result v1
@@ -16284,11 +16240,11 @@
 
     move v1, v2
 
-    .line 9193
+    .line 9283
     :goto_0
     return v1
 
-    .line 9157
+    .line 9247
     :cond_0
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -16296,10 +16252,10 @@
 
     move v1, v2
 
-    .line 9158
+    .line 9248
     goto :goto_0
 
-    .line 9166
+    .line 9256
     :cond_1
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportSecondCamera()Z
 
@@ -16307,7 +16263,7 @@
 
     if-ne v1, v3, :cond_2
 
-    .line 9167
+    .line 9257
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v1}, Lcom/android/camera/CameraThread;->is2ndCamera()Z
@@ -16318,10 +16274,10 @@
 
     move v1, v2
 
-    .line 9168
+    .line 9258
     goto :goto_0
 
-    .line 9171
+    .line 9261
     :cond_2
     sget-boolean v1, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
@@ -16364,10 +16320,10 @@
     :cond_3
     move v1, v2
 
-    .line 9177
+    .line 9267
     goto :goto_0
 
-    .line 9180
+    .line 9270
     :cond_4
     new-instance v0, Lcom/android/camera/ConditionalQueryEvent;
 
@@ -16375,13 +16331,13 @@
 
     invoke-direct {v0, v1, v3, v2}, Lcom/android/camera/ConditionalQueryEvent;-><init>(Ljava/lang/String;IZ)V
 
-    .line 9184
+    .line 9274
     .local v0, queryEvent:Lcom/android/camera/ConditionalQueryEvent;
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     invoke-virtual {v1, v0}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 9185
+    .line 9275
     invoke-virtual {v0}, Lcom/android/camera/ConditionalQueryEvent;->hasResult()Z
 
     move-result v1
@@ -16402,10 +16358,10 @@
 
     move v1, v2
 
-    .line 9186
+    .line 9276
     goto :goto_0
 
-    .line 9188
+    .line 9278
     :cond_5
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -16436,13 +16392,13 @@
     :cond_6
     move v1, v2
 
-    .line 9190
+    .line 9280
     goto :goto_0
 
     :cond_7
     move v1, v3
 
-    .line 9193
+    .line 9283
     goto :goto_0
 .end method
 
@@ -16460,38 +16416,38 @@
 
     const/4 v0, 0x0
 
-    .line 9305
+    .line 9395
     const-string v2, "HTCCamera"
 
     const-string v3, "cancelAutoFocus() - start"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9307
+    .line 9397
     invoke-static {}, Lcom/android/camera/DisplayDevice;->canCancelFocus()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 9308
+    .line 9398
     const-string v1, "HTCCamera"
 
     const-string v2, "cancelAutoFocus() return - DisplayDevice.canCancelFocus() = false"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9345
+    .line 9435
     :goto_0
     return v0
 
-    .line 9312
+    .line 9402
     :cond_0
     iget v2, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     if-eq v2, v1, :cond_1
 
-    .line 9313
+    .line 9403
     const-string v1, "HTCCamera"
 
     const-string v2, "cancelAutoFocus() return - mFocusingState != FOCUSING_NO_ACTION"
@@ -16500,79 +16456,79 @@
 
     goto :goto_0
 
-    .line 9318
+    .line 9408
     :cond_1
     iput-boolean v1, p0, Lcom/android/camera/HTCCamera;->bCancelFocus:Z
 
-    .line 9320
+    .line 9410
     sput-boolean v0, Lcom/android/camera/HTCCamera;->bFocusFromPress:Z
 
-    .line 9322
+    .line 9412
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->resetFocusView()V
 
-    .line 9323
+    .line 9413
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x1c
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9324
+    .line 9414
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x1d
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9325
+    .line 9415
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const/4 v3, 0x4
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9326
+    .line 9416
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const/4 v3, 0x5
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9327
+    .line 9417
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v2, v5}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9328
+    .line 9418
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v2, v5}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 9330
+    .line 9420
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSensorHandler:Lcom/android/camera/SensorHandler;
 
     if-eqz v2, :cond_2
 
-    .line 9331
+    .line 9421
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSensorHandler:Lcom/android/camera/SensorHandler;
 
     invoke-virtual {v2, v0}, Lcom/android/camera/SensorHandler;->setifWaitFocus(Z)V
 
-    .line 9332
+    .line 9422
     :cond_2
     iput v0, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
-    .line 9334
+    .line 9424
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     if-eqz v0, :cond_3
 
-    .line 9335
+    .line 9425
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v0}, Lcom/android/camera/FaceDetection;->setStateWithFocus()V
 
-    .line 9336
+    .line 9426
     :cond_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -16580,43 +16536,43 @@
 
     invoke-static {v0, v2}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9337
+    .line 9427
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v2, 0x36
 
     invoke-static {v0, v2}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 9338
+    .line 9428
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v0, v6}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9339
+    .line 9429
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0x1f4
 
     invoke-static {v0, v6, v2, v3}, Lcom/android/camera/MessageHandler;->sendEmptyMessageDelayed(Landroid/os/Handler;IJ)V
 
-    .line 9340
+    .line 9430
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v0, v4}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9341
+    .line 9431
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v0, v4}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9342
+    .line 9432
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0x1f4
 
     invoke-static {v0, v4, v2, v3}, Lcom/android/camera/MessageHandler;->sendEmptyMessageDelayed(Landroid/os/Handler;IJ)V
 
-    .line 9343
+    .line 9433
     const-string v0, "HTCCamera"
 
     const-string v2, "cancelAutoFocus() - end"
@@ -16625,7 +16581,7 @@
 
     move v0, v1
 
-    .line 9345
+    .line 9435
     goto :goto_0
 .end method
 
@@ -16634,32 +16590,32 @@
     .parameter "value"
 
     .prologue
-    .line 10723
+    .line 10813
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->threadAccessCheck()V
 
-    .line 10724
+    .line 10814
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIsZoomLocked:Z
 
     if-eqz v0, :cond_0
 
-    .line 10726
+    .line 10816
     const-string v0, "HTCCamera"
 
     const-string v1, "Zoom is locked"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10737
+    .line 10827
     :goto_0
     return-void
 
-    .line 10729
+    .line 10819
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-nez v0, :cond_1
 
-    .line 10731
+    .line 10821
     const-string v0, "HTCCamera"
 
     const-string v1, "There is no camera thread"
@@ -16668,7 +16624,7 @@
 
     goto :goto_0
 
-    .line 10736
+    .line 10826
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -16683,14 +16639,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 5599
+    .line 5605
     const-string v0, "HTCCamera"
 
     const-string v1, "Change mode to Camera"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5600
+    .line 5606
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
@@ -16701,18 +16657,18 @@
 
     if-nez v0, :cond_0
 
-    .line 5601
+    .line 5607
     const-string v0, "HTCCamera"
 
     const-string v1, "Change mode to Camera - but current mode is Camera !!"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5626
+    .line 5635
     :goto_0
     return-void
 
-    .line 5605
+    .line 5611
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
@@ -16722,17 +16678,17 @@
 
     invoke-static {v0, v1, v3, v3, v2}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 5608
+    .line 5614
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     if-eqz v0, :cond_1
 
-    .line 5609
+    .line 5615
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/MenuHandler;->exitMenuHandler()V
 
-    .line 5611
+    .line 5617
     :cond_1
     const-string v0, "HTCCamera"
 
@@ -16740,24 +16696,24 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5612
+    .line 5618
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/camera/HTCCamera;->mWaitResetSettings:Z
 
-    .line 5613
+    .line 5619
     iput-boolean v3, p0, Lcom/android/camera/HTCCamera;->mIsPreviewStarted:Z
 
-    .line 5615
+    .line 5621
     invoke-direct {p0, v3}, Lcom/android/camera/HTCCamera;->updateModeIcon(I)V
 
-    .line 5616
+    .line 5622
     invoke-direct {p0, v3}, Lcom/android/camera/HTCCamera;->updateCaptureIcon(I)V
 
-    .line 5617
+    .line 5623
     invoke-direct {p0, v3}, Lcom/android/camera/HTCCamera;->updateSwitchIcon(I)V
 
-    .line 5618
+    .line 5624
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->getCameraType()I
@@ -16768,18 +16724,34 @@
 
     invoke-direct {p0, v3, v0, v1}, Lcom/android/camera/HTCCamera;->updateSceneQualityIcon(III)V
 
-    .line 5622
+    .line 5626
+    invoke-static {p0}, Lcom/android/camera/HTCCameraAdvanceSetting;->getFaceNumber(Landroid/app/Activity;)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/camera/HTCCamera;->mFaceNumber:I
+
+    .line 5627
+    iget v0, p0, Lcom/android/camera/HTCCamera;->mFaceNumber:I
+
+    if-lez v0, :cond_2
+
+    .line 5628
+    invoke-direct {p0}, Lcom/android/camera/HTCCamera;->showSelfPortraitHint()V
+
+    .line 5631
+    :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mLocationHandler:Lcom/android/camera/LocationHandler;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
-    .line 5623
+    .line 5632
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mLocationHandler:Lcom/android/camera/LocationHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/LocationHandler;->startReceivingLocationUpdates()V
 
-    .line 5625
-    :cond_2
+    .line 5634
+    :cond_3
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getAudioManager()Landroid/media/AudioManager;
 
     move-result-object v0
@@ -16799,14 +16771,14 @@
 
     const/4 v3, 0x1
 
-    .line 5630
+    .line 5639
     const-string v0, "HTCCamera"
 
     const-string v1, "Change mode to Video"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5631
+    .line 5640
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_1
@@ -16817,29 +16789,29 @@
 
     if-ne v0, v3, :cond_1
 
-    .line 5632
+    .line 5641
     const-string v0, "HTCCamera"
 
     const-string v1, "Change mode to Video - but current mode is Video !!"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5678
+    .line 5688
     :cond_0
     :goto_0
     return-void
 
-    .line 5640
+    .line 5649
     :cond_1
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->broadcastStopFM()V
 
-    .line 5643
+    .line 5652
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->broadcastStopMusic()V
 
-    .line 5646
+    .line 5655
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->stopNotesRecording()V
 
-    .line 5648
+    .line 5657
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getAudioManager()Landroid/media/AudioManager;
 
     move-result-object v0
@@ -16850,19 +16822,19 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
 
-    .line 5651
+    .line 5660
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_2
 
-    .line 5652
+    .line 5661
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 5654
+    .line 5663
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
@@ -16872,17 +16844,17 @@
 
     invoke-static {v0, v1, v4, v4, v2}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 5657
+    .line 5666
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     if-eqz v0, :cond_3
 
-    .line 5658
+    .line 5667
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/MenuHandler;->exitMenuHandler()V
 
-    .line 5660
+    .line 5669
     :cond_3
     const-string v0, "HTCCamera"
 
@@ -16890,22 +16862,22 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5661
+    .line 5670
     iput-boolean v3, p0, Lcom/android/camera/HTCCamera;->mWaitResetSettings:Z
 
-    .line 5662
+    .line 5671
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsPreviewStarted:Z
 
-    .line 5664
+    .line 5673
     invoke-direct {p0, v3}, Lcom/android/camera/HTCCamera;->updateModeIcon(I)V
 
-    .line 5665
+    .line 5674
     invoke-direct {p0, v3}, Lcom/android/camera/HTCCamera;->updateCaptureIcon(I)V
 
-    .line 5666
+    .line 5675
     invoke-direct {p0, v3}, Lcom/android/camera/HTCCamera;->updateSwitchIcon(I)V
 
-    .line 5667
+    .line 5676
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->getCameraType()I
@@ -16916,28 +16888,31 @@
 
     invoke-direct {p0, v3, v0, v1}, Lcom/android/camera/HTCCamera;->updateSceneQualityIcon(III)V
 
-    .line 5671
+    .line 5678
+    invoke-direct {p0}, Lcom/android/camera/HTCCamera;->hideSelfPortraitHint()V
+
+    .line 5681
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mLocationHandler:Lcom/android/camera/LocationHandler;
 
     if-eqz v0, :cond_4
 
-    .line 5672
+    .line 5682
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mLocationHandler:Lcom/android/camera/LocationHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/LocationHandler;->stopReceivingLocationUpdates()V
 
-    .line 5673
+    .line 5683
     :cond_4
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->hide_gps_indicator()V
 
-    .line 5676
+    .line 5686
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportCamcorderRotate()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 5677
+    .line 5687
     invoke-virtual {p0, v3}, Lcom/android/camera/HTCCamera;->lockOrientation(I)V
 
     goto :goto_0
@@ -16947,20 +16922,20 @@
     .locals 1
 
     .prologue
-    .line 11629
+    .line 11719
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->m_NeedTriggerRecord:Z
 
     if-eqz v0, :cond_0
 
-    .line 11630
+    .line 11720
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/camera/HTCCamera;->m_NeedTriggerRecord:Z
 
-    .line 11631
+    .line 11721
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->triggerRecord()V
 
-    .line 11633
+    .line 11723
     :cond_0
     return-void
 .end method
@@ -16971,14 +16946,14 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 10151
+    .line 10241
     const-string v9, "HTCCamera"
 
     const-string v10, "Check Internal Storage"
 
     invoke-static {v9, v10}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10153
+    .line 10243
     :try_start_0
     new-instance v5, Landroid/os/StatFs;
 
@@ -16986,7 +16961,7 @@
 
     invoke-direct {v5, v9}, Landroid/os/StatFs;-><init>(Ljava/lang/String;)V
 
-    .line 10154
+    .line 10244
     .local v5, fileStats:Landroid/os/StatFs;
     invoke-virtual {v5}, Landroid/os/StatFs;->getAvailableBlocks()I
 
@@ -16994,7 +16969,7 @@
 
     int-to-long v0, v9
 
-    .line 10155
+    .line 10245
     .local v0, availableBlocks:J
     invoke-virtual {v5}, Landroid/os/StatFs;->getBlockSize()I
 
@@ -17002,11 +16977,11 @@
 
     int-to-long v2, v9
 
-    .line 10156
+    .line 10246
     .local v2, blockSize:J
     mul-long v6, v0, v2
 
-    .line 10157
+    .line 10247
     .local v6, size:J
     const-string v9, "HTCCamera"
 
@@ -17032,7 +17007,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 10161
+    .line 10251
     const-wide/32 v9, 0x100000
 
     cmp-long v9, v6, v9
@@ -17041,7 +17016,7 @@
 
     const/4 v8, 0x1
 
-    .line 10164
+    .line 10254
     .end local v0           #availableBlocks:J
     .end local v2           #blockSize:J
     .end local v5           #fileStats:Landroid/os/StatFs;
@@ -17050,11 +17025,11 @@
     :goto_0
     return v8
 
-    .line 10162
+    .line 10252
     :catch_0
     move-exception v4
 
-    .line 10163
+    .line 10253
     .local v4, ex:Ljava/lang/Exception;
     const-string v9, "HTCCamera"
 
@@ -17069,7 +17044,7 @@
     .locals 2
 
     .prologue
-    .line 10534
+    .line 10624
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -17078,23 +17053,23 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 10537
+    .line 10627
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mActionScreen:Lcom/android/camera/actionscreen/ActionScreen;
 
     if-nez v0, :cond_0
 
-    .line 10539
+    .line 10629
     const-string v0, "HTCCamera"
 
     const-string v1, "No action screen to close"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10550
+    .line 10640
     :goto_0
     return-void
 
-    .line 10544
+    .line 10634
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mActionScreen:Lcom/android/camera/actionscreen/ActionScreen;
 
@@ -17104,13 +17079,13 @@
 
     goto :goto_0
 
-    .line 10546
+    .line 10636
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_2
 
-    .line 10547
+    .line 10637
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCloseActionScreenRunnable:Ljava/lang/Runnable;
@@ -17119,7 +17094,7 @@
 
     goto :goto_0
 
-    .line 10549
+    .line 10639
     :cond_2
     const-string v0, "HTCCamera"
 
@@ -17134,7 +17109,7 @@
     .locals 1
 
     .prologue
-    .line 10027
+    .line 10117
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     if-eqz v0, :cond_0
@@ -17147,7 +17122,7 @@
 
     if-nez v0, :cond_0
 
-    .line 10028
+    .line 10118
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {v0}, Lcom/android/camera/widget/SlidingDrawer;->isOpened()Z
@@ -17164,17 +17139,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 10029
+    .line 10119
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {v0}, Lcom/android/camera/widget/SlidingDrawer;->close()V
 
-    .line 10034
+    .line 10124
     :cond_0
     :goto_0
     return-void
 
-    .line 10030
+    .line 10120
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -17192,7 +17167,7 @@
 
     if-nez v0, :cond_0
 
-    .line 10031
+    .line 10121
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {v0}, Lcom/android/camera/widget/SlidingDrawer;->animateClose()V
@@ -17205,12 +17180,12 @@
     .parameter "audioResId"
 
     .prologue
-    .line 7855
+    .line 7914
     new-instance v0, Landroid/media/MediaPlayer;
 
     invoke-direct {v0}, Landroid/media/MediaPlayer;-><init>()V
 
-    .line 7856
+    .line 7915
     .local v0, mediaPlayer:Landroid/media/MediaPlayer;
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getResources()Landroid/content/res/Resources;
 
@@ -17220,7 +17195,7 @@
 
     move-result-object v6
 
-    .line 7859
+    .line 7918
     .local v6, afd:Landroid/content/res/AssetFileDescriptor;
     :try_start_0
     invoke-virtual {v6}, Landroid/content/res/AssetFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
@@ -17237,7 +17212,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/media/MediaPlayer;->setDataSource(Ljava/io/FileDescriptor;JJ)V
 
-    .line 7862
+    .line 7921
     invoke-static {}, Lcom/android/camera/DisplayDevice;->forceSutterSound()Z
 
     move-result v1
@@ -17250,34 +17225,34 @@
 
     if-eqz v1, :cond_1
 
-    .line 7865
+    .line 7925
     :cond_0
-    const/4 v7, 0x4
+    const/4 v7, 0x7
 
-    .line 7866
+    .line 7926
     .local v7, audioStreamType:I
     const-string v1, "HTCCamera"
 
-    const-string v2, "PlaySound() - StreamType : STREAM_ALARM"
+    const-string v2, "PlaySound() - StreamType : STREAM_SYSTEM_ENFORCED"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7872
+    .line 7932
     :goto_0
     invoke-virtual {v0, v7}, Landroid/media/MediaPlayer;->setAudioStreamType(I)V
 
-    .line 7878
+    .line 7938
     .end local v0           #mediaPlayer:Landroid/media/MediaPlayer;
     .end local v7           #audioStreamType:I
     :goto_1
     return-object v0
 
-    .line 7868
+    .line 7928
     .restart local v0       #mediaPlayer:Landroid/media/MediaPlayer;
     :cond_1
     const/4 v7, 0x2
 
-    .line 7869
+    .line 7929
     .restart local v7       #audioStreamType:I
     const-string v1, "HTCCamera"
 
@@ -17289,12 +17264,12 @@
 
     goto :goto_0
 
-    .line 7874
+    .line 7934
     .end local v7           #audioStreamType:I
     :catch_0
     move-exception v8
 
-    .line 7876
+    .line 7936
     .local v8, ex:Ljava/lang/Throwable;
     const/4 v0, 0x0
 
@@ -17309,14 +17284,14 @@
 
     const/4 v3, 0x0
 
-    .line 9806
+    .line 9896
     const-string v1, "HTCCamera"
 
     const-string v2, "deactivate!!!!"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9807
+    .line 9897
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v1, :cond_0
@@ -17325,7 +17300,7 @@
 
     if-nez v1, :cond_1
 
-    .line 9808
+    .line 9898
     :cond_0
     const-string v1, "HTCCamera"
 
@@ -17333,17 +17308,17 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9877
+    .line 9967
     :goto_0
     return-void
 
-    .line 9812
+    .line 9902
     :cond_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     if-nez v1, :cond_2
 
-    .line 9813
+    .line 9903
     const-string v1, "HTCCamera"
 
     const-string v2, "deactivate - mUIHandler = null"
@@ -17352,13 +17327,13 @@
 
     goto :goto_0
 
-    .line 9817
+    .line 9907
     :cond_2
     iget-boolean v1, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
     if-ne v1, v4, :cond_3
 
-    .line 9818
+    .line 9908
     const-string v1, "HTCCamera"
 
     const-string v2, "deactivate in mIdle = true"
@@ -17367,26 +17342,26 @@
 
     goto :goto_0
 
-    .line 9823
+    .line 9913
     :cond_3
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
-    .line 9826
+    .line 9916
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v2, "CameraActivity.Deactivate"
 
     invoke-virtual {v1, v2}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 9829
+    .line 9919
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->closeActionScreen()V
 
-    .line 9831
+    .line 9921
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mScreensave:Landroid/view/View;
 
     if-nez v1, :cond_4
 
-    .line 9832
+    .line 9922
     const v1, 0x7f080069
 
     invoke-virtual {p0, v1}, Lcom/android/camera/HTCCamera;->findViewById(I)Landroid/view/View;
@@ -17395,7 +17370,7 @@
 
     check-cast v0, Landroid/view/ViewStub;
 
-    .line 9833
+    .line 9923
     .local v0, stub:Landroid/view/ViewStub;
     invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
@@ -17403,7 +17378,7 @@
 
     iput-object v1, p0, Lcom/android/camera/HTCCamera;->mScreensave:Landroid/view/View;
 
-    .line 9834
+    .line 9924
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mScreensave:Landroid/view/View;
 
     new-instance v2, Lcom/android/camera/HTCCamera$35;
@@ -17412,7 +17387,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 9841
+    .line 9931
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mScreensave:Landroid/view/View;
 
     const v2, 0x7f08018a
@@ -17425,7 +17400,7 @@
 
     iput-object v1, p0, Lcom/android/camera/HTCCamera;->mScreensaveTextContainer:Lcom/android/camera/rotate/RotateRelativeLayout;
 
-    .line 9842
+    .line 9932
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mScreensaveTextContainer:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     const v2, 0x7f08018b
@@ -17438,7 +17413,7 @@
 
     iput-object v1, p0, Lcom/android/camera/HTCCamera;->mScreensaveText:Landroid/widget/TextView;
 
-    .line 9845
+    .line 9935
     .end local v0           #stub:Landroid/view/ViewStub;
     :cond_4
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
@@ -17451,21 +17426,21 @@
 
     if-ne v1, v4, :cond_6
 
-    .line 9846
+    .line 9936
     sget-object v1, Lcom/android/camera/DisplayDevice;->CAPTURE_BUTTON:Lcom/android/camera/DisplayDevice$CaptureButton;
 
     sget-object v2, Lcom/android/camera/DisplayDevice$CaptureButton;->ActionKey:Lcom/android/camera/DisplayDevice$CaptureButton;
 
     if-ne v1, v2, :cond_5
 
-    .line 9847
+    .line 9937
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mScreensaveText:Landroid/widget/TextView;
 
     const v2, 0x7f0a013d
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
-    .line 9858
+    .line 9948
     :goto_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mScreensaveTextContainer:Lcom/android/camera/rotate/RotateRelativeLayout;
 
@@ -17475,12 +17450,12 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/rotate/RotateRelativeLayout;->setOrientation(I)V
 
-    .line 9859
+    .line 9949
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mScreensave:Landroid/view/View;
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 9861
+    .line 9951
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getWindow()Landroid/view/Window;
 
     move-result-object v1
@@ -17489,31 +17464,31 @@
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->clearFlags(I)V
 
-    .line 9864
+    .line 9954
     sput v3, Lcom/android/camera/HTCCamera;->mFocusMode:I
 
-    .line 9865
+    .line 9955
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->releaseFaceDetection()V
 
-    .line 9867
+    .line 9957
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v1, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9868
+    .line 9958
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const/4 v2, 0x2
 
     invoke-static {v1, v2}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 9870
+    .line 9960
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->setOldBrightness()V
 
-    .line 9873
+    .line 9963
     invoke-virtual {p0, v3}, Lcom/android/camera/HTCCamera;->registerFocusSensor(Z)V
 
-    .line 9876
+    .line 9966
     iget-wide v1, p0, Lcom/android/camera/HTCCamera;->mSessionID:J
 
     const-wide/16 v3, 0x1
@@ -17524,7 +17499,7 @@
 
     goto/16 :goto_0
 
-    .line 9849
+    .line 9939
     :cond_5
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mScreensaveText:Landroid/widget/TextView;
 
@@ -17534,7 +17509,7 @@
 
     goto :goto_1
 
-    .line 9851
+    .line 9941
     :cond_6
     sget-object v1, Lcom/android/camera/DisplayDevice;->CAPTURE_BUTTON:Lcom/android/camera/DisplayDevice$CaptureButton;
 
@@ -17542,7 +17517,7 @@
 
     if-ne v1, v2, :cond_7
 
-    .line 9852
+    .line 9942
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mScreensaveText:Landroid/widget/TextView;
 
     const v2, 0x7f0a013c
@@ -17551,7 +17526,7 @@
 
     goto :goto_1
 
-    .line 9854
+    .line 9944
     :cond_7
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mScreensaveText:Landroid/widget/TextView;
 
@@ -17566,19 +17541,19 @@
     .locals 1
 
     .prologue
-    .line 7165
+    .line 7224
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->threadAccessCheck()V
 
-    .line 7168
+    .line 7227
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mActivityOnPause:Z
 
     if-eqz v0, :cond_0
 
-    .line 7176
+    .line 7235
     :goto_0
     return-void
 
-    .line 7172
+    .line 7231
     :cond_0
     iget v0, p0, Lcom/android/camera/HTCCamera;->mFlashDisableCounter:I
 
@@ -17586,7 +17561,7 @@
 
     iput v0, p0, Lcom/android/camera/HTCCamera;->mFlashDisableCounter:I
 
-    .line 7175
+    .line 7234
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->updateFlashMode()V
 
     goto :goto_0
@@ -17596,26 +17571,26 @@
     .locals 5
 
     .prologue
-    .line 11587
+    .line 11677
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->threadAccessCheck()V
 
-    .line 11590
+    .line 11680
     iget-boolean v1, p0, Lcom/android/camera/HTCCamera;->mActivityOnPause:Z
 
     if-eqz v1, :cond_1
 
-    .line 11602
+    .line 11692
     :cond_0
     :goto_0
     return-void
 
-    .line 11594
+    .line 11684
     :cond_1
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getSelfTimerInterval()I
 
     move-result v0
 
-    .line 11597
+    .line 11687
     .local v0, interval:I
     iget v1, p0, Lcom/android/camera/HTCCamera;->mSelfTimerDisableCounter:I
 
@@ -17623,7 +17598,7 @@
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mSelfTimerDisableCounter:I
 
-    .line 11600
+    .line 11690
     iget v1, p0, Lcom/android/camera/HTCCamera;->mSelfTimerDisableCounter:I
 
     const/4 v2, 0x1
@@ -17632,7 +17607,7 @@
 
     if-lez v0, :cond_0
 
-    .line 11601
+    .line 11691
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     new-instance v2, Lcom/android/camera/OneValueEvent;
@@ -17656,14 +17631,14 @@
     .locals 1
 
     .prologue
-    .line 9437
+    .line 9527
     iget v0, p0, Lcom/android/camera/HTCCamera;->mSensorFocusDisabledCounter:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/camera/HTCCamera;->mSensorFocusDisabledCounter:I
 
-    .line 9438
+    .line 9528
     return-void
 .end method
 
@@ -17673,22 +17648,22 @@
     .prologue
     const/16 v1, 0x1f
 
-    .line 9755
+    .line 9845
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mActivityOnPause:Z
 
     if-nez v0, :cond_0
 
-    .line 9756
+    .line 9846
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9757
+    .line 9847
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 9759
+    .line 9849
     :cond_0
     return-void
 .end method
@@ -17697,14 +17672,14 @@
     .locals 1
 
     .prologue
-    .line 9453
+    .line 9543
     iget v0, p0, Lcom/android/camera/HTCCamera;->mTouchFocusDisabledCounter:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/camera/HTCCamera;->mTouchFocusDisabledCounter:I
 
-    .line 9454
+    .line 9544
     return-void
 .end method
 
@@ -17717,10 +17692,10 @@
 
     const/4 v3, 0x1
 
-    .line 9881
+    .line 9971
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->resetScreenSaveTimer()V
 
-    .line 9885
+    .line 9975
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     if-eqz v0, :cond_0
@@ -17733,19 +17708,19 @@
 
     if-ne v0, v3, :cond_0
 
-    .line 9886
+    .line 9976
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v0, v4}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9887
+    .line 9977
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const-wide/16 v1, 0x1f40
 
     invoke-static {v0, v4, v1, v2}, Lcom/android/camera/MessageHandler;->sendEmptyMessageDelayed(Landroid/os/Handler;IJ)V
 
-    .line 9890
+    .line 9980
     :cond_0
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
@@ -17761,12 +17736,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 9891
+    .line 9981
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/camera/HTCCamera;->bHoldFocusKey:Z
 
-    .line 9893
+    .line 9983
     :cond_1
     invoke-super {p0, p1}, Landroid/app/Activity;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
@@ -17784,10 +17759,10 @@
 
     const/4 v3, 0x1
 
-    .line 9898
+    .line 9988
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->resetScreenSaveTimer()V
 
-    .line 9901
+    .line 9991
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     if-eqz v0, :cond_0
@@ -17800,19 +17775,19 @@
 
     if-ne v0, v3, :cond_0
 
-    .line 9902
+    .line 9992
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v0, v4}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9903
+    .line 9993
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const-wide/16 v1, 0x1f40
 
     invoke-static {v0, v4, v1, v2}, Lcom/android/camera/MessageHandler;->sendEmptyMessageDelayed(Landroid/os/Handler;IJ)V
 
-    .line 9909
+    .line 9999
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
     if-eqz v0, :cond_1
@@ -17825,12 +17800,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 9910
+    .line 10000
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {v0}, Lcom/android/camera/widget/SlidingDrawer;->requestFocus()Z
 
-    .line 9916
+    .line 10006
     :cond_0
     :goto_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
@@ -17839,12 +17814,12 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 9917
+    .line 10007
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIsTouchScreen:Z
 
-    .line 9922
+    .line 10012
     :goto_1
     invoke-super {p0, p1}, Landroid/app/Activity;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -17852,7 +17827,7 @@
 
     return v0
 
-    .line 9912
+    .line 10002
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -17860,7 +17835,7 @@
 
     goto :goto_0
 
-    .line 9919
+    .line 10009
     :cond_2
     iput-boolean v3, p0, Lcom/android/camera/HTCCamera;->mIsTouchScreen:Z
 
@@ -17875,89 +17850,89 @@
 
     const/4 v3, 0x4
 
-    .line 5234
+    .line 5240
     const-string v1, "HTCCamera"
 
     const-string v2, "doOnPause() - start"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5236
+    .line 5242
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCurrentDialog:Landroid/app/Dialog;
 
     if-eqz v1, :cond_0
 
-    .line 5237
+    .line 5243
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCurrentDialog:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->cancel()V
 
-    .line 5238
+    .line 5244
     iput-object v4, p0, Lcom/android/camera/HTCCamera;->mCurrentDialog:Landroid/app/Dialog;
 
-    .line 5248
+    .line 5254
     :cond_0
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Lcom/android/camera/HTCCamera;->registerFocusSensor(Z)V
 
-    .line 5250
+    .line 5256
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mToast:Lcom/android/camera/rotate/RotateToast;
 
     if-eqz v1, :cond_1
 
-    .line 5251
+    .line 5257
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mToast:Lcom/android/camera/rotate/RotateToast;
 
     invoke-virtual {v1}, Lcom/android/camera/rotate/RotateToast;->cancel()V
 
-    .line 5253
+    .line 5259
     :cond_1
     iget-boolean v1, p0, Lcom/android/camera/HTCCamera;->mIsSelfTimerStarted:Z
 
     if-eqz v1, :cond_2
 
-    .line 5254
+    .line 5260
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->closeSelfTimer()V
 
-    .line 5256
+    .line 5262
     :cond_2
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
     if-eqz v1, :cond_3
 
-    .line 5257
+    .line 5263
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 5259
+    .line 5265
     :cond_3
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->resetFocusView()V
 
-    .line 5261
+    .line 5267
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mPreviewDuplicate:Landroid/widget/ImageView;
 
     if-eqz v1, :cond_4
 
-    .line 5262
+    .line 5268
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mPreviewDuplicate:Landroid/widget/ImageView;
 
     invoke-virtual {v1}, Landroid/widget/ImageView;->clearAnimation()V
 
-    .line 5263
+    .line 5269
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mPreviewDuplicate:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 5264
+    .line 5270
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mPreviewDuplicate:Landroid/widget/ImageView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 5266
+    .line 5272
     :cond_4
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -17969,19 +17944,19 @@
 
     if-eqz v1, :cond_5
 
-    .line 5267
+    .line 5273
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget-object v1, v1, Lcom/android/camera/CameraThread;->mOneShotBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 5268
+    .line 5274
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iput-object v4, v1, Lcom/android/camera/CameraThread;->mOneShotBitmap:Landroid/graphics/Bitmap;
 
-    .line 5271
+    .line 5277
     :cond_5
     const-string v1, "HTCCamera"
 
@@ -17989,74 +17964,74 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5272
+    .line 5278
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
 
     if-eqz v1, :cond_6
 
-    .line 5273
+    .line 5279
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 5275
+    .line 5281
     :cond_6
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->closeCaptureUI()V
 
-    .line 5277
+    .line 5283
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
     if-eqz v1, :cond_7
 
-    .line 5278
+    .line 5284
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->clearAnimation()V
 
-    .line 5280
+    .line 5286
     :cond_7
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mIndicatorLayout:Landroid/view/View;
 
     if-eqz v1, :cond_8
 
-    .line 5281
+    .line 5287
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mIndicatorLayout:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->clearAnimation()V
 
-    .line 5282
+    .line 5288
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mIndicatorLayout:Landroid/view/View;
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 5285
+    .line 5291
     :cond_8
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SwitchBtn:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     if-eqz v1, :cond_9
 
-    .line 5286
+    .line 5292
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SwitchBtn:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v1}, Lcom/android/camera/rotate/RotateRelativeLayout;->clearAnimation()V
 
-    .line 5287
+    .line 5293
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mRotateLayout_SwitchBtn:Lcom/android/camera/rotate/RotateRelativeLayout;
 
     invoke-virtual {v1, v3}, Lcom/android/camera/rotate/RotateRelativeLayout;->setVisibility(I)V
 
-    .line 5291
+    .line 5297
     :cond_9
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     if-eqz v1, :cond_a
 
-    .line 5292
+    .line 5298
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v1}, Lcom/android/camera/MenuHandler;->exitMenuHandler()V
 
-    .line 5294
+    .line 5300
     :cond_a
     iget-boolean v1, p0, Lcom/android/camera/HTCCamera;->mNeed_unregisterReceiver:Z
 
@@ -18064,7 +18039,7 @@
 
     if-ne v1, v2, :cond_d
 
-    .line 5297
+    .line 5303
     :try_start_0
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isPowerWarning()Z
 
@@ -18072,17 +18047,17 @@
 
     if-nez v1, :cond_b
 
-    .line 5298
+    .line 5304
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mPartitonReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v1}, Lcom/android/camera/HTCCamera;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 5299
+    .line 5305
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSIPReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v1}, Lcom/android/camera/HTCCamera;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 5302
+    .line 5308
     :cond_b
     invoke-static {}, Lcom/android/camera/DisplayDevice;->support3DCamera()Z
 
@@ -18096,58 +18071,58 @@
 
     if-eqz v1, :cond_c
 
-    .line 5303
+    .line 5309
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->m3DKeySwitchReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v1}, Lcom/android/camera/HTCCamera;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5308
+    .line 5314
     :cond_c
     :goto_0
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mLocationHandler:Lcom/android/camera/LocationHandler;
 
     if-eqz v1, :cond_d
 
-    .line 5309
+    .line 5315
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mLocationHandler:Lcom/android/camera/LocationHandler;
 
     invoke-virtual {v1}, Lcom/android/camera/LocationHandler;->stopReceivingLocationUpdates()V
 
-    .line 5315
+    .line 5321
     :cond_d
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mFlashRestriction:Lcom/android/camera/FlashRestriction;
 
     if-eqz v1, :cond_e
 
-    .line 5316
+    .line 5322
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mFlashRestriction:Lcom/android/camera/FlashRestriction;
 
     invoke-virtual {v1}, Lcom/android/camera/FlashRestriction;->releaseFlashRestriction()V
 
-    .line 5317
+    .line 5323
     iput-object v4, p0, Lcom/android/camera/HTCCamera;->mFlashRestriction:Lcom/android/camera/FlashRestriction;
 
-    .line 5320
+    .line 5326
     :cond_e
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->releaseSoundPool()V
 
-    .line 5322
+    .line 5328
     const-string v1, "HTCCamera"
 
     const-string v2, "doOnPause() - end"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5323
+    .line 5329
     return-void
 
-    .line 5305
+    .line 5311
     :catch_0
     move-exception v0
 
-    .line 5306
+    .line 5312
     .local v0, ex:Ljava/lang/Exception;
     const-string v1, "HTCCamera"
 
@@ -18162,10 +18137,10 @@
     .locals 1
 
     .prologue
-    .line 7184
+    .line 7243
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->threadAccessCheck()V
 
-    .line 7187
+    .line 7246
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mActivityOnPause:Z
 
     if-nez v0, :cond_0
@@ -18174,12 +18149,12 @@
 
     if-gtz v0, :cond_1
 
-    .line 7195
+    .line 7254
     :cond_0
     :goto_0
     return-void
 
-    .line 7191
+    .line 7250
     :cond_1
     iget v0, p0, Lcom/android/camera/HTCCamera;->mFlashDisableCounter:I
 
@@ -18187,7 +18162,7 @@
 
     iput v0, p0, Lcom/android/camera/HTCCamera;->mFlashDisableCounter:I
 
-    .line 7194
+    .line 7253
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->updateFlashMode()V
 
     goto :goto_0
@@ -18198,16 +18173,16 @@
     .parameter "enable"
 
     .prologue
-    .line 9941
+    .line 10031
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mLocationHandler:Lcom/android/camera/LocationHandler;
 
     if-nez v0, :cond_0
 
-    .line 9952
+    .line 10042
     :goto_0
     return-void
 
-    .line 9944
+    .line 10034
     :cond_0
     const/4 v0, 0x1
 
@@ -18223,20 +18198,20 @@
 
     if-nez v0, :cond_1
 
-    .line 9947
+    .line 10037
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mLocationHandler:Lcom/android/camera/LocationHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/LocationHandler;->startReceivingLocationUpdates()V
 
     goto :goto_0
 
-    .line 9949
+    .line 10039
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mLocationHandler:Lcom/android/camera/LocationHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/LocationHandler;->stopReceivingLocationUpdates()V
 
-    .line 9950
+    .line 10040
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->hide_gps_indicator()V
 
     goto :goto_0
@@ -18246,10 +18221,10 @@
     .locals 4
 
     .prologue
-    .line 11567
+    .line 11657
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->threadAccessCheck()V
 
-    .line 11570
+    .line 11660
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mActivityOnPause:Z
 
     if-nez v0, :cond_0
@@ -18258,12 +18233,12 @@
 
     if-gtz v0, :cond_1
 
-    .line 11579
+    .line 11669
     :cond_0
     :goto_0
     return-void
 
-    .line 11574
+    .line 11664
     :cond_1
     iget v0, p0, Lcom/android/camera/HTCCamera;->mSelfTimerDisableCounter:I
 
@@ -18271,7 +18246,7 @@
 
     iput v0, p0, Lcom/android/camera/HTCCamera;->mSelfTimerDisableCounter:I
 
-    .line 11577
+    .line 11667
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getSelfTimerInterval()I
 
     move-result v0
@@ -18282,7 +18257,7 @@
 
     if-gtz v0, :cond_0
 
-    .line 11578
+    .line 11668
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     new-instance v1, Lcom/android/camera/OneValueEvent;
@@ -18306,14 +18281,14 @@
     .locals 1
 
     .prologue
-    .line 9445
+    .line 9535
     iget v0, p0, Lcom/android/camera/HTCCamera;->mSensorFocusDisabledCounter:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Lcom/android/camera/HTCCamera;->mSensorFocusDisabledCounter:I
 
-    .line 9446
+    .line 9536
     return-void
 .end method
 
@@ -18322,36 +18297,36 @@
     .parameter "takeFocus"
 
     .prologue
-    .line 9461
+    .line 9551
     iget v2, p0, Lcom/android/camera/HTCCamera;->mTouchFocusDisabledCounter:I
 
     add-int/lit8 v2, v2, -0x1
 
     iput v2, p0, Lcom/android/camera/HTCCamera;->mTouchFocusDisabledCounter:I
 
-    .line 9462
+    .line 9552
     iget v2, p0, Lcom/android/camera/HTCCamera;->mTouchFocusDisabledCounter:I
 
     if-gtz v2, :cond_0
 
     if-eqz p1, :cond_0
 
-    .line 9467
+    .line 9557
     sget v2, Lcom/android/camera/DisplayDevice;->SCREEN_HEIGHT:I
 
     div-int/lit8 v0, v2, 0x2
 
-    .line 9468
+    .line 9558
     .local v0, x:I
     sget v2, Lcom/android/camera/DisplayDevice;->SCREEN_WIDTH:I
 
     div-int/lit8 v1, v2, 0x2
 
-    .line 9475
+    .line 9565
     .local v1, y:I
     invoke-virtual {p0, v0, v1}, Lcom/android/camera/HTCCamera;->takeFocus(II)V
 
-    .line 9477
+    .line 9567
     .end local v0           #x:I
     .end local v1           #y:I
     :cond_0
@@ -18362,7 +18337,7 @@
     .locals 1
 
     .prologue
-    .line 10409
+    .line 10499
     const-string v0, "Burst UI"
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->getComponent(Ljava/lang/String;)Lcom/android/camera/component/Component;
@@ -18373,7 +18348,7 @@
 
     invoke-virtual {v0}, Lcom/android/camera/component/BurstUI;->enterBurstMode()V
 
-    .line 10410
+    .line 10500
     return-void
 .end method
 
@@ -18381,7 +18356,7 @@
     .locals 1
 
     .prologue
-    .line 10393
+    .line 10483
     const-string v0, "HDR UI"
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->getComponent(Ljava/lang/String;)Lcom/android/camera/component/Component;
@@ -18392,7 +18367,7 @@
 
     invoke-virtual {v0}, Lcom/android/camera/component/HdrUI;->enterHdrMode()V
 
-    .line 10394
+    .line 10484
     return-void
 .end method
 
@@ -18400,7 +18375,7 @@
     .locals 1
 
     .prologue
-    .line 10377
+    .line 10467
     const-string v0, "Panorama UI"
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->getComponent(Ljava/lang/String;)Lcom/android/camera/component/Component;
@@ -18411,7 +18386,7 @@
 
     invoke-virtual {v0}, Lcom/android/camera/component/PanoramaUI;->enterPanoramaMode()V
 
-    .line 10378
+    .line 10468
     return-void
 .end method
 
@@ -18419,7 +18394,7 @@
     .locals 1
 
     .prologue
-    .line 10417
+    .line 10507
     const-string v0, "Burst UI"
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->getComponent(Ljava/lang/String;)Lcom/android/camera/component/Component;
@@ -18430,7 +18405,7 @@
 
     invoke-virtual {v0}, Lcom/android/camera/component/BurstUI;->exitBurstMode()V
 
-    .line 10418
+    .line 10508
     return-void
 .end method
 
@@ -18438,7 +18413,7 @@
     .locals 1
 
     .prologue
-    .line 10401
+    .line 10491
     const-string v0, "HDR UI"
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->getComponent(Ljava/lang/String;)Lcom/android/camera/component/Component;
@@ -18449,7 +18424,7 @@
 
     invoke-virtual {v0}, Lcom/android/camera/component/HdrUI;->exitHdrMode()V
 
-    .line 10402
+    .line 10492
     return-void
 .end method
 
@@ -18457,7 +18432,7 @@
     .locals 1
 
     .prologue
-    .line 10385
+    .line 10475
     const-string v0, "Panorama UI"
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->getComponent(Ljava/lang/String;)Lcom/android/camera/component/Component;
@@ -18468,7 +18443,7 @@
 
     invoke-virtual {v0}, Lcom/android/camera/component/PanoramaUI;->exitPanoramaMode()V
 
-    .line 10386
+    .line 10476
     return-void
 .end method
 
@@ -18476,7 +18451,7 @@
     .locals 1
 
     .prologue
-    .line 6051
+    .line 6061
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mActionScreen:Lcom/android/camera/actionscreen/ActionScreen;
 
     return-object v0
@@ -18486,18 +18461,18 @@
     .locals 2
 
     .prologue
-    .line 11395
+    .line 11485
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mAudioSyncRoot:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 11397
+    .line 11487
     :try_start_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mAudioManager:Landroid/media/AudioManager;
 
     if-nez v0, :cond_0
 
-    .line 11398
+    .line 11488
     const-string v0, "audio"
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -18508,18 +18483,18 @@
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mAudioManager:Landroid/media/AudioManager;
 
-    .line 11399
+    .line 11489
     :cond_0
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 11400
+    .line 11490
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mAudioManager:Landroid/media/AudioManager;
 
     return-object v0
 
-    .line 11399
+    .line 11489
     :catchall_0
     move-exception v0
 
@@ -18535,7 +18510,7 @@
     .locals 1
 
     .prologue
-    .line 10169
+    .line 10259
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->keep_backgroundDataSetting:Z
 
     return v0
@@ -18545,12 +18520,12 @@
     .locals 1
 
     .prologue
-    .line 10072
+    .line 10162
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraLayout:Landroid/widget/RelativeLayout;
 
     if-nez v0, :cond_0
 
-    .line 10073
+    .line 10163
     const v0, 0x7f08003b
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->findViewById(I)Landroid/view/View;
@@ -18561,7 +18536,7 @@
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraLayout:Landroid/widget/RelativeLayout;
 
-    .line 10075
+    .line 10165
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraLayout:Landroid/widget/RelativeLayout;
 
@@ -18572,7 +18547,7 @@
     .locals 1
 
     .prologue
-    .line 10839
+    .line 10929
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     return-object v0
@@ -18583,7 +18558,7 @@
     .parameter "name"
 
     .prologue
-    .line 10855
+    .line 10945
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mComponentManager:Lcom/android/camera/component/ComponentManager;
 
     invoke-virtual {v0, p1}, Lcom/android/camera/component/ComponentManager;->getComponent(Ljava/lang/String;)Lcom/android/camera/component/Component;
@@ -18597,7 +18572,7 @@
     .locals 1
 
     .prologue
-    .line 10847
+    .line 10937
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mComponentManager:Lcom/android/camera/component/ComponentManager;
 
     return-object v0
@@ -18607,7 +18582,7 @@
     .locals 1
 
     .prologue
-    .line 10935
+    .line 11025
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mEffectManager:Lcom/android/camera/effect/EffectManager;
 
     return-object v0
@@ -18617,7 +18592,7 @@
     .locals 1
 
     .prologue
-    .line 10943
+    .line 11033
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     return-object v0
@@ -18627,7 +18602,7 @@
     .locals 2
 
     .prologue
-    .line 6796
+    .line 6856
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
@@ -18640,11 +18615,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 6797
+    .line 6857
     :cond_0
     const/4 v0, 0x0
 
-    .line 6799
+    .line 6859
     :goto_0
     return v0
 
@@ -18658,7 +18633,7 @@
     .locals 1
 
     .prologue
-    .line 6040
+    .line 6050
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFlashRestriction:Lcom/android/camera/FlashRestriction;
 
     return-object v0
@@ -18668,7 +18643,7 @@
     .locals 1
 
     .prologue
-    .line 9226
+    .line 9316
     iget v0, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     return v0
@@ -18678,7 +18653,7 @@
     .locals 1
 
     .prologue
-    .line 5975
+    .line 5985
     iget v0, p0, Lcom/android/camera/HTCCamera;->mFreezeOrientation:I
 
     return v0
@@ -18689,23 +18664,23 @@
     .parameter "faces"
 
     .prologue
-    .line 11647
+    .line 11737
     const/4 v2, 0x0
 
-    .line 11648
+    .line 11738
     .local v2, iFaceNum:I
     iget-object v5, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-nez v5, :cond_0
 
-    .line 11649
+    .line 11739
     const/4 v5, 0x0
 
-    .line 11669
+    .line 11759
     :goto_0
     return v5
 
-    .line 11651
+    .line 11741
     :cond_0
     iget-object v5, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -18713,7 +18688,7 @@
 
     move-result v3
 
-    .line 11652
+    .line 11742
     .local v3, iPreviewH:I
     iget-object v5, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -18721,13 +18696,13 @@
 
     move-result v4
 
-    .line 11653
+    .line 11743
     .local v4, iPreviewW:I
     iget-object v5, p0, Lcom/android/camera/HTCCamera;->mFaces:[Landroid/hardware/Camera$Face;
 
     if-eqz v5, :cond_2
 
-    .line 11655
+    .line 11745
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -18739,7 +18714,7 @@
 
     if-ge v1, v5, :cond_1
 
-    .line 11657
+    .line 11747
     aget-object v5, p1, v1
 
     iget-object v5, v5, Lcom/android/camera/FaceDetection$Face;->range:Landroid/graphics/Rect;
@@ -18762,7 +18737,7 @@
 
     iput v6, v5, Landroid/graphics/Rect;->left:I
 
-    .line 11658
+    .line 11748
     aget-object v5, p1, v1
 
     iget-object v5, v5, Lcom/android/camera/FaceDetection$Face;->range:Landroid/graphics/Rect;
@@ -18785,7 +18760,7 @@
 
     iput v6, v5, Landroid/graphics/Rect;->right:I
 
-    .line 11659
+    .line 11749
     aget-object v5, p1, v1
 
     iget-object v5, v5, Lcom/android/camera/FaceDetection$Face;->range:Landroid/graphics/Rect;
@@ -18806,7 +18781,7 @@
 
     iput v6, v5, Landroid/graphics/Rect;->top:I
 
-    .line 11660
+    .line 11750
     aget-object v5, p1, v1
 
     iget-object v5, v5, Lcom/android/camera/FaceDetection$Face;->range:Landroid/graphics/Rect;
@@ -18829,16 +18804,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 11655
+    .line 11745
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 11663
+    .line 11753
     :catch_0
     move-exception v0
 
-    .line 11664
+    .line 11754
     .local v0, ex:Ljava/lang/Exception;
     const-string v5, "HTCCamera"
 
@@ -18846,10 +18821,10 @@
 
     invoke-static {v5, v6, v0}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 11665
+    .line 11755
     const/4 v2, 0x0
 
-    .line 11667
+    .line 11757
     .end local v0           #ex:Ljava/lang/Exception;
     :cond_1
     iget-object v5, p0, Lcom/android/camera/HTCCamera;->mFaces:[Landroid/hardware/Camera$Face;
@@ -18860,7 +18835,7 @@
     :cond_2
     move v5, v2
 
-    .line 11669
+    .line 11759
     goto :goto_0
 .end method
 
@@ -18868,7 +18843,7 @@
     .locals 1
 
     .prologue
-    .line 5967
+    .line 5977
     iget v0, p0, Lcom/android/camera/HTCCamera;->mLastOrientation:I
 
     return v0
@@ -18878,7 +18853,7 @@
     .locals 1
 
     .prologue
-    .line 10086
+    .line 10176
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     return-object v0
@@ -18888,7 +18863,7 @@
     .locals 1
 
     .prologue
-    .line 6020
+    .line 6030
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     return-object v0
@@ -18898,7 +18873,7 @@
     .locals 1
 
     .prologue
-    .line 6032
+    .line 6042
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
 
     return-object v0
@@ -18908,7 +18883,7 @@
     .locals 1
 
     .prologue
-    .line 10927
+    .line 11017
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     return-object v0
@@ -18919,25 +18894,25 @@
     .parameter "mode"
 
     .prologue
-    .line 11370
+    .line 11460
     const/4 v0, 0x0
 
-    .line 11371
+    .line 11461
     .local v0, prev_scene:Ljava/lang/String;
     if-nez p1, :cond_0
 
-    .line 11373
+    .line 11463
     const-string v1, "pref_camera_scene"
 
     invoke-static {p0, v1}, Lcom/android/camera/HTCCameraAdvanceSetting;->getPrefenceValue(Landroid/app/Activity;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 11380
+    .line 11470
     :goto_0
     return-object v0
 
-    .line 11377
+    .line 11467
     :cond_0
     const-string v1, "pref_video_scene"
 
@@ -18952,19 +18927,19 @@
     .locals 1
 
     .prologue
-    .line 11525
+    .line 11615
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
     if-eqz v0, :cond_0
 
-    .line 11527
+    .line 11617
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v0}, Landroid/view/SurfaceView;->getHeight()I
 
     move-result v0
 
-    .line 11529
+    .line 11619
     :goto_0
     return v0
 
@@ -18978,19 +18953,19 @@
     .locals 1
 
     .prologue
-    .line 11516
+    .line 11606
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
     if-eqz v0, :cond_0
 
-    .line 11518
+    .line 11608
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v0}, Landroid/view/SurfaceView;->getWidth()I
 
     move-result v0
 
-    .line 11520
+    .line 11610
     :goto_0
     return v0
 
@@ -19004,7 +18979,7 @@
     .locals 1
 
     .prologue
-    .line 6045
+    .line 6055
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mRecordLimitCheck:Lcom/android/camera/RecordLimitCheck;
 
     return-object v0
@@ -19014,7 +18989,7 @@
     .locals 4
 
     .prologue
-    .line 8311
+    .line 8374
     iget-wide v0, p0, Lcom/android/camera/HTCCamera;->mRecord_sec:J
 
     const-wide/16 v2, 0x3e8
@@ -19028,22 +19003,22 @@
     .locals 2
 
     .prologue
-    .line 6092
+    .line 6102
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
     if-nez v0, :cond_0
 
-    .line 6093
+    .line 6103
     const-string v0, "HTCCamera"
 
     const-string v1, "getRequestMode() - mIntentManager == null"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6094
+    .line 6104
     const/4 v0, 0x0
 
-    .line 6096
+    .line 6106
     :goto_0
     return-object v0
 
@@ -19059,22 +19034,22 @@
     .locals 2
 
     .prologue
-    .line 6100
+    .line 6110
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
     if-nez v0, :cond_0
 
-    .line 6101
+    .line 6111
     const-string v0, "HTCCamera"
 
     const-string v1, "getRequestName() - mIntentManager == null"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6102
+    .line 6112
     const/4 v0, 0x0
 
-    .line 6104
+    .line 6114
     :goto_0
     return-object v0
 
@@ -19090,7 +19065,7 @@
     .locals 1
 
     .prologue
-    .line 6194
+    .line 6204
     iget v0, p0, Lcom/android/camera/HTCCamera;->mReviewDuration:I
 
     return v0
@@ -19100,7 +19075,7 @@
     .locals 1
 
     .prologue
-    .line 6036
+    .line 6046
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSecondLayout:Landroid/view/View;
 
     return-object v0
@@ -19112,17 +19087,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 6687
+    .line 6704
     iget v2, p0, Lcom/android/camera/HTCCamera;->mSelfTimerDisableCounter:I
 
     if-lez v2, :cond_1
 
-    .line 6698
+    .line 6715
     :cond_0
     :goto_0
     return v1
 
-    .line 6690
+    .line 6707
     :cond_1
     const-string v2, "pref_camera_self_timer"
 
@@ -19130,11 +19105,11 @@
 
     move-result-object v0
 
-    .line 6691
+    .line 6708
     .local v0, value:Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 6693
+    .line 6710
     const-string v2, "2s"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -19143,12 +19118,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 6694
+    .line 6711
     const/4 v1, 0x2
 
     goto :goto_0
 
-    .line 6695
+    .line 6712
     :cond_2
     const-string v2, "10s"
 
@@ -19158,7 +19133,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 6696
+    .line 6713
     const/16 v1, 0xa
 
     goto :goto_0
@@ -19168,7 +19143,7 @@
     .locals 2
 
     .prologue
-    .line 10487
+    .line 10577
     iget-wide v0, p0, Lcom/android/camera/HTCCamera;->mSessionID:J
 
     return-wide v0
@@ -19178,7 +19153,7 @@
     .locals 1
 
     .prologue
-    .line 6028
+    .line 6038
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSurfaceHolder:Landroid/view/SurfaceHolder;
 
     return-object v0
@@ -19188,7 +19163,7 @@
     .locals 1
 
     .prologue
-    .line 6024
+    .line 6034
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
     return-object v0
@@ -19198,7 +19173,7 @@
     .locals 2
 
     .prologue
-    .line 10080
+    .line 10170
     const v1, 0x7f08003f
 
     invoke-virtual {p0, v1}, Lcom/android/camera/HTCCamera;->findViewById(I)Landroid/view/View;
@@ -19207,7 +19182,7 @@
 
     check-cast v0, Landroid/widget/RelativeLayout;
 
-    .line 10082
+    .line 10172
     .local v0, upper:Landroid/widget/RelativeLayout;
     return-object v0
 .end method
@@ -19219,52 +19194,52 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 9349
+    .line 9439
     const-string v0, "HTCCamera"
 
     const-string v1, "handleFaceFocus() - start"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9351
+    .line 9441
     const-string v0, "HTCCamera"
 
     const-string v1, "Block Capture UI - take focus start"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9352
+    .line 9442
     sput-boolean v2, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 9354
+    .line 9444
     iget v0, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     if-nez v0, :cond_0
 
-    .line 9355
+    .line 9445
     const-string v0, "HTCCamera"
 
     const-string v1, "take focus - mFocusingState = FOCUSING_NO_ACTION"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9356
+    .line 9446
     iput v2, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
-    .line 9362
+    .line 9452
     :cond_0
     const/4 v0, 0x2
 
     sput v0, Lcom/android/camera/HTCCamera;->mFocusMode:I
 
-    .line 9363
+    .line 9453
     iget-short v0, p1, Lcom/android/camera/FaceDetection$Face;->focus_X:S
 
     iget-short v1, p1, Lcom/android/camera/FaceDetection$Face;->focus_Y:S
 
     invoke-direct {p0, v0, v1}, Lcom/android/camera/HTCCamera;->updateFocusView(II)V
 
-    .line 9365
+    .line 9455
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -19333,7 +19308,7 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9372
+    .line 9462
     iget-object v0, p1, Lcom/android/camera/FaceDetection$Face;->range:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
@@ -19348,14 +19323,14 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/camera/HTCCamera;->sendFocusMessage(II)V
 
-    .line 9374
+    .line 9464
     const-string v0, "HTCCamera"
 
     const-string v1, "handleFaceFocus() - end"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9375
+    .line 9465
     return-void
 .end method
 
@@ -19368,10 +19343,10 @@
 
     const/4 v1, 0x1
 
-    .line 9075
+    .line 9165
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->closeSettingsPanel()V
 
-    .line 9077
+    .line 9167
     invoke-static {}, Lcom/android/camera/DisplayDevice;->canCancelFocus()Z
 
     move-result v2
@@ -19394,49 +19369,49 @@
 
     if-nez v2, :cond_0
 
-    .line 9081
+    .line 9171
     iput-boolean v1, p0, Lcom/android/camera/HTCCamera;->m_CancelFocusFromTouch:Z
 
-    .line 9082
+    .line 9172
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->cancelAutoFocus()Z
 
-    .line 9083
+    .line 9173
     iput-boolean v5, p0, Lcom/android/camera/HTCCamera;->m_CancelFocusFromTouch:Z
 
-    .line 9084
+    .line 9174
     const-string v2, "HTCCamera"
 
     const-string v3, "UnBlock Capture UI - touch down and cancel focus"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9085
+    .line 9175
     sput-boolean v5, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 9088
+    .line 9178
     :cond_0
     sget-boolean v2, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
     if-ne v2, v1, :cond_1
 
-    .line 9089
+    .line 9179
     const-string v2, "HTCCamera"
 
     const-string v3, "onTouchEvent - UI Block !!!"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9149
+    .line 9239
     :goto_0
     return v1
 
-    .line 9093
+    .line 9183
     :cond_1
     iget-boolean v2, p0, Lcom/android/camera/HTCCamera;->mIsSipExist:Z
 
     if-ne v2, v1, :cond_2
 
-    .line 9094
+    .line 9184
     const-string v2, "HTCCamera"
 
     const-string v3, "onTouchEvent - SIP is shown, UI Block !!!"
@@ -19445,7 +19420,7 @@
 
     goto :goto_0
 
-    .line 9099
+    .line 9189
     :cond_2
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
@@ -19457,14 +19432,14 @@
 
     invoke-virtual {v2, v3}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 9104
+    .line 9194
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v2
 
     packed-switch v2, :pswitch_data_0
 
-    .line 9149
+    .line 9239
     :cond_3
     :goto_1
     invoke-super {p0, p1}, Landroid/app/Activity;->onTouchEvent(Landroid/view/MotionEvent;)Z
@@ -19473,11 +19448,11 @@
 
     goto :goto_0
 
-    .line 9107
+    .line 9197
     :pswitch_0
     iput-boolean v5, p0, Lcom/android/camera/HTCCamera;->mCloseTouchEvent:Z
 
-    .line 9109
+    .line 9199
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v2
@@ -19492,30 +19467,30 @@
 
     invoke-direct {p0, v2, v3}, Lcom/android/camera/HTCCamera;->resetTapCapture(II)V
 
-    .line 9111
+    .line 9201
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
 
     if-eqz v2, :cond_3
 
-    .line 9112
+    .line 9202
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v2
 
     if-nez v2, :cond_3
 
-    .line 9113
+    .line 9203
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 9114
+    .line 9204
     .local v0, rect:Landroid/graphics/Rect;
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 9115
+    .line 9205
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v2
@@ -19534,19 +19509,19 @@
 
     if-nez v2, :cond_3
 
-    .line 9116
+    .line 9206
     iput-boolean v1, p0, Lcom/android/camera/HTCCamera;->mCloseTouchEvent:Z
 
     goto :goto_1
 
-    .line 9127
+    .line 9217
     .end local v0           #rect:Landroid/graphics/Rect;
     :pswitch_1
     iget-boolean v2, p0, Lcom/android/camera/HTCCamera;->mCloseTouchEvent:Z
 
     if-eq v2, v1, :cond_3
 
-    .line 9130
+    .line 9220
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportTapScreenCapture()Z
 
     move-result v1
@@ -19555,13 +19530,13 @@
 
     goto :goto_1
 
-    .line 9139
+    .line 9229
     :pswitch_2
     iget-boolean v2, p0, Lcom/android/camera/HTCCamera;->mCloseTouchEvent:Z
 
     if-eq v2, v1, :cond_3
 
-    .line 9143
+    .line 9233
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getFaceNumber()I
 
     move-result v1
@@ -19572,7 +19547,7 @@
 
     if-gtz v1, :cond_3
 
-    .line 9144
+    .line 9234
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
@@ -19589,7 +19564,7 @@
 
     goto :goto_1
 
-    .line 9104
+    .line 9194
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -19608,7 +19583,7 @@
 
     const/4 v2, 0x1
 
-    .line 9498
+    .line 9588
     const-string v3, "HTCCamera"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -19641,35 +19616,35 @@
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9499
+    .line 9589
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
     if-nez v3, :cond_0
 
-    .line 9500
+    .line 9590
     const-string v2, "HTCCamera"
 
     const-string v3, "handleTouchFocus - mSurfaceView = null"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9542
+    .line 9632
     :goto_0
     return v1
 
-    .line 9504
+    .line 9594
     :cond_0
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 9505
+    .line 9595
     .local v0, rect:Landroid/graphics/Rect;
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v3, v0}, Landroid/view/SurfaceView;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 9507
+    .line 9597
     const-string v3, "HTCCamera"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -19706,7 +19681,7 @@
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9508
+    .line 9598
     const-string v3, "HTCCamera"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -19743,14 +19718,14 @@
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9509
+    .line 9599
     invoke-virtual {v0, p1, p2}, Landroid/graphics/Rect;->contains(II)Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
-    .line 9510
+    .line 9600
     const-string v2, "HTCCamera"
 
     const-string v3, "handleTouchFocus - touch point not in mSurfaceView"
@@ -19759,7 +19734,7 @@
 
     goto :goto_0
 
-    .line 9514
+    .line 9604
     :cond_1
     const-string v1, "HTCCamera"
 
@@ -19767,53 +19742,53 @@
 
     invoke-static {v1, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9515
+    .line 9605
     sput-boolean v2, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 9517
+    .line 9607
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x23
 
     invoke-static {v1, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9518
+    .line 9608
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     if-eqz v1, :cond_2
 
-    .line 9519
+    .line 9609
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v1}, Lcom/android/camera/FaceDetection;->stopCheckLoop()V
 
-    .line 9520
+    .line 9610
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v1}, Lcom/android/camera/FaceDetection;->stopFaceDetection()V
 
-    .line 9521
+    .line 9611
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/camera/HTCCamera;->mFaces:[Landroid/hardware/Camera$Face;
 
-    .line 9524
+    .line 9614
     :cond_2
     iget v1, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     if-nez v1, :cond_3
 
-    .line 9525
+    .line 9615
     const-string v1, "HTCCamera"
 
     const-string v3, "take focus - mFocusingState = FOCUSING_NO_ACTION"
 
     invoke-static {v1, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9526
+    .line 9616
     iput v2, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
-    .line 9529
+    .line 9619
     :cond_3
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -19821,32 +19796,32 @@
 
     invoke-static {v1, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9530
+    .line 9620
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mToast:Lcom/android/camera/rotate/RotateToast;
 
     if-eqz v1, :cond_4
 
-    .line 9531
+    .line 9621
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mToast:Lcom/android/camera/rotate/RotateToast;
 
     invoke-virtual {v1}, Lcom/android/camera/rotate/RotateToast;->cancel()V
 
-    .line 9533
+    .line 9623
     :cond_4
     sput v2, Lcom/android/camera/HTCCamera;->mFocusMode:I
 
-    .line 9534
+    .line 9624
     invoke-direct {p0, p1, p2}, Lcom/android/camera/HTCCamera;->updateFocusView(II)V
 
-    .line 9536
+    .line 9626
     invoke-direct {p0, p1, p2, v0}, Lcom/android/camera/HTCCamera;->mapFocusPoint_Screen2Preview(IILandroid/graphics/Rect;)V
 
-    .line 9539
+    .line 9629
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSensorHandler:Lcom/android/camera/SensorHandler;
 
     if-eqz v1, :cond_5
 
-    .line 9540
+    .line 9630
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSensorHandler:Lcom/android/camera/SensorHandler;
 
     invoke-virtual {v1, v2}, Lcom/android/camera/SensorHandler;->setTouchThreshold(Z)V
@@ -19854,7 +19829,7 @@
     :cond_5
     move v1, v2
 
-    .line 9542
+    .line 9632
     goto/16 :goto_0
 .end method
 
@@ -19862,7 +19837,7 @@
     .locals 1
 
     .prologue
-    .line 7202
+    .line 7261
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
@@ -19896,7 +19871,7 @@
     .locals 1
 
     .prologue
-    .line 6803
+    .line 6863
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mPreviewFilterLayout:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -19916,7 +19891,7 @@
     .locals 1
 
     .prologue
-    .line 5989
+    .line 5999
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mEffectManager:Lcom/android/camera/effect/EffectManager;
 
     if-eqz v0, :cond_0
@@ -19942,15 +19917,15 @@
     .locals 1
 
     .prologue
-    .line 4292
+    .line 4298
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitch_btn:Landroid/widget/Button;
 
     if-eqz v0, :cond_0
 
-    .line 4293
+    .line 4299
     const/4 v0, 0x1
 
-    .line 4295
+    .line 4301
     :goto_0
     return v0
 
@@ -19964,7 +19939,7 @@
     .locals 0
 
     .prologue
-    .line 9973
+    .line 10063
     return-void
 .end method
 
@@ -19974,31 +19949,31 @@
     .prologue
     const/4 v4, -0x1
 
-    .line 10091
+    .line 10181
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 10092
+    .line 10182
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFocusAnimation:Landroid/view/View;
 
     if-eqz v2, :cond_1
 
-    .line 10093
+    .line 10183
     const-string v2, "HTCCamera"
 
     const-string v3, "mFocusAnimation != null"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10109
+    .line 10199
     :cond_0
     :goto_0
     return-void
 
-    .line 10096
+    .line 10186
     :cond_1
     const v2, 0x7f080048
 
@@ -20008,7 +19983,7 @@
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 10097
+    .line 10187
     .local v0, layout:Landroid/widget/LinearLayout;
     new-instance v2, Lcom/android/camera/widget/CameraFocusWidget;
 
@@ -20016,7 +19991,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mFocusAnimation:Landroid/view/View;
 
-    .line 10098
+    .line 10188
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mFocusAnimation:Landroid/view/View;
 
     new-instance v3, Landroid/widget/LinearLayout$LayoutParams;
@@ -20027,7 +20002,7 @@
 
     goto :goto_0
 
-    .line 10101
+    .line 10191
     .end local v0           #layout:Landroid/widget/LinearLayout;
     :cond_2
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mivFocusingView:Landroid/widget/ImageView;
@@ -20038,7 +20013,7 @@
 
     if-nez v2, :cond_0
 
-    .line 10104
+    .line 10194
     :cond_3
     const v2, 0x7f080046
 
@@ -20048,13 +20023,13 @@
 
     check-cast v1, Landroid/view/ViewStub;
 
-    .line 10105
+    .line 10195
     .local v1, stub:Landroid/view/ViewStub;
     invoke-virtual {v1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
     move-result-object v0
 
-    .line 10106
+    .line 10196
     .local v0, layout:Landroid/view/View;
     const v2, 0x7f0800ad
 
@@ -20066,7 +20041,7 @@
 
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mivFocusingView:Landroid/widget/ImageView;
 
-    .line 10107
+    .line 10197
     const v2, 0x7f0800ae
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -20086,7 +20061,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 11330
+    .line 11420
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v1, :cond_0
@@ -20097,7 +20072,7 @@
 
     if-nez v1, :cond_1
 
-    .line 11332
+    .line 11422
     :cond_0
     :goto_0
     return v0
@@ -20126,7 +20101,7 @@
     .locals 1
 
     .prologue
-    .line 6059
+    .line 6069
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mActionScreen:Lcom/android/camera/actionscreen/ActionScreen;
 
     if-eqz v0, :cond_0
@@ -20154,7 +20129,7 @@
     .locals 1
 
     .prologue
-    .line 5931
+    .line 5941
     sget-boolean v0, Lcom/android/camera/HTCCamera;->mIsSelfPortraitTask:Z
 
     return v0
@@ -20164,7 +20139,7 @@
     .locals 1
 
     .prologue
-    .line 9493
+    .line 9583
     iget v0, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     if-eqz v0, :cond_0
@@ -20184,7 +20159,7 @@
     .locals 1
 
     .prologue
-    .line 5896
+    .line 5906
     sget-boolean v0, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
     return v0
@@ -20194,7 +20169,7 @@
     .locals 1
 
     .prologue
-    .line 11451
+    .line 11541
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mBlockPowerWarning:Z
 
     return v0
@@ -20204,7 +20179,7 @@
     .locals 1
 
     .prologue
-    .line 11249
+    .line 11339
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIsCameraThreadRunning:Z
 
     return v0
@@ -20214,7 +20189,7 @@
     .locals 1
 
     .prologue
-    .line 5943
+    .line 5953
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->bCancelFocus:Z
 
     return v0
@@ -20224,7 +20199,7 @@
     .locals 1
 
     .prologue
-    .line 11387
+    .line 11477
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIsCaptureTriggered:Z
 
     return v0
@@ -20234,7 +20209,7 @@
     .locals 1
 
     .prologue
-    .line 10682
+    .line 10772
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIsCaptureUIOpen:Z
 
     return v0
@@ -20244,20 +20219,20 @@
     .locals 2
 
     .prologue
-    .line 5983
+    .line 5993
     new-instance v0, Lcom/android/camera/QueryEvent;
 
     const-string v1, "Query.IsEffectControlVisible"
 
     invoke-direct {v0, v1}, Lcom/android/camera/QueryEvent;-><init>(Ljava/lang/String;)V
 
-    .line 5984
+    .line 5994
     .local v0, event:Lcom/android/camera/QueryEvent;,"Lcom/android/camera/QueryEvent<Ljava/lang/Boolean;>;"
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     invoke-virtual {v1, v0}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 5985
+    .line 5995
     invoke-virtual {v0}, Lcom/android/camera/QueryEvent;->hasResult()Z
 
     move-result v1
@@ -20291,20 +20266,20 @@
     .locals 2
 
     .prologue
-    .line 10268
+    .line 10358
     new-instance v0, Lcom/android/camera/QueryEvent;
 
     const-string v1, "Query.IsEffectPanelOpen"
 
     invoke-direct {v0, v1}, Lcom/android/camera/QueryEvent;-><init>(Ljava/lang/String;)V
 
-    .line 10269
+    .line 10359
     .local v0, event:Lcom/android/camera/QueryEvent;,"Lcom/android/camera/QueryEvent<Ljava/lang/Boolean;>;"
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     invoke-virtual {v1, v0}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 10270
+    .line 10360
     invoke-virtual {v0}, Lcom/android/camera/QueryEvent;->hasResult()Z
 
     move-result v1
@@ -20334,7 +20309,7 @@
     .locals 1
 
     .prologue
-    .line 7210
+    .line 7269
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->hasFlash()Z
 
     move-result v0
@@ -20377,7 +20352,7 @@
     .locals 1
 
     .prologue
-    .line 10471
+    .line 10561
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
     return v0
@@ -20387,7 +20362,7 @@
     .locals 1
 
     .prologue
-    .line 10479
+    .line 10569
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mActivityOnPause:Z
 
     if-nez v0, :cond_0
@@ -20412,7 +20387,7 @@
     .locals 1
 
     .prologue
-    .line 10714
+    .line 10804
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isMenuOpen()Z
 
     move-result v0
@@ -20440,7 +20415,7 @@
     .locals 1
 
     .prologue
-    .line 10706
+    .line 10796
     const/4 v0, 0x0
 
     return v0
@@ -20452,7 +20427,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 10690
+    .line 10780
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSettingMenu:Lcom/android/camera/widget/PopupMenu;
 
     if-eqz v1, :cond_1
@@ -20465,12 +20440,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 10698
+    .line 10788
     :cond_0
     :goto_0
     return v0
 
-    .line 10692
+    .line 10782
     :cond_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSceneMenu:Lcom/android/camera/widget/PopupMenu;
 
@@ -20484,7 +20459,7 @@
 
     if-nez v1, :cond_0
 
-    .line 10694
+    .line 10784
     :cond_2
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mQualityMenu:Lcom/android/camera/widget/PopupMenu;
 
@@ -20498,7 +20473,7 @@
 
     if-nez v1, :cond_0
 
-    .line 10696
+    .line 10786
     :cond_3
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSwitchMenu:Lcom/android/camera/widget/PopupMenu;
 
@@ -20512,7 +20487,7 @@
 
     if-nez v1, :cond_0
 
-    .line 10698
+    .line 10788
     :cond_4
     const/4 v0, 0x0
 
@@ -20525,19 +20500,19 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 10278
+    .line 10368
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportIconRotate()Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 10285
+    .line 10375
     :cond_0
     :goto_0
     return v1
 
-    .line 10281
+    .line 10371
     :cond_1
     const-string v2, "Panorama UI"
 
@@ -20547,7 +20522,7 @@
 
     check-cast v0, Lcom/android/camera/component/PanoramaUI;
 
-    .line 10282
+    .line 10372
     .local v0, panoramaUI:Lcom/android/camera/component/PanoramaUI;
     if-eqz v0, :cond_2
 
@@ -20563,7 +20538,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 10285
+    .line 10375
     :cond_2
     const/4 v1, 0x0
 
@@ -20576,12 +20551,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10064
+    .line 10154
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     if-nez v1, :cond_1
 
-    .line 10067
+    .line 10157
     :cond_0
     :goto_0
     return v0
@@ -20606,17 +20581,17 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10054
+    .line 10144
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     if-nez v1, :cond_1
 
-    .line 10060
+    .line 10150
     :cond_0
     :goto_0
     return v0
 
-    .line 10057
+    .line 10147
     :cond_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -20626,7 +20601,7 @@
 
     if-nez v1, :cond_0
 
-    .line 10058
+    .line 10148
     const/4 v0, 0x1
 
     goto :goto_0
@@ -20636,7 +20611,7 @@
     .locals 1
 
     .prologue
-    .line 10674
+    .line 10764
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mActivityOnPause:Z
 
     return v0
@@ -20646,7 +20621,7 @@
     .locals 1
 
     .prologue
-    .line 11460
+    .line 11550
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIsPowerWarning:Z
 
     return v0
@@ -20656,7 +20631,7 @@
     .locals 1
 
     .prologue
-    .line 10640
+    .line 10730
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIsPreviewStarted:Z
 
     return v0
@@ -20669,24 +20644,24 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 6109
+    .line 6119
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
     if-nez v1, :cond_1
 
-    .line 6110
+    .line 6120
     const-string v1, "HTCCamera"
 
     const-string v2, "isRequestMode() - mIntentManager == null"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6117
+    .line 6127
     :cond_0
     :goto_0
     return v0
 
-    .line 6114
+    .line 6124
     :cond_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
@@ -20694,7 +20669,7 @@
 
     if-ne v1, p1, :cond_0
 
-    .line 6115
+    .line 6125
     const/4 v0, 0x1
 
     goto :goto_0
@@ -20707,24 +20682,24 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 6121
+    .line 6131
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
     if-nez v1, :cond_1
 
-    .line 6122
+    .line 6132
     const-string v1, "HTCCamera"
 
     const-string v2, "isRequestName() - mIntentManager == null"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6129
+    .line 6139
     :cond_0
     :goto_0
     return v0
 
-    .line 6126
+    .line 6136
     :cond_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
@@ -20732,7 +20707,7 @@
 
     if-ne v1, p1, :cond_0
 
-    .line 6127
+    .line 6137
     const/4 v0, 0x1
 
     goto :goto_0
@@ -20742,7 +20717,7 @@
     .locals 1
 
     .prologue
-    .line 10665
+    .line 10755
     sget-object v0, Lcom/android/camera/IntentManager$RequestName;->Contacts:Lcom/android/camera/IntentManager$RequestName;
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
@@ -20775,7 +20750,7 @@
     .locals 1
 
     .prologue
-    .line 11609
+    .line 11699
     iget v0, p0, Lcom/android/camera/HTCCamera;->mSelfTimerDisableCounter:I
 
     if-lez v0, :cond_0
@@ -20795,7 +20770,7 @@
     .locals 1
 
     .prologue
-    .line 6679
+    .line 6696
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getSelfTimerInterval()I
 
     move-result v0
@@ -20817,7 +20792,7 @@
     .locals 1
 
     .prologue
-    .line 10648
+    .line 10738
     sget-object v0, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->isRequestMode(Lcom/android/camera/IntentManager$RequestMode;)Z
@@ -20849,15 +20824,15 @@
     .locals 1
 
     .prologue
-    .line 5948
+    .line 5958
     sget-boolean v0, Lcom/android/camera/HTCCamera;->mIsKeyguardShow:Z
 
     if-eqz v0, :cond_0
 
-    .line 5949
+    .line 5959
     const/4 v0, 0x0
 
-    .line 5951
+    .line 5961
     :goto_0
     return v0
 
@@ -20871,7 +20846,7 @@
     .locals 1
 
     .prologue
-    .line 5971
+    .line 5981
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mFreezeUI:Z
 
     return v0
@@ -20881,7 +20856,7 @@
     .locals 1
 
     .prologue
-    .line 5935
+    .line 5945
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIsUIReady:Z
 
     return v0
@@ -20891,7 +20866,7 @@
     .locals 1
 
     .prologue
-    .line 10657
+    .line 10747
     sget-object v0, Lcom/android/camera/IntentManager$RequestName;->Unknown_Service:Lcom/android/camera/IntentManager$RequestName;
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
@@ -20907,18 +20882,18 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 10810
+    .line 10900
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-nez v1, :cond_0
 
     move v1, v2
 
-    .line 10822
+    .line 10912
     :goto_0
     return v1
 
-    .line 10812
+    .line 10902
     :cond_0
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -20930,10 +20905,10 @@
 
     move v1, v2
 
-    .line 10813
+    .line 10903
     goto :goto_0
 
-    .line 10816
+    .line 10906
     :cond_1
     new-instance v0, Lcom/android/camera/ConditionalQueryEvent;
 
@@ -20941,13 +20916,13 @@
 
     invoke-direct {v0, v1, v2, v2}, Lcom/android/camera/ConditionalQueryEvent;-><init>(Ljava/lang/String;IZ)V
 
-    .line 10817
+    .line 10907
     .local v0, event:Lcom/android/camera/ConditionalQueryEvent;
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     invoke-virtual {v1, v0}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 10818
+    .line 10908
     invoke-virtual {v0}, Lcom/android/camera/ConditionalQueryEvent;->hasResult()Z
 
     move-result v1
@@ -20968,10 +20943,10 @@
 
     move v1, v2
 
-    .line 10819
+    .line 10909
     goto :goto_0
 
-    .line 10822
+    .line 10912
     :cond_2
     const/4 v1, 0x0
 
@@ -20982,7 +20957,7 @@
     .locals 1
 
     .prologue
-    .line 10744
+    .line 10834
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIsZoomLocked:Z
 
     return v0
@@ -20994,25 +20969,25 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 10315
+    .line 10405
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->is3DCameraActivated()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 10316
+    .line 10406
     invoke-virtual {p0, v1}, Lcom/android/camera/HTCCamera;->lockOrientation(I)V
 
-    .line 10322
+    .line 10412
     :goto_0
     return-void
 
-    .line 10319
+    .line 10409
     :cond_0
     iput-boolean v1, p0, Lcom/android/camera/HTCCamera;->mFreezeUI:Z
 
-    .line 10320
+    .line 10410
     iget v0, p0, Lcom/android/camera/HTCCamera;->mLastOrientation:I
 
     iput v0, p0, Lcom/android/camera/HTCCamera;->mFreezeOrientation:I
@@ -21027,7 +21002,7 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 10293
+    .line 10383
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportIconRotate()Z
 
     move-result v0
@@ -21040,31 +21015,31 @@
 
     if-eqz v0, :cond_1
 
-    .line 10294
+    .line 10384
     :cond_0
     const/4 p1, 0x1
 
-    .line 10295
+    .line 10385
     :cond_1
     if-ne p1, v3, :cond_2
 
-    .line 10297
+    .line 10387
     const-string v0, "HTCCamera"
 
     const-string v1, "unlock UI orientation"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10298
+    .line 10388
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/camera/HTCCamera;->mFreezeUI:Z
 
-    .line 10308
+    .line 10398
     :goto_0
     return-void
 
-    .line 10302
+    .line 10392
     :cond_2
     const-string v0, "HTCCamera"
 
@@ -21088,22 +21063,22 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10303
+    .line 10393
     invoke-direct {p0, p1}, Lcom/android/camera/HTCCamera;->onRotateChanged(I)V
 
-    .line 10304
+    .line 10394
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x3f
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 10305
+    .line 10395
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/camera/HTCCamera;->mFreezeUI:Z
 
-    .line 10306
+    .line 10396
     iput v3, p0, Lcom/android/camera/HTCCamera;->mFreezeOrientation:I
 
     goto :goto_0
@@ -21115,42 +21090,42 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 10752
+    .line 10842
     const-string v0, "HTCCamera"
 
     const-string v1, "lockZoom() - start"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10755
+    .line 10845
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->threadAccessCheck()V
 
-    .line 10756
+    .line 10846
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIsZoomLocked:Z
 
     if-eqz v0, :cond_0
 
-    .line 10758
+    .line 10848
     const-string v0, "HTCCamera"
 
     const-string v1, "Zoom is already be locked"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10778
+    .line 10868
     :goto_0
     return-void
 
-    .line 10763
+    .line 10853
     :cond_0
     iput-boolean v3, p0, Lcom/android/camera/HTCCamera;->mIsZoomLocked:Z
 
-    .line 10766
+    .line 10856
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_2
 
-    .line 10768
+    .line 10858
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->isZoomRangeRetrieved()Z
@@ -21159,7 +21134,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 10769
+    .line 10859
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
@@ -21170,7 +21145,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/CameraThread;->changeZoom(I)V
 
-    .line 10775
+    .line 10865
     :cond_1
     :goto_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
@@ -21187,7 +21162,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 10777
+    .line 10867
     const-string v0, "HTCCamera"
 
     const-string v1, "lockZoom() - end"
@@ -21196,7 +21171,7 @@
 
     goto :goto_0
 
-    .line 10772
+    .line 10862
     :cond_2
     const-string v0, "HTCCamera"
 
@@ -21212,70 +21187,70 @@
     .parameter "scene_idx"
 
     .prologue
-    .line 7486
+    .line 7545
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isServiceMode()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 7487
+    .line 7546
     packed-switch p1, :pswitch_data_0
 
-    .line 7515
+    .line 7574
     :cond_0
     :goto_0
     return p1
 
-    .line 7489
+    .line 7548
     :pswitch_0
     const/4 p1, 0x0
 
-    .line 7490
+    .line 7549
     goto :goto_0
 
-    .line 7492
+    .line 7551
     :pswitch_1
     const/4 p1, 0x2
 
-    .line 7493
+    .line 7552
     goto :goto_0
 
-    .line 7495
+    .line 7554
     :pswitch_2
     const/4 p1, 0x4
 
-    .line 7496
+    .line 7555
     goto :goto_0
 
-    .line 7498
+    .line 7557
     :pswitch_3
     const/4 p1, 0x5
 
-    .line 7499
+    .line 7558
     goto :goto_0
 
-    .line 7501
+    .line 7560
     :pswitch_4
     const/4 p1, 0x6
 
-    .line 7502
+    .line 7561
     goto :goto_0
 
-    .line 7504
+    .line 7563
     :pswitch_5
     const/4 p1, 0x7
 
-    .line 7505
+    .line 7564
     goto :goto_0
 
-    .line 7510
+    .line 7569
     :pswitch_6
     const/16 p1, 0x8
 
     goto :goto_0
 
-    .line 7487
+    .line 7546
     nop
 
     :pswitch_data_0
@@ -21295,71 +21270,71 @@
     .parameter "scene_idx"
 
     .prologue
-    .line 7518
+    .line 7577
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isServiceMode()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 7519
+    .line 7578
     packed-switch p1, :pswitch_data_0
 
-    .line 7546
+    .line 7605
     :cond_0
     :goto_0
     :pswitch_0
     return p1
 
-    .line 7521
+    .line 7580
     :pswitch_1
     const/4 p1, 0x0
 
-    .line 7522
+    .line 7581
     goto :goto_0
 
-    .line 7524
+    .line 7583
     :pswitch_2
     const/4 p1, 0x1
 
-    .line 7525
+    .line 7584
     goto :goto_0
 
-    .line 7527
+    .line 7586
     :pswitch_3
     const/4 p1, 0x2
 
-    .line 7528
+    .line 7587
     goto :goto_0
 
-    .line 7530
+    .line 7589
     :pswitch_4
     const/4 p1, 0x3
 
-    .line 7531
+    .line 7590
     goto :goto_0
 
-    .line 7533
+    .line 7592
     :pswitch_5
     const/4 p1, 0x4
 
-    .line 7534
+    .line 7593
     goto :goto_0
 
-    .line 7536
+    .line 7595
     :pswitch_6
     const/4 p1, 0x5
 
-    .line 7537
+    .line 7596
     goto :goto_0
 
-    .line 7542
+    .line 7601
     :pswitch_7
     const/4 p1, 0x6
 
     goto :goto_0
 
-    .line 7519
+    .line 7578
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -21382,23 +21357,23 @@
 
     const/4 v2, 0x1
 
-    .line 10428
+    .line 10518
     const/4 v3, -0x1
 
     iput v3, p0, Lcom/android/camera/HTCCamera;->mReviewDuration:I
 
-    .line 10431
+    .line 10521
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isPowerWarning()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 10462
+    .line 10552
     :goto_0
     return v1
 
-    .line 10434
+    .line 10524
     :cond_0
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isServiceMode()Z
 
@@ -21408,10 +21383,10 @@
 
     move v1, v2
 
-    .line 10435
+    .line 10525
     goto :goto_0
 
-    .line 10437
+    .line 10527
     :cond_1
     sget-boolean v3, Lcom/android/camera/HTCCamera;->mIsSelfPortraitTask:Z
 
@@ -21419,10 +21394,10 @@
 
     move v1, v2
 
-    .line 10438
+    .line 10528
     goto :goto_0
 
-    .line 10440
+    .line 10530
     :cond_2
     const-string v3, "pref_camera_review_duration"
 
@@ -21430,7 +21405,7 @@
 
     move-result-object v0
 
-    .line 10441
+    .line 10531
     .local v0, review:Ljava/lang/String;
     const-string v3, "2s"
 
@@ -21440,24 +21415,24 @@
 
     if-eqz v3, :cond_3
 
-    .line 10442
+    .line 10532
     const-string v1, "HTCCamera"
 
     const-string v3, "advanced settings - Review is 2 seconds"
 
     invoke-static {v1, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10443
+    .line 10533
     const/4 v1, 0x2
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mReviewDuration:I
 
     move v1, v2
 
-    .line 10444
+    .line 10534
     goto :goto_0
 
-    .line 10445
+    .line 10535
     :cond_3
     const-string v3, "3s"
 
@@ -21467,24 +21442,24 @@
 
     if-eqz v3, :cond_4
 
-    .line 10446
+    .line 10536
     const-string v1, "HTCCamera"
 
     const-string v3, "advanced settings - Review is 3 seconds"
 
     invoke-static {v1, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10447
+    .line 10537
     const/4 v1, 0x3
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mReviewDuration:I
 
     move v1, v2
 
-    .line 10448
+    .line 10538
     goto :goto_0
 
-    .line 10449
+    .line 10539
     :cond_4
     const-string v3, "5s"
 
@@ -21494,24 +21469,24 @@
 
     if-eqz v3, :cond_5
 
-    .line 10450
+    .line 10540
     const-string v1, "HTCCamera"
 
     const-string v3, "advanced settings - Review is 5 seconds"
 
     invoke-static {v1, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10451
+    .line 10541
     const/4 v1, 0x5
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mReviewDuration:I
 
     move v1, v2
 
-    .line 10452
+    .line 10542
     goto :goto_0
 
-    .line 10453
+    .line 10543
     :cond_5
     const-string v3, "10s"
 
@@ -21521,24 +21496,24 @@
 
     if-eqz v3, :cond_6
 
-    .line 10454
+    .line 10544
     const-string v1, "HTCCamera"
 
     const-string v3, "advanced settings - Review is 10 seconds"
 
     invoke-static {v1, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10455
+    .line 10545
     const/16 v1, 0xa
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mReviewDuration:I
 
     move v1, v2
 
-    .line 10456
+    .line 10546
     goto :goto_0
 
-    .line 10457
+    .line 10547
     :cond_6
     const-string v3, "no_limit"
 
@@ -21548,7 +21523,7 @@
 
     if-eqz v3, :cond_7
 
-    .line 10458
+    .line 10548
     const-string v1, "HTCCamera"
 
     const-string v3, "advanced settings - Review is no limit"
@@ -21557,10 +21532,10 @@
 
     move v1, v2
 
-    .line 10459
+    .line 10549
     goto :goto_0
 
-    .line 10461
+    .line 10551
     :cond_7
     const-string v2, "HTCCamera"
 
@@ -21579,36 +21554,36 @@
 
     const/4 v2, 0x1
 
-    .line 6154
+    .line 6164
     const/4 v3, -0x1
 
     iput v3, p0, Lcom/android/camera/HTCCamera;->mReviewDuration:I
 
-    .line 6157
+    .line 6167
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isServiceMode()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 6158
+    .line 6168
     const-string v2, "HTCCamera"
 
     const-string v3, "not requested from album - Review is off"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6189
+    .line 6199
     :goto_0
     return v1
 
-    .line 6162
+    .line 6172
     :cond_0
     sget-boolean v3, Lcom/android/camera/HTCCamera;->mIsSelfPortraitTask:Z
 
     if-eqz v3, :cond_1
 
-    .line 6163
+    .line 6173
     const-string v1, "HTCCamera"
 
     const-string v3, "self portrait - Review is no limit"
@@ -21617,10 +21592,10 @@
 
     move v1, v2
 
-    .line 6164
+    .line 6174
     goto :goto_0
 
-    .line 6167
+    .line 6177
     :cond_1
     const-string v3, "pref_camera_review_duration"
 
@@ -21628,7 +21603,7 @@
 
     move-result-object v0
 
-    .line 6168
+    .line 6178
     .local v0, review:Ljava/lang/String;
     const-string v3, "2s"
 
@@ -21638,24 +21613,24 @@
 
     if-eqz v3, :cond_2
 
-    .line 6169
+    .line 6179
     const-string v1, "HTCCamera"
 
     const-string v3, "advanced settings - Review is 2 seconds"
 
     invoke-static {v1, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6170
+    .line 6180
     const/4 v1, 0x2
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mReviewDuration:I
 
     move v1, v2
 
-    .line 6171
+    .line 6181
     goto :goto_0
 
-    .line 6172
+    .line 6182
     :cond_2
     const-string v3, "3s"
 
@@ -21665,24 +21640,24 @@
 
     if-eqz v3, :cond_3
 
-    .line 6173
+    .line 6183
     const-string v1, "HTCCamera"
 
     const-string v3, "advanced settings - Review is 3 seconds"
 
     invoke-static {v1, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6174
+    .line 6184
     const/4 v1, 0x3
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mReviewDuration:I
 
     move v1, v2
 
-    .line 6175
+    .line 6185
     goto :goto_0
 
-    .line 6176
+    .line 6186
     :cond_3
     const-string v3, "5s"
 
@@ -21692,24 +21667,24 @@
 
     if-eqz v3, :cond_4
 
-    .line 6177
+    .line 6187
     const-string v1, "HTCCamera"
 
     const-string v3, "advanced settings - Review is 5 seconds"
 
     invoke-static {v1, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6178
+    .line 6188
     const/4 v1, 0x5
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mReviewDuration:I
 
     move v1, v2
 
-    .line 6179
+    .line 6189
     goto :goto_0
 
-    .line 6180
+    .line 6190
     :cond_4
     const-string v3, "10s"
 
@@ -21719,24 +21694,24 @@
 
     if-eqz v3, :cond_5
 
-    .line 6181
+    .line 6191
     const-string v1, "HTCCamera"
 
     const-string v3, "advanced settings - Review is 10 seconds"
 
     invoke-static {v1, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6182
+    .line 6192
     const/16 v1, 0xa
 
     iput v1, p0, Lcom/android/camera/HTCCamera;->mReviewDuration:I
 
     move v1, v2
 
-    .line 6183
+    .line 6193
     goto :goto_0
 
-    .line 6184
+    .line 6194
     :cond_5
     const-string v3, "no_limit"
 
@@ -21746,7 +21721,7 @@
 
     if-eqz v3, :cond_6
 
-    .line 6185
+    .line 6195
     const-string v1, "HTCCamera"
 
     const-string v3, "advanced settings - Review is no limit"
@@ -21755,10 +21730,10 @@
 
     move v1, v2
 
-    .line 6186
+    .line 6196
     goto :goto_0
 
-    .line 6188
+    .line 6198
     :cond_6
     const-string v2, "HTCCamera"
 
@@ -21778,7 +21753,7 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 5516
+    .line 5522
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -21801,14 +21776,14 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5517
+    .line 5523
     if-eq p2, v3, :cond_0
 
-    .line 5556
+    .line 5562
     :goto_0
     return-void
 
-    .line 5520
+    .line 5526
     :cond_0
     sget-object v0, Lcom/android/camera/HTCCamera$39;->$SwitchMap$com$android$camera$Global$REQUEST_CODE:[I
 
@@ -21826,7 +21801,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 5553
+    .line 5559
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -21857,22 +21832,22 @@
 
     goto :goto_0
 
-    .line 5522
+    .line 5528
     :pswitch_0
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->openCaptureUI()V
 
     goto :goto_0
 
-    .line 5527
+    .line 5533
     :pswitch_1
     invoke-virtual {p0, v3, p3}, Lcom/android/camera/HTCCamera;->setResult(ILandroid/content/Intent;)V
 
-    .line 5528
+    .line 5534
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->finish()V
 
     goto :goto_0
 
-    .line 5549
+    .line 5555
     :pswitch_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mAutoUploader:Lcom/android/camera/AutoUploader;
 
@@ -21880,7 +21855,7 @@
 
     goto :goto_0
 
-    .line 5520
+    .line 5526
     nop
 
     :pswitch_data_0
@@ -21898,51 +21873,51 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 5570
+    .line 5576
     iget v0, p1, Landroid/content/res/Configuration;->orientation:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 5571
+    .line 5577
     const-string v0, "HTCCamera"
 
     const-string v1, "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% onConfigurationChanged LANDSCAPE"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5573
+    .line 5579
     iput v2, p0, Lcom/android/camera/HTCCamera;->Display_Orientation:I
 
-    .line 5583
+    .line 5589
     :goto_0
     invoke-super {p0, p1}, Landroid/app/Activity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 5584
+    .line 5590
     return-void
 
-    .line 5575
+    .line 5581
     :cond_0
     iget v0, p1, Landroid/content/res/Configuration;->orientation:I
 
     if-ne v0, v2, :cond_1
 
-    .line 5576
+    .line 5582
     const-string v0, "HTCCamera"
 
     const-string v1, "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% onConfigurationChanged PORTRAIT"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5578
+    .line 5584
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/camera/HTCCamera;->Display_Orientation:I
 
     goto :goto_0
 
-    .line 5581
+    .line 5587
     :cond_1
     const-string v0, "HTCCamera"
 
@@ -22616,7 +22591,7 @@
     .parameter "menu"
 
     .prologue
-    .line 5995
+    .line 6005
     const/4 v0, 0x1
 
     return v0
@@ -22628,21 +22603,21 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 5338
+    .line 5344
     const-string v0, "HTCCamera"
 
     const-string v1, "onDestroy() - start"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5342
+    .line 5348
     const-string v0, "[ANALYTIC_com.android.camera]"
 
     const-string v1, "[press_back]close"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->I(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5344
+    .line 5350
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v1, 0x8
@@ -22651,12 +22626,12 @@
 
     invoke-static {v0, v1, v3, v3, v2}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 5346
+    .line 5352
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_0
 
-    .line 5347
+    .line 5353
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/camera/HTCCamera$26;
@@ -22667,7 +22642,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 5359
+    .line 5365
     :goto_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -22675,27 +22650,27 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5363
+    .line 5369
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
-    .line 5364
+    .line 5370
     const-string v0, "HTCCamera"
 
     const-string v1, "onDestroy() - end"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5368
+    .line 5374
     const-string v0, "[ANALYTIC_com.android.camera]"
 
     const-string v1, "[close_camera]complete"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->I(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5369
+    .line 5375
     return-void
 
-    .line 5355
+    .line 5361
     :cond_0
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->doOnDestory()V
 
@@ -22707,12 +22682,12 @@
     .parameter "event"
 
     .prologue
-    .line 10951
+    .line 11041
     invoke-virtual {p1}, Lcom/android/camera/Event;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 10952
+    .line 11042
     .local v0, name:Ljava/lang/String;
     const-string v1, "ActionScreen.Closing"
 
@@ -22722,18 +22697,18 @@
 
     if-eqz v1, :cond_1
 
-    .line 10953
+    .line 11043
     const/4 v1, 0x1
 
     sput-boolean v1, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 10984
+    .line 11074
     .end local p1
     :cond_0
     :goto_0
     return-void
 
-    .line 10954
+    .line 11044
     .restart local p1
     :cond_1
     const-string v1, "ActionScreen.Closed"
@@ -22744,7 +22719,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 10955
+    .line 11045
     check-cast p1, Lcom/android/camera/actionscreen/ActionScreenEvent;
 
     .end local p1
@@ -22752,7 +22727,7 @@
 
     goto :goto_0
 
-    .line 10956
+    .line 11046
     .restart local p1
     :cond_2
     const-string v1, "EffectPanel.Closed"
@@ -22763,12 +22738,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 10957
+    .line 11047
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->onEffectPanelClosed()V
 
     goto :goto_0
 
-    .line 10958
+    .line 11048
     :cond_3
     const-string v1, "EffectPanel.Open"
 
@@ -22778,12 +22753,12 @@
 
     if-eqz v1, :cond_4
 
-    .line 10959
+    .line 11049
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->onEffectPanelOpen()V
 
     goto :goto_0
 
-    .line 10960
+    .line 11050
     :cond_4
     const-string v1, "EffectPanel.Opening"
 
@@ -22793,12 +22768,12 @@
 
     if-eqz v1, :cond_5
 
-    .line 10961
+    .line 11051
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->onEffectPanelOpening()V
 
     goto :goto_0
 
-    .line 10962
+    .line 11052
     :cond_5
     const-string v1, "Media.Saved"
 
@@ -22808,7 +22783,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 10963
+    .line 11053
     check-cast p1, Lcom/android/camera/MediaEvent;
 
     .end local p1
@@ -22816,7 +22791,7 @@
 
     goto :goto_0
 
-    .line 10964
+    .line 11054
     .restart local p1
     :cond_6
     const-string v1, "RemovableStorage.Ejected"
@@ -22827,12 +22802,12 @@
 
     if-eqz v1, :cond_7
 
-    .line 10965
+    .line 11055
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->onRemovableStorageEjected()V
 
     goto :goto_0
 
-    .line 10966
+    .line 11056
     :cond_7
     const-string v1, "RemovableStorage.Mounted"
 
@@ -22842,12 +22817,12 @@
 
     if-eqz v1, :cond_8
 
-    .line 10967
+    .line 11057
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->onRemovableStorageMounted()V
 
     goto :goto_0
 
-    .line 10968
+    .line 11058
     :cond_8
     const-string v1, "RemovableStorage.Unmounted"
 
@@ -22857,12 +22832,12 @@
 
     if-eqz v1, :cond_9
 
-    .line 10969
+    .line 11059
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->onRemovableStorageUnmounted()V
 
     goto :goto_0
 
-    .line 10970
+    .line 11060
     :cond_9
     const-string v1, "Request.ResetToDefault"
 
@@ -22872,12 +22847,12 @@
 
     if-eqz v1, :cond_a
 
-    .line 10971
+    .line 11061
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->onResetToDefault()V
 
     goto :goto_0
 
-    .line 10972
+    .line 11062
     :cond_a
     const-string v1, "Effect.Applied"
 
@@ -22887,12 +22862,12 @@
 
     if-eqz v1, :cond_b
 
-    .line 10973
+    .line 11063
     invoke-direct {p0, p1}, Lcom/android/camera/HTCCamera;->onEffectApplied(Lcom/android/camera/Event;)V
 
     goto :goto_0
 
-    .line 10974
+    .line 11064
     :cond_b
     const-string v1, "Menu.Opening"
 
@@ -22902,12 +22877,12 @@
 
     if-eqz v1, :cond_c
 
-    .line 10975
+    .line 11065
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->onMenuOpening()V
 
     goto/16 :goto_0
 
-    .line 10976
+    .line 11066
     :cond_c
     const-string v1, "Menu.Closed"
 
@@ -22917,12 +22892,12 @@
 
     if-eqz v1, :cond_d
 
-    .line 10977
+    .line 11067
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->onMenuClosed()V
 
     goto/16 :goto_0
 
-    .line 10978
+    .line 11068
     :cond_d
     const-string v1, "3DMode.Switched"
 
@@ -22932,7 +22907,7 @@
 
     if-eqz v1, :cond_e
 
-    .line 10979
+    .line 11069
     check-cast p1, Lcom/android/camera/OneValueEvent;
 
     .end local p1
@@ -22940,7 +22915,7 @@
 
     goto/16 :goto_0
 
-    .line 10980
+    .line 11070
     .restart local p1
     :cond_e
     const-string v1, "Mode.Switching"
@@ -22951,7 +22926,7 @@
 
     if-eqz v1, :cond_f
 
-    .line 10981
+    .line 11071
     check-cast p1, Lcom/android/camera/TwoValuesEvent;
 
     .end local p1
@@ -22959,7 +22934,7 @@
 
     goto/16 :goto_0
 
-    .line 10982
+    .line 11072
     .restart local p1
     :cond_f
     const-string v1, "Zoom.Changed"
@@ -22979,15 +22954,15 @@
     .parameter "camera"
 
     .prologue
-    .line 11638
+    .line 11728
     iput-object p1, p0, Lcom/android/camera/HTCCamera;->mFaces:[Landroid/hardware/Camera$Face;
 
-    .line 11639
+    .line 11729
     array-length v0, p1
 
     if-lez v0, :cond_0
 
-    .line 11641
+    .line 11731
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -23012,7 +22987,7 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11643
+    .line 11733
     :cond_0
     return-void
 .end method
@@ -23033,56 +23008,56 @@
 
     const/4 v5, 0x1
 
-    .line 8598
+    .line 8661
     new-instance v1, Lcom/android/camera/KeyEvent;
 
     const-string v6, "Key.Down"
 
     invoke-direct {v1, v6, p2}, Lcom/android/camera/KeyEvent;-><init>(Ljava/lang/String;Landroid/view/KeyEvent;)V
 
-    .line 8599
+    .line 8662
     .local v1, kv:Lcom/android/camera/KeyEvent;
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     invoke-virtual {v6, v1}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 8600
+    .line 8663
     invoke-virtual {v1}, Lcom/android/camera/KeyEvent;->isHandled()Z
 
     move-result v6
 
     if-eqz v6, :cond_1
 
-    .line 8602
+    .line 8665
     const-string v6, "HTCCamera"
 
     const-string v7, "KeyDown event is interrupted by event listener"
 
     invoke-static {v6, v7}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9012
+    .line 9093
     :cond_0
     :goto_0
     :sswitch_0
     return v5
 
-    .line 8607
+    .line 8670
     :cond_1
     iget v6, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     if-ne v6, v5, :cond_2
 
-    .line 8608
+    .line 8671
     sparse-switch p1, :sswitch_data_0
 
-    .line 8772
+    .line 8843
     :cond_2
     :goto_1
     sget-boolean v6, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
     if-ne v6, v5, :cond_b
 
-    .line 8773
+    .line 8844
     const-string v6, "HTCCamera"
 
     const-string v7, "onKeyDown - UI Block !!!"
@@ -23091,7 +23066,7 @@
 
     goto :goto_0
 
-    .line 8610
+    .line 8673
     :sswitch_1
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getRepeatCount()I
 
@@ -23099,12 +23074,37 @@
 
     if-ne v6, v12, :cond_2
 
-    .line 8611
+    .line 8675
     sput-boolean v5, Lcom/android/camera/HTCCamera;->bHoldFocusKey:Z
+
+    .line 8677
+    iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
+
+    if-eqz v6, :cond_2
+
+    iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
+
+    invoke-virtual {v6}, Lcom/android/camera/CameraThread;->getRecorderStatus()Z
+
+    move-result v6
+
+    if-nez v6, :cond_2
+
+    .line 8679
+    const-string v6, "HTCCamera"
+
+    const-string v7, "onKeyDown - lock AEC/AWB"
+
+    invoke-static {v6, v7}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 8680
+    iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
+
+    invoke-virtual {v6, v5}, Lcom/android/camera/CameraThread;->setAecAwbLock(Z)V
 
     goto :goto_1
 
-    .line 8615
+    .line 8686
     :sswitch_2
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getRepeatCount()I
 
@@ -23112,7 +23112,7 @@
 
     if-gtz v6, :cond_0
 
-    .line 8618
+    .line 8689
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getFaceNumber()I
 
     move-result v6
@@ -23123,7 +23123,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 8622
+    .line 8693
     :cond_3
     invoke-static {}, Lcom/android/camera/DisplayDevice;->canCancelFocus()Z
 
@@ -23143,22 +23143,22 @@
 
     if-eqz v6, :cond_4
 
-    .line 8624
+    .line 8695
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->cancelAutoFocus()Z
 
-    .line 8625
+    .line 8696
     const-string v6, "HTCCamera"
 
     const-string v7, "UnBlock Capture UI - stop recorder and cancel focus"
 
     invoke-static {v6, v7}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8626
+    .line 8697
     sput-boolean v9, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
     goto :goto_1
 
-    .line 8631
+    .line 8702
     :cond_4
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -23170,22 +23170,22 @@
 
     if-nez v6, :cond_5
 
-    .line 8632
+    .line 8703
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isServiceMode()Z
 
     move-result v6
 
     if-nez v6, :cond_0
 
-    .line 8635
+    .line 8706
     iput-boolean v5, p0, Lcom/android/camera/HTCCamera;->m_NeedTriggerRecord:Z
 
-    .line 8636
+    .line 8707
     invoke-virtual {p0, v5}, Lcom/android/camera/HTCCamera;->switchMode(I)Z
 
     goto :goto_0
 
-    .line 8640
+    .line 8711
     :cond_5
     const-string v6, "HTCCamera"
 
@@ -23193,37 +23193,37 @@
 
     invoke-static {v6, v7}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8641
+    .line 8712
     const/4 v6, 0x4
 
     iput v6, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
-    .line 8643
+    .line 8714
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->closeCaptureUI()V
 
-    .line 8645
+    .line 8716
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v6
 
     if-nez v6, :cond_0
 
-    .line 8646
+    .line 8717
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     if-eqz v6, :cond_0
 
-    .line 8647
+    .line 8718
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     invoke-virtual {v6, v9}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8648
+    .line 8719
     invoke-direct {p0, v5}, Lcom/android/camera/HTCCamera;->setPanelVisible(Z)V
 
     goto/16 :goto_0
 
-    .line 8655
+    .line 8726
     :sswitch_3
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getRepeatCount()I
 
@@ -23231,7 +23231,7 @@
 
     if-gtz v6, :cond_0
 
-    .line 8661
+    .line 8732
     :sswitch_4
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getFaceNumber()I
 
@@ -23243,23 +23243,23 @@
 
     if-nez v6, :cond_6
 
-    .line 8664
+    .line 8735
     const v3, 0x7f0a014b
 
-    .line 8665
+    .line 8736
     .local v3, str:I
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v6, v10}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 8666
+    .line 8737
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v6, v10, v3, v9, v11}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
     goto/16 :goto_1
 
-    .line 8670
+    .line 8741
     .end local v3           #str:I
     :cond_6
     invoke-static {}, Lcom/android/camera/DisplayDevice;->canCancelFocus()Z
@@ -23280,22 +23280,22 @@
 
     if-eqz v6, :cond_7
 
-    .line 8672
+    .line 8743
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->cancelAutoFocus()Z
 
-    .line 8673
+    .line 8744
     const-string v6, "HTCCamera"
 
     const-string v7, "UnBlock Capture UI - stop recorder and cancel focus"
 
     invoke-static {v6, v7}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8674
+    .line 8745
     sput-boolean v9, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
     goto/16 :goto_1
 
-    .line 8680
+    .line 8751
     :cond_7
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->is3DCameraActivated()Z
 
@@ -23307,21 +23307,21 @@
 
     if-ne v6, v5, :cond_8
 
-    .line 8682
+    .line 8753
     const-string v6, "HTCCamera"
 
     const-string v7, "onKeyDown, 3D portrait capture !!!"
 
     invoke-static {v6, v7}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8683
+    .line 8754
     iget v6, p0, Lcom/android/camera/HTCCamera;->mLastOrientation:I
 
     invoke-static {v6}, Lcom/android/camera/rotate/OrientationConfig;->mapOrientation_Event2UI(I)I
 
     move-result v2
 
-    .line 8684
+    .line 8755
     .local v2, orentation_mode:I
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -23333,45 +23333,45 @@
 
     goto/16 :goto_1
 
-    .line 8689
+    .line 8760
     .end local v2           #orentation_mode:I
     :cond_8
     iput-boolean v5, p0, Lcom/android/camera/HTCCamera;->m3DTriggerCapture:Z
 
-    .line 8691
+    .line 8762
     const-string v6, "HTCCamera"
 
     const-string v7, "Press Capture when focusing - mFocusingState = FOCUSING_PRESS_CAPTURE"
 
     invoke-static {v6, v7}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8692
+    .line 8763
     iput v12, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
-    .line 8694
+    .line 8765
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
     if-eqz v6, :cond_9
 
-    .line 8695
+    .line 8766
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mivGrid:Landroid/widget/ImageView;
 
     const/4 v7, 0x4
 
     invoke-virtual {v6, v7}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 8697
+    .line 8768
     :cond_9
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->closeCaptureUI()V
 
-    .line 8700
+    .line 8771
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v6
 
     if-nez v6, :cond_0
 
-    .line 8701
+    .line 8772
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v6, :cond_a
@@ -23382,54 +23382,54 @@
 
     if-nez v6, :cond_a
 
-    .line 8702
+    .line 8773
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     if-eqz v6, :cond_0
 
-    .line 8703
+    .line 8774
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getSelfTimerInterval()I
 
     move-result v4
 
-    .line 8704
+    .line 8775
     .local v4, timer:I
     if-lez v4, :cond_0
 
-    .line 8705
+    .line 8776
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     invoke-virtual {v6, v9}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8706
+    .line 8777
     invoke-direct {p0, v5}, Lcom/android/camera/HTCCamera;->setPanelVisible(Z)V
 
-    .line 8708
+    .line 8779
     invoke-direct {p0, v9}, Lcom/android/camera/HTCCamera;->enableMainBarItems(Z)V
 
-    .line 8709
+    .line 8780
     invoke-virtual {p0, v9, v5}, Lcom/android/camera/HTCCamera;->showMainBarItems(ZZ)V
 
     goto/16 :goto_0
 
-    .line 8713
+    .line 8784
     .end local v4           #timer:I
     :cond_a
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     if-eqz v6, :cond_0
 
-    .line 8714
+    .line 8785
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     invoke-virtual {v6, v9}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8715
+    .line 8786
     invoke-direct {p0, v5}, Lcom/android/camera/HTCCamera;->setPanelVisible(Z)V
 
     goto/16 :goto_0
 
-    .line 8725
+    .line 8796
     :sswitch_5
     invoke-static {}, Lcom/android/camera/DisplayDevice;->canCancelFocus()Z
 
@@ -23443,7 +23443,7 @@
 
     if-ge v6, v5, :cond_2
 
-    .line 8726
+    .line 8797
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v6, :cond_2
@@ -23456,12 +23456,12 @@
 
     if-nez v6, :cond_2
 
-    .line 8727
+    .line 8798
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->togglePanelState()V
 
     goto/16 :goto_0
 
-    .line 8757
+    .line 8828
     :sswitch_6
     invoke-static {}, Lcom/android/camera/DisplayDevice;->canCancelFocus()Z
 
@@ -23475,22 +23475,22 @@
 
     if-ge v6, v5, :cond_2
 
-    .line 8758
+    .line 8829
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->cancelAutoFocus()Z
 
-    .line 8759
+    .line 8830
     const-string v6, "HTCCamera"
 
     const-string v7, "UnBlock Capture UI - press back key and cancel focus"
 
     invoke-static {v6, v7}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8760
+    .line 8831
     sput-boolean v9, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
     goto/16 :goto_1
 
-    .line 8767
+    .line 8838
     :sswitch_7
     sget-object v6, Lcom/android/camera/DisplayDevice;->CAPTURE_BUTTON:Lcom/android/camera/DisplayDevice$CaptureButton;
 
@@ -23500,14 +23500,14 @@
 
     goto/16 :goto_0
 
-    .line 8777
+    .line 8848
     :cond_b
     sparse-switch p1, :sswitch_data_1
 
-    .line 9002
+    .line 9083
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
-    if-eqz v6, :cond_c
+    if-eqz v6, :cond_d
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -23515,12 +23515,12 @@
 
     move-result v6
 
-    if-eqz v6, :cond_c
+    if-eqz v6, :cond_d
 
-    .line 9003
+    .line 9084
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
-    if-eqz v6, :cond_26
+    if-eqz v6, :cond_27
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -23528,37 +23528,64 @@
 
     move-result v6
 
-    if-eqz v6, :cond_26
+    if-eqz v6, :cond_27
 
-    .line 9004
+    .line 9085
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {v6}, Lcom/android/camera/widget/SlidingDrawer;->requestFocus()Z
 
     goto/16 :goto_0
 
-    .line 8781
+    .line 8852
     :sswitch_8
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getRepeatCount()I
 
     move-result v6
 
-    if-ne v6, v12, :cond_c
+    if-ne v6, v12, :cond_d
 
+    .line 8854
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->canTriggerFocus()Z
 
     move-result v6
 
     if-ne v6, v5, :cond_c
 
-    .line 8782
+    .line 8856
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->startFocusFromLongPressKey()V
 
-    .line 8783
+    .line 8857
     sput-boolean v5, Lcom/android/camera/HTCCamera;->bHoldFocusKey:Z
 
-    .line 9012
+    .line 8860
     :cond_c
+    iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
+
+    if-eqz v6, :cond_d
+
+    iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
+
+    invoke-virtual {v6}, Lcom/android/camera/CameraThread;->getRecorderStatus()Z
+
+    move-result v6
+
+    if-nez v6, :cond_d
+
+    .line 8862
+    const-string v6, "HTCCamera"
+
+    const-string v7, "onKeyDown - lock AEC/AWB"
+
+    invoke-static {v6, v7}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 8863
+    iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
+
+    invoke-virtual {v6, v5}, Lcom/android/camera/CameraThread;->setAecAwbLock(Z)V
+
+    .line 9093
+    :cond_d
     :goto_2
     invoke-super {p0, p1, p2}, Landroid/app/Activity;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
@@ -23566,7 +23593,7 @@
 
     goto/16 :goto_0
 
-    .line 8790
+    .line 8871
     :sswitch_9
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getRepeatCount()I
 
@@ -23574,15 +23601,15 @@
 
     if-gtz v6, :cond_0
 
-    .line 8793
+    .line 8874
     iget-boolean v6, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
-    if-ne v6, v5, :cond_f
+    if-ne v6, v5, :cond_10
 
-    .line 8794
+    .line 8875
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mScreensave:Landroid/view/View;
 
-    if-eqz v6, :cond_e
+    if-eqz v6, :cond_f
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mScreensave:Landroid/view/View;
 
@@ -23590,33 +23617,33 @@
 
     move-result v6
 
-    if-nez v6, :cond_e
+    if-nez v6, :cond_f
 
     sget-object v6, Lcom/android/camera/DisplayDevice;->CAPTURE_BUTTON:Lcom/android/camera/DisplayDevice$CaptureButton;
 
     sget-object v7, Lcom/android/camera/DisplayDevice$CaptureButton;->ActionKey:Lcom/android/camera/DisplayDevice$CaptureButton;
 
-    if-eq v6, v7, :cond_d
+    if-eq v6, v7, :cond_e
 
     sget-object v6, Lcom/android/camera/DisplayDevice;->CAPTURE_BUTTON:Lcom/android/camera/DisplayDevice$CaptureButton;
 
     sget-object v7, Lcom/android/camera/DisplayDevice$CaptureButton;->HWKey:Lcom/android/camera/DisplayDevice$CaptureButton;
 
-    if-ne v6, v7, :cond_e
+    if-ne v6, v7, :cond_f
 
-    .line 8797
-    :cond_d
+    .line 8878
+    :cond_e
     const-string v6, "HTCCamera"
 
     const-string v7, "screen save mode -- action key pressed so activate camera"
 
     invoke-static {v6, v7}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8798
+    .line 8879
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->activate()V
 
-    .line 8800
-    :cond_e
+    .line 8881
+    :cond_f
     const-string v6, "HTCCamera"
 
     const-string v7, "save screen - block camcorder key"
@@ -23625,18 +23652,18 @@
 
     goto/16 :goto_0
 
-    .line 8805
-    :cond_f
+    .line 8886
+    :cond_10
     iget-boolean v6, p0, Lcom/android/camera/HTCCamera;->mIsSelfTimerStarted:Z
 
     if-nez v6, :cond_0
 
-    .line 8810
+    .line 8891
     iget-boolean v6, p0, Lcom/android/camera/HTCCamera;->mIsSipExist:Z
 
-    if-ne v6, v5, :cond_10
+    if-ne v6, v5, :cond_11
 
-    .line 8811
+    .line 8892
     const-string v6, "HTCCamera"
 
     const-string v7, "SIP is shown, not handle center button"
@@ -23645,54 +23672,54 @@
 
     goto/16 :goto_0
 
-    .line 8815
-    :cond_10
+    .line 8896
+    :cond_11
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
-    if-eqz v6, :cond_11
+    if-eqz v6, :cond_12
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget v6, v6, Lcom/android/camera/CameraThread;->mMode:I
 
-    if-nez v6, :cond_11
+    if-nez v6, :cond_12
 
-    .line 8816
+    .line 8897
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isServiceMode()Z
 
     move-result v6
 
     if-nez v6, :cond_0
 
-    .line 8818
+    .line 8899
     iput-boolean v5, p0, Lcom/android/camera/HTCCamera;->m_NeedTriggerRecord:Z
 
-    .line 8819
+    .line 8900
     invoke-virtual {p0, v5}, Lcom/android/camera/HTCCamera;->switchMode(I)Z
 
     goto/16 :goto_0
 
-    .line 8824
-    :cond_11
+    .line 8905
+    :cond_12
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v7, 0xf
 
     invoke-static {v6, v7}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 8826
+    .line 8907
     const-string v6, "HTCCamera"
 
     const-string v7, "Press camcorder button to start video recording"
 
     invoke-static {v6, v7}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8827
+    .line 8908
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->triggerRecord()V
 
     goto/16 :goto_0
 
-    .line 8834
+    .line 8915
     :sswitch_a
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getRepeatCount()I
 
@@ -23700,16 +23727,16 @@
 
     if-gtz v6, :cond_0
 
-    .line 8840
+    .line 8921
     :sswitch_b
     iget-boolean v6, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
-    if-ne v6, v5, :cond_14
+    if-ne v6, v5, :cond_15
 
-    .line 8841
+    .line 8922
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mScreensave:Landroid/view/View;
 
-    if-eqz v6, :cond_13
+    if-eqz v6, :cond_14
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mScreensave:Landroid/view/View;
 
@@ -23717,33 +23744,33 @@
 
     move-result v6
 
-    if-nez v6, :cond_13
+    if-nez v6, :cond_14
 
     sget-object v6, Lcom/android/camera/DisplayDevice;->CAPTURE_BUTTON:Lcom/android/camera/DisplayDevice$CaptureButton;
 
     sget-object v7, Lcom/android/camera/DisplayDevice$CaptureButton;->ActionKey:Lcom/android/camera/DisplayDevice$CaptureButton;
 
-    if-eq v6, v7, :cond_12
+    if-eq v6, v7, :cond_13
 
     sget-object v6, Lcom/android/camera/DisplayDevice;->CAPTURE_BUTTON:Lcom/android/camera/DisplayDevice$CaptureButton;
 
     sget-object v7, Lcom/android/camera/DisplayDevice$CaptureButton;->HWKey:Lcom/android/camera/DisplayDevice$CaptureButton;
 
-    if-ne v6, v7, :cond_13
+    if-ne v6, v7, :cond_14
 
-    .line 8844
-    :cond_12
+    .line 8925
+    :cond_13
     const-string v6, "HTCCamera"
 
     const-string v7, "screen save mode -- action key pressed so activate camera"
 
     invoke-static {v6, v7}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8845
+    .line 8926
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->activate()V
 
-    .line 8847
-    :cond_13
+    .line 8928
+    :cond_14
     const-string v6, "HTCCamera"
 
     const-string v7, "save screen - block capture key"
@@ -23752,24 +23779,24 @@
 
     goto/16 :goto_0
 
-    .line 8852
-    :cond_14
+    .line 8933
+    :cond_15
     iget-boolean v6, p0, Lcom/android/camera/HTCCamera;->mIsSelfTimerStarted:Z
 
-    if-eqz v6, :cond_15
+    if-eqz v6, :cond_16
 
-    .line 8853
+    .line 8934
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->closeSelfTimer()V
 
     goto/16 :goto_0
 
-    .line 8857
-    :cond_15
+    .line 8938
+    :cond_16
     iget-boolean v6, p0, Lcom/android/camera/HTCCamera;->mIsSipExist:Z
 
-    if-ne v6, v5, :cond_16
+    if-ne v6, v5, :cond_17
 
-    .line 8858
+    .line 8939
     const-string v6, "HTCCamera"
 
     const-string v7, "SIP is shown, not handle center button"
@@ -23778,67 +23805,47 @@
 
     goto/16 :goto_0
 
-    .line 8862
-    :cond_16
+    .line 8943
+    :cond_17
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
-    if-eqz v6, :cond_18
+    if-eqz v6, :cond_19
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget v6, v6, Lcom/android/camera/CameraThread;->mMode:I
 
-    if-nez v6, :cond_18
+    if-nez v6, :cond_19
 
-    .line 8864
+    .line 8945
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getFaceNumber()I
 
     move-result v6
 
-    if-lez v6, :cond_17
+    if-lez v6, :cond_18
 
     sget-boolean v6, Lcom/android/camera/HTCCamera;->mIsSelfPortraitTask:Z
 
-    if-nez v6, :cond_17
+    if-nez v6, :cond_18
 
-    .line 8867
+    .line 8948
     const v3, 0x7f0a014b
 
-    .line 8868
+    .line 8949
     .restart local v3       #str:I
     iget-object v5, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v5, v10}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 8869
+    .line 8950
     iget-object v5, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v5, v10, v3, v9, v11}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
     goto/16 :goto_2
 
-    .line 8874
+    .line 8955
     .end local v3           #str:I
-    :cond_17
-    iget-object v6, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
-
-    const/16 v7, 0xf
-
-    invoke-static {v6, v7}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
-
-    .line 8876
-    const-string v6, "HTCCamera"
-
-    const-string v7, "Press center button to take picture"
-
-    invoke-static {v6, v7}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 8877
-    invoke-direct {p0}, Lcom/android/camera/HTCCamera;->triggerTakePicture()V
-
-    goto/16 :goto_0
-
-    .line 8882
     :cond_18
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -23846,23 +23853,43 @@
 
     invoke-static {v6, v7}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 8884
+    .line 8957
+    const-string v6, "HTCCamera"
+
+    const-string v7, "Press center button to take picture"
+
+    invoke-static {v6, v7}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 8958
+    invoke-direct {p0}, Lcom/android/camera/HTCCamera;->triggerTakePicture()V
+
+    goto/16 :goto_0
+
+    .line 8963
+    :cond_19
+    iget-object v6, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
+
+    const/16 v7, 0xf
+
+    invoke-static {v6, v7}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
+
+    .line 8965
     const-string v6, "HTCCamera"
 
     const-string v7, "Press center button to start video recording"
 
     invoke-static {v6, v7}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8885
+    .line 8966
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->triggerRecord()V
 
     goto/16 :goto_0
 
-    .line 8893
+    .line 8974
     :sswitch_c
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
-    if-eqz v6, :cond_1a
+    if-eqz v6, :cond_1b
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -23870,12 +23897,12 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1a
+    if-eqz v6, :cond_1b
 
-    .line 8894
+    .line 8975
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
-    if-eqz v6, :cond_19
+    if-eqz v6, :cond_1a
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -23883,36 +23910,36 @@
 
     move-result v6
 
-    if-eqz v6, :cond_19
+    if-eqz v6, :cond_1a
 
-    .line 8895
+    .line 8976
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {v6}, Lcom/android/camera/widget/SlidingDrawer;->requestFocus()Z
 
     goto/16 :goto_0
 
-    .line 8897
-    :cond_19
-    iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
-
-    invoke-virtual {v6}, Lcom/android/camera/widget/SlidingDrawer;->requestFocus()Z
-
-    goto/16 :goto_0
-
-    .line 8901
+    .line 8978
     :cond_1a
+    iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
+
+    invoke-virtual {v6}, Lcom/android/camera/widget/SlidingDrawer;->requestFocus()Z
+
+    goto/16 :goto_0
+
+    .line 8982
+    :cond_1b
     sget-object v6, Lcom/android/camera/DisplayDevice;->CAPTURE_BUTTON:Lcom/android/camera/DisplayDevice$CaptureButton;
 
     sget-object v7, Lcom/android/camera/DisplayDevice$CaptureButton;->ActionKey:Lcom/android/camera/DisplayDevice$CaptureButton;
 
     if-ne v6, v7, :cond_0
 
-    .line 8907
+    .line 8988
     :sswitch_d
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
-    if-eqz v6, :cond_1c
+    if-eqz v6, :cond_1d
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -23920,12 +23947,12 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1c
+    if-eqz v6, :cond_1d
 
-    .line 8908
+    .line 8989
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
-    if-eqz v6, :cond_1b
+    if-eqz v6, :cond_1c
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -23933,36 +23960,36 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1b
+    if-eqz v6, :cond_1c
 
-    .line 8909
+    .line 8990
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {v6}, Lcom/android/camera/widget/SlidingDrawer;->requestFocus()Z
 
     goto/16 :goto_0
 
-    .line 8911
-    :cond_1b
-    iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
-
-    invoke-virtual {v6}, Lcom/android/camera/widget/SlidingDrawer;->requestFocus()Z
-
-    goto/16 :goto_0
-
-    .line 8915
+    .line 8992
     :cond_1c
+    iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
+
+    invoke-virtual {v6}, Lcom/android/camera/widget/SlidingDrawer;->requestFocus()Z
+
+    goto/16 :goto_0
+
+    .line 8996
+    :cond_1d
     sget-object v6, Lcom/android/camera/DisplayDevice;->CAPTURE_BUTTON:Lcom/android/camera/DisplayDevice$CaptureButton;
 
     sget-object v7, Lcom/android/camera/DisplayDevice$CaptureButton;->ActionKey:Lcom/android/camera/DisplayDevice$CaptureButton;
 
     if-ne v6, v7, :cond_0
 
-    .line 8922
+    .line 9003
     :sswitch_e
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
-    if-eqz v6, :cond_1d
+    if-eqz v6, :cond_1e
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -23970,36 +23997,36 @@
 
     move-result v6
 
-    if-ne v6, v5, :cond_1d
+    if-ne v6, v5, :cond_1e
 
-    .line 8923
+    .line 9004
     const-string v6, "HTCCamera"
 
     const-string v7, "Press back key to stop video recording"
 
     invoke-static {v6, v7}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8924
+    .line 9005
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->triggerRecord()V
 
     goto/16 :goto_0
 
-    .line 8929
-    :cond_1d
+    .line 9010
+    :cond_1e
     iget-boolean v6, p0, Lcom/android/camera/HTCCamera;->mIsSelfTimerStarted:Z
 
-    if-eqz v6, :cond_1e
+    if-eqz v6, :cond_1f
 
-    .line 8930
+    .line 9011
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->closeSelfTimer()V
 
     goto/16 :goto_0
 
-    .line 8934
-    :cond_1e
+    .line 9015
+    :cond_1f
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
-    if-eqz v6, :cond_20
+    if-eqz v6, :cond_21
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -24007,7 +24034,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_20
+    if-nez v6, :cond_21
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -24015,7 +24042,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_20
+    if-eqz v6, :cond_21
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
@@ -24023,57 +24050,57 @@
 
     move-result v6
 
-    if-nez v6, :cond_20
+    if-nez v6, :cond_21
 
-    .line 8935
+    .line 9016
     const/4 v0, 0x0
 
-    .line 8936
+    .line 9017
     .local v0, closeSubMenu:Z
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
-    if-eqz v6, :cond_1f
+    if-eqz v6, :cond_20
 
-    .line 8937
+    .line 9018
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v6, v5}, Lcom/android/camera/MenuHandler;->closeSubMenu(Z)Z
 
     move-result v0
 
-    .line 8940
-    :cond_1f
+    .line 9021
+    :cond_20
     if-nez v0, :cond_0
 
-    .line 8941
+    .line 9022
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {v6}, Lcom/android/camera/widget/SlidingDrawer;->animateClose()V
 
     goto/16 :goto_0
 
-    .line 8946
+    .line 9027
     .end local v0           #closeSubMenu:Z
-    :cond_20
+    :cond_21
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getRepeatCount()I
 
     move-result v6
 
-    if-ge v6, v5, :cond_c
+    if-ge v6, v5, :cond_d
 
-    .line 8950
+    .line 9031
     sget-object v6, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
     invoke-virtual {p0, v6}, Lcom/android/camera/HTCCamera;->isRequestMode(Lcom/android/camera/IntentManager$RequestMode;)Z
 
     move-result v6
 
-    if-ne v6, v5, :cond_c
+    if-ne v6, v5, :cond_d
 
-    .line 8951
+    .line 9032
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
-    if-eqz v6, :cond_21
+    if-eqz v6, :cond_22
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
@@ -24081,23 +24108,23 @@
 
     move-result v6
 
-    if-ne v6, v5, :cond_21
+    if-ne v6, v5, :cond_22
 
-    .line 8953
+    .line 9034
     const-string v6, "HTCCamera"
 
     const-string v7, "go Back - to finish CamcoderEntry"
 
     invoke-static {v6, v7}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8960
+    .line 9041
     :goto_3
     iput-boolean v5, p0, Lcom/android/camera/HTCCamera;->mIsBackQuit:Z
 
     goto/16 :goto_2
 
-    .line 8956
-    :cond_21
+    .line 9037
+    :cond_22
     const-string v6, "HTCCamera"
 
     const-string v7, "go Back - to finish CameraEntry"
@@ -24106,7 +24133,7 @@
 
     goto :goto_3
 
-    .line 8967
+    .line 9048
     :sswitch_f
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getRepeatCount()I
 
@@ -24114,12 +24141,12 @@
 
     if-gtz v6, :cond_0
 
-    .line 8970
+    .line 9051
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
-    if-nez v6, :cond_22
+    if-nez v6, :cond_23
 
-    .line 8971
+    .line 9052
     const-string v6, "HTCCamera"
 
     const-string v7, "!! Menu Key block !! - mCameraThread = null"
@@ -24128,11 +24155,11 @@
 
     goto/16 :goto_0
 
-    .line 8975
-    :cond_22
+    .line 9056
+    :cond_23
     sget-boolean v6, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    if-nez v6, :cond_23
+    if-nez v6, :cond_24
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -24140,7 +24167,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_23
+    if-nez v6, :cond_24
 
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -24148,20 +24175,20 @@
 
     move-result v6
 
-    if-nez v6, :cond_23
+    if-nez v6, :cond_24
 
     iget-boolean v6, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
-    if-nez v6, :cond_23
+    if-nez v6, :cond_24
 
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isActionScreenOpen()Z
 
     move-result v6
 
-    if-eqz v6, :cond_24
+    if-eqz v6, :cond_25
 
-    .line 8979
-    :cond_23
+    .line 9060
+    :cond_24
     const-string v6, "HTCCamera"
 
     const-string v7, "!! Menu Key block !!"
@@ -24170,27 +24197,27 @@
 
     goto/16 :goto_0
 
-    .line 8983
-    :cond_24
+    .line 9064
+    :cond_25
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->checkInternalStorage()Z
 
     move-result v6
 
-    if-nez v6, :cond_25
+    if-nez v6, :cond_26
 
-    .line 8984
+    .line 9065
     const-string v6, "HTCCamera"
 
     const-string v7, "!! Menu Key block !! - low internal storage ..."
 
     invoke-static {v6, v7}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8985
+    .line 9066
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v6, v10}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 8986
+    .line 9067
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const v7, 0x104039d
@@ -24199,21 +24226,21 @@
 
     goto/16 :goto_0
 
-    .line 8993
-    :cond_25
+    .line 9074
+    :cond_26
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->togglePanelState()V
 
     goto/16 :goto_0
 
-    .line 9006
-    :cond_26
+    .line 9087
+    :cond_27
     iget-object v6, p0, Lcom/android/camera/HTCCamera;->mPanel:Lcom/android/camera/widget/SlidingDrawer;
 
     invoke-virtual {v6}, Lcom/android/camera/widget/SlidingDrawer;->requestFocus()Z
 
     goto/16 :goto_0
 
-    .line 8608
+    .line 8671
     :sswitch_data_0
     .sparse-switch
         0x4 -> :sswitch_6
@@ -24227,7 +24254,7 @@
         0xe4 -> :sswitch_2
     .end sparse-switch
 
-    .line 8777
+    .line 8848
     :sswitch_data_1
     .sparse-switch
         0x4 -> :sswitch_e
@@ -24244,102 +24271,136 @@
 .end method
 
 .method public onKeyUp(ILandroid/view/KeyEvent;)Z
-    .locals 5
+    .locals 6
     .parameter "keyCode"
     .parameter "event"
 
     .prologue
-    const/4 v4, 0x4
+    const/4 v5, 0x4
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     const/4 v1, 0x1
 
-    .line 9021
+    .line 9102
     new-instance v0, Lcom/android/camera/KeyEvent;
 
     const-string v2, "Key.Up"
 
     invoke-direct {v0, v2, p2}, Lcom/android/camera/KeyEvent;-><init>(Ljava/lang/String;Landroid/view/KeyEvent;)V
 
-    .line 9022
+    .line 9103
     .local v0, kv:Lcom/android/camera/KeyEvent;
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     invoke-virtual {v2, v0}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 9023
+    .line 9104
     invoke-virtual {v0}, Lcom/android/camera/KeyEvent;->isHandled()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 9025
+    .line 9106
     const-string v2, "HTCCamera"
 
     const-string v3, "KeyUp event is interrupted by event listener"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9060
+    .line 9150
     :goto_0
     :sswitch_0
     return v1
 
-    .line 9029
+    .line 9110
     :cond_0
-    if-ne p1, v4, :cond_2
+    const/16 v2, 0x50
 
-    .line 9030
+    if-ne p1, v2, :cond_1
+
+    .line 9112
+    const-string v2, "HTCCamera"
+
+    const-string v3, "onKeyUp - unlock AEC/AWB"
+
+    invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 9113
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
+
+    if-eqz v2, :cond_3
+
+    .line 9114
+    iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
+
+    invoke-virtual {v2, v4}, Lcom/android/camera/CameraThread;->setAecAwbLock(Z)V
+
+    .line 9119
+    :cond_1
+    :goto_1
+    if-ne p1, v5, :cond_4
+
+    .line 9120
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getRepeatCount()I
 
     move-result v2
 
-    if-ge v2, v1, :cond_2
+    if-ge v2, v1, :cond_4
 
-    .line 9032
+    .line 9122
     iget-boolean v1, p0, Lcom/android/camera/HTCCamera;->mIsBackQuit:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     invoke-virtual {p2}, Landroid/view/KeyEvent;->isCanceled()Z
 
     move-result v1
 
-    if-nez v1, :cond_1
+    if-nez v1, :cond_2
 
-    .line 9033
+    .line 9123
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    .line 9034
+    .line 9124
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
-    invoke-virtual {v1, v4}, Landroid/view/SurfaceView;->setVisibility(I)V
+    invoke-virtual {v1, v5}, Landroid/view/SurfaceView;->setVisibility(I)V
 
-    .line 9037
-    :cond_1
-    iput-boolean v3, p0, Lcom/android/camera/HTCCamera;->mIsBackQuit:Z
+    .line 9127
+    :cond_2
+    iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsBackQuit:Z
 
-    .line 9038
+    .line 9128
     invoke-super {p0, p1, p2}, Landroid/app/Activity;->onKeyUp(ILandroid/view/KeyEvent;)Z
 
     move-result v1
 
     goto :goto_0
 
-    .line 9043
-    :cond_2
-    iput-boolean v3, p0, Lcom/android/camera/HTCCamera;->mIsBackQuit:Z
+    .line 9116
+    :cond_3
+    const-string v2, "HTCCamera"
 
-    .line 9045
+    const-string v3, "onKeyUp - unlock AEC/AWB, but no camera thread"
+
+    invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_1
+
+    .line 9133
+    :cond_4
+    iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsBackQuit:Z
+
+    .line 9135
     sget-boolean v2, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    if-ne v2, v1, :cond_3
+    if-ne v2, v1, :cond_5
 
-    .line 9046
+    .line 9136
     const-string v2, "HTCCamera"
 
     const-string v3, "onKeyUp - UI Block !!!"
@@ -24348,18 +24409,18 @@
 
     goto :goto_0
 
-    .line 9050
-    :cond_3
+    .line 9140
+    :cond_5
     sparse-switch p1, :sswitch_data_0
 
-    .line 9060
+    .line 9150
     invoke-super {p0, p1, p2}, Landroid/app/Activity;->onKeyUp(ILandroid/view/KeyEvent;)Z
 
     move-result v1
 
     goto :goto_0
 
-    .line 9050
+    .line 9140
     nop
 
     :sswitch_data_0
@@ -24375,21 +24436,21 @@
     .parameter "event"
 
     .prologue
-    .line 6067
+    .line 6077
     const-string v0, "HTCCamera"
 
     const-string v1, "onMediaSaved() - start"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6070
+    .line 6080
     invoke-virtual {p1}, Lcom/android/camera/MediaEvent;->getFilePath()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mLastSavedMediaPath:Ljava/lang/String;
 
-    .line 6073
+    .line 6083
     instance-of v0, p1, Lcom/android/camera/PictureSavedEvent;
 
     if-eqz v0, :cond_1
@@ -24413,7 +24474,7 @@
 
     if-nez v0, :cond_1
 
-    .line 6075
+    .line 6085
     check-cast p1, Lcom/android/camera/PictureSavedEvent;
 
     .end local p1
@@ -24423,31 +24484,31 @@
 
     if-eqz v0, :cond_1
 
-    .line 6077
+    .line 6087
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_3
 
-    .line 6078
+    .line 6088
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mLastSavedMediaPath:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/android/camera/CameraThread;->startScaladoPostProcessing(Ljava/lang/String;)V
 
-    .line 6085
+    .line 6095
     :cond_1
     :goto_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mAutoUploader:Lcom/android/camera/AutoUploader;
 
     if-eqz v0, :cond_2
 
-    .line 6086
+    .line 6096
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mAutoUploader:Lcom/android/camera/AutoUploader;
 
     invoke-virtual {v0}, Lcom/android/camera/AutoUploader;->setSaveDone()V
 
-    .line 6088
+    .line 6098
     :cond_2
     const-string v0, "HTCCamera"
 
@@ -24455,10 +24516,10 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6089
+    .line 6099
     return-void
 
-    .line 6080
+    .line 6090
     :cond_3
     const-string v0, "HTCCamera"
 
@@ -24478,7 +24539,7 @@
 
     const/4 v3, 0x1
 
-    .line 5450
+    .line 5456
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -24509,149 +24570,149 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5452
+    .line 5458
     invoke-super {p0, p1}, Landroid/app/Activity;->onNewIntent(Landroid/content/Intent;)V
 
-    .line 5454
+    .line 5460
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mNeed_doOnCreate:Z
 
     if-ne v0, v3, :cond_0
 
-    .line 5455
+    .line 5461
     const-string v0, "HTCCamera"
 
     const-string v1, "need to do create, not to initate mode onNewIntent!!"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5511
+    .line 5517
     :goto_0
     return-void
 
-    .line 5459
+    .line 5465
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mIntentManager:Lcom/android/camera/IntentManager;
 
     invoke-virtual {v0, p1}, Lcom/android/camera/IntentManager;->initManager(Landroid/content/Intent;)V
 
-    .line 5462
+    .line 5468
     sput-boolean v4, Lcom/android/camera/HTCCamera;->mTurnOnTorch_Camcorder:Z
 
-    .line 5464
+    .line 5470
     sput-boolean v3, Lcom/android/camera/HTCCameraAdvanceSetting;->mIsInitZoom:Z
 
-    .line 5467
+    .line 5473
     const-string v0, "pref_camera_switch"
 
     invoke-static {p0, v0, v4}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Z)Z
 
-    .line 5470
+    .line 5476
     const-string v0, "pref_camera_effect"
 
     const-string v1, "none"
 
     invoke-static {p0, v0, v1}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 5471
+    .line 5477
     const-string v0, "pref_video_effect"
 
     const-string v1, "none"
 
     invoke-static {p0, v0, v1}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 5472
+    .line 5478
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-ne v0, v3, :cond_1
 
-    .line 5473
+    .line 5479
     const-string v0, "pref_camera_effect_manual"
 
     const-string v1, "none"
 
     invoke-static {p0, v0, v1}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 5477
+    .line 5483
     :cond_1
     const-string v0, "pref_front_camera_mode"
 
     invoke-static {p0, v0, v3}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Z)Z
 
-    .line 5480
+    .line 5486
     const-string v0, "pref_camera_self_portrait"
 
     invoke-static {p0, v0, v4}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Z)Z
 
-    .line 5481
+    .line 5487
     const-string v0, "pref_camera_self_timer"
 
     const-string v1, "none"
 
     invoke-static {p0, v0, v1}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 5483
+    .line 5489
     const-string v0, "pref_camera_face_number"
 
     const-string v1, "none"
 
     invoke-static {p0, v0, v1}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 5486
+    .line 5492
     invoke-static {}, Lcom/android/camera/DisplayDevice;->showSceneInMenu()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 5488
+    .line 5494
     const-string v0, "pref_camera_scene"
 
     const-string v1, "auto"
 
     invoke-static {p0, v0, v1}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 5491
+    .line 5497
     const-string v0, "pref_video_scene"
 
     const-string v1, "auto"
 
     invoke-static {p0, v0, v1}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 5494
+    .line 5500
     :cond_2
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->resetIndicatorLayout()V
 
-    .line 5496
+    .line 5502
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0xc
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->sendUniqueEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 5503
+    .line 5509
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v1, "CameraActivity.NewIntent"
 
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 5505
+    .line 5511
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportShowWhenLock()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 5506
+    .line 5512
     const-string v0, "HTCCamera"
 
     const-string v1, "addFlags FLAG_SHOW_WHEN_LOCKED onNewIntent"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5507
+    .line 5513
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -24660,7 +24721,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->addFlags(I)V
 
-    .line 5510
+    .line 5516
     :cond_3
     const-string v0, "HTCCamera"
 
@@ -24700,7 +24761,7 @@
     .parameter "item"
 
     .prologue
-    .line 6008
+    .line 6018
     const/4 v0, 0x1
 
     return v0
@@ -24711,7 +24772,7 @@
     .parameter "menu"
 
     .prologue
-    .line 6015
+    .line 6025
     return-void
 .end method
 
@@ -24729,68 +24790,68 @@
 
     const/4 v4, 0x0
 
-    .line 4995
+    .line 5001
     const-string v2, "HTCCamera"
 
     const-string v3, "onPause() - start"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4997
+    .line 5003
     iput-boolean v5, p0, Lcom/android/camera/HTCCamera;->mActivityOnPause:Z
 
-    .line 4998
+    .line 5004
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsUIReady:Z
 
-    .line 4999
+    .line 5005
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->m3DOptimalLandscape:Z
 
-    .line 5000
+    .line 5006
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->m3DStatusInitialized:Z
 
-    .line 5001
+    .line 5007
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->m3DTriggerCapture:Z
 
-    .line 5002
+    .line 5008
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsCaptureTriggered:Z
 
-    .line 5003
+    .line 5009
     iput v4, p0, Lcom/android/camera/HTCCamera;->mFlashDisableCounter:I
 
-    .line 5004
+    .line 5010
     iput v4, p0, Lcom/android/camera/HTCCamera;->mSelfTimerDisableCounter:I
 
-    .line 5005
+    .line 5011
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsPreviewStarted:Z
 
-    .line 5006
+    .line 5012
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->m_NeedTriggerRecord:Z
 
-    .line 5007
+    .line 5013
     const-string v2, "HTCCamera"
 
     const-string v3, "onPause() - mIsUIReady = false"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5010
+    .line 5016
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v3, "CameraActivity.Pausing"
 
     invoke-virtual {v2, v3}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 5013
+    .line 5019
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
     if-eqz v2, :cond_0
 
-    .line 5014
+    .line 5020
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v2, v7}, Landroid/view/SurfaceView;->setVisibility(I)V
 
-    .line 5016
+    .line 5022
     :cond_0
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getWindow()Landroid/view/Window;
 
@@ -24800,21 +24861,21 @@
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->clearFlags(I)V
 
-    .line 5017
+    .line 5023
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportShowWhenLock()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 5018
+    .line 5024
     const-string v2, "HTCCamera"
 
     const-string v3, "clearFlags FLAG_SHOW_WHEN_LOCKED onPause"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5019
+    .line 5025
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getWindow()Landroid/view/Window;
 
     move-result-object v2
@@ -24823,7 +24884,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->clearFlags(I)V
 
-    .line 5043
+    .line 5049
     :cond_1
     invoke-static {}, Lcom/android/camera/rotate/OrientationConfig;->getUIOrientation()I
 
@@ -24831,99 +24892,99 @@
 
     iput v2, p0, Lcom/android/camera/HTCCamera;->mInstanceOrientation:I
 
-    .line 5045
+    .line 5051
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x2d
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5046
+    .line 5052
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x2e
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5047
+    .line 5053
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x2f
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5048
+    .line 5054
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     if-eqz v2, :cond_2
 
-    .line 5049
+    .line 5055
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mPrepareActionScreenRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 5059
+    .line 5065
     :cond_2
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->setOldBrightness()V
 
-    .line 5061
+    .line 5067
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->restoreVolume()V
 
-    .line 5063
+    .line 5069
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/4 v3, 0x3
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5064
+    .line 5070
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v2, v6}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5065
+    .line 5071
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v2, v7}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5066
+    .line 5072
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x41
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5073
+    .line 5079
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x1e
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5075
+    .line 5081
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x2c
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5080
+    .line 5086
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x25
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5083
+    .line 5089
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/4 v3, 0x5
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5085
+    .line 5091
     invoke-static {}, Lcom/android/camera/DisplayDevice;->canCancelFocus()Z
 
     move-result v2
@@ -24934,91 +24995,91 @@
 
     if-eqz v2, :cond_3
 
-    .line 5086
+    .line 5092
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const/4 v3, 0x6
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 5087
+    .line 5093
     :cond_3
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->bCancelFocus:Z
 
-    .line 5089
+    .line 5095
     sput-boolean v4, Lcom/android/camera/HTCCamera;->bFocusFromPress:Z
 
-    .line 5091
+    .line 5097
     const-string v2, "HTCCamera"
 
     const-string v3, "onPause() - mFocusingState = NO_FOCUSING"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5092
+    .line 5098
     iput v4, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
-    .line 5093
+    .line 5099
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x1c
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5094
+    .line 5100
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x22
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5095
+    .line 5101
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x1f
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5097
+    .line 5103
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x16
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5099
+    .line 5105
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->resetMainBarBtn()V
 
-    .line 5100
+    .line 5106
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mMenuIsOpening:Z
 
-    .line 5102
+    .line 5108
     const-string v2, "HTCCamera"
 
     const-string v3, "OnPause - set mWaitResetSettings to false"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5103
+    .line 5109
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mWaitResetSettings:Z
 
-    .line 5105
+    .line 5111
     sput-boolean v4, Lcom/android/camera/HTCCamera;->mIsKeyguardShow:Z
 
-    .line 5106
+    .line 5112
     sput-boolean v4, Lcom/android/camera/HTCCamera;->mIsWaitKeyguardBeforePreview:Z
 
-    .line 5108
+    .line 5114
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->releaseFaceDetection()V
 
-    .line 5110
+    .line 5116
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x34
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5112
+    .line 5118
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v2, :cond_4
@@ -25031,46 +25092,46 @@
 
     if-ne v2, v5, :cond_4
 
-    .line 5113
+    .line 5119
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v2, v8}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5114
+    .line 5120
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v2, v8}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 5117
+    .line 5123
     :cond_4
     iget-boolean v2, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
     if-nez v2, :cond_f
 
-    .line 5122
+    .line 5128
     const-string v2, "HTCCamera"
 
     const-string v3, "onPause mIdle is false"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5129
+    .line 5135
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v2, v4}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5130
+    .line 5136
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v2, v6}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 5132
+    .line 5138
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->closeActionScreen()V
 
-    .line 5134
+    .line 5140
     iput-boolean v5, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
-    .line 5146
+    .line 5152
     :cond_5
     :goto_0
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
@@ -25079,7 +25140,7 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5149
+    .line 5155
     sget-object v2, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
     invoke-virtual {p0, v2}, Lcom/android/camera/HTCCamera;->isRequestMode(Lcom/android/camera/IntentManager$RequestMode;)Z
@@ -25096,11 +25157,11 @@
 
     if-ne v2, v5, :cond_7
 
-    .line 5151
+    .line 5157
     :cond_6
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->WriteModePreference()V
 
-    .line 5154
+    .line 5160
     :cond_7
     :try_start_0
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mKeyguardReceiver:Landroid/content/BroadcastReceiver;
@@ -25109,7 +25170,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5159
+    .line 5165
     :goto_1
     iget-boolean v2, p0, Lcom/android/camera/HTCCamera;->mNeed_doOnResume:Z
 
@@ -25121,11 +25182,11 @@
 
     if-eqz v2, :cond_10
 
-    .line 5160
+    .line 5166
     :cond_8
     iput-boolean v5, p0, Lcom/android/camera/HTCCamera;->mNeed_unregisterReceiver:Z
 
-    .line 5170
+    .line 5176
     :goto_2
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -25133,34 +25194,34 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5171
+    .line 5177
     const-string v2, "HTCCamera"
 
     const-string v3, "OnPause - Freeze UI !!!"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5172
+    .line 5178
     iput-boolean v5, p0, Lcom/android/camera/HTCCamera;->mFreezeUI:Z
 
-    .line 5173
+    .line 5179
     const/4 v2, -0x1
 
     iput v2, p0, Lcom/android/camera/HTCCamera;->mFreezeOrientation:I
 
-    .line 5174
+    .line 5180
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportSensor()Z
 
     move-result v2
 
     if-ne v2, v5, :cond_9
 
-    .line 5175
+    .line 5181
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mOrientationListener:Landroid/view/OrientationEventListener;
 
     invoke-virtual {v2}, Landroid/view/OrientationEventListener;->disable()V
 
-    .line 5178
+    .line 5184
     :cond_9
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isVirtualHWKeyRotated()Z
 
@@ -25168,14 +25229,14 @@
 
     if-eqz v2, :cond_a
 
-    .line 5179
+    .line 5185
     invoke-direct {p0, v4, v4}, Lcom/android/camera/HTCCamera;->updateVirtualHwKeysOrientation(IZ)V
 
-    .line 5181
+    .line 5187
     :cond_a
     const/4 v1, 0x0
 
-    .line 5182
+    .line 5188
     .local v1, intent:Landroid/content/Intent;
     new-instance v1, Landroid/content/Intent;
 
@@ -25184,7 +25245,7 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 5183
+    .line 5189
     .restart local v1       #intent:Landroid/content/Intent;
     const-string v2, "com.htc.eas.extra.tag"
 
@@ -25192,22 +25253,22 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 5184
+    .line 5190
     invoke-virtual {p0, v1}, Lcom/android/camera/HTCCamera;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 5200
+    .line 5206
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mRunnable_Swing:Ljava/lang/Runnable;
 
     if-eqz v2, :cond_b
 
-    .line 5201
+    .line 5207
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mRunnable_Swing:Ljava/lang/Runnable;
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 5204
+    .line 5210
     :cond_b
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -25215,7 +25276,7 @@
 
     if-eqz v2, :cond_c
 
-    .line 5205
+    .line 5211
     const-string v2, "pref_camera_scene_service_ds"
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -25224,7 +25285,7 @@
 
     invoke-static {p0, v2, v3}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 5207
+    .line 5213
     :cond_c
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportFastFrameRecording()Z
 
@@ -25232,19 +25293,19 @@
 
     if-eqz v2, :cond_d
 
-    .line 5209
+    .line 5215
     const-string v2, "pref_fast_fps"
 
     invoke-static {p0, v2, v4}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Z)Z
 
-    .line 5210
+    .line 5216
     const-string v2, "pref_fast_frame_resolution_temp"
 
     const-string v3, "null"
 
     invoke-static {p0, v2, v3}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 5214
+    .line 5220
     :cond_d
     invoke-static {}, Lcom/android/camera/DisplayDevice;->support3DCamera()Z
 
@@ -25252,14 +25313,14 @@
 
     if-eqz v2, :cond_e
 
-    .line 5216
+    .line 5222
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x48
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5219
+    .line 5225
     :cond_e
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -25267,20 +25328,20 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5220
+    .line 5226
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v3, 0x45
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5222
+    .line 5228
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->doOnPause()V
 
-    .line 5224
+    .line 5230
     invoke-super {p0}, Landroid/app/Activity;->onPause()V
 
-    .line 5228
+    .line 5234
     iget-wide v2, p0, Lcom/android/camera/HTCCamera;->mSessionID:J
 
     const-wide/16 v4, 0x1
@@ -25289,17 +25350,17 @@
 
     iput-wide v2, p0, Lcom/android/camera/HTCCamera;->mSessionID:J
 
-    .line 5230
+    .line 5236
     const-string v2, "HTCCamera"
 
     const-string v3, "onPause() - end"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5231
+    .line 5237
     return-void
 
-    .line 5141
+    .line 5147
     .end local v1           #intent:Landroid/content/Intent;
     :cond_f
     const-string v2, "HTCCamera"
@@ -25308,12 +25369,12 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5142
+    .line 5148
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mScreensave:Landroid/view/View;
 
     if-eqz v2, :cond_5
 
-    .line 5143
+    .line 5149
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mScreensave:Landroid/view/View;
 
     const/16 v3, 0x8
@@ -25322,11 +25383,11 @@
 
     goto/16 :goto_0
 
-    .line 5155
+    .line 5161
     :catch_0
     move-exception v0
 
-    .line 5156
+    .line 5162
     .local v0, ex:Ljava/lang/Exception;
     const-string v2, "HTCCamera"
 
@@ -25336,7 +25397,7 @@
 
     goto/16 :goto_1
 
-    .line 5162
+    .line 5168
     .end local v0           #ex:Ljava/lang/Exception;
     :cond_10
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mNeed_unregisterReceiver:Z
@@ -25349,7 +25410,7 @@
     .parameter "menu"
 
     .prologue
-    .line 6001
+    .line 6011
     const/4 v0, 0x1
 
     return v0
@@ -25359,24 +25420,24 @@
     .locals 2
 
     .prologue
-    .line 4597
+    .line 4603
     const-string v0, "HTCCamera"
 
     const-string v1, "onRestart() - start"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4599
+    .line 4605
     invoke-super {p0}, Landroid/app/Activity;->onRestart()V
 
-    .line 4601
+    .line 4607
     const-string v0, "HTCCamera"
 
     const-string v1, "onRestart() - end"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4602
+    .line 4608
     return-void
 .end method
 
@@ -25392,24 +25453,24 @@
 
     const/4 v11, 0x1
 
-    .line 4606
+    .line 4612
     const-string v8, "HTCCamera"
 
     const-string v9, "onResume() - start"
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4607
+    .line 4613
     invoke-super {p0}, Landroid/app/Activity;->onResume()V
 
-    .line 4610
+    .line 4616
     new-instance v6, Landroid/content/IntentFilter;
 
     const-string v8, "android.intent.action.USER_PRESENT"
 
     invoke-direct {v6, v8}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 4612
+    .line 4618
     .local v6, userPresentFilter:Landroid/content/IntentFilter;
     :try_start_0
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->mKeyguardReceiver:Landroid/content/BroadcastReceiver;
@@ -25418,11 +25479,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4617
+    .line 4623
     :goto_0
     const/4 v2, 0x0
 
-    .line 4618
+    .line 4624
     .local v2, intent:Landroid/content/Intent;
     new-instance v2, Landroid/content/Intent;
 
@@ -25431,7 +25492,7 @@
 
     invoke-direct {v2, v8}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 4619
+    .line 4625
     .restart local v2       #intent:Landroid/content/Intent;
     const-string v8, "com.htc.eas.extra.tag"
 
@@ -25439,13 +25500,13 @@
 
     invoke-virtual {v2, v8, v9}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4620
+    .line 4626
     invoke-virtual {p0, v2}, Lcom/android/camera/HTCCamera;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 4623
+    .line 4629
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->broadcastStopVoiceRecording()V
 
-    .line 4626
+    .line 4632
     const-string v8, "connectivity"
 
     invoke-virtual {p0, v8}, Lcom/android/camera/HTCCamera;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -25456,12 +25517,12 @@
 
     iput-object v8, p0, Lcom/android/camera/HTCCamera;->connManager:Landroid/net/ConnectivityManager;
 
-    .line 4627
+    .line 4633
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->connManager:Landroid/net/ConnectivityManager;
 
     if-eqz v8, :cond_4
 
-    .line 4628
+    .line 4634
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->connManager:Landroid/net/ConnectivityManager;
 
     invoke-virtual {v8}, Landroid/net/ConnectivityManager;->getBackgroundDataSetting()Z
@@ -25470,7 +25531,7 @@
 
     iput-boolean v8, p0, Lcom/android/camera/HTCCamera;->keep_backgroundDataSetting:Z
 
-    .line 4634
+    .line 4640
     :goto_1
     const-string v8, "HTCCamera"
 
@@ -25496,7 +25557,7 @@
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4636
+    .line 4642
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v8, :cond_5
@@ -25507,35 +25568,35 @@
 
     if-ne v8, v11, :cond_5
 
-    .line 4638
+    .line 4644
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->broadcastStopFM()V
 
-    .line 4641
+    .line 4647
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->broadcastStopMusic()V
 
-    .line 4644
+    .line 4650
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->stopNotesRecording()V
 
-    .line 4653
+    .line 4659
     :cond_0
     :goto_2
     iget v8, p0, Lcom/android/camera/HTCCamera;->mInstanceOrientation:I
 
     invoke-static {v8}, Lcom/android/camera/rotate/OrientationConfig;->setUIOrientation(I)V
 
-    .line 4655
+    .line 4661
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isVirtualHWKeyRotated()Z
 
     move-result v8
 
     if-eqz v8, :cond_1
 
-    .line 4656
+    .line 4662
     iget v8, p0, Lcom/android/camera/HTCCamera;->mInstanceOrientation:I
 
     invoke-direct {p0, v8, v11}, Lcom/android/camera/HTCCamera;->updateVirtualHwKeysOrientation(IZ)V
 
-    .line 4659
+    .line 4665
     :cond_1
     const-string v8, "window"
 
@@ -25545,13 +25606,13 @@
 
     check-cast v5, Landroid/view/WindowManager;
 
-    .line 4660
+    .line 4666
     .local v5, mgr:Landroid/view/WindowManager;
     invoke-interface {v5}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v0
 
-    .line 4661
+    .line 4667
     .local v0, display:Landroid/view/Display;
     invoke-virtual {v0}, Landroid/view/Display;->getRotation()I
 
@@ -25559,7 +25620,7 @@
 
     iput v8, p0, Lcom/android/camera/HTCCamera;->Display_Orientation:I
 
-    .line 4662
+    .line 4668
     const-string v8, "HTCCamera"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -25584,49 +25645,49 @@
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4664
+    .line 4670
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportSensor()Z
 
     move-result v8
 
     if-ne v8, v11, :cond_2
 
-    .line 4665
+    .line 4671
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->mOrientationListener:Landroid/view/OrientationEventListener;
 
     invoke-virtual {v8}, Landroid/view/OrientationEventListener;->enable()V
 
-    .line 4667
+    .line 4673
     :cond_2
     invoke-static {}, Lcom/android/camera/SensorHandler;->createFocusFile()V
 
-    .line 4669
+    .line 4675
     const-string v8, "HTCCamera"
 
     const-string v9, "OnResume - reset UI, immediately set mMainLayout invisible"
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4670
+    .line 4676
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
 
     if-eqz v8, :cond_3
 
-    .line 4671
+    .line 4677
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
 
     const/4 v9, 0x4
 
     invoke-virtual {v8, v9}, Landroid/view/View;->setVisibility(I)V
 
-    .line 4673
+    .line 4679
     :cond_3
     :goto_3
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     if-nez v8, :cond_6
 
-    .line 4674
+    .line 4680
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v8}, Lcom/android/camera/CameraThread;->getHandler()Landroid/os/Handler;
@@ -25637,14 +25698,14 @@
 
     goto :goto_3
 
-    .line 4613
+    .line 4619
     .end local v0           #display:Landroid/view/Display;
     .end local v2           #intent:Landroid/content/Intent;
     .end local v5           #mgr:Landroid/view/WindowManager;
     :catch_0
     move-exception v1
 
-    .line 4614
+    .line 4620
     .local v1, ex:Ljava/lang/Exception;
     const-string v8, "HTCCamera"
 
@@ -25654,7 +25715,7 @@
 
     goto/16 :goto_0
 
-    .line 4631
+    .line 4637
     .end local v1           #ex:Ljava/lang/Exception;
     .restart local v2       #intent:Landroid/content/Intent;
     :cond_4
@@ -25666,7 +25727,7 @@
 
     goto/16 :goto_1
 
-    .line 4646
+    .line 4652
     :cond_5
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isHalfPCB()Z
 
@@ -25674,18 +25735,18 @@
 
     if-ne v8, v11, :cond_0
 
-    .line 4648
+    .line 4654
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->broadcastStopFM()V
 
     goto/16 :goto_2
 
-    .line 4682
+    .line 4688
     .restart local v0       #display:Landroid/view/Display;
     .restart local v5       #mgr:Landroid/view/WindowManager;
     :cond_6
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->setMaxBrightness()V
 
-    .line 4685
+    .line 4691
     invoke-static {}, Lcom/android/camera/DisplayDevice;->support3DCamera()Z
 
     move-result v8
@@ -25696,7 +25757,7 @@
 
     if-nez v8, :cond_a
 
-    .line 4687
+    .line 4693
     sget-object v8, Lcom/android/camera/IntentManager$RequestName;->Contacts:Lcom/android/camera/IntentManager$RequestName;
 
     invoke-virtual {p0, v8}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
@@ -25729,11 +25790,11 @@
 
     if-ne v8, v11, :cond_8
 
-    .line 4691
+    .line 4697
     :cond_7
     iput-boolean v11, p0, Lcom/android/camera/HTCCamera;->mForce2DMode:Z
 
-    .line 4692
+    .line 4698
     :cond_8
     invoke-static {}, Lcom/android/camera/DisplayDevice;->support3DHWSwitch()Z
 
@@ -25741,39 +25802,39 @@
 
     if-eqz v8, :cond_14
 
-    .line 4694
+    .line 4700
     iget-boolean v8, p0, Lcom/android/camera/HTCCamera;->mForce2DMode:Z
 
     if-eqz v8, :cond_12
 
-    .line 4695
+    .line 4701
     iput v11, p0, Lcom/android/camera/HTCCamera;->m3DButtonStatus:I
 
-    .line 4698
+    .line 4704
     :goto_4
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v8, :cond_9
 
-    .line 4699
+    .line 4705
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget v9, p0, Lcom/android/camera/HTCCamera;->m3DButtonStatus:I
 
     iput v9, v8, Lcom/android/camera/CameraThread;->m3DButtonStatus:I
 
-    .line 4701
+    .line 4707
     :cond_9
     iget v8, p0, Lcom/android/camera/HTCCamera;->m3DButtonStatus:I
 
     if-ne v8, v11, :cond_13
 
-    .line 4702
+    .line 4708
     const-string v8, "pref_camera_3D_status"
 
     invoke-static {p0, v8, v12}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Z)Z
 
-    .line 4705
+    .line 4711
     :goto_5
     const-string v8, "HTCCamera"
 
@@ -25799,23 +25860,23 @@
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4707
+    .line 4713
     new-instance v3, Landroid/content/IntentFilter;
 
     invoke-direct {v3}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 4708
+    .line 4714
     .local v3, interruptingEventsFilter:Landroid/content/IntentFilter;
     const-string v8, "com.htc.intent.action.CAM_SWITCH_CHANGE"
 
     invoke-virtual {v3, v8}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 4709
+    .line 4715
     const/16 v8, 0x3e9
 
     invoke-virtual {v3, v8}, Landroid/content/IntentFilter;->setPriority(I)V
 
-    .line 4712
+    .line 4718
     :try_start_1
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->m3DKeySwitchReceiver:Landroid/content/BroadcastReceiver;
 
@@ -25823,12 +25884,12 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 4722
+    .line 4728
     .end local v3           #interruptingEventsFilter:Landroid/content/IntentFilter;
     :goto_6
     iput-boolean v11, p0, Lcom/android/camera/HTCCamera;->m3DStatusInitialized:Z
 
-    .line 4726
+    .line 4732
     :cond_a
     invoke-static {p0}, Lcom/android/camera/component/PowerWarningController;->isSupported(Lcom/android/camera/HTCCamera;)Z
 
@@ -25836,38 +25897,38 @@
 
     if-eqz v8, :cond_b
 
-    .line 4727
+    .line 4733
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->mFlashRestriction:Lcom/android/camera/FlashRestriction;
 
     if-nez v8, :cond_b
 
-    .line 4728
+    .line 4734
     new-instance v8, Lcom/android/camera/FlashRestriction;
 
     invoke-direct {v8}, Lcom/android/camera/FlashRestriction;-><init>()V
 
     iput-object v8, p0, Lcom/android/camera/HTCCamera;->mFlashRestriction:Lcom/android/camera/FlashRestriction;
 
-    .line 4729
+    .line 4735
     const-string v8, "HTCCamera"
 
     const-string v9, "initFlashRestriction - start"
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4730
+    .line 4736
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->mFlashRestriction:Lcom/android/camera/FlashRestriction;
 
     invoke-virtual {v8, p0}, Lcom/android/camera/FlashRestriction;->initFlashRestriction(Lcom/android/camera/HTCCamera;)V
 
-    .line 4731
+    .line 4737
     const-string v8, "HTCCamera"
 
     const-string v9, "initFlashRestriction - end"
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4733
+    .line 4739
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->mComponentManager:Lcom/android/camera/component/ComponentManager;
 
     const-string v9, "PowerWarning UI"
@@ -25878,7 +25939,7 @@
 
     invoke-virtual {v8}, Lcom/android/camera/component/Component;->initialize()V
 
-    .line 4743
+    .line 4749
     :cond_b
     const-string v8, "HTCCamera"
 
@@ -25886,23 +25947,23 @@
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4744
+    .line 4750
     sput-boolean v11, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 4747
+    .line 4753
     iput-boolean v12, p0, Lcom/android/camera/HTCCamera;->mIsSipExist:Z
 
-    .line 4749
+    .line 4755
     const-string v8, "HTCCamera"
 
     const-string v9, "onResume() - mFocusingState = NO_FOCUSING"
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4750
+    .line 4756
     iput v12, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
-    .line 4756
+    .line 4762
     const-string v8, "keyguard"
 
     invoke-virtual {p0, v8}, Lcom/android/camera/HTCCamera;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -25911,7 +25972,7 @@
 
     check-cast v4, Landroid/app/KeyguardManager;
 
-    .line 4757
+    .line 4763
     .local v4, mKeyguardManager:Landroid/app/KeyguardManager;
     if-eqz v4, :cond_15
 
@@ -25921,17 +25982,17 @@
 
     if-eqz v8, :cond_15
 
-    .line 4758
+    .line 4764
     const-string v8, "HTCCamera"
 
     const-string v9, "keyguard is shown !!!!!"
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4759
+    .line 4765
     sput-boolean v11, Lcom/android/camera/HTCCamera;->mIsKeyguardShow:Z
 
-    .line 4760
+    .line 4766
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportShowWhenLock()Z
 
     move-result v8
@@ -25954,38 +26015,38 @@
 
     if-ne v13, v8, :cond_d
 
-    .line 4764
+    .line 4770
     :cond_c
     iput-boolean v12, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
-    .line 4773
+    .line 4779
     :cond_d
     :goto_7
     iput-boolean v12, p0, Lcom/android/camera/HTCCamera;->mActivityOnPause:Z
 
-    .line 4774
+    .line 4780
     iput-boolean v11, p0, Lcom/android/camera/HTCCamera;->mNeed_doOnResume:Z
 
-    .line 4775
+    .line 4781
     iput-object v14, p0, Lcom/android/camera/HTCCamera;->mLastSavedMediaPath:Ljava/lang/String;
 
-    .line 4777
+    .line 4783
     iput-boolean v12, p0, Lcom/android/camera/HTCCamera;->mIsCaptureTriggered:Z
 
-    .line 4779
+    .line 4785
     const-string v8, "HTCCamera"
 
     const-string v9, "OnResume - set mWaitResetSettings to true"
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4780
+    .line 4786
     iput-boolean v11, p0, Lcom/android/camera/HTCCamera;->mWaitResetSettings:Z
 
-    .line 4783
+    .line 4789
     monitor-enter p0
 
-    .line 4785
+    .line 4791
     :try_start_2
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->mAutoUploader:Lcom/android/camera/AutoUploader;
 
@@ -25993,28 +26054,28 @@
 
     iput-object v9, v8, Lcom/android/camera/AutoUploader;->mAutoUploadUri:Landroid/net/Uri;
 
-    .line 4786
+    .line 4792
     monitor-exit p0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 4788
+    .line 4794
     iget-boolean v8, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
     if-nez v8, :cond_16
 
-    .line 4790
+    .line 4796
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getWindow()Landroid/view/Window;
 
     move-result-object v7
 
-    .line 4791
+    .line 4797
     .local v7, win:Landroid/view/Window;
     const/16 v8, 0x80
 
     invoke-virtual {v7, v8}, Landroid/view/Window;->addFlags(I)V
 
-    .line 4792
+    .line 4798
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportShowWhenLock()Z
 
     move-result v8
@@ -26037,7 +26098,7 @@
 
     if-ne v13, v8, :cond_f
 
-    .line 4796
+    .line 4802
     :cond_e
     const-string v8, "HTCCamera"
 
@@ -26045,28 +26106,28 @@
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4797
+    .line 4803
     const/high16 v8, 0x8
 
     invoke-virtual {v7, v8}, Landroid/view/Window;->addFlags(I)V
 
-    .line 4799
+    .line 4805
     :cond_f
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->resetScreenSaveTimer()V
 
-    .line 4857
+    .line 4863
     .end local v7           #win:Landroid/view/Window;
     :goto_8
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
     if-eqz v8, :cond_10
 
-    .line 4858
+    .line 4864
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v8, v12}, Landroid/view/SurfaceView;->setVisibility(I)V
 
-    .line 4861
+    .line 4867
     :cond_10
     iget-object v8, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
@@ -26074,31 +26135,31 @@
 
     invoke-virtual {v8, v9}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 4863
+    .line 4869
     invoke-static {}, Lcom/android/camera/DisplayDevice;->DisablePen()Z
 
     move-result v8
 
     if-ne v8, v11, :cond_11
 
-    .line 4864
+    .line 4870
     invoke-static {p0}, Lcom/android/camera/Util;->disableSketcher(Landroid/app/Activity;)V
 
-    .line 4867
+    .line 4873
     :cond_11
     iput-boolean v12, p0, Lcom/android/camera/HTCCamera;->mIsBackQuit:Z
 
-    .line 4869
+    .line 4875
     const-string v8, "HTCCamera"
 
     const-string v9, "onResume() - end"
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4870
+    .line 4876
     return-void
 
-    .line 4697
+    .line 4703
     .end local v4           #mKeyguardManager:Landroid/app/KeyguardManager;
     :cond_12
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getContentResolver()Landroid/content/ContentResolver;
@@ -26113,7 +26174,7 @@
 
     goto/16 :goto_4
 
-    .line 4704
+    .line 4710
     :cond_13
     const-string v8, "pref_camera_3D_status"
 
@@ -26121,12 +26182,12 @@
 
     goto/16 :goto_5
 
-    .line 4713
+    .line 4719
     .restart local v3       #interruptingEventsFilter:Landroid/content/IntentFilter;
     :catch_1
     move-exception v1
 
-    .line 4714
+    .line 4720
     .restart local v1       #ex:Ljava/lang/Exception;
     const-string v8, "HTCCamera"
 
@@ -26136,7 +26197,7 @@
 
     goto/16 :goto_6
 
-    .line 4719
+    .line 4725
     .end local v1           #ex:Ljava/lang/Exception;
     .end local v3           #interruptingEventsFilter:Landroid/content/IntentFilter;
     :cond_14
@@ -26146,7 +26207,7 @@
 
     goto/16 :goto_6
 
-    .line 4768
+    .line 4774
     .restart local v4       #mKeyguardManager:Landroid/app/KeyguardManager;
     :cond_15
     const-string v8, "HTCCamera"
@@ -26155,15 +26216,15 @@
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4769
+    .line 4775
     sput-boolean v12, Lcom/android/camera/HTCCamera;->mIsKeyguardShow:Z
 
-    .line 4770
+    .line 4776
     iput-boolean v12, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
     goto/16 :goto_7
 
-    .line 4786
+    .line 4792
     :catchall_0
     move-exception v8
 
@@ -26174,7 +26235,7 @@
 
     throw v8
 
-    .line 4807
+    .line 4813
     :cond_16
     sget-boolean v8, Lcom/android/camera/HTCCamera;->mIsKeyguardShow:Z
 
@@ -26202,26 +26263,26 @@
 
     if-ne v13, v8, :cond_19
 
-    .line 4812
+    .line 4818
     :cond_17
     sget-boolean v8, Lcom/android/camera/HTCCamera;->mIsKeyguardShow:Z
 
     if-nez v8, :cond_18
 
-    .line 4813
+    .line 4819
     const-string v8, "HTCCamera"
 
     const-string v9, "mIsKeyguardShow is false, activate"
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4816
+    .line 4822
     :goto_9
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->activate()V
 
     goto :goto_8
 
-    .line 4815
+    .line 4821
     :cond_18
     const-string v8, "HTCCamera"
 
@@ -26231,7 +26292,7 @@
 
     goto :goto_9
 
-    .line 4819
+    .line 4825
     :cond_19
     const-string v8, "HTCCamera"
 
@@ -26239,7 +26300,7 @@
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4820
+    .line 4826
     invoke-static {v11}, Lcom/android/camera/HTCCamera;->setWaitKeyguardBeforePreview(Z)V
 
     goto/16 :goto_8
@@ -26251,17 +26312,17 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 4582
+    .line 4588
     invoke-super {p0}, Landroid/app/Activity;->onStart()V
 
-    .line 4583
+    .line 4589
     const-string v0, "HTCCamera"
 
     const-string v1, "onStart() - start"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4588
+    .line 4594
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
@@ -26272,7 +26333,7 @@
 
     if-ne v0, v3, :cond_0
 
-    .line 4589
+    .line 4595
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getAudioManager()Landroid/media/AudioManager;
 
     move-result-object v0
@@ -26283,7 +26344,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
 
-    .line 4592
+    .line 4598
     :cond_0
     const-string v0, "HTCCamera"
 
@@ -26291,7 +26352,7 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4593
+    .line 4599
     return-void
 .end method
 
@@ -26299,17 +26360,17 @@
     .locals 2
 
     .prologue
-    .line 5327
+    .line 5333
     const-string v0, "HTCCamera"
 
     const-string v1, "onStop() - start"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5329
+    .line 5335
     invoke-super {p0}, Landroid/app/Activity;->onStop()V
 
-    .line 5330
+    .line 5336
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
@@ -26322,7 +26383,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 5331
+    .line 5337
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getAudioManager()Landroid/media/AudioManager;
 
     move-result-object v0
@@ -26331,7 +26392,7 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->abandonAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I
 
-    .line 5333
+    .line 5339
     :cond_0
     const-string v0, "HTCCamera"
 
@@ -26339,7 +26400,7 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5334
+    .line 5340
     return-void
 .end method
 
@@ -26348,7 +26409,7 @@
     .parameter "event"
 
     .prologue
-    .line 9067
+    .line 9157
     invoke-virtual {p0, p1}, Lcom/android/camera/HTCCamera;->handleTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -26364,37 +26425,37 @@
 
     const/4 v2, 0x1
 
-    .line 6538
+    .line 6548
     const-string v0, "HTCCamera"
 
     const-string v1, "openCaptureUI()"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6539
+    .line 6549
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x10
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 6541
+    .line 6551
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget v0, v0, Lcom/android/camera/CameraThread;->mMode:I
 
     if-nez v0, :cond_7
 
-    .line 6542
+    .line 6552
     invoke-direct {p0, v3}, Lcom/android/camera/HTCCamera;->updateSwitchIcon(I)V
 
-    .line 6547
+    .line 6557
     :goto_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_layout:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 6548
+    .line 6558
     sget-object v0, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->isRequestMode(Lcom/android/camera/IntentManager$RequestMode;)Z
@@ -26411,82 +26472,82 @@
 
     if-nez v0, :cond_8
 
-    .line 6550
+    .line 6560
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_layout:Landroid/view/View;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6557
+    .line 6567
     :cond_0
     :goto_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFpsText:Landroid/widget/TextView;
 
     if-eqz v0, :cond_1
 
-    .line 6558
+    .line 6568
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFpsText:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 6560
+    .line 6570
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCapture_icon:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_2
 
-    .line 6561
+    .line 6571
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCapture_icon:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 6563
+    .line 6573
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     if-eqz v0, :cond_3
 
-    .line 6564
+    .line 6574
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar:Landroid/view/View;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6566
+    .line 6576
     :cond_3
     invoke-direct {p0, v2}, Lcom/android/camera/HTCCamera;->enableMainBarItems(Z)V
 
-    .line 6567
+    .line 6577
     invoke-virtual {p0, v2, v3}, Lcom/android/camera/HTCCamera;->showMainBarItems(ZZ)V
 
-    .line 6570
+    .line 6580
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCapture_combine_ds:Landroid/view/View;
 
     if-eqz v0, :cond_4
 
-    .line 6571
+    .line 6581
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCapture_combine_ds:Landroid/view/View;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6573
+    .line 6583
     :cond_4
     invoke-direct {p0, v2}, Lcom/android/camera/HTCCamera;->setPanelVisible(Z)V
 
-    .line 6575
+    .line 6585
     invoke-direct {p0, v2}, Lcom/android/camera/HTCCamera;->openSecondLayout(Z)V
 
-    .line 6578
+    .line 6588
     iput-boolean v2, p0, Lcom/android/camera/HTCCamera;->mIsCaptureUIOpen:Z
 
-    .line 6581
+    .line 6591
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v1, "CaptureUI.Open"
 
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 6583
+    .line 6593
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_5
@@ -26497,7 +26558,7 @@
 
     if-nez v0, :cond_5
 
-    .line 6584
+    .line 6594
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mLocationHandler:Lcom/android/camera/LocationHandler;
 
     if-eqz v0, :cond_5
@@ -26516,49 +26577,66 @@
 
     if-eqz v0, :cond_5
 
-    .line 6586
+    .line 6596
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->show_gps_indicator()V
 
-    .line 6590
+    .line 6600
     :cond_5
+    invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getFaceNumber()I
+
+    move-result v0
+
+    if-lez v0, :cond_9
+
+    .line 6601
+    invoke-direct {p0}, Lcom/android/camera/HTCCamera;->showSelfPortraitHint()V
+
+    .line 6607
+    :goto_2
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 6591
+    .line 6608
     iget v0, p0, Lcom/android/camera/HTCCamera;->mScene_Idx:I
 
     invoke-direct {p0, v0}, Lcom/android/camera/HTCCamera;->updateSceneGuide(I)V
 
-    .line 6593
+    .line 6610
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCapture_btn_ds:Landroid/widget/Button;
 
     if-eqz v0, :cond_6
 
-    .line 6594
+    .line 6611
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCapture_btn_ds:Landroid/widget/Button;
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 6596
+    .line 6613
     :cond_6
     return-void
 
-    .line 6544
+    .line 6554
     :cond_7
     invoke-direct {p0, v2}, Lcom/android/camera/HTCCamera;->updateSwitchIcon(I)V
 
     goto/16 :goto_0
 
-    .line 6552
+    .line 6562
     :cond_8
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFilmstrip_layout:Landroid/view/View;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_1
+
+    .line 6603
+    :cond_9
+    invoke-direct {p0}, Lcom/android/camera/HTCCamera;->hideSelfPortraitHint()V
+
+    goto :goto_2
 .end method
 
 .method public final playSound(Landroid/media/MediaPlayer;ZZZ)V
@@ -26571,69 +26649,69 @@
     .prologue
     const/4 v6, -0x1
 
-    .line 7898
+    .line 7958
     const-string v4, "HTCCamera"
 
     const-string v5, "playSound() - start"
 
     invoke-static {v4, v5}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7900
+    .line 7960
     if-eqz p2, :cond_0
 
-    .line 7901
+    .line 7961
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->requestAudioFocus()V
 
-    .line 7903
+    .line 7963
     :cond_0
     iget-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsUIReady:Z
 
     if-nez v4, :cond_2
 
-    .line 7905
+    .line 7965
     const-string v4, "HTCCamera"
 
     const-string v5, "mIsUIReady = false - PlaySound return"
 
     invoke-static {v4, v5}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7907
+    .line 7967
     if-eqz p4, :cond_1
 
-    .line 7909
+    .line 7969
     const-string v4, "HTCCamera"
 
     const-string v5, "Release media player"
 
     invoke-static {v4, v5}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7910
+    .line 7970
     invoke-virtual {p1}, Landroid/media/MediaPlayer;->release()V
 
-    .line 7911
+    .line 7971
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->abandonAudioFocus()V
 
-    .line 8051
+    .line 8113
     :cond_1
     :goto_0
     return-void
 
-    .line 7917
+    .line 7977
     :cond_2
     iget-object v5, p0, Lcom/android/camera/HTCCamera;->mAudioSyncRoot:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 7919
+    .line 7979
     :try_start_0
     iput-object p1, p0, Lcom/android/camera/HTCCamera;->mAudioPlayer:Landroid/media/MediaPlayer;
 
-    .line 7920
+    .line 7980
     monitor-exit v5
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 7932
+    .line 7992
     :try_start_1
     invoke-static {}, Lcom/android/camera/DisplayDevice;->forceSutterSound()Z
 
@@ -26647,26 +26725,26 @@
 
     if-eqz v4, :cond_8
 
-    .line 7935
+    .line 7996
     :cond_3
-    const/4 v2, 0x4
+    const/4 v2, 0x7
 
-    .line 7936
+    .line 7997
     .local v2, audioStreamType:I
     const-string v4, "HTCCamera"
 
-    const-string v5, "PlaySound() - StreamType : STREAM_ALARM"
+    const-string v5, "PlaySound() - StreamType : STREAM_SYSTEM_ENFORCED"
 
     invoke-static {v4, v5}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7942
+    .line 8004
     :goto_1
     if-nez p3, :cond_4
 
-    .line 7943
+    .line 8005
     invoke-virtual {p1}, Landroid/media/MediaPlayer;->stop()V
 
-    .line 7945
+    .line 8007
     :cond_4
     new-instance v4, Lcom/android/camera/HTCCamera$33;
 
@@ -26674,24 +26752,24 @@
 
     invoke-virtual {p1, v4}, Landroid/media/MediaPlayer;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
 
-    .line 7968
+    .line 8030
     new-instance v4, Lcom/android/camera/HTCCamera$34;
 
     invoke-direct {v4, p0, p4}, Lcom/android/camera/HTCCamera$34;-><init>(Lcom/android/camera/HTCCamera;Z)V
 
     invoke-virtual {p1, v4}, Landroid/media/MediaPlayer;->setOnErrorListener(Landroid/media/MediaPlayer$OnErrorListener;)V
 
-    .line 7986
+    .line 8048
     invoke-virtual {p1}, Landroid/media/MediaPlayer;->prepare()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 7999
+    .line 8061
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getAudioManager()Landroid/media/AudioManager;
 
     move-result-object v1
 
-    .line 8024
+    .line 8086
     .local v1, audioManager:Landroid/media/AudioManager;
     invoke-virtual {v1}, Landroid/media/AudioManager;->getRingerMode()I
 
@@ -26713,7 +26791,7 @@
 
     if-eqz v4, :cond_7
 
-    .line 8027
+    .line 8089
     :cond_5
     const-string v4, "HTCCamera"
 
@@ -26721,30 +26799,30 @@
 
     invoke-static {v4, v5}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8029
+    .line 8091
     invoke-virtual {v1, v2}, Landroid/media/AudioManager;->getStreamMaxVolume(I)I
 
     move-result v0
 
-    .line 8032
+    .line 8094
     .local v0, MaxVolume:I
-    const/4 v4, 0x4
+    const/4 v4, 0x7
 
     if-ne v2, v4, :cond_a
 
-    .line 8033
+    .line 8095
     iget v4, p0, Lcom/android/camera/HTCCamera;->mOriginalVolume_Alarm:I
 
     if-ne v4, v6, :cond_6
 
-    .line 8034
+    .line 8096
     invoke-virtual {v1, v2}, Landroid/media/AudioManager;->getStreamVolume(I)I
 
     move-result v4
 
     iput v4, p0, Lcom/android/camera/HTCCamera;->mOriginalVolume_Alarm:I
 
-    .line 8035
+    .line 8097
     const-string v4, "HTCCamera"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -26769,7 +26847,7 @@
 
     invoke-static {v4, v5}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8044
+    .line 8106
     :cond_6
     :goto_2
     invoke-direct {p0, v0}, Lcom/android/camera/HTCCamera;->getAdjustedVolume(I)I
@@ -26780,12 +26858,12 @@
 
     invoke-virtual {v1, v2, v4, v5}, Landroid/media/AudioManager;->setStreamVolume(III)V
 
-    .line 8048
+    .line 8110
     .end local v0           #MaxVolume:I
     :cond_7
     invoke-virtual {p1}, Landroid/media/MediaPlayer;->start()V
 
-    .line 8050
+    .line 8112
     const-string v4, "HTCCamera"
 
     const-string v5, "playSound() - end"
@@ -26794,7 +26872,7 @@
 
     goto/16 :goto_0
 
-    .line 7920
+    .line 7980
     .end local v1           #audioManager:Landroid/media/AudioManager;
     .end local v2           #audioStreamType:I
     :catchall_0
@@ -26807,11 +26885,11 @@
 
     throw v4
 
-    .line 7938
+    .line 8000
     :cond_8
     const/4 v2, 0x2
 
-    .line 7939
+    .line 8001
     .restart local v2       #audioStreamType:I
     :try_start_3
     const-string v4, "HTCCamera"
@@ -26824,12 +26902,12 @@
 
     goto :goto_1
 
-    .line 7988
+    .line 8050
     .end local v2           #audioStreamType:I
     :catch_0
     move-exception v3
 
-    .line 7989
+    .line 8051
     .local v3, ex:Ljava/lang/Exception;
     const-string v4, "HTCCamera"
 
@@ -26837,26 +26915,26 @@
 
     invoke-static {v4, v5, v3}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 7990
+    .line 8052
     invoke-virtual {p1}, Landroid/media/MediaPlayer;->release()V
 
-    .line 7991
+    .line 8053
     iget-object v5, p0, Lcom/android/camera/HTCCamera;->mAudioSyncRoot:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 7993
+    .line 8055
     :try_start_4
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mAudioPlayer:Landroid/media/MediaPlayer;
 
     if-ne p1, v4, :cond_9
 
-    .line 7994
+    .line 8056
     const/4 v4, 0x0
 
     iput-object v4, p0, Lcom/android/camera/HTCCamera;->mAudioPlayer:Landroid/media/MediaPlayer;
 
-    .line 7995
+    .line 8057
     :cond_9
     monitor-exit v5
 
@@ -26871,7 +26949,7 @@
 
     throw v4
 
-    .line 8038
+    .line 8100
     .end local v3           #ex:Ljava/lang/Exception;
     .restart local v0       #MaxVolume:I
     .restart local v1       #audioManager:Landroid/media/AudioManager;
@@ -26881,14 +26959,14 @@
 
     if-ne v4, v6, :cond_6
 
-    .line 8039
+    .line 8101
     invoke-virtual {v1, v2}, Landroid/media/AudioManager;->getStreamVolume(I)I
 
     move-result v4
 
     iput v4, p0, Lcom/android/camera/HTCCamera;->mOriginalVolume_Ring:I
 
-    .line 8040
+    .line 8102
     const-string v4, "HTCCamera"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -26923,7 +27001,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 11421
+    .line 11511
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
@@ -26932,7 +27010,7 @@
 
     if-nez v0, :cond_1
 
-    .line 11422
+    .line 11512
     :cond_0
     const-string v0, "HTCCamera"
 
@@ -26940,17 +27018,17 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11448
+    .line 11538
     :goto_0
     return-void
 
-    .line 11426
+    .line 11516
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     if-nez v0, :cond_2
 
-    .line 11427
+    .line 11517
     const-string v0, "HTCCamera"
 
     const-string v1, "deactivate - mUIHandler = null"
@@ -26959,13 +27037,13 @@
 
     goto :goto_0
 
-    .line 11431
+    .line 11521
     :cond_2
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->setPowerWarning(Z)V
 
-    .line 11433
+    .line 11523
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -26974,39 +27052,39 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->clearFlags(I)V
 
-    .line 11436
+    .line 11526
     sput v2, Lcom/android/camera/HTCCamera;->mFocusMode:I
 
-    .line 11437
+    .line 11527
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->releaseFaceDetection()V
 
-    .line 11439
+    .line 11529
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x24
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 11440
+    .line 11530
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v0, v2}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 11441
+    .line 11531
     if-nez p1, :cond_3
 
-    .line 11442
+    .line 11532
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const/4 v1, 0x2
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 11444
+    .line 11534
     :cond_3
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->setOldBrightness()V
 
-    .line 11447
+    .line 11537
     invoke-virtual {p0, v2}, Lcom/android/camera/HTCCamera;->registerFocusSensor(Z)V
 
     goto :goto_0
@@ -27016,7 +27094,7 @@
     .locals 2
 
     .prologue
-    .line 10557
+    .line 10647
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -27025,23 +27103,23 @@
 
     if-ne v0, v1, :cond_7
 
-    .line 10560
+    .line 10650
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIsUIReady:Z
 
     if-nez v0, :cond_0
 
-    .line 10562
+    .line 10652
     const-string v0, "HTCCamera"
 
     const-string v1, "mIsUIReady = false"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10598
+    .line 10688
     :goto_0
     return-void
 
-    .line 10567
+    .line 10657
     :cond_0
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->needsActionScreen()Z
 
@@ -27053,7 +27131,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 10569
+    .line 10659
     :cond_1
     const-string v0, "HTCCamera"
 
@@ -27063,27 +27141,27 @@
 
     goto :goto_0
 
-    .line 10574
+    .line 10664
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mActionScreen:Lcom/android/camera/actionscreen/ActionScreen;
 
     if-nez v0, :cond_3
 
-    .line 10576
+    .line 10666
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isServiceMode()Z
 
     move-result v0
 
     if-nez v0, :cond_4
 
-    .line 10577
+    .line 10667
     new-instance v0, Lcom/android/camera/actionscreen/CommonActionScreen;
 
     invoke-direct {v0, p0}, Lcom/android/camera/actionscreen/CommonActionScreen;-><init>(Lcom/android/camera/HTCCamera;)V
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mActionScreen:Lcom/android/camera/actionscreen/ActionScreen;
 
-    .line 10582
+    .line 10672
     :goto_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mComponentManager:Lcom/android/camera/component/ComponentManager;
 
@@ -27091,25 +27169,25 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/component/ComponentManager;->addComponent(Lcom/android/camera/component/Component;)V
 
-    .line 10586
+    .line 10676
     :cond_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mActionScreen:Lcom/android/camera/actionscreen/ActionScreen;
 
     if-eqz v0, :cond_6
 
-    .line 10588
+    .line 10678
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mActionScreen:Lcom/android/camera/actionscreen/ActionScreen;
 
     invoke-virtual {v0}, Lcom/android/camera/actionscreen/ActionScreen;->prepare()V
 
-    .line 10589
+    .line 10679
     iget-wide v0, p0, Lcom/android/camera/HTCCamera;->mSessionID:J
 
     iput-wide v0, p0, Lcom/android/camera/HTCCamera;->mPreparedActionScreenSessionID:J
 
     goto :goto_0
 
-    .line 10578
+    .line 10668
     :cond_4
     sget-object v0, Lcom/android/camera/IntentManager$RequestName;->CU:Lcom/android/camera/IntentManager$RequestName;
 
@@ -27119,7 +27197,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 10579
+    .line 10669
     new-instance v0, Lcom/android/camera/actionscreen/NoUIRequestActionScreen;
 
     invoke-direct {v0, p0}, Lcom/android/camera/actionscreen/NoUIRequestActionScreen;-><init>(Lcom/android/camera/HTCCamera;)V
@@ -27128,7 +27206,7 @@
 
     goto :goto_1
 
-    .line 10581
+    .line 10671
     :cond_5
     new-instance v0, Lcom/android/camera/actionscreen/RequestActionScreen;
 
@@ -27138,7 +27216,7 @@
 
     goto :goto_1
 
-    .line 10592
+    .line 10682
     :cond_6
     const-string v0, "HTCCamera"
 
@@ -27148,13 +27226,13 @@
 
     goto :goto_0
 
-    .line 10594
+    .line 10684
     :cond_7
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_8
 
-    .line 10595
+    .line 10685
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mPrepareActionScreenRunnable:Ljava/lang/Runnable;
@@ -27163,7 +27241,7 @@
 
     goto :goto_0
 
-    .line 10597
+    .line 10687
     :cond_8
     const-string v0, "HTCCamera"
 
@@ -27178,7 +27256,7 @@
     .locals 2
 
     .prologue
-    .line 6791
+    .line 6851
     sget v0, Lcom/android/camera/HTCCamera;->mBeepCount:I
 
     const/4 v1, 0x5
@@ -27201,29 +27279,29 @@
     .parameter "register"
 
     .prologue
-    .line 10113
+    .line 10203
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSensorHandler:Lcom/android/camera/SensorHandler;
 
     if-nez v0, :cond_0
 
-    .line 10120
+    .line 10210
     :goto_0
     return-void
 
-    .line 10116
+    .line 10206
     :cond_0
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_1
 
-    .line 10117
+    .line 10207
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSensorHandler:Lcom/android/camera/SensorHandler;
 
     invoke-virtual {v0}, Lcom/android/camera/SensorHandler;->registerSensor()V
 
     goto :goto_0
 
-    .line 10119
+    .line 10209
     :cond_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSensorHandler:Lcom/android/camera/SensorHandler;
 
@@ -27238,47 +27316,47 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 9742
+    .line 9832
     const-string v0, "HTCCamera"
 
     const-string v1, "releaseFaceDetection()"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 9743
+    .line 9833
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x23
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 9745
+    .line 9835
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     if-eqz v0, :cond_0
 
-    .line 9746
+    .line 9836
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v0}, Lcom/android/camera/FaceDetection;->stopCheckLoop()V
 
-    .line 9747
+    .line 9837
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v0}, Lcom/android/camera/FaceDetection;->stopFaceDetection()V
 
-    .line 9748
+    .line 9838
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mFaces:[Landroid/hardware/Camera$Face;
 
-    .line 9749
+    .line 9839
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
     invoke-virtual {v0}, Lcom/android/camera/FaceDetection;->releaseFaceDetection()V
 
-    .line 9750
+    .line 9840
     iput-object v2, p0, Lcom/android/camera/HTCCamera;->mFaceDetection:Lcom/android/camera/FaceDetection;
 
-    .line 9752
+    .line 9842
     :cond_0
     return-void
 .end method
@@ -27291,45 +27369,45 @@
 
     const/4 v2, 0x1
 
-    .line 11317
+    .line 11407
     sput-boolean v2, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 11318
+    .line 11408
     const-string v0, "HTCCamera"
 
     const-string v1, "Block Capture UI - reloadSettings()"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11319
+    .line 11409
     iput-boolean v2, p0, Lcom/android/camera/HTCCamera;->mWaitResetSettings:Z
 
-    .line 11320
+    .line 11410
     const-string v0, "HTCCamera"
 
     const-string v1, "reloadSettings() - set mWaitResetSettings to true"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11321
+    .line 11411
     iput-boolean v3, p0, Lcom/android/camera/HTCCamera;->mIsPreviewStarted:Z
 
-    .line 11322
+    .line 11412
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->closeSettingsPanel()V
 
-    .line 11323
+    .line 11413
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v0, v2}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 11324
+    .line 11414
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v3, v2, v3, v1}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 11326
+    .line 11416
     return-void
 .end method
 
@@ -27337,7 +27415,7 @@
     .locals 4
 
     .prologue
-    .line 7883
+    .line 7943
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
@@ -27348,7 +27426,7 @@
 
     if-nez v0, :cond_0
 
-    .line 7885
+    .line 7945
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getAudioManager()Landroid/media/AudioManager;
 
     move-result-object v0
@@ -27361,7 +27439,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
 
-    .line 7888
+    .line 7948
     :cond_0
     return-void
 .end method
@@ -27372,13 +27450,13 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 5913
+    .line 5923
     sput-boolean v0, Lcom/android/camera/HTCCamera;->mIsSelfTimerTask:Z
 
-    .line 5914
+    .line 5924
     sput-boolean v0, Lcom/android/camera/HTCCamera;->mIsSelfPortraitTask:Z
 
-    .line 5915
+    .line 5925
     return-void
 .end method
 
@@ -27386,12 +27464,12 @@
     .locals 1
 
     .prologue
-    .line 6786
+    .line 6846
     const/4 v0, 0x0
 
     sput v0, Lcom/android/camera/HTCCamera;->mBeepCount:I
 
-    .line 6787
+    .line 6847
     return-void
 .end method
 
@@ -27399,12 +27477,12 @@
     .locals 1
 
     .prologue
-    .line 9667
+    .line 9757
     const/4 v0, 0x0
 
     sput v0, Lcom/android/camera/HTCCamera;->mFocusMode:I
 
-    .line 9668
+    .line 9758
     return-void
 .end method
 
@@ -27414,21 +27492,21 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 11471
+    .line 11561
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitchBtn_icon:Lcom/android/camera/widget/ImageTextView;
 
     const v1, 0x7f020049
 
     invoke-virtual {v0, v1}, Lcom/android/camera/widget/ImageTextView;->setImageResource(I)V
 
-    .line 11472
+    .line 11562
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mSwitch_text_ds:Landroid/widget/TextView;
 
     const v1, 0x7f0a0170
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 11475
+    .line 11565
     const-string v0, "pref_camera_scene_ds"
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -27437,7 +27515,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 11476
+    .line 11566
     const-string v0, "pref_camera_scene_service_ds"
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -27446,17 +27524,17 @@
 
     invoke-static {p0, v0, v1}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 11479
+    .line 11569
     invoke-direct {p0, v2}, Lcom/android/camera/HTCCamera;->doAfterSceneSelect(I)V
 
-    .line 11481
+    .line 11571
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget v0, v0, Lcom/android/camera/CameraThread;->mMode:I
 
     if-nez v0, :cond_0
 
-    .line 11482
+    .line 11572
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mScene_icon_ds:Landroid/widget/ImageView;
 
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mScene_btn_ds:Landroid/widget/Button;
@@ -27465,11 +27543,11 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/camera/ViewUtil;->enableMainButton(Landroid/widget/ImageView;Landroid/widget/Button;Landroid/widget/TextView;)V
 
-    .line 11488
+    .line 11578
     :goto_0
     return-void
 
-    .line 11485
+    .line 11575
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mScene_icon_ds:Landroid/widget/ImageView;
 
@@ -27486,15 +27564,15 @@
     .locals 1
 
     .prologue
-    .line 6670
+    .line 6687
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/camera/HTCCamera;->mFaceNumber:I
 
-    .line 6671
+    .line 6688
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->hideSelfPortraitHint()V
 
-    .line 6672
+    .line 6689
     return-void
 .end method
 
@@ -27502,7 +27580,7 @@
     .locals 4
 
     .prologue
-    .line 11287
+    .line 11377
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mActivityOnPause:Z
 
     if-nez v0, :cond_0
@@ -27511,7 +27589,7 @@
 
     if-nez v0, :cond_0
 
-    .line 11288
+    .line 11378
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x24
@@ -27522,7 +27600,7 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/camera/MessageHandler;->sendUniqueEmptyMessageDelayed(Landroid/os/Handler;IJ)V
 
-    .line 11289
+    .line 11379
     :cond_0
     return-void
 .end method
@@ -27535,7 +27613,7 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 6368
+    .line 6378
     const-string v3, "HTCCamera"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -27568,26 +27646,26 @@
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6370
+    .line 6380
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
 
     if-nez v3, :cond_0
 
-    .line 6371
+    .line 6381
     const-string v3, "HTCCamera"
 
     const-string v4, "mMainLayout == null - initiate mMainLayout"
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6374
+    .line 6384
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v3
 
     if-nez v3, :cond_6
 
-    .line 6375
+    .line 6385
     const v3, 0x7f080057
 
     invoke-virtual {p0, v3}, Lcom/android/camera/HTCCamera;->findViewById(I)Landroid/view/View;
@@ -27596,7 +27674,7 @@
 
     check-cast v2, Landroid/view/ViewStub;
 
-    .line 6378
+    .line 6388
     .local v2, stub:Landroid/view/ViewStub;
     :goto_0
     invoke-virtual {v2}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
@@ -27605,7 +27683,7 @@
 
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
 
-    .line 6387
+    .line 6397
     .end local v2           #stub:Landroid/view/ViewStub;
     :cond_0
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mMainLayout:Landroid/view/View;
@@ -27614,19 +27692,19 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6388
+    .line 6398
     const-string v3, "HTCCamera"
 
     const-string v4, "Reset layout end, set mMainLayout visible"
 
     invoke-static {v3, v4}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6390
+    .line 6400
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mSecondLayout:Landroid/view/View;
 
     if-nez v3, :cond_1
 
-    .line 6391
+    .line 6401
     const v3, 0x7f08004b
 
     invoke-virtual {p0, v3}, Lcom/android/camera/HTCCamera;->findViewById(I)Landroid/view/View;
@@ -27635,7 +27713,7 @@
 
     check-cast v2, Landroid/view/ViewStub;
 
-    .line 6392
+    .line 6402
     .restart local v2       #stub:Landroid/view/ViewStub;
     invoke-virtual {v2}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
@@ -27643,7 +27721,7 @@
 
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mSecondLayout:Landroid/view/View;
 
-    .line 6396
+    .line 6406
     .end local v2           #stub:Landroid/view/ViewStub;
     :cond_1
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
@@ -27652,12 +27730,12 @@
 
     if-eqz v3, :cond_2
 
-    .line 6397
+    .line 6407
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mSceneGuideLayout:Landroid/view/View;
 
     if-nez v3, :cond_2
 
-    .line 6398
+    .line 6408
     const v3, 0x7f080054
 
     invoke-virtual {p0, v3}, Lcom/android/camera/HTCCamera;->findViewById(I)Landroid/view/View;
@@ -27666,7 +27744,7 @@
 
     check-cast v2, Landroid/view/ViewStub;
 
-    .line 6399
+    .line 6409
     .restart local v2       #stub:Landroid/view/ViewStub;
     invoke-virtual {v2}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
@@ -27674,7 +27752,7 @@
 
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mSceneGuideLayout:Landroid/view/View;
 
-    .line 6410
+    .line 6420
     .end local v2           #stub:Landroid/view/ViewStub;
     :cond_2
     invoke-static {}, Lcom/android/camera/DisplayDevice;->captrueFullSize()Z
@@ -27699,13 +27777,13 @@
 
     if-ne v3, v6, :cond_5
 
-    .line 6413
+    .line 6423
     :cond_3
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mPreviewFilterLayout:Landroid/view/View;
 
     if-nez v3, :cond_4
 
-    .line 6414
+    .line 6424
     const v3, 0x7f08003d
 
     invoke-virtual {p0, v3}, Lcom/android/camera/HTCCamera;->findViewById(I)Landroid/view/View;
@@ -27714,7 +27792,7 @@
 
     check-cast v2, Landroid/view/ViewStub;
 
-    .line 6415
+    .line 6425
     .restart local v2       #stub:Landroid/view/ViewStub;
     invoke-virtual {v2}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
@@ -27722,7 +27800,7 @@
 
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mPreviewFilterLayout:Landroid/view/View;
 
-    .line 6416
+    .line 6426
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mPreviewFilterLayout:Landroid/view/View;
 
     const v4, 0x7f08015b
@@ -27733,14 +27811,14 @@
 
     iput-object v3, p0, Lcom/android/camera/HTCCamera;->mPreviewVisibleArea:Landroid/view/View;
 
-    .line 6418
+    .line 6428
     .end local v2           #stub:Landroid/view/ViewStub;
     :cond_4
     if-ge p1, p2, :cond_7
 
     move v1, p1
 
-    .line 6419
+    .line 6429
     .local v1, size:I
     :goto_1
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mPreviewVisibleArea:Landroid/view/View;
@@ -27749,25 +27827,25 @@
 
     move-result-object v0
 
-    .line 6420
+    .line 6430
     .local v0, params:Landroid/view/ViewGroup$LayoutParams;
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 6421
+    .line 6431
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 6422
+    .line 6432
     iget-object v3, p0, Lcom/android/camera/HTCCamera;->mPreviewVisibleArea:Landroid/view/View;
 
     invoke-virtual {v3, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6424
+    .line 6434
     .end local v0           #params:Landroid/view/ViewGroup$LayoutParams;
     .end local v1           #size:I
     :cond_5
     return-void
 
-    .line 6377
+    .line 6387
     :cond_6
     const v3, 0x7f08005a
 
@@ -27784,7 +27862,7 @@
     :cond_7
     move v1, p2
 
-    .line 6418
+    .line 6428
     goto :goto_1
 .end method
 
@@ -27796,60 +27874,60 @@
 
     const/4 v2, 0x0
 
-    .line 11297
+    .line 11387
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v1, "Camera.Restart"
 
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 11299
+    .line 11389
     sput-boolean v3, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 11300
+    .line 11390
     const-string v0, "HTCCamera"
 
     const-string v1, "Block Capture UI - restartCamera()"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11301
+    .line 11391
     iput-boolean v2, p0, Lcom/android/camera/HTCCamera;->mIsPreviewStarted:Z
 
-    .line 11302
+    .line 11392
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->resetFocusMode()V
 
-    .line 11303
+    .line 11393
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->releaseFaceDetection()V
 
-    .line 11304
+    .line 11394
     invoke-virtual {p0, v3}, Lcom/android/camera/HTCCamera;->setWaitResetSettings(Z)V
 
-    .line 11305
+    .line 11395
     const-string v0, "HTCCamera"
 
     const-string v1, "restartCamera() - set mWaitResetSettings to true"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11306
+    .line 11396
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->closeSettingsPanel()V
 
-    .line 11307
+    .line 11397
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const/4 v1, 0x2
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 11308
+    .line 11398
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const-string v1, "true"
 
     invoke-static {v0, v2, v3, v2, v1}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 11310
+    .line 11400
     return-void
 .end method
 
@@ -27857,19 +27935,19 @@
     .locals 3
 
     .prologue
-    .line 10180
+    .line 10270
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->connManager:Landroid/net/ConnectivityManager;
 
     if-eqz v0, :cond_0
 
-    .line 10181
+    .line 10271
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->connManager:Landroid/net/ConnectivityManager;
 
     iget-boolean v1, p0, Lcom/android/camera/HTCCamera;->keep_backgroundDataSetting:Z
 
     invoke-virtual {v0, v1}, Landroid/net/ConnectivityManager;->setBackgroundDataSetting(Z)V
 
-    .line 10182
+    .line 10272
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -27894,7 +27972,7 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10184
+    .line 10274
     :cond_0
     return-void
 .end method
@@ -27905,54 +27983,54 @@
     .prologue
     const/4 v10, -0x1
 
-    .line 5686
+    .line 5696
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isServiceMode()Z
 
     move-result v7
 
     if-nez v7, :cond_1
 
-    .line 5688
+    .line 5698
     const-string v7, "HTCCamera"
 
     const-string v8, "Returning media from non-service mode"
 
     invoke-static {v7, v8}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5818
+    .line 5828
     :cond_0
     :goto_0
     return-void
 
-    .line 5691
+    .line 5701
     :cond_1
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v7, :cond_0
 
-    .line 5695
+    .line 5705
     invoke-static {}, Lcom/android/camera/IntentManager;->getSaveUri()Landroid/net/Uri;
 
     move-result-object v6
 
-    .line 5696
+    .line 5706
     .local v6, saveUri:Landroid/net/Uri;
     invoke-static {}, Lcom/android/camera/IntentManager;->getCropValue()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 5699
+    .line 5709
     .local v2, cropValue:Ljava/lang/String;
     if-eqz v2, :cond_5
 
-    .line 5701
+    .line 5711
     const-string v7, "HTCCamera"
 
     const-string v8, "Has Crop Extras , pass to CropImage Activity"
 
     invoke-static {v7, v8}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5703
+    .line 5713
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->getIntent()Landroid/content/Intent;
 
     move-result-object v7
@@ -27961,19 +28039,19 @@
 
     move-result-object v5
 
-    .line 5704
+    .line 5714
     .local v5, myExtras:Landroid/os/Bundle;
     if-eqz v5, :cond_2
 
-    .line 5706
+    .line 5716
     if-eqz v6, :cond_4
 
-    .line 5707
+    .line 5717
     const-string v7, "output"
 
     invoke-virtual {v5, v7, v6}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 5712
+    .line 5722
     :cond_2
     :goto_1
     new-instance v1, Landroid/content/Intent;
@@ -27982,13 +28060,13 @@
 
     invoke-direct {v1, v7}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 5713
+    .line 5723
     .local v1, cropIntent:Landroid/content/Intent;
     const-string v7, "image/*"
 
     invoke-virtual {v1, v7}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 5714
+    .line 5724
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-static {}, Lcom/android/camera/CameraThread;->getLastContentUri()Landroid/net/Uri;
@@ -27997,13 +28075,13 @@
 
     invoke-virtual {v1, v7}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 5715
+    .line 5725
     if-eqz v5, :cond_3
 
-    .line 5716
+    .line 5726
     invoke-virtual {v1, v5}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 5718
+    .line 5728
     :cond_3
     sget-object v7, Lcom/android/camera/Global$REQUEST_CODE;->REQUEST_CODE_CROP_MSG:Lcom/android/camera/Global$REQUEST_CODE;
 
@@ -28015,7 +28093,7 @@
 
     goto :goto_0
 
-    .line 5709
+    .line 5719
     .end local v1           #cropIntent:Landroid/content/Intent;
     :cond_4
     const-string v7, "return-data"
@@ -28026,31 +28104,31 @@
 
     goto :goto_1
 
-    .line 5723
+    .line 5733
     .end local v5           #myExtras:Landroid/os/Bundle;
     :cond_5
     const/4 v4, 0x0
 
-    .line 5724
+    .line 5734
     .local v4, jpegData:[B
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v7, :cond_6
 
-    .line 5725
+    .line 5735
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v7}, Lcom/android/camera/CameraThread;->getJpegData()[B
 
     move-result-object v4
 
-    .line 5728
+    .line 5738
     :cond_6
     new-instance v3, Landroid/content/Intent;
 
     invoke-direct {v3}, Landroid/content/Intent;-><init>()V
 
-    .line 5729
+    .line 5739
     .local v3, intent:Landroid/content/Intent;
     sget-object v7, Lcom/android/camera/IntentManager$RequestName;->Contacts:Lcom/android/camera/IntentManager$RequestName;
 
@@ -28060,38 +28138,38 @@
 
     if-eqz v7, :cond_c
 
-    .line 5731
+    .line 5741
     if-nez v4, :cond_9
 
-    .line 5732
+    .line 5742
     const-string v7, "HTCCamera"
 
     const-string v8, "contacts - jpeg data is null !!"
 
     invoke-static {v7, v8}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5814
+    .line 5824
     :cond_7
     :goto_2
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v7, :cond_8
 
-    .line 5815
+    .line 5825
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v7}, Lcom/android/camera/CameraThread;->resetJpegData()V
 
-    .line 5816
+    .line 5826
     :cond_8
     invoke-virtual {p0, v10, v3}, Lcom/android/camera/HTCCamera;->setResult(ILandroid/content/Intent;)V
 
-    .line 5817
+    .line 5827
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->finish()V
 
     goto/16 :goto_0
 
-    .line 5735
+    .line 5745
     :cond_9
     invoke-static {}, Lcom/android/camera/DisplayDevice;->captrueFullSize()Z
 
@@ -28099,7 +28177,7 @@
 
     if-eqz v7, :cond_b
 
-    .line 5737
+    .line 5747
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v7}, Lcom/android/camera/CameraThread;->getCaptureWidth()I
@@ -28122,11 +28200,11 @@
 
     move-result-object v0
 
-    .line 5742
+    .line 5752
     .local v0, bitmap:Landroid/graphics/Bitmap;
     if-eqz v0, :cond_a
 
-    .line 5743
+    .line 5753
     const-string v7, "inline-data"
 
     invoke-virtual {v3, v7}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
@@ -28139,7 +28217,7 @@
 
     goto :goto_2
 
-    .line 5745
+    .line 5755
     :cond_a
     const-string v7, "HTCCamera"
 
@@ -28149,7 +28227,7 @@
 
     goto :goto_2
 
-    .line 5748
+    .line 5758
     .end local v0           #bitmap:Landroid/graphics/Bitmap;
     :cond_b
     const-string v7, "jpeg_data"
@@ -28158,7 +28236,7 @@
 
     goto :goto_2
 
-    .line 5751
+    .line 5761
     :cond_c
     sget-object v7, Lcom/android/camera/IntentManager$RequestName;->Square:Lcom/android/camera/IntentManager$RequestName;
 
@@ -28168,10 +28246,10 @@
 
     if-eqz v7, :cond_10
 
-    .line 5753
+    .line 5763
     if-nez v4, :cond_d
 
-    .line 5754
+    .line 5764
     const-string v7, "HTCCamera"
 
     const-string v8, "square - jpeg data is null !!"
@@ -28180,7 +28258,7 @@
 
     goto :goto_2
 
-    .line 5757
+    .line 5767
     :cond_d
     invoke-static {}, Lcom/android/camera/DisplayDevice;->captrueFullSize()Z
 
@@ -28188,7 +28266,7 @@
 
     if-eqz v7, :cond_f
 
-    .line 5759
+    .line 5769
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v7}, Lcom/android/camera/CameraThread;->getCaptureWidth()I
@@ -28207,11 +28285,11 @@
 
     move-result-object v0
 
-    .line 5764
+    .line 5774
     .restart local v0       #bitmap:Landroid/graphics/Bitmap;
     if-eqz v0, :cond_e
 
-    .line 5765
+    .line 5775
     const-string v7, "inline-data"
 
     invoke-virtual {v3, v7}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
@@ -28224,7 +28302,7 @@
 
     goto :goto_2
 
-    .line 5767
+    .line 5777
     :cond_e
     const-string v7, "HTCCamera"
 
@@ -28234,7 +28312,7 @@
 
     goto/16 :goto_2
 
-    .line 5771
+    .line 5781
     .end local v0           #bitmap:Landroid/graphics/Bitmap;
     :cond_f
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
@@ -28245,7 +28323,7 @@
 
     invoke-virtual {v3, v7}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 5772
+    .line 5782
     const-string v7, "HTCCamera"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -28276,19 +28354,19 @@
 
     goto/16 :goto_2
 
-    .line 5779
+    .line 5789
     :cond_10
     if-eqz v6, :cond_11
 
-    .line 5781
+    .line 5791
     invoke-virtual {p0, v10}, Lcom/android/camera/HTCCamera;->setResult(I)V
 
-    .line 5782
+    .line 5792
     invoke-direct {p0, v6, v4}, Lcom/android/camera/HTCCamera;->saveAndFinish(Landroid/net/Uri;[B)V
 
     goto/16 :goto_0
 
-    .line 5787
+    .line 5797
     :cond_11
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -28298,7 +28376,7 @@
 
     invoke-virtual {v3, v7}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 5788
+    .line 5798
     const-string v7, "HTCCamera"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -28327,7 +28405,7 @@
 
     invoke-static {v7, v8}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5792
+    .line 5802
     sget-object v7, Lcom/android/camera/IntentManager$RequestName;->Unknown_Service:Lcom/android/camera/IntentManager$RequestName;
 
     invoke-virtual {p0, v7}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
@@ -28336,7 +28414,7 @@
 
     if-eqz v7, :cond_7
 
-    .line 5794
+    .line 5804
     iget-object v7, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v7, :cond_7
@@ -28349,10 +28427,10 @@
 
     if-nez v7, :cond_7
 
-    .line 5796
+    .line 5806
     if-eqz v4, :cond_13
 
-    .line 5798
+    .line 5808
     const v7, 0x19000
 
     sget-object v8, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -28361,11 +28439,11 @@
 
     move-result-object v0
 
-    .line 5802
+    .line 5812
     .restart local v0       #bitmap:Landroid/graphics/Bitmap;
     if-eqz v0, :cond_12
 
-    .line 5803
+    .line 5813
     const-string v7, "inline-data"
 
     invoke-virtual {v3, v7}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
@@ -28378,7 +28456,7 @@
 
     goto/16 :goto_2
 
-    .line 5805
+    .line 5815
     :cond_12
     const-string v7, "HTCCamera"
 
@@ -28388,7 +28466,7 @@
 
     goto/16 :goto_2
 
-    .line 5808
+    .line 5818
     .end local v0           #bitmap:Landroid/graphics/Bitmap;
     :cond_13
     const-string v7, "HTCCamera"
@@ -28405,17 +28483,17 @@
     .parameter "newvalue"
 
     .prologue
-    .line 10173
+    .line 10263
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->connManager:Landroid/net/ConnectivityManager;
 
     if-eqz v0, :cond_0
 
-    .line 10174
+    .line 10264
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->connManager:Landroid/net/ConnectivityManager;
 
     invoke-virtual {v0, p1}, Landroid/net/ConnectivityManager;->setBackgroundDataSetting(Z)V
 
-    .line 10175
+    .line 10265
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -28438,7 +28516,7 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10177
+    .line 10267
     :cond_0
     return-void
 .end method
@@ -28448,10 +28526,10 @@
     .parameter "flag"
 
     .prologue
-    .line 5892
+    .line 5902
     sput-boolean p1, Lcom/android/camera/HTCCamera;->mBlock3DSwitch:Z
 
-    .line 5893
+    .line 5903
     return-void
 .end method
 
@@ -28460,10 +28538,10 @@
     .parameter "flag"
 
     .prologue
-    .line 5887
+    .line 5897
     sput-boolean p1, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 5888
+    .line 5898
     return-void
 .end method
 
@@ -28472,7 +28550,7 @@
     .parameter "flag"
 
     .prologue
-    .line 11455
+    .line 11545
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -28495,10 +28573,10 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11456
+    .line 11546
     iput-boolean p1, p0, Lcom/android/camera/HTCCamera;->mBlockPowerWarning:Z
 
-    .line 11457
+    .line 11547
     return-void
 .end method
 
@@ -28507,10 +28585,10 @@
     .parameter "state"
 
     .prologue
-    .line 9230
+    .line 9320
     iput p1, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
-    .line 9231
+    .line 9321
     return-void
 .end method
 
@@ -28530,30 +28608,30 @@
 
     const/4 v2, 0x0
 
-    .line 11491
+    .line 11581
     if-nez p2, :cond_0
 
-    .line 11513
+    .line 11603
     :goto_0
     return-void
 
-    .line 11494
+    .line 11584
     :cond_0
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     invoke-direct {v0, v1, v1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    .line 11497
+    .line 11587
     .local v0, params:Landroid/widget/LinearLayout$LayoutParams;
     packed-switch p1, :pswitch_data_0
 
-    .line 11512
+    .line 11602
     :goto_1
     invoke-virtual {p2, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_0
 
-    .line 11499
+    .line 11589
     :pswitch_0
     const/16 v1, 0x16f
 
@@ -28561,7 +28639,7 @@
 
     goto :goto_1
 
-    .line 11502
+    .line 11592
     :pswitch_1
     const/16 v1, 0x16f
 
@@ -28569,19 +28647,19 @@
 
     goto :goto_1
 
-    .line 11505
+    .line 11595
     :pswitch_2
     invoke-virtual {v0, v5, v3, v2, v2}, Landroid/widget/LinearLayout$LayoutParams;->setMargins(IIII)V
 
     goto :goto_1
 
-    .line 11508
+    .line 11598
     :pswitch_3
     invoke-virtual {v0, v2, v2, v5, v3}, Landroid/widget/LinearLayout$LayoutParams;->setMargins(IIII)V
 
     goto :goto_1
 
-    .line 11497
+    .line 11587
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -28596,7 +28674,7 @@
     .parameter "flag"
 
     .prologue
-    .line 11464
+    .line 11554
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -28619,10 +28697,10 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11465
+    .line 11555
     iput-boolean p1, p0, Lcom/android/camera/HTCCamera;->mIsPowerWarning:Z
 
-    .line 11466
+    .line 11556
     return-void
 .end method
 
@@ -28631,10 +28709,10 @@
     .parameter "turnOn"
 
     .prologue
-    .line 5955
+    .line 5965
     sput-boolean p1, Lcom/android/camera/HTCCamera;->mTurnOnTorch_Camcorder:Z
 
-    .line 5956
+    .line 5966
     return-void
 .end method
 
@@ -28643,10 +28721,10 @@
     .parameter "wait"
 
     .prologue
-    .line 5939
+    .line 5949
     iput-boolean p1, p0, Lcom/android/camera/HTCCamera;->mWaitResetSettings:Z
 
-    .line 5940
+    .line 5950
     return-void
 .end method
 
@@ -28655,10 +28733,10 @@
     .parameter "bVal"
 
     .prologue
-    .line 5963
+    .line 5973
     sput-boolean p1, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 5964
+    .line 5974
     return-void
 .end method
 
@@ -28666,12 +28744,12 @@
     .locals 1
 
     .prologue
-    .line 10495
+    .line 10585
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->showActionScreen(I)V
 
-    .line 10496
+    .line 10586
     return-void
 .end method
 
@@ -28682,7 +28760,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 10499
+    .line 10589
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -28691,10 +28769,10 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 10501
+    .line 10591
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIsCaptureTriggered:Z
 
-    .line 10503
+    .line 10593
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->needsActionScreen()Z
 
     move-result v0
@@ -28709,33 +28787,33 @@
 
     if-eqz v0, :cond_1
 
-    .line 10505
+    .line 10595
     :cond_0
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/camera/HTCCamera;->onActionScreenClosed(Lcom/android/camera/actionscreen/ActionScreenEvent;)V
 
-    .line 10527
+    .line 10617
     :goto_0
     return-void
 
-    .line 10510
+    .line 10600
     :cond_1
     sput-boolean v4, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 10513
+    .line 10603
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mActionScreen:Lcom/android/camera/actionscreen/ActionScreen;
 
     if-eqz v0, :cond_2
 
-    .line 10514
+    .line 10604
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mActionScreen:Lcom/android/camera/actionscreen/ActionScreen;
 
     invoke-virtual {v0}, Lcom/android/camera/actionscreen/ActionScreen;->open()V
 
     goto :goto_0
 
-    .line 10516
+    .line 10606
     :cond_2
     const-string v0, "HTCCamera"
 
@@ -28745,16 +28823,16 @@
 
     goto :goto_0
 
-    .line 10518
+    .line 10608
     :cond_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_5
 
-    .line 10520
+    .line 10610
     if-gtz p1, :cond_4
 
-    .line 10521
+    .line 10611
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mShowActionScreenRunnable:Ljava/lang/Runnable;
@@ -28763,7 +28841,7 @@
 
     goto :goto_0
 
-    .line 10523
+    .line 10613
     :cond_4
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -28775,7 +28853,7 @@
 
     goto :goto_0
 
-    .line 10526
+    .line 10616
     :cond_5
     const-string v0, "HTCCamera"
 
@@ -28800,21 +28878,21 @@
 
     const-wide/16 v2, 0x0
 
-    .line 10337
+    .line 10427
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
     if-nez v0, :cond_1
 
-    .line 10370
+    .line 10460
     :cond_0
     :goto_0
     return-void
 
-    .line 10340
+    .line 10430
     :cond_1
     if-eqz p1, :cond_4
 
-    .line 10342
+    .line 10432
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -28823,31 +28901,31 @@
 
     if-eqz v0, :cond_0
 
-    .line 10344
+    .line 10434
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
     const/4 v6, 0x0
 
     invoke-virtual {v0, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 10345
+    .line 10435
     if-eqz p2, :cond_3
 
-    .line 10346
+    .line 10436
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 10347
+    .line 10437
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
     invoke-static/range {v0 .. v5}, Lcom/android/camera/AnimationManager;->slideIn(Landroid/view/View;IJJ)Landroid/view/animation/Animation;
 
     goto :goto_0
 
-    .line 10349
+    .line 10439
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
@@ -28857,7 +28935,7 @@
 
     goto :goto_0
 
-    .line 10352
+    .line 10442
     :cond_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
@@ -28865,7 +28943,7 @@
 
     goto :goto_0
 
-    .line 10357
+    .line 10447
     :cond_4
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
@@ -28875,31 +28953,31 @@
 
     if-nez v0, :cond_0
 
-    .line 10359
+    .line 10449
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
     const/4 v6, 0x4
 
     invoke-virtual {v0, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 10360
+    .line 10450
     if-eqz p2, :cond_6
 
-    .line 10361
+    .line 10451
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v0
 
     if-nez v0, :cond_5
 
-    .line 10362
+    .line 10452
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
     invoke-static/range {v0 .. v5}, Lcom/android/camera/AnimationManager;->slideOut(Landroid/view/View;IJJ)Landroid/view/animation/Animation;
 
     goto :goto_0
 
-    .line 10364
+    .line 10454
     :cond_5
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
@@ -28909,7 +28987,7 @@
 
     goto :goto_0
 
-    .line 10367
+    .line 10457
     :cond_6
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMainBar_item:Landroid/view/View;
 
@@ -28923,14 +29001,14 @@
     .parameter "resId"
 
     .prologue
-    .line 11408
+    .line 11498
     invoke-virtual {p0, p1}, Lcom/android/camera/HTCCamera;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->showToast(Ljava/lang/String;)V
 
-    .line 11409
+    .line 11499
     return-void
 .end method
 
@@ -28939,15 +29017,15 @@
     .parameter "message"
 
     .prologue
-    .line 11412
+    .line 11502
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->threadAccessCheck()V
 
-    .line 11413
+    .line 11503
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mToast:Lcom/android/camera/rotate/RotateToast;
 
     invoke-virtual {v0}, Lcom/android/camera/rotate/RotateToast;->cancel()V
 
-    .line 11414
+    .line 11504
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mToast:Lcom/android/camera/rotate/RotateToast;
 
     invoke-static {}, Lcom/android/camera/rotate/OrientationConfig;->getUIOrientation()I
@@ -28956,17 +29034,17 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/rotate/RotateToast;->updateOrientation(I)V
 
-    .line 11415
+    .line 11505
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mToast:Lcom/android/camera/rotate/RotateToast;
 
     invoke-virtual {v0, p1}, Lcom/android/camera/rotate/RotateToast;->setText(Ljava/lang/CharSequence;)V
 
-    .line 11416
+    .line 11506
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mToast:Lcom/android/camera/rotate/RotateToast;
 
     invoke-virtual {v0}, Lcom/android/camera/rotate/RotateToast;->show()V
 
-    .line 11417
+    .line 11507
     return-void
 .end method
 
@@ -28974,7 +29052,7 @@
     .locals 0
 
     .prologue
-    .line 9956
+    .line 10046
     return-void
 .end method
 
@@ -28982,7 +29060,7 @@
     .locals 3
 
     .prologue
-    .line 10864
+    .line 10954
     sget-object v1, Lcom/android/camera/IntentManager$RequestName;->Album:Lcom/android/camera/IntentManager$RequestName;
 
     invoke-virtual {p0, v1}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
@@ -28991,10 +29069,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 10865
+    .line 10955
     const-string v0, "FROM_CAMERA"
 
-    .line 10868
+    .line 10958
     .local v0, action:Ljava/lang/String;
     :goto_0
     #invoke-static {}, Lcom/android/camera/CameraThread;->getLastContentUri()Landroid/net/Uri;
@@ -29007,10 +29085,10 @@
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/camera/HTCCamera;->startAlbum(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
 
-    .line 10869
+    .line 10959
     return-void
 
-    .line 10867
+    .line 10957
     .end local v0           #action:Ljava/lang/String;
     :cond_0
     const-string v0, "android.intent.action.VIEW"
@@ -29026,7 +29104,7 @@
     .parameter "mimeType"
 
     .prologue
-    .line 10872
+    .line 10962
     sget-object v2, Lcom/android/camera/IntentManager$RequestName;->Album:Lcom/android/camera/IntentManager$RequestName;
 
     invoke-virtual {p0, v2}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
@@ -29035,19 +29113,19 @@
 
     if-eqz v2, :cond_0
 
-    .line 10874
+    .line 10964
     const-string v2, "HTCCamera"
 
     const-string v3, "Returning to album"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10876
+    .line 10966
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1, p1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 10877
+    .line 10967
     .local v1, intent:Landroid/content/Intent;
     const-string v2, "preview_mode"
 
@@ -29055,19 +29133,19 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 10878
+    .line 10968
     const/4 v2, -0x1
 
     invoke-virtual {p0, v2, v1}, Lcom/android/camera/HTCCamera;->setResult(ILandroid/content/Intent;)V
 
-    .line 10879
+    .line 10969
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->finish()V
 
-    .line 10902
+    .line 10992
     :goto_0
     return-void
 
-    .line 10883
+    .line 10973
     .end local v1           #intent:Landroid/content/Intent;
     :cond_0
     const-string v2, "HTCCamera"
@@ -29076,12 +29154,12 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10885
+    .line 10975
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1, p1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 10886
+    .line 10976
     .restart local v1       #intent:Landroid/content/Intent;
     iget-object v2, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -29093,25 +29171,25 @@
 
     if-nez v2, :cond_1
 
-    .line 10887
+    .line 10977
     const-string v2, "capture_mode"
 
     const-string v3, "camera"
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 10890
+    .line 10980
     :goto_1
     invoke-virtual {v1, p2, p3}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 10891
+    .line 10981
     const-string v2, "preview_mode"
 
     const-string v3, "filmstrip"
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 10895
+    .line 10985
     :try_start_0
     invoke-virtual {p0, v1}, Lcom/android/camera/HTCCamera;->startActivity(Landroid/content/Intent;)V
     :try_end_0
@@ -29119,11 +29197,11 @@
 
     goto :goto_0
 
-    .line 10897
+    .line 10987
     :catch_0
     move-exception v0
 
-    .line 10899
+    .line 10989
     .local v0, ex:Landroid/content/ActivityNotFoundException;
     const-string v2, "HTCCamera"
 
@@ -29149,7 +29227,7 @@
 
     goto :goto_0
 
-    .line 10889
+    .line 10979
     .end local v0           #ex:Landroid/content/ActivityNotFoundException;
     :cond_1
     const-string v2, "capture_mode"
@@ -29165,21 +29243,21 @@
     .locals 2
 
     .prologue
-    .line 11556
+    .line 11646
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 11557
+    .line 11647
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "com.android.camera.tutorial.CAMERA_MODE"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 11558
+    .line 11648
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->startActivity(Landroid/content/Intent;)V
 
-    .line 11559
+    .line 11649
     return-void
 .end method
 
@@ -29191,7 +29269,7 @@
     .parameter "h"
 
     .prologue
-    .line 4543
+    .line 4549
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -29224,7 +29302,7 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4556
+    .line 4562
     return-void
 .end method
 
@@ -29237,7 +29315,7 @@
 
     const/4 v3, 0x0
 
-    .line 4559
+    .line 4565
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -29260,13 +29338,13 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4560
+    .line 4566
     iput-object p1, p0, Lcom/android/camera/HTCCamera;->mSurfaceHolder:Landroid/view/SurfaceHolder;
 
-    .line 4561
+    .line 4567
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mSurfaceCreated:Z
 
-    .line 4562
+    .line 4568
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_1
@@ -29283,7 +29361,7 @@
 
     if-nez v0, :cond_1
 
-    .line 4563
+    .line 4569
     :cond_0
     const-string v0, "HTCCamera"
 
@@ -29291,21 +29369,21 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4564
+    .line 4570
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v3, v4, v3, v1}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 4566
+    .line 4572
     iput-boolean v3, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
-    .line 4571
+    .line 4577
     :goto_0
     return-void
 
-    .line 4568
+    .line 4574
     :cond_1
     const-string v0, "HTCCamera"
 
@@ -29313,7 +29391,7 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4569
+    .line 4575
     iput-boolean v4, p0, Lcom/android/camera/HTCCamera;->mIdle:Z
 
     goto :goto_0
@@ -29324,24 +29402,24 @@
     .parameter "holder"
 
     .prologue
-    .line 4575
+    .line 4581
     const-string v0, "HTCCamera"
 
     const-string v1, "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ surfaceDestroyed $$$$$$$$$$$$$$$$$$$$$$$$$$$"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4576
+    .line 4582
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/camera/HTCCamera;->mSurfaceCreated:Z
 
-    .line 4577
+    .line 4583
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/camera/HTCCamera;->mSurfaceHolder:Landroid/view/SurfaceHolder;
 
-    .line 4578
+    .line 4584
     return-void
 .end method
 
@@ -29349,14 +29427,14 @@
     .locals 2
 
     .prologue
-    .line 7362
+    .line 7421
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->isFlashEnabled()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 7364
+    .line 7423
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v1}, Lcom/android/camera/CameraThread;->getMode()I
@@ -29365,14 +29443,14 @@
 
     if-nez v1, :cond_3
 
-    .line 7366
+    .line 7425
     const-string v1, "pref_camera_flash_mode"
 
     invoke-static {p0, v1}, Lcom/android/camera/HTCCameraAdvanceSetting;->getPrefenceValue(Landroid/app/Activity;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 7367
+    .line 7426
     .local v0, flashMode:Ljava/lang/String;
     const-string v1, "auto"
 
@@ -29382,25 +29460,25 @@
 
     if-eqz v1, :cond_1
 
-    .line 7368
+    .line 7427
     const-string v0, "on"
 
-    .line 7373
+    .line 7432
     :goto_0
     const-string v1, "pref_camera_flash_mode"
 
     invoke-static {p0, v1, v0}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 7380
+    .line 7439
     .end local v0           #flashMode:Ljava/lang/String;
     :cond_0
     :goto_1
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->updateFlashMode()V
 
-    .line 7381
+    .line 7440
     return-void
 
-    .line 7369
+    .line 7428
     .restart local v0       #flashMode:Ljava/lang/String;
     :cond_1
     const-string v1, "on"
@@ -29411,18 +29489,18 @@
 
     if-eqz v1, :cond_2
 
-    .line 7370
+    .line 7429
     const-string v0, "off"
 
     goto :goto_0
 
-    .line 7372
+    .line 7431
     :cond_2
     const-string v0, "auto"
 
     goto :goto_0
 
-    .line 7376
+    .line 7435
     .end local v0           #flashMode:Ljava/lang/String;
     :cond_3
     sget-boolean v1, Lcom/android/camera/HTCCamera;->mTurnOnTorch_Camcorder:Z
@@ -29447,12 +29525,12 @@
     .parameter "mode"
 
     .prologue
-    .line 3085
+    .line 3082
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
 
-    .line 3086
+    .line 3083
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->is2ndCamera()Z
@@ -29463,7 +29541,7 @@
 
     move-result v0
 
-    .line 3087
+    .line 3084
     :goto_0
     return v0
 
@@ -29483,46 +29561,46 @@
 
     const/4 v2, 0x0
 
-    .line 3092
+    .line 3089
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v5, "Mode.Switched"
 
     invoke-virtual {v4, v5}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 3095
+    .line 3092
     iget v4, p0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     if-ne v4, v3, :cond_0
 
-    .line 3097
+    .line 3094
     invoke-static {}, Lcom/android/camera/DisplayDevice;->canCancelFocus()Z
 
     move-result v4
 
     if-eqz v4, :cond_2
 
-    .line 3099
+    .line 3096
     const-string v4, "HTCCamera"
 
     const-string v5, "change camera mode when focusing, cancel focus"
 
     invoke-static {v4, v5}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3100
+    .line 3097
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->cancelAutoFocus()Z
 
-    .line 3101
+    .line 3098
     const-string v4, "HTCCamera"
 
     const-string v5, "UnBlock Capture UI - change camera mode and cancel focus"
 
     invoke-static {v4, v5}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3102
+    .line 3099
     sput-boolean v2, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 3110
+    .line 3107
     :cond_0
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -29536,12 +29614,12 @@
 
     if-eqz v4, :cond_3
 
-    .line 3207
+    .line 3204
     :cond_1
     :goto_0
     return v2
 
-    .line 3104
+    .line 3101
     :cond_2
     const-string v3, "HTCCamera"
 
@@ -29551,13 +29629,13 @@
 
     goto :goto_0
 
-    .line 3114
+    .line 3111
     :cond_3
     iget-boolean v4, p0, Lcom/android/camera/HTCCamera;->mWaitResetSettings:Z
 
     if-nez v4, :cond_1
 
-    .line 3118
+    .line 3115
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v4}, Lcom/android/camera/CameraThread;->is2ndCamera()Z
@@ -29568,7 +29646,7 @@
 
     move v0, v3
 
-    .line 3119
+    .line 3116
     .local v0, isCameraChanged:Z
     :goto_1
     if-nez v0, :cond_5
@@ -29583,36 +29661,36 @@
 
     move v2, v3
 
-    .line 3120
+    .line 3117
     goto :goto_0
 
     .end local v0           #isCameraChanged:Z
     :cond_4
     move v0, v2
 
-    .line 3118
+    .line 3115
     goto :goto_1
 
-    .line 3123
+    .line 3120
     .restart local v0       #isCameraChanged:Z
     :cond_5
     sget-boolean v4, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
     if-nez v4, :cond_1
 
-    .line 3125
+    .line 3122
     sput-boolean v3, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 3128
+    .line 3125
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->resetFocusMode()V
 
-    .line 3129
+    .line 3126
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->releaseFaceDetection()V
 
-    .line 3133
+    .line 3130
     if-nez p1, :cond_a
 
-    .line 3135
+    .line 3132
     const-string v4, "pref_camera_3D_status"
 
     invoke-static {p0, v4, v2}, Lcom/android/camera/HTCCameraAdvanceSetting;->getPrefenceBoolean(Landroid/app/Activity;Ljava/lang/String;Z)Ljava/lang/Boolean;
@@ -29625,10 +29703,10 @@
 
     if-nez v4, :cond_9
 
-    .line 3136
+    .line 3133
     const/4 v1, 0x1
 
-    .line 3144
+    .line 3141
     .local v1, newCameraType:I
     :goto_2
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
@@ -29649,48 +29727,48 @@
 
     invoke-virtual {v4, v5}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 3147
+    .line 3144
     if-eqz v0, :cond_7
 
-    .line 3149
+    .line 3146
     iput-boolean v3, p0, Lcom/android/camera/HTCCamera;->mWaitResetSettings:Z
 
-    .line 3150
+    .line 3147
     iput-boolean v2, p0, Lcom/android/camera/HTCCamera;->mIsPreviewStarted:Z
 
-    .line 3151
+    .line 3148
     const-string v4, "HTCCamera"
 
     const-string v5, "restartCamera() - set mWaitResetSettings to true"
 
     invoke-static {v4, v5}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3152
+    .line 3149
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->closeSettingsPanel()V
 
-    .line 3155
+    .line 3152
     const-string v4, "pref_camera_switch"
 
     invoke-static {p0, v4, p1}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Z)Z
 
-    .line 3156
+    .line 3153
     invoke-static {}, Lcom/android/camera/DisplayDevice;->support3DCamera()Z
 
     move-result v4
 
     if-eqz v4, :cond_6
 
-    .line 3158
+    .line 3155
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget v4, v4, Lcom/android/camera/CameraThread;->m3DButtonStatus:I
 
     if-nez v4, :cond_b
 
-    .line 3159
+    .line 3156
     invoke-virtual {p0, v3}, Lcom/android/camera/HTCCamera;->lockOrientation(I)V
 
-    .line 3166
+    .line 3163
     :cond_6
     :goto_3
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
@@ -29699,7 +29777,7 @@
 
     invoke-static {v4, v5}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 3170
+    .line 3167
     :cond_7
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -29709,10 +29787,10 @@
 
     if-eq p2, v4, :cond_c
 
-    .line 3172
+    .line 3169
     packed-switch p2, :pswitch_data_0
 
-    .line 3188
+    .line 3185
     const-string v4, "HTCCamera"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -29735,10 +29813,10 @@
 
     invoke-static {v4, v5}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3189
+    .line 3186
     if-eqz v0, :cond_8
 
-    .line 3190
+    .line 3187
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const-string v5, "true"
@@ -29749,10 +29827,10 @@
     :goto_4
     move v2, v3
 
-    .line 3207
+    .line 3204
     goto/16 :goto_0
 
-    .line 3138
+    .line 3135
     .end local v1           #newCameraType:I
     :cond_9
     const/4 v1, 0x3
@@ -29760,7 +29838,7 @@
     .restart local v1       #newCameraType:I
     goto :goto_2
 
-    .line 3141
+    .line 3138
     .end local v1           #newCameraType:I
     :cond_a
     const/4 v1, 0x2
@@ -29768,35 +29846,35 @@
     .restart local v1       #newCameraType:I
     goto :goto_2
 
-    .line 3161
+    .line 3158
     :cond_b
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->unlockOrientation()V
 
     goto :goto_3
 
-    .line 3176
+    .line 3173
     :pswitch_0
     invoke-direct {p0, v2}, Lcom/android/camera/HTCCamera;->closeSecondLayout(Z)V
 
-    .line 3177
+    .line 3174
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->changetoCameraMode()V
 
     goto :goto_4
 
-    .line 3182
+    .line 3179
     :pswitch_1
     invoke-direct {p0, v2}, Lcom/android/camera/HTCCamera;->closeSecondLayout(Z)V
 
-    .line 3183
+    .line 3180
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->changetoVideoMode()V
 
     goto :goto_4
 
-    .line 3196
+    .line 3193
     :cond_c
     if-eqz v0, :cond_d
 
-    .line 3197
+    .line 3194
     iget-object v4, p0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
 
     const-string v5, "true"
@@ -29805,13 +29883,13 @@
 
     goto :goto_4
 
-    .line 3199
+    .line 3196
     :cond_d
     sput-boolean v2, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
     goto :goto_4
 
-    .line 3172
+    .line 3169
     nop
 
     :pswitch_data_0
@@ -29827,17 +29905,17 @@
     .parameter "screenY"
 
     .prologue
-    .line 9484
+    .line 9574
     invoke-virtual {p0}, Lcom/android/camera/HTCCamera;->canTriggerFocus()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 9485
+    .line 9575
     invoke-virtual {p0, p1, p2}, Lcom/android/camera/HTCCamera;->handleTouchFocus(II)Z
 
-    .line 9486
+    .line 9576
     :cond_0
     return-void
 .end method
@@ -29846,31 +29924,31 @@
     .locals 2
 
     .prologue
-    .line 5904
+    .line 5914
     sget-boolean v0, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
     if-eqz v0, :cond_0
 
-    .line 5906
+    .line 5916
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x34
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 5907
+    .line 5917
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/camera/HTCCamera;->mBlockCaptureUI:Z
 
-    .line 5908
+    .line 5918
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     const-string v1, "CaptureUI.Unblock"
 
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 5910
+    .line 5920
     :cond_0
     return-void
 .end method
@@ -29879,12 +29957,12 @@
     .locals 1
 
     .prologue
-    .line 10329
+    .line 10419
     const/4 v0, -0x1
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->lockOrientation(I)V
 
-    .line 10330
+    .line 10420
     return-void
 .end method
 
@@ -29894,37 +29972,37 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 10785
+    .line 10875
     const-string v0, "HTCCamera"
 
     const-string v1, "unlockZoom() - start"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10788
+    .line 10878
     invoke-direct {p0}, Lcom/android/camera/HTCCamera;->threadAccessCheck()V
 
-    .line 10789
+    .line 10879
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera;->mIsZoomLocked:Z
 
     if-nez v0, :cond_0
 
-    .line 10791
+    .line 10881
     const-string v0, "HTCCamera"
 
     const-string v1, "Zoom is already be unlocked"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 10802
+    .line 10892
     :goto_0
     return-void
 
-    .line 10796
+    .line 10886
     :cond_0
     iput-boolean v3, p0, Lcom/android/camera/HTCCamera;->mIsZoomLocked:Z
 
-    .line 10799
+    .line 10889
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->m_EventManager:Lcom/android/camera/EventManager;
 
     new-instance v1, Lcom/android/camera/OneValueEvent;
@@ -29939,7 +30017,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 10801
+    .line 10891
     const-string v0, "HTCCamera"
 
     const-string v1, "unlockZoom() - end"
@@ -29956,28 +30034,28 @@
     .prologue
     const v2, 0x7f020046
 
-    .line 11338
+    .line 11428
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mScene_icon_ds:Landroid/widget/ImageView;
 
     if-nez v0, :cond_1
 
-    .line 11366
+    .line 11456
     :cond_0
     :goto_0
     return-void
 
-    .line 11340
+    .line 11430
     :cond_1
     iget v0, p0, Lcom/android/camera/HTCCamera;->mScene_Idx:I
 
     if-nez v0, :cond_0
 
-    .line 11344
+    .line 11434
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_3
 
-    .line 11345
+    .line 11435
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->getMode()I
@@ -29996,13 +30074,13 @@
 
     if-eqz v0, :cond_4
 
-    .line 11346
+    .line 11436
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mScene_icon_ds:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 11364
+    .line 11454
     :cond_3
     :goto_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mScene_layout_ds:Landroid/widget/LinearLayout;
@@ -30011,13 +30089,13 @@
 
     goto :goto_0
 
-    .line 11348
+    .line 11438
     :cond_4
     packed-switch p1, :pswitch_data_0
 
     goto :goto_1
 
-    .line 11350
+    .line 11440
     :pswitch_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mScene_icon_ds:Landroid/widget/ImageView;
 
@@ -30025,7 +30103,7 @@
 
     goto :goto_1
 
-    .line 11353
+    .line 11443
     :pswitch_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mScene_icon_ds:Landroid/widget/ImageView;
 
@@ -30035,7 +30113,7 @@
 
     goto :goto_1
 
-    .line 11356
+    .line 11446
     :pswitch_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mScene_icon_ds:Landroid/widget/ImageView;
 
@@ -30045,7 +30123,7 @@
 
     goto :goto_1
 
-    .line 11359
+    .line 11449
     :pswitch_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mScene_icon_ds:Landroid/widget/ImageView;
 
@@ -30055,7 +30133,7 @@
 
     goto :goto_1
 
-    .line 11348
+    .line 11438
     nop
 
     :pswitch_data_0
@@ -30082,7 +30160,7 @@
 
     const/16 v1, 0x45
 
-    .line 6754
+    .line 6814
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->hasMessages(Landroid/os/Handler;I)Z
@@ -30091,59 +30169,59 @@
 
     if-eqz v0, :cond_1
 
-    .line 6755
+    .line 6815
     const/4 v9, -0x1
 
-    .line 6756
+    .line 6816
     .local v9, level:I
     packed-switch p1, :pswitch_data_0
 
-    .line 6765
+    .line 6825
     :goto_0
     if-eq v9, v5, :cond_0
 
-    .line 6766
+    .line 6826
     sput v3, Lcom/android/camera/HTCCamera;->mBeepCount:I
 
-    .line 6768
+    .line 6828
     :cond_0
     sget v0, Lcom/android/camera/HTCCamera;->mCurrentBeepLevel:I
 
     if-ne v0, v9, :cond_2
 
-    .line 6783
+    .line 6843
     .end local v9           #level:I
     :cond_1
     :goto_1
     return-void
 
-    .line 6758
+    .line 6818
     .restart local v9       #level:I
     :pswitch_0
     const/16 v9, 0xc8
 
-    .line 6759
+    .line 6819
     goto :goto_0
 
-    .line 6761
+    .line 6821
     :pswitch_1
     const/4 v9, -0x1
 
     goto :goto_0
 
-    .line 6771
+    .line 6831
     :cond_2
     sput v9, Lcom/android/camera/HTCCamera;->mCurrentBeepLevel:I
 
-    .line 6772
+    .line 6832
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 6773
+    .line 6833
     if-ne v9, v5, :cond_1
 
-    .line 6774
+    .line 6834
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v5
@@ -30152,27 +30230,27 @@
 
     sub-long v7, v5, v10
 
-    .line 6775
+    .line 6835
     .local v7, delay:J
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 6776
+    .line 6836
     const-wide/16 v5, 0xc8
 
     cmp-long v0, v7, v5
 
     if-lez v0, :cond_3
 
-    .line 6777
+    .line 6837
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
     goto :goto_1
 
-    .line 6779
+    .line 6839
     :cond_3
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -30184,7 +30262,7 @@
 
     goto :goto_1
 
-    .line 6756
+    .line 6816
     nop
 
     :pswitch_data_0
@@ -30200,7 +30278,7 @@
     .parameter "mode"
 
     .prologue
-    .line 11534
+    .line 11624
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v1, :cond_0
@@ -30209,19 +30287,19 @@
 
     if-nez v1, :cond_1
 
-    .line 11551
+    .line 11641
     :cond_0
     :goto_0
     return-void
 
-    .line 11537
+    .line 11627
     :cond_1
     if-eqz p1, :cond_3
 
-    .line 11538
+    .line 11628
     if-nez p2, :cond_2
 
-    .line 11539
+    .line 11629
     const/high16 v1, 0x7f0a
 
     const v2, 0x7f020073
@@ -30230,7 +30308,7 @@
 
     move-result-object v0
 
-    .line 11540
+    .line 11630
     .local v0, press:Landroid/graphics/drawable/Drawable;
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCapture_btn_ds:Landroid/widget/Button;
 
@@ -30238,7 +30316,7 @@
 
     goto :goto_0
 
-    .line 11543
+    .line 11633
     .end local v0           #press:Landroid/graphics/drawable/Drawable;
     :cond_2
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCapture_btn_ds:Landroid/widget/Button;
@@ -30249,11 +30327,11 @@
 
     goto :goto_0
 
-    .line 11546
+    .line 11636
     :cond_3
     if-nez p2, :cond_4
 
-    .line 11547
+    .line 11637
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCapture_btn_ds:Landroid/widget/Button;
 
     const v2, 0x7f020075
@@ -30262,7 +30340,7 @@
 
     goto :goto_0
 
-    .line 11549
+    .line 11639
     :cond_4
     iget-object v1, p0, Lcom/android/camera/HTCCamera;->mCapture_btn_ds:Landroid/widget/Button;
 
@@ -30282,17 +30360,17 @@
 
     const/4 v1, 0x1
 
-    .line 6703
+    .line 6763
     sget-boolean v0, Lcom/android/camera/HTCCamera;->mIsSelfPortraitTask:Z
 
     if-ne v0, v1, :cond_1
 
-    .line 6751
+    .line 6811
     :cond_0
     :goto_0
     return-void
 
-    .line 6707
+    .line 6767
     :cond_1
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -30300,7 +30378,7 @@
 
     if-nez v0, :cond_3
 
-    .line 6708
+    .line 6768
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_3
@@ -30335,7 +30413,7 @@
 
     if-nez v0, :cond_3
 
-    .line 6711
+    .line 6771
     sget-object v0, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
 
     invoke-virtual {p0, v0}, Lcom/android/camera/HTCCamera;->isRequestMode(Lcom/android/camera/IntentManager$RequestMode;)Z
@@ -30352,23 +30430,23 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 6713
+    .line 6773
     :cond_2
     if-lez p1, :cond_4
 
-    .line 6714
+    .line 6774
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
     const v1, 0x7f02011d
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 6745
+    .line 6805
     :cond_3
     :goto_1
     if-lez p1, :cond_5
 
-    .line 6746
+    .line 6806
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v0, v4}, Lcom/android/camera/MessageHandler;->hasMessages(Landroid/os/Handler;I)Z
@@ -30377,7 +30455,7 @@
 
     if-nez v0, :cond_0
 
-    .line 6747
+    .line 6807
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     const/high16 v1, 0x7f06
@@ -30390,7 +30468,7 @@
 
     goto :goto_0
 
-    .line 6716
+    .line 6776
     :cond_4
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mMode_icon:Landroid/widget/ImageView;
 
@@ -30400,7 +30478,7 @@
 
     goto :goto_1
 
-    .line 6749
+    .line 6809
     :cond_5
     iget-object v0, p0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
@@ -30413,7 +30491,7 @@
     .locals 18
 
     .prologue
-    .line 7219
+    .line 7278
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v2
@@ -30424,14 +30502,14 @@
 
     if-eq v2, v3, :cond_2
 
-    .line 7221
+    .line 7280
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
 
     if-eqz v2, :cond_1
 
-    .line 7223
+    .line 7282
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
@@ -30444,12 +30522,12 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 7354
+    .line 7413
     :cond_0
     :goto_0
     return-void
 
-    .line 7232
+    .line 7291
     :cond_1
     const-string v2, "HTCCamera"
 
@@ -30459,7 +30537,7 @@
 
     goto :goto_0
 
-    .line 7237
+    .line 7296
     :cond_2
     move-object/from16 v0, p0
 
@@ -30469,14 +30547,14 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 7240
+    .line 7299
     invoke-virtual/range {p0 .. p0}, Lcom/android/camera/HTCCamera;->isFlashEnabled()Z
 
     move-result v2
 
     if-nez v2, :cond_9
 
-    .line 7243
+    .line 7302
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
@@ -30491,14 +30569,14 @@
 
     invoke-static {v2, v3, v4, v5, v6}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 7246
+    .line 7305
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/HTCCamera;->mFlash_icon:Lcom/android/camera/widget/ImageTextView;
 
     if-eqz v2, :cond_3
 
-    .line 7247
+    .line 7306
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/camera/HTCCamera;->mFlash_icon:Lcom/android/camera/widget/ImageTextView;
@@ -30514,7 +30592,7 @@
     :goto_1
     invoke-virtual {v3, v2}, Lcom/android/camera/widget/ImageTextView;->setImageResource(I)V
 
-    .line 7248
+    .line 7307
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/camera/HTCCamera;->mFlash_icon:Lcom/android/camera/widget/ImageTextView;
@@ -30530,7 +30608,7 @@
     :goto_2
     invoke-virtual {v3, v2}, Lcom/android/camera/widget/ImageTextView;->setText(I)V
 
-    .line 7250
+    .line 7309
     :cond_3
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -30544,7 +30622,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 7251
+    .line 7310
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/HTCCamera;->mFlash_text_ds:Landroid/widget/TextView;
@@ -30553,7 +30631,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(I)V
 
-    .line 7252
+    .line 7311
     :cond_4
     invoke-virtual/range {p0 .. p0}, Lcom/android/camera/HTCCamera;->hasFlash()Z
 
@@ -30561,7 +30639,7 @@
 
     if-eqz v2, :cond_8
 
-    .line 7254
+    .line 7313
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/HTCCamera;->mFlash_icon:Lcom/android/camera/widget/ImageTextView;
@@ -30576,7 +30654,7 @@
 
     invoke-static {v2, v3, v4}, Lcom/android/camera/ViewUtil;->enableMainButton(Lcom/android/camera/widget/ImageTextView;Landroid/widget/Button;Landroid/widget/TextView;)V
 
-    .line 7256
+    .line 7315
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/HTCCamera;->mFlash_icon:Lcom/android/camera/widget/ImageTextView;
@@ -30585,21 +30663,21 @@
 
     invoke-virtual {v2, v3}, Lcom/android/camera/widget/ImageTextView;->setEnabled(Z)V
 
-    .line 7257
+    .line 7316
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v2
 
     if-eqz v2, :cond_5
 
-    .line 7258
+    .line 7317
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/HTCCamera;->mFlash_text_ds:Landroid/widget/TextView;
 
     invoke-static {v2}, Lcom/android/camera/ViewUtil;->disableTextView(Landroid/widget/TextView;)V
 
-    .line 7264
+    .line 7323
     :cond_5
     :goto_3
     move-object/from16 v0, p0
@@ -30608,7 +30686,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 7266
+    .line 7325
     invoke-static {}, Lcom/android/camera/rotate/OrientationConfig;->getUIOrientation()I
 
     move-result v2
@@ -30617,7 +30695,7 @@
 
     mul-int/lit8 v8, v2, 0x5a
 
-    .line 7267
+    .line 7326
     .local v8, degrees:I
     new-instance v1, Landroid/view/animation/RotateAnimation;
 
@@ -30635,23 +30713,23 @@
 
     invoke-direct/range {v1 .. v7}, Landroid/view/animation/RotateAnimation;-><init>(FFIFIF)V
 
-    .line 7268
+    .line 7327
     .local v1, rotateAnimation:Landroid/view/animation/RotateAnimation;
     const-wide/16 v2, 0x0
 
     invoke-virtual {v1, v2, v3}, Landroid/view/animation/RotateAnimation;->setDuration(J)V
 
-    .line 7269
+    .line 7328
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/view/animation/RotateAnimation;->setFillBefore(Z)V
 
-    .line 7270
+    .line 7329
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/view/animation/RotateAnimation;->setFillAfter(Z)V
 
-    .line 7271
+    .line 7330
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/HTCCamera;->mFlash_icon:Lcom/android/camera/widget/ImageTextView;
@@ -30660,7 +30738,7 @@
 
     goto/16 :goto_0
 
-    .line 7247
+    .line 7306
     .end local v1           #rotateAnimation:Landroid/view/animation/RotateAnimation;
     .end local v8           #degrees:I
     :cond_6
@@ -30668,13 +30746,13 @@
 
     goto/16 :goto_1
 
-    .line 7248
+    .line 7307
     :cond_7
     const/4 v2, 0x0
 
     goto :goto_2
 
-    .line 7261
+    .line 7320
     :cond_8
     move-object/from16 v0, p0
 
@@ -30692,7 +30770,7 @@
 
     goto :goto_3
 
-    .line 7278
+    .line 7337
     :cond_9
     move-object/from16 v0, p0
 
@@ -30704,7 +30782,7 @@
 
     if-nez v2, :cond_d
 
-    .line 7279
+    .line 7338
     const-string v2, "pref_camera_flash_mode"
 
     move-object/from16 v0, p0
@@ -30713,7 +30791,7 @@
 
     move-result-object v12
 
-    .line 7284
+    .line 7343
     .local v12, flashMode:Ljava/lang/String;
     :goto_4
     move-object/from16 v0, p0
@@ -30722,7 +30800,7 @@
 
     if-eqz v2, :cond_c
 
-    .line 7286
+    .line 7345
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
@@ -30733,12 +30811,12 @@
 
     if-nez v2, :cond_13
 
-    .line 7289
+    .line 7348
     invoke-virtual/range {p0 .. p0}, Lcom/android/camera/HTCCamera;->getResources()Landroid/content/res/Resources;
 
     move-result-object v17
 
-    .line 7290
+    .line 7349
     .local v17, res:Landroid/content/res/Resources;
     const v2, 0x7f07000a
 
@@ -30748,7 +30826,7 @@
 
     move-result-object v13
 
-    .line 7291
+    .line 7350
     .local v13, flashModes:[Ljava/lang/String;
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -30765,7 +30843,7 @@
 
     move-result-object v11
 
-    .line 7292
+    .line 7351
     .local v11, flashIcons:Landroid/content/res/TypedArray;
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -30782,11 +30860,11 @@
 
     move-result-object v15
 
-    .line 7295
+    .line 7354
     .local v15, flashTexts:Landroid/content/res/TypedArray;
     const/4 v10, -0x1
 
-    .line 7296
+    .line 7355
     .local v10, flashIconIndex:I
     array-length v2, v13
 
@@ -30796,7 +30874,7 @@
     :goto_7
     if-ltz v16, :cond_a
 
-    .line 7298
+    .line 7357
     aget-object v2, v13, v16
 
     invoke-virtual {v12, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -30805,20 +30883,20 @@
 
     if-eqz v2, :cond_11
 
-    .line 7300
+    .line 7359
     move/from16 v10, v16
 
-    .line 7304
+    .line 7363
     :cond_a
     if-gez v10, :cond_b
 
-    .line 7306
+    .line 7365
     const/4 v10, 0x0
 
-    .line 7307
+    .line 7366
     const-string v12, "auto"
 
-    .line 7311
+    .line 7370
     :cond_b
     move-object/from16 v0, p0
 
@@ -30832,14 +30910,14 @@
 
     invoke-virtual {v2, v3}, Lcom/android/camera/widget/ImageTextView;->setImageResource(I)V
 
-    .line 7312
+    .line 7371
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v2
 
     if-eqz v2, :cond_12
 
-    .line 7313
+    .line 7372
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/HTCCamera;->mFlash_text_ds:Landroid/widget/TextView;
@@ -30850,11 +30928,11 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 7316
+    .line 7375
     :goto_8
     invoke-virtual {v11}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 7341
+    .line 7400
     .end local v10           #flashIconIndex:I
     .end local v11           #flashIcons:Landroid/content/res/TypedArray;
     .end local v13           #flashModes:[Ljava/lang/String;
@@ -30876,7 +30954,7 @@
 
     invoke-static {v2, v3, v4}, Lcom/android/camera/ViewUtil;->enableMainButton(Lcom/android/camera/widget/ImageTextView;Landroid/widget/Button;Landroid/widget/TextView;)V
 
-    .line 7344
+    .line 7403
     invoke-static {}, Lcom/android/camera/rotate/OrientationConfig;->getUIOrientation()I
 
     move-result v2
@@ -30885,7 +30963,7 @@
 
     mul-int/lit8 v8, v2, 0x5a
 
-    .line 7345
+    .line 7404
     .restart local v8       #degrees:I
     new-instance v1, Landroid/view/animation/RotateAnimation;
 
@@ -30903,30 +30981,30 @@
 
     invoke-direct/range {v1 .. v7}, Landroid/view/animation/RotateAnimation;-><init>(FFIFIF)V
 
-    .line 7346
+    .line 7405
     .restart local v1       #rotateAnimation:Landroid/view/animation/RotateAnimation;
     const-wide/16 v2, 0x0
 
     invoke-virtual {v1, v2, v3}, Landroid/view/animation/RotateAnimation;->setDuration(J)V
 
-    .line 7347
+    .line 7406
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/view/animation/RotateAnimation;->setFillBefore(Z)V
 
-    .line 7348
+    .line 7407
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/view/animation/RotateAnimation;->setFillAfter(Z)V
 
-    .line 7349
+    .line 7408
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/HTCCamera;->mFlash_icon:Lcom/android/camera/widget/ImageTextView;
 
     invoke-virtual {v2, v1}, Lcom/android/camera/widget/ImageTextView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 7353
+    .line 7412
     .end local v1           #rotateAnimation:Landroid/view/animation/RotateAnimation;
     .end local v8           #degrees:I
     :cond_c
@@ -30944,7 +31022,7 @@
 
     goto/16 :goto_0
 
-    .line 7281
+    .line 7340
     .end local v12           #flashMode:Ljava/lang/String;
     :cond_d
     sget-boolean v2, Lcom/android/camera/HTCCamera;->mTurnOnTorch_Camcorder:Z
@@ -30963,7 +31041,7 @@
 
     goto :goto_a
 
-    .line 7291
+    .line 7350
     .restart local v12       #flashMode:Ljava/lang/String;
     .restart local v13       #flashModes:[Ljava/lang/String;
     .restart local v17       #res:Landroid/content/res/Resources;
@@ -30972,14 +31050,14 @@
 
     goto/16 :goto_5
 
-    .line 7292
+    .line 7351
     .restart local v11       #flashIcons:Landroid/content/res/TypedArray;
     :cond_10
     const v2, 0x7f07000b
 
     goto/16 :goto_6
 
-    .line 7296
+    .line 7355
     .restart local v10       #flashIconIndex:I
     .restart local v15       #flashTexts:Landroid/content/res/TypedArray;
     .restart local v16       #i:I
@@ -30988,7 +31066,7 @@
 
     goto/16 :goto_7
 
-    .line 7315
+    .line 7374
     :cond_12
     move-object/from16 v0, p0
 
@@ -31002,7 +31080,7 @@
 
     goto :goto_8
 
-    .line 7323
+    .line 7382
     .end local v10           #flashIconIndex:I
     .end local v11           #flashIcons:Landroid/content/res/TypedArray;
     .end local v13           #flashModes:[Ljava/lang/String;
@@ -31014,7 +31092,7 @@
 
     if-nez v2, :cond_16
 
-    .line 7325
+    .line 7384
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v2
@@ -31023,7 +31101,7 @@
 
     const v9, 0x7f020115
 
-    .line 7326
+    .line 7385
     .local v9, flashIconID:I
     :goto_b
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
@@ -31034,7 +31112,7 @@
 
     const v14, 0x7f0a01c1
 
-    .line 7335
+    .line 7394
     .local v14, flashTextID:I
     :goto_c
     move-object/from16 v0, p0
@@ -31043,14 +31121,14 @@
 
     invoke-virtual {v2, v9}, Lcom/android/camera/widget/ImageTextView;->setImageResource(I)V
 
-    .line 7336
+    .line 7395
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v2
 
     if-eqz v2, :cond_19
 
-    .line 7337
+    .line 7396
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/HTCCamera;->mFlash_text_ds:Landroid/widget/TextView;
@@ -31059,7 +31137,7 @@
 
     goto/16 :goto_9
 
-    .line 7325
+    .line 7384
     .end local v9           #flashIconID:I
     .end local v14           #flashTextID:I
     :cond_14
@@ -31067,14 +31145,14 @@
 
     goto :goto_b
 
-    .line 7326
+    .line 7385
     .restart local v9       #flashIconID:I
     :cond_15
     const v14, 0x7f0a0174
 
     goto :goto_c
 
-    .line 7330
+    .line 7389
     .end local v9           #flashIconID:I
     :cond_16
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
@@ -31085,7 +31163,7 @@
 
     const v9, 0x7f020116
 
-    .line 7331
+    .line 7390
     .restart local v9       #flashIconID:I
     :goto_d
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
@@ -31100,7 +31178,7 @@
     :goto_e
     goto :goto_c
 
-    .line 7330
+    .line 7389
     .end local v9           #flashIconID:I
     .end local v14           #flashTextID:I
     :cond_17
@@ -31108,14 +31186,14 @@
 
     goto :goto_d
 
-    .line 7331
+    .line 7390
     .restart local v9       #flashIconID:I
     :cond_18
     const v14, 0x7f0a0173
 
     goto :goto_e
 
-    .line 7339
+    .line 7398
     .restart local v14       #flashTextID:I
     :cond_19
     move-object/from16 v0, p0
@@ -31125,4 +31203,49 @@
     invoke-virtual {v2, v14}, Lcom/android/camera/widget/ImageTextView;->setText(I)V
 
     goto/16 :goto_9
+.end method
+
+.method public updateIndicatorLayout_AutoCapture()V
+    .locals 1
+
+    .prologue
+    .line 6720
+    iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
+
+    iget v0, v0, Lcom/android/camera/CameraThread;->mMode:I
+
+    if-eqz v0, :cond_1
+
+    .line 6759
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 6747
+    :cond_1
+    invoke-static {p0}, Lcom/android/camera/HTCCameraAdvanceSetting;->getFaceNumber(Landroid/app/Activity;)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/camera/HTCCamera;->mFaceNumber:I
+
+    .line 6748
+    iget v0, p0, Lcom/android/camera/HTCCamera;->mFaceNumber:I
+
+    if-lez v0, :cond_2
+
+    .line 6749
+    invoke-direct {p0}, Lcom/android/camera/HTCCamera;->showSelfPortraitHint()V
+
+    goto :goto_0
+
+    .line 6753
+    :cond_2
+    invoke-direct {p0}, Lcom/android/camera/HTCCamera;->hideSelfPortraitHint()V
+
+    goto :goto_0
 .end method

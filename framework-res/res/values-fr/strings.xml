@@ -269,9 +269,9 @@
     <string name="turn_off_radio">Désactiver le mode sans fil</string>
     <string name="screen_lock">"Verrouillage de l'écran"</string>
     <string name="power_off">Éteindre</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Sonnerie éteinte</string>
+    <string name="silent_mode_vibrate">Sonnerie vibreur</string>
+    <string name="silent_mode_ring">Sonnerie allumée</string>
     <string name="shutdown_progress">Arrêt en cours...</string>
     <string name="shutdown_confirm">"Votre téléphone va s'éteindre."</string>
     <string name="shutdown_confirm_question">Éteindre votre appareil ?</string>
@@ -308,7 +308,7 @@
     <string name="permgroupdesc_systemTools">Accès et contrôle de faible niveau du système.</string>
     <string name="permgrouplab_developmentTools">Outils de développement</string>
     <string name="permgroupdesc_developmentTools">"Ces fonctionnalités sont réservées aux développeurs d'applications."</string>
-    <string name="permgrouplab_storage">Stockage</string>
+    <string name="permgrouplab_storage">Mémoire</string>
     <string name="permgroupdesc_storage">Accès à la carte SD</string>
     <string name="permlab_statusBar">"Désactivation ou modification de la barre d'état"</string>
     <string name="permdesc_statusBar">"Permet à une application de désactiver la barre d'état ou d'ajouter/supprimer des icônes système."</string>
@@ -404,8 +404,8 @@
     <string name="permdesc_bindDeviceAdmin">"Autoriser l'application à envoyer des intentions à l'administrateur du périphérique. Les applications standard ne devraient jamais avoir recours à cette fonctionnalité."</string>
     <string name="permlab_setOrientation">"Changement d'orientation de l'écran"</string>
     <string name="permdesc_setOrientation">"Permet à une application de modifier la rotation de l'écran à tout moment. Les applications normales ne devraient jamais avoir recours à cette fonctionnalité."</string>
-    <string name="permlab_setPointerSpeed">changer la vitesse du pointeur</string>
-    <string name="permdesc_setPointerSpeed">Permet à une application de modifier la vitesse du pointeur de la souris ou du pavé tactile à tout moment. Cette autorisation ne devrait jamais être nécessaire pour les applications standards.</string>
+    <string name="permlab_setPointerSpeed">changer la vitesse du curseur</string>
+    <string name="permdesc_setPointerSpeed">Permet à une application de modifier la vitesse du curseur de la souris ou du pavé tactile à tout moment. Cette autorisation ne devrait jamais être nécessaire pour les applications standards.</string>
     <string name="permlab_signalPersistentProcesses">Envoi de signaux Linux aux applications</string>
     <string name="permdesc_signalPersistentProcesses">Permet à une application de demander que le signal fourni soit envoyé à tous les processus persistants.</string>
     <string name="permlab_persistentActivity">"Exécution de l'application en continu"</string>
@@ -416,7 +416,7 @@
     <string name="permdesc_clearAppUserData">"Permet à une application d'effacer les données de l'utilisateur."</string>
     <string name="permlab_deleteCacheFiles">"Suppression du cache d'autres applications"</string>
     <string name="permdesc_deleteCacheFiles">Permet à une application de supprimer des fichiers du cache.</string>
-    <string name="permlab_getPackageSize">"Évaluation de l'espace de stockage de l'application"</string>
+    <string name="permlab_getPackageSize">"Évaluation de l'espace occupé par l'application"</string>
     <string name="permdesc_getPackageSize">Permet à une application de récupérer la taille de son code, de ses données et de son cache.</string>
     <string name="permlab_installPackages">"Installation directe d'applications"</string>
     <string name="permdesc_installPackages">"Permet à une application d'installer des nouveaux paquets de données ou des mises à jour Android. Des applications malveillantes peuvent utiliser cette fonctionnalité pour ajouter de nouvelles applications disposant d'autorisations anormalement élevées."</string>
@@ -426,10 +426,10 @@
     <string name="permdesc_movePackage">"Autoriser l'application à déplacer des ressources d'application d'un support interne à un support externe et inversement."</string>
     <string name="permlab_readLogs">lire les données des journaux à caractère confidentiel</string>
     <string name="permdesc_readLogs">"Permet à une application de lire les différents fichiers journaux du système afin d'obtenir des informations générales sur la façon dont vous utilisez votre téléphone (celles-ci peuvent éventuellement inclure des informations d'ordre personnel ou privé)."</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">utiliser tout décodeur média pour la lecture</string>
+    <string name="permdesc_anyCodecForPlayback">Autorisez une application à utiliser tout décodeur média installé pour décoder pour la lecture.</string>
+    <string name="permlab_readWriteOmaDrm">accéder au dossier sur oma DRM</string>
+    <string name="permdesc_readWriteOmaDrm">"Permet à une application de lire ou d'écrire dans le dossier sur OMA DRM."</string>
     <string name="permlab_diagnostic">Lecture/écriture dans les ressources appartenant aux diagnostics</string>
     <string name="permdesc_diagnostic">"Permet à une application de lire et d'éditer toute ressource appartenant au groupe de diagnostics (par exemple, les fichiers in/dev). Ceci peut affecter la stabilité et la sécurité du système. Cette fonctionnalité est UNIQUEMENT réservée aux diagnostics matériels effectués par le fabricant ou l'opérateur."</string>
     <string name="permlab_changeComponentState">"Activer ou désactiver des éléments de l'application"</string>
@@ -459,7 +459,7 @@
     <string name="permlab_writeSocialStream">Mettre à jour sur vos flux</string>
     <string name="permdesc_writeSocialStream">"Permet à l'application d'afficher les mises à jour de vos amis sur les réseaux sociaux. Les applications malveillantes peuvent utiliser cette fonctionnalité pour se faire passer pour un ami et vous inciter à révéler des mots de passe ou autres informations confidentielles."</string>
     <string name="permlab_readCalendar">"consulter les événements d'agenda ainsi que les informations confidentielles"</string>
-    <string name="permdesc_readCalendar">"Permet à une application de consulter tous les événements d'agendas stockés sur votre téléphone, y compris ceux de vos amis ou de vos collègues. Une application malveillante disposant de cette autorisation peut extraire des informations personnelles de ces agendas à l'insu de leur propriétaire."</string>
+    <string name="permdesc_readCalendar">"Permet à une application de consulter tous les événements d'agendas enregistrés sur votre téléphone, y compris ceux de vos amis ou de vos collègues. Une application malveillante disposant de cette autorisation peut extraire des informations personnelles de ces agendas à l'insu de leur propriétaire."</string>
     <string name="permlab_writeCalendar">"ajouter ou modifier des événements d'agenda et envoyer des e-mails aux invités à l'insu des propriétaires"</string>
     <string name="permdesc_writeCalendar">"Permet à une application d'envoyer des invitations à des événements au nom du propriétaire de l'agenda et d'ajouter, supprimer et modifier les événements que vous pouvez modifier sur votre appareil, y compris ceux de vos amis ou de vos collègues. Une application malveillante disposant de cette autorisation peut envoyer des e-mails indésirables en se faisant passer pour un propriétaire d'agenda, modifier les événements à l'insu du propriétaire ou ajouter des événements fictifs."</string>
     <string name="permlab_accessMockLocation">Création de sources de positionnement fictives à des fins de test</string>
@@ -488,18 +488,18 @@
     <string name="permdesc_reboot">"Permet à l'application de forcer le redémarrage du téléphone."</string>
     <string name="permlab_mount_unmount_filesystems">Monter et démonter des systèmes de fichiers</string>
     <string name="permdesc_mount_unmount_filesystems">"Permet à l'application de monter et démonter des systèmes de fichiers pour des périphériques de stockage amovibles."</string>
-    <string name="permlab_mount_format_filesystems">Formatage du périphérique de stockage externe</string>
+    <string name="permlab_mount_format_filesystems">Formatage de la mémoire externe</string>
     <string name="permdesc_mount_format_filesystems">"Permet à l'application de formater le périphérique de stockage amovible."</string>
-    <string name="permlab_asec_access">obtenir des informations sur la mémoire de stockage interne</string>
-    <string name="permdesc_asec_access">"Permet à l'application d'obtenir des informations sur le stockage interne."</string>
-    <string name="permlab_asec_create">créer un stockage interne</string>
-    <string name="permdesc_asec_create">"Permet à l'application de créer une mémoire de stockage interne."</string>
-    <string name="permlab_asec_destroy">détruire la mémoire de stockage interne</string>
-    <string name="permdesc_asec_destroy">"Permet à l'application de détruire le stockage interne."</string>
-    <string name="permlab_asec_mount_unmount">installer/désinstaller la mémoire de stockage interne</string>
-    <string name="permdesc_asec_mount_unmount">"Permet l'installation ou la désinstallation de la mémoire de stockage interne par l'application."</string>
-    <string name="permlab_asec_rename">renommer la mémoire de stockage interne</string>
-    <string name="permdesc_asec_rename">"Permet à l'application de renommer le stockage interne."</string>
+    <string name="permlab_asec_access">obtenir des informations sur la mémoire interne</string>
+    <string name="permdesc_asec_access">"Permet à l'application d'obtenir des informations sur la mémoire interne."</string>
+    <string name="permlab_asec_create">créer une mémoire interne</string>
+    <string name="permdesc_asec_create">"Permet à l'application de créer une mémoire interne."</string>
+    <string name="permlab_asec_destroy">détruire la mémoire interne</string>
+    <string name="permdesc_asec_destroy">"Permet à l'application de détruire le mémoire interne."</string>
+    <string name="permlab_asec_mount_unmount">installer/désinstaller la mémoire interne</string>
+    <string name="permdesc_asec_mount_unmount">"Permet l'installation ou la désinstallation de la mémoire interne par l'application."</string>
+    <string name="permlab_asec_rename">renommer la mémoire interne</string>
+    <string name="permdesc_asec_rename">"Permet à l'application de renommer la mémoire interne."</string>
     <string name="permlab_vibrate">Contrôle du vibreur</string>
     <string name="permdesc_vibrate">"Permet à l'application de contrôler le vibreur."</string>
     <string name="permlab_flashlight">Contrôle de la lampe de poche</string>
@@ -573,7 +573,7 @@
     <string name="permlab_accessWimaxState">"afficher l'état WiMAX"</string>
     <string name="permdesc_accessWimaxState">"Permet à une application d'afficher des informations concernant l'état du WiMAX."</string>
     <string name="permlab_changeWimaxState">"changer l'état WiMAX"</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">"Permet à une application de se connecter au réseau WiMAX et de s'en déconnecter."</string>
     <string name="permlab_bluetoothAdmin">Gestion Bluetooth</string>
     <string name="permdesc_bluetoothAdmin">"Permet à une application de configurer le téléphone Bluetooth local, d'identifier des périphériques distants et de les associer au téléphone."</string>
     <string name="permlab_bluetooth">Création de connexions Bluetooth</string>
@@ -599,7 +599,7 @@
     <string name="permlab_sdcardWrite">modifier/supprimer le contenu de la carte SD</string>
     <string name="permdesc_sdcardWrite">Autorise une application à écrire sur la carte SD.</string>
     <string name="permlab_mediaStorageWrite">Modifier/Supprimer contenu mémoire interne</string>
-    <string name="permdesc_mediaStorageWrite">Permet à une application de modifier le contenu de la mémoire de stockage interne.</string>
+    <string name="permdesc_mediaStorageWrite">Permet à une application de modifier le contenu de la mémoire interne.</string>
     <string name="permlab_cache_filesystem">Accéder au système de fichiers en cache</string>
     <string name="permdesc_cache_filesystem">"Autoriser une application à lire et d'écrire dans le système de fichiers en cache."</string>
     <string name="permlab_use_sip">effectuer/recevoir des appels Internet</string>
@@ -624,7 +624,7 @@
     <string name="policydesc_setGlobalProxy">"Indiquer le proxy global à utiliser pour ce mobile lorsque les règles sont activées. Seul l'administrateur principal du mobile peut définir le proxy global utilisé."</string>
     <string name="policylab_expirePassword">Définir exp. mot passe verr.</string>
     <string name="policydesc_expirePassword">"Contrôler la fréquence de modification du mot de passe de verrouillage de l'écran"</string>
-    <string name="policylab_encryptedStorage">Définir chiffrement du stockage</string>
+    <string name="policylab_encryptedStorage">Définir chiffrement de la mémoire</string>
     <string name="policydesc_encryptedStorage">"Exiger que les données d'application stockées soient chiffrées"</string>
     <string name="policylab_disableCamera">Désactiver les appareils photo</string>
     <string name="policydesc_disableCamera">"Empêcher l'utilisation de tous les appareils photos"</string>
@@ -748,7 +748,7 @@ Veuillez réessayer dans %d secondes."</string>
     <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Vous avez saisi un code PIN incorrect à %d reprises. 
 
 Veuillez réessayer dans %d secondes."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Vous avez mal saisi le schéma de déverrouillage %d fois. Au bout de %d tentatives supplémentaires, vous devrez déverrouiller votre téléphone à l'aide de votre identifiant Google.
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Vous avez mal saisi le schéma de déverrouillage %d fois. Au bout de %d tentatives supplémentaires, vous devrez débloquer votre téléphone à l'aide de votre identifiant Google.
 
 Merci de réessayer dans %d secondes."</string>
     <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">"Vous avez tenté de déverrouiller le téléphone de façon incorrecte à %d reprises. Si vous échouez encore %d fois, sa configuration d'usine sera rétablie, et toutes les données utilisateur seront perdues."</string>
@@ -781,7 +781,7 @@ Accédez à la page "<b>google.com/accounts/recovery</b></string>
     <string name="factorytest_not_system">"L'action FACTORY_TEST est uniquement prise en charge pour les paquets de données installés dans in/system/app."</string>
     <string name="factorytest_no_action">"Impossible de trouver un paquet proposant l'action FACTORY_TEST."</string>
     <string name="factorytest_reboot">Redémarrer</string>
-    <string name="js_dialog_title">La page \"%s\" affirme :</string>
+    <string name="js_dialog_title">Message du site \"%s\":</string>
     <string name="js_dialog_title_default">JavaScript</string>
     <string name="js_dialog_before_unload">"Vous souhaitez quitter cette page ?
 
@@ -962,7 +962,7 @@ Voulez-vous le fermer ?"</string>
     <string name="ringtone_silent">Silencieux</string>
     <string name="ringtone_picker_title">Sonneries</string>
     <string name="ringtone_unknown">Sonnerie inconnue</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Connexion au réseau Wi-Fi</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Impossible de se connecter au Wi-Fi.</string>
     <string name="wifi_watchdog_network_disabled_detailed">" dispose d'une mauvaise connexion Internet."</string>
@@ -993,11 +993,11 @@ Voulez-vous le fermer ?"</string>
     <string name="no_permissions">Aucune autorisation requise</string>
     <string name="perms_hide"><b>Masquer</b></string>
     <string name="perms_show_all"><b>Tout afficher</b></string>
-    <string name="usb_storage_activity_title">Stockage de masse USB</string>
+    <string name="usb_storage_activity_title">Disque USB</string>
     <string name="usb_storage_title">"Connecté à l'aide d'un câble USB"</string>
     <string name="usb_storage_message">Vous êtes connecté à votre ordinateur via un câble USB. Appuyez sur le bouton ci-dessous pour copier des fichiers de votre ordinateur vers la carte SD de votre Android, ou inversement.</string>
     <string name="usb_storage_button_mount">Activer le mode lecteur de disque</string>
-    <string name="usb_storage_error_message">"Un problème est survenu lors de l'utilisation de votre mémoire de stockage USB comme mémoire de stockage de masse."</string>
+    <string name="usb_storage_error_message">"Un problème est survenu lors de l'utilisation de votre mémoire mémoire comme disque USB."</string>
     <string name="usb_storage_notification_title">Connecté avec un câble USB</string>
     <string name="usb_storage_notification_message">Activez pour copier des fichiers vers/de votre ordinateur.</string>
     <string name="usb_storage_stop_notification_title">Désactiver le mode lecteur de disque</string>
@@ -1092,13 +1092,13 @@ pour le compte %s"</string>
     <string name="no_matches">Aucune correspondance</string>
     <string name="find_on_page">Rechercher sur la page</string>
     <string name="action_mode_done">OK</string>
-    <string name="progress_unmounting">Désinstallation de la mémoire de stockage USB...</string>
-    <string name="progress_erasing">"Effacement de la  mémoire de stockage USB..."</string>
+    <string name="progress_unmounting">Désinstallation de la mémoire USB...</string>
+    <string name="progress_erasing">"Effacement de la  mémoire USB..."</string>
     <string name="format_error">"Impossible d'effacer la carte SD."</string>
     <string name="media_bad_removal">La carte SD a été retirée sans avoir été désinstallée.</string>
-    <string name="media_checking">Vérification de la mémoire de stockage USB en cours.</string>
+    <string name="media_checking">Vérification de la mémoire USB en cours.</string>
     <string name="media_removed">La carte SD a été retirée.</string>
-    <string name="media_shared">"La mémoire de stockage USB est en cours d'utilisation par l'ordinateur."</string>
+    <string name="media_shared">"La mémoire USB est en cours d'utilisation par l'ordinateur."</string>
     <string name="media_unknown_state">État du support externe inconnu</string>
     <string name="share">Partager</string>
     <string name="find">Rechercher</string>
@@ -1160,15 +1160,15 @@ pour le compte %s"</string>
     <string name="description_target_camera">Appareil photo</string>
     <string name="description_target_silent">Mode silencieux</string>
     <string name="description_target_soundon">Son activé</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">Faites glisser pour déverrouiller.</string>
     <string name="keyboard_headset_required_to_hear_password">"Branchez des écouteurs pour entendre l'énoncé à haute voix des touches du mot de passe."</string>
     <string name="keyboard_password_character_no_headset">Point.</string>
     <string name="action_bar_home_description">"Retour à l'accueil"</string>
     <string name="action_bar_up_description">Parcourir vers le haut</string>
     <string name="action_menu_overflow_description">"Plus d'options"</string>
-    <string name="storage_internal">Mémoire de stockage interne</string>
+    <string name="storage_internal">Mémoire interne</string>
     <string name="storage_sd_card">Carte SD</string>
-    <string name="storage_usb">Mémoire de stockage USB</string>
+    <string name="storage_usb">Mémoire USB</string>
     <string name="extract_edit_menu_button">Modifier...</string>
     <string name="data_usage_warning_title">Avertissement utilisation données</string>
     <string name="data_usage_warning_body">Appuyez pour voir utilis./param.</string>
@@ -1203,13 +1203,13 @@ pour le compte %s"</string>
     <string name="share_action_provider_share_with">Partager avec...</string>
     <string name="status_bar_device_locked">Appareil verrouillé</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Envoi...</string>
+    <string name="launchBrowserDefault">Lancer le Navigateur ?</string>
+    <string name="SetupCallDefault">"Accepter l'appel ?"</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">Accéder à 4G</string>
     <string name="permlab_changeWimaxMulticastState">autoriser la réception de données en WiMAX multidiffusion</string>
-    <string name="permdesc_changeWimaxMulticastState">Autorise une application à recevoir des paquets qui ne sont pas directement adressés à votre mobile. Cela peut être utile pour la recherche de services disponibles à proximité. Consomme plus que le mode non multidiffusion.</string>
+    <string name="permdesc_changeWimaxMulticastState">"Autoriser une application à recevoir des informations non-accessibles directement à votre mobile. Cette option peut être utile lors de recherche de services offerts aux alentours. Elle utilise plus d'énergie que le mode non-multicast."</string>
     <string name="permlab_access4GState">"afficher l'état 4G"</string>
     <string name="permdesc_access4GState">"Permet à une application d'afficher des informations concernant l'état du WiMAX."</string>
     <string name="permlab_change4GState">"Changer l'état 4G"</string>
@@ -1267,11 +1267,12 @@ pour le compte %s"</string>
     <string name="install_notify_title">"IT a bloqué l'installation :"</string>
     <string name="uninstall_notify_title">IT a bloqué la désinstallation :</string>
     <string name="wifi_notify_title">TI a désactivé le WiFi</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Effacer par défaut dans Accueil Paramètres > Applications.</string>
+    <string name="sim_puk_contact_customer_care_information">Veuillez contacter le service client pour obtenir le code PUK</string>
     <string name="permlab_accessCWFolder">"Accéder au dossier de fonction de l'assistant de personnalisation"</string>
     <string name="permdesc_accessCWFolder">"Permet à une application d'accéder au dossier de fonction de l'assistant de personnalisation"</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Accéder au dossier de récupération</string>
+    <string name="permdesc_accessRecoveryFolder">"Permet à une application d'accéder au dossier de récupération"</string>
     <string name="permlab_setappname">"Dynamique pour changer le nom d'application"</string>
     <string name="permdesc_setappname">"Permet à une application de changer le nom d'application dynamiquement."</string>
     <string name="text_limitation">Impossible de sélectionner trop de mots à partager.</string>
@@ -1311,5 +1312,5 @@ pour le compte %s"</string>
     <string name="font_color">Couleur de police</string>
     <string name="font_settings">Format de police</string>
     <string name="font_alignment">Alignement de police</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Configurer</string>
 </resources>

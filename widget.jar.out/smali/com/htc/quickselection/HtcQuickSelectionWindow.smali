@@ -23,6 +23,8 @@
 # static fields
 .field private static ARROW_HEIGHT:I = 0x0
 
+.field private static DENSITY:F = 0.0f
+
 .field private static ICON_SIZE:I = 0x0
 
 .field private static final LOCAL_DEBUG:Z = false
@@ -36,6 +38,8 @@
 .field static final TRACE_LAUNCH:Z = false
 
 .field static final TRACE_TAG:Ljava/lang/String; = "quickselection"
+
+.field private static mANCHOR_HEIGHT:I
 
 
 # instance fields
@@ -92,6 +96,8 @@
 
 .field private mMode:I
 
+.field private mNeedFineTune:Z
+
 .field private mOutsideTouchListener:Lcom/htc/quickselection/HtcQuickSelectionWindow$OutsideTouchListener;
 
 .field private mPopupWindow:Landroid/widget/PopupWindow;
@@ -132,421 +138,486 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .prologue
+    .line 492
+    const/4 v0, 0x0
+
+    sput v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mANCHOR_HEIGHT:I
+
+    .line 493
+    const/4 v0, 0x0
+
+    sput v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->DENSITY:F
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+    .locals 5
     .parameter "context"
 
     .prologue
-    const/4 v2, 0x0
-
-    .line 115
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 59
-    new-instance v1, Landroid/graphics/Rect;
-
-    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mRect:Landroid/graphics/Rect;
-
-    .line 60
-    new-instance v1, Landroid/graphics/Rect;
-
-    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
-
-    .line 62
-    iput-boolean v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShowing:Z
-
-    .line 74
-    iput-boolean v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mHasValidSocial:Z
-
-    .line 75
-    iput-boolean v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mHasData:Z
-
-    .line 76
-    iput-boolean v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mMakePrimary:Z
-
-    .line 97
-    iput v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mWindowRecycled:I
-
-    .line 98
-    iput v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mActionRecycled:I
-
-    .line 99
-    iput-boolean v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mIsNotEnoughSpace:Z
-
-    .line 104
-    new-instance v1, Ljava/util/LinkedList;
-
-    invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mActionPool:Ljava/util/LinkedList;
-
-    .line 309
-    iput-boolean v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->isPasteWindow:Z
-
-    .line 532
-    iput-boolean v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mWasDownArrow:Z
-
-    .line 655
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mOutsideTouchListener:Lcom/htc/quickselection/HtcQuickSelectionWindow$OutsideTouchListener;
+    const/4 v4, 0x0
 
     .line 116
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 60
+    new-instance v3, Landroid/graphics/Rect;
+
+    invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mRect:Landroid/graphics/Rect;
+
+    .line 61
+    new-instance v3, Landroid/graphics/Rect;
+
+    invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
+
+    .line 63
+    iput-boolean v4, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShowing:Z
+
+    .line 75
+    iput-boolean v4, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mHasValidSocial:Z
+
+    .line 76
+    iput-boolean v4, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mHasData:Z
+
+    .line 77
+    iput-boolean v4, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mMakePrimary:Z
+
+    .line 98
+    iput v4, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mWindowRecycled:I
+
+    .line 99
+    iput v4, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mActionRecycled:I
+
+    .line 100
+    iput-boolean v4, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mIsNotEnoughSpace:Z
+
+    .line 105
+    new-instance v3, Ljava/util/LinkedList;
+
+    invoke-direct {v3}, Ljava/util/LinkedList;-><init>()V
+
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mActionPool:Ljava/util/LinkedList;
+
+    .line 322
+    iput-boolean v4, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->isPasteWindow:Z
+
+    .line 491
+    iput-boolean v4, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mNeedFineTune:Z
+
+    .line 561
+    iput-boolean v4, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mWasDownArrow:Z
+
+    .line 684
+    const/4 v3, 0x0
+
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mOutsideTouchListener:Lcom/htc/quickselection/HtcQuickSelectionWindow$OutsideTouchListener;
+
+    .line 117
     iput-object p1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContext:Landroid/content/Context;
 
-    .line 118
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContext:Landroid/content/Context;
-
-    const-string v2, "layout_inflater"
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/view/LayoutInflater;
-
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mInflater:Landroid/view/LayoutInflater;
-
     .line 119
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContext:Landroid/content/Context;
 
-    const-string v2, "window"
+    const-string v4, "layout_inflater"
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v3
 
-    check-cast v1, Landroid/view/WindowManager;
+    check-cast v3, Landroid/view/LayoutInflater;
 
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mWindowManager:Landroid/view/WindowManager;
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 121
+    .line 120
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContext:Landroid/content/Context;
+
+    const-string v4, "window"
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/view/WindowManager;
+
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mWindowManager:Landroid/view/WindowManager;
+
+    .line 122
     invoke-direct {p0}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->preparePopupWindow()Landroid/widget/PopupWindow;
 
-    move-result-object v1
+    move-result-object v3
 
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
-
-    .line 123
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
-
-    const v2, 0x2020192
-
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/ImageView;
-
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mArrowUp:Landroid/widget/ImageView;
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
     .line 124
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
-    const v2, 0x2020193
+    const v4, 0x2020192
 
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v3, v4}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v3
 
-    check-cast v1, Landroid/widget/ImageView;
+    check-cast v3, Landroid/widget/ImageView;
 
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mArrowDown:Landroid/widget/ImageView;
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mArrowUp:Landroid/widget/ImageView;
 
-    .line 126
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mArrowUp:Landroid/widget/ImageView;
+    .line 125
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+    const v4, 0x2020193
 
-    move-result-object v1
+    invoke-virtual {v3, v4}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    move-result-object v3
 
-    move-result v1
+    check-cast v3, Landroid/widget/ImageView;
 
-    sput v1, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mArrowDown:Landroid/widget/ImageView;
 
-    .line 128
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContext:Landroid/content/Context;
+    .line 127
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mArrowUp:Landroid/widget/ImageView;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v3}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v0
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v3
+
+    sput v3, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
 
     .line 129
-    .local v0, res:Landroid/content/res/Resources;
-    const v1, 0x20500ec
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result v1
-
-    iput v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShadowHoriz:I
+    move-result-object v2
 
     .line 130
-    const v1, 0x20500ed
+    .local v2, res:Landroid/content/res/Resources;
+    const v3, 0x20500ec
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v1
+    move-result v3
 
-    iput v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShadowVert:I
+    iput v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShadowHoriz:I
 
     .line 131
-    const v1, 0x20500ee
+    const v3, 0x20500ed
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v1
+    move-result v3
 
-    iput v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShadowTouch:I
+    iput v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShadowVert:I
 
-    .line 133
-    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+    .line 132
+    const v3, 0x20500ee
 
-    const/16 v2, 0x28
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    if-eq v1, v2, :cond_0
+    move-result v3
 
-    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+    iput v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShadowTouch:I
 
-    const/16 v2, 0x21
+    .line 134
+    sget-short v3, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    if-eq v1, v2, :cond_0
+    const/16 v4, 0x28
 
-    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+    if-eq v3, v4, :cond_0
 
-    const/16 v2, 0x22
+    sget-short v3, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    if-eq v1, v2, :cond_0
+    const/16 v4, 0x21
 
-    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+    if-eq v3, v4, :cond_0
 
-    const/16 v2, 0x7c
+    sget-short v3, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    if-ne v1, v2, :cond_2
+    const/16 v4, 0x22
 
-    .line 138
+    if-eq v3, v4, :cond_0
+
+    sget-short v3, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    const/16 v4, 0x7c
+
+    if-ne v3, v4, :cond_2
+
+    .line 139
     :cond_0
-    const/high16 v1, 0x4240
+    const/high16 v3, 0x4240
 
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
+    iget v4, v4, Landroid/util/DisplayMetrics;->density:F
 
-    mul-float/2addr v1, v2
+    mul-float/2addr v3, v4
 
-    float-to-int v1, v1
+    float-to-int v3, v3
 
-    sput v1, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ICON_SIZE:I
-
-    .line 142
-    :goto_0
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mWindowManager:Landroid/view/WindowManager;
-
-    invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/Display;->getWidth()I
-
-    move-result v1
-
-    iput v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenWidth:I
+    sput v3, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ICON_SIZE:I
 
     .line 143
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mWindowManager:Landroid/view/WindowManager;
+    :goto_0
+    new-instance v1, Landroid/graphics/Point;
 
-    invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    invoke-direct {v1}, Landroid/graphics/Point;-><init>()V
 
-    move-result-object v1
+    .line 144
+    .local v1, outSize:Landroid/graphics/Point;
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mWindowManager:Landroid/view/WindowManager;
 
-    invoke-virtual {v1}, Landroid/view/Display;->getHeight()I
+    invoke-interface {v3}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
-    move-result v1
+    move-result-object v3
 
-    iput v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenHeight:I
+    invoke-virtual {v3, v1}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
 
     .line 145
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
+    iget v3, v1, Landroid/graphics/Point;->x:I
 
-    const v2, 0x202018f
-
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/view/ViewGroup;
-
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
+    iput v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenWidth:I
 
     .line 146
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
+    iget v3, v1, Landroid/graphics/Point;->y:I
 
-    const v2, 0x202018e
-
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/HorizontalScrollView;
-
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrackScroll:Landroid/widget/HorizontalScrollView;
-
-    .line 147
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
-
-    invoke-virtual {v1, p0}, Landroid/view/ViewGroup;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
-
-    .line 149
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
-
-    const v2, 0x20200fe
-
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
+    iput v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenHeight:I
 
     .line 150
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
-    if-eqz v1, :cond_1
+    const v4, 0x202018f
+
+    invoke-virtual {v3, v4}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/view/ViewGroup;
+
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
 
     .line 151
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    const v4, 0x202018e
 
-    move-result-object v1
+    invoke-virtual {v3, v4}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/LinearLayout$LayoutParams;
+    move-result-object v3
 
-    iget v1, v1, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
+    check-cast v3, Landroid/widget/HorizontalScrollView;
 
-    mul-int/lit8 v1, v1, 0x2
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrackScroll:Landroid/widget/HorizontalScrollView;
 
-    iput v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mHorizontalMargin:I
+    .line 152
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
+
+    invoke-virtual {v3, p0}, Landroid/view/ViewGroup;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 154
-    :cond_1
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
-    const v2, 0x202018c
+    const v4, 0x20200fe
 
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v3, v4}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v3
 
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mHeader:Landroid/view/View;
+    check-cast v3, Landroid/widget/TextView;
+
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
 
     .line 155
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
 
-    const v2, 0x2020190
+    if-eqz v3, :cond_1
 
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    .line 156
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
 
-    move-result-object v1
+    invoke-virtual {v3}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mFooter:Landroid/view/View;
+    move-result-object v3
 
-    .line 157
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
+    check-cast v3, Landroid/widget/LinearLayout$LayoutParams;
 
-    const v2, 0x102000a
+    iget v3, v3, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    mul-int/lit8 v3, v3, 0x2
 
-    move-result-object v1
+    iput v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mHorizontalMargin:I
 
-    check-cast v1, Landroid/widget/ListView;
+    .line 159
+    :cond_1
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mResolveList:Landroid/widget/ListView;
+    const v4, 0x202018c
 
-    .line 158
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
+    invoke-virtual {v3, v4}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
-    const v2, 0x1020001
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/CheckBox;
-
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mSetPrimaryCheckBox:Landroid/widget/CheckBox;
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mHeader:Landroid/view/View;
 
     .line 160
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mSetPrimaryCheckBox:Landroid/widget/CheckBox;
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
-    invoke-virtual {v1, p0}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+    const v4, 0x2020190
+
+    invoke-virtual {v3, v4}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mFooter:Landroid/view/View;
+
+    .line 162
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
+
+    const v4, 0x102000a
+
+    invoke-virtual {v3, v4}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/widget/ListView;
+
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mResolveList:Landroid/widget/ListView;
 
     .line 163
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
-    const v2, 0x2040005
+    const v4, 0x1020001
 
-    invoke-static {v1, v2}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+    invoke-virtual {v3, v4}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v3
 
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrackAnim:Landroid/view/animation/Animation;
+    check-cast v3, Landroid/widget/CheckBox;
 
-    .line 164
-    iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrackAnim:Landroid/view/animation/Animation;
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mSetPrimaryCheckBox:Landroid/widget/CheckBox;
 
-    new-instance v2, Lcom/htc/quickselection/HtcQuickSelectionWindow$1;
+    .line 165
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mSetPrimaryCheckBox:Landroid/widget/CheckBox;
 
-    invoke-direct {v2, p0}, Lcom/htc/quickselection/HtcQuickSelectionWindow$1;-><init>(Lcom/htc/quickselection/HtcQuickSelectionWindow;)V
+    invoke-virtual {v3, p0}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    .line 168
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContext:Landroid/content/Context;
 
-    .line 173
-    const v1, 0x10804bb
+    const v4, 0x2040005
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v3, v4}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
-    move-result-object v1
+    move-result-object v3
 
-    iput-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mCircularProgress:Landroid/graphics/drawable/Drawable;
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrackAnim:Landroid/view/animation/Animation;
 
-    .line 177
+    .line 169
+    iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrackAnim:Landroid/view/animation/Animation;
+
+    new-instance v4, Lcom/htc/quickselection/HtcQuickSelectionWindow$1;
+
+    invoke-direct {v4, p0}, Lcom/htc/quickselection/HtcQuickSelectionWindow$1;-><init>(Lcom/htc/quickselection/HtcQuickSelectionWindow;)V
+
+    invoke-virtual {v3, v4}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+
+    .line 178
+    const v3, 0x10804bb
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mCircularProgress:Landroid/graphics/drawable/Drawable;
+
+    .line 184
+    const v3, 0x2080686
+
+    :try_start_0
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v3
+
+    sput v3, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mANCHOR_HEIGHT:I
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 190
+    :goto_1
     return-void
 
-    .line 140
+    .line 141
+    .end local v1           #outSize:Landroid/graphics/Point;
     :cond_2
-    const/high16 v1, 0x4200
+    const/high16 v3, 0x4200
 
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
+    iget v4, v4, Landroid/util/DisplayMetrics;->density:F
 
-    mul-float/2addr v1, v2
+    mul-float/2addr v3, v4
 
-    float-to-int v1, v1
+    float-to-int v3, v3
 
-    sput v1, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ICON_SIZE:I
+    sput v3, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ICON_SIZE:I
 
     goto/16 :goto_0
+
+    .line 185
+    .restart local v1       #outSize:Landroid/graphics/Point;
+    :catch_0
+    move-exception v0
+
+    .line 186
+    .local v0, e:Ljava/lang/Exception;
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v3
+
+    iget v3, v3, Landroid/util/DisplayMetrics;->density:F
+
+    sput v3, Lcom/htc/quickselection/HtcQuickSelectionWindow;->DENSITY:F
+
+    .line 187
+    const/high16 v3, 0x4270
+
+    sget v4, Lcom/htc/quickselection/HtcQuickSelectionWindow;->DENSITY:F
+
+    mul-float/2addr v3, v4
+
+    float-to-int v3, v3
+
+    sput v3, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mANCHOR_HEIGHT:I
+
+    goto :goto_1
 .end method
 
 .method private dismissInternal()V
     .locals 4
 
     .prologue
-    .line 518
+    .line 547
     :try_start_0
     iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
@@ -554,27 +625,27 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 523
+    .line 552
     :goto_0
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShowing:Z
 
-    .line 524
+    .line 553
     iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mHeader:Landroid/view/View;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 525
+    .line 554
     return-void
 
-    .line 519
+    .line 548
     :catch_0
     move-exception v0
 
-    .line 520
+    .line 549
     .local v0, ex:Ljava/lang/IllegalArgumentException;
     const-string v1, "HtcQuickSelect"
 
@@ -598,7 +669,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 521
+    .line 550
     invoke-direct {p0}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->preparePopupWindow()Landroid/widget/PopupWindow;
 
     move-result-object v1
@@ -619,14 +690,14 @@
 
     const/4 v4, 0x0
 
-    .line 184
+    .line 197
     invoke-direct {p0}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->obtainView()Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Lcom/htc/quickselection/HtcCheckableImageView;
 
-    .line 185
+    .line 198
     .local v2, view:Lcom/htc/quickselection/HtcCheckableImageView;
     invoke-virtual {p1}, Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;->count()I
 
@@ -636,12 +707,12 @@
 
     move v1, v3
 
-    .line 187
+    .line 200
     .local v1, isActionSet:Z
     :goto_0
     invoke-virtual {v2, v4}, Lcom/htc/quickselection/HtcCheckableImageView;->setChecked(Z)V
 
-    .line 190
+    .line 203
     #getter for: Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;->mIcon:Landroid/graphics/drawable/Drawable;
     invoke-static {p1}, Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;->access$000(Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;)Landroid/graphics/drawable/Drawable;
 
@@ -649,7 +720,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 191
+    .line 204
     #getter for: Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;->mIcon:Landroid/graphics/drawable/Drawable;
     invoke-static {p1}, Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;->access$000(Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;)Landroid/graphics/drawable/Drawable;
 
@@ -661,7 +732,7 @@
 
     invoke-virtual {v5, v4, v4, v6, v7}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 192
+    .line 205
     #getter for: Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;->mIcon:Landroid/graphics/drawable/Drawable;
     invoke-static {p1}, Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;->access$000(Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;)Landroid/graphics/drawable/Drawable;
 
@@ -669,20 +740,20 @@
 
     invoke-virtual {v2, v8, v5, v8, v8}, Lcom/htc/quickselection/HtcCheckableImageView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 193
+    .line 206
     invoke-virtual {v2, v4}, Lcom/htc/quickselection/HtcCheckableImageView;->setCompoundDrawablePadding(I)V
 
-    .line 198
+    .line 211
     :goto_1
     if-eqz v1, :cond_2
 
-    .line 199
+    .line 212
     invoke-virtual {v2, p0}, Lcom/htc/quickselection/HtcCheckableImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 200
+    .line 213
     invoke-virtual {v2, p1}, Lcom/htc/quickselection/HtcCheckableImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 221
+    .line 234
     :goto_2
     return-object v2
 
@@ -690,23 +761,23 @@
     :cond_0
     move v1, v4
 
-    .line 185
+    .line 198
     goto :goto_0
 
-    .line 196
+    .line 209
     .restart local v1       #isActionSet:Z
     :cond_1
     invoke-virtual {v2, v8, v8, v8, v8}, Lcom/htc/quickselection/HtcCheckableImageView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_1
 
-    .line 203
+    .line 216
     :cond_2
     invoke-virtual {p1, v4}, Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;->getAction(I)Lcom/htc/quickselection/HtcQuickSelectionWindow$Action;
 
     move-result-object v0
 
-    .line 204
+    .line 217
     .local v0, action:Lcom/htc/quickselection/HtcQuickSelectionWindow$Action;
     invoke-virtual {v0}, Lcom/htc/quickselection/HtcQuickSelectionWindow$Action;->getListener()Landroid/view/View$OnClickListener;
 
@@ -714,14 +785,14 @@
 
     invoke-virtual {v2, v5}, Lcom/htc/quickselection/HtcCheckableImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 205
+    .line 218
     invoke-virtual {v0}, Lcom/htc/quickselection/HtcQuickSelectionWindow$Action;->getID()Ljava/lang/Object;
 
     move-result-object v5
 
     invoke-virtual {v2, v5}, Lcom/htc/quickselection/HtcCheckableImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 207
+    .line 220
     iget-object v5, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow$Action;->description:Ljava/lang/String;
 
     if-eqz v5, :cond_3
@@ -734,17 +805,17 @@
 
     if-lez v5, :cond_3
 
-    .line 208
+    .line 221
     invoke-virtual {v2, v3}, Lcom/htc/quickselection/HtcCheckableImageView;->setLines(I)V
 
-    .line 209
+    .line 222
     iget-object v3, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow$Action;->description:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Lcom/htc/quickselection/HtcCheckableImageView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_2
 
-    .line 212
+    .line 225
     :cond_3
     invoke-virtual {v2, v4}, Lcom/htc/quickselection/HtcCheckableImageView;->setLines(I)V
 
@@ -758,7 +829,7 @@
     .parameter "showArrow"
 
     .prologue
-    .line 462
+    .line 483
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
@@ -822,11 +893,11 @@
 
     if-ne p3, v0, :cond_4
 
-    .line 465
+    .line 486
     :cond_3
     const/4 v0, 0x0
 
-    .line 467
+    .line 488
     :goto_0
     return v0
 
@@ -840,7 +911,7 @@
     .locals 5
 
     .prologue
-    .line 601
+    .line 630
     monitor-enter p0
 
     :try_start_0
@@ -852,11 +923,11 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 602
+    .line 631
     .local v0, view:Landroid/view/View;
     if-nez v0, :cond_0
 
-    .line 603
+    .line 632
     iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mInflater:Landroid/view/LayoutInflater;
 
     const v2, 0x2090091
@@ -871,13 +942,13 @@
 
     move-result-object v0
 
-    .line 605
+    .line 634
     :cond_0
     monitor-exit p0
 
     return-object v0
 
-    .line 601
+    .line 630
     .end local v0           #view:Landroid/view/View;
     :catchall_0
     move-exception v1
@@ -897,12 +968,12 @@
 
     const/4 v4, 0x0
 
-    .line 225
+    .line 238
     iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
     if-nez v3, :cond_0
 
-    .line 226
+    .line 239
     iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mInflater:Landroid/view/LayoutInflater;
 
     invoke-virtual {v3, v5, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
@@ -913,7 +984,7 @@
 
     iput-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
-    .line 227
+    .line 240
     :cond_0
     iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
@@ -921,16 +992,16 @@
 
     move-result-object v1
 
-    .line 228
+    .line 241
     .local v1, parent:Landroid/view/ViewParent;
     if-eqz v1, :cond_1
 
-    .line 229
+    .line 242
     instance-of v3, v1, Landroid/view/ViewGroup;
 
     if-eqz v3, :cond_2
 
-    .line 230
+    .line 243
     check-cast v1, Landroid/view/ViewGroup;
 
     .end local v1           #parent:Landroid/view/ViewParent;
@@ -938,7 +1009,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 234
+    .line 247
     :cond_1
     :goto_0
     new-instance v0, Landroid/widget/FrameLayout;
@@ -947,18 +1018,18 @@
 
     invoke-direct {v0, v3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 235
+    .line 248
     .local v0, ll:Landroid/widget/FrameLayout;
     iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 236
+    .line 249
     new-instance v2, Landroid/widget/PopupWindow;
 
     invoke-direct {v2, v0}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;)V
 
-    .line 237
+    .line 250
     .local v2, popup:Landroid/widget/PopupWindow;
     new-instance v3, Landroid/graphics/drawable/ColorDrawable;
 
@@ -966,16 +1037,16 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/PopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 238
+    .line 251
     invoke-virtual {v2, p0}, Landroid/widget/PopupWindow;->setTouchInterceptor(Landroid/view/View$OnTouchListener;)V
 
-    .line 239
+    .line 252
     invoke-virtual {v2, v4}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
-    .line 240
+    .line 253
     return-object v2
 
-    .line 232
+    .line 245
     .end local v0           #ll:Landroid/widget/FrameLayout;
     .end local v2           #popup:Landroid/widget/PopupWindow;
     .restart local v1       #parent:Landroid/view/ViewParent;
@@ -998,7 +1069,7 @@
     .parameter "view"
 
     .prologue
-    .line 590
+    .line 619
     monitor-enter p0
 
     :try_start_0
@@ -1006,7 +1077,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedList;->offer(Ljava/lang/Object;)Z
 
-    .line 591
+    .line 620
     iget v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mActionRecycled:I
 
     add-int/lit8 v0, v0, 0x1
@@ -1015,12 +1086,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 592
+    .line 621
     monitor-exit p0
 
     return-void
 
-    .line 590
+    .line 619
     :catchall_0
     move-exception v0
 
@@ -1037,12 +1108,12 @@
 
     const/4 v2, 0x0
 
-    .line 567
+    .line 596
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mLastAction:Lcom/htc/quickselection/HtcCheckableImageView;
 
-    .line 570
+    .line 599
     :goto_0
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
 
@@ -1054,7 +1125,7 @@
 
     if-le v0, v1, :cond_0
 
-    .line 571
+    .line 600
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -1063,14 +1134,14 @@
 
     invoke-direct {p0, v0}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->releaseView(Landroid/view/View;)V
 
-    .line 572
+    .line 601
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->removeViewAt(I)V
 
     goto :goto_0
 
-    .line 575
+    .line 604
     :cond_0
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrackScroll:Landroid/widget/HorizontalScrollView;
 
@@ -1078,18 +1149,18 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/HorizontalScrollView;->fullScroll(I)Z
 
-    .line 576
+    .line 605
     iput-boolean v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mWasDownArrow:Z
 
-    .line 579
+    .line 608
     iput-boolean v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mMakePrimary:Z
 
-    .line 580
+    .line 609
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mSetPrimaryCheckBox:Landroid/widget/CheckBox;
 
     invoke-virtual {v0, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 583
+    .line 612
     return-void
 .end method
 
@@ -1107,7 +1178,7 @@
 
     const/4 v2, 0x0
 
-    .line 540
+    .line 569
     iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mFooterDisambig:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
@@ -1118,7 +1189,7 @@
 
     move v0, v1
 
-    .line 542
+    .line 571
     .local v0, visibleNow:Z
     :goto_0
     iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mLastAction:Lcom/htc/quickselection/HtcCheckableImageView;
@@ -1129,20 +1200,20 @@
 
     invoke-virtual {v3, v2}, Lcom/htc/quickselection/HtcCheckableImageView;->setChecked(Z)V
 
-    .line 543
+    .line 572
     :cond_0
     if-eqz p2, :cond_1
 
     invoke-virtual {p2, v1}, Lcom/htc/quickselection/HtcCheckableImageView;->setChecked(Z)V
 
-    .line 544
+    .line 573
     :cond_1
     iput-object p2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mLastAction:Lcom/htc/quickselection/HtcCheckableImageView;
 
-    .line 547
+    .line 576
     if-ne p1, v0, :cond_3
 
-    .line 560
+    .line 589
     :goto_1
     return-void
 
@@ -1150,10 +1221,10 @@
     :cond_2
     move v0, v2
 
-    .line 540
+    .line 569
     goto :goto_0
 
-    .line 549
+    .line 578
     .restart local v0       #visibleNow:Z
     :cond_3
     iget-object v6, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mFooter:Landroid/view/View;
@@ -1165,7 +1236,7 @@
     :goto_2
     invoke-virtual {v6, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 550
+    .line 579
     iget-object v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mFooterDisambig:Landroid/view/View;
 
     if-eqz p1, :cond_4
@@ -1175,10 +1246,10 @@
     :cond_4
     invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 552
+    .line 581
     if-eqz p1, :cond_8
 
-    .line 554
+    .line 583
     iget-boolean v3, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mWasDownArrow:Z
 
     if-nez v3, :cond_5
@@ -1197,7 +1268,7 @@
     :cond_6
     iput-boolean v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mWasDownArrow:Z
 
-    .line 555
+    .line 584
     iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mArrowDown:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -1207,10 +1278,10 @@
     :cond_7
     move v3, v2
 
-    .line 549
+    .line 578
     goto :goto_2
 
-    .line 558
+    .line 587
     :cond_8
     iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mArrowDown:Landroid/widget/ImageView;
 
@@ -1237,19 +1308,19 @@
     .prologue
     const v7, 0x2020192
 
-    .line 474
+    .line 503
     if-ne p1, v7, :cond_1
 
     iget-object v6, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mArrowUp:Landroid/widget/ImageView;
 
-    .line 475
+    .line 504
     .local v6, showArrow:Landroid/view/View;
     :goto_0
     if-ne p1, v7, :cond_2
 
     iget-object v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mArrowDown:Landroid/widget/ImageView;
 
-    .line 477
+    .line 506
     .local v2, hideArrow:Landroid/view/View;
     :goto_1
     iget-object v7, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mArrowUp:Landroid/widget/ImageView;
@@ -1258,30 +1329,30 @@
 
     move-result v0
 
-    .line 478
+    .line 507
     .local v0, arrowWidth:I
     shr-int/lit8 v1, v0, 0x1
 
-    .line 479
+    .line 508
     .local v1, half_arrorWidth:I
     iget v7, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShadowHoriz:I
 
     shr-int/lit8 v3, v7, 0x1
 
-    .line 481
+    .line 510
     .local v3, left_right:I
     const/4 v7, 0x0
 
     invoke-virtual {v6, v7}, Landroid/view/View;->setVisibility(I)V
 
-    .line 482
+    .line 511
     invoke-virtual {v6}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v5
 
     check-cast v5, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 483
+    .line 512
     .local v5, param:Landroid/view/ViewGroup$MarginLayoutParams;
     iget-object v7, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
@@ -1305,28 +1376,28 @@
 
     sub-int v4, v7, v1
 
-    .line 488
+    .line 517
     .local v4, newLeft:I
     const/4 v7, 0x4
 
     invoke-virtual {v2, v7}, Landroid/view/View;->setVisibility(I)V
 
-    .line 490
+    .line 519
     iget v7, v5, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     if-eq v7, v4, :cond_0
 
-    .line 491
+    .line 520
     iput v4, v5, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 492
+    .line 521
     invoke-virtual {v6}, Landroid/view/View;->requestLayout()V
 
-    .line 494
+    .line 523
     :cond_0
     return-void
 
-    .line 474
+    .line 503
     .end local v0           #arrowWidth:I
     .end local v1           #half_arrorWidth:I
     .end local v2           #hideArrow:Landroid/view/View;
@@ -1339,7 +1410,7 @@
 
     goto :goto_0
 
-    .line 475
+    .line 504
     .restart local v6       #showArrow:Landroid/view/View;
     :cond_2
     iget-object v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mArrowUp:Landroid/widget/ImageView;
@@ -1348,877 +1419,849 @@
 .end method
 
 .method private declared-synchronized showInternal(Landroid/view/View;Landroid/graphics/Rect;Z)V
-    .locals 18
+    .locals 19
     .parameter "parent"
     .parameter "anchor"
     .parameter "innerAnimation"
 
     .prologue
-    .line 334
+    .line 347
     monitor-enter p0
 
     const/16 p3, 0x0
 
-    .line 336
-    const/4 v12, 0x0
+    .line 349
+    const/4 v13, 0x0
 
     :try_start_0
     move-object/from16 v0, p0
 
-    iput-boolean v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mIsNotEnoughSpace:Z
+    iput-boolean v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mIsNotEnoughSpace:Z
 
-    .line 338
+    .line 351
     if-eqz p1, :cond_0
 
     invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
-    move-result-object v12
+    move-result-object v13
 
-    if-eqz v12, :cond_0
-
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
-
-    if-eqz v12, :cond_1
+    if-eqz v13, :cond_0
 
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
 
-    invoke-virtual {v12}, Landroid/view/ViewGroup;->getChildCount()I
+    if-eqz v13, :cond_1
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
+
+    invoke-virtual {v13}, Landroid/view/ViewGroup;->getChildCount()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v12
+    move-result v13
 
-    const/4 v13, 0x2
+    const/4 v14, 0x2
 
-    if-gt v12, v13, :cond_1
+    if-gt v13, v14, :cond_1
 
-    .line 460
+    .line 481
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 341
+    .line 354
     :cond_1
     :try_start_1
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
-    const/4 v13, 0x1
+    const/4 v14, 0x1
 
-    invoke-virtual {v12, v13}, Landroid/widget/PopupWindow;->setTouchable(Z)V
+    invoke-virtual {v13, v14}, Landroid/widget/PopupWindow;->setTouchable(Z)V
 
-    .line 343
+    .line 356
     move-object/from16 v0, p0
 
-    iget-boolean v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShowing:Z
+    iget-boolean v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShowing:Z
 
-    if-nez v12, :cond_2
+    if-nez v13, :cond_2
 
-    .line 344
+    .line 357
+    new-instance v6, Landroid/graphics/Point;
+
+    invoke-direct {v6}, Landroid/graphics/Point;-><init>()V
+
+    .line 358
+    .local v6, outSize:Landroid/graphics/Point;
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mWindowManager:Landroid/view/WindowManager;
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mWindowManager:Landroid/view/WindowManager;
 
-    invoke-interface {v12}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    invoke-interface {v13}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v12}, Landroid/view/Display;->getWidth()I
+    invoke-virtual {v13, v6}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
 
-    move-result v12
-
-    move-object/from16 v0, p0
-
-    iput v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenWidth:I
-
-    .line 345
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mWindowManager:Landroid/view/WindowManager;
-
-    invoke-interface {v12}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Landroid/view/Display;->getHeight()I
-
-    move-result v12
+    .line 359
+    iget v13, v6, Landroid/graphics/Point;->x:I
 
     move-object/from16 v0, p0
 
-    iput v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenHeight:I
+    iput v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenWidth:I
 
-    .line 349
+    .line 360
+    iget v13, v6, Landroid/graphics/Point;->y:I
+
+    move-object/from16 v0, p0
+
+    iput v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenHeight:I
+
+    .line 366
+    .end local v6           #outSize:Landroid/graphics/Point;
     :cond_2
-    const/4 v12, 0x2
+    const/4 v13, 0x2
 
-    new-array v5, v12, [I
+    new-array v5, v13, [I
 
-    .line 350
+    .line 367
     .local v5, offsetInWindow:[I
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v5}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 351
+    .line 368
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
 
     move-object/from16 v0, p1
 
-    invoke-virtual {v0, v12}, Landroid/view/View;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
+    invoke-virtual {v0, v13}, Landroid/view/View;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
 
-    .line 352
-    const/4 v12, 0x0
-
-    aget v12, v5, v12
-
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getScrollX()I
-
-    move-result v13
-
-    sub-int/2addr v12, v13
-
-    const/4 v13, 0x1
+    .line 369
+    const/4 v13, 0x0
 
     aget v13, v5, v13
 
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getScrollY()I
+    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getScrollX()I
 
     move-result v14
 
     sub-int/2addr v13, v14
 
+    const/4 v14, 0x1
+
+    aget v14, v5, v14
+
+    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getScrollY()I
+
+    move-result v15
+
+    sub-int/2addr v14, v15
+
     move-object/from16 v0, p2
 
-    invoke-virtual {v0, v12, v13}, Landroid/graphics/Rect;->offset(II)V
+    invoke-virtual {v0, v13, v14}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 353
+    .line 372
+    move-object/from16 v0, p2
+
+    iget v13, v0, Landroid/graphics/Rect;->left:I
+
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
+    iget-object v14, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
 
-    move-object/from16 v0, p1
+    iget v14, v14, Landroid/graphics/Rect;->left:I
 
-    invoke-virtual {v0, v12}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
+    if-ge v13, v14, :cond_3
 
-    .line 355
-    move-object/from16 v0, p2
-
-    iget v12, v0, Landroid/graphics/Rect;->left:I
-
+    .line 373
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
 
     iget v13, v13, Landroid/graphics/Rect;->left:I
 
-    if-ge v12, v13, :cond_3
-
-    .line 356
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
-
-    iget v12, v12, Landroid/graphics/Rect;->left:I
-
     move-object/from16 v0, p2
 
-    iput v12, v0, Landroid/graphics/Rect;->left:I
+    iput v13, v0, Landroid/graphics/Rect;->left:I
 
-    .line 357
+    .line 374
     :cond_3
     move-object/from16 v0, p2
 
-    iget v12, v0, Landroid/graphics/Rect;->right:I
+    iget v13, v0, Landroid/graphics/Rect;->right:I
 
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
+
+    iget v14, v14, Landroid/graphics/Rect;->right:I
+
+    if-le v13, v14, :cond_4
+
+    .line 375
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
 
     iget v13, v13, Landroid/graphics/Rect;->right:I
 
-    if-le v12, v13, :cond_4
-
-    .line 358
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
-
-    iget v12, v12, Landroid/graphics/Rect;->right:I
-
     move-object/from16 v0, p2
 
-    iput v12, v0, Landroid/graphics/Rect;->right:I
+    iput v13, v0, Landroid/graphics/Rect;->right:I
 
-    .line 359
+    .line 376
     :cond_4
     invoke-virtual/range {p2 .. p2}, Landroid/graphics/Rect;->centerX()I
 
-    move-result v12
+    move-result v13
 
-    int-to-float v1, v12
+    int-to-float v1, v13
 
-    .line 360
+    .line 377
     .local v1, cx:F
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
 
-    iget v12, v12, Landroid/graphics/Rect;->top:I
+    iget v13, v13, Landroid/graphics/Rect;->top:I
+
+    move-object/from16 v0, p2
+
+    iget v14, v0, Landroid/graphics/Rect;->top:I
+
+    if-ge v13, v14, :cond_a
 
     move-object/from16 v0, p2
 
     iget v13, v0, Landroid/graphics/Rect;->top:I
-
-    if-ge v12, v13, :cond_9
-
-    move-object/from16 v0, p2
-
-    iget v12, v0, Landroid/graphics/Rect;->top:I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    int-to-float v8, v12
+    int-to-float v9, v13
 
-    .line 363
-    .local v8, ty:F
+    .line 380
+    .local v9, ty:F
     :goto_1
     :try_start_2
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mHeader:Landroid/view/View;
-
-    const/4 v13, 0x0
-
-    invoke-virtual {v12, v13}, Landroid/view/View;->setVisibility(I)V
-
-    .line 364
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
-
-    const/4 v13, 0x0
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mHeader:Landroid/view/View;
 
     const/4 v14, 0x0
 
-    invoke-virtual {v12, v13, v14}, Landroid/widget/RelativeLayout;->measure(II)V
+    invoke-virtual {v13, v14}, Landroid/view/View;->setVisibility(I)V
+
+    .line 381
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    invoke-virtual {v13, v14, v15}, Landroid/widget/RelativeLayout;->measure(II)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 369
+    .line 386
     :goto_2
     :try_start_3
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
-    invoke-virtual {v12}, Landroid/widget/RelativeLayout;->getMeasuredWidth()I
+    invoke-virtual {v13}, Landroid/widget/RelativeLayout;->getMeasuredWidth()I
 
-    move-result v12
+    move-result v13
 
+    move-object/from16 v0, p0
+
+    iget v14, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenWidth:I
+
+    invoke-static {v13, v14}, Ljava/lang/Math;->min(II)I
+
+    move-result v10
+
+    .line 387
+    .local v10, width:I
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v13}, Landroid/widget/RelativeLayout;->getMeasuredHeight()I
+
+    move-result v3
+
+    .line 389
+    .local v3, height:I
+    const v8, 0x2020193
+
+    .line 391
+    .local v8, showArrow:I
+    float-to-int v13, v1
+
+    shr-int/lit8 v14, v10, 0x1
+
+    sub-int v11, v13, v14
+
+    .line 392
+    .local v11, x:I
+    if-gez v11, :cond_b
+
+    .line 393
+    const/4 v11, 0x0
+
+    .line 397
+    :cond_5
+    :goto_3
+    float-to-int v13, v9
+
+    sub-int/2addr v13, v3
+
+    sget v14, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
+
+    add-int v12, v13, v14
+
+    .line 399
+    .local v12, y:I
+    const/4 v4, 0x0
+
+    .line 400
+    .local v4, needClipping:Z
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
+
+    iget v13, v13, Landroid/graphics/Rect;->top:I
+
+    sget v14, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
+
+    sub-int/2addr v13, v14
+
+    if-ge v12, v13, :cond_6
+
+    .line 401
+    move-object/from16 v0, p2
+
+    iget v13, v0, Landroid/graphics/Rect;->bottom:I
+
+    sget v14, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
+
+    sub-int v12, v13, v14
+
+    .line 402
+    const v8, 0x2020192
+
+    .line 403
+    add-int v13, v12, v3
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
+
+    iget v14, v14, Landroid/graphics/Rect;->bottom:I
+
+    sget v15, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
+
+    add-int/2addr v14, v15
+
+    if-le v13, v14, :cond_6
+
+    .line 404
+    const/4 v13, 0x1
+
+    move-object/from16 v0, p0
+
+    iput-boolean v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mIsNotEnoughSpace:Z
+
+    .line 405
+    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Rect;->height()I
+
+    move-result v13
+
+    sget v14, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
+
+    mul-int/lit8 v14, v14, 0x4
+
+    add-int/2addr v14, v3
+
+    if-le v13, v14, :cond_c
+
+    .line 406
+    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Rect;->centerY()I
+
+    move-result v13
+
+    shr-int/lit8 v14, v3, 0x1
+
+    sub-int v12, v13, v14
+
+    .line 407
+    const/4 v4, 0x1
+
+    .line 420
+    :cond_6
+    :goto_4
+    if-eqz v4, :cond_8
+
+    .line 422
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
+
+    iget v13, v13, Landroid/graphics/Rect;->left:I
+
+    if-le v13, v11, :cond_e
+
+    .line 423
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
+
+    iget v11, v13, Landroid/graphics/Rect;->left:I
+
+    .line 428
+    :cond_7
+    :goto_5
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
+
+    iget v13, v13, Landroid/graphics/Rect;->top:I
+
+    if-le v13, v12, :cond_f
+
+    .line 429
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
+
+    iget v12, v13, Landroid/graphics/Rect;->top:I
+
+    .line 436
+    :cond_8
+    :goto_6
+    if-eqz p3, :cond_11
+
+    .line 437
+    const v13, 0x2020192
+
+    if-ne v8, v13, :cond_10
+
+    .line 438
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
+
+    const v14, 0x203008b
+
+    invoke-virtual {v13, v14}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
+
+    .line 445
+    :goto_7
+    move-object/from16 v0, p0
+
+    iget-boolean v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mNeedFineTune:Z
+
+    if-eqz v13, :cond_9
+
+    const v13, 0x2020193
+
+    if-ne v8, v13, :cond_9
+
+    .line 447
+    sget v13, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mANCHOR_HEIGHT:I
+
+    add-int/2addr v13, v12
+
+    sget v14, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
+
+    sub-int v12, v13, v14
+
+    .line 451
+    :cond_9
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v12, v3, v8}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->isPositionVisible(III)Z
+
+    move-result v13
+
+    if-nez v13, :cond_12
+
+    .line 452
+    const-string v13, "TAG"
+
+    const-string v14, "The position is out of current visible rectangle."
+
+    invoke-static {v13, v14}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 453
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
+
+    const/4 v14, 0x4
+
+    invoke-virtual {v13, v14}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    goto/16 :goto_0
+
+    .line 347
+    .end local v1           #cx:F
+    .end local v3           #height:I
+    .end local v4           #needClipping:Z
+    .end local v5           #offsetInWindow:[I
+    .end local v8           #showArrow:I
+    .end local v9           #ty:F
+    .end local v10           #width:I
+    .end local v11           #x:I
+    .end local v12           #y:I
+    :catchall_0
+    move-exception v13
+
+    monitor-exit p0
+
+    throw v13
+
+    .line 377
+    .restart local v1       #cx:F
+    .restart local v5       #offsetInWindow:[I
+    :cond_a
+    :try_start_4
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
+
+    iget v13, v13, Landroid/graphics/Rect;->top:I
+
+    int-to-float v9, v13
+
+    goto/16 :goto_1
+
+    .line 382
+    .restart local v9       #ty:F
+    :catch_0
+    move-exception v2
+
+    .line 383
+    .local v2, e:Ljava/lang/Exception;
+    const-string v13, "HtcQuickSelect"
+
+    const-string v14, "measure error!"
+
+    invoke-static {v13, v14, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto/16 :goto_2
+
+    .line 394
+    .end local v2           #e:Ljava/lang/Exception;
+    .restart local v3       #height:I
+    .restart local v8       #showArrow:I
+    .restart local v10       #width:I
+    .restart local v11       #x:I
+    :cond_b
+    add-int v13, v11, v10
+
+    move-object/from16 v0, p0
+
+    iget v14, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenWidth:I
+
+    if-le v13, v14, :cond_5
+
+    .line 395
     move-object/from16 v0, p0
 
     iget v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenWidth:I
 
-    invoke-static {v12, v13}, Ljava/lang/Math;->min(II)I
+    sub-int v11, v13, v10
 
-    move-result v9
+    goto/16 :goto_3
 
-    .line 370
-    .local v9, width:I
+    .line 410
+    .restart local v4       #needClipping:Z
+    .restart local v12       #y:I
+    :cond_c
+    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Rect;->centerY()I
+
+    move-result v13
+
+    int-to-double v13, v13
+
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
+    iget v15, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenHeight:I
 
-    invoke-virtual {v12}, Landroid/widget/RelativeLayout;->getMeasuredHeight()I
+    int-to-double v15, v15
 
-    move-result v3
+    const-wide/high16 v17, 0x3fe0
 
-    .line 372
-    .local v3, height:I
-    const v7, 0x2020193
+    mul-double v15, v15, v17
 
-    .line 374
-    .local v7, showArrow:I
-    float-to-int v12, v1
+    cmpl-double v13, v13, v15
 
-    shr-int/lit8 v13, v9, 0x1
+    if-lez v13, :cond_d
 
-    sub-int v10, v12, v13
+    .line 411
+    float-to-int v13, v9
 
-    .line 375
-    .local v10, x:I
-    if-gez v10, :cond_a
+    sub-int/2addr v13, v3
 
-    .line 376
-    const/4 v10, 0x0
+    sget v14, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
 
-    .line 380
-    :cond_5
-    :goto_3
-    float-to-int v12, v8
+    add-int v12, v13, v14
 
-    sub-int/2addr v12, v3
+    .line 412
+    const v8, 0x2020193
 
-    sget v13, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
+    goto/16 :goto_4
 
-    add-int v11, v12, v13
-
-    .line 382
-    .local v11, y:I
-    const/4 v4, 0x0
-
-    .line 383
-    .local v4, needClipping:Z
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
-
-    iget v12, v12, Landroid/graphics/Rect;->top:I
-
-    sget v13, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
-
-    sub-int/2addr v12, v13
-
-    if-ge v11, v12, :cond_6
-
-    .line 384
+    .line 414
+    :cond_d
     move-object/from16 v0, p2
 
-    iget v12, v0, Landroid/graphics/Rect;->bottom:I
+    iget v13, v0, Landroid/graphics/Rect;->bottom:I
 
-    sget v13, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
+    sget v14, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
 
-    sub-int v11, v12, v13
+    sub-int v12, v13, v14
 
-    .line 385
-    const v7, 0x2020192
+    goto/16 :goto_4
 
-    .line 386
-    add-int v12, v11, v3
+    .line 424
+    :cond_e
+    move-object/from16 v0, p0
 
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
+
+    iget v13, v13, Landroid/graphics/Rect;->right:I
+
+    add-int v14, v11, v10
+
+    if-ge v13, v14, :cond_7
+
+    .line 425
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
+
+    iget v13, v13, Landroid/graphics/Rect;->right:I
+
+    sub-int v11, v13, v10
+
+    goto/16 :goto_5
+
+    .line 430
+    :cond_f
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
 
     iget v13, v13, Landroid/graphics/Rect;->bottom:I
 
-    sget v14, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
+    add-int v14, v12, v3
 
-    add-int/2addr v13, v14
+    if-ge v13, v14, :cond_8
 
-    if-le v12, v13, :cond_6
-
-    .line 387
-    const/4 v12, 0x1
-
+    .line 431
     move-object/from16 v0, p0
 
-    iput-boolean v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mIsNotEnoughSpace:Z
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
 
-    .line 388
-    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Rect;->height()I
+    iget v13, v13, Landroid/graphics/Rect;->bottom:I
 
-    move-result v12
-
-    sget v13, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
-
-    mul-int/lit8 v13, v13, 0x4
-
-    add-int/2addr v13, v3
-
-    if-le v12, v13, :cond_b
-
-    .line 389
-    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Rect;->centerY()I
-
-    move-result v12
-
-    shr-int/lit8 v13, v3, 0x1
-
-    sub-int v11, v12, v13
-
-    .line 390
-    const/4 v4, 0x1
-
-    .line 403
-    :cond_6
-    :goto_4
-    if-eqz v4, :cond_8
-
-    .line 405
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
-
-    iget v12, v12, Landroid/graphics/Rect;->left:I
-
-    if-le v12, v10, :cond_d
-
-    .line 406
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
-
-    iget v10, v12, Landroid/graphics/Rect;->left:I
-
-    .line 411
-    :cond_7
-    :goto_5
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
-
-    iget v12, v12, Landroid/graphics/Rect;->top:I
-
-    if-le v12, v11, :cond_e
-
-    .line 412
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
-
-    iget v11, v12, Landroid/graphics/Rect;->top:I
-
-    .line 419
-    :cond_8
-    :goto_6
-    if-eqz p3, :cond_10
-
-    .line 420
-    const v12, 0x2020192
-
-    if-ne v7, v12, :cond_f
-
-    .line 421
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
-
-    const v13, 0x203008b
-
-    invoke-virtual {v12, v13}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
-
-    .line 428
-    :goto_7
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v11, v3, v7}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->isPositionVisible(III)Z
-
-    move-result v12
-
-    if-nez v12, :cond_11
-
-    .line 429
-    const-string v12, "TAG"
-
-    const-string v13, "The position is out of current visible rectangle."
-
-    invoke-static {v12, v13}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 430
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
-
-    const/4 v13, 0x4
-
-    invoke-virtual {v12, v13}, Landroid/widget/RelativeLayout;->setVisibility(I)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    goto/16 :goto_0
-
-    .line 334
-    .end local v1           #cx:F
-    .end local v3           #height:I
-    .end local v4           #needClipping:Z
-    .end local v5           #offsetInWindow:[I
-    .end local v7           #showArrow:I
-    .end local v8           #ty:F
-    .end local v9           #width:I
-    .end local v10           #x:I
-    .end local v11           #y:I
-    :catchall_0
-    move-exception v12
-
-    monitor-exit p0
-
-    throw v12
-
-    .line 360
-    .restart local v1       #cx:F
-    .restart local v5       #offsetInWindow:[I
-    :cond_9
-    :try_start_4
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
-
-    iget v12, v12, Landroid/graphics/Rect;->top:I
-
-    int-to-float v8, v12
-
-    goto/16 :goto_1
-
-    .line 365
-    .restart local v8       #ty:F
-    :catch_0
-    move-exception v2
-
-    .line 366
-    .local v2, e:Ljava/lang/Exception;
-    const-string v12, "HtcQuickSelect"
-
-    const-string v13, "measure error!"
-
-    invoke-static {v12, v13, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto/16 :goto_2
-
-    .line 377
-    .end local v2           #e:Ljava/lang/Exception;
-    .restart local v3       #height:I
-    .restart local v7       #showArrow:I
-    .restart local v9       #width:I
-    .restart local v10       #x:I
-    :cond_a
-    add-int v12, v10, v9
-
-    move-object/from16 v0, p0
-
-    iget v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenWidth:I
-
-    if-le v12, v13, :cond_5
-
-    .line 378
-    move-object/from16 v0, p0
-
-    iget v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenWidth:I
-
-    sub-int v10, v12, v9
-
-    goto/16 :goto_3
-
-    .line 393
-    .restart local v4       #needClipping:Z
-    .restart local v11       #y:I
-    :cond_b
-    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Rect;->centerY()I
-
-    move-result v12
-
-    int-to-double v12, v12
-
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenHeight:I
-
-    int-to-double v14, v14
-
-    const-wide/high16 v16, 0x3fe0
-
-    mul-double v14, v14, v16
-
-    cmpl-double v12, v12, v14
-
-    if-lez v12, :cond_c
-
-    .line 394
-    float-to-int v12, v8
-
-    sub-int/2addr v12, v3
-
-    sget v13, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
-
-    add-int v11, v12, v13
-
-    .line 395
-    const v7, 0x2020193
-
-    goto/16 :goto_4
-
-    .line 397
-    :cond_c
-    move-object/from16 v0, p2
-
-    iget v12, v0, Landroid/graphics/Rect;->bottom:I
-
-    sget v13, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
-
-    sub-int v11, v12, v13
-
-    goto/16 :goto_4
-
-    .line 407
-    :cond_d
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
-
-    iget v12, v12, Landroid/graphics/Rect;->right:I
-
-    add-int v13, v10, v9
-
-    if-ge v12, v13, :cond_7
-
-    .line 408
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
-
-    iget v12, v12, Landroid/graphics/Rect;->right:I
-
-    sub-int v10, v12, v9
-
-    goto/16 :goto_5
-
-    .line 413
-    :cond_e
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
-
-    iget v12, v12, Landroid/graphics/Rect;->bottom:I
-
-    add-int v13, v11, v3
-
-    if-ge v12, v13, :cond_8
-
-    .line 414
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTempRect:Landroid/graphics/Rect;
-
-    iget v12, v12, Landroid/graphics/Rect;->bottom:I
-
-    sub-int v11, v12, v3
+    sub-int v12, v13, v3
 
     goto/16 :goto_6
 
-    .line 423
-    :cond_f
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
-
-    const v13, 0x203008a
-
-    invoke-virtual {v12, v13}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
-
-    goto/16 :goto_7
-
-    .line 425
+    .line 440
     :cond_10
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
-    const/4 v13, 0x0
+    const v14, 0x203008a
 
-    invoke-virtual {v12, v13}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
+    invoke-virtual {v13, v14}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
     goto/16 :goto_7
 
-    .line 433
+    .line 442
     :cond_11
-    const/4 v12, 0x1
-
     move-object/from16 v0, p0
 
-    iput-boolean v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShowing:Z
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
-    .line 434
-    move-object/from16 v0, p0
+    const/4 v14, 0x0
 
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
+    invoke-virtual {v13, v14}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
-    invoke-virtual {v12}, Landroid/widget/PopupWindow;->isShowing()Z
+    goto/16 :goto_7
 
-    move-result v12
-
-    if-eqz v12, :cond_13
-
-    .line 435
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
-
-    invoke-virtual {v12, v10, v11, v9, v3}, Landroid/widget/PopupWindow;->update(IIII)V
-
-    .line 436
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
-
-    const/4 v13, 0x0
-
-    invoke-virtual {v12, v13}, Landroid/widget/RelativeLayout;->setVisibility(I)V
-
-    .line 437
-    if-eqz p3, :cond_12
-
-    .line 438
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
-
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrackAnim:Landroid/view/animation/Animation;
-
-    invoke-virtual {v12, v13}, Landroid/view/ViewGroup;->startAnimation(Landroid/view/animation/Animation;)V
-
-    .line 455
+    .line 456
     :cond_12
-    :goto_8
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
-
-    invoke-virtual {v12}, Landroid/widget/PopupWindow;->isClippingEnabled()Z
-
-    move-result v12
-
-    if-eqz v12, :cond_16
-
-    const/4 v12, 0x0
+    const/4 v13, 0x1
 
     move-object/from16 v0, p0
 
-    iget v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenWidth:I
+    iput-boolean v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShowing:Z
 
-    sub-int/2addr v13, v9
+    .line 458
+    move-object/from16 v0, p0
 
-    invoke-static {v10, v13}, Ljava/lang/Math;->min(II)I
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
+
+    invoke-virtual {v13}, Landroid/widget/PopupWindow;->isShowing()Z
 
     move-result v13
 
-    invoke-static {v12, v13}, Ljava/lang/Math;->max(II)I
+    if-eqz v13, :cond_14
 
-    move-result v6
+    .line 459
+    move-object/from16 v0, p0
 
-    .line 458
-    .local v6, px:I
-    :goto_9
-    int-to-float v12, v6
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
-    sub-float v12, v1, v12
+    invoke-virtual {v13, v11, v12, v10, v3}, Landroid/widget/PopupWindow;->update(IIII)V
 
-    float-to-int v12, v12
+    .line 460
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
+
+    const/4 v14, 0x0
+
+    invoke-virtual {v13, v14}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+
+    .line 461
+    if-eqz p3, :cond_13
+
+    .line 462
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v7, v12}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->showArrow(II)V
+    iget-object v14, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrackAnim:Landroid/view/animation/Animation;
+
+    invoke-virtual {v13, v14}, Landroid/view/ViewGroup;->startAnimation(Landroid/view/animation/Animation;)V
+
+    .line 476
+    :cond_13
+    :goto_8
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
+
+    invoke-virtual {v13}, Landroid/widget/PopupWindow;->isClippingEnabled()Z
+
+    move-result v13
+
+    if-eqz v13, :cond_15
+
+    const/4 v13, 0x0
+
+    move-object/from16 v0, p0
+
+    iget v14, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mScreenWidth:I
+
+    sub-int/2addr v14, v10
+
+    invoke-static {v11, v14}, Ljava/lang/Math;->min(II)I
+
+    move-result v14
+
+    invoke-static {v13, v14}, Ljava/lang/Math;->max(II)I
+
+    move-result v7
+
+    .line 479
+    .local v7, px:I
+    :goto_9
+    int-to-float v13, v7
+
+    sub-float v13, v1, v13
+
+    float-to-int v13, v13
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v8, v13}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->showArrow(II)V
 
     goto/16 :goto_0
 
-    .line 443
-    .end local v6           #px:I
-    :cond_13
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
-
-    const/4 v13, 0x0
-
-    invoke-virtual {v12, v13}, Landroid/widget/RelativeLayout;->setVisibility(I)V
-
-    .line 444
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
-
-    invoke-virtual {v12, v9}, Landroid/widget/PopupWindow;->setWidth(I)V
-
-    .line 445
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
-
-    invoke-virtual {v12, v3}, Landroid/widget/PopupWindow;->setHeight(I)V
-
-    .line 446
-    const v12, 0x2020193
-
-    if-ne v7, v12, :cond_15
-
-    const/4 v12, 0x1
-
-    :goto_a
-    move-object/from16 v0, p0
-
-    iget-boolean v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->isPasteWindow:Z
-
-    and-int/2addr v12, v13
-
-    if-eqz v12, :cond_14
-
-    .line 447
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mCurrentView:Landroid/widget/TextView;
-
-    invoke-virtual {v12}, Landroid/widget/TextView;->getAnchorHeight()I
-
-    move-result v12
-
-    add-int/2addr v12, v11
-
-    sget v13, Lcom/htc/quickselection/HtcQuickSelectionWindow;->ARROW_HEIGHT:I
-
-    sub-int v11, v12, v13
-
-    .line 449
+    .line 467
+    .end local v7           #px:I
     :cond_14
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
-    const/4 v13, 0x0
+    const/4 v14, 0x0
+
+    invoke-virtual {v13, v14}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+
+    .line 468
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
+
+    invoke-virtual {v13, v10}, Landroid/widget/PopupWindow;->setWidth(I)V
+
+    .line 469
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
+
+    invoke-virtual {v13, v3}, Landroid/widget/PopupWindow;->setHeight(I)V
+
+    .line 470
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
+
+    const/4 v14, 0x0
 
     move-object/from16 v0, p1
 
-    invoke-virtual {v12, v0, v13, v10, v11}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
+    invoke-virtual {v13, v0, v14, v11, v12}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 451
-    if-eqz p3, :cond_12
+    .line 472
+    if-eqz p3, :cond_13
 
-    .line 452
+    .line 473
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
+    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
 
     move-object/from16 v0, p0
 
-    iget-object v13, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrackAnim:Landroid/view/animation/Animation;
+    iget-object v14, v0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrackAnim:Landroid/view/animation/Animation;
 
-    invoke-virtual {v12, v13}, Landroid/view/ViewGroup;->startAnimation(Landroid/view/animation/Animation;)V
+    invoke-virtual {v13, v14}, Landroid/view/ViewGroup;->startAnimation(Landroid/view/animation/Animation;)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     goto :goto_8
 
-    .line 446
     :cond_15
-    const/4 v12, 0x0
+    move v7, v11
 
-    goto :goto_a
-
-    :cond_16
-    move v6, v10
-
-    .line 455
+    .line 476
     goto :goto_9
 .end method
 
@@ -2230,17 +2273,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 291
+    .line 304
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
 
     if-nez v0, :cond_1
 
-    .line 298
+    .line 311
     :cond_0
     :goto_0
     return-void
 
-    .line 293
+    .line 306
     :cond_1
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
 
@@ -2248,19 +2291,19 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 294
+    .line 307
     invoke-virtual {p0}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->isShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 295
+    .line 308
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v2, v2}, Landroid/widget/RelativeLayout;->measure(II)V
 
-    .line 296
+    .line 309
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
     iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
@@ -2287,17 +2330,17 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 259
+    .line 272
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
 
     if-nez v0, :cond_1
 
-    .line 268
+    .line 281
     :cond_0
     :goto_0
     return-void
 
-    .line 261
+    .line 274
     :cond_1
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
 
@@ -2313,29 +2356,29 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxWidth(I)V
 
-    .line 262
+    .line 275
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 263
+    .line 276
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 264
+    .line 277
     invoke-virtual {p0}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->isShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 265
+    .line 278
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v3, v3}, Landroid/widget/RelativeLayout;->measure(II)V
 
-    .line 266
+    .line 279
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
     iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
@@ -2360,12 +2403,12 @@
     .parameter "actionSet"
 
     .prologue
-    .line 244
+    .line 257
     invoke-direct {p0, p1}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->inflateAction(Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;)Landroid/view/View;
 
     move-result-object v1
 
-    .line 246
+    .line 259
     .local v1, v:Landroid/view/View;
     iget-object v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
 
@@ -2373,7 +2416,7 @@
 
     move-result v0
 
-    .line 247
+    .line 260
     .local v0, childSize:I
     iget-object v2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mTrack:Landroid/view/ViewGroup;
 
@@ -2381,7 +2424,7 @@
 
     invoke-virtual {v2, v1, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
-    .line 248
+    .line 261
     return-void
 .end method
 
@@ -2393,23 +2436,23 @@
     .parameter "description"
 
     .prologue
-    .line 251
+    .line 264
     new-instance v0, Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;
 
     const/4 v1, 0x1
 
     invoke-direct {v0, p0, v1}, Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;-><init>(Lcom/htc/quickselection/HtcQuickSelectionWindow;I)V
 
-    .line 252
+    .line 265
     .local v0, oneAction:Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1, p3}, Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;->AddAction(Ljava/lang/Object;Ljava/lang/String;Landroid/view/View$OnClickListener;)Z
 
-    .line 253
+    .line 266
     invoke-virtual {v0, p2}, Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 254
+    .line 267
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;->getAction(I)Lcom/htc/quickselection/HtcQuickSelectionWindow$Action;
@@ -2418,10 +2461,10 @@
 
     iput-object p4, v1, Lcom/htc/quickselection/HtcQuickSelectionWindow$Action;->description:Ljava/lang/String;
 
-    .line 255
+    .line 268
     invoke-virtual {p0, v0}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->addActionSet(Lcom/htc/quickselection/HtcQuickSelectionWindow$ActionSet;)V
 
-    .line 256
+    .line 269
     return-void
 .end method
 
@@ -2429,7 +2472,7 @@
     .locals 1
 
     .prologue
-    .line 513
+    .line 542
     monitor-enter p0
 
     :try_start_0
@@ -2437,12 +2480,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 514
+    .line 543
     monitor-exit p0
 
     return-void
 
-    .line 513
+    .line 542
     :catchall_0
     move-exception v0
 
@@ -2455,7 +2498,7 @@
     .locals 2
 
     .prologue
-    .line 498
+    .line 527
     monitor-enter p0
 
     :try_start_0
@@ -2465,31 +2508,31 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 499
+    .line 528
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShowing:Z
 
-    .line 500
+    .line 529
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setTouchable(Z)V
 
-    .line 501
+    .line 530
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->update()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 502
+    .line 531
     monitor-exit p0
 
     return-void
 
-    .line 498
+    .line 527
     :catchall_0
     move-exception v0
 
@@ -2502,7 +2545,7 @@
     .locals 1
 
     .prologue
-    .line 305
+    .line 318
     iget-boolean v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mShowing:Z
 
     return v0
@@ -2514,10 +2557,10 @@
     .parameter "isChecked"
 
     .prologue
-    .line 621
+    .line 650
     iput-boolean p2, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mMakePrimary:Z
 
-    .line 622
+    .line 651
     return-void
 .end method
 
@@ -2526,7 +2569,7 @@
     .parameter "v"
 
     .prologue
-    .line 611
+    .line 640
     return-void
 .end method
 
@@ -2547,7 +2590,7 @@
     .end annotation
 
     .prologue
-    .line 617
+    .line 646
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     return-void
 .end method
@@ -2558,7 +2601,7 @@
     .parameter "event"
 
     .prologue
-    .line 626
+    .line 655
     const/4 v0, 0x0
 
     return v0
@@ -2570,7 +2613,7 @@
     .parameter "event"
 
     .prologue
-    .line 631
+    .line 660
     const/4 v0, 0x0
 
     return v0
@@ -2583,7 +2626,7 @@
     .parameter "event"
 
     .prologue
-    .line 636
+    .line 665
     const/4 v0, 0x0
 
     return v0
@@ -2595,7 +2638,7 @@
     .parameter "event"
 
     .prologue
-    .line 641
+    .line 670
     const/4 v0, 0x0
 
     return v0
@@ -2607,7 +2650,7 @@
     .parameter "event"
 
     .prologue
-    .line 646
+    .line 675
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -2620,15 +2663,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 647
+    .line 676
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mOutsideTouchListener:Lcom/htc/quickselection/HtcQuickSelectionWindow$OutsideTouchListener;
 
     invoke-interface {v0, p2}, Lcom/htc/quickselection/HtcQuickSelectionWindow$OutsideTouchListener;->onOutsideTouched(Landroid/view/MotionEvent;)V
 
-    .line 649
+    .line 678
     const/4 v0, 0x1
 
-    .line 651
+    .line 680
     :goto_0
     return v0
 
@@ -2642,10 +2685,22 @@
     .locals 0
 
     .prologue
-    .line 301
+    .line 314
     invoke-direct {p0}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->resetTrack()V
 
-    .line 302
+    .line 315
+    return-void
+.end method
+
+.method public setFineTune(Z)V
+    .locals 0
+    .parameter "needFineTune"
+
+    .prologue
+    .line 496
+    iput-boolean p1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mNeedFineTune:Z
+
+    .line 497
     return-void
 .end method
 
@@ -2654,7 +2709,7 @@
     .parameter "listener"
 
     .prologue
-    .line 657
+    .line 686
     iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
     if-eqz p1, :cond_0
@@ -2664,13 +2719,13 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
-    .line 658
+    .line 687
     iput-object p1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mOutsideTouchListener:Lcom/htc/quickselection/HtcQuickSelectionWindow$OutsideTouchListener;
 
-    .line 659
+    .line 688
     return-void
 
-    .line 657
+    .line 686
     :cond_0
     const/4 v0, 0x0
 
@@ -2683,7 +2738,7 @@
     .parameter "anchor"
 
     .prologue
-    .line 319
+    .line 332
     monitor-enter p0
 
     const/4 v0, 0x0
@@ -2693,12 +2748,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 320
+    .line 333
     monitor-exit p0
 
     return-void
 
-    .line 319
+    .line 332
     :catchall_0
     move-exception v0
 
@@ -2714,7 +2769,7 @@
     .parameter "innerAnimation"
 
     .prologue
-    .line 324
+    .line 337
     monitor-enter p0
 
     :try_start_0
@@ -2723,17 +2778,17 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 329
+    .line 342
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 325
+    .line 338
     :catch_0
     move-exception v0
 
-    .line 326
+    .line 339
     .local v0, ex:Ljava/lang/IllegalArgumentException;
     :try_start_1
     const-string v1, "HtcQuickSelect"
@@ -2758,7 +2813,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 327
+    .line 340
     invoke-direct {p0}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->preparePopupWindow()Landroid/widget/PopupWindow;
 
     move-result-object v1
@@ -2769,7 +2824,7 @@
 
     goto :goto_0
 
-    .line 324
+    .line 337
     .end local v0           #ex:Ljava/lang/IllegalArgumentException;
     :catchall_0
     move-exception v1
@@ -2789,17 +2844,17 @@
 
     const/4 v3, 0x0
 
-    .line 271
+    .line 284
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
 
     if-nez v0, :cond_1
 
-    .line 288
+    .line 301
     :cond_0
     :goto_0
     return-void
 
-    .line 273
+    .line 286
     :cond_1
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
 
@@ -2815,34 +2870,34 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxWidth(I)V
 
-    .line 274
+    .line 287
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 275
+    .line 288
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 276
+    .line 289
     if-eqz p2, :cond_2
 
-    .line 277
+    .line 290
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mCircularProgress:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v1, v3, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 278
+    .line 291
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mCircularProgress:Landroid/graphics/drawable/Drawable;
 
     check-cast v0, Landroid/graphics/drawable/Animatable;
 
     invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->start()V
 
-    .line 284
+    .line 297
     :goto_1
     invoke-virtual {p0}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->isShowing()Z
 
@@ -2850,12 +2905,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 285
+    .line 298
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v4, v4}, Landroid/widget/RelativeLayout;->measure(II)V
 
-    .line 286
+    .line 299
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
     iget-object v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mContent:Landroid/widget/RelativeLayout;
@@ -2874,13 +2929,13 @@
 
     goto :goto_0
 
-    .line 281
+    .line 294
     :cond_2
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mDescription:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3, v3, v3, v3}, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 282
+    .line 295
     iget-object v0, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mCircularProgress:Landroid/graphics/drawable/Drawable;
 
     check-cast v0, Landroid/graphics/drawable/Animatable;
@@ -2897,32 +2952,32 @@
     .parameter "innerAnimation"
 
     .prologue
-    .line 312
+    .line 325
     monitor-enter p0
 
     :try_start_0
     iput-object p1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->mCurrentView:Landroid/widget/TextView;
 
-    .line 313
+    .line 326
     move-object v0, p1
 
-    .line 314
+    .line 327
     .local v0, parent:Landroid/view/View;
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow;->isPasteWindow:Z
 
-    .line 315
+    .line 328
     invoke-virtual {p0, v0, p2, p3}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->show(Landroid/view/View;Landroid/graphics/Rect;Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 316
+    .line 329
     monitor-exit p0
 
     return-void
 
-    .line 312
+    .line 325
     .end local v0           #parent:Landroid/view/View;
     :catchall_0
     move-exception v1

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 339
+    .line 345
     iput-object p1, p0, Lcom/android/camera/component/BurstController$3;->this$0:Lcom/android/camera/component/BurstController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 342
+    .line 348
     iget-object v0, p0, Lcom/android/camera/component/BurstController$3;->this$0:Lcom/android/camera/component/BurstController;
 
     #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
@@ -53,6 +53,6 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 345
+    .line 351
     return-void
 .end method

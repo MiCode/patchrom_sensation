@@ -34,15 +34,15 @@
     .parameter "extensions"
 
     .prologue
-    .line 451
+    .line 444
     iput-object p1, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderExtensionFilter;->this$0:Lcom/htc/app/FilePickerFolderAdapter;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 452
+    .line 445
     iput-object p2, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderExtensionFilter;->mExtensionArray:[Ljava/lang/String;
 
-    .line 453
+    .line 446
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .parameter "f"
 
     .prologue
-    .line 473
+    .line 466
     iget-object v8, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderExtensionFilter;->this$0:Lcom/htc/app/FilePickerFolderAdapter;
 
     #getter for: Lcom/htc/app/FilePickerFolderAdapter;->mFileExtensionFilter:Lcom/htc/app/FilePickerFolderAdapter$FileExtensionFilter;
@@ -63,27 +63,27 @@
 
     move-result-object v1
 
-    .line 474
+    .line 467
     .local v1, files:[Ljava/io/File;
     new-instance v7, Ljava/util/LinkedList;
 
     invoke-direct {v7}, Ljava/util/LinkedList;-><init>()V
 
-    .line 475
+    .line 468
     .local v7, subFoldersList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Ljava/io/File;>;"
     const/4 v4, 0x0
 
-    .line 476
+    .line 469
     .local v4, result:Z
     if-nez v1, :cond_0
 
     const/4 v8, 0x0
 
-    .line 489
+    .line 482
     :goto_0
     return v8
 
-    .line 477
+    .line 470
     :cond_0
     move-object v0, v1
 
@@ -99,7 +99,7 @@
 
     aget-object v5, v0, v2
 
-    .line 478
+    .line 471
     .local v5, subFiles:Ljava/io/File;
     invoke-virtual {v5}, Ljava/io/File;->isFile()Z
 
@@ -107,22 +107,22 @@
 
     if-eqz v8, :cond_1
 
-    .line 479
+    .line 472
     const/4 v4, 0x1
 
-    .line 477
+    .line 470
     :goto_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 481
+    .line 474
     :cond_1
     invoke-virtual {v7, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 484
+    .line 477
     .end local v5           #subFiles:Ljava/io/File;
     :cond_2
     if-eqz v4, :cond_3
@@ -131,7 +131,7 @@
 
     goto :goto_0
 
-    .line 485
+    .line 478
     :cond_3
     invoke-virtual {v7}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
 
@@ -151,20 +151,20 @@
 
     check-cast v6, Ljava/io/File;
 
-    .line 486
+    .line 479
     .local v6, subFolder:Ljava/io/File;
     invoke-direct {p0, v6}, Lcom/htc/app/FilePickerFolderAdapter$FolderExtensionFilter;->checkSubLayerHasFile(Ljava/io/File;)Z
 
     move-result v4
 
-    .line 487
+    .line 480
     if-eqz v4, :cond_4
 
     .end local v6           #subFolder:Ljava/io/File;
     :cond_5
     move v8, v4
 
-    .line 489
+    .line 482
     goto :goto_0
 .end method
 
@@ -177,19 +177,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 457
+    .line 450
     invoke-virtual {p1}, Ljava/io/File;->isFile()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 467
+    .line 460
     :cond_0
     :goto_0
     return v0
 
-    .line 459
+    .line 452
     :cond_1
     invoke-virtual {p1}, Ljava/io/File;->isDirectory()Z
 
@@ -197,7 +197,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 464
+    .line 457
     const/4 v0, 0x1
 
     goto :goto_0

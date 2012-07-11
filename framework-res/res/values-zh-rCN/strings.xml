@@ -183,7 +183,7 @@
     <string name="badPuk">您输入的 PUK 码不正确。</string>
     <string name="mismatchPin">您输入的 PIN 码不匹配。</string>
     <string name="invalidPin">输入一个 4 到 8 位数的 PIN 码。</string>
-    <string name="invalidPuk">请键入至少 8 位数字的 PUK 码。</string>
+    <string name="invalidPuk">请输入至少 8 位数字的 PUK 码。</string>
     <string name="needPuk">已对 SIM 卡进行 PUK 码锁定。输入 PUK 码将其解锁。</string>
     <string name="needPuk2">输入 PUK2 码以解锁 SIM 卡。</string>
     <string name="ClipMmi">来电者 ID</string>
@@ -269,9 +269,9 @@
     <string name="turn_off_radio">关闭收音机</string>
     <string name="screen_lock">屏幕锁定</string>
     <string name="power_off">关机</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">响铃关闭</string>
+    <string name="silent_mode_vibrate">响铃振动</string>
+    <string name="silent_mode_ring">响铃打开</string>
     <string name="shutdown_progress">正在关机...</string>
     <string name="shutdown_confirm">您的手机即将关机。</string>
     <string name="shutdown_confirm_question">您要关机吗？</string>
@@ -398,8 +398,8 @@
     <string name="permdesc_bindVpnService">允许手机用户绑定到 VPN 服务的顶级接口。普通应用程序绝不需要此权限。</string>
     <string name="permlab_bindWallpaper">绑定到壁纸</string>
     <string name="permdesc_bindWallpaper">允许手机用户绑定到壁纸的顶级界面。应该从不需要将此权限授予普通应用程序。</string>
-    <string name="permlab_bindRemoteViews">绑定到窗口小部件服务</string>
-    <string name="permdesc_bindRemoteViews">允许手机用户绑定到窗口小部件服务的顶级界面。普通应用程序一律无需此权限。</string>
+    <string name="permlab_bindRemoteViews">绑定到小插件服务</string>
+    <string name="permdesc_bindRemoteViews">允许手机用户绑定到小插件服务的顶级界面。普通应用程序一律无需此权限。</string>
     <string name="permlab_bindDeviceAdmin">与设备管理器交互</string>
     <string name="permdesc_bindDeviceAdmin">允许持有对象将意向发送到设备管理器。普通的应用程序一律无需此权限。</string>
     <string name="permlab_setOrientation">更改屏幕方向</string>
@@ -426,10 +426,10 @@
     <string name="permdesc_movePackage">允许应用程序在内部介质和外部介质之间移动应用程序资源。</string>
     <string name="permlab_readLogs">查阅敏感日志数据</string>
     <string name="permdesc_readLogs">允许应用程序从系统的各个日志文件中读取信息。这样，应用程序就可以发现关于您手机使用情况的基本信息，其中可能包含个人信息或私密信息。</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">使用任何媒体解码器进行播放</string>
+    <string name="permdesc_anyCodecForPlayback">允许应用程序使用任何已安装的媒体解码器进行解码播放。</string>
+    <string name="permlab_readWriteOmaDrm">访问 oma DRM 文件夹</string>
+    <string name="permdesc_readWriteOmaDrm">允许应用程序读取或写入 OMA DRM 文件夹。</string>
     <string name="permlab_diagnostic">读取/写入诊断拥有的资源</string>
     <string name="permdesc_diagnostic">允许应用程序读取和写入诊断组拥有的任何资源；例如 /dev 中的文件。这可能会潜在地影响系统稳定性和安全性。此权限只应用于由制造商或操作员执行的硬件特定的诊断。</string>
     <string name="permlab_changeComponentState">启用或禁用应用程序组件</string>
@@ -573,7 +573,7 @@
     <string name="permlab_accessWimaxState">查看 WiMAX 状态</string>
     <string name="permdesc_accessWimaxState">允许应用程序查看有关 WiMAX 状态的信息。</string>
     <string name="permlab_changeWimaxState">更改 WiMAX 状态</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">允许应用程序连接到 WiMAX 网络和从 WiMAX 网络断开。</string>
     <string name="permlab_bluetoothAdmin">蓝牙管理</string>
     <string name="permdesc_bluetoothAdmin">允许应用程序配置本地蓝牙手机以及发现远程设备并与其配对。</string>
     <string name="permlab_bluetooth">创建蓝牙连接</string>
@@ -621,7 +621,7 @@
     <string name="policylab_wipeData">清除所有数据</string>
     <string name="policydesc_wipeData">通过恢复出厂设置清除手机上的数据，且不发送警告</string>
     <string name="policylab_setGlobalProxy">设置设备全局代理</string>
-    <string name="policydesc_setGlobalProxy">请设置在启用政策的情况下要使用的设备全局代理。只有第一设备管理员才可设置有效的全局代理。</string>
+    <string name="policydesc_setGlobalProxy">请设置在政策有效的情况下要使用的设备全局代理。只有第一设备管理员才可设置有效的全局代理。</string>
     <string name="policylab_expirePassword">设置锁定屏幕密码的有效期</string>
     <string name="policydesc_expirePassword">控制锁定屏幕密码的更改频率</string>
     <string name="policylab_encryptedStorage">设置存储设备加密</string>
@@ -683,7 +683,7 @@
     <string name="relationTypeAssistant">助理</string>
     <string name="relationTypeBrother">兄弟</string>
     <string name="relationTypeChild">子女</string>
-    <string name="relationTypeDomesticPartner">同居伴侣</string>
+    <string name="relationTypeDomesticPartner">家庭伴侣</string>
     <string name="relationTypeFather">父亲</string>
     <string name="relationTypeFriend">朋友</string>
     <string name="relationTypeManager">经理</string>
@@ -702,7 +702,7 @@
     <string name="keyguard_password_enter_puk_code">请输入 PUK 码和新的 PIN 码</string>
     <string name="keyguard_password_enter_puk_prompt">PUK 码</string>
     <string name="keyguard_password_enter_pin_prompt">新的 PIN 码</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">触摸可输入密码</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">点击以输入密码</font></string>
     <string name="keyguard_password_enter_password_code">输入密码进行解锁</string>
     <string name="keyguard_password_enter_pin_password_code">输入 PIN 进行解锁</string>
     <string name="keyguard_password_wrong_pin_code">PIN 码不正确！</string>
@@ -738,7 +738,7 @@
     <string name="lockscreen_sim_puk_locked_message">SIM 卡被 PUK 锁定</string>
     <string name="lockscreen_sim_puk_locked_instructions">请参阅《用户指南》或联系客服人员。</string>
     <string name="lockscreen_sim_locked_message">SIM 卡已被锁定。</string>
-    <string name="lockscreen_sim_unlock_progress_dialog_message">正在解锁 SIM 卡...</string>
+    <string name="lockscreen_sim_unlock_progress_dialog_message">正在解锁 SIM 卡…</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"您 %d 次错误地绘制了您的解锁图案。
 
 请在 %d 秒后重试。"</string>
@@ -748,7 +748,7 @@
     <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"您已经 %d 次错误地输入了 PIN。
 
 请在 %d 秒后重试。"</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"您已经 %d 次绘错了自己的解锁图案。如果再尝试 %d 次后仍不成功，系统会要求您使用自己的 Google 登录信息解锁手机。
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"您已错误地绘制了您的解锁图案 %d 次。如果再尝试 %d 次后仍不成功，系统会要求您使用您的 Google 登录账户解锁手机。
 
 请在 %d 秒后重试。"</string>
     <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">您已经 %d 次错误地尝试解锁手机。如果再尝试 %d 次后仍不成功，手机将重置为出厂默认设置，所有用户数据将会丢失。</string>
@@ -949,7 +949,7 @@
     <string name="volume_music_hint_silent_ringtone_selected">选择的是静音铃声</string>
     <string name="volume_call">通话音量</string>
     <string name="volume_bluetooth_call">使用蓝牙时的通话音量</string>
-    <string name="volume_alarm">警告音量</string>
+    <string name="volume_alarm">闹铃音量</string>
     <string name="volume_notification">通知音量</string>
     <string name="volume_unknown">音量</string>
     <string name="volume_icon_description_bluetooth">蓝牙音量</string>
@@ -962,18 +962,18 @@
     <string name="ringtone_silent">静音</string>
     <string name="ringtone_picker_title">铃声</string>
     <string name="ringtone_unknown">未知手机铃声</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">登录至 WLAN 网络</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
-    <string name="wifi_watchdog_network_disabled">无法连接到 Wi-Fi</string>
+    <string name="wifi_watchdog_network_disabled">无法连接到 WLAN</string>
     <string name="wifi_watchdog_network_disabled_detailed">" 互联网连接状况不佳。"</string>
-    <string name="wifi_p2p_dialog_title">Wi-Fi Direct</string>
-    <string name="wifi_p2p_turnon_message">启动 Wi-Fi Direct 操作。此操作将会关闭 Wi-Fi 客户端/热点操作。</string>
-    <string name="wifi_p2p_failed_message">无法启动 Wi-Fi Direct</string>
-    <string name="wifi_p2p_pbc_go_negotiation_request_message">收到来自 %1$s 的 Wi-Fi Direct 连接设置请求。点击“确定”即可接受。</string>
-    <string name="wifi_p2p_pin_go_negotiation_request_message">收到来自 %1$s 的 Wi-Fi Direct 连接设置请求。输入 PIN 即可继续操作。</string>
+    <string name="wifi_p2p_dialog_title">WLAN 直连</string>
+    <string name="wifi_p2p_turnon_message">启动 WLAN 直连操作。此操作将会关闭 WLAN 客户端/热点操作。</string>
+    <string name="wifi_p2p_failed_message">无法启动 WLAN 直连</string>
+    <string name="wifi_p2p_pbc_go_negotiation_request_message">收到来自 %1$s 的 WLAN 直连连接设置请求。点击“确定”即可接受。</string>
+    <string name="wifi_p2p_pin_go_negotiation_request_message">收到来自 %1$s 的 WLAN 直连连接设置请求。输入 PIN 即可继续操作。</string>
     <string name="wifi_p2p_pin_display_message">必须在对端设备 %2$s 上输入 WPS PIN“%1$s”，才能继续进行连接设置</string>
-    <string name="wifi_p2p_enabled_notification_title">已启用 Wi-Fi Direct</string>
-    <string name="wifi_p2p_enabled_notification_message">通过触摸进行设置</string>
+    <string name="wifi_p2p_enabled_notification_title">已启用 WLAN 直连</string>
+    <string name="wifi_p2p_enabled_notification_message">通过点击进行设置</string>
     <string name="select_character">插入字符</string>
     <string name="sms_control_default_app_name">未知应用程序</string>
     <string name="sms_control_title">正在发送短信</string>
@@ -995,7 +995,7 @@
     <string name="perms_show_all"><b>全部显示</b></string>
     <string name="usb_storage_activity_title">USB 大容量存储</string>
     <string name="usb_storage_title">USB 已连接</string>
-    <string name="usb_storage_message">您已通过 USB 连接至计算机。如果您要在计算机和 Android 设备的 SD 卡之间复制文件，请触摸下面的按钮。</string>
+    <string name="usb_storage_message">您已通过 USB 连接至计算机。如果您要在计算机和 Android 设备的存储卡之间复制文件，请点击下面的按钮。</string>
     <string name="usb_storage_button_mount">打开 USB 存储设备</string>
     <string name="usb_storage_error_message">将 USB 存储设备用作 USB 大容量存储设备时出现问题。</string>
     <string name="usb_storage_notification_title">USB 已连接</string>
@@ -1014,7 +1014,7 @@
     <string name="usb_ptp_notification_title">作为相机连接</string>
     <string name="usb_cd_installer_notification_title">作为安装程序连接</string>
     <string name="usb_accessory_notification_title">已连接到 USB 配件</string>
-    <string name="usb_notification_message">触摸可显示其他 USB 选项</string>
+    <string name="usb_notification_message">点击可显示其他 USB 选项</string>
     <string name="extmedia_format_title">格式化存储卡</string>
     <string name="extmedia_format_message">您确定要格式化存储卡？卡上的所有数据都会丢失。</string>
     <string name="extmedia_format_button_format">格式化</string>
@@ -1048,9 +1048,9 @@
     <string name="ime_action_go">开始</string>
     <string name="ime_action_search">搜索</string>
     <string name="ime_action_send">发送</string>
-    <string name="ime_action_next">下一步</string>
+    <string name="ime_action_next">下一个</string>
     <string name="ime_action_done">完成</string>
-    <string name="ime_action_previous">上一页</string>
+    <string name="ime_action_previous">上一个</string>
     <string name="ime_action_default">执行</string>
     <string name="dial_number_using">"使用%s拨号
 "</string>
@@ -1072,8 +1072,8 @@
     <string name="alternate_eri_file">/data/eri.xml</string>
     <string name="vpn_title">VPN 已激活。</string>
     <string name="vpn_title_long">“%s”已激活 VPN</string>
-    <string name="vpn_text">点按即可管理网络。</string>
-    <string name="vpn_text_long">已连接到%s。点按即可管理网络。</string>
+    <string name="vpn_text">点击即可管理网络。</string>
+    <string name="vpn_text_long">已连接到%s。点击即可管理网络。</string>
     <string name="upload_file">选择文件</string>
     <string name="no_file_chosen">未选定任何文件</string>
     <string name="reset">重置</string>
@@ -1094,7 +1094,7 @@
     <string name="action_mode_done">完成</string>
     <string name="progress_unmounting">正在卸载 USB 存储设备...</string>
     <string name="progress_erasing">正在清除存储卡</string>
-    <string name="format_error">无法清除 SD 卡。</string>
+    <string name="format_error">无法清除存储卡。</string>
     <string name="media_bad_removal">存储卡尚未卸载已被移除。</string>
     <string name="media_checking">系统当前正在检查存储卡。</string>
     <string name="media_removed">存储卡已移除。</string>
@@ -1109,17 +1109,17 @@
     <string name="gpsVerifYes">是</string>
     <string name="gpsVerifNo">否</string>
     <string name="sync_too_many_deletes">超出删除限制</string>
-    <string name="sync_too_many_deletes_desc">帐户 %3$s 有 %1$d 个关于%2$s的删除项。您要如何操作？</string>
+    <string name="sync_too_many_deletes_desc">账户 %3$s 有 %1$d 个关于%2$s的删除项。您要如何操作？</string>
     <string name="sync_really_delete">删除这些项。</string>
     <string name="sync_undo_deletes">撤消删除。</string>
     <string name="sync_do_nothing">目前不进行任何操作。</string>
-    <string name="choose_account_label">选择帐户</string>
-    <string name="add_account_label">添加帐户</string>
-    <string name="choose_account_text">您希望使用哪个帐户？</string>
-    <string name="add_account_button_label">添加帐户</string>
+    <string name="choose_account_label">选择账户</string>
+    <string name="add_account_label">添加账户</string>
+    <string name="choose_account_text">您希望使用哪个账户？</string>
+    <string name="add_account_button_label">添加账户</string>
     <string name="number_picker_increment_button">增加</string>
     <string name="number_picker_decrement_button">减少</string>
-    <string name="number_picker_increment_scroll_mode">点按 %s 次并按住。</string>
+    <string name="number_picker_increment_scroll_mode">点击 %s 次并长按。</string>
     <string name="number_picker_increment_scroll_action">向上滑动可增加值，向下滑动可减少值。</string>
     <string name="time_picker_increment_minute_button">增加分钟数</string>
     <string name="time_picker_decrement_minute_button">减少分钟数</string>
@@ -1151,7 +1151,7 @@
     <string name="activitychooserview_choose_application">选择一个应用程序</string>
     <string name="shareactionprovider_share_with">共享对象</string>
     <string name="shareactionprovider_share_with_application">与“%s”共享</string>
-    <string name="content_description_sliding_handle">滑动手柄。点按并按住。</string>
+    <string name="content_description_sliding_handle">滑动手柄。长按。</string>
     <string name="description_direction_up">向上滑动%s。</string>
     <string name="description_direction_down">向下滑动%s。</string>
     <string name="description_direction_left">向左滑动%s。</string>
@@ -1160,30 +1160,30 @@
     <string name="description_target_camera">相机</string>
     <string name="description_target_silent">静音</string>
     <string name="description_target_soundon">打开声音</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">滑动解锁。</string>
     <string name="keyboard_headset_required_to_hear_password">需要插入耳机才能听到密码的按键声。</string>
     <string name="keyboard_password_character_no_headset">点。</string>
     <string name="action_bar_home_description">导航首页</string>
     <string name="action_bar_up_description">向上导航</string>
     <string name="action_menu_overflow_description">更多选项</string>
     <string name="storage_internal">内存空间</string>
-    <string name="storage_sd_card">SD 卡</string>
+    <string name="storage_sd_card">存储卡</string>
     <string name="storage_usb">USB 存储器</string>
     <string name="extract_edit_menu_button">编辑...</string>
     <string name="data_usage_warning_title">流量使用警告</string>
-    <string name="data_usage_warning_body">触摸可查看使用情况和设置</string>
+    <string name="data_usage_warning_body">点击可查看使用情况和设置</string>
     <string name="data_usage_3g_limit_title">2G-3G 数据已停用</string>
     <string name="data_usage_4g_limit_title">4G 数据已停用</string>
     <string name="data_usage_mobile_limit_title">移动数据已停用</string>
-    <string name="data_usage_wifi_limit_title">Wi-Fi 数据网络已停用</string>
-    <string name="data_usage_limit_body">触摸以启用</string>
+    <string name="data_usage_wifi_limit_title">WLAN 数据网络已停用</string>
+    <string name="data_usage_limit_body">点击以启用</string>
     <string name="data_usage_3g_limit_snoozed_title">已超出 2G-3G 数据流量限制</string>
     <string name="data_usage_4g_limit_snoozed_title">已超出 4G 数据使用上限</string>
     <string name="data_usage_mobile_limit_snoozed_title">已超出移动数据流量上限</string>
-    <string name="data_usage_wifi_limit_snoozed_title">超出了 Wi-Fi 数据流量上限</string>
+    <string name="data_usage_wifi_limit_snoozed_title">超出了 WLAN 数据流量上限</string>
     <string name="data_usage_limit_snoozed_body">超出规定上限 %s</string>
     <string name="data_usage_restricted_title">后台数据受限制</string>
-    <string name="data_usage_restricted_body">触摸以删除限制</string>
+    <string name="data_usage_restricted_body">点击以删除限制</string>
     <string name="ssl_certificate">安全证书</string>
     <string name="ssl_certificate_is_valid">该证书有效。</string>
     <string name="issued_to">颁发给：</string>
@@ -1203,9 +1203,9 @@
     <string name="share_action_provider_share_with">分享方式...</string>
     <string name="status_bar_device_locked">设备已锁定。</string>
     <string name="list_delimeter">"、 "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">正在发送...</string>
+    <string name="launchBrowserDefault">启动浏览器？</string>
+    <string name="SetupCallDefault">接受呼叫？</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">访问 4G</string>
     <string name="permlab_changeWimaxMulticastState">允许 WiMAX 多播接收</string>
@@ -1267,13 +1267,14 @@
     <string name="install_notify_title">IT 已阻止安装：</string>
     <string name="uninstall_notify_title">IT 已阻止卸载：</string>
     <string name="wifi_notify_title">IT 已禁用 WLAN</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">在主屏幕 > 应用程序中清除默认设置。</string>
+    <string name="sim_puk_contact_customer_care_information">请联系客服中心获得 PUK 代码</string>
     <string name="permlab_accessCWFolder">访问自定义向导功能文件夹</string>
     <string name="permdesc_accessCWFolder">允许应用程序访问自定义向导功能文件夹</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">访问恢复的文件夹</string>
+    <string name="permdesc_accessRecoveryFolder">允许应用程序访问恢复的文件夹</string>
     <string name="permlab_setappname">动态更改应用程序名称</string>
-    <string name="permdesc_setappname">允许应用程序动态更改指定应用程序名称。</string>
+    <string name="permdesc_setappname">允许应用程序动态更改指定的应用程序名称。</string>
     <string name="text_limitation">无法选择太多的字词来分享。</string>
     <string name="sms_roam_guild_dialog_title">发送信息</string>
     <string name="sms_roam_guild_dialog_subject">您正在国际网络漫游。如果发送此信息，无线服务提供商可能会收取额外费用。是否要：</string>
@@ -1311,5 +1312,5 @@
     <string name="font_color">字体颜色</string>
     <string name="font_settings">字体设置</string>
     <string name="font_alignment">字体对齐方式</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">配置</string>
 </resources>

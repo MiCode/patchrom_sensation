@@ -172,7 +172,7 @@
 
     .line 66
     :cond_0
-    const-string v1, "bt_fm_radio"
+    const-string v1, "bt_fm_management"
 
     new-instance v2, Lcom/broadcom/bt/service/framework/PowerManagementService;
 

@@ -1146,7 +1146,7 @@
 
     iget-object v3, p0, Lcom/android/server/UiModeManagerService;->mContext:Landroid/content/Context;
 
-    const v4, 0x1040543
+    const v4, 0x1040544
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1154,7 +1154,7 @@
 
     iget-object v4, p0, Lcom/android/server/UiModeManagerService;->mContext:Landroid/content/Context;
 
-    const v5, 0x1040544
+    const v5, 0x1040545
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

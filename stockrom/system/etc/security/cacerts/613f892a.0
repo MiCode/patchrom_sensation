@@ -1,0 +1,74 @@
+-----BEGIN CERTIFICATE-----
+MIIDRzCCArCgAwIBAgIENm3FGDANBgkqhkiG9w0BAQUFADBQMQswCQYDVQQGEwJV
+UzEkMCIGA1UEChMbRGlnaXRhbCBTaWduYXR1cmUgVHJ1c3QgQ28uMRswGQYDVQQL
+ExJEU1QtRW50cnVzdCBHVEkgQ0EwHhcNOTgxMjA5MDAwMjI0WhcNMTgxMjA5MDAz
+MjI0WjBQMQswCQYDVQQGEwJVUzEkMCIGA1UEChMbRGlnaXRhbCBTaWduYXR1cmUg
+VHJ1c3QgQ28uMRswGQYDVQQLExJEU1QtRW50cnVzdCBHVEkgQ0EwgZ0wDQYJKoZI
+hvcNAQEBBQADgYsAMIGHAoGBALYd90uNDxPjEvUJ/gYyDq9MQfV91Ec9KgrfgwXe
+3n3mAxb2UTrLRxpKrX7E/R20vnSKeN0Lg460hBPE+/htKa6h4Q8PQ+O1XmBp+oOU
+/Hnm3Hbt0UQrjv0Su/4XdxcMie2n71F9xO04wzujevviTaBgtfL9E2XTxuw/vjWc
+PSLvAgEDo4IBLjCCASowEQYJYIZIAYb4QgEBBAQDAgAHMHIGA1UdHwRrMGkwZ6Bl
+oGOkYTBfMQswCQYDVQQGEwJVUzEkMCIGA1UEChMbRGlnaXRhbCBTaWduYXR1cmUg
+VHJ1c3QgQ28uMRswGQYDVQQLExJEU1QtRW50cnVzdCBHVEkgQ0ExDTALBgNVBAMT
+BENSTDEwKwYDVR0QBCQwIoAPMTk5ODEyMDkwMDAyMjRagQ8yMDE4MTIwOTAwMDIy
+NFowCwYDVR0PBAQDAgEGMB8GA1UdIwQYMBaAFJOaRMrQeFOAKUkE38evMz+ZdV+u
+MB0GA1UdDgQWBBSTmkTK0HhTgClJBN/HrzM/mXVfrjAMBgNVHRMEBTADAQH/MBkG
+CSqGSIb2fQdBAAQMMAobBFY0LjADAgSQMA0GCSqGSIb3DQEBBQUAA4GBAGSJzAOn
+3AryWCDn/RegKHLNh7DNmLUkR2MzMRAQsu+KV3KuTAPgZ5+sYEOEIsGpo+Wxp94J
+1M8NeEYjW49Je/4TIpeU6nJI4SwgeJbpZkUZywllY2E/0UmYsXYQVdVjSmZLpAdr
+3nt/ueaTWxoCW4AO3Y0Y1Iqjwmjxo+AY0U5M
+-----END CERTIFICATE-----
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 913163544 (0x366dc518)
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=US, O=Digital Signature Trust Co., OU=DST-Entrust GTI CA
+        Validity
+            Not Before: Dec  9 00:02:24 1998 GMT
+            Not After : Dec  9 00:32:24 2018 GMT
+        Subject: C=US, O=Digital Signature Trust Co., OU=DST-Entrust GTI CA
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:b6:1d:f7:4b:8d:0f:13:e3:12:f5:09:fe:06:32:
+                    0e:af:4c:41:f5:7d:d4:47:3d:2a:0a:df:83:05:de:
+                    de:7d:e6:03:16:f6:51:3a:cb:47:1a:4a:ad:7e:c4:
+                    fd:1d:b4:be:74:8a:78:dd:0b:83:8e:b4:84:13:c4:
+                    fb:f8:6d:29:ae:a1:e1:0f:0f:43:e3:b5:5e:60:69:
+                    fa:83:94:fc:79:e6:dc:76:ed:d1:44:2b:8e:fd:12:
+                    bb:fe:17:77:17:0c:89:ed:a7:ef:51:7d:c4:ed:38:
+                    c3:3b:a3:7a:fb:e2:4d:a0:60:b5:f2:fd:13:65:d3:
+                    c6:ec:3f:be:35:9c:3d:22:ef
+                Exponent: 3 (0x3)
+        X509v3 extensions:
+            Netscape Cert Type: 
+                SSL CA, S/MIME CA, Object Signing CA
+            X509v3 CRL Distribution Points: 
+                DirName:/C=US/O=Digital Signature Trust Co./OU=DST-Entrust GTI CA/CN=CRL1
+
+            X509v3 Private Key Usage Period: 
+                Not Before: Dec  9 00:02:24 1998 GMT, Not After: Dec  9 00:02:24 2018 GMT
+            X509v3 Key Usage: 
+                Certificate Sign, CRL Sign
+            X509v3 Authority Key Identifier: 
+                keyid:93:9A:44:CA:D0:78:53:80:29:49:04:DF:C7:AF:33:3F:99:75:5F:AE
+
+            X509v3 Subject Key Identifier: 
+                93:9A:44:CA:D0:78:53:80:29:49:04:DF:C7:AF:33:3F:99:75:5F:AE
+            X509v3 Basic Constraints: 
+                CA:TRUE
+            1.2.840.113533.7.65.0: 
+                0
+..V4.0....
+    Signature Algorithm: sha1WithRSAEncryption
+        64:89:cc:03:a7:dc:0a:f2:58:20:e7:fd:17:a0:28:72:cd:87:
+        b0:cd:98:b5:24:47:63:33:31:10:10:b2:ef:8a:57:72:ae:4c:
+        03:e0:67:9f:ac:60:43:84:22:c1:a9:a3:e5:b1:a7:de:09:d4:
+        cf:0d:78:46:23:5b:8f:49:7b:fe:13:22:97:94:ea:72:48:e1:
+        2c:20:78:96:e9:66:45:19:cb:09:65:63:61:3f:d1:49:98:b1:
+        76:10:55:d5:63:4a:66:4b:a4:07:6b:de:7b:7f:b9:e6:93:5b:
+        1a:02:5b:80:0e:dd:8d:18:d4:8a:a3:c2:68:f1:a3:e0:18:d1:
+        4e:4c
+SHA1 Fingerprint=BC:92:19:DD:C9:8E:14:BF:1A:78:1F:6E:28:0B:04:C2:7F:90:27:12

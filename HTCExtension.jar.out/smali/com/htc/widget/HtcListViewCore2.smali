@@ -293,7 +293,7 @@
 
     move-result-object v7
 
-    const v8, 0x2080bac
+    const v8, 0x2080bad
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

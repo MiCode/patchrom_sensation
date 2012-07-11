@@ -27,20 +27,20 @@
     .parameter "remote"
 
     .prologue
-    .line 335
+    .line 337
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 336
+    .line 338
     iput-object p1, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 337
+    .line 339
     return-void
 .end method
 
 
 # virtual methods
-.method public HtcNotifyDataConnection(IZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/net/LinkProperties;Landroid/net/LinkCapabilities;IZI)V
-    .locals 5
+.method public HtcNotifyDataConnection(IZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/net/LinkProperties;Landroid/net/LinkCapabilities;IZILjava/lang/String;)V
+    .locals 6
     .parameter "state"
     .parameter "isDataConnectivityPossible"
     .parameter "reason"
@@ -51,6 +51,7 @@
     .parameter "networkType"
     .parameter "roaming"
     .parameter "errorCause"
+    .parameter "apnCarrier"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -58,155 +59,160 @@
     .end annotation
 
     .prologue
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    .line 688
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 689
-    .local v0, _data:Landroid/os/Parcel;
+    .line 691
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 691
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v4, "com.android.internal.telephony.ITelephonyRegistry"
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
     .line 692
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+    .local v1, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    .line 693
-    if-eqz p2, :cond_0
-
-    move v4, v2
-
-    :goto_0
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
+    move-result-object v2
 
     .line 694
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    .local v2, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "com.android.internal.telephony.ITelephonyRegistry"
+
+    invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 695
-    invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 696
-    invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    if-eqz p2, :cond_0
+
+    const/4 v3, 0x1
+
+    :goto_0
+    invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 697
-    if-eqz p6, :cond_1
+    invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 698
-    const/4 v4, 0x1
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {v1, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 699
-    const/4 v4, 0x0
+    invoke-virtual {v1, p5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    invoke-virtual {p6, v0, v4}, Landroid/net/LinkProperties;->writeToParcel(Landroid/os/Parcel;I)V
+    .line 700
+    if-eqz p6, :cond_1
 
-    .line 704
+    .line 701
+    const/4 v3, 0x1
+
+    invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 702
+    const/4 v3, 0x0
+
+    invoke-virtual {p6, v1, v3}, Landroid/net/LinkProperties;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 707
     :goto_1
     if-eqz p7, :cond_2
 
-    .line 705
-    const/4 v4, 0x1
+    .line 708
+    const/4 v3, 0x1
 
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 706
-    const/4 v4, 0x0
+    .line 709
+    const/4 v3, 0x0
 
-    invoke-virtual {p7, v0, v4}, Landroid/net/LinkCapabilities;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 711
-    :goto_2
-    invoke-virtual {v0, p8}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 712
-    if-eqz p9, :cond_3
-
-    :goto_3
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 713
-    invoke-virtual {v0, p10}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p7, v1, v3}, Landroid/net/LinkCapabilities;->writeToParcel(Landroid/os/Parcel;I)V
 
     .line 714
-    iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v3, 0x12
-
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    :goto_2
+    invoke-virtual {v1, p8}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 715
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+    if-eqz p9, :cond_3
+
+    const/4 v3, 0x1
+
+    :goto_3
+    invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 716
+    move/from16 v0, p10
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 717
+    move-object/from16 v0, p11
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 718
+    iget-object v3, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x12
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v1, v2, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 719
+    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 718
+    .line 722
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    .line 723
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 719
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 721
+    .line 725
     return-void
 
+    .line 696
     :cond_0
-    move v4, v3
+    const/4 v3, 0x0
 
-    .line 693
     goto :goto_0
 
-    .line 702
+    .line 705
     :cond_1
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     :try_start_1
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInt(I)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_1
 
-    .line 718
+    .line 722
     :catchall_0
-    move-exception v2
+    move-exception v3
 
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    .line 723
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 719
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+    .line 722
+    throw v3
 
-    .line 718
-    throw v2
-
-    .line 709
+    .line 712
     :cond_2
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     :try_start_2
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInt(I)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_2
 
+    .line 715
     :cond_3
-    move v2, v3
+    const/4 v3, 0x0
 
-    .line 712
     goto :goto_3
 .end method
 
@@ -214,7 +220,7 @@
     .locals 1
 
     .prologue
-    .line 340
+    .line 342
     iget-object v0, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
@@ -224,7 +230,7 @@
     .locals 1
 
     .prologue
-    .line 344
+    .line 346
     const-string v0, "com.android.internal.telephony.ITelephonyRegistry"
 
     return-object v0
@@ -240,28 +246,28 @@
     .end annotation
 
     .prologue
-    .line 607
+    .line 609
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 608
+    .line 610
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 610
+    .line 612
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 611
+    .line 613
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 612
+    .line 614
     iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0xe
@@ -270,30 +276,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 613
+    .line 615
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 616
+    .line 618
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 617
+    .line 619
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 619
+    .line 621
     return-void
 
-    .line 616
+    .line 618
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 617
+    .line 619
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 616
+    .line 618
     throw v2
 .end method
 
@@ -316,28 +322,28 @@
     .end annotation
 
     .prologue
-    .line 564
+    .line 566
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v2
 
-    .line 565
+    .line 567
     .local v2, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v3
 
-    .line 567
+    .line 569
     .local v3, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v4, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v2, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 568
+    .line 570
     invoke-virtual {v2, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 569
+    .line 571
     if-eqz p2, :cond_0
 
     const/4 v4, 0x1
@@ -345,35 +351,35 @@
     :goto_0
     invoke-virtual {v2, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 570
+    .line 572
     invoke-virtual {v2, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 571
+    .line 573
     invoke-virtual {v2, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 572
+    .line 574
     invoke-virtual {v2, p5}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
-    .line 573
+    .line 575
     invoke-virtual {v2, p6}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 574
+    .line 576
     invoke-virtual {v2, p7}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 575
+    .line 577
     invoke-virtual {v2, p8}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 576
+    .line 578
     move-object/from16 v0, p9
 
     invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 577
+    .line 579
     move-wide/from16 v0, p10
 
     invoke-virtual {v2, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 578
+    .line 580
     iget-object v4, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v5, 0xc
@@ -382,36 +388,36 @@
 
     invoke-interface {v4, v5, v2, v3, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 579
+    .line 581
     invoke-virtual {v3}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 582
+    .line 584
     invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
 
-    .line 583
+    .line 585
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
-    .line 585
+    .line 587
     return-void
 
-    .line 569
+    .line 571
     :cond_0
     const/4 v4, 0x0
 
     goto :goto_0
 
-    .line 582
+    .line 584
     :catchall_0
     move-exception v4
 
     invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
 
-    .line 583
+    .line 585
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
-    .line 582
+    .line 584
     throw v4
 .end method
 
@@ -425,28 +431,28 @@
     .end annotation
 
     .prologue
-    .line 622
+    .line 624
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 623
+    .line 625
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 625
+    .line 627
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 626
+    .line 628
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 627
+    .line 629
     iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0xf
@@ -455,30 +461,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 628
+    .line 630
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 631
+    .line 633
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 632
+    .line 634
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 634
+    .line 636
     return-void
 
-    .line 631
+    .line 633
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 632
+    .line 634
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 631
+    .line 633
     throw v2
 .end method
 
@@ -493,35 +499,35 @@
     .end annotation
 
     .prologue
-    .line 588
+    .line 590
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 589
+    .line 591
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 591
+    .line 593
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 592
+    .line 594
     const/4 v2, 0x0
 
     invoke-virtual {v0, p1, v2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 593
+    .line 595
     const/4 v2, 0x0
 
     invoke-virtual {v0, p2, v2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 594
+    .line 596
     iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0xd
@@ -530,30 +536,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 595
+    .line 597
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 598
+    .line 600
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 599
+    .line 601
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 601
+    .line 603
     return-void
 
-    .line 598
+    .line 600
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 599
+    .line 601
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 598
+    .line 600
     throw v2
 .end method
 
@@ -574,28 +580,28 @@
 
     const/4 v3, 0x0
 
-    .line 348
+    .line 350
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 349
+    .line 351
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 351
+    .line 353
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v4, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 352
+    .line 354
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 353
+    .line 355
     if-eqz p2, :cond_0
 
     invoke-interface {p2}, Lcom/android/internal/telephony/IPhoneStateListener;->asBinder()Landroid/os/IBinder;
@@ -605,16 +611,16 @@
     :goto_0
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 354
+    .line 356
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 355
+    .line 357
     if-eqz p4, :cond_1
 
     :goto_1
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 356
+    .line 358
     iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x1
@@ -623,21 +629,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 357
+    .line 359
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 360
+    .line 362
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 361
+    .line 363
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 363
+    .line 365
     return-void
 
-    .line 353
+    .line 355
     :cond_0
     const/4 v4, 0x0
 
@@ -646,19 +652,19 @@
     :cond_1
     move v2, v3
 
-    .line 355
+    .line 357
     goto :goto_1
 
-    .line 360
+    .line 362
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 361
+    .line 363
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 360
+    .line 362
     throw v2
 .end method
 
@@ -672,28 +678,28 @@
     .end annotation
 
     .prologue
-    .line 640
+    .line 642
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 641
+    .line 643
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 643
+    .line 645
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 644
+    .line 646
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 645
+    .line 647
     iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x10
@@ -702,30 +708,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 646
+    .line 648
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 649
+    .line 651
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 650
+    .line 652
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 652
+    .line 654
     return-void
 
-    .line 649
+    .line 651
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 650
+    .line 652
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 649
+    .line 651
     throw v2
 .end method
 
@@ -741,25 +747,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 444
+    .line 446
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 445
+    .line 447
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 447
+    .line 449
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 448
+    .line 450
     if-eqz p1, :cond_0
 
     const/4 v2, 0x1
@@ -767,7 +773,7 @@
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 449
+    .line 451
     iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x6
@@ -776,30 +782,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 450
+    .line 452
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 453
+    .line 455
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 454
+    .line 456
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 456
+    .line 458
     return-void
 
-    .line 453
+    .line 455
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 454
+    .line 456
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 453
+    .line 455
     throw v2
 .end method
 
@@ -814,31 +820,31 @@
     .end annotation
 
     .prologue
-    .line 366
+    .line 368
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 367
+    .line 369
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 369
+    .line 371
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 370
+    .line 372
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 371
+    .line 373
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 372
+    .line 374
     iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x2
@@ -847,30 +853,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 373
+    .line 375
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 376
+    .line 378
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 377
+    .line 379
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 379
+    .line 381
     return-void
 
-    .line 376
+    .line 378
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 377
+    .line 379
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 376
+    .line 378
     throw v2
 .end method
 
@@ -884,38 +890,38 @@
     .end annotation
 
     .prologue
-    .line 525
+    .line 527
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 526
+    .line 528
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 528
+    .line 530
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 529
+    .line 531
     if-eqz p1, :cond_0
 
-    .line 530
+    .line 532
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 531
+    .line 533
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 536
+    .line 538
     :goto_0
     iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -925,21 +931,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 537
+    .line 539
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 540
+    .line 542
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 541
+    .line 543
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 543
+    .line 545
     return-void
 
-    .line 534
+    .line 536
     :cond_0
     const/4 v2, 0x0
 
@@ -950,16 +956,16 @@
 
     goto :goto_0
 
-    .line 540
+    .line 542
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 541
+    .line 543
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 540
+    .line 542
     throw v2
 .end method
 
@@ -973,28 +979,28 @@
     .end annotation
 
     .prologue
-    .line 459
+    .line 461
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 460
+    .line 462
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 462
+    .line 464
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 463
+    .line 465
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 464
+    .line 466
     iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x7
@@ -1003,30 +1009,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 465
+    .line 467
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 468
+    .line 470
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 469
+    .line 471
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 471
+    .line 473
     return-void
 
-    .line 468
+    .line 470
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 469
+    .line 471
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 468
+    .line 470
     throw v2
 .end method
 
@@ -1052,28 +1058,28 @@
 
     const/4 v3, 0x0
 
-    .line 474
+    .line 476
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 475
+    .line 477
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 477
+    .line 479
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v4, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 478
+    .line 480
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 479
+    .line 481
     if-eqz p2, :cond_0
 
     move v4, v2
@@ -1081,53 +1087,53 @@
     :goto_0
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 480
+    .line 482
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 481
+    .line 483
     invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 482
+    .line 484
     invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 483
+    .line 485
     if-eqz p6, :cond_1
 
-    .line 484
+    .line 486
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 485
+    .line 487
     const/4 v4, 0x0
 
     invoke-virtual {p6, v0, v4}, Landroid/net/LinkProperties;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 490
+    .line 492
     :goto_1
     if-eqz p7, :cond_2
 
-    .line 491
+    .line 493
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 492
+    .line 494
     const/4 v4, 0x0
 
     invoke-virtual {p7, v0, v4}, Landroid/net/LinkCapabilities;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 497
+    .line 499
     :goto_2
     invoke-virtual {v0, p8}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 498
+    .line 500
     if-eqz p9, :cond_3
 
     :goto_3
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 499
+    .line 501
     iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x8
@@ -1136,27 +1142,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 500
+    .line 502
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 503
+    .line 505
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 504
+    .line 506
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 506
+    .line 508
     return-void
 
     :cond_0
     move v4, v3
 
-    .line 479
+    .line 481
     goto :goto_0
 
-    .line 488
+    .line 490
     :cond_1
     const/4 v4, 0x0
 
@@ -1167,19 +1173,19 @@
 
     goto :goto_1
 
-    .line 503
+    .line 505
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 504
+    .line 506
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 503
+    .line 505
     throw v2
 
-    .line 495
+    .line 497
     :cond_2
     const/4 v4, 0x0
 
@@ -1193,7 +1199,7 @@
     :cond_3
     move v2, v3
 
-    .line 498
+    .line 500
     goto :goto_3
 .end method
 
@@ -1208,31 +1214,31 @@
     .end annotation
 
     .prologue
-    .line 509
+    .line 511
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 510
+    .line 512
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 512
+    .line 514
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 513
+    .line 515
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 514
+    .line 516
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 515
+    .line 517
     iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x9
@@ -1241,30 +1247,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 516
+    .line 518
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 519
+    .line 521
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 520
+    .line 522
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 522
+    .line 524
     return-void
 
-    .line 519
+    .line 521
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 520
+    .line 522
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 519
+    .line 521
     throw v2
 .end method
 
@@ -1289,49 +1295,49 @@
     .end annotation
 
     .prologue
-    .line 658
+    .line 660
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 659
+    .line 661
     .local v1, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v2
 
-    .line 661
+    .line 663
     .local v2, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 662
+    .line 664
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 663
+    .line 665
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 664
+    .line 666
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 665
+    .line 667
     invoke-virtual {v1, p4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 666
+    .line 668
     invoke-virtual {v1, p5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 667
+    .line 669
     invoke-virtual {v1, p6}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 668
+    .line 670
     invoke-virtual {v1, p7}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 669
+    .line 671
     invoke-virtual {v1, p8}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 670
+    .line 672
     if-eqz p9, :cond_0
 
     const/4 v3, 0x1
@@ -1339,22 +1345,22 @@
     :goto_0
     invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 671
+    .line 673
     move/from16 v0, p10
 
     invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 672
+    .line 674
     move/from16 v0, p11
 
     invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 673
+    .line 675
     move-object/from16 v0, p12
 
     invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 674
+    .line 676
     iget-object v3, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x11
@@ -1363,36 +1369,36 @@
 
     invoke-interface {v3, v4, v1, v2, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 675
+    .line 677
     invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 678
+    .line 680
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
-    .line 679
+    .line 681
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 681
+    .line 683
     return-void
 
-    .line 670
+    .line 672
     :cond_0
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 678
+    .line 680
     :catchall_0
     move-exception v3
 
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
-    .line 679
+    .line 681
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 678
+    .line 680
     throw v3
 .end method
 
@@ -1406,28 +1412,28 @@
     .end annotation
 
     .prologue
-    .line 427
+    .line 429
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 428
+    .line 430
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 430
+    .line 432
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 431
+    .line 433
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 432
+    .line 434
     iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x5
@@ -1436,30 +1442,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 433
+    .line 435
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 436
+    .line 438
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 437
+    .line 439
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 439
+    .line 441
     return-void
 
-    .line 436
+    .line 438
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 437
+    .line 439
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 436
+    .line 438
     throw v2
 .end method
 
@@ -1473,28 +1479,28 @@
     .end annotation
 
     .prologue
-    .line 546
+    .line 548
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 547
+    .line 549
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 549
+    .line 551
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 550
+    .line 552
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 551
+    .line 553
     iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0xb
@@ -1503,30 +1509,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 552
+    .line 554
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 555
+    .line 557
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 556
+    .line 558
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 558
+    .line 560
     return-void
 
-    .line 555
+    .line 557
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 556
+    .line 558
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 555
+    .line 557
     throw v2
 .end method
 
@@ -1540,38 +1546,38 @@
     .end annotation
 
     .prologue
-    .line 382
+    .line 384
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 383
+    .line 385
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 385
+    .line 387
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 386
+    .line 388
     if-eqz p1, :cond_0
 
-    .line 387
+    .line 389
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 388
+    .line 390
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/telephony/ServiceState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 393
+    .line 395
     :goto_0
     iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -1581,21 +1587,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 394
+    .line 396
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 397
+    .line 399
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 398
+    .line 400
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 400
+    .line 402
     return-void
 
-    .line 391
+    .line 393
     :cond_0
     const/4 v2, 0x0
 
@@ -1606,16 +1612,16 @@
 
     goto :goto_0
 
-    .line 397
+    .line 399
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 398
+    .line 400
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 397
+    .line 399
     throw v2
 .end method
 
@@ -1629,38 +1635,38 @@
     .end annotation
 
     .prologue
-    .line 403
+    .line 405
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 404
+    .line 406
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 406
+    .line 408
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "com.android.internal.telephony.ITelephonyRegistry"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 407
+    .line 409
     if-eqz p1, :cond_0
 
-    .line 408
+    .line 410
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 409
+    .line 411
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/telephony/SignalStrength;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 414
+    .line 416
     :goto_0
     iget-object v2, p0, Lcom/android/internal/telephony/ITelephonyRegistry$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -1670,21 +1676,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 415
+    .line 417
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 418
+    .line 420
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 419
+    .line 421
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 421
+    .line 423
     return-void
 
-    .line 412
+    .line 414
     :cond_0
     const/4 v2, 0x0
 
@@ -1695,15 +1701,15 @@
 
     goto :goto_0
 
-    .line 418
+    .line 420
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 419
+    .line 421
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 418
+    .line 420
     throw v2
 .end method

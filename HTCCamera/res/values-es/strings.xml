@@ -238,7 +238,7 @@ cámara"</string>
     <string name="doubleshot_main_bar_flash_on">Activar</string>
     <string name="doubleshot_main_bar_flash_off">Desactivar</string>
     <string name="doubleshot_main_bar_scene_auto">Automático</string>
-    <string name="doubleshot_main_bar_scene_portrait">Vertical</string>
+    <string name="doubleshot_main_bar_scene_portrait">Retrato</string>
     <string name="doubleshot_main_bar_scene_night">Noche</string>
     <string name="doubleshot_main_bar_scene_landscape">Paisaje</string>
     <string name="doubleshot_main_bar_scene_action">Acción</string>
@@ -251,7 +251,7 @@ cámara"</string>
     <string name="doubleshot_main_bar_scene_manual">Manual</string>
     <string name="doubleshot_main_bar_scene_lowlight">Poca luz</string>
     <string name="scene_auto">Automático</string>
-    <string name="scene_portrait">Vertical</string>
+    <string name="scene_portrait">Retrato</string>
     <string name="scene_landscape">Paisaje</string>
     <string name="scene_burst">Ráfaga</string>
     <string name="scene_panorama">Panorámica</string>
@@ -283,7 +283,7 @@ cámara"</string>
     <string name="scene_type_night">Noche</string>
     <string name="scene_type_action">Acción</string>
     <string name="scene_type_macro">Macro</string>
-    <string name="scene_type_portrait">Vertical</string>
+    <string name="scene_type_portrait">Retrato</string>
     <string name="scene_type_lowlight">Poca luz</string>
     <string name="scene_type_manual">Manual</string>
     <string name="scene_description_auto">Detecta y ajusta automáticamente la configuración para lograr resultados óptimos en la mayoría de escenas.</string>

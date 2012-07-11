@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 4568
+    .line 4643
     iput-object p1, p0, Landroid/net/wifi/WifiStateMachine$ScanModeState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 4572
+    .line 4647
     const v0, 0xc365
 
     invoke-virtual {p0}, Landroid/net/wifi/WifiStateMachine$ScanModeState;->getName()Ljava/lang/String;
@@ -47,7 +47,7 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 4573
+    .line 4648
     return-void
 .end method
 
@@ -60,19 +60,19 @@
 
     const/4 v1, 0x0
 
-    .line 4577
+    .line 4652
     iget v2, p1, Landroid/os/Message;->what:I
 
     sparse-switch v2, :sswitch_data_0
 
     move v0, v1
 
-    .line 4601
+    .line 4676
     :cond_0
     :goto_0
     return v0
 
-    .line 4579
+    .line 4654
     :sswitch_0
     iget v2, p1, Landroid/os/Message;->arg1:I
 
@@ -80,21 +80,21 @@
 
     if-eq v2, v3, :cond_0
 
-    .line 4583
+    .line 4658
     iget v2, p1, Landroid/os/Message;->arg1:I
 
     invoke-static {v2}, Landroid/net/wifi/WifiNative;->setScanResultHandlingCommand(I)Z
 
-    .line 4584
+    .line 4659
     invoke-static {}, Landroid/net/wifi/WifiNative;->reconnectCommand()Z
 
-    .line 4585
+    .line 4660
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine$ScanModeState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     #setter for: Landroid/net/wifi/WifiStateMachine;->mIsScanMode:Z
     invoke-static {v2, v1}, Landroid/net/wifi/WifiStateMachine;->access$5802(Landroid/net/wifi/WifiStateMachine;Z)Z
 
-    .line 4586
+    .line 4661
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$ScanModeState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine$ScanModeState;->this$0:Landroid/net/wifi/WifiStateMachine;
@@ -107,7 +107,7 @@
     #calls: Landroid/net/wifi/WifiStateMachine;->transitionTo(Lcom/android/internal/util/IState;)V
     invoke-static {v1, v2}, Landroid/net/wifi/WifiStateMachine;->access$10400(Landroid/net/wifi/WifiStateMachine;Lcom/android/internal/util/IState;)V
 
-    .line 4600
+    .line 4675
     :sswitch_1
     const v1, 0xc366
 
@@ -117,7 +117,7 @@
 
     goto :goto_0
 
-    .line 4577
+    .line 4652
     nop
 
     :sswitch_data_0

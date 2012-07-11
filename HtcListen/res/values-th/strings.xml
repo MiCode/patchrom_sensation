@@ -170,7 +170,7 @@
     <string name="htc_no_songs_to_playlist">กรุณาเพิ่มเพลงในรายการเพลง</string>
     <string name="htc_no_name_for_playlist">กรุณาใส่ชื่อสำหรับรายการเพลง</string>
     <string name="htc_cannot_create_playlist">ไม่สามารถสร้างรายการเพลงได้</string>
-    <string name="htc_private_app">เอชทีซีมิวสิค</string>
+    <string name="htc_private_app">HTC มิวสิค</string>
     <string name="drm_onetime_type_msg">แฟ้มนี้เล่นได้เพียงครั้งเดียว คุณต้องการจะเล่นในตอนนี้หรือไม่?</string>
     <string name="drm_count_type_msg">ไฟล์นี้สามารถเล่นได้อย่างเดียวเท่านั้น %s เวลา คุณต้องการจะเล่นในตอนนี้หรือไม่?</string>
     <string name="drm_date_type_msg" formatted="false">ไฟล์นี้สามารถใช้จาก %s ถึง %s คุณต้องการจะเล่นในตอนนี้หรือไม่?</string>

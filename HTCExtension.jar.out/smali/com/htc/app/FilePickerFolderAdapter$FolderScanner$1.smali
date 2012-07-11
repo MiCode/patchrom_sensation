@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1003
+    .line 996
     iput-object p1, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner$1;->this$1:Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1005
+    .line 998
     iget-object v0, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner$1;->this$1:Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;
 
     #getter for: Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;->isStop:Z
@@ -53,12 +53,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 1026
+    .line 1019
     :cond_0
     :goto_0
     return-void
 
-    .line 1006
+    .line 999
     :cond_1
     iget-object v0, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner$1;->this$1:Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;
 
@@ -69,7 +69,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1007
+    .line 1000
     iget-object v0, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner$1;->this$1:Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;
 
     #getter for: Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;->isRoot:Z
@@ -79,13 +79,13 @@
 
     if-eqz v0, :cond_2
 
-    .line 1008
+    .line 1001
     iget-object v0, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner$1;->this$1:Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;
 
     #setter for: Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;->isDoAppendFlag:Z
     invoke-static {v0, v1}, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;->access$1802(Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;Z)Z
 
-    .line 1009
+    .line 1002
     iget-object v0, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner$1;->this$1:Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;
 
     #getter for: Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;->MoreListView:Lcom/htc/widget/MoreExpandableHtcListView;
@@ -95,7 +95,7 @@
 
     monitor-enter v1
 
-    .line 1010
+    .line 1003
     :try_start_0
     iget-object v0, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner$1;->this$1:Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;
 
@@ -117,7 +117,7 @@
 
     invoke-virtual {v0, v2}, Lcom/htc/widget/MoreExpandableHtcListView;->appendRoot(Ljava/util/LinkedList;)V
 
-    .line 1012
+    .line 1005
     monitor-exit v1
 
     goto :goto_0
@@ -131,7 +131,7 @@
 
     throw v0
 
-    .line 1015
+    .line 1008
     :cond_2
     iget-object v0, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner$1;->this$1:Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;
 
@@ -142,13 +142,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 1016
+    .line 1009
     iget-object v0, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner$1;->this$1:Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;
 
     #setter for: Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;->isDoAppendFlag:Z
     invoke-static {v0, v1}, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;->access$1802(Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;Z)Z
 
-    .line 1017
+    .line 1010
     iget-object v0, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner$1;->this$1:Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;
 
     #getter for: Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;->MoreListView:Lcom/htc/widget/MoreExpandableHtcListView;
@@ -158,7 +158,7 @@
 
     monitor-enter v1
 
-    .line 1018
+    .line 1011
     :try_start_1
     iget-object v0, p0, Lcom/htc/app/FilePickerFolderAdapter$FolderScanner$1;->this$1:Lcom/htc/app/FilePickerFolderAdapter$FolderScanner;
 
@@ -187,7 +187,7 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/htc/widget/MoreExpandableHtcListView;->appendChildren(Lcom/htc/widget/MoreExpandableItemInfo;Ljava/util/LinkedList;)V
 
-    .line 1019
+    .line 1012
     monitor-exit v1
 
     goto :goto_0

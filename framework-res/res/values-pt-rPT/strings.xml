@@ -269,9 +269,9 @@
     <string name="turn_off_radio">Desligar o modo sem fios</string>
     <string name="screen_lock">Bloqueio de ecrã</string>
     <string name="power_off">Desligar</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Campainha desligada</string>
+    <string name="silent_mode_vibrate">Toque em vibração</string>
+    <string name="silent_mode_ring">Campainha ligada</string>
     <string name="shutdown_progress">A encerrar…</string>
     <string name="shutdown_confirm">O seu telefone irá encerrar.</string>
     <string name="shutdown_confirm_question">Pretende encerrar?</string>
@@ -327,7 +327,7 @@
     <string name="permlab_sendSms">enviar mensagens SMS</string>
     <string name="permdesc_sendSms">Permite que uma aplicação envie mensagens SMS. Aplicações maliciosas poderão custar-lhe dinheiro ao enviar mensagens sem a sua confirmação.</string>
     <string name="permlab_sendSmsNoConfirmation">enviar mensagens SMS sem confirmação</string>
-    <string name="permdesc_sendSmsNoConfirmation">Permite à aplicação enviar mensagens SMS. Algumas aplicações maliciosas podem fazer com que incorra em custos, enviando mensagens sem a sua confirmação.</string>
+    <string name="permdesc_sendSmsNoConfirmation">Permite à aplicação enviar mensagens SMS. Algumas aplicações maliciosas podem fazer com que fique sujeito a pagar custos, enviando mensagens sem a sua confirmação.</string>
     <string name="permlab_readSms">ler SMS ou MMS</string>
     <string name="permdesc_readSms">Permite que a aplicação leia as mensagens SMS guardadas no seu telefone ou cartão SIM. Aplicações maliciosas poderão ler as suas mensagens confidenciais.</string>
     <string name="permlab_writeSms">editar SMS ou MMS</string>
@@ -339,7 +339,7 @@
     <string name="permlab_reorderTasks">reordenar aplicações em execução</string>
     <string name="permdesc_reorderTasks">Permite que uma aplicação mova tarefas para o fundo ou frente. Programas maliciosos poderão forçar-se a si mesmas para a frente sem que as consiga controlar.</string>
     <string name="permlab_removeTasks">parar a execução de aplicações</string>
-    <string name="permdesc_removeTasks">Permite que uma aplicação remova tarefas e elimine as respetivas aplicações. As aplicações maliciosas podem perturbar o comportamento de outras aplicações.</string>
+    <string name="permdesc_removeTasks">Permite que uma aplicação remova tarefas e bloqueie as respectivas aplicações. As aplicações maliciosas podem perturbar o comportamento de outras aplicações.</string>
     <string name="permlab_setDebugApp">activar o depuramento da aplicação</string>
     <string name="permdesc_setDebugApp">Permite que uma aplicação ligue o depurar para outra aplicação. Aplicações maliciosas podem utilizar isto para terminar outras aplicações.</string>
     <string name="permlab_changeConfiguration">alterar as suas definições de IU</string>
@@ -426,10 +426,10 @@
     <string name="permdesc_movePackage">Permite que uma aplicação mova recursos de aplicações de meios internos para meios externos e vice-versa.</string>
     <string name="permlab_readLogs">ler dados sensíveis de registo</string>
     <string name="permdesc_readLogs">Permite a uma aplicação ler a partir dos diversos ficheiros de registo do sistema. Isto permite descobrir informações gerais sobre a forma como o utilizador usa o telefone, podendo, inclusive, incluir dados pessoais ou privados.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">utilize qualquer descodificador multimédia para reprodução</string>
+    <string name="permdesc_anyCodecForPlayback">Permite a uma aplicação usar qualquer descodificador multimédia instalado para descodificar a reprodução.</string>
+    <string name="permlab_readWriteOmaDrm">aceda a pasta acerca de oma DRM</string>
+    <string name="permdesc_readWriteOmaDrm">Permite a uma aplicação ler ou escrever na pasta acerca de OMA DRM.</string>
     <string name="permlab_diagnostic">ler/escrever para recursos detidos por diag</string>
     <string name="permdesc_diagnostic">Permite que uma aplicação leia e escreva em qualquer recurso detido pelo grupo diag; por exemplo, ficheiros em /dev. Isto poderá potencialmente afectar a estabilidade e segurança do sistema. Deverá ser APENAS utilizado para diagnósticos específicos de hardware, pelo fabricante ou operador.</string>
     <string name="permlab_changeComponentState">activar ou desactivar componentes das aplicações</string>
@@ -454,9 +454,9 @@
     <string name="permdesc_readProfile">Permite que a aplicação leia informações do perfil pessoal armazenadas no aparelho, como o seu nome e as informações de contacto. Isto significa que a aplicação pode identificá-lo e enviar informações do seu perfil a outras pessoas.</string>
     <string name="permlab_writeProfile">escrever nos dados do seu perfil</string>
     <string name="permdesc_writeProfile">Permite que a aplicação altere ou adicione dados às informações do perfil pessoal armazenadas no aparelho, como o seu nome e as informações de contacto. Isto significa que outras aplicações o podem identificar e enviar informações do seu perfil a outras pessoas.</string>
-    <string name="permlab_readSocialStream">ler o seu fluxo social</string>
-    <string name="permdesc_readSocialStream">Permite que a aplicação para aceda e sincronize atualizações sociais de si e dos seus amigos. Aplicações maliciosas podem usar isso para ler as comunicações privadas entre si e os seus amigos em redes sociais.</string>
-    <string name="permlab_writeSocialStream">escrever para o seu fluxo social</string>
+    <string name="permlab_readSocialStream">Acompanhe as redes sociais</string>
+    <string name="permdesc_readSocialStream">Permite que a aplicação aceda e sincronize atualizações sociais de si e dos seus amigos. Aplicações maliciosas podem usar isso para ler as comunicações privadas entre si e os seus amigos em redes sociais.</string>
+    <string name="permlab_writeSocialStream">escrever para as suas redes sociais</string>
     <string name="permdesc_writeSocialStream">Permite que a aplicação mostre atualizações sociais dos seus amigos. Aplicações maliciosas podem usar isso para fingirem ser um amigo e levá-lo a revelar senhas ou outras informações confidenciais.</string>
     <string name="permlab_readCalendar">ler eventos do calendário, para além de informações confidenciais</string>
     <string name="permdesc_readCalendar">Permite que uma aplicação leia todos os eventos do calendário armazenados no telemóvel, incluindo os de amigos ou colegas de trabalho. Uma aplicação maliciosa com esta permissão pode extrair informações pessoais destes calendários sem o conhecimento dos proprietários.</string>
@@ -573,7 +573,7 @@
     <string name="permlab_accessWimaxState">ver estado WiMAX</string>
     <string name="permdesc_accessWimaxState">Permite a uma aplicação consultar a informação sobre o estado do WiMAX.</string>
     <string name="permlab_changeWimaxState">alterar estado WiMAX</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">Permite a uma aplicação ligar e desligar da rede WiMAX.</string>
     <string name="permlab_bluetoothAdmin">administração do bluetooth</string>
     <string name="permdesc_bluetoothAdmin">Permite que uma aplicação configure o telefone Bluetooth local, e descubra e se emparelhe com dispositivos remotos.</string>
     <string name="permlab_bluetooth">criar ligações Bluetooth</string>
@@ -748,7 +748,7 @@ Tente novamente dentro de %d segundos."</string>
     <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Introduziu incorrectamente o PIN %d vezes. 
 
 Tente novamente dentro de %d segundos."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Efectuou incorrectamente o seu padrão de desbloqueio %d vezes. Após outras %d tentativas sem sucesso, ser-lhe-á pedido para desbloquear o telefone utilizando o seu início de sessão no Google.
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Desenhou o padrão de desbloqueio incorrectamente %d vezes. Ao fim de mais %d tentativas sem sucesso, ser-lhe-á pedido que desbloqueie o seu telefone com o seu acesso Google.
 
  Tente novamente dentro de %d segundos."</string>
     <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Tentou desbloquear o telemóvel %d vezes de forma incorreta. Após mais %d tentativa(s) sem êxito, as definições de origem do telemóvel serão repostas e todos os dados de utilizador serão perdidos.</string>
@@ -819,7 +819,7 @@ Seleccione OK para continuar, ou Cancelar para permanecer na página actual."</s
     <string name="autofill_expiration_month_re">expir|exp.*month|exp.*date|ccmonth|gueltig|gültig|monat|fecha|date.*exp|scadenza|有効期限|validade|Срок действия карты|月</string>
     <string name="autofill_expiration_date_re">exp|^/|year|ablaufdatum|gueltig|gültig|yahr|fecha|scadenza|有効期限|validade|Срок действия карты|年|有效期</string>
     <string name="autofill_fax_re">fax|télécopie|telecopie|ファックス|факс|传真|傳真</string>
-    <string name="autofill_province">Província</string>
+    <string name="autofill_province">Localidade</string>
     <string name="autofill_postal_code">Código postal</string>
     <string name="autofill_state">Estado</string>
     <string name="autofill_zip_code">Código postal</string>
@@ -962,7 +962,7 @@ Pretende encerrá-lo?"</string>
     <string name="ringtone_silent">Silencioso</string>
     <string name="ringtone_picker_title">Toques</string>
     <string name="ringtone_unknown">Toque desconhecido</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Iniciar sessão em rede Wi-Fi</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Não foi possível ligar a Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" tem uma ligação à internet fraca."</string>
@@ -971,7 +971,7 @@ Pretende encerrá-lo?"</string>
     <string name="wifi_p2p_failed_message">Não foi possível iniciar o Wi-Fi Direct</string>
     <string name="wifi_p2p_pbc_go_negotiation_request_message">Pedido de configuração de Wi-Fi Direct de %1$s. Clique em OK para aceitar.</string>
     <string name="wifi_p2p_pin_go_negotiation_request_message">Pedido de configuração de ligação Wi-Fi Direct de %1$s. Introduza o PIN para prosseguir.</string>
-    <string name="wifi_p2p_pin_display_message">É preciso introduzir o PIN WPS %1$s no aparelho de pares %2$s para que possa prosseguir a configuração da ligação</string>
+    <string name="wifi_p2p_pin_display_message">É preciso introduzir o PIN WPS %1$s no aparelho a emparelhar %2$s para que possa prosseguir a configuração da ligação</string>
     <string name="wifi_p2p_enabled_notification_title">O Wi-Fi Direct está ativado</string>
     <string name="wifi_p2p_enabled_notification_message">Toque para aceder às definições</string>
     <string name="select_character">Introduza carácter</string>
@@ -1139,8 +1139,8 @@ para a conta %s"</string>
     <string name="radiobutton_not_selected">não selecionado</string>
     <string name="switch_on">ativado</string>
     <string name="switch_off">desativado</string>
-    <string name="togglebutton_pressed">premido</string>
-    <string name="togglebutton_not_pressed">não premido</string>
+    <string name="togglebutton_pressed">pressionado</string>
+    <string name="togglebutton_not_pressed">não pressionado</string>
     <string name="keyboardview_keycode_alt">Alt</string>
     <string name="keyboardview_keycode_cancel">Cancelar</string>
     <string name="keyboardview_keycode_delete">Delete</string>
@@ -1160,7 +1160,7 @@ para a conta %s"</string>
     <string name="description_target_camera">Câmara</string>
     <string name="description_target_silent">Silencioso</string>
     <string name="description_target_soundon">Som ativado</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">Passe com o dedo para desbloquear.</string>
     <string name="keyboard_headset_required_to_hear_password">Ligue os auscultadores com microfone integrado para ouvir as teclas da palavra-passe.</string>
     <string name="keyboard_password_character_no_headset">Ponto.</string>
     <string name="action_bar_home_description">Navegar para página inicial</string>
@@ -1203,9 +1203,9 @@ para a conta %s"</string>
     <string name="share_action_provider_share_with">Partilhar com...</string>
     <string name="status_bar_device_locked">Aparelho bloqueado.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">A enviar...</string>
+    <string name="launchBrowserDefault">Abrir Navegador?</string>
+    <string name="SetupCallDefault">Aceitar Chamada?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">Aceder a 4G</string>
     <string name="permlab_changeWimaxMulticastState">permitir recepção WiMAX Multicast</string>
@@ -1266,15 +1266,16 @@ para a conta %s"</string>
     <string name="camera_notify_title">TI desactivou a câmara</string>
     <string name="install_notify_title">TI bloqueou instalação:</string>
     <string name="uninstall_notify_title">TI bloqueou desinstalação:</string>
-    <string name="wifi_notify_title">TI Wi-Fi desactivado</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="wifi_notify_title">TI Wi-Fi desativado</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Limpar predefinição em Definições Principais > Aplicações.</string>
+    <string name="sim_puk_contact_customer_care_information">Contate o Apoio ao Cliente para obter o código PUK</string>
     <string name="permlab_accessCWFolder">Aceder à pasta da funcionalidade do assistente de personalização</string>
     <string name="permdesc_accessCWFolder">Permite que uma aplicação aceda à pasta da funcionalidade do assistente de personalização</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Aceder à pasta de recuperação</string>
+    <string name="permdesc_accessRecoveryFolder">Permite a uma aplicação aceder a uma pasta de recuperação</string>
     <string name="permlab_setappname">Dinâmico para alterar nome de aplicação</string>
     <string name="permdesc_setappname">Permite a uma aplicação alterar dinamicamente o nome de uma aplicação específica.</string>
-    <string name="text_limitation">Não é possível seleccionar demasiadas palavras para partilhar.</string>
+    <string name="text_limitation">Não é possível selecionar demasiadas palavras para partilhar.</string>
     <string name="sms_roam_guild_dialog_title">Mensagem a enviar</string>
     <string name="sms_roam_guild_dialog_subject">Está em roaming em redes internacionais. Enviar esta mensagem pode resultar em custos adicionais por parte do seu fornecedor sem fios. Deseja:</string>
     <string name="sms_roam_guild_dialog_radio_auto_send">Enviar automaticamente quando com cobertura nacional</string>
@@ -1286,7 +1287,7 @@ para a conta %s"</string>
     <string name="permdesc_changeUsbnetState">Permite que uma aplicação se ligue e desligue de pontos de acesso UsbNet, e altere as redes UsbNet configuradas.</string>
     <string name="permlab_changeUsbnetMulticastState">permitir recepção UsbNet Multicast</string>
     <string name="permdesc_changeUsbnetMulticastState">Permite que uma aplicação receba pacotes não endereçados directamente ao seu dispositivo. Pode ser útil quando desejar procurar serviços disponíveis perto de si. Utiliza mais energia do que o modo não multicast.</string>
-    <string name="hutch_htctethered_notification_title">PocketWifi activo</string>
+    <string name="hutch_htctethered_notification_title">PocketWifi ativo</string>
     <string name="localized_opertator_name_kddi_roaming">Roaming internacional</string>
     <string name="localized_opertator_name_unknown">Rede desconhecida</string>
     <string name="encryption_password_required">Necessária palavra-passe de encriptação</string>
@@ -1294,7 +1295,7 @@ para a conta %s"</string>
     <string name="ext_media_ro_notification_title">Cartão SD só de leitura (não encriptado)</string>
     <string name="ext_media_ro_notification_message">Para acesso de escrita, formatar para encriptar cartão SD</string>
     <string name="dock_mode_goto_notification_title">Modo de Base</string>
-    <string name="dock_mode_goto_notification_message">Seleccione para regressar ao Modo Base.</string>
+    <string name="dock_mode_goto_notification_message">Selecione para regressar ao Modo Base.</string>
     <string name="lockscreen_uimsim_unlock_progress_dialog_message">A desbloquear cartão UIM/SIM…</string>
     <string name="lockscreen_uim_unlock_progress_dialog_message">A desbloquear cartão UIM…</string>
     <string name="lockscreen_uim_puk_locked_message">Cartão UIM bloqueado por PUK.</string>
@@ -1311,5 +1312,5 @@ para a conta %s"</string>
     <string name="font_color">Cor de letra</string>
     <string name="font_settings">Definições do tipo de letra</string>
     <string name="font_alignment">Alinhamento do tipo de letra</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Configurar</string>
 </resources>

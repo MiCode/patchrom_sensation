@@ -630,7 +630,7 @@
     .locals 1
 
     .prologue
-    .line 524
+    .line 532
     iget-object v0, p0, Lcom/android/camera/widget/ResolutionView;->mMainList:Landroid/widget/ListView;
 
     return-object v0
@@ -640,7 +640,7 @@
     .locals 1
 
     .prologue
-    .line 520
+    .line 528
     iget v0, p0, Lcom/android/camera/widget/ResolutionView;->m_MenuHeight:I
 
     return v0

@@ -175,7 +175,7 @@
     <string name="resolution_contact_description">Среднее (272 x 272)</string>
     <string name="resolution_VGA_3_2_description">Эконом. (640 x 416)</string>
     <string name="resolution_VGA_5_3_description">Эконом. (640 x 384)</string>
-    <string name="resolution_VGA_16_9_description">Среднее (640 x 368)</string>
+    <string name="resolution_VGA_16_9_description">Малое (640 x 368)</string>
     <string name="resolution_Tablet_VGA_16_9_description">Эконом. (640 x 368)</string>
     <string name="screensave_msg">Нажмите экран, чтобы активировать камеру</string>
     <string name="screensave_msg_camcorder">Нажмите экран, чтобы активировать видеокамеру</string>

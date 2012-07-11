@@ -1481,7 +1481,7 @@
     .locals 2
 
     .prologue
-    .line 1160
+    .line 1166
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x28
@@ -1500,11 +1500,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1163
+    .line 1169
     :cond_0
     const/4 v0, 0x1
 
-    .line 1165
+    .line 1171
     :goto_0
     return v0
 
@@ -1518,7 +1518,7 @@
     .locals 2
 
     .prologue
-    .line 1221
+    .line 1230
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0x94
@@ -1531,11 +1531,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1223
+    .line 1232
     :cond_0
     const/4 v0, 0x0
 
-    .line 1225
+    .line 1234
     :goto_0
     return v0
 
@@ -1549,7 +1549,7 @@
     .locals 2
 
     .prologue
-    .line 1053
+    .line 1059
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x28
@@ -1580,11 +1580,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1058
+    .line 1064
     :cond_0
     const/4 v0, 0x1
 
-    .line 1060
+    .line 1066
     :goto_0
     return v0
 
@@ -1598,7 +1598,7 @@
     .locals 2
 
     .prologue
-    .line 1044
+    .line 1050
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x28
@@ -1617,11 +1617,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1047
+    .line 1053
     :cond_0
     const/4 v0, 0x1
 
-    .line 1049
+    .line 1055
     :goto_0
     return v0
 
@@ -1645,17 +1645,17 @@
     .locals 2
 
     .prologue
-    .line 1283
+    .line 1294
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0xa8
 
     if-ne v0, v1, :cond_0
 
-    .line 1284
+    .line 1295
     const/4 v0, 0x1
 
-    .line 1286
+    .line 1297
     :goto_0
     return v0
 
@@ -1669,7 +1669,7 @@
     .locals 1
 
     .prologue
-    .line 802
+    .line 806
     const/4 v0, 0x1
 
     return v0
@@ -1679,7 +1679,7 @@
     .locals 1
 
     .prologue
-    .line 798
+    .line 802
     const/4 v0, 0x1
 
     return v0
@@ -1689,7 +1689,7 @@
     .locals 2
 
     .prologue
-    .line 767
+    .line 770
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0xd1
@@ -1716,21 +1716,15 @@
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
-    const/16 v1, 0x88
-
-    if-eq v0, v1, :cond_0
-
-    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
-
     const/16 v1, 0x9f
 
     if-ne v0, v1, :cond_1
 
-    .line 773
+    .line 775
     :cond_0
     const/4 v0, 0x1
 
-    .line 775
+    .line 777
     :goto_0
     return v0
 
@@ -1744,7 +1738,7 @@
     .locals 2
 
     .prologue
-    .line 779
+    .line 781
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0x94
@@ -1781,23 +1775,35 @@
 
     if-eq v0, v1, :cond_0
 
-    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
-
-    const/16 v1, 0x88
-
-    if-eq v0, v1, :cond_0
-
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x22
 
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
+
+    const/16 v1, 0xc
+
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
+
+    const/16 v1, 0xaf
+
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
+
+    const/4 v1, 0x7
+
     if-ne v0, v1, :cond_1
 
-    .line 787
+    .line 791
     :cond_0
     const/4 v0, 0x1
 
-    .line 789
+    .line 793
     :goto_0
     return v0
 
@@ -1978,7 +1984,7 @@
     .locals 2
 
     .prologue
-    .line 759
+    .line 762
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0x71
@@ -1991,10 +1997,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 761
+    .line 764
     const/4 v0, 0x1
 
-    .line 763
+    .line 766
     :goto_0
     return v0
 
@@ -2010,24 +2016,24 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 944
+    .line 949
     invoke-static {}, Lcom/android/camera/DisplayDevice;->support1080p()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 945
+    .line 950
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v2, 0xd0
 
     if-ne v1, v2, :cond_0
 
-    .line 946
+    .line 951
     const/4 v0, 0x1
 
-    .line 950
+    .line 955
     :cond_0
     return v0
 .end method
@@ -2038,19 +2044,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 929
+    .line 934
     invoke-static {}, Lcom/android/camera/DisplayDevice;->support720p()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 940
+    .line 945
     :cond_0
     :goto_0
     return v0
 
-    .line 932
+    .line 937
     :cond_1
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
@@ -2095,7 +2101,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 938
+    .line 943
     :cond_3
     const/4 v0, 0x1
 
@@ -2106,17 +2112,17 @@
     .locals 2
 
     .prologue
-    .line 1008
+    .line 1013
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0xc
 
     if-ne v0, v1, :cond_0
 
-    .line 1009
+    .line 1014
     const/4 v0, 0x1
 
-    .line 1011
+    .line 1016
     :goto_0
     return v0
 
@@ -2130,7 +2136,7 @@
     .locals 2
 
     .prologue
-    .line 1020
+    .line 1025
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x61
@@ -2151,15 +2157,21 @@
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
+    const/16 v1, 0xe0
+
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
     const/16 v1, 0x9d
 
     if-ne v0, v1, :cond_1
 
-    .line 1024
+    .line 1030
     :cond_0
     const/4 v0, 0x1
 
-    .line 1026
+    .line 1032
     :goto_0
     return v0
 
@@ -2173,7 +2185,7 @@
     .locals 1
 
     .prologue
-    .line 1015
+    .line 1020
     const/4 v0, 0x1
 
     return v0
@@ -2207,7 +2219,7 @@
     .locals 1
 
     .prologue
-    .line 969
+    .line 974
     const/4 v0, 0x1
 
     return v0
@@ -2217,17 +2229,17 @@
     .locals 2
 
     .prologue
-    .line 1307
+    .line 1318
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0xd2
 
     if-ne v0, v1, :cond_0
 
-    .line 1308
+    .line 1319
     const/4 v0, 0x0
 
-    .line 1310
+    .line 1321
     :goto_0
     return v0
 
@@ -2241,7 +2253,7 @@
     .locals 2
 
     .prologue
-    .line 1092
+    .line 1098
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x28
@@ -2260,11 +2272,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1095
+    .line 1101
     :cond_0
     const/4 v0, 0x1
 
-    .line 1097
+    .line 1103
     :goto_0
     return v0
 
@@ -2302,17 +2314,17 @@
     .locals 2
 
     .prologue
-    .line 1299
+    .line 1310
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_LANGUAGE_flag:S
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 1300
+    .line 1311
     const/4 v0, 0x1
 
-    .line 1302
+    .line 1313
     :goto_0
     return v0
 
@@ -2326,7 +2338,7 @@
     .locals 2
 
     .prologue
-    .line 1232
+    .line 1241
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x10
@@ -2357,21 +2369,43 @@
     goto :goto_0
 .end method
 
+.method public static needForce48KAudioSamplingRate()Z
+    .locals 2
+
+    .prologue
+    .line 1330
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    const/16 v1, 0xad
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public static notSupportH264()Z
     .locals 1
 
     .prologue
-    .line 921
+    .line 926
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportQCT7x27()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 922
+    .line 927
     const/4 v0, 0x1
 
-    .line 924
+    .line 929
     :goto_0
     return v0
 
@@ -2385,17 +2419,17 @@
     .locals 2
 
     .prologue
-    .line 752
+    .line 755
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0xd1
 
     if-ne v0, v1, :cond_0
 
-    .line 753
+    .line 756
     const/4 v0, 0x1
 
-    .line 755
+    .line 758
     :goto_0
     return v0
 
@@ -2409,7 +2443,7 @@
     .locals 2
 
     .prologue
-    .line 715
+    .line 718
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x10
@@ -2422,11 +2456,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 717
+    .line 720
     :cond_0
     const/4 v0, 0x1
 
-    .line 719
+    .line 722
     :goto_0
     return v0
 
@@ -2440,7 +2474,7 @@
     .locals 1
 
     .prologue
-    .line 988
+    .line 993
     const/4 v0, 0x1
 
     return v0
@@ -2450,17 +2484,17 @@
     .locals 2
 
     .prologue
-    .line 706
+    .line 709
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x8
 
     if-ne v0, v1, :cond_0
 
-    .line 707
+    .line 710
     const/4 v0, 0x1
 
-    .line 709
+    .line 712
     :goto_0
     return v0
 
@@ -2474,7 +2508,7 @@
     .locals 2
 
     .prologue
-    .line 725
+    .line 728
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x50
@@ -2529,11 +2563,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 734
+    .line 737
     :cond_0
     const/4 v0, 0x0
 
-    .line 736
+    .line 739
     :goto_0
     return v0
 
@@ -2547,7 +2581,7 @@
     .locals 2
 
     .prologue
-    .line 889
+    .line 894
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x7b
@@ -2614,11 +2648,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 900
+    .line 905
     :cond_0
     const/4 v0, 0x1
 
-    .line 902
+    .line 907
     :goto_0
     return v0
 
@@ -2632,7 +2666,7 @@
     .locals 1
 
     .prologue
-    .line 1040
+    .line 1046
     const/4 v0, 0x1
 
     return v0
@@ -2642,17 +2676,17 @@
     .locals 1
 
     .prologue
-    .line 1065
+    .line 1071
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportSpecific2ndCamera()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1066
+    .line 1072
     const/4 v0, 0x0
 
-    .line 1068
+    .line 1074
     :goto_0
     return v0
 
@@ -2666,7 +2700,7 @@
     .locals 2
 
     .prologue
-    .line 1072
+    .line 1078
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0xad
@@ -2679,11 +2713,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1074
+    .line 1080
     :cond_0
     const/4 v0, 0x1
 
-    .line 1076
+    .line 1082
     :goto_0
     return v0
 
@@ -2697,17 +2731,17 @@
     .locals 2
 
     .prologue
-    .line 1274
+    .line 1285
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x89
 
     if-ne v0, v1, :cond_0
 
-    .line 1276
+    .line 1287
     const/4 v0, 0x1
 
-    .line 1278
+    .line 1289
     :goto_0
     return v0
 
@@ -2721,7 +2755,7 @@
     .locals 1
 
     .prologue
-    .line 1176
+    .line 1185
     const/4 v0, 0x1
 
     return v0
@@ -2731,7 +2765,7 @@
     .locals 2
 
     .prologue
-    .line 1102
+    .line 1108
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x7c
@@ -2774,11 +2808,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1109
+    .line 1115
     :cond_0
     const/4 v0, 0x1
 
-    .line 1111
+    .line 1117
     :goto_0
     return v0
 
@@ -2792,7 +2826,7 @@
     .locals 2
 
     .prologue
-    .line 1115
+    .line 1121
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x95
@@ -2817,11 +2851,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1119
+    .line 1125
     :cond_0
     const/4 v0, 0x1
 
-    .line 1121
+    .line 1127
     :goto_0
     return v0
 
@@ -2835,7 +2869,7 @@
     .locals 1
 
     .prologue
-    .line 907
+    .line 912
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportQCT8x50()Z
 
     move-result v0
@@ -2854,11 +2888,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 908
+    .line 913
     :cond_0
     const/4 v0, 0x1
 
-    .line 910
+    .line 915
     :goto_0
     return v0
 
@@ -2872,7 +2906,7 @@
     .locals 2
 
     .prologue
-    .line 1080
+    .line 1086
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0xad
@@ -2903,11 +2937,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1085
+    .line 1091
     :cond_0
     const/4 v0, 0x1
 
-    .line 1087
+    .line 1093
     :goto_0
     return v0
 
@@ -2921,17 +2955,17 @@
     .locals 1
 
     .prologue
-    .line 1182
+    .line 1191
     invoke-static {}, Lcom/android/camera/DisplayDevice;->ishtcChina()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1183
+    .line 1192
     const/4 v0, 0x0
 
-    .line 1185
+    .line 1194
     :goto_0
     return v0
 
@@ -2947,14 +2981,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1195
+    .line 1204
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportAutoUpload()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1199
+    .line 1208
     :cond_0
     return v1
 .end method
@@ -2963,17 +2997,17 @@
     .locals 2
 
     .prologue
-    .line 1290
+    .line 1301
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x89
 
     if-ne v0, v1, :cond_0
 
-    .line 1292
+    .line 1303
     const/4 v0, 0x1
 
-    .line 1294
+    .line 1305
     :goto_0
     return v0
 
@@ -2987,17 +3021,17 @@
     .locals 2
 
     .prologue
-    .line 1125
+    .line 1131
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x88
 
     if-ne v0, v1, :cond_0
 
-    .line 1126
+    .line 1132
     const/4 v0, 0x1
 
-    .line 1128
+    .line 1134
     :goto_0
     return v0
 
@@ -3013,14 +3047,14 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1000
+    .line 1005
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v2, 0x10
 
     if-ne v1, v2, :cond_1
 
-    .line 1002
+    .line 1007
     :cond_0
     :goto_0
     return v0
@@ -3041,7 +3075,7 @@
     .locals 1
 
     .prologue
-    .line 964
+    .line 969
     const/4 v0, 0x1
 
     return v0
@@ -3051,7 +3085,7 @@
     .locals 2
 
     .prologue
-    .line 1260
+    .line 1269
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x3e
@@ -3096,15 +3130,27 @@
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
+    const/16 v1, 0x61
+
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
     const/16 v1, 0x88
+
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    const/16 v1, 0x50
 
     if-ne v0, v1, :cond_1
 
-    .line 1268
+    .line 1279
     :cond_0
     const/4 v0, 0x1
 
-    .line 1270
+    .line 1281
     :goto_0
     return v0
 
@@ -3161,7 +3207,7 @@
     .locals 1
 
     .prologue
-    .line 914
+    .line 919
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportQCT8x50()Z
 
     move-result v0
@@ -3174,11 +3220,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 915
+    .line 920
     :cond_0
     const/4 v0, 0x1
 
-    .line 917
+    .line 922
     :goto_0
     return v0
 
@@ -3192,7 +3238,7 @@
     .locals 2
 
     .prologue
-    .line 742
+    .line 745
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x42
@@ -3215,11 +3261,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 745
+    .line 748
     :cond_0
     const/4 v0, 0x1
 
-    .line 747
+    .line 750
     :goto_0
     return v0
 
@@ -3233,17 +3279,17 @@
     .locals 2
 
     .prologue
-    .line 1213
+    .line 1222
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x62
 
     if-ne v0, v1, :cond_0
 
-    .line 1214
+    .line 1223
     const/4 v0, 0x0
 
-    .line 1216
+    .line 1225
     :goto_0
     return v0
 
@@ -3257,7 +3303,7 @@
     .locals 2
 
     .prologue
-    .line 1204
+    .line 1213
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x10
@@ -3270,11 +3316,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1206
+    .line 1215
     :cond_0
     const/4 v0, 0x1
 
-    .line 1208
+    .line 1217
     :goto_0
     return v0
 
@@ -3288,7 +3334,7 @@
     .locals 2
 
     .prologue
-    .line 697
+    .line 700
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x90
@@ -3301,11 +3347,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 699
+    .line 702
     :cond_0
     const/4 v0, 0x0
 
-    .line 701
+    .line 704
     :goto_0
     return v0
 
@@ -3319,7 +3365,7 @@
     .locals 2
 
     .prologue
-    .line 954
+    .line 959
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x40
@@ -3332,11 +3378,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 958
+    .line 963
     :cond_0
     const/4 v0, 0x1
 
-    .line 960
+    .line 965
     :goto_0
     return v0
 
@@ -3350,17 +3396,17 @@
     .locals 2
 
     .prologue
-    .line 993
+    .line 998
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x10
 
     if-ne v0, v1, :cond_0
 
-    .line 994
+    .line 999
     const/4 v0, 0x0
 
-    .line 996
+    .line 1001
     :goto_0
     return v0
 
@@ -3374,7 +3420,7 @@
     .locals 2
 
     .prologue
-    .line 1030
+    .line 1036
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x28
@@ -3387,10 +3433,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 1033
+    .line 1039
     const/4 v0, 0x0
 
-    .line 1036
+    .line 1042
     :goto_0
     return v0
 
@@ -3404,7 +3450,7 @@
     .locals 1
 
     .prologue
-    .line 1246
+    .line 1255
     const/4 v0, 0x1
 
     return v0
@@ -3414,7 +3460,7 @@
     .locals 2
 
     .prologue
-    .line 807
+    .line 811
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x39
@@ -3433,11 +3479,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 810
+    .line 814
     :cond_0
     const/4 v0, 0x1
 
-    .line 812
+    .line 816
     :goto_0
     return v0
 
@@ -3451,7 +3497,7 @@
     .locals 2
 
     .prologue
-    .line 816
+    .line 820
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x8
@@ -3476,11 +3522,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 820
+    .line 824
     :cond_0
     const/4 v0, 0x1
 
-    .line 822
+    .line 826
     :goto_0
     return v0
 
@@ -3494,7 +3540,7 @@
     .locals 2
 
     .prologue
-    .line 862
+    .line 867
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x62
@@ -3513,11 +3559,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 865
+    .line 870
     :cond_0
     const/4 v0, 0x1
 
-    .line 867
+    .line 872
     :goto_0
     return v0
 
@@ -3531,7 +3577,7 @@
     .locals 2
 
     .prologue
-    .line 838
+    .line 842
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0xa8
@@ -3575,6 +3621,12 @@
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0xaa
+
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    const/16 v1, 0xe0
 
     if-eq v0, v1, :cond_0
 
@@ -3632,11 +3684,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 855
+    .line 860
     :cond_0
     const/4 v0, 0x1
 
-    .line 857
+    .line 862
     :goto_0
     return v0
 
@@ -3650,7 +3702,7 @@
     .locals 2
 
     .prologue
-    .line 828
+    .line 832
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x9
@@ -3675,11 +3727,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 832
+    .line 836
     :cond_0
     const/4 v0, 0x1
 
-    .line 834
+    .line 838
     :goto_0
     return v0
 
@@ -3693,7 +3745,7 @@
     .locals 2
 
     .prologue
-    .line 872
+    .line 877
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x7b
@@ -3760,11 +3812,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 883
+    .line 888
     :cond_0
     const/4 v0, 0x1
 
-    .line 885
+    .line 890
     :goto_0
     return v0
 
@@ -3788,10 +3840,22 @@
     .locals 1
 
     .prologue
-    .line 645
+    .line 644
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    if-nez v0, :cond_0
+
+    .line 646
+    const/4 v0, 0x0
+
+    .line 648
+    :goto_0
+    return v0
+
+    :cond_0
     const/4 v0, 0x1
 
-    return v0
+    goto :goto_0
 .end method
 
 .method public static supportSensor()Z
@@ -3832,7 +3896,7 @@
     .locals 2
 
     .prologue
-    .line 1133
+    .line 1139
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x7c
@@ -3875,11 +3939,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1140
+    .line 1146
     :cond_0
     const/4 v0, 0x1
 
-    .line 1142
+    .line 1148
     :goto_0
     return v0
 
@@ -3893,7 +3957,7 @@
     .locals 2
 
     .prologue
-    .line 1147
+    .line 1153
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x7c
@@ -3936,11 +4000,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1154
+    .line 1160
     :cond_0
     const/4 v0, 0x1
 
-    .line 1156
+    .line 1162
     :goto_0
     return v0
 
@@ -3954,7 +4018,7 @@
     .locals 1
 
     .prologue
-    .line 1313
+    .line 1324
     const/4 v0, 0x1
 
     return v0
@@ -3964,7 +4028,7 @@
     .locals 2
 
     .prologue
-    .line 650
+    .line 653
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x30
@@ -4025,11 +4089,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 661
+    .line 664
     :cond_0
     const/4 v0, 0x1
 
-    .line 663
+    .line 666
     :goto_0
     return v0
 
@@ -4043,21 +4107,38 @@
     .locals 2
 
     .prologue
-    .line 1170
+    .line 1176
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x61
 
-    if-ne v0, v1, :cond_0
+    if-eq v0, v1, :cond_0
 
-    .line 1171
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    if-eqz v0, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    const/16 v1, 0xaa
+
+    if-eq v0, v1, :cond_0
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    const/16 v1, 0xe0
+
+    if-ne v0, v1, :cond_1
+
+    .line 1180
+    :cond_0
     const/4 v0, 0x0
 
-    .line 1172
+    .line 1181
     :goto_0
     return v0
 
-    :cond_0
+    :cond_1
     const/4 v0, 0x1
 
     goto :goto_0
@@ -4069,19 +4150,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 679
+    .line 682
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportSecondCamera()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 685
+    .line 688
     :cond_0
     :goto_0
     return v0
 
-    .line 682
+    .line 685
     :cond_1
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
@@ -4089,7 +4170,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 683
+    .line 686
     const/4 v0, 0x1
 
     goto :goto_0
@@ -4119,7 +4200,7 @@
     .locals 2
 
     .prologue
-    .line 689
+    .line 692
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x30
@@ -4132,11 +4213,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 691
+    .line 694
     :cond_0
     const/4 v0, 0x1
 
-    .line 693
+    .line 696
     :goto_0
     return v0
 
@@ -4150,7 +4231,7 @@
     .locals 1
 
     .prologue
-    .line 1256
+    .line 1265
     const/4 v0, 0x0
 
     return v0
@@ -4160,7 +4241,7 @@
     .locals 2
 
     .prologue
-    .line 667
+    .line 670
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x30
@@ -4197,11 +4278,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 673
+    .line 676
     :cond_0
     const/4 v0, 0x0
 
-    .line 675
+    .line 678
     :goto_0
     return v0
 

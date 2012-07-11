@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 626
+    .line 635
     iput-object p1, p0, Lcom/htc/textselection/HtcTextSelectionManager$2;->this$0:Lcom/htc/textselection/HtcTextSelectionManager;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -47,17 +47,17 @@
 
     const/high16 v8, 0x4040
 
-    .line 630
+    .line 639
     iget v5, p1, Landroid/os/Message;->what:I
 
     packed-switch v5, :pswitch_data_0
 
-    .line 692
+    .line 701
     :cond_0
     :goto_0
     return-void
 
-    .line 655
+    .line 664
     :pswitch_0
     iget-object v5, p0, Lcom/htc/textselection/HtcTextSelectionManager$2;->this$0:Lcom/htc/textselection/HtcTextSelectionManager;
 
@@ -68,7 +68,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 656
+    .line 665
     iget-object v5, p0, Lcom/htc/textselection/HtcTextSelectionManager$2;->this$0:Lcom/htc/textselection/HtcTextSelectionManager;
 
     #getter for: Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
@@ -76,7 +76,7 @@
 
     move-result-object v4
 
-    .line 658
+    .line 667
     .local v4, target:Landroid/widget/TextView;
     invoke-virtual {v4}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -98,7 +98,7 @@
 
     move-result v1
 
-    .line 659
+    .line 668
     .local v1, dest:I
     invoke-virtual {v4}, Landroid/widget/TextView;->getSelectionEnd()I
 
@@ -108,13 +108,13 @@
 
     int-to-float v2, v5
 
-    .line 661
+    .line 670
     .local v2, diff:F
     cmpg-float v5, v2, v9
 
     if-gtz v5, :cond_1
 
-    .line 662
+    .line 671
     invoke-virtual {v4}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v5
@@ -129,13 +129,13 @@
 
     goto :goto_0
 
-    .line 664
+    .line 673
     :cond_1
     div-float v5, v2, v8
 
     float-to-int v3, v5
 
-    .line 665
+    .line 674
     .local v3, increment:I
     div-float v5, v2, v8
 
@@ -149,10 +149,10 @@
 
     if-lez v5, :cond_2
 
-    .line 666
+    .line 675
     add-int/lit8 v3, v3, 0x1
 
-    .line 668
+    .line 677
     :cond_2
     invoke-virtual {v4}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -172,7 +172,7 @@
 
     invoke-static {v5, v6, v7}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;II)V
 
-    .line 669
+    .line 678
     iget-object v5, p0, Lcom/htc/textselection/HtcTextSelectionManager$2;->this$0:Lcom/htc/textselection/HtcTextSelectionManager;
 
     #getter for: Lcom/htc/textselection/HtcTextSelectionManager;->mPrivateHandler:Landroid/os/Handler;
@@ -186,7 +186,7 @@
 
     goto :goto_0
 
-    .line 674
+    .line 683
     .end local v1           #dest:I
     .end local v2           #diff:F
     .end local v3           #increment:I
@@ -202,7 +202,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 675
+    .line 684
     iget-object v5, p0, Lcom/htc/textselection/HtcTextSelectionManager$2;->this$0:Lcom/htc/textselection/HtcTextSelectionManager;
 
     #getter for: Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
@@ -210,7 +210,7 @@
 
     move-result-object v4
 
-    .line 677
+    .line 686
     .restart local v4       #target:Landroid/widget/TextView;
     invoke-virtual {v4}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -224,7 +224,7 @@
 
     move-result v1
 
-    .line 678
+    .line 687
     .restart local v1       #dest:I
     invoke-virtual {v4}, Landroid/widget/TextView;->getSelectionStart()I
 
@@ -234,13 +234,13 @@
 
     int-to-float v2, v5
 
-    .line 680
+    .line 689
     .restart local v2       #diff:F
     cmpg-float v5, v2, v9
 
     if-gtz v5, :cond_4
 
-    .line 681
+    .line 690
     invoke-virtual {v4}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v5
@@ -255,13 +255,13 @@
 
     goto/16 :goto_0
 
-    .line 683
+    .line 692
     :cond_4
     div-float v5, v2, v8
 
     float-to-int v0, v5
 
-    .line 684
+    .line 693
     .local v0, decrement:I
     div-float v5, v2, v8
 
@@ -275,10 +275,10 @@
 
     if-lez v5, :cond_5
 
-    .line 685
+    .line 694
     add-int/lit8 v0, v0, 0x1
 
-    .line 686
+    .line 695
     :cond_5
     invoke-virtual {v4}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -298,7 +298,7 @@
 
     invoke-static {v5, v6, v7}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;II)V
 
-    .line 687
+    .line 696
     iget-object v5, p0, Lcom/htc/textselection/HtcTextSelectionManager$2;->this$0:Lcom/htc/textselection/HtcTextSelectionManager;
 
     #getter for: Lcom/htc/textselection/HtcTextSelectionManager;->mPrivateHandler:Landroid/os/Handler;
@@ -312,7 +312,7 @@
 
     goto/16 :goto_0
 
-    .line 630
+    .line 639
     :pswitch_data_0
     .packed-switch 0x3e9
         :pswitch_1

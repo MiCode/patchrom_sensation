@@ -163,8 +163,8 @@
     <string name="abbrev_wday_month_day_year">EEE، d MMMM y</string>
     <string name="byteShort">B</string>
     <string name="kilobyteShort">ك ب</string>
-    <string name="megabyteShort">ميجابايت</string>
-    <string name="gigabyteShort">جيجابايت</string>
+    <string name="megabyteShort">م ب</string>
+    <string name="gigabyteShort">ج ب</string>
     <string name="terabyteShort">تيرابايت</string>
     <string name="petabyteShort">بيتا بايت</string>
     <string name="fileSizeSuffix">%1$s%2$s</string>
@@ -210,7 +210,7 @@
     <string name="RestrictedOnEmergency">تم حظر خدمة الطوارئ.</string>
     <string name="RestrictedOnNormal">تم حظر الخدمة الصوتية.</string>
     <string name="RestrictedOnAllVoice">تم حظر جميع الرسائل الصوتية.</string>
-    <string name="RestrictedOnSms">تم حظر خدمة SMS.</string>
+    <string name="RestrictedOnSms">تم حظر خدمة الرسائل القصيرة SMS.</string>
     <string name="RestrictedOnVoiceData">تم حظر الخدمات الصوتية/خدمات البيانات.</string>
     <string name="RestrictedOnVoiceSms">تم حظر الخدمات الصوتية/خدمات رسائل SMS.</string>
     <string name="RestrictedOnAll">تم حظر كل الخدمات الصوتية/ خدمات البيانات/رسائل SMS.</string>
@@ -269,9 +269,9 @@
     <string name="turn_off_radio">إيقاف تشغيل الراديو</string>
     <string name="screen_lock">تأمين الشاشة</string>
     <string name="power_off">إيقاف تشغيل الطاقة</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">الرنين غير فعال</string>
+    <string name="silent_mode_vibrate">التنبيه بالاهتزاز</string>
+    <string name="silent_mode_ring">الرنين فعال</string>
     <string name="shutdown_progress">جاري إيقاف التشغيل…</string>
     <string name="shutdown_confirm">سيقوم الهاتف بإيقاف التشغيل.</string>
     <string name="shutdown_confirm_question">هل تريد إيقاف التشغيل؟</string>
@@ -426,10 +426,10 @@
     <string name="permdesc_movePackage">السماح لتطبيق بنقل موارد التطبيق من الوسائط الداخلية إلى الخارجية والعكس صحيح.</string>
     <string name="permlab_readLogs">قراءة بيانات السجل الحساسة</string>
     <string name="permdesc_readLogs">السماح لتطبيق بالقراءة من الملفات المتنوعة لسجل النظام. يسمح ذلك باكتشاف معلومات عامة عن استخدام الهاتف والتي من الممكن أن تشتمل على معلومات شخصية.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">استخدم أي أداة فك ترميز وسائط للتشغيل</string>
+    <string name="permdesc_anyCodecForPlayback">السماح لتطبيق باستخدام أي أداة فك ترميز وسائط مثبتة لفك الترميز من أجل تشغيل الوسائط.</string>
+    <string name="permlab_readWriteOmaDrm">الوصول إلى مجلد oma DRM</string>
+    <string name="permdesc_readWriteOmaDrm">السماح لتطبيق بقراءة المجلد الخاص بمعلومات OMA DRM أو الكتابة إليه.</string>
     <string name="permlab_diagnostic">القراءة/الكتابة إلى موارد خاصة بمربع الحوار</string>
     <string name="permdesc_diagnostic">السماح لتطبيق بالقراءة والكتابة على أي مورد تمتلكه مجموعة diag، على سبيل المثال، الملفات في /dev. قد يؤثر ذلك على ثبات النظام وأمانه. يقتصر استخدام ذلك على عمليات التشخيص الخاصة بالأجهزة والتي تقوم بها الشركة المصنعة أو مشغل الخدمة.</string>
     <string name="permlab_changeComponentState">تمكين أو تعطيل مكونات التطبيق</string>
@@ -540,7 +540,7 @@
     <string name="permdesc_masterClear">السماح لتطبيق بإعادة تعيين النظام بالكامل إلى إعدادات المصنع، مما يؤدي إلى مسح كل البيانات والتكوينات والتطبيقات المثبتة.</string>
     <string name="permlab_setTime">تعيين الوقت</string>
     <string name="permdesc_setTime">السماح لتطبيق بتغيير وقت ساعة الهاتف.</string>
-    <string name="permlab_setTimeZone">تحديد المنطقة الزمنية</string>
+    <string name="permlab_setTimeZone">تعيين المنطقة الزمنية</string>
     <string name="permdesc_setTimeZone">السماح لتطبيق بتغيير المنطقة الزمنية للهاتف.</string>
     <string name="permlab_accountManagerService">العمل كخدمة AccountManagerService</string>
     <string name="permdesc_accountManagerService">السماح لتطبيق بإجراء مكالمات مع AccountAuthenticators</string>
@@ -573,7 +573,7 @@
     <string name="permlab_accessWimaxState">عرض حالة WiMAX</string>
     <string name="permdesc_accessWimaxState">السماح لتطبيق بعرض معلومات حول حالة WiMAX.</string>
     <string name="permlab_changeWimaxState">تغيير حالة WiMAX</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">السماح لتطبيق بالاتصال بشبكة WiMAX وقطع الاتصال بها.</string>
     <string name="permlab_bluetoothAdmin">إدارة Bluetooth</string>
     <string name="permdesc_bluetoothAdmin">السماح لتطبيق بتكوين هاتف Bluetooth محلي واكتشاف الأجهزة البعيدة والاقتران معها.</string>
     <string name="permlab_bluetooth">إنشاء اتصالات Bluetooth</string>
@@ -748,9 +748,9 @@
     <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"لقد أدخلت رقم التعريف الشخصي (PIN) بشكل غير صحيح عدد %d من المرات. 
 
 الرجاء إعادة المحاولة خلال %d ثانية."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"لقد رسمت نقش إلغاء التأمين بشكل غير صحيح %d مرة. بعد %d من المحاولات غير الناجحة الأخرى، ستُطالب بإلغاء تأمين الهاتف باستخدام معلومات تسجيل الدخول إلى Google.
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"لقد رسمت نمط إلغاء التأمين الخاص بك بشكل غير صحيح %d مرة/مرات. بعد إجراء %d محاولة فاشلة ستتم مطالبتك بإلغاء تأمين هاتفك باستخدام تسجيل دخول Google.
 
- الرجاء المحاولة مرة أخرى خلال %d ثانية."</string>
+ رجاء المحاولة مرة أخرى خلال %d ثانية/ثوان."</string>
     <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">لقد حاولت إلغاء تأمين الهاتف %d من المرات. بعد %d من المحاولات غير الناجحة، ستتم إعادة تعيين الهاتف إلى الإعدادات الافتراضية للمصنع وسيتم فقد جميع بيانات المستخدم.</string>
     <string name="lockscreen_failed_attempts_now_wiping">لقد حاولت إلغاء تأمين الهاتف %d من المرات بشكل غير صحيح. سيتم الآن إعادة تعيين الهاتف إلى الإعدادات الافتراضية للمصنع.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">حاول مرة أخرى خلال %d ثانية/ثوان.</string>
@@ -900,7 +900,7 @@
     <string name="capital_on">فعال</string>
     <string name="capital_off">غير فعال</string>
     <string name="whichApplication">تنفيذ العملية باستخدام</string>
-    <string name="alwaysUse">استخدام بشكل افتراضي لهذه العملية.</string>
+    <string name="alwaysUse">استخدام بشكل افتراضي.</string>
     <string name="clearDefaultHintMsg">مسح الإعداد الافتراضي من الرئيسية > إعدادات > التطبيقات > إدارة التطبيقات.</string>
     <string name="chooseActivity">تحديد إجراء</string>
     <string name="chooseUsbActivity">تحديد تطبيق لجهاز USB</string>
@@ -962,7 +962,7 @@
     <string name="ringtone_silent">صامت</string>
     <string name="ringtone_picker_title">نغمات الرنين</string>
     <string name="ringtone_unknown">نغمة رنين غير معروفة</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">تسجيل الدخول إلى شبكة Wi-Fi</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">تعذر الاتصال بـ Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" تحتوي على اتصال إنترنت ضعيف."</string>
@@ -1160,7 +1160,7 @@
     <string name="description_target_camera">الكاميرا</string>
     <string name="description_target_silent">صامت</string>
     <string name="description_target_soundon">تشغيل الصوت</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">اسحب إصبعك لإلغاء التأمين.</string>
     <string name="keyboard_headset_required_to_hear_password">يمكنك توصيل سماعة رأس لسماع مفاتيح كلمة المرور منطوقة بصوت عالٍ.</string>
     <string name="keyboard_password_character_no_headset">نقطة</string>
     <string name="action_bar_home_description">التنقل إلى الشاشة الرئيسية</string>
@@ -1203,9 +1203,9 @@
     <string name="share_action_provider_share_with">مشاركة مع...</string>
     <string name="status_bar_device_locked">تم تأمين الجهاز.</string>
     <string name="list_delimeter">"، "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">جاري الإرسال...</string>
+    <string name="launchBrowserDefault">هل تريد تشغيل المتصفح؟</string>
+    <string name="SetupCallDefault">هل تريد قبول المكالمة؟</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">الوصول لشبكة 4G</string>
     <string name="permlab_changeWimaxMulticastState">السماح باستقبال WiMAX Multicast</string>
@@ -1267,11 +1267,12 @@
     <string name="install_notify_title">منع مسؤول تقنية المعلومات تثبيت:</string>
     <string name="uninstall_notify_title">منع مسؤول تقنية المعلومات إلغاء تثبيت:</string>
     <string name="wifi_notify_title">IT disabled WiFi</string>
+    <string name="resolverActivity_clearDefaultHintMsg">مسح الإعداد الافتراضي في الرئيسية > إعدادات > تطبيقات.</string>
     <string name="sim_puk_contact_customer_care_information">الرجاء الاتصال بخدمة العملاء للحصول على رمز PUK.</string>
     <string name="permlab_accessCWFolder">Access customization wizard feature folder</string>
     <string name="permdesc_accessCWFolder">Allows an application to access customization wizard feature folder</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">الوصول إلى مجلد الاسترداد</string>
+    <string name="permdesc_accessRecoveryFolder">السماح لتطبيق بالوصول إلى مجلد الاسترداد</string>
     <string name="permlab_setappname">ديناميكي لتغيير اسم التطبيق</string>
     <string name="permdesc_setappname">السماح لتطبيق بتغيير اسم تطبيق معين بصورة ديناميكية.</string>
     <string name="text_limitation">يتعذر تحديد عدد كبير من الكلمات لمشاركتها.</string>
@@ -1311,5 +1312,5 @@
     <string name="font_color">لون الخط</string>
     <string name="font_settings">إعدادات الخط</string>
     <string name="font_alignment">ضبط الخط</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">تهيئة</string>
 </resources>

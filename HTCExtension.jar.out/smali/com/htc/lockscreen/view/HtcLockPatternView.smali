@@ -187,7 +187,7 @@
     .line 44
     const/4 v8, 0x6
 
-    const v9, 0x2080b98
+    const v9, 0x2080b99
 
     invoke-direct {p0, v9}, Lcom/htc/lockscreen/view/HtcLockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -198,7 +198,7 @@
     .line 46
     const/4 v8, 0x7
 
-    const v9, 0x2080b99
+    const v9, 0x2080b9a
 
     invoke-direct {p0, v9}, Lcom/htc/lockscreen/view/HtcLockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 

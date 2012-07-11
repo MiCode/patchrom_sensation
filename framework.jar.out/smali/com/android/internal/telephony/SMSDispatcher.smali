@@ -4201,12 +4201,10 @@
 
     const/4 v8, -0x1
 
-    .line 482
     invoke-virtual {p1}, Lcom/android/internal/telephony/SmsMessageBase;->getUserDataHeader()Lcom/android/internal/telephony/SmsHeader;
 
     move-result-object v13
 
-    .line 485
     .local v13, smsHeader:Lcom/android/internal/telephony/SmsHeader;
     if-eqz v13, :cond_0
 
@@ -4214,13 +4212,11 @@
 
     if-nez v0, :cond_3
 
-    .line 487
     :cond_0
     const/4 v0, 0x1
 
     new-array v11, v0, [[B
 
-    .line 488
     .local v11, pdus:[[B
     invoke-virtual {p1}, Lcom/android/internal/telephony/SmsMessageBase;->getPdu()[B
 
@@ -4228,14 +4224,12 @@
 
     aput-object v0, v11, v9
 
-    .line 490
     if-eqz v13, :cond_2
 
     iget-object v0, v13, Lcom/android/internal/telephony/SmsHeader;->portAddrs:Lcom/android/internal/telephony/SmsHeader$PortAddrs;
 
     if-eqz v0, :cond_2
 
-    .line 491
     iget-object v0, v13, Lcom/android/internal/telephony/SmsHeader;->portAddrs:Lcom/android/internal/telephony/SmsHeader$PortAddrs;
 
     iget v0, v0, Lcom/android/internal/telephony/SmsHeader$PortAddrs;->destPort:I
@@ -4244,7 +4238,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 493
     iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher;->mWapPush:Lcom/android/internal/telephony/WapPushOverSms;
 
     invoke-virtual {p1}, Lcom/android/internal/telephony/SmsMessageBase;->getUserData()[B
@@ -4259,12 +4252,10 @@
 
     move-result v8
 
-    .line 507
     .end local v11           #pdus:[[B
     :goto_0
     return v8
 
-    .line 496
     .restart local v11       #pdus:[[B
     :cond_1
     iget-object v0, v13, Lcom/android/internal/telephony/SmsHeader;->portAddrs:Lcom/android/internal/telephony/SmsHeader$PortAddrs;
@@ -4275,22 +4266,18 @@
 
     goto :goto_0
 
-    .line 500
     :cond_2
     invoke-virtual {p0, v11}, Lcom/android/internal/telephony/SMSDispatcher;->dispatchPdus([[B)V
 
     goto :goto_0
 
-    .line 505
     .end local v11           #pdus:[[B
     :cond_3
     iget-object v10, v13, Lcom/android/internal/telephony/SmsHeader;->concatRef:Lcom/android/internal/telephony/SmsHeader$ConcatRef;
 
-    .line 506
     .local v10, concatRef:Lcom/android/internal/telephony/SmsHeader$ConcatRef;
     iget-object v12, v13, Lcom/android/internal/telephony/SmsHeader;->portAddrs:Lcom/android/internal/telephony/SmsHeader$PortAddrs;
 
-    .line 507
     .local v12, portAddrs:Lcom/android/internal/telephony/SmsHeader$PortAddrs;
     invoke-virtual {p1}, Lcom/android/internal/telephony/SmsMessageBase;->getPdu()[B
 
@@ -5020,7 +5007,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v31, "handleMessage > "
+    const-string/jumbo v31, "handleMessage > "
 
     move-object/from16 v0, v31
 
@@ -6185,7 +6172,7 @@
 
     .line 901
     .local v21, list:Landroid/widget/ListView;
-    const v3, 0x1040532
+    const v3, 0x1040533
 
     move-object/from16 v0, v24
 
@@ -6206,7 +6193,7 @@
 
     invoke-direct {v3, v4}, Lcom/htc/dialog/HtcAlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x1040531
+    const v4, 0x1040532
 
     move-object/from16 v0, v24
 
@@ -6457,8 +6444,6 @@
     goto/16 :goto_0
 
     .line 639
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

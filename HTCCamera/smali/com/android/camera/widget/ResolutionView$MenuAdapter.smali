@@ -83,7 +83,7 @@
     .locals 1
 
     .prologue
-    .line 362
+    .line 370
     const/4 v0, 0x0
 
     return v0
@@ -96,14 +96,14 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 396
+    .line 404
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportFastFrameRecording()Z
 
     move-result v1
 
     if-eqz v1, :cond_4
 
-    .line 398
+    .line 406
     iget-object v1, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mListPreference:Landroid/preference/ListPreference;
 
     invoke-virtual {v1}, Landroid/preference/ListPreference;->getContext()Landroid/content/Context;
@@ -122,7 +122,7 @@
 
     move-result v0
 
-    .line 399
+    .line 407
     .local v0, isFastFrame:Z
     if-eqz v0, :cond_0
 
@@ -156,12 +156,12 @@
     :cond_0
     move v1, v2
 
-    .line 417
+    .line 425
     .end local v0           #isFastFrame:Z
     :goto_0
     return v1
 
-    .line 404
+    .line 412
     .restart local v0       #isFastFrame:Z
     :cond_1
     iget-object v1, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->this$0:Lcom/android/camera/widget/ResolutionView;
@@ -228,7 +228,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 411
+    .line 419
     :cond_3
     const/4 v1, 0x0
 
@@ -238,7 +238,7 @@
     :cond_4
     move v1, v2
 
-    .line 417
+    .line 425
     goto :goto_0
 .end method
 
@@ -246,7 +246,7 @@
     .locals 3
 
     .prologue
-    .line 436
+    .line 444
     iget-object v1, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mListPreference:Landroid/preference/ListPreference;
 
     if-eqz v1, :cond_0
@@ -259,15 +259,15 @@
 
     if-nez v1, :cond_1
 
-    .line 437
+    .line 445
     :cond_0
     const/4 v0, 0x0
 
-    .line 441
+    .line 449
     :goto_0
     return v0
 
-    .line 439
+    .line 447
     :cond_1
     iget-object v1, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mListPreference:Landroid/preference/ListPreference;
 
@@ -281,7 +281,7 @@
 
     add-int v0, v1, v2
 
-    .line 440
+    .line 448
     .local v0, count:I
     iget-object v1, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->this$0:Lcom/android/camera/widget/ResolutionView;
 
@@ -305,7 +305,7 @@
     .parameter "position"
 
     .prologue
-    .line 445
+    .line 453
     const/4 v0, 0x0
 
     return-object v0
@@ -316,7 +316,7 @@
     .parameter "position"
 
     .prologue
-    .line 449
+    .line 457
     int-to-long v0, p1
 
     return-wide v0
@@ -327,7 +327,7 @@
     .parameter "position"
 
     .prologue
-    .line 454
+    .line 462
     if-nez p1, :cond_0
 
     invoke-virtual {p0}, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->hasFastMenuItem()Z
@@ -336,10 +336,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 455
+    .line 463
     const/4 v0, 0x0
 
-    .line 458
+    .line 466
     :goto_0
     return v0
 
@@ -359,13 +359,13 @@
     const/4 v11, 0x0
 
     .line 292
-    if-nez p1, :cond_2
+    if-nez p1, :cond_7
 
     invoke-virtual {p0}, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->hasFastMenuItem()Z
 
     move-result v9
 
-    if-eqz v9, :cond_2
+    if-eqz v9, :cond_7
 
     .line 293
     iget-object v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->this$0:Lcom/android/camera/widget/ResolutionView;
@@ -377,7 +377,19 @@
 
     move-result-object p2
 
-    .line 295
+    .line 294
+    iget-object v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mChkPreference:Landroid/preference/CheckBoxPreference;
+
+    if-nez v9, :cond_0
+
+    move-object v9, p2
+
+    .line 363
+    :goto_0
+    return-object v9
+
+    .line 297
+    :cond_0
     const v9, 0x7f0800b9
 
     invoke-virtual {p2, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -386,8 +398,11 @@
 
     check-cast v8, Landroid/widget/TextView;
 
-    .line 296
+    .line 298
     .local v8, title:Landroid/widget/TextView;
+    if-eqz v8, :cond_1
+
+    .line 299
     iget-object v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mChkPreference:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v9}, Landroid/preference/CheckBoxPreference;->getTitle()Ljava/lang/CharSequence;
@@ -396,14 +411,15 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 297
+    .line 300
+    :cond_1
     iget-object v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mChkPreference:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v9}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
     move-result v1
 
-    .line 298
+    .line 301
     .local v1, checked:Z
     const v9, 0x7f08003a
 
@@ -413,11 +429,15 @@
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    .line 299
+    .line 302
     .local v0, checkBox:Landroid/widget/CheckBox;
+    if-eqz v0, :cond_2
+
+    .line 303
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 300
+    .line 304
+    :cond_2
     const v9, 0x7f08013a
 
     invoke-virtual {p2, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -426,9 +446,12 @@
 
     check-cast v7, Landroid/widget/TextView;
 
-    .line 301
+    .line 305
     .local v7, summary:Landroid/widget/TextView;
-    if-eqz v1, :cond_0
+    if-eqz v7, :cond_3
+
+    .line 306
+    if-eqz v1, :cond_5
 
     iget-object v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mChkPreference:Landroid/preference/CheckBoxPreference;
 
@@ -436,19 +459,23 @@
 
     move-result-object v9
 
-    :goto_0
+    :goto_1
     invoke-virtual {v7, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 303
+    .line 308
+    :cond_3
     iget-object v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mChkPreference:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v9}, Landroid/preference/CheckBoxPreference;->getKey()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 304
+    .line 309
     .local v5, key:Ljava/lang/String;
-    if-eqz v5, :cond_1
+    if-eqz v0, :cond_4
+
+    .line 311
+    if-eqz v5, :cond_6
 
     const-string v9, "pref_camera_switch"
 
@@ -456,56 +483,48 @@
 
     move-result v9
 
-    if-eqz v9, :cond_1
+    if-eqz v9, :cond_6
 
-    .line 305
+    .line 312
     const/16 v9, 0x8
 
     invoke-virtual {v0, v9}, Landroid/widget/CheckBox;->setVisibility(I)V
 
-    :goto_1
+    :cond_4
+    :goto_2
     move-object v9, p2
 
-    .line 355
-    .end local v0           #checkBox:Landroid/widget/CheckBox;
-    .end local v1           #checked:Z
-    .end local v5           #key:Ljava/lang/String;
-    .end local v7           #summary:Landroid/widget/TextView;
-    .end local v8           #title:Landroid/widget/TextView;
-    :goto_2
-    return-object v9
+    .line 318
+    goto :goto_0
 
-    .line 301
-    .restart local v0       #checkBox:Landroid/widget/CheckBox;
-    .restart local v1       #checked:Z
-    .restart local v7       #summary:Landroid/widget/TextView;
-    .restart local v8       #title:Landroid/widget/TextView;
-    :cond_0
+    .line 306
+    .end local v5           #key:Ljava/lang/String;
+    :cond_5
     iget-object v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mChkPreference:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v9}, Landroid/preference/CheckBoxPreference;->getSummaryOff()Ljava/lang/CharSequence;
 
     move-result-object v9
 
-    goto :goto_0
-
-    .line 307
-    .restart local v5       #key:Ljava/lang/String;
-    :cond_1
-    invoke-virtual {v0, v11}, Landroid/widget/CheckBox;->setVisibility(I)V
-
     goto :goto_1
 
     .line 314
+    .restart local v5       #key:Ljava/lang/String;
+    :cond_6
+    invoke-virtual {v0, v11}, Landroid/widget/CheckBox;->setVisibility(I)V
+
+    goto :goto_2
+
+    .line 322
     .end local v0           #checkBox:Landroid/widget/CheckBox;
     .end local v1           #checked:Z
     .end local v5           #key:Ljava/lang/String;
     .end local v7           #summary:Landroid/widget/TextView;
     .end local v8           #title:Landroid/widget/TextView;
-    :cond_2
+    :cond_7
     iget-object v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mListPreference:Landroid/preference/ListPreference;
 
-    if-eqz v9, :cond_3
+    if-eqz v9, :cond_8
 
     iget-object v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mListPreference:Landroid/preference/ListPreference;
 
@@ -513,23 +532,23 @@
 
     move-result-object v9
 
-    if-nez v9, :cond_4
+    if-nez v9, :cond_9
 
-    .line 315
-    :cond_3
+    .line 323
+    :cond_8
     const/4 v9, 0x0
 
-    goto :goto_2
+    goto :goto_0
 
-    .line 317
-    :cond_4
+    .line 325
+    :cond_9
     iget-object v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mListPreference:Landroid/preference/ListPreference;
 
     invoke-virtual {v9}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v3
 
-    .line 319
+    .line 327
     .local v3, entry:[Ljava/lang/CharSequence;
     iget-object v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->this$0:Lcom/android/camera/widget/ResolutionView;
 
@@ -540,7 +559,7 @@
 
     move-result-object p2
 
-    .line 322
+    .line 330
     const v9, 0x7f080190
 
     invoke-virtual {p2, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -549,7 +568,7 @@
 
     check-cast v2, Landroid/widget/CheckedTextView;
 
-    .line 323
+    .line 331
     .local v2, checkview:Landroid/widget/CheckedTextView;
     iget v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mDummyCount:I
 
@@ -559,14 +578,14 @@
 
     invoke-virtual {v2, v9}, Landroid/widget/CheckedTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 324
+    .line 332
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportFastFrameRecording()Z
 
     move-result v9
 
-    if-eqz v9, :cond_5
+    if-eqz v9, :cond_a
 
-    .line 332
+    .line 340
     iget v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mDummyCount:I
 
     sub-int v9, p1, v9
@@ -575,13 +594,13 @@
 
     move-result v9
 
-    if-eqz v9, :cond_8
+    if-eqz v9, :cond_d
 
-    .line 333
+    .line 341
     invoke-static {v2}, Lcom/android/camera/ViewUtil;->enableTextView(Landroid/widget/TextView;)V
 
-    .line 338
-    :cond_5
+    .line 346
+    :cond_a
     :goto_3
     iget-object v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mListPreference:Landroid/preference/ListPreference;
 
@@ -595,20 +614,20 @@
 
     move-result v4
 
-    .line 339
+    .line 347
     .local v4, index:I
     iget v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mDummyCount:I
 
     sub-int v9, p1, v9
 
-    if-ne v9, v4, :cond_9
+    if-ne v9, v4, :cond_e
 
-    .line 340
+    .line 348
     const/4 v9, 0x1
 
     invoke-virtual {v2, v9}, Landroid/widget/CheckedTextView;->setChecked(Z)V
 
-    .line 344
+    .line 352
     :goto_4
     iget-object v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mContext:Landroid/content/Context;
 
@@ -616,7 +635,7 @@
 
     move-result-object v6
 
-    .line 346
+    .line 354
     .local v6, mark:Landroid/graphics/drawable/Drawable;
     iget v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mDummyCount:I
 
@@ -626,9 +645,9 @@
 
     move-result v9
 
-    if-nez v9, :cond_6
+    if-nez v9, :cond_b
 
-    .line 347
+    .line 355
     iget-object v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->this$0:Lcom/android/camera/widget/ResolutionView;
 
     #getter for: Lcom/android/camera/widget/ResolutionView;->m_Context:Landroid/content/Context;
@@ -648,20 +667,20 @@
 
     move-result-object v6
 
-    .line 349
+    .line 357
     const/16 v9, 0x80
 
     invoke-virtual {v6, v9}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 351
-    :cond_6
-    if-eqz v6, :cond_7
+    .line 359
+    :cond_b
+    if-eqz v6, :cond_c
 
-    .line 352
+    .line 360
     invoke-virtual {v2, v6}, Landroid/widget/CheckedTextView;->setCheckMarkDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 354
-    :cond_7
+    .line 362
+    :cond_c
     iget-object v9, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->this$0:Lcom/android/camera/widget/ResolutionView;
 
     iget v10, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mDummyCount:I
@@ -677,20 +696,20 @@
 
     move-object v9, p2
 
-    .line 355
-    goto/16 :goto_2
+    .line 363
+    goto/16 :goto_0
 
-    .line 335
+    .line 343
     .end local v4           #index:I
     .end local v6           #mark:Landroid/graphics/drawable/Drawable;
-    :cond_8
+    :cond_d
     invoke-static {v2}, Lcom/android/camera/ViewUtil;->disableTextView(Landroid/widget/TextView;)V
 
     goto :goto_3
 
-    .line 342
+    .line 350
     .restart local v4       #index:I
-    :cond_9
+    :cond_e
     invoke-virtual {v2, v11}, Landroid/widget/CheckedTextView;->setChecked(Z)V
 
     goto :goto_4
@@ -700,7 +719,7 @@
     .locals 1
 
     .prologue
-    .line 463
+    .line 471
     const/4 v0, 0x2
 
     return v0
@@ -712,18 +731,18 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 422
+    .line 430
     iget-object v0, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mListPreference:Landroid/preference/ListPreference;
 
     if-nez v0, :cond_0
 
     move v0, v1
 
-    .line 430
+    .line 438
     :goto_0
     return v0
 
-    .line 425
+    .line 433
     :cond_0
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportFastFrameRecording()Z
 
@@ -758,7 +777,7 @@
 
     if-nez v0, :cond_1
 
-    .line 428
+    .line 436
     const/4 v0, 0x1
 
     goto :goto_0
@@ -766,7 +785,7 @@
     :cond_1
     move v0, v1
 
-    .line 430
+    .line 438
     goto :goto_0
 .end method
 
@@ -774,7 +793,7 @@
     .locals 1
 
     .prologue
-    .line 468
+    .line 476
     const/4 v0, 0x1
 
     return v0
@@ -797,7 +816,7 @@
     .end annotation
 
     .prologue
-    .line 476
+    .line 484
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     if-nez p3, :cond_3
 
@@ -807,7 +826,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 477
+    .line 485
     iget-object v4, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->this$0:Lcom/android/camera/widget/ResolutionView;
 
     iget-object v5, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mChkPreference:Landroid/preference/CheckBoxPreference;
@@ -826,14 +845,14 @@
     #calls: Lcom/android/camera/widget/ResolutionView;->updateCheckBoxPreference(Landroid/preference/Preference;Z)V
     invoke-static {v4, v5, v3}, Lcom/android/camera/widget/ResolutionView;->access$700(Lcom/android/camera/widget/ResolutionView;Landroid/preference/Preference;Z)V
 
-    .line 478
+    .line 486
     iget-object v3, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mChkPreference:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v3}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
     move-result v0
 
-    .line 479
+    .line 487
     .local v0, checked:Z
     const v3, 0x7f08003a
 
@@ -845,7 +864,7 @@
 
     invoke-virtual {v3, v0}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 480
+    .line 488
     const v3, 0x7f08013a
 
     invoke-virtual {p2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -865,22 +884,22 @@
     :goto_1
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 482
+    .line 490
     invoke-virtual {p0}, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->notifyDataSetChanged()V
 
-    .line 510
+    .line 518
     .end local v0           #checked:Z
     :cond_0
     :goto_2
     return-void
 
-    .line 477
+    .line 485
     :cond_1
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 480
+    .line 488
     .restart local v0       #checked:Z
     :cond_2
     iget-object v4, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mChkPreference:Landroid/preference/CheckBoxPreference;
@@ -891,7 +910,7 @@
 
     goto :goto_1
 
-    .line 486
+    .line 494
     .end local v0           #checked:Z
     :cond_3
     iget v3, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mDummyCount:I
@@ -904,14 +923,14 @@
 
     if-eqz v3, :cond_0
 
-    .line 489
+    .line 497
     iget-object v3, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mListPreference:Landroid/preference/ListPreference;
 
     invoke-virtual {v3}, Landroid/preference/ListPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    .line 490
+    .line 498
     .local v2, values:[Ljava/lang/CharSequence;
     iget-object v3, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mListPreference:Landroid/preference/ListPreference;
 
@@ -925,7 +944,7 @@
 
     move-result v1
 
-    .line 491
+    .line 499
     .local v1, current:I
     iget v3, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mDummyCount:I
 
@@ -933,7 +952,7 @@
 
     if-eq v3, v1, :cond_4
 
-    .line 492
+    .line 500
     iget-object v3, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mListPreference:Landroid/preference/ListPreference;
 
     iget v4, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mDummyCount:I
@@ -942,10 +961,10 @@
 
     invoke-virtual {v3, v4}, Landroid/preference/ListPreference;->setValueIndex(I)V
 
-    .line 493
+    .line 501
     invoke-virtual {p0}, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->notifyDataSetChanged()V
 
-    .line 494
+    .line 502
     iget-object v3, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->this$0:Lcom/android/camera/widget/ResolutionView;
 
     iget-object v4, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->mListPreference:Landroid/preference/ListPreference;
@@ -959,7 +978,7 @@
 
     goto :goto_2
 
-    .line 500
+    .line 508
     :cond_4
     iget-object v3, p0, Lcom/android/camera/widget/ResolutionView$MenuAdapter;->this$0:Lcom/android/camera/widget/ResolutionView;
 

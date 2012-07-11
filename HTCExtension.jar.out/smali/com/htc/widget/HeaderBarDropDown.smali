@@ -928,7 +928,7 @@
 
     .line 97
     .local v2, rightPadding:I
-    const v3, 0x2020260
+    const v3, 0x2020263
 
     invoke-virtual {p0, v3}, Lcom/htc/widget/HeaderBarDropDown;->findViewById(I)Landroid/view/View;
 
@@ -939,7 +939,7 @@
     iput-object v3, p0, Lcom/htc/widget/HeaderBarDropDown;->primaryText:Landroid/widget/TextView;
 
     .line 98
-    const v3, 0x2020261
+    const v3, 0x2020264
 
     invoke-virtual {p0, v3}, Lcom/htc/widget/HeaderBarDropDown;->findViewById(I)Landroid/view/View;
 

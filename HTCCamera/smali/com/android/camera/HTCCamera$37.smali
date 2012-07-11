@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 10199
+    .line 10289
     iput-object p1, p0, Lcom/android/camera/HTCCamera$37;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,22 +43,22 @@
     .parameter "which"
 
     .prologue
-    .line 10202
+    .line 10292
     iget-object v1, p0, Lcom/android/camera/HTCCamera$37;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-static {v1}, Lcom/android/camera/DCFRuler$StorageCardControl;->toggleStorageType(Landroid/app/Activity;)V
 
-    .line 10206
+    .line 10296
     invoke-static {}, Lcom/android/camera/DCFRuler$StorageCardControl;->getStorageType()I
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 10207
+    .line 10297
     const-string v0, "main_memory"
 
-    .line 10210
+    .line 10300
     .local v0, storageValue:Ljava/lang/String;
     :goto_0
     iget-object v1, p0, Lcom/android/camera/HTCCamera$37;->this$0:Lcom/android/camera/HTCCamera;
@@ -67,7 +67,7 @@
 
     invoke-static {v1, v2, v0}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 10211
+    .line 10301
     iget-object v1, p0, Lcom/android/camera/HTCCamera$37;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mMenuHandler:Lcom/android/camera/MenuHandler;
@@ -77,7 +77,7 @@
 
     invoke-virtual {v1}, Lcom/android/camera/MenuHandler;->updateStorageLocationItem()V
 
-    .line 10214
+    .line 10304
     iget-object v1, p0, Lcom/android/camera/HTCCamera$37;->this$0:Lcom/android/camera/HTCCamera;
 
     iget-object v1, v1, Lcom/android/camera/HTCCamera;->mCameraHandler:Landroid/os/Handler;
@@ -86,7 +86,7 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 10217
+    .line 10307
     iget-object v1, p0, Lcom/android/camera/HTCCamera$37;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
@@ -98,10 +98,10 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 10218
+    .line 10308
     return-void
 
-    .line 10209
+    .line 10299
     .end local v0           #storageValue:Ljava/lang/String;
     :cond_0
     const-string v0, "sdcard"

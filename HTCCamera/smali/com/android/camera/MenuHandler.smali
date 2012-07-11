@@ -3737,6 +3737,14 @@
     if-eqz v4, :cond_5
 
     :cond_2
+    iget-object v4, p0, Lcom/android/camera/MenuHandler;->mHTCCamera:Lcom/android/camera/HTCCamera;
+
+    invoke-virtual {v4}, Lcom/android/camera/HTCCamera;->getFaceNumber()I
+
+    move-result v4
+
+    if-nez v4, :cond_5
+
     const/4 v4, 0x1
 
     :goto_1

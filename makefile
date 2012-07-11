@@ -3,7 +3,7 @@
 #
 
 # The original zip file, MUST be specified by each product
-local-zip-file     := sensation_3.32.zip
+local-zip-file     := stockrom.zip
 
 # The output zip file of MIUI rom, the default is update.zip if not specified
 # local-out-zip-file :=
@@ -38,9 +38,6 @@ include $(PORT_BUILD)/porting.mk
 
 # To define any local-target
 local-zip-misc:
-	@echo Update boot image
-	cp other/boot.img $(ZIP_DIR)/boot.img
-
 	@echo Update build.prop
 	cp other/build.prop $(ZIP_DIR)/system/build.prop
 
@@ -64,6 +61,12 @@ local-zip-misc:
 	@echo add system config
 	cp other/system_etc/* $(ZIP_DIR)/system/etc/
 
+	@echo delete redundance files
+	rm -f $(ZIP_DIR)/system/customize/resource/*.png
+	rm -f $(ZIP_DIR)/system/customize/resource/*.jpg
+	rm -rf $(ZIP_DIR)/system/media/weather
+	rm -rf $(ZIP_DIR)/system/media/video
+	rm -f $(ZIP_DIR)/system/bin/su
 local-test:
 #	rm -f $(local-out-zip-file)
 #	cp .build/$(local-out-zip-file) .

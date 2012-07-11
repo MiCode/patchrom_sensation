@@ -8,6 +8,9 @@
 
 
 # virtual methods
+.method public abstract forceStopFaceLock()V
+.end method
+
 .method public abstract goToUnlockScreen(I)V
 .end method
 

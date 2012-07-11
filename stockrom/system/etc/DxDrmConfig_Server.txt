@@ -1,0 +1,29 @@
+#disables logging of some irrelevant modules
+DisabledModules = 10          
+ 
+#(50 or 60=verbose ; 40 = debug; 30 = info; 20 = warnings; 10 = error) printout filter
+#DebugLevel = 10
+#DebugLevel = 40
+
+
+#suffix for the log files
+#LogFile=/data/DxDrm/Logs/srv  
+#echo of all log printouts to Logcat
+#LogcatLogs=True
+ 
+FuseVerbose=True
+#FuseLogFile=True
+ 
+#log the HTTP protocol transactions               
+#JavaHTTPLog=true              
+
+#Provisioning data
+AutoProvisionPlayReady = PlayReadyPkg, /data/DxDrm/Credentials/PlayReady/DxPrdyProvisionObf.pkg
+DeviceKeyPath = /data/DxDrm/DxDeviceKey
+PlayReadyStorePath = /data/DxDrm/DxPlayReadyDB.hds
+
+HttpUserName = tester
+HttpPassword = tester
+
+UseContentExtension = False
+AutoSaveFile = False

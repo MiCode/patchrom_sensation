@@ -410,7 +410,7 @@
     <string name="btn_caption_download_later">التنزيل لاحقًا</string>
     <string name="msg_download_later">يمكنك بعد ذلك تنزيل المواد التي قمت بشرائها عن طريق الانتقال إلى إعدادات > عمليات الشراء الخاصة بي.</string>
     <string name="track_count">أغنية(أغاني)</string>
-    <string name="mega_bytes">ميجابايت</string>
+    <string name="mega_bytes">م ب</string>
     <string name="download_percentage" formatted="false">%1s م ب / %2s م ب</string>
     <string name="no_downloading_item">لا توجد أي عناصر في قائمة عمليات التنزيل الخاصة بك.</string>
     <string name="btn_caption_accept">قبول</string>

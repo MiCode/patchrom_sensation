@@ -57,9 +57,9 @@
     <string name="phone_storage_error">"Une erreur s'est produite sur la mémoire de votre téléphone."</string>
     <string name="sdcard_error">"Une erreur s'est produite sur votre carte SD."</string>
     <string name="both_storage_error">"Votre contenu est indisponible car une erreur de mémoire s'est produite."</string>
-    <string name="sdcard_busy_message">Carte SD inaccessible car elle est utilisée comme stockage USB. Déconnectez le câble USB pour accéder à la carte SD.</string>
+    <string name="sdcard_busy_message">Carte SD inaccessible car elle est utilisée comme mémoire USB. Déconnectez le câble USB pour accéder à la carte SD.</string>
     <string name="phone_storage_busy_message">Votre contenu est indisponible car votre téléphone est utilisé comme mémoire USB. Déconnectez le câble USB pour accéder à votre contenu.</string>
-    <string name="internal_memory_low">"L'espace de stockage de votre téléphone est bas. Veuillez supprimer certains fichiers pour libérer de l'espace avant d'utiliser cette application."</string>
+    <string name="internal_memory_low">"L'espace mémoire de votre téléphone est bas. Veuillez supprimer certains fichiers pour libérer de l'espace avant d'utiliser cette application."</string>
     <string name="sdcard_error_title">Erreur de carte SD</string>
     <string name="phone_storage_error_title">erreur de mémoire du téléphone</string>
     <string name="unknown_artist_name">Artiste inconnu</string>
@@ -367,9 +367,9 @@
     <string name="online_setting_downloading_title">Afficher la file de téléchargement</string>
     <string name="online_setting_purchase_title">Achats</string>
     <string name="online_setting_payment_method_title">Méthodes de paiement</string>
-    <string name="online_setting_storage_title">Stockage</string>
-    <string name="online_setting_phone_storage">Stockage du téléphone</string>
-    <string name="online_setting_external_storage">Carte de stockage</string>
+    <string name="online_setting_storage_title">Mémoire</string>
+    <string name="online_setting_phone_storage">Mémoire du téléphone</string>
+    <string name="online_setting_external_storage">Carte mémoire</string>
     <string name="options_menu_my_purchases">Mes achats</string>
     <string name="dlg_title_register_error">Enregistrement impossible</string>
     <string name="msg_register_error">"Nous n'avons pas pu enregistrer votre compte. Veuillez réessayer plus tard."</string>
@@ -397,7 +397,7 @@
     <string name="msg_charge_fail">Impossible de terminer la transaction.</string>
     <string name="msg_download_queue_full">"Impossible d'ajouter tous les titres parce que votre liste de téléchargement est pleine. Pour télécharger les pistes restantes, veuillez aller à votre Liste d'achat pour choisir Télécharger plus tard."</string>
     <string name="msg_unknown_error">Oups ! Nous avons des problèmes avec notre service. Veuillez réessayer plus tard.</string>
-    <string name="txt_query_switch_storage_title">"Définir l'emplacement du stockage"</string>
+    <string name="txt_query_switch_storage_title">"Définir l'emplacement de stockage"</string>
     <string name="txt_query_switch_to_sdcard">Voulez-vous basculer à la carte SD ?</string>
     <string name="search_online_music_store">Rechercher dans le Magasin musical</string>
     <string name="msg_track_being_downloaded">Votre piste est en cours de téléchargement.</string>

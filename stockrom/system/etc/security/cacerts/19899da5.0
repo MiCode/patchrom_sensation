@@ -1,0 +1,80 @@
+-----BEGIN CERTIFICATE-----
+MIIElTCCA/6gAwIBAgIEOJsRPDANBgkqhkiG9w0BAQQFADCBujEUMBIGA1UEChML
+RW50cnVzdC5uZXQxPzA9BgNVBAsUNnd3dy5lbnRydXN0Lm5ldC9TU0xfQ1BTIGlu
+Y29ycC4gYnkgcmVmLiAobGltaXRzIGxpYWIuKTElMCMGA1UECxMcKGMpIDIwMDAg
+RW50cnVzdC5uZXQgTGltaXRlZDE6MDgGA1UEAxMxRW50cnVzdC5uZXQgU2VjdXJl
+IFNlcnZlciBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTAeFw0wMDAyMDQxNzIwMDBa
+Fw0yMDAyMDQxNzUwMDBaMIG6MRQwEgYDVQQKEwtFbnRydXN0Lm5ldDE/MD0GA1UE
+CxQ2d3d3LmVudHJ1c3QubmV0L1NTTF9DUFMgaW5jb3JwLiBieSByZWYuIChsaW1p
+dHMgbGlhYi4pMSUwIwYDVQQLExwoYykgMjAwMCBFbnRydXN0Lm5ldCBMaW1pdGVk
+MTowOAYDVQQDEzFFbnRydXN0Lm5ldCBTZWN1cmUgU2VydmVyIENlcnRpZmljYXRp
+b24gQXV0aG9yaXR5MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDHwV9OcfHO
+8GCGD9JYf9Mzly0XonUwtZZkJi9ow0SrqHXmAGc0V55lxyKbc+bT3QgON1WqJUaB
+bL3+qPZ1V1eMkGxKwz6LS0MKyRFWmponIpnPVZ5h2QLifLZ8OAfc439PmrkDQYC2
+dWcTC5/oVzbIXQA23mYU2m52H083jIITiQIDAQABo4IBpDCCAaAwEQYJYIZIAYb4
+QgEBBAQDAgAHMIHjBgNVHR8EgdswgdgwgdWggdKggc+kgcwwgckxFDASBgNVBAoT
+C0VudHJ1c3QubmV0MT8wPQYDVQQLFDZ3d3cuZW50cnVzdC5uZXQvU1NMX0NQUyBp
+bmNvcnAuIGJ5IHJlZi4gKGxpbWl0cyBsaWFiLikxJTAjBgNVBAsTHChjKSAyMDAw
+IEVudHJ1c3QubmV0IExpbWl0ZWQxOjA4BgNVBAMTMUVudHJ1c3QubmV0IFNlY3Vy
+ZSBTZXJ2ZXIgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkxDTALBgNVBAMTBENSTDEw
+KwYDVR0QBCQwIoAPMjAwMDAyMDQxNzIwMDBagQ8yMDIwMDIwNDE3NTAwMFowCwYD
+VR0PBAQDAgEGMB8GA1UdIwQYMBaAFMtswGvjuz7L/CKc/vuLkpyw8m4iMB0GA1Ud
+DgQWBBTLbMBr47s+y/winP77i5KcsPJuIjAMBgNVHRMEBTADAQH/MB0GCSqGSIb2
+fQdBAAQQMA4bCFY1LjA6NC4wAwIEkDANBgkqhkiG9w0BAQQFAAOBgQBi24GRzsia
+d0Iv7L0no1MPUBvqTpLwqa+poLpIYcvvyQbvH9X07t9WLebKahlzqlO+krNQAraF
+JnJj2HVQYnUUt7NQGj/KEQALhUVpbbalrlHhStyCP2yMNLJ3a9kC9n8O6mUE8c1U
+yrrJzOCE98g+EZfTYAkYvAX/bIkz8OwVDw==
+-----END CERTIFICATE-----
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 949686588 (0x389b113c)
+        Signature Algorithm: md5WithRSAEncryption
+        Issuer: O=Entrust.net, OU=www.entrust.net/SSL_CPS incorp. by ref. (limits liab.), OU=(c) 2000 Entrust.net Limited, CN=Entrust.net Secure Server Certification Authority
+        Validity
+            Not Before: Feb  4 17:20:00 2000 GMT
+            Not After : Feb  4 17:50:00 2020 GMT
+        Subject: O=Entrust.net, OU=www.entrust.net/SSL_CPS incorp. by ref. (limits liab.), OU=(c) 2000 Entrust.net Limited, CN=Entrust.net Secure Server Certification Authority
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:c7:c1:5f:4e:71:f1:ce:f0:60:86:0f:d2:58:7f:
+                    d3:33:97:2d:17:a2:75:30:b5:96:64:26:2f:68:c3:
+                    44:ab:a8:75:e6:00:67:34:57:9e:65:c7:22:9b:73:
+                    e6:d3:dd:08:0e:37:55:aa:25:46:81:6c:bd:fe:a8:
+                    f6:75:57:57:8c:90:6c:4a:c3:3e:8b:4b:43:0a:c9:
+                    11:56:9a:9a:27:22:99:cf:55:9e:61:d9:02:e2:7c:
+                    b6:7c:38:07:dc:e3:7f:4f:9a:b9:03:41:80:b6:75:
+                    67:13:0b:9f:e8:57:36:c8:5d:00:36:de:66:14:da:
+                    6e:76:1f:4f:37:8c:82:13:89
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            Netscape Cert Type: 
+                SSL CA, S/MIME CA, Object Signing CA
+            X509v3 CRL Distribution Points: 
+                DirName:/O=Entrust.net/OU=www.entrust.net/SSL_CPS incorp. by ref. (limits liab.)/OU=(c) 2000 Entrust.net Limited/CN=Entrust.net Secure Server Certification Authority/CN=CRL1
+
+            X509v3 Private Key Usage Period: 
+                Not Before: Feb  4 17:20:00 2000 GMT, Not After: Feb  4 17:50:00 2020 GMT
+            X509v3 Key Usage: 
+                Certificate Sign, CRL Sign
+            X509v3 Authority Key Identifier: 
+                keyid:CB:6C:C0:6B:E3:BB:3E:CB:FC:22:9C:FE:FB:8B:92:9C:B0:F2:6E:22
+
+            X509v3 Subject Key Identifier: 
+                CB:6C:C0:6B:E3:BB:3E:CB:FC:22:9C:FE:FB:8B:92:9C:B0:F2:6E:22
+            X509v3 Basic Constraints: 
+                CA:TRUE
+            1.2.840.113533.7.65.0: 
+                0...V5.0:4.0....
+    Signature Algorithm: md5WithRSAEncryption
+        62:db:81:91:ce:c8:9a:77:42:2f:ec:bd:27:a3:53:0f:50:1b:
+        ea:4e:92:f0:a9:af:a9:a0:ba:48:61:cb:ef:c9:06:ef:1f:d5:
+        f4:ee:df:56:2d:e6:ca:6a:19:73:aa:53:be:92:b3:50:02:b6:
+        85:26:72:63:d8:75:50:62:75:14:b7:b3:50:1a:3f:ca:11:00:
+        0b:85:45:69:6d:b6:a5:ae:51:e1:4a:dc:82:3f:6c:8c:34:b2:
+        77:6b:d9:02:f6:7f:0e:ea:65:04:f1:cd:54:ca:ba:c9:cc:e0:
+        84:f7:c8:3e:11:97:d3:60:09:18:bc:05:ff:6c:89:33:f0:ec:
+        15:0f
+SHA1 Fingerprint=89:39:57:6E:17:8D:F7:05:78:0F:CC:5E:C8:4F:84:F6:25:3A:48:93

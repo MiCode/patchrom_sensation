@@ -118,7 +118,7 @@
     <string name="htc_property_disc_number">Номер диска</string>
     <string name="htc_property_track_number">Номер дорожки</string>
     <string name="htc_property_track_year">Год</string>
-    <string name="htc_property_location">Координаты</string>
+    <string name="htc_property_location">Сохранено в</string>
     <string name="htc_property_unknown">Неизвестно</string>
     <string name="htc_drm_status">Сведения о защите</string>
     <string name="htc_drm_access_count">Счетчик воспроизведения:</string>

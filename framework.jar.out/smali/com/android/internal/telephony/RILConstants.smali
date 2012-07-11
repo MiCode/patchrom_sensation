@@ -386,7 +386,11 @@
 
 .field public static final RIL_REQUEST_EHRPD_SET_CAPABILITY:I = 0x138c
 
+.field public static final RIL_REQUEST_ENABLE_ALL_DAY_SLEEP:I = 0x257
+
 .field public static final RIL_REQUEST_ENABLE_REGISTRATION_STATE_WIFI_CALLING:I = 0x248
+
+.field public static final RIL_REQUEST_ENABLE_W2G_HANDOVER:I = 0x259
 
 .field public static final RIL_REQUEST_ENTER_NETWORK_DEPERSONALIZATION:I = 0x8
 
@@ -425,6 +429,8 @@
 .field public static final RIL_REQUEST_GET_DATA_SUBSCRIPTION:I = 0x2b01
 
 .field public static final RIL_REQUEST_GET_DATA_SUBSCRIPTION_SOURCE:I = 0x22a
+
+.field public static final RIL_REQUEST_GET_DRX_INFO:I = 0x25a
 
 .field public static final RIL_REQUEST_GET_EHRPD_APN_PARAMS:I = 0x1390
 
@@ -951,6 +957,8 @@
 .field public static final RIL_UNSOL_SIM_SWAP_STATUS:I = 0x5f5
 
 .field public static final RIL_UNSOL_SMART_DATA_ROAMING_STATUS:I = 0x5ef
+
+.field public static final RIL_UNSOL_SMART_NETWORK:I = 0x60c
 
 .field public static final RIL_UNSOL_STK_CALL_SETUP:I = 0x3f7
 

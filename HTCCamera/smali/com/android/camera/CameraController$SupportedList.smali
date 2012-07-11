@@ -89,22 +89,22 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 727
+    .line 755
     sput-object v0, Lcom/android/camera/CameraController$SupportedList;->FlashMode:Ljava/util/List;
 
-    .line 729
+    .line 757
     sput-object v0, Lcom/android/camera/CameraController$SupportedList;->FocusModes:Ljava/util/List;
 
-    .line 731
+    .line 759
     sput-object v0, Lcom/android/camera/CameraController$SupportedList;->WhiteBalance:Ljava/util/List;
 
-    .line 733
+    .line 761
     sput-object v0, Lcom/android/camera/CameraController$SupportedList;->Effects:Ljava/util/List;
 
-    .line 735
+    .line 763
     sput-object v0, Lcom/android/camera/CameraController$SupportedList;->Antibanding:Ljava/util/List;
 
-    .line 737
+    .line 765
     sput-object v0, Lcom/android/camera/CameraController$SupportedList;->SceneMode:Ljava/util/List;
 
     return-void
@@ -114,7 +114,7 @@
     .locals 0
 
     .prologue
-    .line 726
+    .line 754
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

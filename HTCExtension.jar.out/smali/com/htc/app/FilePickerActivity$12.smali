@@ -49,7 +49,7 @@
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity$12;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mFileSorter:Lcom/htc/app/FileSorter;
-    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$3500(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$3400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
 
     move-result-object v0
 
@@ -59,7 +59,7 @@
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity$12;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mFileSorter:Lcom/htc/app/FileSorter;
-    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$3500(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$3400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
 
     move-result-object v0
 
@@ -69,7 +69,7 @@
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity$12;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #setter for: Lcom/htc/app/FilePickerActivity;->mIsShowDialog:Z
-    invoke-static {v0, v1}, Lcom/htc/app/FilePickerActivity;->access$3602(Lcom/htc/app/FilePickerActivity;Z)Z
+    invoke-static {v0, v1}, Lcom/htc/app/FilePickerActivity;->access$3502(Lcom/htc/app/FilePickerActivity;Z)Z
 
     .line 1598
     return-void

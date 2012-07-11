@@ -18,8 +18,6 @@
 
 
 # instance fields
-.field private mFilePickerListAdapter:Lcom/htc/app/FilePickerListAdapter;
-
 .field private mLayoutChangeListener:Lcom/htc/app/FilePickerListView$LayoutChangeListener;
 
 
@@ -88,15 +86,10 @@
 
 # virtual methods
 .method close()V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 103
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/htc/app/FilePickerListView;->mFilePickerListAdapter:Lcom/htc/app/FilePickerListAdapter;
-
-    .line 104
+    .line 98
     return-void
 .end method
 
@@ -198,21 +191,14 @@
 .end method
 
 .method public setAdapter(Landroid/widget/ListAdapter;)V
-    .locals 1
+    .locals 0
     .parameter "adapter"
 
     .prologue
-    .line 68
-    move-object v0, p1
-
-    check-cast v0, Lcom/htc/app/FilePickerListAdapter;
-
-    iput-object v0, p0, Lcom/htc/app/FilePickerListView;->mFilePickerListAdapter:Lcom/htc/app/FilePickerListAdapter;
-
-    .line 69
+    .line 66
     invoke-super {p0, p1}, Lcom/htc/widget/HtcListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 70
+    .line 67
     return-void
 .end method
 
@@ -221,10 +207,10 @@
     .parameter "listener"
 
     .prologue
-    .line 87
+    .line 83
     iput-object p1, p0, Lcom/htc/app/FilePickerListView;->mLayoutChangeListener:Lcom/htc/app/FilePickerListView$LayoutChangeListener;
 
-    .line 88
+    .line 84
     return-void
 .end method
 
@@ -233,24 +219,14 @@
     .parameter "position"
 
     .prologue
-    .line 75
-    invoke-virtual {p0}, Lcom/htc/app/FilePickerListView;->getAdapter()Landroid/widget/ListAdapter;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
+    .line 72
     invoke-virtual {p0}, Lcom/htc/app/FilePickerListView;->getCount()I
 
     move-result v0
 
     add-int/lit8 v0, v0, -0x1
 
-    if-eq p1, v0, :cond_1
+    if-eq p1, v0, :cond_0
 
     invoke-virtual {p0}, Lcom/htc/app/FilePickerListView;->getAdapter()Landroid/widget/ListAdapter;
 
@@ -262,17 +238,26 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    .line 77
     :cond_0
+    invoke-virtual {p0}, Lcom/htc/app/FilePickerListView;->getCount()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    if-ne p1, v0, :cond_2
+
+    .line 73
+    :cond_1
     const/4 v0, 0x0
 
-    .line 80
+    .line 76
     :goto_0
     return v0
 
-    :cond_1
+    :cond_2
     invoke-super {p0, p1}, Lcom/htc/widget/HtcListView;->shouldDrawSeperatorDivider(I)Z
 
     move-result v0
@@ -285,7 +270,7 @@
     .parameter "sel"
 
     .prologue
-    .line 95
+    .line 91
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -296,16 +281,16 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 96
+    .line 92
     invoke-virtual {p0, v1}, Lcom/htc/app/FilePickerListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 97
+    .line 93
     .local v0, child:Landroid/view/View;
     if-eq v0, p1, :cond_0
 
-    .line 98
+    .line 94
     invoke-virtual {p0, v1}, Lcom/htc/app/FilePickerListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -314,13 +299,13 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setPressed(Z)V
 
-    .line 95
+    .line 91
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 101
+    .line 96
     .end local v0           #child:Landroid/view/View;
     :cond_1
     return-void

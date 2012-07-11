@@ -890,7 +890,7 @@
     .locals 1
 
     .prologue
-    .line 1250
+    .line 1251
     iget-object v0, p0, Lcom/android/camera/widget/SettingsView;->mMainList_exp:Landroid/widget/ExpandableListView;
 
     return-object v0
@@ -900,7 +900,7 @@
     .locals 2
 
     .prologue
-    .line 1246
+    .line 1247
     iget v0, p0, Lcom/android/camera/widget/SettingsView;->m_MenuParentHeight:I
 
     iget v1, p0, Lcom/android/camera/widget/SettingsView;->m_MenuChildHeight:I

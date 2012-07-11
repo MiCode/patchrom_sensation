@@ -45,7 +45,7 @@
     return-void
 .end method
 
-.method static synthetic access$3808(Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;)I
+.method static synthetic access$3708(Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;)I
     .locals 2
     .parameter "x0"
 
@@ -68,7 +68,7 @@
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$3900(Lcom/htc/app/FilePickerActivity;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$3800(Lcom/htc/app/FilePickerActivity;)Landroid/os/Handler;
 
     move-result-object v0
 

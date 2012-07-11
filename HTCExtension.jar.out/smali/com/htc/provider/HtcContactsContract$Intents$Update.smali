@@ -28,7 +28,7 @@
     .parameter
 
     .prologue
-    .line 724
+    .line 784
     iput-object p1, p0, Lcom/htc/provider/HtcContactsContract$Intents$Update;->this$0:Lcom/htc/provider/HtcContactsContract$Intents;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

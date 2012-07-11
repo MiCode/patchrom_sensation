@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 7969
+    .line 8031
     iput-object p1, p0, Lcom/android/camera/HTCCamera$34;->this$0:Lcom/android/camera/HTCCamera;
 
     iput-boolean p2, p0, Lcom/android/camera/HTCCamera$34;->val$isLastPlay:Z
@@ -49,10 +49,10 @@
     .parameter "extra"
 
     .prologue
-    .line 7972
+    .line 8034
     if-eqz p1, :cond_2
 
-    .line 7974
+    .line 8036
     const-string v0, "HTCCamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -85,15 +85,15 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7975
+    .line 8037
     iget-boolean v0, p0, Lcom/android/camera/HTCCamera$34;->val$isLastPlay:Z
 
     if-eqz v0, :cond_0
 
-    .line 7976
+    .line 8038
     invoke-virtual {p1}, Landroid/media/MediaPlayer;->release()V
 
-    .line 7977
+    .line 8039
     :cond_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera$34;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -104,7 +104,7 @@
 
     monitor-enter v1
 
-    .line 7979
+    .line 8041
     :try_start_0
     iget-object v0, p0, Lcom/android/camera/HTCCamera$34;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -115,7 +115,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 7980
+    .line 8042
     iget-object v0, p0, Lcom/android/camera/HTCCamera$34;->this$0:Lcom/android/camera/HTCCamera;
 
     const/4 v2, 0x0
@@ -123,17 +123,17 @@
     #setter for: Lcom/android/camera/HTCCamera;->mAudioPlayer:Landroid/media/MediaPlayer;
     invoke-static {v0, v2}, Lcom/android/camera/HTCCamera;->access$202(Lcom/android/camera/HTCCamera;Landroid/media/MediaPlayer;)Landroid/media/MediaPlayer;
 
-    .line 7981
+    .line 8043
     :cond_1
     monitor-exit v1
 
-    .line 7983
+    .line 8045
     :cond_2
     const/4 v0, 0x0
 
     return v0
 
-    .line 7981
+    .line 8043
     :catchall_0
     move-exception v0
 

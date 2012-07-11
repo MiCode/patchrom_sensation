@@ -6291,14 +6291,11 @@
     .parameter "volumeName"
 
     .prologue
-    .line 1310
 
-    .line 1311
     const-string v0, "AllFile"
 
     invoke-direct {p0, p1, v0, p2}, Landroid/media/MediaScanner;->scanDirectoriesInternal([Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1312
     return-void
 .end method
 

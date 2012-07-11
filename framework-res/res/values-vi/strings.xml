@@ -269,9 +269,9 @@
     <string name="turn_off_radio">Tắt các chức năng không dây</string>
     <string name="screen_lock">Khóa phím</string>
     <string name="power_off">Tắt điện thoại</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Tắt chuông</string>
+    <string name="silent_mode_vibrate">Bộ rung</string>
+    <string name="silent_mode_ring">Bật chuông</string>
     <string name="shutdown_progress">Đang tắt…</string>
     <string name="shutdown_confirm">Điện thoại của bạn sẽ tắt.</string>
     <string name="shutdown_confirm_question">Bạn có muốn tắt không?</string>
@@ -335,11 +335,11 @@
     <string name="permlab_receiveWapPush">nhận WAP</string>
     <string name="permdesc_receiveWapPush">Cho phép ứng dụng nhận và xử lý tin nhắn WAP. Ứng dụng gây hại có thể theo dõi các tin nhắn của bạn hoặc xóa chúng mà không cho bạn xem trước.</string>
     <string name="permlab_getTasks" />
-    <string name="permdesc_getTasks">Cho phép ứng dụng lấy các thông tin về các tác vụ gần đây và đang chạy gần đây. Có thể cho phép ứng dụng gây hại phát hiện ra các thông tin riêng tư về các ứng dụng khác.</string>
+    <string name="permdesc_getTasks">Cho phép ứng dụng lấy các thông tin về các việc cần làm gần đây và đang chạy gần đây. Có thể cho phép ứng dụng gây hại phát hiện ra các thông tin riêng tư về các ứng dụng khác.</string>
     <string name="permlab_reorderTasks">sắp xếp lại các ứng dụng đang chạy</string>
-    <string name="permdesc_reorderTasks">Cho phép ứng dụng chuyển các tác vụ sang cận cảnh và hậu cảnh. Ứng dụng gây hại có thể bắt buộc chính nó chuyển ra mặt trước mà không cần điều khiển.</string>
+    <string name="permdesc_reorderTasks">Cho phép ứng dụng chuyển các việc cần làm sang chạy trước và chạy nền. Ứng dụng gây hại có thể bắt buộc chính nó chuyển ra chạy trước mà không cần điều khiển.</string>
     <string name="permlab_removeTasks">ngừng chạy các ứng dụng</string>
-    <string name="permdesc_removeTasks">Cho phép ứng dụng xóa tác vụ và hủy các ứng dụng của chúng. Các ứng dụng độc hại có thể làm gián đoạn hoạt động của các ứng dụng khác.</string>
+    <string name="permdesc_removeTasks">Cho phép ứng dụng xóa việc cần làm và hủy các ứng dụng của chúng. Các ứng dụng độc hại có thể làm gián đoạn hoạt động của các ứng dụng khác.</string>
     <string name="permlab_setDebugApp">mở chứng năng debug cho ứng dụng</string>
     <string name="permdesc_setDebugApp">Cho phép một ứng dụng mở chức năng debug cho các ứng dụng khác. Ứng dụng gây hại có thể lợi dụng điều này để hủy các ứng dụng khác.b</string>
     <string name="permlab_changeConfiguration">thay đổi cài đặt Giao diện sử dụng</string>
@@ -374,8 +374,8 @@
     <string name="permdesc_setAlwaysFinish">Cho phép ứng dụng điều khiển các hoạt động luôn hoàn tất ngay khi chúng chuyển ra màn hình nền. Không bao giờ cần cho các ứng dụng thông thường.</string>
     <string name="permlab_batteryStats">bổ sung các phân tích pin</string>
     <string name="permdesc_batteryStats">Cho phép bổ sung các phân tích về lượng pin thu thập. Không dùng cho các ứng dụng thông thường.</string>
-    <string name="permlab_backup">quản lý khôi phục và sao lưu hệ thống</string>
-    <string name="permdesc_backup">Cho phép ứng dụng quản lý bộ máy sao lưu và khôi phục hệ thống. Không dùng cho các ứng dụng thông thường.</string>
+    <string name="permlab_backup">quản lý sao lưu và khôi phục hệ thống</string>
+    <string name="permdesc_backup">Cho phép ứng dụng quản lý cơ chế sao lưu và khôi phục hệ thống. Không dùng cho các ứng dụng thông thường.</string>
     <string name="permlab_confirm_full_backup">xác nhận bản sao lưu đầy đủ hoặc khôi phục hoạt động</string>
     <string name="permdesc_confirm_full_backup">Cho phép ứng dụng khởi chạy toàn bộ Giao diện người dùng xác nhận sao lưu. Không ứng dụng nào được sử dụng.</string>
     <string name="permlab_internalSystemWindow">thể hiện cửa sổ không ủy quyền</string>
@@ -426,10 +426,10 @@
     <string name="permdesc_movePackage">Cho phép ứng dụng chuyển nguồn ứng dụng từ đa phương tiện nội bộ ra bên ngoài và ngược lại.</string>
     <string name="permlab_readLogs">đọc dữ liệu nhật ký nhạy cảm</string>
     <string name="permdesc_readLogs">Cho phép một ứng dụng đọc các tập tin nhật ký khác nhau của hệ thống. Điều này cho phép nó khám phá những thông tin chung về những gì bạn đang làm với điện thoại, có thể bao gồm thông tin cá nhân hoặc riêng tư.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">sử dụng bất kỳ bộ giải mã đa phương tiện để phát lại</string>
+    <string name="permdesc_anyCodecForPlayback">Cho phép ứng dụng sử dụng bất kỳ bộ giải mã phương tiện nào được cài đặt để giải mã cho phát lại.</string>
+    <string name="permlab_readWriteOmaDrm">truy cập thư mục về oma DRM</string>
+    <string name="permdesc_readWriteOmaDrm">Cho phép ứng dụng đọc hoặc ghi vào thư mục về OMA DRM.</string>
     <string name="permlab_diagnostic">đọc/ghi thêm vào các nguồn tài nguyên giữ bởi nhóm chẩn đoán</string>
     <string name="permdesc_diagnostic">Cho phép ứng dụng đọc hoặc ghi thêm vào bất kỳ nguồn tài nguyên nào đang giữ bở nhóm chẩn đoán này, ví dụ, các tập tin /dev. Điều này có thể ảnh hưởng đến bảo mật và tính ổn định của hệ thống. Điều này CHỈ NÊN sử dụng cho các phân tích phần cứng đặc biệt bởi nhà sản xuất hoặc nhà cung cấp mạng.</string>
     <string name="permlab_changeComponentState">mở hoặc tắt các phần thêm của ứng dụng.</string>
@@ -450,9 +450,9 @@
     <string name="permdesc_readContacts">Cho phép ứng dụng đọc tất cả các số liên lạc đã lưu trên máy của bạn. Ứng dụng gây hại có thể lợi dụng điều này để gửi dữ liệu danh bạ của bạn cho người khác.</string>
     <string name="permlab_writeContacts">ghi dữ liệu danh bạ</string>
     <string name="permdesc_writeContacts">Cho phép ứng dụng thay đổi các số liên lạc đã lưu trên máy của bạn. Ứng dụng gây hại có thể lợi dụng điều này để xóa hoặc thêm vào dữ liệu danh bạ của bạn.</string>
-    <string name="permlab_readProfile">đọc d.liệu t.sử của bạn</string>
+    <string name="permlab_readProfile">đọc dữ liệu hồ sơ của bạn</string>
     <string name="permdesc_readProfile">Cho phép ứng dụng đọc thông tin tiểu sử cá nhân được lưu trên thiết bị của bạn, ví dụ như tên và thông tin liên hệ của bạn. Điều này nghĩa là ứng dụng có thể nhận dạng bạn và gửi thông tin tiểu sử của bạn cho những người khác.</string>
-    <string name="permlab_writeProfile">ghi dữ liệu t.sử của bạn</string>
+    <string name="permlab_writeProfile">ghi dữ liệu hồ sơ của bạn</string>
     <string name="permdesc_writeProfile">Cho phép ứng dụng thay đổi hoặc thêm vào thông tin tiểu sử cá nhân được lưu trữ trên thiết bị của bạn, ví dụ như tên và thông tin liên hệ của bạn. Điều này nghĩa là các ứng dụng khác có thể nhận dạng bạn và gửi thông tin tiểu sử của bạn cho những người khác.</string>
     <string name="permlab_readSocialStream">đọc luồng xã hội của bạn</string>
     <string name="permdesc_readSocialStream">Cho phép ứng dụng truy cập và đồng bộ hóa các bản cập nhật xã hội từ bạn bè của bạn. Các ứng dụng độc hại có thể sử dụng điều này để đọc thông tin liên lạc riêng tư giữa bạn và bạn bè của bạn trên mạng xã hội.</string>
@@ -573,7 +573,7 @@
     <string name="permlab_accessWimaxState">Xem trạng thái WiMAX</string>
     <string name="permdesc_accessWimaxState">Cho phép ứng dụng xem thông tin về trạng thái của WiMAX.</string>
     <string name="permlab_changeWimaxState">thay đổi trạng thái WiMAX</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">Cho phép ứng dụng kết nối và ngắt kết nối với mạng WiMAX.</string>
     <string name="permlab_bluetoothAdmin">quản lý bluetooh</string>
     <string name="permdesc_bluetoothAdmin">Cho phép ứng dụng thiết lập điện thoại Bluetooth địa phương, và dò tìm cũng như ghép với các thiết bị gần đó.</string>
     <string name="permlab_bluetooth">tạo kết nối Bluetooth</string>
@@ -744,11 +744,11 @@
 Vui lòng thử lại trong %d giây."</string>
     <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Bạn đã nhập sai mật khẩu %d lần. 
 
-Vui lòng thử lại trong %d giấy."</string>
+Vui lòng thử lại trong%d giây."</string>
     <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Bạn đã nhập sai PIN %d lần. 
 
 Vui lòng thử lại trong %d giây."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Bạn đã vẽ không chính xác hình mở khoá của mình %d lần. Sau %d lần thử không thành công khác, bạn sẽ được yêu cầu mở khoá điện thoại bằng thông tin đăng nhập Google của mình.
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Bạn đã nhập sai mật khẩu hình vẽ của mình %d lần. Sau hơn %d lần không thành công, bạn sẽ được yêu cầu mở khóa điện thoại của mình sử dụng tài khoản Google đã đăng nhập.
 
  Vui lòng thử lại trong %d giây."</string>
     <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Bạn đã mở khóa điện thoại không đúng cách %d lần. Sau %d lần mở khóa không thành công nữa, điện thoại sẽ được đặt lại về mặc định ban đầu và tất cả dữ liệu người dùng sẽ bị mất.</string>
@@ -962,7 +962,7 @@ Bạn có muốn đóng quá trình này không?"</string>
     <string name="ringtone_silent">Yên lặng</string>
     <string name="ringtone_picker_title">Nhạc chuông</string>
     <string name="ringtone_unknown">Nhạc chuông chưa biết</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Đăng nhập mạng Wi-Fi</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Không thể kết nối với Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" có kết nối internet kém."</string>
@@ -1160,7 +1160,7 @@ for account %s"</string>
     <string name="description_target_camera">Máy ảnh</string>
     <string name="description_target_silent">Im lặng</string>
     <string name="description_target_soundon">Bật âm thanh</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">Lướt để mở khóa.</string>
     <string name="keyboard_headset_required_to_hear_password">Hãy cắm tai nghe để nghe mật khẩu.</string>
     <string name="keyboard_password_character_no_headset">Dấu chấm.</string>
     <string name="action_bar_home_description">Điều hướng về trang chủ</string>
@@ -1203,9 +1203,9 @@ for account %s"</string>
     <string name="share_action_provider_share_with">Chia sẻ với...</string>
     <string name="status_bar_device_locked">Thiết bị đã bị khóa.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Đang gửi...</string>
+    <string name="launchBrowserDefault">Khởi chạy trình duyệt?</string>
+    <string name="SetupCallDefault">Chấp nhận cuộc gọi?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">Truy cập 4G</string>
     <string name="permlab_changeWimaxMulticastState">cho phép chấp nhận WiMAX Multicast</string>
@@ -1267,11 +1267,12 @@ for account %s"</string>
     <string name="install_notify_title">Cài đặt bị chặn bởi IT:</string>
     <string name="uninstall_notify_title">Gỡ cài đặt bị chặn bởi IT:</string>
     <string name="wifi_notify_title">Bộ phận IT đã vô hiệu hóa WiFi</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Xóa mặc định trong Cài đặt thành phố Nhà > Ứng dụng.</string>
+    <string name="sim_puk_contact_customer_care_information">Xin vui lòng liên hệ với dịch vụ khách hàng để có mã PUK</string>
     <string name="permlab_accessCWFolder">Truy cập thư mục tính năng wizard tùy chỉnh</string>
     <string name="permdesc_accessCWFolder">Cho phép ứng dụng truy cập thư mục tính năng wizard tùy chỉnh</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Truy cập thư mục phục hồi</string>
+    <string name="permdesc_accessRecoveryFolder">Cho phép ứng dụng truy cập thư mục phục hồi</string>
     <string name="permlab_setappname">Năng động để thay đổi tên ứng dụng</string>
     <string name="permdesc_setappname">Cho phép ứng dụng thay đổi tên ứng dụng cụ thể một cách năng động.</string>
     <string name="text_limitation">Không thể chọn từ quá nhiều từ để chia sẻ.</string>
@@ -1311,5 +1312,5 @@ for account %s"</string>
     <string name="font_color">Màu chữ</string>
     <string name="font_settings">Cài đặt chữ</string>
     <string name="font_alignment">Căn chỉnh chữ</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Thiết lập</string>
 </resources>

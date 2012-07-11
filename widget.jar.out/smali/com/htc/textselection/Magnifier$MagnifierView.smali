@@ -25,13 +25,13 @@
     .parameter "context"
 
     .prologue
-    .line 310
+    .line 320
     iput-object p1, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
-    .line 311
+    .line 321
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 312
+    .line 322
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .parameter "canvas"
 
     .prologue
-    .line 316
+    .line 326
     if-eqz p1, :cond_0
 
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
@@ -54,18 +54,18 @@
 
     if-nez v7, :cond_1
 
-    .line 353
+    .line 361
     :cond_0
     :goto_0
     return-void
 
-    .line 319
+    .line 329
     :cond_1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v1
 
-    .line 321
+    .line 331
     .local v1, saveCount:I
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
@@ -80,7 +80,7 @@
 
     div-float v3, v7, v8
 
-    .line 322
+    .line 332
     .local v3, srcWidth:F
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
@@ -95,7 +95,7 @@
 
     div-float v2, v7, v8
 
-    .line 324
+    .line 334
     .local v2, srcHeight:F
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
@@ -125,7 +125,7 @@
 
     sub-float v0, v7, v8
 
-    .line 325
+    .line 335
     .local v0, left:F
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
@@ -153,39 +153,9 @@
 
     div-float v8, v2, v8
 
-    sub-float/2addr v7, v8
+    sub-float v6, v7, v8
 
-    iget-object v8, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
-
-    #getter for: Lcom/htc/textselection/Magnifier;->mTextView:Landroid/widget/TextView;
-    invoke-static {v8}, Lcom/htc/textselection/Magnifier;->access$000(Lcom/htc/textselection/Magnifier;)Landroid/widget/TextView;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Landroid/widget/TextView;->getPaddingTop()I
-
-    move-result v8
-
-    iget-object v9, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
-
-    #getter for: Lcom/htc/textselection/Magnifier;->mTextView:Landroid/widget/TextView;
-    invoke-static {v9}, Lcom/htc/textselection/Magnifier;->access$000(Lcom/htc/textselection/Magnifier;)Landroid/widget/TextView;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Landroid/widget/TextView;->getPaddingBottom()I
-
-    move-result v9
-
-    add-int/2addr v8, v9
-
-    div-int/lit8 v8, v8, 0x2
-
-    int-to-float v8, v8
-
-    add-float v6, v7, v8
-
-    .line 328
+    .line 336
     .local v6, top:F
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
@@ -198,7 +168,7 @@
 
     move-result-object v5
 
-    .line 329
+    .line 337
     .local v5, textColorlist:Landroid/content/res/ColorStateList;
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
@@ -217,7 +187,7 @@
 
     move-result v4
 
-    .line 330
+    .line 338
     .local v4, textColor:I
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
@@ -243,7 +213,7 @@
     :goto_1
     invoke-virtual {v8, v7}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
-    .line 332
+    .line 340
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
     #getter for: Lcom/htc/textselection/Magnifier;->mCanvas:Landroid/graphics/Canvas;
@@ -261,7 +231,7 @@
 
     invoke-virtual {v7, v8, v9}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 333
+    .line 341
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
     #getter for: Lcom/htc/textselection/Magnifier;->mTextView:Landroid/widget/TextView;
@@ -278,7 +248,7 @@
 
     invoke-virtual {v7, v8}, Landroid/widget/TextView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 334
+    .line 342
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
     #getter for: Lcom/htc/textselection/Magnifier;->mCanvas:Landroid/graphics/Canvas;
@@ -288,7 +258,7 @@
 
     invoke-virtual {v7, v0, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 335
+    .line 343
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
     #getter for: Lcom/htc/textselection/Magnifier;->mContentRect:Landroid/graphics/Rect;
@@ -298,7 +268,7 @@
 
     invoke-virtual {p1, v7}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
 
-    .line 337
+    .line 345
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
     #getter for: Lcom/htc/textselection/Magnifier;->mDestinationRect:Landroid/graphics/Rect;
@@ -317,7 +287,7 @@
 
     iput v8, v7, Landroid/graphics/Rect;->left:I
 
-    .line 338
+    .line 346
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
     #getter for: Lcom/htc/textselection/Magnifier;->mDestinationRect:Landroid/graphics/Rect;
@@ -336,7 +306,7 @@
 
     iput v8, v7, Landroid/graphics/Rect;->right:I
 
-    .line 339
+    .line 347
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
     #getter for: Lcom/htc/textselection/Magnifier;->mDestinationRect:Landroid/graphics/Rect;
@@ -355,7 +325,7 @@
 
     iput v8, v7, Landroid/graphics/Rect;->top:I
 
-    .line 340
+    .line 348
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
     #getter for: Lcom/htc/textselection/Magnifier;->mDestinationRect:Landroid/graphics/Rect;
@@ -374,7 +344,7 @@
 
     iput v8, v7, Landroid/graphics/Rect;->bottom:I
 
-    .line 342
+    .line 350
     invoke-static {v4}, Landroid/graphics/Color;->brightness(I)F
 
     move-result v7
@@ -392,7 +362,7 @@
     :goto_2
     invoke-virtual {p1, v7}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 344
+    .line 352
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
     #getter for: Lcom/htc/textselection/Magnifier;->mBitmap:Landroid/graphics/Bitmap;
@@ -423,10 +393,10 @@
 
     invoke-virtual {p1, v7, v8, v9, v10}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 350
+    .line 358
     invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 352
+    .line 360
     iget-object v7, p0, Lcom/htc/textselection/Magnifier$MagnifierView;->this$0:Lcom/htc/textselection/Magnifier;
 
     #getter for: Lcom/htc/textselection/Magnifier;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -438,13 +408,13 @@
 
     goto/16 :goto_0
 
-    .line 330
+    .line 338
     :cond_2
     const/4 v7, -0x1
 
     goto/16 :goto_1
 
-    .line 342
+    .line 350
     :cond_3
     const/4 v7, -0x1
 

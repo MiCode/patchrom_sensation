@@ -269,9 +269,9 @@
     <string name="turn_off_radio">Desligar sem fio</string>
     <string name="screen_lock">Bloqueio da tela</string>
     <string name="power_off">Desligar</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Campainha Desligada</string>
+    <string name="silent_mode_vibrate">Vibração da campainha</string>
+    <string name="silent_mode_ring">Campainha ligada</string>
     <string name="shutdown_progress">Desligando…</string>
     <string name="shutdown_confirm">Seu telefone será desligado.</string>
     <string name="shutdown_confirm_question">Gostaria de desligar?</string>
@@ -344,12 +344,12 @@
     <string name="permdesc_setDebugApp">Permite que um aplicativo ligue a depuração de outro aplicativo. Aplicativos mal intencionados podem usar isso para desligar outros aplicativos.</string>
     <string name="permlab_changeConfiguration">alterar suas configurações de IU</string>
     <string name="permdesc_changeConfiguration">Permite que um aplicativo mude a configuração atual, como o local ou o tamanho geral da fonte.</string>
-    <string name="permlab_enableCarMode">ativar o modo de carro</string>
-    <string name="permdesc_enableCarMode">Permite que um aplicativo ative o modo de carro.</string>
+    <string name="permlab_enableCarMode">ativar o modo carro</string>
+    <string name="permdesc_enableCarMode">Permite que um aplicativo ative o modo carro.</string>
     <string name="permlab_killBackgroundProcesses">interromper processos em segundo plano</string>
     <string name="permdesc_killBackgroundProcesses">Permite que um aplicativo interrompa processos em segundo plano de outros aplicativos, mesmo se a memória não estiver baixa.</string>
     <string name="permlab_forceStopPackages">forçar a interrupção de outros aplicativos</string>
-    <string name="permdesc_forceStopPackages">Permite que um aplicativo pare forçosamente outros aplicativos.</string>
+    <string name="permdesc_forceStopPackages">Permite que um aplicativo force a parada de outros aplicativos.</string>
     <string name="permlab_forceBack">forçar aplicativo a fechar</string>
     <string name="permdesc_forceBack">Permite que um aplicativo force qualquer atividade que esteja em segundo plano a fechar e voltar. Nunca deve ser necessário para aplicativos normais.</string>
     <string name="permlab_dump">recuperar estado interno do sistema</string>
@@ -426,10 +426,10 @@
     <string name="permdesc_movePackage">Permite que um aplicativo mova os recursos do aplicativo da mídia interna para a externa e vice-versa.</string>
     <string name="permlab_readLogs">ler dados de registro de informações confidenciais</string>
     <string name="permdesc_readLogs">Permite que um aplicativo leia os diversos arquivos de registro do sistema. Isso permite que ele descubra informações gerais sobre o que você está fazendo com o telefone, inclusive possíveis informações pessoais ou privadas.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">use qualquer decodificador de mídia para reprodução</string>
+    <string name="permdesc_anyCodecForPlayback">Permite que um aplicativo use qualquer decodificador de mídia instalado para decodificar a reprodução.</string>
+    <string name="permlab_readWriteOmaDrm">acesse a pasta sobre oma DRM</string>
+    <string name="permdesc_readWriteOmaDrm">Permite que um aplicativo leia ou grave na pasta sobre OMA DRM.</string>
     <string name="permlab_diagnostic">ler/escrever nos recursos de propriedades do diag</string>
     <string name="permdesc_diagnostic">Permite que um aplicativo leia ou grave em qualquer recurso de propriedade do grupo de diagnóstico; por exemplo, arquivos em / dev. Isso pode afetar a segurança e a estabilidade do sistema. Isso deve ser usado APENAS para diagnósticos específicos de hardware feitos pelo fabricante ou operador.</string>
     <string name="permlab_changeComponentState">habilitar ou desabilitar os componentes do aplicativo</string>
@@ -573,7 +573,7 @@
     <string name="permlab_accessWimaxState">exibir estado WiMAX</string>
     <string name="permdesc_accessWimaxState">Permite que um aplicativo veja as informações sobre o estado do WiMAX.</string>
     <string name="permlab_changeWimaxState">alterar estado do WiMAX</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">Permite que um aplicativo se conecte e se desconecte da rede WiMAX.</string>
     <string name="permlab_bluetoothAdmin">administração do bluetooth</string>
     <string name="permdesc_bluetoothAdmin">Permite que um aplicativo configure o telefone Bluetooth local e detecte e se emparelhe com dispositivos remotos.</string>
     <string name="permlab_bluetooth">criar conexões Bluetooth</string>
@@ -622,7 +622,7 @@
     <string name="policydesc_wipeData">Apaga os dados do telefone sem aviso, executando uma redefinição da configuração original</string>
     <string name="policylab_setGlobalProxy">Definir o proxy global do dispositivo</string>
     <string name="policydesc_setGlobalProxy">Configura o proxy global do dispositivo para ser usado enquanto a política estiver ativada. Somente o primeiro administrador do dispositivo pode configurar um verdadeiro proxy global.</string>
-    <string name="policylab_expirePassword">Definir val. da senha de bloqueio</string>
+    <string name="policylab_expirePassword">Definir validade da senha de bloqueio</string>
     <string name="policydesc_expirePassword">Controlar a frequência com que a senha da tela de bloqueio deve ser alterada</string>
     <string name="policylab_encryptedStorage">Definir criptografia de armazenamento</string>
     <string name="policydesc_encryptedStorage">Exigir que os dados do aplicativo armazenado sejam criptografados</string>
@@ -707,7 +707,7 @@
     <string name="keyguard_password_enter_pin_password_code">Digite o PIN para desbloquear</string>
     <string name="keyguard_password_wrong_pin_code">Código PIN incorreto!</string>
     <string name="keyguard_label_text">Para desbloquear, pressione Menu e em seguida 0.</string>
-    <string name="emergency_call_dialog_number_for_display">Número de emergência</string>
+    <string name="emergency_call_dialog_number_for_display">Emergência</string>
     <string name="lockscreen_carrier_default">Sem serviço.</string>
     <string name="lockscreen_screen_locked">Tela bloqueada.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Pressione Menu para desbloquear ou fazer uma chamada de emergência.</string>
@@ -727,7 +727,7 @@
     <string name="lockscreen_missing_sim_instructions">Insira um cartão SIM.</string>
     <string name="lockscreen_missing_sim_instructions_long">O cartão SIM não foi inserido ou não está legível. Insira um cartão SIM.</string>
     <string name="lockscreen_permanent_disabled_sim_instructions">"Seu cartão SIM está permanentemente desativado.
- Entre em contato com seu provedor de serviços de rede sem fio para obter outro cartão SIM."</string>
+ Entre em contato com sua operadora para obter outro cartão SIM."</string>
     <string name="lockscreen_transport_prev_description">Botão \"Faixa anterior\"</string>
     <string name="lockscreen_transport_next_description">Botão \"Próxima faixa\"</string>
     <string name="lockscreen_transport_pause_description">Botão \"Pausar\"</string>
@@ -748,7 +748,7 @@ Tente novamente em %d segundos."</string>
     <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Você digitou incorretamente o seu PIN %d vezes. 
 
 Tente novamente em %d segundos."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Você desenhou o seu padrão de desbloqueio incorretamente %d vezes. Mais %d tentativas incorretas e você receberá uma solicitação para desbloquear o seu telefone usando o seu login do Google.
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Você desenhou seu padrão de bloqueio incorretamente %d vezes. Após %d outras tentativas sem sucesso, você será solicitado a desbloquear seu telefone usando seu nome de usuário do Google.
 
  Tente novamente em %d segundos."</string>
     <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Você tentou desbloquear incorretamente o telefone %d vezes. Após mais %d tentativas malsucedidas, o telefone será redefinido para o padrão de fábrica e todos os dados do usuário serão perdidos.</string>
@@ -962,17 +962,17 @@ Gostaria de fechá-lo?"</string>
     <string name="ringtone_silent">Silencioso</string>
     <string name="ringtone_picker_title">Tons de toque</string>
     <string name="ringtone_unknown">Tom de toque desconhecido</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Entrar na rede Wi-Fi</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Não foi possível se conectar a redes Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" tem uma conexão de baixa qualidade com a Internet."</string>
-    <string name="wifi_p2p_dialog_title">Wi-Fi Direct</string>
-    <string name="wifi_p2p_turnon_message">Iniciar a operação do Wi-Fi Direct. Isso desligará a operação do ponto de acesso/cliente Wi-Fi.</string>
-    <string name="wifi_p2p_failed_message">Não foi possível iniciar o Wi-Fi Direct</string>
-    <string name="wifi_p2p_pbc_go_negotiation_request_message">Solicitação de configuração da conexão do Wi-Fi Direct de %1$s. Clique em OK para aceitar.</string>
-    <string name="wifi_p2p_pin_go_negotiation_request_message">Solicitação de configuração da conexão do Wi-Fi Direct de %1$s. Digite o PIN para prosseguir.</string>
+    <string name="wifi_p2p_dialog_title">Wi-Fi Direto</string>
+    <string name="wifi_p2p_turnon_message">Iniciar a operação do Wi-Fi Direto. Isso desligará a operação do ponto de acesso/cliente Wi-Fi.</string>
+    <string name="wifi_p2p_failed_message">Não foi possível iniciar o Wi-Fi Direto</string>
+    <string name="wifi_p2p_pbc_go_negotiation_request_message">Solicitação de configuração da conexão do Wi-Fi Direto de %1$s. Clique em OK para aceitar.</string>
+    <string name="wifi_p2p_pin_go_negotiation_request_message">Solicitação de configuração da conexão do Wi-Fi Direto de %1$s. Digite o PIN para prosseguir.</string>
     <string name="wifi_p2p_pin_display_message">É necessário inserir o PIN WPS %1$s no dispositivo pareado %2$s para prosseguir com a configuração da conexão</string>
-    <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct ativado</string>
+    <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direto ativado</string>
     <string name="wifi_p2p_enabled_notification_message">Tocar para acessar configurações</string>
     <string name="select_character">Inserir caractere</string>
     <string name="sms_control_default_app_name">Aplicativo desconhecido</string>
@@ -1078,8 +1078,8 @@ para a conta %s"</string>
     <string name="no_file_chosen">Nenhum arquivo escolhido</string>
     <string name="reset">Redefinir</string>
     <string name="submit">Enviar</string>
-    <string name="car_mode_disable_notification_title">Modo de carro ativado</string>
-    <string name="car_mode_disable_notification_message">Selecione para sair do modo de carro.</string>
+    <string name="car_mode_disable_notification_title">Modo carro ativado</string>
+    <string name="car_mode_disable_notification_message">Selecione para sair do modo carro.</string>
     <string name="tethered_notification_title">Vínculo ou ponto de acesso ativo</string>
     <string name="tethered_notification_message">Toque para configurar</string>
     <string name="back_button_label">Voltar</string>
@@ -1160,7 +1160,7 @@ para a conta %s"</string>
     <string name="description_target_camera">Câmera</string>
     <string name="description_target_silent">Silencioso</string>
     <string name="description_target_soundon">Som ativado</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">Deslizar para desbloquear.</string>
     <string name="keyboard_headset_required_to_hear_password">Conecte um fone de ouvido para ouvir as teclas da senha em voz alta.</string>
     <string name="keyboard_password_character_no_headset">Ponto final.</string>
     <string name="action_bar_home_description">Navegar na página inicial</string>
@@ -1203,9 +1203,9 @@ para a conta %s"</string>
     <string name="share_action_provider_share_with">Compartilhar com...</string>
     <string name="status_bar_device_locked">Dispositivo bloqueado.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Enviando...</string>
+    <string name="launchBrowserDefault">Abrir navegador?</string>
+    <string name="SetupCallDefault">Aceitar chamada?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">Acessar 4G</string>
     <string name="permlab_changeWimaxMulticastState">permite a recepção multicast de WiMAX</string>
@@ -1267,11 +1267,12 @@ para a conta %s"</string>
     <string name="install_notify_title">Instalação de TI bloqueado:</string>
     <string name="uninstall_notify_title">Desinstalação de TI bloqueado:</string>
     <string name="wifi_notify_title">TI desabilitou WiFi</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Limpar padrão em Configurações Iniciais > Aplicativos.</string>
+    <string name="sim_puk_contact_customer_care_information">Entre em contato com a Assistência ao Clientee para obter o código PUK</string>
     <string name="permlab_accessCWFolder">Acesse a pasta do recurso do assistente de personalização</string>
     <string name="permdesc_accessCWFolder">Permite que um aplicativo acesse a pasta do recurso do assistente de personalização</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Acesse a pasta de recuperação</string>
+    <string name="permdesc_accessRecoveryFolder">Permita que um aplicativo acesse a pasta de recuperação</string>
     <string name="permlab_setappname">Dinâmico para alterar o nome do aplicativo</string>
     <string name="permdesc_setappname">Permite que um aplicativo altere o nome de um aplicativo específico dinamicamente.</string>
     <string name="text_limitation">Não é possível selecionar muitas palavras para compartilhar.</string>
@@ -1311,5 +1312,5 @@ para a conta %s"</string>
     <string name="font_color">Cor da fonte</string>
     <string name="font_settings">Configurações da fonte</string>
     <string name="font_alignment">Alinhamento da fonte</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Configurar</string>
 </resources>

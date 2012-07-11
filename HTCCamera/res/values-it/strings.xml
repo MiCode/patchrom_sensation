@@ -100,7 +100,7 @@
     <string name="auto_focus">Messa a fuoco automatica</string>
     <string name="face_detection">Rilevamento volto</string>
     <string name="shutter_sound">Suono otturatore</string>
-    <string name="image_adjustment">Regolazione immagime</string>
+    <string name="image_adjustment">Regolazione immagine</string>
     <string name="metering_mode">Modalità Telemetro</string>
     <string name="flicker_adjustment">Regolazione sfarfallio</string>
     <string name="iso">ISO</string>

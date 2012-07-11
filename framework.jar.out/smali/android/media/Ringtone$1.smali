@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 376
+    .line 424
     iput-object p1, p0, Landroid/media/Ringtone$1;->this$0:Landroid/media/Ringtone;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
     .parameter "extra"
 
     .prologue
-    .line 378
+    .line 426
     invoke-static {}, Landroid/media/Ringtone;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -79,10 +79,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 379
+    .line 427
     packed-switch p2, :pswitch_data_0
 
-    .line 395
+    .line 443
     invoke-static {}, Landroid/media/Ringtone;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -91,13 +91,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 399
+    .line 447
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 382
+    .line 430
     :pswitch_0
     iget-object v0, p0, Landroid/media/Ringtone$1;->this$0:Landroid/media/Ringtone;
 
@@ -108,7 +108,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 384
+    .line 432
     invoke-static {}, Landroid/media/Ringtone;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -117,7 +117,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 385
+    .line 433
     iget-object v0, p0, Landroid/media/Ringtone$1;->this$0:Landroid/media/Ringtone;
 
     #getter for: Landroid/media/Ringtone;->mAudio:Landroid/media/MediaPlayer;
@@ -127,7 +127,7 @@
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->reset()V
 
-    .line 386
+    .line 434
     iget-object v0, p0, Landroid/media/Ringtone$1;->this$0:Landroid/media/Ringtone;
 
     #getter for: Landroid/media/Ringtone;->mAudio:Landroid/media/MediaPlayer;
@@ -137,7 +137,7 @@
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->release()V
 
-    .line 387
+    .line 435
     iget-object v0, p0, Landroid/media/Ringtone$1;->this$0:Landroid/media/Ringtone;
 
     const/4 v1, 0x0
@@ -145,13 +145,13 @@
     #setter for: Landroid/media/Ringtone;->mAudio:Landroid/media/MediaPlayer;
     invoke-static {v0, v1}, Landroid/media/Ringtone;->access$102(Landroid/media/Ringtone;Landroid/media/MediaPlayer;)Landroid/media/MediaPlayer;
 
-    .line 393
+    .line 441
     :cond_0
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 379
+    .line 427
     nop
 
     :pswitch_data_0

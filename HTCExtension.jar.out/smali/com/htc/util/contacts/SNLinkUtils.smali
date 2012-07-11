@@ -26,9 +26,21 @@
 
 .field private static final ID_TAG:Ljava/lang/String; = "id:"
 
+.field public static final KAIXIN_LOGIN_MIMETYPE:Ljava/lang/String; = "com.htc.KaixinFriendStream/login"
+
 .field public static final LINK_NOTE_LIMIT:I = 0x14
 
 .field public static final PLURK_LOGIN_MIMETYPE:Ljava/lang/String; = "com.htc.socialnetwork.plurk/login"
+
+.field public static final QQIM_LOGIN_MIMETYPE:Ljava/lang/String; = "com.htc.socialnetwork.qqim/login"
+
+.field public static final QQWEIBO_LOGIN_MIMETYPE:Ljava/lang/String; = "com.htc.socialnetwork.qqweibo/login"
+
+.field public static final QZONE_LOGIN_MIMETYPE:Ljava/lang/String; = "com.htc.socialnetwork.chinasns/login"
+
+.field public static final RENREN_LOGIN_MIMETYPE:Ljava/lang/String; = "com.htc.friendstream.renrenwebplugin/login"
+
+.field public static final SINAWEIBO_LOGIN_MIMETYPE:Ljava/lang/String; = "com.htc.friendstream.sinaweiboplugin/login"
 
 .field private static final TAG:Ljava/lang/String; = "SNLinkUtils"
 
@@ -102,12 +114,12 @@
     .parameter "type"
 
     .prologue
-    .line 253
+    .line 258
     invoke-static {p0}, Lcom/htc/util/contacts/SNLinkUtils;->transferToNewFormat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 254
+    .line 259
     .local v0, newText:Ljava/lang/String;
     invoke-static {v0, p1, p2, p3}, Lcom/htc/util/contacts/SNLinkUtils$NewMethod;->appendLinkData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -132,47 +144,47 @@
     .end annotation
 
     .prologue
-    .line 236
+    .line 241
     invoke-static {p0}, Lcom/htc/util/contacts/SNLinkUtils$OldMethod;->extractLinkData(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 237
+    .line 242
     .local v1, list_old:Ljava/util/List;,"Ljava/util/List<Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;>;"
     invoke-static {p0}, Lcom/htc/util/contacts/SNLinkUtils$NewMethod;->extractLinkData(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 238
+    .line 243
     .local v0, list_new:Ljava/util/List;,"Ljava/util/List<Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;>;"
     if-nez v1, :cond_1
 
     move-object v1, v0
 
-    .line 248
+    .line 253
     .end local v1           #list_old:Ljava/util/List;,"Ljava/util/List<Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;>;"
     :cond_0
     :goto_0
     return-object v1
 
-    .line 240
+    .line 245
     .restart local v1       #list_old:Ljava/util/List;,"Ljava/util/List<Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;>;"
     :cond_1
     if-eqz v0, :cond_0
 
-    .line 242
+    .line 247
     if-eqz v1, :cond_2
 
     if-eqz v0, :cond_2
 
-    .line 243
+    .line 248
     invoke-interface {v1, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 248
+    .line 253
     :cond_2
     const/4 v1, 0x0
 
@@ -199,7 +211,7 @@
     .local p0, list:Ljava/util/List;,"Ljava/util/List<Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;>;"
     const/4 v3, -0x1
 
-    .line 73
+    .line 80
     if-eqz p0, :cond_0
 
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -211,16 +223,16 @@
     :cond_0
     move v2, v3
 
-    .line 81
+    .line 88
     :cond_1
     :goto_0
     return v2
 
-    .line 75
+    .line 82
     :cond_2
     const/4 v2, 0x0
 
-    .line 76
+    .line 83
     .local v2, pos:I
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -240,7 +252,7 @@
 
     check-cast v1, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;
 
-    .line 77
+    .line 84
     .local v1, l:Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;
     iget-object v4, v1, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->userId:Ljava/lang/String;
 
@@ -250,7 +262,7 @@
 
     if-nez v4, :cond_1
 
-    .line 79
+    .line 86
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
@@ -259,244 +271,44 @@
     :cond_3
     move v2, v3
 
-    .line 81
+    .line 88
     goto :goto_0
 .end method
 
 .method public static getLoginIdOfSNAccount(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+    .locals 1
     .parameter "AccountType"
 
     .prologue
-    .line 125
+    .line 156
     if-eqz p0, :cond_0
 
-    const-string v0, "com.htc.socialnetwork.facebook"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 126
+    .line 157
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
-    const-string v1, "facebook"
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/String;
 
-    .line 141
+    .line 160
     :goto_0
     return-object v0
 
-    .line 128
     :cond_0
-    if-eqz p0, :cond_1
-
-    const-string v0, "com.facebook.auth.login"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 129
-    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
-
-    const-string v1, "facebook sso"
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    goto :goto_0
-
-    .line 131
-    :cond_1
-    if-eqz p0, :cond_2
-
-    const-string v0, "com.htc.socialnetwork.flickr"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 132
-    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
-
-    const-string v1, "flickr"
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    goto :goto_0
-
-    .line 134
-    :cond_2
-    if-eqz p0, :cond_3
-
-    const-string v0, "com.htc.socialnetwork.plurk"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 135
-    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
-
-    const-string v1, "plurk"
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    goto :goto_0
-
-    .line 137
-    :cond_3
-    if-eqz p0, :cond_4
-
-    const-string v0, "com.htc.htctwitter"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    .line 138
-    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
-
-    const-string v1, "twitter"
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    goto :goto_0
-
-    .line 141
-    :cond_4
     const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
 .method public static getSNType(Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
+    .locals 0
     .parameter "AccountType"
 
     .prologue
-    .line 215
-    if-eqz p0, :cond_0
-
-    const-string v0, "com.htc.socialnetwork.facebook"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 216
-    const-string v0, "facebook"
-
-    .line 230
-    :goto_0
-    return-object v0
-
-    .line 218
-    :cond_0
-    if-eqz p0, :cond_1
-
-    const-string v0, "com.facebook.auth.login"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 219
-    const-string v0, "facebook sso"
-
-    goto :goto_0
-
-    .line 221
-    :cond_1
-    if-eqz p0, :cond_2
-
-    const-string v0, "com.htc.socialnetwork.flickr"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 222
-    const-string v0, "flickr"
-
-    goto :goto_0
-
-    .line 224
-    :cond_2
-    if-eqz p0, :cond_3
-
-    const-string v0, "com.htc.socialnetwork.plurk"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 225
-    const-string v0, "plurk"
-
-    goto :goto_0
-
-    .line 227
-    :cond_3
-    if-eqz p0, :cond_4
-
-    const-string v0, "com.htc.htctwitter"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    .line 228
-    const-string v0, "twitter"
-
-    goto :goto_0
-
-    .line 230
-    :cond_4
-    const/4 v0, 0x0
-
-    goto :goto_0
+    .line 235
+    return-object p0
 .end method
 
 .method public static isSNContacts(Ljava/lang/String;)Z
@@ -506,19 +318,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 86
+    .line 93
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 93
+    .line 106
     :cond_0
     :goto_0
     return v0
 
-    .line 88
+    .line 95
     :cond_1
     const-string v1, "com.htc.socialnetwork.facebook"
 
@@ -558,9 +370,57 @@
 
     move-result v1
 
+    if-nez v1, :cond_2
+
+    const-string v1, "com.htc.friendstream.sinaweiboplugin"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    const-string v1, "com.htc.socialnetwork.qqim"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    const-string v1, "com.htc.socialnetwork.qqweibo"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    const-string v1, "com.htc.socialnetwork.chinasns"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    const-string v1, "com.htc.KaixinFriendStream"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    const-string v1, "com.htc.friendstream.renrenwebplugin"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
     if-eqz v1, :cond_0
 
-    .line 92
+    .line 105
     :cond_2
     const/4 v0, 0x1
 
@@ -571,7 +431,7 @@
     .locals 2
 
     .prologue
-    .line 109
+    .line 122
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
     if-eqz v0, :cond_1
@@ -586,7 +446,7 @@
 
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
-    const-string v1, "facebook"
+    const-string v1, "com.htc.socialnetwork.facebook"
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -596,7 +456,7 @@
 
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
-    const-string v1, "facebook sso"
+    const-string v1, "com.facebook.auth.login"
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -620,7 +480,7 @@
     .locals 2
 
     .prologue
-    .line 113
+    .line 126
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
@@ -635,7 +495,45 @@
 
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
-    const-string v1, "flickr"
+    const-string v1, "com.htc.socialnetwork.flickr"
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static isSNKaixinLogin()Z
+    .locals 2
+
+    .prologue
+    .line 147
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    const-string v1, "com.htc.KaixinFriendStream"
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -658,7 +556,7 @@
     .locals 1
 
     .prologue
-    .line 106
+    .line 119
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
@@ -686,7 +584,7 @@
     .locals 2
 
     .prologue
-    .line 116
+    .line 129
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
@@ -701,7 +599,197 @@
 
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
-    const-string v1, "plurk"
+    const-string v1, "com.htc.socialnetwork.plurk"
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static isSNQQIMLogin()Z
+    .locals 2
+
+    .prologue
+    .line 138
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    const-string v1, "com.htc.socialnetwork.qqim"
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static isSNQQWeiboLogin()Z
+    .locals 2
+
+    .prologue
+    .line 141
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    const-string v1, "com.htc.socialnetwork.qqweibo"
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static isSNQZoneLogin()Z
+    .locals 2
+
+    .prologue
+    .line 144
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    const-string v1, "com.htc.socialnetwork.chinasns"
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static isSNRenrenLogin()Z
+    .locals 2
+
+    .prologue
+    .line 150
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    const-string v1, "com.htc.friendstream.renrenwebplugin"
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static isSNSinaLogin()Z
+    .locals 2
+
+    .prologue
+    .line 135
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    const-string v1, "com.htc.friendstream.sinaweiboplugin"
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -724,7 +812,7 @@
     .locals 2
 
     .prologue
-    .line 119
+    .line 132
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
@@ -739,7 +827,7 @@
 
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
-    const-string v1, "twitter"
+    const-string v1, "com.htc.htctwitter"
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -765,19 +853,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 97
+    .line 110
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 102
+    .line 115
     :cond_0
     :goto_0
     return v0
 
-    .line 99
+    .line 112
     :cond_1
     const-string v1, "com.google"
 
@@ -811,7 +899,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 101
+    .line 114
     :cond_2
     const/4 v0, 0x1
 
@@ -826,12 +914,12 @@
     .parameter "type"
 
     .prologue
-    .line 259
+    .line 264
     invoke-static {p0}, Lcom/htc/util/contacts/SNLinkUtils;->transferToNewFormat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 260
+    .line 265
     .local v0, newText:Ljava/lang/String;
     invoke-static {v0, p1, p2, p3}, Lcom/htc/util/contacts/SNLinkUtils$NewMethod;->removeLinkData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -841,116 +929,21 @@
 .end method
 
 .method public static removeLoginId(Ljava/lang/String;)V
-    .locals 2
+    .locals 1
     .parameter "AccountType"
 
     .prologue
-    .line 165
-    if-eqz p0, :cond_1
-
-    const-string v0, "com.htc.socialnetwork.facebook"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 166
-    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
-
-    const-string v1, "facebook"
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 180
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 168
-    :cond_1
-    if-eqz p0, :cond_2
-
-    const-string v0, "com.facebook.auth.login"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 169
-    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
-
-    const-string v1, "facebook sso"
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    .line 171
-    :cond_2
-    if-eqz p0, :cond_3
-
-    const-string v0, "com.htc.socialnetwork.flickr"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
     .line 172
-    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
-
-    const-string v1, "flickr"
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    .line 174
-    :cond_3
-    if-eqz p0, :cond_4
-
-    const-string v0, "com.htc.socialnetwork.plurk"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    .line 175
-    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
-
-    const-string v1, "plurk"
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    .line 177
-    :cond_4
     if-eqz p0, :cond_0
 
-    const-string v0, "com.htc.htctwitter"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 178
+    .line 173
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
-    const-string v1, "twitter"
+    invoke-virtual {v0, p0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
+    .line 175
+    :cond_0
+    return-void
 .end method
 
 .method public static setLoginId(Ljava/lang/String;Ljava/lang/String;)V
@@ -959,7 +952,7 @@
     .parameter "id"
 
     .prologue
-    .line 145
+    .line 164
     const-string v0, "SNLinkUtils"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -992,112 +985,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 146
-    if-eqz p0, :cond_1
-
-    const-string v0, "com.htc.socialnetwork.facebook"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 147
-    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
-
-    const-string v1, "facebook"
-
-    invoke-virtual {v0, v1, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 161
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 149
-    :cond_1
-    if-eqz p0, :cond_2
-
-    const-string v0, "com.facebook.auth.login"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 150
-    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
-
-    const-string v1, "facebook sso"
-
-    invoke-virtual {v0, v1, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    .line 152
-    :cond_2
-    if-eqz p0, :cond_3
-
-    const-string v0, "com.htc.socialnetwork.flickr"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 153
-    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
-
-    const-string v1, "flickr"
-
-    invoke-virtual {v0, v1, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    .line 155
-    :cond_3
-    if-eqz p0, :cond_4
-
-    const-string v0, "com.htc.socialnetwork.plurk"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    .line 156
-    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
-
-    const-string v1, "plurk"
-
-    invoke-virtual {v0, v1, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    .line 158
-    :cond_4
+    .line 165
     if-eqz p0, :cond_0
 
-    const-string v0, "com.htc.htctwitter"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 159
+    .line 166
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
-    const-string v1, "twitter"
+    invoke-virtual {v0, p0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
+    .line 168
+    :cond_0
+    return-void
 .end method
 
 .method public static setLoginIdForSNAcoount(Landroid/content/Context;)V
@@ -1111,15 +1009,15 @@
 
     const/4 v8, 0x1
 
-    .line 183
+    .line 178
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 185
-    const-string v3, "mimetype = com.htc.socialnetwork.facebook/login OR mimetype = com.facebook.auth.login/login OR mimetype = com.htc.socialnetwork.flickr/login OR mimetype = com.htc.socialnetwork.plurk/login OR mimetype = com.htc.htctwitter/login"
+    .line 180
+    const-string v3, "mimetype = com.htc.socialnetwork.facebook/login OR mimetype = com.facebook.auth.login/login OR mimetype = com.htc.socialnetwork.flickr/login OR mimetype = com.htc.socialnetwork.plurk/login OR mimetype = com.htc.htctwitter/login OR mimetype = com.htc.friendstream.sinaweiboplugin/login OR mimetype = com.htc.socialnetwork.qqim/login OR mimetype = com.htc.socialnetwork.qqweibo/login OR mimetype = com.htc.socialnetwork.chinasns/login OR mimetype = com.htc.KaixinFriendStream/login OR mimetype = com.htc.friendstream.renrenwebplugin/login"
 
-    .line 190
+    .line 191
     .local v3, selection:Ljava/lang/String;
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1145,25 +1043,25 @@
 
     move-result-object v6
 
-    .line 191
-    .local v6, c:Landroid/database/Cursor;
-    if-eqz v6, :cond_6
-
     .line 192
+    .local v6, c:Landroid/database/Cursor;
+    if-eqz v6, :cond_c
+
+    .line 193
     :cond_0
     :goto_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_b
 
-    .line 193
+    .line 194
     invoke-interface {v6, v9}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 194
+    .line 195
     .local v7, type:Ljava/lang/String;
     const-string v0, "com.htc.socialnetwork.facebook/login"
 
@@ -1173,10 +1071,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 195
+    .line 196
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
-    const-string v1, "facebook"
+    const-string v1, "com.htc.socialnetwork.facebook"
 
     invoke-interface {v6, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -1186,7 +1084,7 @@
 
     goto :goto_0
 
-    .line 197
+    .line 198
     :cond_1
     const-string v0, "com.facebook.auth.login/login"
 
@@ -1196,10 +1094,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 198
+    .line 199
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
-    const-string v1, "facebook sso"
+    const-string v1, "com.facebook.auth.login"
 
     invoke-interface {v6, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -1209,7 +1107,7 @@
 
     goto :goto_0
 
-    .line 200
+    .line 201
     :cond_2
     const-string v0, "com.htc.socialnetwork.flickr/login"
 
@@ -1219,10 +1117,10 @@
 
     if-eqz v0, :cond_3
 
-    .line 201
+    .line 202
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
-    const-string v1, "flickr"
+    const-string v1, "com.htc.socialnetwork.flickr"
 
     invoke-interface {v6, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -1232,7 +1130,7 @@
 
     goto :goto_0
 
-    .line 203
+    .line 204
     :cond_3
     const-string v0, "com.htc.socialnetwork.plurk/login"
 
@@ -1242,10 +1140,10 @@
 
     if-eqz v0, :cond_4
 
-    .line 204
+    .line 205
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
-    const-string v1, "plurk"
+    const-string v1, "com.htc.socialnetwork.plurk"
 
     invoke-interface {v6, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -1255,7 +1153,7 @@
 
     goto :goto_0
 
-    .line 206
+    .line 207
     :cond_4
     const-string v0, "com.htc.htctwitter/login"
 
@@ -1263,12 +1161,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_5
 
-    .line 207
+    .line 208
     sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
 
-    const-string v1, "twitter"
+    const-string v1, "com.htc.htctwitter"
 
     invoke-interface {v6, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -1279,12 +1177,150 @@
     goto :goto_0
 
     .line 210
-    .end local v7           #type:Ljava/lang/String;
     :cond_5
+    const-string v0, "com.htc.friendstream.sinaweiboplugin/login"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    .line 211
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    const-string v1, "com.htc.friendstream.sinaweiboplugin"
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 213
+    :cond_6
+    const-string v0, "com.htc.socialnetwork.qqim/login"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    .line 214
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    const-string v1, "com.htc.socialnetwork.qqim"
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 216
+    :cond_7
+    const-string v0, "com.htc.socialnetwork.qqweibo/login"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    .line 217
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    const-string v1, "com.htc.socialnetwork.qqweibo"
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 219
+    :cond_8
+    const-string v0, "com.htc.socialnetwork.chinasns/login"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    .line 220
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    const-string v1, "com.htc.socialnetwork.chinasns"
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 222
+    :cond_9
+    const-string v0, "com.htc.KaixinFriendStream/login"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    .line 223
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    const-string v1, "com.htc.KaixinFriendStream"
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 225
+    :cond_a
+    const-string v0, "com.htc.friendstream.renrenwebplugin/login"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 226
+    sget-object v0, Lcom/htc/util/contacts/SNLinkUtils;->mCachedLoginIds:Ljava/util/HashMap;
+
+    const-string v1, "com.htc.friendstream.renrenwebplugin"
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 229
+    .end local v7           #type:Ljava/lang/String;
+    :cond_b
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 212
-    :cond_6
+    .line 231
+    :cond_c
     return-void
 .end method
 
@@ -1293,10 +1329,10 @@
     .parameter "oriText"
 
     .prologue
-    .line 265
+    .line 270
     const/4 v9, 0x0
 
-    .line 267
+    .line 272
     .local v9, newText:Ljava/lang/String;
     invoke-static/range {p0 .. p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1304,13 +1340,13 @@
 
     if-eqz v15, :cond_1
 
-    .line 322
+    .line 327
     .end local p0
     :cond_0
     :goto_0
     return-object p0
 
-    .line 271
+    .line 276
     .restart local p0
     :cond_1
     const-string v15, "<sn>"
@@ -1321,7 +1357,7 @@
 
     move-result v12
 
-    .line 272
+    .line 277
     .local v12, startingIndexOld:I
     const-string v15, "</sn>"
 
@@ -1331,7 +1367,7 @@
 
     move-result v5
 
-    .line 273
+    .line 278
     .local v5, endingIndexOld:I
     const-string v15, "<HTCData>"
 
@@ -1341,7 +1377,7 @@
 
     move-result v11
 
-    .line 274
+    .line 279
     .local v11, startingIndexNew:I
     const-string v15, "</HTCData>"
 
@@ -1351,24 +1387,24 @@
 
     move-result v4
 
-    .line 276
+    .line 281
     .local v4, endingIndexNew:I
     if-lt v5, v12, :cond_2
 
     if-ge v4, v11, :cond_5
 
-    .line 278
+    .line 283
     :cond_2
     if-le v12, v11, :cond_4
 
     move v8, v12
 
-    .line 279
+    .line 284
     .local v8, index:I
     :goto_1
     if-lez v8, :cond_3
 
-    .line 280
+    .line 285
     const/4 v15, 0x0
 
     move-object/from16 v0, p0
@@ -1380,17 +1416,17 @@
     :cond_3
     move-object/from16 p0, v9
 
-    .line 283
+    .line 288
     goto :goto_0
 
     .end local v8           #index:I
     :cond_4
     move v8, v11
 
-    .line 278
+    .line 283
     goto :goto_1
 
-    .line 287
+    .line 292
     :cond_5
     const-string v15, "<sn>"
 
@@ -1400,7 +1436,7 @@
 
     move-result v10
 
-    .line 288
+    .line 293
     .local v10, startingIndex:I
     const-string v15, "</sn>"
 
@@ -1410,7 +1446,7 @@
 
     move-result v3
 
-    .line 289
+    .line 294
     .local v3, endingIndex:I
     if-lt v3, v10, :cond_0
 
@@ -1422,7 +1458,7 @@
 
     if-eq v3, v15, :cond_0
 
-    .line 294
+    .line 299
     const-string v15, "<sn>"
 
     invoke-virtual {v15}, Ljava/lang/String;->length()I
@@ -1437,7 +1473,7 @@
 
     move-result-object v13
 
-    .line 295
+    .line 300
     .local v13, subText:Ljava/lang/String;
     new-instance v6, Ljava/util/StringTokenizer;
 
@@ -1445,13 +1481,13 @@
 
     invoke-direct {v6, v13, v15}, Ljava/util/StringTokenizer;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 296
+    .line 301
     .local v6, idListTokens:Ljava/util/StringTokenizer;
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 297
+    .line 302
     .local v2, dataList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;>;"
     :cond_6
     :goto_2
@@ -1461,12 +1497,12 @@
 
     if-eqz v15, :cond_8
 
-    .line 298
+    .line 303
     invoke-virtual {v6}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
     move-result-object v14
 
-    .line 299
+    .line 304
     .local v14, token:Ljava/lang/String;
     const-string v15, "/"
 
@@ -1474,7 +1510,7 @@
 
     move-result-object v7
 
-    .line 300
+    .line 305
     .local v7, ids:[Ljava/lang/String;
     array-length v15, v7
 
@@ -1484,7 +1520,7 @@
 
     if-lt v15, v0, :cond_6
 
-    .line 303
+    .line 308
     const/4 v15, 0x0
 
     aget-object v15, v7, v15
@@ -1509,12 +1545,12 @@
 
     if-eqz v15, :cond_6
 
-    .line 305
+    .line 310
     new-instance v1, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;
 
     invoke-direct {v1}, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;-><init>()V
 
-    .line 306
+    .line 311
     .local v1, data:Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;
     const/4 v15, 0x0
 
@@ -1532,7 +1568,7 @@
 
     iput-object v15, v1, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->userId:Ljava/lang/String;
 
-    .line 307
+    .line 312
     const/4 v15, 0x1
 
     aget-object v15, v7, v15
@@ -1549,7 +1585,7 @@
 
     iput-object v15, v1, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->friendOf:Ljava/lang/String;
 
-    .line 308
+    .line 313
     iget-object v15, v1, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->userId:Ljava/lang/String;
 
     const-string v16, "@"
@@ -1570,26 +1606,26 @@
 
     if-eqz v15, :cond_7
 
-    .line 309
-    const-string v15, "flickr"
+    .line 314
+    const-string v15, "com.htc.socialnetwork.flickr"
 
     iput-object v15, v1, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->SNType:Ljava/lang/String;
 
-    .line 313
+    .line 318
     :goto_3
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 311
+    .line 316
     :cond_7
-    const-string v15, "facebook"
+    const-string v15, "com.htc.socialnetwork.facebook"
 
     iput-object v15, v1, Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;->SNType:Ljava/lang/String;
 
     goto :goto_3
 
-    .line 319
+    .line 324
     .end local v1           #data:Lcom/htc/util/contacts/SNLinkUtils$SNLinkData;
     .end local v7           #ids:[Ljava/lang/String;
     .end local v14           #token:Ljava/lang/String;
@@ -1604,6 +1640,6 @@
 
     move-object/from16 p0, v9
 
-    .line 322
+    .line 327
     goto/16 :goto_0
 .end method

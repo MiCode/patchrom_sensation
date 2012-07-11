@@ -225,7 +225,7 @@
     iput-object v4, p0, Lcom/htc/widget/HeaderBar;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     .line 483
-    const/16 v3, 0x7f
+    const/16 v3, 0xe6
 
     iput v3, p0, Lcom/htc/widget/HeaderBar;->enableAlpha:I
 
@@ -465,7 +465,7 @@
 
     if-eqz v0, :cond_1
 
-    const/16 v0, 0x7f
+    const/16 v0, 0xe6
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V

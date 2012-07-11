@@ -6,19 +6,19 @@
         <item>Підсилювач вокалу</item>
         <item>Блюз</item>
         <item>Класика</item>
-        <item>Країна</item>
+        <item>Кантрі</item>
         <item>Джаз</item>
-        <item>Латина</item>
+        <item>Латино</item>
         <item>Нью-ейдж</item>
         <item>Фортепіано</item>
         <item>Поп</item>
-        <item>Ритм-н-Блюз</item>
+        <item>Ритм-н-блюз</item>
         <item>Рок</item>
     </string-array>
     <string-array name="sound_effect_style">
         <item>Без ефектів</item>
         <item>Dolby Mobile</item>
-        <item>Розширення SRS</item>
+        <item>Підсилення SRS</item>
         <item>Еквалайзер (тільки навушники)</item>
         <item>Beats Audio</item>
     </string-array>
@@ -28,18 +28,18 @@
         <item>Увімкнути Beats Audio</item>
     </string-array>
     <string-array name="onlineMusicBrowseBy">
-        <item>Нові релізи</item>
-        <item>Топ 100 альбомів</item>
-        <item>Топ 100 пісень</item>
+        <item>Нові випуски</item>
+        <item>Найпопулярніші 100 альбомів</item>
+        <item>Найпопулярніші 100 пісень</item>
         <item>Канали</item>
     </string-array>
     <string-array name="online_genres">
-        <item>Додатково</item>
-        <item>Танці й Хаус</item>
+        <item>Альтернативна музика</item>
+        <item>Хаус денс</item>
         <item>Електронна музика</item>
         <item>Джаз</item>
         <item>Поп</item>
-        <item>Ритм-н-Блюз</item>
+        <item>Ритм-н-блюз</item>
         <item>Реп</item>
         <item>Рок</item>
     </string-array>

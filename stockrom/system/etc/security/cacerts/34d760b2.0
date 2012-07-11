@@ -1,0 +1,87 @@
+-----BEGIN CERTIFICATE-----
+MIIEfjCCA2agAwIBAgIBADANBgkqhkiG9w0BAQUFADCBzzELMAkGA1UEBhMCVVMx
+EDAOBgNVBAgTB0FyaXpvbmExEzARBgNVBAcTClNjb3R0c2RhbGUxJTAjBgNVBAoT
+HFN0YXJmaWVsZCBUZWNobm9sb2dpZXMsIEluYy4xOjA4BgNVBAsTMWh0dHA6Ly9j
+ZXJ0aWZpY2F0ZXMuc3RhcmZpZWxkdGVjaC5jb20vcmVwb3NpdG9yeS8xNjA0BgNV
+BAMTLVN0YXJmaWVsZCBTZXJ2aWNlcyBSb290IENlcnRpZmljYXRlIEF1dGhvcml0
+eTAeFw0wODA2MDIwMDAwMDBaFw0yOTEyMzEyMzU5NTlaMIHPMQswCQYDVQQGEwJV
+UzEQMA4GA1UECBMHQXJpem9uYTETMBEGA1UEBxMKU2NvdHRzZGFsZTElMCMGA1UE
+ChMcU3RhcmZpZWxkIFRlY2hub2xvZ2llcywgSW5jLjE6MDgGA1UECxMxaHR0cDov
+L2NlcnRpZmljYXRlcy5zdGFyZmllbGR0ZWNoLmNvbS9yZXBvc2l0b3J5LzE2MDQG
+A1UEAxMtU3RhcmZpZWxkIFNlcnZpY2VzIFJvb3QgQ2VydGlmaWNhdGUgQXV0aG9y
+aXR5MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8sxWKk3mFjdal+pt
+NTjREJvbuNypBAmVMy4JxQB7GnhCj8j0BY7+0miDHk6ZzRfbRz5Q84nS59yY+wX4
+qtZj9FRNwXEDsB8bdrMaNDBz8SgyYIP9tJzXttIiN3wZqjveExBpblwG02+j8mZa
+dkJIr4DRVFk91LnU2+25qzmZ9O5iq+F4cnvYOI1AtszcEgBwQ4Vp2Bjjyldyn7Tf
+P/wiqEJS9XdbmfBWLSZwFjYSwieeV6Z80CPxedyjk1goOD2frTZD7jf7+PlDrchW
+8pQSXkLrc7gTDcum1Ya5qihqVAOhPw8p6wkA6D9eon8XPaEr+L7QdR2khOOrF2UG
+UgCvsQIDAQABo2MwYTAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBBjAd
+BgNVHQ4EFgQUtMZ/GkPMm3VdL8RL8ouYEOnxURAwHwYDVR0jBBgwFoAUtMZ/GkPM
+m3VdL8RL8ouYEOnxURAwDQYJKoZIhvcNAQEFBQADggEBAKyAu8QlBQtYpOR+KX6v
+vDvsLcBELvmR4NI7MieQLfaACVzCq2Uk2jgQRsRJ0v2aqyhId4jG6W/RR5HVNU8U
+CahbQAcdfHFWy4lC1L9hwCL3Lt+r83JDi0DolOuwJtrRE9Or0DYtLjqVs3cuFTkY
+DGm6qoDt8VNOM5toBOKgMC7X0V3UpmadhObnuzyJuzad/BepPVUrivubxEyE/9/S
+vmkbdLCo9uqwnLIpdIFMaDqaf3MlOfUT4GaRadRXS7furUXgLMOI076USYkf/3DV
+W205E7Ady5jmZ2MNY/b7w9dhcoOIP3B+U8meiVTWT399cbmu8WCLd2Ds+L/6aqOc
+ASI=
+-----END CERTIFICATE-----
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 0 (0x0)
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=US, ST=Arizona, L=Scottsdale, O=Starfield Technologies, Inc., OU=http://certificates.starfieldtech.com/repository/, CN=Starfield Services Root Certificate Authority
+        Validity
+            Not Before: Jun  2 00:00:00 2008 GMT
+            Not After : Dec 31 23:59:59 2029 GMT
+        Subject: C=US, ST=Arizona, L=Scottsdale, O=Starfield Technologies, Inc., OU=http://certificates.starfieldtech.com/repository/, CN=Starfield Services Root Certificate Authority
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (2048 bit)
+                Modulus (2048 bit):
+                    00:f2:cc:56:2a:4d:e6:16:37:5a:97:ea:6d:35:38:
+                    d1:10:9b:db:b8:dc:a9:04:09:95:33:2e:09:c5:00:
+                    7b:1a:78:42:8f:c8:f4:05:8e:fe:d2:68:83:1e:4e:
+                    99:cd:17:db:47:3e:50:f3:89:d2:e7:dc:98:fb:05:
+                    f8:aa:d6:63:f4:54:4d:c1:71:03:b0:1f:1b:76:b3:
+                    1a:34:30:73:f1:28:32:60:83:fd:b4:9c:d7:b6:d2:
+                    22:37:7c:19:aa:3b:de:13:10:69:6e:5c:06:d3:6f:
+                    a3:f2:66:5a:76:42:48:af:80:d1:54:59:3d:d4:b9:
+                    d4:db:ed:b9:ab:39:99:f4:ee:62:ab:e1:78:72:7b:
+                    d8:38:8d:40:b6:cc:dc:12:00:70:43:85:69:d8:18:
+                    e3:ca:57:72:9f:b4:df:3f:fc:22:a8:42:52:f5:77:
+                    5b:99:f0:56:2d:26:70:16:36:12:c2:27:9e:57:a6:
+                    7c:d0:23:f1:79:dc:a3:93:58:28:38:3d:9f:ad:36:
+                    43:ee:37:fb:f8:f9:43:ad:c8:56:f2:94:12:5e:42:
+                    eb:73:b8:13:0d:cb:a6:d5:86:b9:aa:28:6a:54:03:
+                    a1:3f:0f:29:eb:09:00:e8:3f:5e:a2:7f:17:3d:a1:
+                    2b:f8:be:d0:75:1d:a4:84:e3:ab:17:65:06:52:00:
+                    af:b1
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+            X509v3 Key Usage: critical
+                Certificate Sign, CRL Sign
+            X509v3 Subject Key Identifier: 
+                B4:C6:7F:1A:43:CC:9B:75:5D:2F:C4:4B:F2:8B:98:10:E9:F1:51:10
+            X509v3 Authority Key Identifier: 
+                keyid:B4:C6:7F:1A:43:CC:9B:75:5D:2F:C4:4B:F2:8B:98:10:E9:F1:51:10
+
+    Signature Algorithm: sha1WithRSAEncryption
+        ac:80:bb:c4:25:05:0b:58:a4:e4:7e:29:7e:af:bc:3b:ec:2d:
+        c0:44:2e:f9:91:e0:d2:3b:32:27:90:2d:f6:80:09:5c:c2:ab:
+        65:24:da:38:10:46:c4:49:d2:fd:9a:ab:28:48:77:88:c6:e9:
+        6f:d1:47:91:d5:35:4f:14:09:a8:5b:40:07:1d:7c:71:56:cb:
+        89:42:d4:bf:61:c0:22:f7:2e:df:ab:f3:72:43:8b:40:e8:94:
+        eb:b0:26:da:d1:13:d3:ab:d0:36:2d:2e:3a:95:b3:77:2e:15:
+        39:18:0c:69:ba:aa:80:ed:f1:53:4e:33:9b:68:04:e2:a0:30:
+        2e:d7:d1:5d:d4:a6:66:9d:84:e6:e7:bb:3c:89:bb:36:9d:fc:
+        17:a9:3d:55:2b:8a:fb:9b:c4:4c:84:ff:df:d2:be:69:1b:74:
+        b0:a8:f6:ea:b0:9c:b2:29:74:81:4c:68:3a:9a:7f:73:25:39:
+        f5:13:e0:66:91:69:d4:57:4b:b7:ee:ad:45:e0:2c:c3:88:d3:
+        be:94:49:89:1f:ff:70:d5:5b:6d:39:13:b0:1d:cb:98:e6:67:
+        63:0d:63:f6:fb:c3:d7:61:72:83:88:3f:70:7e:53:c9:9e:89:
+        54:d6:4f:7f:7d:71:b9:ae:f1:60:8b:77:60:ec:f8:bf:fa:6a:
+        a3:9c:01:22
+SHA1 Fingerprint=5D:00:38:60:F0:02:ED:82:9D:EA:A4:18:68:F7:88:18:6D:62:12:7F

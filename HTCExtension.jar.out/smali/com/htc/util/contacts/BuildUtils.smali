@@ -44,7 +44,7 @@
     .line 30
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 640
+    .line 641
     return-void
 .end method
 
@@ -52,17 +52,17 @@
     .locals 2
 
     .prologue
-    .line 686
+    .line 687
     sget-byte v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->s_byteHtc_MobileNetworkInUse:B
 
     sget-byte v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->s_byteHtc_MobileNetwork_CDMA:B
 
     if-ne v0, v1, :cond_0
 
-    .line 687
+    .line 688
     const/4 v0, 0x1
 
-    .line 689
+    .line 690
     :goto_0
     return v0
 
@@ -86,7 +86,7 @@
     .locals 2
 
     .prologue
-    .line 728
+    .line 729
     const-wide/high16 v0, 0x400c
 
     invoke-static {v0, v1}, Lcom/htc/util/contacts/BuildUtils$HtcSense;->isAboveOrEqualToVer(D)Z
@@ -119,11 +119,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 732
+    .line 733
     :cond_0
     const/4 v0, 0x1
 
-    .line 734
+    .line 735
     :goto_0
     return v0
 
@@ -137,40 +137,60 @@
     .locals 2
 
     .prologue
-    .line 739
+    .line 740
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v1, 0xa8
 
-    if-eq v0, v1, :cond_0
+    if-ne v0, v1, :cond_0
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x61
 
-    if-eq v0, v1, :cond_0
+    if-eq v0, v1, :cond_2
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0xad
 
-    if-eq v0, v1, :cond_0
+    if-eq v0, v1, :cond_2
 
     sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v1, 0x2b
 
-    if-ne v0, v1, :cond_1
+    if-eq v0, v1, :cond_2
 
-    .line 744
     :cond_0
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
+
+    const/16 v1, 0xe1
+
+    if-eq v0, v1, :cond_1
+
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
+
+    const/16 v1, 0x9
+
+    if-ne v0, v1, :cond_3
+
+    :cond_1
+    sget-short v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_LANGUAGE_flag:S
+
+    const/4 v1, 0x6
+
+    if-ne v0, v1, :cond_3
+
+    .line 748
+    :cond_2
     const/4 v0, 0x1
 
-    .line 746
+    .line 750
     :goto_0
     return v0
 
-    :cond_1
+    :cond_3
     const/4 v0, 0x0
 
     goto :goto_0
@@ -180,7 +200,7 @@
     .locals 2
 
     .prologue
-    .line 697
+    .line 698
     const/16 v0, 0x28
 
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
@@ -205,11 +225,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 701
+    .line 702
     :cond_0
     const/4 v0, 0x1
 
-    .line 703
+    .line 704
     :goto_0
     return v0
 
@@ -223,7 +243,7 @@
     .locals 1
 
     .prologue
-    .line 710
+    .line 711
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->isTabletPhoneEnabled()Z
 
     move-result v0
@@ -251,12 +271,12 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 717
+    .line 718
     sget-boolean v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->HtcVVMFlag:Z
 
     if-ne v0, v1, :cond_0
 
-    .line 720
+    .line 721
     :goto_0
     return v0
 

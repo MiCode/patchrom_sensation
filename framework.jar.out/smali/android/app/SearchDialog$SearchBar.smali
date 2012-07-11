@@ -24,10 +24,10 @@
     .parameter "context"
 
     .prologue
-    .line 630
+    .line 634
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 631
+    .line 635
     return-void
 .end method
 
@@ -37,10 +37,10 @@
     .parameter "attrs"
 
     .prologue
-    .line 626
+    .line 630
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 627
+    .line 631
     return-void
 .end method
 
@@ -51,10 +51,10 @@
     .parameter "searchDialog"
 
     .prologue
-    .line 634
+    .line 638
     iput-object p1, p0, Landroid/app/SearchDialog$SearchBar;->mSearchDialog:Landroid/app/SearchDialog;
 
-    .line 635
+    .line 639
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .parameter "callback"
 
     .prologue
-    .line 642
+    .line 646
     const/4 v0, 0x0
 
     return-object v0

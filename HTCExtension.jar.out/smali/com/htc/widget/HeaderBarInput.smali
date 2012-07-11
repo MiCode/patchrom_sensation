@@ -400,7 +400,7 @@
     iput-object v1, p0, Lcom/htc/widget/HeaderBarInput;->progressBar:Landroid/widget/ProgressBar;
 
     .line 138
-    const v1, 0x2020263
+    const v1, 0x2020266
 
     invoke-virtual {p0, v1}, Lcom/htc/widget/HeaderBarInput;->findViewById(I)Landroid/view/View;
 

@@ -47,63 +47,78 @@
     .prologue
     const/4 v2, -0x2
 
+    .line 330
     invoke-direct {p0}, Landroid/app/ITransientNotification$Stub;-><init>()V
 
+    .line 302
     new-instance v1, Landroid/widget/Toast$TN$1;
 
     invoke-direct {v1, p0}, Landroid/widget/Toast$TN$1;-><init>(Landroid/widget/Toast$TN;)V
 
     iput-object v1, p0, Landroid/widget/Toast$TN;->mShow:Ljava/lang/Runnable;
 
+    .line 308
     new-instance v1, Landroid/widget/Toast$TN$2;
 
     invoke-direct {v1, p0}, Landroid/widget/Toast$TN$2;-><init>(Landroid/widget/Toast$TN;)V
 
     iput-object v1, p0, Landroid/widget/Toast$TN;->mHide:Ljava/lang/Runnable;
 
+    .line 316
     new-instance v1, Landroid/view/WindowManager$LayoutParams;
 
     invoke-direct {v1}, Landroid/view/WindowManager$LayoutParams;-><init>()V
 
     iput-object v1, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
+    .line 317
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
     iput-object v1, p0, Landroid/widget/Toast$TN;->mHandler:Landroid/os/Handler;
 
+    .line 319
     const/16 v1, 0x51
 
     iput v1, p0, Landroid/widget/Toast$TN;->mGravity:I
 
+    .line 333
     iget-object v0, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
+    .line 334
     .local v0, params:Landroid/view/WindowManager$LayoutParams;
     iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
+    .line 335
     iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
+    .line 336
     const/16 v1, 0x98
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
+    .line 339
     const/4 v1, -0x3
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->format:I
 
+    .line 340
     const v1, 0x1030004
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
+    .line 341
     const/16 v1, 0x7d5
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->type:I
 
+    .line 342
     const-string v1, "Toast"
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
+    .line 343
     return-void
 .end method
 

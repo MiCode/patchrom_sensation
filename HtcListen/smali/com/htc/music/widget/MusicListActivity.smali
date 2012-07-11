@@ -686,7 +686,7 @@
     if-ne v0, v1, :cond_0
 
     .line 260
-    const v0, 0x7f07021f
+    const v0, 0x7f0701bd
 
     invoke-static {p0, v0}, Lcom/htc/music/util/ProjectSettings;->getIntValue(Landroid/content/Context;I)I
 

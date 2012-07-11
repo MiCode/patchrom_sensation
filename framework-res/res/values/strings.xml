@@ -1318,6 +1318,7 @@ for account %s"</string>
     <string name="install_notify_title">IT blocked install:</string>
     <string name="uninstall_notify_title">IT blocked uninstall:</string>
     <string name="wifi_notify_title">IT disabled WiFi</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Clear default in Home Settings > Apps.</string>
     <string name="cate_geo">Geo</string>
     <string name="cate_met">Met</string>
     <string name="cate_safety">Safety</string>

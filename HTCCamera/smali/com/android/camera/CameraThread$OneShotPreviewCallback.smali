@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 4403
+    .line 4427
     iput-object p1, p0, Lcom/android/camera/CameraThread$OneShotPreviewCallback;->this$0:Lcom/android/camera/CameraThread;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 4403
+    .line 4427
     invoke-direct {p0, p1}, Lcom/android/camera/CameraThread$OneShotPreviewCallback;-><init>(Lcom/android/camera/CameraThread;)V
 
     return-void
@@ -57,7 +57,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 4407
+    .line 4431
     new-instance v0, Lcom/android/camera/CameraThread$DecodeThread;
 
     iget-object v1, p0, Lcom/android/camera/CameraThread$OneShotPreviewCallback;->this$0:Lcom/android/camera/CameraThread;
@@ -78,11 +78,11 @@
 
     invoke-direct {v0, v1, p1, v2, v3}, Lcom/android/camera/CameraThread$DecodeThread;-><init>(Lcom/android/camera/CameraThread;[BII)V
 
-    .line 4408
+    .line 4432
     .local v0, decodeThread:Ljava/lang/Thread;
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 4409
+    .line 4433
     iget-object v1, p0, Lcom/android/camera/CameraThread$OneShotPreviewCallback;->this$0:Lcom/android/camera/CameraThread;
 
     iget-object v1, v1, Lcom/android/camera/CameraThread;->mCameraHandler:Lcom/android/camera/CameraThread$MainHandler;
@@ -93,6 +93,6 @@
 
     invoke-static {v1, v2, v4, v4, v3}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 4410
+    .line 4434
     return-void
 .end method

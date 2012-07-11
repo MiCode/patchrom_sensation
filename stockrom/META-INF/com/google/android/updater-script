@@ -1,0 +1,109 @@
+assert(
+    getprop("ro.product.device") == "pyramid"
+);
+
+show_progress(0,0);
+ui_print("Formatting system ...");
+
+ifelse(is_mounted("/system") == "/system", unmount("/system"));
+ifelse(is_mounted("/data")   == "/data",   unmount("/data"));
+
+format("ext4", "EMMC", "/dev/block/mmcblk0p22");
+run_program("/sbin/tune2fs", "-m", "0", "/dev/block/mmcblk0p22");
+mount("ext4", "EMMC", "/dev/block/mmcblk0p22", "/system");
+mount("ext4", "EMMC", "/dev/block/mmcblk0p23", "/data");
+
+ui_print("Clearing dalvik and boot cache ...");
+delete_recursive("/data/dalvik-cache");
+delete_recursive("/data/boot-cache");
+
+ui_print("Installing system files ...");
+show_progress(0.700000, 50);
+package_extract_dir("system", "/system");
+
+ui_print("Creating links and setting perms ...");
+symlink("dumpstate", "/system/bin/bugreport");
+symlink("dumpstate", "/system/bin/dumpcrash");
+
+symlink("toolbox", "/system/bin/cat", "/system/bin/chmod", "/system/bin/chown",
+    "/system/bin/chownto", "/system/bin/ionice", "/system/bin/nandread",
+    "/system/bin/cmp", "/system/bin/date", "/system/bin/dd",
+    "/system/bin/df", "/system/bin/dmesg", "/system/bin/getevent",
+    "/system/bin/getprop", "/system/bin/hd", "/system/bin/id",
+    "/system/bin/ifconfig", "/system/bin/iftop", "/system/bin/insmod",
+    "/system/bin/ioctl", "/system/bin/kill", "/system/bin/ln",
+    "/system/bin/log", "/system/bin/ls", "/system/bin/lsmod",
+    "/system/bin/mkdir", "/system/bin/mount", "/system/bin/mv",
+    "/system/bin/netstat", "/system/bin/newfs_msdos", "/system/bin/notify",
+    "/system/bin/printenv", "/system/bin/ps", "/system/bin/renice",
+    "/system/bin/rm", "/system/bin/rmdir", "/system/bin/rmmod",
+    "/system/bin/route", "/system/bin/schedtop", "/system/bin/sendevent",
+    "/system/bin/setconsole", "/system/bin/setprop", "/system/bin/sleep",
+    "/system/bin/smd", "/system/bin/start", "/system/bin/stop",
+    "/system/bin/sync", "/system/bin/top", "/system/bin/umount",
+    "/system/bin/vmstat", "/system/bin/watchprops", "/system/bin/wipe");
+
+symlink("mksh", "/system/bin/sh");
+
+set_perm_recursive(0, 0, 0755, 0644, "/system");
+set_perm_recursive(0, 2000, 0755, 0755, "/system/bin");
+set_perm(0, 1000, 04750, "/system/bin/iptables");
+set_perm(0, 3003, 02750, "/system/bin/netcfg");
+set_perm(0, 3004, 02755, "/system/bin/ping");
+set_perm(0, 2000, 06755, "/system/bin/reboot");
+set_perm(0, 2000, 06750, "/system/bin/run-as");
+set_perm(0, 1000, 04750, "/system/bin/tc");
+set_perm_recursive(1002, 1002, 0755, 0440, "/system/etc/bluetooth");
+set_perm(0, 0, 0755, "/system/etc/bluetooth");
+set_perm(0, 0, 0644, "/system/etc/bluetooth/a2dp_avrcp.conf");
+set_perm(1000, 1000, 0640, "/system/etc/bluetooth/auto_pairing.conf");
+set_perm(3002, 3002, 0444, "/system/etc/bluetooth/blacklist.conf");
+set_perm(1002, 1002, 0440, "/system/etc/dbus.conf");
+set_perm(1014, 2000, 0550, "/system/etc/dhcpcd/dhcpcd-run-hooks");
+set_perm(0, 2000, 0550, "/system/etc/init.goldfish.sh");
+set_perm(1000, 1000, 0555, "/system/etc/init.qcom.sdio.sh");
+set_perm_recursive(0, 0, 0755, 0555, "/system/etc/ppp");
+set_perm_recursive(0, 2000, 0755, 0644, "/system/vendor");
+set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.3/left_eye-y0-yi45-p0-pi45-r0-ri20.2d_n2/full_model.bin");
+set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.3/left_eye-y0-yi45-p0-pi45-rn7-ri20.2d_n2/full_model.bin");
+set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.3/left_eye-y0-yi45-p0-pi45-rp7-ri20.2d_n2/full_model.bin");
+set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.3/nose_base-y0-yi45-p0-pi45-r0-ri20.2d_n2/full_model.bin");
+set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.3/nose_base-y0-yi45-p0-pi45-rn7-ri20.2d_n2/full_model.bin");
+set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.3/nose_base-y0-yi45-p0-pi45-rp7-ri20.2d_n2/full_model.bin");
+set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.3/right_eye-y0-yi45-p0-pi45-r0-ri20.2d_n2/full_model.bin");
+set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.3/right_eye-y0-yi45-p0-pi45-rn7-ri20.2d_n2/full_model.bin");
+set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.3/right_eye-y0-yi45-p0-pi45-rp7-ri20.2d_n2/full_model.bin");
+set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/detection/yaw_roll_face_detectors.3/head-y0-yi45-p0-pi45-r0-ri30.4a/full_model.bin");
+set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/detection/yaw_roll_face_detectors.3/head-y0-yi45-p0-pi45-rn30-ri30.5/full_model.bin");
+set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/detection/yaw_roll_face_detectors.3/head-y0-yi45-p0-pi45-rp30-ri30.5/full_model.bin");
+set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/recognition/face.face.y0-y0-22-b-N/full_model.bin");
+set_perm_recursive(0, 2000, 0755, 0755, "/system/xbin");
+set_perm(0, 0, 0644, "/system/build.prop");
+
+set_perm_recursive(0, 2000, 0755, 0750, "/system/etc/init.d");
+set_perm_recursive(0, 2000, 0755, 0750, "/system/etc/pre-init.d");
+set_perm(0, 0, 0755, "/system/etc/init.d");
+set_perm(0, 0, 0755, "/system/etc/pre-init.d");
+
+delete("/system/bin/su");
+symlink("/system/xbin/su", "/system/bin/su");
+set_perm(0, 0, 06755, "/system/xbin/su");
+set_perm(0, 0, 04755, "/system/xbin/busybox");
+
+unmount("/system");
+unmount("/data");
+
+show_progress(0.200000, 0);
+show_progress(0.200000, 10);
+
+ui_print("Flashing kernel ...");
+assert(package_extract_file("boot.img", "/tmp/boot.img"),
+    write_raw_image("/tmp/boot.img", "boot"),
+    delete("/tmp/boot.img"));
+show_progress(10.000000, 1);
+
+ui_print("Clearing dalvik and boot cache ...");
+delete_recursive("/data/dalvik-cache");
+delete_recursive("/data/boot-cache");
+
+ui_print("Done.");

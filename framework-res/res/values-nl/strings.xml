@@ -181,7 +181,7 @@
     <string name="mmiComplete">MMI voltooid.</string>
     <string name="badPin">De oude PIN-code die je hebt ingevoerd, is onjuist.</string>
     <string name="badPuk">De PUK-code die je hebt ingevoerd, is onjuist.</string>
-    <string name="mismatchPin">De PIN-codes die je hebt ingevoerd, komen niet overeen.</string>
+    <string name="mismatchPin">De PIN-codes die je hebt ingevoerd komen niet overeen.</string>
     <string name="invalidPin">Voer een PIN-code van 4 tot 8 cijfers in.</string>
     <string name="invalidPuk">Typ een PUK-code die 8 cijfers of langer is.</string>
     <string name="needPuk">Jouw SIM-kaart is vergrendeld met de PUK-code. Typ de PUK-code om te ontgrendelen.</string>
@@ -210,10 +210,10 @@
     <string name="RestrictedOnEmergency">Alarmnummer is geblokkeerd.</string>
     <string name="RestrictedOnNormal">Spraakservice is geblokkeerd.</string>
     <string name="RestrictedOnAllVoice">Alle spraakservices zijn geblokkeerd.</string>
-    <string name="RestrictedOnSms">SMS-service is geblokkeerd.</string>
+    <string name="RestrictedOnSms">SMS service is geblokkeerd.</string>
     <string name="RestrictedOnVoiceData">Spraak-gegevensservices zijn geblokkeerd.</string>
-    <string name="RestrictedOnVoiceSms">Spraak-SMS-services zijn geblokkeerd.</string>
-    <string name="RestrictedOnAll">Alle spraak-gegevens-SMS-services zijn geblokkeerd.</string>
+    <string name="RestrictedOnVoiceSms">Spraak/SMS services zijn geblokkeerd.</string>
+    <string name="RestrictedOnAll">Alle spraakgegevens en SMS services zijn geblokkeerd.</string>
     <string name="serviceClassVoice">Spraak</string>
     <string name="serviceClassData">Gegevens</string>
     <string name="serviceClassFAX">FAX</string>
@@ -269,12 +269,12 @@
     <string name="turn_off_radio">Draadloos uitschakelen</string>
     <string name="screen_lock">Schermvergrendeling</string>
     <string name="power_off">Uitschakelen</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Beltoon uit</string>
+    <string name="silent_mode_vibrate">Trilmodus</string>
+    <string name="silent_mode_ring">Beltoon aan</string>
     <string name="shutdown_progress">Uitschakelen...</string>
     <string name="shutdown_confirm">Jouw telefoon wordt uitgeschakeld.</string>
-    <string name="shutdown_confirm_question">Wilt u afsluiten?</string>
+    <string name="shutdown_confirm_question">Wil je afsluiten?</string>
     <string name="recent_tasks_title">Recent</string>
     <string name="no_recent_tasks">Geen recente applicaties.</string>
     <string name="global_actions">Telefoonopties</string>
@@ -283,9 +283,9 @@
     <string name="global_action_toggle_silent_mode">Stilte modus</string>
     <string name="global_action_silent_mode_on_status">Geluid is UIT</string>
     <string name="global_action_silent_mode_off_status">Geluid is AAN</string>
-    <string name="global_actions_toggle_airplane_mode">Vliegmodus</string>
-    <string name="global_actions_airplane_mode_on_status">Vliegmodus is AAN</string>
-    <string name="global_actions_airplane_mode_off_status">Vliegmodus is UIT</string>
+    <string name="global_actions_toggle_airplane_mode">Vliegtuigmodus</string>
+    <string name="global_actions_airplane_mode_on_status">Vliegtuigmodus is AAN</string>
+    <string name="global_actions_airplane_mode_off_status">Vliegtuigmodus is UIT</string>
     <string name="safeMode">Veilige modus</string>
     <string name="android_system_label">Android-systeem</string>
     <string name="permgrouplab_costMoney">Services waarvoor je moet betalen</string>
@@ -313,25 +313,25 @@
     <string name="permlab_statusBar">statusbalk uitschakelen of wijzigen</string>
     <string name="permdesc_statusBar">Hiermee kan een applicatie de statusbalk uitschakelen of systeempictogrammen toevoegen en verwijderen.</string>
     <string name="permlab_statusBarService">statusbalk</string>
-    <string name="permdesc_statusBarService">Hiermee kan de toepassing de statusbalk zijn.</string>
+    <string name="permdesc_statusBarService">Hiermee kan de app de statusbalk zijn.</string>
     <string name="permlab_expandStatusBar">statusbalk uitvouwen/samenvouwen</string>
     <string name="permdesc_expandStatusBar">Hiermee kan de applicatie de statusbalk uitvouwen of samenvouwen.</string>
     <string name="permlab_processOutgoingCalls">uitgaande oproepen onderscheppen</string>
     <string name="permdesc_processOutgoingCalls">Hiermee kan een applicatie uitgaande oproepen verwerken en het nummer wijzigen dat wordt gebeld. Schadelijke applicaties kunnen uitgaande oproepen bijhouden, omleiden of tegenhouden.</string>
     <string name="permlab_receiveSms">SMS ontvangen</string>
-    <string name="permdesc_receiveSms">Hiermee kan een applicatie SMS-berichten ontvangen en verwerken. Schadelijke toepassingen kunnen je berichten bijhouden of deze verwijderen zonder dat je ze te zien krijgt.</string>
+    <string name="permdesc_receiveSms">Hiermee kan een applicatie SMS berichten ontvangen en verwerken. Schadelijke toepassingen kunnen je berichten bijhouden of deze verwijderen zonder dat je ze te zien krijgt.</string>
     <string name="permlab_receiveMms">MMS ontvangen</string>
     <string name="permdesc_receiveMms">Hiermee kan een applicatie MMS-berichten ontvangen en verwerken. Schadelijke applicaties kunnen je berichten bijhouden of deze verwijderen zonder dat je ze te zien krijgt.</string>
     <string name="permlab_receiveEmergencyBroadcast">noodberichten ontvangen</string>
     <string name="permdesc_receiveEmergencyBroadcast">Hiermee kan een app noodberichten ontvangen en verwerken. Deze toestemming is alleen beschikbaar voor systeemapps.</string>
-    <string name="permlab_sendSms">SMS-berichten verzenden</string>
-    <string name="permdesc_sendSms">Hiermee kan de applicatie SMS-berichten verzenden. Schadelijke applicaties kunnen je geld kosten door berichten te verzenden zonder je toestemming.</string>
-    <string name="permlab_sendSmsNoConfirmation">"zonder toestemming sms'jes verzenden"</string>
-    <string name="permdesc_sendSmsNoConfirmation">"Hiermee kan de app sms'jes verzenden. Schadelijke apps kunnen u geld kosten door zonder uw toestemming berichten te verzenden."</string>
+    <string name="permlab_sendSms">SMS berichten verzenden</string>
+    <string name="permdesc_sendSms">Hiermee kan de applicatie SMS berichten verzenden. Schadelijke applicaties kunnen je geld kosten door berichten te verzenden zonder je toestemming.</string>
+    <string name="permlab_sendSmsNoConfirmation">"zonder toestemming SMS'jes verzenden"</string>
+    <string name="permdesc_sendSmsNoConfirmation">"Hiermee kan de app SMS'jes verzenden. Schadelijke apps kunnen je geld kosten door zonder jouw toestemming berichten te verzenden."</string>
     <string name="permlab_readSms">SMS of MMS lezen</string>
-    <string name="permdesc_readSms">Hiermee kan een applicatie de op je telefoon of SIM-kaart opgeslagen SMS-berichten lezen. Schadelijke applicaties kunnen je vertrouwelijke berichten mogelijk lezen.</string>
+    <string name="permdesc_readSms">Hiermee kan een applicatie de op je telefoon of SIM-kaart opgeslagen SMS berichten lezen. Schadelijke applicaties kunnen je vertrouwelijke berichten mogelijk lezen.</string>
     <string name="permlab_writeSms">SMS of MMS bewerken</string>
-    <string name="permdesc_writeSms">Hiermee kan een applicatie naar de op je telefoon of SIM-kaart opgeslagen SMS-berichten schrijven. Schadelijke applicaties kunnen je berichten mogelijk verwijderen.</string>
+    <string name="permdesc_writeSms">Hiermee kan een applicatie naar de op je telefoon of SIM-kaart opgeslagen SMS berichten schrijven. Schadelijke applicaties kunnen je berichten mogelijk verwijderen.</string>
     <string name="permlab_receiveWapPush">WAP ontvangen</string>
     <string name="permdesc_receiveWapPush">Hiermee kan een applicatie WAP-berichten ontvangen en verwerken. Schadelijke applicaties kunnen je berichten bijhouden of deze verwijderen zonder dat je ze te zien krijgt.</string>
     <string name="permlab_getTasks">actieve applicatie ophalen</string>
@@ -364,10 +364,10 @@
     <string name="permdesc_runSetActivityWatcher">Hiermee kan een app de manier waarop het systeem activiteiten start, bijhouden en beheren. Schadelijke apps kunnen het systeem volledig in gevaar brengen. Deze machtiging is alleen voor ontwikkeling vereist, nooit voor normaal gebruik.</string>
     <string name="permlab_broadcastPackageRemoved">melding verzenden dat pakket is verwijderd</string>
     <string name="permdesc_broadcastPackageRemoved">Hiermee kan een applicatie een melding verzenden dat een applicatiepakket is verwijderd. Schadelijke applicaties kunnen hiervan gebruik maken om alle andere actieve applicaties af te sluiten.</string>
-    <string name="permlab_broadcastSmsReceived">melding over ontvangen SMS-bericht verzenden</string>
-    <string name="permdesc_broadcastSmsReceived">Hiermee kan een applicaties een melding verzenden dat een SMS-bericht is ontvangen. Schadelijke applicaties kunnen hiervan gebruik maken om inkomende SMS-berichten te vervalsen.</string>
+    <string name="permlab_broadcastSmsReceived">melding over ontvangen SMS bericht verzenden</string>
+    <string name="permdesc_broadcastSmsReceived">Hiermee kan een applicaties een melding verzenden dat een SMS bericht is ontvangen. Schadelijke applicaties kunnen hiervan gebruik maken om inkomende SMS berichten te vervalsen.</string>
     <string name="permlab_broadcastWapPush">melding over ontvangen WAP-PUSH-bericht verzenden</string>
-    <string name="permdesc_broadcastWapPush">"Hiermee kan een applicatie een melding verzenden dat een WAP PUSH-bericht is ontvangen. Schadelijke applicaties kunnen hiervan gebruik maken om een valse MMS-ontvangst te melden of de inhoud van willekeurige webpagina's door schadelijke varianten te vervangen."</string>
+    <string name="permdesc_broadcastWapPush">"Hiermee kan een applicatie een melding verzenden dat een WAP PUSH bericht is ontvangen. Schadelijke applicaties kunnen hiervan gebruik maken om een valse MMS ontvangst te melden of de inhoud van willekeurige webpagina's door schadelijke varianten te vervangen."</string>
     <string name="permlab_setProcessLimit">aantal actieve processen beperken</string>
     <string name="permdesc_setProcessLimit">Hiermee kan een applicatie het maximum aantal processen bepalen dat wordt uitgevoerd. Nooit vereist voor normale applicaties.</string>
     <string name="permlab_setAlwaysFinish">alle achtergrondapplicaties sluiten</string>
@@ -392,20 +392,20 @@
     <string name="permdesc_readInputState">Hiermee kan een applicatie je toetsaanslagen registreren, zelfs tijdens de interactie met een andere applicaties (zoals de invoer van een wachtwoord). Nooit vereist voor normale applicaties.</string>
     <string name="permlab_bindInputMethod">verbinden aan een invoermethode</string>
     <string name="permdesc_bindInputMethod">Hiermee sta je de houder toe zich te verbinden met de hoofdinterface van een invoermethode. Nooit vereist voor normale applicaties.</string>
-    <string name="permlab_bindTextService">koppelen aan een sms-service</string>
-    <string name="permdesc_bindTextService">Hiermee kan de gebruiker koppelen met de hoofdinterface van een sms-service (zoals SpellCheckerService). Dit is niet nodig voor normale apps.</string>
+    <string name="permlab_bindTextService">koppelen aan een SMS service</string>
+    <string name="permdesc_bindTextService">Hiermee kan de gebruiker koppelen met de hoofd interface van een SMS service (zoals SpellCheckerService). Dit is niet nodig voor normale apps.</string>
     <string name="permlab_bindVpnService">koppelen aan een VPN-service</string>
-    <string name="permdesc_bindVpnService">Hiermee staat u de houder toe verbinding te maken met de hoofdinterface van een VPN-service. Nooit vereist voor normale apps.</string>
+    <string name="permdesc_bindVpnService">Hiermee staat u de houder toe verbinding te maken met de hoofd interface van een VPN service. Dit zou voor normale apps niet nodig moeten zijn.</string>
     <string name="permlab_bindWallpaper">verbinden met een achtergrond</string>
-    <string name="permdesc_bindWallpaper">Hiermee sta je de houder toe zich te verbinden met de hoofdinterface van een achtergrond. Nooit vereist voor normale applicatie.</string>
+    <string name="permdesc_bindWallpaper">Hiermee sta je de houder toe zich te verbinden met de hoofd interface van een achtergrond. Nooit vereist voor normale applicatie.</string>
     <string name="permlab_bindRemoteViews">verbinden met een widgetservice</string>
-    <string name="permdesc_bindRemoteViews">Hiermee staat u de houder toe verbinding te maken met de hoofdinterface van een widgetservice. Nooit vereist voor normale apps.</string>
+    <string name="permdesc_bindRemoteViews">Hiermee staat u de houder toe verbinding te maken met de hoofd interface van een widget service. Dit zou voor normale apps niet nodig moeten zijn.</string>
     <string name="permlab_bindDeviceAdmin">interactie met apparaatbeheer</string>
     <string name="permdesc_bindDeviceAdmin">Staat de houder toe intenties te verzenden naar een apparaatbeheerder. Nooit vereist voor normale applicaties.</string>
     <string name="permlab_setOrientation">schermstand wijzigen</string>
     <string name="permdesc_setOrientation">Hiermee kan een applicatie op elk gewenst moment de oriëntatie van het scherm wijzigen. Nooit vereist voor normale applicaties.</string>
     <string name="permlab_setPointerSpeed">aanwijzersnelheid wijzigen</string>
-    <string name="permdesc_setPointerSpeed">Hiermee kan een app de snelheid van de muis- of trackpadaanwijzer op elk moment wijzigen. Dit zou voor normale apps niet nodig moeten zijn.</string>
+    <string name="permdesc_setPointerSpeed">Hiermee kan een app de snelheid van de muis of trackpad aanwijzer op elk moment wijzigen. Dit zou voor normale apps niet nodig moeten zijn.</string>
     <string name="permlab_signalPersistentProcesses">Linux-signalen verzenden naar applicaties</string>
     <string name="permdesc_signalPersistentProcesses">Hiermee kan de applicatie ervoor zorgen dat het geleverde signaal wordt verzonden naar alle persistente processen.</string>
     <string name="permlab_persistentActivity">applicatie altijd laten uitvoeren</string>
@@ -426,14 +426,14 @@
     <string name="permdesc_movePackage">Een applicatie toestaan toepassingsbronnen te verplaatsen van interne naar externe media en omgekeerd.</string>
     <string name="permlab_readLogs">gevoelige logbestandsgegevens lezen</string>
     <string name="permdesc_readLogs">Hiermee kan een toepassing de verschillende logbestanden van het systeem lezen. De toepassing kan op deze manier algemene informatie achterhalen over jou telefoongebruik, mogelijk inclusief persoonlijke of privé-informatie.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">elke mediadecoder gebruiken voor weergave</string>
+    <string name="permdesc_anyCodecForPlayback">Hiermee kan een applicatie een willekeurig geïnstalleerde media decoder gebruiken om te decoderen en af te spelen.</string>
+    <string name="permlab_readWriteOmaDrm">open de map met oma DRM</string>
+    <string name="permdesc_readWriteOmaDrm">Hiermee kan een applicatie lezen of schrijven naar de folder over OMA DRM.</string>
     <string name="permlab_diagnostic">lezen/schrijven naar bronnen van diag</string>
     <string name="permdesc_diagnostic">Hiermee kan een applicatie lezen en schrijven naar elke bron die hoort bij de diagnostische groep, zoals bestanden in /dev. Hierdoor kan de systeemstabiliteit en -veiligheid worden beïnvloed. Dit mag ALLEEN worden gebruikt voor hardwarespecifieke diagnostiek door de fabrikant of operator.</string>
     <string name="permlab_changeComponentState">applicatiecomponenten in- of uitschakelen</string>
-    <string name="permdesc_changeComponentState">Hiermee kan een app bepalen of een component van een andere app is ingeschakeld. Schadelijke apps kunnen dit gebruiken om belangrijke telefoonfuncties uit te schakelen. Een machtiging moet zorgvuldig worden overwogen, aangezien app-componenten onbruikbaar, inconsistent of instabiel kunnen worden.</string>
+    <string name="permdesc_changeComponentState">Hiermee kan een app bepalen of een component van een andere app is ingeschakeld. Schadelijke apps kunnen dit gebruiken om belangrijke telefoonfuncties uit te schakelen. Een machtiging moet zorgvuldig worden overwogen aangezien app componenten onbruikbaar, inconsistent of instabiel kunnen worden.</string>
     <string name="permlab_setPreferredApplications">voorkeursapplicaties instellen</string>
     <string name="permdesc_setPreferredApplications">Hiermee kan een applicatie je voorkeurstoepassingen wijzigen. Schadelijke toepassingen kunnen op deze manier de actieve toepassingen zonder je medeweten wijzigen en je bestaande toepassingen doorzoeken om privégegevens van je te verzamelen.</string>
     <string name="permlab_writeSettings">algemene systeeminstellingen wijzigen</string>
@@ -450,18 +450,18 @@
     <string name="permdesc_readContacts">Hiermee kan een applicatie alle contactgegevens (adresgegevens) zien die op je telefoon zijn opgeslagen. Schadelijke applicaties kunnen hiervan gebruik maken om je gegevens te verzenden naar andere personen.</string>
     <string name="permlab_writeContacts">contactgegevens schrijven</string>
     <string name="permdesc_writeContacts">Hiermee kan een applicatie de op je telefoon opgeslagen contactgegevens (adresgegevens) wijzigen. Schadelijke toepassingen kunnen hiermee je contactgegevens verwijderen of wijzigen.</string>
-    <string name="permlab_readProfile">uw profielgegevens lezen</string>
-    <string name="permdesc_readProfile">Hiermee kan de app persoonlijke profielgegevens lezen die op uw apparaat staan, zoals uw naam en contactgegevens. Dit houdt in dat de app u kan identificeren en uw profielgegevens kan doorsturen naar anderen.</string>
+    <string name="permlab_readProfile">je profielgegevens lezen</string>
+    <string name="permdesc_readProfile">Hiermee kan de app persoonlijke profielgegevens lezen die op je apparaat staan zoals je naam en contactgegevens. Dit houdt in dat de app je kan identificeren en je profielgegevens kan doorsturen naar anderen.</string>
     <string name="permlab_writeProfile">schrijven naar profielgegevens</string>
-    <string name="permdesc_writeProfile">Hiermee kan de app persoonlijke profielgegevens die op uw apparaat staan, zoals uw naam en contactgegevens, wijzigen of toevoegen. Dit houdt in dat andere apps u kunnen identificeren en uw profielgegevens kunnen doorsturen naar anderen.</string>
-    <string name="permlab_readSocialStream">uw sociale stream lezen</string>
+    <string name="permdesc_writeProfile">Hiermee kan de app persoonlijke profielgegevens die op je apparaat staan zoals je naam en contactgegevens wijzigen of toevoegen. Dit houdt in dat andere apps je kunt identificeren en je profielgegevens kunnen doorsturen naar anderen.</string>
+    <string name="permlab_readSocialStream">je sociale stream lezen</string>
     <string name="permdesc_readSocialStream">Hiermee kan de app toegang krijgen tot sociale updates van u en uw vrienden en deze synchroniseren. Schadelijke apps kunnen hiermee toegang krijgen tot privécommunicatie tussen u en uw vrienden in sociale netwerken.</string>
     <string name="permlab_writeSocialStream">schrijven naar sociale streams</string>
     <string name="permdesc_writeSocialStream">Hiermee kan de app sociale updates van uw vrienden weergeven. Schadelijke apps kunnen deze mogelijkheid gebruiken om zich voor te doen als vriend en u wachtwoorden of andere vertrouwelijke gegevens te laten vrijgeven.</string>
     <string name="permlab_readCalendar">agenda-afspraken en vertrouwelijke informatie lezen</string>
-    <string name="permdesc_readCalendar">"Hiermee kan een app alle agenda-afspraken lezen die op uw telefoon zijn opgeslagen, inclusief de afspraken van vrienden of collega's. Een schadelijke app die over deze rechten beschikt, kan persoonlijke gegevens extraheren uit deze agenda's zonder medeweten van de eigenaren van de agenda's."</string>
-    <string name="permlab_writeCalendar">agenda-afspraken toevoegen of wijzigen en e-mails verzenden aan gasten zonder medeweten van de eigenaren</string>
-    <string name="permdesc_writeCalendar">"Hiermee kan een app uitnodigingen voor afspraken verzenden uit naam van de eigenaar van de agenda en afspraken toevoegen, verwijderen of wijzigen die u op uw apparaat kunt aanpassen, inclusief die van vrienden of collega's. Een schadelijke app die over deze rechten beschikt, kan spam-e-mails verzenden die afkomstig lijken te zijn van eigenaren van agenda's, afspraken wijzigen zonder medeweten van de eigenaren of nepafspraken toevoegen."</string>
+    <string name="permdesc_readCalendar">"Hiermee kan een app alle agenda-afspraken lezen die op uw telefoon zijn opgeslagen, inclusief de afspraken van vrienden of collega's. Een schadelijke app die over deze rechten beschikt, kan persoonlijke gegevens halen uit deze agenda's zonder medeweten van de eigenaren van de agenda's."</string>
+    <string name="permlab_writeCalendar">agenda afspraken toevoegen of wijzigen en e-mails verzenden aan gasten zonder medeweten van de eigenaren</string>
+    <string name="permdesc_writeCalendar">"Hiermee kan een app uitnodigingen voor afspraken verzenden uit naam van de eigenaar van de agenda en afspraken toevoegen, verwijderen of wijzigen die u op uw apparaat kunt aanpassen inclusief die van vrienden of collega's. Een schadelijke app die over deze rechten beschikt kan spam e-mails verzenden die afkomstig lijken te zijn van eigenaren van agenda's, afspraken wijzigen zonder medeweten van de eigenaren of nepafspraken toevoegen."</string>
     <string name="permlab_accessMockLocation">neplocatiebronnen voor test</string>
     <string name="permdesc_accessMockLocation">Neplocatiebronnen voor testdoeleinden maken. Schadelijke applicaties kunnen dit gebruiken om de locatie en/of status te overschrijven die door de echte locatiebronnen wordt aangegeven, zoals GPS of netwerkaanbieders.</string>
     <string name="permlab_accessLocationExtraCommands">toegang opdrachten aanbieder extra locaties</string>
@@ -481,7 +481,7 @@
     <string name="permlab_recordAudio">audio opnemen</string>
     <string name="permdesc_recordAudio">Hiermee krijgt de applicatie toegang tot het audio-opnamepad.</string>
     <string name="permlab_camera">"foto's en video's maken"</string>
-    <string name="permdesc_camera">"Hiermee kan een toepassing foto's en video's maken met de camera. De toepassing kan op deze manier op elk gewenste moment beelden verzamelen van wat de camera ziet."</string>
+    <string name="permdesc_camera">"Hiermee kan een applicatie foto's en video's maken met de camera. De applicatie kan op deze manier op elk gewenste moment beelden verzamelen van wat de camera ziet."</string>
     <string name="permlab_brick">telefoon permanent uitschakelen</string>
     <string name="permdesc_brick">Hiermee kan de applicatie de telefoon permanent uitschakelen. Dit is erg gevaarlijk.</string>
     <string name="permlab_reboot">telefoon nu opnieuw opstarten</string>
@@ -491,15 +491,15 @@
     <string name="permlab_mount_format_filesystems">externe opslag formatteren</string>
     <string name="permdesc_mount_format_filesystems">Hiermee kan de applicatie de externe opslag formatteren.</string>
     <string name="permlab_asec_access">informatie over de interne opslag verkrijgen</string>
-    <string name="permdesc_asec_access">Hiermee kan de toepassing informatie over de interne opslag verkrijgen.</string>
+    <string name="permdesc_asec_access">Hiermee kan de applicatie informatie over de interne opslag verkrijgen.</string>
     <string name="permlab_asec_create">interne opslag maken</string>
-    <string name="permdesc_asec_create">Hiermee kan de toepassing interne opslag maken.</string>
+    <string name="permdesc_asec_create">Hiermee kan de applicatie interne opslag maken.</string>
     <string name="permlab_asec_destroy">interne opslag vernietigen</string>
-    <string name="permdesc_asec_destroy">Hiermee kan de toepassing de interne opslag vernietigen.</string>
+    <string name="permdesc_asec_destroy">Hiermee kan de applicatie de interne opslag vernietigen.</string>
     <string name="permlab_asec_mount_unmount">interne opslag koppelen/ontkoppelen</string>
-    <string name="permdesc_asec_mount_unmount">Hiermee kan de toepassing de interne opslag koppelen/ontkoppelen.</string>
+    <string name="permdesc_asec_mount_unmount">Hiermee kan de applicatie de interne opslag koppelen/ontkoppelen.</string>
     <string name="permlab_asec_rename">naam van interne opslag wijzigen</string>
-    <string name="permdesc_asec_rename">Hiermee kan de toepassing de naam van de interne opslag wijzigen.</string>
+    <string name="permdesc_asec_rename">Hiermee kan de applicatie de naam van de interne opslag wijzigen.</string>
     <string name="permlab_vibrate">trilstand beheren</string>
     <string name="permdesc_vibrate">Hiermee kan de applicatie de trilstand beheren.</string>
     <string name="permlab_flashlight">zaklamp bedienen</string>
@@ -556,7 +556,7 @@
     <string name="permdesc_accessNetworkState">Hiermee kan een applicatie de status van alle netwerken bekijken.</string>
     <string name="permlab_createNetworkSockets">volledige internettoegang</string>
     <string name="permdesc_createNetworkSockets">Hiermee kan een applicatie netwerksockets maken.</string>
-    <string name="permlab_writeApnSettings">netwerkinstellingen en -verkeer wijzigen/onderscheppen</string>
+    <string name="permlab_writeApnSettings">netwerkinstellingen en verkeer wijzigen/onderscheppen</string>
     <string name="permdesc_writeApnSettings">Hiermee kan een app netwerkinstellingen wijzigen en al het netwerkverkeer onderscheppen en inspecteren, bijvoorbeeld om de proxy en poort van een APN te wijzigen. Schadelijke apps kunnen zonder uw medeweten netwerkpakketten bijhouden, omleiden of aanpassen.</string>
     <string name="permlab_changeNetworkState">netwerkverbinding wijzigen</string>
     <string name="permdesc_changeNetworkState">Staat een applicatie toe de status van de netwerkverbinding te wijzigen.</string>
@@ -564,16 +564,16 @@
     <string name="permdesc_changeTetherState">Staat een applicatie toe de status van de getetherde netwerkverbinding te wijzigen.</string>
     <string name="permlab_changeBackgroundDataSetting">instelling voor gebruik van achtergrondgegevens van gegevens wijzigen</string>
     <string name="permdesc_changeBackgroundDataSetting">Hiermee kan een applicatie de instelling voor gebruik van achtergrondgegevens wijzigen.</string>
-    <string name="permlab_accessWifiState">Wi-Fi-status bekijken</string>
-    <string name="permdesc_accessWifiState">Hiermee kan een applicatie informatie over de Wi-Fi-status bekijken.</string>
-    <string name="permlab_changeWifiState">Wi-Fi-status wijzigen</string>
-    <string name="permdesc_changeWifiState">Hiermee kan een applicatie zich koppelen aan en loskoppelen van Wi-Fi toegangspunten en wijzigingen aanbrengen in geconfigureerde Wi-Fi-netwerken.</string>
-    <string name="permlab_changeWifiMulticastState">Wi-Fi Multicast-ontvangst toestaan</string>
+    <string name="permlab_accessWifiState">Wi-Fi status bekijken</string>
+    <string name="permdesc_accessWifiState">Hiermee kan een applicatie informatie over de Wi-Fi status bekijken.</string>
+    <string name="permlab_changeWifiState">Wi-Fi status wijzigen</string>
+    <string name="permdesc_changeWifiState">Hiermee kan een applicatie zich koppelen aan en loskoppelen van Wi-Fi toegangspunten en wijzigingen aanbrengen in geconfigureerde Wi-Fi netwerken.</string>
+    <string name="permlab_changeWifiMulticastState">Wi-Fi Multicast ontvangst toestaan</string>
     <string name="permdesc_changeWifiMulticastState">Hiermee kan een applicatie pakketten ontvangen die niet rechtstreeks zijn geadresseerd aan je apparaat. Dit kan handig zijn wanneer services in de buurt worden ontdekt. Dit verbruikt meer energie dan de niet-multicastmodus.</string>
-    <string name="permlab_accessWimaxState">WiMAX-status weergeven</string>
-    <string name="permdesc_accessWimaxState">Hiermee kan een toepassing informatie over de WiMAX-status bekijken.</string>
-    <string name="permlab_changeWimaxState">WiMAX-status wijzigen</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permlab_accessWimaxState">Bekijk WiMAX status</string>
+    <string name="permdesc_accessWimaxState">Allows an application to view the information about the state of WiMAX.</string>
+    <string name="permlab_changeWimaxState">change WiMAX state</string>
+    <string name="permdesc_changeWimaxState">Hiermee kan een applicatie een WiMAX netwerk koppelen of ontkoppelen.</string>
     <string name="permlab_bluetoothAdmin">bluetooth-beheer</string>
     <string name="permdesc_bluetoothAdmin">Hiermee kan een applicatie de lokale Bluetooth-telefoon configureren en externe apparaten zoeken en aansluiten.</string>
     <string name="permlab_bluetooth">Bluetooth-verbindingen maken</string>
@@ -607,9 +607,9 @@
     <string name="permlab_readNetworkUsageHistory">historisch netwerkgebruik lezen</string>
     <string name="permdesc_readNetworkUsageHistory">Hiermee kan een app historisch netwerkgebruik voor specifieke netwerken en apps lezen.</string>
     <string name="permlab_manageNetworkPolicy">netwerkbeleid beheren</string>
-    <string name="permdesc_manageNetworkPolicy">Hiermee kan een app het netwerkbeleid beheren en app-specifieke regels definiëren.</string>
+    <string name="permdesc_manageNetworkPolicy">Hiermee kan een app het netwerkbeleid beheren en app specifieke regels definiëren.</string>
     <string name="permlab_modifyNetworkAccounting">verrekening van netwerkgebruik aanpassen</string>
-    <string name="permdesc_modifyNetworkAccounting">Toestaan dat de manier waarop het netwerkgebruik wordt verrekend met applicaties, wordt aangepast. Niet voor gebruik door normale applicaties.</string>
+    <string name="permdesc_modifyNetworkAccounting">Toestaan dat de manier waarop het netwerkgebruik wordt verrekend met applicaties wordt aangepast. Niet voor gebruik door normale applicaties.</string>
     <string name="policylab_limitPassword">Wachtwoordregels instellen</string>
     <string name="policydesc_limitPassword">De lengte en tekens beheren die zijn toegestaan in wachtwoorden voor schermontgrendeling</string>
     <string name="policylab_watchLogin">Pogingen voor schermontgrendeling bijhouden</string>
@@ -693,15 +693,15 @@
     <string name="relationTypeReferredBy">Genoemd door</string>
     <string name="relationTypeRelative">Familielid</string>
     <string name="relationTypeSister">Zus</string>
-    <string name="relationTypeSpouse">Echtgenoot/-genote</string>
+    <string name="relationTypeSpouse">Echtgenoot/genote</string>
     <string name="sipAddressTypeCustom">Aangepast</string>
     <string name="sipAddressTypeHome">Startpagina</string>
     <string name="sipAddressTypeWork">Werk</string>
     <string name="sipAddressTypeOther">Overig</string>
     <string name="keyguard_password_enter_pin_code">PIN-code invoeren</string>
-    <string name="keyguard_password_enter_puk_code">Geef de PUK-code en de nieuwe pincode op</string>
+    <string name="keyguard_password_enter_puk_code">Geef de PUK-code en de nieuwe PIN-code op</string>
     <string name="keyguard_password_enter_puk_prompt">PUK-code</string>
-    <string name="keyguard_password_enter_pin_prompt">Nieuwe pincode</string>
+    <string name="keyguard_password_enter_pin_prompt">Nieuwe PIN-code</string>
     <string name="keyguard_password_entry_touch_hint"><font size="17">Raak aan om wachtwoord op te geven</font></string>
     <string name="keyguard_password_enter_password_code">Voer het wachtwoord in om te ontgrendelen</string>
     <string name="keyguard_password_enter_pin_password_code">Voer de PIN-code in om te ontgrendelen</string>
@@ -725,9 +725,9 @@
     <string name="lockscreen_missing_sim_message_short">Geen SIM-kaart.</string>
     <string name="lockscreen_missing_sim_message">Geen SIM-kaart in telefoon.</string>
     <string name="lockscreen_missing_sim_instructions">Plaats een SIM-kaart.</string>
-    <string name="lockscreen_missing_sim_instructions_long">De simkaart ontbreekt of kan niet worden gelezen. Plaats een simkaart.</string>
-    <string name="lockscreen_permanent_disabled_sim_instructions">"Uw simkaart is permanent uitgeschakeld.
- Neem contact op met uw draadloze serviceprovider voor een nieuwe simkaart."</string>
+    <string name="lockscreen_missing_sim_instructions_long">De SIM-kaart ontbreekt of kan niet worden gelezen. Plaats een SIM-kaart.</string>
+    <string name="lockscreen_permanent_disabled_sim_instructions">"Je SIM-kaart is permanent uitgeschakeld.
+ Neem contact op met je draadloze serviceprovider voor een nieuwe SIM-kaart."</string>
     <string name="lockscreen_transport_prev_description">Knop voor vorig nummer</string>
     <string name="lockscreen_transport_next_description">Knop voor volgend nummer</string>
     <string name="lockscreen_transport_pause_description">Knop voor onderbreken</string>
@@ -742,16 +742,16 @@
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"je hebt je ontgrendelingspatroon %d keer onjuist getekend. 
 
 Probeer het over %d seconden opnieuw."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"U heeft uw wachtwoord %d keer onjuist ingevoerd. 
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"je heeft jouuw wachtwoord %d keer onjuist ingevoerd. 
 
 Probeer het over %d seconden opnieuw."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"U heeft uw PIN-code %d keer onjuist ingevoerd. 
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Je hebt je PIN-code %d keer onjuist ingevoerd. 
 
 Probeer het over %d seconden opnieuw."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"U heeft uw ontgrendelingspatroon %d keer onjuist getekend. Na nog eens %d mislukte pogingen, wordt u gevraagd om uw telefoon te ontgrendelen met uw Google aanmelding.
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Je hebt je ontgrendelingspatroon %d keer onjuist getekend. Na nog eens %d mislukte pogingen, word je gevraagd om je telefoon te ontgrendelen met je Google aanmelding.
 
  Probeer het over %d seconden opnieuw."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">U heeft nu %d keer geprobeerd de telefoon op een onjuiste manier te ontgrendelen. Na nog eens %d mislukte pogingen worden de fabrieksinstellingen hersteld op de telefoon en gaan alle gebruikersgegevens verloren.</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Je hebt %d keer geprobeerd de telefoon op een onjuiste manier te ontgrendelen. Na nog eens %d mislukte pogingen worden de fabrieksinstellingen hersteld op de telefoon en gaan alle gebruikersgegevens verloren.</string>
     <string name="lockscreen_failed_attempts_now_wiping">U heeft %d keer geprobeerd de telefoon op een onjuiste manier te ontgrendelen. De fabrieksinstellingen worden nu hersteld op de telefoon.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Probeer het over %d seconden opnieuw.</string>
     <string name="lockscreen_forgot_pattern_button_text">Patroon vergeten?</string>
@@ -791,7 +791,7 @@ Kies OK om door te gaan of Annuleren om op de huidige pagina te blijven."</strin
     <string name="save_password_label">Bevestigen</string>
     <string name="double_tap_toast">Tip: tik tweemaal om in of uit te zoomen.</string>
     <string name="autofill_this_form">AutoFill</string>
-    <string name="setup_autofill">Aut. aanv. inst.</string>
+    <string name="setup_autofill">Auto aanvullen inst.</string>
     <string name="autofill_address_name_separator">" "</string>
     <string name="autofill_address_summary_name_format">$1$2$3</string>
     <string name="autofill_address_summary_separator">", "</string>
@@ -838,7 +838,7 @@ Kies OK om door te gaan of Annuleren om op de huidige pagina te blijven."</strin
     <string name="permlab_setAlarm">alarm instellen in wekker</string>
     <string name="permdesc_setAlarm">Hiermee kan de toepassing een alarm instellen in een geïnstalleerde wekkertoepassing. Deze functie wordt door sommige wekkertoepassingen niet geïmplementeerd.</string>
     <string name="permlab_addVoicemail">voicemail toevoegen</string>
-    <string name="permdesc_addVoicemail">Hiermee kan de app berichten toevoegen aan de inbox van uw voicemail.</string>
+    <string name="permdesc_addVoicemail">Hiermee kan de app berichten toevoegen aan de inbox van je voicemail.</string>
     <string name="permlab_writeGeolocationPermissions">Geolocatierechten voor browser aanpassen</string>
     <string name="permdesc_writeGeolocationPermissions">Staat een applicatie toe de geolocatierechten van de browser aan te passen. Schadelijke toepassingen kunnen dit gebruiken om locatiegegevens te verzenden naar willekeurige websites.</string>
     <string name="permlab_packageVerificationAgent">pakketten controleren</string>
@@ -911,18 +911,18 @@ Kies OK om door te gaan of Annuleren om op de huidige pagina te blijven."</strin
     <string name="anr_title" />
     <string name="anr_activity_application">"%2$s reageert niet.
 
-Wilt u deze app sluiten?"</string>
+Wil je deze app sluiten?"</string>
     <string name="anr_activity_process">"Activiteit %1$s reageert niet.
 
-Wilt u deze activiteit sluiten?"</string>
-    <string name="anr_application_process">%1$s reageert niet. Wilt u deze app sluiten?</string>
+Wil je deze activiteit sluiten?"</string>
+    <string name="anr_application_process">%1$s reageert niet. Wil je deze app sluiten?</string>
     <string name="anr_process">"Proces %1$s reageert niet.
 
-Wilt u het sluiten?"</string>
+Wil je het sluiten?"</string>
     <string name="force_close">OK</string>
     <string name="report">Rapport</string>
     <string name="wait">Wachten</string>
-    <string name="launch_warning_title">Toepassing omgeleid</string>
+    <string name="launch_warning_title">Applicatie omgeleid</string>
     <string name="launch_warning_replace">%1$s is nu actief.</string>
     <string name="launch_warning_original">%1$s was het eerst gestart.</string>
     <string name="screen_compat_mode_scale">Schaal</string>
@@ -935,13 +935,13 @@ Wilt u het sluiten?"</string>
     <string name="android_upgrading_starting_apps">Apps starten.</string>
     <string name="android_upgrading_complete">Opstarten afronden.</string>
     <string name="heavy_weight_notification">%1$s wordt uitgevoerd</string>
-    <string name="heavy_weight_notification_detail">Selecteren om over te schakelen naar toepassing</string>
-    <string name="heavy_weight_switcher_title">Toepassingen wijzigen?</string>
-    <string name="heavy_weight_switcher_text">Er wordt al een andere toepassing uitgevoerd die moet worden gestopt voordat je een nieuwe toepassing kunt starten.</string>
+    <string name="heavy_weight_notification_detail">Selecteren om over te schakelen naar de applicatie</string>
+    <string name="heavy_weight_switcher_title">Applicaties wijzigen?</string>
+    <string name="heavy_weight_switcher_text">Er draait al een andere applicatie die eerst moet worden gestopt voordat je een nieuwe applicatie kunt starten.</string>
     <string name="old_app_action">Terug naar %1$s</string>
-    <string name="old_app_description">De nieuwe toepassing niet starten.</string>
+    <string name="old_app_description">De nieuwe applicatie niet starten.</string>
     <string name="new_app_action">%1$s starten</string>
-    <string name="new_app_description">De oude toepassing stoppen zonder opslaan.</string>
+    <string name="new_app_description">De oude applicatie stoppen zonder opslaan.</string>
     <string name="sendText">Selecteer een actie voor tekst</string>
     <string name="volume_ringtone">Belvolume</string>
     <string name="volume_music">Mediavolume</string>
@@ -949,7 +949,7 @@ Wilt u het sluiten?"</string>
     <string name="volume_music_hint_silent_ringtone_selected">Stille beltoon geselecteerd</string>
     <string name="volume_call">Gespreksvolume</string>
     <string name="volume_bluetooth_call">Volume tijdens gesprek in Bluetooth-modus</string>
-    <string name="volume_alarm">Alarmvolume</string>
+    <string name="volume_alarm">Alarm volume</string>
     <string name="volume_notification">Meldingsvolume</string>
     <string name="volume_unknown">Volume</string>
     <string name="volume_icon_description_bluetooth">Bluetooth-volume</string>
@@ -962,7 +962,7 @@ Wilt u het sluiten?"</string>
     <string name="ringtone_silent">Stil</string>
     <string name="ringtone_picker_title">Beltonen</string>
     <string name="ringtone_unknown">Onbekende beltoon</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Meld u aan bij Wi-Fi netwerk</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Kan geen verbinding maken met Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" heeft een slechte internetverbinding."</string>
@@ -970,21 +970,21 @@ Wilt u het sluiten?"</string>
     <string name="wifi_p2p_turnon_message">Bewerking van Wi-Fi Direct starten. Hierdoor wordt de bewerking van Wi-Fi-client/hotspot uitgeschakeld.</string>
     <string name="wifi_p2p_failed_message">Kan Wi-Fi Direct niet starten</string>
     <string name="wifi_p2p_pbc_go_negotiation_request_message">"Configuratieverzoek voor verbinding met Wi-Fi Direct van %1$s. Klik op 'OK' om te accepteren."</string>
-    <string name="wifi_p2p_pin_go_negotiation_request_message">Configuratieverzoek van %1$s voor verbinding met Wi-Fi Direct. Geef de pincode op om door te gaan.</string>
+    <string name="wifi_p2p_pin_go_negotiation_request_message">Configuratieverzoek van %1$s voor verbinding met Wi-Fi Direct. Geef de PIN-code op om door te gaan.</string>
     <string name="wifi_p2p_pin_display_message">WPS-pincode %1$s moet worden ingevoerd op peerapparaat %2$s, zodat het instellen van de verbinding kan worden voortgezet</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct is actief</string>
     <string name="wifi_p2p_enabled_notification_message">Aanraken voor instellingen</string>
     <string name="select_character">Teken invoegen</string>
     <string name="sms_control_default_app_name">Onbekende applicatie</string>
-    <string name="sms_control_title">SMS-berichten verzenden</string>
-    <string name="sms_control_message">"Er wordt een groot aantal SMS-berichten verzonden. Selecteer 'OK' om door te gaan of 'Annuleren' om de verzending te stoppen."</string>
+    <string name="sms_control_title">SMS berichten verzenden</string>
+    <string name="sms_control_message">"Er wordt een groot aantal SMS berichten verzonden. Selecteer 'OK' om door te gaan of 'Annuleren' om de verzending te stoppen."</string>
     <string name="sms_control_yes">OK</string>
     <string name="sms_control_no">Annuleren</string>
-    <string name="sim_removed_title">Simkaart verwijderd</string>
-    <string name="sim_removed_message">Het mobiele netwerk is niet beschikbaar totdat u het apparaat opnieuw start met een geldige simkaart.</string>
+    <string name="sim_removed_title">SIM-kaart verwijderd</string>
+    <string name="sim_removed_message">Het mobiele netwerk is niet beschikbaar totdat je het apparaat opnieuw start met een geldige SIM-kaart.</string>
     <string name="sim_done_button">Gereed</string>
-    <string name="sim_added_title">Simkaart aangesloten</string>
-    <string name="sim_added_message">U moet uw apparaat opnieuw starten voor toegang tot het mobiele netwerk.</string>
+    <string name="sim_added_title">SIM-kaart toegevoegd</string>
+    <string name="sim_added_message">Je moet Jouw toestel opnieuw starten voor toegang tot het mobiele netwerk.</string>
     <string name="sim_restart_button">Opnieuw starten</string>
     <string name="time_picker_dialog_title">Tijd instellen</string>
     <string name="date_picker_dialog_title">Datum instellen</string>
@@ -995,7 +995,7 @@ Wilt u het sluiten?"</string>
     <string name="perms_show_all"><b>Alles weergeven</b></string>
     <string name="usb_storage_activity_title">USB-massaopslag</string>
     <string name="usb_storage_title">USB-verbinding</string>
-    <string name="usb_storage_message">U heeft uw telefoon via USB op uw computer aangesloten. Raak de onderstaande knop aan als u bestanden tussen uw computer en de SD-kaart van uw Android wilt kopiëren.</string>
+    <string name="usb_storage_message">Je hebt je telefoon via USB op je computer aangesloten. Raak de onderstaande knop aan als je bestanden tussen jouw computer en de SD-kaart van je toestel wilt kopiëren.</string>
     <string name="usb_storage_button_mount">USB-opslag inschakelen</string>
     <string name="usb_storage_error_message">Er is een probleem bij het gebruik van jou USB-opslag voor USB-massaopslag.</string>
     <string name="usb_storage_notification_title">USB-verbinding</string>
@@ -1007,7 +1007,7 @@ Wilt u het sluiten?"</string>
     <string name="usb_storage_stop_button_mount">USB-opslag uitschakelen</string>
     <string name="usb_storage_stop_error_message">Er is een probleem opgetreden tijdens het uitschakelen van de USB-opslag. Controleer of je de USB-host heeft losgekoppeld en probeer het opnieuw.</string>
     <string name="dlg_confirm_kill_storage_users_title">USB-opslag inschakelen</string>
-    <string name="dlg_confirm_kill_storage_users_text">Als je USB-opslag inschakelt, worden bepaalde applicatie die je gebruikt, gestopt en worden deze mogelijk pas weer beschikbaar wanneer je USB-opslag uitschakelt.</string>
+    <string name="dlg_confirm_kill_storage_users_text">Als je USB-opslag inschakelt worden bepaalde applicatie die je gebruikt gestopt en worden deze mogelijk pas weer beschikbaar wanneer je USB-opslag uitschakelt.</string>
     <string name="dlg_error_title">USB-bewerking mislukt</string>
     <string name="dlg_ok">OK</string>
     <string name="usb_mtp_notification_title">Gekoppeld als media-apparaat</string>
@@ -1018,8 +1018,8 @@ Wilt u het sluiten?"</string>
     <string name="extmedia_format_title">SD-kaart formatteren</string>
     <string name="extmedia_format_message">Weet je zeker dat je de SD-kaart wil formatteren? Alle gegevens op je kaart gaan dan verloren.</string>
     <string name="extmedia_format_button_format">Formatteren</string>
-    <string name="adb_active_notification_title">USB-foutopsporing verbonden</string>
-    <string name="adb_active_notification_message">Selecteer deze optie om USB-foutopsporing uit te schakelen.</string>
+    <string name="adb_active_notification_title">USB foutopsporing verbonden</string>
+    <string name="adb_active_notification_message">Selecteer deze optie om USB foutopsporing uit te schakelen.</string>
     <string name="locale_replacement" />
     <string name="select_input_method">Invoermethode selecteren</string>
     <string name="configure_input_methods">Invoermethoden configureren</string>
@@ -1160,7 +1160,7 @@ voor account '%s'"</string>
     <string name="description_target_camera">Camera</string>
     <string name="description_target_silent">Stil</string>
     <string name="description_target_soundon">Geluid aan</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">Vegen om te ontgrendelen.</string>
     <string name="keyboard_headset_required_to_hear_password">Sluit een headset aan om wachtwoordtoetsen hardop te laten voorlezen.</string>
     <string name="keyboard_password_character_no_headset">Stip.</string>
     <string name="action_bar_home_description">Navigeren naar startpositie</string>
@@ -1168,19 +1168,19 @@ voor account '%s'"</string>
     <string name="action_menu_overflow_description">Meer opties</string>
     <string name="storage_internal">Interne opslag</string>
     <string name="storage_sd_card">SD-kaart</string>
-    <string name="storage_usb">USB-opslag</string>
+    <string name="storage_usb">USB opslag</string>
     <string name="extract_edit_menu_button">Bewerken...</string>
-    <string name="data_usage_warning_title">Waarschuwing v. gegevensgebruik</string>
+    <string name="data_usage_warning_title">Waarschuwing van gegevensgebr.</string>
     <string name="data_usage_warning_body">Aanraken: gebruik/inst. bekijken</string>
-    <string name="data_usage_3g_limit_title">2G-3G-gegevens uitgeschakeld</string>
-    <string name="data_usage_4g_limit_title">4G-gegevens uitgeschakeld</string>
+    <string name="data_usage_3g_limit_title">2G/3G gegevens uitgeschakeld</string>
+    <string name="data_usage_4g_limit_title">4G gegevens uitgeschakeld</string>
     <string name="data_usage_mobile_limit_title">Mobiele gegevens uitgeschakeld</string>
-    <string name="data_usage_wifi_limit_title">Wi-Fi-data uitgeschakeld</string>
+    <string name="data_usage_wifi_limit_title">Wi-Fi data uitgeschakeld</string>
     <string name="data_usage_limit_body">Raak aan om in te schakelen</string>
-    <string name="data_usage_3g_limit_snoozed_title">Gegevenslimiet 2G-3G overschreden</string>
+    <string name="data_usage_3g_limit_snoozed_title">Gegevenslimiet 2G/3G overschreden</string>
     <string name="data_usage_4g_limit_snoozed_title">Gegevenslimiet 4G overschreden</string>
     <string name="data_usage_mobile_limit_snoozed_title">Mobiele datalimiet overschreden</string>
-    <string name="data_usage_wifi_limit_snoozed_title">Wi-Fi-datalimiet overschreden</string>
+    <string name="data_usage_wifi_limit_snoozed_title">Wi-Fi datalimiet overschreden</string>
     <string name="data_usage_limit_snoozed_body">%s meer dan limiet</string>
     <string name="data_usage_restricted_title">Achtergrondgegevens beperkt</string>
     <string name="data_usage_restricted_body">Raak aan voor opheffen beperking</string>
@@ -1203,9 +1203,9 @@ voor account '%s'"</string>
     <string name="share_action_provider_share_with">Delen met...</string>
     <string name="status_bar_device_locked">Apparaat vergrendeld.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Bezig met verzenden...</string>
+    <string name="launchBrowserDefault">Browser starten?</string>
+    <string name="SetupCallDefault">Gesprek aannemen?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">4G-toegang</string>
     <string name="permlab_changeWimaxMulticastState">WiMAX Multicast-ontvangst toestaan</string>
@@ -1213,21 +1213,21 @@ voor account '%s'"</string>
     <string name="permlab_access4GState">4G-toestand weergeven</string>
     <string name="permdesc_access4GState">Hiermee kan een applicatie informatie over de WiMAX-status bekijken.</string>
     <string name="permlab_change4GState">4G-toestand veranderen</string>
-    <string name="permdesc_change4GState">Hiermee kan een toepassing verbinding maken en verbreken met 4G-toegangspunten en wijzigingen aanbrengen in geconfigureerde 4G-netwerken.</string>
+    <string name="permdesc_change4GState">Hiermee kan een applicatie verbinding maken en verbreken met 4G toegangspunten en wijzigingen aanbrengen in geconfigureerde 4G netwerken.</string>
     <string name="permlab_initiate4GScan">4G-scan starten</string>
     <string name="permdesc_initiate4GScan">Hiermee kan een toepassing een 4G-scan starten.</string>
     <string name="permlab_initiate4GScanDataServiceDisruptive">4G-scan datadienststoring starten</string>
     <string name="permdesc_initiate4GScanDataServiceDisruptive">Hiermee kan een toepassing een 4G-scan en datadienststoring starten.</string>
     <string name="permlab_access4GRadioDisable">4G-radiosignaal uitschakelen</string>
-    <string name="permdesc_access4GRadioDisable">Hiermee kan een toepassing het 4G-radiosignaal uitschakelen.</string>
+    <string name="permdesc_access4GRadioDisable">Hiermee kan een applicatie het 4G radiosignaal uitschakelen.</string>
     <string name="permlab_fm_receiver">toegang tot FM-ontvanger</string>
-    <string name="permdesc_fm_receiver">Geeft een toepassing toestemming de functies van de FM-ontvanger te openen.</string>
+    <string name="permdesc_fm_receiver">Geeft een applicatie toestemming de functies van de FM-ontvanger te openen.</string>
     <string name="permlab_fm_transmitter">toegang tot FM-zender</string>
     <string name="permdesc_fm_transmitter">Geeft een applicatie toegang tot de functies van de FM-zender</string>
     <string name="permlab_obex">toegang tot OBEX-dienst</string>
-    <string name="permdesc_obex">Geeft een toepassing toestemming de functies van de OBEX-dienst te openen.</string>
+    <string name="permdesc_obex">Geeft een applicatie toestemming de functies van de OBEX-dienst te openen</string>
     <string name="permlab_bluetooth_printer">toegang tot bluetooth-printers</string>
-    <string name="permdesc_bluetooth_printer">Geeft een toepassing toestemming de functies van Bluetooth-printers te openen.</string>
+    <string name="permdesc_bluetooth_printer">Allows an application to access the Bluetooth printer service functions.</string>
     <string name="permlab_fmAdmin">FM-beheer</string>
     <string name="permdesc_fmAdmin">Hiermee kan een toepassing de FM-radio gebruiken.</string>
     <string name="permlab_fm">FMRX-verbindingen maken</string>
@@ -1251,7 +1251,7 @@ voor account '%s'"</string>
     <string name="htc_framework_pm">PM</string>
     <string name="sd_encrypt_notify_title">SD-kaartcodering vereist</string>
     <string name="sd_encrypt_notify_text">Klik hier om in te schakelen</string>
-    <string name="data_encrypt_notify_title">Interne datacodering ingeschakeld</string>
+    <string name="data_encrypt_notify_title">Interne data-codering ingeschakeld</string>
     <string name="data_encrypt_convert_diag">Decoderen...</string>
     <string name="disable_notify_title">IT uitgeschakeld:</string>
     <string name="it_notify_text">Beleid afgedwongen door IT</string>
@@ -1266,15 +1266,16 @@ voor account '%s'"</string>
     <string name="camera_notify_title">IT heeft camera uitgeschakeld</string>
     <string name="install_notify_title">IT heeft installatie geblokkeerd:</string>
     <string name="uninstall_notify_title">IT heeft verwijderen geblokkeerd:</string>
-    <string name="wifi_notify_title">IT heeft WiFi uitgeschakeld</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
-    <string name="permlab_accessCWFolder">Toegang tot de map met de aanpasassistent</string>
-    <string name="permdesc_accessCWFolder">Geeft een toepassing toegang tot de map met de optie aanpasassistent</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
-    <string name="permlab_setappname">Dynamisch om naam van toepassing te wijzigen</string>
-    <string name="permdesc_setappname">Hiermee kun je de naam van een toepassing dynamisch opgeven en wijzigen.</string>
-    <string name="text_limitation">Je mag niet te veel woorden selecteren om te delen.</string>
+    <string name="wifi_notify_title">IT heeft Wi-Fi uitgeschakeld</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Wis de standaardinstellingen in Thuis instellingen > Apps.</string>
+    <string name="sim_puk_contact_customer_care_information">Neem contact op met de klantenservice om de PUK-code aan te vragen</string>
+    <string name="permlab_accessCWFolder">Toegang tot de map met de aanpassings wizard</string>
+    <string name="permdesc_accessCWFolder">Geeft een applicatie toegang tot de map met de optie aanpassings wizard</string>
+    <string name="permlab_accessRecoveryFolder">Herstelmap openen</string>
+    <string name="permdesc_accessRecoveryFolder">Hiermee kan een app de herstelmap openen.</string>
+    <string name="permlab_setappname">Dynamisch om naam van applicatie te wijzigen</string>
+    <string name="permdesc_setappname">Hiermee kun je de naam van een applicatie dynamisch opgeven en wijzigen.</string>
+    <string name="text_limitation">Je kan te veel woorden selecteren om te delen.</string>
     <string name="sms_roam_guild_dialog_title">Uitgaand bericht</string>
     <string name="sms_roam_guild_dialog_subject">Je roamt op internationale netwerken. Voor het verzenden van dit bericht zal je mobiele dienstverlener mogelijk extra kosten in rekening brengen. Wil je:</string>
     <string name="sms_roam_guild_dialog_radio_auto_send">Automatisch verzenden bij nationale dekking</string>
@@ -1286,7 +1287,7 @@ voor account '%s'"</string>
     <string name="permdesc_changeUsbnetState">Hiermee kan een applicatie zich koppelen aan en loskoppelen van UsbNet toegangspunten en wijzigingen aanbrengen in geconfigureerde UsbNet-netwerken.</string>
     <string name="permlab_changeUsbnetMulticastState">UsbNet Multicast-ontvangst toestaan</string>
     <string name="permdesc_changeUsbnetMulticastState">Hiermee kan een applicatie pakketten ontvangen die niet rechtstreeks zijn geadresseerd aan je apparaat. Dit kan handig zijn wanneer services in de buurt worden ontdekt. Dit verbruikt meer energie dan de niet-multicastmodus.</string>
-    <string name="hutch_htctethered_notification_title">PocketWifi geactiveerd</string>
+    <string name="hutch_htctethered_notification_title">Pocket Wi-fi geactiveerd</string>
     <string name="localized_opertator_name_kddi_roaming">Internationaal roamen</string>
     <string name="localized_opertator_name_unknown">Onbekend netwerk</string>
     <string name="encryption_password_required">Coderingswachtwoord vereist</string>
@@ -1311,5 +1312,5 @@ voor account '%s'"</string>
     <string name="font_color">Lettertypekleur</string>
     <string name="font_settings">Lettertype-instellingen</string>
     <string name="font_alignment">Lettertype-uitlijning</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Configureren</string>
 </resources>

@@ -394,9 +394,6 @@
 
     const/4 v2, 0x0
 
-    .line 970
-    iget-object v0, p0, Lcom/htc/app/FilePickerActivity;->mFilePickerUtil:Lcom/htc/app/FilePickerUtil;
-
     .line 973
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity;->mHeaderBar:Lcom/htc/widget/HeaderBarMiddle;
 
@@ -505,23 +502,12 @@
 
     .prologue
     .line 77
-    invoke-direct {p0}, Lcom/htc/app/FilePickerActivity;->loadFiles()V
-
-    return-void
-.end method
-
-.method static synthetic access$1100(Lcom/htc/app/FilePickerActivity;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 77
     invoke-direct {p0}, Lcom/htc/app/FilePickerActivity;->hideNoSdCard()V
 
     return-void
 .end method
 
-.method static synthetic access$1202(Lcom/htc/app/FilePickerActivity;Z)Z
+.method static synthetic access$1102(Lcom/htc/app/FilePickerActivity;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -533,7 +519,7 @@
     return p1
 .end method
 
-.method static synthetic access$1300(Lcom/htc/app/FilePickerActivity;)I
+.method static synthetic access$1200(Lcom/htc/app/FilePickerActivity;)I
     .locals 1
     .parameter "x0"
 
@@ -544,7 +530,7 @@
     return v0
 .end method
 
-.method static synthetic access$1402(Lcom/htc/app/FilePickerActivity;Z)Z
+.method static synthetic access$1302(Lcom/htc/app/FilePickerActivity;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -556,7 +542,7 @@
     return p1
 .end method
 
-.method static synthetic access$1500(Lcom/htc/app/FilePickerActivity;)V
+.method static synthetic access$1400(Lcom/htc/app/FilePickerActivity;)V
     .locals 0
     .parameter "x0"
 
@@ -567,7 +553,7 @@
     return-void
 .end method
 
-.method static synthetic access$1600(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
+.method static synthetic access$1500(Lcom/htc/app/FilePickerActivity;)Landroid/view/Menu;
     .locals 1
     .parameter "x0"
 
@@ -578,7 +564,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1700(Lcom/htc/app/FilePickerActivity;Landroid/view/Menu;)V
+.method static synthetic access$1600(Lcom/htc/app/FilePickerActivity;Landroid/view/Menu;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -590,7 +576,7 @@
     return-void
 .end method
 
-.method static synthetic access$1800(Lcom/htc/app/FilePickerActivity;)V
+.method static synthetic access$1700(Lcom/htc/app/FilePickerActivity;)V
     .locals 0
     .parameter "x0"
 
@@ -601,7 +587,7 @@
     return-void
 .end method
 
-.method static synthetic access$1900(Lcom/htc/app/FilePickerActivity;)V
+.method static synthetic access$1800(Lcom/htc/app/FilePickerActivity;)V
     .locals 0
     .parameter "x0"
 
@@ -610,6 +596,17 @@
     invoke-direct {p0}, Lcom/htc/app/FilePickerActivity;->hideDialog()V
 
     return-void
+.end method
+
+.method static synthetic access$1900(Lcom/htc/app/FilePickerActivity;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 77
+    iget-boolean v0, p0, Lcom/htc/app/FilePickerActivity;->isMultiPath:Z
+
+    return v0
 .end method
 
 .method static synthetic access$200(Lcom/htc/app/FilePickerActivity;)I
@@ -623,15 +620,15 @@
     return v0
 .end method
 
-.method static synthetic access$2000(Lcom/htc/app/FilePickerActivity;)Z
+.method static synthetic access$2000(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
     .locals 1
     .parameter "x0"
 
     .prologue
     .line 77
-    iget-boolean v0, p0, Lcom/htc/app/FilePickerActivity;->isMultiPath:Z
+    iget-object v0, p0, Lcom/htc/app/FilePickerActivity;->mAdapter:Lcom/htc/app/FilePickerListAdapter;
 
-    return v0
+    return-object v0
 .end method
 
 .method static synthetic access$202(Lcom/htc/app/FilePickerActivity;I)I
@@ -646,18 +643,7 @@
     return p1
 .end method
 
-.method static synthetic access$2100(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListAdapter;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 77
-    iget-object v0, p0, Lcom/htc/app/FilePickerActivity;->mAdapter:Lcom/htc/app/FilePickerListAdapter;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2200(Lcom/htc/app/FilePickerActivity;)Landroid/widget/TextView;
+.method static synthetic access$2100(Lcom/htc/app/FilePickerActivity;)Landroid/widget/TextView;
     .locals 1
     .parameter "x0"
 
@@ -668,7 +654,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2300(Lcom/htc/app/FilePickerActivity;)Z
+.method static synthetic access$2200(Lcom/htc/app/FilePickerActivity;)Z
     .locals 1
     .parameter "x0"
 
@@ -679,7 +665,7 @@
     return v0
 .end method
 
-.method static synthetic access$2400(Lcom/htc/app/FilePickerActivity;)Landroid/content/Context;
+.method static synthetic access$2300(Lcom/htc/app/FilePickerActivity;)Landroid/content/Context;
     .locals 1
     .parameter "x0"
 
@@ -690,7 +676,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2500(Lcom/htc/app/FilePickerActivity;Ljava/lang/String;)V
+.method static synthetic access$2400(Lcom/htc/app/FilePickerActivity;Ljava/lang/String;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -702,7 +688,7 @@
     return-void
 .end method
 
-.method static synthetic access$2600(Lcom/htc/app/FilePickerActivity;)Landroid/widget/TextView;
+.method static synthetic access$2500(Lcom/htc/app/FilePickerActivity;)Landroid/widget/TextView;
     .locals 1
     .parameter "x0"
 
@@ -713,7 +699,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2700(Lcom/htc/app/FilePickerActivity;)Landroid/widget/TextView;
+.method static synthetic access$2600(Lcom/htc/app/FilePickerActivity;)Landroid/widget/TextView;
     .locals 1
     .parameter "x0"
 
@@ -724,7 +710,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2800(Lcom/htc/app/FilePickerActivity;)Z
+.method static synthetic access$2700(Lcom/htc/app/FilePickerActivity;)Z
     .locals 1
     .parameter "x0"
 
@@ -735,7 +721,7 @@
     return v0
 .end method
 
-.method static synthetic access$2802(Lcom/htc/app/FilePickerActivity;Z)Z
+.method static synthetic access$2702(Lcom/htc/app/FilePickerActivity;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -747,7 +733,7 @@
     return p1
 .end method
 
-.method static synthetic access$2902(Lcom/htc/app/FilePickerActivity;Z)Z
+.method static synthetic access$2802(Lcom/htc/app/FilePickerActivity;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -757,6 +743,18 @@
     iput-boolean p1, p0, Lcom/htc/app/FilePickerActivity;->isEnableOptionMenu:Z
 
     return p1
+.end method
+
+.method static synthetic access$2900(Lcom/htc/app/FilePickerActivity;I)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 77
+    invoke-direct {p0, p1}, Lcom/htc/app/FilePickerActivity;->hideView(I)V
+
+    return-void
 .end method
 
 .method static synthetic access$300(Lcom/htc/app/FilePickerActivity;)I
@@ -770,16 +768,15 @@
     return v0
 .end method
 
-.method static synthetic access$3000(Lcom/htc/app/FilePickerActivity;I)V
-    .locals 0
+.method static synthetic access$3000(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListView;
+    .locals 1
     .parameter "x0"
-    .parameter "x1"
 
     .prologue
     .line 77
-    invoke-direct {p0, p1}, Lcom/htc/app/FilePickerActivity;->hideView(I)V
+    iget-object v0, p0, Lcom/htc/app/FilePickerActivity;->mListView:Lcom/htc/app/FilePickerListView;
 
-    return-void
+    return-object v0
 .end method
 
 .method static synthetic access$302(Lcom/htc/app/FilePickerActivity;I)I
@@ -794,18 +791,7 @@
     return p1
 .end method
 
-.method static synthetic access$3100(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerListView;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 77
-    iget-object v0, p0, Lcom/htc/app/FilePickerActivity;->mListView:Lcom/htc/app/FilePickerListView;
-
-    return-object v0
-.end method
-
-.method static synthetic access$3200(Lcom/htc/app/FilePickerActivity;)Landroid/view/View;
+.method static synthetic access$3100(Lcom/htc/app/FilePickerActivity;)Landroid/view/View;
     .locals 1
     .parameter "x0"
 
@@ -816,7 +802,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3300(Lcom/htc/app/FilePickerActivity;)Ljava/lang/String;
+.method static synthetic access$3200(Lcom/htc/app/FilePickerActivity;)Ljava/lang/String;
     .locals 1
     .parameter "x0"
 
@@ -827,7 +813,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3400(Lcom/htc/app/FilePickerActivity;)Landroid/view/View;
+.method static synthetic access$3300(Lcom/htc/app/FilePickerActivity;)Landroid/view/View;
     .locals 1
     .parameter "x0"
 
@@ -838,7 +824,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3500(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
+.method static synthetic access$3400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FileSorter;
     .locals 1
     .parameter "x0"
 
@@ -849,7 +835,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3602(Lcom/htc/app/FilePickerActivity;Z)Z
+.method static synthetic access$3502(Lcom/htc/app/FilePickerActivity;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -861,7 +847,7 @@
     return p1
 .end method
 
-.method static synthetic access$3702(Lcom/htc/app/FilePickerActivity;I)I
+.method static synthetic access$3602(Lcom/htc/app/FilePickerActivity;I)I
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -873,7 +859,7 @@
     return p1
 .end method
 
-.method static synthetic access$3900(Lcom/htc/app/FilePickerActivity;)Landroid/os/Handler;
+.method static synthetic access$3800(Lcom/htc/app/FilePickerActivity;)Landroid/os/Handler;
     .locals 1
     .parameter "x0"
 
@@ -884,18 +870,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerUtil;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 77
-    iget-object v0, p0, Lcom/htc/app/FilePickerActivity;->mFilePickerUtil:Lcom/htc/app/FilePickerUtil;
-
-    return-object v0
-.end method
-
-.method static synthetic access$500(Lcom/htc/app/FilePickerActivity;)Lcom/htc/widget/HeaderBarMiddle;
+.method static synthetic access$400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/widget/HeaderBarMiddle;
     .locals 1
     .parameter "x0"
 
@@ -906,7 +881,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$600(Lcom/htc/app/FilePickerActivity;)Landroid/view/inputmethod/InputMethodManager;
+.method static synthetic access$500(Lcom/htc/app/FilePickerActivity;)Landroid/view/inputmethod/InputMethodManager;
     .locals 1
     .parameter "x0"
 
@@ -917,7 +892,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$602(Lcom/htc/app/FilePickerActivity;Landroid/view/inputmethod/InputMethodManager;)Landroid/view/inputmethod/InputMethodManager;
+.method static synthetic access$502(Lcom/htc/app/FilePickerActivity;Landroid/view/inputmethod/InputMethodManager;)Landroid/view/inputmethod/InputMethodManager;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -929,7 +904,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$700(Lcom/htc/app/FilePickerActivity;)Landroid/widget/EditText;
+.method static synthetic access$600(Lcom/htc/app/FilePickerActivity;)Landroid/widget/EditText;
     .locals 1
     .parameter "x0"
 
@@ -940,7 +915,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$800(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
+.method static synthetic access$700(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
     .locals 1
     .parameter "x0"
 
@@ -951,7 +926,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$802(Lcom/htc/app/FilePickerActivity;Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;)Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
+.method static synthetic access$702(Lcom/htc/app/FilePickerActivity;Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;)Lcom/htc/app/FilePickerActivity$LaunchIMEReceiver;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -963,7 +938,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$900(Lcom/htc/app/FilePickerActivity;)Landroid/os/Handler;
+.method static synthetic access$800(Lcom/htc/app/FilePickerActivity;)Landroid/os/Handler;
     .locals 1
     .parameter "x0"
 
@@ -972,6 +947,17 @@
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity;->handler:Landroid/os/Handler;
 
     return-object v0
+.end method
+
+.method static synthetic access$900(Lcom/htc/app/FilePickerActivity;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 77
+    invoke-direct {p0}, Lcom/htc/app/FilePickerActivity;->loadFiles()V
+
+    return-void
 .end method
 
 .method private changeCurrentView(I)V
@@ -1285,9 +1271,6 @@
 
     .line 1651
     iput-boolean v2, p0, Lcom/htc/app/FilePickerActivity;->mIsShowSearchBar:Z
-
-    .line 1652
-    iget-object v0, p0, Lcom/htc/app/FilePickerActivity;->mFilePickerUtil:Lcom/htc/app/FilePickerUtil;
 
     .line 1656
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity;->mHeaderBar:Lcom/htc/widget/HeaderBarMiddle;
@@ -1955,7 +1938,7 @@
     iput-object v2, v0, Lcom/htc/app/FilePickerActivity;->mSearchBar:Lcom/htc/widget/SearchBoxView;
 
     .line 631
-    const v2, 0x202025f
+    const v2, 0x2020262
 
     move-object/from16 v0, p0
 
@@ -2003,11 +1986,6 @@
     move-object/from16 v0, v26
 
     invoke-virtual {v0, v2}, Lcom/htc/widget/HeaderBarText;->setPrimaryVisibility(I)V
-
-    .line 641
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/htc/app/FilePickerActivity;->mFilePickerUtil:Lcom/htc/app/FilePickerUtil;
 
     .line 652
     move-object/from16 v0, p0
@@ -2180,19 +2158,6 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 689
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/htc/app/FilePickerActivity;->mFileListHeader:Landroid/view/View;
-
-    new-instance v3, Lcom/htc/app/FilePickerListItemSeparable;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v3, v4}, Lcom/htc/app/FilePickerListItemSeparable;-><init>(Z)V
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
     .line 690
     move-object/from16 v0, p0
 
@@ -2240,15 +2205,6 @@
     const/4 v5, 0x0
 
     invoke-virtual {v2, v3, v4, v5}, Lcom/htc/app/FilePickerListView;->addHeaderView(Landroid/view/View;Ljava/lang/Object;Z)V
-
-    .line 695
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/htc/app/FilePickerActivity;->mListView:Lcom/htc/app/FilePickerListView;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v3}, Lcom/htc/app/FilePickerListView;->setTopBorderHeight(I)V
 
     .line 696
     sget-boolean v2, Lcom/htc/app/FilePickerUtil;->IsEnabledListViewRoundedCorner:Z
@@ -2401,11 +2357,6 @@
 
     .line 739
     if-eqz p7, :cond_12
-
-    .line 740
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/htc/app/FilePickerActivity;->mFilePickerUtil:Lcom/htc/app/FilePickerUtil;
 
     .line 746
     move-object/from16 v0, v26
@@ -2873,15 +2824,10 @@
 
     goto/16 :goto_2
 
-    .line 749
+    .line 756
     .restart local v11       #doneButton:Landroid/widget/Button;
     .restart local v23       #refreshIcon:Lcom/htc/app/AnimatedImageView;
     :cond_12
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/htc/app/FilePickerActivity;->mFilePickerUtil:Lcom/htc/app/FilePickerUtil;
-
-    .line 756
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/htc/app/FilePickerActivity;->mSelectionType:I
@@ -3921,9 +3867,6 @@
 
     invoke-virtual {v0, v2}, Lcom/htc/widget/SearchBoxView;->setVisibility(I)V
 
-    .line 1611
-    iget-object v0, p0, Lcom/htc/app/FilePickerActivity;->mFilePickerUtil:Lcom/htc/app/FilePickerUtil;
-
     .line 1612
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity;->mHeaderBar:Lcom/htc/widget/HeaderBarMiddle;
 
@@ -4747,9 +4690,6 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 412
-    iget-object v1, p0, Lcom/htc/app/FilePickerActivity;->mFilePickerUtil:Lcom/htc/app/FilePickerUtil;
-
     .line 415
     invoke-virtual {p0}, Lcom/htc/app/FilePickerActivity;->getWindow()Landroid/view/Window;
 

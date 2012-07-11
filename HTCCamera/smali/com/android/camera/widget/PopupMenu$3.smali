@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 110
+    .line 112
     iput-object p1, p0, Lcom/android/camera/widget/PopupMenu$3;->this$0:Lcom/android/camera/widget/PopupMenu;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 113
+    .line 115
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu$3;->this$0:Lcom/android/camera/widget/PopupMenu;
 
     const/4 v1, 0x0
@@ -49,7 +49,7 @@
     #setter for: Lcom/android/camera/widget/PopupMenu;->m_Menu:Lcom/htc/widget/PopupBubbleWindow;
     invoke-static {v0, v1}, Lcom/android/camera/widget/PopupMenu;->access$002(Lcom/android/camera/widget/PopupMenu;Lcom/htc/widget/PopupBubbleWindow;)Lcom/htc/widget/PopupBubbleWindow;
 
-    .line 114
+    .line 116
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu$3;->this$0:Lcom/android/camera/widget/PopupMenu;
 
     #getter for: Lcom/android/camera/widget/PopupMenu;->m_NeedReopen:Z
@@ -59,12 +59,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 115
+    .line 117
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu$3;->this$0:Lcom/android/camera/widget/PopupMenu;
 
     invoke-virtual {v0}, Lcom/android/camera/widget/PopupMenu;->open()V
 
-    .line 116
+    .line 118
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu$3;->this$0:Lcom/android/camera/widget/PopupMenu;
 
     const/4 v1, 0x0
@@ -72,11 +72,11 @@
     #setter for: Lcom/android/camera/widget/PopupMenu;->m_NeedReopen:Z
     invoke-static {v0, v1}, Lcom/android/camera/widget/PopupMenu;->access$102(Lcom/android/camera/widget/PopupMenu;Z)Z
 
-    .line 125
+    .line 127
     :goto_0
     return-void
 
-    .line 120
+    .line 122
     :cond_0
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu$3;->this$0:Lcom/android/camera/widget/PopupMenu;
 
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 122
+    .line 124
     iget-object v0, p0, Lcom/android/camera/widget/PopupMenu$3;->this$0:Lcom/android/camera/widget/PopupMenu;
 
     const/4 v1, 0x2

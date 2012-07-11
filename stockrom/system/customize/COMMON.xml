@@ -1,0 +1,228 @@
+<customization_form version="1.00">
+	<category name="system">
+
+		<module name="IME">
+			<function>
+				<set name="single">
+					<item name="defeault">IME</item> 
+				</set>
+			</function>
+		</module>
+
+		<module name="language">
+			<function>
+				<set name="single">
+					<item name="total_list">en_US;en_GB;zh_CN;zh_TW;cs_CZ;fr;de_DE;it;ja;es_US;</item>
+					<item name="en_US" type="boolean">yes</item>
+					<item name="en_GB" type="boolean">no</item>
+					<item name="zh_CN" type="boolean">no</item>
+					<item name="zh_TW" type="boolean">no</item>
+					<item name="cs_CZ" type="boolean">yes</item>
+					<item name="fr" type="boolean">yes</item>
+					<item name="de_DE" type="boolean">yes</item>
+					<item name="it" type="boolean">yes</item>
+					<item name="ja" type="boolean">no</item>
+					<item name="es_US" type="boolean">yes</item>
+					<item name="defeault" >it</item> 
+				</set>
+			</function>
+		</module>
+				
+		<module name="InputMethod">
+			<function name="IME_language_set">
+				<set name="single">
+					<item name="English" type="boolean">yes</item>
+					<item name="German" type="boolean">yes</item>
+					<item name="France" type="boolean">yes</item>
+					<item name="Italian" type="boolean">yes</item>
+					<item name="Spanish" type="boolean">yes</item>
+					<item name="Russian" type="boolean">yes</item>
+					<item name="Czech" type="boolean">yes</item>
+					<item name="Danish" type="boolean">yes</item>
+					<item name="Swedish" type="boolean">yes</item>
+					<item name="Norwegian" type="boolean">yes</item>
+					<item name="Dutch" type="boolean">yes</item>
+					<item name="Polish" type="boolean">yes</item>
+					<item name="default">Italian</item>
+				</set>
+			</function>
+			
+			<function name="IME_sip_set">
+				<set name="single">
+					<item name="total_list">Handwriting;ZuhYin;CangJie;PinYin;Stroke;</item> 
+					<item name="Handwriting" type="boolean">yes</item>
+					<item name="ZuhYin" type="boolean">yes</item>
+					<item name="CangJie" type="boolean">yes</item>
+					<item name="PinYin" type="boolean">yes</item>
+					<item name="Stroke" type="boolean">yes</item>					
+					<item name="default">ZuhYin</item>
+				</set>
+			</function>						
+		</module>
+
+		<module name="property">
+			<function>
+				<set name="single">
+					<item name="build_number"></item>
+					<item name="model_number"></item>
+					<item name="firmware_version"></item>
+					<item name="baseband_version"></item>
+					<item name="emergency_call_list"></item>
+					<item name="A52" type="boolean"></item>
+					<item name="A53" type="boolean"></item>
+				</set>
+			</function>
+		</module>
+
+	</category>
+	<category name="application">
+		<module name="Launcher">
+			<function name="extra_wallpapers">
+				<set name="plenty" max="10">
+					<item name="thumb" type="file"></item>
+					<item name="image" type="file"></item>
+				</set>
+			</function>
+			<function name="default_wallpaper">
+				<set name="single">
+					<item name="image" type="file"></item>
+				</set>
+			</function>
+			<function name="shortcuts">
+				<set name="plenty" max="7">
+					<item name="title"></item>
+					<item name="package"></item>
+					<item name="class"></item>
+					<item name="screen"></item>
+					<item name="x"></item>
+					<item name="y"></item>
+					<item name="url"></item>
+					<item name="icon" type="file_name"></item>
+					<item name="itemtype">0</item>
+				</set>
+			</function>
+			<function name="clock_widget">
+				<set name="single">
+					<item name="enable"></item>
+					<item name="screen"></item>
+					<item name="x"></item>
+					<item name="y"></item>
+				</set>
+			</function>
+		</module>
+		<module name="Settings">
+			<function name="resource_path">
+				<set name="single">
+					<item name="path">/system/customize/resource</item>
+				</set>
+			</function>
+			<function name="extra_ringtones">
+				<set name="plenty" max="5">
+					<item name="ringtone" type="file_name"></item>
+				</set>
+			</function>
+			<function name="default_ringtone">
+				<set name="single">
+					<item name="ringtone" type="file_name"></item>
+				</set>
+			</function>
+			<function name="extra_alarms">
+				<set name="plenty" max="5">
+					<item name="alarm" type="file_name"></item>
+				</set>
+			</function>
+			<function name="default_alarm">
+				<set name="single">
+					<item name="alarm" type="file_name"></item>
+				</set>
+			</function>
+			<function name="extra_notifications">
+				<set name="plenty" max="5">
+					<item name="notification" type="file_name"></item>
+				</set>
+			</function>
+			<function name="default_notification">
+				<set name="single">
+					<item name="notification" type="file_name"></item>
+				</set>
+			</function>
+		</module>
+		<module name="Browser">
+			<function name="bookmark">
+				<set name="plenty" max="15">
+					<item name="title">Google</item>
+					<item name="url">http://www.google.com/m?client=ms-{ro.com.google.clientid:unknown}</item>
+				</set>
+				<set name="plenty" max="15">
+					<item name="title">Yahoo!</item>
+					<item name="url">http://www.yahoo.com/</item>
+				</set>
+				<set name="plenty" max="15">
+					<item name="title">MSN</item>
+					<item name="url">http://www.msn.com/</item>
+				</set>
+				<set name="plenty" max="15">
+					<item name="title">MySpace</item>
+					<item name="url">http://www.myspace.com/</item>
+				</set>
+				<set name="plenty" max="15">
+					<item name="title">Facebook</item>
+					<item name="url">http://www.facebook.com/</item>
+				</set>
+				<set name="plenty" max="15">
+					<item name="title">Wikipedia</item>
+					<item name="url">http://www.wikipedia.org/</item>
+				</set>
+				<set name="plenty" max="15">
+					<item name="title">eBay</item>
+					<item name="url">http://www.ebay.com/</item>
+				</set>
+				<set name="plenty" max="15">
+					<item name="title">CNN</item>
+					<item name="url">http://www.cnn.com/</item>
+				</set>
+				<set name="plenty" max="15">
+					<item name="title">New York Times</item>
+					<item name="url">http://www.nytimes.com/</item>
+				</set>
+				<set name="plenty" max="15">
+					<item name="title">ESPN</item>
+					<item name="url">http://espn.go.com/</item>
+				</set>
+				<set name="plenty" max="15">
+					<item name="title">Amazon</item>
+					<item name="url">http://www.amazon.com/</item>
+				</set>
+				<set name="plenty" max="15">
+					<item name="title">Weather Channel</item>
+					<item name="url">http://www.weather.com/</item>
+				</set>
+				<set name="plenty" max="15">
+					<item name="title">BBC</item>
+					<item name="url">http://www.bbc.co.uk/</item>
+				</set>
+			</function>
+			<function name="ua_string">
+				<set name="single">
+					<item name="value">Mozilla/5.0 (Linux; U; Android %s)
+        AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1</item>
+				</set>
+			</function>
+		</module>
+	</category>
+	<category name="connection">
+		<module name="imps">
+			<function>
+				<set name="plenty" max="3">
+					<item name="name"></item>
+					<item name="full_name"></item>
+					<item name="signup_url"></item>
+					<item name="protocol"></item>
+					<item name="imps_data_channel"></item>
+					<item name="imps_data_encoding"></item>
+					<item name="imps_cir_channel"></item>
+				</set>
+			</function>
+		</module>
+	</category>
+</customization_form>

@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 1568
+    .line 1628
     invoke-direct {p0}, Lcom/htc/provider/HtcContactsContract$DefaultActionHelper;-><init>()V
 
     return-void

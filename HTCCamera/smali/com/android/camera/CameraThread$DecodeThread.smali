@@ -33,26 +33,26 @@
     .parameter "height"
 
     .prologue
-    .line 4373
+    .line 4397
     iput-object p1, p0, Lcom/android/camera/CameraThread$DecodeThread;->this$0:Lcom/android/camera/CameraThread;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 4371
+    .line 4395
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/camera/CameraThread$DecodeThread;->data:[B
 
-    .line 4374
+    .line 4398
     iput-object p2, p0, Lcom/android/camera/CameraThread$DecodeThread;->data:[B
 
-    .line 4375
+    .line 4399
     iput p3, p0, Lcom/android/camera/CameraThread$DecodeThread;->width:I
 
-    .line 4376
+    .line 4400
     iput p4, p0, Lcom/android/camera/CameraThread$DecodeThread;->height:I
 
-    .line 4378
+    .line 4402
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .locals 6
 
     .prologue
-    .line 4382
+    .line 4406
     iget v1, p0, Lcom/android/camera/CameraThread$DecodeThread;->width:I
 
     iget v2, p0, Lcom/android/camera/CameraThread$DecodeThread;->height:I
@@ -71,20 +71,20 @@
 
     new-array v0, v1, [I
 
-    .line 4389
+    .line 4413
     .local v0, image:[I
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/camera/CameraThread$DecodeThread;->data:[B
 
-    .line 4390
+    .line 4414
     iget-object v1, p0, Lcom/android/camera/CameraThread$DecodeThread;->this$0:Lcom/android/camera/CameraThread;
 
     iget-object v2, v1, Lcom/android/camera/CameraThread;->mSyncObject:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 4391
+    .line 4415
     :try_start_0
     iget-object v1, p0, Lcom/android/camera/CameraThread$DecodeThread;->this$0:Lcom/android/camera/CameraThread;
 
@@ -100,10 +100,10 @@
 
     iput-object v3, v1, Lcom/android/camera/CameraThread;->mOneShotBitmap:Landroid/graphics/Bitmap;
 
-    .line 4392
+    .line 4416
     const/4 v0, 0x0
 
-    .line 4393
+    .line 4417
     const-string v1, "CameraThread"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -130,27 +130,27 @@
 
     invoke-static {v1, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4394
+    .line 4418
     iget-object v1, p0, Lcom/android/camera/CameraThread$DecodeThread;->this$0:Lcom/android/camera/CameraThread;
 
     iget-object v1, v1, Lcom/android/camera/CameraThread;->mSyncObject:Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/Object;->notifyAll()V
 
-    .line 4395
+    .line 4419
     const-string v1, "CameraThread"
 
     const-string v3, "mOneShotBitmap != null - notifyAll()"
 
     invoke-static {v1, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4396
+    .line 4420
     monitor-exit v2
 
-    .line 4397
+    .line 4421
     return-void
 
-    .line 4396
+    .line 4420
     :catchall_0
     move-exception v1
 

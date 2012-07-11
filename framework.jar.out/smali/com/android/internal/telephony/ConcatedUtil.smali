@@ -392,18 +392,15 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 94
     iget-object v4, p0, Lcom/android/internal/telephony/ConcatedUtil;->mResolver:Landroid/content/ContentResolver;
 
     iget-object v5, p0, Lcom/android/internal/telephony/ConcatedUtil;->mRawUri:Landroid/net/Uri;
 
 
-    .line 95
     const/4 v4, -0x1
 
     return v4
 
-    .line 68
     .end local v1           #values:Landroid/content/ContentValues;
     .end local v2           #where:Ljava/lang/StringBuilder;
     .end local v3           #whereArgs:[Ljava/lang/String;

@@ -76,7 +76,7 @@
         <item quantity="one">Red Wi-Fi abierta disponible</item>
     </plurals>
     <plurals name="matches_found">
-        <item quantity="other">%1$d of %2$d</item>
+        <item quantity="other">%1$d de %2$d</item>
         <item quantity="one">1 match</item>
     </plurals>
     <plurals name="wimax_available">

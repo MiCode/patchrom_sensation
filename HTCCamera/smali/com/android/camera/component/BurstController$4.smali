@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 348
+    .line 354
     iput-object p1, p0, Lcom/android/camera/component/BurstController$4;->this$0:Lcom/android/camera/component/BurstController;
 
     iput-object p2, p0, Lcom/android/camera/component/BurstController$4;->val$cameraThread:Lcom/android/camera/CameraThread;
@@ -62,7 +62,7 @@
 
     const/4 v1, 0x0
 
-    .line 351
+    .line 357
     iget-object v0, p0, Lcom/android/camera/component/BurstController$4;->this$0:Lcom/android/camera/component/BurstController;
 
     #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
@@ -95,7 +95,7 @@
 
     invoke-static {v3, v0}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 352
+    .line 358
     iget-object v0, p0, Lcom/android/camera/component/BurstController$4;->val$cameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->isShutterSoundNeeded()Z
@@ -104,7 +104,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 354
+    .line 360
     iget-object v3, p0, Lcom/android/camera/component/BurstController$4;->val$cameraActivity:Lcom/android/camera/HTCCamera;
 
     iget-object v4, p0, Lcom/android/camera/component/BurstController$4;->val$mediaPlayer:Landroid/media/MediaPlayer;
@@ -135,20 +135,20 @@
     :goto_2
     invoke-virtual {v3, v4, v1, v0, v2}, Lcom/android/camera/HTCCamera;->playSound(Landroid/media/MediaPlayer;ZZZ)V
 
-    .line 357
+    .line 363
     :cond_0
     return-void
 
     :cond_1
     move v0, v1
 
-    .line 351
+    .line 357
     goto :goto_0
 
     :cond_2
     move v0, v1
 
-    .line 354
+    .line 360
     goto :goto_1
 
     :cond_3

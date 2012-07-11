@@ -76,8 +76,8 @@
         <item quantity="one">Nyílt Wi-Fi hálózat elérhet</item>
     </plurals>
     <plurals name="matches_found">
-        <item quantity="other">%1$d of %2$d</item>
-        <item quantity="one">1 match</item>
+        <item quantity="other">%1$d/%2$d</item>
+        <item quantity="one">1 találat</item>
     </plurals>
     <plurals name="wimax_available">
         <item quantity="other">WiMAX hálózatok elérhetők</item>

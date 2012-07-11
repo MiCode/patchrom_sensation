@@ -33,7 +33,7 @@
     .locals 2
 
     .prologue
-    .line 2863
+    .line 2923
     sget-object v0, Lcom/htc/provider/HtcContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "status_update_sn"
@@ -51,7 +51,7 @@
     .locals 0
 
     .prologue
-    .line 2789
+    .line 2849
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -64,71 +64,71 @@
     .prologue
     const v0, 0x20804b8
 
-    .line 2823
+    .line 2883
     packed-switch p0, :pswitch_data_0
 
-    .line 2847
+    .line 2907
     const v0, 0x20804bc
 
     :goto_0
     :pswitch_0
     return v0
 
-    .line 2825
+    .line 2885
     :pswitch_1
     const v0, 0x20804bf
 
     goto :goto_0
 
-    .line 2827
+    .line 2887
     :pswitch_2
     const v0, 0x20804b7
 
     goto :goto_0
 
-    .line 2829
+    .line 2889
     :pswitch_3
     const v0, 0x20804b9
 
     goto :goto_0
 
-    .line 2831
+    .line 2891
     :pswitch_4
     const v0, 0x20804b5
 
     goto :goto_0
 
-    .line 2833
+    .line 2893
     :pswitch_5
     const v0, 0x20804bb
 
     goto :goto_0
 
-    .line 2835
+    .line 2895
     :pswitch_6
     const v0, 0x20804be
 
     goto :goto_0
 
-    .line 2837
+    .line 2897
     :pswitch_7
     const v0, 0x20804b4
 
     goto :goto_0
 
-    .line 2843
+    .line 2903
     :pswitch_8
     const v0, 0x20804ba
 
     goto :goto_0
 
-    .line 2845
+    .line 2905
     :pswitch_9
     const v0, 0x20804bd
 
     goto :goto_0
 
-    .line 2823
+    .line 2883
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_9
@@ -150,7 +150,7 @@
     .parameter "status"
 
     .prologue
-    .line 2860
+    .line 2920
     return p0
 .end method
 
@@ -164,10 +164,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2868
+    .line 2928
     const/4 v7, 0x0
 
-    .line 2869
+    .line 2929
     .local v7, needUpdate:Z
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -277,41 +277,41 @@
 
     move-result-object v6
 
-    .line 2876
+    .line 2936
     .local v6, c:Landroid/database/Cursor;
     if-eqz v6, :cond_1
 
-    .line 2877
+    .line 2937
     invoke-interface {v6}, Landroid/database/Cursor;->getCount()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 2878
+    .line 2938
     const/4 v7, 0x1
 
-    .line 2879
+    .line 2939
     const-string v0, "DEBUG"
 
     const-string v1, "-----NEED UPDATE!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2881
+    .line 2941
     :cond_0
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 2885
+    .line 2945
     :cond_1
     if-eqz v7, :cond_2
 
-    .line 2886
+    .line 2946
     new-instance v8, Landroid/content/ContentValues;
 
     invoke-direct {v8}, Landroid/content/ContentValues;-><init>()V
 
-    .line 2887
+    .line 2947
     .local v8, values:Landroid/content/ContentValues;
     const-string v0, "status_label"
 
@@ -321,7 +321,7 @@
 
     invoke-virtual {v8, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 2888
+    .line 2948
     const-string v0, "status_icon"
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -330,7 +330,7 @@
 
     invoke-virtual {v8, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 2889
+    .line 2949
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -363,7 +363,7 @@
 
     invoke-virtual {v0, v1, v8, v2, v4}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 2892
+    .line 2952
     .end local v8           #values:Landroid/content/ContentValues;
     :cond_2
     return-void

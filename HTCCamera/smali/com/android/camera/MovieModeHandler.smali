@@ -417,10 +417,10 @@
     .locals 0
 
     .prologue
-    .line 335
+    .line 357
     invoke-direct {p0}, Lcom/android/camera/ModeHandler;-><init>()V
 
-    .line 337
+    .line 359
     return-void
 .end method
 
@@ -428,19 +428,19 @@
     .locals 1
 
     .prologue
-    .line 341
+    .line 363
     sget-object v0, Lcom/android/camera/MovieModeHandler;->mSingleton:Lcom/android/camera/MovieModeHandler;
 
     if-nez v0, :cond_0
 
-    .line 343
+    .line 365
     new-instance v0, Lcom/android/camera/MovieModeHandler;
 
     invoke-direct {v0}, Lcom/android/camera/MovieModeHandler;-><init>()V
 
     sput-object v0, Lcom/android/camera/MovieModeHandler;->mSingleton:Lcom/android/camera/MovieModeHandler;
 
-    .line 346
+    .line 368
     :cond_0
     sget-object v0, Lcom/android/camera/MovieModeHandler;->mSingleton:Lcom/android/camera/MovieModeHandler;
 
@@ -454,12 +454,12 @@
     .parameter "camera"
 
     .prologue
-    .line 326
+    .line 348
     invoke-virtual {p0, p1}, Lcom/android/camera/MovieModeHandler;->getCurrentResolutionSettingValue(Lcom/android/camera/HTCCamera;)Lcom/android/camera/Resolution;
 
     move-result-object v0
 
-    .line 327
+    .line 349
     .local v0, r:Lcom/android/camera/Resolution;
     sget-object v1, Lcom/android/camera/Resolution;->Video_QCIF:Lcom/android/camera/Resolution;
 
@@ -477,11 +477,11 @@
 
     if-eqz v1, :cond_1
 
-    .line 329
+    .line 351
     :cond_0
     const/4 v1, 0x1
 
-    .line 331
+    .line 353
     :goto_0
     return v1
 
@@ -498,7 +498,7 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 221
+    .line 235
     sget-object v2, Lcom/android/camera/IntentManager$RequestName;->Mms:Lcom/android/camera/IntentManager$RequestName;
 
     invoke-virtual {p1, v2}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
@@ -507,28 +507,28 @@
 
     if-ne v2, v4, :cond_2
 
-    .line 223
+    .line 237
     sget-object v2, Lcom/android/camera/DisplayDevice;->CUSTOM_MMS:Lcom/android/camera/DisplayDevice$CustomMMS;
 
     sget-object v3, Lcom/android/camera/DisplayDevice$CustomMMS;->Verizon:Lcom/android/camera/DisplayDevice$CustomMMS;
 
     if-ne v2, v3, :cond_1
 
-    .line 225
+    .line 239
     invoke-static {}, Lcom/android/camera/IntentManager;->getMMS_isVideoQVGA()Z
 
     move-result v2
 
     if-ne v2, v4, :cond_0
 
-    .line 226
+    .line 240
     const-string v2, "MovieModeHandler"
 
     const-string v3, "Mms custom request - QVGA"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 227
+    .line 241
     sget-object v2, Lcom/android/camera/Resolution;->Video_QVGA_Service:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -539,11 +539,11 @@
 
     move-result-object v2
 
-    .line 313
+    .line 335
     :goto_0
     return-object v2
 
-    .line 229
+    .line 243
     :cond_0
     const-string v2, "MovieModeHandler"
 
@@ -551,7 +551,7 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 230
+    .line 244
     sget-object v2, Lcom/android/camera/Resolution;->Video_QCIF_Service:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -564,7 +564,7 @@
 
     goto :goto_0
 
-    .line 233
+    .line 247
     :cond_1
     const-string v2, "MovieModeHandler"
 
@@ -572,7 +572,7 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 234
+    .line 248
     sget-object v2, Lcom/android/camera/Resolution;->Video_QCIF_Service:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -585,7 +585,7 @@
 
     goto :goto_0
 
-    .line 236
+    .line 250
     :cond_2
     sget-object v2, Lcom/android/camera/IntentManager$RequestName;->CU:Lcom/android/camera/IntentManager$RequestName;
 
@@ -595,14 +595,14 @@
 
     if-ne v2, v4, :cond_3
 
-    .line 238
+    .line 252
     const-string v2, "MovieModeHandler"
 
     const-string v3, "CU request - resolution setting is QCIF"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 239
+    .line 253
     sget-object v2, Lcom/android/camera/Resolution;->Video_QCIF_Service:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -615,7 +615,7 @@
 
     goto :goto_0
 
-    .line 242
+    .line 256
     :cond_3
     sget-object v2, Lcom/android/camera/IntentManager$RequestName;->Notes:Lcom/android/camera/IntentManager$RequestName;
 
@@ -625,21 +625,21 @@
 
     if-ne v2, v4, :cond_6
 
-    .line 244
+    .line 258
     invoke-virtual {p1}, Lcom/android/camera/HTCCamera;->RequestVideoQualityLevel()I
 
     move-result v2
 
     if-ne v2, v4, :cond_5
 
-    .line 245
+    .line 259
     invoke-static {}, Lcom/android/camera/DisplayDevice;->support720p()Z
 
     move-result v2
 
     if-eqz v2, :cond_4
 
-    .line 246
+    .line 260
     sget-object v2, Lcom/android/camera/Resolution;->Video_720p:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -652,7 +652,7 @@
 
     goto :goto_0
 
-    .line 248
+    .line 262
     :cond_4
     sget-object v2, Lcom/android/camera/Resolution;->Video_VGA:Lcom/android/camera/Resolution;
 
@@ -666,7 +666,7 @@
 
     goto :goto_0
 
-    .line 251
+    .line 265
     :cond_5
     sget-object v2, Lcom/android/camera/Resolution;->Video_QCIF_Service:Lcom/android/camera/Resolution;
 
@@ -680,7 +680,7 @@
 
     goto :goto_0
 
-    .line 253
+    .line 267
     :cond_6
     sget-object v2, Lcom/android/camera/IntentManager$RequestName;->Unknown_Service:Lcom/android/camera/IntentManager$RequestName;
 
@@ -688,71 +688,58 @@
 
     move-result v2
 
-    if-ne v2, v4, :cond_b
+    if-ne v2, v4, :cond_d
 
     invoke-static {}, Lcom/android/camera/IntentManager;->hasVideoQuality()Z
 
     move-result v2
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_d
 
-    .line 256
+    .line 270
     invoke-virtual {p1}, Lcom/android/camera/HTCCamera;->RequestVideoQualityLevel()I
 
     move-result v2
 
-    if-ne v2, v4, :cond_a
+    if-ne v2, v4, :cond_c
 
-    .line 258
-    sget-object v2, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
+    .line 272
+    invoke-virtual {p0, p1}, Lcom/android/camera/MovieModeHandler;->getResolutionSettingString(Lcom/android/camera/HTCCamera;)Ljava/lang/String;
 
-    sget-object v3, Lcom/android/camera/DisplayDevice$Resolution;->QHD:Lcom/android/camera/DisplayDevice$Resolution;
+    move-result-object v0
 
-    if-eq v2, v3, :cond_7
+    .line 273
+    .local v0, key:Ljava/lang/String;
+    const-string v2, "pref_capture_resolution_video_2nd"
 
-    sget-object v2, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    sget-object v3, Lcom/android/camera/DisplayDevice$Resolution;->HD:Lcom/android/camera/DisplayDevice$Resolution;
+    move-result v2
 
-    if-ne v2, v3, :cond_8
+    if-eqz v2, :cond_8
 
-    .line 260
+    .line 275
+    invoke-static {}, Lcom/android/camera/DisplayDevice;->support720p2ndCam()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_7
+
+    .line 276
+    sget-object v2, Lcom/android/camera/Resolution;->Video_720p:Lcom/android/camera/Resolution;
+
+    invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p1, v2}, Lcom/android/camera/Resolution;->getResolution(Landroid/content/Context;Ljava/lang/String;)Lcom/android/camera/Resolution;
+
+    move-result-object v2
+
+    goto/16 :goto_0
+
+    .line 278
     :cond_7
-    sget-object v2, Lcom/android/camera/Resolution;->Video_QHD:Lcom/android/camera/Resolution;
-
-    invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {p1, v2}, Lcom/android/camera/Resolution;->getResolution(Landroid/content/Context;Ljava/lang/String;)Lcom/android/camera/Resolution;
-
-    move-result-object v2
-
-    goto/16 :goto_0
-
-    .line 261
-    :cond_8
-    sget-object v2, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
-
-    sget-object v3, Lcom/android/camera/DisplayDevice$Resolution;->WVGA:Lcom/android/camera/DisplayDevice$Resolution;
-
-    if-ne v2, v3, :cond_9
-
-    .line 262
-    sget-object v2, Lcom/android/camera/Resolution;->Video_WVGA:Lcom/android/camera/Resolution;
-
-    invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {p1, v2}, Lcom/android/camera/Resolution;->getResolution(Landroid/content/Context;Ljava/lang/String;)Lcom/android/camera/Resolution;
-
-    move-result-object v2
-
-    goto/16 :goto_0
-
-    .line 264
-    :cond_9
     sget-object v2, Lcom/android/camera/Resolution;->Video_VGA:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -765,8 +752,72 @@
 
     goto/16 :goto_0
 
-    .line 267
+    .line 280
+    :cond_8
+    sget-object v2, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
+
+    sget-object v3, Lcom/android/camera/DisplayDevice$Resolution;->QHD:Lcom/android/camera/DisplayDevice$Resolution;
+
+    if-eq v2, v3, :cond_9
+
+    sget-object v2, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
+
+    sget-object v3, Lcom/android/camera/DisplayDevice$Resolution;->HD:Lcom/android/camera/DisplayDevice$Resolution;
+
+    if-ne v2, v3, :cond_a
+
+    .line 282
+    :cond_9
+    sget-object v2, Lcom/android/camera/Resolution;->Video_QHD:Lcom/android/camera/Resolution;
+
+    invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p1, v2}, Lcom/android/camera/Resolution;->getResolution(Landroid/content/Context;Ljava/lang/String;)Lcom/android/camera/Resolution;
+
+    move-result-object v2
+
+    goto/16 :goto_0
+
+    .line 283
     :cond_a
+    sget-object v2, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
+
+    sget-object v3, Lcom/android/camera/DisplayDevice$Resolution;->WVGA:Lcom/android/camera/DisplayDevice$Resolution;
+
+    if-ne v2, v3, :cond_b
+
+    .line 284
+    sget-object v2, Lcom/android/camera/Resolution;->Video_WVGA:Lcom/android/camera/Resolution;
+
+    invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p1, v2}, Lcom/android/camera/Resolution;->getResolution(Landroid/content/Context;Ljava/lang/String;)Lcom/android/camera/Resolution;
+
+    move-result-object v2
+
+    goto/16 :goto_0
+
+    .line 286
+    :cond_b
+    sget-object v2, Lcom/android/camera/Resolution;->Video_VGA:Lcom/android/camera/Resolution;
+
+    invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p1, v2}, Lcom/android/camera/Resolution;->getResolution(Landroid/content/Context;Ljava/lang/String;)Lcom/android/camera/Resolution;
+
+    move-result-object v2
+
+    goto/16 :goto_0
+
+    .line 289
+    .end local v0           #key:Ljava/lang/String;
+    :cond_c
     sget-object v2, Lcom/android/camera/Resolution;->Video_QCIF_Service:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -779,21 +830,21 @@
 
     goto/16 :goto_0
 
-    .line 274
-    :cond_b
+    .line 296
+    :cond_d
     invoke-virtual {p0, p1}, Lcom/android/camera/MovieModeHandler;->getResolutionSettingString(Lcom/android/camera/HTCCamera;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 275
-    .local v0, key:Ljava/lang/String;
+    .line 297
+    .restart local v0       #key:Ljava/lang/String;
     invoke-static {p1, v0}, Lcom/android/camera/HTCCameraAdvanceSetting;->getPrefenceValue(Landroid/app/Activity;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 276
+    .line 298
     .local v1, value:Ljava/lang/String;
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_e
 
     const-string v2, "null"
 
@@ -801,52 +852,52 @@
 
     move-result v2
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_f
 
-    .line 278
-    :cond_c
+    .line 300
+    :cond_e
     const-string v2, "pref_capture_resolution_video_2nd"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_11
 
-    .line 280
+    .line 302
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDefaultQuality720p()Z
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_10
 
     sget-short v2, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
     const/16 v3, 0xa9
 
-    if-eq v2, v3, :cond_e
+    if-eq v2, v3, :cond_10
 
-    .line 281
+    .line 303
     sget-object v2, Lcom/android/camera/Resolution;->Video_720p:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 309
+    .line 331
     :goto_1
     invoke-static {p1, v0, v1}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 313
-    :cond_d
+    .line 335
+    :cond_f
     invoke-static {p1, v1}, Lcom/android/camera/Resolution;->getResolution(Landroid/content/Context;Ljava/lang/String;)Lcom/android/camera/Resolution;
 
     move-result-object v2
 
     goto/16 :goto_0
 
-    .line 283
-    :cond_e
+    .line 305
+    :cond_10
     sget-object v2, Lcom/android/camera/Resolution;->Video_VGA:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -855,17 +906,17 @@
 
     goto :goto_1
 
-    .line 286
-    :cond_f
+    .line 308
+    :cond_11
     const-string v2, "pref_capture_resolution_video_3D"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_12
 
-    .line 288
+    .line 310
     sget-object v2, Lcom/android/camera/Resolution;->Video_720P_3D:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -874,15 +925,15 @@
 
     goto :goto_1
 
-    .line 291
-    :cond_10
+    .line 313
+    :cond_12
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDefaultQuality1080pMainCam()Z
 
     move-result v2
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_13
 
-    .line 292
+    .line 314
     sget-object v2, Lcom/android/camera/Resolution;->Video_1080p:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -891,15 +942,15 @@
 
     goto :goto_1
 
-    .line 293
-    :cond_11
+    .line 315
+    :cond_13
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDefaultQuality720p()Z
 
     move-result v2
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_14
 
-    .line 294
+    .line 316
     sget-object v2, Lcom/android/camera/Resolution;->Video_720p:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -908,15 +959,15 @@
 
     goto :goto_1
 
-    .line 295
-    :cond_12
+    .line 317
+    :cond_14
     sget-object v2, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
 
     sget-object v3, Lcom/android/camera/DisplayDevice$Resolution;->WVGA:Lcom/android/camera/DisplayDevice$Resolution;
 
-    if-ne v2, v3, :cond_13
+    if-ne v2, v3, :cond_15
 
-    .line 296
+    .line 318
     sget-object v2, Lcom/android/camera/Resolution;->Video_WVGA:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -925,15 +976,15 @@
 
     goto :goto_1
 
-    .line 297
-    :cond_13
+    .line 319
+    :cond_15
     sget-object v2, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
 
     sget-object v3, Lcom/android/camera/DisplayDevice$Resolution;->QHD:Lcom/android/camera/DisplayDevice$Resolution;
 
-    if-ne v2, v3, :cond_14
+    if-ne v2, v3, :cond_16
 
-    .line 298
+    .line 320
     sget-object v2, Lcom/android/camera/Resolution;->Video_QHD:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -942,22 +993,22 @@
 
     goto :goto_1
 
-    .line 299
-    :cond_14
+    .line 321
+    :cond_16
     sget-object v2, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
 
     sget-object v3, Lcom/android/camera/DisplayDevice$Resolution;->HVGA:Lcom/android/camera/DisplayDevice$Resolution;
 
-    if-ne v2, v3, :cond_16
+    if-ne v2, v3, :cond_18
 
-    .line 301
+    .line 323
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportHVGARecording()Z
 
     move-result v2
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_17
 
-    .line 302
+    .line 324
     sget-object v2, Lcom/android/camera/Resolution;->Video_HVGA:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -966,8 +1017,8 @@
 
     goto :goto_1
 
-    .line 304
-    :cond_15
+    .line 326
+    :cond_17
     sget-object v2, Lcom/android/camera/Resolution;->Video_VGA:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -976,8 +1027,8 @@
 
     goto :goto_1
 
-    .line 307
-    :cond_16
+    .line 329
+    :cond_18
     sget-object v2, Lcom/android/camera/Resolution;->Video_VGA:Lcom/android/camera/Resolution;
 
     invoke-virtual {v2}, Lcom/android/camera/Resolution;->getKeyName()Ljava/lang/String;
@@ -988,7 +1039,7 @@
 .end method
 
 .method public getResolutionMenuItem(Lcom/android/camera/HTCCamera;)Ljava/util/LinkedList;
-    .locals 7
+    .locals 8
     .parameter "camera"
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1003,7 +1054,7 @@
     .end annotation
 
     .prologue
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
     .line 118
     new-instance v3, Ljava/util/LinkedList;
@@ -1012,453 +1063,514 @@
 
     .line 121
     .local v3, items:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/android/camera/ResolutionMenuItem;>;"
-    sget-object v5, Lcom/android/camera/IntentManager$RequestName;->Mms:Lcom/android/camera/IntentManager$RequestName;
+    sget-object v6, Lcom/android/camera/IntentManager$RequestName;->Mms:Lcom/android/camera/IntentManager$RequestName;
 
-    invoke-virtual {p1, v5}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
+    invoke-virtual {p1, v6}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
 
-    move-result v5
+    move-result v6
 
-    if-ne v5, v6, :cond_1
+    if-ne v6, v7, :cond_1
 
     .line 122
-    const-string v5, "MovieModeHandler"
+    const-string v6, "MovieModeHandler"
 
-    const-string v6, "Mms request - resolution menu has only QCIF"
+    const-string v7, "Mms request - resolution menu has only QCIF"
 
-    invoke-static {v5, v6}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v6, v7}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 123
-    sget-object v4, Lcom/android/camera/Resolution;->Video_QCIF_Service:Lcom/android/camera/Resolution;
+    sget-object v5, Lcom/android/camera/Resolution;->Video_QCIF_Service:Lcom/android/camera/Resolution;
 
     .line 124
-    .local v4, r:Lcom/android/camera/Resolution;
-    new-instance v5, Lcom/android/camera/ResolutionMenuItem;
+    .local v5, r:Lcom/android/camera/Resolution;
+    new-instance v6, Lcom/android/camera/ResolutionMenuItem;
 
-    invoke-virtual {v4}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+    invoke-virtual {v5}, Lcom/android/camera/Resolution;->getResolutionDescription()I
 
-    move-result v6
+    move-result v7
 
-    invoke-direct {v5, v4, v6}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+    invoke-direct {v6, v5, v7}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
 
-    invoke-virtual {v3, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v6}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     .line 125
-    sget-object v5, Lcom/android/camera/DisplayDevice;->CUSTOM_MMS:Lcom/android/camera/DisplayDevice$CustomMMS;
+    sget-object v6, Lcom/android/camera/DisplayDevice;->CUSTOM_MMS:Lcom/android/camera/DisplayDevice$CustomMMS;
 
-    sget-object v6, Lcom/android/camera/DisplayDevice$CustomMMS;->Verizon:Lcom/android/camera/DisplayDevice$CustomMMS;
+    sget-object v7, Lcom/android/camera/DisplayDevice$CustomMMS;->Verizon:Lcom/android/camera/DisplayDevice$CustomMMS;
 
-    if-ne v5, v6, :cond_0
+    if-ne v6, v7, :cond_0
 
     .line 126
-    sget-object v4, Lcom/android/camera/Resolution;->Video_QVGA_Service:Lcom/android/camera/Resolution;
+    sget-object v5, Lcom/android/camera/Resolution;->Video_QVGA_Service:Lcom/android/camera/Resolution;
 
     .line 127
-    new-instance v5, Lcom/android/camera/ResolutionMenuItem;
+    new-instance v6, Lcom/android/camera/ResolutionMenuItem;
 
-    invoke-virtual {v4}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+    invoke-virtual {v5}, Lcom/android/camera/Resolution;->getResolutionDescription()I
 
-    move-result v6
+    move-result v7
 
-    invoke-direct {v5, v4, v6}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+    invoke-direct {v6, v5, v7}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
 
-    invoke-virtual {v3, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v6}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 214
-    .end local v4           #r:Lcom/android/camera/Resolution;
+    .line 228
+    .end local v5           #r:Lcom/android/camera/Resolution;
     :cond_0
     :goto_0
     return-object v3
 
     .line 131
     :cond_1
-    sget-object v5, Lcom/android/camera/IntentManager$RequestName;->CU:Lcom/android/camera/IntentManager$RequestName;
+    sget-object v6, Lcom/android/camera/IntentManager$RequestName;->CU:Lcom/android/camera/IntentManager$RequestName;
 
-    invoke-virtual {p1, v5}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
-
-    move-result v5
-
-    if-ne v5, v6, :cond_2
-
-    .line 133
-    const-string v5, "MovieModeHandler"
-
-    const-string v6, "CU request - resolution menu has only QCIF"
-
-    invoke-static {v5, v6}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 134
-    sget-object v4, Lcom/android/camera/Resolution;->Video_QCIF_Service:Lcom/android/camera/Resolution;
-
-    .line 135
-    .restart local v4       #r:Lcom/android/camera/Resolution;
-    new-instance v5, Lcom/android/camera/ResolutionMenuItem;
-
-    invoke-virtual {v4}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+    invoke-virtual {p1, v6}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
 
     move-result v6
 
-    invoke-direct {v5, v4, v6}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+    if-ne v6, v7, :cond_2
 
-    invoke-virtual {v3, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    .line 133
+    const-string v6, "MovieModeHandler"
+
+    const-string v7, "CU request - resolution menu has only QCIF"
+
+    invoke-static {v6, v7}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 134
+    sget-object v5, Lcom/android/camera/Resolution;->Video_QCIF_Service:Lcom/android/camera/Resolution;
+
+    .line 135
+    .restart local v5       #r:Lcom/android/camera/Resolution;
+    new-instance v6, Lcom/android/camera/ResolutionMenuItem;
+
+    invoke-virtual {v5}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+
+    move-result v7
+
+    invoke-direct {v6, v5, v7}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+
+    invoke-virtual {v3, v6}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     .line 139
-    .end local v4           #r:Lcom/android/camera/Resolution;
+    .end local v5           #r:Lcom/android/camera/Resolution;
     :cond_2
-    sget-object v5, Lcom/android/camera/IntentManager$RequestName;->Notes:Lcom/android/camera/IntentManager$RequestName;
+    sget-object v6, Lcom/android/camera/IntentManager$RequestName;->Notes:Lcom/android/camera/IntentManager$RequestName;
 
-    invoke-virtual {p1, v5}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
+    invoke-virtual {p1, v6}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
 
-    move-result v5
+    move-result v6
 
-    if-ne v5, v6, :cond_5
+    if-ne v6, v7, :cond_5
 
     .line 141
     invoke-virtual {p1}, Lcom/android/camera/HTCCamera;->RequestVideoQualityLevel()I
 
-    move-result v5
+    move-result v6
 
-    if-ne v5, v6, :cond_4
+    if-ne v6, v7, :cond_4
 
     .line 142
     invoke-static {}, Lcom/android/camera/DisplayDevice;->support720p()Z
 
-    move-result v5
-
-    if-eqz v5, :cond_3
-
-    .line 144
-    sget-object v4, Lcom/android/camera/Resolution;->Video_720p:Lcom/android/camera/Resolution;
-
-    .line 145
-    .restart local v4       #r:Lcom/android/camera/Resolution;
-    new-instance v5, Lcom/android/camera/ResolutionMenuItem;
-
-    invoke-virtual {v4}, Lcom/android/camera/Resolution;->getResolutionDescription()I
-
     move-result v6
 
-    invoke-direct {v5, v4, v6}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+    if-eqz v6, :cond_3
 
-    invoke-virtual {v3, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    .line 144
+    sget-object v5, Lcom/android/camera/Resolution;->Video_720p:Lcom/android/camera/Resolution;
+
+    .line 145
+    .restart local v5       #r:Lcom/android/camera/Resolution;
+    new-instance v6, Lcom/android/camera/ResolutionMenuItem;
+
+    invoke-virtual {v5}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+
+    move-result v7
+
+    invoke-direct {v6, v5, v7}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+
+    invoke-virtual {v3, v6}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     .line 149
-    .end local v4           #r:Lcom/android/camera/Resolution;
+    .end local v5           #r:Lcom/android/camera/Resolution;
     :cond_3
-    sget-object v4, Lcom/android/camera/Resolution;->VGA:Lcom/android/camera/Resolution;
+    sget-object v5, Lcom/android/camera/Resolution;->VGA:Lcom/android/camera/Resolution;
 
     .line 150
-    .restart local v4       #r:Lcom/android/camera/Resolution;
-    new-instance v5, Lcom/android/camera/ResolutionMenuItem;
+    .restart local v5       #r:Lcom/android/camera/Resolution;
+    new-instance v6, Lcom/android/camera/ResolutionMenuItem;
 
-    invoke-virtual {v4}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+    invoke-virtual {v5}, Lcom/android/camera/Resolution;->getResolutionDescription()I
 
-    move-result v6
+    move-result v7
 
-    invoke-direct {v5, v4, v6}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+    invoke-direct {v6, v5, v7}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
 
-    invoke-virtual {v3, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v6}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     .line 154
-    .end local v4           #r:Lcom/android/camera/Resolution;
+    .end local v5           #r:Lcom/android/camera/Resolution;
     :cond_4
-    sget-object v4, Lcom/android/camera/Resolution;->Video_QCIF_Service:Lcom/android/camera/Resolution;
+    sget-object v5, Lcom/android/camera/Resolution;->Video_QCIF_Service:Lcom/android/camera/Resolution;
 
     .line 155
-    .restart local v4       #r:Lcom/android/camera/Resolution;
-    new-instance v5, Lcom/android/camera/ResolutionMenuItem;
+    .restart local v5       #r:Lcom/android/camera/Resolution;
+    new-instance v6, Lcom/android/camera/ResolutionMenuItem;
 
-    invoke-virtual {v4}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+    invoke-virtual {v5}, Lcom/android/camera/Resolution;->getResolutionDescription()I
 
-    move-result v6
+    move-result v7
 
-    invoke-direct {v5, v4, v6}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+    invoke-direct {v6, v5, v7}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
 
-    invoke-virtual {v3, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v6}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     .line 159
-    .end local v4           #r:Lcom/android/camera/Resolution;
+    .end local v5           #r:Lcom/android/camera/Resolution;
     :cond_5
-    sget-object v5, Lcom/android/camera/IntentManager$RequestName;->Unknown_Service:Lcom/android/camera/IntentManager$RequestName;
+    sget-object v6, Lcom/android/camera/IntentManager$RequestName;->Unknown_Service:Lcom/android/camera/IntentManager$RequestName;
 
-    invoke-virtual {p1, v5}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
+    invoke-virtual {p1, v6}, Lcom/android/camera/HTCCamera;->isRequestName(Lcom/android/camera/IntentManager$RequestName;)Z
 
-    move-result v5
+    move-result v6
 
-    if-ne v5, v6, :cond_a
+    if-ne v6, v7, :cond_c
 
     invoke-static {}, Lcom/android/camera/IntentManager;->hasVideoQuality()Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_a
+    if-eqz v6, :cond_c
 
     .line 162
     invoke-virtual {p1}, Lcom/android/camera/HTCCamera;->RequestVideoQualityLevel()I
 
-    move-result v5
+    move-result v6
 
-    if-ne v5, v6, :cond_9
+    if-ne v6, v7, :cond_b
 
     .line 164
-    sget-object v5, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
+    invoke-virtual {p0, p1}, Lcom/android/camera/MovieModeHandler;->getResolutionSettingString(Lcom/android/camera/HTCCamera;)Ljava/lang/String;
 
-    sget-object v6, Lcom/android/camera/DisplayDevice$Resolution;->QHD:Lcom/android/camera/DisplayDevice$Resolution;
+    move-result-object v4
 
-    if-eq v5, v6, :cond_6
+    .line 165
+    .local v4, key:Ljava/lang/String;
+    const-string v6, "pref_capture_resolution_video_2nd"
 
-    sget-object v5, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
+    invoke-virtual {v4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    sget-object v6, Lcom/android/camera/DisplayDevice$Resolution;->HD:Lcom/android/camera/DisplayDevice$Resolution;
+    move-result v6
 
-    if-ne v5, v6, :cond_7
+    if-eqz v6, :cond_7
 
     .line 167
-    :cond_6
-    sget-object v4, Lcom/android/camera/Resolution;->Video_QHD:Lcom/android/camera/Resolution;
+    invoke-static {}, Lcom/android/camera/DisplayDevice;->support720p2ndCam()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_6
 
     .line 168
-    .restart local v4       #r:Lcom/android/camera/Resolution;
-    new-instance v5, Lcom/android/camera/ResolutionMenuItem;
+    sget-object v5, Lcom/android/camera/Resolution;->Video_720p:Lcom/android/camera/Resolution;
 
-    invoke-virtual {v4}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+    .line 169
+    .restart local v5       #r:Lcom/android/camera/Resolution;
+    new-instance v6, Lcom/android/camera/ResolutionMenuItem;
 
-    move-result v6
+    invoke-virtual {v5}, Lcom/android/camera/Resolution;->getResolutionDescription()I
 
-    invoke-direct {v5, v4, v6}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+    move-result v7
 
-    invoke-virtual {v3, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    invoke-direct {v6, v5, v7}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+
+    invoke-virtual {v3, v6}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_0
-
-    .line 171
-    .end local v4           #r:Lcom/android/camera/Resolution;
-    :cond_7
-    sget-object v5, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
-
-    sget-object v6, Lcom/android/camera/DisplayDevice$Resolution;->WVGA:Lcom/android/camera/DisplayDevice$Resolution;
-
-    if-ne v5, v6, :cond_8
 
     .line 173
-    sget-object v4, Lcom/android/camera/Resolution;->Video_WVGA:Lcom/android/camera/Resolution;
+    .end local v5           #r:Lcom/android/camera/Resolution;
+    :cond_6
+    sget-object v5, Lcom/android/camera/Resolution;->Video_VGA:Lcom/android/camera/Resolution;
 
     .line 174
-    .restart local v4       #r:Lcom/android/camera/Resolution;
-    new-instance v5, Lcom/android/camera/ResolutionMenuItem;
+    .restart local v5       #r:Lcom/android/camera/Resolution;
+    new-instance v6, Lcom/android/camera/ResolutionMenuItem;
 
-    invoke-virtual {v4}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+    invoke-virtual {v5}, Lcom/android/camera/Resolution;->getResolutionDescription()I
 
-    move-result v6
+    move-result v7
 
-    invoke-direct {v5, v4, v6}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+    invoke-direct {v6, v5, v7}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
 
-    invoke-virtual {v3, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v6}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_0
 
-    .line 179
-    .end local v4           #r:Lcom/android/camera/Resolution;
+    .line 178
+    .end local v5           #r:Lcom/android/camera/Resolution;
+    :cond_7
+    sget-object v6, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
+
+    sget-object v7, Lcom/android/camera/DisplayDevice$Resolution;->QHD:Lcom/android/camera/DisplayDevice$Resolution;
+
+    if-eq v6, v7, :cond_8
+
+    sget-object v6, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
+
+    sget-object v7, Lcom/android/camera/DisplayDevice$Resolution;->HD:Lcom/android/camera/DisplayDevice$Resolution;
+
+    if-ne v6, v7, :cond_9
+
+    .line 181
     :cond_8
-    sget-object v4, Lcom/android/camera/Resolution;->VGA:Lcom/android/camera/Resolution;
+    sget-object v5, Lcom/android/camera/Resolution;->Video_QHD:Lcom/android/camera/Resolution;
 
-    .line 180
-    .restart local v4       #r:Lcom/android/camera/Resolution;
-    new-instance v5, Lcom/android/camera/ResolutionMenuItem;
+    .line 182
+    .restart local v5       #r:Lcom/android/camera/Resolution;
+    new-instance v6, Lcom/android/camera/ResolutionMenuItem;
 
-    invoke-virtual {v4}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+    invoke-virtual {v5}, Lcom/android/camera/Resolution;->getResolutionDescription()I
 
-    move-result v6
+    move-result v7
 
-    invoke-direct {v5, v4, v6}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+    invoke-direct {v6, v5, v7}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
 
-    invoke-virtual {v3, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v6}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_0
 
     .line 185
-    .end local v4           #r:Lcom/android/camera/Resolution;
+    .end local v5           #r:Lcom/android/camera/Resolution;
     :cond_9
-    sget-object v4, Lcom/android/camera/Resolution;->Video_QCIF_Service:Lcom/android/camera/Resolution;
+    sget-object v6, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
 
-    .line 186
-    .restart local v4       #r:Lcom/android/camera/Resolution;
-    new-instance v5, Lcom/android/camera/ResolutionMenuItem;
+    sget-object v7, Lcom/android/camera/DisplayDevice$Resolution;->WVGA:Lcom/android/camera/DisplayDevice$Resolution;
 
-    invoke-virtual {v4}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+    if-ne v6, v7, :cond_a
 
-    move-result v6
+    .line 187
+    sget-object v5, Lcom/android/camera/Resolution;->Video_WVGA:Lcom/android/camera/Resolution;
 
-    invoke-direct {v5, v4, v6}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+    .line 188
+    .restart local v5       #r:Lcom/android/camera/Resolution;
+    new-instance v6, Lcom/android/camera/ResolutionMenuItem;
 
-    invoke-virtual {v3, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v5}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+
+    move-result v7
+
+    invoke-direct {v6, v5, v7}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+
+    invoke-virtual {v3, v6}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_0
 
-    .line 191
-    .end local v4           #r:Lcom/android/camera/Resolution;
+    .line 193
+    .end local v5           #r:Lcom/android/camera/Resolution;
     :cond_a
-    const-string v5, "pref_camera_switch"
+    sget-object v5, Lcom/android/camera/Resolution;->VGA:Lcom/android/camera/Resolution;
 
-    invoke-static {p1, v5}, Lcom/android/camera/HTCCameraAdvanceSetting;->getPrefenceBoolean(Landroid/app/Activity;Ljava/lang/String;)Ljava/lang/Boolean;
+    .line 194
+    .restart local v5       #r:Lcom/android/camera/Resolution;
+    new-instance v6, Lcom/android/camera/ResolutionMenuItem;
 
-    move-result-object v5
+    invoke-virtual {v5}, Lcom/android/camera/Resolution;->getResolutionDescription()I
 
-    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result v7
+
+    invoke-direct {v6, v5, v7}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+
+    invoke-virtual {v3, v6}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_0
+
+    .line 199
+    .end local v4           #key:Ljava/lang/String;
+    .end local v5           #r:Lcom/android/camera/Resolution;
+    :cond_b
+    sget-object v5, Lcom/android/camera/Resolution;->Video_QCIF_Service:Lcom/android/camera/Resolution;
+
+    .line 200
+    .restart local v5       #r:Lcom/android/camera/Resolution;
+    new-instance v6, Lcom/android/camera/ResolutionMenuItem;
+
+    invoke-virtual {v5}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+
+    move-result v7
+
+    invoke-direct {v6, v5, v7}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+
+    invoke-virtual {v3, v6}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_0
+
+    .line 205
+    .end local v5           #r:Lcom/android/camera/Resolution;
+    :cond_c
+    const-string v6, "pref_camera_switch"
+
+    invoke-static {p1, v6}, Lcom/android/camera/HTCCameraAdvanceSetting;->getPrefenceBoolean(Landroid/app/Activity;Ljava/lang/String;)Ljava/lang/Boolean;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    .line 192
+    .line 206
     .local v1, bSwitchCamera:Z
-    const-string v5, "pref_camera_3D_status"
+    const-string v6, "pref_camera_3D_status"
 
-    invoke-static {p1, v5}, Lcom/android/camera/HTCCameraAdvanceSetting;->getPrefenceBoolean(Landroid/app/Activity;Ljava/lang/String;)Ljava/lang/Boolean;
+    invoke-static {p1, v6}, Lcom/android/camera/HTCCameraAdvanceSetting;->getPrefenceBoolean(Landroid/app/Activity;Ljava/lang/String;)Ljava/lang/Boolean;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v6}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
-    .line 194
+    .line 208
     .local v0, bIs3DMode:Z
-    if-ne v1, v6, :cond_b
+    if-ne v1, v7, :cond_d
 
-    .line 195
+    .line 209
     const/4 v2, 0x0
 
     .local v2, i:I
     :goto_1
-    sget-object v5, Lcom/android/camera/MovieModeHandler;->mResolutionSet_2nd:Ljava/util/LinkedList;
+    sget-object v6, Lcom/android/camera/MovieModeHandler;->mResolutionSet_2nd:Ljava/util/LinkedList;
 
-    invoke-virtual {v5}, Ljava/util/LinkedList;->size()I
-
-    move-result v5
-
-    if-ge v2, v5, :cond_0
-
-    .line 196
-    sget-object v5, Lcom/android/camera/MovieModeHandler;->mResolutionSet_2nd:Ljava/util/LinkedList;
-
-    invoke-virtual {v5, v2}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/android/camera/Resolution;
-
-    .line 197
-    .restart local v4       #r:Lcom/android/camera/Resolution;
-    new-instance v5, Lcom/android/camera/ResolutionMenuItem;
-
-    invoke-virtual {v4}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+    invoke-virtual {v6}, Ljava/util/LinkedList;->size()I
 
     move-result v6
 
-    invoke-direct {v5, v4, v6}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+    if-ge v2, v6, :cond_0
 
-    invoke-virtual {v3, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    .line 210
+    sget-object v6, Lcom/android/camera/MovieModeHandler;->mResolutionSet_2nd:Ljava/util/LinkedList;
 
-    .line 195
+    invoke-virtual {v6, v2}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/android/camera/Resolution;
+
+    .line 211
+    .restart local v5       #r:Lcom/android/camera/Resolution;
+    new-instance v6, Lcom/android/camera/ResolutionMenuItem;
+
+    invoke-virtual {v5}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+
+    move-result v7
+
+    invoke-direct {v6, v5, v7}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+
+    invoke-virtual {v3, v6}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+
+    .line 209
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 201
+    .line 215
     .end local v2           #i:I
-    .end local v4           #r:Lcom/android/camera/Resolution;
-    :cond_b
+    .end local v5           #r:Lcom/android/camera/Resolution;
+    :cond_d
     invoke-static {}, Lcom/android/camera/DisplayDevice;->support3DCamera()Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_c
+    if-eqz v6, :cond_e
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_e
 
-    .line 203
+    .line 217
     const/4 v2, 0x0
 
     .restart local v2       #i:I
     :goto_2
-    sget-object v5, Lcom/android/camera/MovieModeHandler;->mResolutionSet_3D:Ljava/util/LinkedList;
+    sget-object v6, Lcom/android/camera/MovieModeHandler;->mResolutionSet_3D:Ljava/util/LinkedList;
 
-    invoke-virtual {v5}, Ljava/util/LinkedList;->size()I
-
-    move-result v5
-
-    if-ge v2, v5, :cond_0
-
-    .line 204
-    sget-object v5, Lcom/android/camera/MovieModeHandler;->mResolutionSet_3D:Ljava/util/LinkedList;
-
-    invoke-virtual {v5, v2}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/android/camera/Resolution;
-
-    .line 205
-    .restart local v4       #r:Lcom/android/camera/Resolution;
-    new-instance v5, Lcom/android/camera/ResolutionMenuItem;
-
-    invoke-virtual {v4}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+    invoke-virtual {v6}, Ljava/util/LinkedList;->size()I
 
     move-result v6
 
-    invoke-direct {v5, v4, v6}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+    if-ge v2, v6, :cond_0
 
-    invoke-virtual {v3, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    .line 218
+    sget-object v6, Lcom/android/camera/MovieModeHandler;->mResolutionSet_3D:Ljava/util/LinkedList;
 
-    .line 203
+    invoke-virtual {v6, v2}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/android/camera/Resolution;
+
+    .line 219
+    .restart local v5       #r:Lcom/android/camera/Resolution;
+    new-instance v6, Lcom/android/camera/ResolutionMenuItem;
+
+    invoke-virtual {v5}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+
+    move-result v7
+
+    invoke-direct {v6, v5, v7}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+
+    invoke-virtual {v3, v6}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+
+    .line 217
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
-    .line 209
+    .line 223
     .end local v2           #i:I
-    .end local v4           #r:Lcom/android/camera/Resolution;
-    :cond_c
+    .end local v5           #r:Lcom/android/camera/Resolution;
+    :cond_e
     const/4 v2, 0x0
 
     .restart local v2       #i:I
     :goto_3
-    sget-object v5, Lcom/android/camera/MovieModeHandler;->mResolutionSet_Main:Ljava/util/LinkedList;
+    sget-object v6, Lcom/android/camera/MovieModeHandler;->mResolutionSet_Main:Ljava/util/LinkedList;
 
-    invoke-virtual {v5}, Ljava/util/LinkedList;->size()I
-
-    move-result v5
-
-    if-ge v2, v5, :cond_0
-
-    .line 210
-    sget-object v5, Lcom/android/camera/MovieModeHandler;->mResolutionSet_Main:Ljava/util/LinkedList;
-
-    invoke-virtual {v5, v2}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/android/camera/Resolution;
-
-    .line 211
-    .restart local v4       #r:Lcom/android/camera/Resolution;
-    new-instance v5, Lcom/android/camera/ResolutionMenuItem;
-
-    invoke-virtual {v4}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+    invoke-virtual {v6}, Ljava/util/LinkedList;->size()I
 
     move-result v6
 
-    invoke-direct {v5, v4, v6}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+    if-ge v2, v6, :cond_0
 
-    invoke-virtual {v3, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    .line 224
+    sget-object v6, Lcom/android/camera/MovieModeHandler;->mResolutionSet_Main:Ljava/util/LinkedList;
 
-    .line 209
+    invoke-virtual {v6, v2}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/android/camera/Resolution;
+
+    .line 225
+    .restart local v5       #r:Lcom/android/camera/Resolution;
+    new-instance v6, Lcom/android/camera/ResolutionMenuItem;
+
+    invoke-virtual {v5}, Lcom/android/camera/Resolution;->getResolutionDescription()I
+
+    move-result v7
+
+    invoke-direct {v6, v5, v7}, Lcom/android/camera/ResolutionMenuItem;-><init>(Lcom/android/camera/Resolution;I)V
+
+    invoke-virtual {v3, v6}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+
+    .line 223
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3

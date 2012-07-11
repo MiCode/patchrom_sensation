@@ -1,0 +1,2276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<customization_form>
+  <category name="system">
+    <module name="defaultLocale">
+      <function>
+        <set name="single">
+          <item name="auto_detect">false</item>
+          <item name="defeault">en_ZA</item>
+        </set>
+      </function>
+    </module>
+    <module name="defaultInputMethod">
+      <function name="default_IME_prediction_set">
+        <set name="single">
+          <item name="qwerty">yes</item>
+          <item name="1220">yes</item>
+        </set>
+      </function>
+      <function name="default_IME_keyboard_type">
+        <set name="single">
+          <item name="default">2</item>
+        </set>
+      </function>
+      <function name="default_stroke_speed_level">
+        <set name="single">
+          <item name="default">5</item>
+        </set>
+      </function>
+      <function name="default_use_qwerty">
+        <set name="single">
+          <item name="default">1</item>
+        </set>
+      </function>
+      <function name="default_IKB_settings_checked">
+        <set name="single">
+          <item name="checked_list_latin">English;German;France;Portugal;</item>
+        </set>
+      </function>
+      <function name="default_IKB_init_value">
+        <set name="single">
+          <item name="default">English</item>
+        </set>
+      </function>
+      <function name="default_IME_language_set">
+        <set name="single">
+          <item name="default">English</item>
+        </set>
+      </function>
+    </module>
+    <module name="defaultWallpaper">
+      <function>
+        <set name="single">
+          <item name="defeault">color.jpg</item>
+        </set>
+      </function>
+    </module>
+    <module name="defaultTimeFormatSetting">
+      <function>
+        <set name="single">
+          <item name="default">d/MM/yyyy</item>
+        </set>
+      </function>
+    </module>
+    <module name="defaultTimeFormatSettingShort">
+      <function>
+        <set name="single">
+          <item name="default">d/MM</item>
+        </set>
+      </function>
+    </module>
+    <module name="IME">
+      <function>
+        <set type="list:IME,CIME,SWYPE,A4,PDACHebrew" name="single">
+          <item name="defeault">IME</item>
+        </set>
+      </function>
+    </module>
+  </category>
+  <category name="application">
+    <module name="Settings">
+      <function name="resource_path">
+        <set name="single" max="1">
+          <item name="path">/system/customize/resource/</item>
+        </set>
+      </function>
+    </module>
+    <module name="widget_download_manager">
+      <function name="settings">
+        <set name="single">
+          <item name="auto_sync">false</item>
+        </set>
+      </function>
+    </module>
+    <module name="Newsstand">
+      <function name="feeds">
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">CNN.com - Top Stories</item>
+          <item name="url">http://rss.cnn.com/rss/cnn_topstories.rss</item>
+          <item name="default">default</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">Yahoo! News - Top Stories</item>
+          <item name="url">http://rss.news.yahoo.com/rss/topstories</item>
+          <item name="default">default</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">NY Times</item>
+          <item name="url">http://feeds.nytimes.com/nyt/rss/HomePage</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">USA Today</item>
+          <item name="url">http://content.usatoday.com/marketing/rss/rsstrans.aspx?feedId=news1</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">BBC News</item>
+          <item name="url">http://news.bbc.co.uk/rss/newsonline_world_edition/front_page/rss.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">Washingtonpost-Today's Highlights</item>
+          <item name="url">http://feeds.washingtonpost.com/wp-dyn/rss/linkset/2005/03/24/LI2005032400102_xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">Google News</item>
+          <item name="url">http://news.google.com/?output=rss</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">Reuters: Top News</item>
+          <item name="url">http://feeds.reuters.com/reuters/topNews</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">HuffingtonPost Business</item>
+          <item name="url">http://www.huffingtonpost.com/feeds/verticals/business/index.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">FOXBusiness.com</item>
+          <item name="url">http://feeds.foxnews.com/foxnews/business</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">L.A. Times – Business News</item>
+          <item name="url">http://feeds.latimes.com/latimes/business</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">L.A. Times – Personal Finance</item>
+          <item name="url">http://feeds.latimes.com/latimes/business/investing</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">AP Top Business News</item>
+          <item name="url">http://hosted.ap.org/lineups/BUSINESSHEADS-rss_2.0.xml?SITE=WIJAN&amp;SECTION=HOME</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">Business News (CP)</item>
+          <item name="url">http://www.canadianbusiness.com/rss/business.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">MSNBC Business</item>
+          <item name="url">http://rss.msnbc.msn.com/id/3032071/device/rss/for/mobile/rss.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">Market News (CP)</item>
+          <item name="url">http://www.canadianbusiness.com/content/FEEDS/RSS/markets.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">News</item>
+          <item name="channel">Harvard Business Review</item>
+          <item name="url">http://feeds.harvardbusiness.org/harvardbusiness/</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">Wired Top Stories</item>
+          <item name="url">http://feeds.wired.com/wired/index?format=xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">Wired News</item>
+          <item name="url">http://feeds.wired.com/wired/index</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">Wired Product Review</item>
+          <item name="url">http://www.wired.com/reviews/feeds/latestProductsRss</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">Engadget</item>
+          <item name="url">http://www.engadget.com/rss.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">Gizmodo</item>
+          <item name="url">http://feeds.gawker.com/gizmodo/full</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">CNET News.com - The Net</item>
+          <item name="url">http://news.com.com/2547-1023_3-0-5.xml</item>
+          <item name="default">default</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">InfoWorld: Top News</item>
+          <item name="url">http://www.infoworld.com/rss/news.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">Geek.com</item>
+          <item name="url">http://www.geek.com/feed/</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">Slashdot</item>
+          <item name="url">http://rss.slashdot.org/Slashdot/slashdot</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">Ars Technica</item>
+          <item name="url">http://feeds.arstechnica.com/arstechnica/index/</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">Techcrunch</item>
+          <item name="url">http://feeds.feedburner.com/TechCrunch</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">The Register</item>
+          <item name="url">http://www.theregister.co.uk/headlines.rss</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">InfoWorld Blogs</item>
+          <item name="url">http://www.infoworld.com/blogs/feed</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">CNN Technology</item>
+          <item name="url">http://rss.cnn.com/rss/edition_technology.rss</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">Yahoo! News: Technology News</item>
+          <item name="url">http://rss.news.yahoo.com/rss/tech</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">NY Times Technology</item>
+          <item name="url">http://feeds.nytimes.com/nyt/rss/Technology</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">USA Today Tech – Top Stories</item>
+          <item name="url">http://content.usatoday.com/marketing/rss/rsstrans.aspx?feedId=tech1</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">BBC Technology</item>
+          <item name="url">http://newsrss.bbc.co.uk/rss/newsonline_world_edition/technology/rss.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">Reuters: Technology News</item>
+          <item name="url">http://feeds.reuters.com/reuters/technologyNews</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">HuffingtonPost Technology</item>
+          <item name="url">http://www.huffingtonpost.com/feeds/verticals/technology/index.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">FOXNews SciTech</item>
+          <item name="url">http://feeds.foxnews.com/foxnews/scitech</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">L.A. Times – Technology News</item>
+          <item name="url">http://feeds.latimes.com/latimes/technology</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">msnbc.com: Technology &amp; Science</item>
+          <item name="url">http://rss.msnbc.msn.com/id/3032117/device/rss/for/mobile/rss.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">01net. Les dossiers Entreprise</item>
+          <item name="url">http://www.01net.com/rss/dossiersentreprise.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">jkOnTheRun</item>
+          <item name="url">http://feeds.feedburner.com/jkOnTheRun</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Technology</item>
+          <item name="channel">AP Top Technology News</item>
+          <item name="url">http://hosted.ap.org/lineups/TECHHEADS-rss_2.0.xml?SITE=INLAF&amp;SECTION=HOME</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Mobile Device</item>
+          <item name="channel">HTC – Latest in Support</item>
+          <item name="url">http://www.htc.com/[country code]/supportrss.aspx</item>
+          <item name="default">default</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Mobile Device</item>
+          <item name="channel">Phone scoop</item>
+          <item name="url">http://www.phonescoop.com/rss/news.php</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Mobile Device</item>
+          <item name="channel">Geekzone, mobile forums</item>
+          <item name="url">http://feeds.geekzone.co.nz/geekzone</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Mobile Device</item>
+          <item name="channel">Brighthand</item>
+          <item name="url">http://www.brighthand.com/rss.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Mobile Device</item>
+          <item name="channel">The Gadgeteer</item>
+          <item name="url">http://the-gadgeteer.com/feed/</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Mobile Device</item>
+          <item name="channel">Aximsite</item>
+          <item name="url">http://feeds.feedburner.com/aximsiterss</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Mobile Device</item>
+          <item name="channel">infoSync World</item>
+          <item name="url">http://www.infosyncworld.com/feed/rss/index.php</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Mobile Device</item>
+          <item name="channel">Astraware</item>
+          <item name="url">http://www.astraware.com/rss.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Mobile Device</item>
+          <item name="channel">The Register - Mobile</item>
+          <item name="url">http://www.theregister.co.uk/networks/mobile/headlines.rss</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Mobile Device</item>
+          <item name="channel">Engadget Mobile</item>
+          <item name="url">http://www.engadgetmobile.com/rss.xml</item>
+          <item name="default">default</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Mobile Device</item>
+          <item name="channel">Just Another Mobile Monday</item>
+          <item name="url">http://feeds.feedburner.com/JustAnotherMobileMonday</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Mobile Device</item>
+          <item name="channel">Gear Diary</item>
+          <item name="url">http://feeds.feedburner.com/GearDiary</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Mobile Device</item>
+          <item name="channel">Mobility Site</item>
+          <item name="url">http://feeds.feedburner.com/MobilitySite</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Mobile Device</item>
+          <item name="channel">Mobile Opportunity</item>
+          <item name="url">http://feeds.feedburner.com/MobileOpportunity</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Video</item>
+          <item name="channel">GeekBrief.TV</item>
+          <item name="url">http://www.podshow.com/feeds/gbtvwindows.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Video</item>
+          <item name="channel">Rocketboom Windows WMV</item>
+          <item name="url">http://www.rocketboom.com/rss/wmv.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Video</item>
+          <item name="channel">CNN Video</item>
+          <item name="url">http://rss.cnn.com/rss/cnn_freevideo.rss</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Travel</item>
+          <item name="channel">CNN Travel</item>
+          <item name="url">http://rss.cnn.com/rss/edition_travel.rss</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Travel</item>
+          <item name="channel">USA Today Travel</item>
+          <item name="url">http://content.usatoday.com/marketing/rss/rsstrans.aspx?feedId=travel1</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Travel</item>
+          <item name="channel">HuffingtonPost Style</item>
+          <item name="url">http://www.huffingtonpost.com/feeds/verticals/style/index.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Travel</item>
+          <item name="channel">Times Online Travel News</item>
+          <item name="url">http://feeds.timesonline.co.uk/c/32313/f/463696/index.rss</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Travel</item>
+          <item name="channel">msnbc.com: Travel</item>
+          <item name="url">http://rss.msnbc.msn.com/id/3032122/device/rss/for/mobile/rss.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Health</item>
+          <item name="channel">Yahoo! News: Health News</item>
+          <item name="url">http://rss.news.yahoo.com/rss/health</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Health</item>
+          <item name="channel">BBC Health</item>
+          <item name="url">http://newsrss.bbc.co.uk/rss/newsonline_world_edition/health/rss.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Health</item>
+          <item name="channel">Reuters: Health News</item>
+          <item name="url">http://feeds.reuters.com/reuters/healthNews</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Health</item>
+          <item name="channel">FOXNews Health</item>
+          <item name="url">http://feeds.foxnews.com/foxnews/health</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Health</item>
+          <item name="channel">msnbc.com: Health</item>
+          <item name="url">http://rss.msnbc.msn.com/id/3088327/device/rss/for/mobile/rss.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Photography</item>
+          <item name="channel">Digital Photography School</item>
+          <item name="url">http://feeds.feedburner.com/DigitalPhotographySchool</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Photography</item>
+          <item name="channel">JMG-Galleries</item>
+          <item name="url">http://feeds.feedburner.com/jmg-galleries</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Photography</item>
+          <item name="channel">Photocritic photography blog</item>
+          <item name="url">http://feeds.feedburner.com/photocritic</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Photography</item>
+          <item name="channel">Strobist</item>
+          <item name="url">http://feeds.feedburner.com/blogspot/WOBq</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Photography</item>
+          <item name="channel">Art and photography</item>
+          <item name="url">http://feeds2.feedburner.com/openorigins</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Photography</item>
+          <item name="channel">File magazine</item>
+          <item name="url">http://www.filemagazine.com/thecollection/atom.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Photography</item>
+          <item name="channel">Photodoto</item>
+          <item name="url">http://feeds.feedburner.com/photodoto?format=xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Photography</item>
+          <item name="channel">DIYPhotography.net</item>
+          <item name="url">http://feeds.feedburner.com/Diyphotographynet</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Photography</item>
+          <item name="channel">Photojojo</item>
+          <item name="url">http://feeds2.feedburner.com/Photojojo</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Food</item>
+          <item name="channel">Food &amp; Wine: Recipes</item>
+          <item name="url">http://www.foodandwine.com/rss/food-and-wine-recipes-rss.cfm</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Food</item>
+          <item name="channel">Food &amp; Wine: Article</item>
+          <item name="url">http://www.foodandwine.com/rss/food-and-wine-articles-rss.cfm</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Food</item>
+          <item name="channel">BBC Good Food - Recipes</item>
+          <item name="url">http://www.bbcgoodfood.com/recipes-of-the-day.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Food</item>
+          <item name="channel">BBC Good Food – Cakes</item>
+          <item name="url">http://www.bbcgoodfood.com/cakes-of-the-week.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Food</item>
+          <item name="channel">Food Channel</item>
+          <item name="url">http://feeds.feedburner.com/foodchannel/recipes</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Food</item>
+          <item name="channel">Delish.com - Recipes</item>
+          <item name="url">http://www.delish.com/recipes/recipes-rss/</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Design</item>
+          <item name="channel">Better Living Through Design</item>
+          <item name="url">http://www.betterlivingthroughdesign.com/atom.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Design</item>
+          <item name="channel">Brand New</item>
+          <item name="url">http://www.underconsideration.com/brandnew/atom.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Design</item>
+          <item name="channel">Bittbox</item>
+          <item name="url">http://feeds.feedburner.com/Bittbox</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Design</item>
+          <item name="channel">Creative Briefing</item>
+          <item name="url">http://feeds.feedburner.com/creativebriefing</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Design</item>
+          <item name="channel">Creativebits</item>
+          <item name="url">http://creativebits.org/node/feed</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Design</item>
+          <item name="channel">David Airey, graphic designer</item>
+          <item name="url">http://feeds.feedburner.com/CreativeDesign</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Design</item>
+          <item name="channel">Design by Grid</item>
+          <item name="url">http://feeds.feedburner.com/DesignByGridShowcase?format=xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Design</item>
+          <item name="channel">Hip.Young.Thing</item>
+          <item name="url">http://feeds.feedburner.com/Hipyoungthing</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Design</item>
+          <item name="channel">Apartment Therapy New York</item>
+          <item name="url">http://www.apartmenttherapy.com/index.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Design</item>
+          <item name="channel">Cool Hunting</item>
+          <item name="url">http://www.coolhunting.com/atom.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Design</item>
+          <item name="channel">LifeClever</item>
+          <item name="url">http://feeds.feedburner.com/lifeclever</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Design</item>
+          <item name="channel">MoCoLoco</item>
+          <item name="url">http://mocoloco.com/index.rdf</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Design</item>
+          <item name="channel">Uncrate</item>
+          <item name="url">http://feeds.feedburner.com/uncrate</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Design</item>
+          <item name="channel">Yanko Design</item>
+          <item name="url">http://feeds.feedburner.com/yankodesign</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Blogs</item>
+          <item name="channel">The Huffington Post Full Blog</item>
+          <item name="url">http://feeds.huffingtonpost.com/huffingtonpost/TheBlog</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Blogs</item>
+          <item name="channel">The Mobile Gadgeteer</item>
+          <item name="url">http://blogs.zdnet.com/mobile-gadgeteer/wp-rss2.php</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Blogs</item>
+          <item name="channel">Office Evolution</item>
+          <item name="url">http://blogs.zdnet.com/Orchant/wp-rss2.php</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Blogs</item>
+          <item name="channel">Scobleizer</item>
+          <item name="url">http://scobleizer.wordpress.com/feed/</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Blogs</item>
+          <item name="channel">The Two Inch View</item>
+          <item name="url">http://feeds.feedburner.com/twoinchview</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Blogs</item>
+          <item name="channel">Fail Blog</item>
+          <item name="url">http://feeds.feedburner.com/failblog?format=xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Blogs</item>
+          <item name="channel">Lolcats</item>
+          <item name="url">http://feeds.feedburner.com/ICanHasCheezburger?format=xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Shopping</item>
+          <item name="channel">Amazon.com: Today's Deals</item>
+          <item name="url">http://rssfeeds.s3.amazonaws.com/goldbox</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Shopping</item>
+          <item name="channel">Bits du Jour</item>
+          <item name="url">http://www.bitsdujour.com/rss/</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Shopping</item>
+          <item name="channel">Coupons</item>
+          <item name="url">http://couponbar.coupons.com/rss.asp</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Shopping</item>
+          <item name="channel">Woot - One Day, One Deal</item>
+          <item name="url">http://www.woot.com/blog/rss.aspx</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Shopping</item>
+          <item name="channel">Shopzilla – Electronics</item>
+          <item name="url">http://www.shopzilla.com/14G_-_feed_id--1</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Shopping</item>
+          <item name="channel">Shopzilla - Outdoor Cooking</item>
+          <item name="url">http://www.shopzilla.com/14G_-_feed_id--10</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Shopping</item>
+          <item name="channel">Shopzilla – Video Games</item>
+          <item name="url">http://www.shopzilla.com/14G_-_feed_id--12</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">CNN Entertainment</item>
+          <item name="url">http://rss.cnn.com/rss/edition_entertainment.rss</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">Yahoo! News: Entertainment News</item>
+          <item name="url">http://rss.news.yahoo.com/rss/entertainment</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">USA Today Life</item>
+          <item name="url">http://content.usatoday.com/marketing/rss/rsstrans.aspx?feedId=life1</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">Reuters Entertainment News</item>
+          <item name="url">http://feeds.reuters.com/reuters/entertainment</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">BBC Entertainment News</item>
+          <item name="url">http://news.bbc.co.uk/rss/newsonline_world_edition/entertainment/rss.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">HuffingtonPost Entertainment</item>
+          <item name="url">http://www.huffingtonpost.com/feeds/verticals/entertainment/index.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">FOXNews Entertainment</item>
+          <item name="url">http://feeds.foxnews.com/foxnews/entertainment</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">Sci Fi Wire</item>
+          <item name="url">http://www.scifi.com/scifiwire/rss/index.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">L.A. Times – Entertainment</item>
+          <item name="url">http://feeds.latimes.com/latimes/entertainment/</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">msnbc.com: Entertainment</item>
+          <item name="url">http://rss.msnbc.msn.com/id/3032083/device/rss/for/mobile/rss.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">AP Top Entertainment News</item>
+          <item name="url">http://hosted.ap.org/lineups/ENTERTAINMENT-rss_2.0.xml?SITE=KTVK&amp;SECTION=HOME</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">CP: ENTERTAINMENT</item>
+          <item name="url">http://www.thetelegram.com/rss/cp/Telegram/entertainment.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">Netflix Top 100</item>
+          <item name="url">http://rss.netflix.com/Top100RSS</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">Netflix New Releases This Week</item>
+          <item name="url">http://rss.netflix.com/NewReleasesRSS</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">The Onion - Daily Content</item>
+          <item name="url">http://www.theonion.com/content/feeds/daily</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Entertainment</item>
+          <item name="channel">ComingSoon.net</item>
+          <item name="url">http://www.comingsoon.net/news/rss-movie-10.php</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Sports</item>
+          <item name="channel">ESPN.com</item>
+          <item name="url">http://sports.espn.go.com/espn/rss/news</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Sports</item>
+          <item name="channel">ESPN.com - NFL</item>
+          <item name="url">http://sports.espn.go.com/espn/rss/nfl/news</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Sports</item>
+          <item name="channel">ESPN.com - NBA</item>
+          <item name="url">http://sports.espn.go.com/espn/rss/nba/news</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Sports</item>
+          <item name="channel">ESPN.com - NHL</item>
+          <item name="url">http://sports.espn.go.com/espn/rss/nhl/news</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Sports</item>
+          <item name="channel">ESPN.com - MLB</item>
+          <item name="url">http://sports.espn.go.com/espn/rss/mlb/news</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Sports</item>
+          <item name="channel">CNN Sport</item>
+          <item name="url">http://rss.cnn.com/rss/edition_sport.rss</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Sports</item>
+          <item name="channel">NY Times Sports</item>
+          <item name="url">http://feeds.nytimes.com/nyt/rss/Technology</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Sports</item>
+          <item name="channel">Yahoo! News: Sports News</item>
+          <item name="url">http://rss.news.yahoo.com/rss/sports</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Sports</item>
+          <item name="channel">USA Today Sports</item>
+          <item name="url">http://content.usatoday.com/marketing/rss/rsstrans.aspx?feedId=sports1</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Sports</item>
+          <item name="channel">Reuters: Sports</item>
+          <item name="url">http://feeds.reuters.com/reuters/sportsNews</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Sports</item>
+          <item name="channel">L.A. Times – Sports</item>
+          <item name="url">http://feeds.latimes.com/latimes/sports/</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Sports</item>
+          <item name="channel">Times Online Sports News</item>
+          <item name="url">http://feeds.timesonline.co.uk/c/32313/f/463695/index.rss</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Sports</item>
+          <item name="channel">msnbc.com - Sports</item>
+          <item name="url">http://rss.nbcsports.msnbc.com/id/3032112/device/rss/for/mobile/rss.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">Sports</item>
+          <item name="channel">AP Top Sports News</item>
+          <item name="url">http://hosted.ap.org/lineups/SPORTSHEADS-rss_2.0.xml?SITE=KLIF&amp;SECTION=HOME</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">World Weather</item>
+          <item name="channel">USA Today Weather</item>
+          <item name="url">http://content.usatoday.com/marketing/rss/rsstrans.aspx?feedId=weather1</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">World Weather</item>
+          <item name="channel">New York Weather</item>
+          <item name="url">http://www.rssweather.com/wx/us/ny/new%20york/rss.php</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">World Weather</item>
+          <item name="channel">msnbc.com: Weather</item>
+          <item name="url">http://rss.msnbc.msn.com/id/3032127/device/rss/for/mobile/rss.xml</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">World Weather</item>
+          <item name="channel">London, Gatwick Weather</item>
+          <item name="url">http://www.rssweather.com/rss.php?config=&amp;amp;forecast=zandh&amp;amp;icao=EGKK&amp;amp;alt=rss20a</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">World Weather</item>
+          <item name="channel">Paris-Aeroport Charles De Gaulle, France Weather</item>
+          <item name="url">http://www.rssweather.com/rss.php?config=&amp;amp;forecast=zandh&amp;amp;icao=LFPG&amp;amp;alt=rss20a</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">World Weather</item>
+          <item name="channel">San Francisco Weather</item>
+          <item name="url">http://www.rssweather.com/wx/us/ca/san%20francisco/rss.php</item>
+        </set>
+        <set name="plenty" max="10">
+          <item name="category">World Weather</item>
+          <item name="channel">Tokyo Weather</item>
+          <item name="url">http://www.rssweather.com/rss.php?config=&amp;amp;forecast=zandh&amp;amp;icao=RJTT&amp;amp;alt=rss20a</item>
+        </set>
+      </function>
+    </module>
+    <module name="Launcher">
+      <function name="1_app_widgets">
+        <set name="plenty" max="19">
+          <!--a0f1b092-e9e7-43ba-ba45-e4291f738c32-->
+          <item name="package_name">com.google.android.googlequicksearchbox</item>
+          <item name="app_widget_provider">com.google.android.googlequicksearchbox.SearchWidgetProvider</item>
+          <item name="screen">4</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">1</item>
+        </set>
+      </function>
+      <function name="applications_hide">
+        <set name="plenty" max="7">
+          <item name="package">com.google.android.videos</item>
+          <item name="class">com.google.android.youtube.videos.honeycomb.VideosActivity</item>
+        </set>
+        <set name="plenty" max="7">
+          <item name="package">com.google.android.apps.books</item>
+          <item name="class">com.google.android.apps.books.app.BooksActivity</item>
+        </set>
+      </function>
+      <function name="app_widgets_hide">
+        <set name="plenty" max="7">
+          <item name="package">com.google.android.apps.books</item>
+          <item name="class">com.google.android.apps.books.appwidget.BooksAppWidgetProvider</item>
+        </set>
+      </function>
+      <function name="1_fx_widgets">
+        <set name="plenty">
+          <!--c91f1916-b3a3-4293-b989-1428041e73c4-->
+          <item name="package_name">com.htc.htccontactwidgets_3d_fusion</item>
+          <item name="widget_name">com.htc.htccontactwidgets_3d_fusion.ContactWidgetMatrix</item>
+          <item name="provider_name">com.htc.android.rosie.widget.provider</item>
+          <item name="screen">4</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">1</item>
+          <item name="span_x">4</item>
+          <item name="span_y">3</item>
+          <item name="property.group_name">Favorite_8656150684447252476_6727701920173350445</item>
+          <item name="property.sence_path">Port/People_4x3_ListView.m10</item>
+          <item name="property.item_path">Port/People_4x4_ListItem.m10</item>
+        </set>
+        <set name="plenty">
+          <!--2a59290f-8da8-4eba-a246-27a5df7c6246-->
+          <item name="package_name">com.htc.clock3dwidget</item>
+          <item name="widget_name">com.htc.clock3dwidget.weatherclock.WeatherClockWidgetView</item>
+          <item name="provider_name">com.htc.clock3dwidget.ClockWidgetProvider</item>
+          <item name="screen">3</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">2</item>
+        </set>
+        <set name="plenty">
+          <!--7f378885-8973-4a77-bacb-acc638c037e6-->
+          <item name="package_name">com.htc.widget3d.watch</item>
+          <item name="widget_name">com.htc.widget3d.watch.Watch</item>
+          <item name="provider_name">com.htc.widget3d.watch.WatchProvider</item>
+          <item name="screen">1</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--ac0d0ac6-ec8f-4c80-9d0f-ddb885c9b8c7-->
+          <item name="package_name">com.htc.laputa.widget3d.locations</item>
+          <item name="widget_name">com.htc.laputa.widget3d.locations.Locations4x2Widget</item>
+          <item name="provider_name">com.htc.laputa.widget3d.locations.LocationsWidgetProvider</item>
+          <item name="screen">5</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">1</item>
+          <item name="span_x">4</item>
+          <item name="span_y">2</item>
+        </set>
+        <set name="plenty">
+          <!--b04c6088-87ca-46cc-95f8-06745106efa3-->
+          <item name="package_name">com.htc.MusicWidget3D</item>
+          <item name="widget_name">com.htc.MusicWidget3D.MusicWidget3D_4x4</item>
+          <item name="provider_name">com.htc.MusicWidget3D.MusicWidget3DProvider</item>
+          <item name="screen">2</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--d06d463c-45ca-413c-8a25-7e0e21da170b-->
+          <item name="package_name">com.htc.widget3d.weather</item>
+          <item name="widget_name">com.htc.widget3d.weather.Weather4x4Widget</item>
+          <item name="provider_name">com.htc.widget3d.weather.WeatherWidgetProvider</item>
+          <item name="screen">0</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+      </function>
+      <function name="2_fx_widgets">
+        <set name="plenty">
+          <!--5ca1720a-82c7-4aa3-9dd2-027f3f080e43-->
+          <item name="package_name">com.htc.htcmsgwidgets3d</item>
+          <item name="widget_name">com.htc.htcmsgwidgets3d.Messages_card_4x4</item>
+          <item name="provider_name">com.htc.htcmsgwidgets.MsgWidgetProvider</item>
+          <item name="screen">5</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--fd7784da-d761-496b-8dec-b010ee14955e-->
+          <item name="package_name">com.htc.htccontactwidgets_3d_fusion</item>
+          <item name="widget_name">com.htc.htccontactwidgets_3d_fusion.ContactWidgetMatrix</item>
+          <item name="provider_name">com.htc.android.rosie.widget.provider</item>
+          <item name="screen">4</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+          <item name="property.group_name">Favorite_8656150684447252476_6727701920173350445</item>
+          <item name="property.sence_path">Port/People_Big_4x4_ListView.m10</item>
+          <item name="property.item_path">Port/People_Big_4x4_ListItem.m10</item>
+        </set>
+        <set name="plenty">
+          <!--96d0af80-c688-4d91-91d3-ab3bf35f5490-->
+          <item name="package_name">com.htc.htccalendarwidgets</item>
+          <item name="widget_name">com.htc.htccalendarwidgets.AgendaListWidget</item>
+          <item name="provider_name">com.htc.htccalendarwidgets.WidgetReceiver</item>
+          <item name="screen">0</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--0994bc08-5ea4-471a-b848-658285ad38e7-->
+          <item name="package_name">com.htc.clock3dwidget</item>
+          <item name="widget_name">com.htc.clock3dwidget.socialclock.SocialClockWidgetView</item>
+          <item name="provider_name">com.htc.clock3dwidget.ClockWidgetProvider</item>
+          <item name="screen">3</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">2</item>
+        </set>
+        <set name="plenty">
+          <!--ece1ae69-5fcb-4662-af63-799a4ae468bf-->
+          <item name="package_name">com.htc.htcmailwidgets</item>
+          <item name="widget_name">com.htc.htcmailwidgets.MailPaperWidget</item>
+          <item name="provider_name">com.htc.htcmailwidgets.WidgetReceiver</item>
+          <item name="screen">1</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--84cf0e54-51c4-4241-81e2-b74a601d7001-->
+          <item name="package_name">com.htc.FriendStream3DWidget</item>
+          <item name="widget_name">com.htc.FriendStream3DWidget.FriendStream4x4Widget</item>
+          <item name="provider_name">com.htc.FriendStream3DWidget.FriendStreamWidgetProvider</item>
+          <item name="screen">2</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+      </function>
+      <function name="3_fx_widgets">
+        <set name="plenty">
+          <!--3829eeca-4b59-4382-a25e-e10f20c39633-->
+          <item name="package_name">com.htc.htccalendarwidgets</item>
+          <item name="widget_name">com.htc.htccalendarwidgets.MonthViewWidget</item>
+          <item name="provider_name">com.htc.htccalendarwidgets.WidgetReceiver</item>
+          <item name="screen">0</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--46f9953d-5255-47a5-83d4-e5e1acbf701c-->
+          <item name="package_name">com.htc.htcmailwidgets</item>
+          <item name="widget_name">com.htc.htcmailwidgets.MailSummaryWidget</item>
+          <item name="provider_name">com.htc.htcmailwidgets.WidgetReceiver</item>
+          <item name="screen">2</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--d43b2923-3fd9-4bd4-87a0-9d25ba52aed6-->
+          <item name="package_name">com.htc.clock3dwidget</item>
+          <item name="widget_name">com.htc.clock3dwidget.ClockDual</item>
+          <item name="provider_name">com.htc.clock3dwidget.ClockWidgetProvider</item>
+          <item name="screen">3</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">2</item>
+        </set>
+        <set name="plenty">
+          <!--54a37ca3-08b2-4cf1-9be1-4c9c805c48e6-->
+          <item name="package_name">com.htc.googlereaderwidget</item>
+          <item name="widget_name">com.htc.googlereaderwidget.GReaderBigWidget</item>
+          <item name="provider_name">com.htc.googlereaderwidget.RosieWidgetReceiver</item>
+          <item name="screen">5</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--39732b3d-8b2f-4692-b6e5-7295be50199c-->
+          <item name="package_name">com.htc.htccontactwidgets_3d_fusion</item>
+          <item name="widget_name">com.htc.htccontactwidgets_3d_fusion.ContactWidgetMatrix</item>
+          <item name="provider_name">com.htc.android.rosie.widget.provider</item>
+          <item name="screen">4</item>
+          <item name="cell_x">2</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">2</item>
+          <item name="span_y">4</item>
+          <item name="property.group_name">Favorite_8656150684447252476_6727701920173350445</item>
+          <item name="property.sence_path">Port/People_4x2_ListView.m10</item>
+          <item name="property.item_path">Port/People_4x2_ListItem.m10</item>
+        </set>
+        <set name="plenty">
+          <!--b13dc74a-f1c6-4fc0-9e42-46b10b06fac5-->
+          <item name="package_name">com.htc.htccalendarwidgets</item>
+          <item name="widget_name">com.htc.htccalendarwidgets.AgendaWidget</item>
+          <item name="provider_name">com.htc.htccalendarwidgets.WidgetReceiver</item>
+          <item name="screen">3</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">2</item>
+          <item name="span_x">4</item>
+          <item name="span_y">1</item>
+        </set>
+        <set name="plenty">
+          <!--7a5cac57-016c-4725-9488-3320b1883d1e-->
+          <item name="package_name">com.htc.widget3d.weather</item>
+          <item name="widget_name">com.htc.widget3d.weather.Weather2x2Widget</item>
+          <item name="provider_name">com.htc.widget3d.weather.WeatherWidgetProvider</item>
+          <item name="screen">4</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">2</item>
+          <item name="span_x">2</item>
+          <item name="span_y">2</item>
+        </set>
+        <set name="plenty">
+          <!--c1a59cfe-8c24-496a-b266-93698f054be7-->
+          <item name="package_name">com.htc.htcsettingwidgets</item>
+          <item name="widget_name">com.htc.htcsettingwidgets.BTWidget</item>
+          <item name="provider_name">com.htc.htcsettingwidgets.BTWidget</item>
+          <item name="screen">4</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">1</item>
+          <item name="span_y">1</item>
+        </set>
+        <set name="plenty">
+          <!--45807cc2-de06-4dc3-bbfc-9bc84c3602fd-->
+          <item name="package_name">com.htc.htcsettingwidgets</item>
+          <item name="widget_name">com.htc.htcsettingwidgets.WiFiWidget</item>
+          <item name="provider_name">com.htc.htcsettingwidgets. WiFiWidget</item>
+          <item name="screen">4</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">1</item>
+          <item name="span_x">1</item>
+          <item name="span_y">1</item>
+        </set>
+        <set name="plenty">
+          <!--764c5fcd-8877-4d53-bb45-d54b79d6dc04-->
+          <item name="package_name">com.htc.android.fusion.StockWidget</item>
+          <item name="widget_name">com.htc.android.fusion.StockWidget.Stock4x4PWidget</item>
+          <item name="provider_name">com.htc.android.fusion.StockWidget.RosieWidgetReceiver</item>
+          <item name="screen">1</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+      </function>
+      <function name="4_fx_widgets">
+        <set name="plenty">
+          <!--888d3096-e8a1-4767-bb65-ca626dad186d-->
+          <item name="package_name">com.htc.widget3d.weather</item>
+          <item name="widget_name">com.htc.widget3d.weather.Weather4x4Widget</item>
+          <item name="provider_name">com.htc.widget3d.weather.WeatherWidgetProvider</item>
+          <item name="screen">0</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--1fcb40ee-d55e-4a4f-ad7f-09ba4658d6f8-->
+          <item name="package_name">com.htc.photowidget3d</item>
+          <item name="widget_name">com.htc.photowidget3d.album.PhotoAlbumWidget3D</item>
+          <item name="provider_name">com.htc.photowidget3d.album.PhotoAlbumWidgetPorvider</item>
+          <item name="screen">2</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--7def86e8-2e2d-46a4-aec0-9c287db779f2-->
+          <item name="package_name">com.htc.clock3dwidget</item>
+          <item name="widget_name">com.htc.clock3dwidget.ClockRing</item>
+          <item name="provider_name">com.htc.clock3dwidget.ClockWidgetProvider</item>
+          <item name="screen">3</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">3</item>
+        </set>
+        <set name="plenty">
+          <!--b41399ab-c170-4515-b908-2a631cb613ca-->
+          <item name="package_name">com.htc.FriendStream3DWidget</item>
+          <item name="widget_name">com.htc.FriendStream3DWidget.FriendStream4x4Widget</item>
+          <item name="provider_name">com.htc.FriendStream3DWidget.FriendStreamWidgetProvider</item>
+          <item name="screen">1</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--324ba9e6-b8ca-41aa-bc03-c0ad8eb277dd-->
+          <item name="package_name">com.htc.widget3d.watch</item>
+          <item name="widget_name">com.htc.widget3d.watch.Watch</item>
+          <item name="provider_name">com.htc.widget3d.watch.WatchProvider</item>
+          <item name="screen">5</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--3f96bb78-6e61-438a-b0de-f2bfcc186497-->
+          <item name="package_name">com.htc.MusicWidget3D</item>
+          <item name="widget_name">com.htc.MusicWidget3D.MusicWidget3D_4x4</item>
+          <item name="provider_name">com.htc.MusicWidget3D.MusicWidget3DProvider</item>
+          <item name="screen">4</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+      </function>
+      <function name="5_fx_widgets">
+        <set name="plenty">
+          <!--5bd707b4-f988-4c5f-9777-eb0c2a52966f-->
+          <item name="package_name">com.htc.widget3d.weather</item>
+          <item name="widget_name">com.htc.widget3d.weather.Weather4x4Widget</item>
+          <item name="provider_name">com.htc.widget3d.weather.WeatherWidgetProvider</item>
+          <item name="screen">0</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--4facfcc7-729b-4ca6-a7f3-39518c669927-->
+          <item name="package_name">com.htc.htccalendarwidgets</item>
+          <item name="widget_name">com.htc.htccalendarwidgets.MonthViewWidget</item>
+          <item name="provider_name">com.htc.htccalendarwidgets.WidgetReceiver</item>
+          <item name="screen">5</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--733941a1-0ccd-4714-9d79-6294e117b483-->
+          <item name="package_name">com.htc.MusicWidget3D</item>
+          <item name="widget_name">com.htc.MusicWidget3D.MusicWidget3D_4x2</item>
+          <item name="provider_name">com.htc.MusicWidget3D.MusicWidget3DProvider</item>
+          <item name="screen">4</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">2</item>
+        </set>
+        <set name="plenty">
+          <!--e3bc6b62-25ee-4b34-9bbd-9ebc98128537-->
+          <item name="package_name">com.htc.clock3dwidget</item>
+          <item name="widget_name">com.htc.clock3dwidget.Clock1x1</item>
+          <item name="provider_name">com.htc.clock3dwidget.ClockWidgetProvider</item>
+          <item name="screen">3</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">1</item>
+          <item name="span_y">1</item>
+          <item name="property.code_">ASI|JP|JA041|TOKYO</item>
+        </set>
+        <set name="plenty">
+          <!--f080f68e-e34d-403f-b8c6-a83722d2c66a-->
+          <item name="package_name">com.htc.clock3dwidget</item>
+          <item name="widget_name">com.htc.clock3dwidget.Clock1x1</item>
+          <item name="provider_name">com.htc.clock3dwidget.ClockWidgetProvider</item>
+          <item name="screen">3</item>
+          <item name="cell_x">1</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">1</item>
+          <item name="span_y">1</item>
+          <item name="property.code_">ASI|TW|TW018|TAIPEI</item>
+        </set>
+        <set name="plenty">
+          <!--5a797c30-e9f5-483a-b4cd-821c7e4d709c-->
+          <item name="package_name">com.htc.clock3dwidget</item>
+          <item name="widget_name">com.htc.clock3dwidget.Clock1x1</item>
+          <item name="provider_name">com.htc.clock3dwidget.ClockWidgetProvider</item>
+          <item name="screen">3</item>
+          <item name="cell_x">2</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">1</item>
+          <item name="span_y">1</item>
+          <item name="property.code_">EUR|ES|SP008|BARCELONA</item>
+        </set>
+        <set name="plenty">
+          <!--fa0dbe4b-8526-4da7-877c-1ac8384443fb-->
+          <item name="package_name">com.htc.clock3dwidget</item>
+          <item name="widget_name">com.htc.clock3dwidget.Clock1x1</item>
+          <item name="provider_name">com.htc.clock3dwidget.ClockWidgetProvider</item>
+          <item name="screen">3</item>
+          <item name="cell_x">3</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">1</item>
+          <item name="span_y">1</item>
+          <item name="property.code_">EUR|UK|UK124|LONDON</item>
+        </set>
+        <set name="plenty">
+          <!--52926992-c05b-4fb4-ac22-85956f14883b-->
+          <item name="package_name">com.htc.htcmailwidgets</item>
+          <item name="widget_name">com.htc.htcmailwidgets.MailPaperWidget</item>
+          <item name="provider_name">com.htc.htcmailwidgets.WidgetReceiver</item>
+          <item name="screen">1</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--bb19965d-5790-445a-9552-151d53f2fecd-->
+          <item name="package_name">com.htc.laputa.trip.TripWidget</item>
+          <item name="widget_name">com.htc.laputa.trip.TripWidget.Trip4x4Widget</item>
+          <item name="provider_name">com.htc.laputa.trip.TripWidget.TripWidgetProvider</item>
+          <item name="screen">2</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">0</item>
+          <item name="span_x">4</item>
+          <item name="span_y">4</item>
+        </set>
+        <set name="plenty">
+          <!--a7e0b85b-6d95-4d62-9ebb-bb8b094bed5d-->
+          <item name="package_name">com.htc.FriendStream3DWidget</item>
+          <item name="widget_name">com.htc.FriendStream3DWidget.FriendStream4x2Widget</item>
+          <item name="provider_name">com.htc.FriendStream3DWidget.FriendStreamWidgetProvider</item>
+          <item name="screen">4</item>
+          <item name="cell_x">0</item>
+          <item name="cell_y">2</item>
+          <item name="span_x">4</item>
+          <item name="span_y">2</item>
+        </set>
+      </function>
+      <function name="default_quicklaunch">
+        <set name="plenty">
+          <item name="package">com.android.htccontacts</item>
+          <item name="class">com.android.htccontacts.DialerTabActivity</item>
+          <item name="screen">0</item>
+          <item name="x">0</item>
+          <item name="y">0</item>
+          <item name="itemtype">0</item>
+        </set>
+        <set name="plenty">
+          <item name="package">com.htc.android.mail</item>
+          <item name="class">com.htc.android.mail.MailListTab</item>
+          <item name="screen">0</item>
+          <item name="x">1</item>
+          <item name="y">0</item>
+          <item name="itemtype">0</item>
+        </set>
+        <set name="plenty">
+          <item name="package">com.android.mms</item>
+          <item name="class">com.android.mms.ui.ConversationList</item>
+          <item name="screen">0</item>
+          <item name="x">2</item>
+          <item name="y">0</item>
+          <item name="itemtype">0</item>
+        </set>
+        <set name="plenty">
+          <item name="package">com.android.camera</item>
+          <item name="class">com.android.camera.CameraEntry</item>
+          <item name="screen">0</item>
+          <item name="x">3</item>
+          <item name="y">0</item>
+          <item name="itemtype">0</item>
+        </set>
+      </function>
+      <function name="1_wallpaper">
+        <set name="single" max="1">
+          <item type="file_name" name="image">color.jpg</item>
+        </set>
+      </function>
+      <function name="2_wallpaper">
+        <set name="single" max="1">
+          <item type="file_name" name="image">cellular.jpg</item>
+        </set>
+      </function>
+      <function name="3_wallpaper">
+        <set name="single" max="1">
+          <item type="file_name" name="image">foliage.jpg</item>
+        </set>
+      </function>
+      <function name="4_wallpaper">
+        <set name="single" max="1">
+          <item type="file_name" name="image">velocity.jpg</item>
+        </set>
+      </function>
+      <function name="5_wallpaper">
+        <set name="single" max="1">
+          <item type="file_name" name="image">qbic.jpg</item>
+        </set>
+      </function>
+      <function name="extra_wallpapers">
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">beats_grid.jpg</item>
+          <item type="file_name" name="image">beats.jpg</item>
+          <item type="file_name" name="preview">beats_panel.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">bokeh_grid_preview.jpg</item>
+          <item type="file_name" name="image">bokeh.jpg</item>
+          <item type="file_name" name="preview">bokeh_preview.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">cellular_grid_preview.jpg</item>
+          <item type="file_name" name="image">cellular.jpg</item>
+          <item type="file_name" name="preview">cellular_preview.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">color_grid_preview.jpg</item>
+          <item type="file_name" name="image">color.jpg</item>
+          <item type="file_name" name="preview">color_preview.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">curtain_call_grid_preview.jpg</item>
+          <item type="file_name" name="image">curtain_call.jpg</item>
+          <item type="file_name" name="preview">curtain_call_preview.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">dandelion_grid_preview.jpg</item>
+          <item type="file_name" name="image">dandelion.jpg</item>
+          <item type="file_name" name="preview">dandelion_preview.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">foliage_grid_preview.jpg</item>
+          <item type="file_name" name="image">foliage.jpg</item>
+          <item type="file_name" name="preview">foliage_preview.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">hex_grid_preview.jpg</item>
+          <item type="file_name" name="image">Hex.jpg</item>
+          <item type="file_name" name="preview">hex_preview.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">molecule_grid_preview.jpg</item>
+          <item type="file_name" name="image">Molecule.jpg</item>
+          <item type="file_name" name="preview">molecule_preview.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">qbic_grid_preview.jpg</item>
+          <item type="file_name" name="image">qbic.jpg</item>
+          <item type="file_name" name="preview">qbic_preview.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">shows_over_grid_preview.jpg</item>
+          <item type="file_name" name="image">shows_over.jpg</item>
+          <item type="file_name" name="preview">shows_over_preview.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">stainless_grid_preview.jpg</item>
+          <item type="file_name" name="image">Stainless.jpg</item>
+          <item type="file_name" name="preview">stainless_preview.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">string_theory_grid_preview.jpg</item>
+          <item type="file_name" name="image">string_theory.jpg</item>
+          <item type="file_name" name="preview">string_theory_preview.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">sun_and_moon_grid_preview.jpg</item>
+          <item type="file_name" name="image">Sun_and_Moon.jpg</item>
+          <item type="file_name" name="preview">sun_and_moon_preview.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">velocity_grid_preview.jpg</item>
+          <item type="file_name" name="image">velocity.jpg</item>
+          <item type="file_name" name="preview">velocity_preview.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+        <set name="plenty" max="10">
+          <item type="file_name" name="thumb">waveforms_grid_preview.jpg</item>
+          <item type="file_name" name="image">Waveforms.jpg</item>
+          <item type="file_name" name="preview">waveforms_preview.jpg</item>
+          <!--%%Extra_Preveiw_image_landscape_Mode%%-->
+          <!--%%Extra_Normal_image_landscape_Mode%%-->
+        </set>
+      </function>
+      <function name="1_shortcuts">
+        <set name="plenty">
+          <!--8d3dbb3b-da03-4dc3-8f26-b62d9d24134e-->
+          <item name="package">com.android.vending</item>
+          <item name="class">com.android.vending.AssetBrowserActivity</item>
+          <item name="screen">3</item>
+          <item name="x">0</item>
+          <item name="y">3</item>
+          <item name="itemtype">0</item>
+        </set>
+        <set name="plenty">
+          <!--2b0a4ea2-d745-4c6a-b4b5-caf813731ff3-->
+          <item name="package">com.android.browser</item>
+          <item name="class">com.android.browser.BrowserActivity</item>
+          <item name="screen">3</item>
+          <item name="x">3</item>
+          <item name="y">3</item>
+          <item name="itemtype">0</item>
+        </set>
+      </function>
+      <function name="3_shortcuts">
+        <set name="plenty">
+          <!--fe163c91-a708-4eee-bddf-6a10bb085eac-->
+          <item name="package">com.android.browser</item>
+          <item name="class">com.android.browser.BrowserActivity</item>
+          <item name="screen">3</item>
+          <item name="x">3</item>
+          <item name="y">3</item>
+          <item name="itemtype">0</item>
+        </set>
+        <set name="plenty">
+          <!--669fe60a-c072-4783-a118-d9cb78cc9ebf-->
+          <item name="package">com.htc.laputa.HtcLaputaInstaller</item>
+          <item name="class">com.htc.laputa.HtcLaputaInstaller.HtcLaputaInstaller</item>
+          <item name="screen">3</item>
+          <item name="x">0</item>
+          <item name="y">3</item>
+          <item name="itemtype">0</item>
+        </set>
+      </function>
+      <function name="4_shortcuts">
+        <set name="plenty">
+          <!--e23e871a-b8d5-4c16-affc-f2d509ecc412-->
+          <item name="package">com.sdgtl.watch</item>
+          <item name="class">com.sdgtl.watch.Main</item>
+          <item name="screen">3</item>
+          <item name="x">0</item>
+          <item name="y">3</item>
+          <item name="itemtype">0</item>
+        </set>
+        <set name="plenty">
+          <!--0324ff3d-65da-47e8-aa10-1efda3ac2233-->
+          <item name="package">com.android.browser</item>
+          <item name="class">com.android.browser.BrowserActivity</item>
+          <item name="screen">3</item>
+          <item name="x">3</item>
+          <item name="y">3</item>
+          <item name="itemtype">0</item>
+        </set>
+      </function>
+      <function name="5_shortcuts">
+        <set name="plenty">
+          <!--578d0dc3-f55a-4d55-b3d5-d3201dfc06d2-->
+          <item name="package">com.htc.laputa.HtcLaputaInstaller</item>
+          <item name="class">com.htc.laputa.HtcLaputaInstaller.HtcLaputaInstaller</item>
+          <item name="screen">3</item>
+          <item name="x">0</item>
+          <item name="y">3</item>
+          <item name="itemtype">0</item>
+        </set>
+        <set name="plenty">
+          <!--3608bf67-5de5-468a-9b10-c2c70dd6055b-->
+          <item name="package">com.android.browser</item>
+          <item name="class">com.android.browser.BrowserActivity</item>
+          <item name="screen">3</item>
+          <item name="x">3</item>
+          <item name="y">3</item>
+          <item name="itemtype">0</item>
+        </set>
+      </function>
+      <function name="scene_list">
+        <set name="plenty" max="1">
+          <item name="scenename">HTC</item>
+          <item name="scene_preview_large">scenes_picker_01.png</item>
+        </set>
+        <set name="plenty" max="1">
+          <item name="scenename">Social</item>
+          <item name="scene_preview_large">scenes_picker_02.png</item>
+        </set>
+        <set name="plenty" max="1">
+          <item name="scenename">Work</item>
+          <item name="scene_preview_large">scenes_picker_03.png</item>
+        </set>
+        <set name="plenty" max="1">
+          <item name="scenename">Play</item>
+          <item name="scene_preview_large">scenes_picker_04.png</item>
+        </set>
+        <set name="plenty" max="1">
+          <item name="scenename">Travel</item>
+          <item name="scene_preview_large">scenes_picker_05.png</item>
+        </set>
+      </function>
+    </module>
+    <module name="MessageConfig">
+      <function name="setting">
+        <set name="single">
+          <item name="SMS_Delivery_Report">false</item>
+          <item name="MMS_Delivery_Report">false</item>
+          <item name="MMS_Read_Report">false</item>
+          <item name="MMS_Auto_Retrieve">true</item>
+          <item name="MMS_Roaming_Auto_Retrieve">false</item>
+          <item name="MMS_Priority">Normal</item>
+          <item name="MMS_Msg_Size1">100K</item>
+          <item name="MMS_Msg_Size2">200K</item>
+          <item name="MMS_Msg_Size3">300K</item>
+          <item name="MMS_Msg_Size_Choose">300K</item>
+          <item name="MMS_Received_Notify">true</item>
+          <item name="MMS_Play_Received_Notify">true</item>
+          <item name="MMS_Received_Viberation">true</item>
+          <item name="MMS_Sent_Notify">false</item>
+          <item name="MMS_Fail_Notify">true</item>
+          <item name="MMS_Play_Notify">true</item>
+          <item name="MMS_Notify_Sound">Default Ringtone</item>
+          <item name="MMS_Viberation">true</item>
+          <item name="MMS_Max_Recipient_Number">10</item>
+          <item name="SMS_Max_Recipient_Number">250</item>
+          <item name="SMS_Max_Concatenated_Number">5</item>
+          <item name="MMS_Max_Slide_Number">10</item>
+          <item name="MMS_Default_Slide_Duration">5000</item>
+          <item name="RECIPT_Show_Sent_Msg_History">true</item>
+          <item name="RECIPT_Show_Call_History">true</item>
+          <item name="RECIPT_Show_Email_Address">false</item>
+          <item name="MSG_Preview_Line">2</item>
+          <item name="STORAGE_Del_Old_Msg">false</item>
+          <item name="STORAGE_Text_Msg_Limit">200</item>
+          <item name="STORAGE_MMS_Msg_Limit">20</item>
+          <item name="SMS_Wap_Push_Support">true</item>
+          <item name="SMS_Empty_Draft_Support">false</item>
+          <item name="SMS_To_Email_Support">false</item>
+          <item name="SMS_Class_Zero_Save_Support">true</item>
+          <item name="SMS_Concatenated_Email_SMS">false</item>
+          <item name="SMS_Subject_Support">false</item>
+          <item name="SMS_SMSC_Editable">true</item>
+          <item name="SMS_Empty_SMS_Support">true</item>
+          <item name="SMS_Use_Device_Time">false</item>
+          <item name="SMS_Characters">true</item>
+          <item name="MMS_Retry_Policy">15,15,15,15,15,15</item>
+          <item name="MSG_General_CMAS_Support">false</item>
+          <item name="MMS_Callback_Number">false</item>
+          <item name="MSG_Use_Signature">false</item>
+          <item name="Display_message_on_screen">success_and_failure</item>
+          <item name="MMS_Show_All_Mixed_Text">false</item>
+          <item name="RECIPT_Input_Type_Number">false</item>
+          <item name="MMS_Force_Display_In_Slideshow">false</item>
+        </set>
+      </function>
+    </module>
+    <module name="Calendar">
+      <function name="reminder">
+        <set name="plenty" max="15">
+          <item name="reminder_type">1</item>
+          <item name="reminder_time">10</item>
+        </set>
+      </function>
+      <function name="view">
+        <set name="plenty" max="15">
+          <item name="include_weather">true</item>
+          <item name="preset_city">0</item>
+          <item name="start_weekday">1</item>
+        </set>
+      </function>
+    </module>
+    <module name="weather_provider">
+      <function name="settings">
+        <set name="single">
+          <item name="temprature_unit">c</item>
+        </set>
+      </function>
+      <function name="default_city">
+        <set name="plenty" max="15">
+          <item name="app">com.htc.elroy.Weather</item>
+          <item name="type">1</item>
+          <item name="name">Johannesburg</item>
+          <item name="country">South Africa</item>
+          <item name="code">AFR|ZA|SF004|JOHANNESBURG</item>
+          <item name="timezone">-120</item>
+          <item name="timezoneid">Africa/Harare</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.elroy.Weather</item>
+          <item name="type">1</item>
+          <item name="name">Durban</item>
+          <item name="country">South Africa</item>
+          <item name="code">AFR|ZA|SF005|DURBAN</item>
+          <item name="timezone">-120</item>
+          <item name="timezoneid">Africa/Harare</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.elroy.Weather</item>
+          <item name="type">1</item>
+          <item name="name">Cape Town                                                                      </item>
+          <item name="country">South Africa</item>
+          <item name="code">AFR|ZA|SF011|CAPE TOWN</item>
+          <item name="timezone">-120</item>
+          <item name="timezoneid">Africa/Harare</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.elroy.Weather</item>
+          <item name="type">1</item>
+          <item name="name">London</item>
+          <item name="country">United Kingdom</item>
+          <item name="code">EUR|UK|UK124|LONDON</item>
+          <item name="timezone">0</item>
+          <item name="timezoneid">Europe/London</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.elroy.Weather</item>
+          <item name="type">1</item>
+          <item name="name">Paris</item>
+          <item name="country">France</item>
+          <item name="code">EUR|FR|FR012|PARIS</item>
+          <item name="timezone">-60</item>
+          <item name="timezoneid">Europe/Brussels</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.elroy.Weather</item>
+          <item name="type">1</item>
+          <item name="name">Lisbon</item>
+          <item name="country">Portugal</item>
+          <item name="code">EUR|PT|PO012|LISBOA</item>
+          <item name="timezone">0</item>
+          <item name="timezoneid">Europe/London</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.elroy.Weather</item>
+          <item name="type">1</item>
+          <item name="name">New York</item>
+          <item name="state">NY</item>
+          <item name="country">United States</item>
+          <item name="code">NAM|US|NY|NEW YORK</item>
+          <item name="timezone">300</item>
+          <item name="timezoneid">America/New_York</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.elroy.Weather</item>
+          <item name="type">1</item>
+          <item name="name">Nairobi</item>
+          <item name="country">Kenya</item>
+          <item name="code">AFR|KE|KE004|NAIROBI</item>
+          <item name="timezone">-180</item>
+          <item name="timezoneid">Africa/Nairobi</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.elroy.Weather</item>
+          <item name="type">1</item>
+          <item name="name">Windhoek</item>
+          <item name="country">Namibia</item>
+          <item name="code">AFR|NA|WA005|WINDHOEK</item>
+          <item name="timezone">-60</item>
+          <item name="timezoneid">Africa/Windhoek</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.elroy.Weather</item>
+          <item name="type">1</item>
+          <item name="name">Luanda</item>
+          <item name="country">Angola</item>
+          <item name="code">AFR|AO|AO006|LUANDA</item>
+          <item name="timezone">-60</item>
+          <item name="timezoneid">Africa/Brazzaville</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.elroy.Weather</item>
+          <item name="type">1</item>
+          <item name="name">Maputo</item>
+          <item name="country">Mozambique</item>
+          <item name="code">AFR|MZ|MZ005|MAPUTO</item>
+          <item name="timezone">-120</item>
+          <item name="timezoneid">Africa/Harare</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.elroy.Weather</item>
+          <item name="type">1</item>
+          <item name="name">Abuja</item>
+          <item name="country">Nigeria</item>
+          <item name="code">AFR|NG|NI000|ABUJA</item>
+          <item name="timezone">-60</item>
+          <item name="timezoneid">Africa/Brazzaville</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.android.worldclock</item>
+          <item name="type">1</item>
+          <item name="name">Johannesburg</item>
+          <item name="country">South Africa</item>
+          <item name="code">AFR|ZA|SF004|JOHANNESBURG</item>
+          <item name="timezone">-120</item>
+          <item name="timezoneid">Africa/Harare</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.android.worldclock</item>
+          <item name="type">1</item>
+          <item name="name">Durban</item>
+          <item name="country">South Africa</item>
+          <item name="code">AFR|ZA|SF005|DURBAN</item>
+          <item name="timezone">-120</item>
+          <item name="timezoneid">Africa/Harare</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.android.worldclock</item>
+          <item name="type">1</item>
+          <item name="name">Cape Town                                                                      </item>
+          <item name="country">South Africa</item>
+          <item name="code">AFR|ZA|SF011|CAPE TOWN</item>
+          <item name="timezone">-120</item>
+          <item name="timezoneid">Africa/Harare</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.android.worldclock</item>
+          <item name="type">1</item>
+          <item name="name">London</item>
+          <item name="country">United Kingdom</item>
+          <item name="code">EUR|UK|UK124|LONDON</item>
+          <item name="timezone">0</item>
+          <item name="timezoneid">Europe/London</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.android.worldclock</item>
+          <item name="type">1</item>
+          <item name="name">Paris</item>
+          <item name="country">France</item>
+          <item name="code">EUR|FR|FR012|PARIS</item>
+          <item name="timezone">-60</item>
+          <item name="timezoneid">Europe/Brussels</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.android.worldclock</item>
+          <item name="type">1</item>
+          <item name="name">Lisbon</item>
+          <item name="country">Portugal</item>
+          <item name="code">EUR|PT|PO012|LISBOA</item>
+          <item name="timezone">0</item>
+          <item name="timezoneid">Europe/London</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.android.worldclock</item>
+          <item name="type">1</item>
+          <item name="name">New York</item>
+          <item name="state">NY</item>
+          <item name="country">United States</item>
+          <item name="code">NAM|US|NY|NEW YORK</item>
+          <item name="timezone">300</item>
+          <item name="timezoneid">America/New_York</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.android.worldclock</item>
+          <item name="type">1</item>
+          <item name="name">Nairobi</item>
+          <item name="country">Kenya</item>
+          <item name="code">AFR|KE|KE004|NAIROBI</item>
+          <item name="timezone">-180</item>
+          <item name="timezoneid">Africa/Nairobi</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.android.worldclock</item>
+          <item name="type">1</item>
+          <item name="name">Windhoek</item>
+          <item name="country">Namibia</item>
+          <item name="code">AFR|NA|WA005|WINDHOEK</item>
+          <item name="timezone">-60</item>
+          <item name="timezoneid">Africa/Windhoek</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.android.worldclock</item>
+          <item name="type">1</item>
+          <item name="name">Luanda</item>
+          <item name="country">Angola</item>
+          <item name="code">AFR|AO|AO006|LUANDA</item>
+          <item name="timezone">-60</item>
+          <item name="timezoneid">Africa/Brazzaville</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.android.worldclock</item>
+          <item name="type">1</item>
+          <item name="name">Maputo</item>
+          <item name="country">Mozambique</item>
+          <item name="code">AFR|MZ|MZ005|MAPUTO</item>
+          <item name="timezone">-120</item>
+          <item name="timezoneid">Africa/Harare</item>
+        </set>
+        <set name="plenty" max="15">
+          <item name="app">com.htc.android.worldclock</item>
+          <item name="type">1</item>
+          <item name="name">Abuja</item>
+          <item name="country">Nigeria</item>
+          <item name="code">AFR|NG|NI000|ABUJA</item>
+          <item name="timezone">-60</item>
+          <item name="timezoneid">Africa/Brazzaville</item>
+        </set>
+      </function>
+    </module>
+    <module name="weather_sync_provider">
+      <function name="settings">
+        <set name="single">
+          <item name="temprature_unit">c</item>
+          <item name="update_interval">10800000</item>
+        </set>
+      </function>
+    </module>
+    <module name="Stocks">
+      <function name="settings">
+        <set name="single">
+          <item name="raisecolor">Green</item>
+          <item name="interval">240</item>
+        </set>
+      </function>
+      <function name="default_stocks">
+        <set name="plenty" max="30">
+          <item name="symbol">2498.TW</item>
+        </set>
+        <set name="plenty" max="30">
+          <item name="symbol">^DJI</item>
+        </set>
+        <set name="plenty" max="30">
+          <item name="symbol">^IXIC</item>
+        </set>
+        <set name="plenty" max="30">
+          <item name="symbol">^FTSE</item>
+        </set>
+        <set name="plenty" max="30">
+          <item name="symbol">GOOG</item>
+        </set>
+        <set name="plenty" max="30">
+          <item name="symbol">AMZN</item>
+        </set>
+      </function>
+    </module>
+    <module name="Browser">
+      <function name="bookmark">
+        <set name="plenty">
+          <!--%%File%%-->
+          <item name="title">MTN</item>
+          <item name="url">http://www.mtnloaded.co.za</item>
+        </set>
+        <set name="plenty">
+          <!--%%File%%-->
+          <item name="title">News24</item>
+          <item name="url">http://www.news24.com</item>
+        </set>
+        <set name="plenty">
+          <!--%%File%%-->
+          <item name="title">Mobile Money</item>
+          <item name="url">https://ficarica.mtnbanking.co.za/e17w.jsp</item>
+        </set>
+        <set name="plenty">
+          <!--%%File%%-->
+          <item name="title">FNB</item>
+          <item name="url">http://www.fnb.mobi</item>
+        </set>
+        <set name="plenty">
+          <!--%%File%%-->
+          <item name="title">ABSA</item>
+          <item name="url">https://ib.absa.co.za</item>
+        </set>
+        <set name="plenty">
+          <!--%%File%%-->
+          <item name="title">Standard Bank</item>
+          <item name="url">http://standardbank.mobi</item>
+        </set>
+        <set name="plenty">
+          <!--%%File%%-->
+          <item name="title">Nedbank</item>
+          <item name="url">https://www.nedbankmobile.co.za/mobilenedbank.bank</item>
+        </set>
+        <set name="plenty">
+          <!--%%File%%-->
+          <item name="title">HTC</item>
+          <item name="url">http://www.htc.com</item>
+        </set>
+        <set name="plenty">
+          <!--%%File%%-->
+          <item name="title">Google</item>
+          <item name="url">http://www.google.com</item>
+        </set>
+        <set name="plenty">
+          <!--%%File%%-->
+          <item name="title">Yahoo!</item>
+          <item name="url">http://www.yahoo.com</item>
+        </set>
+        <set name="plenty">
+          <!--%%File%%-->
+          <item name="title">Wiki</item>
+          <item name="url">http://www.wikipedia.org</item>
+        </set>
+        <set name="plenty">
+          <!--%%File%%-->
+          <item name="title">Twitter</item>
+          <item name="url">http://twitter.com</item>
+        </set>
+        <set name="plenty">
+          <!--%%File%%-->
+          <item name="title">Facebook</item>
+          <item name="url">http://www.facebook.com</item>
+        </set>
+        <set name="plenty">
+          <!--%%File%%-->
+          <item name="title">AccuWeather</item>
+          <item name="url">http://www.accuweather.com/m/default.aspx?p=htcand&amp;loc</item>
+        </set>
+        <set name="plenty">
+          <!--%%File%%-->
+          <item name="title">Lonely Planet</item>
+          <item name="url">http://www.lonelyplanet.com</item>
+        </set>
+      </function>
+      <function name="homepage">
+        <set name="single" max="15">
+          <item name="url">http://www.google.com</item>
+        </set>
+      </function>
+    </module>
+    <module name="Message">
+      <function name="mms_retrieval_during_roaming">
+        <set name="single">
+          <item name="setting_method">user_define</item>
+        </set>
+      </function>
+    </module>
+    <module name="Mail">
+      <function name="provider">
+        <set name="plenty" max="10">
+          <!--%%File%%-->
+          <item name="provider">Microsoft Exchange ActiveSync</item>
+          <item name="inprotocol">EAS</item>
+          <item name="description">exchangeAccountDesc</item>
+          <item name="resid">0</item>
+        </set>
+        <set name="plenty" max="10">
+          <!--%%File%%-->
+          <item name="provider">Gmail</item>
+          <item name="domain">gmail.com</item>
+          <item name="inprotocol">IMAP</item>
+          <item name="description">googleAccountDesc</item>
+          <item name="resid">0</item>
+        </set>
+        <set name="plenty" max="10">
+          <!--%%File%%-->
+          <item name="provider">Yahoo</item>
+          <item name="domain">yahoo.com</item>
+          <item name="inprotocol">IMAP</item>
+          <item name="description">yahooAccountDesc</item>
+          <item name="resid">0</item>
+        </set>
+        <set name="plenty" max="10">
+          <!--%%File%%-->
+          <item name="provider">Hotmail</item>
+          <item name="domain">hotmail.com</item>
+          <item name="inprotocol">POP</item>
+          <item name="description">hotmailAccountDesc</item>
+          <item name="resid">0</item>
+        </set>
+        <set name="plenty" max="10">
+          <!--%%File%%-->
+          <item name="provider">Other</item>
+          <item name="description">otherAccountDesc</item>
+          <item name="resid">0</item>
+        </set>
+      </function>
+      <function name="mail_common_setting">
+        <set name="plenty" max="20">
+          <item name="useSignature">1</item>
+          <item name="emailnotifications">1</item>
+          <item name="sizelimit">4</item>
+          <item name="poll_frequency_number">3</item>
+          <item name="fetchMailType">1</item>
+          <item name="fetchMailDays">1</item>
+          <item name="fetchMailNum">0</item>
+          <item name="deleteFromServer">0</item>
+          <item name="alwaysBccMyself">0</item>
+          <item name="askBeforeDelete">0</item>
+          <item name="enableSDsave">1</item>
+          <item name="vibrate">0</item>
+          <item name="sound">0</item>
+          <item name="replyWithText">1</item>
+          <item name="refreshMailWhenOpenFolder">1</item>
+          <item name="syncSchedulePeakOn">3</item>
+          <item name="syncSchedulePeakOff">5</item>
+          <item name="peakDays">31</item>
+          <item name="peakTimeStart">480</item>
+          <item name="peakTimeEnd">1200</item>
+          <item name="downloadMessageWhenScroll">1</item>
+          <item name="syncWithServer">0</item>
+          <item name="previewLinesNumber">2</item>
+        </set>
+      </function>
+      <function name="eas_sync_option">
+        <set name="plenty" max="10">
+          <item name="sync_schedule">4</item>
+          <item name="conflict_resolving">1</item>
+          <item name="mail_filter_type">2</item>
+          <item name="mail_truncation_size">4</item>
+          <item name="mail_body_type">2</item>
+          <item name="mail_attachment_opt">0</item>
+          <item name="cal_filter_type">4</item>
+          <item name="use_ssl">1</item>
+          <item name="syncSchedulePeakOn">4</item>
+          <item name="syncSchedulePeakOff">6</item>
+          <item name="peakDays">31</item>
+          <item name="peakTimeStart">480</item>
+          <item name="peakTimeEnd">1200</item>
+        </set>
+      </function>
+    </module>
+  </category>
+  <category name="ulog_policy">
+    <module name="com.htc.reportagent">
+      <function name="common">
+        <set name="single">
+          <item name="retry">1</item>
+        </set>
+      </function>
+      <function name="policy">
+        <set name="single">
+          <item name="freq">168</item>
+        </set>
+      </function>
+      <function name="log">
+        <set name="single">
+          <item name="cache">2</item>
+        </set>
+      </function>
+      <function name="budget">
+        <set name="single">
+          <item name="period">720</item>
+          <item name="mobile_calc_unit">1</item>
+          <item name="mobile_UL">50</item>
+          <item name="mobile_DL">50</item>
+          <item name="mobile_total">100</item>
+          <item name="other_calc_unit">1</item>
+          <item name="other_UL">-1</item>
+          <item name="other_DL">-1</item>
+          <item name="other_total">-1</item>
+          <item name="all_calc_unit">1</item>
+          <item name="all_UL">-1</item>
+          <item name="all_DL">-1</item>
+          <item name="all_total">-1</item>
+        </set>
+      </function>
+    </module>
+    <module name="com.htc.feedback">
+      <function name="HTC_APP_CRASH">
+        <set name="single">
+          <item name="enable">1</item>
+        </set>
+      </function>
+      <function name="SYSTEM_CRASH">
+        <set name="single">
+          <item name="enable">1</item>
+        </set>
+      </function>
+      <function name="HTC_APP_ANR">
+        <set name="single">
+          <item name="enable">1</item>
+        </set>
+      </function>
+      <function name="LASTKMSG">
+        <set name="single">
+          <item name="enable">1</item>
+        </set>
+      </function>
+      <function name="extra">
+        <set name="single">
+          <item name="bugreport">0</item>
+        </set>
+      </function>
+    </module>
+  </category>
+  <category name="force_change">
+    <module name="Browser">
+      <!-- Web Browser UA string -->
+      <function name="ua_string">
+        <set name="single">
+          <item name="value">SensationXE_Beats_Z715e</item>
+        </set>
+      </function>
+      <function name="ua_string_mobile">
+        <set name="single" />
+      </function>
+      <function name="ua_string_desktop">
+        <set name="single" />
+      </function>
+      <function name="ua_string_short_desktop">
+        <set name="single" />
+      </function>
+      <!-- UA profile URL -->
+      <function name="ua_profile">
+        <set name="single">
+          <item name="value">http://www.htcmms.com.tw/Android/Common/PG5813/ua-profile.xml</item>
+        </set>
+      </function>
+      <!-- Enable gif animation -->
+      <function name="enable_gif_anim">
+        <set name="single" />
+      </function>
+      <!-- Mobile_view -->
+      <function name="mobile_view">
+        <set name="single" />
+      </function>
+      <!-- Default text encoding -->
+      <function name="default_text_encoding">
+        <set name="single" />
+      </function>
+      <!-- Location_Setting -->
+      <function name="geolocation">
+        <set name="single" />
+      </function>
+      <!-- Open pages in overview -->
+      <function name="overview">
+        <set name="single">
+          <item name="value">true</item>
+        </set>
+      </function>
+      <!-- Max tabs count -->
+      <function name="max_tabs">
+        <set name="single" />
+      </function>
+      <!-- full screen mode (show/hide status bar) -->
+      <function name="always_show_statusbar">
+        <set name="single" />
+      </function>
+      <!-- Bookmark View Setting -->
+      <function name="bookmark_view_mode">
+        <set name="single" />
+      </function>
+      <!-- Most Visit Bookmark View Setting -->
+      <function name="mostvisited_view_mode">
+        <set name="single" />
+      </function>
+      <!-- Default Search Engine -->
+      <function name="search_engine">
+        <set name="single" />
+      </function>
+      <!-- download_dialog -->
+      <function name="download">
+        <set name="single" />
+      </function>
+      <!-- normal_layout -->
+      <function name="normal_layout">
+        <set name="single" />
+      </function>
+      <!-- autofit_pages -->
+      <function name="autofit_pages">
+        <set name="single" />
+      </function>
+      <!-- mobile_proxy_host -->
+      <function name="mobile_proxy_host">
+        <set name="single" />
+      </function>
+      <!-- mobile_proxy_port -->
+      <function name="mobile_proxy_port">
+        <set name="single" />
+      </function>
+      <!-- Bookmark enable_plugin-->
+      <function name="enable_plugin">
+        <set name="single" />
+      </function>
+    </module>
+    <!-- MMS UA string -->
+    <module name="MMS">
+      <function name="ua_string">
+        <set name="single">
+          <item name="value">HTC_SensationXE_Beats/1.0</item>
+        </set>
+      </function>
+    </module>
+    <!--  J2ME UA string  -->
+    <module name="J2ME">
+      <function name="ua_string">
+        <set name="single" />
+      </function>
+    </module>
+  </category>
+</customization_form>

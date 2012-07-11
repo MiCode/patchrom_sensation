@@ -119,7 +119,7 @@
 
 .field public static final btn_normal_small:I = 0x2080003
 
-.field public static final btn_phone_bg:I = 0x2080ba7
+.field public static final btn_phone_bg:I = 0x2080ba8
 
 .field public static final btn_qualifier_asks:I = 0x20800f0
 
@@ -789,11 +789,11 @@
 
 .field public static final common_divider_items:I = 0x2080020
 
-.field public static final common_divider_list:I = 0x2080bac
+.field public static final common_divider_list:I = 0x2080bad
 
 .field public static final common_divider_top:I = 0x20806a4
 
-.field public static final common_dot:I = 0x2080ba8
+.field public static final common_dot:I = 0x2080ba9
 
 .field public static final common_download:I = 0x20807ec
 
@@ -1201,35 +1201,35 @@
 
 .field public static final common_icon_attached_xls:I = 0x2080832
 
-.field public static final common_icon_attachment_audio:I = 0x2080bba
+.field public static final common_icon_attachment_audio:I = 0x2080bbb
 
-.field public static final common_icon_attachment_compress:I = 0x2080bbb
+.field public static final common_icon_attachment_compress:I = 0x2080bbc
 
-.field public static final common_icon_attachment_doc:I = 0x2080bbc
+.field public static final common_icon_attachment_doc:I = 0x2080bbd
 
-.field public static final common_icon_attachment_mail:I = 0x2080bbd
+.field public static final common_icon_attachment_mail:I = 0x2080bbe
 
 .field public static final common_icon_attachment_on:I = 0x2080205
 
-.field public static final common_icon_attachment_other:I = 0x2080bbe
+.field public static final common_icon_attachment_other:I = 0x2080bbf
 
-.field public static final common_icon_attachment_pdf:I = 0x2080bbf
+.field public static final common_icon_attachment_pdf:I = 0x2080bc0
 
-.field public static final common_icon_attachment_pic:I = 0x2080bc0
+.field public static final common_icon_attachment_pic:I = 0x2080bc1
 
-.field public static final common_icon_attachment_ppt:I = 0x2080bc1
+.field public static final common_icon_attachment_ppt:I = 0x2080bc2
 
 .field public static final common_icon_attachment_rest:I = 0x2080206
 
-.field public static final common_icon_attachment_snapbooth:I = 0x2080bc2
+.field public static final common_icon_attachment_snapbooth:I = 0x2080bc3
 
-.field public static final common_icon_attachment_vcf:I = 0x2080bc3
+.field public static final common_icon_attachment_vcf:I = 0x2080bc4
 
-.field public static final common_icon_attachment_vcs:I = 0x2080bc4
+.field public static final common_icon_attachment_vcs:I = 0x2080bc5
 
-.field public static final common_icon_attachment_video:I = 0x2080bc5
+.field public static final common_icon_attachment_video:I = 0x2080bc6
 
-.field public static final common_icon_attachment_xls:I = 0x2080bc6
+.field public static final common_icon_attachment_xls:I = 0x2080bc7
 
 .field public static final common_icon_back:I = 0x208002c
 
@@ -1597,7 +1597,7 @@
 
 .field public static final common_icon_dlna_music_rest:I = 0x2080274
 
-.field public static final common_icon_dlna_output_on:I = 0x2080b9e
+.field public static final common_icon_dlna_output_on:I = 0x2080b9f
 
 .field public static final common_icon_dlna_photo_on:I = 0x2080275
 
@@ -4209,6 +4209,8 @@
 
 .field public static final common_icon_trip_on:I = 0x20806ff
 
+.field public static final common_icon_trip_rest:I = 0x2080b96
+
 .field public static final common_icon_twitter_favorites_on:I = 0x2080445
 
 .field public static final common_icon_twitter_favorites_rest:I = 0x2080446
@@ -4245,13 +4247,13 @@
 
 .field public static final common_icon_video_details_rest:I = 0x2080ae8
 
-.field public static final common_icon_video_play_fastforward_1:I = 0x2080bca
+.field public static final common_icon_video_play_fastforward_1:I = 0x2080bcb
 
-.field public static final common_icon_video_play_fastforward_2:I = 0x2080bc9
+.field public static final common_icon_video_play_fastforward_2:I = 0x2080bca
 
-.field public static final common_icon_video_play_fastrewind_1:I = 0x2080bc8
+.field public static final common_icon_video_play_fastrewind_1:I = 0x2080bc9
 
-.field public static final common_icon_video_play_fastrewind_2:I = 0x2080bc7
+.field public static final common_icon_video_play_fastrewind_2:I = 0x2080bc8
 
 .field public static final common_icon_video_store_on:I = 0x208074d
 
@@ -4513,13 +4515,13 @@
 
 .field public static final common_mainnav_right_selected:I = 0x20804a6
 
-.field public static final common_menu_panel_4round:I = 0x2080b96
+.field public static final common_menu_panel_4round:I = 0x2080b97
 
-.field public static final common_minus_press:I = 0x2080b9f
+.field public static final common_minus_press:I = 0x2080ba0
 
-.field public static final common_minus_rest:I = 0x2080ba0
+.field public static final common_minus_rest:I = 0x2080ba1
 
-.field public static final common_minus_selected:I = 0x2080ba1
+.field public static final common_minus_selected:I = 0x2080ba2
 
 .field public static final common_more_disabled:I = 0x20804a7
 
@@ -4539,11 +4541,11 @@
 
 .field public static final common_notification_new_on:I = 0x20805ac
 
-.field public static final common_notification_off_small:I = 0x2080ba2
+.field public static final common_notification_off_small:I = 0x2080ba3
 
 .field public static final common_notification_on:I = 0x208006a
 
-.field public static final common_notification_on_small:I = 0x2080ba3
+.field public static final common_notification_on_small:I = 0x2080ba4
 
 .field public static final common_notification_problem:I = 0x2080aee
 
@@ -4551,7 +4553,7 @@
 
 .field public static final common_panel:I = 0x208006c
 
-.field public static final common_panel_container_mask:I = 0x2080b97
+.field public static final common_panel_container_mask:I = 0x2080b98
 
 .field public static final common_panel_fullscreen_base:I = 0x20804ac
 
@@ -4591,11 +4593,11 @@
 
 .field public static final common_photo_frame_selector:I = 0x2080790
 
-.field public static final common_plus_press:I = 0x2080ba4
+.field public static final common_plus_press:I = 0x2080ba5
 
-.field public static final common_plus_rest:I = 0x2080ba5
+.field public static final common_plus_rest:I = 0x2080ba6
 
-.field public static final common_plus_selected:I = 0x2080ba6
+.field public static final common_plus_selected:I = 0x2080ba7
 
 .field public static final common_popupmenu:I = 0x2080aef
 
@@ -4647,21 +4649,21 @@
 
 .field public static final common_pulldown_bkg:I = 0x2080705
 
-.field public static final common_pulldown_bottom_2nd_rest:I = 0x2080bad
+.field public static final common_pulldown_bottom_2nd_rest:I = 0x2080bae
 
-.field public static final common_pulldown_bottom_pressed:I = 0x2080bae
+.field public static final common_pulldown_bottom_pressed:I = 0x2080baf
 
-.field public static final common_pulldown_bottom_rest:I = 0x2080baf
+.field public static final common_pulldown_bottom_rest:I = 0x2080bb0
 
-.field public static final common_pulldown_bottom_selected:I = 0x2080bb0
+.field public static final common_pulldown_bottom_selected:I = 0x2080bb1
 
-.field public static final common_pulldown_center_2nd_rest:I = 0x2080bb1
+.field public static final common_pulldown_center_2nd_rest:I = 0x2080bb2
 
-.field public static final common_pulldown_center_pressed:I = 0x2080bb2
+.field public static final common_pulldown_center_pressed:I = 0x2080bb3
 
-.field public static final common_pulldown_center_rest:I = 0x2080bb3
+.field public static final common_pulldown_center_rest:I = 0x2080bb4
 
-.field public static final common_pulldown_center_selected:I = 0x2080bb4
+.field public static final common_pulldown_center_selected:I = 0x2080bb5
 
 .field public static final common_pulldown_disable:I = 0x2080791
 
@@ -4671,15 +4673,15 @@
 
 .field public static final common_pulldown_selected:I = 0x20804c4
 
-.field public static final common_pulldown_top_2nd_rest:I = 0x2080bb5
+.field public static final common_pulldown_top_2nd_rest:I = 0x2080bb6
 
-.field public static final common_pulldown_top_pressed:I = 0x2080bb6
+.field public static final common_pulldown_top_pressed:I = 0x2080bb7
 
-.field public static final common_pulldown_top_rest:I = 0x2080bb7
+.field public static final common_pulldown_top_rest:I = 0x2080bb8
 
-.field public static final common_pulldown_top_selected:I = 0x2080bb8
+.field public static final common_pulldown_top_selected:I = 0x2080bb9
 
-.field public static final common_pulldown_top_shadow:I = 0x2080bb9
+.field public static final common_pulldown_top_shadow:I = 0x2080bba
 
 .field public static final common_radio_off_disable:I = 0x20800b8
 
@@ -5405,7 +5407,7 @@
 
 .field public static final gl_raindrop_streaks_gl:I = 0x2080598
 
-.field public static final glance_icon_zero_dummy_asset:I = 0x2080ba9
+.field public static final glance_icon_zero_dummy_asset:I = 0x2080baa
 
 .field public static final hailstone_sleet:I = 0x2080599
 
@@ -5517,9 +5519,9 @@
 
 .field public static final lockscreen_arcglass_top:I = 0x20805c8
 
-.field public static final lockscreen_drag_direction_green:I = 0x2080b98
+.field public static final lockscreen_drag_direction_green:I = 0x2080b99
 
-.field public static final lockscreen_drag_direction_red:I = 0x2080b99
+.field public static final lockscreen_drag_direction_red:I = 0x2080b9a
 
 .field public static final lockscreen_prompt_back:I = 0x20805c9
 
@@ -5645,7 +5647,7 @@
 
 .field public static final pressed_application_background:I = 0x208008e
 
-.field public static final progress_bg:I = 0x2080baa
+.field public static final progress_bg:I = 0x2080bab
 
 .field public static final qa_copy:I = 0x20805f0
 
@@ -5901,7 +5903,7 @@
 
 .field public static final selection_magnify:I = 0x208066d
 
-.field public static final selector:I = 0x2080bab
+.field public static final selector:I = 0x2080bac
 
 .field public static final showers_01:I = 0x208066e
 
@@ -5995,13 +5997,13 @@
 
 .field public static final titlebar_control:I = 0x208068e
 
-.field public static final toggle_button:I = 0x2080b9a
+.field public static final toggle_button:I = 0x2080b9b
 
-.field public static final toggle_off:I = 0x2080b9b
+.field public static final toggle_off:I = 0x2080b9c
 
-.field public static final toggle_on:I = 0x2080b9c
+.field public static final toggle_on:I = 0x2080b9d
 
-.field public static final toggle_outer:I = 0x2080b9d
+.field public static final toggle_outer:I = 0x2080b9e
 
 .field public static final topround_v1:I = 0x208068f
 
@@ -6059,7 +6061,7 @@
     .locals 0
 
     .prologue
-    .line 4108
+    .line 4184
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

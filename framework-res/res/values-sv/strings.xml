@@ -269,9 +269,9 @@
     <string name="turn_off_radio">Inaktivera trådlöst</string>
     <string name="screen_lock">Skärmlås</string>
     <string name="power_off">Stäng av</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Ringsignal av</string>
+    <string name="silent_mode_vibrate">Vibrationsringning</string>
+    <string name="silent_mode_ring">Ringsignal på</string>
     <string name="shutdown_progress">Avslutar…</string>
     <string name="shutdown_confirm">Din telefon stängs av.</string>
     <string name="shutdown_confirm_question">Vill du stänga av?</string>
@@ -322,8 +322,8 @@
     <string name="permdesc_receiveSms">Tillåter att program tar emot och bearbetar SMS-meddelanden. Skadliga program kan övervaka dina meddelanden eller ta bort dem utan att visa dem för dig.</string>
     <string name="permlab_receiveMms">ta emot MMS</string>
     <string name="permdesc_receiveMms">Tillåter att program tar emot och bearbetar MMS-meddelanden. Skadliga program kan övervaka dina meddelanden eller ta bort dem innan du har sett dem.</string>
-    <string name="permlab_receiveEmergencyBroadcast">ta emot sändningar i nödsituationer</string>
-    <string name="permdesc_receiveEmergencyBroadcast">Tillåter att appen tar emot och bearbetar sändningar i nödsituationer. Behörigheten är bara tillgänglig för systemappar.</string>
+    <string name="permlab_receiveEmergencyBroadcast">ta emot meddelanden vid nödsituationer</string>
+    <string name="permdesc_receiveEmergencyBroadcast">Tillåter att appen tar emot och bearbetar meddelanden vid nödsituationer. Behörigheten är bara tillgänglig för systemappar.</string>
     <string name="permlab_sendSms">skicka SMS</string>
     <string name="permdesc_sendSms">Tillåter att programmet skickar SMS-meddelanden. Skadliga program kan skicka meddelanden utan ditt godkännande vilket kan kosta pengar.</string>
     <string name="permlab_sendSmsNoConfirmation">skicka SMS utan bekräftelse</string>
@@ -338,7 +338,7 @@
     <string name="permdesc_getTasks">Tillåter att program hämtar information om uppgifter som körs och har körts. Skadliga program kan upptäcka privat information om andra program.</string>
     <string name="permlab_reorderTasks">byt ordning på program som körs</string>
     <string name="permdesc_reorderTasks">Tillåter att ett program flyttar uppgifter till förgrunden eller bakgrunden. Skadliga program kan tvinga sig till förgrunden utan att du kan styra det.</string>
-    <string name="permlab_removeTasks">Sluta köra appar</string>
+    <string name="permlab_removeTasks">Avsluta aktiva appar</string>
     <string name="permdesc_removeTasks">Tillåter att en app tar bort uppgifter och stänger av appar. Skadliga appar kan störa andra appars funktion.</string>
     <string name="permlab_setDebugApp">aktivera felsökning av program</string>
     <string name="permdesc_setDebugApp">Tillåter att ett program aktiverar felsökning för ett annat program. Skadliga program kan använda detta för att avsluta andra program.</string>
@@ -405,7 +405,7 @@
     <string name="permlab_setOrientation">ändra bildskärmsläge</string>
     <string name="permdesc_setOrientation">Tillåter att ett program när som helst roterar skärmens orientering. Behövs inte för vanliga program.</string>
     <string name="permlab_setPointerSpeed">ändra markörens hastighet</string>
-    <string name="permdesc_setPointerSpeed">Tillåter att en app när som helst ändrar hastigheten för musens eller styrplattans markör. Ska inte behövas för vanliga appar.</string>
+    <string name="permdesc_setPointerSpeed">Tillåter att en app att när som helst ändrar hastigheten för musens eller styrplattans markör. Ska inte behövas för vanliga appar.</string>
     <string name="permlab_signalPersistentProcesses">skicka Linux-signaler till program</string>
     <string name="permdesc_signalPersistentProcesses">Tillåter att programmet begär att den angivna signalen skickas till alla beständiga processer.</string>
     <string name="permlab_persistentActivity">se till att programmet alltid körs</string>
@@ -426,10 +426,10 @@
     <string name="permdesc_movePackage">Tillåter att ett program flyttar programresurser från interna till externa medier och tvärt om.</string>
     <string name="permlab_readLogs">läsa känsliga loggdata</string>
     <string name="permdesc_readLogs">Tillåter att ett program läser från systemets olika loggfiler. Det innebär att programmet kan upptäcka allmän information om vad du gör med telefonen, vilket kan inkludera personlig eller privat information.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">använd valfri medie-avkodare för uppspelning</string>
+    <string name="permdesc_anyCodecForPlayback">Låter ett program använda en installerad medie-avkodare för uppspelning.</string>
+    <string name="permlab_readWriteOmaDrm">öppna mappen oma DRM</string>
+    <string name="permdesc_readWriteOmaDrm">Låter applikationen läsa eller skriva om OMA DRM till mappen.</string>
     <string name="permlab_diagnostic">läsa/skriva till resurser som ägs av diag</string>
     <string name="permdesc_diagnostic">Tillåter att ett program läser och skriver till en resurs som ägs av diag-gruppen; till exempel filer i /dev. Detta kan eventuellt påverka systemets stabilitet och säkerhet. Detta bör ENDAST används av tillverkaren eller operatören för maskinvaruspecifik diagnostik.</string>
     <string name="permlab_changeComponentState">aktivera eller inaktivera programkomponenter</string>
@@ -450,17 +450,17 @@
     <string name="permdesc_readContacts">Tillåter att ett program läser alla kontaktuppgifter (adresser) som har lagrats på din telefon. Skadliga program kan använda detta för att skicka dina data till andra personer.</string>
     <string name="permlab_writeContacts">skriva kontaktuppgifter</string>
     <string name="permdesc_writeContacts">Tillåter att ett program ändrar kontaktuppgifter (adress) som har lagrats på din telefon. Skadliga program kan använda detta för att radera eller ändra kontaktuppgifter.</string>
-    <string name="permlab_readProfile">läser din profilinformation</string>
+    <string name="permlab_readProfile">läsa din profilinformation</string>
     <string name="permdesc_readProfile">Tillåter att appen läser personlig profilinformation som lagrats på enheten, t.ex. ditt namn och kontaktuppgifter. Det innebär att appen kan identifiera dig och skicka din profilinformation till andra.</string>
-    <string name="permlab_writeProfile">skriver till data för din profil</string>
+    <string name="permlab_writeProfile">skriva data till din profil</string>
     <string name="permdesc_writeProfile">Tillåter att appen ändrar eller lägger till personlig profilinformation som lagras på din enhet, t.ex. ditt namn och kontaktuppgifter. Det innebär att andra appar kan identifiera dig och skicka profilinformation till andra.</string>
-    <string name="permlab_readSocialStream">läs mitt sociala flöde</string>
-    <string name="permdesc_readSocialStream">Gör det möjligt för appen få åtkomst till och synkronisera sociala uppdateringar från dig och dina vänner. Skadliga appar kan använda detta för att läsa privata konversationer mellan dig och dina vänner på sociala nätverk.</string>
-    <string name="permlab_writeSocialStream">skriv till mitt sociala flöde</string>
+    <string name="permlab_readSocialStream">läsa mitt sociala flöde</string>
+    <string name="permdesc_readSocialStream">Tillåter appen åtkomst till och synkronisera sociala uppdateringar från dig och dina vänner. Skadliga appar kan använda detta för att läsa privata konversationer mellan dig och dina vänner på sociala nätverk.</string>
+    <string name="permlab_writeSocialStream">skriva till mina sociala flöden</string>
     <string name="permdesc_writeSocialStream">Gör det möjligt för appen att visa sociala uppdateringar från dina vänner. Skadliga program kan använda detta för att låtsas vara en vän och lura dig att avslöja lösenord eller annan konfidentiell information.</string>
     <string name="permlab_readCalendar">läsa kalenderuppgifter plus konfidentiell information</string>
     <string name="permdesc_readCalendar">Tillåter att en app läser kalenderuppgifter som har lagrats på din telefon, även dina vänners eller kollegors uppgifter. Skadliga appar kan använda detta för att hämta personliga uppgifter från kalendrar utan ägarens vetskap.</string>
-    <string name="permlab_writeCalendar">lägga till eller ändra kalenderuppgifter och skicka e-post till gäster utan ägarens vetskap</string>
+    <string name="permlab_writeCalendar">lägga till eller ändra kalenderuppgifter och skicka e-post utan ägarens vetskap</string>
     <string name="permdesc_writeCalendar">Tillåter att en app skickar inbjudningar som kalenderns ägare och att den lägger till, tar bort och ändrar uppgifter som du kan ändra på enheten, inklusive dina vänners eller kollegors uppgifter. Skadliga appar kan använda detta för att skicka skräppost som ser ut att komma från kalenderns ägare, ändra uppgifter utan ägarens vetskap eller lägga till falska uppgifter.</string>
     <string name="permlab_accessMockLocation">skenplatser för att testa</string>
     <string name="permdesc_accessMockLocation">Skapa skenplatser för att testa. Skadliga program kan använda detta för att åsidosätta platsen och/eller statusen som returneras av riktiga platser, till exempel GPS- eller nätverksleverantörer.</string>
@@ -557,7 +557,7 @@
     <string name="permlab_createNetworkSockets">fullständig Internetåtkomst</string>
     <string name="permdesc_createNetworkSockets">Tillåter att ett program skapar nätverksuttag.</string>
     <string name="permlab_writeApnSettings">ändra/spärra nätverksinställningar och trafik</string>
-    <string name="permdesc_writeApnSettings">Tillåter att en app ändrar nätverksinställningar och spärrar och undersöker all nätverkstrafik, t.ex. ändrar proxyservern och porten till en APN. Skadliga appar kan övervaka, omdirigera eller ändra nätverkspaket utan din vetskap.</string>
+    <string name="permdesc_writeApnSettings">Tillåter att en app ändrar nätverksinställningar, spärrar och undersöker all nätverkstrafik, t.ex. ändrar proxyservern och porten till en APN. Skadliga appar kan övervaka, omdirigera eller ändra nätverkspaket utan din vetskap.</string>
     <string name="permlab_changeNetworkState">ändra nätverksanslutning</string>
     <string name="permdesc_changeNetworkState">Tillåter att ett program ändrar statusens för en kopplad nätverksanslutning.</string>
     <string name="permlab_changeTetherState">ändra sammanlänkad anslutning</string>
@@ -571,9 +571,9 @@
     <string name="permlab_changeWifiMulticastState">tillåta Wi-Fi Multicast-mottagning</string>
     <string name="permdesc_changeWifiMulticastState">Ger ett program möjlighet att ta emot paket som inte är direktadresserade till din enhet. Det kan vara användbart vid identifiering av tjänster som erbjuds i närheten. Använder mer energi än läget för icke-multicast.</string>
     <string name="permlab_accessWimaxState">visa WiMAX-status</string>
-    <string name="permdesc_accessWimaxState">Tillåter att ett program visar information om statusen för WiMAX.</string>
+    <string name="permdesc_accessWimaxState">Låter ett program visa information om statusen för WiMAX.</string>
     <string name="permlab_changeWimaxState">ändra WiMAX-status</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">Låter ett program ansluta och koppla från WiMAX-nätverket.</string>
     <string name="permlab_bluetoothAdmin">administrera bluetooth</string>
     <string name="permdesc_bluetoothAdmin">Tillåter att ett program konfigurerar den lokala Bluetooth-telefonen samt upptäcker och parkopplar den med fjärranslutna enheter.</string>
     <string name="permlab_bluetooth">skapa Bluetooth-anslutningar</string>
@@ -608,7 +608,7 @@
     <string name="permdesc_readNetworkUsageHistory">Tillåter att en app läser den historiska nätverksanvändningen för specifika nätverk och appar.</string>
     <string name="permlab_manageNetworkPolicy">hantera nätverkspolicy</string>
     <string name="permdesc_manageNetworkPolicy">Tillåter att en app hanterar nätverkspolicyer och definierar programspecifika regler.</string>
-    <string name="permlab_modifyNetworkAccounting">ändra nätverksredovisningen</string>
+    <string name="permlab_modifyNetworkAccounting">ändra nätverksanvändning</string>
     <string name="permdesc_modifyNetworkAccounting">Tillåter att appen ändrar hur nätverksanvändningen redovisas för appar. Används inte av vanliga appar.</string>
     <string name="policylab_limitPassword">Ange lösenordsregler</string>
     <string name="policydesc_limitPassword">Bestäm hur många och vilka tecken som är tillåtna i skärmlåsets lösenord</string>
@@ -626,7 +626,7 @@
     <string name="policydesc_expirePassword">Styr hur ofta lösenordet till skärmlåset måste ändras</string>
     <string name="policylab_encryptedStorage">Ange krypterad lagring</string>
     <string name="policydesc_encryptedStorage">Kräv att sparade applikationsdata krypteras.</string>
-    <string name="policylab_disableCamera">Inaktivera kameror</string>
+    <string name="policylab_disableCamera">Inaktivera kamera</string>
     <string name="policydesc_disableCamera">Förhindra att enhetens kameror används</string>
     <string name="phoneTypeCustom">Anpassad</string>
     <string name="phoneTypeHome">Hem</string>
@@ -708,7 +708,7 @@
     <string name="keyguard_password_wrong_pin_code">Fel PIN-kod!</string>
     <string name="keyguard_label_text">Tryck på Meny och sedan på 0 om du vill låsa upp.</string>
     <string name="emergency_call_dialog_number_for_display">Nödsamtalsnummer</string>
-    <string name="lockscreen_carrier_default">Ingen tjänst.</string>
+    <string name="lockscreen_carrier_default">Inget nätverk.</string>
     <string name="lockscreen_screen_locked">Skärmen har låsts.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Tryck på Meny om du vill låsa upp eller ringa nödsamtal.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Tryck på Meny om du vill låsa upp.</string>
@@ -731,7 +731,7 @@
     <string name="lockscreen_transport_prev_description">Knapp för föregående spår</string>
     <string name="lockscreen_transport_next_description">Knapp för nästa spår</string>
     <string name="lockscreen_transport_pause_description">Pausknappen</string>
-    <string name="lockscreen_transport_play_description">Uppspelningsknappen</string>
+    <string name="lockscreen_transport_play_description">Playknappen</string>
     <string name="lockscreen_transport_stop_description">Stoppknappen</string>
     <string name="emergency_calls_only">Endast nödsamtal</string>
     <string name="lockscreen_network_locked_message">Nätverk låst</string>
@@ -826,7 +826,7 @@ Tryck på OK om du vill fortsätta eller på Avbryt om du vill vara kvar på den
     <string name="autofill_county">Kommun</string>
     <string name="autofill_island">Ö</string>
     <string name="autofill_district">Distrikt</string>
-    <string name="autofill_department">Department</string>
+    <string name="autofill_department">Avdelning</string>
     <string name="autofill_prefecture">Prefektur</string>
     <string name="autofill_parish">Församling</string>
     <string name="autofill_area">Område</string>
@@ -925,7 +925,7 @@ Vill du stänga den?"</string>
     <string name="launch_warning_title">Programmet omdirigerades</string>
     <string name="launch_warning_replace">%1$s körs.</string>
     <string name="launch_warning_original">%1$s startades först.</string>
-    <string name="screen_compat_mode_scale">Anpassning</string>
+    <string name="screen_compat_mode_scale">Anpassa</string>
     <string name="screen_compat_mode_show">Visa alltid</string>
     <string name="screen_compat_mode_hint">Aktivera igen under Inställningar > Appar > Hantera appar.</string>
     <string name="smv_application">Programmet %1$s (processen %2$s) har brutit mot sin egen StrictMode-policy.</string>
@@ -962,7 +962,7 @@ Vill du stänga den?"</string>
     <string name="ringtone_silent">Tyst</string>
     <string name="ringtone_picker_title">Ringsignaler</string>
     <string name="ringtone_unknown">Okänd ringsignal</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Logga in på Wi-Fi-nätverk</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Det gick inte att ansluta till Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" har en dålig Internetanslutning."</string>
@@ -1073,7 +1073,7 @@ för kontot %s"</string>
     <string name="vpn_title">VPN är aktiverad.</string>
     <string name="vpn_title_long">VPN aktiveras av %s</string>
     <string name="vpn_text">Knacka lätt för att hantera nätverket.</string>
-    <string name="vpn_text_long">Ansluten till %s. Knacka lätt för att hantera nätverket.</string>
+    <string name="vpn_text_long">Ansluten till %s. Tryck för att hantera nätverket.</string>
     <string name="upload_file">Välj fil</string>
     <string name="no_file_chosen">Ingen fil har valts</string>
     <string name="reset">Återställ</string>
@@ -1119,7 +1119,7 @@ för kontot %s"</string>
     <string name="add_account_button_label">Lägg till konto</string>
     <string name="number_picker_increment_button">Öka</string>
     <string name="number_picker_decrement_button">Minska</string>
-    <string name="number_picker_increment_scroll_mode">%s knacka lätt och håll kvar.</string>
+    <string name="number_picker_increment_scroll_mode">%s tryck och håll kvar.</string>
     <string name="number_picker_increment_scroll_action">Skjut uppåt för att öka och nedåt för att minska.</string>
     <string name="time_picker_increment_minute_button">Öka minuter</string>
     <string name="time_picker_decrement_minute_button">Minska minuter</string>
@@ -1160,7 +1160,7 @@ för kontot %s"</string>
     <string name="description_target_camera">Kamera</string>
     <string name="description_target_silent">Tyst</string>
     <string name="description_target_soundon">Ljud på</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">Svep för att låsa upp.</string>
     <string name="keyboard_headset_required_to_hear_password">Anslut hörlurar om du vill höra lösenorden läsas upp.</string>
     <string name="keyboard_password_character_no_headset">Punkt.</string>
     <string name="action_bar_home_description">Visa startsidan</string>
@@ -1203,9 +1203,9 @@ för kontot %s"</string>
     <string name="share_action_provider_share_with">Dela med...</string>
     <string name="status_bar_device_locked">Enheten är låst.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Sänder...</string>
+    <string name="launchBrowserDefault">Starta webbläsare?</string>
+    <string name="SetupCallDefault">Besvara samtal?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">Komma åt 4G</string>
     <string name="permlab_changeWimaxMulticastState">tillåt WiMAX-multicastmottagning</string>
@@ -1267,11 +1267,12 @@ för kontot %s"</string>
     <string name="install_notify_title">IT spärrat installation:</string>
     <string name="uninstall_notify_title">IT spärrat avinstallation:</string>
     <string name="wifi_notify_title">IT inaktiverade WiFi</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Rensa standardinställning i Inställningar för startsida > Program.</string>
+    <string name="sim_puk_contact_customer_care_information">Kontakta Kundtjänst för att få PUK-koden</string>
     <string name="permlab_accessCWFolder">Öppna guiden för anpassning av funktionsmappar</string>
     <string name="permdesc_accessCWFolder">Ger ett program tillåtelse att öppna guiden för anpassning av funktionsmappar</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Öppna återställningsmappen</string>
+    <string name="permdesc_accessRecoveryFolder">Låter ett program komma åt återställningsmappen</string>
     <string name="permlab_setappname">Dynamik för att ändra programnamn</string>
     <string name="permdesc_setappname">Tillåter att ett program ändrar specifikt programnamn dynamiskt.</string>
     <string name="text_limitation">Kan inte välja för många ord att dela.</string>
@@ -1294,7 +1295,7 @@ för kontot %s"</string>
     <string name="ext_media_ro_notification_title">SD-kortet är skrivskyddat (inte krypterat)</string>
     <string name="ext_media_ro_notification_message">För skrivbehörighet, formatera för att kryptera SD-kort</string>
     <string name="dock_mode_goto_notification_title">Dockningsläge</string>
-    <string name="dock_mode_goto_notification_message">Markera för att återgå till dockningsläget.</string>
+    <string name="dock_mode_goto_notification_message">Välj för att återgå till dockningsläget.</string>
     <string name="lockscreen_uimsim_unlock_progress_dialog_message">Låser upp UIM/SIM-kort…</string>
     <string name="lockscreen_uim_unlock_progress_dialog_message">Låser upp UIM-kort…</string>
     <string name="lockscreen_uim_puk_locked_message">UIM-kortet är PUK-låst.</string>
@@ -1311,5 +1312,5 @@ för kontot %s"</string>
     <string name="font_color">Teckenfärg</string>
     <string name="font_settings">Teckensnittsinställningar</string>
     <string name="font_alignment">Teckensnittsjustering</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Konfigurera</string>
 </resources>

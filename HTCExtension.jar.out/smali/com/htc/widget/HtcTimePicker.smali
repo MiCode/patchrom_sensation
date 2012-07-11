@@ -443,22 +443,22 @@
     .locals 1
 
     .prologue
-    .line 346
+    .line 344
     iget v0, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentHour:I
 
     invoke-virtual {p0, v0}, Lcom/htc/widget/HtcTimePicker;->setCurrentHour(I)V
 
-    .line 347
+    .line 345
     iget v0, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentMinute:I
 
     invoke-virtual {p0, v0}, Lcom/htc/widget/HtcTimePicker;->setCurrentMinute(I)V
 
-    .line 348
+    .line 346
     iget v0, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentSecond:I
 
     invoke-virtual {p0, v0}, Lcom/htc/widget/HtcTimePicker;->setCurrentSecond(I)V
 
-    .line 349
+    .line 347
     return-void
 .end method
 
@@ -472,22 +472,22 @@
 
     const/4 v2, 0x0
 
-    .line 540
+    .line 538
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mLabelHour:Landroid/widget/TextView;
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 541
+    .line 539
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mLabelMinute:Landroid/widget/TextView;
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 542
+    .line 540
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mLabelSecond:Landroid/widget/TextView;
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 543
+    .line 541
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mHourPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1}, Lcom/htc/widget/HtcNumberPicker;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -496,12 +496,26 @@
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 544
+    .line 542
     .local v0, tmpParam:Landroid/widget/RelativeLayout$LayoutParams;
     invoke-virtual {v0, v2, v2, v2, v2}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 545
+    .line 543
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mMinutePicker:Lcom/htc/widget/HtcNumberPicker;
+
+    invoke-virtual {v1}, Lcom/htc/widget/HtcNumberPicker;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    .end local v0           #tmpParam:Landroid/widget/RelativeLayout$LayoutParams;
+    check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
+
+    .line 544
+    .restart local v0       #tmpParam:Landroid/widget/RelativeLayout$LayoutParams;
+    invoke-virtual {v0, v2, v2, v2, v2}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
+
+    .line 545
+    iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1}, Lcom/htc/widget/HtcNumberPicker;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -515,7 +529,7 @@
     invoke-virtual {v0, v2, v2, v2, v2}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
     .line 547
-    iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
+    iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1}, Lcom/htc/widget/HtcNumberPicker;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -529,20 +543,6 @@
     invoke-virtual {v0, v2, v2, v2, v2}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
     .line 549
-    iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
-
-    invoke-virtual {v1}, Lcom/htc/widget/HtcNumberPicker;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    .end local v0           #tmpParam:Landroid/widget/RelativeLayout$LayoutParams;
-    check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
-
-    .line 550
-    .restart local v0       #tmpParam:Landroid/widget/RelativeLayout$LayoutParams;
-    invoke-virtual {v0, v2, v2, v2, v2}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
-
-    .line 551
     return-void
 .end method
 
@@ -551,10 +551,10 @@
     .parameter "target"
 
     .prologue
-    .line 357
+    .line 355
     if-eqz p1, :cond_3
 
-    .line 358
+    .line 356
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mMinutePicker:Lcom/htc/widget/HtcNumberPicker;
 
     if-eqz v0, :cond_0
@@ -563,7 +563,7 @@
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/HtcNumberPicker;->setOnScrollIdleStateListener(Lcom/htc/widget/HtcNumberPicker$OnScrollIdleStateListener;)V
 
-    .line 359
+    .line 357
     :cond_0
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mHourPicker:Lcom/htc/widget/HtcNumberPicker;
 
@@ -573,7 +573,7 @@
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/HtcNumberPicker;->setOnScrollIdleStateListener(Lcom/htc/widget/HtcNumberPicker$OnScrollIdleStateListener;)V
 
-    .line 360
+    .line 358
     :cond_1
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
@@ -591,7 +591,7 @@
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/HtcNumberPicker;->setOnScrollIdleStateListener(Lcom/htc/widget/HtcNumberPicker$OnScrollIdleStateListener;)V
 
-    .line 361
+    .line 359
     :cond_2
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
@@ -609,7 +609,7 @@
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/HtcNumberPicker;->setOnScrollIdleStateListener(Lcom/htc/widget/HtcNumberPicker$OnScrollIdleStateListener;)V
 
-    .line 363
+    .line 361
     :cond_3
     return-void
 .end method
@@ -618,7 +618,7 @@
     .locals 1
 
     .prologue
-    .line 433
+    .line 431
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcNumberPicker;->getCenterView()I
@@ -632,14 +632,14 @@
     .locals 3
 
     .prologue
-    .line 415
+    .line 413
     iget-object v2, p0, Lcom/htc/widget/HtcTimePicker;->mHourPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v2}, Lcom/htc/widget/HtcNumberPicker;->getCenterView()I
 
     move-result v1
 
-    .line 416
+    .line 414
     .local v1, h:I
     iget-object v2, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
@@ -649,28 +649,28 @@
 
     if-eqz v2, :cond_1
 
-    .line 417
+    .line 415
     const/16 v2, 0xc
 
     if-ne v1, v2, :cond_0
 
-    .line 418
+    .line 416
     const/4 v1, 0x0
 
-    .line 419
+    .line 417
     :cond_0
     invoke-virtual {p0}, Lcom/htc/widget/HtcTimePicker;->getCurrentAmPm()I
 
     move-result v0
 
-    .line 420
+    .line 418
     .local v0, am:I
     if-nez v0, :cond_1
 
-    .line 421
+    .line 419
     add-int/lit8 v1, v1, 0xc
 
-    .line 423
+    .line 421
     .end local v0           #am:I
     :cond_1
     return v1
@@ -680,7 +680,7 @@
     .locals 1
 
     .prologue
-    .line 411
+    .line 409
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mMinutePicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcNumberPicker;->getCenterView()I
@@ -694,7 +694,7 @@
     .locals 1
 
     .prologue
-    .line 427
+    .line 425
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcNumberPicker;->getCenterView()I
@@ -714,31 +714,31 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 253
+    .line 251
     iput p1, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentHour:I
 
-    .line 254
+    .line 252
     iput p2, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentMinute:I
 
-    .line 255
+    .line 253
     iput p3, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentSecond:I
 
-    .line 256
+    .line 254
     iput-boolean v0, p0, Lcom/htc/widget/HtcTimePicker;->mIsHourInit:Z
 
-    .line 257
+    .line 255
     iput-boolean v0, p0, Lcom/htc/widget/HtcTimePicker;->mIsMinuteInit:Z
 
-    .line 258
+    .line 256
     iput-boolean v0, p0, Lcom/htc/widget/HtcTimePicker;->mIsSecondInit:Z
 
-    .line 259
+    .line 257
     iput-object p4, p0, Lcom/htc/widget/HtcTimePicker;->mOnTimeSetListener:Lcom/htc/widget/HtcTimePicker$OnTimeSetListener;
 
-    .line 260
+    .line 258
     invoke-direct {p0}, Lcom/htc/widget/HtcTimePicker;->updateTables()V
 
-    .line 261
+    .line 259
     return-void
 .end method
 
@@ -757,7 +757,7 @@
 
     const/4 v4, 0x1
 
-    .line 166
+    .line 164
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mHourPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1}, Lcom/htc/widget/HtcNumberPicker;->getTableView()Lcom/htc/view/table/TableView;
@@ -766,7 +766,7 @@
 
     invoke-virtual {v1, v2}, Lcom/htc/view/table/TableView;->setVisibility(I)V
 
-    .line 167
+    .line 165
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mMinutePicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1}, Lcom/htc/widget/HtcNumberPicker;->getTableView()Lcom/htc/view/table/TableView;
@@ -775,7 +775,7 @@
 
     invoke-virtual {v1, v2}, Lcom/htc/view/table/TableView;->setVisibility(I)V
 
-    .line 168
+    .line 166
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1}, Lcom/htc/widget/HtcNumberPicker;->getTableView()Lcom/htc/view/table/TableView;
@@ -784,7 +784,7 @@
 
     invoke-virtual {v1, v2}, Lcom/htc/view/table/TableView;->setVisibility(I)V
 
-    .line 169
+    .line 167
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1}, Lcom/htc/widget/HtcNumberPicker;->getTableView()Lcom/htc/view/table/TableView;
@@ -793,21 +793,21 @@
 
     invoke-virtual {v1, v2}, Lcom/htc/view/table/TableView;->setVisibility(I)V
 
-    .line 170
+    .line 168
     iget v1, p0, Lcom/htc/widget/HtcTimePicker;->mStartMinute:I
 
     iget v2, p0, Lcom/htc/widget/HtcTimePicker;->mEndMinute:I
 
     invoke-virtual {p0, v1, v2}, Lcom/htc/widget/HtcTimePicker;->setMinuteRange(II)V
 
-    .line 171
+    .line 169
     iget v1, p0, Lcom/htc/widget/HtcTimePicker;->mStartSecond:I
 
     iget v2, p0, Lcom/htc/widget/HtcTimePicker;->mEndSecond:I
 
     invoke-virtual {p0, v1, v2}, Lcom/htc/widget/HtcTimePicker;->setSecondRange(II)V
 
-    .line 175
+    .line 173
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/text/format/DateFormat;->is24HourFormat(Landroid/content/Context;)Z
@@ -816,14 +816,14 @@
 
     if-nez v1, :cond_4
 
-    .line 176
+    .line 174
     iget v1, p0, Lcom/htc/widget/HtcTimePicker;->mStartHour:I
 
     iget v2, p0, Lcom/htc/widget/HtcTimePicker;->mEndHour:I
 
     invoke-virtual {p0, v1, v2}, Lcom/htc/widget/HtcTimePicker;->setHourRange(II)V
 
-    .line 177
+    .line 175
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1}, Lcom/htc/widget/HtcNumberPicker;->isEnabled()Z
@@ -832,20 +832,20 @@
 
     if-nez v1, :cond_2
 
-    .line 178
+    .line 176
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1, v4}, Lcom/htc/widget/HtcNumberPicker;->setEnabled(Z)V
 
-    .line 179
+    .line 177
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1, v3}, Lcom/htc/widget/HtcNumberPicker;->setVisibility(I)V
 
-    .line 180
+    .line 178
     new-array v0, v5, [Ljava/lang/String;
 
-    .line 181
+    .line 179
     .local v0, ampm:[Ljava/lang/String;
     invoke-virtual {p0}, Lcom/htc/widget/HtcTimePicker;->getResources()Landroid/content/res/Resources;
 
@@ -859,7 +859,7 @@
 
     aput-object v1, v0, v3
 
-    .line 182
+    .line 180
     invoke-virtual {p0}, Lcom/htc/widget/HtcTimePicker;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -872,7 +872,7 @@
 
     aput-object v1, v0, v4
 
-    .line 183
+    .line 181
     aget-object v1, v0, v3
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
@@ -889,22 +889,22 @@
 
     if-le v1, v5, :cond_1
 
-    .line 184
+    .line 182
     :cond_0
     const-string v1, "AM"
 
     aput-object v1, v0, v3
 
-    .line 185
+    .line 183
     const-string v1, "PM"
 
     aput-object v1, v0, v4
 
-    .line 187
+    .line 185
     :cond_1
     invoke-virtual {p0, v3, v4, v0}, Lcom/htc/widget/HtcTimePicker;->setAmPmRange(II[Ljava/lang/String;)V
 
-    .line 195
+    .line 193
     .end local v0           #ampm:[Ljava/lang/String;
     :cond_2
     :goto_0
@@ -916,10 +916,10 @@
 
     invoke-virtual {p0, v1, v2, v3}, Lcom/htc/widget/HtcTimePicker;->setMinuteRange(IIZ)V
 
-    .line 196
+    .line 194
     invoke-virtual {p0, v4}, Lcom/htc/widget/HtcTimePicker;->setRepeatEnable(Z)V
 
-    .line 197
+    .line 195
     const-string v1, "test"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -962,7 +962,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 203
+    .line 201
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1}, Lcom/htc/widget/HtcNumberPicker;->isEnabled()Z
@@ -973,58 +973,58 @@
 
     const/4 p3, 0x0
 
-    .line 204
+    .line 202
     :cond_3
     iput p1, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentHour:I
 
-    .line 205
+    .line 203
     iput p2, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentMinute:I
 
-    .line 206
+    .line 204
     iput p3, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentSecond:I
 
-    .line 207
+    .line 205
     iput-boolean v4, p0, Lcom/htc/widget/HtcTimePicker;->mIsHourInit:Z
 
-    .line 208
+    .line 206
     iput-boolean v4, p0, Lcom/htc/widget/HtcTimePicker;->mIsMinuteInit:Z
 
-    .line 209
+    .line 207
     iput-boolean v4, p0, Lcom/htc/widget/HtcTimePicker;->mIsSecondInit:Z
 
-    .line 211
+    .line 209
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1}, Lcom/htc/widget/HtcNumberPicker;->notifyOnInitState()V
 
-    .line 212
+    .line 210
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mMinutePicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1}, Lcom/htc/widget/HtcNumberPicker;->notifyOnInitState()V
 
-    .line 213
+    .line 211
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mHourPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1}, Lcom/htc/widget/HtcNumberPicker;->notifyOnInitState()V
 
-    .line 214
+    .line 212
     invoke-direct {p0}, Lcom/htc/widget/HtcTimePicker;->updateTables()V
 
-    .line 215
+    .line 213
     iget v1, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentAMPM:I
 
     invoke-virtual {p0, v1}, Lcom/htc/widget/HtcTimePicker;->setCurrentAmPm(I)V
 
-    .line 217
+    .line 215
     invoke-virtual {p0}, Lcom/htc/widget/HtcTimePicker;->requestFocus()Z
 
-    .line 218
+    .line 216
     invoke-virtual {p0, p0}, Lcom/htc/widget/HtcTimePicker;->dispatchOnScrollIdleStateListener(Lcom/htc/widget/HtcNumberPicker$OnScrollIdleStateListener;)V
 
-    .line 221
+    .line 219
     return-void
 
-    .line 190
+    .line 188
     :cond_4
     iget v1, p0, Lcom/htc/widget/HtcTimePicker;->mStartHour:I
 
@@ -1032,12 +1032,12 @@
 
     invoke-virtual {p0, v1, v2}, Lcom/htc/widget/HtcTimePicker;->setHourRange(II)V
 
-    .line 191
+    .line 189
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1, v3}, Lcom/htc/widget/HtcNumberPicker;->setEnabled(Z)V
 
-    .line 192
+    .line 190
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
     const/16 v2, 0x8
@@ -1051,19 +1051,19 @@
     .locals 1
 
     .prologue
-    .line 571
+    .line 569
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     if-eqz v0, :cond_0
 
-    .line 572
+    .line 570
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcNumberPicker;->isEnabled()Z
 
     move-result v0
 
-    .line 573
+    .line 571
     :goto_0
     return v0
 
@@ -1078,7 +1078,21 @@
     .parameter "newConfig"
 
     .prologue
-    .line 160
+    .line 157
+    const/16 v0, 0x62
+
+    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    if-eq v0, v1, :cond_0
+
+    const/16 v0, 0x42
+
+    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    if-ne v0, v1, :cond_1
+
+    .line 159
+    :cond_0
     iget v0, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentHour:I
 
     iget v1, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentMinute:I
@@ -1087,7 +1101,8 @@
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/htc/widget/HtcTimePicker;->initPicker(III)V
 
-    .line 162
+    .line 160
+    :cond_1
     return-void
 .end method
 
@@ -1097,7 +1112,7 @@
     .parameter "data"
 
     .prologue
-    .line 494
+    .line 492
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mHourPicker:Lcom/htc/widget/HtcNumberPicker;
 
     if-eq v0, p1, :cond_0
@@ -1106,7 +1121,7 @@
 
     if-ne v0, p1, :cond_2
 
-    .line 495
+    .line 493
     :cond_0
     invoke-virtual {p0}, Lcom/htc/widget/HtcTimePicker;->getCurrentHour()I
 
@@ -1114,14 +1129,14 @@
 
     iput v0, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentHour:I
 
-    .line 496
+    .line 494
     invoke-virtual {p0}, Lcom/htc/widget/HtcTimePicker;->getCurrentMinute()I
 
     move-result v0
 
     iput v0, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentMinute:I
 
-    .line 499
+    .line 497
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mOnTimeSetListener:Lcom/htc/widget/HtcTimePicker$OnTimeSetListener;
 
     if-eqz v0, :cond_1
@@ -1136,12 +1151,12 @@
 
     invoke-interface {v0, p0, v1, v2, v3}, Lcom/htc/widget/HtcTimePicker$OnTimeSetListener;->onTimeSet(Lcom/htc/widget/HtcTimePicker;III)V
 
-    .line 509
+    .line 507
     :cond_1
     :goto_0
     return-void
 
-    .line 500
+    .line 498
     :cond_2
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
@@ -1159,14 +1174,14 @@
 
     if-ne v0, p1, :cond_3
 
-    .line 501
+    .line 499
     invoke-virtual {p0}, Lcom/htc/widget/HtcTimePicker;->getCurrentHour()I
 
     move-result v0
 
     iput v0, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentHour:I
 
-    .line 503
+    .line 501
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mOnTimeSetListener:Lcom/htc/widget/HtcTimePicker$OnTimeSetListener;
 
     if-eqz v0, :cond_1
@@ -1183,7 +1198,7 @@
 
     goto :goto_0
 
-    .line 504
+    .line 502
     :cond_3
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
@@ -1201,14 +1216,14 @@
 
     if-ne v0, p1, :cond_1
 
-    .line 505
+    .line 503
     invoke-virtual {p0}, Lcom/htc/widget/HtcTimePicker;->getCurrentSecond()I
 
     move-result v0
 
     iput v0, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentSecond:I
 
-    .line 507
+    .line 505
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mOnTimeSetListener:Lcom/htc/widget/HtcTimePicker$OnTimeSetListener;
 
     if-eqz v0, :cond_1
@@ -1230,32 +1245,32 @@
     .locals 1
 
     .prologue
-    .line 481
+    .line 479
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mContext:Landroid/content/Context;
 
-    .line 482
+    .line 480
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mMinutePicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcNumberPicker;->releaseResource()V
 
-    .line 483
+    .line 481
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mHourPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcNumberPicker;->releaseResource()V
 
-    .line 484
+    .line 482
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcNumberPicker;->releaseResource()V
 
-    .line 485
+    .line 483
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcNumberPicker;->releaseResource()V
 
-    .line 486
+    .line 484
     return-void
 .end method
 
@@ -1266,12 +1281,12 @@
     .parameter "candidates"
 
     .prologue
-    .line 471
+    .line 469
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/htc/widget/HtcNumberPicker;->setRange(II[Ljava/lang/String;)V
 
-    .line 472
+    .line 470
     return-void
 .end method
 
@@ -1280,15 +1295,15 @@
     .parameter "ampm"
 
     .prologue
-    .line 405
+    .line 403
     iput p1, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentAMPM:I
 
-    .line 406
+    .line 404
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/HtcNumberPicker;->setCenterView(I)V
 
-    .line 407
+    .line 405
     return-void
 .end method
 
@@ -1301,12 +1316,12 @@
 
     const/16 v1, 0xc
 
-    .line 386
+    .line 384
     invoke-virtual {p0}, Lcom/htc/widget/HtcTimePicker;->getCurrentHour()I
 
     move-result v0
 
-    .line 387
+    .line 385
     .local v0, old_value:I
     if-ne p1, v0, :cond_0
 
@@ -1314,18 +1329,18 @@
 
     if-nez v2, :cond_0
 
-    .line 401
+    .line 399
     :goto_0
     return-void
 
-    .line 389
+    .line 387
     :cond_0
     iput-boolean v3, p0, Lcom/htc/widget/HtcTimePicker;->mIsHourInit:Z
 
-    .line 390
+    .line 388
     iput p1, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentHour:I
 
-    .line 391
+    .line 389
     iget-object v2, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v2}, Lcom/htc/widget/HtcNumberPicker;->isEnabled()Z
@@ -1334,19 +1349,19 @@
 
     if-eqz v2, :cond_1
 
-    .line 392
+    .line 390
     if-lt p1, v1, :cond_3
 
-    .line 393
+    .line 391
     if-ne p1, v1, :cond_2
 
     move p1, v1
 
-    .line 394
+    .line 392
     :goto_1
     invoke-virtual {p0, v3}, Lcom/htc/widget/HtcTimePicker;->setCurrentAmPm(I)V
 
-    .line 400
+    .line 398
     :cond_1
     :goto_2
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mHourPicker:Lcom/htc/widget/HtcNumberPicker;
@@ -1355,19 +1370,19 @@
 
     goto :goto_0
 
-    .line 393
+    .line 391
     :cond_2
     add-int/lit8 p1, p1, -0xc
 
     goto :goto_1
 
-    .line 396
+    .line 394
     :cond_3
     if-nez p1, :cond_4
 
     move p1, v1
 
-    .line 397
+    .line 395
     :cond_4
     const/4 v1, 0x1
 
@@ -1381,12 +1396,12 @@
     .parameter "m"
 
     .prologue
-    .line 367
+    .line 365
     invoke-virtual {p0}, Lcom/htc/widget/HtcTimePicker;->getCurrentMinute()I
 
     move-result v0
 
-    .line 368
+    .line 366
     .local v0, old_value:I
     if-ne p1, v0, :cond_0
 
@@ -1394,20 +1409,20 @@
 
     if-nez v1, :cond_0
 
-    .line 373
+    .line 371
     :goto_0
     return-void
 
-    .line 370
+    .line 368
     :cond_0
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/htc/widget/HtcTimePicker;->mIsMinuteInit:Z
 
-    .line 371
+    .line 369
     iput p1, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentMinute:I
 
-    .line 372
+    .line 370
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mMinutePicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1, p1}, Lcom/htc/widget/HtcNumberPicker;->setCenterView(I)V
@@ -1420,12 +1435,12 @@
     .parameter "s"
 
     .prologue
-    .line 377
+    .line 375
     invoke-virtual {p0}, Lcom/htc/widget/HtcTimePicker;->getCurrentSecond()I
 
     move-result v0
 
-    .line 378
+    .line 376
     .local v0, old_value:I
     if-ne p1, v0, :cond_0
 
@@ -1433,20 +1448,20 @@
 
     if-nez v1, :cond_0
 
-    .line 383
+    .line 381
     :goto_0
     return-void
 
-    .line 380
+    .line 378
     :cond_0
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/htc/widget/HtcTimePicker;->mIsSecondInit:Z
 
-    .line 381
+    .line 379
     iput p1, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentSecond:I
 
-    .line 382
+    .line 380
     iget-object v1, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v1, p1}, Lcom/htc/widget/HtcNumberPicker;->setCenterView(I)V
@@ -1459,27 +1474,27 @@
     .parameter "enabled"
 
     .prologue
-    .line 564
+    .line 562
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mHourPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/HtcNumberPicker;->setTableEnabled(Z)V
 
-    .line 565
+    .line 563
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mMinutePicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/HtcNumberPicker;->setTableEnabled(Z)V
 
-    .line 566
+    .line 564
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/HtcNumberPicker;->setTableEnabled(Z)V
 
-    .line 567
+    .line 565
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/HtcNumberPicker;->setTableEnabled(Z)V
 
-    .line 568
+    .line 566
     return-void
 .end method
 
@@ -1488,12 +1503,12 @@
     .parameter "title"
 
     .prologue
-    .line 554
+    .line 552
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mLabelHour:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 555
+    .line 553
     return-void
 .end method
 
@@ -1503,18 +1518,18 @@
     .parameter "max"
 
     .prologue
-    .line 458
+    .line 456
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mHourPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1, p2}, Lcom/htc/widget/HtcNumberPicker;->setRange(II)V
 
-    .line 459
+    .line 457
     iput p1, p0, Lcom/htc/widget/HtcTimePicker;->mStartHour:I
 
-    .line 460
+    .line 458
     iput p2, p0, Lcom/htc/widget/HtcTimePicker;->mEndHour:I
 
-    .line 461
+    .line 459
     return-void
 .end method
 
@@ -1523,12 +1538,12 @@
     .parameter "title"
 
     .prologue
-    .line 557
+    .line 555
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mLabelMinute:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 558
+    .line 556
     return-void
 .end method
 
@@ -1538,18 +1553,18 @@
     .parameter "max"
 
     .prologue
-    .line 449
+    .line 447
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mMinutePicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1, p2}, Lcom/htc/widget/HtcNumberPicker;->setRange(II)V
 
-    .line 450
+    .line 448
     iput p1, p0, Lcom/htc/widget/HtcTimePicker;->mStartMinute:I
 
-    .line 451
+    .line 449
     iput p2, p0, Lcom/htc/widget/HtcTimePicker;->mEndMinute:I
 
-    .line 454
+    .line 452
     return-void
 .end method
 
@@ -1560,35 +1575,35 @@
     .parameter "multiStop"
 
     .prologue
-    .line 437
+    .line 435
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mMinutePicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1, p2}, Lcom/htc/widget/HtcNumberPicker;->setRange(II)V
 
-    .line 438
+    .line 436
     iput p1, p0, Lcom/htc/widget/HtcTimePicker;->mStartMinute:I
 
-    .line 439
+    .line 437
     iput p2, p0, Lcom/htc/widget/HtcTimePicker;->mEndMinute:I
 
-    .line 440
+    .line 438
     iput-boolean p3, p0, Lcom/htc/widget/HtcTimePicker;->mIsMultiStop:Z
 
-    .line 441
+    .line 439
     if-eqz p3, :cond_0
 
-    .line 442
+    .line 440
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mMinutePicker:Lcom/htc/widget/HtcNumberPicker;
 
     const/16 v1, 0xf
 
     invoke-virtual {v0, v1}, Lcom/htc/widget/HtcNumberPicker;->setMultiStopDistance(I)Z
 
-    .line 445
+    .line 443
     :goto_0
     return-void
 
-    .line 444
+    .line 442
     :cond_0
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mMinutePicker:Lcom/htc/widget/HtcNumberPicker;
 
@@ -1604,13 +1619,13 @@
     .parameter "listener"
 
     .prologue
-    .line 352
+    .line 350
     if-eqz p1, :cond_0
 
-    .line 353
+    .line 351
     iput-object p1, p0, Lcom/htc/widget/HtcTimePicker;->mIdleScrollListener:Lcom/htc/widget/HtcNumberPicker$OnScrollIdleStateListener;
 
-    .line 354
+    .line 352
     :cond_0
     return-void
 .end method
@@ -1620,22 +1635,22 @@
     .parameter "b"
 
     .prologue
-    .line 512
+    .line 510
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mHourPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/HtcNumberPicker;->setRepeatEnable(Z)V
 
-    .line 513
+    .line 511
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mMinutePicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/HtcNumberPicker;->setRepeatEnable(Z)V
 
-    .line 514
+    .line 512
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/HtcNumberPicker;->setRepeatEnable(Z)V
 
-    .line 515
+    .line 513
     return-void
 .end method
 
@@ -1648,52 +1663,52 @@
 
     const/4 v2, 0x0
 
-    .line 224
+    .line 222
     if-eqz p1, :cond_0
 
-    .line 225
+    .line 223
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/htc/widget/HtcNumberPicker;->setEnabled(Z)V
 
-    .line 226
+    .line 224
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, v2}, Lcom/htc/widget/HtcNumberPicker;->setVisibility(I)V
 
-    .line 227
+    .line 225
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondCoat:Landroid/view/View;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 228
+    .line 226
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, v2}, Lcom/htc/widget/HtcNumberPicker;->setEnabled(Z)V
 
-    .line 229
+    .line 227
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, v3}, Lcom/htc/widget/HtcNumberPicker;->setVisibility(I)V
 
-    .line 235
+    .line 233
     :goto_0
     return-void
 
-    .line 231
+    .line 229
     :cond_0
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, v2}, Lcom/htc/widget/HtcNumberPicker;->setEnabled(Z)V
 
-    .line 232
+    .line 230
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, v3}, Lcom/htc/widget/HtcNumberPicker;->setVisibility(I)V
 
-    .line 233
+    .line 231
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondCoat:Landroid/view/View;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
@@ -1707,20 +1722,20 @@
     .parameter "white"
 
     .prologue
-    .line 238
+    .line 236
     invoke-virtual {p0, p1}, Lcom/htc/widget/HtcTimePicker;->setSecondPickerEnable(Z)V
 
-    .line 239
+    .line 237
     if-eqz p1, :cond_0
 
     if-eqz p2, :cond_0
 
-    .line 240
+    .line 238
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcNumberPicker;->changeBkg()V
 
-    .line 241
+    .line 239
     :cond_0
     return-void
 .end method
@@ -1730,12 +1745,12 @@
     .parameter "title"
 
     .prologue
-    .line 560
+    .line 558
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mLabelSecond:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 561
+    .line 559
     return-void
 .end method
 
@@ -1745,18 +1760,18 @@
     .parameter "max"
 
     .prologue
-    .line 465
+    .line 463
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1, p2}, Lcom/htc/widget/HtcNumberPicker;->setRange(II)V
 
-    .line 466
+    .line 464
     iput p1, p0, Lcom/htc/widget/HtcTimePicker;->mStartSecond:I
 
-    .line 467
+    .line 465
     iput p2, p0, Lcom/htc/widget/HtcTimePicker;->mEndSecond:I
 
-    .line 468
+    .line 466
     return-void
 .end method
 
@@ -1765,12 +1780,12 @@
     .parameter "offset"
 
     .prologue
-    .line 534
+    .line 532
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mHourPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/HtcNumberPicker;->slideWithOffset(I)V
 
-    .line 535
+    .line 533
     iget v0, p0, Lcom/htc/widget/HtcTimePicker;->mEndHour:I
 
     iget v1, p0, Lcom/htc/widget/HtcTimePicker;->mStartHour:I
@@ -1783,11 +1798,11 @@
 
     iput v0, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentHour:I
 
-    .line 537
+    .line 535
     :goto_0
     return-void
 
-    .line 536
+    .line 534
     :cond_0
     iget v0, p0, Lcom/htc/widget/HtcTimePicker;->mEndHour:I
 
@@ -1801,12 +1816,12 @@
     .parameter "offset"
 
     .prologue
-    .line 527
+    .line 525
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mMinutePicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/HtcNumberPicker;->slideWithOffset(I)V
 
-    .line 528
+    .line 526
     iget v0, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentMinute:I
 
     iget v1, p0, Lcom/htc/widget/HtcTimePicker;->mStartMinute:I
@@ -1819,11 +1834,11 @@
 
     iput v0, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentMinute:I
 
-    .line 531
+    .line 529
     :goto_0
     return-void
 
-    .line 529
+    .line 527
     :cond_0
     iget v0, p0, Lcom/htc/widget/HtcTimePicker;->mEndMinute:I
 
@@ -1837,12 +1852,12 @@
     .parameter "offset"
 
     .prologue
-    .line 519
+    .line 517
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mSecondPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0, p1}, Lcom/htc/widget/HtcNumberPicker;->slideWithOffset(I)V
 
-    .line 520
+    .line 518
     iget v0, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentSecond:I
 
     iget v1, p0, Lcom/htc/widget/HtcTimePicker;->mStartSecond:I
@@ -1855,11 +1870,11 @@
 
     iput v0, p0, Lcom/htc/widget/HtcTimePicker;->mCurrentSecond:I
 
-    .line 523
+    .line 521
     :goto_0
     return-void
 
-    .line 521
+    .line 519
     :cond_0
     iget v0, p0, Lcom/htc/widget/HtcTimePicker;->mEndSecond:I
 
@@ -1873,7 +1888,7 @@
     .parameter "an"
 
     .prologue
-    .line 475
+    .line 473
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mMinutePicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcNumberPicker;->getTableView()Lcom/htc/view/table/TableView;
@@ -1882,7 +1897,7 @@
 
     invoke-virtual {v0, p1}, Lcom/htc/view/table/TableView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 476
+    .line 474
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mHourPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcNumberPicker;->getTableView()Lcom/htc/view/table/TableView;
@@ -1891,7 +1906,7 @@
 
     invoke-virtual {v0, p1}, Lcom/htc/view/table/TableView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 477
+    .line 475
     iget-object v0, p0, Lcom/htc/widget/HtcTimePicker;->mAmPmPicker:Lcom/htc/widget/HtcNumberPicker;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcNumberPicker;->getTableView()Lcom/htc/view/table/TableView;
@@ -1900,6 +1915,6 @@
 
     invoke-virtual {v0, p1}, Lcom/htc/view/table/TableView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 478
+    .line 476
     return-void
 .end method

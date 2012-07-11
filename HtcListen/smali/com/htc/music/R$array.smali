@@ -63,8 +63,6 @@
 
 .field public static final sound_effect_style:I = 0x7f060014
 
-.field public static final weeklist:I = 0x7f060018
-
 
 # direct methods
 .method public constructor <init>()V

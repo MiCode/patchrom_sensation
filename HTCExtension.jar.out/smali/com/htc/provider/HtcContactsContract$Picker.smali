@@ -67,7 +67,7 @@
     .locals 2
 
     .prologue
-    .line 2466
+    .line 2526
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -100,7 +100,7 @@
 
     sput-object v0, Lcom/htc/provider/HtcContactsContract$Picker;->PICK_SIM_CONTACT:Ljava/lang/String;
 
-    .line 2469
+    .line 2529
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -140,7 +140,7 @@
     .locals 0
 
     .prologue
-    .line 2429
+    .line 2489
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

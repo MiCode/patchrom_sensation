@@ -21,7 +21,7 @@
     <string name="VideoView_error_title">Видеото не може да се изпълни</string>
     <string name="yes">OK</string>
     <string name="dialog_alert_title">Внимание</string>
-    <string name="VideoView_error_text_invalid_progressive_playback">Съжаляваме, това видео не е валидно за поточно изпълнение на това устройство.</string>
+    <string name="VideoView_error_text_invalid_progressive_playback">Съжаляваме, това видео не е валидно за поточно възпроизвеждане на това устройство.</string>
     <string name="selectTextMode">Избиране на текст...</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="month_long_standalone_january">януари</string>
@@ -269,9 +269,9 @@
     <string name="turn_off_radio">Изключване на безжичната връзка</string>
     <string name="screen_lock">Заключен екран</string>
     <string name="power_off">Изключено захранване</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Звънене - изкл.</string>
+    <string name="silent_mode_vibrate">Режим на звънене - вибрация</string>
+    <string name="silent_mode_ring">Звънене - вкл.</string>
     <string name="shutdown_progress">Изключване…</string>
     <string name="shutdown_confirm">Телефонът ви ще се изключи.</string>
     <string name="shutdown_confirm_question">Искате ли да изключите?</string>
@@ -323,7 +323,7 @@
     <string name="permlab_receiveMms">получаване на MMS</string>
     <string name="permdesc_receiveMms">Разрешава на приложение да получава и обработва MMS съобщения. Злонамерени приложения могат да следят съобщенията ви или да ги изтриват, без да ви ги показват.</string>
     <string name="permlab_receiveEmergencyBroadcast">получаване на спешни излъчвания</string>
-    <string name="permdesc_receiveEmergencyBroadcast">Разрешава на приложението да получава и обработва спешни съобщения за излъчване. Това разрешение е налице само за системни приложения.</string>
+    <string name="permdesc_receiveEmergencyBroadcast">Разрешава на приложението да получава и обработва съобщения от спешни излъчвания. Това разрешение е налице само за системни приложения.</string>
     <string name="permlab_sendSms">изпращане на SMS съобщения</string>
     <string name="permdesc_sendSms">Разрешава на приложение да изпраща SMS съобщения. Злонамерени приложения могат да ви костват значителни суми, като изпращат съобщения без вашето потвърждение.</string>
     <string name="permlab_sendSmsNoConfirmation">изпращане на SMS съобщения без потвърждаване</string>
@@ -426,14 +426,14 @@
     <string name="permdesc_movePackage">Разрешава на приложение да премества ресурси на приложението от вътрешна към външна памет и обратно.</string>
     <string name="permlab_readLogs">прочети чувствителни данни от регистър</string>
     <string name="permdesc_readLogs">Разрешава на приложение да чете от различните регистрационни файлове на системата. Това позволява откриване на основна информация за това какво правите с телефона, включително лична или поверителна информация.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">използвай произволен декодер за възпроизвеждане на мултимедия</string>
+    <string name="permdesc_anyCodecForPlayback">Позволява на приложенията да използват всеки инсталиран мултимедиен декодер за декодиране при възпроизвеждане</string>
+    <string name="permlab_readWriteOmaDrm">достъп до папката за oma DRM</string>
+    <string name="permdesc_readWriteOmaDrm">Позволява на приложенията да четат или записват в папката за OMA DRM.</string>
     <string name="permlab_diagnostic">четене/записване в ресурсите, притежавани от диагностичната група</string>
     <string name="permdesc_diagnostic">Разрешава на приложението да чете или записва във всеки ресурс, притежаван от диагностичната група; например, файлове in /dev. Това може потенциално да засегне стабилността и защитата на системата. Това трябва да се използва САМО за диагностика на конкретен хардуер по производител или оператор.</string>
     <string name="permlab_changeComponentState">активиране или деактивиране на компоненти на приложението</string>
-    <string name="permdesc_changeComponentState">Разрешава на приложението да активира или деактивира компонент на друго приложение. Злонамерените приложения могат да използват това, за да деактивират важни възможности на телефона. С това разрешение трябва да се внимава, тъй като компонентите на приложенията може да бъдат приведени в неизползваемо, нееднородно или нестабилно състояние.</string>
+    <string name="permdesc_changeComponentState">Разрешава на приложението да активира или деактивира компонент на друго приложение. Злонамерените приложения могат да използват това, за да деактивират важни възможности на телефона. С това разрешение трябва да се внимава, тъй като компонентите на приложенията може да бъдат приведени в неизползваемо, несъвместимо или нестабилно състояние.</string>
     <string name="permlab_setPreferredApplications">задаване на предпочитани приложения</string>
     <string name="permdesc_setPreferredApplications">Разрешава на приложението да променя предпочитаните ви приложения. Това може да позволи на злонамерени приложения безшумно да променят приложенията, които работят, да сменят самоличността на съществуващите приложения, за да събират лични данни от вас.</string>
     <string name="permlab_writeSettings">промяна на глобалните настройки на системата</string>
@@ -452,7 +452,7 @@
     <string name="permdesc_writeContacts">Разрешава на приложение да променя данните за контакт (адрес), съхранени в телефона ви. Злонамерени приложения могат да използват това, за да изтрият или променят данните ви за контакт.</string>
     <string name="permlab_readProfile">четене на данните в профила ви</string>
     <string name="permdesc_readProfile">Разрешава на приложението да чете информацията от личния потребителски профил, съхранена на устройството ви, например вашето име и данни за връзка. Това означава, че приложението може да ви идентифицира и да изпраща информацията за потребителския ви профил на други хора.</string>
-    <string name="permlab_writeProfile">запис в потр. ви профил</string>
+    <string name="permlab_writeProfile">запис в потребителския ви профил</string>
     <string name="permdesc_writeProfile">Разрешава на приложението да променя или добавя към личния потребителски профил информация, съхранена на устройството ви, като например вашето име и данни за връзка. Това означава, че приложението може да ви идентифицира и да изпраща информацията за потребителския ви профил на други хора.</string>
     <string name="permlab_readSocialStream">четене на социалния ви поток</string>
     <string name="permdesc_readSocialStream">Разрешава на приложението да осъществява достъп и да синхронизира социални актуализации от вас и приятелите ви. Злонамерените приложения могат да използват това, за да четат частни съобщения помежду ви в социалните мрежи.</string>
@@ -531,7 +531,7 @@
     <string name="permlab_devicePower">включване и изключване на захранването на телефона</string>
     <string name="permdesc_devicePower">Разрешава на приложението да включва и изключва телефона.</string>
     <string name="permlab_factoryTest">работа в режим на тест на производителя</string>
-    <string name="permdesc_factoryTest">Работи като тест на производител от ниско ниво, разрешаващ пълен достъп до хардуера на телефона. Достъпен е само когато телефонът работи в режим на тест на производителя.</string>
+    <string name="permdesc_factoryTest">Работи като тест на производител от ниско ниво, разрешаващ пълен достъп до хардуера на телефона. Достъпен е, само когато телефонът работи в режим на тест на производителя.</string>
     <string name="permlab_setWallpaper">задаване на тапет</string>
     <string name="permdesc_setWallpaper">Разрешава на приложение да зададе системния тапет.</string>
     <string name="permlab_setWallpaperHints">задаване на съвети за размер на тапет</string>
@@ -556,8 +556,8 @@
     <string name="permdesc_accessNetworkState">Разрешава на приложение да прегледа състоянието на всички мрежи.</string>
     <string name="permlab_createNetworkSockets">пълен достъп до интернет</string>
     <string name="permdesc_createNetworkSockets">Разрешава на приложение да създаде мрежови гнезда.</string>
-    <string name="permlab_writeApnSettings">промяна/прехващане на мрежовите настройки и трафика от мрежата</string>
-    <string name="permdesc_writeApnSettings">Разрешава на приложението да променя мрежовите настройки и да прехваща и проверява целия трафик от мрежата, например да променя прокси сървъра и порта на името на точката за достъп (APN). Злонамерените приложения могат да наблюдават, пренасочват или променят пакети от мрежата без ваше знание.</string>
+    <string name="permlab_writeApnSettings">промяна/прихващане на мрежовите настройки и трафика от мрежата</string>
+    <string name="permdesc_writeApnSettings">Разрешава на приложението да променя мрежовите настройки и да прихваща и проверява целия трафик от мрежата, например да променя прокси сървъра и порта на името на точката за достъп (APN). Злонамерените приложения могат да наблюдават, пренасочват или променят пакети от мрежата без ваше знание.</string>
     <string name="permlab_changeNetworkState">промяна на свързването с мрежата</string>
     <string name="permdesc_changeNetworkState">Разрешава на приложение да променя състоянието на свързване към мрежата.</string>
     <string name="permlab_changeTetherState">Промяна на свързването чрез USB</string>
@@ -573,7 +573,7 @@
     <string name="permlab_accessWimaxState">преглед на състояние на WiMAX</string>
     <string name="permdesc_accessWimaxState">Разрешава на приложение да прегледа информация за състоянието на WiMAX.</string>
     <string name="permlab_changeWimaxState">промяна на състоянието на WiMAX</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">Позволява на приложенията да се свързват към WiMAX мрежата и да се изключват от нея.</string>
     <string name="permlab_bluetoothAdmin">bluetooth администриране</string>
     <string name="permdesc_bluetoothAdmin">Разрешава на приложение да конфигурира локалния Bluetooth телефон и да открие и се сдвои с отдалечени устройства.</string>
     <string name="permlab_bluetooth">създаване на Bluetooth връзки</string>
@@ -598,7 +598,7 @@
     <string name="permdesc_writeDictionary">Разрешава на приложението да записва нови думи в потребителския речник.</string>
     <string name="permlab_sdcardWrite">промяна/изтриване на съдържанието на SD картата</string>
     <string name="permdesc_sdcardWrite">Разрешава на приложението да записва на SD картата.</string>
-    <string name="permlab_mediaStorageWrite">пром./изтр. на съдърж. на вътр. мултим. хранил.</string>
+    <string name="permlab_mediaStorageWrite">промяна/изтриване на съдържание на вътрешно мултимедийно хранилище</string>
     <string name="permdesc_mediaStorageWrite">Разрешава на приложението да променя съдържанието на вътрешното мултимедийно хранилище.</string>
     <string name="permlab_cache_filesystem">достъп до кеша на файловата система</string>
     <string name="permdesc_cache_filesystem">Разрешава на приложение да чете и пише в кеша на файловата система.</string>
@@ -607,8 +607,8 @@
     <string name="permlab_readNetworkUsageHistory">четене на употребата на мрежата до момента</string>
     <string name="permdesc_readNetworkUsageHistory">Разрешава на приложението да чете употребата на данни за конкретни мрежи и приложения до момента.</string>
     <string name="permlab_manageNetworkPolicy">управление на правилата на мрежата</string>
-    <string name="permdesc_manageNetworkPolicy">Разрешава на приложението да управлява правилата на мрежата и да определя такива за конкретно приложение.</string>
-    <string name="permlab_modifyNetworkAccounting">промяна на отчетността на употребата на мрежа</string>
+    <string name="permdesc_manageNetworkPolicy">Разрешава на приложение да управлява правилата на мрежата и да определя такива за конкретно приложение.</string>
+    <string name="permlab_modifyNetworkAccounting">промяна на отчитането на употребата на мрежа</string>
     <string name="permdesc_modifyNetworkAccounting">Разрешава промяна на това как употребата на мрежа се отчита спрямо приложенията. Не е предназначено за нормални приложения.</string>
     <string name="policylab_limitPassword">Задаване на правила за пароли</string>
     <string name="policydesc_limitPassword">Проверете дължината и символите, които са разрешени в паролите за отключване на екрана</string>
@@ -748,9 +748,9 @@
     <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Въведохте неправилно своя PIN %d пъти. 
 
 Моля, опитайте отново след %d секунди."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Нарисувахте неправилно фигурата си за отключване %d пъти. След още %d неуспешни опита ще ви бъде поискано да отключите телефона, използвайки данните си за вход в Google.
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Изчертахте неправилно шаблона си за отключване %d пъти. След още %d неуспешни опита ще бъдете помолени да отключите телефона си с входните си данни за Google.
 
- Моля, опитайте отново след %d секунди."</string>
+ Опитайте отново след %d секунди."</string>
     <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Направихте опит да отключите телефона неправилно %d пъти. След още %d неуспешни опита ще бъдат възстановени стандартните му фабрични настройки и всички потребителски данни ще бъдат заличени.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Направихте опит да отключите телефона неправилно %d пъти. Сега ще бъдат възстановени стандартните му фабрични настройки.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Опитайте отново след %d секунди.</string>
@@ -945,7 +945,7 @@
     <string name="sendText">Изберете действие за текста</string>
     <string name="volume_ringtone">Сила на звънене</string>
     <string name="volume_music">Сила на звука на медия</string>
-    <string name="volume_music_hint_playing_through_bluetooth">Изпълнение чрез Bluetooth</string>
+    <string name="volume_music_hint_playing_through_bluetooth">Възпроизвеждане чрез Bluetooth</string>
     <string name="volume_music_hint_silent_ringtone_selected">Избрана е тиха мелодия</string>
     <string name="volume_call">Сила на звука при повикване</string>
     <string name="volume_bluetooth_call">Сила на звука при повикване от Bluetooth</string>
@@ -953,7 +953,7 @@
     <string name="volume_notification">Сила на звука при уведомления</string>
     <string name="volume_unknown">Сила на звука</string>
     <string name="volume_icon_description_bluetooth">Сила на звука за Bluetooth</string>
-    <string name="volume_icon_description_ringer">Сила на звука за мелодия</string>
+    <string name="volume_icon_description_ringer">Сила на мелодията на звънене</string>
     <string name="volume_icon_description_incall">Сила на звука за обаждания</string>
     <string name="volume_icon_description_media">Сила на звука</string>
     <string name="volume_icon_description_notification">Сила на звука при известие</string>
@@ -962,10 +962,10 @@
     <string name="ringtone_silent">Тих</string>
     <string name="ringtone_picker_title">Мелодии</string>
     <string name="ringtone_unknown">Непозната мелодия на звънене</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Влизане в Wi-Fi мрежата</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Не можа да се свърже с Wi-Fi</string>
-    <string name="wifi_watchdog_network_disabled_detailed">" има лоша връзка с интернет."</string>
+    <string name="wifi_watchdog_network_disabled_detailed">има слаба интернет връзка.</string>
     <string name="wifi_p2p_dialog_title">Wi-Fi Direct</string>
     <string name="wifi_p2p_turnon_message">Стартиране на операция за Wi-Fi Direct. Това ще изключи операцията за клиентска програма/точка за достъп до Wi-Fi.</string>
     <string name="wifi_p2p_failed_message">Wi-Fi Direct не можа да се стартира</string>
@@ -1121,18 +1121,18 @@
     <string name="number_picker_decrement_button">Намаляване</string>
     <string name="number_picker_increment_scroll_mode">Докоснете %s път/и и задръжте.</string>
     <string name="number_picker_increment_scroll_action">Плъзнете нагоре за увеличаване и надолу за намаляване.</string>
-    <string name="time_picker_increment_minute_button">Увеличаване на минутите</string>
+    <string name="time_picker_increment_minute_button">Добавяне на минути</string>
     <string name="time_picker_decrement_minute_button">Намаляване на минутите</string>
-    <string name="time_picker_increment_hour_button">Увеличаване на часа</string>
-    <string name="time_picker_decrement_hour_button">Намаляване на часа</string>
-    <string name="time_picker_increment_set_pm_button">Задаване на PM</string>
-    <string name="time_picker_decrement_set_am_button">Задаване на AM</string>
-    <string name="date_picker_increment_month_button">Увеличаване на месеца</string>
-    <string name="date_picker_decrement_month_button">Намаляване на месеца</string>
-    <string name="date_picker_increment_day_button">Увеличаване на деня</string>
-    <string name="date_picker_decrement_day_button">Намаляване на деня</string>
-    <string name="date_picker_increment_year_button">Увеличаване на годината</string>
-    <string name="date_picker_decrement_year_button">Намаляване на годината</string>
+    <string name="time_picker_increment_hour_button">Добавяне на час</string>
+    <string name="time_picker_decrement_hour_button">Изваждане на час</string>
+    <string name="time_picker_increment_set_pm_button">Задаване на следобед</string>
+    <string name="time_picker_decrement_set_am_button">Задаване на предиобед</string>
+    <string name="date_picker_increment_month_button">Добавяне на месец</string>
+    <string name="date_picker_decrement_month_button">Изваждане на месец</string>
+    <string name="date_picker_increment_day_button">Добавяне на ден</string>
+    <string name="date_picker_decrement_day_button">Изваждане на деня</string>
+    <string name="date_picker_increment_year_button">Добавяне на година</string>
+    <string name="date_picker_decrement_year_button">Изваждане на година</string>
     <string name="checkbox_checked">отметнато</string>
     <string name="checkbox_not_checked">не е отметнато</string>
     <string name="radiobutton_selected">избрано</string>
@@ -1160,8 +1160,8 @@
     <string name="description_target_camera">Камера</string>
     <string name="description_target_silent">Тих режим</string>
     <string name="description_target_soundon">Включване на звука</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
-    <string name="keyboard_headset_required_to_hear_password">Включете слушалки, за да чуете клавишите за паролата на висок глас.</string>
+    <string name="description_target_unlock_tablet">Плъзнете за отключване.</string>
+    <string name="keyboard_headset_required_to_hear_password">Включете слушалки, за да чуете клавишите за паролата на глас.</string>
     <string name="keyboard_password_character_no_headset">Точка.</string>
     <string name="action_bar_home_description">Придвижване към „Начало“</string>
     <string name="action_bar_up_description">Придвижване нагоре</string>
@@ -1170,7 +1170,7 @@
     <string name="storage_sd_card">SD карта</string>
     <string name="storage_usb">USB хранилище</string>
     <string name="extract_edit_menu_button">Редактиране...</string>
-    <string name="data_usage_warning_title">Предупрежд. за ползване на данни</string>
+    <string name="data_usage_warning_title">Предупреждение за ползване на данни</string>
     <string name="data_usage_warning_body">Ползване и настройки: Докоснете</string>
     <string name="data_usage_3g_limit_title">2G-3G данните са деактивирани</string>
     <string name="data_usage_4g_limit_title">4G данните са деактивирани</string>
@@ -1178,11 +1178,11 @@
     <string name="data_usage_wifi_limit_title">Wi-Fi данните са деактивирани</string>
     <string name="data_usage_limit_body">Докоснете, за да активирате</string>
     <string name="data_usage_3g_limit_snoozed_title">Превишен лимит на 2G–3G данните</string>
-    <string name="data_usage_4g_limit_snoozed_title">Лимит за 4G данните – превишен</string>
-    <string name="data_usage_mobile_limit_snoozed_title">Лимит за моб. данни – превишен</string>
-    <string name="data_usage_wifi_limit_snoozed_title">Превишен лимит на Wi-Fi данните</string>
+    <string name="data_usage_4g_limit_snoozed_title">ПревишенЛимит за 4G данните</string>
+    <string name="data_usage_mobile_limit_snoozed_title">Превишен лимит за мобилните данни</string>
+    <string name="data_usage_wifi_limit_snoozed_title">Превишен лимит нЗ Wi-Fi данните</string>
     <string name="data_usage_limit_snoozed_body">%s над определения лимит</string>
-    <string name="data_usage_restricted_title">Ограничени данни на заден план</string>
+    <string name="data_usage_restricted_title">Ограничени фонови данни</string>
     <string name="data_usage_restricted_body">Докоснете и махнете ограничението</string>
     <string name="ssl_certificate">Сертификат за сигурност</string>
     <string name="ssl_certificate_is_valid">Този сертификат е валиден.</string>
@@ -1203,9 +1203,9 @@
     <string name="share_action_provider_share_with">Споделяне със...</string>
     <string name="status_bar_device_locked">Устройството е заключено.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Изпращане...</string>
+    <string name="launchBrowserDefault">Стартиране на браузър?</string>
+    <string name="SetupCallDefault">Приемане на повикването?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">Достъп до 4G</string>
     <string name="permlab_changeWimaxMulticastState">разрешаване на приемане WiMAX Multicast</string>
@@ -1267,13 +1267,14 @@
     <string name="install_notify_title">инсталиране, блокирано от ИТ:</string>
     <string name="uninstall_notify_title">деинсталиране, блокирано от ИТ:</string>
     <string name="wifi_notify_title">IT изключи WiFi</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Изчистване на настройките по подразбиране в „Настройки на началния екран“ > „Приложения“.</string>
+    <string name="sim_puk_contact_customer_care_information">Моля, за да получите PUK кода, свържете се с отдела за обслужване на клиенти</string>
     <string name="permlab_accessCWFolder">Достъп до папката на съветника за персонализиране</string>
     <string name="permdesc_accessCWFolder">Позволява приложение да има достъп до папката на съветника за персонализиране</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Достъп до папката за възстановяване</string>
+    <string name="permdesc_accessRecoveryFolder">Позволява приложение да получи достъп до папката за възстановяване</string>
     <string name="permlab_setappname">Динамично да се променя името на приложението</string>
-    <string name="permdesc_setappname">Позволява приложение да променя посоченото име на приложение динамично.</string>
+    <string name="permdesc_setappname">Позволява на приложение да променя динамично посоченото име на приложение.</string>
     <string name="text_limitation">Не можете да изберете прекалено много думи за споделяне.</string>
     <string name="sms_roam_guild_dialog_title">Изходящо съобщение</string>
     <string name="sms_roam_guild_dialog_subject">Ползвате роуминг по международни мрежи. Изпращането на това съобщение може да бъде таксувано допълнително от вашия оператор. Желаете ли да:</string>
@@ -1311,5 +1312,5 @@
     <string name="font_color">Цвят на шрифта</string>
     <string name="font_settings">Настройки на шрифта</string>
     <string name="font_alignment">Подравняване на шрифта</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Конфигуриране</string>
 </resources>

@@ -46,33 +46,37 @@
     const/4 v3, 0x0
 
     .line 712
-    if-eqz p2, :cond_1
-
-    .line 713
-    iget-object v0, p0, Lcom/htc/app/FilePickerActivity$6;->this$0:Lcom/htc/app/FilePickerActivity;
-
-    #getter for: Lcom/htc/app/FilePickerActivity;->mFilePickerUtil:Lcom/htc/app/FilePickerUtil;
-    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/app/FilePickerUtil;
+    if-eqz p2, :cond_2
 
     .line 715
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity$6;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mHeaderBar:Lcom/htc/widget/HeaderBarMiddle;
-    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$500(Lcom/htc/app/FilePickerActivity;)Lcom/htc/widget/HeaderBarMiddle;
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/widget/HeaderBarMiddle;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/htc/app/FilePickerActivity$6;->this$0:Lcom/htc/app/FilePickerActivity;
+
+    #getter for: Lcom/htc/app/FilePickerActivity;->mHeaderBar:Lcom/htc/widget/HeaderBarMiddle;
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$400(Lcom/htc/app/FilePickerActivity;)Lcom/htc/widget/HeaderBarMiddle;
 
     move-result-object v0
 
     invoke-virtual {v0, v3}, Lcom/htc/widget/HeaderBarMiddle;->setFocusable(Z)V
 
     .line 716
+    :cond_0
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity$6;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mInputManager:Landroid/view/inputmethod/InputMethodManager;
-    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$600(Lcom/htc/app/FilePickerActivity;)Landroid/view/inputmethod/InputMethodManager;
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$500(Lcom/htc/app/FilePickerActivity;)Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     .line 717
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$6;->this$0:Lcom/htc/app/FilePickerActivity;
@@ -88,21 +92,21 @@
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
     #setter for: Lcom/htc/app/FilePickerActivity;->mInputManager:Landroid/view/inputmethod/InputMethodManager;
-    invoke-static {v1, v0}, Lcom/htc/app/FilePickerActivity;->access$602(Lcom/htc/app/FilePickerActivity;Landroid/view/inputmethod/InputMethodManager;)Landroid/view/inputmethod/InputMethodManager;
+    invoke-static {v1, v0}, Lcom/htc/app/FilePickerActivity;->access$502(Lcom/htc/app/FilePickerActivity;Landroid/view/inputmethod/InputMethodManager;)Landroid/view/inputmethod/InputMethodManager;
 
     .line 719
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcom/htc/app/FilePickerActivity$6;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mInputManager:Landroid/view/inputmethod/InputMethodManager;
-    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$600(Lcom/htc/app/FilePickerActivity;)Landroid/view/inputmethod/InputMethodManager;
+    invoke-static {v0}, Lcom/htc/app/FilePickerActivity;->access$500(Lcom/htc/app/FilePickerActivity;)Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/htc/app/FilePickerActivity$6;->this$0:Lcom/htc/app/FilePickerActivity;
 
     #getter for: Lcom/htc/app/FilePickerActivity;->mEditor:Landroid/widget/EditText;
-    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$700(Lcom/htc/app/FilePickerActivity;)Landroid/widget/EditText;
+    invoke-static {v1}, Lcom/htc/app/FilePickerActivity;->access$600(Lcom/htc/app/FilePickerActivity;)Landroid/widget/EditText;
 
     move-result-object v1
 
@@ -113,6 +117,6 @@
     invoke-virtual {v0, v1, v3}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
     .line 722
-    :cond_1
+    :cond_2
     return-void
 .end method

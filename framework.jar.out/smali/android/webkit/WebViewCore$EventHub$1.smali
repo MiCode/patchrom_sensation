@@ -87,7 +87,7 @@
 
     if-nez v2, :cond_1
 
-    .line 1779
+    .line 1782
     :cond_0
     :goto_0
     return-void
@@ -198,7 +198,7 @@
 
     invoke-virtual {v2, v0}, Landroid/webkit/HTCWebCore$EditEventHub;->handleMessage(Landroid/os/Message;)V
 
-    .line 1777
+    .line 1780
     :cond_3
     :goto_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -209,7 +209,7 @@
 
     move-wide/from16 v24, v0
 
-    .line 1778
+    .line 1781
     .local v24, currTime:D
     invoke-static/range {v24 .. v25}, Landroid/webkit/WebViewCore;->leaveMsgHandle(D)V
 
@@ -3549,8 +3549,85 @@
 
     goto/16 :goto_1
 
-    .line 1769
+    .line 1767
     :cond_20
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Landroid/webkit/WebViewCore$EventHub$1;->this$1:Landroid/webkit/WebViewCore$EventHub;
+
+    iget-object v2, v2, Landroid/webkit/WebViewCore$EventHub;->this$0:Landroid/webkit/WebViewCore;
+
+    #getter for: Landroid/webkit/WebViewCore;->mSettings:Landroid/webkit/WebSettings;
+    invoke-static {v2}, Landroid/webkit/WebViewCore;->access$1200(Landroid/webkit/WebViewCore;)Landroid/webkit/WebSettings;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/webkit/WebSettings;->isEnableQuickSelection()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_21
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Landroid/webkit/WebViewCore$EventHub$1;->this$1:Landroid/webkit/WebViewCore$EventHub;
+
+    iget-object v2, v2, Landroid/webkit/WebViewCore$EventHub;->this$0:Landroid/webkit/WebViewCore;
+
+    #getter for: Landroid/webkit/WebViewCore;->mWebView:Landroid/webkit/WebView;
+    invoke-static {v2}, Landroid/webkit/WebViewCore;->access$600(Landroid/webkit/WebViewCore;)Landroid/webkit/WebView;
+
+    move-result-object v2
+
+    iget-object v2, v2, Landroid/webkit/WebView;->mQuickSelect:Landroid/webkit/WebView$QuickSelectAbs;
+
+    if-eqz v2, :cond_21
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Landroid/webkit/WebViewCore$EventHub$1;->this$1:Landroid/webkit/WebViewCore$EventHub;
+
+    iget-object v2, v2, Landroid/webkit/WebViewCore$EventHub;->this$0:Landroid/webkit/WebViewCore;
+
+    #getter for: Landroid/webkit/WebViewCore;->mWebView:Landroid/webkit/WebView;
+    invoke-static {v2}, Landroid/webkit/WebViewCore;->access$600(Landroid/webkit/WebViewCore;)Landroid/webkit/WebView;
+
+    move-result-object v2
+
+    iget-object v2, v2, Landroid/webkit/WebView;->mQuickSelect:Landroid/webkit/WebView$QuickSelectAbs;
+
+    move-object/from16 v0, p1
+
+    iget v4, v0, Landroid/os/Message;->what:I
+
+    invoke-virtual {v2, v4}, Landroid/webkit/WebView$QuickSelectAbs;->isSelectMsg(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_21
+
+    .line 1769
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Landroid/webkit/WebViewCore$EventHub$1;->this$1:Landroid/webkit/WebViewCore$EventHub;
+
+    iget-object v2, v2, Landroid/webkit/WebViewCore$EventHub;->this$0:Landroid/webkit/WebViewCore;
+
+    #getter for: Landroid/webkit/WebViewCore;->mWebView:Landroid/webkit/WebView;
+    invoke-static {v2}, Landroid/webkit/WebViewCore;->access$600(Landroid/webkit/WebViewCore;)Landroid/webkit/WebView;
+
+    move-result-object v2
+
+    iget-object v2, v2, Landroid/webkit/WebView;->mQuickSelect:Landroid/webkit/WebView$QuickSelectAbs;
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v2, v0}, Landroid/webkit/WebView$QuickSelectAbs;->handleSelectMessage(Landroid/os/Message;)V
+
+    goto/16 :goto_1
+
+    .line 1772
+    :cond_21
     const-string v2, "LOGTAG"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -3580,6 +3657,8 @@
     goto/16 :goto_1
 
     .line 1157
+    nop
+
     :pswitch_data_0
     .packed-switch 0x60
         :pswitch_4

@@ -122,7 +122,7 @@
 
     .line 59
     :pswitch_0
-    const v2, 0x1040533
+    const v2, 0x1040534
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -130,7 +130,7 @@
 
     .line 62
     :pswitch_1
-    const v2, 0x1040534
+    const v2, 0x1040535
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 

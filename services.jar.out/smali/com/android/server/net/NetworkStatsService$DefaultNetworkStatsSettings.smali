@@ -27,10 +27,10 @@
     .parameter "context"
 
     .prologue
-    .line 1716
+    .line 1729
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1717
+    .line 1730
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -43,7 +43,7 @@
 
     iput-object v0, p0, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->mResolver:Landroid/content/ContentResolver;
 
-    .line 1719
+    .line 1732
     return-void
 .end method
 
@@ -57,12 +57,12 @@
 
     const/4 v2, 0x0
 
-    .line 1725
+    .line 1738
     if-eqz p2, :cond_0
 
     move v0, v1
 
-    .line 1726
+    .line 1739
     .local v0, defInt:I
     :goto_0
     iget-object v3, p0, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->mResolver:Landroid/content/ContentResolver;
@@ -80,14 +80,14 @@
     :cond_0
     move v0, v2
 
-    .line 1725
+    .line 1738
     goto :goto_0
 
     .restart local v0       #defInt:I
     :cond_1
     move v1, v2
 
-    .line 1726
+    .line 1739
     goto :goto_1
 .end method
 
@@ -97,7 +97,7 @@
     .parameter "def"
 
     .prologue
-    .line 1722
+    .line 1735
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->mResolver:Landroid/content/ContentResolver;
 
     invoke-static {v0, p1, p2, p3}, Landroid/provider/Settings$Secure;->getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
@@ -113,7 +113,7 @@
     .locals 3
 
     .prologue
-    .line 1736
+    .line 1749
     const-string v0, "netstats_network_bucket_duration"
 
     const-wide/32 v1, 0x36ee80
@@ -129,7 +129,7 @@
     .locals 3
 
     .prologue
-    .line 1739
+    .line 1752
     const-string v0, "netstats_network_max_history"
 
     const-wide v1, 0x1cf7c5800L
@@ -145,7 +145,7 @@
     .locals 3
 
     .prologue
-    .line 1733
+    .line 1746
     const-string v0, "netstats_persist_threshold"
 
     const-wide/32 v1, 0x200000
@@ -161,7 +161,7 @@
     .locals 3
 
     .prologue
-    .line 1730
+    .line 1743
     const-string v0, "netstats_poll_interval"
 
     const-wide/32 v1, 0x1b7740
@@ -177,7 +177,7 @@
     .locals 3
 
     .prologue
-    .line 1748
+    .line 1761
     const-string v0, "netstats_tag_max_history"
 
     const-wide v1, 0x9a7ec800L
@@ -193,7 +193,7 @@
     .locals 2
 
     .prologue
-    .line 1751
+    .line 1764
     const-wide/32 v0, 0x5265c00
 
     return-wide v0
@@ -203,7 +203,7 @@
     .locals 3
 
     .prologue
-    .line 1742
+    .line 1755
     const-string v0, "netstats_uid_bucket_duration"
 
     const-wide/32 v1, 0x6ddd00
@@ -219,7 +219,7 @@
     .locals 3
 
     .prologue
-    .line 1745
+    .line 1758
     const-string v0, "netstats_uid_max_history"
 
     const-wide v1, 0x1cf7c5800L

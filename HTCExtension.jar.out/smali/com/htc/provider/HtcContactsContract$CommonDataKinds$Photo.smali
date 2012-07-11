@@ -27,7 +27,7 @@
     .locals 0
 
     .prologue
-    .line 2092
+    .line 2152
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,14 +43,14 @@
 
     const/4 v3, 0x0
 
-    .line 2122
+    .line 2182
     sget-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0, p1, p2}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
     move-result-object v6
 
-    .line 2125
+    .line 2185
     .local v6, contactUri:Landroid/net/Uri;
     const-string v0, "photo"
 
@@ -58,7 +58,7 @@
 
     move-result-object v1
 
-    .line 2128
+    .line 2188
     .local v1, photoUri:Landroid/net/Uri;
     const/4 v0, 0x1
 
@@ -78,7 +78,7 @@
 
     move-result-object v7
 
-    .line 2131
+    .line 2191
     .local v7, cursor:Landroid/database/Cursor;
     if-eqz v7, :cond_0
 
@@ -91,18 +91,18 @@
 
     if-nez v0, :cond_2
 
-    .line 2137
+    .line 2197
     :cond_0
     if-eqz v7, :cond_1
 
-    .line 2138
+    .line 2198
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
     :cond_1
     :goto_0
     return-object v3
 
-    .line 2134
+    .line 2194
     :cond_2
     const/4 v0, 0x0
 
@@ -113,20 +113,20 @@
 
     move-result-object v8
 
-    .line 2135
+    .line 2195
     .local v8, data:[B
     if-nez v8, :cond_3
 
-    .line 2137
+    .line 2197
     :goto_1
     if-eqz v7, :cond_1
 
-    .line 2138
+    .line 2198
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 2135
+    .line 2195
     :cond_3
     const/4 v0, 0x0
 
@@ -141,14 +141,14 @@
 
     goto :goto_1
 
-    .line 2137
+    .line 2197
     .end local v8           #data:[B
     :catchall_0
     move-exception v0
 
     if-eqz v7, :cond_4
 
-    .line 2138
+    .line 2198
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
     :cond_4

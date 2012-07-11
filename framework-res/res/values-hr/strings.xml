@@ -183,7 +183,7 @@
     <string name="badPuk">PUK koji ste unijeli nije ispravan.</string>
     <string name="mismatchPin">PIN-ovi koje ste unijeli ne podudaraju se.</string>
     <string name="invalidPin">Unesite PIN koji ima od 4 do 8 brojeva.</string>
-    <string name="invalidPuk">Upišite PUK koji se sastoji od barem 8 brojeva.</string>
+    <string name="invalidPuk">Upišite PUK koji se sastoji od barem 8 brojki.</string>
     <string name="needPuk">Vaša SIM kartica je blokirana PUK kodom. Unesite PUK za otključavanje.</string>
     <string name="needPuk2">Unesite PUK2 za otključavanje SIM kartice.</string>
     <string name="ClipMmi">ID pozivatelja dolaznog poziva</string>
@@ -269,9 +269,9 @@
     <string name="turn_off_radio">Isključi bežični rad</string>
     <string name="screen_lock">Zaključaj zaslon</string>
     <string name="power_off">Isključuje se</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Zvono isključeno</string>
+    <string name="silent_mode_vibrate">Zvono s vibracijom</string>
+    <string name="silent_mode_ring">Zvono uključeno</string>
     <string name="shutdown_progress">Isključivanje…</string>
     <string name="shutdown_confirm">Telefon će se isključiti.</string>
     <string name="shutdown_confirm_question">Želite li isključiti uređaj?</string>
@@ -393,19 +393,19 @@
     <string name="permlab_bindInputMethod">povezivanje na metodu unosa</string>
     <string name="permdesc_bindInputMethod">Dozvoljava povezivanje s gornjom razinom sučelja metode unosa. Nikad ne bi trebalo biti potrebno za normalne aplikacije.</string>
     <string name="permlab_bindTextService">vezanje na tekstualnu uslugu</string>
-    <string name="permdesc_bindTextService">Omogućuje korisniku povezivanje s najvišom razinom sučelja tekstualne usluge (npr. SpellCheckerService). Ne bi smjelo biti potrebno za normalne aplikacije.</string>
+    <string name="permdesc_bindTextService">Omogućuje korisniku povezivanje s najvišom razinom sučelja tekstualne usluge (npr. SpellCheckerService). Nikad ne bi trebalo biti potrebno za normalne aplikacije.</string>
     <string name="permlab_bindVpnService">vezanje na VPN uslugu</string>
-    <string name="permdesc_bindVpnService">Nositelju omogućuje vezanje uz sučelje najviše razine Vpn usluge. Nije nikad potrebno za uobičajene aplikacije.</string>
+    <string name="permdesc_bindVpnService">Nositelju omogućuje vezanje uz sučelje najviše razine Vpn usluge. Nikad ne bi trebalo biti potrebno za uobičajene aplikacije.</string>
     <string name="permlab_bindWallpaper">povezivanje na pozadinu</string>
     <string name="permdesc_bindWallpaper">Dozvoljava povezivanje s gornjom razinom sučelja pozadine. Nikad ne bi trebalo biti potrebno za normalne aplikacije.</string>
     <string name="permlab_bindRemoteViews">vezanje na uslugu widgeta</string>
-    <string name="permdesc_bindRemoteViews">Nositelju omogućuje vezanje uz sučelje najviše razine usluge widgeta. Nije potrebno za uobičajene aplikacije.</string>
+    <string name="permdesc_bindRemoteViews">Nositelju omogućuje vezanje uz sučelje najviše razine usluge widgeta. Nikad ne bi trebalo biti potrebno za uobičajene aplikacije.</string>
     <string name="permlab_bindDeviceAdmin">surađuj s administratorom uređaja</string>
     <string name="permdesc_bindDeviceAdmin">Dozvoljava vlasniku slanje svojih namjera administratoru uređaja. Nikad ne bi trebalo biti potrebno za normalne aplikacije.</string>
     <string name="permlab_setOrientation">promjena orijentacije zaslona</string>
     <string name="permdesc_setOrientation">Dozvoljava aplikaciji promjenu zakretanja zaslona u bilo kojem trenutku. Nikad ne bi trebalo biti potrebno za normalne aplikacije.</string>
     <string name="permlab_setPointerSpeed">promjena brzine pokazivača</string>
-    <string name="permdesc_setPointerSpeed">Omogućuje aplikaciji promjenu brzine pokazivača miša ili dodirne pločice u bilo koje vrijeme. Ne bi smjelo biti potrebno za normalne aplikacije.</string>
+    <string name="permdesc_setPointerSpeed">Omogućuje aplikaciji promjenu brzine pokazivača miša ili dodirne pločice u bilo koje vrijeme. Nikad ne bi trebalo biti potrebno za normalne aplikacije.</string>
     <string name="permlab_signalPersistentProcesses">slanje Linux signala aplikacijama</string>
     <string name="permdesc_signalPersistentProcesses">Dozvoljava aplikaciji zahtjev slanja dovedenih signala svim trajnim procesima.</string>
     <string name="permlab_persistentActivity">aplikacija uvijek radi</string>
@@ -426,10 +426,10 @@
     <string name="permdesc_movePackage">Dozvoljava aplikaciji premještanje resursa iz unutarnje na vanjski medij i obratno.</string>
     <string name="permlab_readLogs">čitaj osjetljive podatke dnevnika</string>
     <string name="permdesc_readLogs">Dozvoljava aplikaciji čitanje iz različitih dnevničkih datoteka sustava. Time se omogućava otkrivanje općih informacija o tome što radite s telefonom, a moguće je i otkrivanje osobnih ili privatnih informacija.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">za reprodukciju koristi bilo koji dekoder medija</string>
+    <string name="permdesc_anyCodecForPlayback">Dozvoljava aplikaciji uporabu bilo kojeg instaliranog dekodera medija za reprodukciju.</string>
+    <string name="permlab_readWriteOmaDrm">pristup mapi o about oma DRM</string>
+    <string name="permdesc_readWriteOmaDrm">Dozvoljava aplikaciji čitanje ili pisanje u mapu o OMA DRM.</string>
     <string name="permlab_diagnostic">čitanje/upis na resurse u vlasništvu dijag</string>
     <string name="permdesc_diagnostic">Dozvoljava aplikaciji čitanje i upis na bilo koji resurs koji je u vlasništvu dijagnostičke grupe, primjerice datoteke u /dev. To može utjecati na stabilnost i sigurnost sustava. To se treba koristiti SAMO za određenu hardversku dijagnostiku koju vrši proizvođač ili operater.</string>
     <string name="permlab_changeComponentState">omogućavanje ili onemogućavanje dijelova aplikacije</string>
@@ -458,9 +458,9 @@
     <string name="permdesc_readSocialStream">Aplikaciji omogućuje pristup i sinkronizaciju društvenih ažuriranja vaših prijatelja. Zlonamjerne aplikacije to mogu upotrijebiti za pristup privatnim porukama između vas i vaših prijatelja na društvenim mrežama.</string>
     <string name="permlab_writeSocialStream">pisanje društvenog streama</string>
     <string name="permdesc_writeSocialStream">Aplikaciji omogućuje prikazivanje društvenih ažuriranja vaših prijatelja. Zlonamjerne aplikacije to mogu upotrijebiti kako bi se predstavile kao prijatelj i zavarale vas da otkrijete zaporke ili druge povjerljive informacije.</string>
-    <string name="permlab_readCalendar">čitajte kalendarske događaje i povjerljive informacije</string>
+    <string name="permlab_readCalendar">čitanje kalendarskih događaja i povjerljivih informacija</string>
     <string name="permdesc_readCalendar">Aplikaciji omogućuje čitanje svih kalendarskih događaja na vašem telefonu, uključujući događaje prijatelja ili suradnika. Zlonamjerne aplikacije s tim dopuštenjem mogu izdvajati osobne podatke iz tih kalendara bez znanja vlasnika.</string>
-    <string name="permlab_writeCalendar">dodajte ili izmijenite kalendarske događaje i pošaljite e-poštu gostima bez znanja vlasnika</string>
+    <string name="permlab_writeCalendar">dodavanje ili izmjena kalendarskih događaja i slanje e-pošte gostima bez znanja vlasnika</string>
     <string name="permdesc_writeCalendar">Aplikaciji omogućuje slanje pozivnica za događaje u ulozi vlasnika kalendara i dodavanje, uklanjanje, promjenu događaja koje možete izmijeniti na uređaju, uključujući događaje od prijatelja ili suradnika. Zlonamjerna aplikacija s tim dopuštenjem može slati neželjene poruke koje izgledaju kao da ih šalju vlasnici kalendara, mogu mijenjati događaje bez znanja vlasnika ili dodavati lažne događaje.</string>
     <string name="permlab_accessMockLocation">lažni izvori lokacije za ispitivanje</string>
     <string name="permdesc_accessMockLocation">Stvaranje lažnih izvora podataka o lokaciji za potrebe ispitivanja. Zlonamjerne aplikacije mogu to koristiti za prekrivanje lokacije i/ili statusa dobivenih iz stvarnih izvora podataka o lokaciji poput GPS ili mrežnih davatelja usluga.</string>
@@ -506,7 +506,7 @@
     <string name="permdesc_flashlight">Dozvoljava aplikaciji kontrolu bljeskalice.</string>
     <string name="permlab_manageUsb">upravljanje postavkama i dozvolama za USB uređaje</string>
     <string name="permdesc_manageUsb">Aplikaciji omogućuje upravljanje postavkama i dozvolama za USB uređaje.</string>
-    <string name="permlab_accessMtp">Primjena MTP protokola</string>
+    <string name="permlab_accessMtp">primjena MTP protokola</string>
     <string name="permdesc_accessMtp">Omogućuje pristup upravljačkom programu jezgre MTP-a radi implementacije MTP USB protokola.</string>
     <string name="permlab_hardware_test">ispitivanje hardvera</string>
     <string name="permdesc_hardware_test">Dozvoljava aplikaciji upravljanje različitom perifernom opremom za potrebe ispitivanja hardvera.</string>
@@ -573,7 +573,7 @@
     <string name="permlab_accessWimaxState">prikaz WiMAX stanja</string>
     <string name="permdesc_accessWimaxState">Dozvoljava aplikaciji prikaz informacija o stanju WiMAX.</string>
     <string name="permlab_changeWimaxState">promjena WiMAX stanja</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">Dozvoljava aplikaciji povezivanje i raskid veze sa WiMAX mrežom.</string>
     <string name="permlab_bluetoothAdmin">bluetooth administracija</string>
     <string name="permdesc_bluetoothAdmin">Dozvoljava aplikaciji konfiguraciju lokalnog Bluetooth telefona i otkrivanje i uparivanje s udaljenim uređajima.</string>
     <string name="permlab_bluetooth">stvaranje Bluetooth veza</string>
@@ -598,7 +598,7 @@
     <string name="permdesc_writeDictionary">Dozvoljava aplikaciji pisanje novih riječi u korisnički rječnik.</string>
     <string name="permlab_sdcardWrite">izmjena/brisanje sadržaja na SD kartici</string>
     <string name="permdesc_sdcardWrite">Dozvoljava aplikaciji pisanje na SD karticu.</string>
-    <string name="permlab_mediaStorageWrite">izmijeni/izbriši sadržaj pohranjen na internim medijima</string>
+    <string name="permlab_mediaStorageWrite">izmjena/brisanje sadržaja pohranjenog na internim medijima</string>
     <string name="permdesc_mediaStorageWrite">Aplikaciji omogućuje izmjenu sadržaja pohranjenog na internim medijima.</string>
     <string name="permlab_cache_filesystem">pristup datotečnom sustavu predmemorije</string>
     <string name="permdesc_cache_filesystem">Dozvoljava aplikaciji čitanje i pisanje u ddatotečni sustav predmemorije.</string>
@@ -606,7 +606,7 @@
     <string name="permdesc_use_sip">Dozvoljava aplikaciji uporabu SIP usluge za upućivanje/prijam internetskih poziva.</string>
     <string name="permlab_readNetworkUsageHistory">čitanje povijesti upotrebe mreže</string>
     <string name="permdesc_readNetworkUsageHistory">Aplikaciji omogućuje čitanje povijesti upotrebe mreže za određene mreže i aplikacije.</string>
-    <string name="permlab_manageNetworkPolicy">Upravljanje mrežnim pravilima</string>
+    <string name="permlab_manageNetworkPolicy">upravljanje mrežnim pravilima</string>
     <string name="permdesc_manageNetworkPolicy">Aplikaciji omogućuje upravljanje mrežnim pravilima i određivanje pravila za aplikacije.</string>
     <string name="permlab_modifyNetworkAccounting">izmjena evidencije mrežne upotrebe</string>
     <string name="permdesc_modifyNetworkAccounting">Omogućuje izmjenu načina upotrebe mreže u odnosu na aplikacije. Nije namijenjeno uobičajenim aplikacijama.</string>
@@ -620,7 +620,7 @@
     <string name="policydesc_forceLock">Upravlja načinom i vremenom zaključavanja zaslona</string>
     <string name="policylab_wipeData">Obriši sve podatke</string>
     <string name="policydesc_wipeData">Bez upozorenja briše podatke telefona izvođenjem poništavanja na tvorničke podatke</string>
-    <string name="policylab_setGlobalProxy">postavi globalni proxy uređaja</string>
+    <string name="policylab_setGlobalProxy">Postavi globalni proxy uređaja</string>
     <string name="policydesc_setGlobalProxy">Postavi globalni proxy uređaja za upotrebu dok su pravila omogućena. Samo prvi administrator uređaja postavlja djelotvoran globalni proxy.</string>
     <string name="policylab_expirePassword">Post. istek zap. zaklj. zasl.</string>
     <string name="policydesc_expirePassword">Nadzirite koliko se često mora mijenjati zaporka za zaključavanje zaslona</string>
@@ -683,7 +683,7 @@
     <string name="relationTypeAssistant">Pomoćnik</string>
     <string name="relationTypeBrother">Brat</string>
     <string name="relationTypeChild">Dijete</string>
-    <string name="relationTypeDomesticPartner">Partner u kućanstvu</string>
+    <string name="relationTypeDomesticPartner">Vanbračni partner</string>
     <string name="relationTypeFather">Otac</string>
     <string name="relationTypeFriend">Prijatelj</string>
     <string name="relationTypeManager">Voditelj</string>
@@ -748,9 +748,9 @@ Pokušajte ponovno za %d sekunda."</string>
     <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Netočno ste unijeli PIN %d puta. 
 
 Pokušajte ponovno za %d sekunda."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Netočno ste iscrtali uzorak za otključavanje %d puta. Nakon još %d neuspješna pokušaja, morat ćete otključati telefon pomoću Google prijave.
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Neispravno ste nacrtali uzorak za otključavanje %d puta. Nakon još %d neuspješnih pokušaja, dobit ćete upit za otključavanje uporabom podataka za prijavu na Google.
 
- Pokušajte ponovo za %d s."</string>
+ Pokušajte ponovno za %d sekunda."</string>
     <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Neispravno ste pokušali otključati telefon ovoliko puta: %d. On će se vratiti na tvorničke postavke i svi korisnički podaci bit će izgubljeni nakon još ovoliko neuspjelih pokušaja: %d.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Neispravno ste pokušali otključati telefon ovoliko puta: %d. Sada će biti vraćen na tvorničke postavke.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Pokušajte ponovno za %d sekunda.</string>
@@ -768,7 +768,7 @@ Posjetite "<b>google.com/accounts/recovery</b></string>
     <string name="lockscreen_unlock_label">Otključaj</string>
     <string name="lockscreen_sound_on_label">Zvuk uključen</string>
     <string name="lockscreen_sound_off_label">Zvuk isključen</string>
-    <string name="lockscreen_access_pattern_start">Uzorak se pokrenuo</string>
+    <string name="lockscreen_access_pattern_start">Uzorak je pokrenut</string>
     <string name="lockscreen_access_pattern_cleared">Uzorak je obrisan</string>
     <string name="lockscreen_access_pattern_cell_added">Dodan je mobitel</string>
     <string name="lockscreen_access_pattern_detected">Uzorak je dovršen</string>
@@ -837,13 +837,13 @@ Odaberite U redu za nastavak ili Odustani za ostanak na trenutnoj stranici."</st
     <string name="permdesc_writeHistoryBookmarks">Dozvoljava aplikaciji izmjenu povijesti u pregledniku ili knjižnih oznaka spremljenih na vaš telefon. Zlonamjerne aplikacije mogu to koristiti za brisanje ili izmjenu podataka vašeg preglednika.</string>
     <string name="permlab_setAlarm">postavi alarm na budilici</string>
     <string name="permdesc_setAlarm">Dozvoljava aplikaciji postavljanje alarma u instaliranoj aplikaciji budilice. Neke aplikacije budilice možda neće primjenjivati ovu funkciju.</string>
-    <string name="permlab_addVoicemail">dodaj govornu poštu</string>
+    <string name="permlab_addVoicemail">dodvanje govorne pošte</string>
     <string name="permdesc_addVoicemail">Omogućuje aplikaciji da doda poruke u vašu govornu poštu.</string>
     <string name="permlab_writeGeolocationPermissions">Promijeni dozvole geografske lokacije preglednika</string>
     <string name="permdesc_writeGeolocationPermissions">Dozvoljava aplikaciji promjenu dozvola geografskih lokacija preglednika. Zlonamjerne aplikaciju mogu to koristiti da bi omogućile slanje informacija o lokacija web stranicama treće strane.</string>
-    <string name="permlab_packageVerificationAgent">provjeri pakete</string>
+    <string name="permlab_packageVerificationAgent">provjera paketa</string>
     <string name="permdesc_packageVerificationAgent">Aplikaciji omogućuje da provjeri je li paket moguće instalirati.</string>
-    <string name="permlab_bindPackageVerifier">vezano uz paketnu provjeru</string>
+    <string name="permlab_bindPackageVerifier">vezivanje uz paketnu provjeru</string>
     <string name="permdesc_bindPackageVerifier">Nositelju omogućuje da traži paketnu provjeru. Nikad ne bi trebalo biti potrebno za uobičajene aplikacije.</string>
     <string name="save_password_message">Želite li da preglednik zapamti ovu lozinku?</string>
     <string name="save_password_notnow">Ne sada</string>
@@ -927,7 +927,7 @@ Odaberite U redu za nastavak ili Odustani za ostanak na trenutnoj stranici."</st
     <string name="launch_warning_original">%1$s je izvorno pokrenuta.</string>
     <string name="screen_compat_mode_scale">Mjerilo</string>
     <string name="screen_compat_mode_show">Uvijek prikaži</string>
-    <string name="screen_compat_mode_hint">Ponovno omogući ovo uz Postavke > Aplikacije > Upravljanje aplikacijama.</string>
+    <string name="screen_compat_mode_hint">Ponovno omogući ovo pomoću Postavke > Aplikacije > Upravljanje aplikacijama.</string>
     <string name="smv_application">Aplikacija %1$s (proces %2$s) je prekršila svoja samo-nametnuta pravila StrictMode politike.</string>
     <string name="smv_process">Postupak %1$s prekršio je svoja samo-nametnuta pravila StrictMode politike.</string>
     <string name="android_upgrading_title">Android se nadograđuje...</string>
@@ -962,14 +962,14 @@ Odaberite U redu za nastavak ili Odustani za ostanak na trenutnoj stranici."</st
     <string name="ringtone_silent">Utišan</string>
     <string name="ringtone_picker_title">Melodije zvona</string>
     <string name="ringtone_unknown">Nepoznata melodija zvona</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Prijava na Wi-Fi mrežu</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Ne može se spojiti na Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" ima lošu internetsku vezu."</string>
     <string name="wifi_p2p_dialog_title">Izravni Wi-Fi</string>
-    <string name="wifi_p2p_turnon_message">Pokreni izravan rad s Wi-Fi mrežom. To će isključiti rad s Wi-Fi klijentom/žarišnom točkom.</string>
+    <string name="wifi_p2p_turnon_message">Pokreni izravan rad s Wi-Fi mrežom. To će isključiti rad s Wi-Fi klijentom/hotspotom.</string>
     <string name="wifi_p2p_failed_message">Neuspjelo pokretanje izravne Wi-Fi veze</string>
-    <string name="wifi_p2p_pbc_go_negotiation_request_message">Zahtjev za postavljanje izravne Wi-Fi veze od %1$s. Kliknite \"U redu\" za potvrdu.</string>
+    <string name="wifi_p2p_pbc_go_negotiation_request_message">Zahtjev za postavljanje izravne Wi-Fi veze od %1$s. Kliknite na U redu za potvrdu.</string>
     <string name="wifi_p2p_pin_go_negotiation_request_message">Zahtjev za postavljanje izravne Wi-Fi veze s %1$s. Unesite PIN da biste nastavili.</string>
     <string name="wifi_p2p_pin_display_message">WPS pin %1$s treba unijeti na paralelni uređaj %2$s da bi se uspostavljanje veze nastavilo</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct uključen</string>
@@ -986,7 +986,7 @@ Odaberite U redu za nastavak ili Odustani za ostanak na trenutnoj stranici."</st
     <string name="sim_added_title">SIM kartica dodana</string>
     <string name="sim_added_message">Morate ponovno pokrenuti uređaj za pristup mobilnoj mreži.</string>
     <string name="sim_restart_button">Ponovno pokreni</string>
-    <string name="time_picker_dialog_title">Postavljanje vremena</string>
+    <string name="time_picker_dialog_title">Postavi vrijeme</string>
     <string name="date_picker_dialog_title">Postavi datum</string>
     <string name="date_time_set">Postavi</string>
     <string name="default_permission_group">Zadana</string>
@@ -995,7 +995,7 @@ Odaberite U redu za nastavak ili Odustani za ostanak na trenutnoj stranici."</st
     <string name="perms_show_all"><b>Pokaži sve</b></string>
     <string name="usb_storage_activity_title">USB memorija</string>
     <string name="usb_storage_title">USB povezan</string>
-    <string name="usb_storage_message">Povezali ste se s računalom putem USB-a. Dodirnite donji gumb ako želite kopirati datoteke s računala na karticu SD svojeg Androida ili obrnuto.</string>
+    <string name="usb_storage_message">Povezali ste se s računalom putem USB-a. Dodirnite donji gumb ako želite kopirati datoteke s računala na SD karticu svojeg Androida ili obratno.</string>
     <string name="usb_storage_button_mount">Uključi USB memoriju</string>
     <string name="usb_storage_error_message">Postoji problem s uporabom SD kartice kao USB memorije za masovnu pohranu podatka.</string>
     <string name="usb_storage_notification_title">USB povezan</string>
@@ -1135,12 +1135,12 @@ za račun %s"</string>
     <string name="date_picker_decrement_year_button">Pomak unatrag za jednu godinu</string>
     <string name="checkbox_checked">označeno</string>
     <string name="checkbox_not_checked">nije označeno</string>
-    <string name="radiobutton_selected">odabran</string>
+    <string name="radiobutton_selected">odabrano</string>
     <string name="radiobutton_not_selected">nije odabrano</string>
     <string name="switch_on">uključeno</string>
     <string name="switch_off">isključeno</string>
-    <string name="togglebutton_pressed">pritisnut</string>
-    <string name="togglebutton_not_pressed">nije pritisnut</string>
+    <string name="togglebutton_pressed">pritisnuto</string>
+    <string name="togglebutton_not_pressed">nije pritisnuto</string>
     <string name="keyboardview_keycode_alt">Alt</string>
     <string name="keyboardview_keycode_cancel">Odustani</string>
     <string name="keyboardview_keycode_delete">Izbriši</string>
@@ -1156,11 +1156,11 @@ za račun %s"</string>
     <string name="description_direction_down">Dolje za %s.</string>
     <string name="description_direction_left">Lijevo za %s.</string>
     <string name="description_direction_right">Desno za %s.</string>
-    <string name="description_target_unlock">Otključaj</string>
+    <string name="description_target_unlock">Otključvanje</string>
     <string name="description_target_camera">Fotoaparat</string>
     <string name="description_target_silent">Bešumno</string>
-    <string name="description_target_soundon">Zvuk je uključen</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_soundon">Uključivanje zvuka</string>
+    <string name="description_target_unlock_tablet">Povuci za otključavanje.</string>
     <string name="keyboard_headset_required_to_hear_password">Priključite slušalice da biste čuli tipke zaporke izgovorene naglas.</string>
     <string name="keyboard_password_character_no_headset">Točka.</string>
     <string name="action_bar_home_description">Kreni na početnu</string>
@@ -1179,9 +1179,9 @@ za račun %s"</string>
     <string name="data_usage_limit_body">Dodirnite za omogućavanje</string>
     <string name="data_usage_3g_limit_snoozed_title">Prekoračeno ograničenje 2G-3G</string>
     <string name="data_usage_4g_limit_snoozed_title">Prekoračeno je ograničenje 4G podataka</string>
-    <string name="data_usage_mobile_limit_snoozed_title">Prekoračeno je ograničenje za podatke na mobilnom uređaju</string>
+    <string name="data_usage_mobile_limit_snoozed_title">Prekoračeno je ogran. za mob. podatke</string>
     <string name="data_usage_wifi_limit_snoozed_title">Prekorač. Wi-Fi ogranič. pod.</string>
-    <string name="data_usage_limit_snoozed_body">%s preko navedenog ograničenja</string>
+    <string name="data_usage_limit_snoozed_body">%s preko zadanog ograničenja</string>
     <string name="data_usage_restricted_title">Pozadinski podaci ograničeni</string>
     <string name="data_usage_restricted_body">Dodir za uklanjanje ograničenja</string>
     <string name="ssl_certificate">Sigurnosni certifikat</string>
@@ -1203,9 +1203,9 @@ za račun %s"</string>
     <string name="share_action_provider_share_with">Dijeli sa...</string>
     <string name="status_bar_device_locked">Uređaj zaključan.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Slanje...</string>
+    <string name="launchBrowserDefault">Pokrenuti preglednik?</string>
+    <string name="SetupCallDefault">Prihvatiti poziv?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">Pristup 4G</string>
     <string name="permlab_changeWimaxMulticastState">dozvola prijama višesmjernog WiMAX</string>
@@ -1267,19 +1267,20 @@ za račun %s"</string>
     <string name="install_notify_title">IT je blokirao instalaciju:</string>
     <string name="uninstall_notify_title">IT je blokirao deinstalaciju:</string>
     <string name="wifi_notify_title">IT onemogućen Wi-Fi</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Očisti zadano u Početne postavke > Aplikacije.</string>
+    <string name="sim_puk_contact_customer_care_information">Obratite se Službi za korisnika da biste dobili PUK kod</string>
     <string name="permlab_accessCWFolder">Pristupi mapi s čarobnjakom za prilagodbu</string>
     <string name="permdesc_accessCWFolder">Omogućuje aplikaciji pristup mapi s čarobnjakom za prilagodbu</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Pristupi mapi za oporavak</string>
+    <string name="permdesc_accessRecoveryFolder">Dozvoljava aplikaciji pristup mapi za oporavak</string>
     <string name="permlab_setappname">Dinamički će promijeniti naziv aplikacije</string>
     <string name="permdesc_setappname">Dozvoljava aplikaciji dinamičku promjenu navedenog naziva aplikacije.</string>
     <string name="text_limitation">Previše odabranih riječi za dijeljenje.</string>
     <string name="sms_roam_guild_dialog_title">Odlazna poruka</string>
     <string name="sms_roam_guild_dialog_subject">Koristite roaming u međunarodnim mrežama. Slanje ove poruke možda ćete morati nadoplatiti vašem pružatelju usluge bežičnog pristupa. Želite li:</string>
-    <string name="sms_roam_guild_dialog_radio_auto_send">Automatsko slanje u nacionalnoj mreži</string>
-    <string name="sms_roam_guild_dialog_send_now">Pošalji odmah</string>
-    <string name="sms_roam_guild_dialog_send_later">Pošalji kasnije</string>
+    <string name="sms_roam_guild_dialog_radio_auto_send">Automatski poslati kada budem u domaćoj mreži</string>
+    <string name="sms_roam_guild_dialog_send_now">Poslati odmah</string>
+    <string name="sms_roam_guild_dialog_send_later">Poslati kasnije</string>
     <string name="permlab_accessUsbnetState">vidi stanje UsbNet-a</string>
     <string name="permdesc_accessUsbnetState">Omogućuje aplikaciji gledanje informacija o stanju UsbNet-a.</string>
     <string name="permlab_changeUsbnetState">promijeni stanje UsbNet-a</string>
@@ -1311,5 +1312,5 @@ za račun %s"</string>
     <string name="font_color">Boja fonta</string>
     <string name="font_settings">Postavke fonta</string>
     <string name="font_alignment">Poravnanje fonta</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Konfiguriraj</string>
 </resources>

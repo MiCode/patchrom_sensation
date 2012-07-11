@@ -4687,6 +4687,40 @@
     return-void
 .end method
 
+.method public getActiveApnCarrier(Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
+    .parameter "apnType"
+
+    .prologue
+    .line 3922
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+
+    if-nez v0, :cond_0
+
+    .line 3923
+    const-string v0, "GSM"
+
+    const-string/jumbo v1, "mDataConnectionTracker is null"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 3924
+    const-string v0, ""
+
+    .line 3927
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+
+    invoke-virtual {v0, p1}, Lcom/android/internal/telephony/DataConnectionTracker;->getActiveApnCarrier(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
 .method public getAvailableNetworks(Landroid/os/Message;)V
     .locals 1
     .parameter "response"

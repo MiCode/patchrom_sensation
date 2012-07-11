@@ -25,17 +25,11 @@
 
 .field public static final action_screen_confirm_delete_message_burst:I = 0x7f0a0143
 
-.field public static final action_screen_processing:I = 0x7f0a01f7
-
-.field public static final action_screen_processing_svto_phone:I = 0x7f0a01f8
-
 .field public static final action_screen_share_image:I = 0x7f0a0144
 
 .field public static final action_screen_share_video:I = 0x7f0a0145
 
-.field public static final advanced:I = 0x7f0a01c8
-
-.field public static final ap_version_id:I = 0x7f0a0204
+.field public static final ap_version_id:I = 0x7f0a01c2
 
 .field public static final auto:I = 0x7f0a0052
 
@@ -55,15 +49,11 @@
 
 .field public static final blink_detection:I = 0x7f0a0096
 
-.field public static final brightness:I = 0x7f0a01c6
-
 .field public static final brightness_level_tile:I = 0x7f0a00d0
 
 .field public static final camcorder_name:I = 0x7f0a002c
 
 .field public static final camera_3D_status:I = 0x7f0a0077
-
-.field public static final camera_actionkey_button_hint:I = 0x7f0a01ff
 
 .field public static final camera_back_description:I = 0x7f0a01bc
 
@@ -71,25 +61,15 @@
 
 .field public static final camera_front_description:I = 0x7f0a01bb
 
-.field public static final camera_label:I = 0x7f0a01c2
-
-.field public static final camera_optical_button_hint:I = 0x7f0a01fd
-
 .field public static final camera_page_title:I = 0x7f0a01b1
 
 .field public static final camera_switch:I = 0x7f0a0076
-
-.field public static final camera_trackball_button_hint:I = 0x7f0a01fb
 
 .field public static final camera_tutorial_item:I = 0x7f0a01b5
 
 .field public static final camera_tutorial_text:I = 0x7f0a01b2
 
-.field public static final cancel:I = 0x7f0a01d4
-
 .field public static final capture_format:I = 0x7f0a007b
-
-.field public static final capture_mode_selection:I = 0x7f0a01c5
 
 .field public static final center_button:I = 0x7f0a019b
 
@@ -98,10 +78,6 @@
 .field public static final click_screensave_msg:I = 0x7f0a013c
 
 .field public static final click_screensave_msg_camcorder:I = 0x7f0a013d
-
-.field public static final confirm_delete_title:I = 0x7f0a01fa
-
-.field public static final contact_mode:I = 0x7f0a01cb
 
 .field public static final custom_res_action_btn_background1:I = 0x7f0a0006
 
@@ -186,8 +162,6 @@
 .field public static final custom_res_title_background:I = 0x7f0a0024
 
 .field public static final custom_res_tumbler:I = 0x7f0a000b
-
-.field public static final dcf_filenumber_full:I = 0x7f0a01c4
 
 .field public static final demo_btn_label:I = 0x7f0a01b4
 
@@ -309,12 +283,6 @@
 
 .field public static final image_adjustments_custom:I = 0x7f0a005f
 
-.field public static final image_mode:I = 0x7f0a01c9
-
-.field public static final image_properties:I = 0x7f0a01d8
-
-.field public static final image_properties_summary:I = 0x7f0a01eb
-
 .field public static final image_ratio:I = 0x7f0a0080
 
 .field public static final image_ratio_wideoff:I = 0x7f0a0084
@@ -328,10 +296,6 @@
 .field public static final iso:I = 0x7f0a0093
 
 .field public static final jps_file_format:I = 0x7f0a0070
-
-.field public static final label_start_record:I = 0x7f0a01f5
-
-.field public static final label_stop_record:I = 0x7f0a01f6
 
 .field public static final limit_size_unit:I = 0x7f0a013e
 
@@ -359,19 +323,9 @@
 
 .field public static final mass_storage_fs_max_file_reach:I = 0x7f0a003f
 
-.field public static final mass_storage_mode:I = 0x7f0a01c3
-
 .field public static final mass_storage_phone_camcorder:I = 0x7f0a0038
 
 .field public static final mass_storage_phone_camera:I = 0x7f0a0037
-
-.field public static final menu_self_timer_off:I = 0x7f0a01d0
-
-.field public static final menu_self_timer_ten:I = 0x7f0a01d2
-
-.field public static final menu_self_timer_two:I = 0x7f0a01d1
-
-.field public static final menu_zoom:I = 0x7f0a01c7
 
 .field public static final metering_mode:I = 0x7f0a0091
 
@@ -384,8 +338,6 @@
 .field public static final mirror_name:I = 0x7f0a002e
 
 .field public static final mms_recording_limit_size:I = 0x7f0a013f
-
-.field public static final mms_recording_time:I = 0x7f0a01f9
 
 .field public static final mode_camera_description:I = 0x7f0a01bd
 
@@ -409,8 +361,6 @@
 
 .field public static final off_capital:I = 0x7f0a0054
 
-.field public static final ok:I = 0x7f0a01d3
-
 .field public static final on_capital:I = 0x7f0a0053
 
 .field public static final on_screen_btn_effects:I = 0x7f0a004d
@@ -420,8 +370,6 @@
 .field public static final on_screen_btn_gallery:I = 0x7f0a004e
 
 .field public static final on_screen_btn_trim_video:I = 0x7f0a0050
-
-.field public static final on_screen_menu_back:I = 0x7f0a01ec
 
 .field public static final one_face:I = 0x7f0a0062
 
@@ -445,19 +393,9 @@
 
 .field public static final power_warning_msg:I = 0x7f0a01b0
 
-.field public static final pref_flash_auto:I = 0x7f0a01e3
-
-.field public static final pref_flash_off:I = 0x7f0a01e5
-
-.field public static final pref_flash_on:I = 0x7f0a01e4
-
 .field public static final pref_flicker_50:I = 0x7f0a00c9
 
 .field public static final pref_flicker_60:I = 0x7f0a00ca
-
-.field public static final pref_flicker_auto:I = 0x7f0a01e9
-
-.field public static final pref_gallery_category:I = 0x7f0a01d6
 
 .field public static final pref_iso_100:I = 0x7f0a00cb
 
@@ -469,15 +407,11 @@
 
 .field public static final pref_iso_800:I = 0x7f0a00ce
 
-.field public static final pref_iso_auto:I = 0x7f0a01ea
-
 .field public static final pref_metering_mode_average:I = 0x7f0a00c8
 
 .field public static final pref_metering_mode_center:I = 0x7f0a00c7
 
 .field public static final pref_metering_mode_spot:I = 0x7f0a00c6
-
-.field public static final pref_quality_basic:I = 0x7f0a01e2
 
 .field public static final pref_quality_fine:I = 0x7f0a00b9
 
@@ -501,31 +435,13 @@
 
 .field public static final pref_recording_limit_unlimited:I = 0x7f0a00c5
 
-.field public static final pref_review_duration_10s:I = 0x7f0a01e0
-
-.field public static final pref_review_duration_5s:I = 0x7f0a01df
-
-.field public static final pref_review_duration_no_limit:I = 0x7f0a01e1
-
 .field public static final pref_review_duration_no_review:I = 0x7f0a00b7
-
-.field public static final pref_review_duration_off:I = 0x7f0a01dd
-
-.field public static final pref_review_duration_on:I = 0x7f0a01de
-
-.field public static final pref_selftimer_10s:I = 0x7f0a01e8
-
-.field public static final pref_selftimer_2s:I = 0x7f0a01e7
-
-.field public static final pref_selftimer_Off:I = 0x7f0a01e6
 
 .field public static final pref_video_format_h263:I = 0x7f0a00bc
 
 .field public static final pref_video_format_h264:I = 0x7f0a00bb
 
 .field public static final pref_video_format_mpeg4:I = 0x7f0a00bd
-
-.field public static final preferences_label:I = 0x7f0a01d5
 
 .field public static final processing_image:I = 0x7f0a0047
 
@@ -657,8 +573,6 @@
 
 .field public static final resolution_SHARP_FIVE_MEGA_5_3:I = 0x7f0a0104
 
-.field public static final resolution_SUBQVGA_description:I = 0x7f0a01f4
-
 .field public static final resolution_SXGA:I = 0x7f0a00e1
 
 .field public static final resolution_SXGA_16_9:I = 0x7f0a00f6
@@ -743,19 +657,11 @@
 
 .field public static final resolution_video_720p_description_3:I = 0x7f0a010f
 
-.field public static final resolution_video_QVGA_description:I = 0x7f0a01f0
-
 .field public static final resolution_video_QVGA_description_2:I = 0x7f0a0105
 
 .field public static final resolution_video_QVGA_description_3:I = 0x7f0a010d
 
-.field public static final resolution_video_cif_description:I = 0x7f0a01ef
-
-.field public static final resolution_video_cif_description_2:I = 0x7f0a01f3
-
 .field public static final resolution_video_hvga_description_2:I = 0x7f0a010b
-
-.field public static final resolution_video_qcif_description:I = 0x7f0a01f1
 
 .field public static final resolution_video_qcif_description_2:I = 0x7f0a0106
 
@@ -763,15 +669,9 @@
 
 .field public static final resolution_video_qhd_description_2:I = 0x7f0a0109
 
-.field public static final resolution_video_subqcif_description:I = 0x7f0a01f2
-
-.field public static final resolution_video_vga_description:I = 0x7f0a01ee
-
 .field public static final resolution_video_vga_description_2:I = 0x7f0a010c
 
 .field public static final resolution_video_vga_description_3:I = 0x7f0a0111
-
-.field public static final resolution_video_wvga_description:I = 0x7f0a01ed
 
 .field public static final resolution_video_wvga_description_2:I = 0x7f0a010a
 
@@ -869,10 +769,6 @@
 
 .field public static final set_default:I = 0x7f0a0099
 
-.field public static final setdef_no:I = 0x7f0a01da
-
-.field public static final setdef_yes:I = 0x7f0a01d9
-
 .field public static final setting_contrast:I = 0x7f0a009c
 
 .field public static final setting_saturation:I = 0x7f0a009d
@@ -926,12 +822,6 @@
 .field public static final storage_card:I = 0x7f0a0087
 
 .field public static final storage_phone:I = 0x7f0a008a
-
-.field public static final submenu_cancel:I = 0x7f0a01dc
-
-.field public static final submenu_done:I = 0x7f0a01db
-
-.field public static final support_portrait:I = 0x7f0a01d7
 
 .field public static final switch_main:I = 0x7f0a009a
 
@@ -1013,19 +903,9 @@
 
 .field public static final usc_online_album:I = 0x7f0a0154
 
-.field public static final video_actionkey_button_hint:I = 0x7f0a0200
-
-.field public static final video_mode:I = 0x7f0a01ca
-
-.field public static final video_optical_button_hint:I = 0x7f0a01fe
-
 .field public static final video_quality:I = 0x7f0a005b
 
-.field public static final video_trackball_button_hint:I = 0x7f0a01fc
-
 .field public static final wait:I = 0x7f0a002f
-
-.field public static final wb_auto:I = 0x7f0a01cc
 
 .field public static final wb_cloudy:I = 0x7f0a006f
 
@@ -1035,19 +915,7 @@
 
 .field public static final wb_incandescent:I = 0x7f0a006c
 
-.field public static final wb_shade:I = 0x7f0a01ce
-
-.field public static final wb_twilight:I = 0x7f0a01cd
-
-.field public static final wb_warm_fluorescent:I = 0x7f0a01cf
-
 .field public static final white_balance:I = 0x7f0a005c
-
-.field public static final zoom_hint_actionkey:I = 0x7f0a0203
-
-.field public static final zoom_hint_screen:I = 0x7f0a0201
-
-.field public static final zoom_hint_trackball:I = 0x7f0a0202
 
 
 # direct methods
@@ -1055,7 +923,7 @@
     .locals 0
 
     .prologue
-    .line 2501
+    .line 2541
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

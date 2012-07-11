@@ -190,6 +190,12 @@
 .method public abstract dial(Ljava/lang/String;ILcom/android/internal/telephony/UUSInfo;Landroid/os/Message;)V
 .end method
 
+.method public abstract enableAllDaySleep(ILandroid/os/Message;)V
+.end method
+
+.method public abstract enablePS_W2G_Handover(ILandroid/os/Message;)V
+.end method
+
 .method public abstract enableRegistrationState_wifi_call(ILandroid/os/Message;)V
 .end method
 
@@ -242,6 +248,9 @@
 .end method
 
 .method public abstract getDeviceMemoryFull(Landroid/os/Message;)V
+.end method
+
+.method public abstract getDrxInfo(Landroid/os/Message;)V
 .end method
 
 .method public abstract getGsmBroadcastConfig(Landroid/os/Message;)V
@@ -645,6 +654,9 @@
 .end method
 
 .method public abstract registerForSmartDataRoamingStatus(Landroid/os/Handler;ILjava/lang/Object;)V
+.end method
+
+.method public abstract registerForSmartNetworkNotify(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
 .method public abstract registerForSystemInfo(Landroid/os/Handler;ILjava/lang/Object;)V
@@ -1452,6 +1464,9 @@
 .end method
 
 .method public abstract unregisterForSmartDataRoamingStatus(Landroid/os/Handler;)V
+.end method
+
+.method public abstract unregisterForSmartNetworkNotify(Landroid/os/Handler;)V
 .end method
 
 .method public abstract unregisterForSystemInfo(Landroid/os/Handler;)V

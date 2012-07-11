@@ -76,15 +76,15 @@
         <item quantity="one">Доступна открытая сеть Wi-Fi</item>
     </plurals>
     <plurals name="matches_found">
-        <item quantity="other">%1$d of %2$d</item>
-        <item quantity="one">1 match</item>
+        <item quantity="other">%1$d из %2$d</item>
+        <item quantity="one">1 соответствие</item>
     </plurals>
     <plurals name="wimax_available">
         <item quantity="other">Сеть WiMAX доступна</item>
         <item quantity="one">Сеть WiMAX доступна</item>
     </plurals>
     <plurals name="wimax_available_detailed">
-        <item quantity="other">Доступны открытые сети WiMAX</item>
-        <item quantity="one">Доступна открытая сеть WiMAX</item>
+        <item quantity="other">Открытая сеть WiMAX доступна</item>
+        <item quantity="one">Открытая сеть WiMAX доступна</item>
     </plurals>
 </resources>

@@ -25,7 +25,7 @@
     .locals 2
 
     .prologue
-    .line 2004
+    .line 2064
     sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "display_name"
@@ -36,7 +36,7 @@
 
     sput-object v0, Lcom/htc/provider/HtcContactsContract$CommonDataKinds$StructuredName;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 2007
+    .line 2067
     sget-object v0, Lcom/htc/provider/HtcContactsContract$CommonDataKinds$StructuredName;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "lookup"
@@ -54,7 +54,7 @@
     .locals 0
 
     .prologue
-    .line 2002
+    .line 2062
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

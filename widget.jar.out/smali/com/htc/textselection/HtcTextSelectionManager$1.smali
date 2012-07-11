@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 557
+    .line 566
     iput-object p1, p0, Lcom/htc/textselection/HtcTextSelectionManager$1;->this$0:Lcom/htc/textselection/HtcTextSelectionManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "event"
 
     .prologue
-    .line 560
+    .line 569
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager$1;->this$0:Lcom/htc/textselection/HtcTextSelectionManager;
 
     #getter for: Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
@@ -52,7 +52,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 561
+    .line 570
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager$1;->this$0:Lcom/htc/textselection/HtcTextSelectionManager;
 
     #getter for: Lcom/htc/textselection/HtcTextSelectionManager;->mVisibleRect:Landroid/graphics/Rect;
@@ -71,7 +71,7 @@
     #setter for: Lcom/htc/textselection/HtcTextSelectionManager;->mVisibleRect:Landroid/graphics/Rect;
     invoke-static {v0, v1}, Lcom/htc/textselection/HtcTextSelectionManager;->access$102(Lcom/htc/textselection/HtcTextSelectionManager;Landroid/graphics/Rect;)Landroid/graphics/Rect;
 
-    .line 562
+    .line 571
     :cond_0
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager$1;->this$0:Lcom/htc/textselection/HtcTextSelectionManager;
 
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 563
+    .line 572
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager$1;->this$0:Lcom/htc/textselection/HtcTextSelectionManager;
 
     #getter for: Lcom/htc/textselection/HtcTextSelectionManager;->mVisibleRect:Landroid/graphics/Rect;
@@ -115,7 +115,7 @@
 
     if-nez v0, :cond_1
 
-    .line 564
+    .line 573
     :cond_1
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager$1;->this$0:Lcom/htc/textselection/HtcTextSelectionManager;
 
@@ -126,7 +126,7 @@
 
     invoke-virtual {v0}, Landroid/widget/TextView;->stopSelectionActionMode()V
 
-    .line 566
+    .line 575
     :cond_2
     return-void
 .end method

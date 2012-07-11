@@ -269,9 +269,9 @@
     <string name="turn_off_radio">ปิดไวเลส</string>
     <string name="screen_lock">ล็อคหน้าจอ</string>
     <string name="power_off">ปิดเครื่อง</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">ปิดเสียงเรียกเข้า</string>
+    <string name="silent_mode_vibrate">เสียงเรียกเข้า สั่น</string>
+    <string name="silent_mode_ring">เปิดเสียงเรียกเข้า</string>
     <string name="shutdown_progress">กำลังปิดเครื่อง…</string>
     <string name="shutdown_confirm">โทรศัพท์ของคุณจะปิด</string>
     <string name="shutdown_confirm_question">คุณต้องการปิดการทำงานหรือไม่</string>
@@ -426,10 +426,10 @@
     <string name="permdesc_movePackage">อนุญาตให้แอพพลิเคชั่นย้ายแหล่งข้อมูลแอพพลิเคชั่นจากภายในไปยังสื่อภายนอกและในทางกลับกัน</string>
     <string name="permlab_readLogs">อ่านข้อมูลล็อกที่สำคัญ</string>
     <string name="permdesc_readLogs">อนุญาตให้แอพพลิเคชั่นเข้าอ่านได้จากไฟล์ล็อกต่างๆ ของระบบ นี่จะช่วยให้แอพพลิเคชั่นได้พบข้อมูลทั่วไปเกี่ยวกับสิ่งที่คุณกับโทรศัพท์ ซึ่งอาจรวมไปถึงข้อมูลส่วนตัวหรือข้อมูลที่เป็นความลับ</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">ใช้ตัวถอดรหัสมีเดียใดก็ได้สำหรับการเล่น</string>
+    <string name="permdesc_anyCodecForPlayback">อนุญาตให้แอพพลิเคชั่นเพื่อใช้ตัวถอดรหัสมีเดียที่ได้ติดตั้งอยู่เพื่อถอดรหัสสำหรับการเล่น</string>
+    <string name="permlab_readWriteOmaDrm">เข้าถึงโฟลเดอร์ oma DRM</string>
+    <string name="permdesc_readWriteOmaDrm">อนุญาตให้แอพพลิเคชั่นอ่านและเขียนโฟลเดอร์ OMA DRM</string>
     <string name="permlab_diagnostic">อ่าน/เขียนจากแหล่งข้อมูลโดย Diag</string>
     <string name="permdesc_diagnostic">อนุญาตให้แอพพลิเคชั่นสามารถอ่านหรือเขียนไปยังเจ้าของแหล่งที่มาได้โดย diag กลุ่มเช่นไฟล์ใน/dev แอพพลิเคชั่นนี้อาจมีผลต่อเสถียรภาพและระบบความปลอดภัยแอพพลิเคชั่นควรใช้กับอาร์ดแวร์ที่ผู้ผลิตหรือฝ่ายปฏิบัติการวินิจฉัยแล้วเท่านั้น</string>
     <string name="permlab_changeComponentState">เปิดหรือปิดการให้บริการส่วนประกอบแอพพลิเคชั่น</string>
@@ -455,7 +455,8 @@
     <string name="permlab_writeProfile">เขียนลงในข้อมูลโปรไฟล์ของคุณ</string>
     <string name="permdesc_writeProfile">อนุญาตให้แอปพลิเคชันเปลี่ยนแปลงหรือเพิ่มลงในข้อมูลโปรไฟล์ส่วนบุคคลที่จัดเก็บในอุปกรณ์ของคุณ เช่น ชื่อและข้อมูลรายชื่อติดต่อของคุณ ซึ่งหมายความว่าแอปพลิเคชันอื่นจะสามารถระบุตัวคุณและส่งข้อมูลโปรไฟล์ของคุณไปให้ผู้อื่นได้</string>
     <string name="permlab_readSocialStream">อ่านสตรีมเครือข่ายสังคม</string>
-    <string name="permdesc_readSocialStream">อนุญาตให้แอปพลิเคชันเข้าถึงและซิงค์การอัปเดตในเครือข่ายสังคมจากคุณและเพื่อน แอปพลิเคชันที่เป็นอันตรายสามารถใช้การทำงานนี้เพื่ออ่านการติดต่อส่วนตัวระหว่างคุณกับเพื่อนในเครือข่ายสังคมได้</string>
+    <string name="permdesc_readSocialStream">"อนุญาตให้แอปพลิเคชันเข้าถึงและซิงค์การอัปเดตใน
+เครือข่ายสังคมจากคุณและเพื่อน แอปพลิเคชันที่เป็นอันตรายสามารถใช้การทำงานนี้เพื่ออ่านการติดต่อส่วนตัวระหว่างคุณกับเพื่อนในเครือข่ายสังคมได้"</string>
     <string name="permlab_writeSocialStream">เขียนในสตรีมเครือข่ายสังคม</string>
     <string name="permdesc_writeSocialStream">อนุญาตให้แอปพลิเคชันแสดงการอัปเดตในเครือข่ายสังคมจากเพื่อนของคุณ แอปพลิเคชันที่เป็นอันตรายสามารถใช้การทำงานนี้เพื่อปลอมเป็นเพื่อนคุณและหลอกให้บอกรหัสผ่านหรือข้อมูลลับอื่นๆ</string>
     <string name="permlab_readCalendar">อ่านกิจกรรมบนปฏิทินรวมถึงข้อมูลที่เป็นความลับ</string>
@@ -507,7 +508,8 @@
     <string name="permlab_manageUsb">จัดการค่ากำหนดและการอนุญาตสำหรับอุปกรณ์ USB</string>
     <string name="permdesc_manageUsb">อนุญาตให้แอปพลิเคชันจัดการค่ากำหนดและการอนุญาตสำหรับอุปกรณ์ USB</string>
     <string name="permlab_accessMtp">ใช้โปรโตคอล MTP</string>
-    <string name="permdesc_accessMtp">อนุญาตการเข้าถึงไดรเวอร์ Kernel MTP เพื่อใช้โปรโตคอล MTP USB</string>
+    <string name="permdesc_accessMtp">"อนุญาตการเข้าถึงไดรเวอร์ Kernel MTP เพื่อใช้
+โปรโตคอล MTP USB"</string>
     <string name="permlab_hardware_test">ทดสอบฮาร์ดแวร์</string>
     <string name="permdesc_hardware_test">ให้แอพพลิเคชั่นนี้สามารถควบคุมอุปกรณ์ต่างๆที่ต่อพ่วงเพื่อจุดประสงค์ของการทดสอบฮาร์ดแวร์</string>
     <string name="permlab_callPhone">โทรโดยตรงไปยังหมายเลขโทรศัพท์</string>
@@ -557,7 +559,7 @@
     <string name="permlab_createNetworkSockets">เข้าถึงอินเทอร์เน็ตแบบเต็ม</string>
     <string name="permdesc_createNetworkSockets">ยอมให้แอพพลิเคชั่นสร้างซ็อคเก็ตเครือข่าย</string>
     <string name="permlab_writeApnSettings">เปลี่ยน/ขัดขวางการตั้งค่าเครือข่ายและการเข้าชม</string>
-    <string name="permdesc_writeApnSettings">อนุญาตให้แอปพลิเคชันเปลี่ยนการตั้งค่าเครือข่ายและขัดขวางและตรวจสอบการเข้าชมในเครือข่าย ตัวอย่างเช่น การเปลี่ยนพร็อกซีและพอร์ตของ APN แอปพลิเคชันที่เป็นอันตรายอาจตรวจสอบ เปลี่ยนเส้นทาง หรือปรับเปลี่ยนแพ็คเก็ตเครือข่ายโดยที่คุณไม่ทราบ</string>
+    <string name="permdesc_writeApnSettings">อนุญาตให้แอพพลิเคชันเปลี่ยนการตั้งค่าเครือข่ายและขัดขวางและตรวจสอบการเข้าชมในเครือข่าย ตัวอย่างเช่น การเปลี่ยนพร็อกซีและพอร์ตของ APN แอปพลิเคชันที่เป็นอันตรายอาจตรวจสอบ เปลี่ยนเส้นทาง หรือปรับเปลี่ยนแพ็คเก็ตเครือข่ายโดยที่คุณไม่ทราบ</string>
     <string name="permlab_changeNetworkState">เปลี่ยนการเชื่อมต่อเครือข่าย</string>
     <string name="permdesc_changeNetworkState">อนุญาตให้แอพพลิเคชั่นเปลี่ยนการเชื่อมต่อเครือข่ายของรัฐ</string>
     <string name="permlab_changeTetherState">เปลี่ยนการเชื่อมต่อการเชื่อมโยง</string>
@@ -573,7 +575,8 @@
     <string name="permlab_accessWimaxState">ดูสถานะ WiMAX</string>
     <string name="permdesc_accessWimaxState">อนุญาตให้แอพพลิเคชั่นดูข้อมูลเกี่ยวกับสถานะของ WiMAX</string>
     <string name="permlab_changeWimaxState">เปลี่ยนสถานะ WiMAX</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">"อนุญาตให้แอพพลิเคชันเชื่อมต่อ และไม่เชื่อมต่อจาก
+เครือข่าย WiMAX"</string>
     <string name="permlab_bluetoothAdmin">การจัดการบลูทูธ</string>
     <string name="permdesc_bluetoothAdmin">ยอมให้แอพพลิเคชั่นกำหนดค่าโทรศัพท์บลูทูธเครื่องนี้,และค้นพบและจับคู่กับเครื่องระยะไกล</string>
     <string name="permlab_bluetooth">สร้างการเชื่อมต่อบลูทูธ</string>
@@ -748,9 +751,9 @@
     <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"คุณป้อน PIN ไม่ถูกต้อง %d ครั้งแล้ว 
 
 โปรดลองอีกครั้งในอีก %d วินาที"</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"คุณวาดรูปแบบการปลดล็อกไม่ถูกต้อง %d ครั้งหากทำไม่สำเร็จอีก %d ครั้ง ระบบจะขอให้คุณปลดล็อกโทรศัพท์โดยใช้การลงชื่อเข้าใช้ Google
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"คุณได้วาดรูปแบบไม่ถูกต้องในการปลดล็อค%d ครั้งหลังจาก%dพยายามแต่ไม่สำเร็จหลายครั้ง, คุณอาจจะถูกถามให้ปลดล็อคโทรศัพท์ของคุณด้วยการเข้าใช้งานกูเกิล
 
-โปรดลองอีกครั้งในอีก %d วินาที"</string>
+ โปรดลงใหม่ใน %d วินาที"</string>
     <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">คุณพยายามปลดล็อกโทรศัพท์อย่างไม่ถูกต้องแล้ว %d ครั้ง หากการพยายามไม่สำเร็จอีก %d ครั้ง โทรศัพท์จะถูกรีเซ็ตเป็นค่าเริ่มต้นจากโรงงานและข้อมูลทั้งหมดของผู้ใช้จะหายไป</string>
     <string name="lockscreen_failed_attempts_now_wiping">คุณพยายามปลดล็อกโทรศัพท์อย่างไม่ถูกต้องแล้ว %d ครั้ง ขณะนี้โทรศัพท์จะถูกรีเซ็ตเป็นค่าเริ่มต้นจากโรงงาน</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">ลองใหม่อีกครั้งใน %d วินาที</string>
@@ -952,7 +955,7 @@
     <string name="volume_alarm">ความดังเสียงเตือน</string>
     <string name="volume_notification">ความดังเสียงแจ้งเตือน</string>
     <string name="volume_unknown">ความดังเสียง</string>
-    <string name="volume_icon_description_bluetooth">ระดับบลูทูธ</string>
+    <string name="volume_icon_description_bluetooth">ระดับเสียงบลูทูธ</string>
     <string name="volume_icon_description_ringer">ระดับเสียงเรียกเข้า</string>
     <string name="volume_icon_description_incall">ปริมาณการโทร</string>
     <string name="volume_icon_description_media">ระดับเสียงของสื่อ</string>
@@ -962,7 +965,7 @@
     <string name="ringtone_silent">เงียบ</string>
     <string name="ringtone_picker_title">เสียงเรียกเข้า</string>
     <string name="ringtone_unknown">ไม่รู้จักเสียงเรียกเข้า</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">ลงชื่อเข้าใช้เครือข่าย Wi-Fi</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">ไม่สามารถเชื่อมต่อ Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" มีสัญญาณอินเทอร์เน็ตไม่ดี"</string>
@@ -981,7 +984,8 @@
     <string name="sms_control_yes">ยืนยัน</string>
     <string name="sms_control_no">ยกเลิก</string>
     <string name="sim_removed_title">นำซิมการ์ดออกแล้ว</string>
-    <string name="sim_removed_message">เครือข่ายมือถือจะไม่สามารถใช้งานได้จนกว่าคุณจะรีสตาร์ทโดยใส่ซิมการ์ดที่ถูกต้องแล้ว</string>
+    <string name="sim_removed_message">"เครือข่ายมือถือจะไม่สามารถใช้งานได้จนกว่าคุณจะ
+รีสตาร์ทโดยใส่ซิมการ์ดที่ถูกต้องแล้ว"</string>
     <string name="sim_done_button">เสร็จสิ้น</string>
     <string name="sim_added_title">เพิ่มซิมการ์ดแล้ว</string>
     <string name="sim_added_message">คุณต้องรีสตาร์ทอุปกรณ์ของคุณเพื่อเข้าถึงเครือข่ายมือถือ</string>
@@ -1134,7 +1138,7 @@
     <string name="date_picker_increment_year_button">เพิ่มปี</string>
     <string name="date_picker_decrement_year_button">ลดปี</string>
     <string name="checkbox_checked">เลือกไว้</string>
-    <string name="checkbox_not_checked">ไม่ได้ตรวจสอบ</string>
+    <string name="checkbox_not_checked">ไม่ได้เลือกไว้</string>
     <string name="radiobutton_selected">เลือกแล้ว</string>
     <string name="radiobutton_not_selected">ไม่ได้เลือก</string>
     <string name="switch_on">เปิด</string>
@@ -1160,7 +1164,7 @@
     <string name="description_target_camera">กล้องถ่ายรูป</string>
     <string name="description_target_silent">ปิดเสียง</string>
     <string name="description_target_soundon">เปิดเสียง</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">กวาดเพื่อปลดล็อค</string>
     <string name="keyboard_headset_required_to_hear_password">เสียบชุดหูฟังเพื่อฟังเสียงเมื่อพิมพ์รหัสผ่าน</string>
     <string name="keyboard_password_character_no_headset">เครื่องหมายจุด</string>
     <string name="action_bar_home_description">นำทางไปหน้าแรก</string>
@@ -1195,7 +1199,7 @@
     <string name="issued_on">ออกเมื่อ:</string>
     <string name="expires_on">หมดอายุวันที่:</string>
     <string name="serial_number">หมายเลขซีเรียล:</string>
-    <string name="fingerprints">ลายนิ้วมือ</string>
+    <string name="fingerprints">ลายนิ้วมือ:</string>
     <string name="sha256_fingerprint">ลายนิ้วมือ SHA-256</string>
     <string name="sha1_fingerprint">ลายนิ้วมือ SHA-1</string>
     <string name="activity_chooser_view_see_all">ดูทั้งหมด...</string>
@@ -1203,9 +1207,9 @@
     <string name="share_action_provider_share_with">แบ่งปันกับ...</string>
     <string name="status_bar_device_locked">ล็อกอุปกรณ์อยู่</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">กำลังส่ง...</string>
+    <string name="launchBrowserDefault">เรียกใช้บราวเซอร์หรือไม่?</string>
+    <string name="SetupCallDefault">รับสายหรือไม่?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">เข้าใช้งาน 4G</string>
     <string name="permlab_changeWimaxMulticastState">ยอมรับ WiMAX Multicast</string>
@@ -1267,11 +1271,12 @@
     <string name="install_notify_title">IT บล็อคการติดตั้ง:</string>
     <string name="uninstall_notify_title">IT บล็อคการถอนการติดตั้ง:</string>
     <string name="wifi_notify_title">IT ปิด Wi-Fi</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">ล้างค่าเริ่มต้นใน การตั้งค่าหน้าหลัก > แอพพลิเคชั่น</string>
+    <string name="sim_puk_contact_customer_care_information">โปรดติดต่อศูนย์บริการลูกค้าเพื่อรับรหัส PUK</string>
     <string name="permlab_accessCWFolder">เข้าถึงโฟลเดอร์ที่ปรับแต่งโดยคุณสมบัติตัวช่วยดำเนินการ</string>
     <string name="permdesc_accessCWFolder">อนุญาตให้แอพพลิเคชั่นเข้าถึงโฟลเดอร์ที่ปรับแต่งโดยคุณสมบัติตัวช่วยดำเนินการ</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">เข้าถึงโฟลเดอร์กู้คืน</string>
+    <string name="permdesc_accessRecoveryFolder">อนุญาตให้แอพพลิเคชั่นเข้าถึงโฟลเดอร์กู้คืน</string>
     <string name="permlab_setappname">เปลี่ยนชื่อแอพพลิเคชั่นไดนามิก</string>
     <string name="permdesc_setappname">อนุญาตให้แอพพลิเคชั่นเปลี่ยนชื่อแอพพลิเคชั่นได้ในแบบไดนามิก</string>
     <string name="text_limitation">ไม่สามารถเลือกคำมากเกินไปเพื่อแบ่งปันได้</string>
@@ -1311,5 +1316,5 @@
     <string name="font_color">สีตัวอักษร</string>
     <string name="font_settings">ตั้งค่าตัวอักษร</string>
     <string name="font_alignment">ปรับแนวตัวอักษร</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">กำหนดค่า</string>
 </resources>

@@ -93,12 +93,6 @@
     :cond_1
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
-    const/16 v2, 0x50
-
-    if-eq v1, v2, :cond_0
-
-    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
-
     const/16 v2, 0x95
 
     if-eq v1, v2, :cond_0
@@ -141,7 +135,41 @@
 
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
+    const/16 v2, 0xa9
+
+    if-eq v1, v2, :cond_0
+
+    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    const/16 v2, 0xaa
+
+    if-eq v1, v2, :cond_0
+
+    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    const/16 v2, 0x61
+
+    if-eq v1, v2, :cond_0
+
+    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    if-eqz v1, :cond_0
+
+    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    const/16 v2, 0xe0
+
+    if-eq v1, v2, :cond_0
+
+    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
     const/16 v2, 0x7c
+
+    if-eq v1, v2, :cond_0
+
+    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
+
+    const/16 v2, 0x94
 
     if-eq v1, v2, :cond_0
 
@@ -154,7 +182,7 @@
     .locals 2
 
     .prologue
-    .line 111
+    .line 116
     invoke-virtual {p0}, Lcom/android/camera/component/HdrController;->getCameraThread()Lcom/android/camera/CameraThread;
 
     move-result-object v1
@@ -163,13 +191,13 @@
 
     move-result-object v0
 
-    .line 112
+    .line 117
     .local v0, components:Lcom/android/camera/component/ComponentManager;
     iget-object v1, p0, Lcom/android/camera/component/HdrController;->m_ColorEffectController:Lcom/android/camera/effect/ColorEffectController;
 
     if-nez v1, :cond_0
 
-    .line 113
+    .line 118
     const-string v1, "Color Effect Controller"
 
     invoke-virtual {v0, v1}, Lcom/android/camera/component/ComponentManager;->getComponent(Ljava/lang/String;)Lcom/android/camera/component/Component;
@@ -180,13 +208,13 @@
 
     iput-object v1, p0, Lcom/android/camera/component/HdrController;->m_ColorEffectController:Lcom/android/camera/effect/ColorEffectController;
 
-    .line 114
+    .line 119
     :cond_0
     iget-object v1, p0, Lcom/android/camera/component/HdrController;->m_GpuEffectController:Lcom/android/camera/effect/GpuEffectController;
 
     if-nez v1, :cond_1
 
-    .line 115
+    .line 120
     const-string v1, "GPU Effect Controller"
 
     invoke-virtual {v0, v1}, Lcom/android/camera/component/ComponentManager;->getComponent(Ljava/lang/String;)Lcom/android/camera/component/Component;
@@ -197,13 +225,13 @@
 
     iput-object v1, p0, Lcom/android/camera/component/HdrController;->m_GpuEffectController:Lcom/android/camera/effect/GpuEffectController;
 
-    .line 116
+    .line 121
     :cond_1
     iget-object v1, p0, Lcom/android/camera/component/HdrController;->m_SceneController:Lcom/android/camera/effect/SceneController;
 
     if-nez v1, :cond_2
 
-    .line 117
+    .line 122
     const-string v1, "Scene Controller"
 
     invoke-virtual {v0, v1}, Lcom/android/camera/component/ComponentManager;->getComponent(Ljava/lang/String;)Lcom/android/camera/component/Component;
@@ -214,7 +242,7 @@
 
     iput-object v1, p0, Lcom/android/camera/component/HdrController;->m_SceneController:Lcom/android/camera/effect/SceneController;
 
-    .line 118
+    .line 123
     :cond_2
     return-void
 .end method
@@ -223,12 +251,12 @@
     .locals 3
 
     .prologue
-    .line 125
+    .line 130
     invoke-virtual {p0}, Lcom/android/camera/component/HdrController;->getCameraThread()Lcom/android/camera/CameraThread;
 
     move-result-object v0
 
-    .line 126
+    .line 131
     .local v0, cameraThread:Lcom/android/camera/CameraThread;
     invoke-virtual {v0}, Lcom/android/camera/CameraThread;->isTakingPicture()Z
 
@@ -236,49 +264,49 @@
 
     if-nez v1, :cond_2
 
-    .line 129
+    .line 134
     invoke-virtual {v0, p0}, Lcom/android/camera/CameraThread;->setCaptureHandler(Lcom/android/camera/ICaptureHandler;)V
 
-    .line 132
+    .line 137
     invoke-direct {p0}, Lcom/android/camera/component/HdrController;->linkToOtherControllers()V
 
-    .line 133
+    .line 138
     iget-object v1, p0, Lcom/android/camera/component/HdrController;->m_ColorEffectController:Lcom/android/camera/effect/ColorEffectController;
 
     if-eqz v1, :cond_0
 
-    .line 134
+    .line 139
     iget-object v1, p0, Lcom/android/camera/component/HdrController;->m_ColorEffectController:Lcom/android/camera/effect/ColorEffectController;
 
     const-string v2, "none"
 
     invoke-virtual {v1, v2}, Lcom/android/camera/effect/ColorEffectController;->setColorEffect(Ljava/lang/String;)V
 
-    .line 135
+    .line 140
     :cond_0
     iget-object v1, p0, Lcom/android/camera/component/HdrController;->m_GpuEffectController:Lcom/android/camera/effect/GpuEffectController;
 
     if-eqz v1, :cond_1
 
-    .line 136
+    .line 141
     iget-object v1, p0, Lcom/android/camera/component/HdrController;->m_GpuEffectController:Lcom/android/camera/effect/GpuEffectController;
 
     invoke-virtual {v1}, Lcom/android/camera/effect/GpuEffectController;->clearEffect()V
 
-    .line 137
+    .line 142
     :cond_1
     iget-object v1, p0, Lcom/android/camera/component/HdrController;->m_SceneController:Lcom/android/camera/effect/SceneController;
 
     if-eqz v1, :cond_2
 
-    .line 138
+    .line 143
     iget-object v1, p0, Lcom/android/camera/component/HdrController;->m_SceneController:Lcom/android/camera/effect/SceneController;
 
     const-string v2, "auto"
 
     invoke-virtual {v1, v2}, Lcom/android/camera/effect/SceneController;->setScene(Ljava/lang/String;)V
 
-    .line 140
+    .line 145
     :cond_2
     return-void
 .end method
@@ -289,12 +317,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 147
+    .line 152
     invoke-virtual {p0}, Lcom/android/camera/component/HdrController;->getCameraThread()Lcom/android/camera/CameraThread;
 
     move-result-object v1
 
-    .line 148
+    .line 153
     .local v1, cameraThread:Lcom/android/camera/CameraThread;
     invoke-virtual {v1}, Lcom/android/camera/CameraThread;->isTakingPicture()Z
 
@@ -302,7 +330,7 @@
 
     if-nez v2, :cond_1
 
-    .line 151
+    .line 156
     iget-boolean v2, p0, Lcom/android/camera/component/HdrController;->m_IsCaptureModeChanged:Z
 
     if-eqz v2, :cond_0
@@ -315,51 +343,51 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 153
+    .line 158
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/android/camera/component/HdrController;->m_IsCaptureModeChanged:Z
 
-    .line 154
+    .line 159
     invoke-virtual {v1}, Lcom/android/camera/CameraThread;->getCameraController()Lcom/android/camera/CameraController;
 
     move-result-object v0
 
-    .line 155
+    .line 160
     .local v0, cameraController:Lcom/android/camera/CameraController;
     if-eqz v0, :cond_2
 
-    .line 157
+    .line 162
     iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v3, "Set capture mode to burst"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 158
+    .line 163
     const-string v2, "capture-mode"
 
     const-string v3, "burst"
 
     invoke-virtual {v0, v2, v3}, Lcom/android/camera/CameraController;->setCameraParameter(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 159
+    .line 164
     invoke-virtual {v0}, Lcom/android/camera/CameraController;->doSetCameraParameters()V
 
-    .line 166
+    .line 171
     .end local v0           #cameraController:Lcom/android/camera/CameraController;
     :cond_0
     :goto_0
     invoke-virtual {v1, v4}, Lcom/android/camera/CameraThread;->setCaptureHandler(Lcom/android/camera/ICaptureHandler;)V
 
-    .line 168
+    .line 173
     :cond_1
     iput-object v4, p0, Lcom/android/camera/component/HdrController;->m_CameraUsed:Landroid/hardware/Camera;
 
-    .line 169
+    .line 174
     return-void
 
-    .line 162
+    .line 167
     .restart local v0       #cameraController:Lcom/android/camera/CameraController;
     :cond_2
     iget-object v2, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
@@ -417,10 +445,10 @@
     .parameter "hdrUI"
 
     .prologue
-    .line 103
+    .line 108
     iput-object p1, p0, Lcom/android/camera/component/HdrController;->m_HdrUI:Lcom/android/camera/component/HdrUI;
 
-    .line 104
+    .line 109
     return-void
 .end method
 
@@ -430,12 +458,12 @@
     .parameter "camera"
 
     .prologue
-    .line 177
+    .line 182
     sget-object v1, Lcom/android/camera/TIME;->ShutterCallback:Lcom/android/camera/TIME$Value;
 
     invoke-virtual {v1}, Lcom/android/camera/TIME$Value;->Start()V
 
-    .line 180
+    .line 185
     iget-boolean v1, p0, Lcom/android/camera/component/HdrController;->m_IsCaptureModeChanged:Z
 
     if-eqz v1, :cond_0
@@ -444,7 +472,7 @@
 
     if-eq v1, p2, :cond_1
 
-    .line 182
+    .line 187
     :cond_0
     iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
@@ -452,12 +480,12 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 183
+    .line 188
     invoke-virtual {p1}, Lcom/android/camera/CameraThread;->getCameraController()Lcom/android/camera/CameraController;
 
     move-result-object v0
 
-    .line 184
+    .line 189
     .local v0, cameraController:Lcom/android/camera/CameraController;
     const-string v1, "capture-mode"
 
@@ -465,27 +493,27 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/camera/CameraController;->setCameraParameter(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 185
+    .line 190
     invoke-virtual {v0}, Lcom/android/camera/CameraController;->doSetCameraParameters()V
 
-    .line 186
+    .line 191
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/camera/component/HdrController;->m_IsCaptureModeChanged:Z
 
-    .line 188
+    .line 193
     .end local v0           #cameraController:Lcom/android/camera/CameraController;
     :cond_1
     iput-object p2, p0, Lcom/android/camera/component/HdrController;->m_CameraUsed:Landroid/hardware/Camera;
 
-    .line 191
+    .line 196
     iget-object v1, p0, Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
 
     const-string v2, "Take picture"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 192
+    .line 197
     new-instance v1, Lcom/android/camera/component/HdrController$1;
 
     invoke-direct {v1, p0, p1}, Lcom/android/camera/component/HdrController$1;-><init>(Lcom/android/camera/component/HdrController;Lcom/android/camera/CameraThread;)V
@@ -504,6 +532,6 @@
 
     invoke-virtual {p2, v1, v2, v3, v4}, Landroid/hardware/Camera;->takePicture(Landroid/hardware/Camera$ShutterCallback;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;)V
 
-    .line 233
+    .line 238
     return-void
 .end method

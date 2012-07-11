@@ -1,0 +1,237 @@
+<customization_form version="1.00">
+	<category name="system">
+		<module name="IME">
+			<function>
+				<set name="single" type="list:IME,CIME">
+					<item name="defeault">IME</item> 
+				</set>
+			</function>
+		</module>
+
+		<module name="language">
+			<function>
+				<set name="single">
+					<item name="total_list">cs_CZ;de_DE;en_AU;en_GB;en_SG;en_US;es_US;fr;it;ja;nl_NL;pl;ru;zh_CN;zh_TW;</item>
+					<item name="cs_CZ" type="boolean">yes</item>
+					<item name="de_DE" type="boolean">yes</item>
+					<item name="en_AU" type="boolean">yes</item>
+					<item name="en_GB" type="boolean">no</item>
+					<item name="en_SG" type="boolean">no</item>
+					<item name="en_US" type="boolean">yes</item>
+					<item name="es_US" type="boolean">no</item>
+					<item name="fr" type="boolean">yes</item>
+					<item name="it" type="boolean">yes</item>
+					<item name="ja" type="boolean">no</item>
+					<item name="nl_NL" type="boolean">no</item>
+					<item name="pl" type="boolean">no</item>
+					<item name="ru" type="boolean">no</item>
+					<item name="zh_CN" type="boolean">no</item>
+					<item name="zh_TW" type="boolean">no</item>
+					<item name="defeault" >zh_TW</item> 
+				</set>
+			</function>
+		</module>
+				
+		<module name="InputMethod">
+			<function name="IME_language_set">
+				<set name="single">
+                    <item name="English" type="boolean">yes</item>
+                    <item name="German" type="boolean">yes</item>
+                    <item name="France" type="boolean">yes</item>
+                    <item name="Italian" type="boolean">yes</item>
+                    <item name="Spanish" type="boolean">yes</item>
+                    <item name="Russian" type="boolean">yes</item>
+                    <item name="Czech" type="boolean">yes</item>
+                    <item name="Dutch" type="boolean">yes</item>
+                    <item name="Polish" type="boolean">yes</item>
+					<item name="default">English</item>
+				</set>
+			</function>
+			<function name="IME_sip_set">
+				<set name="single">
+					<item name="total_list">Handwriting;ZuhYin;CangJie;PinYin;Stroke;</item> 
+					<item name="Handwriting" type="boolean">yes</item>
+					<item name="ZuhYin" type="boolean">yes</item>
+					<item name="CangJie" type="boolean">yes</item>
+					<item name="PinYin" type="boolean">yes</item>
+					<item name="Stroke" type="boolean">yes</item>					
+					<item name="default">ZuhYin</item>
+				</set>
+			</function>						
+		</module>
+		<module name="property">
+			<function>
+				<set name="single">
+					<item name="build_number"></item>
+					<item name="model_number"></item>
+					<item name="firmware_version"></item>
+					<item name="baseband_version"></item>
+					<item name="emergency_call_list"></item>
+					<item name="A52" type="boolean"></item>
+					<item name="A53" type="boolean"></item>
+				</set>
+			</function>
+		</module>
+
+	</category>
+	<category name="application">
+		<module name="Launcher">
+			<function name="extra_wallpapers">
+				<set name="plenty" max="10">
+					<item name="thumb" type="file_name">wallpaper_beach_small.jpg</item>
+					<item name="image" type="file_name">wallpaper_beach.jpg</item>
+				</set>
+				<set name="plenty" max="10">
+					<item name="thumb" type="file_name">wallpaper_sky_small.jpg</item>
+					<item name="image" type="file_name">wallpaper_sky.jpg</item>
+				</set>
+			</function>
+			<function name="default_wallpaper">
+				<set name="single">
+					<item name="image" type="file_name">wallpaper_beach.jpg</item>
+				</set>
+			</function>
+			<function name="shortcuts" >
+				<set name="plenty" max="7">
+					<item name="title">widget_search_bar</item>
+					<item name="package"></item>
+					<item name="class">com.android.launcher.widgets.SearchWidgetItem</item>
+					<item name="screen">0</item>
+					<item name="x">0</item>
+					<item name="y">0</item>
+					<item name="url"></item>
+					<item name="icon" type="file_name"></item>
+					<item name="itemtype">0</item>
+				</set>
+				<set name="plenty" max="7">
+					<item name="title">widget_clock</item>
+					<item name="package"></item>
+					<item name="class">com.android.launcher.widgets.ClockWidgetItem</item>
+					<item name="screen">0</item>
+					<item name="x">1</item>
+					<item name="y">1</item>
+					<item name="url"></item>
+					<item name="icon" type="file_name"></item>
+					<item name="itemtype">0</item>
+				</set>
+				<set name="plenty" max="7">
+					<item name="title"></item>
+					<item name="package"></item>
+					<item name="class"></item>
+					<item name="screen"></item>
+					<item name="x"></item>
+					<item name="y"></item>
+					<item name="url"></item>
+					<item name="icon" type="file_name"></item>
+					<item name="itemtype">0</item>
+				</set>
+				<set name="plenty" max="7">
+					<item name="title"></item>
+					<item name="package"></item>
+					<item name="class"></item>
+					<item name="screen"></item>
+					<item name="x"></item>
+					<item name="y"></item>
+					<item name="url"></item>
+					<item name="icon" type="file_name"></item>
+					<item name="itemtype">0</item>
+				</set>
+			</function>
+			<function name="clock_widget">
+				<set name="single">
+					<item name="enable">yes</item>
+					<item name="screen">1</item>
+					<item name="x">1</item>
+					<item name="y">1</item>
+				</set>
+			</function>
+		</module>
+		<module name="Settings">
+			<function name="resource_path">
+				<set name="single">
+					<item name="path">/system/customize/resource</item>
+				</set>
+			</function>
+			<function name="extra_ringtones">
+				<set name="plenty" max="5">
+					<item name="ringtone" type="file_name">ring1.mp3</item>
+				</set>
+				<set name="plenty" max="5">
+					<item name="ringtone" type="file_name">ring2.mp3</item>
+				</set>
+			</function>
+			<function name="default_ringtone">
+				<set name="single">
+					<item name="ringtone" type="file_name">ring1.mp3</item>
+				</set>
+			</function>
+			<function name="extra_alarms">
+				<set name="plenty" max="5">
+					<item name="alarm" type="file_name">alarm1.mp3</item>
+				</set>
+				<set name="plenty" max="5">
+					<item name="alarm" type="file_name">alarm2.mp3</item>
+				</set>
+			</function>
+			<function name="default_alarm">
+				<set name="single">
+					<item name="alarm" type="file_name">alarm1.mp3</item>
+				</set>
+			</function>
+			<function name="extra_notifications">
+				<set name="plenty" max="5">
+					<item name="notification" type="file_name">notification1.mp3</item>
+				</set>
+				<set name="plenty" max="5">
+					<item name="notification" type="file_name">notification2.mp3</item>
+				</set>
+			</function>
+			<function name="default_notification">
+				<set name="single">
+					<item name="notification" type="file_name">notification1.mp3</item>
+				</set>
+			</function>
+		</module>
+		<module name="Browser">
+			<function name="bookmark">
+				<set name="plenty" max="15">
+					<item name="title">Google</item>
+					<item name="url">http://www.google.com</item>
+				</set>
+				<set name="plenty" max="15">
+					<item name="title">Yahoo</item>
+					<item name="url">http://tw.yahoo.com</item>
+				</set>
+			</function>
+			<function name="ua_string">
+				<set name="single">
+					<item name="value">hTC_A6161</item>
+				</set>
+			</function>
+		</module>
+	</category>
+	<category name="connection">
+		<module name="imps">
+			<function>
+				<set name="plenty" max="3">
+					<item name="name">AIM</item>
+					<item name="full_name">AIM</item>
+					<item name="signup_url">https://new.aol.com/productsweb/Controller.jpf</item>
+					<item name="protocol">IMPS</item>
+					<item name="imps_data_channel">HTTP</item>
+					<item name="imps_data_encoding">WBXML</item>
+					<item name="imps_cir_channel">STCP</item>
+				</set>
+				<set name="plenty" max="3">
+					<item name="name">GTalk</item>
+					<item name="full_name">Google Talk</item>
+					<item name="signup_url"></item>
+					<item name="protocol"></item>
+					<item name="imps_data_channel"></item>
+					<item name="imps_data_encoding"></item>
+					<item name="imps_cir_channel"></item>
+				</set>
+			</function>
+		</module>
+	</category>
+</customization_form>

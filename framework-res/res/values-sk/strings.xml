@@ -269,9 +269,9 @@
     <string name="turn_off_radio">Vypnúť bezdrôtové</string>
     <string name="screen_lock">Zámok obrazovky</string>
     <string name="power_off">Vypnúť</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Zvonenie vypnuté</string>
+    <string name="silent_mode_vibrate">Vibrovanie</string>
+    <string name="silent_mode_ring">Zvonenie zapnuté</string>
     <string name="shutdown_progress">Vypína sa…</string>
     <string name="shutdown_confirm">Telefón sa vypína.</string>
     <string name="shutdown_confirm_question">Chcete zariadenie vypnúť?</string>
@@ -339,7 +339,7 @@
     <string name="permlab_reorderTasks">meniť usporiadanie spustených aplikácií</string>
     <string name="permdesc_reorderTasks">Umožňuje aplikácii premiestňovať úlohy do popredia a pozadia. Škodlivé aplikácie to môžu využiť na svojvoľné pretlačenie samých seba do popredia bez vášho zásahu.</string>
     <string name="permlab_removeTasks">zastavenie činnosti aplikácií</string>
-    <string name="permdesc_removeTasks">Umožňuje aplikácii odstraňovať úlohy a ukončiť činnosť súvisiacich aplikácií. Škodlivé aplikácie môžu narušovať správanie iných aplikácií.</string>
+    <string name="permdesc_removeTasks">Umožňuje aplikácii odstraňovať úlohy a ukončiť činnosť súvisiacich aplikácií. Škodlivé aplikácie môžu narušiť správanie iných aplikácií.</string>
     <string name="permlab_setDebugApp">povoliť ladenie aplikácie</string>
     <string name="permdesc_setDebugApp">Umožňuje aplikácii zapnúť ladenie pre inú aplikáciu. Škodlivé aplikácie to môžu využiť na zatvorenie iných aplikácií.</string>
     <string name="permlab_changeConfiguration">zmeniť nastavenia použív. prostredia</string>
@@ -394,7 +394,7 @@
     <string name="permdesc_bindInputMethod">Umožňuje držiteľovi priradiť najvyššie rozhranie spôsobu zadávania. Bežné aplikácie to nikdy nepotrebujú.</string>
     <string name="permlab_bindTextService">väzba na textovú službu</string>
     <string name="permdesc_bindTextService">Umožňuje držiteľovi viazať sa na najvyššiu úroveň rozhrania textovej služby (napr. SpellCheckerService). Bežné aplikácie by toto nastavenie nemali vôbec využívať.</string>
-    <string name="permlab_bindVpnService">Zaviazať k službe VPN</string>
+    <string name="permlab_bindVpnService">Zaviazať sa k službe VPN</string>
     <string name="permdesc_bindVpnService">Umožňuje držiteľovi viazať sa na najvyššiu úroveň rozhrania služby VPN. Bežné aplikácie by toto nastavenie vôbec nemali používať.</string>
     <string name="permlab_bindWallpaper">vynútenie tapety</string>
     <string name="permdesc_bindWallpaper">Umožňuje držiteľovi priradiť najvyššie rozhranie tapety. Bežné aplikácie to nikdy nepotrebujú.</string>
@@ -426,10 +426,10 @@
     <string name="permdesc_movePackage">Umožňuje aplikácii premiestňovať zdroje aplikácie z interných na externé médiá a naopak.</string>
     <string name="permlab_readLogs">čítať citlivé údaje denníka</string>
     <string name="permdesc_readLogs">Umožňuje aplikácii čítať z rôznych systémových súborov denníka. Tým sa umožní zisťovanie všeobecných informácií o tom, čo ste na telefóne robili, ale nemali by tu byť zahrnuté žiadne osobné ani súkromné informácie.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">použiť akýkoľvek dekodér médií na prehrávanie</string>
+    <string name="permdesc_anyCodecForPlayback">Umožňuje aplikácii použiť ľubovoľný nainštalovaný dekodér médií na prehrávanie.</string>
+    <string name="permlab_readWriteOmaDrm">prístup do priečinka pre oma DRM</string>
+    <string name="permdesc_readWriteOmaDrm">Umožňuje aplikácii čítať alebo zapisovať do priečinka pre OMA DRM.</string>
     <string name="permlab_diagnostic">čítať/zapísať do zdrojov vo vlastníctve diagnostiky</string>
     <string name="permdesc_diagnostic">Umožňuje aplikácii čítať a zapisovať do ľubovoľného zdroja vo vlastníctve diagnostickej skupiny, napríklad súborov v priečinku /dev. To môže potenciálne ovplyvniť stabilitu a zabezpečenie systému. Malo by to byť používané LEN na diagnostiku týkajúcu sa hardvéru u výrobcu alebo operátora.</string>
     <string name="permlab_changeComponentState">povoliť alebo zakázať súčasti aplikácie</string>
@@ -451,11 +451,11 @@
     <string name="permlab_writeContacts">zapisovať údaje o kontaktoch</string>
     <string name="permdesc_writeContacts">Umožňuje aplikácii upraviť kontakty (adresy) uložené v telefóne. Škodlivé aplikácie to môžu využiť na vymazanie alebo zmenu údajov kontaktov.</string>
     <string name="permlab_readProfile">čítať údaje vášho profilu</string>
-    <string name="permdesc_readProfile">Umožňuje aplikácii čítať osobné informácie profilu uložené v zariadení, ako sú vaše meno a kontaktné údaje. Aplikácia vás takto môže identifikovať a poslať informácie profilu ostatným používateľom.</string>
+    <string name="permdesc_readProfile">Umožňuje aplikácii čítať osobné informácie profilu uložené v zariadení, ako sú vaše meno a kontaktné údaje. Aplikácia vás takto môže identifikovať a zaslať informácie profilu ostatným používateľom.</string>
     <string name="permlab_writeProfile">zapisovať do údajov profilu</string>
-    <string name="permdesc_writeProfile">Umožňuje aplikácii zmeniť alebo pridať osobné informácie profilu uložené v zariadení, ako sú vaše meno a kontaktné údaje. Iné aplikácie vás takto môžu identifikovať a poslať vaše informácie profilu ostatným používateľom.</string>
+    <string name="permdesc_writeProfile">Umožňuje aplikácii zmeniť alebo pridať osobné informácie profilu uložené v zariadení, ako sú vaše meno a kontaktné údaje. Iné aplikácie vás takto môžu identifikovať a zaslať vaše informácie profilu ostatným používateľom.</string>
     <string name="permlab_readSocialStream">čítať váš sociálny stream</string>
-    <string name="permdesc_readSocialStream">Umožňuje aplikácii pristupovať k sociálnym aktualizáciám vašich priateľov a synchronizovať ich. Škodlivé aplikácie to môžu využiť na pristupovanie k súkromnej komunikácii medzi vami a vašimi priateľmi na sociálnych sieťach.</string>
+    <string name="permdesc_readSocialStream">Umožňuje aplikácii pristupovať k sociálnym aktualizáciám vašich priateľov a synchronizovať ich. Škodlivé aplikácie to môžu využiť na prístup k súkromnej komunikácii medzi vami a vašimi priateľmi na sociálnych sieťach.</string>
     <string name="permlab_writeSocialStream">písať do vášho sociálneho streamu</string>
     <string name="permdesc_writeSocialStream">Umožňuje aplikácii zobrazovať sociálne aktualizácie vašich priateľov. Škodlivé aplikácie to môžu využiť a predstierať, že sú vaším priateľom. Týmto spôsobom môžu od vás získať heslá a iné dôverné informácie.</string>
     <string name="permlab_readCalendar">čítať udalosti v kalendári a dôverné informácie</string>
@@ -573,7 +573,7 @@
     <string name="permlab_accessWimaxState">zobraziť stav WiMAX</string>
     <string name="permdesc_accessWimaxState">Umožňuje aplikácii zobraziť informácie o stave WiMAX.</string>
     <string name="permlab_changeWimaxState">zmeniť stav WiMAX</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">Umožňuje aplikácii pripojiť sa a odpojiť zo siete WiMAX.</string>
     <string name="permlab_bluetoothAdmin">administrácia Bluetooth</string>
     <string name="permdesc_bluetoothAdmin">Umožňuje aplikácii konfigurovať lokálne Bluetooth na telefóne a zisťovať a párovať sa so vzdialenými zariadeniami.</string>
     <string name="permlab_bluetooth">vytvárať pripojenia cez Bluetooth</string>
@@ -637,7 +637,7 @@
     <string name="phoneTypePager">Pager</string>
     <string name="phoneTypeOther">Iné</string>
     <string name="phoneTypeCallback">Spätné volanie</string>
-    <string name="phoneTypeCar">Automobil</string>
+    <string name="phoneTypeCar">Car</string>
     <string name="phoneTypeCompanyMain">Spoločnosť hlavné</string>
     <string name="phoneTypeIsdn">ISDN</string>
     <string name="phoneTypeMain">Hlavné</string>
@@ -699,7 +699,7 @@
     <string name="sipAddressTypeWork">Pracovné</string>
     <string name="sipAddressTypeOther">Iné</string>
     <string name="keyguard_password_enter_pin_code">Zadajte kód PIN</string>
-    <string name="keyguard_password_enter_puk_code">Zadajte kód PUK a nový kód PIN</string>
+    <string name="keyguard_password_enter_puk_code">"Zadajte PUK kód a nový PIN kód "</string>
     <string name="keyguard_password_enter_puk_prompt">Kód PUK</string>
     <string name="keyguard_password_enter_pin_prompt">Nový kód PIN</string>
     <string name="keyguard_password_entry_touch_hint"><font size="17">Po dotyku môžete zadať heslo</font></string>
@@ -748,9 +748,9 @@ Skúste to znova o %d s."</string>
     <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"%d-krát ste nesprávne zadali kód PIN. 
 
 Skúste to znova o %d s."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"%d-krát ste nesprávne nakreslili svoj bezpečnostný vzor. Po ďalších neúspešných pokusoch (%d) budete požiadaní o odblokovanie telefónu pomocou prihlásenia do služby Google.
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"%d-krát ste nesprávne nakreslili svoj vzor odomknutia. Po ďalších %d neúspešných pokusoch sa objaví výzva na odomknutie telefónu pomocou prihlásenia na Google.
 
- Skúste to znova o niekoľko sekúnd (%d)."</string>
+Skúste to znova o %d s."</string>
     <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Telefón ste sa pokúsili odomknúť nesprávnym spôsobom %d-krát. Po %d ďalších neúspešných pokusoch sa v telefóne obnovia predvolené továrenské nastavenia a všetky používateľské údaje budú stratené.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Telefón ste sa pokúsili odomknúť nesprávnym spôsobom %d-krát. V telefóne sa teraz obnovia predvolené továrenské nastavenia.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Skúste to znova o %d s.</string>
@@ -842,7 +842,7 @@ Pokračujte tlačidlom OK, prípadne vyberte Zrušiť, ak chcete ostať na súč
     <string name="permlab_writeGeolocationPermissions">Upraviť povolenia na geoznačky prehľadávača</string>
     <string name="permdesc_writeGeolocationPermissions">Umožňuje aplikácii upraviť povolenia na geoznačky prehľadávača. Škodlivé aplikácie to môžu využiť na umožnenie odosielania informácií o umiestnení na ľubovoľné webové stránky.</string>
     <string name="permlab_packageVerificationAgent">overiť balíky</string>
-    <string name="permdesc_packageVerificationAgent">Umožňuje aplikácii overiť, či sa dá balík nainštalovať.</string>
+    <string name="permdesc_packageVerificationAgent">Umožňuje aplikácii overiť, či je balík možné nainštalovať.</string>
     <string name="permlab_bindPackageVerifier">naviazať na overovateľa balíka</string>
     <string name="permdesc_bindPackageVerifier">Umožňuje držiteľovi podávať žiadosti o overenie balíkov. Bežné aplikácie by toto nastavenie nemali nikdy potrebovať.</string>
     <string name="save_password_message">Chcete, aby si prehľadávač zapamätal toto heslo?</string>
@@ -962,7 +962,7 @@ Chcete ho ukončiť?"</string>
     <string name="ringtone_silent">Tichý režim</string>
     <string name="ringtone_picker_title">Vyzváňacie tóny</string>
     <string name="ringtone_unknown">Neznámy vyzváňací tón</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Prihlásiť sa k sieti Wi-Fi</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Nepodarilo sa pripojiť k sieti Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" má nekvalitné internetové pripojenie."</string>
@@ -970,8 +970,8 @@ Chcete ho ukončiť?"</string>
     <string name="wifi_p2p_turnon_message">Spustiť prevádzku priameho pripojenia siete Wi-Fi. Táto možnosť vypne prevádzku siete Wi-Fi v režime klient alebo hotspot.</string>
     <string name="wifi_p2p_failed_message">Priame pripojenie siete Wi-Fi sa nepodarilo spustiť</string>
     <string name="wifi_p2p_pbc_go_negotiation_request_message">Žiadosť o nastavenie priameho pripojenia siete Wi-Fi zo zariadenia %1$s. Prijmete kliknutím na tlačidlo OK.</string>
-    <string name="wifi_p2p_pin_go_negotiation_request_message">Žiadosť o nastavenie priameho pripojenia siete Wi-Fi z adresy %1$s. Pokračujte zadaním kódu PIN.</string>
-    <string name="wifi_p2p_pin_display_message">Aby mohlo nastavenie pripojenia pokračovať, je potrebné zadať kód PIN WPS %1$s v zdieľanom zariadení %2$s</string>
+    <string name="wifi_p2p_pin_go_negotiation_request_message">Žiadosť o nastavenie priameho pripojenia siete Wi-Fi z adresy %1$s. Pokračujte zadaním PIN kódu.</string>
+    <string name="wifi_p2p_pin_display_message">Aby mohlo nastavenie pripojenia pokračovať, je potrebné zadať PIN kód WPS %1$s v zdieľanom zariadení %2$s</string>
     <string name="wifi_p2p_enabled_notification_title">Priame pripojenie siete Wi-Fi je zapnuté</string>
     <string name="wifi_p2p_enabled_notification_message">Nastavenia otvoríte dotykom</string>
     <string name="select_character">Vložiť znak</string>
@@ -1071,11 +1071,11 @@ pre účet %s"</string>
     <string name="chooser_wallpaper">Zmeniť tapetu</string>
     <string name="alternate_eri_file">/data/eri.xml</string>
     <string name="vpn_title">Sieť VPN je aktivovaná.</string>
-    <string name="vpn_title_long">Aplikáciu %s aktivovala sieť VPN</string>
+    <string name="vpn_title_long">Aplikácia %s aktivovala sieť VPN</string>
     <string name="vpn_text">Kliknutím zobrazíte správu siete.</string>
     <string name="vpn_text_long">Pripojené k relácii %s. Po klepnutí môžete sieť spravovať.</string>
     <string name="upload_file">Vyberte súbor</string>
-    <string name="no_file_chosen">Nie je vybratý žiadny súbor</string>
+    <string name="no_file_chosen">Nie je zvolený žiadny súbor</string>
     <string name="reset">Vynulovať</string>
     <string name="submit">Odoslať</string>
     <string name="car_mode_disable_notification_title">Režim v aute povolený</string>
@@ -1135,8 +1135,8 @@ pre účet %s"</string>
     <string name="date_picker_decrement_year_button">Odpočítať rok</string>
     <string name="checkbox_checked">začiarknuté</string>
     <string name="checkbox_not_checked">nezačiarknuté</string>
-    <string name="radiobutton_selected">vybratý</string>
-    <string name="radiobutton_not_selected">nie je vybraté</string>
+    <string name="radiobutton_selected">zvolené</string>
+    <string name="radiobutton_not_selected">nie je zvolené</string>
     <string name="switch_on">zapnuté</string>
     <string name="switch_off">vypnuté</string>
     <string name="togglebutton_pressed">stlačené</string>
@@ -1160,22 +1160,22 @@ pre účet %s"</string>
     <string name="description_target_camera">Fotoaparát</string>
     <string name="description_target_silent">Tichý</string>
     <string name="description_target_soundon">Zapnúť zvuk</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
-    <string name="keyboard_headset_required_to_hear_password">Ak si chcete vypočuť nahlas vyslovené klávesy hesla, pripojte náhlavnú súpravu.</string>
+    <string name="description_target_unlock_tablet">Potiahnutím odomknite.</string>
+    <string name="keyboard_headset_required_to_hear_password">Ak chcete nahlas počuť klávesy pri zadávaní hesla, pripojte slúchadlá.</string>
     <string name="keyboard_password_character_no_headset">Bodka.</string>
     <string name="action_bar_home_description">Prejsť na plochu</string>
     <string name="action_bar_up_description">Prejsť na</string>
     <string name="action_menu_overflow_description">Viac možností</string>
-    <string name="storage_internal">Interný ukladací priestor</string>
+    <string name="storage_internal">Interná pamäť</string>
     <string name="storage_sd_card">Karta SD</string>
-    <string name="storage_usb">Ukladací priestor USB</string>
+    <string name="storage_usb">Pamäť USB</string>
     <string name="extract_edit_menu_button">Upraviť...</string>
-    <string name="data_usage_warning_title">Upozornenie o využití dát</string>
-    <string name="data_usage_warning_body">Zobr. využívania dát a nastavení</string>
+    <string name="data_usage_warning_title">Upozornenie o spotrebe dát</string>
+    <string name="data_usage_warning_body">Zobr. spotreby dát a nastavení</string>
     <string name="data_usage_3g_limit_title">Dátové prenosy 2G a 3G zakázané</string>
     <string name="data_usage_4g_limit_title">Dátové prenosy 4G zakázané</string>
     <string name="data_usage_mobile_limit_title">Mobilné dátové prenosy zakázané</string>
-    <string name="data_usage_wifi_limit_title">Prenos dát cez Wi-Fi – zakázaný</string>
+    <string name="data_usage_wifi_limit_title">Prenos dát cez Wi-Fi zakázaný</string>
     <string name="data_usage_limit_body">Dotykom povoľte</string>
     <string name="data_usage_3g_limit_snoozed_title">2G, 3G dátový limit prekročený</string>
     <string name="data_usage_4g_limit_snoozed_title">Dátový limit 4G bol prekročený</string>
@@ -1203,9 +1203,9 @@ pre účet %s"</string>
     <string name="share_action_provider_share_with">Zdieľať s...</string>
     <string name="status_bar_device_locked">Zariadenie je zamknuté.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Odosiela sa...</string>
+    <string name="launchBrowserDefault">Spustiť prehľadávač?</string>
+    <string name="SetupCallDefault">Prijať hovor?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">Prístup k 4G</string>
     <string name="permlab_changeWimaxMulticastState">povoliť príjem WiMAX Multicast</string>
@@ -1243,7 +1243,7 @@ pre účet %s"</string>
     <string name="verizon_retry_msg">Správa neúspešná. Chcete opakovať?</string>
     <string name="action_mode_close">Zavrieť</string>
     <string name="sms_roam_guard_dialog_title">Odchádzajúca správa</string>
-    <string name="sms_roam_guard_dialog_subject">Ste v roamingu v medzinárodných sieťach. Po odoslaní tejto správy môžu byť operátorom účtované ďalšie poplatky. Čo chcete urobiť:</string>
+    <string name="sms_roam_guard_dialog_subject">Nachádzate sa v roamingu medzinárodných sietí. Po odoslaní tejto správy môžu byť operátorom účtované ďalšie poplatky. Čo chcete urobiť:</string>
     <string name="sms_roam_guard_dialog_radio_auto_send">Odoslať automaticky v národnom pokrytí</string>
     <string name="sms_roam_guard_dialog_send_now">Odoslať teraz</string>
     <string name="sms_roam_guard_dialog_send_later">Odoslať neskôr</string>
@@ -1252,7 +1252,7 @@ pre účet %s"</string>
     <string name="sd_encrypt_notify_title">Je potrebné šifrovanie karty SD</string>
     <string name="sd_encrypt_notify_text">Kliknutím sem aktivujte</string>
     <string name="data_encrypt_notify_title">Šifrovanie interných údajov aktivované</string>
-    <string name="data_encrypt_convert_diag">Odšifrováva sa...</string>
+    <string name="data_encrypt_convert_diag">Dešifruje sa...</string>
     <string name="disable_notify_title">Zakázané od IT:</string>
     <string name="it_notify_text">Zásady vynútené od IT</string>
     <string name="permission_notify_title">Zablokované od IT:</string>
@@ -1267,16 +1267,17 @@ pre účet %s"</string>
     <string name="install_notify_title">Inštalácia zablokovaná od IT:</string>
     <string name="uninstall_notify_title">Odinštalovanie zablokované od IT:</string>
     <string name="wifi_notify_title">IT zakázalo Wi-Fi</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Predvolenie vymažete v časti Nastavenia Domov > Aplikácie.</string>
+    <string name="sim_puk_contact_customer_care_information">Obráťte sa na Centrum zákazníkov so žiadosťou o PUK kód</string>
     <string name="permlab_accessCWFolder">Prístup k priečinku funkcie sprievodcu prispôsobením</string>
     <string name="permdesc_accessCWFolder">Umožňuje aplikácii prístup k priečinku funkcie sprievodcu prispôsobením</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Prístup k priečinku obnovy</string>
+    <string name="permdesc_accessRecoveryFolder">Umožňuje aplikácii prístup k priečinku obnovy</string>
     <string name="permlab_setappname">Dynamicky meniť názov aplikácie</string>
     <string name="permdesc_setappname">Umožňuje aplikácii dynamicky meniť názov aplikácie.</string>
     <string name="text_limitation">Nie je možné vybrať príliš veľa slov na zdieľanie.</string>
     <string name="sms_roam_guild_dialog_title">Odchádzajúca správa</string>
-    <string name="sms_roam_guild_dialog_subject">Ste v roamingu v medzinárodných sieťach. Po odoslaní tejto správy môžu byť operátorom účtované ďalšie poplatky. Čo chcete urobiť:</string>
+    <string name="sms_roam_guild_dialog_subject">Nachádzate sa v roamingu medzinárodných sietí. Po odoslaní tejto správy môžu byť operátorom účtované ďalšie poplatky. Čo chcete urobiť:</string>
     <string name="sms_roam_guild_dialog_radio_auto_send">Odoslať automaticky v národnom pokrytí</string>
     <string name="sms_roam_guild_dialog_send_now">Odoslať teraz</string>
     <string name="sms_roam_guild_dialog_send_later">Odoslať neskôr</string>
@@ -1311,5 +1312,5 @@ pre účet %s"</string>
     <string name="font_color">Farba písma</string>
     <string name="font_settings">Nastavenie písma</string>
     <string name="font_alignment">Zarovnanie písma</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Konfigurovať</string>
 </resources>

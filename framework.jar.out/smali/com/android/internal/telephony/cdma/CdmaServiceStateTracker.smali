@@ -1568,7 +1568,7 @@
     .locals 9
 
     .prologue
-    const v8, 0x104053d
+    const v8, 0x104053e
 
     const/4 v1, 0x0
 
@@ -5333,7 +5333,7 @@
 
     .line 529
     :cond_2
-    const-string v4, "handleMessage: EVENT_RADIO_AVAILABLE"
+    const-string/jumbo v4, "handleMessage: EVENT_RADIO_AVAILABLE"
 
     move-object/from16 v0, p0
 
@@ -5425,7 +5425,7 @@
     invoke-interface {v4, v0}, Lcom/android/internal/telephony/CommandsInterface;->getCDMASubscription(Landroid/os/Message;)V
 
     .line 561
-    const-string v4, "handleMessage: EVENT_RUIM_READY, Send Request getCDMASubscription."
+    const-string/jumbo v4, "handleMessage: EVENT_RUIM_READY, Send Request getCDMASubscription."
 
     move-object/from16 v0, p0
 
@@ -5511,7 +5511,7 @@
     iput-boolean v4, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->isSubscriptionFromRuim:Z
 
     .line 584
-    const-string v4, "handleMessage: EVENT_NV_READY, Send Request getCDMASubscription."
+    const-string/jumbo v4, "handleMessage: EVENT_NV_READY, Send Request getCDMASubscription."
 
     move-object/from16 v0, p0
 
@@ -8596,8 +8596,6 @@
     goto/16 :goto_0
 
     .line 521
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_4
@@ -9982,7 +9980,7 @@
 
     move-result-object v2
 
-    const v21, 0x104053d
+    const v21, 0x104053e
 
     move/from16 v0, v21
 
@@ -14259,7 +14257,7 @@
 
     move-result-object v11
 
-    const v12, 0x104053e
+    const v12, 0x104053f
 
     invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

@@ -1029,12 +1029,12 @@
     .parameter "on"
 
     .prologue
-    .line 1489
+    .line 1487
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     if-eqz v0, :cond_0
 
-    .line 1490
+    .line 1488
     const-string v0, "HtcTelephonyInternal"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1057,7 +1057,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1491
+    .line 1489
     iget-object v1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     if-eqz p1, :cond_1
@@ -1069,11 +1069,11 @@
 
     invoke-interface {v1, v0, v2}, Lcom/android/internal/telephony/CommandsInterface;->enableRegistrationState_wifi_call(ILandroid/os/Message;)V
 
-    .line 1493
+    .line 1491
     :cond_0
     return-void
 
-    .line 1491
+    .line 1489
     :cond_1
     const/4 v0, 0x0
 
@@ -1583,52 +1583,29 @@
 .end method
 
 .method public notifyKeyEvent(I)V
-    .locals 4
+    .locals 1
     .parameter "keyCode"
 
     .prologue
-    .line 1470
+    .line 1469
     invoke-static {}, Lcom/android/internal/telephony/cat/CatService;->getInstance()Lcom/android/internal/telephony/cat/AppInterface;
 
     move-result-object v0
 
-    .line 1471
+    .line 1470
     .local v0, catInstance:Lcom/android/internal/telephony/cat/AppInterface;
     if-eqz v0, :cond_0
 
-    .line 1472
-    const-string v1, "HtcTelephonyInternal"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "notifyKeyEvent keyCode="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1473
+    .line 1471
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/cat/AppInterface;->notifyUserActivity(I)V
 
-    .line 1475
+    .line 1473
     :cond_0
     return-void
 .end method
 
 .method public notifyScreenBusy(Z)V
-    .locals 4
+    .locals 1
     .parameter "busy"
 
     .prologue
@@ -1642,32 +1619,9 @@
     if-eqz v0, :cond_0
 
     .line 1459
-    const-string v1, "HtcTelephonyInternal"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "notifyScreenBusy busy="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1460
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/cat/AppInterface;->updateIdleScreenState(Z)V
 
-    .line 1462
+    .line 1461
     :cond_0
     return-void
 .end method
@@ -2676,12 +2630,12 @@
     .parameter "networkType"
 
     .prologue
-    .line 1479
+    .line 1477
     iget-object v1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     if-eqz v1, :cond_0
 
-    .line 1480
+    .line 1478
     const/16 v1, 0x94
 
     new-instance v2, Ljava/lang/Integer;
@@ -2694,7 +2648,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 1481
+    .line 1479
     .local v0, err:Ljava/lang/Integer;
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -2702,10 +2656,10 @@
 
     if-nez v1, :cond_0
 
-    .line 1482
+    .line 1480
     const/4 v1, 0x1
 
-    .line 1485
+    .line 1483
     .end local v0           #err:Ljava/lang/Integer;
     :goto_0
     return v1

@@ -62,9 +62,25 @@
     .line 109
     packed-switch p3, :pswitch_data_0
 
-    .line 131
+    .line 130
     :cond_0
     :goto_0
+    iget-object v1, p0, Lcom/android/camera/widget/SwitchItemListView$3;->this$0:Lcom/android/camera/widget/SwitchItemListView;
+
+    #getter for: Lcom/android/camera/widget/SwitchItemListView;->m_CameraActivity:Lcom/android/camera/HTCCamera;
+    invoke-static {v1}, Lcom/android/camera/widget/SwitchItemListView;->access$300(Lcom/android/camera/widget/SwitchItemListView;)Lcom/android/camera/HTCCamera;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/camera/HTCCamera;->getEventManager()Lcom/android/camera/EventManager;
+
+    move-result-object v1
+
+    const-string v2, "SameMenuItem.Selected"
+
+    invoke-virtual {v1, v2}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
+
+    .line 132
     return-void
 
     .line 111
@@ -206,6 +222,8 @@
     goto :goto_2
 
     .line 109
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

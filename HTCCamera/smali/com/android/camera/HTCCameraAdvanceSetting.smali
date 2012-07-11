@@ -1966,7 +1966,7 @@
 .end method
 
 .method public static writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;Z)Z
-    .locals 8
+    .locals 7
     .parameter "activity"
     .parameter "setting"
     .parameter "value"
@@ -1974,49 +1974,25 @@
 
     .prologue
     .line 101
-    const-string v5, "HTCCameraAdvanceSetting"
+    const-string v4, "HTCCameraAdvanceSetting"
 
-    const-string v6, "writePreference E"
+    const-string v5, "writePreference E"
 
-    invoke-static {v5, v6}, Lcom/android/camera/LOG;->I(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lcom/android/camera/LOG;->I(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 102
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 103
-    .local v4, sp:Landroid/content/SharedPreferences;
-    const/4 v3, 0x1
-
-    .line 104
-    .local v3, result:Z
-    invoke-interface {v4}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
-
-    move-result-object v2
-
-    .line 105
-    .local v2, map:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;*>;"
-    if-eqz v2, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Map;->size()I
-
-    move-result v5
-
-    if-nez v5, :cond_1
-
-    .line 106
-    :cond_0
-    const/4 v5, 0x0
-
-    .line 127
-    :goto_0
-    return v5
+    .local v3, sp:Landroid/content/SharedPreferences;
+    const/4 v2, 0x1
 
     .line 112
-    :cond_1
+    .local v2, result:Z
     :try_start_0
-    invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
@@ -2024,48 +2000,46 @@
     .local v1, editor:Landroid/content/SharedPreferences$Editor;
     invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-interface {v1, p1, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v1, p1, v4}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 114
-    if-eqz p3, :cond_3
+    if-eqz p3, :cond_1
 
     .line 115
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v3
+    move-result v2
 
     .line 118
-    :goto_1
-    if-nez v3, :cond_2
+    :goto_0
+    if-nez v2, :cond_0
 
     .line 126
     .end local v1           #editor:Landroid/content/SharedPreferences$Editor;
-    :cond_2
-    :goto_2
-    const-string v5, "HTCCameraAdvanceSetting"
+    :cond_0
+    :goto_1
+    const-string v4, "HTCCameraAdvanceSetting"
 
-    const-string v6, "writePreference X"
+    const-string v5, "writePreference X"
 
-    invoke-static {v5, v6}, Lcom/android/camera/LOG;->I(Ljava/lang/String;Ljava/lang/String;)V
-
-    move v5, v3
+    invoke-static {v4, v5}, Lcom/android/camera/LOG;->I(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 127
-    goto :goto_0
+    return v2
 
     .line 117
     .restart local v1       #editor:Landroid/content/SharedPreferences$Editor;
-    :cond_3
+    :cond_1
     :try_start_1
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_1
+    goto :goto_0
 
     .line 122
     .end local v1           #editor:Landroid/content/SharedPreferences$Editor;
@@ -2074,98 +2048,72 @@
 
     .line 123
     .local v0, e:Ljava/lang/Exception;
-    const-string v5, "HTCCameraAdvanceSetting"
+    const-string v4, "HTCCameraAdvanceSetting"
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "writePreference commit fail on setPreference: key: "
+    const-string v6, "writePreference commit fail on setPreference: key: "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    const-string v7, " error = "
+    const-string v6, " error = "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
     invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v6
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-static {v5, v6}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    goto :goto_2
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_1
 .end method
 
 .method public static writePreference(Landroid/app/Activity;Ljava/lang/String;Z)Z
-    .locals 8
+    .locals 7
     .parameter "activity"
     .parameter "setting"
     .parameter "value"
 
     .prologue
     .line 135
-    const-string v5, "HTCCameraAdvanceSetting"
+    const-string v4, "HTCCameraAdvanceSetting"
 
-    const-string v6, "writePreference E"
+    const-string v5, "writePreference E"
 
-    invoke-static {v5, v6}, Lcom/android/camera/LOG;->I(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lcom/android/camera/LOG;->I(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 136
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 137
-    .local v4, sp:Landroid/content/SharedPreferences;
-    const/4 v3, 0x0
-
-    .line 138
-    .local v3, result:Z
-    invoke-interface {v4}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
-
-    move-result-object v2
-
-    .line 139
-    .local v2, map:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;*>;"
-    if-eqz v2, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Map;->size()I
-
-    move-result v5
-
-    if-nez v5, :cond_1
-
-    .line 140
-    :cond_0
-    const/4 v3, 0x0
-
-    .line 161
-    .end local v3           #result:Z
-    :goto_0
-    return v3
+    .local v3, sp:Landroid/content/SharedPreferences;
+    const/4 v2, 0x0
 
     .line 146
-    .restart local v3       #result:Z
-    :cond_1
+    .local v2, result:Z
     :try_start_0
-    invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
@@ -2180,14 +2128,15 @@
 
     .line 160
     .end local v1           #editor:Landroid/content/SharedPreferences$Editor;
-    :goto_1
-    const-string v5, "HTCCameraAdvanceSetting"
+    :goto_0
+    const-string v4, "HTCCameraAdvanceSetting"
 
-    const-string v6, "writePreference X"
+    const-string v5, "writePreference X"
 
-    invoke-static {v5, v6}, Lcom/android/camera/LOG;->I(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lcom/android/camera/LOG;->I(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    .line 161
+    return v2
 
     .line 155
     :catch_0
@@ -2195,41 +2144,41 @@
 
     .line 156
     .local v0, e:Ljava/lang/Exception;
-    const-string v5, "HTCCameraAdvanceSetting"
+    const-string v4, "HTCCameraAdvanceSetting"
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "writePreference commit fail on setPreference: key: "
+    const-string v6, "writePreference commit fail on setPreference: key: "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    const-string v7, " error = "
+    const-string v6, " error = "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
     invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v6
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-static {v5, v6}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    goto :goto_1
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
 .end method

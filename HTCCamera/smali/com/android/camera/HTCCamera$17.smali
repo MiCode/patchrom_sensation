@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3867
+    .line 3873
     iput-object p1, p0, Lcom/android/camera/HTCCamera$17;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 3871
+    .line 3877
     iget-object v0, p0, Lcom/android/camera/HTCCamera$17;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mSubMenu_layout:Lcom/android/camera/widget/SlidingDrawer;
@@ -51,6 +51,6 @@
 
     invoke-virtual {v0}, Lcom/android/camera/widget/SlidingDrawer;->requestFocus()Z
 
-    .line 3872
+    .line 3878
     return-void
 .end method

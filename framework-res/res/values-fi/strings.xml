@@ -269,9 +269,9 @@
     <string name="turn_off_radio">Kytke yhteys pois päältä</string>
     <string name="screen_lock">Näyttöruudun lukitus</string>
     <string name="power_off">Virta pois päältä</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Soittoääni pois</string>
+    <string name="silent_mode_vibrate">Soittoäänen värinä</string>
+    <string name="silent_mode_ring">Soittoääni päälle</string>
     <string name="shutdown_progress">Sulkeutuu…</string>
     <string name="shutdown_confirm">Puhelimesi sulkeutuu.</string>
     <string name="shutdown_confirm_question">Haluatko sammuttaa laitteen?</string>
@@ -426,10 +426,10 @@
     <string name="permdesc_movePackage">Sallii sovelluksen siirtää sovelluksen resursseja sisäisestä mediasta ulkoiseen mediaan ja toisinpäin.</string>
     <string name="permlab_readLogs">lue luottamuksellisia lokitietoja</string>
     <string name="permdesc_readLogs">Sallii sovelluksen lukea järjestelmän lokitiedostoja. Tämä antaa sovellukselle luvan kerätä yleistä tietoa siitä, mitä teet puhelimella, myös henkilökohtaista ja luottamuksellista tietoa.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">toista millä tahansa mediadekooderilla</string>
+    <string name="permdesc_anyCodecForPlayback">Sallii sovelluksen käyttää toistamiseen kaikkia asennettuja mediadekoodereita.</string>
+    <string name="permlab_readWriteOmaDrm">käytä OMA DRM -kansiota</string>
+    <string name="permdesc_readWriteOmaDrm">Sallii sovelluksen lukea tai kirjoittaa OMA DRM -kansioon.</string>
     <string name="permlab_diagnostic">lukee ja kirjoittaa diagnoosin resursseja</string>
     <string name="permdesc_diagnostic">Sallii sovelluksen lukea tai muuttaa mitä tahansa diagnoosiryhmän resurssia, kuten esimerkiksi /dev-tiedostoja. Tämä saattaa vaikuttaa järjestelmän vakauteen ja turvallisuuteen. Tätä tulee käyttää AINOASTAAN valmistajan tai operaattorin laitteistokohtaiseen diagnostiikkaan.</string>
     <string name="permlab_changeComponentState">ottaa käyttöön tai poistaa käytöstä sovelluksen komponentteja</string>
@@ -452,7 +452,7 @@
     <string name="permdesc_writeContacts">Sallii sovelluksen muuttaa puhelimeen tallennettuja yhteystietoja (osoitteita). Ilkivaltaiset sovellukset voivat käyttää tätä poistaakseen tai muuttaakseen yhteystietojasi.</string>
     <string name="permlab_readProfile">lukea profiilisi tiedot</string>
     <string name="permdesc_readProfile">Sallii sovelluksen lukea yksityisiä profiilitietoja, kuten nimen ja yhteystiedot. Haittaohjelmat voivat käyttää tätä käyttäjien tunnistamiseen ja profiilitietojen levittämiseen muille.</string>
-    <string name="permlab_writeProfile">kirjoittaa profiilin tietoihin</string>
+    <string name="permlab_writeProfile">kirjoita profiilin tietoihin</string>
     <string name="permdesc_writeProfile">Sallii sovelluksen muuttaa tai lisätä laitteellesi tallennettuja yksityisiä profiilitietoja. Haittaohjelmat voivat käyttää tätä tunnistamiseesi ja profiilitietojesi lähettämiseen muille.</string>
     <string name="permlab_readSocialStream">lue sosiaalista streamia</string>
     <string name="permdesc_readSocialStream">Antaa sovelluksen käyttää ja synkronoida sinun ja kavereidesi päivityksiä sosiaalisista palveluista. Haitalliset sovellukset voivat käyttää tätä sosiaalisissa verkostoissa kavereidesi kanssa käytyjen yksityisten keskustelujen lukemiseen.</string>
@@ -570,10 +570,10 @@
     <string name="permdesc_changeWifiState">Sallii sovelluksen yhdistää WiMAX-tukiasemiin ja katkaista yhteyden sekä tehdä muutoksia konfiguroituihin WiMAX-verkkoihin.</string>
     <string name="permlab_changeWifiMulticastState">sallii Wi-Fi-monilähetysten vastaanoton</string>
     <string name="permdesc_changeWifiMulticastState">Sallii sovelluksen vastaanottaa paketteja, jotka eivät ole suoraan osoitettuja laitteeseesi. Tämä voi olla hyödyllistä havaittaessa lähistöllä tarjottavia palveluita. Virtaa kuluu enemmän kuin ei-monilähetys-tilassa.</string>
-    <string name="permlab_accessWimaxState">näytä WiMAXin tila</string>
+    <string name="permlab_accessWimaxState">näytä WiMAX-tila</string>
     <string name="permdesc_accessWimaxState">Sallii sovelluksen tarkastella WiMAXin tilatietoja.</string>
     <string name="permlab_changeWimaxState">vaihda WiMAX-tila</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">Sallii sovelluksen muodostaa yhteyden WiMAX-verkkoon ja katkaista sen.</string>
     <string name="permlab_bluetoothAdmin">Bluetooth-hallinta</string>
     <string name="permdesc_bluetoothAdmin">Sallii sovelluksen konfiguroida paikallisen Bluetooth-puhelimen, löytää etälaitteita ja muodostaa laitepareja.</string>
     <string name="permlab_bluetooth">luo Bluetooth-yhteyksiä</string>
@@ -621,7 +621,7 @@
     <string name="policylab_wipeData">Poistaa kaiken datan</string>
     <string name="policydesc_wipeData">Tyhjennä puhelimen tiedot ilman varoitusta suorittamalla tehdasasetusten palautus</string>
     <string name="policylab_setGlobalProxy">Aseta laitteen yleinen välityspalvelin</string>
-    <string name="policydesc_setGlobalProxy">Aseta laitteen yleinen välityspalvelin käyttöön, kun käytäntö on käytössä. Vain ensimmäinen laitteen järjestelmänhallitsija voi asettaa käytettävän yleisen välityspalvelimen.</string>
+    <string name="policydesc_setGlobalProxy">Aseta laitteen yleinen välityspalvelin käyttöön, kun käytäntö on sallittu. Vain ensimmäinen laitteen järjestelmänhallitsija voi asettaa käytettävän yleisen välityspalvelimen.</string>
     <string name="policylab_expirePassword">Aseta ruudunlukituksen salasanan voimassaoloaika</string>
     <string name="policydesc_expirePassword">Määritä, miten usein ruudunlukituksen salasana tulee vaihtaa</string>
     <string name="policylab_encryptedStorage">Aseta tallennustilan salaus</string>
@@ -748,9 +748,9 @@ Yritä uudelleen %d sekunnin kuluttua."</string>
     <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Olet antanut PIN-koodisi väärin %d kertaa. 
 
 Yritä uudelleen %d sekunnin kuluttua."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Piirsit lukituksenpoistokuvion väärin %d kertaa. Jos piirrät kuvion väärin vielä %d kertaa, sinua pyydetään poistamaan puhelimesi lukitus Google-sisäänkirjautumisen avulla.
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Annoit väärän avauskuvion %d kertaa. %d epäonnistuneen yrityksen jälkeen sinua pyydetään avaamaan puhelimesi kirjautumalla Googleen.
 
- Yritä uudelleen %d sekunnin kuluttua."</string>
+ Yritä uudestaan %d sekunnin kuluessa."</string>
     <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Puhelimen lukituksen poisto epäonnistui %d kertaa. Jos teet vielä %d epäonnistunutta yritystä, puhelimeen palautetaan tehdasasetukset ja kaikki käyttäjätiedot häviävät.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Puhelimen lukituksen poisto epäonnistui %d kertaa. Puhelimeen palautetaan nyt tehdasasetukset.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Yritä uudestaan %d sekunnin kuluessa.</string>
@@ -790,7 +790,7 @@ Käy osoitteessa "<b>google.com/accounts/recovery</b></string>
 Valitse OK jatkaaksesi tai Peruuta pysyäksesi nykyisellä sivulla."</string>
     <string name="save_password_label">Vahvista</string>
     <string name="double_tap_toast">Vihje: kaksoisnapauta lähentääksesi ja loitontaaksesi.</string>
-    <string name="autofill_this_form">Automaattinen täyttö</string>
+    <string name="autofill_this_form">Aut.täyt</string>
     <string name="setup_autofill">Autom. täyttö</string>
     <string name="autofill_address_name_separator">" "</string>
     <string name="autofill_address_summary_name_format">$1$2$3</string>
@@ -844,7 +844,7 @@ Valitse OK jatkaaksesi tai Peruuta pysyäksesi nykyisellä sivulla."</string>
     <string name="permlab_packageVerificationAgent">vahvista paketteja</string>
     <string name="permdesc_packageVerificationAgent">Antaa sovelluksen vahvistaa pakkauksen olevan asennettavissa.</string>
     <string name="permlab_bindPackageVerifier">sitoudu paketin vahvistajaan</string>
-    <string name="permdesc_bindPackageVerifier">Sovellus voi tehdä pakettien vahvistuspyyntöjä. Ei tavallisten sovelluksien käyttöön.</string>
+    <string name="permdesc_bindPackageVerifier">Sovellus voi tehdä pakettien vahvistuspyyntöjä. Ei tavallisten sovellusten käyttöön.</string>
     <string name="save_password_message">Haluatko, että selain muistaa tämän salasanan?</string>
     <string name="save_password_notnow">Ei nyt</string>
     <string name="save_password_remember">Tallenna</string>
@@ -962,7 +962,7 @@ Haluatko sulkea sen?"</string>
     <string name="ringtone_silent">Äänetön</string>
     <string name="ringtone_picker_title">Soittoäänet</string>
     <string name="ringtone_unknown">Tuntematon soittoääni</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Kirjaudu sisään Wi-Fi-verkkoon</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Wifi-yhteyden muodostaminen epäonnistui</string>
     <string name="wifi_watchdog_network_disabled_detailed">" : huono internetyhteys."</string>
@@ -1160,7 +1160,7 @@ tilille %s"</string>
     <string name="description_target_camera">Kamera</string>
     <string name="description_target_silent">Äänetön</string>
     <string name="description_target_soundon">Ääni käytössä</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">Avaa pyyhkäisemällä.</string>
     <string name="keyboard_headset_required_to_hear_password">Liitä kuulokkeet kuullaksesi, mitä näppäimiä painat kirjoittaessasi salasanaa.</string>
     <string name="keyboard_password_character_no_headset">Piste.</string>
     <string name="action_bar_home_description">Siirry etusivulle</string>
@@ -1203,9 +1203,9 @@ tilille %s"</string>
     <string name="share_action_provider_share_with">Jaa seuraavien kautta:</string>
     <string name="status_bar_device_locked">Laite lukittu.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Lähetetään...</string>
+    <string name="launchBrowserDefault">Käynnistetäänkö selain?</string>
+    <string name="SetupCallDefault">Vastataanko puheluun?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">Käytä 4G:tä</string>
     <string name="permlab_changeWimaxMulticastState">salli WiMAX-moniluonti-vastaanotto</string>
@@ -1267,11 +1267,12 @@ tilille %s"</string>
     <string name="install_notify_title">IT esti asennuksen:</string>
     <string name="uninstall_notify_title">IT esti asennuksen poiston:</string>
     <string name="wifi_notify_title">IT otti Wi-Fi-toiminnon pois käytöstä</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Tyhjennä oletukset kohdassa Kotiasetukset > Sovellukset.</string>
+    <string name="sim_puk_contact_customer_care_information">Ota yhteys asiakaspalveluun saadaksesi PUK-koodin</string>
     <string name="permlab_accessCWFolder">Käytä ohjatun mukautustoiminnon kansiota</string>
     <string name="permdesc_accessCWFolder">Sallii sovelluksen käyttää ohjatun mukautustoiminnon kansiota</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Käytä palautuskansiota</string>
+    <string name="permdesc_accessRecoveryFolder">Sallii sovellukselle palautuskansion käytön</string>
     <string name="permlab_setappname">Dynaaminen sovelluksen nimen muuttaminen</string>
     <string name="permdesc_setappname">Sallii sovelluksen muuttaa sovelluksen nimeä dynaamisesti.</string>
     <string name="text_limitation">Jaettavaksi ei voi valita liian monta sanaa.</string>
@@ -1311,5 +1312,5 @@ tilille %s"</string>
     <string name="font_color">Fontin väri</string>
     <string name="font_settings">Fonttiasetukset</string>
     <string name="font_alignment">Fontin tasaus</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Konfiguroi</string>
 </resources>

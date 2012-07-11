@@ -5148,7 +5148,7 @@
     :cond_3
     const v12, 0x7f0800e9
 
-    const v13, 0x7f070215
+    const v13, 0x7f0701b3
 
     const/4 v14, 0x2
 
@@ -14090,7 +14090,7 @@
     :cond_3
     const v14, 0x7f0800e9
 
-    const v15, 0x7f070215
+    const v15, 0x7f0701b3
 
     const/16 v16, 0x2
 

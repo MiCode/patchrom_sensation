@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3589
+    .line 3595
     iput-object p1, p0, Lcom/android/camera/HTCCamera$13;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -44,45 +44,45 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 3593
+    .line 3599
     iget-object v0, p0, Lcom/android/camera/HTCCamera$13;->this$0:Lcom/android/camera/HTCCamera;
 
     iget v0, v0, Lcom/android/camera/HTCCamera;->mFocusingState:I
 
     if-ne v0, v3, :cond_0
 
-    .line 3594
+    .line 3600
     invoke-static {}, Lcom/android/camera/DisplayDevice;->canCancelFocus()Z
 
     move-result v0
 
     if-ne v0, v3, :cond_1
 
-    .line 3595
+    .line 3601
     const-string v0, "HTCCamera"
 
     const-string v1, "press effect button when focusing, cancel focus"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3596
+    .line 3602
     iget-object v0, p0, Lcom/android/camera/HTCCamera$13;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v0}, Lcom/android/camera/HTCCamera;->cancelAutoFocus()Z
 
-    .line 3597
+    .line 3603
     const-string v0, "HTCCamera"
 
     const-string v1, "UnBlock Capture UI - press effect button and cancel focus"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3598
+    .line 3604
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/camera/HTCCamera;->access$1202(Z)Z
 
-    .line 3606
+    .line 3612
     :cond_0
     invoke-static {}, Lcom/android/camera/HTCCamera;->access$1200()Z
 
@@ -90,11 +90,11 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 3611
+    .line 3617
     :goto_0
     return-void
 
-    .line 3600
+    .line 3606
     :cond_1
     const-string v0, "HTCCamera"
 
@@ -104,7 +104,7 @@
 
     goto :goto_0
 
-    .line 3610
+    .line 3616
     :cond_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera$13;->this$0:Lcom/android/camera/HTCCamera;
 

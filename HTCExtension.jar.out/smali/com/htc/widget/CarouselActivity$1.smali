@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1007
+    .line 1029
     iput-object p1, p0, Lcom/htc/widget/CarouselActivity$1;->this$0:Lcom/htc/widget/CarouselActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,9 +43,9 @@
     .parameter "whichButton"
 
     .prologue
-    .line 1009
+    .line 1031
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 1010
+    .line 1032
     return-void
 .end method

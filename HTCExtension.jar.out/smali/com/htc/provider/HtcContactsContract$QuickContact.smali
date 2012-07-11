@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 2651
+    .line 2711
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
     .parameter "email"
 
     .prologue
-    .line 2771
+    .line 2831
     :try_start_0
     new-instance v1, Landroid/content/Intent;
 
@@ -40,13 +40,13 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2772
+    .line 2832
     .local v1, intent:Landroid/content/Intent;
     const/high16 v2, 0x1420
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 2776
+    .line 2836
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -71,33 +71,33 @@
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 2777
+    .line 2837
     const-string v2, "target_rect"
 
     invoke-virtual {v1, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 2778
+    .line 2838
     const-string v2, "mode"
 
     const/4 v3, 0x1
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 2779
+    .line 2839
     invoke-virtual {p0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2785
+    .line 2845
     .end local v1           #intent:Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 2781
+    .line 2841
     :catch_0
     move-exception v0
 
-    .line 2783
+    .line 2843
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "HtcContactsContact"
 
@@ -117,21 +117,21 @@
     .parameter "email"
 
     .prologue
-    .line 2738
+    .line 2798
     const/4 v2, 0x2
 
     new-array v0, v2, [I
 
-    .line 2739
+    .line 2799
     .local v0, location:[I
     invoke-virtual {p1, v0}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 2741
+    .line 2801
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
-    .line 2742
+    .line 2802
     .local v1, rect:Landroid/graphics/Rect;
     const/4 v2, 0x0
 
@@ -139,14 +139,14 @@
 
     iput v2, v1, Landroid/graphics/Rect;->left:I
 
-    .line 2743
+    .line 2803
     const/4 v2, 0x1
 
     aget v2, v0, v2
 
     iput v2, v1, Landroid/graphics/Rect;->top:I
 
-    .line 2744
+    .line 2804
     iget v2, v1, Landroid/graphics/Rect;->left:I
 
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
@@ -157,7 +157,7 @@
 
     iput v2, v1, Landroid/graphics/Rect;->right:I
 
-    .line 2745
+    .line 2805
     iget v2, v1, Landroid/graphics/Rect;->top:I
 
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
@@ -168,10 +168,10 @@
 
     iput v2, v1, Landroid/graphics/Rect;->bottom:I
 
-    .line 2748
+    .line 2808
     invoke-static {p0, v1, p2}, Lcom/htc/provider/HtcContactsContract$QuickContact;->showQuickContactForAddEmail(Landroid/content/Context;Landroid/graphics/Rect;Ljava/lang/String;)V
 
-    .line 2749
+    .line 2809
     return-void
 .end method
 
@@ -182,7 +182,7 @@
     .parameter "number"
 
     .prologue
-    .line 2704
+    .line 2764
     :try_start_0
     new-instance v1, Landroid/content/Intent;
 
@@ -190,13 +190,13 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2705
+    .line 2765
     .local v1, intent:Landroid/content/Intent;
     const/high16 v2, 0x1420
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 2709
+    .line 2769
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -221,33 +221,33 @@
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 2710
+    .line 2770
     const-string v2, "target_rect"
 
     invoke-virtual {v1, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 2711
+    .line 2771
     const-string v2, "mode"
 
     const/4 v3, 0x1
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 2712
+    .line 2772
     invoke-virtual {p0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2718
+    .line 2778
     .end local v1           #intent:Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 2714
+    .line 2774
     :catch_0
     move-exception v0
 
-    .line 2716
+    .line 2776
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "HtcContactsContact"
 
@@ -267,21 +267,21 @@
     .parameter "number"
 
     .prologue
-    .line 2671
+    .line 2731
     const/4 v2, 0x2
 
     new-array v0, v2, [I
 
-    .line 2672
+    .line 2732
     .local v0, location:[I
     invoke-virtual {p1, v0}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 2674
+    .line 2734
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
-    .line 2675
+    .line 2735
     .local v1, rect:Landroid/graphics/Rect;
     const/4 v2, 0x0
 
@@ -289,14 +289,14 @@
 
     iput v2, v1, Landroid/graphics/Rect;->left:I
 
-    .line 2676
+    .line 2736
     const/4 v2, 0x1
 
     aget v2, v0, v2
 
     iput v2, v1, Landroid/graphics/Rect;->top:I
 
-    .line 2677
+    .line 2737
     iget v2, v1, Landroid/graphics/Rect;->left:I
 
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
@@ -307,7 +307,7 @@
 
     iput v2, v1, Landroid/graphics/Rect;->right:I
 
-    .line 2678
+    .line 2738
     iget v2, v1, Landroid/graphics/Rect;->top:I
 
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
@@ -318,9 +318,9 @@
 
     iput v2, v1, Landroid/graphics/Rect;->bottom:I
 
-    .line 2681
+    .line 2741
     invoke-static {p0, v1, p2}, Lcom/htc/provider/HtcContactsContract$QuickContact;->showQuickContactForAddNumber(Landroid/content/Context;Landroid/graphics/Rect;Ljava/lang/String;)V
 
-    .line 2682
+    .line 2742
     return-void
 .end method

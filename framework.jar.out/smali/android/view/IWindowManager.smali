@@ -127,6 +127,14 @@
     .end annotation
 .end method
 
+.method public abstract forcePasswordTimeout()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract freezeRotation(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

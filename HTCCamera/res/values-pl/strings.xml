@@ -254,7 +254,7 @@
     <string name="scene_landscape">Krajobraz</string>
     <string name="scene_burst">Seryjne</string>
     <string name="scene_panorama">Panorama</string>
-    <string name="scene_hdr">Najlepsze z serii</string>
+    <string name="scene_hdr">Ekspozycja HDR</string>
     <string name="scene_whiteboard">Korekcja gamma</string>
     <string name="scene_sports">Akcja</string>
     <string name="scene_macro">Makro</string>
@@ -277,7 +277,7 @@
     <string name="center_button">Wybierz</string>
     <string name="scene_type_auto">Auto</string>
     <string name="scene_type_panorama">Panorama</string>
-    <string name="scene_type_hdr">Najlepsze z serii</string>
+    <string name="scene_type_hdr">Ekspozycja HDR</string>
     <string name="scene_type_burst">Zdjęcie seryjne</string>
     <string name="scene_type_night">Noc</string>
     <string name="scene_type_action">Akcja</string>

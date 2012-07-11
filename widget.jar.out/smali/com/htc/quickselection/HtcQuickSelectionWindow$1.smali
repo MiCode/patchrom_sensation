@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 164
+    .line 169
     iput-object p1, p0, Lcom/htc/quickselection/HtcQuickSelectionWindow$1;->this$0:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "t"
 
     .prologue
-    .line 168
+    .line 173
     const v1, 0x3fc66666
 
     mul-float/2addr v1, p1
@@ -51,7 +51,7 @@
 
     sub-float v0, v1, v2
 
-    .line 169
+    .line 174
     .local v0, inner:F
     const v1, 0x3f99999a
 

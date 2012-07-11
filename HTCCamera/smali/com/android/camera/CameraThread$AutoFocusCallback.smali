@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 4273
+    .line 4283
     iput-object p1, p0, Lcom/android/camera/CameraThread$AutoFocusCallback;->this$0:Lcom/android/camera/CameraThread;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 4273
+    .line 4283
     invoke-direct {p0, p1}, Lcom/android/camera/CameraThread$AutoFocusCallback;-><init>(Lcom/android/camera/CameraThread;)V
 
     return-void
@@ -55,48 +55,48 @@
     .parameter "camera"
 
     .prologue
-    .line 4275
+    .line 4285
     sget-object v0, Lcom/android/camera/TIME;->AutoFocusCallback:Lcom/android/camera/TIME$Value;
 
     invoke-virtual {v0}, Lcom/android/camera/TIME$Value;->End()V
 
-    .line 4276
+    .line 4286
     sget-object v0, Lcom/android/camera/TIME;->ReadyTakePicture:Lcom/android/camera/TIME$Value;
 
     invoke-virtual {v0}, Lcom/android/camera/TIME$Value;->Start()V
 
-    .line 4277
+    .line 4287
     const-string v0, "CameraThread"
 
     const-string v1, "got AutoFocusCallback..."
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4279
+    .line 4289
     const-string v0, "CameraThread"
 
     const-string v1, "got AutoFocusCallback, mTakeFocus = false"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4280
+    .line 4290
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/camera/CameraThread;->mTakeFocus:Z
 
-    .line 4282
+    .line 4292
     iget-object v0, p0, Lcom/android/camera/CameraThread$AutoFocusCallback;->this$0:Lcom/android/camera/CameraThread;
 
     #calls: Lcom/android/camera/CameraThread;->handleAutoFocus(Z)V
     invoke-static {v0, p1}, Lcom/android/camera/CameraThread;->access$2200(Lcom/android/camera/CameraThread;Z)V
 
-    .line 4284
+    .line 4294
     const-string v0, "CameraThread"
 
     const-string v1, "AutoFocusCallback end"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4285
+    .line 4295
     return-void
 .end method

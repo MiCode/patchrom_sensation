@@ -595,10 +595,12 @@
 
     move-result v2
 
+    .line 1879
     .restart local v2       #handled:Z
     :goto_2
     if-nez v2, :cond_0
 
+    .line 1884
     .end local v1           #cb:Landroid/view/Window$Callback;
     .end local v2           #handled:Z
     :cond_4

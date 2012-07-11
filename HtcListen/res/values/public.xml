@@ -291,7 +291,6 @@
     <public type="array" name="beats_effect_style" id="0x7f060015" />
     <public type="array" name="onlineMusicBrowseBy" id="0x7f060016" />
     <public type="array" name="online_genres" id="0x7f060017" />
-    <public type="array" name="weeklist" id="0x7f060018" />
     <public type="string" name="category_htc_sense_web" id="0x7f070000" />
     <public type="string" name="no_track_title" id="0x7f070001" />
     <public type="string" name="htc_vmm_title" id="0x7f070002" />
@@ -725,119 +724,21 @@
     <public type="string" name="store_splash_msg" id="0x7f0701ae" />
     <public type="string" name="explicit_msg" id="0x7f0701af" />
     <public type="string" name="terms_and_conditions_msg" id="0x7f0701b0" />
-    <public type="string" name="albumsongseparator" id="0x7f070214" />
-    <public type="string" name="notification_artist_album" id="0x7f070215" />
-    <public type="string" name="settings_project_name" id="0x7f070216" />
-    <public type="string" name="settings_max_ringtone_size" id="0x7f070217" />
-    <public type="string" name="settings_enable_use_as_notification_rintone" id="0x7f070218" />
-    <public type="string" name="settings_enable_exp_list" id="0x7f070219" />
-    <public type="string" name="settings_enable_ff_rw" id="0x7f07021a" />
-    <public type="string" name="settings_enable_drm_warning" id="0x7f07021b" />
-    <public type="string" name="settings_enable_show_3party_tabs_first" id="0x7f07021c" />
-    <public type="string" name="settings_enable_dlna_tab" id="0x7f07021d" />
-    <public type="string" name="settings_enable_enhancer" id="0x7f07021e" />
-    <public type="string" name="settings_enable_landscape_horizontal_sd_error" id="0x7f07021f" />
-    <public type="string" name="ap_version_id" id="0x7f070220" />
-    <public type="string" name="ap_version_name" id="0x7f070221" />
+    <public type="string" name="albumsongseparator" id="0x7f0701b2" />
+    <public type="string" name="notification_artist_album" id="0x7f0701b3" />
+    <public type="string" name="settings_project_name" id="0x7f0701b4" />
+    <public type="string" name="settings_max_ringtone_size" id="0x7f0701b5" />
+    <public type="string" name="settings_enable_use_as_notification_rintone" id="0x7f0701b6" />
+    <public type="string" name="settings_enable_exp_list" id="0x7f0701b7" />
+    <public type="string" name="settings_enable_ff_rw" id="0x7f0701b8" />
+    <public type="string" name="settings_enable_drm_warning" id="0x7f0701b9" />
+    <public type="string" name="settings_enable_show_3party_tabs_first" id="0x7f0701ba" />
+    <public type="string" name="settings_enable_dlna_tab" id="0x7f0701bb" />
+    <public type="string" name="settings_enable_enhancer" id="0x7f0701bc" />
+    <public type="string" name="settings_enable_landscape_horizontal_sd_error" id="0x7f0701bd" />
+    <public type="string" name="ap_version_id" id="0x7f0701be" />
+    <public type="string" name="ap_version_name" id="0x7f0701bf" />
     <public type="string" name="create_playlist_create_text_prompt" id="0x7f0701b1" />
-    <public type="string" name="party_shuffle" id="0x7f0701b2" />
-    <public type="string" name="party_shuffle_off" id="0x7f0701b3" />
-    <public type="string" name="delete_item" id="0x7f0701b4" />
-    <public type="string" name="delete_artist_from_storage_desc" id="0x7f0701b5" />
-    <public type="string" name="delete_album_from_storage_desc" id="0x7f0701b6" />
-    <public type="string" name="delete_song_from_storage_desc" id="0x7f0701b7" />
-    <public type="string" name="htc_delete_composer_from_storage_desc" id="0x7f0701b8" />
-    <public type="string" name="htc_delete_genre_from_storage_desc" id="0x7f0701b9" />
-    <public type="string" name="htc_delete_artist_songs_from_storage_desc" id="0x7f0701ba" />
-    <public type="string" name="htc_delete_album_songs_from_storage_desc" id="0x7f0701bb" />
-    <public type="string" name="htc_delete_composer_songs_from_storage_desc" id="0x7f0701bc" />
-    <public type="string" name="htc_delete_genre_songs_desc" id="0x7f0701bd" />
-    <public type="string" name="htc_delete_genre_songs_from_storage_desc" id="0x7f0701be" />
-    <public type="string" name="htc_delete_songs_desc" id="0x7f0701bf" />
-    <public type="string" name="htc_delete_songs_from_storage_desc" id="0x7f0701c0" />
-    <public type="string" name="delete_confirm_button_text" id="0x7f0701c1" />
-    <public type="string" name="scanning_storage" id="0x7f0701c2" />
-    <public type="string" name="albums_menu" id="0x7f0701c3" />
-    <public type="string" name="tracks_menu" id="0x7f0701c4" />
-    <public type="string" name="playlists_menu" id="0x7f0701c5" />
-    <public type="string" name="videos_title" id="0x7f0701c6" />
-    <public type="string" name="all_title" id="0x7f0701c7" />
-    <public type="string" name="browse_menu" id="0x7f0701c8" />
-    <public type="string" name="search_title" id="0x7f0701c9" />
-    <public type="string" name="no_videos_title" id="0x7f0701ca" />
-    <public type="string" name="no_playlists_title" id="0x7f0701cb" />
-    <public type="string" name="htc_no_artists_title" id="0x7f0701cc" />
-    <public type="string" name="htc_no_albums_title" id="0x7f0701cd" />
-    <public type="string" name="htc_no_composer_title" id="0x7f0701ce" />
-    <public type="string" name="htc_no_genre_title" id="0x7f0701cf" />
-    <public type="string" name="htc_no_purchase_title" id="0x7f0701d0" />
-    <public type="string" name="htc_delete_playlists_title" id="0x7f0701d1" />
-    <public type="string" name="htc_delete_playlists_song_title" id="0x7f0701d2" />
-    <public type="string" name="htc_remove_playlists_song_title" id="0x7f0701d3" />
-    <public type="string" name="delete_playlist_menu" id="0x7f0701d4" />
-    <public type="string" name="edit_playlist_menu" id="0x7f0701d5" />
-    <public type="string" name="recentlyadded" id="0x7f0701d6" />
-    <public type="string" name="recentlyadded_title" id="0x7f0701d7" />
-    <public type="string" name="podcasts_title" id="0x7f0701d8" />
-    <public type="string" name="sdcard_missing_title" id="0x7f0701d9" />
-    <public type="string" name="storage_missing_title" id="0x7f0701da" />
-    <public type="string" name="sdcard_missing_message" id="0x7f0701db" />
-    <public type="string" name="storage_missing_message" id="0x7f0701dc" />
-    <public type="string" name="storage_busy_title" id="0x7f0701dd" />
-    <public type="string" name="storage_busy_message" id="0x7f0701de" />
-    <public type="string" name="sdcard_unmounted_title" id="0x7f0701df" />
-    <public type="string" name="storage_error_title" id="0x7f0701e0" />
-    <public type="string" name="sdcard_error_message" id="0x7f0701e1" />
-    <public type="string" name="phone_storage_error_message" id="0x7f0701e2" />
-    <public type="string" name="ringtone_menu" id="0x7f0701e3" />
-    <public type="string" name="create_playlist_create_text" id="0x7f0701e4" />
-    <public type="string" name="create_playlist_overwrite_text" id="0x7f0701e5" />
-    <public type="string" name="service_start_error_button" id="0x7f0701e6" />
-    <public type="string" name="weekpicker_set" id="0x7f0701e7" />
-    <public type="string" name="weekpicker_title" id="0x7f0701e8" />
-    <public type="string" name="musicbrowserlabel" id="0x7f0701e9" />
-    <public type="string" name="videobrowserlabel" id="0x7f0701ea" />
-    <public type="string" name="mediapickerlabel" id="0x7f0701eb" />
-    <public type="string" name="cancel" id="0x7f0701ec" />
-    <public type="string" name="htc_ok" id="0x7f0701ed" />
-    <public type="string" name="htc_delete" id="0x7f0701ee" />
-    <public type="string" name="remove_from_playlist" id="0x7f0701ef" />
-    <public type="string" name="streamloadingtext" id="0x7f0701f0" />
-    <public type="string" name="working_artists" id="0x7f0701f1" />
-    <public type="string" name="working_albums" id="0x7f0701f2" />
-    <public type="string" name="working_songs" id="0x7f0701f3" />
-    <public type="string" name="working_playlists" id="0x7f0701f4" />
-    <public type="string" name="htc_working_composer" id="0x7f0701f5" />
-    <public type="string" name="htc_working_genre" id="0x7f0701f6" />
-    <public type="string" name="loading" id="0x7f0701f7" />
-    <public type="string" name="htc_song_picker_title" id="0x7f0701f8" />
-    <public type="string" name="htc_songs_picker_title" id="0x7f0701f9" />
-    <public type="string" name="htc_purchased_picker_title" id="0x7f0701fa" />
-    <public type="string" name="gadget_track" id="0x7f0701fb" />
-    <public type="string" name="htc_repeatnone" id="0x7f0701fc" />
-    <public type="string" name="htc_properties" id="0x7f0701fd" />
-    <public type="string" name="htc_share" id="0x7f0701fe" />
-    <public type="string" name="htc_drm_interval" id="0x7f0701ff" />
-    <public type="string" name="htc_drm_renew" id="0x7f070200" />
-    <public type="string" name="htc_play_by_artist" id="0x7f070201" />
-    <public type="string" name="htc_play_by_album" id="0x7f070202" />
-    <public type="string" name="htc_play_by_playlist" id="0x7f070203" />
-    <public type="string" name="htc_play_by_genre" id="0x7f070204" />
-    <public type="string" name="htc_play_by_composer" id="0x7f070205" />
-    <public type="string" name="htc_save_to_playlist" id="0x7f070206" />
-    <public type="string" name="htc_playlist_change_order" id="0x7f070207" />
-    <public type="string" name="htc_all_songs" id="0x7f070208" />
-    <public type="string" name="htc_playback_artist_album" id="0x7f070209" />
-    <public type="string" name="htc_select_all" id="0x7f07020a" />
-    <public type="string" name="htc_unselect_all" id="0x7f07020b" />
-    <public type="string" name="htc_set_as_contact_ringtone_menu" id="0x7f07020c" />
-    <public type="string" name="htc_set_as_menu" id="0x7f07020d" />
-    <public type="string" name="htc_sdcard_ejected_message" id="0x7f07020e" />
-    <public type="string" name="htc_storage_ejected_message" id="0x7f07020f" />
-    <public type="string" name="htc_repeatcurrent" id="0x7f070210" />
-    <public type="string" name="htc_new_playlist" id="0x7f070211" />
-    <public type="string" name="htc_corp" id="0x7f070212" />
-    <public type="string" name="drm_normal_type_msg" id="0x7f070213" />
     <public type="id" name="hvga" id="0x7f080000" />
     <public type="id" name="qvga" id="0x7f080001" />
     <public type="id" name="wvga" id="0x7f080002" />
@@ -1288,5 +1189,4 @@
     <public type="plurals" name="NNNtrackstoqueue" id="0x7f0d0004" />
     <public type="plurals" name="htc_NNNdelteplaylists" id="0x7f0d0005" />
     <public type="plurals" name="htc_NNNremovefromplaylist" id="0x7f0d0006" />
-    <public type="plurals" name="Nsongscomp" id="0x7f0d0007" />
 </resources>

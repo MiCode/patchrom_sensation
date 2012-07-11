@@ -307,33 +307,33 @@
 
 .field public static final car_mode_disable_notification_title:I = 0x104044d
 
-.field public static final cate_cbrne:I = 0x1040519
+.field public static final cate_cbrne:I = 0x104051a
 
-.field public static final cate_env:I = 0x1040516
+.field public static final cate_env:I = 0x1040517
 
-.field public static final cate_fire:I = 0x1040514
+.field public static final cate_fire:I = 0x1040515
 
-.field public static final cate_geo:I = 0x104050f
+.field public static final cate_geo:I = 0x1040510
 
-.field public static final cate_health:I = 0x1040515
+.field public static final cate_health:I = 0x1040516
 
-.field public static final cate_infra:I = 0x1040518
+.field public static final cate_infra:I = 0x1040519
 
-.field public static final cate_met:I = 0x1040510
+.field public static final cate_met:I = 0x1040511
 
-.field public static final cate_other:I = 0x104051a
+.field public static final cate_other:I = 0x104051b
 
-.field public static final cate_rescue:I = 0x1040513
+.field public static final cate_rescue:I = 0x1040514
 
-.field public static final cate_safety:I = 0x1040511
+.field public static final cate_safety:I = 0x1040512
 
-.field public static final cate_security:I = 0x1040512
+.field public static final cate_security:I = 0x1040513
 
-.field public static final cate_transport:I = 0x1040517
+.field public static final cate_transport:I = 0x1040518
 
-.field public static final cert_likely:I = 0x1040528
+.field public static final cert_likely:I = 0x1040529
 
-.field public static final cert_observed:I = 0x1040527
+.field public static final cert_observed:I = 0x1040528
 
 .field public static final certificate_3lm:I = 0x10404cd
 
@@ -405,7 +405,7 @@
 
 .field public static final configure_input_methods:I = 0x1040418
 
-.field public static final configure_input_methods_short:I = 0x1040555
+.field public static final configure_input_methods_short:I = 0x1040556
 
 .field public static final contentServiceSync:I = 0x104011a
 
@@ -591,9 +591,9 @@
 
 .field public static final dlg_ok:I = 0x104040b
 
-.field public static final dock_mode_goto_notification_message:I = 0x1040544
+.field public static final dock_mode_goto_notification_message:I = 0x1040545
 
-.field public static final dock_mode_goto_notification_title:I = 0x1040543
+.field public static final dock_mode_goto_notification_title:I = 0x1040544
 
 .field public static final double_tap_toast:I = 0x1040321
 
@@ -629,9 +629,9 @@
 
 .field public static final encrypted_notify_title:I = 0x1040505
 
-.field public static final encryption_password_required:I = 0x104053f
+.field public static final encryption_password_required:I = 0x1040540
 
-.field public static final encryption_password_text:I = 0x1040540
+.field public static final encryption_password_text:I = 0x1040541
 
 .field public static final eventTypeAnniversary:I = 0x10402a3
 
@@ -659,9 +659,9 @@
 
 .field public static final ext_media_nomedia_notification_title:I = 0x1040426
 
-.field public static final ext_media_ro_notification_message:I = 0x1040542
+.field public static final ext_media_ro_notification_message:I = 0x1040543
 
-.field public static final ext_media_ro_notification_title:I = 0x1040541
+.field public static final ext_media_ro_notification_title:I = 0x1040542
 
 .field public static final ext_media_safe_unmount_notification_message:I = 0x1040425
 
@@ -703,13 +703,13 @@
 
 .field public static final fingerprints:I = 0x10404c2
 
-.field public static final font_alignment:I = 0x1040554
+.field public static final font_alignment:I = 0x1040555
 
-.field public static final font_color:I = 0x1040552
+.field public static final font_color:I = 0x1040553
 
-.field public static final font_settings:I = 0x1040553
+.field public static final font_settings:I = 0x1040554
 
-.field public static final font_size:I = 0x1040551
+.field public static final font_size:I = 0x1040552
 
 .field public static final force_close:I = 0x10403af
 
@@ -819,7 +819,7 @@
 
 .field public static final httpErrorUnsupportedScheme:I = 0x1040008
 
-.field public static final hutch_htctethered_notification_title:I = 0x104053c
+.field public static final hutch_htctethered_notification_title:I = 0x104053d
 
 .field public static final imProtocolAim:I = 0x10402b3
 
@@ -943,9 +943,9 @@
 
 .field public static final locale_replacement:I = 0x1040416
 
-.field public static final localized_opertator_name_kddi_roaming:I = 0x104053d
+.field public static final localized_opertator_name_kddi_roaming:I = 0x104053e
 
-.field public static final localized_opertator_name_unknown:I = 0x104053e
+.field public static final localized_opertator_name_unknown:I = 0x104053f
 
 .field public static final lock_pattern_view_aspect:I = 0x10400b7
 
@@ -1005,9 +1005,9 @@
 
 .field public static final lockscreen_missing_sim_message_short:I = 0x10402ea
 
-.field public static final lockscreen_missing_uim_message_short:I = 0x104054b
+.field public static final lockscreen_missing_uim_message_short:I = 0x104054c
 
-.field public static final lockscreen_missing_uimsim_message_short:I = 0x104054c
+.field public static final lockscreen_missing_uimsim_message_short:I = 0x104054d
 
 .field public static final lockscreen_network_locked_message:I = 0x10402f5
 
@@ -1057,21 +1057,21 @@
 
 .field public static final lockscreen_transport_stop_description:I = 0x10402f3
 
-.field public static final lockscreen_uim_fail_message:I = 0x104054d
+.field public static final lockscreen_uim_fail_message:I = 0x104054e
 
-.field public static final lockscreen_uim_locked_message:I = 0x1040549
+.field public static final lockscreen_uim_locked_message:I = 0x104054a
 
-.field public static final lockscreen_uim_puk_locked_message:I = 0x1040547
+.field public static final lockscreen_uim_puk_locked_message:I = 0x1040548
 
-.field public static final lockscreen_uim_unlock_progress_dialog_message:I = 0x1040546
+.field public static final lockscreen_uim_unlock_progress_dialog_message:I = 0x1040547
 
-.field public static final lockscreen_uimsim_fail_message:I = 0x104054e
+.field public static final lockscreen_uimsim_fail_message:I = 0x104054f
 
-.field public static final lockscreen_uimsim_locked_message:I = 0x104054a
+.field public static final lockscreen_uimsim_locked_message:I = 0x104054b
 
-.field public static final lockscreen_uimsim_puk_locked_message:I = 0x1040548
+.field public static final lockscreen_uimsim_puk_locked_message:I = 0x1040549
 
-.field public static final lockscreen_uimsim_unlock_progress_dialog_message:I = 0x1040545
+.field public static final lockscreen_uimsim_unlock_progress_dialog_message:I = 0x1040546
 
 .field public static final lockscreen_unlock_label:I = 0x104030b
 
@@ -1313,7 +1313,7 @@
 
 .field public static final permdesc_access4GState:I = 0x10404d7
 
-.field public static final permdesc_accessCWFolder:I = 0x104052b
+.field public static final permdesc_accessCWFolder:I = 0x104052c
 
 .field public static final permdesc_accessCoarseLocation:I = 0x10401ef
 
@@ -1327,13 +1327,13 @@
 
 .field public static final permdesc_accessNetworkState:I = 0x1040241
 
-.field public static final permdesc_accessRecoveryFolder:I = 0x104052d
+.field public static final permdesc_accessRecoveryFolder:I = 0x104052e
 
 .field public static final permdesc_accessSurfaceFlinger:I = 0x10401f1
 
 .field public static final permdesc_accessTun:I = 0x10404ed
 
-.field public static final permdesc_accessUsbnetState:I = 0x1040537
+.field public static final permdesc_accessUsbnetState:I = 0x1040538
 
 .field public static final permdesc_accessWifiState:I = 0x104024d
 
@@ -1413,9 +1413,9 @@
 
 .field public static final permdesc_changeTetherState:I = 0x1040249
 
-.field public static final permdesc_changeUsbnetMulticastState:I = 0x104053b
+.field public static final permdesc_changeUsbnetMulticastState:I = 0x104053c
 
-.field public static final permdesc_changeUsbnetState:I = 0x1040539
+.field public static final permdesc_changeUsbnetState:I = 0x104053a
 
 .field public static final permdesc_changeWifiMulticastState:I = 0x1040251
 
@@ -1617,7 +1617,7 @@
 
 .field public static final permdesc_setWallpaperHints:I = 0x104022f
 
-.field public static final permdesc_setappname:I = 0x104052f
+.field public static final permdesc_setappname:I = 0x1040530
 
 .field public static final permdesc_shutdown:I = 0x104017d
 
@@ -1729,7 +1729,7 @@
 
 .field public static final permlab_access4GState:I = 0x10404d6
 
-.field public static final permlab_accessCWFolder:I = 0x104052a
+.field public static final permlab_accessCWFolder:I = 0x104052b
 
 .field public static final permlab_accessCoarseLocation:I = 0x10401ee
 
@@ -1743,13 +1743,13 @@
 
 .field public static final permlab_accessNetworkState:I = 0x1040240
 
-.field public static final permlab_accessRecoveryFolder:I = 0x104052c
+.field public static final permlab_accessRecoveryFolder:I = 0x104052d
 
 .field public static final permlab_accessSurfaceFlinger:I = 0x10401f0
 
 .field public static final permlab_accessTun:I = 0x10404ec
 
-.field public static final permlab_accessUsbnetState:I = 0x1040536
+.field public static final permlab_accessUsbnetState:I = 0x1040537
 
 .field public static final permlab_accessWifiState:I = 0x104024c
 
@@ -1829,9 +1829,9 @@
 
 .field public static final permlab_changeTetherState:I = 0x1040248
 
-.field public static final permlab_changeUsbnetMulticastState:I = 0x104053a
+.field public static final permlab_changeUsbnetMulticastState:I = 0x104053b
 
-.field public static final permlab_changeUsbnetState:I = 0x1040538
+.field public static final permlab_changeUsbnetState:I = 0x1040539
 
 .field public static final permlab_changeWifiMulticastState:I = 0x1040250
 
@@ -2033,7 +2033,7 @@
 
 .field public static final permlab_setWallpaperHints:I = 0x104022e
 
-.field public static final permlab_setappname:I = 0x104052e
+.field public static final permlab_setappname:I = 0x104052f
 
 .field public static final permlab_shutdown:I = 0x104017c
 
@@ -2239,21 +2239,23 @@
 
 .field public static final reset:I = 0x104044b
 
-.field public static final resp_assess:I = 0x1040521
+.field public static final resolverActivity_clearDefaultHintMsg:I = 0x104050f
 
-.field public static final resp_avoid:I = 0x1040520
+.field public static final resp_assess:I = 0x1040522
 
-.field public static final resp_evacuate:I = 0x104051c
+.field public static final resp_avoid:I = 0x1040521
 
-.field public static final resp_execute:I = 0x104051e
+.field public static final resp_evacuate:I = 0x104051d
 
-.field public static final resp_monitor:I = 0x104051f
+.field public static final resp_execute:I = 0x104051f
 
-.field public static final resp_none:I = 0x1040522
+.field public static final resp_monitor:I = 0x1040520
 
-.field public static final resp_prepare:I = 0x104051d
+.field public static final resp_none:I = 0x1040523
 
-.field public static final resp_shelter:I = 0x104051b
+.field public static final resp_prepare:I = 0x104051e
+
+.field public static final resp_shelter:I = 0x104051c
 
 .field public static final ringtone_default:I = 0x10403d5
 
@@ -2409,9 +2411,9 @@
 
 .field public static final setup_autofill:I = 0x1040323
 
-.field public static final sev_extreme:I = 0x1040523
+.field public static final sev_extreme:I = 0x1040524
 
-.field public static final sev_severe:I = 0x1040524
+.field public static final sev_severe:I = 0x1040525
 
 .field public static final sha1_fingerprint:I = 0x10404c4
 
@@ -2447,7 +2449,7 @@
 
 .field public static final sim_done_button:I = 0x10403ef
 
-.field public static final sim_puk_contact_customer_care_information:I = 0x1040529
+.field public static final sim_puk_contact_customer_care_information:I = 0x104052a
 
 .field public static final sim_removed_message:I = 0x10403ee
 
@@ -2485,15 +2487,15 @@
 
 .field public static final sms_roam_guard_dialog_title:I = 0x10404f6
 
-.field public static final sms_roam_guild_dialog_radio_auto_send:I = 0x1040533
+.field public static final sms_roam_guild_dialog_radio_auto_send:I = 0x1040534
 
-.field public static final sms_roam_guild_dialog_send_later:I = 0x1040535
+.field public static final sms_roam_guild_dialog_send_later:I = 0x1040536
 
-.field public static final sms_roam_guild_dialog_send_now:I = 0x1040534
+.field public static final sms_roam_guild_dialog_send_now:I = 0x1040535
 
-.field public static final sms_roam_guild_dialog_subject:I = 0x1040532
+.field public static final sms_roam_guild_dialog_subject:I = 0x1040533
 
-.field public static final sms_roam_guild_dialog_title:I = 0x1040531
+.field public static final sms_roam_guild_dialog_title:I = 0x1040532
 
 .field public static final smv_application:I = 0x10403b8
 
@@ -2513,7 +2515,7 @@
 
 .field public static final storage_usb:I = 0x10404a7
 
-.field public static final style:I = 0x104054f
+.field public static final style:I = 0x1040550
 
 .field public static final submit:I = 0x104044c
 
@@ -2543,9 +2545,9 @@
 
 .field public static final text_copied:I = 0x1040370
 
-.field public static final text_editing:I = 0x1040550
+.field public static final text_editing:I = 0x1040551
 
-.field public static final text_limitation:I = 0x1040530
+.field public static final text_limitation:I = 0x1040531
 
 .field public static final throttle_warning_notification_message:I = 0x1040455
 
@@ -2607,9 +2609,9 @@
 
 .field public static final upload_file:I = 0x1040449
 
-.field public static final urg_expected:I = 0x1040526
+.field public static final urg_expected:I = 0x1040527
 
-.field public static final urg_immediate:I = 0x1040525
+.field public static final urg_immediate:I = 0x1040526
 
 .field public static final usb_accessory_notification_title:I = 0x104040f
 
@@ -2753,7 +2755,7 @@
     .locals 0
 
     .prologue
-    .line 19236
+    .line 19557
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

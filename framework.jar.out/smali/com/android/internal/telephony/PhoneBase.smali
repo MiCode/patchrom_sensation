@@ -1593,6 +1593,17 @@
     return-object v0
 .end method
 
+.method public getActiveApnCarrier(Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
+    .parameter "apnType"
+
+    .prologue
+    .line 2408
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method public getActiveApnHost(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
     .parameter "apnType"

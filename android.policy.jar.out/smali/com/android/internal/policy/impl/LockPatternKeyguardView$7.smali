@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2242
+    .line 2245
     iput-object p1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$7;->this$0:Lcom/android/internal/policy/impl/LockPatternKeyguardView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "iservice"
 
     .prologue
-    .line 2246
+    .line 2249
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$7;->this$0:Lcom/android/internal/policy/impl/LockPatternKeyguardView;
 
     invoke-static {p2}, Lcom/android/internal/policy/IFaceLockInterface$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/policy/IFaceLockInterface;
@@ -53,7 +53,7 @@
     #setter for: Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mFaceLockService:Lcom/android/internal/policy/IFaceLockInterface;
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->access$3402(Lcom/android/internal/policy/impl/LockPatternKeyguardView;Lcom/android/internal/policy/IFaceLockInterface;)Lcom/android/internal/policy/IFaceLockInterface;
 
-    .line 2250
+    .line 2253
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$7;->this$0:Lcom/android/internal/policy/impl/LockPatternKeyguardView;
 
     const/4 v1, 0x1
@@ -61,7 +61,7 @@
     #setter for: Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mCameraReady:Z
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->access$3502(Lcom/android/internal/policy/impl/LockPatternKeyguardView;Z)Z
 
-    .line 2251
+    .line 2254
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$7;->this$0:Lcom/android/internal/policy/impl/LockPatternKeyguardView;
 
     #getter for: Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mFocusChanged:Z
@@ -82,13 +82,13 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 2252
+    .line 2255
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$7;->this$0:Lcom/android/internal/policy/impl/LockPatternKeyguardView;
 
     #calls: Lcom/android/internal/policy/impl/LockPatternKeyguardView;->delayStartFaceLock()V
     invoke-static {v0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->access$3700(Lcom/android/internal/policy/impl/LockPatternKeyguardView;)V
 
-    .line 2272
+    .line 2275
     :cond_0
     return-void
 .end method
@@ -100,7 +100,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2277
+    .line 2280
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$7;->this$0:Lcom/android/internal/policy/impl/LockPatternKeyguardView;
 
     #getter for: Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mFaceLockServiceRunningLock:Ljava/lang/Object;
@@ -110,7 +110,7 @@
 
     monitor-enter v1
 
-    .line 2278
+    .line 2281
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$7;->this$0:Lcom/android/internal/policy/impl/LockPatternKeyguardView;
 
@@ -119,7 +119,7 @@
     #setter for: Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mFaceLockService:Lcom/android/internal/policy/IFaceLockInterface;
     invoke-static {v0, v2}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->access$3402(Lcom/android/internal/policy/impl/LockPatternKeyguardView;Lcom/android/internal/policy/IFaceLockInterface;)Lcom/android/internal/policy/IFaceLockInterface;
 
-    .line 2279
+    .line 2282
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$7;->this$0:Lcom/android/internal/policy/impl/LockPatternKeyguardView;
 
     const/4 v2, 0x0
@@ -127,28 +127,28 @@
     #setter for: Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mFaceLockServiceRunning:Z
     invoke-static {v0, v2}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->access$2002(Lcom/android/internal/policy/impl/LockPatternKeyguardView;Z)Z
 
-    .line 2280
+    .line 2283
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2281
+    .line 2284
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$7;->this$0:Lcom/android/internal/policy/impl/LockPatternKeyguardView;
 
     #setter for: Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mBoundToFaceLockService:Z
     invoke-static {v0, v3}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->access$3902(Lcom/android/internal/policy/impl/LockPatternKeyguardView;Z)Z
 
-    .line 2282
+    .line 2285
     const-string v0, "LockPatternKeyguardView"
 
     const-string v1, "Unexpected disconnect from FaceLock service"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2283
+    .line 2286
     return-void
 
-    .line 2280
+    .line 2283
     :catchall_0
     move-exception v0
 

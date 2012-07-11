@@ -22,7 +22,7 @@
 
     const/4 v0, 0x1
 
-    .line 202
+    .line 203
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     if-nez v1, :cond_1
@@ -31,12 +31,12 @@
 
     if-ne v1, v3, :cond_1
 
-    .line 221
+    .line 222
     :cond_0
     :goto_0
     return v0
 
-    .line 207
+    .line 208
     :cond_1
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
@@ -48,7 +48,7 @@
 
     if-eq v1, v3, :cond_0
 
-    .line 212
+    .line 213
     :cond_2
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
@@ -60,7 +60,7 @@
 
     if-eq v1, v3, :cond_0
 
-    .line 217
+    .line 218
     :cond_3
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
@@ -72,7 +72,7 @@
 
     if-eq v1, v3, :cond_0
 
-    .line 221
+    .line 222
     :cond_4
     const/4 v0, 0x0
 
@@ -97,7 +97,7 @@
 
     const/4 v0, 0x1
 
-    .line 180
+    .line 181
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     if-nez v1, :cond_1
@@ -112,12 +112,12 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 192
+    .line 193
     :cond_0
     :goto_0
     return v0
 
-    .line 187
+    .line 188
     :cond_1
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
@@ -133,7 +133,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 192
+    .line 193
     :cond_2
     const/4 v0, 0x0
 
@@ -300,11 +300,9 @@
 .end method
 
 .method public static isMyPhoneBookProfileEnabled()Z
-    .locals 5
+    .locals 4
 
     .prologue
-    const/16 v4, 0x26
-
     const/16 v3, 0xd0
 
     const/4 v0, 0x1
@@ -324,7 +322,7 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 175
+    .line 176
     :cond_0
     :goto_0
     return v0
@@ -341,7 +339,9 @@
 
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_LANGUAGE_flag:S
 
-    if-eq v1, v4, :cond_0
+    const/16 v2, 0x26
+
+    if-eq v1, v2, :cond_0
 
     .line 147
     :cond_2
@@ -355,54 +355,8 @@
 
     if-eq v1, v3, :cond_0
 
-    .line 153
+    .line 176
     :cond_3
-    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
-
-    const/16 v2, 0x7b
-
-    if-ne v1, v2, :cond_4
-
-    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
-
-    if-eq v1, v3, :cond_0
-
-    .line 159
-    :cond_4
-    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
-
-    const/16 v2, 0x8a
-
-    if-ne v1, v2, :cond_5
-
-    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
-
-    if-eq v1, v3, :cond_0
-
-    .line 165
-    :cond_5
-    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
-
-    if-ne v1, v4, :cond_6
-
-    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
-
-    if-eq v1, v3, :cond_0
-
-    .line 171
-    :cond_6
-    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
-
-    const/16 v2, 0xe1
-
-    if-ne v1, v2, :cond_7
-
-    sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
-
-    if-eq v1, v3, :cond_0
-
-    .line 175
-    :cond_7
     const/4 v0, 0x0
 
     goto :goto_0

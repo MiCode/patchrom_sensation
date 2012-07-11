@@ -181,7 +181,7 @@
     iput-object v1, p0, Lcom/htc/music/browserlayer/AlbumTrackBrowserActivity$ArtistAlbumListAdapter;->mResources:Landroid/content/res/Resources;
 
     .line 514
-    const v1, 0x7f070214
+    const v1, 0x7f0701b2
 
     invoke-virtual {p2, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

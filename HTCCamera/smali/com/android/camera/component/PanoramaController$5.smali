@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1094
+    .line 1099
     iput-object p1, p0, Lcom/android/camera/component/PanoramaController$5;->this$0:Lcom/android/camera/component/PanoramaController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "camera"
 
     .prologue
-    .line 1097
+    .line 1102
     iget-object v0, p0, Lcom/android/camera/component/PanoramaController$5;->this$0:Lcom/android/camera/component/PanoramaController;
 
     #getter for: Lcom/android/camera/ThreadDependencyObject;->TAG:Ljava/lang/String;
@@ -55,6 +55,6 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1098
+    .line 1103
     return-void
 .end method

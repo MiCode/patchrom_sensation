@@ -1,0 +1,56 @@
+-----BEGIN CERTIFICATE-----
+MIIDITCCAoqgAwIBAgIBADANBgkqhkiG9w0BAQQFADCByzELMAkGA1UEBhMCWkEx
+FTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTESMBAGA1UEBxMJQ2FwZSBUb3duMRowGAYD
+VQQKExFUaGF3dGUgQ29uc3VsdGluZzEoMCYGA1UECxMfQ2VydGlmaWNhdGlvbiBT
+ZXJ2aWNlcyBEaXZpc2lvbjEhMB8GA1UEAxMYVGhhd3RlIFBlcnNvbmFsIEJhc2lj
+IENBMSgwJgYJKoZIhvcNAQkBFhlwZXJzb25hbC1iYXNpY0B0aGF3dGUuY29tMB4X
+DTk2MDEwMTAwMDAwMFoXDTIwMTIzMTIzNTk1OVowgcsxCzAJBgNVBAYTAlpBMRUw
+EwYDVQQIEwxXZXN0ZXJuIENhcGUxEjAQBgNVBAcTCUNhcGUgVG93bjEaMBgGA1UE
+ChMRVGhhd3RlIENvbnN1bHRpbmcxKDAmBgNVBAsTH0NlcnRpZmljYXRpb24gU2Vy
+dmljZXMgRGl2aXNpb24xITAfBgNVBAMTGFRoYXd0ZSBQZXJzb25hbCBCYXNpYyBD
+QTEoMCYGCSqGSIb3DQEJARYZcGVyc29uYWwtYmFzaWNAdGhhd3RlLmNvbTCBnzAN
+BgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAvLyTU23AUE+CFeZIlDWmWr5vQvoPR+53
+dXLdjUmbllegeNTKP1GzaQuRdhciB5dqxFGTS+CN7zeVoQxN2jSQHReJl+A1OFdK
+wPQIcOk8RHtQfmGakOMj04gRRif1CwcOu93RfyAKiLlWCy4cgNrx454p7xS9CkT7
+G1sY0b8jkyECAwEAAaMTMBEwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQQF
+AAOBgQAt4plrsD16iddZopQBHyvdEktTwq1/qqcAXJFAVyVKOKqEcLnZgA+le1z7
+c8a914phXAPjLSeoF+CEhULcXpvGt7Jtu3Sv5D/Lp7ew4F2+eIMllNLbgQ95B21P
+9DkVWlIBe94y1k049hJcBlDfBVu9FEuh3ym6O0GN92NWod8isQ==
+-----END CERTIFICATE-----
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 0 (0x0)
+        Signature Algorithm: md5WithRSAEncryption
+        Issuer: C=ZA, ST=Western Cape, L=Cape Town, O=Thawte Consulting, OU=Certification Services Division, CN=Thawte Personal Basic CA/emailAddress=personal-basic@thawte.com
+        Validity
+            Not Before: Jan  1 00:00:00 1996 GMT
+            Not After : Dec 31 23:59:59 2020 GMT
+        Subject: C=ZA, ST=Western Cape, L=Cape Town, O=Thawte Consulting, OU=Certification Services Division, CN=Thawte Personal Basic CA/emailAddress=personal-basic@thawte.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:bc:bc:93:53:6d:c0:50:4f:82:15:e6:48:94:35:
+                    a6:5a:be:6f:42:fa:0f:47:ee:77:75:72:dd:8d:49:
+                    9b:96:57:a0:78:d4:ca:3f:51:b3:69:0b:91:76:17:
+                    22:07:97:6a:c4:51:93:4b:e0:8d:ef:37:95:a1:0c:
+                    4d:da:34:90:1d:17:89:97:e0:35:38:57:4a:c0:f4:
+                    08:70:e9:3c:44:7b:50:7e:61:9a:90:e3:23:d3:88:
+                    11:46:27:f5:0b:07:0e:bb:dd:d1:7f:20:0a:88:b9:
+                    56:0b:2e:1c:80:da:f1:e3:9e:29:ef:14:bd:0a:44:
+                    fb:1b:5b:18:d1:bf:23:93:21
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+    Signature Algorithm: md5WithRSAEncryption
+        2d:e2:99:6b:b0:3d:7a:89:d7:59:a2:94:01:1f:2b:dd:12:4b:
+        53:c2:ad:7f:aa:a7:00:5c:91:40:57:25:4a:38:aa:84:70:b9:
+        d9:80:0f:a5:7b:5c:fb:73:c6:bd:d7:8a:61:5c:03:e3:2d:27:
+        a8:17:e0:84:85:42:dc:5e:9b:c6:b7:b2:6d:bb:74:af:e4:3f:
+        cb:a7:b7:b0:e0:5d:be:78:83:25:94:d2:db:81:0f:79:07:6d:
+        4f:f4:39:15:5a:52:01:7b:de:32:d6:4d:38:f6:12:5c:06:50:
+        df:05:5b:bd:14:4b:a1:df:29:ba:3b:41:8d:f7:63:56:a1:df:
+        22:b1
+SHA1 Fingerprint=40:E7:8C:1D:52:3D:1C:D9:95:4F:AC:1A:1A:B3:BD:3C:BA:A1:5B:FC

@@ -54,6 +54,8 @@
 
 .field static final TRANSACTION_exitKeyguardSecurely:I = 0x2b
 
+.field static final TRANSACTION_forcePasswordTimeout:I = 0x5f
+
 .field static final TRANSACTION_freezeRotation:I = 0x4a
 
 .field static final TRANSACTION_getAnimationScale:I = 0x31
@@ -304,7 +306,7 @@
     .line 45
     sparse-switch p1, :sswitch_data_0
 
-    .line 1057
+    .line 1064
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
@@ -4074,6 +4076,25 @@
 
     goto :goto_34
 
+    .line 1058
+    :sswitch_5f
+    const-string v1, "android.view.IWindowManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 1059
+    invoke-virtual {p0}, Landroid/view/IWindowManager$Stub;->forcePasswordTimeout()V
+
+    .line 1060
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 1061
+    const/4 v1, 0x1
+
+    goto/16 :goto_0
+
     .line 45
     nop
 
@@ -4173,6 +4194,7 @@
         0x5c -> :sswitch_5c
         0x5d -> :sswitch_5d
         0x5e -> :sswitch_5e
+        0x5f -> :sswitch_5f
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

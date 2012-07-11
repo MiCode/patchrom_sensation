@@ -1,0 +1,83 @@
+-----BEGIN CERTIFICATE-----
+MIIDsjCCApqgAwIBAgIQQ8vnmqQqrlawz33n5ukr9jANBgkqhkiG9w0BAQQFADBk
+MRgwFgYDVQQKEw9lU2lnbiBBdXN0cmFsaWExHzAdBgNVBAsTFlB1YmxpYyBTZWN1
+cmUgU2VydmljZXMxJzAlBgNVBAMTHmVTaWduIEltcGVyaXRvIFByaW1hcnkgUm9v
+dCBDQTAeFw0wMjA1MjQwMDAwMDBaFw0xMjA1MjMyMzU5NTlaMGQxGDAWBgNVBAoT
+D2VTaWduIEF1c3RyYWxpYTEfMB0GA1UECxMWUHVibGljIFNlY3VyZSBTZXJ2aWNl
+czEnMCUGA1UEAxMeZVNpZ24gSW1wZXJpdG8gUHJpbWFyeSBSb290IENBMIIBIjAN
+BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAttNS6mcUYQBQvTgGExtH2eGeUHB3
+8ppngT43a9LaP7LBrPvBlE60susauRsHuuahCPw2LzhmgNGw4co60sbdn3l9cIdv
+mvfPvJRoBSYAWrQZuHZJ2N6GQdKPnFC6tZkBsy0GDnxw01hSvoaQ3k+lvVlcdxjg
+pC1OZp5gzCFSsy8KqnFWF6WVTjNJeF6+WY7wxS06xxcpBcK0vj1V9wu21prX33e7
+vGjSRbHrfNHrqknMN0yTLCHTHMQu63JOB7YDuyyZYstcH5MRqD0Af0PEaHSNGDxR
+G+4nLJU1uNkSL2FQFmEUoSZVJXd7rkJQgjJXKw+5qhwwUDjPbIk1gPA7VQIDAQAB
+o2AwXjAPBgNVHRMECDAGAQH/AgEIMAsGA1UdDwQEAwIBBjAdBgNVHQ4EFgQUOXYT
+IpLrAtlViCy0WmTyO76MZiwwHwYDVR0jBBgwFoAUOXYTIpLrAtlViCy0WmTyO76M
+ZiwwDQYJKoZIhvcNAQEEBQADggEBAH5lX0FkKqzlGjbAEdElAmp0O+YVm6k31ddS
+qQKM5E7DvsruHR9E3Rb3SRhe5Ml6OVmoD0PFxIRXp6zCOPbUeslPiqOnjO0+cR7l
+AUGOqPKNyyzod8TfiWz1MJ6P3k9KoNhI+bCzm2kD65KtxFkXHCx8bdK8WEjqbwsj
+aLAJkLRHfYmbpPvvg5PZADtLC8vVCuUwVkfUQ4NGqxuN3N2JKThe7GeYL+qcKWaD
+ZANT4KTie1AkNK1EsuXgkyJ1bgnz2RSpCc5hTRpxTBd8SAWNtmFsmSpgUvl4+p9V
+RBqMbXpEn6wKuw4Sove0r/MrH4nwLU1NJVpwUtySkOXXMVMvOZs=
+-----END CERTIFICATE-----
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            43:cb:e7:9a:a4:2a:ae:56:b0:cf:7d:e7:e6:e9:2b:f6
+        Signature Algorithm: md5WithRSAEncryption
+        Issuer: O=eSign Australia, OU=Public Secure Services, CN=eSign Imperito Primary Root CA
+        Validity
+            Not Before: May 24 00:00:00 2002 GMT
+            Not After : May 23 23:59:59 2012 GMT
+        Subject: O=eSign Australia, OU=Public Secure Services, CN=eSign Imperito Primary Root CA
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (2048 bit)
+                Modulus (2048 bit):
+                    00:b6:d3:52:ea:67:14:61:00:50:bd:38:06:13:1b:
+                    47:d9:e1:9e:50:70:77:f2:9a:67:81:3e:37:6b:d2:
+                    da:3f:b2:c1:ac:fb:c1:94:4e:b4:b2:eb:1a:b9:1b:
+                    07:ba:e6:a1:08:fc:36:2f:38:66:80:d1:b0:e1:ca:
+                    3a:d2:c6:dd:9f:79:7d:70:87:6f:9a:f7:cf:bc:94:
+                    68:05:26:00:5a:b4:19:b8:76:49:d8:de:86:41:d2:
+                    8f:9c:50:ba:b5:99:01:b3:2d:06:0e:7c:70:d3:58:
+                    52:be:86:90:de:4f:a5:bd:59:5c:77:18:e0:a4:2d:
+                    4e:66:9e:60:cc:21:52:b3:2f:0a:aa:71:56:17:a5:
+                    95:4e:33:49:78:5e:be:59:8e:f0:c5:2d:3a:c7:17:
+                    29:05:c2:b4:be:3d:55:f7:0b:b6:d6:9a:d7:df:77:
+                    bb:bc:68:d2:45:b1:eb:7c:d1:eb:aa:49:cc:37:4c:
+                    93:2c:21:d3:1c:c4:2e:eb:72:4e:07:b6:03:bb:2c:
+                    99:62:cb:5c:1f:93:11:a8:3d:00:7f:43:c4:68:74:
+                    8d:18:3c:51:1b:ee:27:2c:95:35:b8:d9:12:2f:61:
+                    50:16:61:14:a1:26:55:25:77:7b:ae:42:50:82:32:
+                    57:2b:0f:b9:aa:1c:30:50:38:cf:6c:89:35:80:f0:
+                    3b:55
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:TRUE, pathlen:8
+            X509v3 Key Usage: 
+                Certificate Sign, CRL Sign
+            X509v3 Subject Key Identifier: 
+                39:76:13:22:92:EB:02:D9:55:88:2C:B4:5A:64:F2:3B:BE:8C:66:2C
+            X509v3 Authority Key Identifier: 
+                keyid:39:76:13:22:92:EB:02:D9:55:88:2C:B4:5A:64:F2:3B:BE:8C:66:2C
+
+    Signature Algorithm: md5WithRSAEncryption
+        7e:65:5f:41:64:2a:ac:e5:1a:36:c0:11:d1:25:02:6a:74:3b:
+        e6:15:9b:a9:37:d5:d7:52:a9:02:8c:e4:4e:c3:be:ca:ee:1d:
+        1f:44:dd:16:f7:49:18:5e:e4:c9:7a:39:59:a8:0f:43:c5:c4:
+        84:57:a7:ac:c2:38:f6:d4:7a:c9:4f:8a:a3:a7:8c:ed:3e:71:
+        1e:e5:01:41:8e:a8:f2:8d:cb:2c:e8:77:c4:df:89:6c:f5:30:
+        9e:8f:de:4f:4a:a0:d8:48:f9:b0:b3:9b:69:03:eb:92:ad:c4:
+        59:17:1c:2c:7c:6d:d2:bc:58:48:ea:6f:0b:23:68:b0:09:90:
+        b4:47:7d:89:9b:a4:fb:ef:83:93:d9:00:3b:4b:0b:cb:d5:0a:
+        e5:30:56:47:d4:43:83:46:ab:1b:8d:dc:dd:89:29:38:5e:ec:
+        67:98:2f:ea:9c:29:66:83:64:03:53:e0:a4:e2:7b:50:24:34:
+        ad:44:b2:e5:e0:93:22:75:6e:09:f3:d9:14:a9:09:ce:61:4d:
+        1a:71:4c:17:7c:48:05:8d:b6:61:6c:99:2a:60:52:f9:78:fa:
+        9f:55:44:1a:8c:6d:7a:44:9f:ac:0a:bb:0e:12:a2:f7:b4:af:
+        f3:2b:1f:89:f0:2d:4d:4d:25:5a:70:52:dc:92:90:e5:d7:31:
+        53:2f:39:9b
+SHA1 Fingerprint=70:30:AA:BF:84:32:A8:00:66:6C:CC:C4:2A:88:7E:42:B7:55:3E:2B

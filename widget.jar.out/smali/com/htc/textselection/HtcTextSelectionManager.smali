@@ -121,12 +121,12 @@
 
     sput-boolean v0, Lcom/htc/textselection/HtcTextSelectionManager;->isPasteWindow:Z
 
-    .line 365
+    .line 374
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/htc/textselection/HtcTextSelectionManager;->HTC_SKIN_ENABLED:Z
 
-    .line 367
+    .line 376
     const/4 v0, 0x0
 
     sput-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mSkinName:Ljava/lang/String;
@@ -146,17 +146,17 @@
 
     iput v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mPreMenuSize:I
 
-    .line 611
+    .line 620
     const/16 v0, 0x3e9
 
     iput v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->MSG_FLY_PRIOR_ANCHOR_TO_START:I
 
-    .line 612
+    .line 621
     const/16 v0, 0x3ea
 
     iput v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->MSG_FLY_POST_ANCHOR_TO_END:I
 
-    .line 626
+    .line 635
     new-instance v0, Lcom/htc/textselection/HtcTextSelectionManager$2;
 
     invoke-direct {v0, p0}, Lcom/htc/textselection/HtcTextSelectionManager$2;-><init>(Lcom/htc/textselection/HtcTextSelectionManager;)V
@@ -241,17 +241,17 @@
 
     const/4 v1, 0x0
 
-    .line 369
+    .line 378
     sget-boolean v2, Lcom/htc/textselection/HtcTextSelectionManager;->HTC_SKIN_ENABLED:Z
 
     if-nez v2, :cond_1
 
-    .line 380
+    .line 389
     :cond_0
     :goto_0
     return v1
 
-    .line 371
+    .line 380
     :cond_1
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -263,7 +263,7 @@
 
     iget-object v0, v2, Landroid/content/res/Configuration;->skin:Ljava/lang/String;
 
-    .line 372
+    .line 381
     .local v0, currentSkin:Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -275,22 +275,22 @@
 
     if-nez v2, :cond_0
 
-    .line 373
+    .line 382
     invoke-virtual {p0, v1}, Lcom/htc/textselection/HtcTextSelectionManager;->dismissQuickAction(Z)V
 
-    .line 374
+    .line 383
     sput-object v3, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
-    .line 375
+    .line 384
     sput-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mSkinName:Ljava/lang/String;
 
-    .line 376
+    .line 385
     sput-object v3, Lcom/htc/textselection/HtcTextSelectionManager;->mAnchorBar:Landroid/graphics/drawable/Drawable;
 
-    .line 377
+    .line 386
     sput-object v3, Lcom/htc/textselection/HtcTextSelectionManager;->mAnchorBarTop:Landroid/graphics/drawable/Drawable;
 
-    .line 378
+    .line 387
     const/4 v1, 0x1
 
     goto :goto_0
@@ -304,18 +304,18 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 597
+    .line 606
     invoke-virtual {p1}, Landroid/widget/TextView;->getSelectionStart()I
 
     move-result v2
 
-    .line 598
+    .line 607
     .local v2, start:I
     invoke-virtual {p1}, Landroid/widget/TextView;->getSelectionEnd()I
 
     move-result v0
 
-    .line 600
+    .line 609
     .local v0, end:I
     iget-object v3, p0, Lcom/htc/textselection/HtcTextSelectionManager;->suggestionFromIME:Lcom/htc/textselection/FetchSuggestionFromIME;
 
@@ -329,7 +329,7 @@
 
     invoke-virtual {v3, v4}, Lcom/htc/textselection/FetchSuggestionFromIME;->setContext(Landroid/content/Context;)V
 
-    .line 601
+    .line 610
     sub-int v3, v0, v2
 
     if-ne v3, v5, :cond_0
@@ -352,18 +352,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 604
+    .line 613
     const-string v3, "1"
 
     invoke-direct {p0, p1, v2, v3}, Lcom/htc/textselection/HtcTextSelectionManager;->findChineseWord(Landroid/widget/TextView;ILjava/lang/String;)[I
 
     move-result-object v1
 
-    .line 606
+    .line 615
     .local v1, ret:[I
     if-eqz v1, :cond_0
 
-    .line 607
+    .line 616
     const/4 v3, 0x0
 
     aget v3, v1, v3
@@ -372,7 +372,7 @@
 
     invoke-static {p2, v3, v4}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;II)V
 
-    .line 609
+    .line 618
     .end local v1           #ret:[I
     :cond_0
     return-void
@@ -385,12 +385,12 @@
     .parameter "lang"
 
     .prologue
-    .line 577
+    .line 586
     invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 578
+    .line 587
     .local v1, text:Ljava/lang/CharSequence;
     iget-object v2, p0, Lcom/htc/textselection/HtcTextSelectionManager;->suggestionFromIME:Lcom/htc/textselection/FetchSuggestionFromIME;
 
@@ -404,10 +404,10 @@
 
     invoke-virtual {v2, v3}, Lcom/htc/textselection/FetchSuggestionFromIME;->setContext(Landroid/content/Context;)V
 
-    .line 580
+    .line 589
     const/4 v0, 0x0
 
-    .line 581
+    .line 590
     .local v0, ret:[I
     iget-object v2, p0, Lcom/htc/textselection/HtcTextSelectionManager;->suggestionFromIME:Lcom/htc/textselection/FetchSuggestionFromIME;
 
@@ -427,14 +427,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 584
+    .line 593
     iget-object v2, p0, Lcom/htc/textselection/HtcTextSelectionManager;->suggestionFromIME:Lcom/htc/textselection/FetchSuggestionFromIME;
 
     invoke-virtual {v2, v1, p2, p3}, Lcom/htc/textselection/FetchSuggestionFromIME;->matchWord(Ljava/lang/CharSequence;ILjava/lang/String;)[I
 
     move-result-object v0
 
-    .line 586
+    .line 595
     const/4 v2, 0x0
 
     aget v2, v0, v2
@@ -445,10 +445,10 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 587
+    .line 596
     const/4 v0, 0x0
 
-    .line 590
+    .line 599
     :cond_0
     iget-object v2, p0, Lcom/htc/textselection/HtcTextSelectionManager;->suggestionFromIME:Lcom/htc/textselection/FetchSuggestionFromIME;
 
@@ -456,7 +456,7 @@
 
     invoke-virtual {v2, v3}, Lcom/htc/textselection/FetchSuggestionFromIME;->setContext(Landroid/content/Context;)V
 
-    .line 592
+    .line 601
     return-object v0
 .end method
 
@@ -464,19 +464,19 @@
     .locals 1
 
     .prologue
-    .line 420
+    .line 429
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->sInstance:Lcom/htc/textselection/HtcTextSelectionManager;
 
     if-nez v0, :cond_0
 
-    .line 421
+    .line 430
     new-instance v0, Lcom/htc/textselection/HtcTextSelectionManager;
 
     invoke-direct {v0}, Lcom/htc/textselection/HtcTextSelectionManager;-><init>()V
 
     sput-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->sInstance:Lcom/htc/textselection/HtcTextSelectionManager;
 
-    .line 423
+    .line 432
     :cond_0
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->sInstance:Lcom/htc/textselection/HtcTextSelectionManager;
 
@@ -487,7 +487,7 @@
     .locals 1
 
     .prologue
-    .line 427
+    .line 436
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->sInstance:Lcom/htc/textselection/HtcTextSelectionManager;
 
     return-object v0
@@ -497,19 +497,19 @@
     .locals 1
 
     .prologue
-    .line 556
+    .line 565
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mOutsideTouchListener:Lcom/htc/quickselection/HtcQuickSelectionWindow$OutsideTouchListener;
 
     if-nez v0, :cond_0
 
-    .line 557
+    .line 566
     new-instance v0, Lcom/htc/textselection/HtcTextSelectionManager$1;
 
     invoke-direct {v0, p0}, Lcom/htc/textselection/HtcTextSelectionManager$1;-><init>(Lcom/htc/textselection/HtcTextSelectionManager;)V
 
     sput-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mOutsideTouchListener:Lcom/htc/quickselection/HtcQuickSelectionWindow$OutsideTouchListener;
 
-    .line 569
+    .line 578
     :cond_0
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mOutsideTouchListener:Lcom/htc/quickselection/HtcQuickSelectionWindow$OutsideTouchListener;
 
@@ -858,7 +858,7 @@
     .locals 1
 
     .prologue
-    .line 480
+    .line 489
     const/4 v0, 0x1
 
     return v0
@@ -869,7 +869,7 @@
     .parameter "view"
 
     .prologue
-    .line 294
+    .line 295
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     if-eqz v0, :cond_0
@@ -890,10 +890,10 @@
 
     if-ne v0, p1, :cond_0
 
-    .line 296
+    .line 297
     const/4 v0, 0x1
 
-    .line 297
+    .line 298
     :goto_0
     return v0
 
@@ -909,12 +909,12 @@
     .parameter "y"
 
     .prologue
-    .line 348
+    .line 357
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mAutoScroller:Lcom/htc/textselection/AutoScroller;
 
     invoke-virtual {v0, p1, p2}, Lcom/htc/textselection/AutoScroller;->checkAutoScroll(FF)V
 
-    .line 349
+    .line 358
     return-void
 .end method
 
@@ -922,17 +922,17 @@
     .locals 1
 
     .prologue
-    .line 332
+    .line 341
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mMagnifier:Lcom/htc/textselection/Magnifier;
 
     if-eqz v0, :cond_0
 
-    .line 333
+    .line 342
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mMagnifier:Lcom/htc/textselection/Magnifier;
 
     invoke-virtual {v0}, Lcom/htc/textselection/Magnifier;->dismiss()V
 
-    .line 334
+    .line 343
     :cond_0
     return-void
 .end method
@@ -942,7 +942,7 @@
     .parameter "fakeDismiss"
 
     .prologue
-    .line 315
+    .line 324
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     if-eqz v0, :cond_0
@@ -955,20 +955,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 316
+    .line 325
     if-eqz p1, :cond_1
 
-    .line 317
+    .line 326
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     invoke-virtual {v0}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->fakeDismiss()V
 
-    .line 321
+    .line 330
     :cond_0
     :goto_0
     return-void
 
-    .line 319
+    .line 328
     :cond_1
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
@@ -982,12 +982,12 @@
     .parameter "anchoredView"
 
     .prologue
-    .line 344
+    .line 353
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mAutoScroller:Lcom/htc/textselection/AutoScroller;
 
     invoke-virtual {v0, p1}, Lcom/htc/textselection/AutoScroller;->findScrollableView(Landroid/widget/TextView;)V
 
-    .line 345
+    .line 354
     return-void
 .end method
 
@@ -996,16 +996,16 @@
     .parameter "target"
 
     .prologue
-    .line 615
+    .line 624
     iget-object v1, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
 
     if-nez v1, :cond_0
 
-    .line 619
+    .line 628
     :goto_0
     return-void
 
-    .line 616
+    .line 625
     :cond_0
     iget-object v1, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mPrivateHandler:Landroid/os/Handler;
 
@@ -1013,13 +1013,13 @@
 
     move-result-object v0
 
-    .line 617
+    .line 626
     .local v0, msg:Landroid/os/Message;
     const/16 v1, 0x3ea
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 618
+    .line 627
     iget-object v1, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mPrivateHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0x19
@@ -1034,16 +1034,16 @@
     .parameter "target"
 
     .prologue
-    .line 621
+    .line 630
     iget-object v1, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
 
     if-nez v1, :cond_0
 
-    .line 625
+    .line 634
     :goto_0
     return-void
 
-    .line 622
+    .line 631
     :cond_0
     iget-object v1, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mPrivateHandler:Landroid/os/Handler;
 
@@ -1051,13 +1051,13 @@
 
     move-result-object v0
 
-    .line 623
+    .line 632
     .local v0, msg:Landroid/os/Message;
     const/16 v1, 0x3e9
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 624
+    .line 633
     iget-object v1, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mPrivateHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0x19
@@ -1076,39 +1076,39 @@
 
     const/4 v4, 0x0
 
-    .line 384
+    .line 393
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 385
+    .line 394
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
 
-    .line 386
+    .line 395
     :cond_0
     invoke-direct {p0, p1}, Lcom/htc/textselection/HtcTextSelectionManager;->checkSkinChanged(Landroid/content/Context;)Z
 
-    .line 387
+    .line 396
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mAnchorBar:Landroid/graphics/drawable/Drawable;
 
     if-nez v1, :cond_1
 
-    .line 388
+    .line 397
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 389
+    .line 398
     .local v0, res:Landroid/content/res/Resources;
     sget-boolean v1, Lcom/htc/textselection/HtcTextSelectionManager;->HTC_SKIN_ENABLED:Z
 
     if-eqz v1, :cond_2
 
-    .line 390
+    .line 399
     const-string v1, "text_anchor_bar"
 
     invoke-static {p1, v1, v2}, Landroid/widget/HtcSkinUtil;->getDrawableResIdentifier(Landroid/content/Context;Ljava/lang/String;I)I
@@ -1121,7 +1121,7 @@
 
     sput-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mAnchorBar:Landroid/graphics/drawable/Drawable;
 
-    .line 396
+    .line 405
     :goto_0
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mAnchorBar:Landroid/graphics/drawable/Drawable;
 
@@ -1139,14 +1139,14 @@
 
     invoke-virtual {v1, v4, v4, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 399
+    .line 408
     .end local v0           #res:Landroid/content/res/Resources;
     :cond_1
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mAnchorBar:Landroid/graphics/drawable/Drawable;
 
     return-object v1
 
-    .line 394
+    .line 403
     .restart local v0       #res:Landroid/content/res/Resources;
     :cond_2
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -1167,39 +1167,39 @@
 
     const/4 v4, 0x0
 
-    .line 403
+    .line 412
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 404
+    .line 413
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
 
-    .line 405
+    .line 414
     :cond_0
     invoke-direct {p0, p1}, Lcom/htc/textselection/HtcTextSelectionManager;->checkSkinChanged(Landroid/content/Context;)Z
 
-    .line 406
+    .line 415
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mAnchorBarTop:Landroid/graphics/drawable/Drawable;
 
     if-nez v1, :cond_1
 
-    .line 407
+    .line 416
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 408
+    .line 417
     .local v0, res:Landroid/content/res/Resources;
     sget-boolean v1, Lcom/htc/textselection/HtcTextSelectionManager;->HTC_SKIN_ENABLED:Z
 
     if-eqz v1, :cond_2
 
-    .line 409
+    .line 418
     const-string v1, "text_anchor_bar_top"
 
     invoke-static {p1, v1, v2}, Landroid/widget/HtcSkinUtil;->getDrawableResIdentifier(Landroid/content/Context;Ljava/lang/String;I)I
@@ -1212,7 +1212,7 @@
 
     sput-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mAnchorBarTop:Landroid/graphics/drawable/Drawable;
 
-    .line 413
+    .line 422
     :goto_0
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mAnchorBarTop:Landroid/graphics/drawable/Drawable;
 
@@ -1230,14 +1230,14 @@
 
     invoke-virtual {v1, v4, v4, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 416
+    .line 425
     .end local v0           #res:Landroid/content/res/Resources;
     :cond_1
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mAnchorBarTop:Landroid/graphics/drawable/Drawable;
 
     return-object v1
 
-    .line 412
+    .line 421
     .restart local v0       #res:Landroid/content/res/Resources;
     :cond_2
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -1253,7 +1253,7 @@
     .locals 1
 
     .prologue
-    .line 552
+    .line 561
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
 
     return-object v0
@@ -1263,7 +1263,7 @@
     .locals 1
 
     .prologue
-    .line 340
+    .line 349
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mMagnifier:Lcom/htc/textselection/Magnifier;
 
     return-object v0
@@ -1274,12 +1274,12 @@
     .parameter "ctx"
 
     .prologue
-    .line 360
+    .line 369
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mWindowManager:Landroid/view/WindowManager;
 
     if-nez v0, :cond_0
 
-    .line 361
+    .line 370
     const-string v0, "window"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1290,7 +1290,7 @@
 
     iput-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mWindowManager:Landroid/view/WindowManager;
 
-    .line 362
+    .line 371
     :cond_0
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mWindowManager:Landroid/view/WindowManager;
 
@@ -1311,17 +1311,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 516
+    .line 525
     iget-object v3, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
 
     if-nez v3, :cond_1
 
-    .line 524
+    .line 533
     :cond_0
     :goto_0
     return v2
 
-    .line 518
+    .line 527
     :cond_1
     iget-object v3, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
 
@@ -1333,7 +1333,7 @@
 
     move-result-object v0
 
-    .line 519
+    .line 528
     .local v0, params:Landroid/view/ViewGroup$LayoutParams;
     instance-of v3, v0, Landroid/view/WindowManager$LayoutParams;
 
@@ -1341,10 +1341,10 @@
 
     move-object v1, v0
 
-    .line 520
+    .line 529
     check-cast v1, Landroid/view/WindowManager$LayoutParams;
 
-    .line 521
+    .line 530
     .local v1, windowParams:Landroid/view/WindowManager$LayoutParams;
     iget v3, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
@@ -1352,7 +1352,7 @@
 
     if-nez v3, :cond_0
 
-    .line 524
+    .line 533
     .end local v1           #windowParams:Landroid/view/WindowManager$LayoutParams;
     :cond_2
     iget v2, p0, Lcom/htc/textselection/HtcTextSelectionManager;->STATUS_BAR_HEIGHT:I
@@ -1366,13 +1366,13 @@
     .parameter "text"
 
     .prologue
-    .line 431
+    .line 440
     if-eqz p2, :cond_0
 
-    .line 432
+    .line 441
     invoke-static {p2}, Landroid/text/Selection;->removeSelection(Landroid/text/Spannable;)V
 
-    .line 433
+    .line 442
     :cond_0
     return-void
 .end method
@@ -1381,7 +1381,7 @@
     .locals 1
 
     .prologue
-    .line 356
+    .line 365
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mAutoScroller:Lcom/htc/textselection/AutoScroller;
 
     invoke-virtual {v0}, Lcom/htc/textselection/AutoScroller;->isScrolling()Z
@@ -1407,45 +1407,45 @@
     .parameter "sp"
 
     .prologue
-    .line 496
+    .line 505
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     if-eqz v0, :cond_0
 
-    .line 497
+    .line 506
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     invoke-virtual {v0}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->dismiss()V
 
-    .line 498
+    .line 507
     :cond_0
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mMagnifier:Lcom/htc/textselection/Magnifier;
 
     if-eqz v0, :cond_1
 
-    .line 499
+    .line 508
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mMagnifier:Lcom/htc/textselection/Magnifier;
 
     invoke-virtual {v0}, Lcom/htc/textselection/Magnifier;->dismiss()V
 
-    .line 500
+    .line 509
     :cond_1
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWatcher:Lcom/htc/textselection/HtcTextSelectionManager$TextSelectionWatcher;
 
     if-eqz v0, :cond_2
 
-    .line 501
+    .line 510
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWatcher:Lcom/htc/textselection/HtcTextSelectionManager$TextSelectionWatcher;
 
     invoke-interface {v0, p1}, Lcom/htc/textselection/HtcTextSelectionManager$TextSelectionWatcher;->onEndSelect(Landroid/widget/TextView;)V
 
-    .line 502
+    .line 511
     :cond_2
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/htc/textselection/HtcTextSelectionManager;->updateCurrentView(Landroid/widget/TextView;)V
 
-    .line 503
+    .line 512
     return-void
 .end method
 
@@ -1457,7 +1457,7 @@
     .parameter "previouslyFocusedRect"
 
     .prologue
-    .line 544
+    .line 553
     return-void
 .end method
 
@@ -1468,7 +1468,7 @@
     .parameter "event"
 
     .prologue
-    .line 476
+    .line 485
     const/4 v0, 0x0
 
     return v0
@@ -1482,7 +1482,7 @@
     .parameter "event"
 
     .prologue
-    .line 439
+    .line 448
     const/4 v0, 0x0
 
     return v0
@@ -1495,7 +1495,7 @@
     .parameter "event"
 
     .prologue
-    .line 452
+    .line 461
     const/4 v0, 0x0
 
     return v0
@@ -1509,7 +1509,7 @@
     .parameter "event"
 
     .prologue
-    .line 446
+    .line 455
     const/4 v0, 0x0
 
     return v0
@@ -1523,39 +1523,39 @@
     .parameter "oldt"
 
     .prologue
-    .line 531
+    .line 540
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     if-eqz v0, :cond_0
 
-    .line 532
+    .line 541
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     invoke-virtual {v0}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->dismiss()V
 
-    .line 533
+    .line 542
     :cond_0
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mMagnifier:Lcom/htc/textselection/Magnifier;
 
     if-eqz v0, :cond_1
 
-    .line 534
+    .line 543
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mMagnifier:Lcom/htc/textselection/Magnifier;
 
     invoke-virtual {v0}, Lcom/htc/textselection/Magnifier;->dismiss()V
 
-    .line 535
+    .line 544
     :cond_1
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_2
 
-    .line 536
+    .line 545
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->hideControllers()V
 
-    .line 538
+    .line 547
     :cond_2
     return-void
 .end method
@@ -1566,7 +1566,7 @@
     .parameter "sp"
 
     .prologue
-    .line 484
+    .line 493
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_0
@@ -1575,30 +1575,30 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 485
+    .line 494
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->stopSelectionActionMode()V
 
-    .line 486
+    .line 495
     invoke-virtual {p0, p1}, Lcom/htc/textselection/HtcTextSelectionManager;->updateCurrentView(Landroid/widget/TextView;)V
 
-    .line 488
+    .line 497
     :cond_0
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWatcher:Lcom/htc/textselection/HtcTextSelectionManager$TextSelectionWatcher;
 
     if-eqz v0, :cond_1
 
-    .line 489
+    .line 498
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWatcher:Lcom/htc/textselection/HtcTextSelectionManager$TextSelectionWatcher;
 
     invoke-interface {v0, p1}, Lcom/htc/textselection/HtcTextSelectionManager$TextSelectionWatcher;->onStartSelect(Landroid/widget/TextView;)V
 
-    .line 491
+    .line 500
     :cond_1
     invoke-direct {p0, p1, p2}, Lcom/htc/textselection/HtcTextSelectionManager;->doCJKSelection(Landroid/widget/TextView;Landroid/text/Spannable;)V
 
-    .line 493
+    .line 502
     return-void
 .end method
 
@@ -1609,7 +1609,7 @@
     .parameter "direction"
 
     .prologue
-    .line 459
+    .line 468
     return-void
 .end method
 
@@ -1620,7 +1620,7 @@
     .parameter "event"
 
     .prologue
-    .line 472
+    .line 481
     const/4 v0, 0x0
 
     return v0
@@ -1633,7 +1633,7 @@
     .parameter "event"
 
     .prologue
-    .line 465
+    .line 474
     const/4 v0, 0x0
 
     return v0
@@ -1645,7 +1645,7 @@
     .parameter "hasWindowFocus"
 
     .prologue
-    .line 549
+    .line 558
     return-void
 .end method
 
@@ -1655,7 +1655,7 @@
     .parameter "listener"
     .parameter "context"
     .parameter "canPaste"
-    .parameter "hasIMEswitch"
+    .parameter "showSelectAll"
 
     .prologue
     const/4 v1, 0x1
@@ -1724,10 +1724,33 @@
 
     invoke-virtual {v1}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->reset()V
 
-    .line 194
-    if-eqz p4, :cond_3
-
     .line 195
+    if-eqz p5, :cond_3
+
+    .line 196
+    sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
+
+    const v2, 0x102001f
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/htc/textselection/HtcTextSelectionManager;->icon_select_all:Landroid/graphics/drawable/Drawable;
+
+    const v4, 0x104000d
+
+    invoke-virtual {p3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v1, v2, v3, p2, v4}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->addButton(Ljava/lang/Object;Landroid/graphics/drawable/Drawable;Landroid/view/View$OnClickListener;Ljava/lang/String;)V
+
+    .line 197
+    :cond_3
+    if-eqz p4, :cond_4
+
+    .line 198
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     const v2, 0x1020022
@@ -1746,30 +1769,7 @@
 
     invoke-virtual {v1, v2, v3, p2, v4}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->addButton(Ljava/lang/Object;Landroid/graphics/drawable/Drawable;Landroid/view/View$OnClickListener;Ljava/lang/String;)V
 
-    .line 196
-    :cond_3
-    if-eqz p5, :cond_4
-
-    .line 197
-    sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
-
-    const v2, 0x1020024
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/htc/textselection/HtcTextSelectionManager;->icon_ime_switch:Landroid/graphics/drawable/Drawable;
-
-    const v4, 0x104039a
-
-    invoke-virtual {p3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v1, v2, v3, p2, v4}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->addButton(Ljava/lang/Object;Landroid/graphics/drawable/Drawable;Landroid/view/View$OnClickListener;Ljava/lang/String;)V
-
-    .line 198
+    .line 199
     :cond_4
     return-void
 
@@ -1795,66 +1795,66 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 239
+    .line 240
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v4
 
     invoke-direct {p0, v4}, Lcom/htc/textselection/HtcTextSelectionManager;->checkSkinChanged(Landroid/content/Context;)Z
 
-    .line 240
+    .line 241
     sput-boolean v5, Lcom/htc/textselection/HtcTextSelectionManager;->isPasteWindow:Z
 
-    .line 242
+    .line 243
     invoke-interface {p2}, Landroid/view/Menu;->size()I
 
     move-result v3
 
-    .line 243
+    .line 244
     .local v3, size:I
     iget v4, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mPreMenuSize:I
 
     if-ge v3, v4, :cond_0
 
-    .line 244
+    .line 245
     invoke-virtual {p0, v5}, Lcom/htc/textselection/HtcTextSelectionManager;->dismissQuickAction(Z)V
 
-    .line 245
+    .line 246
     const/4 v4, 0x0
 
     sput-object v4, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
-    .line 247
+    .line 248
     :cond_0
     iput v3, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mPreMenuSize:I
 
-    .line 250
+    .line 251
     sget-object v4, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     if-nez v4, :cond_1
 
-    .line 251
+    .line 252
     invoke-direct {p0, p1}, Lcom/htc/textselection/HtcTextSelectionManager;->prepareSelectionWindow(Landroid/view/View;)V
 
-    .line 252
+    .line 253
     :cond_1
     sget-object v4, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     invoke-virtual {v4}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->reset()V
 
-    .line 254
+    .line 255
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_0
     if-ge v0, v3, :cond_3
 
-    .line 255
+    .line 256
     invoke-interface {p2, v0}, Landroid/view/Menu;->getItem(I)Landroid/view/MenuItem;
 
     move-result-object v2
 
-    .line 256
+    .line 257
     .local v2, item:Landroid/view/MenuItem;
     invoke-interface {v2}, Landroid/view/MenuItem;->isVisible()Z
 
@@ -1862,16 +1862,16 @@
 
     if-eqz v4, :cond_2
 
-    .line 257
+    .line 258
     invoke-interface {v2}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v1
 
-    .line 258
+    .line 259
     .local v1, id:I
     sparse-switch v1, :sswitch_data_0
 
-    .line 254
+    .line 255
     .end local v1           #id:I
     :cond_2
     :goto_1
@@ -1879,7 +1879,7 @@
 
     goto :goto_0
 
-    .line 260
+    .line 261
     .restart local v1       #id:I
     :sswitch_0
     sget-object v5, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
@@ -1900,7 +1900,7 @@
 
     goto :goto_1
 
-    .line 263
+    .line 264
     :sswitch_1
     sget-object v5, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
@@ -1920,7 +1920,7 @@
 
     goto :goto_1
 
-    .line 266
+    .line 267
     :sswitch_2
     sget-object v5, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
@@ -1940,7 +1940,7 @@
 
     goto :goto_1
 
-    .line 269
+    .line 270
     :sswitch_3
     sget-object v5, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
@@ -1960,7 +1960,7 @@
 
     goto :goto_1
 
-    .line 272
+    .line 273
     :sswitch_4
     sget-object v5, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
@@ -1980,7 +1980,7 @@
 
     goto :goto_1
 
-    .line 275
+    .line 276
     :sswitch_5
     sget-object v5, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
@@ -2000,7 +2000,7 @@
 
     goto :goto_1
 
-    .line 278
+    .line 279
     :sswitch_6
     sget-object v5, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
@@ -2020,13 +2020,13 @@
 
     goto :goto_1
 
-    .line 281
+    .line 282
     :sswitch_7
     sget-object v4, Lcom/htc/textselection/HtcTextSelectionManager;->str_lookup:Ljava/lang/String;
 
     if-eqz v4, :cond_2
 
-    .line 282
+    .line 283
     sget-object v4, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2041,7 +2041,7 @@
 
     goto/16 :goto_1
 
-    .line 285
+    .line 286
     :sswitch_8
     sget-object v5, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
@@ -2061,13 +2061,13 @@
 
     goto/16 :goto_1
 
-    .line 291
+    .line 292
     .end local v1           #id:I
     .end local v2           #item:Landroid/view/MenuItem;
     :cond_3
     return-void
 
-    .line 258
+    .line 259
     :sswitch_data_0
     .sparse-switch
         0x54d -> :sswitch_7
@@ -2098,26 +2098,26 @@
 
     const/4 v2, 0x0
 
-    .line 202
+    .line 203
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
     invoke-direct {p0, v3}, Lcom/htc/textselection/HtcTextSelectionManager;->checkSkinChanged(Landroid/content/Context;)Z
 
-    .line 203
+    .line 204
     sput-boolean v2, Lcom/htc/textselection/HtcTextSelectionManager;->isPasteWindow:Z
 
-    .line 205
+    .line 206
     const/4 v0, 0x0
 
-    .line 206
+    .line 207
     .local v0, mMenuSize:I
     if-eqz p4, :cond_9
 
     move v0, v1
 
-    .line 207
+    .line 208
     :goto_0
     if-eqz p5, :cond_a
 
@@ -2126,19 +2126,21 @@
     :goto_1
     add-int/2addr v0, v3
 
-    .line 208
+    .line 209
     if-eqz p6, :cond_b
 
-    move v0, v1
+    move v3, v1
 
-    .line 209
     :goto_2
+    add-int/2addr v0, v3
+
+    .line 210
     if-eqz p7, :cond_c
 
     :goto_3
     add-int/2addr v0, v1
 
-    .line 210
+    .line 211
     if-eqz p8, :cond_d
 
     const/4 v1, 0x2
@@ -2146,7 +2148,7 @@
     :goto_4
     add-int/2addr v0, v1
 
-    .line 211
+    .line 212
     iget v1, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mPreMenuSize:I
 
     if-lt v0, v1, :cond_0
@@ -2155,37 +2157,37 @@
 
     if-nez v1, :cond_1
 
-    .line 212
+    .line 213
     :cond_0
     invoke-virtual {p0, v2}, Lcom/htc/textselection/HtcTextSelectionManager;->dismissQuickAction(Z)V
 
-    .line 213
+    .line 214
     const/4 v1, 0x0
 
     sput-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
-    .line 215
+    .line 216
     :cond_1
     iput v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mPreMenuSize:I
 
-    .line 218
+    .line 219
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     if-nez v1, :cond_2
 
-    .line 219
+    .line 220
     invoke-direct {p0, p1}, Lcom/htc/textselection/HtcTextSelectionManager;->prepareSelectionWindow(Landroid/view/View;)V
 
-    .line 220
+    .line 221
     :cond_2
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     invoke-virtual {v1}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->reset()V
 
-    .line 222
+    .line 223
     if-eqz p4, :cond_3
 
-    .line 223
+    .line 224
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     const v2, 0x102001f
@@ -2204,11 +2206,11 @@
 
     invoke-virtual {v1, v2, v3, p2, v4}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->addButton(Ljava/lang/Object;Landroid/graphics/drawable/Drawable;Landroid/view/View$OnClickListener;Ljava/lang/String;)V
 
-    .line 224
+    .line 225
     :cond_3
     if-eqz p5, :cond_4
 
-    .line 225
+    .line 226
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     const v2, 0x1020020
@@ -2227,11 +2229,11 @@
 
     invoke-virtual {v1, v2, v3, p2, v4}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->addButton(Ljava/lang/Object;Landroid/graphics/drawable/Drawable;Landroid/view/View$OnClickListener;Ljava/lang/String;)V
 
-    .line 226
+    .line 227
     :cond_4
     if-eqz p6, :cond_5
 
-    .line 227
+    .line 228
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     const v2, 0x1020021
@@ -2250,11 +2252,11 @@
 
     invoke-virtual {v1, v2, v3, p2, v4}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->addButton(Ljava/lang/Object;Landroid/graphics/drawable/Drawable;Landroid/view/View$OnClickListener;Ljava/lang/String;)V
 
-    .line 228
+    .line 229
     :cond_5
     if-eqz p7, :cond_6
 
-    .line 229
+    .line 230
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     const v2, 0x1020022
@@ -2273,16 +2275,16 @@
 
     invoke-virtual {v1, v2, v3, p2, v4}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->addButton(Ljava/lang/Object;Landroid/graphics/drawable/Drawable;Landroid/view/View$OnClickListener;Ljava/lang/String;)V
 
-    .line 230
+    .line 231
     :cond_6
     if-eqz p8, :cond_8
 
-    .line 231
+    .line 232
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->str_lookup:Ljava/lang/String;
 
     if-eqz v1, :cond_7
 
-    .line 232
+    .line 233
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     const/16 v2, 0x54d
@@ -2297,7 +2299,7 @@
 
     invoke-virtual {v1, v2, v3, p2, v4}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->addButton(Ljava/lang/Object;Landroid/graphics/drawable/Drawable;Landroid/view/View$OnClickListener;Ljava/lang/String;)V
 
-    .line 233
+    .line 234
     :cond_7
     sget-object v1, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
@@ -2317,39 +2319,59 @@
 
     invoke-virtual {v1, v2, v3, p2, v4}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->addButton(Ljava/lang/Object;Landroid/graphics/drawable/Drawable;Landroid/view/View$OnClickListener;Ljava/lang/String;)V
 
-    .line 235
+    .line 236
     :cond_8
     return-void
 
     :cond_9
     move v0, v2
 
-    .line 206
+    .line 207
     goto/16 :goto_0
 
     :cond_a
     move v3, v2
 
-    .line 207
+    .line 208
     goto/16 :goto_1
 
     :cond_b
-    move v0, v2
+    move v3, v2
 
-    .line 208
+    .line 209
     goto/16 :goto_2
 
     :cond_c
     move v1, v2
 
-    .line 209
+    .line 210
     goto/16 :goto_3
 
     :cond_d
     move v1, v2
 
-    .line 210
+    .line 211
     goto/16 :goto_4
+.end method
+
+.method public setFineTune(Z)V
+    .locals 1
+    .parameter "needFineTune"
+
+    .prologue
+    .line 319
+    sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
+
+    if-eqz v0, :cond_0
+
+    .line 320
+    sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
+
+    invoke-virtual {v0, p1}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->setFineTune(Z)V
+
+    .line 321
+    :cond_0
+    return-void
 .end method
 
 .method public setSelectionWatcher(Lcom/htc/textselection/HtcTextSelectionManager$TextSelectionWatcher;)V
@@ -2357,10 +2379,10 @@
     .parameter "watcher"
 
     .prologue
-    .line 697
+    .line 706
     iput-object p1, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWatcher:Lcom/htc/textselection/HtcTextSelectionManager$TextSelectionWatcher;
 
-    .line 698
+    .line 707
     return-void
 .end method
 
@@ -2373,17 +2395,17 @@
     .parameter "mode"
 
     .prologue
-    .line 326
+    .line 335
     invoke-direct {p0, p1}, Lcom/htc/textselection/HtcTextSelectionManager;->prepareMagnifier(Landroid/view/View;)V
 
-    .line 327
+    .line 336
     invoke-virtual {p1}, Landroid/widget/TextView;->getWindowToken()Landroid/os/IBinder;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 328
+    .line 337
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mMagnifier:Lcom/htc/textselection/Magnifier;
 
     move-object v1, p1
@@ -2398,7 +2420,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/htc/textselection/Magnifier;->show(Landroid/widget/TextView;IIILcom/htc/textselection/Magnifier$TouchingMode;)V
 
-    .line 329
+    .line 338
     :cond_0
     return-void
 .end method
@@ -2410,14 +2432,14 @@
     .parameter "flags"
 
     .prologue
-    .line 301
+    .line 302
     if-nez p1, :cond_0
 
-    .line 312
+    .line 313
     :goto_0
     return-void
 
-    .line 303
+    .line 304
     :cond_0
     invoke-virtual {p1}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
@@ -2425,18 +2447,18 @@
 
     invoke-direct {p0, v0}, Lcom/htc/textselection/HtcTextSelectionManager;->checkSkinChanged(Landroid/content/Context;)Z
 
-    .line 304
+    .line 305
     invoke-direct {p0, p1}, Lcom/htc/textselection/HtcTextSelectionManager;->prepareSelectionWindow(Landroid/view/View;)V
 
-    .line 305
+    .line 306
     invoke-virtual {p0, p1}, Lcom/htc/textselection/HtcTextSelectionManager;->updateCurrentView(Landroid/widget/TextView;)V
 
-    .line 306
+    .line 307
     and-int/lit8 v0, p3, 0x8
 
     if-eqz v0, :cond_1
 
-    .line 307
+    .line 308
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
     invoke-direct {p0}, Lcom/htc/textselection/HtcTextSelectionManager;->getOutsideTouchListener()Lcom/htc/quickselection/HtcQuickSelectionWindow$OutsideTouchListener;
@@ -2445,7 +2467,7 @@
 
     invoke-virtual {v0, v1}, Lcom/htc/quickselection/HtcQuickSelectionWindow;->setOutsideTouchListener(Lcom/htc/quickselection/HtcQuickSelectionWindow$OutsideTouchListener;)V
 
-    .line 311
+    .line 312
     :goto_1
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
@@ -2455,7 +2477,7 @@
 
     goto :goto_0
 
-    .line 309
+    .line 310
     :cond_1
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mSelectionWindow:Lcom/htc/quickselection/HtcQuickSelectionWindow;
 
@@ -2470,12 +2492,12 @@
     .locals 1
 
     .prologue
-    .line 352
+    .line 361
     sget-object v0, Lcom/htc/textselection/HtcTextSelectionManager;->mAutoScroller:Lcom/htc/textselection/AutoScroller;
 
     invoke-virtual {v0}, Lcom/htc/textselection/AutoScroller;->stopScroll()V
 
-    .line 353
+    .line 362
     return-void
 .end method
 
@@ -2486,29 +2508,29 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 506
+    .line 515
     if-eqz p1, :cond_1
 
     iget-object v0, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
 
     if-eq v0, p1, :cond_1
 
-    .line 507
+    .line 516
     iput-object p1, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
 
-    .line 513
+    .line 522
     :cond_0
     :goto_0
     return-void
 
-    .line 509
+    .line 518
     :cond_1
     if-nez p1, :cond_0
 
-    .line 510
+    .line 519
     iput-object v1, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mCurrentView:Landroid/widget/TextView;
 
-    .line 511
+    .line 520
     iput-object v1, p0, Lcom/htc/textselection/HtcTextSelectionManager;->mWindowManager:Landroid/view/WindowManager;
 
     goto :goto_0

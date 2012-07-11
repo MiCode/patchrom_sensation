@@ -253,7 +253,7 @@
     const/4 v5, 0x0
 
     .line 117
-    const v4, 0x2080b9a
+    const v4, 0x2080b9b
 
     invoke-virtual {p0, v4}, Lcom/htc/widget/HtcToggleButton;->setBackgroundResource(I)V
 
@@ -327,7 +327,7 @@
     invoke-static {p1, v4, p0}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
     .line 143
-    const v4, 0x2020265
+    const v4, 0x2020268
 
     invoke-virtual {p0, v4}, Lcom/htc/widget/HtcToggleButton;->findViewById(I)Landroid/view/View;
 
@@ -338,7 +338,7 @@
     iput-object v4, p0, Lcom/htc/widget/HtcToggleButton;->mTextOn:Landroid/widget/TextView;
 
     .line 144
-    const v4, 0x2020264
+    const v4, 0x2020267
 
     invoke-virtual {p0, v4}, Lcom/htc/widget/HtcToggleButton;->findViewById(I)Landroid/view/View;
 
@@ -355,7 +355,7 @@
 
     .line 146
     .local v3, res:Landroid/content/res/Resources;
-    const v4, 0x2080b9d
+    const v4, 0x2080b9e
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -388,7 +388,7 @@
     .line 149
     const-string v4, "toggle_on"
 
-    const v5, 0x2080b9c
+    const v5, 0x2080b9d
 
     invoke-static {p1, v4, v5}, Lcom/htc/util/skin/HtcSkinUtil;->getDrawableResIdentifier(Landroid/content/Context;Ljava/lang/String;I)I
 
@@ -401,7 +401,7 @@
     iput-object v4, p0, Lcom/htc/widget/HtcToggleButton;->mToggleOnDrawable:Landroid/graphics/drawable/Drawable;
 
     .line 150
-    const v4, 0x2080b9b
+    const v4, 0x2080b9c
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1708,7 +1708,7 @@
     .line 506
     iget-object v5, p0, Lcom/htc/widget/HtcToggleButton;->mTextOff:Landroid/widget/TextView;
 
-    const v6, 0x20c023e
+    const v6, 0x20c024a
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
@@ -1721,7 +1721,7 @@
     .line 508
     iget-object v5, p0, Lcom/htc/widget/HtcToggleButton;->mTextOn:Landroid/widget/TextView;
 
-    const v6, 0x20c023d
+    const v6, 0x20c0249
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
@@ -1731,7 +1731,7 @@
     .restart local v0       #config:Landroid/content/res/Configuration;
     .restart local v3       #skinPackage:Ljava/lang/String;
     :cond_4
-    const v5, 0x2080b9c
+    const v5, 0x2080b9d
 
     invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

@@ -33,17 +33,17 @@
     .parameter "viewAncestor"
 
     .prologue
-    .line 4182
+    .line 4189
     invoke-direct {p0}, Lcom/android/internal/view/IInputMethodCallback$Stub;-><init>()V
 
-    .line 4183
+    .line 4190
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/view/ViewRootImpl$InputMethodCallback;->mViewAncestor:Ljava/lang/ref/WeakReference;
 
-    .line 4184
+    .line 4191
     return-void
 .end method
 
@@ -55,7 +55,7 @@
     .parameter "handled"
 
     .prologue
-    .line 4187
+    .line 4194
     iget-object v1, p0, Landroid/view/ViewRootImpl$InputMethodCallback;->mViewAncestor:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -64,14 +64,14 @@
 
     check-cast v0, Landroid/view/ViewRootImpl;
 
-    .line 4188
+    .line 4195
     .local v0, viewAncestor:Landroid/view/ViewRootImpl;
     if-eqz v0, :cond_0
 
-    .line 4189
+    .line 4196
     invoke-virtual {v0, p1, p2}, Landroid/view/ViewRootImpl;->dispatchFinishedEvent(IZ)V
 
-    .line 4191
+    .line 4198
     :cond_0
     return-void
 .end method
@@ -81,6 +81,6 @@
     .parameter "session"
 
     .prologue
-    .line 4195
+    .line 4202
     return-void
 .end method

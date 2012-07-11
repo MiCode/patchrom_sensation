@@ -8686,7 +8686,6 @@
     .parameter "ev"
 
     .prologue
-    .line 3015
 
     invoke-direct/range {p0 .. p1}, Landroid/widget/AbsListView;->isOutOfTouchRange(Landroid/view/MotionEvent;)Z
 
@@ -8700,7 +8699,6 @@
 
     if-nez v26, :cond_2
 
-    .line 3018
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->isClickable()Z
 
     move-result v26

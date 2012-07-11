@@ -87,6 +87,8 @@
 
 .field public static final HEALTH_WEIGHING:I = 0x90c
 
+.field public static final PERIPHERAL_GAMEPAD:I = 0x508
+
 .field public static final PERIPHERAL_KEYBOARD:I = 0x540
 
 .field public static final PERIPHERAL_KEYBOARD_POINTING:I = 0x5c0

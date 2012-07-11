@@ -1078,6 +1078,21 @@
     return-object v0
 .end method
 
+.method public getActiveApnCarrier(Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
+    .parameter "apnType"
+
+    .prologue
+    .line 2525
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getActiveApnCarrier(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public getActiveApnHost(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
     .parameter "apnType"

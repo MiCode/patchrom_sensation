@@ -32,8 +32,8 @@
     <string name="optimal_3D_in_landscape">Hãy giữ điện thoại theo phương ngang để chụp ảnh 3D tốt nhất.</string>
     <string name="auto_upload_first_time_dialog">Bạn có muốn tự động sao lưu ảnh chụp trong máy ảnh lên Facebook?</string>
     <string name="auto_upload_confirm_dialog">Bạn có thể thay đổi cài đặt này bất cứ lúc nào trong phần Cài đặt-->Tải lên tự động</string>
-    <string name="other_usage_camera">Không thể mở máy ảnh vì nó đang được dùng bởi ứng dụng khác.</string>
-    <string name="other_usage_camcorder">Không thể mở máy quay phim vì nó đang được dùng bởi ứng dụng khác.</string>
+    <string name="other_usage_camera">Không thể bật máy ảnh vì nó đang được dùng bởi ứng dụng khác.</string>
+    <string name="other_usage_camcorder">Không thể bật máy quay phim vì nó đang được dùng bởi ứng dụng khác.</string>
     <string name="on_screen_btn_effects">Hiệu ứng</string>
     <string name="on_screen_btn_gallery">Bộ sưu tập</string>
     <string name="on_screen_btn_enhance_photo">Nâng cao</string>

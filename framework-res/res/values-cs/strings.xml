@@ -269,9 +269,9 @@
     <string name="turn_off_radio">Vypnout bezdrátové připojení</string>
     <string name="screen_lock">Zámek obrazovky</string>
     <string name="power_off">Vypnout</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Vypnout vyzvánění</string>
+    <string name="silent_mode_vibrate">Vyzvánění a vibrace</string>
+    <string name="silent_mode_ring">Zapnout vyzvánění</string>
     <string name="shutdown_progress">Vypínání...</string>
     <string name="shutdown_confirm">Váš telefon bude vypnut.</string>
     <string name="shutdown_confirm_question">Chcete zařízení vypnout?</string>
@@ -426,10 +426,10 @@
     <string name="permdesc_movePackage">Umožňuje aplikaci přesunout své zdroje z interní paměti na externí médium a opačně.</string>
     <string name="permlab_readLogs">číst citlivá data v protokolech</string>
     <string name="permdesc_readLogs">Umožňuje aplikaci číst různé systémové soubory protokolů. Toto nastavení aplikaci umožní získat obecné informace o činnostech s telefonem, které by mohly obsahovat osobní či soukromé informace.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">použít libovolný dekodér médií pro přehrávání</string>
+    <string name="permdesc_anyCodecForPlayback">Umožňuje aplikaci použít libovolný nainstalovaný dekodér médií pro přehrávání.</string>
+    <string name="permlab_readWriteOmaDrm">přístup ke složce o oma DRM</string>
+    <string name="permdesc_readWriteOmaDrm">Umožňuje aplikaci číst nebo zapisovat do složky o OMA DRM.</string>
     <string name="permlab_diagnostic">čtení nebo zápis do prostředků funkce diag</string>
     <string name="permdesc_diagnostic">Umožňuje aplikaci číst libovolné prostředky ve skupině diag, např. soubory ve složce /dev, a zapisovat do nich. Může dojít k ovlivnění stability a bezpečnosti systému. Toto nastavení by měl používat pouze výrobce či operátor pro diagnostiku hardwaru.</string>
     <string name="permlab_changeComponentState">povolení či zakázání komponent aplikací</string>
@@ -573,7 +573,7 @@
     <string name="permlab_accessWimaxState">zobrazit stav WiMAX</string>
     <string name="permdesc_accessWimaxState">Umožňuje aplikaci zobrazit informace o stavu připojení WiMAX.</string>
     <string name="permlab_changeWimaxState">změna stavu WiMAX</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">Umožňuje aplikaci připojit se k síti WiMAX a odpojit se.</string>
     <string name="permlab_bluetoothAdmin">správa rozhraní Bluetooth</string>
     <string name="permdesc_bluetoothAdmin">Umožňuje aplikaci konfigurovat místní telefon s rozhraním Bluetooth a vyhledávat a párovat vzdálená zařízení.</string>
     <string name="permlab_bluetooth">vytvoření připojení Bluetooth</string>
@@ -826,7 +826,7 @@ Vyberte OK, chcete-li pokračovat, nebo Zrušit, chcete-li na stránce zůstat."
     <string name="autofill_county">Okres</string>
     <string name="autofill_island">Ostrov</string>
     <string name="autofill_district">Okres</string>
-    <string name="autofill_department">Department</string>
+    <string name="autofill_department">Úsek</string>
     <string name="autofill_prefecture">Prefektura</string>
     <string name="autofill_parish">Farnost</string>
     <string name="autofill_area">Oblast</string>
@@ -962,7 +962,7 @@ Chcete jej ukončit?"</string>
     <string name="ringtone_silent">Ticho</string>
     <string name="ringtone_picker_title">Vyzváněcí tóny</string>
     <string name="ringtone_unknown">Neznámý vyzváněcí tón</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Připojit se k síti Wi-Fi</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Připojení k síti Wi-Fi se nezdařilo</string>
     <string name="wifi_watchdog_network_disabled_detailed">" má pomalé připojení k internetu."</string>
@@ -1160,7 +1160,7 @@ pro účet %s"</string>
     <string name="description_target_camera">Fotoaparát</string>
     <string name="description_target_silent">Tichý</string>
     <string name="description_target_soundon">Zapnout zvuk</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">Pro odemčení rychle přesuňte prst.</string>
     <string name="keyboard_headset_required_to_hear_password">Chcete-li slyšet, které klávesy jste při zadávání hesla stiskli, připojte sluchátka.</string>
     <string name="keyboard_password_character_no_headset">Tečka.</string>
     <string name="action_bar_home_description">Přejít na plochu</string>
@@ -1203,9 +1203,9 @@ pro účet %s"</string>
     <string name="share_action_provider_share_with">Sdílet s...</string>
     <string name="status_bar_device_locked">Zařízení je uzamčeno.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Odesílání...</string>
+    <string name="launchBrowserDefault">Spustit prohlížeč?</string>
+    <string name="SetupCallDefault">Přijmout hovor?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">Přístup na 4G</string>
     <string name="permlab_changeWimaxMulticastState">povolit příjem WiMAX Multicast</string>
@@ -1267,16 +1267,17 @@ pro účet %s"</string>
     <string name="install_notify_title">Instalace blokována ze strany IT:</string>
     <string name="uninstall_notify_title">Odinstalace blokována ze strany IT:</string>
     <string name="wifi_notify_title">Zákaz Wi-Fi ze strany IT</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Vymažte výchozí v Nastavení plochy > Aplikace.</string>
+    <string name="sim_puk_contact_customer_care_information">Pro získání kódu PUK se obraťte na oddělení péče o zákazníky</string>
     <string name="permlab_accessCWFolder">Přístup ke složce funkce průvodce přizpůsobení</string>
     <string name="permdesc_accessCWFolder">Umožňuje aplikaci přístup ke složce funkce průvodce přizpůsobení</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Přístup do složky pro obnovení</string>
+    <string name="permdesc_accessRecoveryFolder">Umožňuje aplikaci přístup ke složce pro obnovení</string>
     <string name="permlab_setappname">Dynamika pro změnu názvu aplikace</string>
     <string name="permdesc_setappname">Umožňuje aplikaci dynamicky změnit specifikaci názvu aplikace.</string>
     <string name="text_limitation">Ke sdílení nelze vybrat příliš mnoho slov.</string>
     <string name="sms_roam_guild_dialog_title">Odchozí zpráva</string>
-    <string name="sms_roam_guild_dialog_subject">Využíváte roaming na mezinárodních sítích. Odeslání této zprávy může znamenat další poplatky ze strany vašeho bezdrátového poskytovatele služeb. Chcete:</string>
+    <string name="sms_roam_guild_dialog_subject">Využíváte roaming na mezinárodních sítích. Odeslání této zprávy může znamenat další poplatky ze strany vašeho poskytovatele bezdrátových služeb. Chcete:</string>
     <string name="sms_roam_guild_dialog_radio_auto_send">Automaticky odeslat při národním pokrytí</string>
     <string name="sms_roam_guild_dialog_send_now">Odeslat nyní</string>
     <string name="sms_roam_guild_dialog_send_later">Odeslat později</string>
@@ -1311,5 +1312,5 @@ pro účet %s"</string>
     <string name="font_color">Barva písma</string>
     <string name="font_settings">Nastavení písma</string>
     <string name="font_alignment">Zarovnání písma</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Konfigurovat</string>
 </resources>

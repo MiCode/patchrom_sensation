@@ -43,7 +43,7 @@
     .locals 3
 
     .prologue
-    .line 2155
+    .line 2215
     const/4 v0, 0x6
 
     new-array v0, v0, [Ljava/lang/String;
@@ -93,7 +93,7 @@
     .locals 0
 
     .prologue
-    .line 2153
+    .line 2213
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -109,10 +109,10 @@
 
     const/4 v7, 0x1
 
-    .line 2212
+    .line 2272
     const/4 v6, 0x0
 
-    .line 2213
+    .line 2273
     .local v6, primaryCursor:Landroid/database/Cursor;
     if-eqz p0, :cond_0
 
@@ -122,7 +122,7 @@
 
     if-lez v0, :cond_0
 
-    .line 2214
+    .line 2274
     const-string v0, "contact_id=%d AND is_primary<>0"
 
     new-array v1, v7, [Ljava/lang/Object;
@@ -139,7 +139,7 @@
 
     move-result-object v3
 
-    .line 2216
+    .line 2276
     .local v3, selection:Ljava/lang/String;
     sget-object v1, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
@@ -153,10 +153,10 @@
 
     move-result-object v6
 
-    .line 2221
+    .line 2281
     if-eqz v6, :cond_0
 
-    .line 2222
+    .line 2282
     :goto_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -164,7 +164,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2223
+    .line 2283
     const/4 v0, 0x5
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getInt(I)I
@@ -173,12 +173,12 @@
 
     if-ne v7, v0, :cond_1
 
-    .line 2233
+    .line 2293
     .end local v3           #selection:Ljava/lang/String;
     :cond_0
     return-object v6
 
-    .line 2228
+    .line 2288
     .restart local v3       #selection:Ljava/lang/String;
     :cond_1
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
@@ -194,10 +194,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2188
+    .line 2248
     const/4 v6, 0x0
 
-    .line 2189
+    .line 2249
     .local v6, mailCursor:Landroid/database/Cursor;
     if-eqz p0, :cond_0
 
@@ -207,7 +207,7 @@
 
     if-lez v0, :cond_0
 
-    .line 2190
+    .line 2250
     const-string v0, "contact_id=%d"
 
     const/4 v1, 0x1
@@ -226,7 +226,7 @@
 
     move-result-object v3
 
-    .line 2192
+    .line 2252
     .local v3, selection:Ljava/lang/String;
     sget-object v1, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
@@ -240,7 +240,7 @@
 
     move-result-object v6
 
-    .line 2198
+    .line 2258
     .end local v3           #selection:Ljava/lang/String;
     :cond_0
     return-object v6

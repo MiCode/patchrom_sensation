@@ -1,0 +1,84 @@
+-----BEGIN CERTIFICATE-----
+MIIE7TCCBFagAwIBAgIEOAOR7jANBgkqhkiG9w0BAQQFADCByTELMAkGA1UEBhMC
+VVMxFDASBgNVBAoTC0VudHJ1c3QubmV0MUgwRgYDVQQLFD93d3cuZW50cnVzdC5u
+ZXQvQ2xpZW50X0NBX0luZm8vQ1BTIGluY29ycC4gYnkgcmVmLiBsaW1pdHMgbGlh
+Yi4xJTAjBgNVBAsTHChjKSAxOTk5IEVudHJ1c3QubmV0IExpbWl0ZWQxMzAxBgNV
+BAMTKkVudHJ1c3QubmV0IENsaWVudCBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTAe
+Fw05OTEwMTIxOTI0MzBaFw0xOTEwMTIxOTU0MzBaMIHJMQswCQYDVQQGEwJVUzEU
+MBIGA1UEChMLRW50cnVzdC5uZXQxSDBGBgNVBAsUP3d3dy5lbnRydXN0Lm5ldC9D
+bGllbnRfQ0FfSW5mby9DUFMgaW5jb3JwLiBieSByZWYuIGxpbWl0cyBsaWFiLjEl
+MCMGA1UECxMcKGMpIDE5OTkgRW50cnVzdC5uZXQgTGltaXRlZDEzMDEGA1UEAxMq
+RW50cnVzdC5uZXQgQ2xpZW50IENlcnRpZmljYXRpb24gQXV0aG9yaXR5MIGdMA0G
+CSqGSIb3DQEBAQUAA4GLADCBhwKBgQDIOpleMRffrCdvkHvkGf9FozTC28GoT/Bo
+6oT9n3V5z8GKUZSvx1cDR2SerYIbWtp/N3hHuzeYEpbOxhN979IMMFGpOZ5V+Pux
+5zDeg7K6PvHViTs7hbqqdCz+PzFur5GVbgbUB01LLFZHGARS2g4Qk79jkJvh34zm
+AqTmT173iwIBA6OCAeAwggHcMBEGCWCGSAGG+EIBAQQEAwIABzCCASIGA1UdHwSC
+ARkwggEVMIHkoIHhoIHepIHbMIHYMQswCQYDVQQGEwJVUzEUMBIGA1UEChMLRW50
+cnVzdC5uZXQxSDBGBgNVBAsUP3d3dy5lbnRydXN0Lm5ldC9DbGllbnRfQ0FfSW5m
+by9DUFMgaW5jb3JwLiBieSByZWYuIGxpbWl0cyBsaWFiLjElMCMGA1UECxMcKGMp
+IDE5OTkgRW50cnVzdC5uZXQgTGltaXRlZDEzMDEGA1UEAxMqRW50cnVzdC5uZXQg
+Q2xpZW50IENlcnRpZmljYXRpb24gQXV0aG9yaXR5MQ0wCwYDVQQDEwRDUkwxMCyg
+KqAohiZodHRwOi8vd3d3LmVudHJ1c3QubmV0L0NSTC9DbGllbnQxLmNybDArBgNV
+HRAEJDAigA8xOTk5MTAxMjE5MjQzMFqBDzIwMTkxMDEyMTkyNDMwWjALBgNVHQ8E
+BAMCAQYwHwYDVR0jBBgwFoAUxPucKXuXzUyW/O5bs8qZdIuV6kwwHQYDVR0OBBYE
+FMT7nCl7l81MlvzuW7PKmXSLlepMMAwGA1UdEwQFMAMBAf8wGQYJKoZIhvZ9B0EA
+BAwwChsEVjQuMAMCBJAwDQYJKoZIhvcNAQEEBQADgYEAP66K8ddmAwWePvrqHEa7
+pFuPeJoSSJn59DXeDDYHAmsQOokUgZwxpnyyQbJq5wcBoUv5nyU7lsqZwz6hURzz
+wy5E97BnRqqS5TvaHBkUODDV4qIxJS7x7EU47fgGWANzYrAQMY9Av2TgXD7FTx/a
+EkP/TOYGJqibGapEPHayXOw=
+-----END CERTIFICATE-----
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 939758062 (0x380391ee)
+        Signature Algorithm: md5WithRSAEncryption
+        Issuer: C=US, O=Entrust.net, OU=www.entrust.net/Client_CA_Info/CPS incorp. by ref. limits liab., OU=(c) 1999 Entrust.net Limited, CN=Entrust.net Client Certification Authority
+        Validity
+            Not Before: Oct 12 19:24:30 1999 GMT
+            Not After : Oct 12 19:54:30 2019 GMT
+        Subject: C=US, O=Entrust.net, OU=www.entrust.net/Client_CA_Info/CPS incorp. by ref. limits liab., OU=(c) 1999 Entrust.net Limited, CN=Entrust.net Client Certification Authority
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:c8:3a:99:5e:31:17:df:ac:27:6f:90:7b:e4:19:
+                    ff:45:a3:34:c2:db:c1:a8:4f:f0:68:ea:84:fd:9f:
+                    75:79:cf:c1:8a:51:94:af:c7:57:03:47:64:9e:ad:
+                    82:1b:5a:da:7f:37:78:47:bb:37:98:12:96:ce:c6:
+                    13:7d:ef:d2:0c:30:51:a9:39:9e:55:f8:fb:b1:e7:
+                    30:de:83:b2:ba:3e:f1:d5:89:3b:3b:85:ba:aa:74:
+                    2c:fe:3f:31:6e:af:91:95:6e:06:d4:07:4d:4b:2c:
+                    56:47:18:04:52:da:0e:10:93:bf:63:90:9b:e1:df:
+                    8c:e6:02:a4:e6:4f:5e:f7:8b
+                Exponent: 3 (0x3)
+        X509v3 extensions:
+            Netscape Cert Type: 
+                SSL CA, S/MIME CA, Object Signing CA
+            X509v3 CRL Distribution Points: 
+                DirName:/C=US/O=Entrust.net/OU=www.entrust.net/Client_CA_Info/CPS incorp. by ref. limits liab./OU=(c) 1999 Entrust.net Limited/CN=Entrust.net Client Certification Authority/CN=CRL1
+                URI:http://www.entrust.net/CRL/Client1.crl
+
+            X509v3 Private Key Usage Period: 
+                Not Before: Oct 12 19:24:30 1999 GMT, Not After: Oct 12 19:24:30 2019 GMT
+            X509v3 Key Usage: 
+                Certificate Sign, CRL Sign
+            X509v3 Authority Key Identifier: 
+                keyid:C4:FB:9C:29:7B:97:CD:4C:96:FC:EE:5B:B3:CA:99:74:8B:95:EA:4C
+
+            X509v3 Subject Key Identifier: 
+                C4:FB:9C:29:7B:97:CD:4C:96:FC:EE:5B:B3:CA:99:74:8B:95:EA:4C
+            X509v3 Basic Constraints: 
+                CA:TRUE
+            1.2.840.113533.7.65.0: 
+                0
+..V4.0....
+    Signature Algorithm: md5WithRSAEncryption
+        3f:ae:8a:f1:d7:66:03:05:9e:3e:fa:ea:1c:46:bb:a4:5b:8f:
+        78:9a:12:48:99:f9:f4:35:de:0c:36:07:02:6b:10:3a:89:14:
+        81:9c:31:a6:7c:b2:41:b2:6a:e7:07:01:a1:4b:f9:9f:25:3b:
+        96:ca:99:c3:3e:a1:51:1c:f3:c3:2e:44:f7:b0:67:46:aa:92:
+        e5:3b:da:1c:19:14:38:30:d5:e2:a2:31:25:2e:f1:ec:45:38:
+        ed:f8:06:58:03:73:62:b0:10:31:8f:40:bf:64:e0:5c:3e:c5:
+        4f:1f:da:12:43:ff:4c:e6:06:26:a8:9b:19:aa:44:3c:76:b2:
+        5c:ec
+SHA1 Fingerprint=DA:79:C1:71:11:50:C2:34:39:AA:2B:0B:0C:62:FD:55:B2:F9:F5:80

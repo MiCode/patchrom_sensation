@@ -4003,7 +4003,7 @@
     .parameter "title"
 
     .prologue
-    const v3, 0x2020260
+    const v3, 0x2020263
 
     .line 828
     invoke-super {p0, p1}, Landroid/app/ListActivity;->setTitle(Ljava/lang/CharSequence;)V

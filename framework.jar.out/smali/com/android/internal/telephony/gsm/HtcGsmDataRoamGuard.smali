@@ -536,7 +536,7 @@
 
     .line 283
     :cond_0
-    const-string v1, "handleMobileAllowStatusChange() is only supported in Sprint world phone"
+    const-string/jumbo v1, "handleMobileAllowStatusChange() is only supported in Sprint world phone"
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/gsm/HtcGsmDataRoamGuard;->log(Ljava/lang/String;)V
 
@@ -563,7 +563,7 @@
     if-ne v1, p2, :cond_2
 
     .line 290
-    const-string v1, "handleMobileAllowStatusChange(), mobile allow setting is not changed"
+    const-string/jumbo v1, "handleMobileAllowStatusChange(), mobile allow setting is not changed"
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/gsm/HtcGsmDataRoamGuard;->log(Ljava/lang/String;)V
 

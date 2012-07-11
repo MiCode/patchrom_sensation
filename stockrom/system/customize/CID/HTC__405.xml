@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<customization_form>
+  <category name="system">
+    <module name="locale">
+      <function>
+        <set name="single">
+          <item name="total_list">de_IT;en_IT;es_IT;fr_IT;it_IT;</item>
+          <item type="boolean" name="de_IT">yes</item>
+          <item type="boolean" name="en_IT">yes</item>
+          <item type="boolean" name="es_IT">yes</item>
+          <item type="boolean" name="fr_IT">yes</item>
+          <item type="boolean" name="it_IT">yes</item>
+        </set>
+      </function>
+    </module>
+    <module name="deviceData">
+      <function>
+        <set name="single">
+          <item name="device_name">HTC Sensation XE with Beats Audio Z715e</item>
+        </set>
+      </function>
+    </module>
+    <module name="deviceData1">
+      <function>
+        <set name="single">
+          <item name="sw_number">NA</item>
+        </set>
+      </function>
+    </module>
+    <module name="Settings">
+      <function name="screen_timeout">
+        <set name="plenty">
+          <item name="value1">15000</item>
+          <item name="value2">30000</item>
+          <item name="value3">45000</item>
+          <item name="value4">60000</item>
+          <item name="value5">120000</item>
+          <item name="value6">600000</item>
+          <item name="value7">-1</item>
+        </set>
+      </function>
+    </module>
+    <module name="defaultTime1224">
+      <function>
+        <set name="single">
+          <item name="default">24</item>
+        </set>
+      </function>
+    </module>
+    <module name="InputMethod">
+      <function name="IME_language_set">
+        <set name="single">
+          <item type="boolean" name="English">yes</item>
+          <item type="boolean" name="German">yes</item>
+          <item type="boolean" name="France">yes</item>
+          <item type="boolean" name="Italian">yes</item>
+          <item type="boolean" name="Spanish">yes</item>
+          <item type="boolean" name="Russian">yes</item>
+          <item type="boolean" name="Czech">yes</item>
+          <item type="boolean" name="Danish">yes</item>
+          <item type="boolean" name="Swedish">yes</item>
+          <item type="boolean" name="Norwegian">yes</item>
+          <item type="boolean" name="Dutch">yes</item>
+          <item type="boolean" name="Polish">yes</item>
+          <item type="boolean" name="Portugal">yes</item>
+          <item type="boolean" name="Greek">yes</item>
+          <item type="boolean" name="Turkish">yes</item>
+          <item type="boolean" name="Finnish">yes</item>
+          <item type="boolean" name="Hungarian">yes</item>
+          <item type="boolean" name="Romanian">yes</item>
+          <item type="boolean" name="Slovak">yes</item>
+          <item type="boolean" name="Croatian">yes</item>
+          <item type="boolean" name="Slovenian">yes</item>
+          <item type="boolean" name="Serbian">yes</item>
+          <item type="boolean" name="Bulgarian">yes</item>
+        </set>
+      </function>
+    </module>
+  </category>
+  <category name="application">
+    <module name="Crash_Report">
+      <function name="setting">
+        <set name="single">
+          <item name="turn_off_report" type="boolean">no</item>
+          <item name="turn_off_application_log" type="boolean">yes</item>
+        </set>
+      </function>
+    </module>
+    <module name="FOTA">
+      <function name="settings">
+        <set name="single">
+          <item name="Enable_FOTA_UI" type="boolean">yes</item>
+          <item name="Enable_Manual_Check" type="boolean">yes</item>
+          <item name="Default_Scheduled_Ckeck" type="boolean">yes</item>
+          <item name="Default_Download_Wifi" type="boolean">yes</item>
+        </set>
+      </function>
+    </module>
+  </category>
+  <BootConfiguration>
+    <BootAnimation animation="/system/customize/resource/bootanimation.zip" audio="/system/customize/resource/android_audio.mp3" />
+  </BootConfiguration>
+  <ShutdownConfiguration>
+    <ShutdownAnimation image_png="/system/customize/resource/downanimation.zip" image="" fps="15" />
+  </ShutdownConfiguration>
+  <category name="SettingsProvider">
+    <module name="res">
+      <function name="values">
+        <set name="single">
+          <item name="def_screen_off_timeout">45000</item>
+          <item name="def_2g_on">1</item>
+        </set>
+      </function>
+    </module>
+  </category>
+  <category name="Settings">
+    <module name="properties">
+      <function>
+        <set name="single">
+          <item name="market_name">HTC Sensation XE con Beats Audio</item>
+        </set>
+      </function>
+    </module>
+  </category>
+</customization_form>

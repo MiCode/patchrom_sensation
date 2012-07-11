@@ -9,7 +9,7 @@
     <string name="no_storage_camcorder">使用摄像机前请先插入存储卡。</string>
     <string name="not_write_storage">文件权限不足，无法将文件保存到存储卡上。</string>
     <string name="not_enough_space">存储卡已满。</string>
-    <string name="not_enough_phone_storage">您的手机内存已满。</string>
+    <string name="not_enough_phone_storage">您的手机存储已满。</string>
     <string name="mass_storage_camera">存储卡已装载，相机不可用。请断开 USB 数据线再继续。</string>
     <string name="mass_storage_camcorder">存储卡已装载，摄像机不可用。请断开 USB 数据线再继续。</string>
     <string name="mass_storage_phone_camera">手机正作为 USB 存储器使用，因此相机当前不可用。请断开 USB 线连接再继续。</string>
@@ -94,7 +94,7 @@
     <string name="storage_card">存储卡</string>
     <string name="fast_frame_recording">慢镜头(2X)</string>
     <string name="stereo_recording">立体声录音</string>
-    <string name="storage_phone">手机内存</string>
+    <string name="storage_phone">手机存储</string>
     <string name="geo_tagging">地理标签照片</string>
     <string name="post_processing">自动增强</string>
     <string name="auto_focus">自动对焦</string>
@@ -199,10 +199,10 @@
     <string name="text_title_location_disable">位置来源被禁用</string>
     <string name="text_message_location_disable">该应用程序需要启动定位功能。在设置中启动无线网络或者GPS卫星，以获取当前位置。</string>
     <string name="txt_query_switch_storage_title">设置存储位置</string>
-    <string name="txt_query_switch_to_phone_storage">是否切换至手机内存？</string>
+    <string name="txt_query_switch_to_phone_storage">是否切换至手机存储？</string>
     <string name="txt_query_switch_to_sdcard">是否切换至存储卡？</string>
-    <string name="txt_switch_to_phone_storage">存储卡已满或不可用。存储已切换至手机内存。</string>
-    <string name="txt_switch_to_sdcard">手机内存已满或不可用。存储已切换至存储卡。</string>
+    <string name="txt_switch_to_phone_storage">存储卡已满或不可用。存储已切换至手机存储。</string>
+    <string name="txt_switch_to_sdcard">手机存储已满或不可用。存储已切换至存储卡。</string>
     <string name="usc_online_album">网络相册</string>
     <string name="review_btn_setas">设为</string>
     <string name="review_btn_play">播放</string>

@@ -152,7 +152,7 @@
     .line 38
     sparse-switch p1, :sswitch_data_0
 
-    .line 329
+    .line 331
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
@@ -1214,16 +1214,42 @@
 
     move-result v11
 
-    .restart local v11       #_arg9:I
-    move-object/from16 v1, p0
-
-    .line 324
-    invoke-virtual/range {v1 .. v11}, Lcom/android/internal/telephony/ITelephonyRegistry$Stub;->HtcNotifyDataConnection(IZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/net/LinkProperties;Landroid/net/LinkCapabilities;IZI)V
-
     .line 325
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+    .restart local v11       #_arg9:I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v24
+
+    .local v24, _arg10:Ljava/lang/String;
+    move-object/from16 v13, p0
+
+    move v14, v2
+
+    move v15, v3
+
+    move-object/from16 v16, v4
+
+    move-object/from16 v17, v5
+
+    move-object/from16 v18, v6
+
+    move-object/from16 v19, v7
+
+    move-object/from16 v20, v8
+
+    move/from16 v21, v9
+
+    move/from16 v22, v10
+
+    move/from16 v23, v11
 
     .line 326
+    invoke-virtual/range {v13 .. v24}, Lcom/android/internal/telephony/ITelephonyRegistry$Stub;->HtcNotifyDataConnection(IZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/net/LinkProperties;Landroid/net/LinkCapabilities;IZILjava/lang/String;)V
+
+    .line 327
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 328
     const/4 v1, 0x1
 
     goto/16 :goto_0
@@ -1238,6 +1264,7 @@
     .end local v9           #_arg7:I
     .end local v10           #_arg8:Z
     .end local v11           #_arg9:I
+    .end local v24           #_arg10:Ljava/lang/String;
     :cond_b
     const/4 v3, 0x0
 

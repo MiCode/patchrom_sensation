@@ -1503,73 +1503,7 @@
     <public type="string" name="main_bar_flash_auto" id="0x7f0a01bf" />
     <public type="string" name="main_bar_flash_on" id="0x7f0a01c0" />
     <public type="string" name="main_bar_flash_off" id="0x7f0a01c1" />
-    <public type="string" name="ap_version_id" id="0x7f0a0204" />
-    <public type="string" name="camera_label" id="0x7f0a01c2" />
-    <public type="string" name="mass_storage_mode" id="0x7f0a01c3" />
-    <public type="string" name="dcf_filenumber_full" id="0x7f0a01c4" />
-    <public type="string" name="capture_mode_selection" id="0x7f0a01c5" />
-    <public type="string" name="brightness" id="0x7f0a01c6" />
-    <public type="string" name="menu_zoom" id="0x7f0a01c7" />
-    <public type="string" name="advanced" id="0x7f0a01c8" />
-    <public type="string" name="image_mode" id="0x7f0a01c9" />
-    <public type="string" name="video_mode" id="0x7f0a01ca" />
-    <public type="string" name="contact_mode" id="0x7f0a01cb" />
-    <public type="string" name="wb_auto" id="0x7f0a01cc" />
-    <public type="string" name="wb_twilight" id="0x7f0a01cd" />
-    <public type="string" name="wb_shade" id="0x7f0a01ce" />
-    <public type="string" name="wb_warm_fluorescent" id="0x7f0a01cf" />
-    <public type="string" name="menu_self_timer_off" id="0x7f0a01d0" />
-    <public type="string" name="menu_self_timer_two" id="0x7f0a01d1" />
-    <public type="string" name="menu_self_timer_ten" id="0x7f0a01d2" />
-    <public type="string" name="ok" id="0x7f0a01d3" />
-    <public type="string" name="cancel" id="0x7f0a01d4" />
-    <public type="string" name="preferences_label" id="0x7f0a01d5" />
-    <public type="string" name="pref_gallery_category" id="0x7f0a01d6" />
-    <public type="string" name="support_portrait" id="0x7f0a01d7" />
-    <public type="string" name="image_properties" id="0x7f0a01d8" />
-    <public type="string" name="setdef_yes" id="0x7f0a01d9" />
-    <public type="string" name="setdef_no" id="0x7f0a01da" />
-    <public type="string" name="submenu_done" id="0x7f0a01db" />
-    <public type="string" name="submenu_cancel" id="0x7f0a01dc" />
-    <public type="string" name="pref_review_duration_off" id="0x7f0a01dd" />
-    <public type="string" name="pref_review_duration_on" id="0x7f0a01de" />
-    <public type="string" name="pref_review_duration_5s" id="0x7f0a01df" />
-    <public type="string" name="pref_review_duration_10s" id="0x7f0a01e0" />
-    <public type="string" name="pref_review_duration_no_limit" id="0x7f0a01e1" />
-    <public type="string" name="pref_quality_basic" id="0x7f0a01e2" />
-    <public type="string" name="pref_flash_auto" id="0x7f0a01e3" />
-    <public type="string" name="pref_flash_on" id="0x7f0a01e4" />
-    <public type="string" name="pref_flash_off" id="0x7f0a01e5" />
-    <public type="string" name="pref_selftimer_Off" id="0x7f0a01e6" />
-    <public type="string" name="pref_selftimer_2s" id="0x7f0a01e7" />
-    <public type="string" name="pref_selftimer_10s" id="0x7f0a01e8" />
-    <public type="string" name="pref_flicker_auto" id="0x7f0a01e9" />
-    <public type="string" name="pref_iso_auto" id="0x7f0a01ea" />
-    <public type="string" name="image_properties_summary" id="0x7f0a01eb" />
-    <public type="string" name="on_screen_menu_back" id="0x7f0a01ec" />
-    <public type="string" name="resolution_video_wvga_description" id="0x7f0a01ed" />
-    <public type="string" name="resolution_video_vga_description" id="0x7f0a01ee" />
-    <public type="string" name="resolution_video_cif_description" id="0x7f0a01ef" />
-    <public type="string" name="resolution_video_QVGA_description" id="0x7f0a01f0" />
-    <public type="string" name="resolution_video_qcif_description" id="0x7f0a01f1" />
-    <public type="string" name="resolution_video_subqcif_description" id="0x7f0a01f2" />
-    <public type="string" name="resolution_video_cif_description_2" id="0x7f0a01f3" />
-    <public type="string" name="resolution_SUBQVGA_description" id="0x7f0a01f4" />
-    <public type="string" name="label_start_record" id="0x7f0a01f5" />
-    <public type="string" name="label_stop_record" id="0x7f0a01f6" />
-    <public type="string" name="action_screen_processing" id="0x7f0a01f7" />
-    <public type="string" name="action_screen_processing_svto_phone" id="0x7f0a01f8" />
-    <public type="string" name="mms_recording_time" id="0x7f0a01f9" />
-    <public type="string" name="confirm_delete_title" id="0x7f0a01fa" />
-    <public type="string" name="camera_trackball_button_hint" id="0x7f0a01fb" />
-    <public type="string" name="video_trackball_button_hint" id="0x7f0a01fc" />
-    <public type="string" name="camera_optical_button_hint" id="0x7f0a01fd" />
-    <public type="string" name="video_optical_button_hint" id="0x7f0a01fe" />
-    <public type="string" name="camera_actionkey_button_hint" id="0x7f0a01ff" />
-    <public type="string" name="video_actionkey_button_hint" id="0x7f0a0200" />
-    <public type="string" name="zoom_hint_screen" id="0x7f0a0201" />
-    <public type="string" name="zoom_hint_trackball" id="0x7f0a0202" />
-    <public type="string" name="zoom_hint_actionkey" id="0x7f0a0203" />
+    <public type="string" name="ap_version_id" id="0x7f0a01c2" />
     <public type="dimen" name="tumbler_base_height" id="0x7f0b0000" />
     <public type="dimen" name="tumbler_base_width" id="0x7f0b0001" />
     <public type="dimen" name="title_space" id="0x7f0b0002" />

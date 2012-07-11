@@ -163,7 +163,7 @@
     iput-object v0, p0, Lcom/htc/music/browserlayer/AlbumBrowserActivity$AlbumListAdapter;->mUnknownArtist:Ljava/lang/String;
 
     .line 1090
-    const v0, 0x7f070214
+    const v0, 0x7f0701b2
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

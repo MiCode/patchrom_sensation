@@ -1,0 +1,75 @@
+<customization_form version="1.00">
+	<category name="system">
+		
+		<module name="locale">
+			<function>
+				<set name="single">
+					<item name="total_list">cs_CZ;de_DE;en_AU;en_GB;en_SG;en_US;es_US;fr;it;ja;nl_NL;pl;ru;zh_CN;zh_TW;</item>
+					<item name="cs_CZ" type="boolean">yes</item>
+					<item name="de_DE" type="boolean">yes</item>
+					<item name="en_AU" type="boolean">yes</item>
+					<item name="en_GB" type="boolean">yes</item>
+					<item name="en_SG" type="boolean">yes</item>
+					<item name="en_US" type="boolean">yes</item>
+					<item name="es_US" type="boolean">yes</item>
+					<item name="fr" type="boolean">yes</item>
+					<item name="it" type="boolean">yes</item>
+					<item name="ja" type="boolean">yes</item>
+					<item name="nl_NL" type="boolean">yes</item>
+					<item name="pl" type="boolean">yes</item>
+					<item name="ru" type="boolean">yes</item>
+					<item name="zh_CN" type="boolean">yes</item>
+					<item name="zh_TW" type="boolean">yes</item>
+				</set>
+			</function>
+		</module>
+
+		<module name="deviceData">
+			<function>
+				<set name="single">
+					<item name="device_name">HTC Magic</item>
+				</set>
+			</function>
+		</module>
+				
+		<module name="InputMethod">
+			<function name="IME_language_set">
+				<set name="single">
+					<item name="English" type="boolean">yes</item>
+					<item name="German" type="boolean">yes</item>
+					<item name="France" type="boolean">yes</item>
+					<item name="Italian" type="boolean">yes</item>
+					<item name="Spanish" type="boolean">yes</item>
+					<item name="Russian" type="boolean">yes</item>
+					<item name="Czech" type="boolean">yes</item>
+					<item name="Danish" type="boolean">yes</item>
+					<item name="Swedish" type="boolean">yes</item>
+					<item name="Norwegian" type="boolean">yes</item>
+					<item name="Dutch" type="boolean">yes</item>
+					<item name="Polish" type="boolean">yes</item>
+				</set>
+			</function>
+			
+			<function name="IME_sip_set">
+				<set name="single">
+					<item name="total_list">Handwriting;ZuhYin;CangJie;PinYin;Stroke;</item> 
+					<item name="Handwriting" type="boolean">yes</item>
+					<item name="ZuhYin" type="boolean">yes</item>
+					<item name="CangJie" type="boolean">yes</item>
+					<item name="PinYin" type="boolean">yes</item>
+					<item name="Stroke" type="boolean">no</item>					
+				</set>
+			</function>						
+		</module>
+	</category>
+
+	<category name="application">
+		<module name="application_MediaScanner">
+			<function name="locale">
+				<set name="single">
+					<item name="default_locale">zh</item>					
+				</set>
+			</function>
+		</module>
+	</category>
+</customization_form>

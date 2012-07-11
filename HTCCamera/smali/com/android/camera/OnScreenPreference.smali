@@ -872,10 +872,10 @@
     .parameter "prefence"
 
     .prologue
-    .line 2830
+    .line 2833
     const/4 v0, 0x0
 
-    .line 2831
+    .line 2834
     .local v0, scene:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -885,7 +885,7 @@
 
     if-nez v1, :cond_0
 
-    .line 2832
+    .line 2835
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v2, "pref_camera_scene_ds"
@@ -894,7 +894,7 @@
 
     move-result-object v0
 
-    .line 2838
+    .line 2841
     :goto_0
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -906,10 +906,10 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2840
+    .line 2843
     return-void
 
-    .line 2834
+    .line 2837
     :cond_0
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -930,7 +930,7 @@
     .prologue
     const/4 v11, 0x1
 
-    .line 2878
+    .line 2881
     const-string v8, "null"
 
     invoke-virtual {p2, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -939,11 +939,11 @@
 
     if-ne v8, v11, :cond_0
 
-    .line 2908
+    .line 2911
     :goto_0
     return-void
 
-    .line 2880
+    .line 2883
     :cond_0
     const-string v8, "OnScreenPreference"
 
@@ -967,7 +967,7 @@
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2882
+    .line 2885
     const-string v8, "pref_set_resolution"
 
     invoke-virtual {p1, v8}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -976,11 +976,11 @@
 
     check-cast v4, Landroid/preference/ListPreference;
 
-    .line 2884
+    .line 2887
     .local v4, list:Landroid/preference/ListPreference;
     if-nez v4, :cond_1
 
-    .line 2885
+    .line 2888
     const-string v8, "OnScreenPreference"
 
     const-string v9, "setupResolutionList failed - no resolution preference"
@@ -989,23 +989,23 @@
 
     goto :goto_0
 
-    .line 2889
+    .line 2892
     :cond_1
     invoke-virtual {v4}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 2890
+    .line 2893
     .local v1, entries:[Ljava/lang/CharSequence;
     invoke-virtual {v4}, Landroid/preference/ListPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 2891
+    .line 2894
     .local v0, entrieValues:[Ljava/lang/CharSequence;
     const/4 v3, 0x0
 
-    .line 2892
+    .line 2895
     .local v3, index:I
     const/4 v2, 0x0
 
@@ -1019,7 +1019,7 @@
 
     if-ge v2, v8, :cond_2
 
-    .line 2893
+    .line 2896
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mResolutionItems:Ljava/util/LinkedList;
 
     invoke-virtual {v8, v2}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
@@ -1040,10 +1040,10 @@
 
     if-eqz v8, :cond_3
 
-    .line 2894
+    .line 2897
     move v3, v2
 
-    .line 2898
+    .line 2901
     :cond_2
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mResolutionItems:Ljava/util/LinkedList;
 
@@ -1055,7 +1055,7 @@
 
     iget-object v5, v8, Lcom/android/camera/ResolutionMenuItem;->resolution:Lcom/android/camera/Resolution;
 
-    .line 2900
+    .line 2903
     .local v5, r:Lcom/android/camera/Resolution;
     const-string v8, "OnScreenPreference"
 
@@ -1079,18 +1079,18 @@
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2901
+    .line 2904
     invoke-virtual {v5}, Lcom/android/camera/Resolution;->getWidth()I
 
     move-result v7
 
-    .line 2902
+    .line 2905
     .local v7, resolutionWidth:I
     invoke-virtual {v5}, Lcom/android/camera/Resolution;->getHeight()I
 
     move-result v6
 
-    .line 2904
+    .line 2907
     .local v6, resolutionHeight:I
     const-string v8, "OnScreenPreference"
 
@@ -1098,12 +1098,12 @@
 
     invoke-static {v8, v9}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2905
+    .line 2908
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v8, v11}, Lcom/android/camera/HTCCamera;->setBlockCaptureUI(Z)V
 
-    .line 2907
+    .line 2910
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v9, 0xf
@@ -1114,7 +1114,7 @@
 
     goto/16 :goto_0
 
-    .line 2892
+    .line 2895
     .end local v5           #r:Lcom/android/camera/Resolution;
     .end local v6           #resolutionHeight:I
     .end local v7           #resolutionWidth:I
@@ -1133,12 +1133,12 @@
 
     const/4 v2, 0x0
 
-    .line 2162
+    .line 2165
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v0, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 2163
+    .line 2166
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -1147,17 +1147,17 @@
 
     invoke-static {v0, v3, v2, v2, v1}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2166
+    .line 2169
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->m3DCameraSwitchPref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_0
 
-    .line 2168
+    .line 2171
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->m3DCameraSwitchPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, p1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 2170
+    .line 2173
     :cond_0
     return-void
 .end method
@@ -1171,31 +1171,31 @@
 
     const/4 v1, 0x1
 
-    .line 2150
+    .line 2153
     if-ne p1, v1, :cond_0
 
-    .line 2151
+    .line 2154
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v0, v2}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 2152
+    .line 2155
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v0, v2}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 2155
+    .line 2158
     :cond_0
     invoke-virtual {p0, v1}, Lcom/android/camera/OnScreenPreference;->updateFaceDetection(Z)Z
 
-    .line 2157
+    .line 2160
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x23
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 2158
+    .line 2161
     return-void
 .end method
 
@@ -1206,12 +1206,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2290
+    .line 2293
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mBlinkDetectionPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, p1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 2291
+    .line 2294
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mSmileCapturePref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_0
@@ -1224,15 +1224,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 2293
+    .line 2296
     iput-boolean v1, p0, Lcom/android/camera/OnScreenPreference;->bSmileCapture:Z
 
-    .line 2294
+    .line 2297
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mSmileCapturePref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 2296
+    .line 2299
     :cond_0
     return-void
 .end method
@@ -1245,7 +1245,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2175
+    .line 2178
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v4, "pref_capture_resolution_video_main"
@@ -1254,11 +1254,11 @@
 
     move-result-object v0
 
-    .line 2176
+    .line 2179
     .local v0, currentResolution:Ljava/lang/String;
     if-eqz p2, :cond_6
 
-    .line 2178
+    .line 2181
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mRecordWithAudio:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v3}, Landroid/preference/CheckBoxPreference;->isChecked()Z
@@ -1267,17 +1267,17 @@
 
     iput-boolean v3, p0, Lcom/android/camera/OnScreenPreference;->bRecordWithAudio:Z
 
-    .line 2179
+    .line 2182
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mRecordWithAudio:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v3, v2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 2180
+    .line 2183
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mRecordWithAudio:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v3, v2}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
-    .line 2182
+    .line 2185
     const-string v3, "1080p"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1286,7 +1286,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 2185
+    .line 2188
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v4, "pref_fast_frame_resolution_temp"
@@ -1295,7 +1295,7 @@
 
     invoke-static {v3, v4, v5}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2186
+    .line 2189
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v4, "pref_capture_resolution_video_main"
@@ -1304,37 +1304,37 @@
 
     invoke-static {v3, v4, v5}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2187
+    .line 2190
     const-string v3, "720p"
 
     invoke-direct {p0, p1, v3}, Lcom/android/camera/OnScreenPreference;->changeResolutionBySlowMotion(Landroid/preference/PreferenceScreen;Ljava/lang/String;)V
 
-    .line 2214
+    .line 2217
     :cond_0
     :goto_0
     invoke-direct {p0, v2}, Lcom/android/camera/OnScreenPreference;->checkRecordWithAudio(Z)V
 
-    .line 2232
+    .line 2235
     :goto_1
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     if-eqz v2, :cond_1
 
-    .line 2234
+    .line 2237
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v2}, Lcom/android/camera/MenuHandler;->exitMenuHandler()V
 
-    .line 2235
+    .line 2238
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mMenuHandler:Lcom/android/camera/MenuHandler;
 
     invoke-virtual {v2}, Lcom/android/camera/MenuHandler;->resetMenuHandler()V
 
-    .line 2237
+    .line 2240
     :cond_1
     return-void
 
-    .line 2189
+    .line 2192
     :cond_2
     const-string v3, "720p"
 
@@ -1350,7 +1350,7 @@
 
     if-eqz v3, :cond_4
 
-    .line 2192
+    .line 2195
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v4, "pref_fast_frame_resolution_temp"
@@ -1359,14 +1359,14 @@
 
     invoke-static {v3, v4, v5}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2193
+    .line 2196
     sget-object v3, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
 
     sget-object v4, Lcom/android/camera/DisplayDevice$Resolution;->QHD:Lcom/android/camera/DisplayDevice$Resolution;
 
     if-ne v3, v4, :cond_3
 
-    .line 2195
+    .line 2198
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v4, "pref_capture_resolution_video_main"
@@ -1375,14 +1375,14 @@
 
     invoke-static {v3, v4, v5}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2196
+    .line 2199
     const-string v3, "QHD"
 
     invoke-direct {p0, p1, v3}, Lcom/android/camera/OnScreenPreference;->changeResolutionBySlowMotion(Landroid/preference/PreferenceScreen;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 2198
+    .line 2201
     :cond_3
     sget-object v3, Lcom/android/camera/DisplayDevice;->SCREEN_RESOLUTION:Lcom/android/camera/DisplayDevice$Resolution;
 
@@ -1390,7 +1390,7 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 2200
+    .line 2203
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v4, "pref_capture_resolution_video_main"
@@ -1399,14 +1399,14 @@
 
     invoke-static {v3, v4, v5}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2201
+    .line 2204
     const-string v3, "WVGA"
 
     invoke-direct {p0, p1, v3}, Lcom/android/camera/OnScreenPreference;->changeResolutionBySlowMotion(Landroid/preference/PreferenceScreen;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 2204
+    .line 2207
     :cond_4
     const-string v3, "QCIF"
 
@@ -1416,7 +1416,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 2207
+    .line 2210
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v4, "pref_fast_frame_resolution_temp"
@@ -1425,7 +1425,7 @@
 
     invoke-static {v3, v4, v5}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2208
+    .line 2211
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v4, "pref_capture_resolution_video_main"
@@ -1434,14 +1434,14 @@
 
     invoke-static {v3, v4, v5}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2209
+    .line 2212
     const-string v3, "QVGA"
 
     invoke-direct {p0, p1, v3}, Lcom/android/camera/OnScreenPreference;->changeResolutionBySlowMotion(Landroid/preference/PreferenceScreen;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 2212
+    .line 2215
     :cond_5
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -1449,7 +1449,7 @@
 
     goto :goto_0
 
-    .line 2218
+    .line 2221
     :cond_6
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -1459,7 +1459,7 @@
 
     move-result-object v1
 
-    .line 2219
+    .line 2222
     .local v1, tempResolution:Ljava/lang/String;
     const-string v3, "null"
 
@@ -1469,17 +1469,17 @@
 
     if-nez v3, :cond_8
 
-    .line 2221
+    .line 2224
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v4, "pref_capture_resolution_video_main"
 
     invoke-static {v3, v4, v1}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2222
+    .line 2225
     invoke-direct {p0, p1, v1}, Lcom/android/camera/OnScreenPreference;->changeResolutionBySlowMotion(Landroid/preference/PreferenceScreen;Ljava/lang/String;)V
 
-    .line 2227
+    .line 2230
     :goto_2
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mRecordWithAudio:Landroid/preference/CheckBoxPreference;
 
@@ -1487,7 +1487,7 @@
 
     invoke-virtual {v3, v4}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 2228
+    .line 2231
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mRecordWithAudio:Landroid/preference/CheckBoxPreference;
 
     if-nez p2, :cond_7
@@ -1497,14 +1497,14 @@
     :cond_7
     invoke-virtual {v3, v2}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
-    .line 2229
+    .line 2232
     iget-boolean v2, p0, Lcom/android/camera/OnScreenPreference;->bRecordWithAudio:Z
 
     invoke-direct {p0, v2}, Lcom/android/camera/OnScreenPreference;->checkRecordWithAudio(Z)V
 
     goto/16 :goto_1
 
-    .line 2225
+    .line 2228
     :cond_8
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -1620,22 +1620,22 @@
 
     const/4 v2, 0x0
 
-    .line 2242
+    .line 2245
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_1
 
-    .line 2244
+    .line 2247
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
 
-    .line 2246
+    .line 2249
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v0, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 2247
+    .line 2250
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     iget-boolean v1, p0, Lcom/android/camera/OnScreenPreference;->bStereoRecording:Z
@@ -1646,40 +1646,40 @@
 
     invoke-static {v0, v3, v2, v2, v1}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2250
+    .line 2253
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mStereoRecordingPref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_0
 
-    .line 2252
+    .line 2255
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mStereoRecordingPref:Landroid/preference/CheckBoxPreference;
 
     iget-boolean v1, p0, Lcom/android/camera/OnScreenPreference;->bStereoRecording:Z
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 2253
+    .line 2256
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mStereoRecordingPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, p1}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
-    .line 2274
+    .line 2277
     :cond_0
     :goto_0
     return-void
 
-    .line 2259
+    .line 2262
     :cond_1
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v0, :cond_0
 
-    .line 2261
+    .line 2264
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v0, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 2262
+    .line 2265
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -1688,17 +1688,17 @@
 
     invoke-static {v0, v3, v2, v2, v1}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2265
+    .line 2268
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mStereoRecordingPref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_0
 
-    .line 2267
+    .line 2270
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mStereoRecordingPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, p1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 2268
+    .line 2271
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mStereoRecordingPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, p1}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
@@ -1945,35 +1945,35 @@
     .locals 13
 
     .prologue
-    .line 2438
+    .line 2441
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-nez v8, :cond_0
 
-    .line 2439
+    .line 2442
     const/4 v8, 0x1
 
-    .line 2644
+    .line 2647
     :goto_0
     return v8
 
-    .line 2441
+    .line 2444
     :cond_0
     const/4 v0, 0x0
 
-    .line 2442
+    .line 2445
     .local v0, bIsManual:Z
     const/4 v7, 0x0
 
-    .line 2443
+    .line 2446
     .local v7, sceneNum:I
     const/4 v1, 0x0
 
-    .line 2444
+    .line 2447
     .local v1, conflictsPrefs:Landroid/preference/Preference;
     const/4 v6, 0x0
 
-    .line 2445
+    .line 2448
     .local v6, scene:Ljava/lang/String;
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -1983,7 +1983,7 @@
 
     if-nez v8, :cond_b
 
-    .line 2446
+    .line 2449
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v9, "pref_camera_scene_ds"
@@ -1992,7 +1992,7 @@
 
     move-result-object v6
 
-    .line 2450
+    .line 2453
     :goto_1
     if-eqz v6, :cond_1
 
@@ -2004,12 +2004,12 @@
 
     if-nez v8, :cond_1
 
-    .line 2451
+    .line 2454
     invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v7
 
-    .line 2453
+    .line 2456
     :cond_1
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -2049,11 +2049,11 @@
 
     if-ne v8, v9, :cond_c
 
-    .line 2458
+    .line 2461
     :cond_2
     const/4 v0, 0x1
 
-    .line 2462
+    .line 2465
     :goto_2
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
@@ -2063,7 +2063,7 @@
 
     move-result-object v1
 
-    .line 2463
+    .line 2466
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     if-eqz v7, :cond_3
@@ -2094,21 +2094,21 @@
 
     if-ne v8, v9, :cond_d
 
-    .line 2468
+    .line 2471
     :cond_3
     if-eqz v1, :cond_4
 
-    .line 2469
+    .line 2472
     const/4 v8, 0x1
 
     invoke-virtual {v1, v8}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 2477
+    .line 2480
     :cond_4
     :goto_3
     if-nez v0, :cond_10
 
-    .line 2480
+    .line 2483
     const/16 v8, 0x8
 
     if-eq v7, v8, :cond_e
@@ -2123,7 +2123,7 @@
 
     if-eq v8, v9, :cond_e
 
-    .line 2482
+    .line 2485
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v8}, Lcom/android/camera/CameraThread;->is2ndCamera()Z
@@ -2134,7 +2134,7 @@
 
     if-eq v8, v9, :cond_5
 
-    .line 2484
+    .line 2487
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v9, "pref_camera_white_balance"
@@ -2143,7 +2143,7 @@
 
     invoke-static {v8, v9, v10}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2485
+    .line 2488
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v9, 0x10
@@ -2156,7 +2156,7 @@
 
     invoke-static {v8, v9, v10, v11, v12}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2498
+    .line 2501
     :cond_5
     :goto_4
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
@@ -2167,10 +2167,10 @@
 
     move-result-object v1
 
-    .line 2499
+    .line 2502
     if-eqz v1, :cond_6
 
-    .line 2501
+    .line 2504
     invoke-virtual {v1}, Landroid/preference/Preference;->isEnabled()Z
 
     move-result v8
@@ -2185,12 +2185,12 @@
 
     if-nez v8, :cond_6
 
-    .line 2502
+    .line 2505
     const/4 v8, 0x0
 
     invoke-virtual {v1, v8}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 2506
+    .line 2509
     :cond_6
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -2198,12 +2198,12 @@
 
     if-nez v8, :cond_8
 
-    .line 2508
+    .line 2511
     const/16 v8, 0x8
 
     if-eq v7, v8, :cond_7
 
-    .line 2510
+    .line 2513
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v8}, Lcom/android/camera/CameraThread;->is2ndCamera()Z
@@ -2214,7 +2214,7 @@
 
     if-eq v8, v9, :cond_7
 
-    .line 2512
+    .line 2515
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v9, "pref_camera_iso"
@@ -2223,7 +2223,7 @@
 
     invoke-static {v8, v9, v10}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2513
+    .line 2516
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v8}, Lcom/android/camera/HTCCamera;->getCameraThread()Lcom/android/camera/CameraThread;
@@ -2234,21 +2234,21 @@
 
     move-result-object v2
 
-    .line 2514
+    .line 2517
     .local v2, contorller:Lcom/android/camera/CameraController;
     if-eqz v2, :cond_7
 
-    .line 2516
+    .line 2519
     const-string v8, "iso"
 
     const-string v9, "auto"
 
     invoke-virtual {v2, v8, v9}, Lcom/android/camera/CameraController;->setCameraParameter(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2517
+    .line 2520
     invoke-virtual {v2}, Lcom/android/camera/CameraController;->doSetCameraParameters()V
 
-    .line 2521
+    .line 2524
     .end local v2           #contorller:Lcom/android/camera/CameraController;
     :cond_7
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
@@ -2259,7 +2259,7 @@
 
     move-result-object v1
 
-    .line 2522
+    .line 2525
     if-eqz v1, :cond_8
 
     invoke-virtual {v1}, Landroid/preference/Preference;->isEnabled()Z
@@ -2268,21 +2268,21 @@
 
     if-eqz v8, :cond_8
 
-    .line 2523
+    .line 2526
     const/4 v8, 0x0
 
     invoke-virtual {v1, v8}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 2527
+    .line 2530
     :cond_8
     const/16 v8, 0x8
 
     if-eq v7, v8, :cond_9
 
-    .line 2529
+    .line 2532
     const/4 v4, 0x2
 
-    .line 2530
+    .line 2533
     .local v4, level_def:I
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -2294,7 +2294,7 @@
 
     invoke-static {v8, v9, v10}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2531
+    .line 2534
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v9, 0x11
@@ -2305,10 +2305,10 @@
 
     invoke-static {v8, v9, v4, v10, v11}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2534
+    .line 2537
     const/4 v4, 0x2
 
-    .line 2535
+    .line 2538
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v9, "pref_camera_contrast"
@@ -2319,7 +2319,7 @@
 
     invoke-static {v8, v9, v10}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2536
+    .line 2539
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v9, 0x14
@@ -2330,10 +2330,10 @@
 
     invoke-static {v8, v9, v4, v10, v11}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2539
+    .line 2542
     const/4 v4, 0x2
 
-    .line 2540
+    .line 2543
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v9, "pref_camera_saturation"
@@ -2344,7 +2344,7 @@
 
     invoke-static {v8, v9, v10}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2541
+    .line 2544
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v9, 0x14
@@ -2355,10 +2355,10 @@
 
     invoke-static {v8, v9, v4, v10, v11}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2544
+    .line 2547
     const/4 v4, 0x2
 
-    .line 2545
+    .line 2548
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v9, "pref_camera_shaprness"
@@ -2369,7 +2369,7 @@
 
     invoke-static {v8, v9, v10}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2546
+    .line 2549
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v9, 0x14
@@ -2380,7 +2380,7 @@
 
     invoke-static {v8, v9, v4, v10, v11}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2549
+    .line 2552
     .end local v4           #level_def:I
     :cond_9
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
@@ -2391,10 +2391,10 @@
 
     move-result-object v1
 
-    .line 2550
+    .line 2553
     if-eqz v1, :cond_a
 
-    .line 2552
+    .line 2555
     invoke-virtual {v1}, Landroid/preference/Preference;->isEnabled()Z
 
     move-result v8
@@ -2409,19 +2409,19 @@
 
     if-nez v8, :cond_a
 
-    .line 2553
+    .line 2556
     const/4 v8, 0x0
 
     invoke-virtual {v1, v8}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 2644
+    .line 2647
     :cond_a
     :goto_5
     const/4 v8, 0x1
 
     goto/16 :goto_0
 
-    .line 2448
+    .line 2451
     :cond_b
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -2433,24 +2433,24 @@
 
     goto/16 :goto_1
 
-    .line 2460
+    .line 2463
     :cond_c
     const/4 v0, 0x0
 
     goto/16 :goto_2
 
-    .line 2473
+    .line 2476
     :cond_d
     if-eqz v1, :cond_4
 
-    .line 2474
+    .line 2477
     const/4 v8, 0x0
 
     invoke-virtual {v1, v8}, Landroid/preference/Preference;->setEnabled(Z)V
 
     goto/16 :goto_3
 
-    .line 2488
+    .line 2491
     :cond_e
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -2462,7 +2462,7 @@
 
     if-ne v8, v9, :cond_5
 
-    .line 2490
+    .line 2493
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v8}, Lcom/android/camera/CameraThread;->is2ndCamera()Z
@@ -2473,7 +2473,7 @@
 
     if-eq v8, v9, :cond_f
 
-    .line 2491
+    .line 2494
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v9, "pref_camera_white_balance_manual"
@@ -2484,7 +2484,7 @@
 
     iput-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
-    .line 2494
+    .line 2497
     :goto_6
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -2494,7 +2494,7 @@
 
     invoke-static {v8, v9, v10}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2495
+    .line 2498
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v9, 0x10
@@ -2509,7 +2509,7 @@
 
     goto/16 :goto_4
 
-    .line 2493
+    .line 2496
     :cond_f
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -2523,7 +2523,7 @@
 
     goto :goto_6
 
-    .line 2559
+    .line 2562
     :cond_10
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -2535,7 +2535,7 @@
 
     if-eq v8, v9, :cond_11
 
-    .line 2561
+    .line 2564
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v9, "pref_camera_white_balance_manual"
@@ -2546,7 +2546,7 @@
 
     iput-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
-    .line 2562
+    .line 2565
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v9, "pref_camera_white_balance"
@@ -2555,7 +2555,7 @@
 
     invoke-static {v8, v9, v10}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2563
+    .line 2566
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v9, 0x10
@@ -2568,7 +2568,7 @@
 
     invoke-static {v8, v9, v10, v11, v12}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2571
+    .line 2574
     :cond_11
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
@@ -2578,7 +2578,7 @@
 
     move-result-object v1
 
-    .line 2572
+    .line 2575
     if-eqz v1, :cond_12
 
     invoke-virtual {v1}, Landroid/preference/Preference;->isEnabled()Z
@@ -2587,12 +2587,12 @@
 
     if-nez v8, :cond_12
 
-    .line 2573
+    .line 2576
     const/4 v8, 0x1
 
     invoke-virtual {v1, v8}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 2575
+    .line 2578
     :cond_12
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -2600,7 +2600,7 @@
 
     if-nez v8, :cond_16
 
-    .line 2579
+    .line 2582
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v9, "pref_camera_iso_manual"
@@ -2611,7 +2611,7 @@
 
     iput-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
-    .line 2580
+    .line 2583
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
     if-eqz v8, :cond_13
@@ -2626,13 +2626,13 @@
 
     if-eqz v8, :cond_14
 
-    .line 2581
+    .line 2584
     :cond_13
     const-string v8, "auto"
 
     iput-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
-    .line 2582
+    .line 2585
     :cond_14
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -2642,7 +2642,7 @@
 
     invoke-static {v8, v9, v10}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2584
+    .line 2587
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v8}, Lcom/android/camera/HTCCamera;->getCameraThread()Lcom/android/camera/CameraThread;
@@ -2653,21 +2653,21 @@
 
     move-result-object v2
 
-    .line 2585
+    .line 2588
     .restart local v2       #contorller:Lcom/android/camera/CameraController;
     if-eqz v2, :cond_15
 
-    .line 2587
+    .line 2590
     const-string v8, "iso"
 
     iget-object v9, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
     invoke-virtual {v2, v8, v9}, Lcom/android/camera/CameraController;->setCameraParameter(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2588
+    .line 2591
     invoke-virtual {v2}, Lcom/android/camera/CameraController;->doSetCameraParameters()V
 
-    .line 2591
+    .line 2594
     :cond_15
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
@@ -2677,12 +2677,12 @@
 
     move-result-object v1
 
-    .line 2592
+    .line 2595
     const/4 v8, 0x0
 
     iput-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
-    .line 2593
+    .line 2596
     if-eqz v1, :cond_16
 
     invoke-virtual {v1}, Landroid/preference/Preference;->isEnabled()Z
@@ -2691,12 +2691,12 @@
 
     if-nez v8, :cond_16
 
-    .line 2594
+    .line 2597
     const/4 v8, 0x1
 
     invoke-virtual {v1, v8}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 2597
+    .line 2600
     .end local v2           #contorller:Lcom/android/camera/CameraController;
     :cond_16
     invoke-virtual {p0}, Lcom/android/camera/OnScreenPreference;->getCurrentEffectPreference()Ljava/lang/String;
@@ -2709,16 +2709,16 @@
 
     move-result v3
 
-    .line 2598
+    .line 2601
     .local v3, enable:Z
     const/4 v8, 0x1
 
     if-ne v3, v8, :cond_a
 
-    .line 2600
+    .line 2603
     const/4 v5, 0x0
 
-    .line 2601
+    .line 2604
     .local v5, nValue:I
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -2730,7 +2730,7 @@
 
     iput-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
-    .line 2603
+    .line 2606
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
     if-eqz v8, :cond_17
@@ -2745,14 +2745,14 @@
 
     if-nez v8, :cond_17
 
-    .line 2604
+    .line 2607
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
     invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v5
 
-    .line 2607
+    .line 2610
     :goto_7
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -2764,7 +2764,7 @@
 
     invoke-static {v8, v9, v10}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2608
+    .line 2611
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v9, 0x11
@@ -2775,7 +2775,7 @@
 
     invoke-static {v8, v9, v5, v10, v11}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2611
+    .line 2614
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v9, "pref_camera_contrast_manual"
@@ -2786,7 +2786,7 @@
 
     iput-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
-    .line 2612
+    .line 2615
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
     if-eqz v8, :cond_18
@@ -2801,14 +2801,14 @@
 
     if-nez v8, :cond_18
 
-    .line 2613
+    .line 2616
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
     invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v5
 
-    .line 2616
+    .line 2619
     :goto_8
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -2820,7 +2820,7 @@
 
     invoke-static {v8, v9, v10}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2617
+    .line 2620
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v9, 0x14
@@ -2831,7 +2831,7 @@
 
     invoke-static {v8, v9, v5, v10, v11}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2620
+    .line 2623
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v9, "pref_camera_saturation_manual"
@@ -2842,7 +2842,7 @@
 
     iput-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
-    .line 2621
+    .line 2624
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
     if-eqz v8, :cond_19
@@ -2857,14 +2857,14 @@
 
     if-nez v8, :cond_19
 
-    .line 2622
+    .line 2625
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
     invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v5
 
-    .line 2625
+    .line 2628
     :goto_9
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -2876,7 +2876,7 @@
 
     invoke-static {v8, v9, v10}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2626
+    .line 2629
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v9, 0x14
@@ -2887,7 +2887,7 @@
 
     invoke-static {v8, v9, v5, v10, v11}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2629
+    .line 2632
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v9, "pref_camera_sharpness_manual"
@@ -2898,7 +2898,7 @@
 
     iput-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
-    .line 2630
+    .line 2633
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
     if-eqz v8, :cond_1a
@@ -2913,14 +2913,14 @@
 
     if-nez v8, :cond_1a
 
-    .line 2631
+    .line 2634
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->tempValue_ds:Ljava/lang/String;
 
     invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v5
 
-    .line 2634
+    .line 2637
     :goto_a
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -2932,7 +2932,7 @@
 
     invoke-static {v8, v9, v10}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2635
+    .line 2638
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v9, 0x14
@@ -2943,7 +2943,7 @@
 
     invoke-static {v8, v9, v5, v10, v11}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2638
+    .line 2641
     iget-object v8, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
     const-string v9, "pref_camera_image_property"
@@ -2952,7 +2952,7 @@
 
     move-result-object v1
 
-    .line 2639
+    .line 2642
     if-eqz v1, :cond_a
 
     invoke-virtual {v1}, Landroid/preference/Preference;->isEnabled()Z
@@ -2961,32 +2961,32 @@
 
     if-nez v8, :cond_a
 
-    .line 2640
+    .line 2643
     const/4 v8, 0x1
 
     invoke-virtual {v1, v8}, Landroid/preference/Preference;->setEnabled(Z)V
 
     goto/16 :goto_5
 
-    .line 2606
+    .line 2609
     :cond_17
     const/4 v5, 0x2
 
     goto/16 :goto_7
 
-    .line 2615
+    .line 2618
     :cond_18
     const/4 v5, 0x2
 
     goto/16 :goto_8
 
-    .line 2624
+    .line 2627
     :cond_19
     const/4 v5, 0x2
 
     goto :goto_9
 
-    .line 2633
+    .line 2636
     :cond_1a
     const/4 v5, 0x2
 
@@ -3000,12 +3000,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2279
+    .line 2282
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mSmileCapturePref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, p1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 2280
+    .line 2283
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mBlinkDetectionPref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_0
@@ -3018,15 +3018,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 2282
+    .line 2285
     iput-boolean v1, p0, Lcom/android/camera/OnScreenPreference;->bBlinkDetection:Z
 
-    .line 2283
+    .line 2286
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mBlinkDetectionPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 2287
+    .line 2290
     :cond_0
     return-void
 .end method
@@ -3059,28 +3059,28 @@
     .locals 2
 
     .prologue
-    .line 2305
+    .line 2308
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/camera/HTCCamera;->setBlockCaptureUI(Z)V
 
-    .line 2306
+    .line 2309
     const-string v0, "OnScreenPreference"
 
     const-string v1, "Block Capture UI - doSettings()"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2307
+    .line 2310
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v1, 0x1c
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 2308
+    .line 2311
     return-void
 .end method
 
@@ -3091,39 +3091,39 @@
     .parameter "nMode"
 
     .prologue
-    .line 2312
+    .line 2315
     if-nez p2, :cond_1
 
-    .line 2345
+    .line 2348
     :cond_0
     :goto_0
     return-void
 
-    .line 2316
+    .line 2319
     :cond_1
     invoke-virtual {p2}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 2317
+    .line 2320
     .local v0, allEntries:[Ljava/lang/CharSequence;
     invoke-virtual {p2}, Landroid/preference/ListPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 2318
+    .line 2321
     .local v1, allEntryValues:[Ljava/lang/CharSequence;
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2319
+    .line 2322
     .local v2, entries:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2321
+    .line 2324
     .local v3, entryValues:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
     const/4 v4, 0x0
 
@@ -3133,7 +3133,7 @@
 
     if-ge v4, v7, :cond_5
 
-    .line 2323
+    .line 2326
     aget-object v7, v1, v4
 
     const-string v8, "panorama"
@@ -3174,20 +3174,20 @@
 
     if-eqz v7, :cond_3
 
-    .line 2321
+    .line 2324
     :cond_2
     :goto_2
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
-    .line 2329
+    .line 2332
     :cond_3
     const/4 v7, 0x1
 
     if-ne p3, v7, :cond_4
 
-    .line 2330
+    .line 2333
     aget-object v7, v1, v4
 
     const-string v8, "night"
@@ -3198,26 +3198,26 @@
 
     if-nez v7, :cond_2
 
-    .line 2333
+    .line 2336
     :cond_4
     aget-object v7, v0, v4
 
     invoke-virtual {v2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2334
+    .line 2337
     aget-object v7, v1, v4
 
     invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 2336
+    .line 2339
     :cond_5
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
-    .line 2337
+    .line 2340
     .local v5, size:I
     new-array v7, v5, [Ljava/lang/CharSequence;
 
@@ -3229,7 +3229,7 @@
 
     invoke-virtual {p2, v7}, Landroid/preference/ListPreference;->setEntries([Ljava/lang/CharSequence;)V
 
-    .line 2338
+    .line 2341
     new-array v7, v5, [Ljava/lang/CharSequence;
 
     invoke-virtual {v3, v7}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
@@ -3240,12 +3240,12 @@
 
     invoke-virtual {p2, v7}, Landroid/preference/ListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
 
-    .line 2341
+    .line 2344
     invoke-virtual {p2}, Landroid/preference/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 2342
+    .line 2345
     .local v6, value:Ljava/lang/String;
     invoke-virtual {p2, v6}, Landroid/preference/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
 
@@ -3255,7 +3255,7 @@
 
     if-ne v7, v8, :cond_0
 
-    .line 2343
+    .line 2346
     const/4 v7, 0x0
 
     invoke-virtual {p2, v7}, Landroid/preference/ListPreference;->setValueIndex(I)V
@@ -4064,16 +4064,16 @@
     .prologue
     const v2, 0x7f0a0082
 
-    .line 1907
+    .line 1910
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
     if-nez v0, :cond_0
 
-    .line 1921
+    .line 1924
     :goto_0
     return-void
 
-    .line 1910
+    .line 1913
     :cond_0
     sget-object v0, Lcom/android/camera/DisplayDevice;->SCREEN_RATIO:Lcom/android/camera/DisplayDevice$ScreenRatio;
 
@@ -4081,12 +4081,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1911
+    .line 1914
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v2}, Landroid/preference/CheckBoxPreference;->setSummaryOn(I)V
 
-    .line 1919
+    .line 1922
     :goto_1
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
@@ -4094,12 +4094,12 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setSummaryOff(I)V
 
-    .line 1920
+    .line 1923
     invoke-direct {p0}, Lcom/android/camera/OnScreenPreference;->setImageRatio_MMS()V
 
     goto :goto_0
 
-    .line 1912
+    .line 1915
     :cond_1
     sget-object v0, Lcom/android/camera/DisplayDevice;->SCREEN_RATIO:Lcom/android/camera/DisplayDevice$ScreenRatio;
 
@@ -4107,14 +4107,14 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 1913
+    .line 1916
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v2}, Landroid/preference/CheckBoxPreference;->setSummaryOn(I)V
 
     goto :goto_1
 
-    .line 1914
+    .line 1917
     :cond_2
     sget-object v0, Lcom/android/camera/DisplayDevice;->SCREEN_RATIO:Lcom/android/camera/DisplayDevice$ScreenRatio;
 
@@ -4122,7 +4122,7 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 1915
+    .line 1918
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
     const v1, 0x7f0a0081
@@ -4131,7 +4131,7 @@
 
     goto :goto_1
 
-    .line 1917
+    .line 1920
     :cond_3
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
@@ -6217,78 +6217,78 @@
     .locals 2
 
     .prologue
-    .line 1938
+    .line 1941
     const-string v0, "OnScreenPreference"
 
     const-string v1, "restorePreference()"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1941
+    .line 1944
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_0
 
-    .line 1942
+    .line 1945
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
     iget-boolean v1, p0, Lcom/android/camera/OnScreenPreference;->mGeneral_isWideScreen:Z
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 1944
+    .line 1947
     :cond_0
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mAutoFocusPref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_1
 
-    .line 1945
+    .line 1948
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mAutoFocusPref:Landroid/preference/CheckBoxPreference;
 
     iget-boolean v1, p0, Lcom/android/camera/OnScreenPreference;->bAutoFocus:Z
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 1947
+    .line 1950
     :cond_1
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mFaceDetectionPref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_2
 
-    .line 1948
+    .line 1951
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mFaceDetectionPref:Landroid/preference/CheckBoxPreference;
 
     iget-boolean v1, p0, Lcom/android/camera/OnScreenPreference;->bFaceDetection:Z
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 1951
+    .line 1954
     :cond_2
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mPostProcessingPref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_3
 
-    .line 1952
+    .line 1955
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mPostProcessingPref:Landroid/preference/CheckBoxPreference;
 
     iget-boolean v1, p0, Lcom/android/camera/OnScreenPreference;->bPostProcessing:Z
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 1957
+    .line 1960
     :cond_3
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mStereoRecordingPref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_4
 
-    .line 1958
+    .line 1961
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mStereoRecordingPref:Landroid/preference/CheckBoxPreference;
 
     iget-boolean v1, p0, Lcom/android/camera/OnScreenPreference;->bStereoRecording:Z
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 1962
+    .line 1965
     :cond_4
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -6300,84 +6300,84 @@
 
     if-eq v0, v1, :cond_6
 
-    .line 1964
+    .line 1967
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mRecordWithAudio:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_5
 
-    .line 1965
+    .line 1968
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mRecordWithAudio:Landroid/preference/CheckBoxPreference;
 
     iget-boolean v1, p0, Lcom/android/camera/OnScreenPreference;->bRecordWithAudio:Z
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 1967
+    .line 1970
     :cond_5
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mFastFrameRecording:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_6
 
-    .line 1968
+    .line 1971
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mFastFrameRecording:Landroid/preference/CheckBoxPreference;
 
     iget-boolean v1, p0, Lcom/android/camera/OnScreenPreference;->bFastFrameRecording:Z
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 1971
+    .line 1974
     :cond_6
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mShutterSoundPref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_7
 
-    .line 1972
+    .line 1975
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mShutterSoundPref:Landroid/preference/CheckBoxPreference;
 
     iget-boolean v1, p0, Lcom/android/camera/OnScreenPreference;->bShutterSound:Z
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 1973
+    .line 1976
     :cond_7
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mReviewDurationPref:Landroid/preference/ListPreference;
 
     if-eqz v0, :cond_8
 
-    .line 1974
+    .line 1977
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mReviewDurationPref:Landroid/preference/ListPreference;
 
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mReviewDurationValue:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 1977
+    .line 1980
     :cond_8
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->m3DFileFormatPref:Landroid/preference/ListPreference;
 
     if-eqz v0, :cond_9
 
-    .line 1978
+    .line 1981
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->m3DFileFormatPref:Landroid/preference/ListPreference;
 
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->m3DFileFormatValue:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 1981
+    .line 1984
     :cond_9
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mVideoFileFormatPref:Landroid/preference/ListPreference;
 
     if-eqz v0, :cond_a
 
-    .line 1982
+    .line 1985
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mVideoFileFormatPref:Landroid/preference/ListPreference;
 
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mVideoFileFormatValue:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 1985
+    .line 1988
     :cond_a
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -6385,32 +6385,32 @@
 
     if-eqz v0, :cond_c
 
-    .line 1987
+    .line 1990
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mSmileCapturePref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_b
 
-    .line 1988
+    .line 1991
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mSmileCapturePref:Landroid/preference/CheckBoxPreference;
 
     iget-boolean v1, p0, Lcom/android/camera/OnScreenPreference;->bSmileCapture:Z
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 1989
+    .line 1992
     :cond_b
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mBlinkDetectionPref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_c
 
-    .line 1990
+    .line 1993
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mBlinkDetectionPref:Landroid/preference/CheckBoxPreference;
 
     iget-boolean v1, p0, Lcom/android/camera/OnScreenPreference;->bBlinkDetection:Z
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 1992
+    .line 1995
     :cond_c
     return-void
 .end method
@@ -6422,7 +6422,7 @@
     .prologue
     const/4 v12, 0x1
 
-    .line 1756
+    .line 1759
     invoke-static {}, Lcom/android/camera/DisplayDevice;->captrueFullSize()Z
 
     move-result v9
@@ -6449,7 +6449,7 @@
 
     if-eqz v9, :cond_1
 
-    .line 1759
+    .line 1762
     :cond_0
     const-string v9, "OnScreenPreference"
 
@@ -6457,11 +6457,11 @@
 
     invoke-static {v9, v10}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1823
+    .line 1826
     :goto_0
     return-void
 
-    .line 1764
+    .line 1767
     :cond_1
     iget-object v9, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -6473,14 +6473,14 @@
 
     if-ne v9, v12, :cond_2
 
-    .line 1765
+    .line 1768
     const-string v9, "OnScreenPreference"
 
     const-string v10, "only for Mms request - not select to write preference really"
 
     invoke-static {v9, v10}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1766
+    .line 1769
     iget-object v9, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget v9, v9, Lcom/android/camera/CameraThread;->mMode:I
@@ -6490,26 +6490,26 @@
     :cond_2
     move-object v4, p1
 
-    .line 1775
+    .line 1778
     check-cast v4, Landroid/preference/ListPreference;
 
-    .line 1776
+    .line 1779
     .local v4, list:Landroid/preference/ListPreference;
     invoke-virtual {v4}, Landroid/preference/ListPreference;->getEntry()Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 1777
+    .line 1780
     .local v1, entry:Ljava/lang/CharSequence;
     invoke-virtual {v4}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 1778
+    .line 1781
     .local v0, entries:[Ljava/lang/CharSequence;
     const/4 v3, 0x0
 
-    .line 1779
+    .line 1782
     .local v3, index:I
     const/4 v2, 0x0
 
@@ -6519,7 +6519,7 @@
 
     if-ge v2, v9, :cond_3
 
-    .line 1780
+    .line 1783
     aget-object v9, v0, v2
 
     invoke-virtual {v1, v9}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -6528,10 +6528,10 @@
 
     if-eqz v9, :cond_8
 
-    .line 1781
+    .line 1784
     move v3, v2
 
-    .line 1785
+    .line 1788
     :cond_3
     iget-object v9, p0, Lcom/android/camera/OnScreenPreference;->mResolutionItems:Ljava/util/LinkedList;
 
@@ -6543,13 +6543,13 @@
 
     iget-object v5, v9, Lcom/android/camera/ResolutionMenuItem;->resolution:Lcom/android/camera/Resolution;
 
-    .line 1788
+    .line 1791
     .local v5, r:Lcom/android/camera/Resolution;
     iget-object v9, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     if-eqz v9, :cond_4
 
-    .line 1789
+    .line 1792
     iget-object v9, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v9}, Lcom/android/camera/HTCCamera;->getEventManager()Lcom/android/camera/EventManager;
@@ -6564,7 +6564,7 @@
 
     invoke-virtual {v9, v10}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 1791
+    .line 1794
     :cond_4
     const-string v9, "OnScreenPreference"
 
@@ -6588,18 +6588,18 @@
 
     invoke-static {v9, v10}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1792
+    .line 1795
     invoke-virtual {v5}, Lcom/android/camera/Resolution;->getWidth()I
 
     move-result v7
 
-    .line 1793
+    .line 1796
     .local v7, resolutionWidth:I
     invoke-virtual {v5}, Lcom/android/camera/Resolution;->getHeight()I
 
     move-result v6
 
-    .line 1795
+    .line 1798
     .local v6, resolutionHeight:I
     iget-object v9, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -6617,7 +6617,7 @@
 
     if-ne v9, v10, :cond_b
 
-    .line 1797
+    .line 1800
     iget-object v9, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v9}, Lcom/android/camera/CameraThread;->getMode()I
@@ -6626,14 +6626,14 @@
 
     if-ne v9, v12, :cond_a
 
-    .line 1798
+    .line 1801
     const-string v9, "OnScreenPreference"
 
     const-string v10, "for Mms custom request - not select to write preference really"
 
     invoke-static {v9, v10}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1799
+    .line 1802
     sget-object v9, Lcom/android/camera/Resolution;->Video_QVGA_Service:Lcom/android/camera/Resolution;
 
     invoke-virtual {v5, v9}, Lcom/android/camera/Resolution;->equals(Ljava/lang/Object;)Z
@@ -6642,10 +6642,10 @@
 
     if-eqz v9, :cond_9
 
-    .line 1800
+    .line 1803
     invoke-static {v12}, Lcom/android/camera/IntentManager;->setMMS_isVideoQVGA(Z)V
 
-    .line 1817
+    .line 1820
     :cond_5
     :goto_2
     const-string v9, "OnScreenPreference"
@@ -6654,12 +6654,12 @@
 
     invoke-static {v9, v10}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1818
+    .line 1821
     iget-object v9, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v9, v12}, Lcom/android/camera/HTCCamera;->setBlockCaptureUI(Z)V
 
-    .line 1819
+    .line 1822
     iget-object v9, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
     invoke-virtual {v9}, Lcom/android/camera/CameraThread;->getMode()I
@@ -6668,7 +6668,7 @@
 
     if-ne v9, v12, :cond_6
 
-    .line 1820
+    .line 1823
     iget-object v9, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v10, "pref_fast_frame_resolution_temp"
@@ -6677,7 +6677,7 @@
 
     invoke-static {v9, v10, v11}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 1822
+    .line 1825
     :cond_6
     iget-object v9, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
@@ -6689,7 +6689,7 @@
 
     goto/16 :goto_0
 
-    .line 1770
+    .line 1773
     .end local v0           #entries:[Ljava/lang/CharSequence;
     .end local v1           #entry:Ljava/lang/CharSequence;
     .end local v2           #i:I
@@ -6707,7 +6707,7 @@
 
     goto/16 :goto_0
 
-    .line 1779
+    .line 1782
     .restart local v0       #entries:[Ljava/lang/CharSequence;
     .restart local v1       #entry:Ljava/lang/CharSequence;
     .restart local v2       #i:I
@@ -6718,7 +6718,7 @@
 
     goto/16 :goto_1
 
-    .line 1802
+    .line 1805
     .restart local v5       #r:Lcom/android/camera/Resolution;
     .restart local v6       #resolutionHeight:I
     .restart local v7       #resolutionWidth:I
@@ -6729,7 +6729,7 @@
 
     goto :goto_2
 
-    .line 1804
+    .line 1807
     :cond_a
     iget-object v9, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -6749,11 +6749,11 @@
 
     move-result v8
 
-    .line 1805
+    .line 1808
     .local v8, result:Z
     if-nez v8, :cond_5
 
-    .line 1806
+    .line 1809
     const-string v9, "OnScreenPreference"
 
     const-string v10, "Write preference for resolution is fail in MMS photo mode"
@@ -6762,7 +6762,7 @@
 
     goto :goto_2
 
-    .line 1811
+    .line 1814
     .end local v8           #result:Z
     :cond_b
     iget-object v9, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
@@ -6783,11 +6783,11 @@
 
     move-result v8
 
-    .line 1812
+    .line 1815
     .restart local v8       #result:Z
     if-nez v8, :cond_5
 
-    .line 1813
+    .line 1816
     const-string v9, "OnScreenPreference"
 
     const-string v10, "Write preference for resolution is fail"
@@ -6808,25 +6808,25 @@
 
     const/4 v5, 0x0
 
-    .line 1827
+    .line 1830
     if-nez p1, :cond_0
 
-    .line 1828
+    .line 1831
     const-string v2, "OnScreenPreference"
 
     const-string v3, "selectWhiteBalance failed - no white balance preference"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1857
+    .line 1860
     :goto_0
     return-void
 
-    .line 1832
+    .line 1835
     :cond_0
     const/4 v0, 0x0
 
-    .line 1833
+    .line 1836
     .local v0, pref_name:Ljava/lang/String;
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportSpecific2ndCamera()Z
 
@@ -6838,10 +6838,10 @@
 
     if-eqz v2, :cond_2
 
-    .line 1834
+    .line 1837
     const-string v0, "pref_camera_white_balance_2nd"
 
-    .line 1839
+    .line 1842
     :goto_1
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -6849,10 +6849,10 @@
 
     if-ne v2, v4, :cond_1
 
-    .line 1841
+    .line 1844
     const/4 v1, 0x0
 
-    .line 1842
+    .line 1845
     .local v1, scene:Ljava/lang/String;
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -6862,7 +6862,7 @@
 
     if-nez v2, :cond_3
 
-    .line 1843
+    .line 1846
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v3, "pref_camera_scene_ds"
@@ -6871,7 +6871,7 @@
 
     move-result-object v1
 
-    .line 1847
+    .line 1850
     :goto_2
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -6881,7 +6881,7 @@
 
     if-eq v2, v4, :cond_1
 
-    .line 1849
+    .line 1852
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v3, "pref_camera_white_balance_manual"
@@ -6892,7 +6892,7 @@
 
     invoke-static {v2, v3, v4}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 1854
+    .line 1857
     .end local v1           #scene:Ljava/lang/String;
     :cond_1
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
@@ -6903,12 +6903,12 @@
 
     invoke-static {v2, v0, v3}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 1855
+    .line 1858
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v2, v6}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 1856
+    .line 1859
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {p1}, Landroid/preference/ListPreference;->getValue()Ljava/lang/String;
@@ -6919,13 +6919,13 @@
 
     goto :goto_0
 
-    .line 1836
+    .line 1839
     :cond_2
     const-string v0, "pref_camera_white_balance"
 
     goto :goto_1
 
-    .line 1845
+    .line 1848
     .restart local v1       #scene:Ljava/lang/String;
     :cond_3
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
@@ -6943,7 +6943,7 @@
     .locals 0
 
     .prologue
-    .line 1903
+    .line 1906
     return-void
 .end method
 
@@ -8095,16 +8095,16 @@
     .locals 1
 
     .prologue
-    .line 1924
+    .line 1927
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
     if-nez v0, :cond_0
 
-    .line 1935
+    .line 1938
     :goto_0
     return-void
 
-    .line 1926
+    .line 1929
     :cond_0
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
@@ -8114,17 +8114,17 @@
 
     iput-boolean v0, p0, Lcom/android/camera/OnScreenPreference;->bWideScreen:Z
 
-    .line 1931
+    .line 1934
     iget-boolean v0, p0, Lcom/android/camera/OnScreenPreference;->bWideScreen:Z
 
     iput-boolean v0, p0, Lcom/android/camera/OnScreenPreference;->mGeneral_isWideScreen:Z
 
-    .line 1933
+    .line 1936
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
     invoke-direct {p0, v0}, Lcom/android/camera/OnScreenPreference;->setupResolutionList(Landroid/preference/PreferenceScreen;)V
 
-    .line 1934
+    .line 1937
     invoke-direct {p0}, Lcom/android/camera/OnScreenPreference;->updateResolution()V
 
     goto :goto_0
@@ -8134,28 +8134,28 @@
     .locals 2
 
     .prologue
-    .line 2299
+    .line 2302
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/camera/HTCCamera;->setBlockCaptureUI(Z)V
 
-    .line 2300
+    .line 2303
     const-string v0, "OnScreenPreference"
 
     const-string v1, "Block Capture UI - updateResolution()"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2301
+    .line 2304
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v1, 0xf
 
     invoke-static {v0, v1}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 2302
+    .line 2305
     return-void
 .end method
 
@@ -8167,17 +8167,17 @@
 
     const/4 v2, 0x0
 
-    .line 1861
+    .line 1864
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mCameraSwitchPref:Landroid/preference/CheckBoxPreference;
 
     if-nez v0, :cond_1
 
-    .line 1888
+    .line 1891
     :cond_0
     :goto_0
     return-void
 
-    .line 1864
+    .line 1867
     :cond_1
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mCameraSwitchPref:Landroid/preference/CheckBoxPreference;
 
@@ -8191,60 +8191,60 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 1865
+    .line 1868
     iput-boolean v3, p0, Lcom/android/camera/OnScreenPreference;->bSwitchCamera:Z
 
-    .line 1866
+    .line 1869
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportWideScreen2ndCamera()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1867
+    .line 1870
     iput-boolean v2, p0, Lcom/android/camera/OnScreenPreference;->bWideScreen:Z
 
-    .line 1868
+    .line 1871
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_0
 
-    .line 1869
+    .line 1872
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
     const v1, 0x7f0a0084
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setSummaryOff(I)V
 
-    .line 1870
+    .line 1873
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 1871
+    .line 1874
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v2}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
     goto :goto_0
 
-    .line 1875
+    .line 1878
     :cond_2
     iput-boolean v2, p0, Lcom/android/camera/OnScreenPreference;->bSwitchCamera:Z
 
-    .line 1876
+    .line 1879
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_0
 
-    .line 1881
+    .line 1884
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
     iget-boolean v1, p0, Lcom/android/camera/OnScreenPreference;->mGeneral_isWideScreen:Z
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 1882
+    .line 1885
     iget-object v0, p0, Lcom/android/camera/OnScreenPreference;->mImageRatioPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v3}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
@@ -8472,10 +8472,10 @@
     .parameter "nValue"
 
     .prologue
-    .line 2843
+    .line 2846
     const/4 v0, 0x0
 
-    .line 2844
+    .line 2847
     .local v0, scene:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -8485,7 +8485,7 @@
 
     if-nez v1, :cond_1
 
-    .line 2845
+    .line 2848
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v2, "pref_camera_scene_ds"
@@ -8494,7 +8494,7 @@
 
     move-result-object v0
 
-    .line 2849
+    .line 2852
     :goto_0
     const-string v1, "pref_camera_brightness"
 
@@ -8504,7 +8504,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 2850
+    .line 2853
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v2, "pref_camera_brightness_manual"
@@ -8515,12 +8515,12 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2857
+    .line 2860
     :cond_0
     :goto_1
     return-void
 
-    .line 2847
+    .line 2850
     :cond_1
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -8532,7 +8532,7 @@
 
     goto :goto_0
 
-    .line 2851
+    .line 2854
     :cond_2
     const-string v1, "pref_camera_contrast"
 
@@ -8542,7 +8542,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 2852
+    .line 2855
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v2, "pref_camera_contrast_manual"
@@ -8555,7 +8555,7 @@
 
     goto :goto_1
 
-    .line 2853
+    .line 2856
     :cond_3
     const-string v1, "pref_camera_saturation"
 
@@ -8565,7 +8565,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 2854
+    .line 2857
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v2, "pref_camera_saturation_manual"
@@ -8578,7 +8578,7 @@
 
     goto :goto_1
 
-    .line 2855
+    .line 2858
     :cond_4
     const-string v1, "pref_camera_shaprness"
 
@@ -8588,7 +8588,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 2856
+    .line 2859
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v2, "pref_camera_sharpness_manual"
@@ -8862,7 +8862,7 @@
 
     const/4 v3, 0x0
 
-    .line 2364
+    .line 2367
     const-string v4, "pref_set_white_balance"
 
     and-int/lit8 v1, p1, 0x20
@@ -8876,7 +8876,7 @@
 
     move-result v0
 
-    .line 2368
+    .line 2371
     .local v0, updated:Z
     const-string v4, "pref_camera_iso"
 
@@ -8893,7 +8893,7 @@
 
     or-int/2addr v0, v1
 
-    .line 2372
+    .line 2375
     const-string v1, "pref_camera_image_property"
 
     sget v4, Lcom/android/camera/ImageSettings;->SETTING_IMAGE_PROPERTIES:I
@@ -8909,27 +8909,27 @@
 
     or-int/2addr v0, v1
 
-    .line 2376
+    .line 2379
     return v0
 
     .end local v0           #updated:Z
     :cond_0
     move v1, v3
 
-    .line 2364
+    .line 2367
     goto :goto_0
 
     .restart local v0       #updated:Z
     :cond_1
     move v1, v3
 
-    .line 2368
+    .line 2371
     goto :goto_1
 
     :cond_2
     move v2, v3
 
-    .line 2372
+    .line 2375
     goto :goto_2
 .end method
 
@@ -8947,21 +8947,21 @@
 
     const/4 v7, 0x0
 
-    .line 2649
+    .line 2652
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-nez v4, :cond_1
 
-    .line 2827
+    .line 2830
     :cond_0
     :goto_0
     return-void
 
-    .line 2652
+    .line 2655
     :cond_1
     const/4 v0, 0x0
 
-    .line 2653
+    .line 2656
     .local v0, conflictsPrefs:Landroid/preference/Preference;
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -8979,12 +8979,12 @@
 
     if-nez v4, :cond_7
 
-    .line 2656
+    .line 2659
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldWhitebalanceValue:Ljava/lang/String;
 
     if-nez v4, :cond_2
 
-    .line 2658
+    .line 2661
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v5, "pref_set_white_balance"
@@ -8995,14 +8995,14 @@
 
     iput-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldWhitebalanceValue:Ljava/lang/String;
 
-    .line 2661
+    .line 2664
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const-string v5, "auto"
 
     invoke-static {v4, v11, v7, v7, v5}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2663
+    .line 2666
     :cond_2
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
@@ -9012,7 +9012,7 @@
 
     move-result-object v0
 
-    .line 2664
+    .line 2667
     if-eqz v0, :cond_3
 
     invoke-virtual {v0}, Landroid/preference/Preference;->isEnabled()Z
@@ -9021,10 +9021,10 @@
 
     if-eqz v4, :cond_3
 
-    .line 2665
+    .line 2668
     invoke-virtual {v0, v7}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 2668
+    .line 2671
     :cond_3
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -9032,12 +9032,12 @@
 
     if-nez v4, :cond_5
 
-    .line 2671
+    .line 2674
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldISOValue:Ljava/lang/String;
 
     if-nez v4, :cond_4
 
-    .line 2673
+    .line 2676
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v5, "pref_camera_iso"
@@ -9048,7 +9048,7 @@
 
     iput-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldISOValue:Ljava/lang/String;
 
-    .line 2675
+    .line 2678
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v4}, Lcom/android/camera/HTCCamera;->getCameraThread()Lcom/android/camera/CameraThread;
@@ -9059,21 +9059,21 @@
 
     move-result-object v1
 
-    .line 2676
+    .line 2679
     .local v1, contorller:Lcom/android/camera/CameraController;
     if-eqz v1, :cond_4
 
-    .line 2677
+    .line 2680
     const-string v4, "iso"
 
     const-string v5, "auto"
 
     invoke-virtual {v1, v4, v5}, Lcom/android/camera/CameraController;->setCameraParameter(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2678
+    .line 2681
     invoke-virtual {v1}, Lcom/android/camera/CameraController;->doSetCameraParameters()V
 
-    .line 2681
+    .line 2684
     .end local v1           #contorller:Lcom/android/camera/CameraController;
     :cond_4
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
@@ -9084,7 +9084,7 @@
 
     move-result-object v0
 
-    .line 2682
+    .line 2685
     if-eqz v0, :cond_5
 
     invoke-virtual {v0}, Landroid/preference/Preference;->isEnabled()Z
@@ -9093,16 +9093,16 @@
 
     if-eqz v4, :cond_5
 
-    .line 2683
+    .line 2686
     invoke-virtual {v0, v7}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 2686
+    .line 2689
     :cond_5
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldImgBrightnessValue:Ljava/lang/String;
 
     if-nez v4, :cond_6
 
-    .line 2688
+    .line 2691
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v5, "pref_camera_brightness"
@@ -9113,10 +9113,10 @@
 
     iput-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldImgBrightnessValue:Ljava/lang/String;
 
-    .line 2689
+    .line 2692
     const/4 v2, 0x2
 
-    .line 2690
+    .line 2693
     .local v2, level_def:I
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -9128,14 +9128,14 @@
 
     invoke-static {v4, v5, v6}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2692
+    .line 2695
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v5, 0x11
 
     invoke-static {v4, v5, v2, v7, v8}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2695
+    .line 2698
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v5, "pref_camera_contrast"
@@ -9146,10 +9146,10 @@
 
     iput-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldImgContrastValue:Ljava/lang/String;
 
-    .line 2696
+    .line 2699
     const/4 v2, 0x2
 
-    .line 2697
+    .line 2700
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v5, "pref_camera_contrast"
@@ -9160,14 +9160,14 @@
 
     invoke-static {v4, v5, v6}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2699
+    .line 2702
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const-string v5, "contrast"
 
     invoke-static {v4, v9, v2, v7, v5}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2707
+    .line 2710
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v5, "pref_camera_saturation"
@@ -9178,10 +9178,10 @@
 
     iput-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldImgSaturationValue:Ljava/lang/String;
 
-    .line 2708
+    .line 2711
     const/4 v2, 0x2
 
-    .line 2709
+    .line 2712
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v5, "pref_camera_saturation"
@@ -9192,14 +9192,14 @@
 
     invoke-static {v4, v5, v6}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2711
+    .line 2714
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const-string v5, "saturation"
 
     invoke-static {v4, v9, v2, v7, v5}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2719
+    .line 2722
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v5, "pref_camera_shaprness"
@@ -9210,10 +9210,10 @@
 
     iput-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldImgSharpnessValue:Ljava/lang/String;
 
-    .line 2720
+    .line 2723
     const/4 v2, 0x2
 
-    .line 2721
+    .line 2724
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v5, "pref_camera_shaprness"
@@ -9224,14 +9224,14 @@
 
     invoke-static {v4, v5, v6}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2723
+    .line 2726
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const-string v5, "sharpness"
 
     invoke-static {v4, v9, v2, v7, v5}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2731
+    .line 2734
     .end local v2           #level_def:I
     :cond_6
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
@@ -9242,7 +9242,7 @@
 
     move-result-object v0
 
-    .line 2732
+    .line 2735
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/preference/Preference;->isEnabled()Z
@@ -9251,18 +9251,18 @@
 
     if-eqz v4, :cond_0
 
-    .line 2733
+    .line 2736
     invoke-virtual {v0, v7}, Landroid/preference/Preference;->setEnabled(Z)V
 
     goto/16 :goto_0
 
-    .line 2737
+    .line 2740
     :cond_7
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldWhitebalanceValue:Ljava/lang/String;
 
     if-eqz v4, :cond_8
 
-    .line 2739
+    .line 2742
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v5, "pref_set_white_balance"
@@ -9271,17 +9271,17 @@
 
     invoke-static {v4, v5, v6}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2741
+    .line 2744
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     iget-object v5, p0, Lcom/android/camera/OnScreenPreference;->oldWhitebalanceValue:Ljava/lang/String;
 
     invoke-static {v4, v11, v7, v7, v5}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2742
+    .line 2745
     iput-object v8, p0, Lcom/android/camera/OnScreenPreference;->oldWhitebalanceValue:Ljava/lang/String;
 
-    .line 2745
+    .line 2748
     :cond_8
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
@@ -9291,17 +9291,17 @@
 
     move-result-object v0
 
-    .line 2746
+    .line 2749
     invoke-virtual {v0}, Landroid/preference/Preference;->isEnabled()Z
 
     move-result v4
 
     if-nez v4, :cond_9
 
-    .line 2747
+    .line 2750
     invoke-virtual {v0, v10}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 2749
+    .line 2752
     :cond_9
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
@@ -9309,12 +9309,12 @@
 
     if-nez v4, :cond_c
 
-    .line 2752
+    .line 2755
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldISOValue:Ljava/lang/String;
 
     if-eqz v4, :cond_b
 
-    .line 2754
+    .line 2757
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v4}, Lcom/android/camera/HTCCamera;->getCameraThread()Lcom/android/camera/CameraThread;
@@ -9325,25 +9325,25 @@
 
     move-result-object v1
 
-    .line 2755
+    .line 2758
     .restart local v1       #contorller:Lcom/android/camera/CameraController;
     if-eqz v1, :cond_a
 
-    .line 2756
+    .line 2759
     const-string v4, "iso"
 
     iget-object v5, p0, Lcom/android/camera/OnScreenPreference;->oldISOValue:Ljava/lang/String;
 
     invoke-virtual {v1, v4, v5}, Lcom/android/camera/CameraController;->setCameraParameter(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2757
+    .line 2760
     invoke-virtual {v1}, Lcom/android/camera/CameraController;->doSetCameraParameters()V
 
-    .line 2759
+    .line 2762
     :cond_a
     iput-object v8, p0, Lcom/android/camera/OnScreenPreference;->oldISOValue:Ljava/lang/String;
 
-    .line 2762
+    .line 2765
     .end local v1           #contorller:Lcom/android/camera/CameraController;
     :cond_b
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
@@ -9354,7 +9354,7 @@
 
     move-result-object v0
 
-    .line 2763
+    .line 2766
     if-eqz v0, :cond_c
 
     invoke-virtual {v0}, Landroid/preference/Preference;->isEnabled()Z
@@ -9363,27 +9363,27 @@
 
     if-nez v4, :cond_c
 
-    .line 2764
+    .line 2767
     invoke-virtual {v0, v10}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 2767
+    .line 2770
     :cond_c
     const/4 v3, 0x0
 
-    .line 2768
+    .line 2771
     .local v3, nValue:I
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldImgBrightnessValue:Ljava/lang/String;
 
     if-eqz v4, :cond_d
 
-    .line 2770
+    .line 2773
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldImgBrightnessValue:Ljava/lang/String;
 
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
 
-    .line 2771
+    .line 2774
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v5, "pref_camera_brightness"
@@ -9394,30 +9394,30 @@
 
     invoke-static {v4, v5, v6}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2773
+    .line 2776
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v5, 0x11
 
     invoke-static {v4, v5, v3, v7, v8}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2774
+    .line 2777
     iput-object v8, p0, Lcom/android/camera/OnScreenPreference;->oldImgBrightnessValue:Ljava/lang/String;
 
-    .line 2778
+    .line 2781
     :cond_d
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldImgContrastValue:Ljava/lang/String;
 
     if-eqz v4, :cond_e
 
-    .line 2780
+    .line 2783
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldImgContrastValue:Ljava/lang/String;
 
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
 
-    .line 2781
+    .line 2784
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v5, "pref_camera_contrast"
@@ -9428,30 +9428,30 @@
 
     invoke-static {v4, v5, v6}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2783
+    .line 2786
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const-string v5, "contrast"
 
     invoke-static {v4, v9, v3, v7, v5}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2789
+    .line 2792
     iput-object v8, p0, Lcom/android/camera/OnScreenPreference;->oldImgContrastValue:Ljava/lang/String;
 
-    .line 2793
+    .line 2796
     :cond_e
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldImgSaturationValue:Ljava/lang/String;
 
     if-eqz v4, :cond_f
 
-    .line 2795
+    .line 2798
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldImgSaturationValue:Ljava/lang/String;
 
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
 
-    .line 2796
+    .line 2799
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v5, "pref_camera_saturation"
@@ -9462,30 +9462,30 @@
 
     invoke-static {v4, v5, v6}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2798
+    .line 2801
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const-string v5, "saturation"
 
     invoke-static {v4, v9, v3, v7, v5}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2804
+    .line 2807
     iput-object v8, p0, Lcom/android/camera/OnScreenPreference;->oldImgSaturationValue:Ljava/lang/String;
 
-    .line 2808
+    .line 2811
     :cond_f
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldImgSharpnessValue:Ljava/lang/String;
 
     if-eqz v4, :cond_10
 
-    .line 2810
+    .line 2813
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->oldImgSharpnessValue:Ljava/lang/String;
 
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
 
-    .line 2811
+    .line 2814
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v5, "pref_camera_shaprness"
@@ -9496,17 +9496,17 @@
 
     invoke-static {v4, v5, v6}, Lcom/android/camera/HTCCameraAdvanceSetting;->writePreference(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Z
 
-    .line 2813
+    .line 2816
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const-string v5, "sharpness"
 
     invoke-static {v4, v9, v3, v7, v5}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 2819
+    .line 2822
     iput-object v8, p0, Lcom/android/camera/OnScreenPreference;->oldImgSharpnessValue:Ljava/lang/String;
 
-    .line 2823
+    .line 2826
     :cond_10
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
@@ -9516,7 +9516,7 @@
 
     move-result-object v0
 
-    .line 2824
+    .line 2827
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/preference/Preference;->isEnabled()Z
@@ -9537,7 +9537,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 2825
+    .line 2828
     invoke-virtual {v0, v10}, Landroid/preference/Preference;->setEnabled(Z)V
 
     goto/16 :goto_0
@@ -9654,7 +9654,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 2028
+    .line 2031
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
     const-string v2, "pref_camera_iso"
@@ -9663,22 +9663,22 @@
 
     move-result-object v0
 
-    .line 2029
+    .line 2032
     .local v0, property:Landroid/preference/Preference;
     if-eqz v0, :cond_0
 
-    .line 2030
+    .line 2033
     if-eqz p1, :cond_1
 
-    .line 2031
+    .line 2034
     invoke-virtual {v0, v3}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 2035
+    .line 2038
     :cond_0
     :goto_0
     return v3
 
-    .line 2033
+    .line 2036
     :cond_1
     const/4 v1, 0x0
 
@@ -9694,7 +9694,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2014
+    .line 2017
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
     const-string v3, "pref_camera_image_property"
@@ -9703,27 +9703,27 @@
 
     move-result-object v0
 
-    .line 2015
+    .line 2018
     .local v0, property:Landroid/preference/Preference;
     if-eqz v0, :cond_0
 
-    .line 2016
+    .line 2019
     invoke-virtual {v0}, Landroid/preference/Preference;->isEnabled()Z
 
     move-result v2
 
     if-ne p1, v2, :cond_1
 
-    .line 2023
+    .line 2026
     :cond_0
     :goto_0
     return v1
 
-    .line 2019
+    .line 2022
     :cond_1
     invoke-virtual {v0, p1}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 2020
+    .line 2023
     const/4 v1, 0x1
 
     goto :goto_0
@@ -9737,23 +9737,23 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2349
+    .line 2352
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
     invoke-virtual {v2, p1}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v0
 
-    .line 2350
+    .line 2353
     .local v0, preference:Landroid/preference/Preference;
     if-nez v0, :cond_1
 
-    .line 2358
+    .line 2361
     :cond_0
     :goto_0
     return v1
 
-    .line 2353
+    .line 2356
     :cond_1
     invoke-virtual {v0}, Landroid/preference/Preference;->isEnabled()Z
 
@@ -9761,10 +9761,10 @@
 
     if-eq v2, p2, :cond_0
 
-    .line 2355
+    .line 2358
     invoke-virtual {v0, p2}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 2356
+    .line 2359
     const/4 v1, 0x1
 
     goto :goto_0
@@ -9777,10 +9777,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2382
+    .line 2385
     const/4 v0, 0x0
 
-    .line 2384
+    .line 2387
     .local v0, property:Landroid/preference/Preference;
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -9788,19 +9788,19 @@
 
     if-nez v2, :cond_4
 
-    .line 2386
+    .line 2389
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v2, :cond_0
 
-    .line 2387
+    .line 2390
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
     iget v2, v2, Lcom/android/camera/CameraThread;->mMode:I
 
     if-nez v2, :cond_2
 
-    .line 2388
+    .line 2391
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
     const-string v3, "pref_camera_scene"
@@ -9809,30 +9809,30 @@
 
     move-result-object v0
 
-    .line 2393
+    .line 2396
     :cond_0
     :goto_0
     if-eqz v0, :cond_3
 
-    .line 2394
+    .line 2397
     invoke-virtual {v0}, Landroid/preference/Preference;->isEnabled()Z
 
     move-result v2
 
     if-eq p1, v2, :cond_1
 
-    .line 2395
+    .line 2398
     invoke-virtual {v0, p1}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 2397
+    .line 2400
     :cond_1
     invoke-virtual {p0}, Lcom/android/camera/OnScreenPreference;->checkSceneSetting()V
 
-    .line 2405
+    .line 2408
     :goto_1
     return v1
 
-    .line 2390
+    .line 2393
     :cond_2
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
@@ -9844,13 +9844,13 @@
 
     goto :goto_0
 
-    .line 2400
+    .line 2403
     :cond_3
     const/4 v1, 0x0
 
     goto :goto_1
 
-    .line 2404
+    .line 2407
     :cond_4
     invoke-direct {p0}, Lcom/android/camera/OnScreenPreference;->checkSceneSettingForDOT()Z
 
@@ -9864,12 +9864,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1996
+    .line 1999
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mSelfTimerPref:Landroid/preference/ListPreference;
 
     if-eqz v2, :cond_1
 
-    .line 1997
+    .line 2000
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     if-eqz v2, :cond_1
@@ -9882,12 +9882,12 @@
 
     if-lez v2, :cond_1
 
-    .line 2010
+    .line 2013
     :cond_0
     :goto_0
     return v1
 
-    .line 2001
+    .line 2004
     :cond_1
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
@@ -9897,21 +9897,21 @@
 
     move-result-object v0
 
-    .line 2002
+    .line 2005
     .local v0, pref:Landroid/preference/Preference;
     if-eqz v0, :cond_0
 
-    .line 2003
+    .line 2006
     invoke-virtual {v0}, Landroid/preference/Preference;->isEnabled()Z
 
     move-result v2
 
     if-eq p1, v2, :cond_0
 
-    .line 2006
+    .line 2009
     invoke-virtual {v0, p1}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 2007
+    .line 2010
     const/4 v1, 0x1
 
     goto :goto_0
@@ -9921,13 +9921,13 @@
     .locals 0
 
     .prologue
-    .line 1748
+    .line 1751
     invoke-direct {p0}, Lcom/android/camera/OnScreenPreference;->restorePreference()V
 
-    .line 1749
+    .line 1752
     invoke-direct {p0}, Lcom/android/camera/OnScreenPreference;->closeDialog()V
 
-    .line 1750
+    .line 1753
     return-void
 .end method
 
@@ -9954,14 +9954,14 @@
     .locals 2
 
     .prologue
-    .line 2040
+    .line 2043
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v1}, Lcom/android/camera/HTCCamera;->getEffectManager()Lcom/android/camera/effect/EffectManager;
 
     move-result-object v0
 
-    .line 2041
+    .line 2044
     .local v0, effectManager:Lcom/android/camera/effect/EffectManager;
     if-eqz v0, :cond_0
 
@@ -9986,14 +9986,14 @@
     .locals 5
 
     .prologue
-    .line 2862
+    .line 2865
     const/4 v1, 0x0
 
-    .line 2863
+    .line 2866
     .local v1, scene:Ljava/lang/String;
     const/4 v2, 0x0
 
-    .line 2864
+    .line 2867
     .local v2, sceneNum:I
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -10003,7 +10003,7 @@
 
     if-nez v3, :cond_1
 
-    .line 2865
+    .line 2868
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v4, "pref_camera_scene_ds"
@@ -10012,7 +10012,7 @@
 
     move-result-object v1
 
-    .line 2869
+    .line 2872
     :goto_0
     if-eqz v1, :cond_0
 
@@ -10025,19 +10025,19 @@
 
     if-nez v3, :cond_0
 
-    .line 2870
+    .line 2873
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v2
 
-    .line 2874
+    .line 2877
     :cond_0
     :goto_1
     return v2
 
-    .line 2867
+    .line 2870
     :cond_1
     iget-object v3, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -10049,11 +10049,11 @@
 
     goto :goto_0
 
-    .line 2871
+    .line 2874
     :catch_0
     move-exception v0
 
-    .line 2872
+    .line 2875
     .local v0, ex:Ljava/lang/NumberFormatException;
     const-string v3, "OnScreenPreference"
 
@@ -10069,14 +10069,14 @@
     .parameter "mode"
 
     .prologue
-    .line 2411
+    .line 2414
     const/4 v0, 0x0
 
-    .line 2412
+    .line 2415
     .local v0, prev_scene:Ljava/lang/String;
     if-nez p1, :cond_0
 
-    .line 2414
+    .line 2417
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v2, "pref_camera_scene"
@@ -10085,7 +10085,7 @@
 
     move-result-object v0
 
-    .line 2416
+    .line 2419
     const-string v1, "OnScreenPreference"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -10108,7 +10108,7 @@
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2424
+    .line 2427
     :goto_0
     const-string v1, "auto"
 
@@ -10118,7 +10118,7 @@
 
     if-nez v1, :cond_1
 
-    .line 2426
+    .line 2429
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v1}, Lcom/android/camera/HTCCamera;->getEventManager()Lcom/android/camera/EventManager;
@@ -10135,12 +10135,12 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 2431
+    .line 2434
     .end local v0           #prev_scene:Ljava/lang/String;
     :goto_1
     return-object v0
 
-    .line 2419
+    .line 2422
     .restart local v0       #prev_scene:Ljava/lang/String;
     :cond_0
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
@@ -10151,7 +10151,7 @@
 
     move-result-object v0
 
-    .line 2421
+    .line 2424
     const-string v1, "OnScreenPreference"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -10176,7 +10176,7 @@
 
     goto :goto_0
 
-    .line 2430
+    .line 2433
     :cond_1
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
@@ -10194,7 +10194,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 2431
+    .line 2434
     const-string v0, "auto"
 
     goto :goto_1
@@ -10402,7 +10402,7 @@
 
     invoke-virtual {v2}, Lcom/android/camera/HTCCamera;->restartCamera()V
 
-    .line 1626
+    .line 1629
     :cond_0
     :goto_0
     return-void
@@ -10717,10 +10717,10 @@
 
     move-result v2
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_12
 
     .line 1595
-    if-eqz p2, :cond_10
+    if-eqz p2, :cond_11
 
     .line 1596
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
@@ -10736,21 +10736,32 @@
     invoke-virtual {p0}, Lcom/android/camera/OnScreenPreference;->checkAutoCapture()V
 
     .line 1604
+    iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
+
+    if-eqz v2, :cond_10
+
+    .line 1605
+    iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
+
+    invoke-virtual {v2}, Lcom/android/camera/HTCCamera;->updateIndicatorLayout_AutoCapture()V
+
+    .line 1607
+    :cond_10
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v2, v7}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 1605
+    .line 1608
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v2, v7}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 1607
+    .line 1610
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v2, v6}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 1608
+    .line 1611
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v2, v6}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
@@ -10758,7 +10769,7 @@
     goto/16 :goto_0
 
     .line 1599
-    :cond_10
+    :cond_11
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     const-string v3, "pref_camera_face_number"
@@ -10769,41 +10780,9 @@
 
     goto :goto_1
 
-    .line 1609
-    :cond_11
-    const-string v2, "pref_smile_capture"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_12
-
-    .line 1610
-    iput-boolean p2, p0, Lcom/android/camera/OnScreenPreference;->bSmileCapture:Z
-
-    .line 1611
-    invoke-direct {p0, p2}, Lcom/android/camera/OnScreenPreference;->checkSmileCapture(Z)V
-
     .line 1612
-    iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
-
-    const/16 v3, 0x3d
-
-    invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
-
-    .line 1613
-    iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
-
-    const/16 v3, 0x3d
-
-    invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
-
-    goto/16 :goto_0
-
-    .line 1614
     :cond_12
-    const-string v2, "pref_blink detection"
+    const-string v2, "pref_smile_capture"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -10811,20 +10790,52 @@
 
     if-eqz v2, :cond_13
 
+    .line 1613
+    iput-boolean p2, p0, Lcom/android/camera/OnScreenPreference;->bSmileCapture:Z
+
+    .line 1614
+    invoke-direct {p0, p2}, Lcom/android/camera/OnScreenPreference;->checkSmileCapture(Z)V
+
     .line 1615
-    iput-boolean p2, p0, Lcom/android/camera/OnScreenPreference;->bBlinkDetection:Z
+    iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
+
+    const/16 v3, 0x3d
+
+    invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
     .line 1616
-    invoke-direct {p0, p2}, Lcom/android/camera/OnScreenPreference;->checkBlinkDetection(Z)V
+    iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
+
+    const/16 v3, 0x3d
+
+    invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
+
+    goto/16 :goto_0
 
     .line 1617
+    :cond_13
+    const-string v2, "pref_blink detection"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_14
+
+    .line 1618
+    iput-boolean p2, p0, Lcom/android/camera/OnScreenPreference;->bBlinkDetection:Z
+
+    .line 1619
+    invoke-direct {p0, p2}, Lcom/android/camera/OnScreenPreference;->checkBlinkDetection(Z)V
+
+    .line 1620
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v3, 0x3c
 
     invoke-static {v2, v3}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 1618
+    .line 1621
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v3, 0x3c
@@ -10833,25 +10844,25 @@
 
     goto/16 :goto_0
 
-    .line 1619
-    :cond_13
+    .line 1622
+    :cond_14
     const-string v2, "pref_fast_fps"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_15
 
-    .line 1620
+    .line 1623
     iput-boolean p2, p0, Lcom/android/camera/OnScreenPreference;->bFastFrameRecording:Z
 
-    .line 1621
+    .line 1624
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
     invoke-direct {p0, v2, p2}, Lcom/android/camera/OnScreenPreference;->checkFastFrameRecording(Landroid/preference/PreferenceScreen;Z)V
 
-    .line 1622
+    .line 1625
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v2}, Lcom/android/camera/HTCCamera;->getEventManager()Lcom/android/camera/EventManager;
@@ -10872,8 +10883,8 @@
 
     goto/16 :goto_0
 
-    .line 1624
-    :cond_14
+    .line 1627
+    :cond_15
     invoke-direct {p0}, Lcom/android/camera/OnScreenPreference;->doSettings()V
 
     goto/16 :goto_0
@@ -10895,12 +10906,12 @@
 
     const/4 v1, 0x0
 
-    .line 1630
+    .line 1633
     invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1631
+    .line 1634
     .local v2, key:Ljava/lang/String;
     const-string v5, "pref_set_resolution"
 
@@ -10910,16 +10921,16 @@
 
     if-eqz v5, :cond_1
 
-    .line 1632
+    .line 1635
     invoke-direct {p0, p1}, Lcom/android/camera/OnScreenPreference;->selectResolution(Landroid/preference/Preference;)V
 
-    .line 1745
+    .line 1748
     .end local p1
     :cond_0
     :goto_0
     return-void
 
-    .line 1634
+    .line 1637
     .restart local p1
     :cond_1
     const-string v5, "pref_capture_format_video"
@@ -10930,17 +10941,17 @@
 
     if-eqz v5, :cond_2
 
-    .line 1635
+    .line 1638
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
     invoke-direct {p0, v4}, Lcom/android/camera/OnScreenPreference;->setupResolutionList(Landroid/preference/PreferenceScreen;)V
 
-    .line 1636
+    .line 1639
     invoke-direct {p0}, Lcom/android/camera/OnScreenPreference;->updateResolution()V
 
     goto :goto_0
 
-    .line 1637
+    .line 1640
     :cond_2
     const-string v5, "pref_set_white_balance"
 
@@ -10950,7 +10961,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 1638
+    .line 1641
     check-cast p1, Landroid/preference/ListPreference;
 
     .end local p1
@@ -10958,7 +10969,7 @@
 
     goto :goto_0
 
-    .line 1639
+    .line 1642
     .restart local p1
     :cond_3
     const-string v5, "pref_camera_self_timer"
@@ -10969,18 +10980,18 @@
 
     if-eqz v5, :cond_6
 
-    .line 1641
+    .line 1644
     invoke-virtual {p0}, Lcom/android/camera/OnScreenPreference;->checkAutoCapture()V
 
-    .line 1642
+    .line 1645
     if-eqz p2, :cond_4
 
-    .line 1643
+    .line 1646
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v4, v8}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 1644
+    .line 1647
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mUIHandler:Landroid/os/Handler;
 
     const v5, 0x7f0a014a
@@ -10989,13 +11000,13 @@
 
     invoke-static {v4, v8, v5, v1, v6}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 1649
+    .line 1652
     :cond_4
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     if-eqz v4, :cond_5
 
-    .line 1650
+    .line 1653
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v4}, Lcom/android/camera/HTCCamera;->getEventManager()Lcom/android/camera/EventManager;
@@ -11020,7 +11031,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/camera/EventManager;->raiseEvent(Lcom/android/camera/Event;)V
 
-    .line 1652
+    .line 1655
     :cond_5
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -11028,12 +11039,12 @@
 
     if-eqz v4, :cond_0
 
-    .line 1653
+    .line 1656
     invoke-virtual {p0}, Lcom/android/camera/OnScreenPreference;->updateSmileCapture()V
 
     goto :goto_0
 
-    .line 1654
+    .line 1657
     :cond_6
     const-string v5, "pref_camera_face_number"
 
@@ -11043,32 +11054,32 @@
 
     if-eqz v5, :cond_9
 
-    .line 1656
+    .line 1659
     invoke-virtual {p0}, Lcom/android/camera/OnScreenPreference;->checkAutoCapture()V
 
-    .line 1657
+    .line 1660
     if-eqz p2, :cond_7
 
-    .line 1658
+    .line 1661
     if-ne p2, v4, :cond_8
 
     const v3, 0x7f0a014b
 
-    .line 1660
+    .line 1663
     .local v3, str:I
     :goto_1
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mUIHandler:Landroid/os/Handler;
 
     invoke-static {v4, v8}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 1661
+    .line 1664
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mUIHandler:Landroid/os/Handler;
 
     const/4 v5, 0x0
 
     invoke-static {v4, v8, v3, v1, v5}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 1664
+    .line 1667
     .end local v3           #str:I
     :cond_7
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
@@ -11077,21 +11088,21 @@
 
     invoke-static {v4, v5}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 1665
+    .line 1668
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v5, 0x30
 
     invoke-static {v4, v5}, Lcom/android/camera/MessageHandler;->sendEmptyMessage(Landroid/os/Handler;I)V
 
-    .line 1667
+    .line 1670
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mUIHandler:Landroid/os/Handler;
 
     const/16 v5, 0x23
 
     invoke-static {v4, v5}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 1668
+    .line 1671
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mUIHandler:Landroid/os/Handler;
 
     const/16 v5, 0x23
@@ -11100,13 +11111,13 @@
 
     goto/16 :goto_0
 
-    .line 1658
+    .line 1661
     :cond_8
     const v3, 0x7f0a014c
 
     goto :goto_1
 
-    .line 1669
+    .line 1672
     :cond_9
     const-string v5, "pref_camera_iso"
 
@@ -11116,7 +11127,7 @@
 
     if-eqz v5, :cond_b
 
-    .line 1670
+    .line 1673
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
     move-result v4
@@ -11125,18 +11136,18 @@
 
     move-object v4, p1
 
-    .line 1671
+    .line 1674
     check-cast v4, Landroid/preference/ListPreference;
 
     invoke-direct {p0, v4}, Lcom/android/camera/OnScreenPreference;->backupISOSettings_DOT(Landroid/preference/ListPreference;)V
 
-    .line 1673
+    .line 1676
     :cond_a
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v4, v6}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 1674
+    .line 1677
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     check-cast p1, Landroid/preference/ListPreference;
@@ -11150,7 +11161,7 @@
 
     goto/16 :goto_0
 
-    .line 1675
+    .line 1678
     .restart local p1
     :cond_b
     const-string v5, "pref_camera_review_duration"
@@ -11161,7 +11172,7 @@
 
     if-eqz v5, :cond_c
 
-    .line 1676
+    .line 1679
     check-cast p1, Landroid/preference/ListPreference;
 
     .end local p1
@@ -11171,10 +11182,10 @@
 
     iput-object v4, p0, Lcom/android/camera/OnScreenPreference;->mReviewDurationValue:Ljava/lang/String;
 
-    .line 1677
+    .line 1680
     invoke-direct {p0}, Lcom/android/camera/OnScreenPreference;->doSettings()V
 
-    .line 1678
+    .line 1681
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v4}, Lcom/android/camera/HTCCamera;->getEventManager()Lcom/android/camera/EventManager;
@@ -11187,7 +11198,7 @@
 
     goto/16 :goto_0
 
-    .line 1679
+    .line 1682
     .restart local p1
     :cond_c
     const-string v5, "pref_camera_3D_file_format"
@@ -11198,7 +11209,7 @@
 
     if-eqz v5, :cond_d
 
-    .line 1681
+    .line 1684
     check-cast p1, Landroid/preference/ListPreference;
 
     .end local p1
@@ -11208,12 +11219,12 @@
 
     iput-object v4, p0, Lcom/android/camera/OnScreenPreference;->m3DFileFormatValue:Ljava/lang/String;
 
-    .line 1682
+    .line 1685
     invoke-direct {p0}, Lcom/android/camera/OnScreenPreference;->doSettings()V
 
     goto/16 :goto_0
 
-    .line 1683
+    .line 1686
     .restart local p1
     :cond_d
     const-string v5, "pref_camera_video_file_format"
@@ -11224,7 +11235,7 @@
 
     if-eqz v5, :cond_e
 
-    .line 1685
+    .line 1688
     check-cast p1, Landroid/preference/ListPreference;
 
     .end local p1
@@ -11234,12 +11245,12 @@
 
     iput-object v4, p0, Lcom/android/camera/OnScreenPreference;->mVideoFileFormatValue:Ljava/lang/String;
 
-    .line 1686
+    .line 1689
     invoke-direct {p0}, Lcom/android/camera/OnScreenPreference;->doSettings()V
 
     goto/16 :goto_0
 
-    .line 1689
+    .line 1692
     .restart local p1
     :cond_e
     const-string v5, "pref_camera_effect"
@@ -11250,18 +11261,18 @@
 
     if-eqz v5, :cond_11
 
-    .line 1691
+    .line 1694
     iget-object v5, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v5}, Lcom/android/camera/HTCCamera;->getEffectManager()Lcom/android/camera/effect/EffectManager;
 
     move-result-object v0
 
-    .line 1692
+    .line 1695
     .local v0, effectManager:Lcom/android/camera/effect/EffectManager;
     if-eqz v0, :cond_f
 
-    .line 1693
+    .line 1696
     check-cast p1, Landroid/preference/ListPreference;
 
     .end local p1
@@ -11271,7 +11282,7 @@
 
     invoke-virtual {v0, v5}, Lcom/android/camera/effect/EffectManager;->setCurrentEffect(Ljava/lang/String;)V
 
-    .line 1694
+    .line 1697
     :cond_f
     if-eqz v0, :cond_10
 
@@ -11293,20 +11304,20 @@
 
     move v1, v4
 
-    .line 1695
+    .line 1698
     .local v1, enable:Z
     :cond_10
     invoke-virtual {p0, v1}, Lcom/android/camera/OnScreenPreference;->enableImageProperty(Z)Z
 
-    .line 1696
+    .line 1699
     invoke-virtual {p0, v1}, Lcom/android/camera/OnScreenPreference;->enableSceneOptions(Z)Z
 
-    .line 1697
+    .line 1700
     invoke-virtual {p0, v4}, Lcom/android/camera/OnScreenPreference;->updateFaceDetection(Z)Z
 
     goto/16 :goto_0
 
-    .line 1699
+    .line 1702
     .end local v0           #effectManager:Lcom/android/camera/effect/EffectManager;
     .end local v1           #enable:Z
     .restart local p1
@@ -11319,18 +11330,18 @@
 
     if-eqz v5, :cond_14
 
-    .line 1701
+    .line 1704
     iget-object v5, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v5}, Lcom/android/camera/HTCCamera;->getEffectManager()Lcom/android/camera/effect/EffectManager;
 
     move-result-object v0
 
-    .line 1702
+    .line 1705
     .restart local v0       #effectManager:Lcom/android/camera/effect/EffectManager;
     if-eqz v0, :cond_12
 
-    .line 1703
+    .line 1706
     check-cast p1, Landroid/preference/ListPreference;
 
     .end local p1
@@ -11340,7 +11351,7 @@
 
     invoke-virtual {v0, v5}, Lcom/android/camera/effect/EffectManager;->setCurrentEffect(Ljava/lang/String;)V
 
-    .line 1704
+    .line 1707
     :cond_12
     if-eqz v0, :cond_13
 
@@ -11362,20 +11373,20 @@
 
     move v1, v4
 
-    .line 1705
+    .line 1708
     .restart local v1       #enable:Z
     :cond_13
     invoke-virtual {p0, v1}, Lcom/android/camera/OnScreenPreference;->enableImageProperty(Z)Z
 
-    .line 1706
+    .line 1709
     invoke-virtual {p0, v1}, Lcom/android/camera/OnScreenPreference;->enableSceneOptions(Z)Z
 
-    .line 1707
+    .line 1710
     invoke-virtual {p0, v4}, Lcom/android/camera/OnScreenPreference;->updateFaceDetection(Z)Z
 
     goto/16 :goto_0
 
-    .line 1712
+    .line 1715
     .end local v0           #effectManager:Lcom/android/camera/effect/EffectManager;
     .end local v1           #enable:Z
     .restart local p1
@@ -11390,7 +11401,7 @@
 
     move-object v4, p1
 
-    .line 1714
+    .line 1717
     check-cast v4, Landroid/preference/ListPreference;
 
     invoke-virtual {v4}, Landroid/preference/ListPreference;->getValue()Ljava/lang/String;
@@ -11405,7 +11416,7 @@
 
     if-eqz v4, :cond_15
 
-    .line 1716
+    .line 1719
     const-string v5, "OnScreenPreference"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -11436,14 +11447,14 @@
 
     invoke-static {v5, v4}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1717
+    .line 1720
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const-string v5, "auto"
 
     invoke-static {v4, v7, v1, v1, v5}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 1718
+    .line 1721
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v5, 0x13
@@ -11452,7 +11463,7 @@
 
     invoke-static {v4, v5, v1, v1, v6}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 1719
+    .line 1722
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v5, 0x3e
@@ -11466,13 +11477,13 @@
 
     invoke-static {v4, v5, v1, v1, v6}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 1730
+    .line 1733
     :goto_2
     invoke-virtual {p0}, Lcom/android/camera/OnScreenPreference;->checkSceneSetting()V
 
     goto/16 :goto_0
 
-    .line 1723
+    .line 1726
     .restart local p1
     :cond_15
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
@@ -11481,7 +11492,7 @@
 
     invoke-static {v4, v7, v1, v1, v5}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 1724
+    .line 1727
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v5, 0x13
@@ -11490,12 +11501,12 @@
 
     invoke-static {v4, v5, v1, v1, v6}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 1725
+    .line 1728
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v4, v7}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 1726
+    .line 1729
     iget-object v5, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     move-object v4, p1
@@ -11508,7 +11519,7 @@
 
     invoke-static {v5, v7, v1, v1, v4}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 1727
+    .line 1730
     const-string v4, "OnScreenPreference"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -11540,7 +11551,7 @@
 
     goto :goto_2
 
-    .line 1732
+    .line 1735
     .restart local p1
     :cond_16
     const-string v4, "pref_video_scene"
@@ -11551,12 +11562,12 @@
 
     if-eqz v4, :cond_17
 
-    .line 1734
+    .line 1737
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     invoke-static {v4, v7}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 1735
+    .line 1738
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     check-cast p1, Landroid/preference/ListPreference;
@@ -11568,12 +11579,12 @@
 
     invoke-static {v4, v7, v1, v1, v5}, Lcom/android/camera/MessageHandler;->sendObtainMessage(Landroid/os/Handler;IIILjava/lang/Object;)V
 
-    .line 1736
+    .line 1739
     invoke-virtual {p0}, Lcom/android/camera/OnScreenPreference;->checkSceneSetting()V
 
     goto/16 :goto_0
 
-    .line 1738
+    .line 1741
     .restart local p1
     :cond_17
     const-string v4, "pref_camera_storage_location"
@@ -11584,10 +11595,10 @@
 
     if-eqz v4, :cond_18
 
-    .line 1740
+    .line 1743
     invoke-direct {p0}, Lcom/android/camera/OnScreenPreference;->doSettings()V
 
-    .line 1741
+    .line 1744
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
     const/16 v5, 0x35
@@ -11596,7 +11607,7 @@
 
     goto/16 :goto_0
 
-    .line 1744
+    .line 1747
     :cond_18
     invoke-direct {p0}, Lcom/android/camera/OnScreenPreference;->doSettings()V
 
@@ -11787,7 +11798,7 @@
 
     const/4 v3, 0x0
 
-    .line 2127
+    .line 2130
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v1, :cond_0
@@ -11798,12 +11809,12 @@
 
     if-ne v1, v4, :cond_1
 
-    .line 2144
+    .line 2147
     :cond_0
     :goto_0
     return-void
 
-    .line 2130
+    .line 2133
     :cond_1
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mBlinkDetectionPref:Landroid/preference/CheckBoxPreference;
 
@@ -11813,7 +11824,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 2133
+    .line 2136
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
     const-string v2, "pref_face_detection"
@@ -11824,7 +11835,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    .line 2135
+    .line 2138
     .local v0, face:Landroid/preference/CheckBoxPreference;
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -11840,19 +11851,19 @@
 
     if-nez v1, :cond_2
 
-    .line 2136
+    .line 2139
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mBlinkDetectionPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v1, v4}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
-    .line 2137
+    .line 2140
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mBlinkDetectionPref:Landroid/preference/CheckBoxPreference;
 
     iget-boolean v2, p0, Lcom/android/camera/OnScreenPreference;->bBlinkDetection:Z
 
     invoke-virtual {v1, v2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 2143
+    .line 2146
     :goto_1
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
@@ -11862,13 +11873,13 @@
 
     goto :goto_0
 
-    .line 2140
+    .line 2143
     :cond_2
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mBlinkDetectionPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v1, v3}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
-    .line 2141
+    .line 2144
     iget-object v1, p0, Lcom/android/camera/OnScreenPreference;->mBlinkDetectionPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v1, v3}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
@@ -11885,7 +11896,7 @@
 
     const/4 v4, 0x0
 
-    .line 2065
+    .line 2068
     iget-object v5, p0, Lcom/android/camera/OnScreenPreference;->mHTCCamera:Lcom/android/camera/HTCCamera;
 
     invoke-static {v5}, Lcom/android/camera/HTCCameraAdvanceSetting;->getFaceNumber(Landroid/app/Activity;)I
@@ -11894,12 +11905,12 @@
 
     if-lez v5, :cond_1
 
-    .line 2099
+    .line 2102
     :cond_0
     :goto_0
     return v4
 
-    .line 2068
+    .line 2071
     :cond_1
     iget-object v5, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
@@ -11911,7 +11922,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    .line 2073
+    .line 2076
     .local v0, auto:Landroid/preference/CheckBoxPreference;
     invoke-static {}, Lcom/android/camera/DisplayDevice;->isDoubleShot()Z
 
@@ -11931,7 +11942,7 @@
 
     if-nez v5, :cond_7
 
-    .line 2074
+    .line 2077
     :cond_2
     if-eqz v0, :cond_0
 
@@ -11939,7 +11950,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 2077
+    .line 2080
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
     move-result v5
@@ -11955,7 +11966,7 @@
     :cond_3
     move v1, v3
 
-    .line 2078
+    .line 2081
     .local v1, autoFocus:Z
     :goto_1
     if-eqz v1, :cond_6
@@ -11970,7 +11981,7 @@
 
     move v2, v3
 
-    .line 2089
+    .line 2092
     .local v2, enable:Z
     :goto_2
     if-nez p1, :cond_4
@@ -11983,16 +11994,16 @@
 
     if-eq v5, v2, :cond_0
 
-    .line 2092
+    .line 2095
     :cond_4
     if-eqz v2, :cond_a
 
-    .line 2093
+    .line 2096
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mFaceDetectionPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v4, v3}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
-    .line 2094
+    .line 2097
     iget-object v4, p0, Lcom/android/camera/OnScreenPreference;->mFaceDetectionPref:Landroid/preference/CheckBoxPreference;
 
     iget-boolean v5, p0, Lcom/android/camera/OnScreenPreference;->bFaceDetection:Z
@@ -12002,7 +12013,7 @@
     :goto_3
     move v4, v3
 
-    .line 2099
+    .line 2102
     goto :goto_0
 
     .end local v1           #autoFocus:Z
@@ -12010,24 +12021,24 @@
     :cond_5
     move v1, v4
 
-    .line 2077
+    .line 2080
     goto :goto_1
 
     .restart local v1       #autoFocus:Z
     :cond_6
     move v2, v4
 
-    .line 2078
+    .line 2081
     goto :goto_2
 
-    .line 2081
+    .line 2084
     .end local v1           #autoFocus:Z
     :cond_7
     iget-object v5, p0, Lcom/android/camera/OnScreenPreference;->mFaceDetectionPref:Landroid/preference/CheckBoxPreference;
 
     if-eqz v5, :cond_0
 
-    .line 2084
+    .line 2087
     sget-object v5, Lcom/android/camera/DisplayDevice;->CAPTURE_BUTTON:Lcom/android/camera/DisplayDevice$CaptureButton;
 
     sget-object v6, Lcom/android/camera/DisplayDevice$CaptureButton;->HWKey:Lcom/android/camera/DisplayDevice$CaptureButton;
@@ -12036,7 +12047,7 @@
 
     move v1, v3
 
-    .line 2085
+    .line 2088
     .restart local v1       #autoFocus:Z
     :goto_4
     if-eqz v1, :cond_9
@@ -12060,24 +12071,24 @@
     :cond_8
     move v1, v4
 
-    .line 2084
+    .line 2087
     goto :goto_4
 
     .restart local v1       #autoFocus:Z
     :cond_9
     move v2, v4
 
-    .line 2085
+    .line 2088
     goto :goto_5
 
-    .line 2096
+    .line 2099
     .restart local v2       #enable:Z
     :cond_a
     iget-object v5, p0, Lcom/android/camera/OnScreenPreference;->mFaceDetectionPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v5, v4}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 2097
+    .line 2100
     iget-object v5, p0, Lcom/android/camera/OnScreenPreference;->mFaceDetectionPref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v5, v4}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
@@ -12093,7 +12104,7 @@
 
     const/4 v4, 0x0
 
-    .line 2105
+    .line 2108
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-eqz v2, :cond_0
@@ -12104,12 +12115,12 @@
 
     if-ne v2, v5, :cond_1
 
-    .line 2123
+    .line 2126
     :cond_0
     :goto_0
     return-void
 
-    .line 2108
+    .line 2111
     :cond_1
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mSelfTimerPref:Landroid/preference/ListPreference;
 
@@ -12123,14 +12134,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 2111
+    .line 2114
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mSelfTimerPref:Landroid/preference/ListPreference;
 
     invoke-virtual {v2}, Landroid/preference/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2112
+    .line 2115
     .local v1, timer:Ljava/lang/String;
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mScreen:Landroid/preference/PreferenceScreen;
 
@@ -12142,7 +12153,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    .line 2114
+    .line 2117
     .local v0, face:Landroid/preference/CheckBoxPreference;
     if-eqz v1, :cond_2
 
@@ -12169,19 +12180,19 @@
 
     if-nez v2, :cond_3
 
-    .line 2115
+    .line 2118
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mSmileCapturePref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v2, v5}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
-    .line 2116
+    .line 2119
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mSmileCapturePref:Landroid/preference/CheckBoxPreference;
 
     iget-boolean v3, p0, Lcom/android/camera/OnScreenPreference;->bSmileCapture:Z
 
     invoke-virtual {v2, v3}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 2122
+    .line 2125
     :goto_1
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mCameraHandler:Landroid/os/Handler;
 
@@ -12191,13 +12202,13 @@
 
     goto :goto_0
 
-    .line 2119
+    .line 2122
     :cond_3
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mSmileCapturePref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v2, v4}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
-    .line 2120
+    .line 2123
     iget-object v2, p0, Lcom/android/camera/OnScreenPreference;->mSmileCapturePref:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v2, v4}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V

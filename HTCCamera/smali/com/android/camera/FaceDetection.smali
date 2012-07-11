@@ -1920,7 +1920,7 @@
     .line 648
     iget-object v5, p0, Lcom/android/camera/FaceDetection;->mCameraThread:Lcom/android/camera/CameraThread;
 
-    invoke-virtual {v5}, Lcom/android/camera/CameraThread;->getPreviewWidth()I
+    invoke-virtual {v5}, Lcom/android/camera/CameraThread;->getPreviewHeight()I
 
     move-result v3
 
@@ -1928,7 +1928,7 @@
     .local v3, preview_width:I
     iget-object v5, p0, Lcom/android/camera/FaceDetection;->mCameraThread:Lcom/android/camera/CameraThread;
 
-    invoke-virtual {v5}, Lcom/android/camera/CameraThread;->getPreviewHeight()I
+    invoke-virtual {v5}, Lcom/android/camera/CameraThread;->getPreviewWidth()I
 
     move-result v2
 
@@ -2055,7 +2055,7 @@
     .local v6, state:I
     iget-object v7, p0, Lcom/android/camera/FaceDetection;->mCameraThread:Lcom/android/camera/CameraThread;
 
-    invoke-virtual {v7}, Lcom/android/camera/CameraThread;->getPreviewWidth()I
+    invoke-virtual {v7}, Lcom/android/camera/CameraThread;->getPreviewHeight()I
 
     move-result v4
 
@@ -2063,7 +2063,7 @@
     .local v4, preview_width:I
     iget-object v7, p0, Lcom/android/camera/FaceDetection;->mCameraThread:Lcom/android/camera/CameraThread;
 
-    invoke-virtual {v7}, Lcom/android/camera/CameraThread;->getPreviewHeight()I
+    invoke-virtual {v7}, Lcom/android/camera/CameraThread;->getPreviewWidth()I
 
     move-result v3
 

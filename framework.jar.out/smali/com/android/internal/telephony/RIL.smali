@@ -47,6 +47,8 @@
 # instance fields
 .field mIntentReceiver:Landroid/content/BroadcastReceiver;
 
+.field mIsTestKeys:Z
+
 .field mLastNITZTimeInfo:Ljava/lang/Object;
 
 .field mPendingCLIRMode:I
@@ -99,7 +101,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 667
+    .line 676
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/BaseCommands;-><init>(Landroid/content/Context;)V
 
     .line 275
@@ -112,14 +114,17 @@
     .line 279
     iput-boolean v6, p0, Lcom/android/internal/telephony/RIL;->mProcessingDTMF:Z
 
-    .line 307
+    .line 286
+    iput-boolean v6, p0, Lcom/android/internal/telephony/RIL;->mIsTestKeys:Z
+
+    .line 311
     new-instance v4, Lcom/android/internal/telephony/RIL$1;
 
     invoke-direct {v4, p0}, Lcom/android/internal/telephony/RIL$1;-><init>(Lcom/android/internal/telephony/RIL;)V
 
     iput-object v4, p0, Lcom/android/internal/telephony/RIL;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 669
+    .line 678
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -156,16 +161,16 @@
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 672
+    .line 681
     iput p3, p0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSubscription:I
 
-    .line 673
+    .line 682
     iput p2, p0, Lcom/android/internal/telephony/BaseCommands;->mPreferredNetworkType:I
 
-    .line 674
+    .line 683
     iput v6, p0, Lcom/android/internal/telephony/BaseCommands;->mPhoneType:I
 
-    .line 676
+    .line 685
     const-string/jumbo v4, "power"
 
     invoke-virtual {p1, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -174,7 +179,7 @@
 
     check-cast v3, Landroid/os/PowerManager;
 
-    .line 677
+    .line 686
     .local v3, pm:Landroid/os/PowerManager;
     const/4 v4, 0x1
 
@@ -186,12 +191,12 @@
 
     iput-object v4, p0, Lcom/android/internal/telephony/RIL;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 678
+    .line 687
     iget-object v4, p0, Lcom/android/internal/telephony/RIL;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v4, v6}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
 
-    .line 679
+    .line 688
     const-string/jumbo v4, "ro.ril.wake_lock_timeout"
 
     const v5, 0xea60
@@ -202,13 +207,13 @@
 
     iput v4, p0, Lcom/android/internal/telephony/RIL;->mWakeLockTimeout:I
 
-    .line 681
+    .line 690
     iput v6, p0, Lcom/android/internal/telephony/RIL;->mRequestMessagesPending:I
 
-    .line 682
+    .line 691
     iput v6, p0, Lcom/android/internal/telephony/RIL;->mRequestMessagesWaiting:I
 
-    .line 684
+    .line 693
     new-instance v4, Landroid/os/HandlerThread;
 
     const-string v5, "RILSender"
@@ -217,19 +222,19 @@
 
     iput-object v4, p0, Lcom/android/internal/telephony/RIL;->mSenderThread:Landroid/os/HandlerThread;
 
-    .line 685
+    .line 694
     iget-object v4, p0, Lcom/android/internal/telephony/RIL;->mSenderThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v4}, Landroid/os/HandlerThread;->start()V
 
-    .line 687
+    .line 696
     iget-object v4, p0, Lcom/android/internal/telephony/RIL;->mSenderThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v4}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v2
 
-    .line 688
+    .line 697
     .local v2, looper:Landroid/os/Looper;
     new-instance v4, Lcom/android/internal/telephony/RIL$RILSender;
 
@@ -237,7 +242,7 @@
 
     iput-object v4, p0, Lcom/android/internal/telephony/RIL;->mSender:Lcom/android/internal/telephony/RIL$RILSender;
 
-    .line 690
+    .line 699
     const-string v4, "connectivity"
 
     invoke-virtual {p1, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -246,7 +251,7 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 692
+    .line 701
     .local v0, cm:Landroid/net/ConnectivityManager;
     invoke-virtual {v0, v6}, Landroid/net/ConnectivityManager;->isNetworkSupported(I)Z
 
@@ -254,29 +259,29 @@
 
     if-nez v4, :cond_0
 
-    .line 693
+    .line 702
     const-string v4, "Not starting RILReceiver: wifi-only"
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 705
+    .line 714
     :goto_0
     return-void
 
-    .line 695
+    .line 704
     :cond_0
     const-string v4, "Starting RILReceiver"
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 696
+    .line 705
     new-instance v4, Lcom/android/internal/telephony/RIL$RILReceiver;
 
     invoke-direct {v4, p0}, Lcom/android/internal/telephony/RIL$RILReceiver;-><init>(Lcom/android/internal/telephony/RIL;)V
 
     iput-object v4, p0, Lcom/android/internal/telephony/RIL;->mReceiver:Lcom/android/internal/telephony/RIL$RILReceiver;
 
-    .line 697
+    .line 706
     new-instance v4, Ljava/lang/Thread;
 
     iget-object v5, p0, Lcom/android/internal/telephony/RIL;->mReceiver:Lcom/android/internal/telephony/RIL$RILReceiver;
@@ -287,28 +292,28 @@
 
     iput-object v4, p0, Lcom/android/internal/telephony/RIL;->mReceiverThread:Ljava/lang/Thread;
 
-    .line 698
+    .line 707
     iget-object v4, p0, Lcom/android/internal/telephony/RIL;->mReceiverThread:Ljava/lang/Thread;
 
     invoke-virtual {v4}, Ljava/lang/Thread;->start()V
 
-    .line 700
+    .line 709
     new-instance v1, Landroid/content/IntentFilter;
 
     invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 701
+    .line 710
     .local v1, filter:Landroid/content/IntentFilter;
     const-string v4, "android.intent.action.SCREEN_ON"
 
     invoke-virtual {v1, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 702
+    .line 711
     const-string v4, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v1, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 703
+    .line 712
     iget-object v4, p0, Lcom/android/internal/telephony/RIL;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p1, v4, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
@@ -425,32 +430,32 @@
     .locals 5
 
     .prologue
-    .line 2198
+    .line 2253
     iget-object v2, p0, Lcom/android/internal/telephony/RIL;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     monitor-enter v2
 
-    .line 2199
+    .line 2254
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 2200
+    .line 2255
     iget v1, p0, Lcom/android/internal/telephony/RIL;->mRequestMessagesPending:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/android/internal/telephony/RIL;->mRequestMessagesPending:I
 
-    .line 2202
+    .line 2257
     iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mSender:Lcom/android/internal/telephony/RIL$RILSender;
 
     const/4 v3, 0x2
 
     invoke-virtual {v1, v3}, Lcom/android/internal/telephony/RIL$RILSender;->removeMessages(I)V
 
-    .line 2203
+    .line 2258
     iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mSender:Lcom/android/internal/telephony/RIL$RILSender;
 
     const/4 v3, 0x2
@@ -459,7 +464,7 @@
 
     move-result-object v0
 
-    .line 2204
+    .line 2259
     .local v0, msg:Landroid/os/Message;
     iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mSender:Lcom/android/internal/telephony/RIL$RILSender;
 
@@ -469,13 +474,13 @@
 
     invoke-virtual {v1, v0, v3, v4}, Lcom/android/internal/telephony/RIL$RILSender;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 2205
+    .line 2260
     monitor-exit v2
 
-    .line 2206
+    .line 2261
     return-void
 
-    .line 2205
+    .line 2260
     .end local v0           #msg:Landroid/os/Message;
     :catchall_0
     move-exception v1
@@ -493,12 +498,12 @@
     .parameter "loggable"
 
     .prologue
-    .line 2259
+    .line 2314
     iget-object v4, p0, Lcom/android/internal/telephony/RIL;->mRequestsList:Ljava/util/ArrayList;
 
     monitor-enter v4
 
-    .line 2260
+    .line 2315
     :try_start_0
     iget-object v3, p0, Lcom/android/internal/telephony/RIL;->mRequestsList:Ljava/util/ArrayList;
 
@@ -506,11 +511,11 @@
 
     move-result v0
 
-    .line 2261
+    .line 2316
     .local v0, count:I
     if-eqz p2, :cond_0
 
-    .line 2262
+    .line 2317
     const-string v3, "RILJ"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -545,7 +550,7 @@
 
     invoke-static {v3, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2267
+    .line 2322
     :cond_0
     const/4 v1, 0x0
 
@@ -553,7 +558,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 2268
+    .line 2323
     iget-object v3, p0, Lcom/android/internal/telephony/RIL;->mRequestsList:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -562,11 +567,11 @@
 
     check-cast v2, Lcom/android/internal/telephony/RILRequest;
 
-    .line 2269
+    .line 2324
     .local v2, rr:Lcom/android/internal/telephony/RILRequest;
     if-eqz p2, :cond_1
 
-    .line 2270
+    .line 2325
     const-string v3, "RILJ"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -611,39 +616,39 @@
 
     invoke-static {v3, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2273
+    .line 2328
     :cond_1
     const/4 v3, 0x0
 
     invoke-virtual {v2, p1, v3}, Lcom/android/internal/telephony/RILRequest;->onError(ILjava/lang/Object;)V
 
-    .line 2274
+    .line 2329
     invoke-virtual {v2}, Lcom/android/internal/telephony/RILRequest;->release()V
 
-    .line 2267
+    .line 2322
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2276
+    .line 2331
     .end local v2           #rr:Lcom/android/internal/telephony/RILRequest;
     :cond_2
     iget-object v3, p0, Lcom/android/internal/telephony/RIL;->mRequestsList:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 2277
+    .line 2332
     const/4 v3, 0x0
 
     iput v3, p0, Lcom/android/internal/telephony/RIL;->mRequestMessagesWaiting:I
 
-    .line 2278
+    .line 2333
     monitor-exit v4
 
-    .line 2279
+    .line 2334
     return-void
 
-    .line 2278
+    .line 2333
     .end local v0           #count:I
     .end local v1           #i:I
     :catchall_0
@@ -662,18 +667,18 @@
     .parameter "pdu"
 
     .prologue
-    .line 5118
+    .line 5194
     new-instance v1, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v1, p2}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    .line 5119
+    .line 5195
     .local v1, bais:Ljava/io/ByteArrayInputStream;
     new-instance v3, Ljava/io/DataInputStream;
 
     invoke-direct {v3, v1}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 5122
+    .line 5198
     .local v3, dis:Ljava/io/DataInputStream;
     :try_start_0
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
@@ -684,7 +689,7 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5123
+    .line 5199
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3}, Ljava/io/DataInputStream;->readInt()I
@@ -695,7 +700,7 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 5124
+    .line 5200
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3}, Ljava/io/DataInputStream;->readInt()I
@@ -704,7 +709,7 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5125
+    .line 5201
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
@@ -713,7 +718,7 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5126
+    .line 5202
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
@@ -722,7 +727,7 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5127
+    .line 5203
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
@@ -731,7 +736,7 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5128
+    .line 5204
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
@@ -740,14 +745,14 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5129
+    .line 5205
     invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
 
     move-result v7
 
     int-to-byte v0, v7
 
-    .line 5130
+    .line 5206
     .local v0, address_nbr_of_digits:I
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -755,14 +760,14 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 5131
+    .line 5207
     const/4 v5, 0x0
 
     .local v5, i:I
     :goto_0
     if-ge v5, v0, :cond_0
 
-    .line 5132
+    .line 5208
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3}, Ljava/io/DataInputStream;->readByte()B
@@ -771,12 +776,12 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 5131
+    .line 5207
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 5134
+    .line 5210
     :cond_0
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -786,7 +791,7 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5135
+    .line 5211
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
@@ -797,14 +802,14 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 5136
+    .line 5212
     invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
 
     move-result v7
 
     int-to-byte v6, v7
 
-    .line 5137
+    .line 5213
     .local v6, subaddr_nbr_of_digits:I
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -812,13 +817,13 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 5138
+    .line 5214
     const/4 v5, 0x0
 
     :goto_1
     if-ge v5, v6, :cond_1
 
-    .line 5139
+    .line 5215
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3}, Ljava/io/DataInputStream;->readByte()B
@@ -827,30 +832,30 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 5138
+    .line 5214
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 5142
+    .line 5218
     :cond_1
     invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
 
     move-result v2
 
-    .line 5143
+    .line 5219
     .local v2, bearerDataLength:I
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v7, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5144
+    .line 5220
     const/4 v5, 0x0
 
     :goto_2
     if-ge v5, v2, :cond_2
 
-    .line 5145
+    .line 5221
     iget-object v7, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3}, Ljava/io/DataInputStream;->readByte()B
@@ -861,12 +866,12 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5144
+    .line 5220
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_2
 
-    .line 5147
+    .line 5223
     .end local v0           #address_nbr_of_digits:I
     .end local v2           #bearerDataLength:I
     .end local v5           #i:I
@@ -874,7 +879,7 @@
     :catch_0
     move-exception v4
 
-    .line 5148
+    .line 5224
     .local v4, ex:Ljava/io/IOException;
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -896,7 +901,7 @@
 
     invoke-direct {p0, v7}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5151
+    .line 5227
     .end local v4           #ex:Ljava/io/IOException;
     :cond_2
     return-void
@@ -909,24 +914,24 @@
     .parameter "pdu"
 
     .prologue
-    .line 5108
+    .line 5184
     iget-object v0, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5109
+    .line 5185
     iget-object v0, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5110
+    .line 5186
     iget-object v0, p1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5111
+    .line 5187
     return-void
 .end method
 
@@ -935,12 +940,12 @@
     .parameter "serial"
 
     .prologue
-    .line 2282
+    .line 2337
     iget-object v4, p0, Lcom/android/internal/telephony/RIL;->mRequestsList:Ljava/util/ArrayList;
 
     monitor-enter v4
 
-    .line 2283
+    .line 2338
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -955,7 +960,7 @@
     :goto_0
     if-ge v0, v2, :cond_2
 
-    .line 2284
+    .line 2339
     iget-object v3, p0, Lcom/android/internal/telephony/RIL;->mRequestsList:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -964,56 +969,56 @@
 
     check-cast v1, Lcom/android/internal/telephony/RILRequest;
 
-    .line 2286
+    .line 2341
     .local v1, rr:Lcom/android/internal/telephony/RILRequest;
     iget v3, v1, Lcom/android/internal/telephony/RILRequest;->mSerial:I
 
     if-ne v3, p1, :cond_1
 
-    .line 2287
+    .line 2342
     iget-object v3, p0, Lcom/android/internal/telephony/RIL;->mRequestsList:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 2288
+    .line 2343
     iget v3, p0, Lcom/android/internal/telephony/RIL;->mRequestMessagesWaiting:I
 
     if-lez v3, :cond_0
 
-    .line 2289
+    .line 2344
     iget v3, p0, Lcom/android/internal/telephony/RIL;->mRequestMessagesWaiting:I
 
     add-int/lit8 v3, v3, -0x1
 
     iput v3, p0, Lcom/android/internal/telephony/RIL;->mRequestMessagesWaiting:I
 
-    .line 2290
+    .line 2345
     :cond_0
     monitor-exit v4
 
-    .line 2295
+    .line 2350
     .end local v1           #rr:Lcom/android/internal/telephony/RILRequest;
     :goto_1
     return-object v1
 
-    .line 2283
+    .line 2338
     .restart local v1       #rr:Lcom/android/internal/telephony/RILRequest;
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2293
+    .line 2348
     .end local v1           #rr:Lcom/android/internal/telephony/RILRequest;
     :cond_2
     monitor-exit v4
 
-    .line 2295
+    .line 2350
     const/4 v1, 0x0
 
     goto :goto_1
 
-    .line 2293
+    .line 2348
     .end local v2           #s:I
     :catchall_0
     move-exception v3
@@ -1029,7 +1034,7 @@
     .locals 2
 
     .prologue
-    .line 5323
+    .line 5405
     const-string/jumbo v0, "ril.aid"
 
     const/4 v1, 0x0
@@ -1047,47 +1052,47 @@
     .parameter "version"
 
     .prologue
-    .line 3925
+    .line 3996
     new-instance v1, Lcom/android/internal/telephony/DataCallState;
 
     invoke-direct {v1}, Lcom/android/internal/telephony/DataCallState;-><init>()V
 
-    .line 3927
+    .line 3998
     .local v1, dataCall:Lcom/android/internal/telephony/DataCallState;
     iput p2, v1, Lcom/android/internal/telephony/DataCallState;->version:I
 
-    .line 3928
+    .line 3999
     const/4 v4, 0x5
 
     if-ge p2, v4, :cond_1
 
-    .line 3929
+    .line 4000
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, v1, Lcom/android/internal/telephony/DataCallState;->cid:I
 
-    .line 3930
+    .line 4001
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, v1, Lcom/android/internal/telephony/DataCallState;->active:I
 
-    .line 3931
+    .line 4002
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, v1, Lcom/android/internal/telephony/DataCallState;->type:Ljava/lang/String;
 
-    .line 3932
+    .line 4003
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3933
+    .line 4004
     .local v0, addresses:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1095,7 +1100,7 @@
 
     if-nez v4, :cond_0
 
-    .line 3934
+    .line 4005
     const-string v4, " "
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -1104,12 +1109,12 @@
 
     iput-object v4, v1, Lcom/android/internal/telephony/DataCallState;->addresses:[Ljava/lang/String;
 
-    .line 3960
+    .line 4031
     :cond_0
     :goto_0
     return-object v1
 
-    .line 3937
+    .line 4008
     .end local v0           #addresses:Ljava/lang/String;
     :cond_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -1118,42 +1123,42 @@
 
     iput v4, v1, Lcom/android/internal/telephony/DataCallState;->status:I
 
-    .line 3938
+    .line 4009
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, v1, Lcom/android/internal/telephony/DataCallState;->suggestedRetryTime:I
 
-    .line 3939
+    .line 4010
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, v1, Lcom/android/internal/telephony/DataCallState;->cid:I
 
-    .line 3940
+    .line 4011
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, v1, Lcom/android/internal/telephony/DataCallState;->active:I
 
-    .line 3941
+    .line 4012
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, v1, Lcom/android/internal/telephony/DataCallState;->type:Ljava/lang/String;
 
-    .line 3942
+    .line 4013
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, v1, Lcom/android/internal/telephony/DataCallState;->ifname:Ljava/lang/String;
 
-    .line 3943
+    .line 4014
     iget v4, v1, Lcom/android/internal/telephony/DataCallState;->status:I
 
     sget-object v5, Lcom/android/internal/telephony/DataConnection$FailCause;->NONE:Lcom/android/internal/telephony/DataConnection$FailCause;
@@ -1176,7 +1181,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 3945
+    .line 4016
     new-instance v4, Ljava/lang/RuntimeException;
 
     const-string v5, "getDataCallState, no ifname"
@@ -1185,13 +1190,13 @@
 
     throw v4
 
-    .line 3947
+    .line 4018
     :cond_2
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3948
+    .line 4019
     .restart local v0       #addresses:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1199,7 +1204,7 @@
 
     if-nez v4, :cond_3
 
-    .line 3949
+    .line 4020
     const-string v4, " "
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -1208,13 +1213,13 @@
 
     iput-object v4, v1, Lcom/android/internal/telephony/DataCallState;->addresses:[Ljava/lang/String;
 
-    .line 3951
+    .line 4022
     :cond_3
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 3952
+    .line 4023
     .local v2, dnses:Ljava/lang/String;
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1222,7 +1227,7 @@
 
     if-nez v4, :cond_4
 
-    .line 3953
+    .line 4024
     const-string v4, " "
 
     invoke-virtual {v2, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -1231,13 +1236,13 @@
 
     iput-object v4, v1, Lcom/android/internal/telephony/DataCallState;->dnses:[Ljava/lang/String;
 
-    .line 3955
+    .line 4026
     :cond_4
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 3956
+    .line 4027
     .local v3, gateways:Ljava/lang/String;
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1245,7 +1250,7 @@
 
     if-nez v4, :cond_0
 
-    .line 3957
+    .line 4028
     const-string v4, " "
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -1262,10 +1267,10 @@
     .parameter "stateInt"
 
     .prologue
-    .line 2158
+    .line 2213
     packed-switch p1, :pswitch_data_0
 
-    .line 2177
+    .line 2232
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1290,16 +1295,16 @@
 
     throw v1
 
-    .line 2159
+    .line 2214
     :pswitch_0
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RADIO_OFF:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
-    .line 2180
+    .line 2235
     .local v0, state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     :goto_0
     return-object v0
 
-    .line 2160
+    .line 2215
     .end local v0           #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     :pswitch_1
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RADIO_UNAVAILABLE:Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -1307,7 +1312,7 @@
     .restart local v0       #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     goto :goto_0
 
-    .line 2161
+    .line 2216
     .end local v0           #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     :pswitch_2
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->SIM_NOT_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -1315,7 +1320,7 @@
     .restart local v0       #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     goto :goto_0
 
-    .line 2162
+    .line 2217
     .end local v0           #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     :pswitch_3
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->SIM_LOCKED_OR_ABSENT:Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -1323,7 +1328,7 @@
     .restart local v0       #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     goto :goto_0
 
-    .line 2163
+    .line 2218
     .end local v0           #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     :pswitch_4
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->SIM_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -1331,7 +1336,7 @@
     .restart local v0       #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     goto :goto_0
 
-    .line 2164
+    .line 2219
     .end local v0           #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     :pswitch_5
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RUIM_NOT_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -1339,7 +1344,7 @@
     .restart local v0       #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     goto :goto_0
 
-    .line 2165
+    .line 2220
     .end local v0           #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     :pswitch_6
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RUIM_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -1347,7 +1352,7 @@
     .restart local v0       #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     goto :goto_0
 
-    .line 2166
+    .line 2221
     .end local v0           #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     :pswitch_7
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RUIM_LOCKED_OR_ABSENT:Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -1355,7 +1360,7 @@
     .restart local v0       #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     goto :goto_0
 
-    .line 2167
+    .line 2222
     .end local v0           #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     :pswitch_8
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->NV_NOT_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -1363,7 +1368,7 @@
     .restart local v0       #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     goto :goto_0
 
-    .line 2168
+    .line 2223
     .end local v0           #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     :pswitch_9
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->NV_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -1371,7 +1376,7 @@
     .restart local v0       #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     goto :goto_0
 
-    .line 2169
+    .line 2224
     .end local v0           #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     :pswitch_a
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->NV_SIM_NOT_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -1379,7 +1384,7 @@
     .restart local v0       #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     goto :goto_0
 
-    .line 2170
+    .line 2225
     .end local v0           #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     :pswitch_b
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->NV_SIM_LOCKED_OR_ABSENT:Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -1387,7 +1392,7 @@
     .restart local v0       #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     goto :goto_0
 
-    .line 2171
+    .line 2226
     .end local v0           #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     :pswitch_c
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->NV_SIM_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -1395,7 +1400,7 @@
     .restart local v0       #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     goto :goto_0
 
-    .line 2173
+    .line 2228
     .end local v0           #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     :pswitch_d
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RADIO_ON:Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -1403,7 +1408,7 @@
     .restart local v0       #state:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     goto :goto_0
 
-    .line 2158
+    .line 2213
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -1430,10 +1435,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 4262
+    .line 4333
     const/16 v0, 0x403
 
-    .line 4263
+    .line 4334
     .local v0, response:I
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;->record:Ljava/lang/Object;
 
@@ -1441,17 +1446,17 @@
 
     if-eqz v1, :cond_1
 
-    .line 4264
+    .line 4335
     iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mDisplayInfoRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v1, :cond_0
 
-    .line 4265
+    .line 4336
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;->record:Ljava/lang/Object;
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 4266
+    .line 4337
     iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mDisplayInfoRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
@@ -1462,12 +1467,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
-    .line 4306
+    .line 4377
     :cond_0
     :goto_0
     return-void
 
-    .line 4269
+    .line 4340
     :cond_1
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;->record:Ljava/lang/Object;
 
@@ -1475,17 +1480,17 @@
 
     if-eqz v1, :cond_2
 
-    .line 4270
+    .line 4341
     iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mSignalInfoRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v1, :cond_0
 
-    .line 4271
+    .line 4342
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;->record:Ljava/lang/Object;
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 4272
+    .line 4343
     iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mSignalInfoRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
@@ -1498,7 +1503,7 @@
 
     goto :goto_0
 
-    .line 4275
+    .line 4346
     :cond_2
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;->record:Ljava/lang/Object;
 
@@ -1506,17 +1511,17 @@
 
     if-eqz v1, :cond_3
 
-    .line 4276
+    .line 4347
     iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mNumberInfoRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v1, :cond_0
 
-    .line 4277
+    .line 4348
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;->record:Ljava/lang/Object;
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 4278
+    .line 4349
     iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mNumberInfoRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
@@ -1529,7 +1534,7 @@
 
     goto :goto_0
 
-    .line 4281
+    .line 4352
     :cond_3
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;->record:Ljava/lang/Object;
 
@@ -1537,17 +1542,17 @@
 
     if-eqz v1, :cond_4
 
-    .line 4282
+    .line 4353
     iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mRedirNumInfoRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v1, :cond_0
 
-    .line 4283
+    .line 4354
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;->record:Ljava/lang/Object;
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 4284
+    .line 4355
     iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mRedirNumInfoRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
@@ -1560,7 +1565,7 @@
 
     goto :goto_0
 
-    .line 4287
+    .line 4358
     :cond_4
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;->record:Ljava/lang/Object;
 
@@ -1568,17 +1573,17 @@
 
     if-eqz v1, :cond_5
 
-    .line 4288
+    .line 4359
     iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mLineControlInfoRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v1, :cond_0
 
-    .line 4289
+    .line 4360
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;->record:Ljava/lang/Object;
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 4290
+    .line 4361
     iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mLineControlInfoRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
@@ -1591,7 +1596,7 @@
 
     goto :goto_0
 
-    .line 4293
+    .line 4364
     :cond_5
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;->record:Ljava/lang/Object;
 
@@ -1599,17 +1604,17 @@
 
     if-eqz v1, :cond_6
 
-    .line 4294
+    .line 4365
     iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mT53ClirInfoRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v1, :cond_0
 
-    .line 4295
+    .line 4366
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;->record:Ljava/lang/Object;
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 4296
+    .line 4367
     iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mT53ClirInfoRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
@@ -1622,7 +1627,7 @@
 
     goto/16 :goto_0
 
-    .line 4299
+    .line 4370
     :cond_6
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;->record:Ljava/lang/Object;
 
@@ -1630,17 +1635,17 @@
 
     if-eqz v1, :cond_0
 
-    .line 4300
+    .line 4371
     iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mT53AudCntrlInfoRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v1, :cond_0
 
-    .line 4301
+    .line 4372
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;->record:Ljava/lang/Object;
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 4302
+    .line 4373
     iget-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mT53AudCntrlInfoRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
@@ -1661,15 +1666,15 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3658
+    .line 3724
     iput p1, p0, Lcom/android/internal/telephony/BaseCommands;->mRilVersion:I
 
-    .line 3659
+    .line 3725
     iget-object v0, p0, Lcom/android/internal/telephony/BaseCommands;->mRilConnectedRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v0, :cond_0
 
-    .line 3660
+    .line 3726
     iget-object v0, p0, Lcom/android/internal/telephony/BaseCommands;->mRilConnectedRegistrants:Landroid/os/RegistrantList;
 
     new-instance v1, Landroid/os/AsyncResult;
@@ -1682,7 +1687,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
-    .line 3663
+    .line 3729
     :cond_0
     return-void
 .end method
@@ -1692,33 +1697,33 @@
     .parameter "p"
 
     .prologue
-    .line 2241
+    .line 2296
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 2243
+    .line 2298
     .local v0, type:I
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_1
 
-    .line 2244
+    .line 2299
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->processUnsolicited(Landroid/os/Parcel;)V
 
-    .line 2249
+    .line 2304
     :cond_0
     :goto_0
     invoke-direct {p0}, Lcom/android/internal/telephony/RIL;->releaseWakeLockIfDone()V
 
-    .line 2250
+    .line 2305
     return-void
 
-    .line 2245
+    .line 2300
     :cond_1
     if-nez v0, :cond_0
 
-    .line 2246
+    .line 2301
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->processSolicited(Landroid/os/Parcel;)V
 
     goto :goto_0
@@ -1731,32 +1736,32 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 2301
+    .line 2356
     const/4 v1, 0x0
 
-    .line 2303
+    .line 2358
     .local v1, found:Z
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    .line 2304
+    .line 2359
     .local v4, serial:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 2308
+    .line 2363
     .local v0, error:I
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/RIL;->findAndRemoveRequestFromList(I)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v3
 
-    .line 2310
+    .line 2365
     .local v3, rr:Lcom/android/internal/telephony/RILRequest;
     if-nez v3, :cond_0
 
-    .line 2311
+    .line 2366
     const-string v6, "RILJ"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1789,15 +1794,15 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2668
+    .line 2726
     :goto_0
     return-void
 
-    .line 2316
+    .line 2371
     :cond_0
     const/4 v2, 0x0
 
-    .line 2318
+    .line 2373
     .local v2, ret:Ljava/lang/Object;
     if-eqz v0, :cond_1
 
@@ -1807,14 +1812,14 @@
 
     if-lez v6, :cond_3
 
-    .line 2320
+    .line 2375
     :cond_1
     :try_start_0
     iget v6, v3, Lcom/android/internal/telephony/RILRequest;->mRequest:I
 
     sparse-switch v6, :sswitch_data_0
 
-    .line 2629
+    .line 2687
     new-instance v6, Ljava/lang/RuntimeException;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1843,11 +1848,11 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2631
+    .line 2689
     :catch_0
     move-exception v5
 
-    .line 2634
+    .line 2692
     .local v5, tr:Ljava/lang/Throwable;
     const-string v6, "RILJ"
 
@@ -1891,28 +1896,28 @@
 
     invoke-static {v6, v7, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2638
+    .line 2696
     iget-object v6, v3, Lcom/android/internal/telephony/RILRequest;->mResult:Landroid/os/Message;
 
     if-eqz v6, :cond_2
 
-    .line 2639
+    .line 2697
     iget-object v6, v3, Lcom/android/internal/telephony/RILRequest;->mResult:Landroid/os/Message;
 
     invoke-static {v6, v9, v5}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2640
+    .line 2698
     iget-object v6, v3, Lcom/android/internal/telephony/RILRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v6}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2642
+    .line 2700
     :cond_2
     invoke-virtual {v3}, Lcom/android/internal/telephony/RILRequest;->release()V
 
     goto :goto_0
 
-    .line 2326
+    .line 2381
     .end local v5           #tr:Ljava/lang/Throwable;
     :sswitch_0
     :try_start_1
@@ -1922,21 +1927,21 @@
 
     move-result-object v2
 
-    .line 2647
+    .line 2705
     .end local v2           #ret:Ljava/lang/Object;
     :cond_3
     :goto_1
     if-eqz v0, :cond_6
 
-    .line 2648
+    .line 2706
     invoke-virtual {v3, v0, v2}, Lcom/android/internal/telephony/RILRequest;->onError(ILjava/lang/Object;)V
 
-    .line 2649
+    .line 2707
     invoke-virtual {v3}, Lcom/android/internal/telephony/RILRequest;->release()V
 
     goto :goto_0
 
-    .line 2327
+    .line 2382
     .restart local v2       #ret:Ljava/lang/Object;
     :sswitch_1
     :try_start_2
@@ -1946,7 +1951,7 @@
 
     goto :goto_1
 
-    .line 2328
+    .line 2383
     :sswitch_2
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -1954,7 +1959,7 @@
 
     goto :goto_1
 
-    .line 2329
+    .line 2384
     :sswitch_3
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -1962,7 +1967,7 @@
 
     goto :goto_1
 
-    .line 2330
+    .line 2385
     :sswitch_4
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -1970,7 +1975,7 @@
 
     goto :goto_1
 
-    .line 2331
+    .line 2386
     :sswitch_5
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -1978,7 +1983,7 @@
 
     goto :goto_1
 
-    .line 2332
+    .line 2387
     :sswitch_6
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -1986,7 +1991,7 @@
 
     goto :goto_1
 
-    .line 2333
+    .line 2388
     :sswitch_7
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -1994,7 +1999,7 @@
 
     goto :goto_1
 
-    .line 2334
+    .line 2389
     :sswitch_8
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseCallList(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2002,7 +2007,7 @@
 
     goto :goto_1
 
-    .line 2335
+    .line 2390
     :sswitch_9
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2010,7 +2015,7 @@
 
     goto :goto_1
 
-    .line 2336
+    .line 2391
     :sswitch_a
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2018,7 +2023,7 @@
 
     goto :goto_1
 
-    .line 2337
+    .line 2392
     :sswitch_b
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2026,7 +2031,7 @@
 
     goto :goto_1
 
-    .line 2338
+    .line 2393
     :sswitch_c
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2034,7 +2039,7 @@
 
     goto :goto_1
 
-    .line 2339
+    .line 2394
     :sswitch_d
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2042,7 +2047,7 @@
 
     goto :goto_1
 
-    .line 2340
+    .line 2395
     :sswitch_e
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2050,7 +2055,7 @@
 
     goto :goto_1
 
-    .line 2341
+    .line 2396
     :sswitch_f
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2058,7 +2063,7 @@
 
     goto :goto_1
 
-    .line 2342
+    .line 2397
     :sswitch_10
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2066,7 +2071,7 @@
 
     goto :goto_1
 
-    .line 2343
+    .line 2398
     :sswitch_11
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2074,7 +2079,7 @@
 
     goto :goto_1
 
-    .line 2344
+    .line 2399
     :sswitch_12
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseSignalStrength(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2082,7 +2087,7 @@
 
     goto :goto_1
 
-    .line 2345
+    .line 2400
     :sswitch_13
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2090,7 +2095,7 @@
 
     goto :goto_1
 
-    .line 2346
+    .line 2401
     :sswitch_14
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2098,7 +2103,7 @@
 
     goto :goto_1
 
-    .line 2347
+    .line 2402
     :sswitch_15
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2106,7 +2111,7 @@
 
     goto :goto_1
 
-    .line 2348
+    .line 2403
     :sswitch_16
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2114,7 +2119,7 @@
 
     goto :goto_1
 
-    .line 2349
+    .line 2404
     :sswitch_17
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2122,7 +2127,7 @@
 
     goto :goto_1
 
-    .line 2350
+    .line 2405
     :sswitch_18
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseSMS(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2130,7 +2135,7 @@
 
     goto :goto_1
 
-    .line 2351
+    .line 2406
     :sswitch_19
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseSMS(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2138,7 +2143,7 @@
 
     goto/16 :goto_1
 
-    .line 2352
+    .line 2407
     :sswitch_1a
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseSetupDataCall(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2146,7 +2151,7 @@
 
     goto/16 :goto_1
 
-    .line 2353
+    .line 2408
     :sswitch_1b
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseICC_IO(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2154,7 +2159,7 @@
 
     goto/16 :goto_1
 
-    .line 2354
+    .line 2409
     :sswitch_1c
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2162,7 +2167,7 @@
 
     goto/16 :goto_1
 
-    .line 2355
+    .line 2410
     :sswitch_1d
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2170,7 +2175,7 @@
 
     goto/16 :goto_1
 
-    .line 2356
+    .line 2411
     :sswitch_1e
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2178,7 +2183,7 @@
 
     goto/16 :goto_1
 
-    .line 2357
+    .line 2412
     :sswitch_1f
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2186,7 +2191,7 @@
 
     goto/16 :goto_1
 
-    .line 2358
+    .line 2413
     :sswitch_20
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseCallForward(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2194,7 +2199,7 @@
 
     goto/16 :goto_1
 
-    .line 2359
+    .line 2414
     :sswitch_21
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2202,7 +2207,7 @@
 
     goto/16 :goto_1
 
-    .line 2360
+    .line 2415
     :sswitch_22
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2210,7 +2215,7 @@
 
     goto/16 :goto_1
 
-    .line 2361
+    .line 2416
     :sswitch_23
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2218,7 +2223,7 @@
 
     goto/16 :goto_1
 
-    .line 2362
+    .line 2417
     :sswitch_24
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2226,7 +2231,7 @@
 
     goto/16 :goto_1
 
-    .line 2363
+    .line 2418
     :sswitch_25
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2234,7 +2239,7 @@
 
     goto/16 :goto_1
 
-    .line 2364
+    .line 2419
     :sswitch_26
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2242,7 +2247,7 @@
 
     goto/16 :goto_1
 
-    .line 2365
+    .line 2420
     :sswitch_27
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2250,7 +2255,7 @@
 
     goto/16 :goto_1
 
-    .line 2366
+    .line 2421
     :sswitch_28
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2258,7 +2263,7 @@
 
     goto/16 :goto_1
 
-    .line 2367
+    .line 2422
     :sswitch_29
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2266,7 +2271,7 @@
 
     goto/16 :goto_1
 
-    .line 2368
+    .line 2423
     :sswitch_2a
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2274,7 +2279,7 @@
 
     goto/16 :goto_1
 
-    .line 2369
+    .line 2424
     :sswitch_2b
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2282,7 +2287,7 @@
 
     goto/16 :goto_1
 
-    .line 2370
+    .line 2425
     :sswitch_2c
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2290,7 +2295,7 @@
 
     goto/16 :goto_1
 
-    .line 2371
+    .line 2426
     :sswitch_2d
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2298,7 +2303,7 @@
 
     goto/16 :goto_1
 
-    .line 2372
+    .line 2427
     :sswitch_2e
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2306,7 +2311,7 @@
 
     goto/16 :goto_1
 
-    .line 2378
+    .line 2433
     :sswitch_2f
     sget-short v6, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
@@ -2326,7 +2331,7 @@
 
     if-ne v6, v7, :cond_5
 
-    .line 2382
+    .line 2437
     :cond_4
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseOperatorInfosAppendAct(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2334,16 +2339,16 @@
 
     goto/16 :goto_1
 
-    .line 2384
+    .line 2439
     :cond_5
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseOperatorInfos(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 2386
+    .line 2441
     goto/16 :goto_1
 
-    .line 2388
+    .line 2443
     :sswitch_30
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2351,7 +2356,7 @@
 
     goto/16 :goto_1
 
-    .line 2389
+    .line 2444
     :sswitch_31
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2359,7 +2364,7 @@
 
     goto/16 :goto_1
 
-    .line 2390
+    .line 2445
     :sswitch_32
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2367,7 +2372,7 @@
 
     goto/16 :goto_1
 
-    .line 2391
+    .line 2446
     :sswitch_33
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2375,7 +2380,7 @@
 
     goto/16 :goto_1
 
-    .line 2392
+    .line 2447
     :sswitch_34
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2383,7 +2388,7 @@
 
     goto/16 :goto_1
 
-    .line 2393
+    .line 2448
     :sswitch_35
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2391,7 +2396,7 @@
 
     goto/16 :goto_1
 
-    .line 2394
+    .line 2449
     :sswitch_36
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2399,7 +2404,7 @@
 
     goto/16 :goto_1
 
-    .line 2395
+    .line 2450
     :sswitch_37
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2407,7 +2412,7 @@
 
     goto/16 :goto_1
 
-    .line 2396
+    .line 2451
     :sswitch_38
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseDataCallList(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2415,7 +2420,7 @@
 
     goto/16 :goto_1
 
-    .line 2397
+    .line 2452
     :sswitch_39
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2423,7 +2428,7 @@
 
     goto/16 :goto_1
 
-    .line 2398
+    .line 2453
     :sswitch_3a
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseRaw(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2431,7 +2436,7 @@
 
     goto/16 :goto_1
 
-    .line 2399
+    .line 2454
     :sswitch_3b
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2439,7 +2444,7 @@
 
     goto/16 :goto_1
 
-    .line 2400
+    .line 2455
     :sswitch_3c
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2447,7 +2452,7 @@
 
     goto/16 :goto_1
 
-    .line 2401
+    .line 2456
     :sswitch_3d
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2455,7 +2460,7 @@
 
     goto/16 :goto_1
 
-    .line 2402
+    .line 2457
     :sswitch_3e
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2463,7 +2468,7 @@
 
     goto/16 :goto_1
 
-    .line 2403
+    .line 2458
     :sswitch_3f
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2471,7 +2476,7 @@
 
     goto/16 :goto_1
 
-    .line 2404
+    .line 2459
     :sswitch_40
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2479,7 +2484,7 @@
 
     goto/16 :goto_1
 
-    .line 2405
+    .line 2460
     :sswitch_41
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2487,7 +2492,7 @@
 
     goto/16 :goto_1
 
-    .line 2406
+    .line 2461
     :sswitch_42
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2495,7 +2500,7 @@
 
     goto/16 :goto_1
 
-    .line 2407
+    .line 2462
     :sswitch_43
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2503,7 +2508,7 @@
 
     goto/16 :goto_1
 
-    .line 2408
+    .line 2463
     :sswitch_44
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2511,7 +2516,7 @@
 
     goto/16 :goto_1
 
-    .line 2409
+    .line 2464
     :sswitch_45
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2519,7 +2524,7 @@
 
     goto/16 :goto_1
 
-    .line 2410
+    .line 2465
     :sswitch_46
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2527,7 +2532,7 @@
 
     goto/16 :goto_1
 
-    .line 2411
+    .line 2466
     :sswitch_47
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2535,7 +2540,7 @@
 
     goto/16 :goto_1
 
-    .line 2412
+    .line 2467
     :sswitch_48
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2543,7 +2548,7 @@
 
     goto/16 :goto_1
 
-    .line 2413
+    .line 2468
     :sswitch_49
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseGetPreferredNetworkType(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2551,7 +2556,7 @@
 
     goto/16 :goto_1
 
-    .line 2414
+    .line 2469
     :sswitch_4a
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseCellList(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2559,7 +2564,7 @@
 
     goto/16 :goto_1
 
-    .line 2415
+    .line 2470
     :sswitch_4b
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2567,7 +2572,7 @@
 
     goto/16 :goto_1
 
-    .line 2416
+    .line 2471
     :sswitch_4c
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2575,7 +2580,7 @@
 
     goto/16 :goto_1
 
-    .line 2417
+    .line 2472
     :sswitch_4d
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2583,7 +2588,7 @@
 
     goto/16 :goto_1
 
-    .line 2418
+    .line 2473
     :sswitch_4e
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2591,7 +2596,7 @@
 
     goto/16 :goto_1
 
-    .line 2419
+    .line 2474
     :sswitch_4f
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2599,7 +2604,7 @@
 
     goto/16 :goto_1
 
-    .line 2420
+    .line 2475
     :sswitch_50
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2607,7 +2612,7 @@
 
     goto/16 :goto_1
 
-    .line 2421
+    .line 2476
     :sswitch_51
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2615,7 +2620,7 @@
 
     goto/16 :goto_1
 
-    .line 2422
+    .line 2477
     :sswitch_52
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2623,7 +2628,7 @@
 
     goto/16 :goto_1
 
-    .line 2423
+    .line 2478
     :sswitch_53
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2631,7 +2636,7 @@
 
     goto/16 :goto_1
 
-    .line 2424
+    .line 2479
     :sswitch_54
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2639,7 +2644,7 @@
 
     goto/16 :goto_1
 
-    .line 2425
+    .line 2480
     :sswitch_55
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseSMS(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2647,7 +2652,7 @@
 
     goto/16 :goto_1
 
-    .line 2426
+    .line 2481
     :sswitch_56
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2655,7 +2660,7 @@
 
     goto/16 :goto_1
 
-    .line 2427
+    .line 2482
     :sswitch_57
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseGmsBroadcastConfig(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2663,7 +2668,7 @@
 
     goto/16 :goto_1
 
-    .line 2428
+    .line 2483
     :sswitch_58
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2671,7 +2676,7 @@
 
     goto/16 :goto_1
 
-    .line 2429
+    .line 2484
     :sswitch_59
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2679,7 +2684,7 @@
 
     goto/16 :goto_1
 
-    .line 2430
+    .line 2485
     :sswitch_5a
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseCdmaBroadcastConfig(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2687,7 +2692,7 @@
 
     goto/16 :goto_1
 
-    .line 2431
+    .line 2486
     :sswitch_5b
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2695,7 +2700,7 @@
 
     goto/16 :goto_1
 
-    .line 2432
+    .line 2487
     :sswitch_5c
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2703,7 +2708,7 @@
 
     goto/16 :goto_1
 
-    .line 2433
+    .line 2488
     :sswitch_5d
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2711,7 +2716,7 @@
 
     goto/16 :goto_1
 
-    .line 2434
+    .line 2489
     :sswitch_5e
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2719,7 +2724,7 @@
 
     goto/16 :goto_1
 
-    .line 2435
+    .line 2490
     :sswitch_5f
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2727,7 +2732,7 @@
 
     goto/16 :goto_1
 
-    .line 2436
+    .line 2491
     :sswitch_60
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2735,7 +2740,7 @@
 
     goto/16 :goto_1
 
-    .line 2437
+    .line 2492
     :sswitch_61
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2743,7 +2748,7 @@
 
     goto/16 :goto_1
 
-    .line 2438
+    .line 2493
     :sswitch_62
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2751,7 +2756,7 @@
 
     goto/16 :goto_1
 
-    .line 2439
+    .line 2494
     :sswitch_63
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2759,7 +2764,7 @@
 
     goto/16 :goto_1
 
-    .line 2440
+    .line 2495
     :sswitch_64
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2767,7 +2772,7 @@
 
     goto/16 :goto_1
 
-    .line 2441
+    .line 2496
     :sswitch_65
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2775,7 +2780,7 @@
 
     goto/16 :goto_1
 
-    .line 2442
+    .line 2497
     :sswitch_66
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2783,7 +2788,7 @@
 
     goto/16 :goto_1
 
-    .line 2443
+    .line 2498
     :sswitch_67
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2791,7 +2796,7 @@
 
     goto/16 :goto_1
 
-    .line 2444
+    .line 2499
     :sswitch_68
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2799,7 +2804,7 @@
 
     goto/16 :goto_1
 
-    .line 2445
+    .line 2500
     :sswitch_69
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2807,7 +2812,7 @@
 
     goto/16 :goto_1
 
-    .line 2446
+    .line 2501
     :sswitch_6a
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseICC_IO(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2815,7 +2820,7 @@
 
     goto/16 :goto_1
 
-    .line 2456
+    .line 2511
     :sswitch_6b
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseICC_IO(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2823,7 +2828,7 @@
 
     goto/16 :goto_1
 
-    .line 2457
+    .line 2512
     :sswitch_6c
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2831,7 +2836,7 @@
 
     goto/16 :goto_1
 
-    .line 2458
+    .line 2513
     :sswitch_6d
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2839,7 +2844,7 @@
 
     goto/16 :goto_1
 
-    .line 2459
+    .line 2514
     :sswitch_6e
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseICC_IO(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2847,7 +2852,7 @@
 
     goto/16 :goto_1
 
-    .line 2462
+    .line 2517
     :sswitch_6f
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2855,7 +2860,7 @@
 
     goto/16 :goto_1
 
-    .line 2463
+    .line 2518
     :sswitch_70
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2863,7 +2868,7 @@
 
     goto/16 :goto_1
 
-    .line 2464
+    .line 2519
     :sswitch_71
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseAka(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2871,7 +2876,7 @@
 
     goto/16 :goto_1
 
-    .line 2465
+    .line 2520
     :sswitch_72
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseICC_IO(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2879,7 +2884,7 @@
 
     goto/16 :goto_1
 
-    .line 2466
+    .line 2521
     :sswitch_73
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseBootstrap(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2887,7 +2892,7 @@
 
     goto/16 :goto_1
 
-    .line 2467
+    .line 2522
     :sswitch_74
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseNaf(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2895,7 +2900,7 @@
 
     goto/16 :goto_1
 
-    .line 2470
+    .line 2525
     :sswitch_75
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseAka(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2903,7 +2908,7 @@
 
     goto/16 :goto_1
 
-    .line 2473
+    .line 2528
     :sswitch_76
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2911,7 +2916,7 @@
 
     goto/16 :goto_1
 
-    .line 2474
+    .line 2529
     :sswitch_77
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2919,7 +2924,7 @@
 
     goto/16 :goto_1
 
-    .line 2475
+    .line 2530
     :sswitch_78
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseSMS(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2927,7 +2932,7 @@
 
     goto/16 :goto_1
 
-    .line 2476
+    .line 2531
     :sswitch_79
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2935,7 +2940,7 @@
 
     goto/16 :goto_1
 
-    .line 2477
+    .line 2532
     :sswitch_7a
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2943,7 +2948,7 @@
 
     goto/16 :goto_1
 
-    .line 2480
+    .line 2535
     :sswitch_7b
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2951,7 +2956,7 @@
 
     goto/16 :goto_1
 
-    .line 2482
+    .line 2537
     :sswitch_7c
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2959,7 +2964,7 @@
 
     goto/16 :goto_1
 
-    .line 2491
+    .line 2546
     :sswitch_7d
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2967,7 +2972,7 @@
 
     goto/16 :goto_1
 
-    .line 2492
+    .line 2547
     :sswitch_7e
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2975,7 +2980,7 @@
 
     goto/16 :goto_1
 
-    .line 2493
+    .line 2548
     :sswitch_7f
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseSimTypes(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2983,7 +2988,7 @@
 
     goto/16 :goto_1
 
-    .line 2494
+    .line 2549
     :sswitch_80
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2991,7 +2996,7 @@
 
     goto/16 :goto_1
 
-    .line 2495
+    .line 2550
     :sswitch_81
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responsePhoneBookEntry(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -2999,7 +3004,7 @@
 
     goto/16 :goto_1
 
-    .line 2496
+    .line 2551
     :sswitch_82
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3007,7 +3012,7 @@
 
     goto/16 :goto_1
 
-    .line 2497
+    .line 2552
     :sswitch_83
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responsePhoneBookMemory(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3015,7 +3020,7 @@
 
     goto/16 :goto_1
 
-    .line 2498
+    .line 2553
     :sswitch_84
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3023,7 +3028,7 @@
 
     goto/16 :goto_1
 
-    .line 2499
+    .line 2554
     :sswitch_85
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3031,7 +3036,7 @@
 
     goto/16 :goto_1
 
-    .line 2500
+    .line 2555
     :sswitch_86
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseSMSExtend(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3039,7 +3044,7 @@
 
     goto/16 :goto_1
 
-    .line 2501
+    .line 2556
     :sswitch_87
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseSMSExtend(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3047,7 +3052,7 @@
 
     goto/16 :goto_1
 
-    .line 2502
+    .line 2557
     :sswitch_88
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3055,7 +3060,7 @@
 
     goto/16 :goto_1
 
-    .line 2503
+    .line 2558
     :sswitch_89
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3063,7 +3068,7 @@
 
     goto/16 :goto_1
 
-    .line 2504
+    .line 2559
     :sswitch_8a
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3071,7 +3076,7 @@
 
     goto/16 :goto_1
 
-    .line 2505
+    .line 2560
     :sswitch_8b
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3079,7 +3084,7 @@
 
     goto/16 :goto_1
 
-    .line 2506
+    .line 2561
     :sswitch_8c
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3087,7 +3092,7 @@
 
     goto/16 :goto_1
 
-    .line 2507
+    .line 2562
     :sswitch_8d
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3095,7 +3100,7 @@
 
     goto/16 :goto_1
 
-    .line 2508
+    .line 2563
     :sswitch_8e
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3103,7 +3108,7 @@
 
     goto/16 :goto_1
 
-    .line 2509
+    .line 2564
     :sswitch_8f
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3111,7 +3116,7 @@
 
     goto/16 :goto_1
 
-    .line 2510
+    .line 2565
     :sswitch_90
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3119,7 +3124,7 @@
 
     goto/16 :goto_1
 
-    .line 2511
+    .line 2566
     :sswitch_91
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3127,7 +3132,7 @@
 
     goto/16 :goto_1
 
-    .line 2512
+    .line 2567
     :sswitch_92
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3135,7 +3140,7 @@
 
     goto/16 :goto_1
 
-    .line 2513
+    .line 2568
     :sswitch_93
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3143,7 +3148,7 @@
 
     goto/16 :goto_1
 
-    .line 2514
+    .line 2569
     :sswitch_94
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3151,7 +3156,7 @@
 
     goto/16 :goto_1
 
-    .line 2515
+    .line 2570
     :sswitch_95
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3159,7 +3164,7 @@
 
     goto/16 :goto_1
 
-    .line 2516
+    .line 2571
     :sswitch_96
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3167,7 +3172,7 @@
 
     goto/16 :goto_1
 
-    .line 2517
+    .line 2572
     :sswitch_97
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3175,7 +3180,7 @@
 
     goto/16 :goto_1
 
-    .line 2518
+    .line 2573
     :sswitch_98
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3183,7 +3188,7 @@
 
     goto/16 :goto_1
 
-    .line 2519
+    .line 2574
     :sswitch_99
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3191,7 +3196,7 @@
 
     goto/16 :goto_1
 
-    .line 2520
+    .line 2575
     :sswitch_9a
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3199,7 +3204,7 @@
 
     goto/16 :goto_1
 
-    .line 2521
+    .line 2576
     :sswitch_9b
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3207,7 +3212,7 @@
 
     goto/16 :goto_1
 
-    .line 2522
+    .line 2577
     :sswitch_9c
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseSMS(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3215,7 +3220,7 @@
 
     goto/16 :goto_1
 
-    .line 2523
+    .line 2578
     :sswitch_9d
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3223,7 +3228,7 @@
 
     goto/16 :goto_1
 
-    .line 2524
+    .line 2579
     :sswitch_9e
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseOperatorInfosAppendAct(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3231,7 +3236,7 @@
 
     goto/16 :goto_1
 
-    .line 2525
+    .line 2580
     :sswitch_9f
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3239,7 +3244,7 @@
 
     goto/16 :goto_1
 
-    .line 2526
+    .line 2581
     :sswitch_a0
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3247,7 +3252,7 @@
 
     goto/16 :goto_1
 
-    .line 2527
+    .line 2582
     :sswitch_a1
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3255,7 +3260,7 @@
 
     goto/16 :goto_1
 
-    .line 2528
+    .line 2583
     :sswitch_a2
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3263,7 +3268,7 @@
 
     goto/16 :goto_1
 
-    .line 2529
+    .line 2584
     :sswitch_a3
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3271,7 +3276,7 @@
 
     goto/16 :goto_1
 
-    .line 2530
+    .line 2585
     :sswitch_a4
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3279,7 +3284,7 @@
 
     goto/16 :goto_1
 
-    .line 2531
+    .line 2586
     :sswitch_a5
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3287,7 +3292,7 @@
 
     goto/16 :goto_1
 
-    .line 2532
+    .line 2587
     :sswitch_a6
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3295,7 +3300,7 @@
 
     goto/16 :goto_1
 
-    .line 2533
+    .line 2588
     :sswitch_a7
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3303,7 +3308,7 @@
 
     goto/16 :goto_1
 
-    .line 2534
+    .line 2589
     :sswitch_a8
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3311,7 +3316,7 @@
 
     goto/16 :goto_1
 
-    .line 2535
+    .line 2590
     :sswitch_a9
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3319,7 +3324,7 @@
 
     goto/16 :goto_1
 
-    .line 2536
+    .line 2591
     :sswitch_aa
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3327,7 +3332,7 @@
 
     goto/16 :goto_1
 
-    .line 2537
+    .line 2592
     :sswitch_ab
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3335,7 +3340,7 @@
 
     goto/16 :goto_1
 
-    .line 2538
+    .line 2593
     :sswitch_ac
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseICC_IO(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3343,7 +3348,7 @@
 
     goto/16 :goto_1
 
-    .line 2539
+    .line 2594
     :sswitch_ad
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3351,7 +3356,7 @@
 
     goto/16 :goto_1
 
-    .line 2540
+    .line 2595
     :sswitch_ae
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3359,7 +3364,7 @@
 
     goto/16 :goto_1
 
-    .line 2541
+    .line 2596
     :sswitch_af
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3367,7 +3372,7 @@
 
     goto/16 :goto_1
 
-    .line 2542
+    .line 2597
     :sswitch_b0
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3375,7 +3380,7 @@
 
     goto/16 :goto_1
 
-    .line 2543
+    .line 2598
     :sswitch_b1
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3383,7 +3388,7 @@
 
     goto/16 :goto_1
 
-    .line 2544
+    .line 2599
     :sswitch_b2
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3391,15 +3396,15 @@
 
     goto/16 :goto_1
 
-    .line 2547
+    .line 2600
     :sswitch_b3
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
     goto/16 :goto_1
 
-    .line 2548
+    .line 2601
     :sswitch_b4
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3407,7 +3412,7 @@
 
     goto/16 :goto_1
 
-    .line 2549
+    .line 2602
     :sswitch_b5
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3415,7 +3420,7 @@
 
     goto/16 :goto_1
 
-    .line 2550
+    .line 2605
     :sswitch_b6
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3423,15 +3428,15 @@
 
     goto/16 :goto_1
 
-    .line 2551
+    .line 2606
     :sswitch_b7
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
     goto/16 :goto_1
 
-    .line 2552
+    .line 2607
     :sswitch_b8
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3439,23 +3444,23 @@
 
     goto/16 :goto_1
 
-    .line 2553
+    .line 2608
     :sswitch_b9
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
     goto/16 :goto_1
 
-    .line 2554
+    .line 2609
     :sswitch_ba
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
     goto/16 :goto_1
 
-    .line 2555
+    .line 2610
     :sswitch_bb
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -3463,424 +3468,16 @@
 
     goto/16 :goto_1
 
-    .line 2556
+    .line 2611
     :sswitch_bc
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2557
-    :sswitch_bd
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2558
-    :sswitch_be
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2559
-    :sswitch_bf
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2560
-    :sswitch_c0
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2561
-    :sswitch_c1
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2562
-    :sswitch_c2
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2563
-    :sswitch_c3
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseCdmaRSInfo(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2564
-    :sswitch_c4
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2565
-    :sswitch_c5
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2566
-    :sswitch_c6
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2567
-    :sswitch_c7
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2568
-    :sswitch_c8
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2569
-    :sswitch_c9
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2570
-    :sswitch_ca
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2571
-    :sswitch_cb
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2572
-    :sswitch_cc
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2573
-    :sswitch_cd
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2574
-    :sswitch_ce
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2575
-    :sswitch_cf
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2576
-    :sswitch_d0
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2577
-    :sswitch_d1
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2578
-    :sswitch_d2
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2579
-    :sswitch_d3
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2580
-    :sswitch_d4
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2581
-    :sswitch_d5
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2582
-    :sswitch_d6
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2583
-    :sswitch_d7
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2584
-    :sswitch_d8
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2585
-    :sswitch_d9
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2586
-    :sswitch_da
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseCdmaBCSMSServiceLabel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2587
-    :sswitch_db
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2588
-    :sswitch_dc
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2589
-    :sswitch_dd
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2590
-    :sswitch_de
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2591
-    :sswitch_df
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2592
-    :sswitch_e0
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2593
-    :sswitch_e1
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2594
-    :sswitch_e2
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2595
-    :sswitch_e3
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2596
-    :sswitch_e4
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2599
-    :sswitch_e5
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2600
-    :sswitch_e6
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2601
-    :sswitch_e7
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2602
-    :sswitch_e8
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2603
-    :sswitch_e9
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2604
-    :sswitch_ea
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseAPN(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2605
-    :sswitch_eb
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2606
-    :sswitch_ec
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseAPN(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2607
-    :sswitch_ed
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2608
-    :sswitch_ee
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2609
-    :sswitch_ef
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
     goto/16 :goto_1
 
     .line 2612
-    :sswitch_f0
+    :sswitch_bd
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
@@ -3888,31 +3485,31 @@
     goto/16 :goto_1
 
     .line 2613
-    :sswitch_f1
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+    :sswitch_be
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
     goto/16 :goto_1
 
     .line 2614
-    :sswitch_f2
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+    :sswitch_bf
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
     goto/16 :goto_1
 
     .line 2615
-    :sswitch_f3
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+    :sswitch_c0
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
     goto/16 :goto_1
 
     .line 2616
-    :sswitch_f4
+    :sswitch_c1
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
@@ -3920,31 +3517,31 @@
     goto/16 :goto_1
 
     .line 2617
-    :sswitch_f5
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+    :sswitch_c2
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
     goto/16 :goto_1
 
     .line 2618
-    :sswitch_f6
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responsePOL(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto/16 :goto_1
-
-    .line 2619
-    :sswitch_f7
+    :sswitch_c3
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
     goto/16 :goto_1
 
+    .line 2619
+    :sswitch_c4
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
     .line 2620
-    :sswitch_f8
+    :sswitch_c5
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
@@ -3952,23 +3549,23 @@
     goto/16 :goto_1
 
     .line 2621
-    :sswitch_f9
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+    :sswitch_c6
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseCdmaRSInfo(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
     goto/16 :goto_1
 
     .line 2622
-    :sswitch_fa
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+    :sswitch_c7
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
     goto/16 :goto_1
 
     .line 2623
-    :sswitch_fb
+    :sswitch_c8
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
@@ -3976,7 +3573,7 @@
     goto/16 :goto_1
 
     .line 2624
-    :sswitch_fc
+    :sswitch_c9
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
@@ -3984,7 +3581,439 @@
     goto/16 :goto_1
 
     .line 2625
+    :sswitch_ca
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2626
+    :sswitch_cb
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2627
+    :sswitch_cc
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2628
+    :sswitch_cd
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2629
+    :sswitch_ce
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2630
+    :sswitch_cf
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2631
+    :sswitch_d0
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2632
+    :sswitch_d1
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2633
+    :sswitch_d2
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2634
+    :sswitch_d3
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2635
+    :sswitch_d4
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2636
+    :sswitch_d5
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2637
+    :sswitch_d6
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2638
+    :sswitch_d7
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2639
+    :sswitch_d8
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2640
+    :sswitch_d9
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2641
+    :sswitch_da
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2642
+    :sswitch_db
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2643
+    :sswitch_dc
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2644
+    :sswitch_dd
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseCdmaBCSMSServiceLabel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2645
+    :sswitch_de
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2646
+    :sswitch_df
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2647
+    :sswitch_e0
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2648
+    :sswitch_e1
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2649
+    :sswitch_e2
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2650
+    :sswitch_e3
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2651
+    :sswitch_e4
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2652
+    :sswitch_e5
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2653
+    :sswitch_e6
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2654
+    :sswitch_e7
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2657
+    :sswitch_e8
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2658
+    :sswitch_e9
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2659
+    :sswitch_ea
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2660
+    :sswitch_eb
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2661
+    :sswitch_ec
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2662
+    :sswitch_ed
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseAPN(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2663
+    :sswitch_ee
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2664
+    :sswitch_ef
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseAPN(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2665
+    :sswitch_f0
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2666
+    :sswitch_f1
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2667
+    :sswitch_f2
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2670
+    :sswitch_f3
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2671
+    :sswitch_f4
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2672
+    :sswitch_f5
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2673
+    :sswitch_f6
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2674
+    :sswitch_f7
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2675
+    :sswitch_f8
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2676
+    :sswitch_f9
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responsePOL(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2677
+    :sswitch_fa
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2678
+    :sswitch_fb
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2679
+    :sswitch_fc
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2680
     :sswitch_fd
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2681
+    :sswitch_fe
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2682
+    :sswitch_ff
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    goto/16 :goto_1
+
+    .line 2683
+    :sswitch_100
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
     :try_end_2
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
@@ -3993,7 +4022,7 @@
 
     goto/16 :goto_1
 
-    .line 2654
+    .line 2712
     .end local v2           #ret:Ljava/lang/Object;
     :cond_6
     iget v6, v3, Lcom/android/internal/telephony/RILRequest;->mRequest:I
@@ -4002,7 +4031,7 @@
 
     if-ne v6, v7, :cond_8
 
-    .line 2655
+    .line 2713
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -4049,29 +4078,29 @@
 
     invoke-direct {p0, v6}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 2662
+    .line 2720
     :goto_2
     iget-object v6, v3, Lcom/android/internal/telephony/RILRequest;->mResult:Landroid/os/Message;
 
     if-eqz v6, :cond_7
 
-    .line 2663
+    .line 2721
     iget-object v6, v3, Lcom/android/internal/telephony/RILRequest;->mResult:Landroid/os/Message;
 
     invoke-static {v6, v2, v9}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2664
+    .line 2722
     iget-object v6, v3, Lcom/android/internal/telephony/RILRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v6}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2667
+    .line 2725
     :cond_7
     invoke-virtual {v3}, Lcom/android/internal/telephony/RILRequest;->release()V
 
     goto/16 :goto_0
 
-    .line 2658
+    .line 2716
     :cond_8
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -4125,7 +4154,7 @@
 
     goto :goto_2
 
-    .line 2320
+    .line 2375
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
@@ -4302,81 +4331,84 @@
         0x246 -> :sswitch_75
         0x247 -> :sswitch_b1
         0x248 -> :sswitch_b2
-        0x7d1 -> :sswitch_b3
-        0x7d4 -> :sswitch_b4
-        0x7d5 -> :sswitch_b5
-        0x7d6 -> :sswitch_b6
-        0x7d7 -> :sswitch_b7
-        0x7da -> :sswitch_b8
-        0x7db -> :sswitch_b9
-        0x7de -> :sswitch_ba
-        0x7df -> :sswitch_bb
-        0x7e0 -> :sswitch_bc
-        0x7e1 -> :sswitch_bd
-        0x7e2 -> :sswitch_be
-        0x7e3 -> :sswitch_bf
-        0x7e4 -> :sswitch_c0
-        0x7e5 -> :sswitch_c1
-        0x7e6 -> :sswitch_c2
-        0x7e9 -> :sswitch_c3
-        0x7ea -> :sswitch_c4
-        0x7eb -> :sswitch_c5
-        0x7ec -> :sswitch_c6
-        0x7ed -> :sswitch_c7
-        0x7ee -> :sswitch_c8
-        0x7ef -> :sswitch_c9
-        0x7f0 -> :sswitch_ca
-        0x7f1 -> :sswitch_cb
-        0x7f2 -> :sswitch_cc
-        0x7f3 -> :sswitch_cd
-        0x7f4 -> :sswitch_ce
-        0x7f5 -> :sswitch_cf
-        0x7f6 -> :sswitch_d0
-        0x7f7 -> :sswitch_d1
-        0x7f8 -> :sswitch_d2
-        0x7f9 -> :sswitch_d3
-        0x7fa -> :sswitch_d4
-        0x7fb -> :sswitch_d5
-        0x7fc -> :sswitch_d6
-        0x7fd -> :sswitch_d7
-        0x7fe -> :sswitch_d8
-        0x7ff -> :sswitch_d9
-        0x800 -> :sswitch_da
-        0x801 -> :sswitch_db
-        0x802 -> :sswitch_dc
-        0x803 -> :sswitch_dd
-        0x804 -> :sswitch_de
-        0x805 -> :sswitch_df
-        0x806 -> :sswitch_e0
-        0x807 -> :sswitch_e1
-        0x808 -> :sswitch_e2
-        0x809 -> :sswitch_e3
-        0x80a -> :sswitch_e4
-        0x1389 -> :sswitch_e5
-        0x138a -> :sswitch_e6
-        0x138b -> :sswitch_e7
-        0x138c -> :sswitch_e8
-        0x138d -> :sswitch_e9
-        0x138e -> :sswitch_ea
-        0x138f -> :sswitch_eb
-        0x1390 -> :sswitch_ec
-        0x1391 -> :sswitch_ed
-        0x1392 -> :sswitch_ee
-        0x1393 -> :sswitch_ef
-        0x2711 -> :sswitch_f0
-        0x2712 -> :sswitch_f1
-        0x2713 -> :sswitch_f2
-        0x2716 -> :sswitch_f3
-        0x2717 -> :sswitch_f4
-        0x2718 -> :sswitch_f5
-        0x2719 -> :sswitch_f6
-        0x271a -> :sswitch_f7
-        0x271b -> :sswitch_f8
-        0x271c -> :sswitch_f9
-        0x271d -> :sswitch_fa
-        0x271e -> :sswitch_fb
-        0x271f -> :sswitch_fc
-        0x2720 -> :sswitch_fd
+        0x257 -> :sswitch_b3
+        0x259 -> :sswitch_b4
+        0x25a -> :sswitch_b5
+        0x7d1 -> :sswitch_b6
+        0x7d4 -> :sswitch_b7
+        0x7d5 -> :sswitch_b8
+        0x7d6 -> :sswitch_b9
+        0x7d7 -> :sswitch_ba
+        0x7da -> :sswitch_bb
+        0x7db -> :sswitch_bc
+        0x7de -> :sswitch_bd
+        0x7df -> :sswitch_be
+        0x7e0 -> :sswitch_bf
+        0x7e1 -> :sswitch_c0
+        0x7e2 -> :sswitch_c1
+        0x7e3 -> :sswitch_c2
+        0x7e4 -> :sswitch_c3
+        0x7e5 -> :sswitch_c4
+        0x7e6 -> :sswitch_c5
+        0x7e9 -> :sswitch_c6
+        0x7ea -> :sswitch_c7
+        0x7eb -> :sswitch_c8
+        0x7ec -> :sswitch_c9
+        0x7ed -> :sswitch_ca
+        0x7ee -> :sswitch_cb
+        0x7ef -> :sswitch_cc
+        0x7f0 -> :sswitch_cd
+        0x7f1 -> :sswitch_ce
+        0x7f2 -> :sswitch_cf
+        0x7f3 -> :sswitch_d0
+        0x7f4 -> :sswitch_d1
+        0x7f5 -> :sswitch_d2
+        0x7f6 -> :sswitch_d3
+        0x7f7 -> :sswitch_d4
+        0x7f8 -> :sswitch_d5
+        0x7f9 -> :sswitch_d6
+        0x7fa -> :sswitch_d7
+        0x7fb -> :sswitch_d8
+        0x7fc -> :sswitch_d9
+        0x7fd -> :sswitch_da
+        0x7fe -> :sswitch_db
+        0x7ff -> :sswitch_dc
+        0x800 -> :sswitch_dd
+        0x801 -> :sswitch_de
+        0x802 -> :sswitch_df
+        0x803 -> :sswitch_e0
+        0x804 -> :sswitch_e1
+        0x805 -> :sswitch_e2
+        0x806 -> :sswitch_e3
+        0x807 -> :sswitch_e4
+        0x808 -> :sswitch_e5
+        0x809 -> :sswitch_e6
+        0x80a -> :sswitch_e7
+        0x1389 -> :sswitch_e8
+        0x138a -> :sswitch_e9
+        0x138b -> :sswitch_ea
+        0x138c -> :sswitch_eb
+        0x138d -> :sswitch_ec
+        0x138e -> :sswitch_ed
+        0x138f -> :sswitch_ee
+        0x1390 -> :sswitch_ef
+        0x1391 -> :sswitch_f0
+        0x1392 -> :sswitch_f1
+        0x1393 -> :sswitch_f2
+        0x2711 -> :sswitch_f3
+        0x2712 -> :sswitch_f4
+        0x2713 -> :sswitch_f5
+        0x2716 -> :sswitch_f6
+        0x2717 -> :sswitch_f7
+        0x2718 -> :sswitch_f8
+        0x2719 -> :sswitch_f9
+        0x271a -> :sswitch_fa
+        0x271b -> :sswitch_fb
+        0x271c -> :sswitch_fc
+        0x271d -> :sswitch_fd
+        0x271e -> :sswitch_fe
+        0x271f -> :sswitch_ff
+        0x2720 -> :sswitch_100
         0x2afa -> :sswitch_76
         0x2afb -> :sswitch_77
         0x2afc -> :sswitch_78
@@ -4391,16 +4423,16 @@
     .parameter "rr"
 
     .prologue
-    .line 6520
+    .line 6636
     const/4 v0, 0x0
 
-    .line 6522
+    .line 6638
     .local v0, ret:Ljava/lang/Object;
     iget v1, p2, Lcom/android/internal/telephony/RILRequest;->mRequest:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 6527
+    .line 6643
     .end local v0           #ret:Ljava/lang/Object;
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4437,10 +4469,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6529
+    .line 6645
     return-object v0
 
-    .line 6523
+    .line 6639
     .restart local v0       #ret:Ljava/lang/Object;
     :pswitch_0
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseSMSExtend(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4449,7 +4481,7 @@
 
     goto :goto_0
 
-    .line 6524
+    .line 6640
     :pswitch_1
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseSMSExtend(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -4457,7 +4489,7 @@
 
     goto :goto_0
 
-    .line 6522
+    .line 6638
     nop
 
     :pswitch_data_0
@@ -4472,16 +4504,16 @@
     .parameter "p"
 
     .prologue
-    .line 2744
+    .line 2802
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v18
 
-    .line 2746
+    .line 2804
     .local v18, response:I
     sparse-switch v18, :sswitch_data_0
 
-    .line 2874
+    .line 2934
     :try_start_0
     new-instance v26, Ljava/lang/RuntimeException;
 
@@ -4513,11 +4545,11 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2876
+    .line 2936
     :catch_0
     move-exception v25
 
-    .line 2877
+    .line 2937
     .local v25, tr:Ljava/lang/Throwable;
     const-string v26, "RILJ"
 
@@ -4559,13 +4591,13 @@
 
     invoke-static/range {v26 .. v27}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3650
+    .line 3716
     .end local v25           #tr:Ljava/lang/Throwable;
     :cond_0
     :goto_0
     return-void
 
-    .line 2753
+    .line 2811
     :sswitch_0
     :try_start_1
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4574,13 +4606,13 @@
 
     move-result-object v20
 
-    .line 2882
+    .line 2942
     :goto_1
     sparse-switch v18, :sswitch_data_1
 
     goto :goto_0
 
-    .line 2885
+    .line 2945
     :sswitch_1
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
@@ -4594,7 +4626,7 @@
 
     move-result-object v11
 
-    .line 2886
+    .line 2946
     .local v11, newState:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     invoke-virtual {v11}, Lcom/android/internal/telephony/CommandsInterface$RadioState;->toString()Ljava/lang/String;
 
@@ -4608,14 +4640,14 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogMore(ILjava/lang/String;)V
 
-    .line 2888
+    .line 2948
     move-object/from16 v0, p0
 
     invoke-direct {v0, v11}, Lcom/android/internal/telephony/RIL;->switchToRadioState(Lcom/android/internal/telephony/CommandsInterface$RadioState;)V
 
     goto :goto_0
 
-    .line 2754
+    .line 2812
     .end local v11           #newState:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     :sswitch_2
     :try_start_2
@@ -4626,7 +4658,7 @@
     .local v20, ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2755
+    .line 2813
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_3
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4636,7 +4668,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2756
+    .line 2814
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_4
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4646,7 +4678,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2757
+    .line 2815
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_5
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4656,7 +4688,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2758
+    .line 2816
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_6
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4666,7 +4698,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2759
+    .line 2817
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_7
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4676,7 +4708,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2760
+    .line 2818
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_8
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4686,7 +4718,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2761
+    .line 2819
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_9
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseSignalStrength(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4696,7 +4728,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2762
+    .line 2820
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_a
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseDataCallList(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4706,7 +4738,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2763
+    .line 2821
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_b
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseSuppServiceNotification(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4716,7 +4748,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2764
+    .line 2822
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_c
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4726,7 +4758,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2765
+    .line 2823
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_d
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4736,7 +4768,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2766
+    .line 2824
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_e
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4746,7 +4778,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2767
+    .line 2825
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_f
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4756,7 +4788,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2768
+    .line 2826
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_10
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4766,7 +4798,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2769
+    .line 2827
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_11
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4776,7 +4808,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2770
+    .line 2828
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_12
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseCallRing(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4786,7 +4818,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2771
+    .line 2829
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_13
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4796,7 +4828,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto :goto_1
 
-    .line 2772
+    .line 2830
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_14
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4806,7 +4838,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2773
+    .line 2831
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_15
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseCdmaSms(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4816,7 +4848,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2774
+    .line 2832
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_16
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseRaw(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4826,7 +4858,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2775
+    .line 2833
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_17
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4836,7 +4868,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2776
+    .line 2834
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_18
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4846,7 +4878,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2777
+    .line 2835
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_19
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseCdmaCallWaiting(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4856,7 +4888,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2778
+    .line 2836
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_1a
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4866,7 +4898,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2779
+    .line 2837
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_1b
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseCdmaInformationRecord(Landroid/os/Parcel;)Ljava/util/ArrayList;
@@ -4876,7 +4908,7 @@
     .local v20, ret:Ljava/util/ArrayList;
     goto/16 :goto_1
 
-    .line 2780
+    .line 2838
     .end local v20           #ret:Ljava/util/ArrayList;
     :sswitch_1c
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseRaw(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4886,7 +4918,7 @@
     .local v20, ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2781
+    .line 2839
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_1d
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4896,7 +4928,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2782
+    .line 2840
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_1e
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4906,7 +4938,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2783
+    .line 2841
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_1f
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4916,7 +4948,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2784
+    .line 2842
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_20
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4926,7 +4958,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2785
+    .line 2843
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_21
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4936,7 +4968,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2786
+    .line 2844
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_22
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4946,7 +4978,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2796
+    .line 2854
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_23
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4956,7 +4988,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2799
+    .line 2857
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_24
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4966,7 +4998,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2803
+    .line 2861
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_25
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4976,7 +5008,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2805
+    .line 2863
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_26
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4986,7 +5018,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2808
+    .line 2866
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_27
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4996,7 +5028,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2809
+    .line 2867
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_28
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5006,7 +5038,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2810
+    .line 2868
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_29
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5016,7 +5048,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2811
+    .line 2869
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_2a
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5026,7 +5058,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2812
+    .line 2870
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_2b
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5036,7 +5068,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2813
+    .line 2871
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_2c
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5046,7 +5078,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2814
+    .line 2872
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_2d
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5056,7 +5088,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2815
+    .line 2873
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_2e
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5066,7 +5098,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2816
+    .line 2874
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_2f
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5076,7 +5108,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2817
+    .line 2875
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_30
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5086,7 +5118,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2818
+    .line 2876
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_31
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5096,7 +5128,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2819
+    .line 2877
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_32
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5106,7 +5138,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2820
+    .line 2878
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_33
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5116,7 +5148,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2821
+    .line 2879
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_34
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5126,7 +5158,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2822
+    .line 2880
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_35
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5136,7 +5168,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2823
+    .line 2881
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_36
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5146,7 +5178,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2824
+    .line 2882
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_37
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5156,7 +5188,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2825
+    .line 2883
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_38
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5166,7 +5198,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2826
+    .line 2884
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_39
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5176,7 +5208,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2827
+    .line 2885
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_3a
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5186,7 +5218,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2828
+    .line 2886
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_3b
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5196,7 +5228,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2829
+    .line 2887
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_3c
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5206,7 +5238,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2830
+    .line 2888
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_3d
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5216,7 +5248,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2831
+    .line 2889
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_3e
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5226,7 +5258,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2832
+    .line 2890
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_3f
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5236,7 +5268,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2833
+    .line 2891
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_40
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5246,7 +5278,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2836
+    .line 2893
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_41
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5256,7 +5288,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2837
+    .line 2896
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_42
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5266,7 +5298,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2838
+    .line 2897
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_43
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5276,7 +5308,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2839
+    .line 2898
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_44
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5286,7 +5318,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2840
+    .line 2899
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_45
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5296,7 +5328,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2841
+    .line 2900
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_46
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5306,19 +5338,9 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2842
+    .line 2901
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_47
-    invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseCdmaERIInfo(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v20
-
-    .restart local v20       #ret:Ljava/lang/Object;
-    goto/16 :goto_1
-
-    .line 2843
-    .end local v20           #ret:Ljava/lang/Object;
-    :sswitch_48
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v20
@@ -5326,7 +5348,17 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2844
+    .line 2902
+    .end local v20           #ret:Ljava/lang/Object;
+    :sswitch_48
+    invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseCdmaERIInfo(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v20
+
+    .restart local v20       #ret:Ljava/lang/Object;
+    goto/16 :goto_1
+
+    .line 2903
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_49
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5336,19 +5368,9 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2845
+    .line 2904
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_4a
-    invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v20
-
-    .restart local v20       #ret:Ljava/lang/Object;
-    goto/16 :goto_1
-
-    .line 2846
-    .end local v20           #ret:Ljava/lang/Object;
-    :sswitch_4b
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v20
@@ -5356,7 +5378,17 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2847
+    .line 2905
+    .end local v20           #ret:Ljava/lang/Object;
+    :sswitch_4b
+    invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v20
+
+    .restart local v20       #ret:Ljava/lang/Object;
+    goto/16 :goto_1
+
+    .line 2906
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_4c
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5366,7 +5398,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2848
+    .line 2907
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_4d
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5376,19 +5408,9 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2849
+    .line 2908
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_4e
-    invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v20
-
-    .restart local v20       #ret:Ljava/lang/Object;
-    goto/16 :goto_1
-
-    .line 2850
-    .end local v20           #ret:Ljava/lang/Object;
-    :sswitch_4f
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v20
@@ -5396,7 +5418,17 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2851
+    .line 2909
+    .end local v20           #ret:Ljava/lang/Object;
+    :sswitch_4f
+    invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v20
+
+    .restart local v20       #ret:Ljava/lang/Object;
+    goto/16 :goto_1
+
+    .line 2910
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_50
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5406,7 +5438,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2852
+    .line 2911
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_51
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5416,7 +5448,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2853
+    .line 2912
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_52
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5426,19 +5458,9 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2854
+    .line 2913
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_53
-    invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v20
-
-    .restart local v20       #ret:Ljava/lang/Object;
-    goto/16 :goto_1
-
-    .line 2857
-    .end local v20           #ret:Ljava/lang/Object;
-    :sswitch_54
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v20
@@ -5446,7 +5468,17 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2858
+    .line 2914
+    .end local v20           #ret:Ljava/lang/Object;
+    :sswitch_54
+    invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v20
+
+    .restart local v20       #ret:Ljava/lang/Object;
+    goto/16 :goto_1
+
+    .line 2917
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_55
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5456,7 +5488,7 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2859
+    .line 2918
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_56
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5466,19 +5498,9 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2860
+    .line 2919
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_57
-    invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseCdmaSms(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v20
-
-    .restart local v20       #ret:Ljava/lang/Object;
-    goto/16 :goto_1
-
-    .line 2861
-    .end local v20           #ret:Ljava/lang/Object;
-    :sswitch_58
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v20
@@ -5486,7 +5508,17 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2862
+    .line 2920
+    .end local v20           #ret:Ljava/lang/Object;
+    :sswitch_58
+    invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseCdmaSms(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v20
+
+    .restart local v20       #ret:Ljava/lang/Object;
+    goto/16 :goto_1
+
+    .line 2921
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_59
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -5496,9 +5528,19 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2865
+    .line 2922
     .end local v20           #ret:Ljava/lang/Object;
     :sswitch_5a
+    invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v20
+
+    .restart local v20       #ret:Ljava/lang/Object;
+    goto/16 :goto_1
+
+    .line 2925
+    .end local v20           #ret:Ljava/lang/Object;
+    :sswitch_5b
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseRaw(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v20
@@ -5506,9 +5548,9 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2866
+    .line 2926
     .end local v20           #ret:Ljava/lang/Object;
-    :sswitch_5b
+    :sswitch_5c
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v20
@@ -5516,9 +5558,9 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2867
+    .line 2927
     .end local v20           #ret:Ljava/lang/Object;
-    :sswitch_5c
+    :sswitch_5d
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseCallFailNotice(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v20
@@ -5526,9 +5568,9 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2868
+    .line 2928
     .end local v20           #ret:Ljava/lang/Object;
-    :sswitch_5d
+    :sswitch_5e
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v20
@@ -5536,9 +5578,9 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2869
+    .line 2929
     .end local v20           #ret:Ljava/lang/Object;
-    :sswitch_5e
+    :sswitch_5f
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
     :try_end_2
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
@@ -5548,16 +5590,16 @@
     .restart local v20       #ret:Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 2891
+    .line 2951
     .end local v20           #ret:Ljava/lang/Object;
-    :sswitch_5f
+    :sswitch_60
     move-object/from16 v0, p0
 
     move/from16 v1, v18
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
 
-    .line 2893
+    .line 2953
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallStateRegistrants:Landroid/os/RegistrantList;
@@ -5578,15 +5620,15 @@
 
     goto/16 :goto_0
 
-    .line 2897
-    :sswitch_60
+    .line 2957
+    :sswitch_61
     move-object/from16 v0, p0
 
     move/from16 v1, v18
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
 
-    .line 2899
+    .line 2959
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mVoiceNetworkStateRegistrants:Landroid/os/RegistrantList;
@@ -5607,22 +5649,22 @@
 
     goto/16 :goto_0
 
-    .line 2903
-    :sswitch_61
+    .line 2963
+    :sswitch_62
     move-object/from16 v0, p0
 
     move/from16 v1, v18
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
 
-    .line 2906
+    .line 2966
     const/16 v26, 0x2
 
     move/from16 v0, v26
 
     new-array v4, v0, [Ljava/lang/String;
 
-    .line 2908
+    .line 2968
     .local v4, a:[Ljava/lang/String;
     const/16 v26, 0x1
 
@@ -5630,12 +5672,12 @@
 
     aput-object v20, v4, v26
 
-    .line 2912
+    .line 2972
     invoke-static {v4}, Landroid/telephony/SmsMessage;->newFromCMT([Ljava/lang/String;)Landroid/telephony/SmsMessage;
 
     move-result-object v22
 
-    .line 2913
+    .line 2973
     .local v22, sms:Landroid/telephony/SmsMessage;
     move-object/from16 v0, p0
 
@@ -5645,7 +5687,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 2914
+    .line 2974
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mGsmSmsRegistrant:Landroid/os/Registrant;
@@ -5672,10 +5714,10 @@
 
     goto/16 :goto_0
 
-    .line 2920
+    .line 2980
     .end local v4           #a:[Ljava/lang/String;
     .end local v22           #sms:Landroid/telephony/SmsMessage;
-    :sswitch_62
+    :sswitch_63
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -5684,7 +5726,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 2922
+    .line 2982
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSmsStatusRegistrant:Landroid/os/Registrant;
@@ -5693,7 +5735,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 2923
+    .line 2983
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSmsStatusRegistrant:Landroid/os/Registrant;
@@ -5720,8 +5762,8 @@
 
     goto/16 :goto_0
 
-    .line 2928
-    :sswitch_63
+    .line 2988
+    :sswitch_64
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -5730,14 +5772,14 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 2930
+    .line 2990
     check-cast v20, [I
 
     move-object/from16 v23, v20
 
     check-cast v23, [I
 
-    .line 2932
+    .line 2992
     .local v23, smsIndex:[I
     move-object/from16 v0, v23
 
@@ -5753,7 +5795,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 2933
+    .line 2993
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSmsOnSimRegistrant:Landroid/os/Registrant;
@@ -5762,7 +5804,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 2934
+    .line 2994
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSmsOnSimRegistrant:Landroid/os/Registrant;
@@ -5789,7 +5831,7 @@
 
     goto/16 :goto_0
 
-    .line 2938
+    .line 2998
     :cond_1
     new-instance v26, Ljava/lang/StringBuilder;
 
@@ -5824,17 +5866,17 @@
     goto/16 :goto_0
 
     .end local v23           #smsIndex:[I
-    :sswitch_64
+    :sswitch_65
     move-object/from16 v26, v20
 
-    .line 2943
+    .line 3003
     check-cast v26, [Ljava/lang/String;
 
     move-object/from16 v17, v26
 
     check-cast v17, [Ljava/lang/String;
 
-    .line 2945
+    .line 3005
     .local v17, resp:[Ljava/lang/String;
     move-object/from16 v0, v17
 
@@ -5850,7 +5892,7 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 2946
+    .line 3006
     const/16 v26, 0x2
 
     move/from16 v0, v26
@@ -5859,7 +5901,7 @@
 
     move-object/from16 v17, v0
 
-    .line 2947
+    .line 3007
     const/16 v26, 0x0
 
     check-cast v20, [Ljava/lang/String;
@@ -5872,14 +5914,14 @@
 
     aput-object v27, v17, v26
 
-    .line 2948
+    .line 3008
     const/16 v26, 0x1
 
     const/16 v27, 0x0
 
     aput-object v27, v17, v26
 
-    .line 2950
+    .line 3010
     :cond_2
     const/16 v26, 0x0
 
@@ -5893,7 +5935,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogMore(ILjava/lang/String;)V
 
-    .line 2951
+    .line 3011
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mUSSDRegistrant:Landroid/os/Registrant;
@@ -5902,7 +5944,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 2952
+    .line 3012
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mUSSDRegistrant:Landroid/os/Registrant;
@@ -5929,9 +5971,9 @@
 
     goto/16 :goto_0
 
-    .line 2957
+    .line 3017
     .end local v17           #resp:[Ljava/lang/String;
-    :sswitch_65
+    :sswitch_66
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -5940,12 +5982,12 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 2961
+    .line 3021
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v12
 
-    .line 2963
+    .line 3023
     .local v12, nitzReceiveTime:J
     const/16 v26, 0x2
 
@@ -5955,13 +5997,13 @@
 
     move-object/from16 v19, v0
 
-    .line 2965
+    .line 3025
     .local v19, result:[Ljava/lang/Object;
     const/16 v26, 0x0
 
     aput-object v20, v19, v26
 
-    .line 2966
+    .line 3026
     const/16 v26, 0x1
 
     invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -5970,7 +6012,7 @@
 
     aput-object v27, v19, v26
 
-    .line 2968
+    .line 3028
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNITZTimeRegistrant:Landroid/os/Registrant;
@@ -5979,7 +6021,7 @@
 
     if-eqz v26, :cond_3
 
-    .line 2970
+    .line 3030
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNITZTimeRegistrant:Landroid/os/Registrant;
@@ -6006,7 +6048,7 @@
 
     goto/16 :goto_0
 
-    .line 2974
+    .line 3034
     :cond_3
     move-object/from16 v0, v19
 
@@ -6016,10 +6058,10 @@
 
     goto/16 :goto_0
 
-    .line 2981
+    .line 3041
     .end local v12           #nitzReceiveTime:J
     .end local v19           #result:[Ljava/lang/Object;
-    :sswitch_66
+    :sswitch_67
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -6028,7 +6070,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
 
-    .line 2983
+    .line 3043
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSignalStrengthRegistrant:Landroid/os/Registrant;
@@ -6037,7 +6079,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 2984
+    .line 3044
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSignalStrengthRegistrant:Landroid/os/Registrant;
@@ -6064,8 +6106,8 @@
 
     goto/16 :goto_0
 
-    .line 2990
-    :sswitch_67
+    .line 3050
+    :sswitch_68
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -6074,7 +6116,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 2992
+    .line 3052
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mDataConnectionRegistrants:Landroid/os/RegistrantList;
@@ -6101,8 +6143,8 @@
 
     goto/16 :goto_0
 
-    .line 2996
-    :sswitch_68
+    .line 3056
+    :sswitch_69
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -6111,7 +6153,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 2998
+    .line 3058
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSsnRegistrant:Landroid/os/Registrant;
@@ -6120,7 +6162,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 2999
+    .line 3059
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSsnRegistrant:Landroid/os/Registrant;
@@ -6147,15 +6189,15 @@
 
     goto/16 :goto_0
 
-    .line 3005
-    :sswitch_69
+    .line 3065
+    :sswitch_6a
     move-object/from16 v0, p0
 
     move/from16 v1, v18
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
 
-    .line 3007
+    .line 3067
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatSessionEndRegistrant:Landroid/os/Registrant;
@@ -6164,7 +6206,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3008
+    .line 3068
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatSessionEndRegistrant:Landroid/os/Registrant;
@@ -6191,53 +6233,7 @@
 
     goto/16 :goto_0
 
-    .line 3014
-    :sswitch_6a
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
-
-    .line 3016
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatProCmdRegistrant:Landroid/os/Registrant;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3017
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatProCmdRegistrant:Landroid/os/Registrant;
-
-    move-object/from16 v26, v0
-
-    new-instance v27, Landroid/os/AsyncResult;
-
-    const/16 v28, 0x0
-
-    const/16 v29, 0x0
-
-    move-object/from16 v0, v27
-
-    move-object/from16 v1, v28
-
-    move-object/from16 v2, v20
-
-    move-object/from16 v3, v29
-
-    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    invoke-virtual/range {v26 .. v27}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 3023
+    .line 3074
     :sswitch_6b
     move-object/from16 v0, p0
 
@@ -6247,19 +6243,19 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 3025
+    .line 3076
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatEventRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatProCmdRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v26, v0
 
     if-eqz v26, :cond_0
 
-    .line 3026
+    .line 3077
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatEventRegistrant:Landroid/os/Registrant;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatProCmdRegistrant:Landroid/os/Registrant;
 
     move-object/from16 v26, v0
 
@@ -6283,7 +6279,7 @@
 
     goto/16 :goto_0
 
-    .line 3032
+    .line 3083
     :sswitch_6c
     move-object/from16 v0, p0
 
@@ -6293,7 +6289,53 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 3034
+    .line 3085
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatEventRegistrant:Landroid/os/Registrant;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3086
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatEventRegistrant:Landroid/os/Registrant;
+
+    move-object/from16 v26, v0
+
+    new-instance v27, Landroid/os/AsyncResult;
+
+    const/16 v28, 0x0
+
+    const/16 v29, 0x0
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    move-object/from16 v2, v20
+
+    move-object/from16 v3, v29
+
+    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+
+    invoke-virtual/range {v26 .. v27}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 3092
+    :sswitch_6d
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
+
+    .line 3094
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatCallSetUpRegistrant:Landroid/os/Registrant;
@@ -6302,7 +6344,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3035
+    .line 3095
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCatCallSetUpRegistrant:Landroid/os/Registrant;
@@ -6329,15 +6371,15 @@
 
     goto/16 :goto_0
 
-    .line 3041
-    :sswitch_6d
+    .line 3101
+    :sswitch_6e
     move-object/from16 v0, p0
 
     move/from16 v1, v18
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
 
-    .line 3043
+    .line 3103
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccSmsFullRegistrant:Landroid/os/Registrant;
@@ -6346,7 +6388,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3044
+    .line 3104
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccSmsFullRegistrant:Landroid/os/Registrant;
@@ -6357,8 +6399,8 @@
 
     goto/16 :goto_0
 
-    .line 3049
-    :sswitch_6e
+    .line 3109
+    :sswitch_6f
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -6367,7 +6409,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 3051
+    .line 3111
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccRefreshRegistrants:Landroid/os/RegistrantList;
@@ -6376,7 +6418,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3052
+    .line 3112
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccRefreshRegistrants:Landroid/os/RegistrantList;
@@ -6403,8 +6445,8 @@
 
     goto/16 :goto_0
 
-    .line 3058
-    :sswitch_6f
+    .line 3118
+    :sswitch_70
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -6413,7 +6455,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 3060
+    .line 3120
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRingRegistrant:Landroid/os/Registrant;
@@ -6422,7 +6464,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3061
+    .line 3121
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRingRegistrant:Landroid/os/Registrant;
@@ -6449,8 +6491,8 @@
 
     goto/16 :goto_0
 
-    .line 3067
-    :sswitch_70
+    .line 3127
+    :sswitch_71
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -6459,7 +6501,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
 
-    .line 3068
+    .line 3128
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRestrictedStateRegistrant:Landroid/os/Registrant;
@@ -6468,7 +6510,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3069
+    .line 3129
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRestrictedStateRegistrant:Landroid/os/Registrant;
@@ -6495,15 +6537,15 @@
 
     goto/16 :goto_0
 
-    .line 3075
-    :sswitch_71
+    .line 3135
+    :sswitch_72
     move-object/from16 v0, p0
 
     move/from16 v1, v18
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
 
-    .line 3077
+    .line 3137
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
@@ -6512,7 +6554,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3078
+    .line 3138
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccStatusChangedRegistrants:Landroid/os/RegistrantList;
@@ -6523,8 +6565,8 @@
 
     goto/16 :goto_0
 
-    .line 3083
-    :sswitch_72
+    .line 3143
+    :sswitch_73
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -6533,10 +6575,10 @@
 
     move-object/from16 v22, v20
 
-    .line 3085
+    .line 3145
     check-cast v22, Landroid/telephony/SmsMessage;
 
-    .line 3087
+    .line 3147
     .restart local v22       #sms:Landroid/telephony/SmsMessage;
     move-object/from16 v0, p0
 
@@ -6546,7 +6588,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3088
+    .line 3148
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSmsRegistrant:Landroid/os/Registrant;
@@ -6573,16 +6615,16 @@
 
     goto/16 :goto_0
 
-    .line 3094
+    .line 3154
     .end local v22           #sms:Landroid/telephony/SmsMessage;
-    :sswitch_73
+    :sswitch_74
     move-object/from16 v0, p0
 
     move/from16 v1, v18
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
 
-    .line 3096
+    .line 3156
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mGsmBroadcastSmsRegistrant:Landroid/os/Registrant;
@@ -6591,7 +6633,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3097
+    .line 3157
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mGsmBroadcastSmsRegistrant:Landroid/os/Registrant;
@@ -6618,35 +6660,7 @@
 
     goto/16 :goto_0
 
-    .line 3103
-    :sswitch_74
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
-
-    .line 3105
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccSmsFullRegistrant:Landroid/os/Registrant;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3106
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccSmsFullRegistrant:Landroid/os/Registrant;
-
-    move-object/from16 v26, v0
-
-    invoke-virtual/range {v26 .. v26}, Landroid/os/Registrant;->notifyRegistrant()V
-
-    goto/16 :goto_0
-
-    .line 3111
+    .line 3163
     :sswitch_75
     move-object/from16 v0, p0
 
@@ -6654,7 +6668,35 @@
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
 
-    .line 3113
+    .line 3165
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccSmsFullRegistrant:Landroid/os/Registrant;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3166
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccSmsFullRegistrant:Landroid/os/Registrant;
+
+    move-object/from16 v26, v0
+
+    invoke-virtual/range {v26 .. v26}, Landroid/os/Registrant;->notifyRegistrant()V
+
+    goto/16 :goto_0
+
+    .line 3171
+    :sswitch_76
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
+
+    .line 3173
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mEmergencyCallbackModeRegistrant:Landroid/os/Registrant;
@@ -6663,7 +6705,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3114
+    .line 3174
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mEmergencyCallbackModeRegistrant:Landroid/os/Registrant;
@@ -6674,53 +6716,7 @@
 
     goto/16 :goto_0
 
-    .line 3119
-    :sswitch_76
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
-
-    .line 3121
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallWaitingInfoRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3122
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallWaitingInfoRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    new-instance v27, Landroid/os/AsyncResult;
-
-    const/16 v28, 0x0
-
-    const/16 v29, 0x0
-
-    move-object/from16 v0, v27
-
-    move-object/from16 v1, v28
-
-    move-object/from16 v2, v20
-
-    move-object/from16 v3, v29
-
-    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    invoke-virtual/range {v26 .. v27}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 3128
+    .line 3179
     :sswitch_77
     move-object/from16 v0, p0
 
@@ -6730,7 +6726,53 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 3130
+    .line 3181
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallWaitingInfoRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3182
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallWaitingInfoRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    new-instance v27, Landroid/os/AsyncResult;
+
+    const/16 v28, 0x0
+
+    const/16 v29, 0x0
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    move-object/from16 v2, v20
+
+    move-object/from16 v3, v29
+
+    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+
+    invoke-virtual/range {v26 .. v27}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 3188
+    :sswitch_78
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
+
+    .line 3190
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mOtaProvisionRegistrants:Landroid/os/RegistrantList;
@@ -6739,7 +6781,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3131
+    .line 3191
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mOtaProvisionRegistrants:Landroid/os/RegistrantList;
@@ -6766,8 +6808,8 @@
 
     goto/16 :goto_0
 
-    .line 3140
-    :sswitch_78
+    .line 3200
+    :sswitch_79
     :try_start_3
     move-object/from16 v0, v20
 
@@ -6777,7 +6819,7 @@
     :try_end_3
     .catch Ljava/lang/ClassCastException; {:try_start_3 .. :try_end_3} :catch_1
 
-    .line 3146
+    .line 3206
     .local v10, listInfoRecs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/cdma/CdmaInformationRecords;>;"
     invoke-virtual {v10}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -6797,7 +6839,7 @@
 
     check-cast v16, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;
 
-    .line 3147
+    .line 3207
     .local v16, rec:Lcom/android/internal/telephony/cdma/CdmaInformationRecords;
     move-object/from16 v0, p0
 
@@ -6807,7 +6849,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 3148
+    .line 3208
     move-object/from16 v0, p0
 
     move-object/from16 v1, v16
@@ -6816,14 +6858,14 @@
 
     goto :goto_2
 
-    .line 3141
+    .line 3201
     .end local v9           #i$:Ljava/util/Iterator;
     .end local v10           #listInfoRecs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/cdma/CdmaInformationRecords;>;"
     .end local v16           #rec:Lcom/android/internal/telephony/cdma/CdmaInformationRecords;
     :catch_1
     move-exception v7
 
-    .line 3142
+    .line 3202
     .local v7, e:Ljava/lang/ClassCastException;
     const-string v26, "RILJ"
 
@@ -6838,10 +6880,10 @@
     goto/16 :goto_0
 
     .end local v7           #e:Ljava/lang/ClassCastException;
-    :sswitch_79
+    :sswitch_7a
     move-object/from16 v26, v20
 
-    .line 3153
+    .line 3213
     check-cast v26, [B
 
     check-cast v26, [B
@@ -6858,7 +6900,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
 
-    .line 3154
+    .line 3214
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mUnsolOemHookRawRegistrant:Landroid/os/Registrant;
@@ -6867,7 +6909,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3155
+    .line 3215
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mUnsolOemHookRawRegistrant:Landroid/os/Registrant;
@@ -6894,8 +6936,8 @@
 
     goto/16 :goto_0
 
-    .line 3160
-    :sswitch_7a
+    .line 3220
+    :sswitch_7b
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -6904,7 +6946,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
 
-    .line 3161
+    .line 3221
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRingbackToneRegistrants:Landroid/os/RegistrantList;
@@ -6913,7 +6955,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3162
+    .line 3222
     check-cast v20, [I
 
     check-cast v20, [I
@@ -6932,7 +6974,7 @@
 
     const/4 v14, 0x1
 
-    .line 3163
+    .line 3223
     .local v14, playtone:Z
     :goto_3
     move-object/from16 v0, p0
@@ -6957,60 +6999,14 @@
 
     goto/16 :goto_0
 
-    .line 3162
+    .line 3222
     .end local v14           #playtone:Z
     :cond_4
     const/4 v14, 0x0
 
     goto :goto_3
 
-    .line 3169
-    :sswitch_7b
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
-
-    .line 3171
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mResendIncallMuteRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3172
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mResendIncallMuteRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    new-instance v27, Landroid/os/AsyncResult;
-
-    const/16 v28, 0x0
-
-    const/16 v29, 0x0
-
-    move-object/from16 v0, v27
-
-    move-object/from16 v1, v28
-
-    move-object/from16 v2, v20
-
-    move-object/from16 v3, v29
-
-    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    invoke-virtual/range {v26 .. v27}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 3178
+    .line 3229
     :sswitch_7c
     move-object/from16 v0, p0
 
@@ -7020,19 +7016,19 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 3180
+    .line 3231
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSubscriptionChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mResendIncallMuteRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
     if-eqz v26, :cond_0
 
-    .line 3181
+    .line 3232
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSubscriptionChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mResendIncallMuteRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -7056,7 +7052,7 @@
 
     goto/16 :goto_0
 
-    .line 3187
+    .line 3238
     :sswitch_7d
     move-object/from16 v0, p0
 
@@ -7066,7 +7062,53 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 3189
+    .line 3240
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSubscriptionChangedRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3241
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSubscriptionChangedRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    new-instance v27, Landroid/os/AsyncResult;
+
+    const/16 v28, 0x0
+
+    const/16 v29, 0x0
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    move-object/from16 v2, v20
+
+    move-object/from16 v3, v29
+
+    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+
+    invoke-virtual/range {v26 .. v27}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 3247
+    :sswitch_7e
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
+
+    .line 3249
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaPrlChangedRegistrants:Landroid/os/RegistrantList;
@@ -7075,7 +7117,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3190
+    .line 3250
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaPrlChangedRegistrants:Landroid/os/RegistrantList;
@@ -7102,8 +7144,8 @@
 
     goto/16 :goto_0
 
-    .line 3196
-    :sswitch_7e
+    .line 3256
+    :sswitch_7f
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -7112,7 +7154,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 3198
+    .line 3258
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mExitEmergencyCallbackModeRegistrants:Landroid/os/RegistrantList;
@@ -7121,7 +7163,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3199
+    .line 3259
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mExitEmergencyCallbackModeRegistrants:Landroid/os/RegistrantList;
@@ -7142,8 +7184,8 @@
 
     goto/16 :goto_0
 
-    .line 3205
-    :sswitch_7f
+    .line 3265
+    :sswitch_80
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -7152,7 +7194,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 3215
+    .line 3275
     check-cast v20, [I
 
     check-cast v20, [I
@@ -7169,15 +7211,15 @@
 
     goto/16 :goto_0
 
-    .line 3227
-    :sswitch_80
+    .line 3287
+    :sswitch_81
     move-object/from16 v0, p0
 
     move/from16 v1, v18
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
 
-    .line 3229
+    .line 3289
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mVoiceRadioTechChangedRegistrants:Landroid/os/RegistrantList;
@@ -7198,15 +7240,15 @@
 
     goto/16 :goto_0
 
-    .line 3233
-    :sswitch_81
+    .line 3293
+    :sswitch_82
     move-object/from16 v0, p0
 
     move/from16 v1, v18
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
 
-    .line 3235
+    .line 3295
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mImsNetworkStateChangedRegistrants:Landroid/os/RegistrantList;
@@ -7227,15 +7269,15 @@
 
     goto/16 :goto_0
 
-    .line 3239
-    :sswitch_82
+    .line 3299
+    :sswitch_83
     move-object/from16 v0, p0
 
     move/from16 v1, v18
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
 
-    .line 3241
+    .line 3301
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mDataNetworkStateRegistrants:Landroid/os/RegistrantList;
@@ -7256,8 +7298,8 @@
 
     goto/16 :goto_0
 
-    .line 3247
-    :sswitch_83
+    .line 3307
+    :sswitch_84
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -7266,7 +7308,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 3249
+    .line 3309
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccAppRefreshRegistrant:Landroid/os/Registrant;
@@ -7275,7 +7317,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3250
+    .line 3310
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mIccAppRefreshRegistrant:Landroid/os/Registrant;
@@ -7302,8 +7344,8 @@
 
     goto/16 :goto_0
 
-    .line 3257
-    :sswitch_84
+    .line 3317
+    :sswitch_85
     const-string v26, "[UNSL]< RIL_UNSOL_NEW_CBM "
 
     move-object/from16 v0, p0
@@ -7312,14 +7354,14 @@
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 3258
+    .line 3318
     const/16 v26, 0x2
 
     move/from16 v0, v26
 
     new-array v4, v0, [Ljava/lang/String;
 
-    .line 3260
+    .line 3320
     .restart local v4       #a:[Ljava/lang/String;
     const/16 v26, 0x1
 
@@ -7327,12 +7369,12 @@
 
     aput-object v20, v4, v26
 
-    .line 3263
+    .line 3323
     invoke-static {v4}, Lcom/android/internal/telephony/gsm/CBMessage;->newFromCBM([Ljava/lang/String;)Lcom/android/internal/telephony/gsm/CBMessage;
 
     move-result-object v5
 
-    .line 3264
+    .line 3324
     .local v5, cb:Lcom/android/internal/telephony/gsm/CBMessage;
     move-object/from16 v0, p0
 
@@ -7342,7 +7384,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3265
+    .line 3325
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCBRegistrant:Landroid/os/Registrant;
@@ -7367,10 +7409,10 @@
 
     goto/16 :goto_0
 
-    .line 3271
+    .line 3331
     .end local v4           #a:[Ljava/lang/String;
     .end local v5           #cb:Lcom/android/internal/telephony/gsm/CBMessage;
-    :sswitch_85
+    :sswitch_86
     const-string v26, "[UNSL]< RIL_UNSOL_NEW_CBM_ON_SIM"
 
     move-object/from16 v0, p0
@@ -7379,14 +7421,14 @@
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 3272
+    .line 3332
     check-cast v20, [I
 
     move-object/from16 v6, v20
 
     check-cast v6, [I
 
-    .line 3274
+    .line 3334
     .local v6, cbIndex:[I
     array-length v0, v6
 
@@ -7400,7 +7442,7 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 3275
+    .line 3335
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCBOnSimRegistrant:Landroid/os/Registrant;
@@ -7409,7 +7451,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3276
+    .line 3336
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCBOnSimRegistrant:Landroid/os/Registrant;
@@ -7434,7 +7476,7 @@
 
     goto/16 :goto_0
 
-    .line 3280
+    .line 3340
     :cond_5
     new-instance v26, Ljava/lang/StringBuilder;
 
@@ -7466,9 +7508,9 @@
 
     goto/16 :goto_0
 
-    .line 3286
+    .line 3346
     .end local v6           #cbIndex:[I
-    :sswitch_86
+    :sswitch_87
     const-string v26, "[UNSL]< RIL_UNSOL_CLI_INFORMATION "
 
     move-object/from16 v0, p0
@@ -7477,342 +7519,10 @@
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 3287
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCLINotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3288
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCLINotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3292
-    :sswitch_87
-    const-string v26, "[UNSL]< RIL_UNSOL_RESPONSE_DIAL_TONE_END "
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v26
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 3293
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mDialToneNotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3294
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mDialToneNotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    invoke-virtual/range {v26 .. v26}, Landroid/os/RegistrantList;->notifyRegistrants()V
-
-    goto/16 :goto_0
-
-    .line 3298
-    :sswitch_88
-    const-string v26, "[UNSL]< RIL_UNSOL_DEVICE_SMS_STORAGE_FULL "
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v26
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 3299
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSMSFullNotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3300
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSMSFullNotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    invoke-virtual/range {v26 .. v26}, Landroid/os/RegistrantList;->notifyRegistrants()V
-
-    goto/16 :goto_0
-
-    .line 3304
-    :sswitch_89
-    const-string v26, "[UNSL]< RIL_UNSOL_CW_INFORMATION "
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v26
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 3305
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallWaitingInformation:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3306
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallWaitingInformation:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3310
-    :sswitch_8a
-    const-string v26, "[UNSL]< RIL_UNSOL_COL_INFORMATION "
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v26
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 3311
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mConnectedLineInformation:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3312
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mConnectedLineInformation:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3316
-    :sswitch_8b
-    const-string v26, "[UNSL]< RIL_UNSOL_PUK1_OR_PUK2_LOCK "
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v26
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 3317
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPUKLockNotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3318
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPUKLockNotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3322
-    :sswitch_8c
-    const-string v26, "[UNSL]< RIL_UNSOL_MM_LU_FAILED_CAUSE "
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v26
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 3323
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mMMLUFailNotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3324
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mMMLUFailNotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3328
-    :sswitch_8d
-    const-string v26, "[UNSL]< RIL_UNSOL_PCSCF_ADDRESS "
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v26
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 3329
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPcscfNotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3330
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPcscfNotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3334
-    :sswitch_8e
-    const-string v26, "[UNSL]< RIL_UNSOL_CNAP_INFORMATION "
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v26
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 3335
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCnapNotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3336
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCnapNotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3340
-    :sswitch_8f
-    const-string v26, "[UNSL]< RIL_UNSOL_HOMEZONE_DCH_STATUS "
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v26
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 3341
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mHomezoneDCHNotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3342
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mHomezoneDCHNotify:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3346
-    :sswitch_90
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
-
     .line 3347
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mModemLinkStatusRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCLINotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -7821,7 +7531,7 @@
     .line 3348
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mModemLinkStatusRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCLINotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -7834,19 +7544,19 @@
     goto/16 :goto_0
 
     .line 3352
-    :sswitch_91
+    :sswitch_88
+    const-string v26, "[UNSL]< RIL_UNSOL_RESPONSE_DIAL_TONE_END "
+
     move-object/from16 v0, p0
 
-    move/from16 v1, v18
+    move-object/from16 v1, v26
 
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
     .line 3353
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSmartDataRoamingStatusRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mDialToneNotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -7855,32 +7565,28 @@
     .line 3354
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSmartDataRoamingStatusRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mDialToneNotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+    invoke-virtual/range {v26 .. v26}, Landroid/os/RegistrantList;->notifyRegistrants()V
 
     goto/16 :goto_0
 
     .line 3358
-    :sswitch_92
+    :sswitch_89
+    const-string v26, "[UNSL]< RIL_UNSOL_DEVICE_SMS_STORAGE_FULL "
+
     move-object/from16 v0, p0
 
-    move/from16 v1, v18
+    move-object/from16 v1, v26
 
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
     .line 3359
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSIMExpiredStatusRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSMSFullNotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -7889,21 +7595,17 @@
     .line 3360
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSIMExpiredStatusRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSMSFullNotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+    invoke-virtual/range {v26 .. v26}, Landroid/os/RegistrantList;->notifyRegistrants()V
 
     goto/16 :goto_0
 
     .line 3364
-    :sswitch_93
-    const-string v26, "[UNSL]< RIL_UNSOL_PHONE_BOOK_READY "
+    :sswitch_8a
+    const-string v26, "[UNSL]< RIL_UNSOL_CW_INFORMATION "
 
     move-object/from16 v0, p0
 
@@ -7914,7 +7616,7 @@
     .line 3365
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPBReadyNotify:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallWaitingInformation:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -7923,28 +7625,32 @@
     .line 3366
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPBReadyNotify:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallWaitingInformation:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
-    invoke-virtual/range {v26 .. v26}, Landroid/os/RegistrantList;->notifyRegistrants()V
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
 
     goto/16 :goto_0
 
     .line 3370
-    :sswitch_94
+    :sswitch_8b
+    const-string v26, "[UNSL]< RIL_UNSOL_COL_INFORMATION "
+
     move-object/from16 v0, p0
 
-    move/from16 v1, v18
+    move-object/from16 v1, v26
 
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
     .line 3371
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mEnterLowPowerModeRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mConnectedLineInformation:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -7953,7 +7659,7 @@
     .line 3372
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mEnterLowPowerModeRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mConnectedLineInformation:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -7966,19 +7672,19 @@
     goto/16 :goto_0
 
     .line 3376
-    :sswitch_95
+    :sswitch_8c
+    const-string v26, "[UNSL]< RIL_UNSOL_PUK1_OR_PUK2_LOCK "
+
     move-object/from16 v0, p0
 
-    move/from16 v1, v18
+    move-object/from16 v1, v26
 
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
     .line 3377
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mTPMRRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPUKLockNotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -7987,7 +7693,7 @@
     .line 3378
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mTPMRRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPUKLockNotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8000,19 +7706,19 @@
     goto/16 :goto_0
 
     .line 3382
-    :sswitch_96
+    :sswitch_8d
+    const-string v26, "[UNSL]< RIL_UNSOL_MM_LU_FAILED_CAUSE "
+
     move-object/from16 v0, p0
 
-    move/from16 v1, v18
+    move-object/from16 v1, v26
 
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
     .line 3383
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSIMSWAPRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mMMLUFailNotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8021,7 +7727,7 @@
     .line 3384
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSIMSWAPRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mMMLUFailNotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8034,19 +7740,19 @@
     goto/16 :goto_0
 
     .line 3388
-    :sswitch_97
+    :sswitch_8e
+    const-string v26, "[UNSL]< RIL_UNSOL_PCSCF_ADDRESS "
+
     move-object/from16 v0, p0
 
-    move/from16 v1, v18
+    move-object/from16 v1, v26
 
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
     .line 3389
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallWaitingToneRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPcscfNotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8055,7 +7761,7 @@
     .line 3390
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallWaitingToneRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPcscfNotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8068,19 +7774,19 @@
     goto/16 :goto_0
 
     .line 3394
-    :sswitch_98
+    :sswitch_8f
+    const-string v26, "[UNSL]< RIL_UNSOL_CNAP_INFORMATION "
+
     move-object/from16 v0, p0
 
-    move/from16 v1, v18
+    move-object/from16 v1, v26
 
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
     .line 3395
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCTlineControlRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCnapNotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8089,7 +7795,7 @@
     .line 3396
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCTlineControlRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCnapNotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8102,19 +7808,19 @@
     goto/16 :goto_0
 
     .line 3400
-    :sswitch_99
+    :sswitch_90
+    const-string v26, "[UNSL]< RIL_UNSOL_HOMEZONE_DCH_STATUS "
+
     move-object/from16 v0, p0
 
-    move/from16 v1, v18
+    move-object/from16 v1, v26
 
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
     .line 3401
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mAcdbTableChangeRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mHomezoneDCHNotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8123,7 +7829,7 @@
     .line 3402
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mAcdbTableChangeRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mHomezoneDCHNotify:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8136,7 +7842,7 @@
     goto/16 :goto_0
 
     .line 3406
-    :sswitch_9a
+    :sswitch_91
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -8148,7 +7854,7 @@
     .line 3407
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSIMHotSwapRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mModemLinkStatusRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8157,7 +7863,7 @@
     .line 3408
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSIMHotSwapRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mModemLinkStatusRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8170,7 +7876,7 @@
     goto/16 :goto_0
 
     .line 3412
-    :sswitch_9b
+    :sswitch_92
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -8182,7 +7888,7 @@
     .line 3413
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mECallUSSDRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSmartDataRoamingStatusRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8191,7 +7897,7 @@
     .line 3414
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mECallUSSDRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSmartDataRoamingStatusRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8204,7 +7910,7 @@
     goto/16 :goto_0
 
     .line 3418
-    :sswitch_9c
+    :sswitch_93
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -8216,13 +7922,349 @@
     .line 3419
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mManualStateRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSIMExpiredStatusRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
     if-eqz v26, :cond_0
 
     .line 3420
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSIMExpiredStatusRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3424
+    :sswitch_94
+    const-string v26, "[UNSL]< RIL_UNSOL_PHONE_BOOK_READY "
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v26
+
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 3425
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPBReadyNotify:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3426
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPBReadyNotify:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    invoke-virtual/range {v26 .. v26}, Landroid/os/RegistrantList;->notifyRegistrants()V
+
+    goto/16 :goto_0
+
+    .line 3430
+    :sswitch_95
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3431
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mEnterLowPowerModeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3432
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mEnterLowPowerModeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3436
+    :sswitch_96
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3437
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mTPMRRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3438
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mTPMRRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3442
+    :sswitch_97
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3443
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSIMSWAPRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3444
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSIMSWAPRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3448
+    :sswitch_98
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3449
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallWaitingToneRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3450
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCallWaitingToneRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3454
+    :sswitch_99
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3455
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCTlineControlRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3456
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCTlineControlRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3460
+    :sswitch_9a
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3461
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mAcdbTableChangeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3462
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mAcdbTableChangeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3466
+    :sswitch_9b
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3467
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSIMHotSwapRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3468
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSIMHotSwapRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3472
+    :sswitch_9c
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3473
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mECallUSSDRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3474
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mECallUSSDRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3478
+    :sswitch_9d
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3479
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mManualStateRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3480
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mManualStateRegistrants:Landroid/os/RegistrantList;
@@ -8237,8 +8279,8 @@
 
     goto/16 :goto_0
 
-    .line 3424
-    :sswitch_9d
+    .line 3484
+    :sswitch_9e
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -8247,7 +8289,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
 
-    .line 3425
+    .line 3485
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mManualStateRegistrants:Landroid/os/RegistrantList;
@@ -8256,7 +8298,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3426
+    .line 3486
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRssiReportRegistrants:Landroid/os/RegistrantList;
@@ -8271,41 +8313,7 @@
 
     goto/16 :goto_0
 
-    .line 3432
-    :sswitch_9e
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
-
-    .line 3433
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mE911CallRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3434
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mE911CallRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3438
+    .line 3490
     :sswitch_9f
     move-object/from16 v0, p0
 
@@ -8315,321 +8323,19 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
 
-    .line 3439
+    .line 3491
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mLoopbackModeRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSmartNetworkRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
     if-eqz v26, :cond_0
-
-    .line 3440
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mLoopbackModeRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3444
-    :sswitch_a0
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
-
-    .line 3445
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNetworkBusyRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3446
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNetworkBusyRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3450
-    :sswitch_a1
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
-
-    .line 3451
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSystemInfoRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3452
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSystemInfoRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3456
-    :sswitch_a2
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
-
-    .line 3457
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->m3GIndicatorRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3458
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->m3GIndicatorRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3462
-    :sswitch_a3
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
-
-    .line 3463
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mMsgWaitIndicatorRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3464
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mMsgWaitIndicatorRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3468
-    :sswitch_a4
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
-
-    .line 3469
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mERIRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3470
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mERIRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3474
-    :sswitch_a5
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
-
-    .line 3475
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPDSSRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3476
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPDSSRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3480
-    :sswitch_a6
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
-
-    .line 3481
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mToneSignalsRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3482
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mToneSignalsRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
-
-    .line 3486
-    :sswitch_a7
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
-
-    .line 3487
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRedirNumRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3488
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRedirNumRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
-
-    goto/16 :goto_0
 
     .line 3492
-    :sswitch_a8
     move-object/from16 v0, p0
 
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
-
-    .line 3493
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mOMATriggerRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3494
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mOMATriggerRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSmartNetworkRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8642,7 +8348,7 @@
     goto/16 :goto_0
 
     .line 3498
-    :sswitch_a9
+    :sswitch_a0
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -8654,7 +8360,7 @@
     .line 3499
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mMIPFailRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mE911CallRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8663,7 +8369,7 @@
     .line 3500
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mMIPFailRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mE911CallRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8676,7 +8382,7 @@
     goto/16 :goto_0
 
     .line 3504
-    :sswitch_aa
+    :sswitch_a1
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -8688,7 +8394,7 @@
     .line 3505
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSignalFadeRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mLoopbackModeRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8697,7 +8403,7 @@
     .line 3506
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSignalFadeRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mLoopbackModeRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8710,17 +8416,19 @@
     goto/16 :goto_0
 
     .line 3510
-    :sswitch_ab
+    :sswitch_a2
     move-object/from16 v0, p0
 
     move/from16 v1, v18
 
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
 
     .line 3511
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNBPCDRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNetworkBusyRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8729,7 +8437,7 @@
     .line 3512
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNBPCDRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNetworkBusyRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -8742,14 +8450,382 @@
     goto/16 :goto_0
 
     .line 3516
-    :sswitch_ac
+    :sswitch_a3
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3517
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSystemInfoRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3518
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSystemInfoRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3522
+    :sswitch_a4
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3523
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->m3GIndicatorRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3524
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->m3GIndicatorRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3528
+    :sswitch_a5
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3529
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mMsgWaitIndicatorRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3530
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mMsgWaitIndicatorRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3534
+    :sswitch_a6
     move-object/from16 v0, p0
 
     move/from16 v1, v18
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
 
-    .line 3517
+    .line 3535
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mERIRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3536
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mERIRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3540
+    :sswitch_a7
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3541
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPDSSRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3542
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPDSSRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3546
+    :sswitch_a8
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3547
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mToneSignalsRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3548
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mToneSignalsRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3552
+    :sswitch_a9
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
+
+    .line 3553
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRedirNumRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3554
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRedirNumRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3558
+    :sswitch_aa
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3559
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mOMATriggerRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3560
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mOMATriggerRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3564
+    :sswitch_ab
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3565
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mMIPFailRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3566
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mMIPFailRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3570
+    :sswitch_ac
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3571
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSignalFadeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3572
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mSignalFadeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3576
+    :sswitch_ad
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
+
+    .line 3577
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNBPCDRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3578
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNBPCDRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyResult(Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    .line 3582
+    :sswitch_ae
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
+
+    .line 3583
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mLBSRegistrants:Landroid/os/RegistrantList;
@@ -8758,7 +8834,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3518
+    .line 3584
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mLBSRegistrants:Landroid/os/RegistrantList;
@@ -8773,8 +8849,8 @@
 
     goto/16 :goto_0
 
-    .line 3522
-    :sswitch_ad
+    .line 3588
+    :sswitch_af
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -8783,7 +8859,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 3523
+    .line 3589
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCWUWRegStateRegistrants:Landroid/os/RegistrantList;
@@ -8810,417 +8886,8 @@
 
     goto/16 :goto_0
 
-    .line 3527
-    :sswitch_ae
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
-
-    .line 3528
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mServiceDomainChangeRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3529
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mServiceDomainChangeRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    new-instance v27, Landroid/os/AsyncResult;
-
-    const/16 v28, 0x0
-
-    const/16 v29, 0x0
-
-    move-object/from16 v0, v27
-
-    move-object/from16 v1, v28
-
-    move-object/from16 v2, v20
-
-    move-object/from16 v3, v29
-
-    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    invoke-virtual/range {v26 .. v27}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 3533
-    :sswitch_af
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
-
-    .line 3534
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaCTModeChangeRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3535
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaCTModeChangeRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    new-instance v27, Landroid/os/AsyncResult;
-
-    const/16 v28, 0x0
-
-    const/16 v29, 0x0
-
-    move-object/from16 v0, v27
-
-    move-object/from16 v1, v28
-
-    move-object/from16 v2, v20
-
-    move-object/from16 v3, v29
-
-    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    invoke-virtual/range {v26 .. v27}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 3539
-    :sswitch_b0
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
-
-    .line 3540
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaCTMccMncChangeRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3541
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaCTMccMncChangeRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    new-instance v27, Landroid/os/AsyncResult;
-
-    const/16 v28, 0x0
-
-    const/16 v29, 0x0
-
-    move-object/from16 v0, v27
-
-    move-object/from16 v1, v28
-
-    move-object/from16 v2, v20
-
-    move-object/from16 v3, v29
-
-    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    invoke-virtual/range {v26 .. v27}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 3547
-    :sswitch_b1
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
-
-    .line 3548
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRadioTechnologyChangedRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3549
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRadioTechnologyChangedRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    new-instance v27, Landroid/os/AsyncResult;
-
-    const/16 v28, 0x0
-
-    const/16 v29, 0x0
-
-    move-object/from16 v0, v27
-
-    move-object/from16 v1, v28
-
-    move-object/from16 v2, v20
-
-    move-object/from16 v3, v29
-
-    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    invoke-virtual/range {v26 .. v27}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 3552
-    :sswitch_b2
-    const-string v26, "[UNSL]< RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE"
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v26
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 3553
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPhoneModeChangeRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_6
-
-    .line 3554
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPhoneModeChangeRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    invoke-virtual/range {v26 .. v26}, Landroid/os/RegistrantList;->notifyRegistrants()V
-
-    .line 3556
-    :cond_6
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRequestsList:Ljava/util/ArrayList;
-
-    move-object/from16 v27, v0
-
-    monitor-enter v27
-
-    .line 3557
-    const/4 v8, 0x0
-
-    .local v8, i:I
-    :try_start_4
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRequestsList:Ljava/util/ArrayList;
-
-    move-object/from16 v26, v0
-
-    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
-
-    move-result v24
-
-    .local v24, sz:I
-    :goto_4
-    move/from16 v0, v24
-
-    if-ge v8, v0, :cond_7
-
-    .line 3558
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRequestsList:Ljava/util/ArrayList;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v21
-
-    check-cast v21, Lcom/android/internal/telephony/RILRequest;
-
-    .line 3559
-    .local v21, rr:Lcom/android/internal/telephony/RILRequest;
-    const/16 v26, 0x9
-
-    const/16 v28, 0x0
-
-    move-object/from16 v0, v21
-
-    move/from16 v1, v26
-
-    move-object/from16 v2, v28
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/RILRequest;->onError(ILjava/lang/Object;)V
-
-    .line 3560
-    invoke-virtual/range {v21 .. v21}, Lcom/android/internal/telephony/RILRequest;->release()V
-
-    .line 3557
-    add-int/lit8 v8, v8, 0x1
-
-    goto :goto_4
-
-    .line 3562
-    .end local v21           #rr:Lcom/android/internal/telephony/RILRequest;
-    :cond_7
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRequestsList:Ljava/util/ArrayList;
-
-    move-object/from16 v26, v0
-
-    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->clear()V
-
-    .line 3563
-    monitor-exit v27
-
-    goto/16 :goto_0
-
-    .end local v24           #sz:I
-    :catchall_0
-    move-exception v26
-
-    monitor-exit v27
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    throw v26
-
-    .line 3567
-    .end local v8           #i:I
-    :sswitch_b3
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
-
-    .line 3568
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNetworkModeChangeRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3569
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNetworkModeChangeRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v26, v0
-
-    new-instance v27, Landroid/os/AsyncResult;
-
-    const/16 v28, 0x0
-
-    const/16 v29, 0x0
-
-    move-object/from16 v0, v27
-
-    move-object/from16 v1, v28
-
-    move-object/from16 v2, v20
-
-    move-object/from16 v3, v29
-
-    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    invoke-virtual/range {v26 .. v27}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 3573
-    :sswitch_b4
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
-
-    move-object/from16 v15, v20
-
-    .line 3574
-    check-cast v15, Landroid/telephony/SmsMessage;
-
-    .line 3577
-    .local v15, psSms:Landroid/telephony/SmsMessage;
-    const-string v26, "RILJ"
-
-    const-string/jumbo v27, "mark this new sms as EVDO sms"
-
-    invoke-static/range {v26 .. v27}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3587
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSmsRegistrant:Landroid/os/Registrant;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3588
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSmsRegistrant:Landroid/os/Registrant;
-
-    move-object/from16 v26, v0
-
-    new-instance v27, Landroid/os/AsyncResult;
-
-    const/16 v28, 0x0
-
-    const/16 v29, 0x0
-
-    move-object/from16 v0, v27
-
-    move-object/from16 v1, v28
-
-    move-object/from16 v2, v29
-
-    invoke-direct {v0, v1, v15, v2}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    invoke-virtual/range {v26 .. v27}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
     .line 3593
-    .end local v15           #psSms:Landroid/telephony/SmsMessage;
-    :sswitch_b5
+    :sswitch_b0
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -9232,7 +8899,7 @@
     .line 3594
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mEhrpdDomainNameChangeRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mServiceDomainChangeRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -9241,7 +8908,7 @@
     .line 3595
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mEhrpdDomainNameChangeRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mServiceDomainChangeRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
@@ -9266,7 +8933,7 @@
     goto/16 :goto_0
 
     .line 3599
-    :sswitch_b6
+    :sswitch_b1
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -9278,13 +8945,422 @@
     .line 3600
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mEhrpdEmergencyCallBackModeChangeRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaCTModeChangeRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v26, v0
 
     if-eqz v26, :cond_0
 
     .line 3601
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaCTModeChangeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    new-instance v27, Landroid/os/AsyncResult;
+
+    const/16 v28, 0x0
+
+    const/16 v29, 0x0
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    move-object/from16 v2, v20
+
+    move-object/from16 v3, v29
+
+    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+
+    invoke-virtual/range {v26 .. v27}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 3605
+    :sswitch_b2
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3606
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaCTMccMncChangeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3607
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaCTMccMncChangeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    new-instance v27, Landroid/os/AsyncResult;
+
+    const/16 v28, 0x0
+
+    const/16 v29, 0x0
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    move-object/from16 v2, v20
+
+    move-object/from16 v3, v29
+
+    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+
+    invoke-virtual/range {v26 .. v27}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 3613
+    :sswitch_b3
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3614
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRadioTechnologyChangedRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3615
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mRadioTechnologyChangedRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    new-instance v27, Landroid/os/AsyncResult;
+
+    const/16 v28, 0x0
+
+    const/16 v29, 0x0
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    move-object/from16 v2, v20
+
+    move-object/from16 v3, v29
+
+    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+
+    invoke-virtual/range {v26 .. v27}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 3618
+    :sswitch_b4
+    const-string v26, "[UNSL]< RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE"
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v26
+
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 3619
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPhoneModeChangeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_6
+
+    .line 3620
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mPhoneModeChangeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    invoke-virtual/range {v26 .. v26}, Landroid/os/RegistrantList;->notifyRegistrants()V
+
+    .line 3622
+    :cond_6
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRequestsList:Ljava/util/ArrayList;
+
+    move-object/from16 v27, v0
+
+    monitor-enter v27
+
+    .line 3623
+    const/4 v8, 0x0
+
+    .local v8, i:I
+    :try_start_4
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRequestsList:Ljava/util/ArrayList;
+
+    move-object/from16 v26, v0
+
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
+
+    move-result v24
+
+    .local v24, sz:I
+    :goto_4
+    move/from16 v0, v24
+
+    if-ge v8, v0, :cond_7
+
+    .line 3624
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRequestsList:Ljava/util/ArrayList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v21
+
+    check-cast v21, Lcom/android/internal/telephony/RILRequest;
+
+    .line 3625
+    .local v21, rr:Lcom/android/internal/telephony/RILRequest;
+    const/16 v26, 0x9
+
+    const/16 v28, 0x0
+
+    move-object/from16 v0, v21
+
+    move/from16 v1, v26
+
+    move-object/from16 v2, v28
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/RILRequest;->onError(ILjava/lang/Object;)V
+
+    .line 3626
+    invoke-virtual/range {v21 .. v21}, Lcom/android/internal/telephony/RILRequest;->release()V
+
+    .line 3623
+    add-int/lit8 v8, v8, 0x1
+
+    goto :goto_4
+
+    .line 3628
+    .end local v21           #rr:Lcom/android/internal/telephony/RILRequest;
+    :cond_7
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/RIL;->mRequestsList:Ljava/util/ArrayList;
+
+    move-object/from16 v26, v0
+
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->clear()V
+
+    .line 3629
+    monitor-exit v27
+
+    goto/16 :goto_0
+
+    .end local v24           #sz:I
+    :catchall_0
+    move-exception v26
+
+    monitor-exit v27
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    throw v26
+
+    .line 3633
+    .end local v8           #i:I
+    :sswitch_b5
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3634
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNetworkModeChangeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3635
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mNetworkModeChangeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    new-instance v27, Landroid/os/AsyncResult;
+
+    const/16 v28, 0x0
+
+    const/16 v29, 0x0
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    move-object/from16 v2, v20
+
+    move-object/from16 v3, v29
+
+    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+
+    invoke-virtual/range {v26 .. v27}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 3639
+    :sswitch_b6
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->unsljLog(I)V
+
+    move-object/from16 v15, v20
+
+    .line 3640
+    check-cast v15, Landroid/telephony/SmsMessage;
+
+    .line 3643
+    .local v15, psSms:Landroid/telephony/SmsMessage;
+    const-string v26, "RILJ"
+
+    const-string/jumbo v27, "mark this new sms as EVDO sms"
+
+    invoke-static/range {v26 .. v27}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 3653
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSmsRegistrant:Landroid/os/Registrant;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3654
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCdmaSmsRegistrant:Landroid/os/Registrant;
+
+    move-object/from16 v26, v0
+
+    new-instance v27, Landroid/os/AsyncResult;
+
+    const/16 v28, 0x0
+
+    const/16 v29, 0x0
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    move-object/from16 v2, v29
+
+    invoke-direct {v0, v1, v15, v2}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+
+    invoke-virtual/range {v26 .. v27}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 3659
+    .end local v15           #psSms:Landroid/telephony/SmsMessage;
+    :sswitch_b7
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3660
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mEhrpdDomainNameChangeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3661
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mEhrpdDomainNameChangeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    new-instance v27, Landroid/os/AsyncResult;
+
+    const/16 v28, 0x0
+
+    const/16 v29, 0x0
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    move-object/from16 v2, v20
+
+    move-object/from16 v3, v29
+
+    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+
+    invoke-virtual/range {v26 .. v27}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 3665
+    :sswitch_b8
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogvRet(ILjava/lang/Object;)V
+
+    .line 3666
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mEhrpdEmergencyCallBackModeChangeRegistrants:Landroid/os/RegistrantList;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3667
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mEhrpdEmergencyCallBackModeChangeRegistrants:Landroid/os/RegistrantList;
@@ -9311,8 +9387,8 @@
 
     goto/16 :goto_0
 
-    .line 3606
-    :sswitch_b7
+    .line 3672
+    :sswitch_b9
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -9321,7 +9397,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 3608
+    .line 3674
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mT3gPsdbgRegistrant:Landroid/os/Registrant;
@@ -9330,7 +9406,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3609
+    .line 3675
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mT3gPsdbgRegistrant:Landroid/os/Registrant;
@@ -9357,8 +9433,8 @@
 
     goto/16 :goto_0
 
-    .line 3615
-    :sswitch_b8
+    .line 3681
+    :sswitch_ba
     const-string v26, "[UNSL]< RIL_UNSOL_HTC_ECC_AVAILABLE "
 
     move-object/from16 v0, p0
@@ -9367,7 +9443,7 @@
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 3616
+    .line 3682
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mHTCECCStatusRegistrants:Landroid/os/RegistrantList;
@@ -9376,7 +9452,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3617
+    .line 3683
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mHTCECCStatusRegistrants:Landroid/os/RegistrantList;
@@ -9387,99 +9463,7 @@
 
     goto/16 :goto_0
 
-    .line 3622
-    :sswitch_b9
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
-
-    .line 3624
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mHTCCallFailNoticeRegistrant:Landroid/os/Registrant;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3625
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mHTCCallFailNoticeRegistrant:Landroid/os/Registrant;
-
-    move-object/from16 v26, v0
-
-    new-instance v27, Landroid/os/AsyncResult;
-
-    const/16 v28, 0x0
-
-    const/16 v29, 0x0
-
-    move-object/from16 v0, v27
-
-    move-object/from16 v1, v28
-
-    move-object/from16 v2, v20
-
-    move-object/from16 v3, v29
-
-    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    invoke-virtual/range {v26 .. v27}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 3631
-    :sswitch_ba
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
-
-    .line 3633
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mHTCRejectedMTCallRegistrant:Landroid/os/Registrant;
-
-    move-object/from16 v26, v0
-
-    if-eqz v26, :cond_0
-
-    .line 3634
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mHTCRejectedMTCallRegistrant:Landroid/os/Registrant;
-
-    move-object/from16 v26, v0
-
-    new-instance v27, Landroid/os/AsyncResult;
-
-    const/16 v28, 0x0
-
-    const/16 v29, 0x0
-
-    move-object/from16 v0, v27
-
-    move-object/from16 v1, v28
-
-    move-object/from16 v2, v20
-
-    move-object/from16 v3, v29
-
-    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    invoke-virtual/range {v26 .. v27}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 3640
+    .line 3688
     :sswitch_bb
     move-object/from16 v0, p0
 
@@ -9489,7 +9473,99 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 3642
+    .line 3690
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mHTCCallFailNoticeRegistrant:Landroid/os/Registrant;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3691
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mHTCCallFailNoticeRegistrant:Landroid/os/Registrant;
+
+    move-object/from16 v26, v0
+
+    new-instance v27, Landroid/os/AsyncResult;
+
+    const/16 v28, 0x0
+
+    const/16 v29, 0x0
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    move-object/from16 v2, v20
+
+    move-object/from16 v3, v29
+
+    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+
+    invoke-virtual/range {v26 .. v27}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 3697
+    :sswitch_bc
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
+
+    .line 3699
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mHTCRejectedMTCallRegistrant:Landroid/os/Registrant;
+
+    move-object/from16 v26, v0
+
+    if-eqz v26, :cond_0
+
+    .line 3700
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mHTCRejectedMTCallRegistrant:Landroid/os/Registrant;
+
+    move-object/from16 v26, v0
+
+    new-instance v27, Landroid/os/AsyncResult;
+
+    const/16 v28, 0x0
+
+    const/16 v29, 0x0
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    move-object/from16 v2, v20
+
+    move-object/from16 v3, v29
+
+    invoke-direct {v0, v1, v2, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+
+    invoke-virtual/range {v26 .. v27}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 3706
+    :sswitch_bd
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/RIL;->unsljLogRet(ILjava/lang/Object;)V
+
+    .line 3708
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCREGstateRegistrant:Landroid/os/Registrant;
@@ -9498,7 +9574,7 @@
 
     if-eqz v26, :cond_0
 
-    .line 3643
+    .line 3709
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/BaseCommands;->mCREGstateRegistrant:Landroid/os/Registrant;
@@ -9525,7 +9601,7 @@
 
     goto/16 :goto_0
 
-    .line 2746
+    .line 2804
     nop
 
     :sswitch_data_0
@@ -9591,138 +9667,140 @@
         0x605 -> :sswitch_3f
         0x606 -> :sswitch_40
         0x608 -> :sswitch_24
-        0xbb9 -> :sswitch_41
-        0xbba -> :sswitch_42
-        0xbbc -> :sswitch_43
-        0xbc0 -> :sswitch_44
-        0xbc1 -> :sswitch_45
-        0xbc3 -> :sswitch_46
-        0xbc4 -> :sswitch_47
-        0xbc5 -> :sswitch_48
-        0xbc6 -> :sswitch_49
-        0xbc8 -> :sswitch_4a
-        0xbc9 -> :sswitch_4b
-        0xbca -> :sswitch_4c
-        0xbcb -> :sswitch_4d
-        0xbcc -> :sswitch_4e
-        0xbcd -> :sswitch_4f
-        0xbce -> :sswitch_50
-        0xbcf -> :sswitch_51
-        0xbd0 -> :sswitch_52
-        0xbd1 -> :sswitch_53
-        0x1771 -> :sswitch_54
-        0x1772 -> :sswitch_55
-        0x1773 -> :sswitch_56
-        0x1774 -> :sswitch_57
-        0x1776 -> :sswitch_58
-        0x1777 -> :sswitch_59
-        0x4e21 -> :sswitch_5a
-        0x4e22 -> :sswitch_5b
-        0x4e23 -> :sswitch_5c
-        0x4e24 -> :sswitch_5d
-        0x4e25 -> :sswitch_5e
+        0x60c -> :sswitch_41
+        0xbb9 -> :sswitch_42
+        0xbba -> :sswitch_43
+        0xbbc -> :sswitch_44
+        0xbc0 -> :sswitch_45
+        0xbc1 -> :sswitch_46
+        0xbc3 -> :sswitch_47
+        0xbc4 -> :sswitch_48
+        0xbc5 -> :sswitch_49
+        0xbc6 -> :sswitch_4a
+        0xbc8 -> :sswitch_4b
+        0xbc9 -> :sswitch_4c
+        0xbca -> :sswitch_4d
+        0xbcb -> :sswitch_4e
+        0xbcc -> :sswitch_4f
+        0xbcd -> :sswitch_50
+        0xbce -> :sswitch_51
+        0xbcf -> :sswitch_52
+        0xbd0 -> :sswitch_53
+        0xbd1 -> :sswitch_54
+        0x1771 -> :sswitch_55
+        0x1772 -> :sswitch_56
+        0x1773 -> :sswitch_57
+        0x1774 -> :sswitch_58
+        0x1776 -> :sswitch_59
+        0x1777 -> :sswitch_5a
+        0x4e21 -> :sswitch_5b
+        0x4e22 -> :sswitch_5c
+        0x4e23 -> :sswitch_5d
+        0x4e24 -> :sswitch_5e
+        0x4e25 -> :sswitch_5f
         0x520c -> :sswitch_25
         0x520d -> :sswitch_26
         0x520f -> :sswitch_23
     .end sparse-switch
 
-    .line 2882
+    .line 2942
     :sswitch_data_1
     .sparse-switch
         0x3e8 -> :sswitch_1
-        0x3e9 -> :sswitch_5f
-        0x3ea -> :sswitch_60
-        0x3eb -> :sswitch_61
-        0x3ec -> :sswitch_62
-        0x3ed -> :sswitch_63
-        0x3ee -> :sswitch_64
-        0x3f0 -> :sswitch_65
-        0x3f1 -> :sswitch_66
-        0x3f2 -> :sswitch_67
-        0x3f3 -> :sswitch_68
-        0x3f4 -> :sswitch_69
-        0x3f5 -> :sswitch_6a
-        0x3f6 -> :sswitch_6b
-        0x3f7 -> :sswitch_6c
-        0x3f8 -> :sswitch_6d
-        0x3f9 -> :sswitch_6e
-        0x3fa -> :sswitch_6f
-        0x3fb -> :sswitch_71
-        0x3fc -> :sswitch_72
-        0x3fd -> :sswitch_73
-        0x3fe -> :sswitch_74
-        0x3ff -> :sswitch_70
-        0x400 -> :sswitch_75
-        0x401 -> :sswitch_76
-        0x402 -> :sswitch_77
-        0x403 -> :sswitch_78
-        0x404 -> :sswitch_79
-        0x405 -> :sswitch_7a
-        0x406 -> :sswitch_7b
-        0x407 -> :sswitch_7c
-        0x408 -> :sswitch_7d
-        0x409 -> :sswitch_7e
-        0x40a -> :sswitch_7f
-        0x5dd -> :sswitch_84
-        0x5de -> :sswitch_85
-        0x5e3 -> :sswitch_86
-        0x5e4 -> :sswitch_87
-        0x5e5 -> :sswitch_88
-        0x5e6 -> :sswitch_89
-        0x5e7 -> :sswitch_8a
-        0x5e9 -> :sswitch_8b
-        0x5ea -> :sswitch_8c
-        0x5eb -> :sswitch_8d
-        0x5ec -> :sswitch_8e
-        0x5ed -> :sswitch_8f
-        0x5ee -> :sswitch_90
-        0x5ef -> :sswitch_91
-        0x5f0 -> :sswitch_92
-        0x5f2 -> :sswitch_93
-        0x5f3 -> :sswitch_94
-        0x5f4 -> :sswitch_95
-        0x5f5 -> :sswitch_96
-        0x5f6 -> :sswitch_97
-        0x5f7 -> :sswitch_98
-        0x5f8 -> :sswitch_99
-        0x5f9 -> :sswitch_9a
-        0x5fa -> :sswitch_9b
-        0x605 -> :sswitch_9c
-        0x606 -> :sswitch_9d
-        0x608 -> :sswitch_83
-        0xbb9 -> :sswitch_9e
-        0xbba -> :sswitch_9f
-        0xbbc -> :sswitch_a0
-        0xbc0 -> :sswitch_a1
-        0xbc1 -> :sswitch_a2
-        0xbc3 -> :sswitch_a3
-        0xbc4 -> :sswitch_a4
-        0xbc5 -> :sswitch_a5
-        0xbc6 -> :sswitch_a6
-        0xbc8 -> :sswitch_a7
-        0xbc9 -> :sswitch_a8
-        0xbca -> :sswitch_a9
-        0xbcb -> :sswitch_aa
-        0xbcc -> :sswitch_ab
-        0xbcd -> :sswitch_ac
-        0xbce -> :sswitch_ad
-        0xbcf -> :sswitch_ae
-        0xbd0 -> :sswitch_af
-        0xbd1 -> :sswitch_b0
-        0x1771 -> :sswitch_b1
-        0x1772 -> :sswitch_b2
-        0x1773 -> :sswitch_b3
-        0x1774 -> :sswitch_b4
-        0x1776 -> :sswitch_b5
-        0x1777 -> :sswitch_b6
-        0x4e21 -> :sswitch_b7
-        0x4e22 -> :sswitch_b8
-        0x4e23 -> :sswitch_b9
-        0x4e24 -> :sswitch_ba
-        0x4e25 -> :sswitch_bb
-        0x520c -> :sswitch_80
-        0x520d -> :sswitch_81
-        0x520f -> :sswitch_82
+        0x3e9 -> :sswitch_60
+        0x3ea -> :sswitch_61
+        0x3eb -> :sswitch_62
+        0x3ec -> :sswitch_63
+        0x3ed -> :sswitch_64
+        0x3ee -> :sswitch_65
+        0x3f0 -> :sswitch_66
+        0x3f1 -> :sswitch_67
+        0x3f2 -> :sswitch_68
+        0x3f3 -> :sswitch_69
+        0x3f4 -> :sswitch_6a
+        0x3f5 -> :sswitch_6b
+        0x3f6 -> :sswitch_6c
+        0x3f7 -> :sswitch_6d
+        0x3f8 -> :sswitch_6e
+        0x3f9 -> :sswitch_6f
+        0x3fa -> :sswitch_70
+        0x3fb -> :sswitch_72
+        0x3fc -> :sswitch_73
+        0x3fd -> :sswitch_74
+        0x3fe -> :sswitch_75
+        0x3ff -> :sswitch_71
+        0x400 -> :sswitch_76
+        0x401 -> :sswitch_77
+        0x402 -> :sswitch_78
+        0x403 -> :sswitch_79
+        0x404 -> :sswitch_7a
+        0x405 -> :sswitch_7b
+        0x406 -> :sswitch_7c
+        0x407 -> :sswitch_7d
+        0x408 -> :sswitch_7e
+        0x409 -> :sswitch_7f
+        0x40a -> :sswitch_80
+        0x5dd -> :sswitch_85
+        0x5de -> :sswitch_86
+        0x5e3 -> :sswitch_87
+        0x5e4 -> :sswitch_88
+        0x5e5 -> :sswitch_89
+        0x5e6 -> :sswitch_8a
+        0x5e7 -> :sswitch_8b
+        0x5e9 -> :sswitch_8c
+        0x5ea -> :sswitch_8d
+        0x5eb -> :sswitch_8e
+        0x5ec -> :sswitch_8f
+        0x5ed -> :sswitch_90
+        0x5ee -> :sswitch_91
+        0x5ef -> :sswitch_92
+        0x5f0 -> :sswitch_93
+        0x5f2 -> :sswitch_94
+        0x5f3 -> :sswitch_95
+        0x5f4 -> :sswitch_96
+        0x5f5 -> :sswitch_97
+        0x5f6 -> :sswitch_98
+        0x5f7 -> :sswitch_99
+        0x5f8 -> :sswitch_9a
+        0x5f9 -> :sswitch_9b
+        0x5fa -> :sswitch_9c
+        0x605 -> :sswitch_9d
+        0x606 -> :sswitch_9e
+        0x608 -> :sswitch_84
+        0x60c -> :sswitch_9f
+        0xbb9 -> :sswitch_a0
+        0xbba -> :sswitch_a1
+        0xbbc -> :sswitch_a2
+        0xbc0 -> :sswitch_a3
+        0xbc1 -> :sswitch_a4
+        0xbc3 -> :sswitch_a5
+        0xbc4 -> :sswitch_a6
+        0xbc5 -> :sswitch_a7
+        0xbc6 -> :sswitch_a8
+        0xbc8 -> :sswitch_a9
+        0xbc9 -> :sswitch_aa
+        0xbca -> :sswitch_ab
+        0xbcb -> :sswitch_ac
+        0xbcc -> :sswitch_ad
+        0xbcd -> :sswitch_ae
+        0xbce -> :sswitch_af
+        0xbcf -> :sswitch_b0
+        0xbd0 -> :sswitch_b1
+        0xbd1 -> :sswitch_b2
+        0x1771 -> :sswitch_b3
+        0x1772 -> :sswitch_b4
+        0x1773 -> :sswitch_b5
+        0x1774 -> :sswitch_b6
+        0x1776 -> :sswitch_b7
+        0x1777 -> :sswitch_b8
+        0x4e21 -> :sswitch_b9
+        0x4e22 -> :sswitch_ba
+        0x4e23 -> :sswitch_bb
+        0x4e24 -> :sswitch_bc
+        0x4e25 -> :sswitch_bd
+        0x520c -> :sswitch_81
+        0x520d -> :sswitch_82
+        0x520f -> :sswitch_83
     .end sparse-switch
 .end method
 
@@ -9739,25 +9817,25 @@
     .prologue
     const/4 v4, -0x1
 
-    .line 512
+    .line 516
     const/4 v2, 0x0
 
-    .line 513
+    .line 517
     .local v2, offset:I
     const/4 v3, 0x4
 
-    .line 515
+    .line 519
     .local v3, remaining:I
     :cond_0
     invoke-virtual {p0, p1, v2, v3}, Ljava/io/InputStream;->read([BII)I
 
     move-result v0
 
-    .line 517
+    .line 521
     .local v0, countRead:I
     if-gez v0, :cond_1
 
-    .line 518
+    .line 522
     const-string v5, "RILJ"
 
     const-string v6, "Hit EOS reading message length"
@@ -9766,21 +9844,21 @@
 
     move v1, v4
 
-    .line 547
+    .line 551
     :goto_0
     return v1
 
-    .line 522
+    .line 526
     :cond_1
     add-int/2addr v2, v0
 
-    .line 523
+    .line 527
     sub-int/2addr v3, v0
 
-    .line 524
+    .line 528
     if-gtz v3, :cond_0
 
-    .line 526
+    .line 530
     const/4 v5, 0x0
 
     aget-byte v5, p1, v5
@@ -9817,23 +9895,23 @@
 
     or-int v1, v5, v6
 
-    .line 532
+    .line 536
     .local v1, messageLength:I
     const/4 v2, 0x0
 
-    .line 533
+    .line 537
     move v3, v1
 
-    .line 535
+    .line 539
     :cond_2
     invoke-virtual {p0, p1, v2, v3}, Ljava/io/InputStream;->read([BII)I
 
     move-result v0
 
-    .line 537
+    .line 541
     if-gez v0, :cond_3
 
-    .line 538
+    .line 542
     const-string v5, "RILJ"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -9868,17 +9946,17 @@
 
     move v1, v4
 
-    .line 540
+    .line 544
     goto :goto_0
 
-    .line 543
+    .line 547
     :cond_3
     add-int/2addr v2, v0
 
-    .line 544
+    .line 548
     sub-int/2addr v3, v0
 
-    .line 545
+    .line 549
     if-gtz v3, :cond_2
 
     goto :goto_0
@@ -9888,12 +9966,12 @@
     .locals 3
 
     .prologue
-    .line 2210
+    .line 2265
     iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     monitor-enter v1
 
-    .line 2211
+    .line 2266
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/telephony/RIL;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
@@ -9911,26 +9989,26 @@
 
     if-nez v0, :cond_0
 
-    .line 2214
+    .line 2269
     iget-object v0, p0, Lcom/android/internal/telephony/RIL;->mSender:Lcom/android/internal/telephony/RIL$RILSender;
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v2}, Lcom/android/internal/telephony/RIL$RILSender;->removeMessages(I)V
 
-    .line 2215
+    .line 2270
     iget-object v0, p0, Lcom/android/internal/telephony/RIL;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 2217
+    .line 2272
     :cond_0
     monitor-exit v1
 
-    .line 2218
+    .line 2273
     return-void
 
-    .line 2217
+    .line 2272
     :catchall_0
     move-exception v0
 
@@ -9946,1486 +10024,1504 @@
     .parameter "request"
 
     .prologue
-    .line 4315
+    .line 4386
     sparse-switch p0, :sswitch_data_0
 
-    .line 4596
+    .line 4670
     const-string v0, "<unknown request>"
 
     :goto_0
     return-object v0
 
-    .line 4316
+    .line 4387
     :sswitch_0
     const-string v0, "GET_SIM_STATUS"
 
     goto :goto_0
 
-    .line 4317
+    .line 4388
     :sswitch_1
     const-string v0, "ENTER_SIM_PIN"
 
     goto :goto_0
 
-    .line 4318
+    .line 4389
     :sswitch_2
     const-string v0, "ENTER_SIM_PUK"
 
     goto :goto_0
 
-    .line 4319
+    .line 4390
     :sswitch_3
     const-string v0, "ENTER_SIM_PIN2"
 
     goto :goto_0
 
-    .line 4320
+    .line 4391
     :sswitch_4
     const-string v0, "ENTER_SIM_PUK2"
 
     goto :goto_0
 
-    .line 4321
+    .line 4392
     :sswitch_5
     const-string v0, "CHANGE_SIM_PIN"
 
     goto :goto_0
 
-    .line 4322
+    .line 4393
     :sswitch_6
     const-string v0, "CHANGE_SIM_PIN2"
 
     goto :goto_0
 
-    .line 4323
+    .line 4394
     :sswitch_7
     const-string v0, "ENTER_NETWORK_DEPERSONALIZATION"
 
     goto :goto_0
 
-    .line 4324
+    .line 4395
     :sswitch_8
     const-string v0, "GET_CURRENT_CALLS"
 
     goto :goto_0
 
-    .line 4325
+    .line 4396
     :sswitch_9
     const-string v0, "DIAL"
 
     goto :goto_0
 
-    .line 4326
+    .line 4397
     :sswitch_a
     const-string v0, "GET_IMSI"
 
     goto :goto_0
 
-    .line 4327
+    .line 4398
     :sswitch_b
     const-string v0, "HANGUP"
 
     goto :goto_0
 
-    .line 4328
+    .line 4399
     :sswitch_c
     const-string v0, "HANGUP_WAITING_OR_BACKGROUND"
 
     goto :goto_0
 
-    .line 4329
+    .line 4400
     :sswitch_d
     const-string v0, "HANGUP_FOREGROUND_RESUME_BACKGROUND"
 
     goto :goto_0
 
-    .line 4330
+    .line 4401
     :sswitch_e
     const-string v0, "REQUEST_SWITCH_WAITING_OR_HOLDING_AND_ACTIVE"
 
     goto :goto_0
 
-    .line 4331
+    .line 4402
     :sswitch_f
     const-string v0, "CONFERENCE"
 
     goto :goto_0
 
-    .line 4332
+    .line 4403
     :sswitch_10
     const-string v0, "UDUB"
 
     goto :goto_0
 
-    .line 4333
+    .line 4404
     :sswitch_11
     const-string v0, "LAST_CALL_FAIL_CAUSE"
 
     goto :goto_0
 
-    .line 4334
+    .line 4405
     :sswitch_12
     const-string v0, "SIGNAL_STRENGTH"
 
     goto :goto_0
 
-    .line 4335
+    .line 4406
     :sswitch_13
     const-string v0, "VOICE_REGISTRATION_STATE"
 
     goto :goto_0
 
-    .line 4336
+    .line 4407
     :sswitch_14
     const-string v0, "DATA_REGISTRATION_STATE"
 
     goto :goto_0
 
-    .line 4337
+    .line 4408
     :sswitch_15
     const-string v0, "OPERATOR"
 
     goto :goto_0
 
-    .line 4338
+    .line 4409
     :sswitch_16
     const-string v0, "RADIO_POWER"
 
     goto :goto_0
 
-    .line 4339
+    .line 4410
     :sswitch_17
     const-string v0, "DTMF"
 
     goto :goto_0
 
-    .line 4340
+    .line 4411
     :sswitch_18
     const-string v0, "SEND_SMS"
 
     goto :goto_0
 
-    .line 4341
+    .line 4412
     :sswitch_19
     const-string v0, "SEND_SMS_EXPECT_MORE"
 
     goto :goto_0
 
-    .line 4342
+    .line 4413
     :sswitch_1a
     const-string v0, "SETUP_DATA_CALL"
 
     goto :goto_0
 
-    .line 4343
+    .line 4414
     :sswitch_1b
     const-string v0, "SIM_IO"
 
     goto :goto_0
 
-    .line 4344
+    .line 4415
     :sswitch_1c
     const-string v0, "SEND_USSD"
 
     goto :goto_0
 
-    .line 4345
+    .line 4416
     :sswitch_1d
     const-string v0, "CANCEL_USSD"
 
     goto :goto_0
 
-    .line 4346
+    .line 4417
     :sswitch_1e
     const-string v0, "GET_CLIR"
 
     goto :goto_0
 
-    .line 4347
+    .line 4418
     :sswitch_1f
     const-string v0, "SET_CLIR"
 
     goto :goto_0
 
-    .line 4348
+    .line 4419
     :sswitch_20
     const-string v0, "QUERY_CALL_FORWARD_STATUS"
 
     goto :goto_0
 
-    .line 4349
+    .line 4420
     :sswitch_21
     const-string v0, "SET_CALL_FORWARD"
 
     goto :goto_0
 
-    .line 4350
+    .line 4421
     :sswitch_22
     const-string v0, "QUERY_CALL_WAITING"
 
     goto :goto_0
 
-    .line 4351
+    .line 4422
     :sswitch_23
     const-string v0, "SET_CALL_WAITING"
 
     goto :goto_0
 
-    .line 4352
+    .line 4423
     :sswitch_24
     const-string v0, "SMS_ACKNOWLEDGE"
 
     goto :goto_0
 
-    .line 4353
+    .line 4424
     :sswitch_25
     const-string v0, "GET_IMEI"
 
     goto :goto_0
 
-    .line 4354
+    .line 4425
     :sswitch_26
     const-string v0, "GET_IMEISV"
 
     goto :goto_0
 
-    .line 4355
+    .line 4426
     :sswitch_27
     const-string v0, "ANSWER"
 
     goto :goto_0
 
-    .line 4356
+    .line 4427
     :sswitch_28
     const-string v0, "DEACTIVATE_DATA_CALL"
 
     goto :goto_0
 
-    .line 4357
+    .line 4428
     :sswitch_29
     const-string v0, "QUERY_FACILITY_LOCK"
 
     goto :goto_0
 
-    .line 4358
+    .line 4429
     :sswitch_2a
     const-string v0, "SET_FACILITY_LOCK"
 
     goto/16 :goto_0
 
-    .line 4359
+    .line 4430
     :sswitch_2b
     const-string v0, "CHANGE_BARRING_PASSWORD"
 
     goto/16 :goto_0
 
-    .line 4360
+    .line 4431
     :sswitch_2c
     const-string v0, "QUERY_NETWORK_SELECTION_MODE"
 
     goto/16 :goto_0
 
-    .line 4361
+    .line 4432
     :sswitch_2d
     const-string v0, "SET_NETWORK_SELECTION_AUTOMATIC"
 
     goto/16 :goto_0
 
-    .line 4362
+    .line 4433
     :sswitch_2e
     const-string v0, "SET_NETWORK_SELECTION_MANUAL"
 
     goto/16 :goto_0
 
-    .line 4363
+    .line 4434
     :sswitch_2f
     const-string v0, "QUERY_AVAILABLE_NETWORKS "
 
     goto/16 :goto_0
 
-    .line 4364
+    .line 4435
     :sswitch_30
     const-string v0, "DTMF_START"
 
     goto/16 :goto_0
 
-    .line 4365
+    .line 4436
     :sswitch_31
     const-string v0, "DTMF_STOP"
 
     goto/16 :goto_0
 
-    .line 4366
+    .line 4437
     :sswitch_32
     const-string v0, "BASEBAND_VERSION"
 
     goto/16 :goto_0
 
-    .line 4367
+    .line 4438
     :sswitch_33
     const-string v0, "SEPARATE_CONNECTION"
 
     goto/16 :goto_0
 
-    .line 4368
+    .line 4439
     :sswitch_34
     const-string v0, "SET_MUTE"
 
     goto/16 :goto_0
 
-    .line 4369
+    .line 4440
     :sswitch_35
     const-string v0, "GET_MUTE"
 
     goto/16 :goto_0
 
-    .line 4370
+    .line 4441
     :sswitch_36
     const-string v0, "QUERY_CLIP"
 
     goto/16 :goto_0
 
-    .line 4371
+    .line 4442
     :sswitch_37
     const-string v0, "LAST_DATA_CALL_FAIL_CAUSE"
 
     goto/16 :goto_0
 
-    .line 4372
+    .line 4443
     :sswitch_38
     const-string v0, "DATA_CALL_LIST"
 
     goto/16 :goto_0
 
-    .line 4373
+    .line 4444
     :sswitch_39
     const-string v0, "RESET_RADIO"
 
     goto/16 :goto_0
 
-    .line 4374
+    .line 4445
     :sswitch_3a
     const-string v0, "OEM_HOOK_RAW"
 
     goto/16 :goto_0
 
-    .line 4375
+    .line 4446
     :sswitch_3b
     const-string v0, "OEM_HOOK_STRINGS"
 
     goto/16 :goto_0
 
-    .line 4376
+    .line 4447
     :sswitch_3c
     const-string v0, "SCREEN_STATE"
 
     goto/16 :goto_0
 
-    .line 4377
+    .line 4448
     :sswitch_3d
     const-string v0, "SET_SUPP_SVC_NOTIFICATION"
 
     goto/16 :goto_0
 
-    .line 4378
+    .line 4449
     :sswitch_3e
     const-string v0, "WRITE_SMS_TO_SIM"
 
     goto/16 :goto_0
 
-    .line 4379
+    .line 4450
     :sswitch_3f
     const-string v0, "DELETE_SMS_ON_SIM"
 
     goto/16 :goto_0
 
-    .line 4380
+    .line 4451
     :sswitch_40
     const-string v0, "SET_BAND_MODE"
 
     goto/16 :goto_0
 
-    .line 4381
+    .line 4452
     :sswitch_41
     const-string v0, "QUERY_AVAILABLE_BAND_MODE"
 
     goto/16 :goto_0
 
-    .line 4382
+    .line 4453
     :sswitch_42
     const-string v0, "STK_GET_PROFILE"
 
     goto/16 :goto_0
 
-    .line 4383
+    .line 4454
     :sswitch_43
     const-string v0, "STK_SET_PROFILE"
 
     goto/16 :goto_0
 
-    .line 4384
+    .line 4455
     :sswitch_44
     const-string v0, "STK_SEND_ENVELOPE_COMMAND"
 
     goto/16 :goto_0
 
-    .line 4385
+    .line 4456
     :sswitch_45
     const-string v0, "STK_SEND_TERMINAL_RESPONSE"
 
     goto/16 :goto_0
 
-    .line 4386
+    .line 4457
     :sswitch_46
     const-string v0, "STK_HANDLE_CALL_SETUP_REQUESTED_FROM_SIM"
 
     goto/16 :goto_0
 
-    .line 4387
+    .line 4458
     :sswitch_47
     const-string v0, "EXPLICIT_CALL_TRANSFER"
 
     goto/16 :goto_0
 
-    .line 4388
+    .line 4459
     :sswitch_48
     const-string v0, "SET_PREFERRED_NETWORK_TYPE"
 
     goto/16 :goto_0
 
-    .line 4389
+    .line 4460
     :sswitch_49
     const-string v0, "GET_PREFERRED_NETWORK_TYPE"
 
     goto/16 :goto_0
 
-    .line 4390
+    .line 4461
     :sswitch_4a
     const-string v0, "GET_NEIGHBORING_CELL_IDS"
 
     goto/16 :goto_0
 
-    .line 4391
+    .line 4462
     :sswitch_4b
     const-string v0, "SET_LOCATION_UPDATES"
 
     goto/16 :goto_0
 
-    .line 4392
+    .line 4463
     :sswitch_4c
     const-string v0, "CDMA_SET_SUBSCRIPTION_SOURCE"
 
     goto/16 :goto_0
 
-    .line 4393
+    .line 4464
     :sswitch_4d
     const-string v0, "CDMA_SET_ROAMING_PREFERENCE"
 
     goto/16 :goto_0
 
-    .line 4394
+    .line 4465
     :sswitch_4e
     const-string v0, "CDMA_QUERY_ROAMING_PREFERENCE"
 
     goto/16 :goto_0
 
-    .line 4395
+    .line 4466
     :sswitch_4f
     const-string v0, "SET_TTY_MODE"
 
     goto/16 :goto_0
 
-    .line 4396
+    .line 4467
     :sswitch_50
     const-string v0, "QUERY_TTY_MODE"
 
     goto/16 :goto_0
 
-    .line 4397
+    .line 4468
     :sswitch_51
     const-string v0, "CDMA_SET_PREFERRED_VOICE_PRIVACY_MODE"
 
     goto/16 :goto_0
 
-    .line 4398
+    .line 4469
     :sswitch_52
     const-string v0, "CDMA_QUERY_PREFERRED_VOICE_PRIVACY_MODE"
 
     goto/16 :goto_0
 
-    .line 4399
+    .line 4470
     :sswitch_53
     const-string v0, "CDMA_FLASH"
 
     goto/16 :goto_0
 
-    .line 4400
+    .line 4471
     :sswitch_54
     const-string v0, "CDMA_BURST_DTMF"
 
     goto/16 :goto_0
 
-    .line 4401
+    .line 4472
     :sswitch_55
     const-string v0, "CDMA_SEND_SMS"
 
     goto/16 :goto_0
 
-    .line 4402
+    .line 4473
     :sswitch_56
     const-string v0, "CDMA_SMS_ACKNOWLEDGE"
 
     goto/16 :goto_0
 
-    .line 4403
+    .line 4474
     :sswitch_57
     const-string v0, "GSM_GET_BROADCAST_CONFIG"
 
     goto/16 :goto_0
 
-    .line 4404
+    .line 4475
     :sswitch_58
     const-string v0, "GSM_SET_BROADCAST_CONFIG"
 
     goto/16 :goto_0
 
-    .line 4405
+    .line 4476
     :sswitch_59
     const-string v0, "CDMA_GET_BROADCAST_CONFIG"
 
     goto/16 :goto_0
 
-    .line 4406
+    .line 4477
     :sswitch_5a
     const-string v0, "CDMA_SET_BROADCAST_CONFIG"
 
     goto/16 :goto_0
 
-    .line 4407
+    .line 4478
     :sswitch_5b
     const-string v0, "GSM_BROADCAST_ACTIVATION"
 
     goto/16 :goto_0
 
-    .line 4408
+    .line 4479
     :sswitch_5c
     const-string v0, "CDMA_VALIDATE_AND_WRITE_AKEY"
 
     goto/16 :goto_0
 
-    .line 4409
+    .line 4480
     :sswitch_5d
     const-string v0, "CDMA_BROADCAST_ACTIVATION"
 
     goto/16 :goto_0
 
-    .line 4410
+    .line 4481
     :sswitch_5e
     const-string v0, "CDMA_SUBSCRIPTION"
 
     goto/16 :goto_0
 
-    .line 4411
+    .line 4482
     :sswitch_5f
     const-string v0, "CDMA_WRITE_SMS_TO_RUIM"
 
     goto/16 :goto_0
 
-    .line 4412
+    .line 4483
     :sswitch_60
     const-string v0, "CDMA_DELETE_SMS_ON_RUIM"
 
     goto/16 :goto_0
 
-    .line 4413
+    .line 4484
     :sswitch_61
     const-string v0, "DEVICE_IDENTITY"
 
     goto/16 :goto_0
 
-    .line 4414
+    .line 4485
     :sswitch_62
     const-string v0, "GET_SMSC_ADDRESS"
 
     goto/16 :goto_0
 
-    .line 4415
+    .line 4486
     :sswitch_63
     const-string v0, "SET_SMSC_ADDRESS"
 
     goto/16 :goto_0
 
-    .line 4416
+    .line 4487
     :sswitch_64
     const-string v0, "EXIT_EMERGENCY_CALLBACK_MODE"
 
     goto/16 :goto_0
 
-    .line 4417
+    .line 4488
     :sswitch_65
     const-string v0, "REPORT_SMS_MEMORY_STATUS"
 
     goto/16 :goto_0
 
-    .line 4418
+    .line 4489
     :sswitch_66
     const-string v0, "REPORT_STK_SERVICE_IS_RUNNING"
 
     goto/16 :goto_0
 
-    .line 4419
+    .line 4490
     :sswitch_67
     const-string v0, "CDMA_GET_SUBSCRIPTION_SOURCE"
 
     goto/16 :goto_0
 
-    .line 4420
+    .line 4491
     :sswitch_68
     const-string v0, "ISIM_AUTHENTICATION"
 
     goto/16 :goto_0
 
-    .line 4421
+    .line 4492
     :sswitch_69
     const-string v0, "RIL_REQUEST_ACKNOWLEDGE_INCOMING_GSM_SMS_WITH_PDU"
 
     goto/16 :goto_0
 
-    .line 4422
+    .line 4493
     :sswitch_6a
     const-string v0, "RIL_REQUEST_STK_SEND_ENVELOPE_WITH_STATUS"
 
     goto/16 :goto_0
 
-    .line 4431
+    .line 4502
     :sswitch_6b
     const-string v0, "SIM_APDU"
 
     goto/16 :goto_0
 
-    .line 4432
+    .line 4503
     :sswitch_6c
     const-string v0, "SIM_OPEN_CHANNEL"
 
     goto/16 :goto_0
 
-    .line 4433
+    .line 4504
     :sswitch_6d
     const-string v0, "SIM_CLOSE_CHANNEL"
 
     goto/16 :goto_0
 
-    .line 4434
+    .line 4505
     :sswitch_6e
     const-string v0, "SIM_TRANSMIT_CHANNEL"
 
     goto/16 :goto_0
 
-    .line 4437
+    .line 4508
     :sswitch_6f
     const-string v0, "RIL_REQUEST_UICC_SELECT_APPLICATION"
 
     goto/16 :goto_0
 
-    .line 4438
+    .line 4509
     :sswitch_70
     const-string v0, "RIL_REQUEST_UICC_DEACTIVATE_APPLICATION"
 
     goto/16 :goto_0
 
-    .line 4439
+    .line 4510
     :sswitch_71
     const-string v0, "RIL_REQUEST_UICC_AKA_AUTHENTICATE"
 
     goto/16 :goto_0
 
-    .line 4440
+    .line 4511
     :sswitch_72
     const-string v0, "RIL_REQUEST_UICC_APPLICATION_IO"
 
     goto/16 :goto_0
 
-    .line 4441
+    .line 4512
     :sswitch_73
     const-string v0, "RIL_REQUEST_UICC_GBA_AUTHENTICATE_BOOTSTRAP"
 
     goto/16 :goto_0
 
-    .line 4442
+    .line 4513
     :sswitch_74
     const-string v0, "RIL_REQUEST_UICC_GBA_AUTHENTICATE_NAF"
 
     goto/16 :goto_0
 
-    .line 4445
+    .line 4516
     :sswitch_75
     const-string v0, "RIL_REQUEST_3G_CONTEXT_AUTHENTICATE"
 
     goto/16 :goto_0
 
-    .line 4448
+    .line 4519
     :sswitch_76
     const-string v0, "VOICE_RADIO_TECH"
 
     goto/16 :goto_0
 
-    .line 4449
+    .line 4520
     :sswitch_77
     const-string v0, "IMS_REGISTRATION_STATE"
 
     goto/16 :goto_0
 
-    .line 4450
+    .line 4521
     :sswitch_78
     const-string v0, "IMS_SEND_SMS"
 
     goto/16 :goto_0
 
-    .line 4451
+    .line 4522
     :sswitch_79
     const-string v0, "GET_DATA_CALL_PROFILE"
 
     goto/16 :goto_0
 
-    .line 4454
+    .line 4525
     :sswitch_7a
     const-string v0, "RIL_REQUEST_SET_TRANSMIT_POWER"
 
     goto/16 :goto_0
 
-    .line 4457
+    .line 4528
     :sswitch_7b
     const-string v0, "SET_CSCB"
 
     goto/16 :goto_0
 
-    .line 4458
+    .line 4529
     :sswitch_7c
     const-string v0, "GET_CSCB"
 
     goto/16 :goto_0
 
-    .line 4459
+    .line 4530
     :sswitch_7d
     const-string v0, "GET_SIM_TYPES"
 
     goto/16 :goto_0
 
-    .line 4460
+    .line 4531
     :sswitch_7e
     const-string v0, "GET_PB_ENTRIES_LENGTH"
 
     goto/16 :goto_0
 
-    .line 4461
+    .line 4532
     :sswitch_7f
     const-string v0, "GET_PB_ENTRIES_INFORMATION"
 
     goto/16 :goto_0
 
-    .line 4462
+    .line 4533
     :sswitch_80
     const-string v0, "SET_PB_ENTRIES_INFORMATION"
 
     goto/16 :goto_0
 
-    .line 4463
+    .line 4534
     :sswitch_81
     const-string v0, "GET_PB_MEMORY"
 
     goto/16 :goto_0
 
-    .line 4464
+    .line 4535
     :sswitch_82
     const-string v0, "QUERY_DEVICE_MEMORY"
 
     goto/16 :goto_0
 
-    .line 4468
+    .line 4539
     :sswitch_83
     const-string v0, "GET_BAND_CAPABILITY"
 
     goto/16 :goto_0
 
-    .line 4469
+    .line 4540
     :sswitch_84
     const-string v0, "SET_CLIP"
 
     goto/16 :goto_0
 
-    .line 4470
+    .line 4541
     :sswitch_85
     const-string v0, "GENERIC_SIM_IO"
 
     goto/16 :goto_0
 
-    .line 4471
+    .line 4542
     :sswitch_86
     const-string v0, "GET_SUBSIDY_LOCK_SETTINGS"
 
     goto/16 :goto_0
 
-    .line 4472
+    .line 4543
     :sswitch_87
     const-string v0, "ENTER_SUBSIDY_LOCK_DEPERSONALIZATION"
 
     goto/16 :goto_0
 
-    .line 4476
+    .line 4547
     :sswitch_88
     const-string v0, "SET_TTYMODE"
 
     goto/16 :goto_0
 
-    .line 4478
+    .line 4549
     :sswitch_89
     const-string v0, "GET_PHONE_FUNCTIONALITY"
 
     goto/16 :goto_0
 
-    .line 4479
+    .line 4550
     :sswitch_8a
     const-string v0, "GET_SUBSCRIBER_NUMBER"
 
     goto/16 :goto_0
 
-    .line 4480
+    .line 4551
     :sswitch_8b
     const-string v0, "SET_ISIM_AUTH"
 
     goto/16 :goto_0
 
-    .line 4481
+    .line 4552
     :sswitch_8c
     const-string v0, "ISIM_READ"
 
     goto/16 :goto_0
 
-    .line 4482
+    .line 4553
     :sswitch_8d
     const-string v0, "QUERY_ISIM_SUPPORTED"
 
     goto/16 :goto_0
 
-    .line 4483
+    .line 4554
     :sswitch_8e
     const-string v0, "GET_SUBSCRIBER_NUMBER"
 
     goto/16 :goto_0
 
-    .line 4484
+    .line 4555
     :sswitch_8f
     const-string v0, "GET_SUBSCRIBER_NUMBER"
 
     goto/16 :goto_0
 
-    .line 4485
+    .line 4556
     :sswitch_90
     const-string v0, "SET_PDP_FAST_DORMANCY"
 
     goto/16 :goto_0
 
-    .line 4486
+    .line 4557
     :sswitch_91
     const-string v0, "RELEASE_ALL_VOICE_CALLS"
 
     goto/16 :goto_0
 
-    .line 4487
+    .line 4558
     :sswitch_92
     const-string v0, "SET_SMART_DATA_ROAMING"
 
     goto/16 :goto_0
 
-    .line 4488
+    .line 4559
     :sswitch_93
     const-string v0, "GET_SMART_DATA_ROAMING_STATUS"
 
     goto/16 :goto_0
 
-    .line 4489
+    .line 4560
     :sswitch_94
     const-string v0, "SEND_SMS_LAST_PAGE"
 
     goto/16 :goto_0
 
-    .line 4490
+    .line 4561
     :sswitch_95
     const-string v0, "SET_NETWORK_SELECTION_MANUAL_APPEND_ACT"
 
     goto/16 :goto_0
 
-    .line 4491
+    .line 4562
     :sswitch_96
     const-string v0, "QUERY_AVAILABLE_NETWORKS_APPEND_ACT"
 
     goto/16 :goto_0
 
-    .line 4492
+    .line 4563
     :sswitch_97
     const-string v0, "GET_VKK_SIM_EXPIRED_STATUS"
 
     goto/16 :goto_0
 
-    .line 4493
+    .line 4564
     :sswitch_98
     const-string v0, "SET_EMERGENCY_CALL_CATEGORY"
 
     goto/16 :goto_0
 
-    .line 4494
+    .line 4565
     :sswitch_99
     const-string v0, "CHECK_FDN_STATE"
 
     goto/16 :goto_0
 
-    .line 4495
+    .line 4566
     :sswitch_9a
     const-string v0, "SEND_ECC_USSD"
 
     goto/16 :goto_0
 
-    .line 4496
+    .line 4567
     :sswitch_9b
     const-string v0, "RESET_WSIM_STATE"
 
     goto/16 :goto_0
 
-    .line 4497
+    .line 4568
     :sswitch_9c
     const-string v0, "CELLUAR_POWER"
 
     goto/16 :goto_0
 
-    .line 4499
+    .line 4570
     :sswitch_9d
     const-string v0, "GET_HTC_SIM_MODE"
 
     goto/16 :goto_0
 
-    .line 4500
+    .line 4571
     :sswitch_9e
     const-string v0, "SET_HTC_SIM_MODE"
 
     goto/16 :goto_0
 
-    .line 4501
+    .line 4572
     :sswitch_9f
     const-string v0, "SET_RX_DIVERSITY"
 
     goto/16 :goto_0
 
-    .line 4502
+    .line 4573
     :sswitch_a0
     const-string v0, "SET_RSSI_LOGGING"
 
     goto/16 :goto_0
 
-    .line 4503
+    .line 4574
     :sswitch_a1
     const-string v0, "GET_HTC_UIM_TYPE"
 
     goto/16 :goto_0
 
-    .line 4504
+    .line 4575
     :sswitch_a2
     const-string v0, "GET_VOLTE_SIP_REG_FAILURE"
 
     goto/16 :goto_0
 
-    .line 4505
+    .line 4576
     :sswitch_a3
     const-string v0, "GET_PCSCF_ADDRESSES"
 
     goto/16 :goto_0
 
-    .line 4506
+    .line 4577
     :sswitch_a4
     const-string v0, "GET_POWER_INFO"
 
     goto/16 :goto_0
 
-    .line 4507
+    .line 4578
     :sswitch_a5
     const-string v0, "QUERY_QMI_UIM_AUTH"
 
     goto/16 :goto_0
 
-    .line 4508
+    .line 4579
     :sswitch_a6
     const-string v0, "GET_SECTOR_ID"
 
     goto/16 :goto_0
 
-    .line 4509
+    .line 4580
     :sswitch_a7
     const-string v0, "SET_MULTI_RAB_TRAFFIC_THROTTLING"
 
     goto/16 :goto_0
 
-    .line 4510
+    .line 4581
     :sswitch_a8
     const-string v0, "SET_FAST_DORMANCY"
 
     goto/16 :goto_0
 
-    .line 4511
+    .line 4582
     :sswitch_a9
     const-string v0, "SET_PREFERRED_NETWORK_TYPE_WIFI"
 
     goto/16 :goto_0
 
-    .line 4512
+    .line 4583
     :sswitch_aa
     const-string v0, "ENABLE_REGISTRATION_STATE_WIFI_CALLING"
 
     goto/16 :goto_0
 
-    .line 4515
-    :sswitch_ab
-    const-string v0, "CDMA_HTC_DM_COMMAND"
-
-    goto/16 :goto_0
-
-    .line 4516
-    :sswitch_ac
-    const-string v0, "CDMA_EXIT_POWERSAVE_MODE"
-
-    goto/16 :goto_0
-
-    .line 4517
-    :sswitch_ad
-    const-string v0, "CDMA_QUERY_OTA_MSG_PROVISION"
-
-    goto/16 :goto_0
-
-    .line 4518
-    :sswitch_ae
-    const-string v0, "CDMA_GET_MSL"
-
-    goto/16 :goto_0
-
-    .line 4519
-    :sswitch_af
-    const-string v0, "CDMA_GET_OTKSL"
-
-    goto/16 :goto_0
-
-    .line 4520
-    :sswitch_b0
-    const-string v0, "CDMA_GET_GPSONEMODE"
-
-    goto/16 :goto_0
-
-    .line 4521
-    :sswitch_b1
-    const-string v0, "CDMA_SET_GPSONEMODE"
-
-    goto/16 :goto_0
-
-    .line 4522
-    :sswitch_b2
-    const-string v0, "CDMA_SET_PSCALL_ENTER_DORMANCY"
-
-    goto/16 :goto_0
-
-    .line 4523
-    :sswitch_b3
-    const-string v0, "CDMA_GET_SYSTEM_LOCALTIME"
-
-    goto/16 :goto_0
-
-    .line 4524
-    :sswitch_b4
-    const-string v0, "CDMA_GET_SYSTEM_GPSTIME"
-
-    goto/16 :goto_0
-
-    .line 4525
-    :sswitch_b5
-    const-string v0, "CDMA_GET_NAM"
-
-    goto/16 :goto_0
-
-    .line 4526
-    :sswitch_b6
-    const-string v0, "CDMA_SET_NAM"
-
-    goto/16 :goto_0
-
-    .line 4527
-    :sswitch_b7
-    const-string v0, "CDMA_GET_HYBRID_MODE"
-
-    goto/16 :goto_0
-
-    .line 4528
-    :sswitch_b8
-    const-string v0, "CDMA_SET_HYBRID_MODE"
-
-    goto/16 :goto_0
-
-    .line 4529
-    :sswitch_b9
-    const-string v0, "CDMA_GET_DDTM"
-
-    goto/16 :goto_0
-
-    .line 4530
-    :sswitch_ba
-    const-string v0, "CDMA_SET_DDTM"
-
-    goto/16 :goto_0
-
-    .line 4531
-    :sswitch_bb
-    const-string v0, "CDMA_GET_RADIO_SYSTEM_INFO"
-
-    goto/16 :goto_0
-
-    .line 4532
-    :sswitch_bc
-    const-string v0, "CDMA_GET_A_KEY"
-
-    goto/16 :goto_0
-
-    .line 4534
-    :sswitch_bd
-    const-string v0, "CDMA_SET_PROFILE"
-
-    goto/16 :goto_0
-
-    .line 4535
-    :sswitch_be
-    const-string v0, "CDMA_SET_NAI"
-
-    goto/16 :goto_0
-
-    .line 4536
-    :sswitch_bf
-    const-string v0, "CDMA_GET_CELL_INFO"
-
-    goto/16 :goto_0
-
-    .line 4537
-    :sswitch_c0
-    const-string v0, "CDMA_SET_FORCE_3GIND"
-
-    goto/16 :goto_0
-
-    .line 4538
-    :sswitch_c1
-    const-string v0, "CDMA_SET_PUSHMAIL_DORMANT_TIME"
-
-    goto/16 :goto_0
-
-    .line 4539
-    :sswitch_c2
-    const-string v0, "CDMA_GET_NETWORK_BASE_PLUSCODE_DIAL"
-
-    goto/16 :goto_0
-
-    .line 4540
-    :sswitch_c3
-    const-string v0, "CDMA_GET_WIMAX_MODE"
-
-    goto/16 :goto_0
-
-    .line 4541
-    :sswitch_c4
-    const-string v0, "CDMA_SET_WIMAX_MODE"
-
-    goto/16 :goto_0
-
-    .line 4542
-    :sswitch_c5
-    const-string v0, "CDMA_GET_OMADM_TRIGGER"
-
-    goto/16 :goto_0
-
-    .line 4543
-    :sswitch_c6
-    const-string v0, "CDMA_HTC_DM_COMMAND_EX"
-
-    goto/16 :goto_0
-
-    .line 4544
-    :sswitch_c7
-    const-string v0, "CDMA_SET_LBSNTFY"
-
-    goto/16 :goto_0
-
-    .line 4545
-    :sswitch_c8
-    const-string v0, "CW_UW_REG"
-
-    goto/16 :goto_0
-
-    .line 4546
-    :sswitch_c9
-    const-string v0, "CW_UW_DEREG"
-
-    goto/16 :goto_0
-
-    .line 4547
-    :sswitch_ca
-    const-string v0, "CDMA_GET_CURRENT_SERVICE_DOMAIN"
-
-    goto/16 :goto_0
-
-    .line 4548
-    :sswitch_cb
-    const-string v0, "CDMA_GET_BCSMS"
-
-    goto/16 :goto_0
-
-    .line 4549
-    :sswitch_cc
-    const-string v0, "CDMA_SET_BCSMS"
-
-    goto/16 :goto_0
-
-    .line 4550
-    :sswitch_cd
-    const-string v0, "CDMA_GET_APP_PROFILE"
-
-    goto/16 :goto_0
-
-    .line 4551
-    :sswitch_ce
-    const-string v0, "CDMA_SET_APP_PROFILE"
-
-    goto/16 :goto_0
-
-    .line 4552
-    :sswitch_cf
-    const-string v0, "CDMA_SET_ENROAM"
-
-    goto/16 :goto_0
-
-    .line 4553
-    :sswitch_d0
-    const-string v0, "CDMA_GET_BCSMS_SRVNUM"
-
-    goto/16 :goto_0
-
-    .line 4554
-    :sswitch_d1
-    const-string v0, "CDMA_GET_BCSMS_SRVLBL"
-
-    goto/16 :goto_0
-
-    .line 4555
-    :sswitch_d2
-    const-string v0, "REQUEST_CAVE"
-
-    goto/16 :goto_0
-
-    .line 4556
-    :sswitch_d3
-    const-string v0, "QUERY_CAVE"
-
-    goto/16 :goto_0
-
-    .line 4557
-    :sswitch_d4
-    const-string v0, "SSD_UPDATE"
-
-    goto/16 :goto_0
-
-    .line 4558
-    :sswitch_d5
-    const-string v0, "QUERY_SSD_UPDATE"
-
-    goto/16 :goto_0
-
-    .line 4559
-    :sswitch_d6
-    const-string v0, "SSD_UPDATE_CONFIRM"
-
-    goto/16 :goto_0
-
-    .line 4560
-    :sswitch_d7
-    const-string v0, "REQUEST_VPM"
-
-    goto/16 :goto_0
-
-    .line 4561
-    :sswitch_d8
-    const-string v0, "QUERY_VPM"
-
-    goto/16 :goto_0
-
-    .line 4562
-    :sswitch_d9
-    const-string v0, "REQUEST_MD5"
-
-    goto/16 :goto_0
-
-    .line 4563
-    :sswitch_da
-    const-string v0, "QUERY_MD5"
-
-    goto/16 :goto_0
-
-    .line 4564
-    :sswitch_db
-    const-string v0, "QUERY_UIM_AUTH"
-
-    goto/16 :goto_0
-
-    .line 4567
-    :sswitch_dc
-    const-string v0, "HTC_PHONE_CLASS_CHANGE_DONE"
-
-    goto/16 :goto_0
-
-    .line 4568
-    :sswitch_dd
-    const-string v0, "EHRPD_DOMAINNAME_CHANGE_STATE"
-
-    goto/16 :goto_0
-
-    .line 4569
-    :sswitch_de
-    const-string v0, "EHRPD_EMERGENCY_CALLBACK_MODE"
-
-    goto/16 :goto_0
-
-    .line 4570
-    :sswitch_df
-    const-string v0, "EHRPD_SET_CAPABILITY"
-
-    goto/16 :goto_0
-
-    .line 4571
-    :sswitch_e0
-    const-string v0, "SET_LTE_APN_PARAMS"
-
-    goto/16 :goto_0
-
-    .line 4572
-    :sswitch_e1
-    const-string v0, "GET_LTE_APN_PARAMS"
-
-    goto/16 :goto_0
-
-    .line 4573
-    :sswitch_e2
-    const-string v0, "SET_EHRPD_APN_PARAMS"
-
-    goto/16 :goto_0
-
-    .line 4574
-    :sswitch_e3
-    const-string v0, "GET_EHRPD_APN_PARAMS"
-
-    goto/16 :goto_0
-
-    .line 4575
-    :sswitch_e4
-    const-string v0, "EHRPD_GET_CAPABILITY"
-
-    goto/16 :goto_0
-
-    .line 4576
-    :sswitch_e5
-    const-string v0, "EHRPD_GET_DEVICE_CAPABILITY"
-
-    goto/16 :goto_0
-
-    .line 4577
-    :sswitch_e6
-    const-string v0, "GET_HTC_SIM_TYPES"
-
-    goto/16 :goto_0
-
-    .line 4580
-    :sswitch_e7
-    const-string v0, "RIL_REQUEST_VT_DIAL"
-
-    goto/16 :goto_0
-
-    .line 4581
-    :sswitch_e8
-    const-string v0, "RIL_REQUEST_VT_CHUP"
-
-    goto/16 :goto_0
-
-    .line 4582
-    :sswitch_e9
-    const-string v0, "SET_PB_MEMORY"
-
-    goto/16 :goto_0
-
-    .line 4583
-    :sswitch_ea
-    const-string v0, "SET_NETWORK_SELECTION_MANUAL_EXT"
-
-    goto/16 :goto_0
-
     .line 4584
-    :sswitch_eb
-    const-string v0, "REMOVE_PREFERRED_OPERATOR_LIST"
+    :sswitch_ab
+    const-string v0, "ENABLE_ALL_DAY_SLEEP"
 
     goto/16 :goto_0
 
     .line 4585
-    :sswitch_ec
-    const-string v0, "ADD_PREFERRED_OPERATOR_LIST"
+    :sswitch_ac
+    const-string v0, "GET_DRX_INFO"
 
     goto/16 :goto_0
 
     .line 4586
-    :sswitch_ed
-    const-string v0, "GET_PREFERRED_OPERATOR_LIST"
-
-    goto/16 :goto_0
-
-    .line 4587
-    :sswitch_ee
-    const-string v0, "SET_BLACKLIST"
-
-    goto/16 :goto_0
-
-    .line 4588
-    :sswitch_ef
-    const-string v0, "ADD_BLACKLIST_ITEM"
+    :sswitch_ad
+    const-string v0, "ENABLE_W2G_SWITCH"
 
     goto/16 :goto_0
 
     .line 4589
-    :sswitch_f0
-    const-string v0, "DELETE_BLACKLIST_ITEM"
+    :sswitch_ae
+    const-string v0, "CDMA_HTC_DM_COMMAND"
 
     goto/16 :goto_0
 
     .line 4590
-    :sswitch_f1
-    const-string v0, "DELETE_BLACKLIST_ALL"
+    :sswitch_af
+    const-string v0, "CDMA_EXIT_POWERSAVE_MODE"
 
     goto/16 :goto_0
 
     .line 4591
-    :sswitch_f2
-    const-string v0, "SET_BLACKLIST_UNKNOWN"
+    :sswitch_b0
+    const-string v0, "CDMA_QUERY_OTA_MSG_PROVISION"
 
     goto/16 :goto_0
 
     .line 4592
-    :sswitch_f3
-    const-string v0, "VT_HANGUP"
+    :sswitch_b1
+    const-string v0, "CDMA_GET_MSL"
 
     goto/16 :goto_0
 
     .line 4593
+    :sswitch_b2
+    const-string v0, "CDMA_GET_OTKSL"
+
+    goto/16 :goto_0
+
+    .line 4594
+    :sswitch_b3
+    const-string v0, "CDMA_GET_GPSONEMODE"
+
+    goto/16 :goto_0
+
+    .line 4595
+    :sswitch_b4
+    const-string v0, "CDMA_SET_GPSONEMODE"
+
+    goto/16 :goto_0
+
+    .line 4596
+    :sswitch_b5
+    const-string v0, "CDMA_SET_PSCALL_ENTER_DORMANCY"
+
+    goto/16 :goto_0
+
+    .line 4597
+    :sswitch_b6
+    const-string v0, "CDMA_GET_SYSTEM_LOCALTIME"
+
+    goto/16 :goto_0
+
+    .line 4598
+    :sswitch_b7
+    const-string v0, "CDMA_GET_SYSTEM_GPSTIME"
+
+    goto/16 :goto_0
+
+    .line 4599
+    :sswitch_b8
+    const-string v0, "CDMA_GET_NAM"
+
+    goto/16 :goto_0
+
+    .line 4600
+    :sswitch_b9
+    const-string v0, "CDMA_SET_NAM"
+
+    goto/16 :goto_0
+
+    .line 4601
+    :sswitch_ba
+    const-string v0, "CDMA_GET_HYBRID_MODE"
+
+    goto/16 :goto_0
+
+    .line 4602
+    :sswitch_bb
+    const-string v0, "CDMA_SET_HYBRID_MODE"
+
+    goto/16 :goto_0
+
+    .line 4603
+    :sswitch_bc
+    const-string v0, "CDMA_GET_DDTM"
+
+    goto/16 :goto_0
+
+    .line 4604
+    :sswitch_bd
+    const-string v0, "CDMA_SET_DDTM"
+
+    goto/16 :goto_0
+
+    .line 4605
+    :sswitch_be
+    const-string v0, "CDMA_GET_RADIO_SYSTEM_INFO"
+
+    goto/16 :goto_0
+
+    .line 4606
+    :sswitch_bf
+    const-string v0, "CDMA_GET_A_KEY"
+
+    goto/16 :goto_0
+
+    .line 4608
+    :sswitch_c0
+    const-string v0, "CDMA_SET_PROFILE"
+
+    goto/16 :goto_0
+
+    .line 4609
+    :sswitch_c1
+    const-string v0, "CDMA_SET_NAI"
+
+    goto/16 :goto_0
+
+    .line 4610
+    :sswitch_c2
+    const-string v0, "CDMA_GET_CELL_INFO"
+
+    goto/16 :goto_0
+
+    .line 4611
+    :sswitch_c3
+    const-string v0, "CDMA_SET_FORCE_3GIND"
+
+    goto/16 :goto_0
+
+    .line 4612
+    :sswitch_c4
+    const-string v0, "CDMA_SET_PUSHMAIL_DORMANT_TIME"
+
+    goto/16 :goto_0
+
+    .line 4613
+    :sswitch_c5
+    const-string v0, "CDMA_GET_NETWORK_BASE_PLUSCODE_DIAL"
+
+    goto/16 :goto_0
+
+    .line 4614
+    :sswitch_c6
+    const-string v0, "CDMA_GET_WIMAX_MODE"
+
+    goto/16 :goto_0
+
+    .line 4615
+    :sswitch_c7
+    const-string v0, "CDMA_SET_WIMAX_MODE"
+
+    goto/16 :goto_0
+
+    .line 4616
+    :sswitch_c8
+    const-string v0, "CDMA_GET_OMADM_TRIGGER"
+
+    goto/16 :goto_0
+
+    .line 4617
+    :sswitch_c9
+    const-string v0, "CDMA_HTC_DM_COMMAND_EX"
+
+    goto/16 :goto_0
+
+    .line 4618
+    :sswitch_ca
+    const-string v0, "CDMA_SET_LBSNTFY"
+
+    goto/16 :goto_0
+
+    .line 4619
+    :sswitch_cb
+    const-string v0, "CW_UW_REG"
+
+    goto/16 :goto_0
+
+    .line 4620
+    :sswitch_cc
+    const-string v0, "CW_UW_DEREG"
+
+    goto/16 :goto_0
+
+    .line 4621
+    :sswitch_cd
+    const-string v0, "CDMA_GET_CURRENT_SERVICE_DOMAIN"
+
+    goto/16 :goto_0
+
+    .line 4622
+    :sswitch_ce
+    const-string v0, "CDMA_GET_BCSMS"
+
+    goto/16 :goto_0
+
+    .line 4623
+    :sswitch_cf
+    const-string v0, "CDMA_SET_BCSMS"
+
+    goto/16 :goto_0
+
+    .line 4624
+    :sswitch_d0
+    const-string v0, "CDMA_GET_APP_PROFILE"
+
+    goto/16 :goto_0
+
+    .line 4625
+    :sswitch_d1
+    const-string v0, "CDMA_SET_APP_PROFILE"
+
+    goto/16 :goto_0
+
+    .line 4626
+    :sswitch_d2
+    const-string v0, "CDMA_SET_ENROAM"
+
+    goto/16 :goto_0
+
+    .line 4627
+    :sswitch_d3
+    const-string v0, "CDMA_GET_BCSMS_SRVNUM"
+
+    goto/16 :goto_0
+
+    .line 4628
+    :sswitch_d4
+    const-string v0, "CDMA_GET_BCSMS_SRVLBL"
+
+    goto/16 :goto_0
+
+    .line 4629
+    :sswitch_d5
+    const-string v0, "REQUEST_CAVE"
+
+    goto/16 :goto_0
+
+    .line 4630
+    :sswitch_d6
+    const-string v0, "QUERY_CAVE"
+
+    goto/16 :goto_0
+
+    .line 4631
+    :sswitch_d7
+    const-string v0, "SSD_UPDATE"
+
+    goto/16 :goto_0
+
+    .line 4632
+    :sswitch_d8
+    const-string v0, "QUERY_SSD_UPDATE"
+
+    goto/16 :goto_0
+
+    .line 4633
+    :sswitch_d9
+    const-string v0, "SSD_UPDATE_CONFIRM"
+
+    goto/16 :goto_0
+
+    .line 4634
+    :sswitch_da
+    const-string v0, "REQUEST_VPM"
+
+    goto/16 :goto_0
+
+    .line 4635
+    :sswitch_db
+    const-string v0, "QUERY_VPM"
+
+    goto/16 :goto_0
+
+    .line 4636
+    :sswitch_dc
+    const-string v0, "REQUEST_MD5"
+
+    goto/16 :goto_0
+
+    .line 4637
+    :sswitch_dd
+    const-string v0, "QUERY_MD5"
+
+    goto/16 :goto_0
+
+    .line 4638
+    :sswitch_de
+    const-string v0, "QUERY_UIM_AUTH"
+
+    goto/16 :goto_0
+
+    .line 4641
+    :sswitch_df
+    const-string v0, "HTC_PHONE_CLASS_CHANGE_DONE"
+
+    goto/16 :goto_0
+
+    .line 4642
+    :sswitch_e0
+    const-string v0, "EHRPD_DOMAINNAME_CHANGE_STATE"
+
+    goto/16 :goto_0
+
+    .line 4643
+    :sswitch_e1
+    const-string v0, "EHRPD_EMERGENCY_CALLBACK_MODE"
+
+    goto/16 :goto_0
+
+    .line 4644
+    :sswitch_e2
+    const-string v0, "EHRPD_SET_CAPABILITY"
+
+    goto/16 :goto_0
+
+    .line 4645
+    :sswitch_e3
+    const-string v0, "SET_LTE_APN_PARAMS"
+
+    goto/16 :goto_0
+
+    .line 4646
+    :sswitch_e4
+    const-string v0, "GET_LTE_APN_PARAMS"
+
+    goto/16 :goto_0
+
+    .line 4647
+    :sswitch_e5
+    const-string v0, "SET_EHRPD_APN_PARAMS"
+
+    goto/16 :goto_0
+
+    .line 4648
+    :sswitch_e6
+    const-string v0, "GET_EHRPD_APN_PARAMS"
+
+    goto/16 :goto_0
+
+    .line 4649
+    :sswitch_e7
+    const-string v0, "EHRPD_GET_CAPABILITY"
+
+    goto/16 :goto_0
+
+    .line 4650
+    :sswitch_e8
+    const-string v0, "EHRPD_GET_DEVICE_CAPABILITY"
+
+    goto/16 :goto_0
+
+    .line 4651
+    :sswitch_e9
+    const-string v0, "GET_HTC_SIM_TYPES"
+
+    goto/16 :goto_0
+
+    .line 4654
+    :sswitch_ea
+    const-string v0, "RIL_REQUEST_VT_DIAL"
+
+    goto/16 :goto_0
+
+    .line 4655
+    :sswitch_eb
+    const-string v0, "RIL_REQUEST_VT_CHUP"
+
+    goto/16 :goto_0
+
+    .line 4656
+    :sswitch_ec
+    const-string v0, "SET_PB_MEMORY"
+
+    goto/16 :goto_0
+
+    .line 4657
+    :sswitch_ed
+    const-string v0, "SET_NETWORK_SELECTION_MANUAL_EXT"
+
+    goto/16 :goto_0
+
+    .line 4658
+    :sswitch_ee
+    const-string v0, "REMOVE_PREFERRED_OPERATOR_LIST"
+
+    goto/16 :goto_0
+
+    .line 4659
+    :sswitch_ef
+    const-string v0, "ADD_PREFERRED_OPERATOR_LIST"
+
+    goto/16 :goto_0
+
+    .line 4660
+    :sswitch_f0
+    const-string v0, "GET_PREFERRED_OPERATOR_LIST"
+
+    goto/16 :goto_0
+
+    .line 4661
+    :sswitch_f1
+    const-string v0, "SET_BLACKLIST"
+
+    goto/16 :goto_0
+
+    .line 4662
+    :sswitch_f2
+    const-string v0, "ADD_BLACKLIST_ITEM"
+
+    goto/16 :goto_0
+
+    .line 4663
+    :sswitch_f3
+    const-string v0, "DELETE_BLACKLIST_ITEM"
+
+    goto/16 :goto_0
+
+    .line 4664
     :sswitch_f4
+    const-string v0, "DELETE_BLACKLIST_ALL"
+
+    goto/16 :goto_0
+
+    .line 4665
+    :sswitch_f5
+    const-string v0, "SET_BLACKLIST_UNKNOWN"
+
+    goto/16 :goto_0
+
+    .line 4666
+    :sswitch_f6
+    const-string v0, "VT_HANGUP"
+
+    goto/16 :goto_0
+
+    .line 4667
+    :sswitch_f7
     const-string v0, "VT_ANSWER"
 
     goto/16 :goto_0
 
-    .line 4315
+    .line 4386
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
@@ -11594,80 +11690,83 @@
         0x246 -> :sswitch_75
         0x247 -> :sswitch_a9
         0x248 -> :sswitch_aa
-        0x7d1 -> :sswitch_ab
-        0x7d4 -> :sswitch_ac
-        0x7d5 -> :sswitch_ad
-        0x7d6 -> :sswitch_ae
-        0x7d7 -> :sswitch_af
-        0x7da -> :sswitch_b0
-        0x7db -> :sswitch_b1
-        0x7de -> :sswitch_b2
-        0x7df -> :sswitch_b3
-        0x7e0 -> :sswitch_b4
-        0x7e1 -> :sswitch_b5
-        0x7e2 -> :sswitch_b6
-        0x7e3 -> :sswitch_b7
-        0x7e4 -> :sswitch_b8
-        0x7e5 -> :sswitch_b9
-        0x7e6 -> :sswitch_ba
-        0x7e9 -> :sswitch_bb
-        0x7ea -> :sswitch_bc
-        0x7ec -> :sswitch_bd
-        0x7ed -> :sswitch_be
-        0x7ee -> :sswitch_bf
-        0x7ef -> :sswitch_c0
-        0x7f0 -> :sswitch_c1
-        0x7f1 -> :sswitch_c2
-        0x7f2 -> :sswitch_c3
-        0x7f3 -> :sswitch_c4
-        0x7f4 -> :sswitch_c5
-        0x7f5 -> :sswitch_c6
-        0x7f6 -> :sswitch_c7
-        0x7f7 -> :sswitch_c8
-        0x7f8 -> :sswitch_c9
-        0x7f9 -> :sswitch_ca
-        0x7fa -> :sswitch_cb
-        0x7fb -> :sswitch_cc
-        0x7fc -> :sswitch_cd
-        0x7fd -> :sswitch_ce
-        0x7fe -> :sswitch_cf
-        0x7ff -> :sswitch_d0
-        0x800 -> :sswitch_d1
-        0x801 -> :sswitch_d2
-        0x802 -> :sswitch_d3
-        0x803 -> :sswitch_d4
-        0x804 -> :sswitch_d5
-        0x805 -> :sswitch_d6
-        0x806 -> :sswitch_d7
-        0x807 -> :sswitch_d8
-        0x808 -> :sswitch_d9
-        0x809 -> :sswitch_da
-        0x80a -> :sswitch_db
-        0x1389 -> :sswitch_dc
-        0x138a -> :sswitch_dd
-        0x138b -> :sswitch_de
-        0x138c -> :sswitch_df
-        0x138d -> :sswitch_e0
-        0x138e -> :sswitch_e1
-        0x138f -> :sswitch_e2
-        0x1390 -> :sswitch_e3
-        0x1391 -> :sswitch_e4
-        0x1392 -> :sswitch_e5
-        0x1393 -> :sswitch_e6
-        0x2711 -> :sswitch_e7
-        0x2712 -> :sswitch_e8
-        0x2713 -> :sswitch_e9
-        0x2716 -> :sswitch_ea
-        0x2717 -> :sswitch_eb
-        0x2718 -> :sswitch_ec
-        0x2719 -> :sswitch_ed
-        0x271a -> :sswitch_ee
-        0x271b -> :sswitch_ef
-        0x271c -> :sswitch_f0
-        0x271d -> :sswitch_f1
-        0x271e -> :sswitch_f2
-        0x271f -> :sswitch_f3
-        0x2720 -> :sswitch_f4
+        0x257 -> :sswitch_ab
+        0x259 -> :sswitch_ad
+        0x25a -> :sswitch_ac
+        0x7d1 -> :sswitch_ae
+        0x7d4 -> :sswitch_af
+        0x7d5 -> :sswitch_b0
+        0x7d6 -> :sswitch_b1
+        0x7d7 -> :sswitch_b2
+        0x7da -> :sswitch_b3
+        0x7db -> :sswitch_b4
+        0x7de -> :sswitch_b5
+        0x7df -> :sswitch_b6
+        0x7e0 -> :sswitch_b7
+        0x7e1 -> :sswitch_b8
+        0x7e2 -> :sswitch_b9
+        0x7e3 -> :sswitch_ba
+        0x7e4 -> :sswitch_bb
+        0x7e5 -> :sswitch_bc
+        0x7e6 -> :sswitch_bd
+        0x7e9 -> :sswitch_be
+        0x7ea -> :sswitch_bf
+        0x7ec -> :sswitch_c0
+        0x7ed -> :sswitch_c1
+        0x7ee -> :sswitch_c2
+        0x7ef -> :sswitch_c3
+        0x7f0 -> :sswitch_c4
+        0x7f1 -> :sswitch_c5
+        0x7f2 -> :sswitch_c6
+        0x7f3 -> :sswitch_c7
+        0x7f4 -> :sswitch_c8
+        0x7f5 -> :sswitch_c9
+        0x7f6 -> :sswitch_ca
+        0x7f7 -> :sswitch_cb
+        0x7f8 -> :sswitch_cc
+        0x7f9 -> :sswitch_cd
+        0x7fa -> :sswitch_ce
+        0x7fb -> :sswitch_cf
+        0x7fc -> :sswitch_d0
+        0x7fd -> :sswitch_d1
+        0x7fe -> :sswitch_d2
+        0x7ff -> :sswitch_d3
+        0x800 -> :sswitch_d4
+        0x801 -> :sswitch_d5
+        0x802 -> :sswitch_d6
+        0x803 -> :sswitch_d7
+        0x804 -> :sswitch_d8
+        0x805 -> :sswitch_d9
+        0x806 -> :sswitch_da
+        0x807 -> :sswitch_db
+        0x808 -> :sswitch_dc
+        0x809 -> :sswitch_dd
+        0x80a -> :sswitch_de
+        0x1389 -> :sswitch_df
+        0x138a -> :sswitch_e0
+        0x138b -> :sswitch_e1
+        0x138c -> :sswitch_e2
+        0x138d -> :sswitch_e3
+        0x138e -> :sswitch_e4
+        0x138f -> :sswitch_e5
+        0x1390 -> :sswitch_e6
+        0x1391 -> :sswitch_e7
+        0x1392 -> :sswitch_e8
+        0x1393 -> :sswitch_e9
+        0x2711 -> :sswitch_ea
+        0x2712 -> :sswitch_eb
+        0x2713 -> :sswitch_ec
+        0x2716 -> :sswitch_ed
+        0x2717 -> :sswitch_ee
+        0x2718 -> :sswitch_ef
+        0x2719 -> :sswitch_f0
+        0x271a -> :sswitch_f1
+        0x271b -> :sswitch_f2
+        0x271c -> :sswitch_f3
+        0x271d -> :sswitch_f4
+        0x271e -> :sswitch_f5
+        0x271f -> :sswitch_f6
+        0x2720 -> :sswitch_f7
         0x2afa -> :sswitch_76
         0x2afb -> :sswitch_77
         0x2afc -> :sswitch_78
@@ -11681,48 +11780,48 @@
     .parameter "p"
 
     .prologue
-    .line 7452
+    .line 7568
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 7453
+    .line 7569
     .local v1, index:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 7454
+    .line 7570
     .local v2, class_id:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 7455
+    .line 7571
     .local v3, name:Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    .line 7456
+    .line 7572
     .local v4, type:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 7457
+    .line 7573
     .local v5, state:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 7459
+    .line 7575
     .local v6, timer:I
     new-instance v0, Lcom/android/internal/telephony/APNParam;
 
     invoke-direct/range {v0 .. v6}, Lcom/android/internal/telephony/APNParam;-><init>(IILjava/lang/String;III)V
 
-    .line 7461
+    .line 7577
     .local v0, response:Lcom/android/internal/telephony/APNParam;
     return-object v0
 .end method
@@ -11732,12 +11831,12 @@
     .parameter "p"
 
     .prologue
-    .line 5497
+    .line 5608
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 5499
+    .line 5610
     .local v0, b:Landroid/os/Bundle;
     const-string/jumbo v1, "res"
 
@@ -11751,7 +11850,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
 
-    .line 5500
+    .line 5611
     const-string v1, "Ck"
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -11764,7 +11863,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
 
-    .line 5501
+    .line 5612
     const-string v1, "Ik"
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -11777,7 +11876,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
 
-    .line 5502
+    .line 5613
     const-string/jumbo v1, "kc"
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -11790,7 +11889,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
 
-    .line 5503
+    .line 5614
     const-string v1, "auts"
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -11803,7 +11902,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
 
-    .line 5505
+    .line 5616
     return-object v0
 .end method
 
@@ -11812,12 +11911,12 @@
     .parameter "p"
 
     .prologue
-    .line 5510
+    .line 5621
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 5512
+    .line 5623
     .local v0, b:Landroid/os/Bundle;
     const-string/jumbo v1, "res"
 
@@ -11831,7 +11930,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
 
-    .line 5513
+    .line 5624
     const-string v1, "auts"
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -11844,7 +11943,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
 
-    .line 5515
+    .line 5626
     return-object v0
 .end method
 
@@ -11853,12 +11952,12 @@
     .parameter "p"
 
     .prologue
-    .line 7614
+    .line 7730
     new-instance v0, Lcom/android/internal/telephony/gsm/CallFailNotice;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/gsm/CallFailNotice;-><init>()V
 
-    .line 7616
+    .line 7732
     .local v0, notification:Lcom/android/internal/telephony/gsm/CallFailNotice;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -11866,21 +11965,21 @@
 
     iput v1, v0, Lcom/android/internal/telephony/gsm/CallFailNotice;->dir:I
 
-    .line 7617
+    .line 7733
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/telephony/gsm/CallFailNotice;->number:Ljava/lang/String;
 
-    .line 7618
+    .line 7734
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/gsm/CallFailNotice;->type:I
 
-    .line 7620
+    .line 7736
     return-object v0
 .end method
 
@@ -11889,16 +11988,16 @@
     .parameter "p"
 
     .prologue
-    .line 3692
+    .line 3758
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 3694
+    .line 3760
     .local v2, numInfos:I
     new-array v1, v2, [Lcom/android/internal/telephony/CallForwardInfo;
 
-    .line 3696
+    .line 3762
     .local v1, infos:[Lcom/android/internal/telephony/CallForwardInfo;
     const/4 v0, 0x0
 
@@ -11906,14 +12005,14 @@
     :goto_0
     if-ge v0, v2, :cond_0
 
-    .line 3697
+    .line 3763
     new-instance v3, Lcom/android/internal/telephony/CallForwardInfo;
 
     invoke-direct {v3}, Lcom/android/internal/telephony/CallForwardInfo;-><init>()V
 
     aput-object v3, v1, v0
 
-    .line 3699
+    .line 3765
     aget-object v3, v1, v0
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -11922,7 +12021,7 @@
 
     iput v4, v3, Lcom/android/internal/telephony/CallForwardInfo;->status:I
 
-    .line 3700
+    .line 3766
     aget-object v3, v1, v0
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -11931,7 +12030,7 @@
 
     iput v4, v3, Lcom/android/internal/telephony/CallForwardInfo;->reason:I
 
-    .line 3701
+    .line 3767
     aget-object v3, v1, v0
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -11940,7 +12039,7 @@
 
     iput v4, v3, Lcom/android/internal/telephony/CallForwardInfo;->serviceClass:I
 
-    .line 3702
+    .line 3768
     aget-object v3, v1, v0
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -11949,7 +12048,7 @@
 
     iput v4, v3, Lcom/android/internal/telephony/CallForwardInfo;->toa:I
 
-    .line 3703
+    .line 3769
     aget-object v3, v1, v0
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -11958,7 +12057,7 @@
 
     iput-object v4, v3, Lcom/android/internal/telephony/CallForwardInfo;->number:Ljava/lang/String;
 
-    .line 3704
+    .line 3770
     aget-object v3, v1, v0
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -11967,12 +12066,12 @@
 
     iput v4, v3, Lcom/android/internal/telephony/CallForwardInfo;->timeSeconds:I
 
-    .line 3696
+    .line 3762
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 3707
+    .line 3773
     :cond_0
     return-object v1
 .end method
@@ -11986,18 +12085,18 @@
 
     const/4 v9, 0x1
 
-    .line 3855
+    .line 3926
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    .line 3856
+    .line 3927
     .local v3, num:I
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 3858
+    .line 3929
     .local v4, response:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/DriverCall;>;"
     const/4 v1, 0x0
 
@@ -12005,12 +12104,12 @@
     :goto_0
     if-ge v1, v3, :cond_7
 
-    .line 3859
+    .line 3930
     new-instance v0, Lcom/android/internal/telephony/DriverCall;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/DriverCall;-><init>()V
 
-    .line 3861
+    .line 3932
     .local v0, dc:Lcom/android/internal/telephony/DriverCall;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -12022,21 +12121,21 @@
 
     iput-object v8, v0, Lcom/android/internal/telephony/DriverCall;->state:Lcom/android/internal/telephony/DriverCall$State;
 
-    .line 3862
+    .line 3933
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
 
     iput v8, v0, Lcom/android/internal/telephony/DriverCall;->index:I
 
-    .line 3863
+    .line 3934
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
 
     iput v8, v0, Lcom/android/internal/telephony/DriverCall;->TOA:I
 
-    .line 3864
+    .line 3935
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
@@ -12048,7 +12147,7 @@
     :goto_1
     iput-boolean v8, v0, Lcom/android/internal/telephony/DriverCall;->isMpty:Z
 
-    .line 3865
+    .line 3936
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
@@ -12060,19 +12159,19 @@
     :goto_2
     iput-boolean v8, v0, Lcom/android/internal/telephony/DriverCall;->isMT:Z
 
-    .line 3866
+    .line 3937
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
 
     iput v8, v0, Lcom/android/internal/telephony/DriverCall;->als:I
 
-    .line 3867
+    .line 3938
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 3868
+    .line 3939
     .local v7, voiceSettings:I
     if-nez v7, :cond_3
 
@@ -12081,7 +12180,7 @@
     :goto_3
     iput-boolean v8, v0, Lcom/android/internal/telephony/DriverCall;->isVoice:Z
 
-    .line 3869
+    .line 3940
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
@@ -12093,19 +12192,19 @@
     :goto_4
     iput-boolean v8, v0, Lcom/android/internal/telephony/DriverCall;->isVoicePrivacy:Z
 
-    .line 3870
+    .line 3941
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v8
 
     iput-object v8, v0, Lcom/android/internal/telephony/DriverCall;->number:Ljava/lang/String;
 
-    .line 3871
+    .line 3942
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 3872
+    .line 3943
     .local v2, np:I
     invoke-static {v2}, Lcom/android/internal/telephony/DriverCall;->presentationFromCLIP(I)I
 
@@ -12113,37 +12212,37 @@
 
     iput v8, v0, Lcom/android/internal/telephony/DriverCall;->numberPresentation:I
 
-    .line 3873
+    .line 3944
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v8
 
     iput-object v8, v0, Lcom/android/internal/telephony/DriverCall;->name:Ljava/lang/String;
 
-    .line 3874
+    .line 3945
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
 
     iput v8, v0, Lcom/android/internal/telephony/DriverCall;->namePresentation:I
 
-    .line 3875
+    .line 3946
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 3876
+    .line 3947
     .local v6, uusInfoPresent:I
     if-ne v6, v9, :cond_5
 
-    .line 3877
+    .line 3948
     new-instance v8, Lcom/android/internal/telephony/UUSInfo;
 
     invoke-direct {v8}, Lcom/android/internal/telephony/UUSInfo;-><init>()V
 
     iput-object v8, v0, Lcom/android/internal/telephony/DriverCall;->uusInfo:Lcom/android/internal/telephony/UUSInfo;
 
-    .line 3878
+    .line 3949
     iget-object v8, v0, Lcom/android/internal/telephony/DriverCall;->uusInfo:Lcom/android/internal/telephony/UUSInfo;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -12152,7 +12251,7 @@
 
     invoke-virtual {v8, v11}, Lcom/android/internal/telephony/UUSInfo;->setType(I)V
 
-    .line 3879
+    .line 3950
     iget-object v8, v0, Lcom/android/internal/telephony/DriverCall;->uusInfo:Lcom/android/internal/telephony/UUSInfo;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -12161,18 +12260,18 @@
 
     invoke-virtual {v8, v11}, Lcom/android/internal/telephony/UUSInfo;->setDcs(I)V
 
-    .line 3880
+    .line 3951
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v5
 
-    .line 3881
+    .line 3952
     .local v5, userData:[B
     iget-object v8, v0, Lcom/android/internal/telephony/DriverCall;->uusInfo:Lcom/android/internal/telephony/UUSInfo;
 
     invoke-virtual {v8, v5}, Lcom/android/internal/telephony/UUSInfo;->setUserData([B)V
 
-    .line 3882
+    .line 3953
     const-string v8, "Incoming UUS : type=%d, dcs=%d, length=%d"
 
     const/4 v11, 0x3
@@ -12225,7 +12324,7 @@
 
     invoke-direct {p0, v8}, Lcom/android/internal/telephony/RIL;->riljLogv(Ljava/lang/String;)V
 
-    .line 3885
+    .line 3956
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -12256,7 +12355,7 @@
 
     invoke-direct {p0, v8}, Lcom/android/internal/telephony/RIL;->riljLogv(Ljava/lang/String;)V
 
-    .line 3887
+    .line 3958
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -12287,7 +12386,7 @@
 
     invoke-direct {p0, v8}, Lcom/android/internal/telephony/RIL;->riljLogv(Ljava/lang/String;)V
 
-    .line 3894
+    .line 3965
     .end local v5           #userData:[B
     :goto_5
     iget-object v8, v0, Lcom/android/internal/telephony/DriverCall;->number:Ljava/lang/String;
@@ -12300,7 +12399,7 @@
 
     iput-object v8, v0, Lcom/android/internal/telephony/DriverCall;->number:Ljava/lang/String;
 
-    .line 3901
+    .line 3972
     iget v8, v0, Lcom/android/internal/telephony/DriverCall;->TOA:I
 
     const/16 v11, 0x91
@@ -12329,31 +12428,31 @@
 
     if-eqz v8, :cond_0
 
-    .line 3905
+    .line 3976
     const/4 v8, 0x0
 
     iput-object v8, v0, Lcom/android/internal/telephony/DriverCall;->number:Ljava/lang/String;
 
-    .line 3908
+    .line 3979
     :cond_0
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3910
+    .line 3981
     iget-boolean v8, v0, Lcom/android/internal/telephony/DriverCall;->isVoicePrivacy:Z
 
     if-eqz v8, :cond_6
 
-    .line 3911
+    .line 3982
     iget-object v8, p0, Lcom/android/internal/telephony/BaseCommands;->mVoicePrivacyOnRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v8}, Landroid/os/RegistrantList;->notifyRegistrants()V
 
-    .line 3912
+    .line 3983
     const-string v8, "InCall VoicePrivacy is enabled"
 
     invoke-direct {p0, v8}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 3858
+    .line 3929
     :goto_6
     add-int/lit8 v1, v1, 0x1
 
@@ -12365,29 +12464,29 @@
     :cond_1
     move v8, v10
 
-    .line 3864
+    .line 3935
     goto/16 :goto_1
 
     :cond_2
     move v8, v10
 
-    .line 3865
+    .line 3936
     goto/16 :goto_2
 
     .restart local v7       #voiceSettings:I
     :cond_3
     move v8, v9
 
-    .line 3868
+    .line 3939
     goto/16 :goto_3
 
     :cond_4
     move v8, v10
 
-    .line 3869
+    .line 3940
     goto/16 :goto_4
 
-    .line 3890
+    .line 3961
     .restart local v2       #np:I
     .restart local v6       #uusInfoPresent:I
     :cond_5
@@ -12397,20 +12496,20 @@
 
     goto :goto_5
 
-    .line 3914
+    .line 3985
     :cond_6
     iget-object v8, p0, Lcom/android/internal/telephony/BaseCommands;->mVoicePrivacyOffRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v8}, Landroid/os/RegistrantList;->notifyRegistrants()V
 
-    .line 3915
+    .line 3986
     const-string v8, "InCall VoicePrivacy is disabled"
 
     invoke-direct {p0, v8}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
     goto :goto_6
 
-    .line 3919
+    .line 3990
     .end local v0           #dc:Lcom/android/internal/telephony/DriverCall;
     .end local v2           #np:I
     .end local v6           #uusInfoPresent:I
@@ -12418,7 +12517,7 @@
     :cond_7
     invoke-static {v4}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 3921
+    .line 3992
     return-object v4
 .end method
 
@@ -12427,12 +12526,12 @@
     .parameter "p"
 
     .prologue
-    .line 4250
+    .line 4321
     const/4 v1, 0x4
 
     new-array v0, v1, [C
 
-    .line 4252
+    .line 4323
     .local v0, response:[C
     const/4 v1, 0x0
 
@@ -12444,7 +12543,7 @@
 
     aput-char v2, v0, v1
 
-    .line 4253
+    .line 4324
     const/4 v1, 0x1
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -12455,7 +12554,7 @@
 
     aput-char v2, v0, v1
 
-    .line 4254
+    .line 4325
     const/4 v1, 0x2
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -12466,7 +12565,7 @@
 
     aput-char v2, v0, v1
 
-    .line 4255
+    .line 4326
     const/4 v1, 0x3
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -12477,7 +12576,7 @@
 
     aput-char v2, v0, v1
 
-    .line 4257
+    .line 4328
     return-object v0
 .end method
 
@@ -12486,12 +12585,12 @@
     .parameter "p"
 
     .prologue
-    .line 7271
+    .line 7387
     new-instance v0, Lcom/android/internal/telephony/cdma/CdmaBCSMSServiceLabel;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/cdma/CdmaBCSMSServiceLabel;-><init>()V
 
-    .line 7273
+    .line 7389
     .local v0, ret:Lcom/android/internal/telephony/cdma/CdmaBCSMSServiceLabel;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -12499,21 +12598,21 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaBCSMSServiceLabel;->setIndex(I)V
 
-    .line 7274
+    .line 7390
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaBCSMSServiceLabel;->setLabel_encode(I)V
 
-    .line 7275
+    .line 7391
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaBCSMSServiceLabel;->setLabel(Ljava/lang/String;)V
 
-    .line 7277
+    .line 7393
     return-object v0
 .end method
 
@@ -12524,60 +12623,60 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 4162
+    .line 4233
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 4164
+    .line 4235
     .local v2, numServiceCategories:I
     if-nez v2, :cond_0
 
-    .line 4169
+    .line 4240
     const/16 v1, 0x5e
 
-    .line 4170
+    .line 4241
     .local v1, numInts:I
     new-array v3, v1, [I
 
-    .line 4173
+    .line 4244
     .local v3, response:[I
     const/16 v4, 0x1f
 
     aput v4, v3, v6
 
-    .line 4177
+    .line 4248
     const/4 v0, 0x1
 
     .local v0, i:I
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 4178
+    .line 4249
     add-int/lit8 v4, v0, 0x0
 
     div-int/lit8 v5, v0, 0x3
 
     aput v5, v3, v4
 
-    .line 4179
+    .line 4250
     add-int/lit8 v4, v0, 0x1
 
     const/4 v5, 0x1
 
     aput v5, v3, v4
 
-    .line 4180
+    .line 4251
     add-int/lit8 v4, v0, 0x2
 
     aput v6, v3, v4
 
-    .line 4177
+    .line 4248
     add-int/lit8 v0, v0, 0x3
 
     goto :goto_0
 
-    .line 4184
+    .line 4255
     .end local v0           #i:I
     .end local v1           #numInts:I
     .end local v3           #response:[I
@@ -12586,34 +12685,34 @@
 
     add-int/lit8 v1, v4, 0x1
 
-    .line 4185
+    .line 4256
     .restart local v1       #numInts:I
     new-array v3, v1, [I
 
-    .line 4187
+    .line 4258
     .restart local v3       #response:[I
     aput v2, v3, v6
 
-    .line 4188
+    .line 4259
     const/4 v0, 0x1
 
     .restart local v0       #i:I
     :goto_1
     if-ge v0, v1, :cond_1
 
-    .line 4189
+    .line 4260
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     aput v4, v3, v0
 
-    .line 4188
+    .line 4259
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 4193
+    .line 4264
     :cond_1
     return-object v3
 .end method
@@ -12623,12 +12722,12 @@
     .parameter "p"
 
     .prologue
-    .line 4232
+    .line 4303
     new-instance v0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;-><init>()V
 
-    .line 4234
+    .line 4305
     .local v0, notification:Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -12636,7 +12735,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->number:Ljava/lang/String;
 
-    .line 4235
+    .line 4306
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -12647,61 +12746,61 @@
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->numberPresentation:I
 
-    .line 4236
+    .line 4307
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->name:Ljava/lang/String;
 
-    .line 4237
+    .line 4308
     iget v1, v0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->numberPresentation:I
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->namePresentation:I
 
-    .line 4238
+    .line 4309
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->isPresent:I
 
-    .line 4239
+    .line 4310
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->signalType:I
 
-    .line 4240
+    .line 4311
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->alertPitch:I
 
-    .line 4241
+    .line 4312
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->signal:I
 
-    .line 4242
+    .line 4313
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->numberType:I
 
-    .line 4243
+    .line 4314
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->numberPlan:I
 
-    .line 4245
+    .line 4316
     return-object v0
 .end method
 
@@ -12710,12 +12809,12 @@
     .parameter "p"
 
     .prologue
-    .line 7252
+    .line 7368
     new-instance v0, Lcom/android/internal/telephony/cdma/CdmaERIInfo;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/cdma/CdmaERIInfo;-><init>()V
 
-    .line 7254
+    .line 7370
     .local v0, ret:Lcom/android/internal/telephony/cdma/CdmaERIInfo;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -12723,77 +12822,77 @@
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaERIInfo;->carrier_id:I
 
-    .line 7255
+    .line 7371
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaERIInfo;->eri_id:I
 
-    .line 7256
+    .line 7372
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaERIInfo;->icon_img_id:I
 
-    .line 7257
+    .line 7373
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaERIInfo;->param1:I
 
-    .line 7258
+    .line 7374
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaERIInfo;->param2:I
 
-    .line 7259
+    .line 7375
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaERIInfo;->param3:I
 
-    .line 7260
+    .line 7376
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaERIInfo;->param4:I
 
-    .line 7261
+    .line 7377
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/telephony/cdma/CdmaERIInfo;->text:Ljava/lang/String;
 
-    .line 7262
+    .line 7378
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaERIInfo;->data_support:I
 
-    .line 7263
+    .line 7379
     invoke-virtual {p1}, Landroid/os/Parcel;->dataAvail()I
 
     move-result v1
 
     if-lez v1, :cond_0
 
-    .line 7264
+    .line 7380
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaERIInfo;->roaming_type:I
 
-    .line 7265
+    .line 7381
     :cond_0
     return-object v0
 .end method
@@ -12814,18 +12913,18 @@
     .end annotation
 
     .prologue
-    .line 4219
+    .line 4290
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 4220
+    .line 4291
     .local v2, numberOfInfoRecs:I
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 4222
+    .line 4293
     .local v3, response:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/cdma/CdmaInformationRecords;>;"
     const/4 v1, 0x0
 
@@ -12833,21 +12932,21 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 4223
+    .line 4294
     new-instance v0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;
 
     invoke-direct {v0, p1}, Lcom/android/internal/telephony/cdma/CdmaInformationRecords;-><init>(Landroid/os/Parcel;)V
 
-    .line 4224
+    .line 4295
     .local v0, InfoRec:Lcom/android/internal/telephony/cdma/CdmaInformationRecords;
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4222
+    .line 4293
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 4227
+    .line 4298
     .end local v0           #InfoRec:Lcom/android/internal/telephony/cdma/CdmaInformationRecords;
     :cond_0
     return-object v3
@@ -12858,12 +12957,12 @@
     .parameter "p"
 
     .prologue
-    .line 7233
+    .line 7349
     new-instance v0, Lcom/android/internal/telephony/cdma/CdmaRadioStateInfo;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/cdma/CdmaRadioStateInfo;-><init>()V
 
-    .line 7235
+    .line 7351
     .local v0, ret:Lcom/android/internal/telephony/cdma/CdmaRadioStateInfo;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -12871,70 +12970,70 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/cdma/CdmaRadioStateInfo;->version:Ljava/lang/String;
 
-    .line 7236
+    .line 7352
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/telephony/cdma/CdmaRadioStateInfo;->mobile_sw_version:Ljava/lang/String;
 
-    .line 7237
+    .line 7353
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/telephony/cdma/CdmaRadioStateInfo;->esn:Ljava/lang/String;
 
-    .line 7238
+    .line 7354
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/telephony/cdma/CdmaRadioStateInfo;->prl_version:Ljava/lang/String;
 
-    .line 7239
+    .line 7355
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/cdma/CdmaRadioStateInfo;->pre_only:I
 
-    .line 7240
+    .line 7356
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/telephony/cdma/CdmaRadioStateInfo;->imsi:Ljava/lang/String;
 
-    .line 7241
+    .line 7357
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/telephony/cdma/CdmaRadioStateInfo;->customer_id:Ljava/lang/String;
 
-    .line 7242
+    .line 7358
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/telephony/cdma/CdmaRadioStateInfo;->pri_version:Ljava/lang/String;
 
-    .line 7243
+    .line 7359
     invoke-virtual {p1}, Landroid/os/Parcel;->dataAvail()I
 
     move-result v1
 
     if-lez v1, :cond_0
 
-    .line 7244
+    .line 7360
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/telephony/cdma/CdmaRadioStateInfo;->pri_version_2:Ljava/lang/String;
 
-    .line 7246
+    .line 7362
     :cond_0
     return-object v0
 .end method
@@ -12944,12 +13043,12 @@
     .parameter "p"
 
     .prologue
-    .line 3726
+    .line 3792
     invoke-static {p1}, Landroid/telephony/SmsMessage;->newFromParcel(Landroid/os/Parcel;)Landroid/telephony/SmsMessage;
 
     move-result-object v0
 
-    .line 3728
+    .line 3794
     .local v0, sms:Landroid/telephony/SmsMessage;
     return-object v0
 .end method
@@ -12959,18 +13058,18 @@
     .parameter "p"
 
     .prologue
-    .line 4088
+    .line 4159
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    .line 4089
+    .line 4160
     .local v3, num:I
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4092
+    .line 4163
     .local v6, response:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/telephony/NeighboringCellInfo;>;"
     const-string v8, "gsm.network.type"
 
@@ -12980,7 +13079,7 @@
 
     move-result-object v4
 
-    .line 4095
+    .line 4166
     .local v4, radioString:Ljava/lang/String;
     const-string v8, "GPRS"
 
@@ -12990,48 +13089,48 @@
 
     if-eqz v8, :cond_0
 
-    .line 4096
+    .line 4167
     const/4 v5, 0x1
 
-    .line 4112
+    .line 4183
     .local v5, radioType:I
     :goto_0
     if-eqz v5, :cond_6
 
-    .line 4113
+    .line 4184
     const/4 v1, 0x0
 
     .local v1, i:I
     :goto_1
     if-ge v1, v3, :cond_6
 
-    .line 4114
+    .line 4185
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 4115
+    .line 4186
     .local v7, rssi:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4116
+    .line 4187
     .local v2, location:Ljava/lang/String;
     new-instance v0, Landroid/telephony/NeighboringCellInfo;
 
     invoke-direct {v0, v7, v2, v5}, Landroid/telephony/NeighboringCellInfo;-><init>(ILjava/lang/String;I)V
 
-    .line 4117
+    .line 4188
     .local v0, cell:Landroid/telephony/NeighboringCellInfo;
     invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4113
+    .line 4184
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 4097
+    .line 4168
     .end local v0           #cell:Landroid/telephony/NeighboringCellInfo;
     .end local v1           #i:I
     .end local v2           #location:Ljava/lang/String;
@@ -13046,13 +13145,13 @@
 
     if-eqz v8, :cond_1
 
-    .line 4098
+    .line 4169
     const/4 v5, 0x2
 
     .restart local v5       #radioType:I
     goto :goto_0
 
-    .line 4099
+    .line 4170
     .end local v5           #radioType:I
     :cond_1
     const-string v8, "UMTS"
@@ -13063,13 +13162,13 @@
 
     if-eqz v8, :cond_2
 
-    .line 4100
+    .line 4171
     const/4 v5, 0x3
 
     .restart local v5       #radioType:I
     goto :goto_0
 
-    .line 4101
+    .line 4172
     .end local v5           #radioType:I
     :cond_2
     const-string v8, "HSDPA"
@@ -13080,13 +13179,13 @@
 
     if-eqz v8, :cond_3
 
-    .line 4102
+    .line 4173
     const/16 v5, 0x8
 
     .restart local v5       #radioType:I
     goto :goto_0
 
-    .line 4103
+    .line 4174
     .end local v5           #radioType:I
     :cond_3
     const-string v8, "HSUPA"
@@ -13097,13 +13196,13 @@
 
     if-eqz v8, :cond_4
 
-    .line 4104
+    .line 4175
     const/16 v5, 0x9
 
     .restart local v5       #radioType:I
     goto :goto_0
 
-    .line 4105
+    .line 4176
     .end local v5           #radioType:I
     :cond_4
     const-string v8, "HSPA"
@@ -13114,13 +13213,13 @@
 
     if-eqz v8, :cond_5
 
-    .line 4106
+    .line 4177
     const/16 v5, 0xa
 
     .restart local v5       #radioType:I
     goto :goto_0
 
-    .line 4108
+    .line 4179
     .end local v5           #radioType:I
     :cond_5
     const/4 v5, 0x0
@@ -13128,7 +13227,7 @@
     .restart local v5       #radioType:I
     goto :goto_0
 
-    .line 4120
+    .line 4191
     :cond_6
     return-object v6
 .end method
@@ -13138,18 +13237,18 @@
     .parameter "p"
 
     .prologue
-    .line 3967
+    .line 4038
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    .line 3968
+    .line 4039
     .local v3, ver:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 3969
+    .line 4040
     .local v1, num:I
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -13181,12 +13280,12 @@
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 3971
+    .line 4042
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 3972
+    .line 4043
     .local v2, response:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/DataCallState;>;"
     const/4 v0, 0x0
 
@@ -13194,19 +13293,19 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 3973
+    .line 4044
     invoke-direct {p0, p1, v3}, Lcom/android/internal/telephony/RIL;->getDataCallState(Landroid/os/Parcel;I)Lcom/android/internal/telephony/DataCallState;
 
     move-result-object v4
 
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3972
+    .line 4043
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 3976
+    .line 4047
     :cond_0
     return-object v2
 .end method
@@ -13216,7 +13315,7 @@
     .parameter "p"
 
     .prologue
-    .line 4124
+    .line 4195
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v1
@@ -13227,7 +13326,7 @@
 
     check-cast v0, [I
 
-    .line 4126
+    .line 4197
     .local v0, response:[I
     array-length v1, v0
 
@@ -13235,14 +13334,14 @@
 
     if-lt v1, v2, :cond_0
 
-    .line 4130
+    .line 4201
     const/4 v1, 0x0
 
     aget v1, v0, v1
 
     iput v1, p0, Lcom/android/internal/telephony/BaseCommands;->mPreferredNetworkType:I
 
-    .line 4132
+    .line 4203
     :cond_0
     return-object v0
 .end method
@@ -13254,18 +13353,18 @@
     .prologue
     const/4 v9, 0x1
 
-    .line 4140
+    .line 4211
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 4141
+    .line 4212
     .local v7, num:I
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8, v7}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 4143
+    .line 4214
     .local v8, response:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;>;"
     const/4 v6, 0x0
 
@@ -13273,30 +13372,30 @@
     :goto_0
     if-ge v6, v7, :cond_1
 
-    .line 4144
+    .line 4215
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 4145
+    .line 4216
     .local v1, fromId:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 4146
+    .line 4217
     .local v2, toId:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    .line 4147
+    .line 4218
     .local v3, fromScheme:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    .line 4148
+    .line 4219
     .local v4, toScheme:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -13306,23 +13405,23 @@
 
     move v5, v9
 
-    .line 4150
+    .line 4221
     .local v5, selected:Z
     :goto_1
     new-instance v0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;-><init>(IIIIZ)V
 
-    .line 4152
+    .line 4223
     .local v0, info:Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;
     invoke-virtual {v8, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4143
+    .line 4214
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 4148
+    .line 4219
     .end local v0           #info:Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;
     .end local v5           #selected:Z
     :cond_0
@@ -13330,7 +13429,7 @@
 
     goto :goto_1
 
-    .line 4154
+    .line 4225
     .end local v1           #fromId:I
     .end local v2           #toId:I
     .end local v3           #fromScheme:I
@@ -13344,29 +13443,33 @@
     .parameter "p"
 
     .prologue
-    .line 3787
+    .line 3853
     const/4 v0, 0x0
 
-    .line 3790
+    .line 3856
     .local v0, data:[B
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 3791
+    .line 3857
     .local v2, sw1:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    .line 3793
+    .line 3859
     .local v3, sw2:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3795
+    .line 3862
     .local v1, s:Ljava/lang/String;
+    iget-boolean v4, p0, Lcom/android/internal/telephony/RIL;->mIsTestKeys:Z
+
+    if-eqz v4, :cond_0
+
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -13415,12 +13518,55 @@
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 3800
+    .line 3871
+    :goto_0
     new-instance v4, Lcom/android/internal/telephony/IccIoResult;
 
     invoke-direct {v4, v2, v3, v1}, Lcom/android/internal/telephony/IccIoResult;-><init>(IILjava/lang/String;)V
 
     return-object v4
+
+    .line 3866
+    :cond_0
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "< iccIO:  0x"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-static {v2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, " 0x"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-static {v3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {p0, v4}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method
 
 .method private responseIccCardStatus(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -13428,12 +13574,12 @@
     .parameter "p"
 
     .prologue
-    .line 3807
+    .line 3878
     new-instance v3, Lcom/android/internal/telephony/IccCardStatus;
 
     invoke-direct {v3}, Lcom/android/internal/telephony/IccCardStatus;-><init>()V
 
-    .line 3808
+    .line 3879
     .local v3, status:Lcom/android/internal/telephony/IccCardStatus;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -13441,65 +13587,65 @@
 
     invoke-virtual {v3, v4}, Lcom/android/internal/telephony/IccCardStatus;->setCardState(I)V
 
-    .line 3809
+    .line 3880
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     invoke-virtual {v3, v4}, Lcom/android/internal/telephony/IccCardStatus;->setUniversalPinState(I)V
 
-    .line 3810
+    .line 3881
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     invoke-virtual {v3, v4}, Lcom/android/internal/telephony/IccCardStatus;->setGsmUmtsSubscriptionAppIndex(I)V
 
-    .line 3811
+    .line 3882
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     invoke-virtual {v3, v4}, Lcom/android/internal/telephony/IccCardStatus;->setCdmaSubscriptionAppIndex(I)V
 
-    .line 3812
+    .line 3883
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     invoke-virtual {v3, v4}, Lcom/android/internal/telephony/IccCardStatus;->setImsSubscriptionAppIndex(I)V
 
-    .line 3813
+    .line 3884
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 3816
+    .line 3887
     .local v2, numApplications:I
     const/16 v4, 0x8
 
     if-le v2, v4, :cond_0
 
-    .line 3817
+    .line 3888
     const/16 v2, 0x8
 
-    .line 3819
+    .line 3890
     :cond_0
     invoke-virtual {v3, v2}, Lcom/android/internal/telephony/IccCardStatus;->setNumApplications(I)V
 
-    .line 3821
+    .line 3892
     const/4 v1, 0x0
 
     .local v1, i:I
     :goto_0
     if-ge v1, v2, :cond_3
 
-    .line 3822
+    .line 3893
     new-instance v0, Lcom/android/internal/telephony/IccCardApplication;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/IccCardApplication;-><init>()V
 
-    .line 3823
+    .line 3894
     .local v0, ca:Lcom/android/internal/telephony/IccCardApplication;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -13511,7 +13657,7 @@
 
     iput-object v4, v0, Lcom/android/internal/telephony/IccCardApplication;->app_type:Lcom/android/internal/telephony/IccCardApplication$AppType;
 
-    .line 3824
+    .line 3895
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
@@ -13522,7 +13668,7 @@
 
     iput-object v4, v0, Lcom/android/internal/telephony/IccCardApplication;->app_state:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
-    .line 3825
+    .line 3896
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
@@ -13533,14 +13679,14 @@
 
     iput-object v4, v0, Lcom/android/internal/telephony/IccCardApplication;->perso_substate:Lcom/android/internal/telephony/IccCardApplication$PersoSubState;
 
-    .line 3827
+    .line 3898
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->QMI_CONFIG()Z
 
     move-result v4
 
     if-eqz v4, :cond_2
 
-    .line 3828
+    .line 3899
     iget-object v4, v0, Lcom/android/internal/telephony/IccCardApplication;->app_state:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
     sget-object v5, Lcom/android/internal/telephony/IccCardApplication$AppState;->APPSTATE_SUBSCRIPTION_PERSO:Lcom/android/internal/telephony/IccCardApplication$AppState;
@@ -13559,27 +13705,27 @@
 
     if-ne v4, v5, :cond_2
 
-    .line 3831
+    .line 3902
     :cond_1
     sget-object v4, Lcom/android/internal/telephony/IccCardApplication$AppState;->APPSTATE_UNKNOWN:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
     iput-object v4, v0, Lcom/android/internal/telephony/IccCardApplication;->app_state:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
-    .line 3832
+    .line 3903
     const-string v4, "RILJ"
 
     const-string v5, "ca.app_state == AppState.APPSTATE_SUBSCRIPTION_PERSO"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3833
+    .line 3904
     const-string v4, "RILJ"
 
     const-string v5, "ca.perso_substate == PersoSubState.PERSOSUBSTATE_READY"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3838
+    .line 3909
     :cond_2
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -13587,21 +13733,21 @@
 
     iput-object v4, v0, Lcom/android/internal/telephony/IccCardApplication;->aid:Ljava/lang/String;
 
-    .line 3839
+    .line 3910
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, v0, Lcom/android/internal/telephony/IccCardApplication;->app_label:Ljava/lang/String;
 
-    .line 3840
+    .line 3911
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, v0, Lcom/android/internal/telephony/IccCardApplication;->pin1_replaced:I
 
-    .line 3841
+    .line 3912
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
@@ -13612,7 +13758,7 @@
 
     iput-object v4, v0, Lcom/android/internal/telephony/IccCardApplication;->pin1:Lcom/android/internal/telephony/IccCardStatus$PinState;
 
-    .line 3842
+    .line 3913
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
@@ -13623,15 +13769,15 @@
 
     iput-object v4, v0, Lcom/android/internal/telephony/IccCardApplication;->pin2:Lcom/android/internal/telephony/IccCardStatus$PinState;
 
-    .line 3843
+    .line 3914
     invoke-virtual {v3, v0}, Lcom/android/internal/telephony/IccCardStatus;->addApplication(Lcom/android/internal/telephony/IccCardApplication;)V
 
-    .line 3821
+    .line 3892
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 3845
+    .line 3916
     .end local v0           #ca:Lcom/android/internal/telephony/IccCardApplication;
     :cond_3
     return-object v3
@@ -13642,16 +13788,16 @@
     .parameter "p"
 
     .prologue
-    .line 3670
+    .line 3736
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 3672
+    .line 3738
     .local v1, numInts:I
     new-array v2, v1, [I
 
-    .line 3674
+    .line 3740
     .local v2, response:[I
     const/4 v0, 0x0
 
@@ -13659,19 +13805,19 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 3675
+    .line 3741
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     aput v3, v2, v0
 
-    .line 3674
+    .line 3740
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 3678
+    .line 3744
     :cond_0
     return-object v2
 .end method
@@ -13681,7 +13827,7 @@
     .parameter "p"
 
     .prologue
-    .line 5520
+    .line 5631
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
@@ -13698,7 +13844,7 @@
     .parameter "p"
 
     .prologue
-    .line 6534
+    .line 6650
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v0
@@ -13709,7 +13855,7 @@
 
     check-cast v9, [Ljava/lang/String;
 
-    .line 6556
+    .line 6672
     .local v9, strings:[Ljava/lang/String;
     array-length v0, v9
 
@@ -13717,7 +13863,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 6557
+    .line 6673
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -13750,7 +13896,7 @@
 
     throw v0
 
-    .line 6562
+    .line 6678
     :cond_0
     new-instance v8, Ljava/util/ArrayList;
 
@@ -13760,7 +13906,7 @@
 
     invoke-direct {v8, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 6564
+    .line 6680
     .local v8, ret:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/OperatorInfo;>;"
     const/4 v7, 0x0
 
@@ -13770,7 +13916,7 @@
 
     if-ge v7, v0, :cond_1
 
-    .line 6565
+    .line 6681
     new-instance v0, Lcom/android/internal/telephony/OperatorInfo;
 
     add-int/lit8 v1, v7, 0x0
@@ -13801,12 +13947,12 @@
 
     invoke-virtual {v8, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 6564
+    .line 6680
     add-int/lit8 v7, v7, 0x6
 
     goto :goto_0
 
-    .line 6574
+    .line 6690
     :cond_1
     return-object v8
 .end method
@@ -13816,7 +13962,7 @@
     .parameter "p"
 
     .prologue
-    .line 4028
+    .line 4099
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v0
@@ -13827,7 +13973,7 @@
 
     check-cast v8, [Ljava/lang/String;
 
-    .line 4031
+    .line 4102
     .local v8, strings:[Ljava/lang/String;
     array-length v0, v8
 
@@ -13835,7 +13981,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4032
+    .line 4103
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -13868,7 +14014,7 @@
 
     throw v0
 
-    .line 4037
+    .line 4108
     :cond_0
     new-instance v7, Ljava/util/ArrayList;
 
@@ -13878,7 +14024,7 @@
 
     invoke-direct {v7, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 4039
+    .line 4110
     .local v7, ret:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/OperatorInfo;>;"
     const/4 v6, 0x0
 
@@ -13888,7 +14034,7 @@
 
     if-ge v6, v0, :cond_1
 
-    .line 4040
+    .line 4111
     new-instance v0, Lcom/android/internal/telephony/OperatorInfo;
 
     add-int/lit8 v1, v6, 0x0
@@ -13915,12 +14061,12 @@
 
     invoke-virtual {v7, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4039
+    .line 4110
     add-int/lit8 v6, v6, 0x5
 
     goto :goto_0
 
-    .line 4049
+    .line 4120
     :cond_1
     return-object v7
 .end method
@@ -13930,7 +14076,7 @@
     .parameter "p"
 
     .prologue
-    .line 4055
+    .line 4126
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v0
@@ -13941,7 +14087,7 @@
 
     check-cast v9, [Ljava/lang/String;
 
-    .line 4058
+    .line 4129
     .local v9, strings:[Ljava/lang/String;
     array-length v0, v9
 
@@ -13949,7 +14095,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4059
+    .line 4130
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -13982,7 +14128,7 @@
 
     throw v0
 
-    .line 4064
+    .line 4135
     :cond_0
     new-instance v8, Ljava/util/ArrayList;
 
@@ -13992,7 +14138,7 @@
 
     invoke-direct {v8, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 4066
+    .line 4137
     .local v8, ret:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/OperatorInfo;>;"
     const/4 v7, 0x0
 
@@ -14002,7 +14148,7 @@
 
     if-ge v7, v0, :cond_1
 
-    .line 4067
+    .line 4138
     new-instance v0, Lcom/android/internal/telephony/OperatorInfo;
 
     add-int/lit8 v1, v7, 0x0
@@ -14033,12 +14179,12 @@
 
     invoke-virtual {v8, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4066
+    .line 4137
     add-int/lit8 v7, v7, 0x6
 
     goto :goto_0
 
-    .line 4077
+    .line 4148
     :cond_1
     return-object v8
 .end method
@@ -14048,18 +14194,18 @@
     .parameter "p"
 
     .prologue
-    .line 7596
+    .line 7712
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 7597
+    .line 7713
     .local v1, num:I
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 7599
+    .line 7715
     .local v3, response:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/PreferredOperator;>;"
     const/4 v0, 0x0
 
@@ -14067,12 +14213,12 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 7600
+    .line 7716
     new-instance v2, Lcom/android/internal/telephony/PreferredOperator;
 
     invoke-direct {v2}, Lcom/android/internal/telephony/PreferredOperator;-><init>()V
 
-    .line 7602
+    .line 7718
     .local v2, pol:Lcom/android/internal/telephony/PreferredOperator;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -14080,29 +14226,29 @@
 
     iput v4, v2, Lcom/android/internal/telephony/PreferredOperator;->index:I
 
-    .line 7603
+    .line 7719
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, v2, Lcom/android/internal/telephony/PreferredOperator;->operatorNumeric:Ljava/lang/String;
 
-    .line 7604
+    .line 7720
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, v2, Lcom/android/internal/telephony/PreferredOperator;->act:I
 
-    .line 7606
+    .line 7722
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 7599
+    .line 7715
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 7609
+    .line 7725
     .end local v2           #pol:Lcom/android/internal/telephony/PreferredOperator;
     :cond_0
     return-object v3
@@ -14115,18 +14261,18 @@
     .prologue
     const/4 v10, 0x0
 
-    .line 6439
+    .line 6555
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    .line 6440
+    .line 6556
     .local v3, num:I
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 6442
+    .line 6558
     .local v7, response:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/PhoneBookEntry;>;"
     const/4 v1, 0x0
 
@@ -14134,12 +14280,12 @@
     :goto_0
     if-ge v1, v3, :cond_2
 
-    .line 6443
+    .line 6559
     new-instance v6, Lcom/android/internal/telephony/PhoneBookEntry;
 
     invoke-direct {v6}, Lcom/android/internal/telephony/PhoneBookEntry;-><init>()V
 
-    .line 6458
+    .line 6574
     .local v6, phoneBookEntry:Lcom/android/internal/telephony/PhoneBookEntry;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -14147,26 +14293,26 @@
 
     iput v8, v6, Lcom/android/internal/telephony/PhoneBookEntry;->index:I
 
-    .line 6459
+    .line 6575
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v8
 
     iput-object v8, v6, Lcom/android/internal/telephony/PhoneBookEntry;->number:Ljava/lang/String;
 
-    .line 6460
+    .line 6576
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
 
     iput v8, v6, Lcom/android/internal/telephony/PhoneBookEntry;->type:I
 
-    .line 6461
+    .line 6577
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 6462
+    .line 6578
     .local v5, pbname:Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -14174,14 +14320,14 @@
 
     iput v8, v6, Lcom/android/internal/telephony/PhoneBookEntry;->hidden:I
 
-    .line 6463
+    .line 6579
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v8
 
     iput-object v8, v6, Lcom/android/internal/telephony/PhoneBookEntry;->group:Ljava/lang/String;
 
-    .line 6464
+    .line 6580
     iget-object v8, v6, Lcom/android/internal/telephony/PhoneBookEntry;->adnumber:[Ljava/lang/String;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -14190,26 +14336,26 @@
 
     aput-object v9, v8, v10
 
-    .line 6465
+    .line 6581
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
 
     iput v8, v6, Lcom/android/internal/telephony/PhoneBookEntry;->adtype:I
 
-    .line 6466
+    .line 6582
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v8
 
     iput-object v8, v6, Lcom/android/internal/telephony/PhoneBookEntry;->secondtext:Ljava/lang/String;
 
-    .line 6467
+    .line 6583
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 6468
+    .line 6584
     .local v4, pbemail:Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -14217,22 +14363,22 @@
 
     iput-object v8, v6, Lcom/android/internal/telephony/PhoneBookEntry;->sip_uri:Ljava/lang/String;
 
-    .line 6469
+    .line 6585
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v8
 
     iput-object v8, v6, Lcom/android/internal/telephony/PhoneBookEntry;->tel_uri:Ljava/lang/String;
 
-    .line 6472
+    .line 6588
     if-eqz v5, :cond_0
 
-    .line 6474
+    .line 6590
     invoke-static {v5}, Lcom/android/internal/util/HexDump;->hexStringToByteArray(Ljava/lang/String;)[B
 
     move-result-object v2
 
-    .line 6475
+    .line 6591
     .local v2, name:[B
     array-length v8, v2
 
@@ -14242,17 +14388,17 @@
 
     iput-object v8, v6, Lcom/android/internal/telephony/PhoneBookEntry;->text:Ljava/lang/String;
 
-    .line 6479
+    .line 6595
     .end local v2           #name:[B
     :cond_0
     if-eqz v4, :cond_1
 
-    .line 6481
+    .line 6597
     invoke-static {v4}, Lcom/android/internal/util/HexDump;->hexStringToByteArray(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 6482
+    .line 6598
     .local v0, email:[B
     array-length v8, v0
 
@@ -14262,17 +14408,17 @@
 
     iput-object v8, v6, Lcom/android/internal/telephony/PhoneBookEntry;->email:Ljava/lang/String;
 
-    .line 6486
+    .line 6602
     .end local v0           #email:[B
     :cond_1
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 6442
+    .line 6558
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 6488
+    .line 6604
     .end local v4           #pbemail:Ljava/lang/String;
     .end local v5           #pbname:Ljava/lang/String;
     .end local v6           #phoneBookEntry:Lcom/android/internal/telephony/PhoneBookEntry;
@@ -14285,12 +14431,12 @@
     .parameter "p"
 
     .prologue
-    .line 6493
+    .line 6609
     new-instance v0, Lcom/android/internal/telephony/PhoneBookMemory;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/PhoneBookMemory;-><init>()V
 
-    .line 6494
+    .line 6610
     .local v0, response:Lcom/android/internal/telephony/PhoneBookMemory;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -14298,21 +14444,21 @@
 
     iput v1, v0, Lcom/android/internal/telephony/PhoneBookMemory;->used:I
 
-    .line 6495
+    .line 6611
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/PhoneBookMemory;->total:I
 
-    .line 6496
+    .line 6612
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/telephony/PhoneBookMemory;->storage:Ljava/lang/String;
 
-    .line 6497
+    .line 6613
     return-object v0
 .end method
 
@@ -14321,12 +14467,12 @@
     .parameter "p"
 
     .prologue
-    .line 3764
+    .line 3830
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v0
 
-    .line 3766
+    .line 3832
     .local v0, response:[B
     return-object v0
 .end method
@@ -14338,10 +14484,10 @@
     .prologue
     const/4 v7, 0x2
 
-    .line 5279
+    .line 5361
     new-array v3, v7, [[Ljava/lang/String;
 
-    .line 5281
+    .line 5363
     .local v3, regstates:[[Ljava/lang/String;
     const/4 v0, 0x0
 
@@ -14349,40 +14495,40 @@
     :goto_0
     if-ge v0, v7, :cond_2
 
-    .line 5282
+    .line 5364
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 5283
+    .line 5365
     .local v2, num:I
     if-nez v2, :cond_1
 
-    .line 5284
+    .line 5366
     const/4 v5, 0x0
 
     aput-object v5, v3, v0
 
-    .line 5281
+    .line 5363
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 5286
+    .line 5368
     :cond_1
     new-array v5, v2, [Ljava/lang/String;
 
     aput-object v5, v3, v0
 
-    .line 5287
+    .line 5369
     const/4 v1, 0x0
 
     .local v1, j:I
     :goto_1
     if-ge v1, v2, :cond_0
 
-    .line 5288
+    .line 5370
     aget-object v5, v3, v0
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -14391,12 +14537,12 @@
 
     aput-object v6, v5, v1
 
-    .line 5287
+    .line 5369
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 5293
+    .line 5375
     .end local v1           #j:I
     .end local v2           #num:I
     :cond_2
@@ -14404,7 +14550,7 @@
 
     invoke-direct {v4, v3}, Lcom/android/internal/telephony/RegStateResponse;-><init>([[Ljava/lang/String;)V
 
-    .line 5295
+    .line 5377
     .local v4, response:Lcom/android/internal/telephony/RegStateResponse;
     return-object v4
 .end method
@@ -14414,30 +14560,30 @@
     .parameter "p"
 
     .prologue
-    .line 3774
+    .line 3840
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 3775
+    .line 3841
     .local v2, messageRef:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3776
+    .line 3842
     .local v0, ackPDU:Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 3778
+    .line 3844
     .local v1, errorCode:I
     new-instance v3, Lcom/android/internal/telephony/SmsResponse;
 
     invoke-direct {v3, v2, v0, v1}, Lcom/android/internal/telephony/SmsResponse;-><init>(ILjava/lang/String;I)V
 
-    .line 3780
+    .line 3846
     .local v3, response:Lcom/android/internal/telephony/SmsResponse;
     return-object v3
 .end method
@@ -14447,30 +14593,30 @@
     .parameter "p"
 
     .prologue
-    .line 6505
+    .line 6621
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 6506
+    .line 6622
     .local v2, messageRef:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 6507
+    .line 6623
     .local v0, ackPDU:Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 6508
+    .line 6624
     .local v1, errorcode:I
     new-instance v3, Lcom/android/internal/telephony/SmsResponse;
 
     invoke-direct {v3, v2, v0, v1}, Lcom/android/internal/telephony/SmsResponse;-><init>(ILjava/lang/String;I)V
 
-    .line 6510
+    .line 6626
     .local v3, response:Lcom/android/internal/telephony/SmsResponse;
     return-object v3
 .end method
@@ -14482,18 +14628,18 @@
     .prologue
     const/4 v8, 0x5
 
-    .line 3981
+    .line 4052
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 3982
+    .line 4053
     .local v5, ver:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    .line 3983
+    .line 4054
     .local v4, num:I
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -14525,19 +14671,19 @@
 
     invoke-direct {p0, v6}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 3987
+    .line 4058
     if-ge v5, v8, :cond_4
 
-    .line 3988
+    .line 4059
     new-instance v1, Lcom/android/internal/telephony/DataCallState;
 
     invoke-direct {v1}, Lcom/android/internal/telephony/DataCallState;-><init>()V
 
-    .line 3989
+    .line 4060
     .local v1, dataCall:Lcom/android/internal/telephony/DataCallState;
     iput v5, v1, Lcom/android/internal/telephony/DataCallState;->version:I
 
-    .line 3990
+    .line 4061
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v6
@@ -14548,14 +14694,14 @@
 
     iput v6, v1, Lcom/android/internal/telephony/DataCallState;->cid:I
 
-    .line 3991
+    .line 4062
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v6
 
     iput-object v6, v1, Lcom/android/internal/telephony/DataCallState;->ifname:Ljava/lang/String;
 
-    .line 3992
+    .line 4063
     iget-object v6, v1, Lcom/android/internal/telephony/DataCallState;->ifname:Ljava/lang/String;
 
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -14564,7 +14710,7 @@
 
     if-eqz v6, :cond_0
 
-    .line 3993
+    .line 4064
     new-instance v6, Ljava/lang/RuntimeException;
 
     const-string v7, "RIL_REQUEST_SETUP_DATA_CALL response, no ifname"
@@ -14573,13 +14719,13 @@
 
     throw v6
 
-    .line 3996
+    .line 4067
     :cond_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3997
+    .line 4068
     .local v0, addresses:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -14587,7 +14733,7 @@
 
     if-nez v6, :cond_1
 
-    .line 3998
+    .line 4069
     const-string v6, " "
 
     invoke-virtual {v0, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -14596,18 +14742,18 @@
 
     iput-object v6, v1, Lcom/android/internal/telephony/DataCallState;->addresses:[Ljava/lang/String;
 
-    .line 4000
+    .line 4071
     :cond_1
     const/4 v6, 0x4
 
     if-lt v4, v6, :cond_2
 
-    .line 4001
+    .line 4072
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4002
+    .line 4073
     .local v2, dnses:Ljava/lang/String;
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -14629,14 +14775,14 @@
 
     invoke-direct {p0, v6}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4003
+    .line 4074
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v6
 
     if-nez v6, :cond_2
 
-    .line 4004
+    .line 4075
     const-string v6, " "
 
     invoke-virtual {v2, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -14645,17 +14791,17 @@
 
     iput-object v6, v1, Lcom/android/internal/telephony/DataCallState;->dnses:[Ljava/lang/String;
 
-    .line 4007
+    .line 4078
     .end local v2           #dnses:Ljava/lang/String;
     :cond_2
     if-lt v4, v8, :cond_3
 
-    .line 4008
+    .line 4079
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 4009
+    .line 4080
     .local v3, gateways:Ljava/lang/String;
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -14677,14 +14823,14 @@
 
     invoke-direct {p0, v6}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4010
+    .line 4081
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v6
 
     if-nez v6, :cond_3
 
-    .line 4011
+    .line 4082
     const-string v6, " "
 
     invoke-virtual {v3, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -14693,21 +14839,21 @@
 
     iput-object v6, v1, Lcom/android/internal/telephony/DataCallState;->gateways:[Ljava/lang/String;
 
-    .line 4023
+    .line 4094
     .end local v0           #addresses:Ljava/lang/String;
     .end local v3           #gateways:Ljava/lang/String;
     :cond_3
     :goto_0
     return-object v1
 
-    .line 4015
+    .line 4086
     .end local v1           #dataCall:Lcom/android/internal/telephony/DataCallState;
     :cond_4
     const/4 v6, 0x1
 
     if-eq v4, v6, :cond_5
 
-    .line 4016
+    .line 4087
     new-instance v6, Ljava/lang/RuntimeException;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -14732,7 +14878,7 @@
 
     throw v6
 
-    .line 4020
+    .line 4091
     :cond_5
     invoke-direct {p0, p1, v5}, Lcom/android/internal/telephony/RIL;->getDataCallState(Landroid/os/Parcel;I)Lcom/android/internal/telephony/DataCallState;
 
@@ -14747,14 +14893,14 @@
     .parameter "p"
 
     .prologue
-    .line 4198
+    .line 4269
     const/16 v1, 0xc
 
-    .line 4202
+    .line 4273
     .local v1, numInts:I
     new-array v2, v1, [I
 
-    .line 4203
+    .line 4274
     .local v2, response:[I
     const/4 v0, 0x0
 
@@ -14762,19 +14908,19 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 4204
+    .line 4275
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     aput v3, v2, v0
 
-    .line 4203
+    .line 4274
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 4207
+    .line 4278
     :cond_0
     return-object v2
 .end method
@@ -14784,7 +14930,7 @@
     .parameter "p"
 
     .prologue
-    .line 6416
+    .line 6532
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->responseInts(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v1
@@ -14797,11 +14943,11 @@
 
     aget v0, v1, v2
 
-    .line 6417
+    .line 6533
     .local v0, status:I
     sparse-switch v0, :sswitch_data_0
 
-    .line 6431
+    .line 6547
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -14826,75 +14972,75 @@
 
     throw v1
 
-    .line 6418
+    .line 6534
     :sswitch_0
     sget-object v1, Lcom/android/internal/telephony/CommandsInterface$SimTypes;->RIL_NO_SIM_CARD:Lcom/android/internal/telephony/CommandsInterface$SimTypes;
 
-    .line 6428
+    .line 6544
     :goto_0
     return-object v1
 
-    .line 6419
+    .line 6535
     :sswitch_1
     sget-object v1, Lcom/android/internal/telephony/CommandsInterface$SimTypes;->RIL_2G_SIM_CARD:Lcom/android/internal/telephony/CommandsInterface$SimTypes;
 
     goto :goto_0
 
-    .line 6420
+    .line 6536
     :sswitch_2
     sget-object v1, Lcom/android/internal/telephony/CommandsInterface$SimTypes;->RIL_3G_SIM_CARD:Lcom/android/internal/telephony/CommandsInterface$SimTypes;
 
     goto :goto_0
 
-    .line 6421
+    .line 6537
     :sswitch_3
     sget-object v1, Lcom/android/internal/telephony/CommandsInterface$SimTypes;->RIL_TITAN_LITE_SIM_CARD:Lcom/android/internal/telephony/CommandsInterface$SimTypes;
 
     goto :goto_0
 
-    .line 6422
+    .line 6538
     :sswitch_4
     sget-object v1, Lcom/android/internal/telephony/CommandsInterface$SimTypes;->RIL_DBDM_SIM_CARD:Lcom/android/internal/telephony/CommandsInterface$SimTypes;
 
     goto :goto_0
 
-    .line 6423
+    .line 6539
     :sswitch_5
     sget-object v1, Lcom/android/internal/telephony/CommandsInterface$SimTypes;->RIL_WIBRO_ONLY_SIM_CARD:Lcom/android/internal/telephony/CommandsInterface$SimTypes;
 
     goto :goto_0
 
-    .line 6424
+    .line 6540
     :sswitch_6
     sget-object v1, Lcom/android/internal/telephony/CommandsInterface$SimTypes;->RIL_TESTSIM_2G_SIM_CARD:Lcom/android/internal/telephony/CommandsInterface$SimTypes;
 
     goto :goto_0
 
-    .line 6425
+    .line 6541
     :sswitch_7
     sget-object v1, Lcom/android/internal/telephony/CommandsInterface$SimTypes;->RIL_TESTSIM_3G_SIM_CARD:Lcom/android/internal/telephony/CommandsInterface$SimTypes;
 
     goto :goto_0
 
-    .line 6426
+    .line 6542
     :sswitch_8
     sget-object v1, Lcom/android/internal/telephony/CommandsInterface$SimTypes;->RIL_RUIM_CARD:Lcom/android/internal/telephony/CommandsInterface$SimTypes;
 
     goto :goto_0
 
-    .line 6427
+    .line 6543
     :sswitch_9
     sget-object v1, Lcom/android/internal/telephony/CommandsInterface$SimTypes;->RIL_DUAL_CARD:Lcom/android/internal/telephony/CommandsInterface$SimTypes;
 
     goto :goto_0
 
-    .line 6428
+    .line 6544
     :sswitch_a
     sget-object v1, Lcom/android/internal/telephony/CommandsInterface$SimTypes;->RIL_SIM_FAIL:Lcom/android/internal/telephony/CommandsInterface$SimTypes;
 
     goto :goto_0
 
-    .line 6417
+    .line 6533
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0
@@ -14916,12 +15062,12 @@
     .parameter "p"
 
     .prologue
-    .line 3735
+    .line 3801
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3737
+    .line 3803
     .local v0, response:Ljava/lang/String;
     return-object v0
 .end method
@@ -14931,12 +15077,12 @@
     .parameter "p"
 
     .prologue
-    .line 3745
+    .line 3811
     invoke-virtual {p1}, Landroid/os/Parcel;->readStringArray()[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3756
+    .line 3822
     .local v0, response:[Ljava/lang/String;
     return-object v0
 .end method
@@ -14946,12 +15092,12 @@
     .parameter "p"
 
     .prologue
-    .line 3712
+    .line 3778
     new-instance v0, Lcom/android/internal/telephony/gsm/SuppServiceNotification;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/gsm/SuppServiceNotification;-><init>()V
 
-    .line 3714
+    .line 3780
     .local v0, notification:Lcom/android/internal/telephony/gsm/SuppServiceNotification;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -14959,35 +15105,35 @@
 
     iput v1, v0, Lcom/android/internal/telephony/gsm/SuppServiceNotification;->notificationType:I
 
-    .line 3715
+    .line 3781
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/gsm/SuppServiceNotification;->code:I
 
-    .line 3716
+    .line 3782
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/gsm/SuppServiceNotification;->index:I
 
-    .line 3717
+    .line 3783
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/internal/telephony/gsm/SuppServiceNotification;->type:I
 
-    .line 3718
+    .line 3784
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/telephony/gsm/SuppServiceNotification;->number:Ljava/lang/String;
 
-    .line 3720
+    .line 3786
     return-object v0
 .end method
 
@@ -14996,580 +15142,586 @@
     .parameter "request"
 
     .prologue
-    .line 4608
+    .line 4682
     sparse-switch p0, :sswitch_data_0
 
-    .line 4727
+    .line 4803
     const-string v0, "<unknown reponse>"
 
     :goto_0
     return-object v0
 
-    .line 4609
+    .line 4683
     :sswitch_0
     const-string v0, "UNSOL_RESPONSE_RADIO_STATE_CHANGED"
 
     goto :goto_0
 
-    .line 4610
+    .line 4684
     :sswitch_1
     const-string v0, "UNSOL_RESPONSE_CALL_STATE_CHANGED"
 
     goto :goto_0
 
-    .line 4611
+    .line 4685
     :sswitch_2
     const-string v0, "UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED"
 
     goto :goto_0
 
-    .line 4612
+    .line 4686
     :sswitch_3
     const-string v0, "UNSOL_RESPONSE_NEW_SMS"
 
     goto :goto_0
 
-    .line 4613
+    .line 4687
     :sswitch_4
     const-string v0, "UNSOL_RESPONSE_NEW_SMS_STATUS_REPORT"
 
     goto :goto_0
 
-    .line 4614
+    .line 4688
     :sswitch_5
     const-string v0, "UNSOL_RESPONSE_NEW_SMS_ON_SIM"
 
     goto :goto_0
 
-    .line 4615
+    .line 4689
     :sswitch_6
     const-string v0, "UNSOL_ON_USSD"
 
     goto :goto_0
 
-    .line 4616
+    .line 4690
     :sswitch_7
     const-string v0, "UNSOL_ON_USSD_REQUEST"
 
     goto :goto_0
 
-    .line 4617
+    .line 4691
     :sswitch_8
     const-string v0, "UNSOL_NITZ_TIME_RECEIVED"
 
     goto :goto_0
 
-    .line 4618
+    .line 4692
     :sswitch_9
     const-string v0, "UNSOL_SIGNAL_STRENGTH"
 
     goto :goto_0
 
-    .line 4619
+    .line 4693
     :sswitch_a
     const-string v0, "UNSOL_DATA_CALL_LIST_CHANGED"
 
     goto :goto_0
 
-    .line 4620
+    .line 4694
     :sswitch_b
     const-string v0, "UNSOL_SUPP_SVC_NOTIFICATION"
 
     goto :goto_0
 
-    .line 4621
+    .line 4695
     :sswitch_c
     const-string v0, "UNSOL_STK_SESSION_END"
 
     goto :goto_0
 
-    .line 4622
+    .line 4696
     :sswitch_d
     const-string v0, "UNSOL_STK_PROACTIVE_COMMAND"
 
     goto :goto_0
 
-    .line 4623
+    .line 4697
     :sswitch_e
     const-string v0, "UNSOL_STK_EVENT_NOTIFY"
 
     goto :goto_0
 
-    .line 4624
+    .line 4698
     :sswitch_f
     const-string v0, "UNSOL_STK_CALL_SETUP"
 
     goto :goto_0
 
-    .line 4625
+    .line 4699
     :sswitch_10
     const-string v0, "UNSOL_SIM_SMS_STORAGE_FULL"
 
     goto :goto_0
 
-    .line 4626
+    .line 4700
     :sswitch_11
     const-string v0, "UNSOL_SIM_REFRESH"
 
     goto :goto_0
 
-    .line 4627
+    .line 4701
     :sswitch_12
     const-string v0, "UNSOL_CALL_RING"
 
     goto :goto_0
 
-    .line 4628
+    .line 4702
     :sswitch_13
     const-string v0, "UNSOL_RESPONSE_SIM_STATUS_CHANGED"
 
     goto :goto_0
 
-    .line 4629
+    .line 4703
     :sswitch_14
     const-string v0, "UNSOL_RESPONSE_CDMA_NEW_SMS"
 
     goto :goto_0
 
-    .line 4630
+    .line 4704
     :sswitch_15
     const-string v0, "UNSOL_RESPONSE_NEW_BROADCAST_SMS"
 
     goto :goto_0
 
-    .line 4631
+    .line 4705
     :sswitch_16
     const-string v0, "UNSOL_CDMA_RUIM_SMS_STORAGE_FULL"
 
     goto :goto_0
 
-    .line 4632
+    .line 4706
     :sswitch_17
     const-string v0, "UNSOL_RESTRICTED_STATE_CHANGED"
 
     goto :goto_0
 
-    .line 4633
+    .line 4707
     :sswitch_18
     const-string v0, "UNSOL_ENTER_EMERGENCY_CALLBACK_MODE"
 
     goto :goto_0
 
-    .line 4634
+    .line 4708
     :sswitch_19
     const-string v0, "UNSOL_CDMA_CALL_WAITING"
 
     goto :goto_0
 
-    .line 4635
+    .line 4709
     :sswitch_1a
     const-string v0, "UNSOL_CDMA_OTA_PROVISION_STATUS"
 
     goto :goto_0
 
-    .line 4636
+    .line 4710
     :sswitch_1b
     const-string v0, "UNSOL_CDMA_INFO_REC"
 
     goto :goto_0
 
-    .line 4637
+    .line 4711
     :sswitch_1c
     const-string v0, "UNSOL_OEM_HOOK_RAW"
 
     goto :goto_0
 
-    .line 4638
+    .line 4712
     :sswitch_1d
     const-string v0, "UNSOL_RINGBACK_TONG"
 
     goto :goto_0
 
-    .line 4639
+    .line 4713
     :sswitch_1e
     const-string v0, "UNSOL_RESEND_INCALL_MUTE"
 
     goto :goto_0
 
-    .line 4640
+    .line 4714
     :sswitch_1f
     const-string v0, "CDMA_SUBSCRIPTION_SOURCE_CHANGED"
 
     goto :goto_0
 
-    .line 4641
+    .line 4715
     :sswitch_20
     const-string v0, "UNSOL_CDMA_PRL_CHANGED"
 
     goto :goto_0
 
-    .line 4642
+    .line 4716
     :sswitch_21
     const-string v0, "UNSOL_EXIT_EMERGENCY_CALLBACK_MODE"
 
     goto :goto_0
 
-    .line 4643
+    .line 4717
     :sswitch_22
     const-string v0, "UNSOL_RIL_CONNECTED"
 
     goto :goto_0
 
-    .line 4652
+    .line 4726
     :sswitch_23
     const-string v0, "UNSOL_SIM_APPLICATION_REFRESH"
 
     goto :goto_0
 
-    .line 4653
+    .line 4727
     :sswitch_24
     const-string v0, "UNSOL_UICC_APPLICATION_STATUS"
 
     goto :goto_0
 
-    .line 4656
+    .line 4730
     :sswitch_25
     const-string v0, "RIL_UNSOL_VOICE_RADIO_TECH_CHANGED"
 
     goto :goto_0
 
-    .line 4657
+    .line 4731
     :sswitch_26
     const-string v0, "UNSOL_DATA_NETWORK_STATE_CHANGED"
 
     goto :goto_0
 
-    .line 4659
+    .line 4733
     :sswitch_27
     const-string v0, "RESPONSE_IMS_NETWORK_STATE_CHANGED"
 
     goto :goto_0
 
-    .line 4663
+    .line 4737
     :sswitch_28
     const-string v0, "UNSOL_RESPONSE_NEW_CB"
 
     goto :goto_0
 
-    .line 4664
+    .line 4738
     :sswitch_29
     const-string v0, "UNSOL_RESPONSE_NEW_CB_ON_SIM"
 
     goto :goto_0
 
-    .line 4665
+    .line 4739
     :sswitch_2a
     const-string v0, "UNSOL_CLI_INFORMATION"
 
     goto/16 :goto_0
 
-    .line 4666
+    .line 4740
     :sswitch_2b
     const-string v0, "UNSOL_RESPONSE_DIAL_TONE_END"
 
     goto/16 :goto_0
 
-    .line 4667
+    .line 4741
     :sswitch_2c
     const-string v0, "UNSOL_DEVICE_SMS_STORAGE_FULL"
 
     goto/16 :goto_0
 
-    .line 4668
+    .line 4742
     :sswitch_2d
     const-string v0, "UNSOL_CW_INFORMATION"
 
     goto/16 :goto_0
 
-    .line 4669
+    .line 4743
     :sswitch_2e
     const-string v0, "UNSOL_COL_INFORMATION"
 
     goto/16 :goto_0
 
-    .line 4670
+    .line 4744
     :sswitch_2f
     const-string v0, "UNSOL_PUK1_OR_PUK2_LOCK"
 
     goto/16 :goto_0
 
-    .line 4672
+    .line 4746
     :sswitch_30
     const-string v0, "UNSOL_PCSCF_ADDRESS"
 
     goto/16 :goto_0
 
-    .line 4674
+    .line 4748
     :sswitch_31
     const-string v0, "UNSOL_HOMEZONE_DCH_STATUS"
 
     goto/16 :goto_0
 
-    .line 4675
+    .line 4749
     :sswitch_32
     const-string v0, "UNSOL_MODEM_LINK_STATUS"
 
     goto/16 :goto_0
 
-    .line 4676
+    .line 4750
     :sswitch_33
     const-string v0, "UNSOL_SMART_DATA_ROAMING_STATUS"
 
     goto/16 :goto_0
 
-    .line 4677
+    .line 4751
     :sswitch_34
     const-string v0, "UNSOL_VKK_SIM_EXPIRED_STATUS"
 
     goto/16 :goto_0
 
-    .line 4678
+    .line 4752
     :sswitch_35
     const-string v0, "UNSOL_PHONE_BOOK_READY"
 
     goto/16 :goto_0
 
-    .line 4679
+    .line 4753
     :sswitch_36
     const-string v0, "RIL_UNSOL_ENTER_LPM"
 
     goto/16 :goto_0
 
-    .line 4680
+    .line 4754
     :sswitch_37
     const-string v0, "UNSOL_TPMR_ID"
 
     goto/16 :goto_0
 
-    .line 4681
+    .line 4755
     :sswitch_38
     const-string v0, "UNSOL_SIM_SWAP_STATUS"
 
     goto/16 :goto_0
 
-    .line 4682
+    .line 4756
     :sswitch_39
     const-string v0, "UNSOL_CALL_WAITING_TONE"
 
     goto/16 :goto_0
 
-    .line 4683
+    .line 4757
     :sswitch_3a
     const-string v0, "UNSOL_LINE_CONTROL"
 
     goto/16 :goto_0
 
-    .line 4684
+    .line 4758
     :sswitch_3b
     const-string v0, "UNSOL_RESPONSE_ACDB_TABLE_CHANGED"
 
     goto/16 :goto_0
 
-    .line 4685
+    .line 4759
     :sswitch_3c
     const-string v0, "UNSOL_SIM_HOT_SWAP"
 
     goto/16 :goto_0
 
-    .line 4686
+    .line 4760
     :sswitch_3d
     const-string v0, "UNSOL_ECC_USSD"
 
     goto/16 :goto_0
 
-    .line 4687
+    .line 4761
     :sswitch_3e
     const-string v0, "UNSOL_MANUAL_REG_STATE"
 
     goto/16 :goto_0
 
-    .line 4688
+    .line 4762
     :sswitch_3f
     const-string v0, "UNSOL_RSSI_REPORT"
 
     goto/16 :goto_0
 
-    .line 4691
+    .line 4764
     :sswitch_40
+    const-string v0, "UNSOL_SMART_NETWORK"
+
+    goto/16 :goto_0
+
+    .line 4767
+    :sswitch_41
     const-string v0, "CDMA_E911_STATUS_CHANGED"
 
     goto/16 :goto_0
 
-    .line 4692
-    :sswitch_41
+    .line 4768
+    :sswitch_42
     const-string v0, "UNSOL_CDMA_LOOPBACK_MODE"
 
     goto/16 :goto_0
 
-    .line 4693
-    :sswitch_42
+    .line 4769
+    :sswitch_43
     const-string v0, "UNSOL_CDMA_NETWORK_BUSY"
 
     goto/16 :goto_0
 
-    .line 4694
-    :sswitch_43
+    .line 4770
+    :sswitch_44
     const-string v0, "UNSOL_CDMA_SYSTEMINFO_CHANGED"
 
     goto/16 :goto_0
 
-    .line 4695
-    :sswitch_44
+    .line 4771
+    :sswitch_45
     const-string v0, "UNSOL_CDMA_3G_INDICATOR"
 
     goto/16 :goto_0
 
-    .line 4696
-    :sswitch_45
+    .line 4772
+    :sswitch_46
     const-string v0, "UNSOL_CDMA_MESSAGE_WAITING_INDICATOR"
 
     goto/16 :goto_0
 
-    .line 4697
-    :sswitch_46
+    .line 4773
+    :sswitch_47
     const-string v0, "UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR"
 
     goto/16 :goto_0
 
-    .line 4698
-    :sswitch_47
+    .line 4774
+    :sswitch_48
     const-string v0, "UNSOL_CDMA_POSITION_DETERMINATION_SESSION_STATUS"
 
     goto/16 :goto_0
 
-    .line 4699
-    :sswitch_48
+    .line 4775
+    :sswitch_49
     const-string v0, "UNSOL_CDMA_TONE_SIGNALS"
 
     goto/16 :goto_0
 
-    .line 4700
-    :sswitch_49
+    .line 4776
+    :sswitch_4a
     const-string v0, "UNSOL_CDMA_REDIRECT_PARTY_NUMBER"
 
     goto/16 :goto_0
 
-    .line 4701
-    :sswitch_4a
+    .line 4777
+    :sswitch_4b
     const-string v0, "UNSOL_CDMA_OMA_DM_TRIGGER"
 
     goto/16 :goto_0
 
-    .line 4702
-    :sswitch_4b
+    .line 4778
+    :sswitch_4c
     const-string v0, "UNSOL_CDMA_PS_FAIL_MSGID"
 
     goto/16 :goto_0
 
-    .line 4703
-    :sswitch_4c
+    .line 4779
+    :sswitch_4d
     const-string v0, "UNSOL_CDMA_SIGNAL_FADE"
 
     goto/16 :goto_0
 
-    .line 4704
-    :sswitch_4d
+    .line 4780
+    :sswitch_4e
     const-string v0, "UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL"
 
     goto/16 :goto_0
 
-    .line 4705
-    :sswitch_4e
+    .line 4781
+    :sswitch_4f
     const-string v0, "UNSOL_CDMA_CDMA_LBS"
 
     goto/16 :goto_0
 
-    .line 4706
-    :sswitch_4f
+    .line 4782
+    :sswitch_50
     const-string v0, "UNSOL_CW_UW_REG_CHANGED"
 
     goto/16 :goto_0
 
-    .line 4707
-    :sswitch_50
+    .line 4783
+    :sswitch_51
     const-string v0, "UNSOL_CDMA_SERVICE_DOMAIN_CHANGE"
 
     goto/16 :goto_0
 
-    .line 4708
-    :sswitch_51
+    .line 4784
+    :sswitch_52
     const-string v0, "UNSOL_CDMA_CT_MODE_CHANGE"
 
     goto/16 :goto_0
 
-    .line 4709
-    :sswitch_52
+    .line 4785
+    :sswitch_53
     const-string v0, "UNSOL_CDMA_CT_MCC_MNC_CHANGE"
 
     goto/16 :goto_0
 
-    .line 4712
-    :sswitch_53
+    .line 4788
+    :sswitch_54
     const-string v0, "UNSOL_RESPONSE_RADIO_TECH_CHANGE"
 
     goto/16 :goto_0
 
-    .line 4713
-    :sswitch_54
+    .line 4789
+    :sswitch_55
     const-string v0, "UNSOL_RESPONSE_PHONE_MODE_CHANGE"
 
     goto/16 :goto_0
 
-    .line 4714
-    :sswitch_55
+    .line 4790
+    :sswitch_56
     const-string v0, "UNSOL_RESPONSE_NETWORK_MODE_CHANGE"
 
     goto/16 :goto_0
 
-    .line 4715
-    :sswitch_56
+    .line 4791
+    :sswitch_57
     const-string v0, "UNSOL_RESPONSE_PS_NEW_CDMA_SMS"
 
     goto/16 :goto_0
 
-    .line 4716
-    :sswitch_57
+    .line 4792
+    :sswitch_58
     const-string v0, "UNSOL_RESPONSE_EHRPD_DOMAINNAME_CHANGE"
 
     goto/16 :goto_0
 
-    .line 4717
-    :sswitch_58
+    .line 4793
+    :sswitch_59
     const-string v0, "UNSOL_RESPONSE_EHRPD_EMERGENCY_CALLBACK_MODE_CHANGE"
 
     goto/16 :goto_0
 
-    .line 4720
-    :sswitch_59
+    .line 4796
+    :sswitch_5a
     const-string v0, "UNSOL_RESPONSE_T3G_PSDBG"
 
     goto/16 :goto_0
 
-    .line 4721
-    :sswitch_5a
+    .line 4797
+    :sswitch_5b
     const-string v0, "UNSOL_HTC_ECC_AVAILABLE"
 
     goto/16 :goto_0
 
-    .line 4722
-    :sswitch_5b
+    .line 4798
+    :sswitch_5c
     const-string v0, "UNSOL_HTC_CALL_FAIL_NOTICE"
 
     goto/16 :goto_0
 
-    .line 4723
-    :sswitch_5c
+    .line 4799
+    :sswitch_5d
     const-string v0, "UNSOL_HTC_REJECTED_MT_CALL"
 
     goto/16 :goto_0
 
-    .line 4724
-    :sswitch_5d
+    .line 4800
+    :sswitch_5e
     const-string v0, "UNSOL_CREG_STATE_CHANGED"
 
     goto/16 :goto_0
 
-    .line 4608
+    .line 4682
     :sswitch_data_0
     .sparse-switch
         0x3e8 -> :sswitch_0
@@ -15633,36 +15785,37 @@
         0x606 -> :sswitch_3f
         0x608 -> :sswitch_23
         0x609 -> :sswitch_24
-        0xbb9 -> :sswitch_40
-        0xbba -> :sswitch_41
-        0xbbc -> :sswitch_42
-        0xbc0 -> :sswitch_43
-        0xbc1 -> :sswitch_44
-        0xbc3 -> :sswitch_45
-        0xbc4 -> :sswitch_46
-        0xbc5 -> :sswitch_47
-        0xbc6 -> :sswitch_48
-        0xbc8 -> :sswitch_49
-        0xbc9 -> :sswitch_4a
-        0xbca -> :sswitch_4b
-        0xbcb -> :sswitch_4c
-        0xbcc -> :sswitch_4d
-        0xbcd -> :sswitch_4e
-        0xbce -> :sswitch_4f
-        0xbcf -> :sswitch_50
-        0xbd0 -> :sswitch_51
-        0xbd1 -> :sswitch_52
-        0x1771 -> :sswitch_53
-        0x1772 -> :sswitch_54
-        0x1773 -> :sswitch_55
-        0x1774 -> :sswitch_56
-        0x1776 -> :sswitch_57
-        0x1777 -> :sswitch_58
-        0x4e21 -> :sswitch_59
-        0x4e22 -> :sswitch_5a
-        0x4e23 -> :sswitch_5b
-        0x4e24 -> :sswitch_5c
-        0x4e25 -> :sswitch_5d
+        0x60c -> :sswitch_40
+        0xbb9 -> :sswitch_41
+        0xbba -> :sswitch_42
+        0xbbc -> :sswitch_43
+        0xbc0 -> :sswitch_44
+        0xbc1 -> :sswitch_45
+        0xbc3 -> :sswitch_46
+        0xbc4 -> :sswitch_47
+        0xbc5 -> :sswitch_48
+        0xbc6 -> :sswitch_49
+        0xbc8 -> :sswitch_4a
+        0xbc9 -> :sswitch_4b
+        0xbca -> :sswitch_4c
+        0xbcb -> :sswitch_4d
+        0xbcc -> :sswitch_4e
+        0xbcd -> :sswitch_4f
+        0xbce -> :sswitch_50
+        0xbcf -> :sswitch_51
+        0xbd0 -> :sswitch_52
+        0xbd1 -> :sswitch_53
+        0x1771 -> :sswitch_54
+        0x1772 -> :sswitch_55
+        0x1773 -> :sswitch_56
+        0x1774 -> :sswitch_57
+        0x1776 -> :sswitch_58
+        0x1777 -> :sswitch_59
+        0x4e21 -> :sswitch_5a
+        0x4e22 -> :sswitch_5b
+        0x4e23 -> :sswitch_5c
+        0x4e24 -> :sswitch_5d
+        0x4e25 -> :sswitch_5e
         0x520c -> :sswitch_25
         0x520d -> :sswitch_27
         0x520f -> :sswitch_26
@@ -15674,7 +15827,7 @@
     .parameter "p"
 
     .prologue
-    .line 3684
+    .line 3750
     const/4 v0, 0x0
 
     return-object v0
@@ -15686,17 +15839,17 @@
     .parameter "ret"
 
     .prologue
-    .line 2672
+    .line 2730
     if-nez p2, :cond_0
 
     const-string v11, ""
 
-    .line 2736
+    .line 2794
     .end local p2
     :goto_0
     return-object v11
 
-    .line 2687
+    .line 2745
     .restart local p2
     :cond_0
     move-object/from16 v0, p2
@@ -15705,7 +15858,7 @@
 
     if-eqz v14, :cond_2
 
-    .line 2688
+    .line 2746
     check-cast p2, [I
 
     .end local p2
@@ -15713,11 +15866,11 @@
 
     check-cast v9, [I
 
-    .line 2689
+    .line 2747
     .local v9, intArray:[I
     array-length v10, v9
 
-    .line 2690
+    .line 2748
     .local v10, length:I
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -15725,14 +15878,14 @@
 
     invoke-direct {v12, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 2691
+    .line 2749
     .local v12, sb:Ljava/lang/StringBuilder;
     if-lez v10, :cond_1
 
-    .line 2692
+    .line 2750
     const/4 v6, 0x0
 
-    .line 2693
+    .line 2751
     .local v6, i:I
     add-int/lit8 v7, v6, 0x1
 
@@ -15742,11 +15895,11 @@
 
     invoke-virtual {v12, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 2694
+    .line 2752
     :goto_1
     if-ge v7, v10, :cond_1
 
-    .line 2695
+    .line 2753
     const-string v14, ", "
 
     invoke-virtual {v12, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -15767,19 +15920,19 @@
     .restart local v7       #i:I
     goto :goto_1
 
-    .line 2698
+    .line 2756
     .end local v7           #i:I
     :cond_1
     const-string/jumbo v14, "}"
 
     invoke-virtual {v12, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2699
+    .line 2757
     invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v11
 
-    .line 2700
+    .line 2758
     .local v11, s:Ljava/lang/String;
     goto :goto_0
 
@@ -15795,7 +15948,7 @@
 
     if-eqz v14, :cond_4
 
-    .line 2701
+    .line 2759
     check-cast p2, [Ljava/lang/String;
 
     .end local p2
@@ -15803,11 +15956,11 @@
 
     check-cast v13, [Ljava/lang/String;
 
-    .line 2702
+    .line 2760
     .local v13, strings:[Ljava/lang/String;
     array-length v10, v13
 
-    .line 2703
+    .line 2761
     .restart local v10       #length:I
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -15815,14 +15968,14 @@
 
     invoke-direct {v12, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 2704
+    .line 2762
     .restart local v12       #sb:Ljava/lang/StringBuilder;
     if-lez v10, :cond_3
 
-    .line 2705
+    .line 2763
     const/4 v6, 0x0
 
-    .line 2706
+    .line 2764
     .restart local v6       #i:I
     add-int/lit8 v7, v6, 0x1
 
@@ -15832,11 +15985,11 @@
 
     invoke-virtual {v12, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2707
+    .line 2765
     :goto_2
     if-ge v7, v10, :cond_3
 
-    .line 2708
+    .line 2766
     const-string v14, ", "
 
     invoke-virtual {v12, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -15857,19 +16010,19 @@
     .restart local v7       #i:I
     goto :goto_2
 
-    .line 2711
+    .line 2769
     .end local v7           #i:I
     :cond_3
     const-string/jumbo v14, "}"
 
     invoke-virtual {v12, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2712
+    .line 2770
     invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v11
 
-    .line 2713
+    .line 2771
     .restart local v11       #s:Ljava/lang/String;
     goto :goto_0
 
@@ -15887,10 +16040,10 @@
 
     move-object/from16 v2, p2
 
-    .line 2714
+    .line 2772
     check-cast v2, Ljava/util/ArrayList;
 
-    .line 2715
+    .line 2773
     .local v2, calls:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/DriverCall;>;"
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -15898,7 +16051,7 @@
 
     invoke-direct {v12, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 2716
+    .line 2774
     .restart local v12       #sb:Ljava/lang/StringBuilder;
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -15918,7 +16071,7 @@
 
     check-cast v5, Lcom/android/internal/telephony/DriverCall;
 
-    .line 2717
+    .line 2775
     .local v5, dc:Lcom/android/internal/telephony/DriverCall;
     const-string v14, "["
 
@@ -15936,14 +16089,14 @@
 
     goto :goto_3
 
-    .line 2719
+    .line 2777
     .end local v5           #dc:Lcom/android/internal/telephony/DriverCall;
     :cond_5
     invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v11
 
-    .line 2720
+    .line 2778
     .restart local v11       #s:Ljava/lang/String;
     goto/16 :goto_0
 
@@ -15960,10 +16113,10 @@
 
     move-object/from16 v4, p2
 
-    .line 2722
+    .line 2780
     check-cast v4, Ljava/util/ArrayList;
 
-    .line 2723
+    .line 2781
     .local v4, cells:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/telephony/NeighboringCellInfo;>;"
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -15971,7 +16124,7 @@
 
     invoke-direct {v12, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 2724
+    .line 2782
     .restart local v12       #sb:Ljava/lang/StringBuilder;
     invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -15991,7 +16144,7 @@
 
     check-cast v3, Landroid/telephony/NeighboringCellInfo;
 
-    .line 2725
+    .line 2783
     .local v3, cell:Landroid/telephony/NeighboringCellInfo;
     invoke-virtual {v12, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -16003,14 +16156,14 @@
 
     goto :goto_4
 
-    .line 2727
+    .line 2785
     .end local v3           #cell:Landroid/telephony/NeighboringCellInfo;
     :cond_7
     invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v11
 
-    .line 2729
+    .line 2787
     .restart local v11       #s:Ljava/lang/String;
     goto/16 :goto_0
 
@@ -16031,7 +16184,7 @@
 
     if-ne v0, v14, :cond_a
 
-    .line 2730
+    .line 2788
     :cond_9
     check-cast p2, [B
 
@@ -16040,17 +16193,17 @@
 
     check-cast v1, [B
 
-    .line 2731
+    .line 2789
     .local v1, bytes:[B
     invoke-static {v1}, Lcom/android/internal/telephony/IccUtils;->bytesToHexString([B)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 2733
+    .line 2791
     .restart local v11       #s:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 2734
+    .line 2792
     .end local v1           #bytes:[B
     .end local v11           #s:Ljava/lang/String;
     .restart local p2
@@ -16068,12 +16221,12 @@
     .parameter "msg"
 
     .prologue
-    .line 4732
+    .line 4808
     const-string v0, "RILJ"
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4733
+    .line 4809
     return-void
 .end method
 
@@ -16082,12 +16235,12 @@
     .parameter "msg"
 
     .prologue
-    .line 4736
+    .line 4812
     const-string v0, "RILJ"
 
     invoke-static {v0, p1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4737
+    .line 4813
     return-void
 .end method
 
@@ -16098,24 +16251,24 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 2224
+    .line 2279
     iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mSocket:Landroid/net/LocalSocket;
 
     if-nez v1, :cond_0
 
-    .line 2225
+    .line 2280
     const/4 v1, 0x0
 
     invoke-virtual {p1, v2, v1}, Lcom/android/internal/telephony/RILRequest;->onError(ILjava/lang/Object;)V
 
-    .line 2226
+    .line 2281
     invoke-virtual {p1}, Lcom/android/internal/telephony/RILRequest;->release()V
 
-    .line 2235
+    .line 2290
     :goto_0
     return-void
 
-    .line 2230
+    .line 2285
     :cond_0
     iget-object v1, p0, Lcom/android/internal/telephony/RIL;->mSender:Lcom/android/internal/telephony/RIL$RILSender;
 
@@ -16123,11 +16276,11 @@
 
     move-result-object v0
 
-    .line 2232
+    .line 2287
     .local v0, msg:Landroid/os/Message;
     invoke-direct {p0}, Lcom/android/internal/telephony/RIL;->acquireWakeLock()V
 
-    .line 2234
+    .line 2289
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0
@@ -16140,7 +16293,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2134
+    .line 2189
     const/16 v2, 0x3d
 
     const/4 v3, 0x0
@@ -16149,13 +16302,13 @@
 
     move-result-object v0
 
-    .line 2135
+    .line 2190
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2136
+    .line 2191
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p1, :cond_0
@@ -16163,7 +16316,7 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2138
+    .line 2193
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -16208,13 +16361,13 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 2141
+    .line 2196
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 2142
+    .line 2197
     return-void
 
-    .line 2136
+    .line 2191
     :cond_0
     const/4 v1, 0x0
 
@@ -16226,10 +16379,10 @@
     .parameter "newState"
 
     .prologue
-    .line 2184
+    .line 2239
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/RIL;->setRadioState(Lcom/android/internal/telephony/CommandsInterface$RadioState;)V
 
-    .line 2185
+    .line 2240
     return-void
 .end method
 
@@ -16240,35 +16393,35 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 1385
+    .line 1394
     and-int/lit8 v1, p1, 0x7
 
     packed-switch v1, :pswitch_data_0
 
-    .line 1397
+    .line 1406
     :goto_0
     :pswitch_0
     return v0
 
-    .line 1389
+    .line 1398
     :pswitch_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 1391
+    .line 1400
     :pswitch_2
     const/4 v0, 0x3
 
     goto :goto_0
 
-    .line 1393
+    .line 1402
     :pswitch_3
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 1385
+    .line 1394
     nop
 
     :pswitch_data_0
@@ -16288,7 +16441,7 @@
     .parameter "response"
 
     .prologue
-    .line 4740
+    .line 4816
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -16313,7 +16466,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4741
+    .line 4817
     return-void
 .end method
 
@@ -16323,7 +16476,7 @@
     .parameter "more"
 
     .prologue
-    .line 4744
+    .line 4820
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -16358,7 +16511,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4745
+    .line 4821
     return-void
 .end method
 
@@ -16368,7 +16521,7 @@
     .parameter "ret"
 
     .prologue
-    .line 4748
+    .line 4824
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -16407,7 +16560,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4749
+    .line 4825
     return-void
 .end method
 
@@ -16417,7 +16570,7 @@
     .parameter "ret"
 
     .prologue
-    .line 4752
+    .line 4828
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -16456,7 +16609,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->riljLogv(Ljava/lang/String;)V
 
-    .line 4753
+    .line 4829
     return-void
 .end method
 
@@ -16467,14 +16620,14 @@
     .parameter "result"
 
     .prologue
-    .line 7020
+    .line 7136
     const/16 v1, 0x7f8
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7022
+    .line 7138
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -16510,10 +16663,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7024
+    .line 7140
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7025
+    .line 7141
     return-void
 .end method
 
@@ -16522,14 +16675,14 @@
     .parameter "result"
 
     .prologue
-    .line 7011
+    .line 7127
     const/16 v1, 0x7f7
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7013
+    .line 7129
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -16565,10 +16718,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7015
+    .line 7131
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7016
+    .line 7132
     return-void
 .end method
 
@@ -16577,14 +16730,14 @@
     .parameter "result"
 
     .prologue
-    .line 1086
+    .line 1095
     const/16 v1, 0x28
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1089
+    .line 1098
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -16620,10 +16773,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1091
+    .line 1100
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1092
+    .line 1101
     return-void
 .end method
 
@@ -16634,14 +16787,14 @@
     .parameter "result"
 
     .prologue
-    .line 1501
+    .line 1515
     const/16 v1, 0x6a
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1504
+    .line 1518
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -16649,7 +16802,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1505
+    .line 1519
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p1, :cond_0
@@ -16659,12 +16812,12 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1506
+    .line 1520
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1508
+    .line 1522
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -16725,13 +16878,13 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1511
+    .line 1525
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1512
+    .line 1526
     return-void
 
-    .line 1505
+    .line 1519
     :cond_0
     const-string v1, "0"
 
@@ -16745,14 +16898,14 @@
     .parameter "result"
 
     .prologue
-    .line 1486
+    .line 1500
     const/16 v1, 0x58
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1489
+    .line 1503
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -16763,12 +16916,12 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1491
+    .line 1505
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1493
+    .line 1507
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -16823,13 +16976,13 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1496
+    .line 1510
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1497
+    .line 1511
     return-void
 
-    .line 1489
+    .line 1503
     :cond_0
     const/4 v1, 0x1
 
@@ -16843,14 +16996,14 @@
     .parameter "result"
 
     .prologue
-    .line 1471
+    .line 1485
     const/16 v1, 0x25
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1474
+    .line 1488
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -16858,7 +17011,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1475
+    .line 1489
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p1, :cond_0
@@ -16868,12 +17021,12 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1476
+    .line 1490
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1478
+    .line 1492
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -16928,13 +17081,13 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1481
+    .line 1495
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1482
+    .line 1496
     return-void
 
-    .line 1475
+    .line 1489
     :cond_0
     const/4 v1, 0x0
 
@@ -16948,14 +17101,14 @@
     .parameter "response"
 
     .prologue
-    .line 7501
+    .line 7617
     const/16 v1, 0x271b
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7504
+    .line 7620
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -16963,7 +17116,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7505
+    .line 7621
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -16972,12 +17125,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 7506
+    .line 7622
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 7508
+    .line 7624
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -17032,10 +17185,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7511
+    .line 7627
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7512
+    .line 7628
     return-void
 .end method
 
@@ -17046,14 +17199,14 @@
     .parameter "response"
 
     .prologue
-    .line 7569
+    .line 7685
     const/16 v1, 0x2718
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7572
+    .line 7688
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -17061,12 +17214,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7573
+    .line 7689
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 7574
+    .line 7690
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -17075,7 +17228,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 7576
+    .line 7692
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -17130,10 +17283,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7579
+    .line 7695
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7580
+    .line 7696
     return-void
 .end method
 
@@ -17142,14 +17295,14 @@
     .parameter "response"
 
     .prologue
-    .line 1796
+    .line 1816
     const/16 v1, 0x1e
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1799
+    .line 1819
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -17185,10 +17338,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1802
+    .line 1822
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1803
+    .line 1823
     return-void
 .end method
 
@@ -17200,14 +17353,14 @@
     .parameter "result"
 
     .prologue
-    .line 889
+    .line 898
     const/16 v1, 0x2c
 
     invoke-static {v1, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 891
+    .line 900
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -17243,32 +17396,32 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 893
+    .line 902
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x3
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 894
+    .line 903
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 895
+    .line 904
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 896
+    .line 905
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 898
+    .line 907
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 899
+    .line 908
     return-void
 .end method
 
@@ -17279,25 +17432,25 @@
     .parameter "result"
 
     .prologue
-    .line 837
+    .line 846
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->QMI_CONFIG()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 838
+    .line 847
     invoke-direct {p0}, Lcom/android/internal/telephony/RIL;->getAID()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, p2, v0, p3}, Lcom/android/internal/telephony/RIL;->changeIccPinForApp(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 843
+    .line 852
     :goto_0
     return-void
 
-    .line 841
+    .line 850
     :cond_0
     const/4 v0, 0x0
 
@@ -17314,14 +17467,14 @@
     .parameter "result"
 
     .prologue
-    .line 5015
+    .line 5091
     const/4 v1, 0x6
 
     invoke-static {v1, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5017
+    .line 5093
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -17357,32 +17510,32 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5019
+    .line 5095
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x3
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5020
+    .line 5096
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5021
+    .line 5097
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5022
+    .line 5098
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5024
+    .line 5100
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5025
+    .line 5101
     return-void
 .end method
 
@@ -17393,25 +17546,25 @@
     .parameter "result"
 
     .prologue
-    .line 863
+    .line 872
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->QMI_CONFIG()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 864
+    .line 873
     invoke-direct {p0}, Lcom/android/internal/telephony/RIL;->getAID()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, p2, v0, p3}, Lcom/android/internal/telephony/RIL;->changeIccPin2ForApp(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 869
+    .line 878
     :goto_0
     return-void
 
-    .line 867
+    .line 876
     :cond_0
     const/4 v0, 0x0
 
@@ -17428,14 +17581,14 @@
     .parameter "result"
 
     .prologue
-    .line 5031
+    .line 5107
     const/4 v1, 0x7
 
     invoke-static {v1, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5033
+    .line 5109
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -17471,32 +17624,32 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5035
+    .line 5111
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x3
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5036
+    .line 5112
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5037
+    .line 5113
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5038
+    .line 5114
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5040
+    .line 5116
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5041
+    .line 5117
     return-void
 .end method
 
@@ -17508,14 +17661,14 @@
     .parameter "result"
 
     .prologue
-    .line 875
+    .line 884
     const/4 v1, 0x7
 
     invoke-static {v1, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 877
+    .line 886
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -17551,32 +17704,32 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 879
+    .line 888
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x3
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 880
+    .line 889
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 881
+    .line 890
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 882
+    .line 891
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 884
+    .line 893
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 885
+    .line 894
     return-void
 .end method
 
@@ -17588,14 +17741,14 @@
     .parameter "result"
 
     .prologue
-    .line 849
+    .line 858
     const/4 v1, 0x6
 
     invoke-static {v1, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 851
+    .line 860
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -17631,32 +17784,32 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 853
+    .line 862
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x3
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 854
+    .line 863
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 855
+    .line 864
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 856
+    .line 865
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 858
+    .line 867
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 859
+    .line 868
     return-void
 .end method
 
@@ -17665,14 +17818,14 @@
     .parameter "result"
 
     .prologue
-    .line 1045
+    .line 1054
     const/16 v1, 0x10
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1048
+    .line 1057
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -17708,10 +17861,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1050
+    .line 1059
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1051
+    .line 1060
     return-void
 .end method
 
@@ -17720,7 +17873,7 @@
     .parameter "name"
 
     .prologue
-    .line 5701
+    .line 5817
     const/4 v4, 0x0
 
     invoke-static {p1, v4}, Lcom/android/internal/telephony/GsmAlphabet;->countGsmSeptets(Ljava/lang/CharSequence;Z)Lcom/android/internal/telephony/SmsMessageBase$TextEncodingDetails;
@@ -17729,24 +17882,24 @@
 
     if-eqz v4, :cond_0
 
-    .line 5702
+    .line 5818
     invoke-static {p1}, Lcom/android/internal/telephony/GsmAlphabet;->stringToGsm8BitPacked(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 5703
+    .line 5819
     .local v0, byteArray:[B
     invoke-static {v0}, Lcom/android/internal/util/HexDump;->toHexString([B)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 5713
+    .line 5829
     .end local v0           #byteArray:[B
     .local v2, hexString:Ljava/lang/String;
     :goto_0
     return-object v2
 
-    .line 5706
+    .line 5822
     .end local v2           #hexString:Ljava/lang/String;
     :cond_0
     :try_start_0
@@ -17756,13 +17909,13 @@
 
     move-result-object v0
 
-    .line 5707
+    .line 5823
     .restart local v0       #byteArray:[B
     invoke-static {v0}, Lcom/android/internal/util/HexDump;->toHexString([B)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 5708
+    .line 5824
     .local v3, nameHexString:Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -17787,14 +17940,14 @@
     .restart local v2       #hexString:Ljava/lang/String;
     goto :goto_0
 
-    .line 5709
+    .line 5825
     .end local v0           #byteArray:[B
     .end local v2           #hexString:Ljava/lang/String;
     .end local v3           #nameHexString:Ljava/lang/String;
     :catch_0
     move-exception v1
 
-    .line 5710
+    .line 5826
     .local v1, e1:Ljava/io/UnsupportedEncodingException;
     const-string v2, ""
 
@@ -17809,14 +17962,14 @@
     .parameter "result"
 
     .prologue
-    .line 1427
+    .line 1441
     const/16 v1, 0x29
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1430
+    .line 1444
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -17824,7 +17977,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1431
+    .line 1445
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -17833,7 +17986,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1432
+    .line 1446
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -17842,7 +17995,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1434
+    .line 1448
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -17897,10 +18050,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1437
+    .line 1451
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1438
+    .line 1452
     return-void
 .end method
 
@@ -17909,14 +18062,14 @@
     .parameter "response"
 
     .prologue
-    .line 7530
+    .line 7646
     const/16 v1, 0x271d
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7533
+    .line 7649
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -17952,10 +18105,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7535
+    .line 7651
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7536
+    .line 7652
     return-void
 .end method
 
@@ -17965,14 +18118,14 @@
     .parameter "response"
 
     .prologue
-    .line 7516
+    .line 7632
     const/16 v1, 0x271c
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7519
+    .line 7635
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -17980,7 +18133,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7520
+    .line 7636
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -17989,7 +18142,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 7522
+    .line 7638
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -18034,10 +18187,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7525
+    .line 7641
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7526
+    .line 7642
     return-void
 .end method
 
@@ -18047,14 +18200,14 @@
     .parameter "response"
 
     .prologue
-    .line 1334
+    .line 1343
     const/16 v1, 0x61
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1337
+    .line 1346
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -18062,12 +18215,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1338
+    .line 1347
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1340
+    .line 1349
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -18112,10 +18265,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1344
+    .line 1353
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1345
+    .line 1354
     return-void
 .end method
 
@@ -18125,14 +18278,14 @@
     .parameter "response"
 
     .prologue
-    .line 1320
+    .line 1329
     const/16 v1, 0x40
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1323
+    .line 1332
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -18140,12 +18293,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1324
+    .line 1333
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1326
+    .line 1335
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -18190,10 +18343,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1330
+    .line 1339
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1331
+    .line 1340
     return-void
 .end method
 
@@ -18204,12 +18357,12 @@
     .parameter "result"
 
     .prologue
-    .line 938
+    .line 947
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0, p3}, Lcom/android/internal/telephony/RIL;->dial(Ljava/lang/String;ILcom/android/internal/telephony/UUSInfo;Landroid/os/Message;)V
 
-    .line 939
+    .line 948
     return-void
 .end method
 
@@ -18223,38 +18376,38 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 943
+    .line 952
     const/16 v1, 0xa
 
     invoke-static {v1, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 945
+    .line 954
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 946
+    .line 955
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 947
-    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
-
-    invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 949
-    if-nez p3, :cond_0
-
-    .line 950
+    .line 956
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 958
+    if-nez p3, :cond_0
+
+    .line 959
+    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 967
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -18290,13 +18443,13 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 960
+    .line 969
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 961
+    .line 970
     return-void
 
-    .line 952
+    .line 961
     :cond_0
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -18304,7 +18457,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 953
+    .line 962
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {p3}, Lcom/android/internal/telephony/UUSInfo;->getType()I
@@ -18313,7 +18466,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 954
+    .line 963
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {p3}, Lcom/android/internal/telephony/UUSInfo;->getDcs()I
@@ -18322,7 +18475,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 955
+    .line 964
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {p3}, Lcom/android/internal/telephony/UUSInfo;->getUserData()[B
@@ -18334,20 +18487,20 @@
     goto :goto_0
 .end method
 
-.method public enableRegistrationState_wifi_call(ILandroid/os/Message;)V
+.method public enableAllDaySleep(ILandroid/os/Message;)V
     .locals 3
     .parameter "enable"
-    .parameter "result"
+    .parameter "response"
 
     .prologue
-    .line 2119
-    const/16 v1, 0x248
+    .line 2152
+    const/16 v1, 0x257
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 2122
+    .line 2155
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -18355,12 +18508,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2123
+    .line 2156
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2125
+    .line 2158
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -18405,10 +18558,166 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 2128
+    .line 2161
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 2129
+    .line 2162
+    return-void
+.end method
+
+.method public enablePS_W2G_Handover(ILandroid/os/Message;)V
+    .locals 3
+    .parameter "enable"
+    .parameter "response"
+
+    .prologue
+    .line 2165
+    const/16 v1, 0x259
+
+    invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 2168
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 2169
+    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 2171
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 2174
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 2175
+    return-void
+.end method
+
+.method public enableRegistrationState_wifi_call(ILandroid/os/Message;)V
+    .locals 3
+    .parameter "enable"
+    .parameter "result"
+
+    .prologue
+    .line 2139
+    const/16 v1, 0x248
+
+    invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 2142
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 2143
+    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 2145
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 2148
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 2149
     return-void
 .end method
 
@@ -18417,14 +18726,14 @@
     .parameter "response"
 
     .prologue
-    .line 4915
+    .line 4991
     const/16 v1, 0x63
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4917
+    .line 4993
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -18460,10 +18769,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4919
+    .line 4995
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4920
+    .line 4996
     return-void
 .end method
 
@@ -18472,14 +18781,14 @@
     .parameter "result"
 
     .prologue
-    .line 1106
+    .line 1115
     const/16 v1, 0x48
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1109
+    .line 1118
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -18515,10 +18824,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1111
+    .line 1120
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1112
+    .line 1121
     return-void
 .end method
 
@@ -18528,14 +18837,14 @@
     .parameter "response"
 
     .prologue
-    .line 5870
+    .line 5986
     const/16 v1, 0x204
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5872
+    .line 5988
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -18543,7 +18852,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5873
+    .line 5989
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -18556,12 +18865,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5874
+    .line 5990
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5875
+    .line 5991
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -18596,10 +18905,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5877
+    .line 5993
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5878
+    .line 5994
     return-void
 .end method
 
@@ -18608,14 +18917,14 @@
     .parameter "response"
 
     .prologue
-    .line 6088
+    .line 6204
     const/16 v1, 0x213
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6090
+    .line 6206
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -18651,10 +18960,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6091
+    .line 6207
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6092
+    .line 6208
     return-void
 .end method
 
@@ -18663,14 +18972,14 @@
     .parameter "result"
 
     .prologue
-    .line 5629
+    .line 5745
     const/16 v1, 0x1f6
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5632
+    .line 5748
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -18706,10 +19015,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5633
+    .line 5749
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5634
+    .line 5750
     return-void
 .end method
 
@@ -18718,14 +19027,14 @@
     .parameter "response"
 
     .prologue
-    .line 1639
+    .line 1659
     const/16 v1, 0x30
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1643
+    .line 1663
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -18761,10 +19070,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1645
+    .line 1665
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1646
+    .line 1666
     return-void
 .end method
 
@@ -18773,14 +19082,14 @@
     .parameter "response"
 
     .prologue
-    .line 6206
+    .line 6322
     const/16 v1, 0x21c
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6210
+    .line 6326
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -18816,10 +19125,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6212
+    .line 6328
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6213
+    .line 6329
     return-void
 .end method
 
@@ -18829,14 +19138,14 @@
     .parameter "response"
 
     .prologue
-    .line 5843
+    .line 5959
     const/16 v1, 0x202
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5844
+    .line 5960
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -18844,12 +19153,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5845
+    .line 5961
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5846
+    .line 5962
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -18884,10 +19193,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5847
+    .line 5963
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5848
+    .line 5964
     return-void
 .end method
 
@@ -18896,14 +19205,14 @@
     .parameter "response"
 
     .prologue
-    .line 1700
+    .line 1720
     const/16 v1, 0x33
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1703
+    .line 1723
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -18939,10 +19248,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1705
+    .line 1725
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1706
+    .line 1726
     return-void
 .end method
 
@@ -18951,14 +19260,14 @@
     .parameter "response"
 
     .prologue
-    .line 4768
+    .line 4844
     const/16 v1, 0x5f
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4770
+    .line 4846
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -18994,10 +19303,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4772
+    .line 4848
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4773
+    .line 4849
     return-void
 .end method
 
@@ -19006,14 +19315,14 @@
     .parameter "result"
 
     .prologue
-    .line 1548
+    .line 1568
     const/16 v1, 0x1f
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1551
+    .line 1571
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -19049,10 +19358,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1553
+    .line 1573
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1554
+    .line 1574
     return-void
 .end method
 
@@ -19061,18 +19370,18 @@
     .parameter "response"
 
     .prologue
-    .line 4882
+    .line 4958
     const/16 v1, 0x5c
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4884
+    .line 4960
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4885
+    .line 4961
     return-void
 .end method
 
@@ -19081,14 +19390,14 @@
     .parameter "response"
 
     .prologue
-    .line 4830
+    .line 4906
     const/16 v1, 0x68
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4833
+    .line 4909
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -19124,10 +19433,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4835
+    .line 4911
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4836
+    .line 4912
     return-void
 .end method
 
@@ -19136,14 +19445,14 @@
     .parameter "result"
 
     .prologue
-    .line 915
+    .line 924
     const/16 v1, 0x9
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 917
+    .line 926
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -19179,10 +19488,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 919
+    .line 928
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 920
+    .line 929
     return-void
 .end method
 
@@ -19191,14 +19500,14 @@
     .parameter "result"
 
     .prologue
-    .line 929
+    .line 938
     const/16 v1, 0x39
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 931
+    .line 940
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -19234,10 +19543,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 933
+    .line 942
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 934
+    .line 943
     return-void
 .end method
 
@@ -19246,14 +19555,14 @@
     .parameter "result"
 
     .prologue
-    .line 1191
+    .line 1200
     const/16 v1, 0x15
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1194
+    .line 1203
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -19289,10 +19598,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1196
+    .line 1205
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1197
+    .line 1206
     return-void
 .end method
 
@@ -19301,14 +19610,14 @@
     .parameter "response"
 
     .prologue
-    .line 4759
+    .line 4835
     const/16 v1, 0x62
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4761
+    .line 4837
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -19344,10 +19653,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4763
+    .line 4839
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4764
+    .line 4840
     return-void
 .end method
 
@@ -19356,14 +19665,14 @@
     .parameter "response"
 
     .prologue
-    .line 5789
+    .line 5905
     const/16 v1, 0x1fe
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5791
+    .line 5907
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -19399,10 +19708,65 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5793
+    .line 5909
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5794
+    .line 5910
+    return-void
+.end method
+
+.method public getDrxInfo(Landroid/os/Message;)V
+    .locals 3
+    .parameter "response"
+
+    .prologue
+    .line 2178
+    const/16 v1, 0x25a
+
+    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 2181
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 2183
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 2184
     return-void
 .end method
 
@@ -19411,14 +19775,14 @@
     .parameter "response"
 
     .prologue
-    .line 2054
+    .line 2074
     const/16 v1, 0x59
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 2056
+    .line 2076
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -19454,10 +19818,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 2058
+    .line 2078
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 2059
+    .line 2079
     return-void
 .end method
 
@@ -19466,14 +19830,14 @@
     .parameter "result"
 
     .prologue
-    .line 6284
+    .line 6400
     const/16 v1, 0x22d
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6286
+    .line 6402
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -19509,10 +19873,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6288
+    .line 6404
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6289
+    .line 6405
     return-void
 .end method
 
@@ -19521,14 +19885,14 @@
     .parameter "result"
 
     .prologue
-    .line 7438
+    .line 7554
     const/16 v1, 0x1393
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7440
+    .line 7556
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -19564,10 +19928,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7442
+    .line 7558
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7443
+    .line 7559
     return-void
 .end method
 
@@ -19576,14 +19940,14 @@
     .parameter "result"
 
     .prologue
-    .line 6334
+    .line 6450
     const/16 v1, 0x231
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6336
+    .line 6452
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -19619,10 +19983,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6338
+    .line 6454
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6339
+    .line 6455
     return-void
 .end method
 
@@ -19631,63 +19995,8 @@
     .parameter "result"
 
     .prologue
-    .line 979
-    const/16 v1, 0x26
-
-    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-
-    move-result-object v0
-
-    .line 981
-    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
-
-    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 983
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
-
-    .line 984
-    return-void
-.end method
-
-.method public getIMEISV(Landroid/os/Message;)V
-    .locals 3
-    .parameter "result"
-
-    .prologue
     .line 988
-    const/16 v1, 0x27
+    const/16 v1, 0x26
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
@@ -19736,38 +20045,19 @@
     return-void
 .end method
 
-.method public getIMSI(Landroid/os/Message;)V
+.method public getIMEISV(Landroid/os/Message;)V
     .locals 3
     .parameter "result"
 
     .prologue
-    .line 965
-    invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->QMI_CONFIG()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 966
-    invoke-direct {p0}, Lcom/android/internal/telephony/RIL;->getAID()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1, p1}, Lcom/android/internal/telephony/RIL;->getIMSIForApp(Ljava/lang/String;Landroid/os/Message;)V
-
-    .line 975
-    :goto_0
-    return-void
-
-    .line 969
-    :cond_0
-    const/16 v1, 0xb
+    .line 997
+    const/16 v1, 0x27
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 971
+    .line 999
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -19803,7 +20093,81 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 973
+    .line 1001
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 1002
+    return-void
+.end method
+
+.method public getIMSI(Landroid/os/Message;)V
+    .locals 3
+    .parameter "result"
+
+    .prologue
+    .line 974
+    invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->QMI_CONFIG()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 975
+    invoke-direct {p0}, Lcom/android/internal/telephony/RIL;->getAID()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1, p1}, Lcom/android/internal/telephony/RIL;->getIMSIForApp(Ljava/lang/String;Landroid/os/Message;)V
+
+    .line 984
+    :goto_0
+    return-void
+
+    .line 978
+    :cond_0
+    const/16 v1, 0xb
+
+    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 980
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 982
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
     goto :goto_0
@@ -19815,14 +20179,14 @@
     .parameter "result"
 
     .prologue
-    .line 5085
+    .line 5161
     const/16 v1, 0xb
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5087
+    .line 5163
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -19830,12 +20194,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5088
+    .line 5164
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5090
+    .line 5166
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -19870,10 +20234,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5092
+    .line 5168
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5093
+    .line 5169
     return-void
 .end method
 
@@ -19882,14 +20246,14 @@
     .parameter "result"
 
     .prologue
-    .line 726
+    .line 735
     const/4 v1, 0x1
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 728
+    .line 737
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -19925,10 +20289,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 730
+    .line 739
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 731
+    .line 740
     return-void
 .end method
 
@@ -19937,14 +20301,14 @@
     .parameter "result"
 
     .prologue
-    .line 5299
+    .line 5381
     const/16 v1, 0x2afb
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5302
+    .line 5384
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -19980,10 +20344,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5304
+    .line 5386
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5305
+    .line 5387
     return-void
 .end method
 
@@ -19992,14 +20356,14 @@
     .parameter "result"
 
     .prologue
-    .line 1116
+    .line 1125
     const/16 v1, 0x12
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1119
+    .line 1128
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20035,10 +20399,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1121
+    .line 1130
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1122
+    .line 1131
     return-void
 .end method
 
@@ -20047,14 +20411,14 @@
     .parameter "result"
 
     .prologue
-    .line 1137
+    .line 1146
     const/16 v1, 0x38
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1140
+    .line 1149
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20090,10 +20454,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1142
+    .line 1151
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1143
+    .line 1152
     return-void
 .end method
 
@@ -20102,10 +20466,10 @@
     .parameter "result"
 
     .prologue
-    .line 1129
+    .line 1138
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/RIL;->getLastDataCallFailCause(Landroid/os/Message;)V
 
-    .line 1130
+    .line 1139
     return-void
 .end method
 
@@ -20114,14 +20478,14 @@
     .parameter "response"
 
     .prologue
-    .line 1161
+    .line 1170
     const/16 v1, 0x36
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1164
+    .line 1173
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20157,10 +20521,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1166
+    .line 1175
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1167
+    .line 1176
     return-void
 .end method
 
@@ -20169,14 +20533,14 @@
     .parameter "response"
 
     .prologue
-    .line 1978
+    .line 1998
     const/16 v1, 0x4b
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1981
+    .line 2001
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20212,10 +20576,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1983
+    .line 2003
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1984
+    .line 2004
     return-void
 .end method
 
@@ -20224,14 +20588,14 @@
     .parameter "response"
 
     .prologue
-    .line 1628
+    .line 1648
     const/16 v1, 0x2d
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1632
+    .line 1652
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20267,10 +20631,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1634
+    .line 1654
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1635
+    .line 1655
     return-void
 .end method
 
@@ -20279,14 +20643,14 @@
     .parameter "result"
 
     .prologue
-    .line 1201
+    .line 1210
     const/16 v1, 0x16
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1204
+    .line 1213
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20322,10 +20686,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1206
+    .line 1215
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1207
+    .line 1216
     return-void
 .end method
 
@@ -20336,10 +20700,10 @@
     .end annotation
 
     .prologue
-    .line 924
+    .line 933
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/RIL;->getDataCallList(Landroid/os/Message;)V
 
-    .line 925
+    .line 934
     return-void
 .end method
 
@@ -20350,14 +20714,14 @@
     .parameter "response"
 
     .prologue
-    .line 5686
+    .line 5802
     const/16 v1, 0x1f9
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5688
+    .line 5804
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -20365,17 +20729,17 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5689
+    .line 5805
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5690
+    .line 5806
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5692
+    .line 5808
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -20410,10 +20774,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5694
+    .line 5810
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5695
+    .line 5811
     return-void
 .end method
 
@@ -20422,14 +20786,14 @@
     .parameter "response"
 
     .prologue
-    .line 5669
+    .line 5785
     const/16 v1, 0x1f8
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5671
+    .line 5787
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20465,10 +20829,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5673
+    .line 5789
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5674
+    .line 5790
     return-void
 .end method
 
@@ -20477,14 +20841,14 @@
     .parameter "response"
 
     .prologue
-    .line 5776
+    .line 5892
     const/16 v1, 0x1fb
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5778
+    .line 5894
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20520,10 +20884,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5780
+    .line 5896
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5781
+    .line 5897
     return-void
 .end method
 
@@ -20532,14 +20896,14 @@
     .parameter "response"
 
     .prologue
-    .line 6021
+    .line 6137
     const/16 v1, 0x20c
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6023
+    .line 6139
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20575,10 +20939,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6025
+    .line 6141
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6026
+    .line 6142
     return-void
 .end method
 
@@ -20587,14 +20951,14 @@
     .parameter "response"
 
     .prologue
-    .line 1966
+    .line 1986
     const/16 v1, 0x4a
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1969
+    .line 1989
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20630,10 +20994,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1971
+    .line 1991
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1972
+    .line 1992
     return-void
 .end method
 
@@ -20642,14 +21006,14 @@
     .parameter "response"
 
     .prologue
-    .line 7584
+    .line 7700
     const/16 v1, 0x2719
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7587
+    .line 7703
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20685,10 +21049,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7589
+    .line 7705
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7590
+    .line 7706
     return-void
 .end method
 
@@ -20697,18 +21061,18 @@
     .parameter "result"
 
     .prologue
-    .line 1065
+    .line 1074
     const/16 v1, 0x53
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1067
+    .line 1076
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1068
+    .line 1077
     return-void
 .end method
 
@@ -20717,14 +21081,14 @@
     .parameter "response"
 
     .prologue
-    .line 6220
+    .line 6336
     const/16 v1, 0x21d
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6222
+    .line 6338
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20760,10 +21124,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6223
+    .line 6339
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6224
+    .line 6340
     return-void
 .end method
 
@@ -20772,14 +21136,14 @@
     .parameter "response"
 
     .prologue
-    .line 5946
+    .line 6062
     const/16 v1, 0x207
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5948
+    .line 6064
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20815,10 +21179,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5950
+    .line 6066
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5951
+    .line 6067
     return-void
 .end method
 
@@ -20827,14 +21191,14 @@
     .parameter "result"
 
     .prologue
-    .line 1171
+    .line 1180
     const/16 v1, 0x13
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1174
+    .line 1183
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20870,10 +21234,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1176
+    .line 1185
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1177
+    .line 1186
     return-void
 .end method
 
@@ -20882,14 +21246,14 @@
     .parameter "result"
 
     .prologue
-    .line 5642
+    .line 5758
     const/16 v1, 0x1f7
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5644
+    .line 5760
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20925,10 +21289,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5646
+    .line 5762
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5647
+    .line 5763
     return-void
 .end method
 
@@ -20937,14 +21301,14 @@
     .parameter "result"
 
     .prologue
-    .line 2004
+    .line 2024
     const/16 v1, 0x64
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 2006
+    .line 2026
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -20980,10 +21344,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 2008
+    .line 2028
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 2009
+    .line 2029
     return-void
 .end method
 
@@ -20992,14 +21356,14 @@
     .parameter "response"
 
     .prologue
-    .line 6033
+    .line 6149
     const/16 v1, 0x20d
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6035
+    .line 6151
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -21035,10 +21399,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6037
+    .line 6153
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6038
+    .line 6154
     return-void
 .end method
 
@@ -21050,7 +21414,7 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 5885
+    .line 6001
     sget-short v4, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v5, 0x61
@@ -21063,25 +21427,25 @@
 
     if-ne v4, v5, :cond_1
 
-    .line 5888
+    .line 6004
     :cond_0
     const-string v1, "0"
 
-    .line 5889
+    .line 6005
     .local v1, subsidyLockResult:Ljava/lang/String;
     const/4 v4, 0x0
 
     invoke-static {p2, v1, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 5890
+    .line 6006
     invoke-virtual {p2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 5912
+    .line 6028
     .end local v1           #subsidyLockResult:Ljava/lang/String;
     :goto_0
     return-void
 
-    .line 5896
+    .line 6012
     :cond_1
     iget-object v4, p0, Lcom/android/internal/telephony/BaseCommands;->mContext:Landroid/content/Context;
 
@@ -21095,22 +21459,22 @@
 
     move-result v3
 
-    .line 5898
+    .line 6014
     .local v3, trustZone:Z
     if-ne v3, v6, :cond_2
 
-    .line 5899
+    .line 6015
     new-instance v2, Lcom/android/internal/telephony/RIL$SubsidyLockTrustZoneThread;
 
     invoke-direct {v2, p0, v6, p2}, Lcom/android/internal/telephony/RIL$SubsidyLockTrustZoneThread;-><init>(Lcom/android/internal/telephony/RIL;ZLandroid/os/Message;)V
 
-    .line 5900
+    .line 6016
     .local v2, thread:Lcom/android/internal/telephony/RIL$SubsidyLockTrustZoneThread;
     invoke-virtual {v2}, Lcom/android/internal/telephony/RIL$SubsidyLockTrustZoneThread;->start()V
 
     goto :goto_0
 
-    .line 5905
+    .line 6021
     .end local v2           #thread:Lcom/android/internal/telephony/RIL$SubsidyLockTrustZoneThread;
     :cond_2
     const/16 v4, 0x205
@@ -21119,18 +21483,18 @@
 
     move-result-object v0
 
-    .line 5907
+    .line 6023
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v4, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v4, v6}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5908
+    .line 6024
     iget-object v4, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v4, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5909
+    .line 6025
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -21165,7 +21529,7 @@
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5911
+    .line 6027
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
     goto :goto_0
@@ -21176,14 +21540,14 @@
     .parameter "result"
 
     .prologue
-    .line 4941
+    .line 5017
     const/16 v1, 0x2afa
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4944
+    .line 5020
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -21219,10 +21583,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4946
+    .line 5022
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4947
+    .line 5023
     return-void
 .end method
 
@@ -21231,14 +21595,14 @@
     .parameter "result"
 
     .prologue
-    .line 1181
+    .line 1190
     const/16 v1, 0x14
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1184
+    .line 1193
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -21274,10 +21638,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1186
+    .line 1195
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1187
+    .line 1196
     return-void
 .end method
 
@@ -21291,14 +21655,14 @@
 
     const/4 v3, 0x0
 
-    .line 1921
+    .line 1941
     const/16 v4, 0x47
 
     invoke-static {v4, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v1
 
-    .line 1925
+    .line 1945
     .local v1, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -21334,31 +21698,31 @@
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1927
+    .line 1947
     new-array v0, v2, [I
 
-    .line 1928
+    .line 1948
     .local v0, param:[I
     if-eqz p1, :cond_0
 
     :goto_0
     aput v2, v0, v3
 
-    .line 1929
+    .line 1949
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeIntArray([I)V
 
-    .line 1930
+    .line 1950
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1931
+    .line 1951
     return-void
 
     :cond_0
     move v2, v3
 
-    .line 1928
+    .line 1948
     goto :goto_0
 .end method
 
@@ -21368,7 +21732,7 @@
     .parameter "result"
 
     .prologue
-    .line 998
+    .line 1007
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -21389,14 +21753,14 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1000
+    .line 1009
     const/16 v1, 0xc
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1002
+    .line 1011
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -21442,22 +21806,22 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1005
+    .line 1014
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1006
+    .line 1015
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1008
+    .line 1017
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1009
+    .line 1018
     return-void
 .end method
 
@@ -21466,14 +21830,14 @@
     .parameter "result"
 
     .prologue
-    .line 1023
+    .line 1032
     const/16 v1, 0xe
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1027
+    .line 1036
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -21509,10 +21873,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1029
+    .line 1038
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1030
+    .line 1039
     return-void
 .end method
 
@@ -21521,14 +21885,14 @@
     .parameter "result"
 
     .prologue
-    .line 1013
+    .line 1022
     const/16 v1, 0xd
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1016
+    .line 1025
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -21564,10 +21928,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1018
+    .line 1027
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1019
+    .line 1028
     return-void
 .end method
 
@@ -21577,14 +21941,14 @@
     .parameter "result"
 
     .prologue
-    .line 5381
+    .line 5469
     const/16 v1, 0x236
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5383
+    .line 5471
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -21592,12 +21956,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5384
+    .line 5472
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5386
+    .line 5474
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -21642,10 +22006,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5389
+    .line 5477
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5390
+    .line 5478
     return-void
 .end method
 
@@ -21663,64 +22027,68 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 5342
+    .line 5424
     if-nez p3, :cond_0
 
-    .line 5343
+    .line 5425
     const/16 v1, 0x234
 
     invoke-static {v1, p8}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5348
+    .line 5430
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     :goto_0
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5349
+    .line 5431
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5350
+    .line 5432
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5351
+    .line 5433
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5352
+    .line 5434
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5353
+    .line 5435
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p5}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5354
+    .line 5436
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p6}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5355
+    .line 5437
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p7}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5356
+    .line 5438
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5358
+    .line 5441
+    iget-boolean v1, p0, Lcom/android/internal/telephony/RIL;->mIsTestKeys:Z
+
+    if-eqz v1, :cond_1
+
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -21827,13 +22195,14 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5364
+    .line 5452
+    :goto_1
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5365
+    .line 5453
     return-void
 
-    .line 5345
+    .line 5427
     .end local v0           #rr:Lcom/android/internal/telephony/RILRequest;
     :cond_0
     const/16 v1, 0x237
@@ -21844,6 +22213,86 @@
 
     .restart local v0       #rr:Lcom/android/internal/telephony/RILRequest;
     goto/16 :goto_0
+
+    .line 5446
+    :cond_1
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> iccExchangeAPDU: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " 0x"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " 0x"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " 0x"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    goto :goto_1
 .end method
 
 .method public iccIO(IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
@@ -21859,14 +22308,14 @@
     .parameter "result"
 
     .prologue
-    .line 1518
+    .line 1532
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->QMI_CONFIG()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 1519
+    .line 1533
     invoke-direct {p0}, Lcom/android/internal/telephony/RIL;->getAID()Ljava/lang/String;
 
     move-result-object v2
@@ -21893,11 +22342,11 @@
 
     invoke-virtual/range {v1 .. v11}, Lcom/android/internal/telephony/RIL;->iccIO(Ljava/lang/String;IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 1544
+    .line 1564
     :goto_0
     return-void
 
-    .line 1525
+    .line 1539
     :cond_0
     const/16 v1, 0x1c
 
@@ -21907,60 +22356,64 @@
 
     move-result-object v12
 
-    .line 1528
+    .line 1542
     .local v12, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v12, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1529
+    .line 1543
     iget-object v1, v12, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1530
+    .line 1544
     iget-object v1, v12, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     move-object/from16 v0, p3
 
     invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1531
+    .line 1545
     iget-object v1, v12, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     move/from16 v0, p4
 
     invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1532
+    .line 1546
     iget-object v1, v12, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     move/from16 v0, p5
 
     invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1533
+    .line 1547
     iget-object v1, v12, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     move/from16 v0, p6
 
     invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1534
+    .line 1548
     iget-object v1, v12, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     move-object/from16 v0, p7
 
     invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1535
+    .line 1549
     iget-object v1, v12, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     move-object/from16 v0, p8
 
     invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1537
+    .line 1552
+    iget-boolean v1, p0, Lcom/android/internal/telephony/RIL;->mIsTestKeys:Z
+
+    if-eqz v1, :cond_1
+
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -22077,10 +22530,95 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1543
+    .line 1563
+    :goto_1
     invoke-direct {p0, v12}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
     goto/16 :goto_0
+
+    .line 1557
+    :cond_1
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v12}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> iccIO: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v12, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " 0x"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " 0x"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " path: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    goto :goto_1
 .end method
 
 .method public iccIO(Ljava/lang/String;IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
@@ -22097,60 +22635,64 @@
     .parameter "result"
 
     .prologue
-    .line 5186
+    .line 5262
     const/16 v1, 0x1c
 
     invoke-static {v1, p10}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5189
+    .line 5265
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5190
+    .line 5266
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5191
+    .line 5267
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5192
+    .line 5268
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p5}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5193
+    .line 5269
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p6}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5194
+    .line 5270
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p7}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5195
+    .line 5271
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p8}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5196
+    .line 5272
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p9}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5197
+    .line 5273
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5199
+    .line 5276
+    iget-boolean v1, p0, Lcom/android/internal/telephony/RIL;->mIsTestKeys:Z
+
+    if-eqz v1, :cond_0
+
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -22275,11 +22817,94 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5207
+    .line 5289
+    :goto_0
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5208
+    .line 5290
     return-void
+
+    .line 5283
+    :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> iccIO: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " 0x"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " 0x"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " path: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method
 
 .method public iccOpenChannel(Ljava/lang/String;Landroid/os/Message;)V
@@ -22288,20 +22913,20 @@
     .parameter "result"
 
     .prologue
-    .line 5369
+    .line 5457
     const/16 v1, 0x235
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5371
+    .line 5459
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5373
+    .line 5461
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -22346,10 +22971,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5376
+    .line 5464
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5377
+    .line 5465
     return-void
 .end method
 
@@ -22360,14 +22985,14 @@
     .parameter "response"
 
     .prologue
-    .line 5311
+    .line 5393
     const/16 v1, 0x8
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5313
+    .line 5395
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -22413,20 +23038,20 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5316
+    .line 5398
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5317
+    .line 5399
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5319
+    .line 5401
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5320
+    .line 5402
     return-void
 .end method
 
@@ -22436,14 +23061,14 @@
     .parameter "response"
 
     .prologue
-    .line 1816
+    .line 1836
     const/16 v1, 0x3b
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1819
+    .line 1839
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -22499,15 +23124,15 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1822
+    .line 1842
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    .line 1824
+    .line 1844
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1826
+    .line 1846
     return-void
 .end method
 
@@ -22517,14 +23142,14 @@
     .parameter "response"
 
     .prologue
-    .line 1829
+    .line 1849
     const/16 v1, 0x3c
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1832
+    .line 1852
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -22560,15 +23185,15 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1834
+    .line 1854
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
-    .line 1836
+    .line 1856
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1837
+    .line 1857
     return-void
 .end method
 
@@ -22576,12 +23201,12 @@
     .locals 1
 
     .prologue
-    .line 2151
+    .line 2206
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->sendScreenState(Z)V
 
-    .line 2152
+    .line 2207
     return-void
 .end method
 
@@ -22590,14 +23215,14 @@
     .parameter "response"
 
     .prologue
-    .line 1866
+    .line 1886
     const/16 v1, 0x42
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1870
+    .line 1890
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -22633,10 +23258,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1872
+    .line 1892
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1873
+    .line 1893
     return-void
 .end method
 
@@ -22647,14 +23272,14 @@
     .parameter "response"
 
     .prologue
-    .line 7038
+    .line 7154
     const/16 v1, 0x7fa
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7041
+    .line 7157
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -22690,29 +23315,29 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7043
+    .line 7159
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x2
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7044
+    .line 7160
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7045
+    .line 7161
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7047
+    .line 7163
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7048
+    .line 7164
     return-void
 .end method
 
@@ -22721,14 +23346,14 @@
     .parameter "response"
 
     .prologue
-    .line 7133
+    .line 7249
     const/16 v1, 0x802
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7136
+    .line 7252
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -22764,10 +23389,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7138
+    .line 7254
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7139
+    .line 7255
     return-void
 .end method
 
@@ -22776,14 +23401,14 @@
     .parameter "response"
 
     .prologue
-    .line 1689
+    .line 1709
     const/16 v1, 0x37
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1692
+    .line 1712
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -22819,10 +23444,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1694
+    .line 1714
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1695
+    .line 1715
     return-void
 .end method
 
@@ -22834,14 +23459,14 @@
     .parameter "response"
 
     .prologue
-    .line 1671
+    .line 1691
     const/16 v1, 0x21
 
     invoke-static {v1, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1674
+    .line 1694
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -22849,17 +23474,17 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1675
+    .line 1695
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1676
+    .line 1696
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1677
+    .line 1697
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-static {p3}, Landroid/telephony/PhoneNumberUtils;->toaFromString(Ljava/lang/String;)I
@@ -22868,19 +23493,19 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1678
+    .line 1698
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1679
+    .line 1699
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1681
+    .line 1701
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -22935,10 +23560,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1684
+    .line 1704
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1685
+    .line 1705
     return-void
 .end method
 
@@ -22948,14 +23573,14 @@
     .parameter "response"
 
     .prologue
-    .line 1574
+    .line 1594
     const/16 v1, 0x23
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1577
+    .line 1597
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -22963,12 +23588,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1578
+    .line 1598
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1580
+    .line 1600
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -23013,10 +23638,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1583
+    .line 1603
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1584
+    .line 1604
     return-void
 .end method
 
@@ -23025,14 +23650,14 @@
     .parameter "response"
 
     .prologue
-    .line 4785
+    .line 4861
     const/16 v1, 0x4f
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4788
+    .line 4864
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -23068,10 +23693,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4790
+    .line 4866
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4791
+    .line 4867
     return-void
 .end method
 
@@ -23083,14 +23708,14 @@
     .parameter "response"
 
     .prologue
-    .line 1713
+    .line 1733
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->QMI_CONFIG()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1714
+    .line 1734
     invoke-direct {p0}, Lcom/android/internal/telephony/RIL;->getAID()Ljava/lang/String;
 
     move-result-object v4
@@ -23107,11 +23732,11 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/internal/telephony/RIL;->queryFacilityLockForApp(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Landroid/os/Message;)V
 
-    .line 1720
+    .line 1740
     :goto_0
     return-void
 
-    .line 1717
+    .line 1737
     :cond_0
     const/4 v4, 0x0
 
@@ -23139,14 +23764,14 @@
     .parameter "response"
 
     .prologue
-    .line 5213
+    .line 5295
     const/16 v1, 0x2a
 
     invoke-static {v1, p5}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5215
+    .line 5297
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -23202,21 +23827,21 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5218
+    .line 5300
     sget-short v1, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v2, 0x61
 
     if-ne v1, v2, :cond_0
 
-    .line 5221
+    .line 5303
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x5
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5222
+    .line 5304
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x0
@@ -23227,23 +23852,23 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5230
+    .line 5312
     :goto_0
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5232
+    .line 5314
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5233
+    .line 5315
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5235
+    .line 5317
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-static {p4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -23252,13 +23877,13 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5237
+    .line 5319
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5238
+    .line 5320
     return-void
 
-    .line 5227
+    .line 5309
     :cond_0
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -23278,14 +23903,14 @@
     .parameter "response"
 
     .prologue
-    .line 1726
+    .line 1746
     const/16 v1, 0x2a
 
     invoke-static {v1, p5}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1728
+    .line 1748
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -23341,24 +23966,24 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1732
+    .line 1752
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x4
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1734
+    .line 1754
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1735
+    .line 1755
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1737
+    .line 1757
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-static {p3}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -23367,15 +23992,15 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1738
+    .line 1758
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1740
+    .line 1760
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1741
+    .line 1761
     return-void
 .end method
 
@@ -23384,14 +24009,14 @@
     .parameter "response"
 
     .prologue
-    .line 7212
+    .line 7328
     const/16 v1, 0x809
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7214
+    .line 7330
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -23427,10 +24052,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7216
+    .line 7332
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7217
+    .line 7333
     return-void
 .end method
 
@@ -23439,14 +24064,14 @@
     .parameter "response"
 
     .prologue
-    .line 7155
+    .line 7271
     const/16 v1, 0x804
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7158
+    .line 7274
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -23482,10 +24107,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7160
+    .line 7276
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7161
+    .line 7277
     return-void
 .end method
 
@@ -23494,14 +24119,14 @@
     .parameter "response"
 
     .prologue
-    .line 4842
+    .line 4918
     const/16 v1, 0x51
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4845
+    .line 4921
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -23537,10 +24162,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4847
+    .line 4923
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4848
+    .line 4924
     return-void
 .end method
 
@@ -23549,14 +24174,14 @@
     .parameter "response"
 
     .prologue
-    .line 7221
+    .line 7337
     const/16 v1, 0x80a
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7223
+    .line 7339
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -23592,10 +24217,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7225
+    .line 7341
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7226
+    .line 7342
     return-void
 .end method
 
@@ -23604,14 +24229,14 @@
     .parameter "response"
 
     .prologue
-    .line 7186
+    .line 7302
     const/16 v1, 0x807
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7188
+    .line 7304
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -23647,10 +24272,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7190
+    .line 7306
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7191
+    .line 7307
     return-void
 .end method
 
@@ -23659,14 +24284,14 @@
     .parameter "result"
 
     .prologue
-    .line 1096
+    .line 1105
     const/16 v1, 0x11
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1099
+    .line 1108
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -23702,10 +24327,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1101
+    .line 1110
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1102
+    .line 1111
     return-void
 .end method
 
@@ -23715,14 +24340,14 @@
     .parameter "response"
 
     .prologue
-    .line 7555
+    .line 7671
     const/16 v1, 0x2717
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7558
+    .line 7674
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -23730,12 +24355,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7559
+    .line 7675
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7561
+    .line 7677
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -23780,10 +24405,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7564
+    .line 7680
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7565
+    .line 7681
     return-void
 .end method
 
@@ -23795,20 +24420,20 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2029
+    .line 2049
     const/16 v2, 0x66
 
     invoke-static {v2, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 2030
+    .line 2050
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2031
+    .line 2051
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p1, :cond_0
@@ -23816,7 +24441,7 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2033
+    .line 2053
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -23861,13 +24486,13 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 2036
+    .line 2056
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 2037
+    .line 2057
     return-void
 
-    .line 2031
+    .line 2051
     :cond_0
     const/4 v1, 0x0
 
@@ -23879,14 +24504,14 @@
     .parameter "result"
 
     .prologue
-    .line 2043
+    .line 2063
     const/16 v1, 0x67
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 2045
+    .line 2065
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -23922,10 +24547,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 2047
+    .line 2067
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 2048
+    .line 2068
     return-void
 .end method
 
@@ -23935,14 +24560,14 @@
     .parameter "response"
 
     .prologue
-    .line 7121
+    .line 7237
     const/16 v1, 0x801
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7122
+    .line 7238
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -23950,12 +24575,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7123
+    .line 7239
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 7125
+    .line 7241
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -24000,10 +24625,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7128
+    .line 7244
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7129
+    .line 7245
     return-void
 .end method
 
@@ -24012,14 +24637,14 @@
     .parameter "response"
 
     .prologue
-    .line 6246
+    .line 6362
     const/16 v1, 0x21f
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6248
+    .line 6364
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -24055,10 +24680,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6249
+    .line 6365
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6250
+    .line 6366
     return-void
 .end method
 
@@ -24067,14 +24692,14 @@
     .parameter "response"
 
     .prologue
-    .line 7291
+    .line 7407
     const/16 v1, 0x138a
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7293
+    .line 7409
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -24101,611 +24726,6 @@
     move-result-object v2
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 7295
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
-
-    .line 7296
-    return-void
-.end method
-
-.method public requestEnable3GInd(ILandroid/os/Message;)V
-    .locals 3
-    .parameter "enable"
-    .parameter "response"
-
-    .prologue
-    .line 6889
-    const/16 v1, 0x7ef
-
-    invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-
-    move-result-object v0
-
-    .line 6891
-    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
-    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 6892
-    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
-
-    invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 6894
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
-
-    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 6896
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
-
-    .line 6897
-    return-void
-.end method
-
-.method public requestExitPowerSaveMode(Landroid/os/Message;)V
-    .locals 3
-    .parameter "response"
-
-    .prologue
-    .line 6602
-    const/16 v1, 0x7d4
-
-    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-
-    move-result-object v0
-
-    .line 6604
-    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
-
-    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 6606
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
-
-    .line 6608
-    return-void
-.end method
-
-.method public requestGetAKey(Landroid/os/Message;)V
-    .locals 3
-    .parameter "response"
-
-    .prologue
-    .line 6821
-    const/16 v1, 0x7ea
-
-    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-
-    move-result-object v0
-
-    .line 6823
-    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
-
-    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 6825
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
-
-    .line 6826
-    return-void
-.end method
-
-.method public requestGetAppProfileMode(Landroid/os/Message;)V
-    .locals 3
-    .parameter "response"
-
-    .prologue
-    .line 7064
-    const/16 v1, 0x7fc
-
-    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-
-    move-result-object v0
-
-    .line 7067
-    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
-
-    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 7069
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
-
-    .line 7070
-    return-void
-.end method
-
-.method public requestGetBCSMSServiceLabel(IILandroid/os/Message;)V
-    .locals 4
-    .parameter "funccode"
-    .parameter "index"
-    .parameter "response"
-
-    .prologue
-    const/4 v3, 0x2
-
-    .line 7107
-    const/16 v1, 0x800
-
-    invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-
-    move-result-object v0
-
-    .line 7110
-    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
-
-    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 7112
-    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
-
-    invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 7113
-    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
-
-    invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 7114
-    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
-
-    invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 7116
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
-
-    .line 7117
-    return-void
-.end method
-
-.method public requestGetBCSMSServiceNumber(Landroid/os/Message;)V
-    .locals 3
-    .parameter "response"
-
-    .prologue
-    .line 7098
-    const/16 v1, 0x7ff
-
-    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-
-    move-result-object v0
-
-    .line 7101
-    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
-
-    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 7103
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
-
-    .line 7104
-    return-void
-.end method
-
-.method public requestGetBSInfo(Landroid/os/Message;)V
-    .locals 3
-    .parameter "response"
-
-    .prologue
-    .line 6877
-    const/16 v1, 0x7ee
-
-    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-
-    move-result-object v0
-
-    .line 6879
-    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
-
-    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 6881
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
-
-    .line 6882
-    return-void
-.end method
-
-.method public requestGetCurrentServiceDomain(Landroid/os/Message;)V
-    .locals 3
-    .parameter "response"
-
-    .prologue
-    .line 7030
-    const/16 v1, 0x7f9
-
-    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-
-    move-result-object v0
-
-    .line 7032
-    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
-
-    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 7034
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
-
-    .line 7035
-    return-void
-.end method
-
-.method public requestGetDDTM(Landroid/os/Message;)V
-    .locals 3
-    .parameter "response"
-
-    .prologue
-    .line 6780
-    const/16 v1, 0x7e5
-
-    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-
-    move-result-object v0
-
-    .line 6782
-    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
-
-    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 6784
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
-
-    .line 6786
-    return-void
-.end method
-
-.method public requestGetEHRPDAPNParams(ILandroid/os/Message;)V
-    .locals 3
-    .parameter "index"
-    .parameter "result"
-
-    .prologue
-    .line 7401
-    const/16 v1, 0x1390
-
-    invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-
-    move-result-object v0
-
-    .line 7403
-    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
-    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 7404
-    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
-
-    invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 7408
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
-
-    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -24722,240 +24742,20 @@
     return-void
 .end method
 
-.method public requestGetEhrpdDeviceCapability(Landroid/os/Message;)V
+.method public requestEnable3GInd(ILandroid/os/Message;)V
     .locals 3
+    .parameter "enable"
     .parameter "response"
 
     .prologue
-    .line 7424
-    const/16 v1, 0x1392
-
-    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-
-    move-result-object v0
-
-    .line 7426
-    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
-
-    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 7428
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
-
-    .line 7430
-    return-void
-.end method
-
-.method public requestGetEhrpdDisableCapability(Landroid/os/Message;)V
-    .locals 3
-    .parameter "response"
-
-    .prologue
-    .line 7415
-    const/16 v1, 0x1391
-
-    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-
-    move-result-object v0
-
-    .line 7417
-    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
-
-    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 7419
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
-
-    .line 7421
-    return-void
-.end method
-
-.method public requestGetGPSOneMode(Landroid/os/Message;)V
-    .locals 3
-    .parameter "response"
-
-    .prologue
-    .line 6654
-    const/16 v1, 0x7da
-
-    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-
-    move-result-object v0
-
-    .line 6656
-    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
-
-    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 6658
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
-
-    .line 6660
-    return-void
-.end method
-
-.method public requestGetHybridMode(Landroid/os/Message;)V
-    .locals 3
-    .parameter "response"
-
-    .prologue
-    .line 6751
-    const/16 v1, 0x7e3
-
-    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-
-    move-result-object v0
-
-    .line 6753
-    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
-
-    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
-
-    .line 6755
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
-
-    .line 6757
-    return-void
-.end method
-
-.method public requestGetLTEAPNParams(ILandroid/os/Message;)V
-    .locals 3
-    .parameter "index"
-    .parameter "result"
-
-    .prologue
-    .line 7354
-    const/16 v1, 0x138e
+    .line 7005
+    const/16 v1, 0x7ef
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7356
+    .line 7007
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -24963,12 +24763,539 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7357
+    .line 7008
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7361
+    .line 7010
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 7012
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 7013
+    return-void
+.end method
+
+.method public requestExitPowerSaveMode(Landroid/os/Message;)V
+    .locals 3
+    .parameter "response"
+
+    .prologue
+    .line 6718
+    const/16 v1, 0x7d4
+
+    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 6720
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 6722
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 6724
+    return-void
+.end method
+
+.method public requestGetAKey(Landroid/os/Message;)V
+    .locals 3
+    .parameter "response"
+
+    .prologue
+    .line 6937
+    const/16 v1, 0x7ea
+
+    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 6939
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 6941
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 6942
+    return-void
+.end method
+
+.method public requestGetAppProfileMode(Landroid/os/Message;)V
+    .locals 3
+    .parameter "response"
+
+    .prologue
+    .line 7180
+    const/16 v1, 0x7fc
+
+    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 7183
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 7185
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 7186
+    return-void
+.end method
+
+.method public requestGetBCSMSServiceLabel(IILandroid/os/Message;)V
+    .locals 4
+    .parameter "funccode"
+    .parameter "index"
+    .parameter "response"
+
+    .prologue
+    const/4 v3, 0x2
+
+    .line 7223
+    const/16 v1, 0x800
+
+    invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 7226
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 7228
+    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 7229
+    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 7230
+    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 7232
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 7233
+    return-void
+.end method
+
+.method public requestGetBCSMSServiceNumber(Landroid/os/Message;)V
+    .locals 3
+    .parameter "response"
+
+    .prologue
+    .line 7214
+    const/16 v1, 0x7ff
+
+    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 7217
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 7219
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 7220
+    return-void
+.end method
+
+.method public requestGetBSInfo(Landroid/os/Message;)V
+    .locals 3
+    .parameter "response"
+
+    .prologue
+    .line 6993
+    const/16 v1, 0x7ee
+
+    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 6995
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 6997
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 6998
+    return-void
+.end method
+
+.method public requestGetCurrentServiceDomain(Landroid/os/Message;)V
+    .locals 3
+    .parameter "response"
+
+    .prologue
+    .line 7146
+    const/16 v1, 0x7f9
+
+    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 7148
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 7150
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 7151
+    return-void
+.end method
+
+.method public requestGetDDTM(Landroid/os/Message;)V
+    .locals 3
+    .parameter "response"
+
+    .prologue
+    .line 6896
+    const/16 v1, 0x7e5
+
+    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 6898
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 6900
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 6902
+    return-void
+.end method
+
+.method public requestGetEHRPDAPNParams(ILandroid/os/Message;)V
+    .locals 3
+    .parameter "index"
+    .parameter "result"
+
+    .prologue
+    .line 7517
+    const/16 v1, 0x1390
+
+    invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 7519
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 7520
+    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 7524
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -25013,10 +25340,308 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7364
+    .line 7527
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7365
+    .line 7528
+    return-void
+.end method
+
+.method public requestGetEhrpdDeviceCapability(Landroid/os/Message;)V
+    .locals 3
+    .parameter "response"
+
+    .prologue
+    .line 7540
+    const/16 v1, 0x1392
+
+    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 7542
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 7544
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 7546
+    return-void
+.end method
+
+.method public requestGetEhrpdDisableCapability(Landroid/os/Message;)V
+    .locals 3
+    .parameter "response"
+
+    .prologue
+    .line 7531
+    const/16 v1, 0x1391
+
+    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 7533
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 7535
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 7537
+    return-void
+.end method
+
+.method public requestGetGPSOneMode(Landroid/os/Message;)V
+    .locals 3
+    .parameter "response"
+
+    .prologue
+    .line 6770
+    const/16 v1, 0x7da
+
+    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 6772
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 6774
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 6776
+    return-void
+.end method
+
+.method public requestGetHybridMode(Landroid/os/Message;)V
+    .locals 3
+    .parameter "response"
+
+    .prologue
+    .line 6867
+    const/16 v1, 0x7e3
+
+    invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 6869
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 6871
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 6873
+    return-void
+.end method
+
+.method public requestGetLTEAPNParams(ILandroid/os/Message;)V
+    .locals 3
+    .parameter "index"
+    .parameter "result"
+
+    .prologue
+    .line 7470
+    const/16 v1, 0x138e
+
+    invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
+
+    move-result-object v0
+
+    .line 7472
+    .local v0, rr:Lcom/android/internal/telephony/RILRequest;
+    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 7473
+    iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 7477
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    .line 7480
+    invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
+
+    .line 7481
     return-void
 .end method
 
@@ -25025,14 +25650,14 @@
     .parameter "response"
 
     .prologue
-    .line 6628
+    .line 6744
     const/16 v1, 0x7d6
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6630
+    .line 6746
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -25068,10 +25693,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6632
+    .line 6748
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6634
+    .line 6750
     return-void
 .end method
 
@@ -25080,14 +25705,14 @@
     .parameter "response"
 
     .prologue
-    .line 6722
+    .line 6838
     const/16 v1, 0x7e1
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6724
+    .line 6840
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -25123,10 +25748,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6726
+    .line 6842
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6728
+    .line 6844
     return-void
 .end method
 
@@ -25135,14 +25760,14 @@
     .parameter "response"
 
     .prologue
-    .line 6928
+    .line 7044
     const/16 v1, 0x7f1
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6930
+    .line 7046
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -25178,10 +25803,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6932
+    .line 7048
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6933
+    .line 7049
     return-void
 .end method
 
@@ -25190,14 +25815,14 @@
     .parameter "response"
 
     .prologue
-    .line 6967
+    .line 7083
     const/16 v1, 0x7f4
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6969
+    .line 7085
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -25233,10 +25858,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6971
+    .line 7087
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6972
+    .line 7088
     return-void
 .end method
 
@@ -25245,14 +25870,14 @@
     .parameter "response"
 
     .prologue
-    .line 6641
+    .line 6757
     const/16 v1, 0x7d7
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6643
+    .line 6759
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -25288,10 +25913,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6645
+    .line 6761
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6647
+    .line 6763
     return-void
 .end method
 
@@ -25301,14 +25926,14 @@
     .parameter "response"
 
     .prologue
-    .line 6350
+    .line 6466
     const/16 v1, 0x233
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6352
+    .line 6468
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -25354,15 +25979,15 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6354
+    .line 6470
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6355
+    .line 6471
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6356
+    .line 6472
     return-void
 .end method
 
@@ -25371,14 +25996,14 @@
     .parameter "response"
 
     .prologue
-    .line 6809
+    .line 6925
     const/16 v1, 0x7e9
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6811
+    .line 6927
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -25414,10 +26039,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6813
+    .line 6929
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6814
+    .line 6930
     return-void
 .end method
 
@@ -25427,14 +26052,14 @@
     .parameter "response"
 
     .prologue
-    .line 6372
+    .line 6488
     const/16 v1, 0x239
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6374
+    .line 6490
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -25470,22 +26095,22 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6375
+    .line 6491
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6376
+    .line 6492
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6377
+    .line 6493
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6378
+    .line 6494
     return-void
 .end method
 
@@ -25494,14 +26119,14 @@
     .parameter "response"
 
     .prologue
-    .line 6166
+    .line 6282
     const/16 v1, 0x219
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6168
+    .line 6284
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -25537,10 +26162,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6170
+    .line 6286
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6171
+    .line 6287
     return-void
 .end method
 
@@ -25549,14 +26174,14 @@
     .parameter "response"
 
     .prologue
-    .line 6709
+    .line 6825
     const/16 v1, 0x7e0
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6711
+    .line 6827
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -25592,10 +26217,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6713
+    .line 6829
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6715
+    .line 6831
     return-void
 .end method
 
@@ -25604,14 +26229,14 @@
     .parameter "response"
 
     .prologue
-    .line 6696
+    .line 6812
     const/16 v1, 0x7df
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6698
+    .line 6814
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -25647,10 +26272,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6700
+    .line 6816
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6702
+    .line 6818
     return-void
 .end method
 
@@ -25659,14 +26284,14 @@
     .parameter "response"
 
     .prologue
-    .line 6342
+    .line 6458
     const/16 v1, 0x232
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6344
+    .line 6460
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -25702,10 +26327,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6346
+    .line 6462
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6347
+    .line 6463
     return-void
 .end method
 
@@ -25714,14 +26339,14 @@
     .parameter "response"
 
     .prologue
-    .line 6940
+    .line 7056
     const/16 v1, 0x7f2
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6942
+    .line 7058
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -25757,10 +26382,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6944
+    .line 7060
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6945
+    .line 7061
     return-void
 .end method
 
@@ -25770,14 +26395,14 @@
     .parameter "response"
 
     .prologue
-    .line 6584
+    .line 6700
     const/16 v1, 0x7d1
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6587
+    .line 6703
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -25819,22 +26444,22 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6590
+    .line 6706
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6591
+    .line 6707
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6593
+    .line 6709
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6595
+    .line 6711
     return-void
 .end method
 
@@ -25845,20 +26470,20 @@
     .parameter "response"
 
     .prologue
-    .line 6979
+    .line 7095
     const/16 v2, 0x7f5
 
     invoke-static {v2, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v1
 
-    .line 6982
+    .line 7098
     .local v1, rr:Lcom/android/internal/telephony/RILRequest;
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 6984
+    .line 7100
     .local v0, modem_id_s:Ljava/lang/String;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -25910,27 +26535,27 @@
 
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6987
+    .line 7103
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v3, 0x2
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6988
+    .line 7104
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6989
+    .line 7105
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6991
+    .line 7107
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6992
+    .line 7108
     return-void
 .end method
 
@@ -25944,14 +26569,14 @@
     .parameter "response"
 
     .prologue
-    .line 6058
+    .line 6174
     const/16 v1, 0x20f
 
     invoke-static {v1, p6}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6060
+    .line 6176
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -25959,32 +26584,32 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6061
+    .line 6177
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6062
+    .line 6178
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6063
+    .line 6179
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6064
+    .line 6180
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6065
+    .line 6181
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p5}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6066
+    .line 6182
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -26019,10 +26644,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6068
+    .line 6184
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6069
+    .line 6185
     return-void
 .end method
 
@@ -26032,20 +26657,20 @@
     .parameter "response"
 
     .prologue
-    .line 4923
+    .line 4999
     const/16 v1, 0x69
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4925
+    .line 5001
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 4927
+    .line 5003
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -26080,10 +26705,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4929
+    .line 5005
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4930
+    .line 5006
     return-void
 .end method
 
@@ -26095,14 +26720,14 @@
     .parameter "result"
 
     .prologue
-    .line 7195
+    .line 7311
     const/16 v1, 0x808
 
     invoke-static {v1, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7198
+    .line 7314
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -26110,22 +26735,22 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7199
+    .line 7315
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 7200
+    .line 7316
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 7201
+    .line 7317
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 7203
+    .line 7319
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -26190,10 +26815,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7207
+    .line 7323
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7208
+    .line 7324
     return-void
 .end method
 
@@ -26202,14 +26827,14 @@
     .parameter "response"
 
     .prologue
-    .line 6615
+    .line 6731
     const/16 v1, 0x7d5
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6617
+    .line 6733
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -26245,10 +26870,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6619
+    .line 6735
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6621
+    .line 6737
     return-void
 .end method
 
@@ -26257,14 +26882,14 @@
     .parameter "response"
 
     .prologue
-    .line 7283
+    .line 7399
     const/16 v1, 0x1389
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7285
+    .line 7401
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -26300,10 +26925,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7287
+    .line 7403
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7288
+    .line 7404
     return-void
 .end method
 
@@ -26312,14 +26937,14 @@
     .parameter "response"
 
     .prologue
-    .line 6076
+    .line 6192
     const/16 v1, 0x210
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6078
+    .line 6194
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -26355,10 +26980,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6080
+    .line 6196
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6081
+    .line 6197
     return-void
 .end method
 
@@ -26371,14 +26996,14 @@
     .parameter "response"
 
     .prologue
-    .line 6359
+    .line 6475
     const/16 v1, 0x238
 
     invoke-static {v1, p5}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6361
+    .line 6477
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -26454,37 +27079,37 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6363
+    .line 6479
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x4
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6364
+    .line 6480
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6365
+    .line 6481
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6366
+    .line 6482
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6367
+    .line 6483
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6368
+    .line 6484
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6369
+    .line 6485
     return-void
 .end method
 
@@ -26493,14 +27118,14 @@
     .parameter "response"
 
     .prologue
-    .line 6137
+    .line 6253
     const/16 v1, 0x217
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6139
+    .line 6255
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -26536,10 +27161,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6141
+    .line 6257
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6142
+    .line 6258
     return-void
 .end method
 
@@ -26548,14 +27173,14 @@
     .parameter "response"
 
     .prologue
-    .line 6271
+    .line 6387
     const/16 v1, 0x221
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6273
+    .line 6389
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -26591,10 +27216,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6275
+    .line 6391
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6276
+    .line 6392
     return-void
 .end method
 
@@ -26604,14 +27229,14 @@
     .parameter "response"
 
     .prologue
-    .line 7143
+    .line 7259
     const/16 v1, 0x803
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7144
+    .line 7260
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -26619,12 +27244,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7145
+    .line 7261
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 7147
+    .line 7263
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -26669,10 +27294,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7150
+    .line 7266
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7151
+    .line 7267
     return-void
 .end method
 
@@ -26682,14 +27307,14 @@
     .parameter "response"
 
     .prologue
-    .line 7165
+    .line 7281
     const/16 v1, 0x805
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7166
+    .line 7282
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -26697,12 +27322,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7167
+    .line 7283
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 7169
+    .line 7285
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -26747,10 +27372,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7172
+    .line 7288
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7173
+    .line 7289
     return-void
 .end method
 
@@ -26760,20 +27385,20 @@
     .parameter "response"
 
     .prologue
-    .line 6257
+    .line 6373
     const/16 v1, 0x220
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6259
+    .line 6375
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6260
+    .line 6376
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -26818,10 +27443,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6263
+    .line 6379
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6264
+    .line 6380
     return-void
 .end method
 
@@ -26831,20 +27456,20 @@
     .parameter "response"
 
     .prologue
-    .line 6833
+    .line 6949
     const/16 v1, 0x7eb
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6835
+    .line 6951
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6837
+    .line 6953
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -26879,10 +27504,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6839
+    .line 6955
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6840
+    .line 6956
     return-void
 .end method
 
@@ -26892,14 +27517,14 @@
     .parameter "response"
 
     .prologue
-    .line 7073
+    .line 7189
     const/16 v1, 0x7fd
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7076
+    .line 7192
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -26935,22 +27560,22 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7078
+    .line 7194
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7079
+    .line 7195
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7081
+    .line 7197
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7082
+    .line 7198
     return-void
 .end method
 
@@ -26960,14 +27585,14 @@
     .parameter "response"
 
     .prologue
-    .line 6793
+    .line 6909
     const/16 v1, 0x7e6
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6795
+    .line 6911
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -26975,12 +27600,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6796
+    .line 6912
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6798
+    .line 6914
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -27015,10 +27640,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6800
+    .line 6916
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6802
+    .line 6918
     return-void
 .end method
 
@@ -27028,14 +27653,14 @@
     .parameter "result"
 
     .prologue
-    .line 7375
+    .line 7491
     const/16 v1, 0x138f
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7377
+    .line 7493
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -27043,42 +27668,42 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7378
+    .line 7494
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget v2, p1, Lcom/android/internal/telephony/APNParam;->class_id:I
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7379
+    .line 7495
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget-object v2, p1, Lcom/android/internal/telephony/APNParam;->name:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 7380
+    .line 7496
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget v2, p1, Lcom/android/internal/telephony/APNParam;->type:I
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7381
+    .line 7497
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget v2, p1, Lcom/android/internal/telephony/APNParam;->state:I
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7382
+    .line 7498
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget v2, p1, Lcom/android/internal/telephony/APNParam;->timer:I
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7386
+    .line 7502
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -27185,10 +27810,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7390
+    .line 7506
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7391
+    .line 7507
     return-void
 .end method
 
@@ -27198,14 +27823,14 @@
     .parameter "response"
 
     .prologue
-    .line 7310
+    .line 7426
     const/16 v1, 0x138c
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7312
+    .line 7428
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -27213,12 +27838,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7313
+    .line 7429
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7315
+    .line 7431
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -27253,10 +27878,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7317
+    .line 7433
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7318
+    .line 7434
     return-void
 .end method
 
@@ -27266,14 +27891,14 @@
     .parameter "response"
 
     .prologue
-    .line 7299
+    .line 7415
     const/16 v1, 0x138b
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7301
+    .line 7417
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -27281,12 +27906,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7302
+    .line 7418
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7304
+    .line 7420
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -27321,10 +27946,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7306
+    .line 7422
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7307
+    .line 7423
     return-void
 .end method
 
@@ -27334,14 +27959,14 @@
     .parameter "response"
 
     .prologue
-    .line 6231
+    .line 6347
     const/16 v1, 0x21e
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6233
+    .line 6349
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -27349,12 +27974,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6234
+    .line 6350
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6235
+    .line 6351
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -27389,10 +28014,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6237
+    .line 6353
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6238
+    .line 6354
     return-void
 .end method
 
@@ -27403,14 +28028,14 @@
     .parameter "response"
 
     .prologue
-    .line 6401
+    .line 6517
     const/16 v1, 0x23b
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6403
+    .line 6519
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -27418,17 +28043,17 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6404
+    .line 6520
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6405
+    .line 6521
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6406
+    .line 6522
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -27463,10 +28088,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6408
+    .line 6524
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6409
+    .line 6525
     return-void
 .end method
 
@@ -27476,14 +28101,14 @@
     .parameter "response"
 
     .prologue
-    .line 6667
+    .line 6783
     const/16 v1, 0x7db
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6669
+    .line 6785
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -27491,12 +28116,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6670
+    .line 6786
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6672
+    .line 6788
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -27531,10 +28156,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6674
+    .line 6790
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6676
+    .line 6792
     return-void
 .end method
 
@@ -27544,14 +28169,14 @@
     .parameter "response"
 
     .prologue
-    .line 6764
+    .line 6880
     const/16 v1, 0x7e4
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6766
+    .line 6882
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -27559,12 +28184,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6767
+    .line 6883
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6769
+    .line 6885
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -27599,10 +28224,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6771
+    .line 6887
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6773
+    .line 6889
     return-void
 .end method
 
@@ -27612,20 +28237,20 @@
     .parameter "response"
 
     .prologue
-    .line 6045
+    .line 6161
     const/16 v1, 0x20e
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6047
+    .line 6163
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6048
+    .line 6164
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -27660,10 +28285,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6050
+    .line 6166
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6051
+    .line 6167
     return-void
 .end method
 
@@ -27673,14 +28298,14 @@
     .parameter "response"
 
     .prologue
-    .line 6999
+    .line 7115
     const/16 v1, 0x7f6
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7001
+    .line 7117
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -27688,12 +28313,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7002
+    .line 7118
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7004
+    .line 7120
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -27728,10 +28353,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7006
+    .line 7122
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7008
+    .line 7124
     return-void
 .end method
 
@@ -27741,14 +28366,14 @@
     .parameter "result"
 
     .prologue
-    .line 7328
+    .line 7444
     const/16 v1, 0x138d
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7330
+    .line 7446
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -27756,42 +28381,42 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7331
+    .line 7447
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget v2, p1, Lcom/android/internal/telephony/APNParam;->class_id:I
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7332
+    .line 7448
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget-object v2, p1, Lcom/android/internal/telephony/APNParam;->name:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 7333
+    .line 7449
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget v2, p1, Lcom/android/internal/telephony/APNParam;->type:I
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7334
+    .line 7450
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget v2, p1, Lcom/android/internal/telephony/APNParam;->state:I
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7335
+    .line 7451
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget v2, p1, Lcom/android/internal/telephony/APNParam;->timer:I
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7339
+    .line 7455
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -27898,10 +28523,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7343
+    .line 7459
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7344
+    .line 7460
     return-void
 .end method
 
@@ -27911,14 +28536,14 @@
     .parameter "response"
 
     .prologue
-    .line 6847
+    .line 6963
     const/16 v1, 0x7ec
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6849
+    .line 6965
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -27926,12 +28551,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6850
+    .line 6966
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6852
+    .line 6968
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -27966,10 +28591,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6854
+    .line 6970
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6855
+    .line 6971
     return-void
 .end method
 
@@ -27980,14 +28605,14 @@
     .parameter "response"
 
     .prologue
-    .line 6385
+    .line 6501
     const/16 v1, 0x23a
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6387
+    .line 6503
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -27995,17 +28620,17 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6388
+    .line 6504
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6389
+    .line 6505
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6390
+    .line 6506
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -28040,10 +28665,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6392
+    .line 6508
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6393
+    .line 6509
     return-void
 .end method
 
@@ -28053,14 +28678,14 @@
     .parameter "response"
 
     .prologue
-    .line 6862
+    .line 6978
     const/16 v1, 0x7ed
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6864
+    .line 6980
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -28068,12 +28693,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6865
+    .line 6981
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6867
+    .line 6983
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -28108,10 +28733,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6869
+    .line 6985
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6870
+    .line 6986
     return-void
 .end method
 
@@ -28121,14 +28746,14 @@
     .parameter "response"
 
     .prologue
-    .line 6735
+    .line 6851
     const/16 v1, 0x7e2
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6737
+    .line 6853
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -28136,12 +28761,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6738
+    .line 6854
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6740
+    .line 6856
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -28176,10 +28801,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6742
+    .line 6858
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6744
+    .line 6860
     return-void
 .end method
 
@@ -28190,14 +28815,14 @@
     .parameter "response"
 
     .prologue
-    .line 6121
+    .line 6237
     const/16 v1, 0x216
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6123
+    .line 6239
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -28205,12 +28830,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6124
+    .line 6240
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6125
+    .line 6241
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p2, :cond_0
@@ -28220,7 +28845,7 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6126
+    .line 6242
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -28255,13 +28880,13 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6128
+    .line 6244
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6129
+    .line 6245
     return-void
 
-    .line 6125
+    .line 6241
     :cond_0
     const/4 v1, 0x1
 
@@ -28273,14 +28898,14 @@
     .parameter "response"
 
     .prologue
-    .line 6683
+    .line 6799
     const/16 v1, 0x7de
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6685
+    .line 6801
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -28316,10 +28941,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6687
+    .line 6803
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6689
+    .line 6805
     return-void
 .end method
 
@@ -28330,14 +28955,14 @@
     .parameter "response"
 
     .prologue
-    .line 6913
+    .line 7029
     const/16 v1, 0x7f0
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6915
+    .line 7031
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -28345,17 +28970,17 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6916
+    .line 7032
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6917
+    .line 7033
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6918
+    .line 7034
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -28390,10 +29015,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6920
+    .line 7036
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6921
+    .line 7037
     return-void
 .end method
 
@@ -28403,14 +29028,14 @@
     .parameter "response"
 
     .prologue
-    .line 6152
+    .line 6268
     const/16 v1, 0x218
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6154
+    .line 6270
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -28418,12 +29043,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6155
+    .line 6271
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6156
+    .line 6272
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -28458,10 +29083,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6158
+    .line 6274
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6159
+    .line 6275
     return-void
 .end method
 
@@ -28471,14 +29096,14 @@
     .parameter "response"
 
     .prologue
-    .line 5993
+    .line 6109
     const/16 v1, 0x20a
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5994
+    .line 6110
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -28486,12 +29111,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5995
+    .line 6111
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5996
+    .line 6112
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -28526,10 +29151,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5998
+    .line 6114
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5999
+    .line 6115
     return-void
 .end method
 
@@ -28540,14 +29165,14 @@
     .parameter "response"
 
     .prologue
-    .line 7085
+    .line 7201
     const/16 v1, 0x7fe
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7088
+    .line 7204
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -28583,27 +29208,27 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7090
+    .line 7206
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x2
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7091
+    .line 7207
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7092
+    .line 7208
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7094
+    .line 7210
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7095
+    .line 7211
     return-void
 .end method
 
@@ -28613,14 +29238,14 @@
     .parameter "response"
 
     .prologue
-    .line 6952
+    .line 7068
     const/16 v1, 0x7f3
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6954
+    .line 7070
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -28628,12 +29253,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6955
+    .line 7071
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6957
+    .line 7073
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -28668,10 +29293,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6959
+    .line 7075
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6960
+    .line 7076
     return-void
 .end method
 
@@ -28680,14 +29305,14 @@
     .parameter "response"
 
     .prologue
-    .line 7177
+    .line 7293
     const/16 v1, 0x806
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7179
+    .line 7295
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -28723,10 +29348,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7181
+    .line 7297
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7182
+    .line 7298
     return-void
 .end method
 
@@ -28735,14 +29360,14 @@
     .parameter "result"
 
     .prologue
-    .line 1807
+    .line 1827
     const/16 v1, 0x3a
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1810
+    .line 1830
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -28778,10 +29403,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1812
+    .line 1832
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1813
+    .line 1833
     return-void
 .end method
 
@@ -28793,14 +29418,14 @@
     .parameter "result"
 
     .prologue
-    .line 1245
+    .line 1254
     const/16 v1, 0x55
 
     invoke-static {v1, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1247
+    .line 1256
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -28808,12 +29433,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1248
+    .line 1257
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1249
+    .line 1258
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -28822,7 +29447,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1250
+    .line 1259
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-static {p3}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -28831,7 +29456,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1252
+    .line 1261
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -28876,10 +29501,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1255
+    .line 1264
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1256
+    .line 1265
     return-void
 .end method
 
@@ -28889,20 +29514,20 @@
     .parameter "response"
 
     .prologue
-    .line 4871
+    .line 4947
     const/16 v1, 0x54
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4873
+    .line 4949
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 4875
+    .line 4951
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -28947,10 +29572,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4878
+    .line 4954
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4879
+    .line 4955
     return-void
 .end method
 
@@ -28960,18 +29585,18 @@
     .parameter "result"
 
     .prologue
-    .line 1277
+    .line 1286
     new-instance v1, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v1, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    .line 1278
+    .line 1287
     .local v1, bais:Ljava/io/ByteArrayInputStream;
     new-instance v3, Ljava/io/DataInputStream;
 
     invoke-direct {v3, v1}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 1280
+    .line 1289
     .local v3, dis:Ljava/io/DataInputStream;
     const/16 v8, 0x57
 
@@ -28979,7 +29604,7 @@
 
     move-result-object v6
 
-    .line 1284
+    .line 1293
     .local v6, rr:Lcom/android/internal/telephony/RILRequest;
     :try_start_0
     iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
@@ -28990,7 +29615,7 @@
 
     invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1285
+    .line 1294
     iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3}, Ljava/io/DataInputStream;->readInt()I
@@ -29001,7 +29626,7 @@
 
     invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 1286
+    .line 1295
     iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3}, Ljava/io/DataInputStream;->readInt()I
@@ -29010,80 +29635,7 @@
 
     invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1287
-    iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
-
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
-
-    move-result v9
-
-    invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1288
-    iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
-
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
-
-    move-result v9
-
-    invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1289
-    iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
-
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
-
-    move-result v9
-
-    invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1290
-    iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
-
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
-
-    move-result v9
-
-    invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1291
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
-
-    move-result v8
-
-    int-to-byte v0, v8
-
-    .line 1292
-    .local v0, address_nbr_of_digits:I
-    iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
-
-    int-to-byte v9, v0
-
-    invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeByte(B)V
-
-    .line 1293
-    const/4 v5, 0x0
-
-    .local v5, i:I
-    :goto_0
-    if-ge v5, v0, :cond_0
-
-    .line 1294
-    iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
-
-    invoke-virtual {v3}, Ljava/io/DataInputStream;->readByte()B
-
-    move-result v9
-
-    invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeByte(B)V
-
-    .line 1293
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_0
-
     .line 1296
-    :cond_0
     iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
@@ -29099,32 +29651,49 @@
 
     move-result v9
 
-    int-to-byte v9, v9
-
-    invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeByte(B)V
+    invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 1298
+    iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
+
+    move-result v9
+
+    invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1299
+    iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
+
+    move-result v9
+
+    invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1300
     invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
 
     move-result v8
 
-    int-to-byte v7, v8
+    int-to-byte v0, v8
 
-    .line 1299
-    .local v7, subaddr_nbr_of_digits:I
+    .line 1301
+    .local v0, address_nbr_of_digits:I
     iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
-    int-to-byte v9, v7
+    int-to-byte v9, v0
 
     invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 1300
+    .line 1302
     const/4 v5, 0x0
 
-    :goto_1
-    if-ge v5, v7, :cond_1
+    .local v5, i:I
+    :goto_0
+    if-ge v5, v0, :cond_0
 
-    .line 1301
+    .line 1303
     iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3}, Ljava/io/DataInputStream;->readByte()B
@@ -29133,30 +29702,86 @@
 
     invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 1300
+    .line 1302
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    .line 1305
+    :cond_0
+    iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
+
+    move-result v9
+
+    invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1306
+    iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
+
+    move-result v9
+
+    int-to-byte v9, v9
+
+    invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeByte(B)V
+
+    .line 1307
+    invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
+
+    move-result v8
+
+    int-to-byte v7, v8
+
+    .line 1308
+    .local v7, subaddr_nbr_of_digits:I
+    iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    int-to-byte v9, v7
+
+    invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeByte(B)V
+
+    .line 1309
+    const/4 v5, 0x0
+
+    :goto_1
+    if-ge v5, v7, :cond_1
+
+    .line 1310
+    iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v3}, Ljava/io/DataInputStream;->readByte()B
+
+    move-result v9
+
+    invoke-virtual {v8, v9}, Landroid/os/Parcel;->writeByte(B)V
+
+    .line 1309
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 1304
+    .line 1313
     :cond_1
     invoke-virtual {v3}, Ljava/io/DataInputStream;->read()I
 
     move-result v2
 
-    .line 1305
+    .line 1314
     .local v2, bearerDataLength:I
     iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v8, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1306
+    .line 1315
     const/4 v5, 0x0
 
     :goto_2
     if-ge v5, v2, :cond_2
 
-    .line 1307
+    .line 1316
     iget-object v8, v6, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3}, Ljava/io/DataInputStream;->readByte()B
@@ -29167,12 +29792,12 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1306
+    .line 1315
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_2
 
-    .line 1309
+    .line 1318
     .end local v0           #address_nbr_of_digits:I
     .end local v2           #bearerDataLength:I
     .end local v5           #i:I
@@ -29180,7 +29805,7 @@
     :catch_0
     move-exception v4
 
-    .line 1310
+    .line 1319
     .local v4, ex:Ljava/io/IOException;
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -29202,7 +29827,7 @@
 
     invoke-direct {p0, v8}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1314
+    .line 1323
     .end local v4           #ex:Ljava/io/IOException;
     :cond_2
     new-instance v8, Ljava/lang/StringBuilder;
@@ -29239,10 +29864,10 @@
 
     invoke-direct {p0, v8}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1316
+    .line 1325
     invoke-direct {p0, v6}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1317
+    .line 1326
     return-void
 .end method
 
@@ -29252,14 +29877,14 @@
     .parameter "result"
 
     .prologue
-    .line 1211
+    .line 1220
     const/16 v1, 0x18
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1214
+    .line 1223
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -29295,7 +29920,7 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1216
+    .line 1225
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-static {p1}, Ljava/lang/Character;->toString(C)Ljava/lang/String;
@@ -29304,10 +29929,10 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1218
+    .line 1227
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1219
+    .line 1228
     return-void
 .end method
 
@@ -29317,14 +29942,14 @@
     .parameter "response"
 
     .prologue
-    .line 1892
+    .line 1912
     const/16 v1, 0x45
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1895
+    .line 1915
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -29360,15 +29985,15 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1897
+    .line 1917
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1898
+    .line 1918
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1899
+    .line 1919
     return-void
 .end method
 
@@ -29378,14 +30003,14 @@
     .parameter "response"
 
     .prologue
-    .line 1905
+    .line 1925
     const/16 v1, 0x6b
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1908
+    .line 1928
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -29437,15 +30062,15 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1911
+    .line 1931
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1912
+    .line 1932
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1913
+    .line 1933
     return-void
 .end method
 
@@ -29455,14 +30080,14 @@
     .parameter "result"
 
     .prologue
-    .line 5169
+    .line 5245
     const/16 v1, 0x2afc
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5173
+    .line 5249
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -29470,10 +30095,10 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5174
+    .line 5250
     invoke-direct {p0, v0, p1}, Lcom/android/internal/telephony/RIL;->constructCdmaSendSmsRilRequest(Lcom/android/internal/telephony/RILRequest;[B)V
 
-    .line 5176
+    .line 5252
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -29508,10 +30133,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5178
+    .line 5254
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5179
+    .line 5255
     return-void
 .end method
 
@@ -29522,14 +30147,14 @@
     .parameter "result"
 
     .prologue
-    .line 5155
+    .line 5231
     const/16 v1, 0x2afc
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5159
+    .line 5235
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -29537,10 +30162,10 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5160
+    .line 5236
     invoke-direct {p0, v0, p1, p2}, Lcom/android/internal/telephony/RIL;->constructGsmSendSmsRilRequest(Lcom/android/internal/telephony/RILRequest;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5162
+    .line 5238
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -29575,10 +30200,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5164
+    .line 5240
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5165
+    .line 5241
     return-void
 .end method
 
@@ -29589,14 +30214,14 @@
     .parameter "result"
 
     .prologue
-    .line 1260
+    .line 1269
     const/16 v1, 0x19
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1263
+    .line 1272
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -29604,17 +30229,17 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1264
+    .line 1273
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1265
+    .line 1274
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1267
+    .line 1276
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -29649,10 +30274,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1269
+    .line 1278
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1270
+    .line 1279
     return-void
 .end method
 
@@ -29673,22 +30298,22 @@
 
     const/4 v5, 0x1
 
-    .line 5546
+    .line 5662
     sget-short v3, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v4, 0x61
 
     if-ne v3, v4, :cond_1
 
-    .line 5547
+    .line 5663
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/internal/telephony/RIL;->sendImsGsmSms(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 5605
+    .line 5721
     :cond_0
     :goto_0
     return-void
 
-    .line 5553
+    .line 5669
     :cond_1
     invoke-static {}, Lcom/android/internal/telephony/SMSDispatcher;->getEasAllowSms()Z
 
@@ -29696,43 +30321,43 @@
 
     if-nez v3, :cond_2
 
-    .line 5554
+    .line 5670
     const-string v3, "RILJ"
 
     const-string v4, "EAS don\'t allow MO SMS, send fail immediately"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5556
+    .line 5672
     if-eqz p3, :cond_0
 
     iget-object v3, p3, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     if-eqz v3, :cond_0
 
-    .line 5557
+    .line 5673
     iget-object v2, p3, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v2, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;
 
-    .line 5559
+    .line 5675
     .local v2, tracker:Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 5560
+    .line 5676
     .local v0, informationIntent:Landroid/content/Intent;
     const-string/jumbo v3, "under_retry"
 
     invoke-virtual {v0, v3, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 5561
+    .line 5677
     const-string/jumbo v3, "retry_count"
 
     invoke-virtual {v0, v3, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 5564
+    .line 5680
     :try_start_0
     iget-object v3, v2, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mSentIntent:Landroid/app/PendingIntent;
 
@@ -29746,13 +30371,13 @@
 
     goto :goto_0
 
-    .line 5566
+    .line 5682
     :catch_0
     move-exception v3
 
     goto :goto_0
 
-    .line 5577
+    .line 5693
     .end local v0           #informationIntent:Landroid/content/Intent;
     .end local v2           #tracker:Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;
     :cond_2
@@ -29768,16 +30393,16 @@
 
     if-ne v3, v4, :cond_5
 
-    .line 5581
+    .line 5697
     :cond_3
     if-ne p4, v5, :cond_4
 
-    .line 5582
+    .line 5698
     invoke-static {v8, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v1
 
-    .line 5598
+    .line 5714
     .local v1, rr:Lcom/android/internal/telephony/RILRequest;
     :goto_1
     iget-object v3, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
@@ -29786,17 +30411,17 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5599
+    .line 5715
     iget-object v3, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5600
+    .line 5716
     iget-object v3, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5602
+    .line 5718
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -29831,12 +30456,12 @@
 
     invoke-direct {p0, v3}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5604
+    .line 5720
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
     goto :goto_0
 
-    .line 5584
+    .line 5700
     .end local v1           #rr:Lcom/android/internal/telephony/RILRequest;
     :cond_4
     invoke-static {v7, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
@@ -29846,12 +30471,12 @@
     .restart local v1       #rr:Lcom/android/internal/telephony/RILRequest;
     goto :goto_1
 
-    .line 5587
+    .line 5703
     .end local v1           #rr:Lcom/android/internal/telephony/RILRequest;
     :cond_5
     if-ne p4, v5, :cond_6
 
-    .line 5588
+    .line 5704
     invoke-static {v8, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v1
@@ -29859,12 +30484,12 @@
     .restart local v1       #rr:Lcom/android/internal/telephony/RILRequest;
     goto :goto_1
 
-    .line 5589
+    .line 5705
     .end local v1           #rr:Lcom/android/internal/telephony/RILRequest;
     :cond_6
     if-ne p5, v5, :cond_7
 
-    .line 5590
+    .line 5706
     const/16 v3, 0x21a
 
     invoke-static {v3, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
@@ -29874,7 +30499,7 @@
     .restart local v1       #rr:Lcom/android/internal/telephony/RILRequest;
     goto :goto_1
 
-    .line 5592
+    .line 5708
     .end local v1           #rr:Lcom/android/internal/telephony/RILRequest;
     :cond_7
     invoke-static {v7, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
@@ -29892,14 +30517,14 @@
     .parameter "response"
 
     .prologue
-    .line 5815
+    .line 5931
     const/16 v1, 0x200
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5816
+    .line 5932
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -29907,17 +30532,17 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5817
+    .line 5933
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5818
+    .line 5934
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5819
+    .line 5935
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -29952,10 +30577,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5820
+    .line 5936
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5821
+    .line 5937
     return-void
 .end method
 
@@ -29966,14 +30591,14 @@
     .parameter "response"
 
     .prologue
-    .line 5829
+    .line 5945
     const/16 v1, 0x201
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5830
+    .line 5946
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -29981,17 +30606,17 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5831
+    .line 5947
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5832
+    .line 5948
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5833
+    .line 5949
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -30026,10 +30651,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5834
+    .line 5950
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5835
+    .line 5951
     return-void
 .end method
 
@@ -30040,14 +30665,14 @@
     .parameter "response"
 
     .prologue
-    .line 6175
+    .line 6291
     const/16 v1, 0x21a
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6176
+    .line 6292
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -30055,17 +30680,17 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6177
+    .line 6293
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6178
+    .line 6294
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6179
+    .line 6295
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -30100,10 +30725,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6181
+    .line 6297
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6182
+    .line 6298
     return-void
 .end method
 
@@ -30113,14 +30738,14 @@
     .parameter "response"
 
     .prologue
-    .line 1879
+    .line 1899
     const/16 v1, 0x46
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1882
+    .line 1902
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -30156,15 +30781,15 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1884
+    .line 1904
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1885
+    .line 1905
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1886
+    .line 1906
     return-void
 .end method
 
@@ -30174,14 +30799,14 @@
     .parameter "response"
 
     .prologue
-    .line 1783
+    .line 1803
     const/16 v1, 0x1d
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1786
+    .line 1806
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -30227,15 +30852,15 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1789
+    .line 1809
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1791
+    .line 1811
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1792
+    .line 1812
     return-void
 .end method
 
@@ -30245,14 +30870,14 @@
     .parameter "result"
 
     .prologue
-    .line 1072
+    .line 1081
     const/16 v1, 0x34
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1075
+    .line 1084
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -30298,22 +30923,22 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1078
+    .line 1087
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1079
+    .line 1088
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1081
+    .line 1090
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1082
+    .line 1091
     return-void
 .end method
 
@@ -30323,14 +30948,14 @@
     .parameter "response"
 
     .prologue
-    .line 6006
+    .line 6122
     const/16 v1, 0x20b
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6008
+    .line 6124
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -30338,12 +30963,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6009
+    .line 6125
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6011
+    .line 6127
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -30378,10 +31003,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6013
+    .line 6129
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6014
+    .line 6130
     return-void
 .end method
 
@@ -30392,14 +31017,14 @@
     .parameter "response"
 
     .prologue
-    .line 5972
+    .line 6088
     const/16 v1, 0x209
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5974
+    .line 6090
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -30407,7 +31032,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5976
+    .line 6092
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x0
@@ -30416,7 +31041,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5977
+    .line 6093
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x1
@@ -30425,7 +31050,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5978
+    .line 6094
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x2
@@ -30434,7 +31059,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5979
+    .line 6095
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x3
@@ -30443,12 +31068,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5980
+    .line 6096
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5982
+    .line 6098
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -30483,10 +31108,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5984
+    .line 6100
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5985
+    .line 6101
     return-void
 .end method
 
@@ -30496,14 +31121,14 @@
     .parameter "response"
 
     .prologue
-    .line 6100
+    .line 6216
     const/16 v1, 0x214
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6102
+    .line 6218
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -30511,12 +31136,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6103
+    .line 6219
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6104
+    .line 6220
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -30551,10 +31176,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6106
+    .line 6222
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6107
+    .line 6223
     return-void
 .end method
 
@@ -30566,14 +31191,14 @@
     .parameter "result"
 
     .prologue
-    .line 5612
+    .line 5728
     const/16 v1, 0x1f5
 
     invoke-static {v1, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5615
+    .line 5731
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -30581,7 +31206,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5616
+    .line 5732
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
@@ -30590,25 +31215,25 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 5617
+    .line 5733
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const-string v2, "1"
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5620
+    .line 5736
     :goto_0
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5621
+    .line 5737
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5622
+    .line 5738
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -30673,13 +31298,13 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5624
+    .line 5740
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5625
+    .line 5741
     return-void
 
-    .line 5619
+    .line 5735
     :cond_0
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -30697,14 +31322,14 @@
     .parameter "response"
 
     .prologue
-    .line 7051
+    .line 7167
     const/16 v1, 0x7fb
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7054
+    .line 7170
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -30740,27 +31365,27 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7056
+    .line 7172
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x2
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7057
+    .line 7173
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7058
+    .line 7174
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7060
+    .line 7176
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7061
+    .line 7177
     return-void
 .end method
 
@@ -30770,14 +31395,14 @@
     .parameter "response"
 
     .prologue
-    .line 1846
+    .line 1866
     const/16 v1, 0x41
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1849
+    .line 1869
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -30785,12 +31410,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1850
+    .line 1870
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1852
+    .line 1872
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -30835,10 +31460,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1855
+    .line 1875
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1856
+    .line 1876
     return-void
 .end method
 
@@ -30848,14 +31473,14 @@
     .parameter "response"
 
     .prologue
-    .line 7487
+    .line 7603
     const/16 v1, 0x271a
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7490
+    .line 7606
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -30863,12 +31488,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7491
+    .line 7607
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7493
+    .line 7609
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -30913,10 +31538,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7496
+    .line 7612
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7497
+    .line 7613
     return-void
 .end method
 
@@ -30926,14 +31551,14 @@
     .parameter "response"
 
     .prologue
-    .line 7540
+    .line 7656
     const/16 v1, 0x271e
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7543
+    .line 7659
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -30941,12 +31566,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7544
+    .line 7660
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7546
+    .line 7662
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -30991,10 +31616,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7549
+    .line 7665
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7550
+    .line 7666
     return-void
 .end method
 
@@ -31006,20 +31631,20 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 5856
+    .line 5972
     const/16 v2, 0x203
 
     invoke-static {v2, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5858
+    .line 5974
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5859
+    .line 5975
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p1, :cond_0
@@ -31027,7 +31652,7 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5860
+    .line 5976
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -31062,13 +31687,13 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5862
+    .line 5978
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5863
+    .line 5979
     return-void
 
-    .line 5859
+    .line 5975
     :cond_0
     const/4 v1, 0x0
 
@@ -31081,14 +31706,14 @@
     .parameter "result"
 
     .prologue
-    .line 1558
+    .line 1578
     const/16 v1, 0x20
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1562
+    .line 1582
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -31096,12 +31721,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1564
+    .line 1584
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1566
+    .line 1586
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -31146,10 +31771,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1569
+    .line 1589
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1570
+    .line 1590
     return-void
 .end method
 
@@ -31163,30 +31788,30 @@
     .parameter "response"
 
     .prologue
-    .line 1651
+    .line 1671
     const/16 v1, 0x22
 
     invoke-static {v1, p6}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1654
+    .line 1674
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1655
+    .line 1675
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1656
+    .line 1676
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1657
+    .line 1677
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-static {p4}, Landroid/telephony/PhoneNumberUtils;->toaFromString(Ljava/lang/String;)I
@@ -31195,17 +31820,17 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1658
+    .line 1678
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1659
+    .line 1679
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p5}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1661
+    .line 1681
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -31274,10 +31899,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1665
+    .line 1685
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1666
+    .line 1686
     return-void
 .end method
 
@@ -31288,14 +31913,14 @@
     .parameter "response"
 
     .prologue
-    .line 1588
+    .line 1608
     const/16 v1, 0x24
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1591
+    .line 1611
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -31303,7 +31928,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1592
+    .line 1612
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p1, :cond_0
@@ -31313,12 +31938,12 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1593
+    .line 1613
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1595
+    .line 1615
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -31373,13 +31998,13 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1598
+    .line 1618
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1599
+    .line 1619
     return-void
 
-    .line 1592
+    .line 1612
     :cond_0
     const/4 v1, 0x0
 
@@ -31394,20 +32019,20 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 4901
+    .line 4977
     const/16 v2, 0x5e
 
     invoke-static {v2, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4903
+    .line 4979
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 4904
+    .line 4980
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p1, :cond_0
@@ -31417,7 +32042,7 @@
     :cond_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 4906
+    .line 4982
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -31452,10 +32077,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4908
+    .line 4984
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4909
+    .line 4985
     return-void
 .end method
 
@@ -31465,14 +32090,14 @@
     .parameter "response"
 
     .prologue
-    .line 4889
+    .line 4965
     const/16 v2, 0x5d
 
     invoke-static {v2, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v1
 
-    .line 4891
+    .line 4967
     .local v1, rr:Lcom/android/internal/telephony/RILRequest;
     const/4 v0, 0x0
 
@@ -31482,19 +32107,19 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 4892
+    .line 4968
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     aget v3, p1, v0
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 4891
+    .line 4967
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 4895
+    .line 4971
     :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -31530,10 +32155,10 @@
 
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4897
+    .line 4973
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4898
+    .line 4974
     return-void
 .end method
 
@@ -31543,14 +32168,14 @@
     .parameter "response"
 
     .prologue
-    .line 4797
+    .line 4873
     const/16 v1, 0x4e
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4800
+    .line 4876
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -31558,12 +32183,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 4801
+    .line 4877
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 4803
+    .line 4879
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -31608,10 +32233,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4806
+    .line 4882
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4807
+    .line 4883
     return-void
 .end method
 
@@ -31621,14 +32246,14 @@
     .parameter "response"
 
     .prologue
-    .line 4813
+    .line 4889
     const/16 v1, 0x4d
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4816
+    .line 4892
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -31636,12 +32261,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 4817
+    .line 4893
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 4819
+    .line 4895
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -31686,10 +32311,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4822
+    .line 4898
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4823
+    .line 4899
     return-void
 .end method
 
@@ -31701,20 +32326,20 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 7669
+    .line 7785
     const/16 v2, 0x222
 
     invoke-static {v2, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7671
+    .line 7787
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7672
+    .line 7788
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p1, :cond_0
@@ -31722,7 +32347,7 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7675
+    .line 7791
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -31766,19 +32391,19 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7679
+    .line 7795
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7680
+    .line 7796
     return-void
 
-    .line 7672
+    .line 7788
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 7675
+    .line 7791
     :cond_1
     const-string v1, " off"
 
@@ -31789,7 +32414,7 @@
     .locals 2
 
     .prologue
-    .line 1938
+    .line 1958
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -31812,14 +32437,14 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1939
+    .line 1959
     iget v0, p0, Lcom/android/internal/telephony/RIL;->mSetPreferredNetworkType:I
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/android/internal/telephony/RIL;->setPreferredNetworkType(ILandroid/os/Message;)V
 
-    .line 1940
+    .line 1960
     return-void
 .end method
 
@@ -31831,20 +32456,20 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 5802
+    .line 5918
     const/16 v2, 0x1ff
 
     invoke-static {v2, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5803
+    .line 5919
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5804
+    .line 5920
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p1, :cond_0
@@ -31852,7 +32477,7 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5805
+    .line 5921
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -31887,13 +32512,13 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5806
+    .line 5922
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5807
+    .line 5923
     return-void
 
-    .line 5804
+    .line 5920
     :cond_0
     const/4 v1, 0x0
 
@@ -31910,14 +32535,14 @@
     .parameter "response"
 
     .prologue
-    .line 5245
+    .line 5327
     const/16 v2, 0x2b
 
     invoke-static {v2, p6}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v1
 
-    .line 5248
+    .line 5330
     .local v1, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -31983,21 +32608,21 @@
 
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5252
+    .line 5334
     sget-short v2, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEVICE_flag:S
 
     const/16 v3, 0x61
 
     if-ne v2, v3, :cond_0
 
-    .line 5255
+    .line 5337
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v3, 0x6
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5256
+    .line 5338
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v3, 0x0
@@ -32008,35 +32633,35 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5264
+    .line 5346
     :goto_0
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5266
+    .line 5348
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5267
+    .line 5349
     if-eqz p3, :cond_1
 
     const-string v0, "1"
 
-    .line 5268
+    .line 5350
     .local v0, lockString:Ljava/lang/String;
     :goto_1
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5269
+    .line 5351
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5270
+    .line 5352
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-static {p5}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -32045,13 +32670,13 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5272
+    .line 5354
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5274
+    .line 5356
     return-void
 
-    .line 5261
+    .line 5343
     .end local v0           #lockString:Ljava/lang/String;
     :cond_0
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
@@ -32062,7 +32687,7 @@
 
     goto :goto_0
 
-    .line 5267
+    .line 5349
     :cond_1
     const-string v0, "0"
 
@@ -32078,14 +32703,14 @@
     .parameter "response"
 
     .prologue
-    .line 1747
+    .line 1767
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->QMI_CONFIG()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1748
+    .line 1768
     invoke-direct {p0}, Lcom/android/internal/telephony/RIL;->getAID()Ljava/lang/String;
 
     move-result-object v5
@@ -32104,11 +32729,11 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/telephony/RIL;->setFacilityLockForApp(Ljava/lang/String;ZLjava/lang/String;ILjava/lang/String;Landroid/os/Message;)V
 
-    .line 1753
+    .line 1773
     :goto_0
     return-void
 
-    .line 1751
+    .line 1771
     :cond_0
     const/4 v5, 0x0
 
@@ -32139,14 +32764,14 @@
     .parameter "response"
 
     .prologue
-    .line 1760
+    .line 1780
     const/16 v2, 0x2b
 
     invoke-static {v2, p6}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v1
 
-    .line 1763
+    .line 1783
     .local v1, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -32212,36 +32837,36 @@
 
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1768
+    .line 1788
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v3, 0x5
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1770
+    .line 1790
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1771
+    .line 1791
     if-eqz p2, :cond_0
 
     const-string v0, "1"
 
-    .line 1772
+    .line 1792
     .local v0, lockString:Ljava/lang/String;
     :goto_0
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1773
+    .line 1793
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1774
+    .line 1794
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-static {p4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -32250,18 +32875,18 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1775
+    .line 1795
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, p5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1777
+    .line 1797
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1779
+    .line 1799
     return-void
 
-    .line 1771
+    .line 1791
     .end local v0           #lockString:Ljava/lang/String;
     :cond_0
     const-string v0, "0"
@@ -32277,20 +32902,20 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2093
+    .line 2113
     const/16 v2, 0x5b
 
     invoke-static {v2, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 2095
+    .line 2115
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2096
+    .line 2116
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p1, :cond_0
@@ -32300,7 +32925,7 @@
     :cond_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2098
+    .line 2118
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -32335,10 +32960,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 2100
+    .line 2120
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 2101
+    .line 2121
     return-void
 .end method
 
@@ -32348,31 +32973,31 @@
     .parameter "response"
 
     .prologue
-    .line 2065
+    .line 2085
     const/16 v3, 0x5a
 
     invoke-static {v3, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v2
 
-    .line 2067
+    .line 2087
     .local v2, rr:Lcom/android/internal/telephony/RILRequest;
     array-length v1, p1
 
-    .line 2068
+    .line 2088
     .local v1, numOfConfig:I
     iget-object v3, v2, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2070
+    .line 2090
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 2071
+    .line 2091
     iget-object v3, v2, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     aget-object v4, p1, v0
@@ -32383,7 +33008,7 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2072
+    .line 2092
     iget-object v3, v2, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     aget-object v4, p1, v0
@@ -32394,7 +33019,7 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2073
+    .line 2093
     iget-object v3, v2, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     aget-object v4, p1, v0
@@ -32405,7 +33030,7 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2074
+    .line 2094
     iget-object v3, v2, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     aget-object v4, p1, v0
@@ -32416,7 +33041,7 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2075
+    .line 2095
     iget-object v4, v2, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     aget-object v3, p1, v0
@@ -32432,18 +33057,18 @@
     :goto_1
     invoke-virtual {v4, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2070
+    .line 2090
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2075
+    .line 2095
     :cond_0
     const/4 v3, 0x0
 
     goto :goto_1
 
-    .line 2079
+    .line 2099
     :cond_1
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -32495,13 +33120,13 @@
 
     invoke-direct {p0, v3}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 2081
+    .line 2101
     const/4 v0, 0x0
 
     :goto_2
     if-ge v0, v1, :cond_2
 
-    .line 2082
+    .line 2102
     aget-object v3, p1, v0
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->toString()Ljava/lang/String;
@@ -32510,16 +33135,16 @@
 
     invoke-direct {p0, v3}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 2081
+    .line 2101
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 2086
+    .line 2106
     :cond_2
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 2087
+    .line 2107
     return-void
 .end method
 
@@ -32530,14 +33155,14 @@
     .parameter "result"
 
     .prologue
-    .line 6297
+    .line 6413
     const/16 v1, 0x22e
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6299
+    .line 6415
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -32545,17 +33170,17 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6300
+    .line 6416
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6301
+    .line 6417
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6303
+    .line 6419
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -32590,10 +33215,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6305
+    .line 6421
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6306
+    .line 6422
     return-void
 .end method
 
@@ -32605,20 +33230,20 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1990
+    .line 2010
     const/16 v2, 0x4c
 
     invoke-static {v2, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1991
+    .line 2011
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1992
+    .line 2012
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p1, :cond_0
@@ -32626,7 +33251,7 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1994
+    .line 2014
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -32671,13 +33296,13 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1997
+    .line 2017
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1998
+    .line 2018
     return-void
 
-    .line 1992
+    .line 2012
     :cond_0
     const/4 v1, 0x0
 
@@ -32692,14 +33317,14 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1147
+    .line 1156
     const/16 v2, 0x35
 
     invoke-static {v2, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1150
+    .line 1159
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -32745,12 +33370,12 @@
 
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1153
+    .line 1162
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1154
+    .line 1163
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p1, :cond_0
@@ -32758,13 +33383,13 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1156
+    .line 1165
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1157
+    .line 1166
     return-void
 
-    .line 1154
+    .line 1163
     :cond_0
     const/4 v1, 0x0
 
@@ -32776,14 +33401,14 @@
     .parameter "response"
 
     .prologue
-    .line 1603
+    .line 1623
     const/16 v1, 0x2e
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1607
+    .line 1627
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -32819,10 +33444,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1609
+    .line 1629
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1610
+    .line 1630
     return-void
 .end method
 
@@ -32832,14 +33457,14 @@
     .parameter "response"
 
     .prologue
-    .line 1614
+    .line 1634
     const/16 v1, 0x2f
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1618
+    .line 1638
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -32885,15 +33510,15 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1621
+    .line 1641
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1623
+    .line 1643
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1624
+    .line 1644
     return-void
 .end method
 
@@ -32904,14 +33529,14 @@
     .parameter "response"
 
     .prologue
-    .line 6186
+    .line 6302
     const/16 v1, 0x21b
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6189
+    .line 6305
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -32919,12 +33544,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6190
+    .line 6306
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6191
+    .line 6307
     const-string v1, "GSM"
 
     invoke-static {p2, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -32933,14 +33558,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 6192
+    .line 6308
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const-string v2, "0"
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 6199
+    .line 6315
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -32996,13 +33621,13 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6201
+    .line 6317
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6202
+    .line 6318
     return-void
 
-    .line 6193
+    .line 6309
     :cond_0
     const-string v1, "TD"
 
@@ -33012,7 +33637,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 6194
+    .line 6310
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const-string v2, "2"
@@ -33021,7 +33646,7 @@
 
     goto :goto_0
 
-    .line 6196
+    .line 6312
     :cond_1
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -33039,15 +33664,15 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 711
+    .line 720
     invoke-super {p0, p1, p2, p3}, Lcom/android/internal/telephony/BaseCommands;->setOnNITZTime(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 714
+    .line 723
     iget-object v0, p0, Lcom/android/internal/telephony/RIL;->mLastNITZTimeInfo:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
 
-    .line 715
+    .line 724
     iget-object v0, p0, Lcom/android/internal/telephony/BaseCommands;->mNITZTimeRegistrant:Landroid/os/Registrant;
 
     new-instance v1, Landroid/os/AsyncResult;
@@ -33058,10 +33683,10 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
 
-    .line 718
+    .line 727
     iput-object v3, p0, Lcom/android/internal/telephony/RIL;->mLastNITZTimeInfo:Ljava/lang/Object;
 
-    .line 720
+    .line 729
     :cond_0
     return-void
 .end method
@@ -33072,14 +33697,14 @@
     .parameter "response"
 
     .prologue
-    .line 5729
+    .line 5845
     const/16 v2, 0x1fa
 
     invoke-static {v2, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v1
 
-    .line 5732
+    .line 5848
     .local v1, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -33087,39 +33712,39 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5733
+    .line 5849
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget-object v3, p1, Lcom/android/internal/telephony/PhoneBookEntry;->number:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5734
+    .line 5850
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget v3, p1, Lcom/android/internal/telephony/PhoneBookEntry;->type:I
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5737
+    .line 5853
     iget-object v2, p1, Lcom/android/internal/telephony/PhoneBookEntry;->text:Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 5738
+    .line 5854
     iget-object v2, p1, Lcom/android/internal/telephony/PhoneBookEntry;->text:Ljava/lang/String;
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/RIL;->convertNameToProperCoding(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5739
+    .line 5855
     .local v0, hexString:Ljava/lang/String;
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5744
+    .line 5860
     .end local v0           #hexString:Ljava/lang/String;
     :goto_0
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
@@ -33128,14 +33753,14 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5745
+    .line 5861
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget-object v3, p1, Lcom/android/internal/telephony/PhoneBookEntry;->group:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5746
+    .line 5862
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget-object v3, p1, Lcom/android/internal/telephony/PhoneBookEntry;->adnumber:[Ljava/lang/String;
@@ -33146,39 +33771,39 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5747
+    .line 5863
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget v3, p1, Lcom/android/internal/telephony/PhoneBookEntry;->adtype:I
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5748
+    .line 5864
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget-object v3, p1, Lcom/android/internal/telephony/PhoneBookEntry;->secondtext:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5751
+    .line 5867
     iget-object v2, p1, Lcom/android/internal/telephony/PhoneBookEntry;->email:Ljava/lang/String;
 
     if-eqz v2, :cond_1
 
-    .line 5752
+    .line 5868
     iget-object v2, p1, Lcom/android/internal/telephony/PhoneBookEntry;->email:Ljava/lang/String;
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/RIL;->convertNameToProperCoding(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5753
+    .line 5869
     .restart local v0       #hexString:Ljava/lang/String;
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5759
+    .line 5875
     .end local v0           #hexString:Ljava/lang/String;
     :goto_1
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
@@ -33187,14 +33812,14 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5760
+    .line 5876
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget-object v3, p1, Lcom/android/internal/telephony/PhoneBookEntry;->tel_uri:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5763
+    .line 5879
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -33229,13 +33854,13 @@
 
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5765
+    .line 5881
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5766
+    .line 5882
     return-void
 
-    .line 5741
+    .line 5857
     :cond_0
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -33245,7 +33870,7 @@
 
     goto :goto_0
 
-    .line 5755
+    .line 5871
     :cond_1
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -33262,14 +33887,14 @@
     .parameter "response"
 
     .prologue
-    .line 7474
+    .line 7590
     const/16 v1, 0x2713
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 7476
+    .line 7592
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -33277,12 +33902,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7477
+    .line 7593
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7479
+    .line 7595
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -33327,10 +33952,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 7482
+    .line 7598
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 7483
+    .line 7599
     return-void
 .end method
 
@@ -33339,7 +33964,7 @@
     .parameter "phoneType"
 
     .prologue
-    .line 4777
+    .line 4853
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -33372,10 +33997,10 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4778
+    .line 4854
     iput p1, p0, Lcom/android/internal/telephony/BaseCommands;->mPhoneType:I
 
-    .line 4779
+    .line 4855
     return-void
 .end method
 
@@ -33385,14 +34010,14 @@
     .parameter "response"
 
     .prologue
-    .line 1947
+    .line 1967
     const/16 v1, 0x49
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1950
+    .line 1970
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -33400,18 +34025,18 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1951
+    .line 1971
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1953
+    .line 1973
     iput p1, p0, Lcom/android/internal/telephony/RIL;->mSetPreferredNetworkType:I
 
-    .line 1954
+    .line 1974
     iput p1, p0, Lcom/android/internal/telephony/BaseCommands;->mPreferredNetworkType:I
 
-    .line 1956
+    .line 1976
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -33456,10 +34081,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1959
+    .line 1979
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1960
+    .line 1980
     return-void
 .end method
 
@@ -33469,14 +34094,14 @@
     .parameter "response"
 
     .prologue
-    .line 2104
+    .line 2124
     const/16 v1, 0x247
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 2107
+    .line 2127
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -33484,15 +34109,15 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2108
+    .line 2128
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2110
+    .line 2130
     iput p1, p0, Lcom/android/internal/telephony/BaseCommands;->mPreferredNetworkType:I
 
-    .line 2112
+    .line 2132
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -33537,10 +34162,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 2115
+    .line 2135
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 2116
+    .line 2136
     return-void
 .end method
 
@@ -33552,20 +34177,20 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1055
+    .line 1064
     const/16 v2, 0x52
 
     invoke-static {v2, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1058
+    .line 1067
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1059
+    .line 1068
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p1, :cond_0
@@ -33573,13 +34198,13 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1061
+    .line 1070
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1062
+    .line 1071
     return-void
 
-    .line 1059
+    .line 1068
     :cond_0
     const/4 v1, 0x0
 
@@ -33594,32 +34219,32 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 6318
+    .line 6434
     const/16 v1, 0x230
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6319
+    .line 6435
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6320
+    .line 6436
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
     if-ne v1, v2, :cond_0
 
-    .line 6321
+    .line 6437
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6324
+    .line 6440
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -33665,13 +34290,13 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6325
+    .line 6441
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6326
+    .line 6442
     return-void
 
-    .line 6323
+    .line 6439
     :cond_0
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -33689,14 +34314,14 @@
     .parameter "response"
 
     .prologue
-    .line 6309
+    .line 6425
     const/16 v1, 0x22f
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 6310
+    .line 6426
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -33704,17 +34329,17 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6311
+    .line 6427
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6312
+    .line 6428
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 6313
+    .line 6429
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -33769,10 +34394,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 6314
+    .line 6430
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 6315
+    .line 6431
     return-void
 .end method
 
@@ -33784,20 +34409,20 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1442
+    .line 1456
     const/16 v2, 0x17
 
     invoke-static {v2, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1444
+    .line 1458
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1445
+    .line 1459
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p1, :cond_0
@@ -33805,7 +34430,7 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1448
+    .line 1462
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -33849,19 +34474,19 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1452
+    .line 1466
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1453
+    .line 1467
     return-void
 
-    .line 1445
+    .line 1459
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 1448
+    .line 1462
     :cond_1
     const-string v1, " off"
 
@@ -33874,14 +34499,14 @@
     .parameter "response"
 
     .prologue
-    .line 5958
+    .line 6074
     const/16 v1, 0x208
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5960
+    .line 6076
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -33889,12 +34514,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5961
+    .line 6077
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5962
+    .line 6078
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -33929,10 +34554,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5964
+    .line 6080
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5965
+    .line 6081
     return-void
 .end method
 
@@ -33942,20 +34567,20 @@
     .parameter "result"
 
     .prologue
-    .line 2015
+    .line 2035
     const/16 v1, 0x65
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 2017
+    .line 2037
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 2019
+    .line 2039
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -34000,10 +34625,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 2022
+    .line 2042
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 2023
+    .line 2043
     return-void
 .end method
 
@@ -34014,7 +34639,7 @@
     .parameter "response"
 
     .prologue
-    .line 5920
+    .line 6036
     iget-object v3, p0, Lcom/android/internal/telephony/BaseCommands;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -34027,32 +34652,32 @@
 
     move-result v2
 
-    .line 5922
+    .line 6038
     .local v2, trustZone:Z
     const/4 v3, 0x1
 
     if-ne v2, v3, :cond_0
 
-    .line 5923
+    .line 6039
     new-instance v1, Lcom/android/internal/telephony/RIL$SubsidyLockTrustZoneThread;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3, p3}, Lcom/android/internal/telephony/RIL$SubsidyLockTrustZoneThread;-><init>(Lcom/android/internal/telephony/RIL;ZLandroid/os/Message;)V
 
-    .line 5924
+    .line 6040
     .local v1, thread:Lcom/android/internal/telephony/RIL$SubsidyLockTrustZoneThread;
     invoke-virtual {v1, p1, p2}, Lcom/android/internal/telephony/RIL$SubsidyLockTrustZoneThread;->setParameters(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5925
+    .line 6041
     invoke-virtual {v1}, Lcom/android/internal/telephony/RIL$SubsidyLockTrustZoneThread;->start()V
 
-    .line 5939
+    .line 6055
     .end local v1           #thread:Lcom/android/internal/telephony/RIL$SubsidyLockTrustZoneThread;
     :goto_0
     return-void
 
-    .line 5931
+    .line 6047
     :cond_0
     const/16 v3, 0x206
 
@@ -34060,7 +34685,7 @@
 
     move-result-object v0
 
-    .line 5933
+    .line 6049
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v3, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -34068,17 +34693,17 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5934
+    .line 6050
     iget-object v3, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5935
+    .line 6051
     iget-object v3, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5936
+    .line 6052
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -34113,7 +34738,7 @@
 
     invoke-direct {p0, v3}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5938
+    .line 6054
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
     goto :goto_0
@@ -34127,20 +34752,20 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1457
+    .line 1471
     const/16 v2, 0x3e
 
     invoke-static {v2, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1460
+    .line 1474
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1461
+    .line 1475
     iget-object v2, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz p1, :cond_0
@@ -34148,7 +34773,7 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1463
+    .line 1477
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -34183,13 +34808,13 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1466
+    .line 1480
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1467
+    .line 1481
     return-void
 
-    .line 1461
+    .line 1475
     :cond_0
     const/4 v1, 0x0
 
@@ -34202,14 +34827,14 @@
     .parameter "response"
 
     .prologue
-    .line 4854
+    .line 4930
     const/16 v1, 0x50
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4857
+    .line 4933
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -34217,12 +34842,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 4858
+    .line 4934
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 4860
+    .line 4936
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -34267,10 +34892,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4863
+    .line 4939
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4864
+    .line 4940
     return-void
 .end method
 
@@ -34280,14 +34905,14 @@
     .parameter "result"
 
     .prologue
-    .line 5327
+    .line 5409
     const/16 v1, 0x2b03
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5329
+    .line 5411
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -34295,12 +34920,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5330
+    .line 5412
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5333
+    .line 5415
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -34335,10 +34960,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5335
+    .line 5417
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5336
+    .line 5418
     return-void
 .end method
 
@@ -34354,14 +34979,14 @@
     .parameter "result"
 
     .prologue
-    .line 1404
+    .line 1413
     const/16 v1, 0x1b
 
     invoke-static {v1, p8}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1407
+    .line 1416
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
@@ -34369,42 +34994,46 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1409
+    .line 1418
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1410
+    .line 1419
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1411
+    .line 1420
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1412
+    .line 1421
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1413
+    .line 1422
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1414
+    .line 1423
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p6}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1415
+    .line 1424
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p7}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1417
+    .line 1427
+    iget-boolean v1, p0, Lcom/android/internal/telephony/RIL;->mIsTestKeys:Z
+
+    if-eqz v1, :cond_0
+
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -34509,11 +35138,100 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1422
+    .line 1436
+    :goto_0
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1423
+    .line 1437
     return-void
+
+    .line 1431
+    :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method
 
 .method public startDtmf(CLandroid/os/Message;)V
@@ -34522,14 +35240,14 @@
     .parameter "result"
 
     .prologue
-    .line 1223
+    .line 1232
     const/16 v1, 0x31
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1226
+    .line 1235
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -34565,7 +35283,7 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1228
+    .line 1237
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-static {p1}, Ljava/lang/Character;->toString(C)Ljava/lang/String;
@@ -34574,10 +35292,10 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1230
+    .line 1239
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1231
+    .line 1240
     return-void
 .end method
 
@@ -34586,14 +35304,14 @@
     .parameter "result"
 
     .prologue
-    .line 1235
+    .line 1244
     const/16 v1, 0x32
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1238
+    .line 1247
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -34629,10 +35347,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1240
+    .line 1249
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1241
+    .line 1250
     return-void
 .end method
 
@@ -34642,25 +35360,25 @@
     .parameter "result"
 
     .prologue
-    .line 735
+    .line 744
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->QMI_CONFIG()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 736
+    .line 745
     invoke-direct {p0}, Lcom/android/internal/telephony/RIL;->getAID()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, v0, p2}, Lcom/android/internal/telephony/RIL;->supplyIccPinForApp(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 741
+    .line 750
     :goto_0
     return-void
 
-    .line 739
+    .line 748
     :cond_0
     const/4 v0, 0x0
 
@@ -34678,12 +35396,12 @@
     .prologue
     const/4 v3, 0x2
 
-    .line 4953
+    .line 5029
     invoke-static {v3, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4955
+    .line 5031
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -34719,25 +35437,25 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4957
+    .line 5033
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 4958
+    .line 5034
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 4959
+    .line 5035
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 4961
+    .line 5037
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4962
+    .line 5038
     return-void
 .end method
 
@@ -34747,25 +35465,25 @@
     .parameter "result"
 
     .prologue
-    .line 786
+    .line 795
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->QMI_CONFIG()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 787
+    .line 796
     invoke-direct {p0}, Lcom/android/internal/telephony/RIL;->getAID()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, v0, p2}, Lcom/android/internal/telephony/RIL;->supplyIccPin2ForApp(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 792
+    .line 801
     :goto_0
     return-void
 
-    .line 790
+    .line 799
     :cond_0
     const/4 v0, 0x0
 
@@ -34781,14 +35499,14 @@
     .parameter "result"
 
     .prologue
-    .line 4984
+    .line 5060
     const/4 v1, 0x4
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4986
+    .line 5062
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -34824,27 +35542,27 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4988
+    .line 5064
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x2
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 4989
+    .line 5065
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 4990
+    .line 5066
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 4992
+    .line 5068
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4993
+    .line 5069
     return-void
 .end method
 
@@ -34855,14 +35573,14 @@
     .parameter "result"
 
     .prologue
-    .line 798
+    .line 807
     const/4 v1, 0x4
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 800
+    .line 809
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -34898,27 +35616,27 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 802
+    .line 811
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x2
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 803
+    .line 812
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 804
+    .line 813
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 806
+    .line 815
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 807
+    .line 816
     return-void
 .end method
 
@@ -34931,12 +35649,12 @@
     .prologue
     const/4 v3, 0x2
 
-    .line 747
+    .line 756
     invoke-static {v3, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 749
+    .line 758
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -34972,25 +35690,25 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 751
+    .line 760
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 752
+    .line 761
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 753
+    .line 762
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 755
+    .line 764
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 756
+    .line 765
     return-void
 .end method
 
@@ -35001,25 +35719,25 @@
     .parameter "result"
 
     .prologue
-    .line 760
+    .line 769
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->QMI_CONFIG()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 761
+    .line 770
     invoke-direct {p0}, Lcom/android/internal/telephony/RIL;->getAID()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, p2, v0, p3}, Lcom/android/internal/telephony/RIL;->supplyIccPukForApp(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 766
+    .line 775
     :goto_0
     return-void
 
-    .line 764
+    .line 773
     :cond_0
     const/4 v0, 0x0
 
@@ -35038,12 +35756,12 @@
     .prologue
     const/4 v3, 0x3
 
-    .line 4968
+    .line 5044
     invoke-static {v3, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 4970
+    .line 5046
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -35079,30 +35797,30 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 4972
+    .line 5048
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 4973
+    .line 5049
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 4974
+    .line 5050
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 4975
+    .line 5051
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 4977
+    .line 5053
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 4978
+    .line 5054
     return-void
 .end method
 
@@ -35113,25 +35831,25 @@
     .parameter "result"
 
     .prologue
-    .line 811
+    .line 820
     invoke-static {}, Lcom/android/internal/telephony/HtcBuildUtils;->QMI_CONFIG()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 812
+    .line 821
     invoke-direct {p0}, Lcom/android/internal/telephony/RIL;->getAID()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, p2, v0, p3}, Lcom/android/internal/telephony/RIL;->supplyIccPuk2ForApp(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 817
+    .line 826
     :goto_0
     return-void
 
-    .line 815
+    .line 824
     :cond_0
     const/4 v0, 0x0
 
@@ -35148,14 +35866,14 @@
     .parameter "result"
 
     .prologue
-    .line 4999
+    .line 5075
     const/4 v1, 0x5
 
     invoke-static {v1, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5001
+    .line 5077
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -35191,32 +35909,32 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5003
+    .line 5079
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x3
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5004
+    .line 5080
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5005
+    .line 5081
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5006
+    .line 5082
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5008
+    .line 5084
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5009
+    .line 5085
     return-void
 .end method
 
@@ -35228,14 +35946,14 @@
     .parameter "result"
 
     .prologue
-    .line 823
+    .line 832
     const/4 v1, 0x5
 
     invoke-static {v1, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 825
+    .line 834
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -35271,32 +35989,32 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 827
+    .line 836
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x3
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 828
+    .line 837
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 829
+    .line 838
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 830
+    .line 839
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 832
+    .line 841
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 833
+    .line 842
     return-void
 .end method
 
@@ -35310,12 +36028,12 @@
     .prologue
     const/4 v3, 0x3
 
-    .line 772
+    .line 781
     invoke-static {v3, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 774
+    .line 783
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -35351,30 +36069,30 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 776
+    .line 785
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 777
+    .line 786
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 778
+    .line 787
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 779
+    .line 788
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 781
+    .line 790
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 782
+    .line 791
     return-void
 .end method
 
@@ -35384,14 +36102,14 @@
     .parameter "result"
 
     .prologue
-    .line 903
+    .line 912
     const/16 v1, 0x8
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 905
+    .line 914
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -35427,22 +36145,22 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 907
+    .line 916
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 908
+    .line 917
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 910
+    .line 919
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 911
+    .line 920
     return-void
 .end method
 
@@ -35451,14 +36169,14 @@
     .parameter "result"
 
     .prologue
-    .line 1034
+    .line 1043
     const/16 v1, 0xf
 
     invoke-static {v1, p1}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1038
+    .line 1047
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -35494,10 +36212,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1040
+    .line 1049
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1041
+    .line 1050
     return-void
 .end method
 
@@ -35509,27 +36227,32 @@
     .parameter "response"
 
     .prologue
-    .line 5418
+    .line 5506
     const/16 v3, 0x243
 
     invoke-static {v3, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v2
 
-    .line 5421
+    .line 5509
     .local v2, rr:Lcom/android/internal/telephony/RILRequest;
     invoke-static {p2}, Lcom/android/internal/telephony/IccUtils;->bytesToHexString([B)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 5422
+    .line 5510
     .local v1, randHex:Ljava/lang/String;
     invoke-static {p3}, Lcom/android/internal/telephony/IccUtils;->bytesToHexString([B)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5425
+    .line 5513
     .local v0, autnHex:Ljava/lang/String;
+    iget-boolean v3, p0, Lcom/android/internal/telephony/RIL;->mIsTestKeys:Z
+
+    if-eqz v3, :cond_0
+
+    .line 5514
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -35600,26 +36323,81 @@
 
     invoke-direct {p0, v3}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5428
+    .line 5521
+    :goto_0
     iget-object v3, v2, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5429
+    .line 5522
     iget-object v3, v2, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5430
+    .line 5523
     iget-object v3, v2, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5432
+    .line 5525
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5433
+    .line 5526
     return-void
+
+    .line 5517
+    :cond_0
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "> "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget v4, v2, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v4}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "["
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "]"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {p0, v3}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method
 
 .method public uiccApplicationIO(IIILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
@@ -35636,60 +36414,65 @@
     .parameter "response"
 
     .prologue
-    .line 5437
+    .line 5530
     const/16 v1, 0x241
 
     invoke-static {v1, p10}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5439
+    .line 5532
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5440
+    .line 5533
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5441
+    .line 5534
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5442
+    .line 5535
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5443
+    .line 5536
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p5}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5444
+    .line 5537
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p6}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5445
+    .line 5538
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p7}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5446
+    .line 5539
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p8}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5447
+    .line 5540
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p9}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5450
+    .line 5543
+    iget-boolean v1, p0, Lcom/android/internal/telephony/RIL;->mIsTestKeys:Z
+
+    if-eqz v1, :cond_0
+
+    .line 5544
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -35812,11 +36595,108 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5457
+    .line 5558
+    :goto_0
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5458
+    .line 5559
     return-void
+
+    .line 5551
+    :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "> uiccApplicationIO: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v2}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " 0x"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " 0x"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " 0x"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " path: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method
 
 .method public uiccDeactivateApplication(ILandroid/os/Message;)V
@@ -35825,14 +36705,14 @@
     .parameter "response"
 
     .prologue
-    .line 5406
+    .line 5494
     const/16 v1, 0x240
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5409
+    .line 5497
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -35884,22 +36764,22 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5412
+    .line 5500
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5413
+    .line 5501
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5414
+    .line 5502
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5415
+    .line 5503
     return-void
 .end method
 
@@ -35911,27 +36791,32 @@
     .parameter "response"
 
     .prologue
-    .line 5462
+    .line 5563
     const/16 v3, 0x244
 
     invoke-static {v3, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v2
 
-    .line 5464
+    .line 5565
     .local v2, rr:Lcom/android/internal/telephony/RILRequest;
     invoke-static {p2}, Lcom/android/internal/telephony/IccUtils;->bytesToHexString([B)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 5465
+    .line 5566
     .local v1, randHex:Ljava/lang/String;
     invoke-static {p3}, Lcom/android/internal/telephony/IccUtils;->bytesToHexString([B)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5468
+    .line 5569
     .local v0, autnHex:Ljava/lang/String;
+    iget-boolean v3, p0, Lcom/android/internal/telephony/RIL;->mIsTestKeys:Z
+
+    if-eqz v3, :cond_0
+
+    .line 5570
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -36002,26 +36887,81 @@
 
     invoke-direct {p0, v3}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5471
+    .line 5577
+    :goto_0
     iget-object v3, v2, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5472
+    .line 5578
     iget-object v3, v2, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5473
+    .line 5579
     iget-object v3, v2, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5475
+    .line 5581
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5476
+    .line 5582
     return-void
+
+    .line 5573
+    :cond_0
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "> "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget v4, v2, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v4}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "["
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "]"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {p0, v3}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method
 
 .method public uiccGbaAuthenticateNaf(I[BLandroid/os/Message;)V
@@ -36031,21 +36971,26 @@
     .parameter "response"
 
     .prologue
-    .line 5479
+    .line 5585
     const/16 v2, 0x245
 
     invoke-static {v2, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v1
 
-    .line 5481
+    .line 5587
     .local v1, rr:Lcom/android/internal/telephony/RILRequest;
     invoke-static {p2}, Lcom/android/internal/telephony/IccUtils;->bytesToHexString([B)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5484
+    .line 5590
     .local v0, nafIdHex:Ljava/lang/String;
+    iget-boolean v2, p0, Lcom/android/internal/telephony/RIL;->mIsTestKeys:Z
+
+    if-eqz v2, :cond_0
+
+    .line 5591
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -36106,28 +37051,83 @@
 
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5487
+    .line 5598
+    :goto_0
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5488
+    .line 5599
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5489
+    .line 5600
     iget-object v2, v1, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5491
+    .line 5602
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5492
+    .line 5603
     return-void
+
+    .line 5594
+    :cond_0
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "> "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget v3, v1, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v3}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "["
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "]"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {p0, v2}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method
 
 .method public uiccSelectApplication(Ljava/lang/String;Landroid/os/Message;)V
@@ -36136,14 +37136,14 @@
     .parameter "response"
 
     .prologue
-    .line 5395
+    .line 5483
     const/16 v1, 0x23f
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 5398
+    .line 5486
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -36195,15 +37195,15 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5401
+    .line 5489
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5402
+    .line 5490
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5403
+    .line 5491
     return-void
 .end method
 
@@ -36215,27 +37215,32 @@
     .parameter "response"
 
     .prologue
-    .line 5525
+    .line 5636
     const/16 v3, 0x246
 
     invoke-static {v3, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v2
 
-    .line 5528
+    .line 5639
     .local v2, rr:Lcom/android/internal/telephony/RILRequest;
     invoke-static {p2}, Lcom/android/internal/telephony/IccUtils;->bytesToHexString([B)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 5529
+    .line 5640
     .local v1, randHex:Ljava/lang/String;
     invoke-static {p3}, Lcom/android/internal/telephony/IccUtils;->bytesToHexString([B)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5532
+    .line 5643
     .local v0, autnHex:Ljava/lang/String;
+    iget-boolean v3, p0, Lcom/android/internal/telephony/RIL;->mIsTestKeys:Z
+
+    if-eqz v3, :cond_0
+
+    .line 5644
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -36306,26 +37311,81 @@
 
     invoke-direct {p0, v3}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 5535
+    .line 5651
+    :goto_0
     iget-object v3, v2, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5536
+    .line 5652
     iget-object v3, v2, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5537
+    .line 5653
     iget-object v3, v2, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5539
+    .line 5655
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 5540
+    .line 5656
     return-void
+
+    .line 5647
+    :cond_0
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2}, Lcom/android/internal/telephony/RILRequest;->serialString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "> "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget v4, v2, Lcom/android/internal/telephony/RILRequest;->mRequest:I
+
+    invoke-static {v4}, Lcom/android/internal/telephony/RIL;->requestToString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "["
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "]"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {p0, v3}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method
 
 .method public writeSmsToRuim(ILjava/lang/String;Landroid/os/Message;)V
@@ -36335,30 +37395,30 @@
     .parameter "response"
 
     .prologue
-    .line 1365
+    .line 1374
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->translateStatus(I)I
 
     move-result p1
 
-    .line 1367
+    .line 1376
     const/16 v1, 0x60
 
     invoke-static {v1, p3}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1370
+    .line 1379
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1371
+    .line 1380
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1373
+    .line 1382
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -36403,10 +37463,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1377
+    .line 1386
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1378
+    .line 1387
     return-void
 .end method
 
@@ -36418,35 +37478,35 @@
     .parameter "response"
 
     .prologue
-    .line 1348
+    .line 1357
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/RIL;->translateStatus(I)I
 
     move-result p1
 
-    .line 1350
+    .line 1359
     const/16 v1, 0x3f
 
     invoke-static {v1, p4}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 1353
+    .line 1362
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1354
+    .line 1363
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1355
+    .line 1364
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1357
+    .line 1366
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -36491,9 +37551,9 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
 
-    .line 1361
+    .line 1370
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 1362
+    .line 1371
     return-void
 .end method

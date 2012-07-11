@@ -24,7 +24,7 @@
 
     .prologue
     .line 98
-    const v1, 0x7f07021d
+    const v1, 0x7f0701bb
 
     invoke-static {p0, v1}, Lcom/htc/music/util/ProjectSettings;->getIntValue(Landroid/content/Context;I)I
 
@@ -80,7 +80,7 @@
 
     .prologue
     .line 77
-    const v0, 0x7f07021b
+    const v0, 0x7f0701b9
 
     invoke-static {p0, v0}, Lcom/htc/music/util/ProjectSettings;->getIntValue(Landroid/content/Context;I)I
 
@@ -97,7 +97,7 @@
     const/4 v1, 0x1
 
     .line 114
-    const v2, 0x7f07021e
+    const v2, 0x7f0701bc
 
     invoke-static {p0, v2}, Lcom/htc/music/util/ProjectSettings;->getIntValue(Landroid/content/Context;I)I
 
@@ -123,7 +123,7 @@
 
     .prologue
     .line 49
-    const v1, 0x7f070219
+    const v1, 0x7f0701b7
 
     invoke-static {p0, v1}, Lcom/htc/music/util/ProjectSettings;->getIntValue(Landroid/content/Context;I)I
 
@@ -185,7 +185,7 @@
 
     .prologue
     .line 68
-    const v0, 0x7f07021a
+    const v0, 0x7f0701b8
 
     invoke-static {p0, v0}, Lcom/htc/music/util/ProjectSettings;->getIntValue(Landroid/content/Context;I)I
 
@@ -212,7 +212,7 @@
     const/4 v1, 0x1
 
     .line 137
-    const v2, 0x7f07021f
+    const v2, 0x7f0701bd
 
     invoke-static {p0, v2}, Lcom/htc/music/util/ProjectSettings;->getIntValue(Landroid/content/Context;I)I
 
@@ -249,7 +249,7 @@
 
     .prologue
     .line 41
-    const v0, 0x7f070218
+    const v0, 0x7f0701b6
 
     invoke-static {p0, v0}, Lcom/htc/music/util/ProjectSettings;->getIntValue(Landroid/content/Context;I)I
 
@@ -274,7 +274,7 @@
 
     .prologue
     .line 90
-    const v0, 0x7f07021c
+    const v0, 0x7f0701ba
 
     invoke-static {p0, v0}, Lcom/htc/music/util/ProjectSettings;->getIntValue(Landroid/content/Context;I)I
 
@@ -325,7 +325,7 @@
 
     .prologue
     .line 45
-    const v0, 0x7f070217
+    const v0, 0x7f0701b5
 
     invoke-static {p0, v0}, Lcom/htc/music/util/ProjectSettings;->getIntValue(Landroid/content/Context;I)I
 
@@ -340,7 +340,7 @@
 
     .prologue
     .line 37
-    const v0, 0x7f070216
+    const v0, 0x7f0701b4
 
     invoke-static {p0, v0}, Lcom/htc/music/util/ProjectSettings;->getIntValue(Landroid/content/Context;I)I
 

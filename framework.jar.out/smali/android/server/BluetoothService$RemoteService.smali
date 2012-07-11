@@ -29,23 +29,23 @@
     .parameter "uuid"
 
     .prologue
-    .line 212
+    .line 238
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 213
+    .line 239
     iput-object p1, p0, Landroid/server/BluetoothService$RemoteService;->address:Ljava/lang/String;
 
-    .line 214
+    .line 240
     iput-object p2, p0, Landroid/server/BluetoothService$RemoteService;->uuid:Landroid/os/ParcelUuid;
 
-    .line 215
+    .line 241
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/server/BluetoothService$RemoteService;->timestamp:J
 
-    .line 216
+    .line 242
     return-void
 .end method
 
@@ -58,17 +58,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 219
+    .line 245
     instance-of v2, p1, Landroid/server/BluetoothService$RemoteService;
 
     if-eqz v2, :cond_0
 
     move-object v0, p1
 
-    .line 220
+    .line 246
     check-cast v0, Landroid/server/BluetoothService$RemoteService;
 
-    .line 221
+    .line 247
     .local v0, service:Landroid/server/BluetoothService$RemoteService;
     iget-object v2, p0, Landroid/server/BluetoothService$RemoteService;->address:Ljava/lang/String;
 
@@ -92,7 +92,7 @@
 
     const/4 v1, 0x1
 
-    .line 223
+    .line 249
     .end local v0           #service:Landroid/server/BluetoothService$RemoteService;
     :cond_0
     return v1
@@ -104,10 +104,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 228
+    .line 254
     const/4 v0, 0x1
 
-    .line 229
+    .line 255
     .local v0, hash:I
     iget-object v1, p0, Landroid/server/BluetoothService$RemoteService;->address:Ljava/lang/String;
 
@@ -118,7 +118,7 @@
     :goto_0
     add-int/lit8 v0, v1, 0x1f
 
-    .line 230
+    .line 256
     mul-int/lit8 v1, v0, 0x1f
 
     iget-object v3, p0, Landroid/server/BluetoothService$RemoteService;->uuid:Landroid/os/ParcelUuid;
@@ -128,10 +128,10 @@
     :goto_1
     add-int v0, v1, v2
 
-    .line 231
+    .line 257
     return v0
 
-    .line 229
+    .line 255
     :cond_0
     iget-object v1, p0, Landroid/server/BluetoothService$RemoteService;->address:Ljava/lang/String;
 
@@ -141,7 +141,7 @@
 
     goto :goto_0
 
-    .line 230
+    .line 256
     :cond_1
     iget-object v2, p0, Landroid/server/BluetoothService$RemoteService;->uuid:Landroid/os/ParcelUuid;
 

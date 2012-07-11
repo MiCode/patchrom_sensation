@@ -269,12 +269,12 @@
     <string name="turn_off_radio">Izslēgt bezvadu pakalpojumus</string>
     <string name="screen_lock">Ekrāna bloķēšana</string>
     <string name="power_off">Izslēgt barošanu</string>
-    <string name="silent_mode_silent">Ringer off</string>
-    <string name="silent_mode_vibrate">Ringer vibrate</string>
-    <string name="silent_mode_ring">Ringer on</string>
+    <string name="silent_mode_silent">Zvans izslēgts</string>
+    <string name="silent_mode_vibrate">Zvans vibrē</string>
+    <string name="silent_mode_ring">Zvans ieslēgts</string>
     <string name="shutdown_progress">Beidzē…</string>
     <string name="shutdown_confirm">Tālrunis tiks beidzēts.</string>
-    <string name="shutdown_confirm_question">Vai vēlaties beidzēt?</string>
+    <string name="shutdown_confirm_question">Vai vēlaties izslēgt?</string>
     <string name="recent_tasks_title">Pēdējie</string>
     <string name="no_recent_tasks">Nav nesenu lietojumprogrammu.</string>
     <string name="global_actions">Tālruņa opcijas</string>
@@ -426,10 +426,10 @@
     <string name="permdesc_movePackage">Atļauj lietojumprogrammai pārvietot lietojumprogrammas resursus no iekšējās uz ārējo multividi un atpakaļ.</string>
     <string name="permlab_readLogs">lasīt jutīgus žurnāla datus</string>
     <string name="permdesc_readLogs">Atļauj lietojumprogrammai lasīt no dažādiem sistēmas žurnālfailiem. Tādējādi tai tiek atļauts atklāt vispārēju informāciju par to, ko jūs darāt ar tālruni, potenciāli iekļaujot personisku vai privātu informāciju.</string>
-    <string name="permlab_anyCodecForPlayback">use any media decoder for playback</string>
-    <string name="permdesc_anyCodecForPlayback">Allows an application to use any installed media decoder to decode for playback.</string>
-    <string name="permlab_readWriteOmaDrm">access the folder about oma DRM</string>
-    <string name="permdesc_readWriteOmaDrm">Allows an application to read or write to the folder about OMA DRM.</string>
+    <string name="permlab_anyCodecForPlayback">izmantot jebkuru multivides dekodētāju atskaņošanai</string>
+    <string name="permdesc_anyCodecForPlayback">Atļauj lietojumprogrammai izmantot jebkuru instalētu multivides dekodētāju, lai dekodētu atskaņošanai.</string>
+    <string name="permlab_readWriteOmaDrm">piekļūt mapei par oma DRM</string>
+    <string name="permdesc_readWriteOmaDrm">Ļauj lietojumprogrammai izlasīt vai rakstīt mapē par OMA DRM.</string>
     <string name="permlab_diagnostic">lasīt/rakstīt diagnostikai piederošajos resursos</string>
     <string name="permdesc_diagnostic">Vienmēr atļauj lietojumprogrammai lasīt un rakstīt jebkurā resursā, kas pieder diagnostikas grupai, piemēram, faili un/dev. Tas var potenciāli ietekmēt sistēmas stabilitāti un drošību. To vajadzētu izmantot TIKAI aparatūras specifiskajai diagnostikai, ko veic ražotājs vai operators.</string>
     <string name="permlab_changeComponentState">iespējot vai atspējot lietojumprogrammas komponentus</string>
@@ -573,7 +573,7 @@
     <string name="permlab_accessWimaxState">skatīt WiMAX stāvokli</string>
     <string name="permdesc_accessWimaxState">Atļauj lietojumprogrammai skatīt informāciju par WiMAX stāvokli.</string>
     <string name="permlab_changeWimaxState">mainīt WiMAX stāvokli</string>
-    <string name="permdesc_changeWimaxState">Allows an application to connect to and disconnect from WiMAX network.</string>
+    <string name="permdesc_changeWimaxState">Atļauj lietojumprogrammai izveidot savienojumu ar WiMAX tīklu un pārtraukt to.</string>
     <string name="permlab_bluetoothAdmin">bluetooth administrācija</string>
     <string name="permdesc_bluetoothAdmin">Atļauj lietojumprogrammai konfigurēt vietējo Bluetooth tālruni, kā arī atklāt un savienot pārī ar attālām ierīcēm.</string>
     <string name="permlab_bluetooth">izveidot Bluetooth savienojumus</string>
@@ -607,7 +607,7 @@
     <string name="permlab_readNetworkUsageHistory">lasīt informāciju par iepriekšēju tīkla izmantošanu</string>
     <string name="permdesc_readNetworkUsageHistory">Ļauj lietojumprogrammai lasīt informāciju par iepriekšēju tīkla izmantošanu saistībā ar noteiktiem tīkliem un lietojumprogrammām.</string>
     <string name="permlab_manageNetworkPolicy">pārvaldīt tīkla politiku</string>
-    <string name="permdesc_manageNetworkPolicy">Ļauj lietojumprogrammai pārvaldīt tīkla politikas un noteikt lietojumprogrammas kārtulas.</string>
+    <string name="permdesc_manageNetworkPolicy">Ļauj lietojumprogrammai pārvaldīt tīkla politiku un noteikt lietojumprogrammas kārtulas.</string>
     <string name="permlab_modifyNetworkAccounting">Tīkla lietojuma uzskaites mainīšana</string>
     <string name="permdesc_modifyNetworkAccounting">Ļauj mainīt to, kā tīkla lietojums tiek uzskaitīts saistībā ar lietojumprogrammām. Nav paredzēts lietošanai parastās lietojumprogrammās.</string>
     <string name="policylab_limitPassword">Iestatīt paroles noteikumus</string>
@@ -693,7 +693,7 @@
     <string name="relationTypeReferredBy">Norādīja:</string>
     <string name="relationTypeRelative">Radinieks</string>
     <string name="relationTypeSister">Māsa</string>
-    <string name="relationTypeSpouse">Laul. draugs/draudz.</string>
+    <string name="relationTypeSpouse">Laulātais</string>
     <string name="sipAddressTypeCustom">Pielāgot</string>
     <string name="sipAddressTypeHome">Mājas</string>
     <string name="sipAddressTypeWork">Darbs</string>
@@ -742,17 +742,17 @@ Lūdzu, sazinieties ar savu bezvadu pakalpojumu sniedzēju, lai iegūtu citu SIM
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Jūs nepareizi uzzīmējāt savu atbloķēšanas šablonu %d reizes. 
 
 Lūdzu, mēģiniet vēlreiz pēc %d sekundēm."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Parole tika nepareizi ievadīta %d reizes. 
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Parole %d reizes tika ievadīta nepareizi. 
 
 Lūdzu, mēģiniet vēlreiz pēc %d sekundēm."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"PIN tika nepareizi ievadīts %d reizes. 
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"%d reizes tika nepareizi ievadīts PIN. 
 
 Lūdzu, mēģiniet vēlreiz pēc %d sekundēm."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Atbloķēšanas kombinācija tika nepareizi uzzīmēta %d reizi(-es). Pēc vēl %d neveiksmīgiem mēģinājumiem tālrunis būs jāatbloķē, izmantojot Google pierakstīšanos.
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Jūs nepareizi uzzīmējāt savu atbloķēšanas šablonu %d reizes. Vēl pēc %d neveiksmīgiem mēģinājumiem jums tiks prasīts atbloķēt tālruni, izmantojot Google pierakstīšanos.
 
- Lūdzu, mēģiniet vēlreiz pēc %d sekundes(-ēm)."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Jūs nepareizi veicāt tālruņa atbloķēšanu %d reizes. Pēc vēl %d neveiksmīga(-iem) mēģinājuma(-iem) tālrunī tiks atiestatīti rūpnīcas noklusējuma iestatījumi, un lietotāja dati tiks zaudēti.</string>
-    <string name="lockscreen_failed_attempts_now_wiping">Jūs nepareizi veicāt tālruņa atbloķēšanu %d reizes. Tālrunī tiks atiestatīti rūpnīcas noklusējuma iestatījumi.</string>
+ Lūdzu, mēģiniet vēlreiz pēc %d sekundēm."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Jūs %d reizes nepareizi veicāt tālruņa atbloķēšanu. Pēc vēl %d neveiksmīga(-iem) mēģinājuma(-iem) tālrunī tiks atiestatīti rūpnīcas noklusējuma iestatījumi, un lietotāja dati tiks zaudēti.</string>
+    <string name="lockscreen_failed_attempts_now_wiping">Jūs %d reizes nepareizi veicāt tālruņa atbloķēšanu. Tālrunī tiks atiestatīti rūpnīcas noklusējuma iestatījumi.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Mēģiniet vēlreiz pēc %d sekundēm.</string>
     <string name="lockscreen_forgot_pattern_button_text">Vai aizmirsāt šablonu?</string>
     <string name="lockscreen_glogin_forgot_pattern">Konts atbloķēts</string>
@@ -838,7 +838,7 @@ Atlasiet Labi, lai turpinātu, vai Atcelt, lai paliktu pašreizējā lapā."</st
     <string name="permlab_setAlarm">iestatīt modinātāju modinātājpulkstenī</string>
     <string name="permdesc_setAlarm">Atļauj lietojumprogrammai iestatīt modinātāju instalētā modinātājpulksteņa lietojumprogrammā. Dažām modinātājpulksteņa lietojumprogrammām var nebūt šīs funkcijas.</string>
     <string name="permlab_addVoicemail">pievienot balss pastu</string>
-    <string name="permdesc_addVoicemail">Ļauj lietojumprogrammai pievienot ziņojumus no jūsu balss pasta iesūtnes.</string>
+    <string name="permdesc_addVoicemail">Ļauj lietojumprogrammai pievienot ziņojumus jūsu balss pasta iesūtnei.</string>
     <string name="permlab_writeGeolocationPermissions">Mainīt pārlūka ģeogrāfiskās atrašanas vietas atļaujas</string>
     <string name="permdesc_writeGeolocationPermissions">Ļauj lietojumprogrammai modificēt pārlūkprogrammas ģeogrāfiskās atrašanās vietas atļaujas. Ļaunprātīgās lietojumprogrammas var to izmantot, lai ļautu sūtīt atrašanās vietas informāciju uz patvaļīgām vietnēm.</string>
     <string name="permlab_packageVerificationAgent">pakotņu verificēšana</string>
@@ -931,7 +931,7 @@ Vai vēlaties to aizvērt?"</string>
     <string name="smv_application">Lietojumprogramma %1$s (process %2$s) ir pārkāpusi savu pašnoteikto StrictMode politiku.</string>
     <string name="smv_process">Process %1$s ir pārkāpis savu pašnoteikto StrictMode politiku.</string>
     <string name="android_upgrading_title">Notiek op. Android jaunināšana...</string>
-    <string name="android_upgrading_apk">Tiek optimizēta %1$d. lietojumprogramma no %2$d.</string>
+    <string name="android_upgrading_apk">Tiek optimizēta %1$d lietojumprogramma no %2$d.</string>
     <string name="android_upgrading_starting_apps">Tiek palaistas lietojumprogrammas.</string>
     <string name="android_upgrading_complete">Tiek pabeigta sāknēšana.</string>
     <string name="heavy_weight_notification">%1$s darbojas</string>
@@ -962,14 +962,14 @@ Vai vēlaties to aizvērt?"</string>
     <string name="ringtone_silent">Klusums</string>
     <string name="ringtone_picker_title">Zvanu signāli</string>
     <string name="ringtone_unknown">Nezināms zvana signāls</string>
-    <string name="wifi_available_sign_in">Sign in to Wi-Fi network</string>
+    <string name="wifi_available_sign_in">Pierakstīties Wi-Fi tīklā</string>
     <string name="wifi_available_sign_in_detailed">%1$s</string>
     <string name="wifi_watchdog_network_disabled">Nevarēja izveidot savienojumu ar Wi-Fi.</string>
     <string name="wifi_watchdog_network_disabled_detailed">" ir slikts interneta savienojums."</string>
     <string name="wifi_p2p_dialog_title">Wi-Fi Direct</string>
     <string name="wifi_p2p_turnon_message">Sākt Wi-Fi Direct darbību. Tiks izslēgta Wi-Fi klienta/tīklāja darbība.</string>
     <string name="wifi_p2p_failed_message">Nevarēja palaist programmu Wi-Fi Direct.</string>
-    <string name="wifi_p2p_pbc_go_negotiation_request_message">Wi-Fi Direct savienojuma iestatīšanas pieprasījums no adreses %1$s. Noklikšķiniet uz Labi, lai apstiprinātu.</string>
+    <string name="wifi_p2p_pbc_go_negotiation_request_message">Wi-Fi Direct savienojuma iestatīšanas pieprasījums no adreses %1$s. Uzklikšķiniet uz Labi, lai apstiprinātu.</string>
     <string name="wifi_p2p_pin_go_negotiation_request_message">Wi-Fi Direct savienojuma iestatīšanas pieprasījums no adreses %1$s. Lai turpinātu, ievadiet PIN.</string>
     <string name="wifi_p2p_pin_display_message">Lai turpinātu savienojuma iestatīšanu, vienādranga ierīcē %2$s ir jāievada WPS PIN %1$s.</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct ir ieslēgts</string>
@@ -1148,8 +1148,8 @@ kontam %s"</string>
     <string name="keyboardview_keycode_mode_change">Režīma maiņa</string>
     <string name="keyboardview_keycode_shift">Pārslēgšanas taustiņš</string>
     <string name="keyboardview_keycode_enter">Ievadīšanas taustiņš</string>
-    <string name="activitychooserview_choose_application">Lietojumprogrammas izvēle</string>
-    <string name="shareactionprovider_share_with">Kopīgot ar:</string>
+    <string name="activitychooserview_choose_application">Izvēlieties lietojumprogrammu</string>
+    <string name="shareactionprovider_share_with">Kopīgot ar</string>
     <string name="shareactionprovider_share_with_application">Kopīgot ar lietojumprogrammu %s</string>
     <string name="content_description_sliding_handle">Bīdāms rokturis. Pieskarieties tam un turiet to nospiestu.</string>
     <string name="description_direction_up">Bīdiet uz augšu, lai veiktu šādu darbību: %s.</string>
@@ -1160,7 +1160,7 @@ kontam %s"</string>
     <string name="description_target_camera">Kamera</string>
     <string name="description_target_silent">Klusums</string>
     <string name="description_target_soundon">Skaņa ieslēgta</string>
-    <string name="description_target_unlock_tablet">Swipe to unlock.</string>
+    <string name="description_target_unlock_tablet">Pabīdiet, lai atbloķētu.</string>
     <string name="keyboard_headset_required_to_hear_password">Pievienojiet austiņas, lai dzirdētu paroles rakstzīmes.</string>
     <string name="keyboard_password_character_no_headset">Punkts.</string>
     <string name="action_bar_home_description">Pārvietoties uz sākuma ekrānu</string>
@@ -1203,9 +1203,9 @@ kontam %s"</string>
     <string name="share_action_provider_share_with">Koplietot ar...</string>
     <string name="status_bar_device_locked">Ierīce ir bloķēta.</string>
     <string name="list_delimeter">", "</string>
-    <string name="sending">Sending...</string>
-    <string name="launchBrowserDefault">Launch Browser?</string>
-    <string name="SetupCallDefault">Accept Call?</string>
+    <string name="sending">Sūta...</string>
+    <string name="launchBrowserDefault">Palaist pārlūkprogrammu?</string>
+    <string name="SetupCallDefault">Pieņemt Zvanu?</string>
     <string name="permgrouplab_4G">4G</string>
     <string name="permgroupdesc_4G">Piekļūt 4G</string>
     <string name="permlab_changeWimaxMulticastState">atļaut WiMAX multiraides saņemšanu</string>
@@ -1267,11 +1267,12 @@ kontam %s"</string>
     <string name="install_notify_title">IT bloķēja instalēšanu:</string>
     <string name="uninstall_notify_title">IT bloķēja atinstalēšanu:</string>
     <string name="wifi_notify_title">IT atspējoja Wi-Fi</string>
-    <string name="sim_puk_contact_customer_care_information">Please contact Customer Care to get the PUK code</string>
+    <string name="resolverActivity_clearDefaultHintMsg">Notīriet noklusējumu sadaļā Sākuma iestatījumi > Lietojumprogrammas.</string>
+    <string name="sim_puk_contact_customer_care_information">Lūdzu, sazinieties ar klientu apkalpošanas dienestu, lai iegūtu PUK kodu</string>
     <string name="permlab_accessCWFolder">Piekļūt pielāgošanas vedņa līdzekļa mapei</string>
     <string name="permdesc_accessCWFolder">Ļauj lietojumprogrammai piekļūt pielāgošanas vedņa līdzekļa mapei</string>
-    <string name="permlab_accessRecoveryFolder">Access recovery folder</string>
-    <string name="permdesc_accessRecoveryFolder">Allows an application to access recovery folder</string>
+    <string name="permlab_accessRecoveryFolder">Piekļūt atkopšanas mapei</string>
+    <string name="permdesc_accessRecoveryFolder">Ļauj lietojumprogrammai piekļūt atkopšanas mapei</string>
     <string name="permlab_setappname">Dinamiski mainīt lietojumprogrammas nosaukumu</string>
     <string name="permdesc_setappname">Ļauj lietojumprogrammai dinamiski mainīt norādītās lietojumprogrammas nosaukumu.</string>
     <string name="text_limitation">Nevar atlasīt pārāk daudz vārdu koplietošanai.</string>
@@ -1311,5 +1312,5 @@ kontam %s"</string>
     <string name="font_color">Fonta krāsa</string>
     <string name="font_settings">Fonta iestatījumi</string>
     <string name="font_alignment">Fonta līdzinājums</string>
-    <string name="configure_input_methods_short">Configure</string>
+    <string name="configure_input_methods_short">Konfigurēt</string>
 </resources>

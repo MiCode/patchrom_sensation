@@ -86,7 +86,7 @@
     .locals 1
 
     .prologue
-    .line 1239
+    .line 1240
     const/4 v0, 0x0
 
     return v0
@@ -178,7 +178,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 986
+    .line 987
     iget-object v2, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mPreferences:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -187,24 +187,24 @@
 
     check-cast v0, Landroid/preference/Preference;
 
-    .line 987
+    .line 988
     .local v0, preference:Landroid/preference/Preference;
     instance-of v2, v0, Landroid/preference/ListPreference;
 
     if-eqz v2, :cond_1
 
-    .line 993
+    .line 994
     :cond_0
     :goto_0
     return v1
 
-    .line 990
+    .line 991
     :cond_1
     instance-of v2, v0, Lcom/android/camera/widget/CustomPreference;
 
     if-eqz v2, :cond_0
 
-    .line 991
+    .line 992
     const/4 v1, 0x1
 
     goto :goto_0
@@ -214,7 +214,7 @@
     .locals 1
 
     .prologue
-    .line 998
+    .line 999
     const/4 v0, 0x2
 
     return v0
@@ -339,7 +339,7 @@
 
     move-object v3, p4
 
-    .line 904
+    .line 905
     .end local v0           #entry:[Ljava/lang/CharSequence;
     .end local v1           #index:I
     :goto_1
@@ -414,8 +414,8 @@
 
     invoke-virtual {v3, p2, v4}, Lcom/android/camera/widget/ImagePropertyItem;->initialize(ILcom/android/camera/CameraThread;)V
 
-    .line 902
-    :cond_4
+    .line 903
+    :goto_2
     iget-object v3, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
     #getter for: Lcom/android/camera/widget/SettingsView;->mImagePropertyItem:[Lcom/android/camera/widget/ImagePropertyItem;
@@ -427,7 +427,22 @@
 
     goto :goto_1
 
-    .line 904
+    .line 901
+    :cond_4
+    iget-object v3, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
+
+    #getter for: Lcom/android/camera/widget/SettingsView;->mImagePropertyItem:[Lcom/android/camera/widget/ImagePropertyItem;
+    invoke-static {v3}, Lcom/android/camera/widget/SettingsView;->access$400(Lcom/android/camera/widget/SettingsView;)[Lcom/android/camera/widget/ImagePropertyItem;
+
+    move-result-object v3
+
+    aget-object v3, v3, p2
+
+    invoke-virtual {v3}, Lcom/android/camera/widget/ImagePropertyItem;->updateUILevel()V
+
+    goto :goto_2
+
+    .line 905
     :cond_5
     const/4 v3, 0x0
 
@@ -439,7 +454,7 @@
     .parameter "groupPosition"
 
     .prologue
-    .line 912
+    .line 913
     iget-object v3, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mPreferences:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -448,30 +463,30 @@
 
     check-cast v2, Landroid/preference/Preference;
 
-    .line 914
+    .line 915
     .local v2, preference:Landroid/preference/Preference;
     instance-of v3, v2, Landroid/preference/ListPreference;
 
     if-eqz v3, :cond_0
 
-    .line 915
+    .line 916
     check-cast v2, Landroid/preference/ListPreference;
 
     .end local v2           #preference:Landroid/preference/Preference;
     iput-object v2, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mListPreference:Landroid/preference/ListPreference;
 
-    .line 916
+    .line 917
     iget-object v3, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mListPreference:Landroid/preference/ListPreference;
 
     invoke-virtual {v3}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 917
+    .line 918
     .local v1, entry:[Ljava/lang/CharSequence;
     array-length v0, v1
 
-    .line 918
+    .line 919
     .local v0, count:I
     iget-object v3, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
@@ -487,20 +502,20 @@
     #setter for: Lcom/android/camera/widget/SettingsView;->m_MenuChildHeight:I
     invoke-static {v3, v4}, Lcom/android/camera/widget/SettingsView;->access$602(Lcom/android/camera/widget/SettingsView;I)I
 
-    .line 928
+    .line 929
     .end local v0           #count:I
     .end local v1           #entry:[Ljava/lang/CharSequence;
     :goto_0
     return v0
 
-    .line 922
+    .line 923
     .restart local v2       #preference:Landroid/preference/Preference;
     :cond_0
     instance-of v3, v2, Lcom/android/camera/widget/CustomPreference;
 
     if-eqz v3, :cond_1
 
-    .line 923
+    .line 924
     iget-object v3, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
     #getter for: Lcom/android/camera/widget/SettingsView;->mImagePropertyItem:[Lcom/android/camera/widget/ImagePropertyItem;
@@ -510,7 +525,7 @@
 
     array-length v0, v3
 
-    .line 924
+    .line 925
     .restart local v0       #count:I
     iget-object v3, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
@@ -528,7 +543,7 @@
 
     goto :goto_0
 
-    .line 928
+    .line 929
     .end local v0           #count:I
     :cond_1
     const/4 v0, 0x0
@@ -541,7 +556,7 @@
     .parameter "groupPosition"
 
     .prologue
-    .line 934
+    .line 935
     iget-object v0, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mPreferences:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -555,14 +570,14 @@
     .locals 3
 
     .prologue
-    .line 939
+    .line 940
     iget-object v1, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mPreferences:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 940
+    .line 941
     .local v0, count:I
     iget-object v1, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
@@ -578,7 +593,7 @@
     #setter for: Lcom/android/camera/widget/SettingsView;->m_MenuParentHeight:I
     invoke-static {v1, v2}, Lcom/android/camera/widget/SettingsView;->access$902(Lcom/android/camera/widget/SettingsView;I)I
 
-    .line 941
+    .line 942
     return v0
 .end method
 
@@ -587,7 +602,7 @@
     .parameter "groupPosition"
 
     .prologue
-    .line 946
+    .line 947
     int-to-long v0, p1
 
     return-wide v0
@@ -600,7 +615,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 951
+    .line 952
     iget-object v2, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mPreferences:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -609,46 +624,46 @@
 
     check-cast v0, Landroid/preference/Preference;
 
-    .line 954
+    .line 955
     .local v0, preference:Landroid/preference/Preference;
     instance-of v2, v0, Landroid/preference/ListPreference;
 
     if-eqz v2, :cond_1
 
-    .line 975
+    .line 976
     :cond_0
     :goto_0
     return v1
 
-    .line 959
+    .line 960
     :cond_1
     instance-of v2, v0, Landroid/preference/CheckBoxPreference;
 
     if-eqz v2, :cond_2
 
-    .line 962
+    .line 963
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 964
+    .line 965
     :cond_2
     instance-of v2, v0, Lcom/android/camera/widget/CustomPreference;
 
     if-eqz v2, :cond_3
 
-    .line 967
+    .line 968
     const/4 v1, 0x2
 
     goto :goto_0
 
-    .line 969
+    .line 970
     :cond_3
     instance-of v2, v0, Landroid/preference/Preference;
 
     if-eqz v2, :cond_0
 
-    .line 972
+    .line 973
     const/4 v1, 0x3
 
     goto :goto_0
@@ -658,7 +673,7 @@
     .locals 1
 
     .prologue
-    .line 980
+    .line 981
     const/4 v0, 0x4
 
     return v0
@@ -672,7 +687,7 @@
     .parameter "parent"
 
     .prologue
-    .line 1007
+    .line 1008
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mPreferences:Ljava/util/ArrayList;
@@ -685,13 +700,13 @@
 
     check-cast v9, Landroid/preference/Preference;
 
-    .line 1009
+    .line 1010
     .local v9, preference:Landroid/preference/Preference;
     instance-of v13, v9, Landroid/preference/PreferenceGroup;
 
     if-eqz v13, :cond_1
 
-    .line 1010
+    .line 1011
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
@@ -710,10 +725,10 @@
 
     move-object v5, v9
 
-    .line 1011
+    .line 1012
     check-cast v5, Landroid/preference/PreferenceGroup;
 
-    .line 1013
+    .line 1014
     .local v5, group:Landroid/preference/PreferenceGroup;
     const v13, 0x7f0800b9
 
@@ -725,7 +740,7 @@
 
     check-cast v12, Landroid/widget/TextView;
 
-    .line 1014
+    .line 1015
     .local v12, title:Landroid/widget/TextView;
     invoke-virtual {v5}, Landroid/preference/PreferenceGroup;->getTitle()Ljava/lang/CharSequence;
 
@@ -733,7 +748,7 @@
 
     invoke-virtual {v12, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1090
+    .line 1091
     .end local v5           #group:Landroid/preference/PreferenceGroup;
     .end local v12           #title:Landroid/widget/TextView;
     :cond_0
@@ -751,10 +766,10 @@
     #calls: Lcom/android/camera/widget/SettingsView;->setEnabledStateOnViews(Landroid/view/View;Z)V
     invoke-static {v13, v0, v14}, Lcom/android/camera/widget/SettingsView;->access$1300(Lcom/android/camera/widget/SettingsView;Landroid/view/View;Z)V
 
-    .line 1091
+    .line 1092
     return-object p3
 
-    .line 1016
+    .line 1017
     :cond_1
     instance-of v13, v9, Landroid/preference/ListPreference;
 
@@ -762,10 +777,10 @@
 
     move-object v8, v9
 
-    .line 1018
+    .line 1019
     check-cast v8, Landroid/preference/ListPreference;
 
-    .line 1019
+    .line 1020
     .local v8, listPref:Landroid/preference/ListPreference;
     move-object/from16 v0, p0
 
@@ -784,7 +799,7 @@
 
     move-result-object p3
 
-    .line 1022
+    .line 1023
     const v13, 0x7f0800b9
 
     move-object/from16 v0, p3
@@ -795,7 +810,7 @@
 
     check-cast v12, Landroid/widget/TextView;
 
-    .line 1023
+    .line 1024
     .restart local v12       #title:Landroid/widget/TextView;
     invoke-virtual {v8}, Landroid/preference/ListPreference;->getTitle()Ljava/lang/CharSequence;
 
@@ -803,7 +818,7 @@
 
     invoke-virtual {v12, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1024
+    .line 1025
     const v13, 0x7f08013a
 
     move-object/from16 v0, p3
@@ -814,13 +829,13 @@
 
     check-cast v11, Landroid/widget/TextView;
 
-    .line 1027
+    .line 1028
     .local v11, summary:Landroid/widget/TextView;
     invoke-virtual {v8}, Landroid/preference/ListPreference;->getSummary()Ljava/lang/CharSequence;
 
     move-result-object v10
 
-    .line 1028
+    .line 1029
     .local v10, str:Ljava/lang/CharSequence;
     if-eqz v10, :cond_2
 
@@ -834,17 +849,17 @@
 
     if-ne v13, v14, :cond_3
 
-    .line 1029
+    .line 1030
     :cond_2
     invoke-virtual {v8}, Landroid/preference/ListPreference;->getEntry()Ljava/lang/CharSequence;
 
     move-result-object v10
 
-    .line 1030
+    .line 1031
     :cond_3
     invoke-virtual {v11, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1032
+    .line 1033
     const v13, 0x7f08013b
 
     move-object/from16 v0, p3
@@ -855,11 +870,11 @@
 
     check-cast v6, Landroid/widget/ImageView;
 
-    .line 1033
+    .line 1034
     .local v6, indicator:Landroid/widget/ImageView;
     if-eqz p2, :cond_4
 
-    .line 1034
+    .line 1035
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
@@ -873,7 +888,7 @@
 
     goto :goto_0
 
-    .line 1036
+    .line 1037
     :cond_4
     move-object/from16 v0, p0
 
@@ -888,7 +903,7 @@
 
     goto :goto_0
 
-    .line 1039
+    .line 1040
     .end local v6           #indicator:Landroid/widget/ImageView;
     .end local v8           #listPref:Landroid/preference/ListPreference;
     .end local v10           #str:Ljava/lang/CharSequence;
@@ -901,10 +916,10 @@
 
     move-object v4, v9
 
-    .line 1041
+    .line 1042
     check-cast v4, Landroid/preference/CheckBoxPreference;
 
-    .line 1042
+    .line 1043
     .local v4, ckPref:Landroid/preference/CheckBoxPreference;
     move-object/from16 v0, p0
 
@@ -923,7 +938,7 @@
 
     move-result-object p3
 
-    .line 1046
+    .line 1047
     const v13, 0x7f0800b9
 
     move-object/from16 v0, p3
@@ -934,7 +949,7 @@
 
     check-cast v12, Landroid/widget/TextView;
 
-    .line 1047
+    .line 1048
     .restart local v12       #title:Landroid/widget/TextView;
     invoke-virtual {v9}, Landroid/preference/Preference;->getTitle()Ljava/lang/CharSequence;
 
@@ -942,12 +957,12 @@
 
     invoke-virtual {v12, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1048
+    .line 1049
     invoke-virtual {v4}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
     move-result v3
 
-    .line 1049
+    .line 1050
     .local v3, checked:Z
     const v13, 0x7f08003a
 
@@ -959,11 +974,11 @@
 
     check-cast v2, Landroid/widget/CheckBox;
 
-    .line 1050
+    .line 1051
     .local v2, checkBox:Landroid/widget/CheckBox;
     invoke-virtual {v2, v3}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 1051
+    .line 1052
     const v13, 0x7f08013a
 
     move-object/from16 v0, p3
@@ -974,7 +989,7 @@
 
     check-cast v11, Landroid/widget/TextView;
 
-    .line 1052
+    .line 1053
     .restart local v11       #summary:Landroid/widget/TextView;
     if-eqz v3, :cond_6
 
@@ -985,12 +1000,12 @@
     :goto_1
     invoke-virtual {v11, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1055
+    .line 1056
     invoke-virtual {v4}, Landroid/preference/CheckBoxPreference;->getKey()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 1056
+    .line 1057
     .local v7, key:Ljava/lang/String;
     if-eqz v7, :cond_7
 
@@ -1002,14 +1017,14 @@
 
     if-eqz v13, :cond_7
 
-    .line 1057
+    .line 1058
     const/16 v13, 0x8
 
     invoke-virtual {v2, v13}, Landroid/widget/CheckBox;->setVisibility(I)V
 
     goto/16 :goto_0
 
-    .line 1052
+    .line 1053
     .end local v7           #key:Ljava/lang/String;
     :cond_6
     invoke-virtual {v4}, Landroid/preference/CheckBoxPreference;->getSummaryOff()Ljava/lang/CharSequence;
@@ -1018,7 +1033,7 @@
 
     goto :goto_1
 
-    .line 1059
+    .line 1060
     .restart local v7       #key:Ljava/lang/String;
     :cond_7
     const/4 v13, 0x0
@@ -1027,7 +1042,7 @@
 
     goto/16 :goto_0
 
-    .line 1062
+    .line 1063
     .end local v2           #checkBox:Landroid/widget/CheckBox;
     .end local v3           #checked:Z
     .end local v4           #ckPref:Landroid/preference/CheckBoxPreference;
@@ -1039,7 +1054,7 @@
 
     if-eqz v13, :cond_0
 
-    .line 1063
+    .line 1064
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
@@ -1057,7 +1072,7 @@
 
     move-result-object p3
 
-    .line 1067
+    .line 1068
     const v13, 0x7f0800b9
 
     move-object/from16 v0, p3
@@ -1068,7 +1083,7 @@
 
     check-cast v12, Landroid/widget/TextView;
 
-    .line 1068
+    .line 1069
     .restart local v12       #title:Landroid/widget/TextView;
     invoke-virtual {v9}, Landroid/preference/Preference;->getTitle()Ljava/lang/CharSequence;
 
@@ -1076,7 +1091,7 @@
 
     invoke-virtual {v12, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1069
+    .line 1070
     const v13, 0x7f08013a
 
     move-object/from16 v0, p3
@@ -1087,19 +1102,19 @@
 
     check-cast v11, Landroid/widget/TextView;
 
-    .line 1070
+    .line 1071
     .restart local v11       #summary:Landroid/widget/TextView;
     invoke-virtual {v9}, Landroid/preference/Preference;->getSummary()Ljava/lang/CharSequence;
 
     move-result-object v10
 
-    .line 1071
+    .line 1072
     .restart local v10       #str:Ljava/lang/CharSequence;
     instance-of v13, v9, Lcom/android/camera/widget/CustomPreference;
 
     if-eqz v13, :cond_9
 
-    .line 1072
+    .line 1073
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
@@ -1113,7 +1128,7 @@
 
     move-result-object v10
 
-    .line 1074
+    .line 1075
     const v13, 0x7f08013b
 
     move-object/from16 v0, p3
@@ -1124,11 +1139,11 @@
 
     check-cast v6, Landroid/widget/ImageView;
 
-    .line 1075
+    .line 1076
     .restart local v6       #indicator:Landroid/widget/ImageView;
     if-eqz p2, :cond_b
 
-    .line 1076
+    .line 1077
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
@@ -1140,7 +1155,7 @@
 
     invoke-virtual {v6, v13}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1080
+    .line 1081
     .end local v6           #indicator:Landroid/widget/ImageView;
     :cond_9
     :goto_2
@@ -1154,7 +1169,7 @@
 
     if-eqz v13, :cond_c
 
-    .line 1081
+    .line 1082
     :cond_a
     const/16 v13, 0x8
 
@@ -1162,7 +1177,7 @@
 
     goto/16 :goto_0
 
-    .line 1078
+    .line 1079
     .restart local v6       #indicator:Landroid/widget/ImageView;
     :cond_b
     move-object/from16 v0, p0
@@ -1178,14 +1193,14 @@
 
     goto :goto_2
 
-    .line 1083
+    .line 1084
     .end local v6           #indicator:Landroid/widget/ImageView;
     :cond_c
     const/4 v13, 0x0
 
     invoke-virtual {v11, v13}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1084
+    .line 1085
     invoke-virtual {v11, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_0
@@ -1195,7 +1210,7 @@
     .locals 1
 
     .prologue
-    .line 1098
+    .line 1099
     const/4 v0, 0x1
 
     return v0
@@ -1207,7 +1222,7 @@
     .parameter "childPosition"
 
     .prologue
-    .line 1104
+    .line 1105
     const/4 v0, 0x1
 
     return v0
@@ -1220,14 +1235,14 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 1217
+    .line 1218
     invoke-static {}, Lcom/android/camera/DisplayDevice;->supportFastFrameRecording()Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    .line 1219
+    .line 1220
     iget-object v1, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mListPreference:Landroid/preference/ListPreference;
 
     invoke-virtual {v1}, Landroid/preference/ListPreference;->getContext()Landroid/content/Context;
@@ -1246,7 +1261,7 @@
 
     move-result v0
 
-    .line 1220
+    .line 1221
     .local v0, isFastFrame:Z
     if-eqz v0, :cond_0
 
@@ -1280,12 +1295,12 @@
     :cond_0
     move v1, v2
 
-    .line 1233
+    .line 1234
     .end local v0           #isFastFrame:Z
     :goto_0
     return v1
 
-    .line 1223
+    .line 1224
     .restart local v0       #isFastFrame:Z
     :cond_1
     iget-object v1, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mListPreference:Landroid/preference/ListPreference;
@@ -1302,7 +1317,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 1224
+    .line 1225
     iget-object v1, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
     #getter for: Lcom/android/camera/widget/SettingsView;->mMenuHandler:Lcom/android/camera/MenuHandler;
@@ -1341,7 +1356,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 1228
+    .line 1229
     :cond_2
     const/4 v1, 0x0
 
@@ -1351,7 +1366,7 @@
     :cond_3
     move v1, v2
 
-    .line 1233
+    .line 1234
     goto :goto_0
 .end method
 
@@ -1362,20 +1377,10 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 1113
+    .line 1114
     iget v0, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mCurrentGroupPosition:I
 
     if-ne v0, v1, :cond_0
-
-    .line 1114
-    iget-object v0, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
-
-    #getter for: Lcom/android/camera/widget/SettingsView;->mMainList_exp:Landroid/widget/ExpandableListView;
-    invoke-static {v0}, Lcom/android/camera/widget/SettingsView;->access$200(Lcom/android/camera/widget/SettingsView;)Landroid/widget/ExpandableListView;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/widget/ExpandableListView;->expandGroup(I)Z
 
     .line 1115
     iget-object v0, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
@@ -1385,22 +1390,32 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Landroid/widget/ExpandableListView;->setSelectedGroup(I)V
+    invoke-virtual {v0, p1}, Landroid/widget/ExpandableListView;->expandGroup(I)Z
 
     .line 1116
+    iget-object v0, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
+
+    #getter for: Lcom/android/camera/widget/SettingsView;->mMainList_exp:Landroid/widget/ExpandableListView;
+    invoke-static {v0}, Lcom/android/camera/widget/SettingsView;->access$200(Lcom/android/camera/widget/SettingsView;)Landroid/widget/ExpandableListView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/widget/ExpandableListView;->setSelectedGroup(I)V
+
+    .line 1117
     iput p1, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mCurrentGroupPosition:I
 
-    .line 1128
+    .line 1129
     :goto_0
     return-void
 
-    .line 1118
+    .line 1119
     :cond_0
     iget v0, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mCurrentGroupPosition:I
 
     if-ne v0, p1, :cond_1
 
-    .line 1119
+    .line 1120
     iget-object v0, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
     #getter for: Lcom/android/camera/widget/SettingsView;->mMainList_exp:Landroid/widget/ExpandableListView;
@@ -1410,12 +1425,12 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/ExpandableListView;->collapseGroup(I)Z
 
-    .line 1120
+    .line 1121
     iput v1, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mCurrentGroupPosition:I
 
     goto :goto_0
 
-    .line 1123
+    .line 1124
     :cond_1
     iget-object v0, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
@@ -1428,7 +1443,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ExpandableListView;->collapseGroup(I)Z
 
-    .line 1124
+    .line 1125
     iget-object v0, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
     #getter for: Lcom/android/camera/widget/SettingsView;->mMainList_exp:Landroid/widget/ExpandableListView;
@@ -1438,7 +1453,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/ExpandableListView;->expandGroup(I)Z
 
-    .line 1125
+    .line 1126
     iget-object v0, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
     #getter for: Lcom/android/camera/widget/SettingsView;->mMainList_exp:Landroid/widget/ExpandableListView;
@@ -1448,7 +1463,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/ExpandableListView;->setSelectedGroup(I)V
 
-    .line 1126
+    .line 1127
     iput p1, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mCurrentGroupPosition:I
 
     goto :goto_0
@@ -1467,7 +1482,7 @@
 
     const/4 v3, 0x0
 
-    .line 1189
+    .line 1190
     iget-object v4, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mPreferences:Ljava/util/ArrayList;
 
     invoke-virtual {v4, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1476,19 +1491,19 @@
 
     check-cast v1, Landroid/preference/Preference;
 
-    .line 1191
+    .line 1192
     .local v1, preference:Landroid/preference/Preference;
     instance-of v4, v1, Landroid/preference/ListPreference;
 
     if-nez v4, :cond_1
 
-    .line 1212
+    .line 1213
     .end local v1           #preference:Landroid/preference/Preference;
     :cond_0
     :goto_0
     return v2
 
-    .line 1194
+    .line 1195
     .restart local v1       #preference:Landroid/preference/Preference;
     :cond_1
     check-cast v1, Landroid/preference/ListPreference;
@@ -1496,14 +1511,14 @@
     .end local v1           #preference:Landroid/preference/Preference;
     iput-object v1, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mListPreference:Landroid/preference/ListPreference;
 
-    .line 1196
+    .line 1197
     invoke-virtual {p0, p4}, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->isEnabled(I)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 1199
+    .line 1200
     iget-object v2, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mListPreference:Landroid/preference/ListPreference;
 
     iget-object v4, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mListPreference:Landroid/preference/ListPreference;
@@ -1516,19 +1531,19 @@
 
     move-result v0
 
-    .line 1200
+    .line 1201
     .local v0, current:I
     if-eq p4, v0, :cond_2
 
-    .line 1201
+    .line 1202
     iget-object v2, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mListPreference:Landroid/preference/ListPreference;
 
     invoke-virtual {v2, p4}, Landroid/preference/ListPreference;->setValueIndex(I)V
 
-    .line 1202
+    .line 1203
     invoke-virtual {p0}, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->notifyDataSetChanged()V
 
-    .line 1203
+    .line 1204
     iget-object v2, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
     iget-object v4, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mListPreference:Landroid/preference/ListPreference;
@@ -1536,7 +1551,7 @@
     #calls: Lcom/android/camera/widget/SettingsView;->updateListPreference(Landroid/preference/Preference;I)V
     invoke-static {v2, v4, p4}, Lcom/android/camera/widget/SettingsView;->access$1700(Lcom/android/camera/widget/SettingsView;Landroid/preference/Preference;I)V
 
-    .line 1204
+    .line 1205
     iget-object v2, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
     #getter for: Lcom/android/camera/widget/SettingsView;->mMainAdapter_exp:Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;
@@ -1548,10 +1563,10 @@
 
     move v2, v3
 
-    .line 1205
+    .line 1206
     goto :goto_0
 
-    .line 1209
+    .line 1210
     :cond_2
     iget-object v2, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
@@ -1566,7 +1581,7 @@
 
     move v2, v3
 
-    .line 1212
+    .line 1213
     goto :goto_0
 .end method
 
@@ -1580,7 +1595,7 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 1133
+    .line 1134
     iget-object v3, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mPreferences:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1589,7 +1604,7 @@
 
     check-cast v2, Landroid/preference/Preference;
 
-    .line 1135
+    .line 1136
     .local v2, preference:Landroid/preference/Preference;
     invoke-virtual {v2}, Landroid/preference/Preference;->isEnabled()Z
 
@@ -1597,30 +1612,30 @@
 
     if-nez v3, :cond_0
 
-    .line 1159
+    .line 1160
     .end local v2           #preference:Landroid/preference/Preference;
     :goto_0
     return v4
 
-    .line 1138
+    .line 1139
     .restart local v2       #preference:Landroid/preference/Preference;
     :cond_0
     instance-of v3, v2, Landroid/preference/ListPreference;
 
     if-eqz v3, :cond_1
 
-    .line 1139
+    .line 1140
     check-cast v2, Landroid/preference/ListPreference;
 
     .end local v2           #preference:Landroid/preference/Preference;
     iput-object v2, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mListPreference:Landroid/preference/ListPreference;
 
-    .line 1140
+    .line 1141
     invoke-virtual {p0, p3}, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->menuExpandCollapseHandler(I)V
 
     goto :goto_0
 
-    .line 1142
+    .line 1143
     .restart local v2       #preference:Landroid/preference/Preference;
     :cond_1
     instance-of v3, v2, Landroid/preference/CheckBoxPreference;
@@ -1629,10 +1644,10 @@
 
     move-object v1, v2
 
-    .line 1146
+    .line 1147
     check-cast v1, Landroid/preference/CheckBoxPreference;
 
-    .line 1147
+    .line 1148
     .local v1, ckPref:Landroid/preference/CheckBoxPreference;
     iget-object v5, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
@@ -1648,12 +1663,12 @@
     #calls: Lcom/android/camera/widget/SettingsView;->updateCheckBoxPreference(Landroid/preference/Preference;Z)V
     invoke-static {v5, v1, v3}, Lcom/android/camera/widget/SettingsView;->access$1400(Lcom/android/camera/widget/SettingsView;Landroid/preference/Preference;Z)V
 
-    .line 1148
+    .line 1149
     invoke-virtual {v1}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
     move-result v0
 
-    .line 1149
+    .line 1150
     .local v0, checked:Z
     const v3, 0x7f08003a
 
@@ -1665,7 +1680,7 @@
 
     invoke-virtual {v3, v0}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 1150
+    .line 1151
     const v3, 0x7f08013a
 
     invoke-virtual {p2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1683,19 +1698,19 @@
     :goto_2
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1152
+    .line 1153
     invoke-virtual {p0}, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->notifyDataSetChanged()V
 
     goto :goto_0
 
-    .line 1147
+    .line 1148
     .end local v0           #checked:Z
     :cond_2
     const/4 v3, 0x0
 
     goto :goto_1
 
-    .line 1150
+    .line 1151
     .restart local v0       #checked:Z
     :cond_3
     invoke-virtual {v1}, Landroid/preference/CheckBoxPreference;->getSummaryOff()Ljava/lang/CharSequence;
@@ -1704,7 +1719,7 @@
 
     goto :goto_2
 
-    .line 1154
+    .line 1155
     .end local v0           #checked:Z
     .end local v1           #ckPref:Landroid/preference/CheckBoxPreference;
     :cond_4
@@ -1712,12 +1727,12 @@
 
     if-eqz v3, :cond_5
 
-    .line 1155
+    .line 1156
     invoke-virtual {p0, p3}, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->menuExpandCollapseHandler(I)V
 
     goto :goto_0
 
-    .line 1158
+    .line 1159
     :cond_5
     iget-object v3, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
@@ -1732,15 +1747,15 @@
     .parameter "groupPosition"
 
     .prologue
-    .line 1174
+    .line 1175
     invoke-super {p0, p1}, Landroid/widget/BaseExpandableListAdapter;->onGroupCollapsed(I)V
 
-    .line 1176
+    .line 1177
     iget v0, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mNextGroupPosition:I
 
     if-ne p1, v0, :cond_0
 
-    .line 1177
+    .line 1178
     iget-object v0, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
     const/4 v1, 0x0
@@ -1748,7 +1763,7 @@
     #setter for: Lcom/android/camera/widget/SettingsView;->m_MenuChildHeight:I
     invoke-static {v0, v1}, Lcom/android/camera/widget/SettingsView;->access$602(Lcom/android/camera/widget/SettingsView;I)I
 
-    .line 1179
+    .line 1180
     iget-object v0, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
     #getter for: Lcom/android/camera/widget/SettingsView;->m_EventManager:Lcom/android/camera/EventManager;
@@ -1760,7 +1775,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 1184
+    .line 1185
     :cond_0
     return-void
 .end method
@@ -1770,13 +1785,13 @@
     .parameter "groupPosition"
 
     .prologue
-    .line 1165
+    .line 1166
     invoke-super {p0, p1}, Landroid/widget/BaseExpandableListAdapter;->onGroupExpanded(I)V
 
-    .line 1166
+    .line 1167
     iput p1, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->mNextGroupPosition:I
 
-    .line 1169
+    .line 1170
     iget-object v0, p0, Lcom/android/camera/widget/SettingsView$MainMenuExpAdapter;->this$0:Lcom/android/camera/widget/SettingsView;
 
     #getter for: Lcom/android/camera/widget/SettingsView;->m_EventManager:Lcom/android/camera/EventManager;
@@ -1788,7 +1803,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/EventManager;->raiseEvent(Ljava/lang/String;)V
 
-    .line 1170
+    .line 1171
     return-void
 .end method
 

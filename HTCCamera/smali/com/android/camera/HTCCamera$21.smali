@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 4019
+    .line 4025
     iput-object p1, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     iput-object p2, p0, Lcom/android/camera/HTCCamera$21;->val$rect:Landroid/graphics/Rect;
@@ -57,7 +57,7 @@
 
     const/4 v1, 0x1
 
-    .line 4024
+    .line 4030
     iget-object v2, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v2}, Lcom/android/camera/HTCCamera;->isPanelReady()Z
@@ -76,11 +76,11 @@
 
     if-eqz v2, :cond_0
 
-    .line 4111
+    .line 4117
     :goto_0
     return v0
 
-    .line 4027
+    .line 4033
     :cond_0
     iget-object v2, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -92,10 +92,10 @@
 
     move v0, v1
 
-    .line 4028
+    .line 4034
     goto :goto_0
 
-    .line 4030
+    .line 4036
     :cond_1
     iget-object v2, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -107,10 +107,10 @@
 
     move v0, v1
 
-    .line 4031
+    .line 4037
     goto :goto_0
 
-    .line 4034
+    .line 4040
     :cond_2
     iget-object v2, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -126,7 +126,7 @@
 
     if-ne v2, v1, :cond_8
 
-    .line 4035
+    .line 4041
     invoke-static {}, Lcom/android/camera/HTCCamera;->access$1200()Z
 
     move-result v2
@@ -150,7 +150,7 @@
 
     if-ne v2, v1, :cond_8
 
-    .line 4037
+    .line 4043
     :cond_4
     iget-object v2, p0, Lcom/android/camera/HTCCamera$21;->val$rect:Landroid/graphics/Rect;
 
@@ -160,20 +160,20 @@
 
     if-eqz v2, :cond_7
 
-    .line 4038
+    .line 4044
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v2
 
     if-nez v2, :cond_6
 
-    .line 4039
+    .line 4045
     iget-object v2, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #setter for: Lcom/android/camera/HTCCamera;->mStartTapCapture:Z
     invoke-static {v2, v0}, Lcom/android/camera/HTCCamera;->access$9202(Lcom/android/camera/HTCCamera;Z)Z
 
-    .line 4040
+    .line 4046
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mCapture_icon:Landroid/widget/ImageView;
@@ -187,7 +187,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 4041
+    .line 4047
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
@@ -197,7 +197,7 @@
 
     invoke-static {v0, v4}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 4042
+    .line 4048
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
@@ -211,10 +211,10 @@
     :goto_1
     move v0, v1
 
-    .line 4054
+    .line 4060
     goto :goto_0
 
-    .line 4043
+    .line 4049
     :cond_6
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -222,7 +222,7 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 4044
+    .line 4050
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mStartTapCapture:Z
@@ -232,40 +232,7 @@
 
     if-nez v0, :cond_5
 
-    .line 4045
-    iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
-
-    #getter for: Lcom/android/camera/HTCCamera;->mCapture_icon:Landroid/widget/ImageView;
-    invoke-static {v0}, Lcom/android/camera/HTCCamera;->access$600(Lcom/android/camera/HTCCamera;)Landroid/widget/ImageView;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
-
-    iget v2, v2, Lcom/android/camera/HTCCamera;->mCapture_rest:I
-
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 4046
-    iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
-
-    #getter for: Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/camera/HTCCamera;->access$000(Lcom/android/camera/HTCCamera;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    invoke-static {v0, v4}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
-
-    .line 4047
-    iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
-
-    #calls: Lcom/android/camera/HTCCamera;->onTouchCapture_Camcorder()V
-    invoke-static {v0}, Lcom/android/camera/HTCCamera;->access$9300(Lcom/android/camera/HTCCamera;)V
-
-    goto :goto_1
-
     .line 4051
-    :cond_7
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mCapture_icon:Landroid/widget/ImageView;
@@ -289,19 +256,16 @@
 
     invoke-static {v0, v4}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
+    .line 4053
+    iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
+
+    #calls: Lcom/android/camera/HTCCamera;->onTouchCapture_Camcorder()V
+    invoke-static {v0}, Lcom/android/camera/HTCCamera;->access$9300(Lcom/android/camera/HTCCamera;)V
+
     goto :goto_1
 
-    .line 4059
-    :cond_8
-    iget-object v2, p0, Lcom/android/camera/HTCCamera$21;->val$rect:Landroid/graphics/Rect;
-
-    invoke-virtual {v2, p2, p3}, Landroid/graphics/Rect;->contains(II)Z
-
-    move-result v2
-
-    if-nez v2, :cond_9
-
-    .line 4061
+    .line 4057
+    :cond_7
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mCapture_icon:Landroid/widget/ImageView;
@@ -315,7 +279,43 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 4062
+    .line 4058
+    iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
+
+    #getter for: Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/camera/HTCCamera;->access$000(Lcom/android/camera/HTCCamera;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    invoke-static {v0, v4}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
+
+    goto :goto_1
+
+    .line 4065
+    :cond_8
+    iget-object v2, p0, Lcom/android/camera/HTCCamera$21;->val$rect:Landroid/graphics/Rect;
+
+    invoke-virtual {v2, p2, p3}, Landroid/graphics/Rect;->contains(II)Z
+
+    move-result v2
+
+    if-nez v2, :cond_9
+
+    .line 4067
+    iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
+
+    #getter for: Lcom/android/camera/HTCCamera;->mCapture_icon:Landroid/widget/ImageView;
+    invoke-static {v0}, Lcom/android/camera/HTCCamera;->access$600(Lcom/android/camera/HTCCamera;)Landroid/widget/ImageView;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
+
+    iget v2, v2, Lcom/android/camera/HTCCamera;->mCapture_rest:I
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 4068
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
@@ -327,10 +327,10 @@
 
     move v0, v1
 
-    .line 4066
+    .line 4072
     goto/16 :goto_0
 
-    .line 4069
+    .line 4075
     :cond_9
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -342,10 +342,10 @@
     :goto_2
     move v0, v1
 
-    .line 4111
+    .line 4117
     goto/16 :goto_0
 
-    .line 4071
+    .line 4077
     :pswitch_0
     iget-object v2, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -360,25 +360,25 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 4072
+    .line 4078
     iget-object v2, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #setter for: Lcom/android/camera/HTCCamera;->mTouchDown_X:I
     invoke-static {v2, p2}, Lcom/android/camera/HTCCamera;->access$11902(Lcom/android/camera/HTCCamera;I)I
 
-    .line 4073
+    .line 4079
     iget-object v2, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #setter for: Lcom/android/camera/HTCCamera;->mTouchDown_Y:I
     invoke-static {v2, p3}, Lcom/android/camera/HTCCamera;->access$12002(Lcom/android/camera/HTCCamera;I)I
 
-    .line 4074
+    .line 4080
     iget-object v2, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #setter for: Lcom/android/camera/HTCCamera;->mStartTapCapture:Z
     invoke-static {v2, v0}, Lcom/android/camera/HTCCamera;->access$9202(Lcom/android/camera/HTCCamera;Z)Z
 
-    .line 4075
+    .line 4081
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
@@ -388,7 +388,7 @@
 
     invoke-static {v0, v4}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 4076
+    .line 4082
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
@@ -400,7 +400,7 @@
 
     goto :goto_2
 
-    .line 4080
+    .line 4086
     :pswitch_1
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -413,7 +413,7 @@
 
     goto :goto_2
 
-    .line 4100
+    .line 4106
     :pswitch_2
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -424,7 +424,7 @@
 
     if-nez v0, :cond_a
 
-    .line 4103
+    .line 4109
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mUIHandler:Landroid/os/Handler;
@@ -434,7 +434,7 @@
 
     invoke-static {v0, v4}, Lcom/android/camera/MessageHandler;->removeMessages(Landroid/os/Handler;I)V
 
-    .line 4104
+    .line 4110
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mCapture_icon:Landroid/widget/ImageView;
@@ -448,7 +448,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 4105
+    .line 4111
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     iget-object v0, v0, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
@@ -463,7 +463,7 @@
 
     if-nez v0, :cond_b
 
-    .line 4106
+    .line 4112
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
     #calls: Lcom/android/camera/HTCCamera;->onTouchCapture_Camera()V
@@ -471,7 +471,7 @@
 
     goto :goto_2
 
-    .line 4108
+    .line 4114
     :cond_b
     iget-object v0, p0, Lcom/android/camera/HTCCamera$21;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -480,7 +480,7 @@
 
     goto :goto_2
 
-    .line 4069
+    .line 4075
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

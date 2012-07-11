@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3277
+    .line 3274
     iput-object p1, p0, Lcom/android/camera/HTCCamera$9;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -44,26 +44,26 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 3279
+    .line 3276
     const-string v2, "HTCCamera"
 
     const-string v3, "Click button to filmstrip"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3287
+    .line 3284
     iget-object v2, p0, Lcom/android/camera/HTCCamera$9;->this$0:Lcom/android/camera/HTCCamera;
 
     iget-object v2, v2, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
 
     if-nez v2, :cond_1
 
-    .line 3347
+    .line 3344
     :cond_0
     :goto_0
     return-void
 
-    .line 3290
+    .line 3287
     :cond_1
     invoke-static {}, Lcom/android/camera/DisplayDevice;->canCancelFocus()Z
 
@@ -77,19 +77,19 @@
 
     if-ne v2, v4, :cond_2
 
-    .line 3291
+    .line 3288
     const-string v2, "HTCCamera"
 
     const-string v3, "Press filmstrip button when focusing, cancel focus"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3292
+    .line 3289
     iget-object v2, p0, Lcom/android/camera/HTCCamera$9;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v2}, Lcom/android/camera/HTCCamera;->cancelAutoFocus()Z
 
-    .line 3308
+    .line 3305
     :goto_1
     iget-object v2, p0, Lcom/android/camera/HTCCamera$9;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -101,21 +101,21 @@
 
     if-ne v2, v4, :cond_3
 
-    .line 3309
+    .line 3306
     const-string v2, "HTCCamera"
 
     const-string v3, "End - Return to album after pressing filmstrip button"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3310
+    .line 3307
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "FROM_CAMERA"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3311
+    .line 3308
     .local v1, intent:Landroid/content/Intent;
     const-string v2, "preview_mode"
 
@@ -123,21 +123,21 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3312
+    .line 3309
     iget-object v2, p0, Lcom/android/camera/HTCCamera$9;->this$0:Lcom/android/camera/HTCCamera;
 
     const/4 v3, -0x1
 
     invoke-virtual {v2, v3, v1}, Lcom/android/camera/HTCCamera;->setResult(ILandroid/content/Intent;)V
 
-    .line 3313
+    .line 3310
     iget-object v2, p0, Lcom/android/camera/HTCCamera$9;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-virtual {v2}, Lcom/android/camera/HTCCamera;->finish()V
 
     goto :goto_0
 
-    .line 3294
+    .line 3291
     .end local v1           #intent:Landroid/content/Intent;
     :cond_2
     invoke-static {}, Lcom/android/camera/HTCCamera;->access$1200()Z
@@ -146,7 +146,7 @@
 
     if-eq v2, v4, :cond_0
 
-    .line 3297
+    .line 3294
     iget-object v2, p0, Lcom/android/camera/HTCCamera$9;->this$0:Lcom/android/camera/HTCCamera;
 
     iget-object v2, v2, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
@@ -157,7 +157,7 @@
 
     if-eq v2, v4, :cond_0
 
-    .line 3300
+    .line 3297
     iget-object v2, p0, Lcom/android/camera/HTCCamera$9;->this$0:Lcom/android/camera/HTCCamera;
 
     #getter for: Lcom/android/camera/HTCCamera;->mIsSelfTimerStarted:Z
@@ -167,19 +167,19 @@
 
     if-nez v2, :cond_0
 
-    .line 3303
+    .line 3300
     const-string v2, "HTCCamera"
 
     const-string v3, "Block Capture UI - press filmstrip button"
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3304
+    .line 3301
     invoke-static {v4}, Lcom/android/camera/HTCCamera;->access$1202(Z)Z
 
     goto :goto_1
 
-    .line 3315
+    .line 3312
     :cond_3
     const-string v2, "HTCCamera"
 
@@ -187,14 +187,12 @@
 
     invoke-static {v2, v3}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3318
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.VIEW"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3319
     .restart local v1       #intent:Landroid/content/Intent;
     iget-object v2, p0, Lcom/android/camera/HTCCamera$9;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -204,14 +202,14 @@
 
     if-nez v2, :cond_4
 
-    .line 3320
+    .line 3317
     const-string v2, "capture_mode"
 
     const-string v3, "camera"
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3323
+    .line 3320
     :goto_2
     iget-object v2, p0, Lcom/android/camera/HTCCamera$9;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -225,7 +223,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3326
+    .line 3323
     :try_start_0
     iget-object v2, p0, Lcom/android/camera/HTCCamera$9;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -235,11 +233,11 @@
 
     goto/16 :goto_0
 
-    .line 3327
+    .line 3324
     :catch_0
     move-exception v0
 
-    .line 3328
+    .line 3325
     .local v0, e:Landroid/content/ActivityNotFoundException;
     const-string v2, "HTCCamera"
 
@@ -265,7 +263,7 @@
 
     goto/16 :goto_0
 
-    .line 3322
+    .line 3319
     .end local v0           #e:Landroid/content/ActivityNotFoundException;
     :cond_4
     const-string v2, "capture_mode"

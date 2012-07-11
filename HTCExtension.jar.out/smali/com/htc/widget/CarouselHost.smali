@@ -4467,6 +4467,12 @@
     if-eqz v0, :cond_1
 
     .line 283
+    invoke-virtual {p0}, Lcom/htc/widget/CarouselHost;->hasFocus()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
     iget-object v0, p0, Lcom/htc/widget/CarouselHost;->mCurrentView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->hasFocus()Z
@@ -4583,7 +4589,7 @@
 
     const-string v1, "Table number is one. Can not delete"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 

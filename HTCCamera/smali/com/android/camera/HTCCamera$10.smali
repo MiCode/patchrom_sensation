@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3442
+    .line 3439
     iput-object p1, p0, Lcom/android/camera/HTCCamera$10;->this$0:Lcom/android/camera/HTCCamera;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +42,14 @@
     .parameter "v"
 
     .prologue
-    .line 3444
+    .line 3441
     const-string v1, "HTCCamera"
 
     const-string v2, "Click button to change camera mode"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3447
+    .line 3444
     iget-object v1, p0, Lcom/android/camera/HTCCamera$10;->this$0:Lcom/android/camera/HTCCamera;
 
     sget-object v2, Lcom/android/camera/IntentManager$RequestMode;->Main:Lcom/android/camera/IntentManager$RequestMode;
@@ -70,12 +70,12 @@
 
     if-nez v1, :cond_1
 
-    .line 3457
+    .line 3454
     :cond_0
     :goto_0
     return-void
 
-    .line 3452
+    .line 3449
     :cond_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera$10;->this$0:Lcom/android/camera/HTCCamera;
 
@@ -83,7 +83,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 3454
+    .line 3451
     iget-object v1, p0, Lcom/android/camera/HTCCamera$10;->this$0:Lcom/android/camera/HTCCamera;
 
     iget-object v1, v1, Lcom/android/camera/HTCCamera;->mCameraThread:Lcom/android/camera/CameraThread;
@@ -94,7 +94,7 @@
 
     const/4 v0, 0x1
 
-    .line 3455
+    .line 3452
     .local v0, mode:I
     :goto_1
     iget-object v1, p0, Lcom/android/camera/HTCCamera$10;->this$0:Lcom/android/camera/HTCCamera;
@@ -111,7 +111,7 @@
 
     goto :goto_0
 
-    .line 3454
+    .line 3451
     .end local v0           #mode:I
     :cond_2
     const/4 v0, 0x0

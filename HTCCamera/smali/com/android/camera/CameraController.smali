@@ -102,7 +102,7 @@
     .local p1, supported:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     const/4 v0, 0x0
 
-    .line 723
+    .line 751
     if-nez p1, :cond_1
 
     :cond_0
@@ -125,15 +125,15 @@
     .locals 1
 
     .prologue
-    .line 708
+    .line 736
     sget-object v0, Lcom/android/camera/CameraController$SupportedList;->FlashMode:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    .line 709
+    .line 737
     const/4 v0, 0x1
 
-    .line 711
+    .line 739
     :goto_0
     return v0
 
@@ -147,15 +147,15 @@
     .locals 1
 
     .prologue
-    .line 716
+    .line 744
     sget-object v0, Lcom/android/camera/CameraController$SupportedList;->SceneMode:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    .line 717
+    .line 745
     const/4 v0, 0x1
 
-    .line 719
+    .line 747
     :goto_0
     return v0
 
@@ -268,7 +268,7 @@
     .locals 1
 
     .prologue
-    .line 351
+    .line 379
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->getPictureSize()Landroid/hardware/Camera$Size;
@@ -282,7 +282,7 @@
     .locals 1
 
     .prologue
-    .line 355
+    .line 383
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->getPreviewSize()Landroid/hardware/Camera$Size;
@@ -307,12 +307,12 @@
 
     const/4 v4, 0x0
 
-    .line 475
+    .line 503
     new-instance v1, Lcom/android/camera/CameraController$SettingInfo;
 
     invoke-direct {v1}, Lcom/android/camera/CameraController$SettingInfo;-><init>()V
 
-    .line 477
+    .line 505
     .local v1, info:Lcom/android/camera/CameraController$SettingInfo;
     const-string v2, "exposure-compensation"
 
@@ -322,7 +322,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 479
+    .line 507
     :try_start_0
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -332,7 +332,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraController$SettingInfo;->setMin(I)V
 
-    .line 480
+    .line 508
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v2}, Landroid/hardware/Camera$Parameters;->getMaxExposureCompensation()I
@@ -341,7 +341,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraController$SettingInfo;->setMax(I)V
 
-    .line 481
+    .line 509
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v2}, Landroid/hardware/Camera$Parameters;->getExposureCompensationStep()F
@@ -350,12 +350,12 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraController$SettingInfo;->setStep(F)V
 
-    .line 482
+    .line 510
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraController$SettingInfo;->setDefault(I)V
 
-    .line 483
+    .line 511
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v2}, Landroid/hardware/Camera$Parameters;->getExposureCompensation()I
@@ -366,15 +366,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 583
+    .line 611
     :goto_0
     return-object v1
 
-    .line 484
+    .line 512
     :catch_0
     move-exception v0
 
-    .line 485
+    .line 513
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "CameraController"
 
@@ -384,7 +384,7 @@
 
     goto :goto_0
 
-    .line 488
+    .line 516
     .end local v0           #e:Ljava/lang/Exception;
     :cond_0
     const-string v2, "saturation"
@@ -395,7 +395,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 490
+    .line 518
     :try_start_1
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -407,7 +407,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraController$SettingInfo;->setMin(I)V
 
-    .line 491
+    .line 519
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v3, "saturation-max"
@@ -420,11 +420,11 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 498
+    .line 526
     :goto_1
     invoke-virtual {v1, v6}, Lcom/android/camera/CameraController$SettingInfo;->setStep(F)V
 
-    .line 500
+    .line 528
     :try_start_2
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -438,7 +438,7 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
 
-    .line 507
+    .line 535
     :goto_2
     :try_start_3
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
@@ -455,15 +455,15 @@
 
     goto :goto_0
 
-    .line 508
+    .line 536
     :catch_1
     move-exception v0
 
-    .line 509
+    .line 537
     .restart local v0       #e:Ljava/lang/Exception;
     invoke-virtual {v1, v5}, Lcom/android/camera/CameraController$SettingInfo;->setCurrent(I)V
 
-    .line 510
+    .line 538
     const-string v2, "CameraController"
 
     const-string v3, "saturation: set current value failed !!"
@@ -472,19 +472,19 @@
 
     goto :goto_0
 
-    .line 492
+    .line 520
     .end local v0           #e:Ljava/lang/Exception;
     :catch_2
     move-exception v0
 
-    .line 493
+    .line 521
     .restart local v0       #e:Ljava/lang/Exception;
     invoke-virtual {v1, v4}, Lcom/android/camera/CameraController$SettingInfo;->setMin(I)V
 
-    .line 494
+    .line 522
     invoke-virtual {v1, v7}, Lcom/android/camera/CameraController$SettingInfo;->setMax(I)V
 
-    .line 495
+    .line 523
     const-string v2, "CameraController"
 
     const-string v3, "saturation: set min, max value failed !!"
@@ -493,16 +493,16 @@
 
     goto :goto_1
 
-    .line 501
+    .line 529
     .end local v0           #e:Ljava/lang/Exception;
     :catch_3
     move-exception v0
 
-    .line 502
+    .line 530
     .restart local v0       #e:Ljava/lang/Exception;
     invoke-virtual {v1, v5}, Lcom/android/camera/CameraController$SettingInfo;->setDefault(I)V
 
-    .line 503
+    .line 531
     const-string v2, "CameraController"
 
     const-string v3, "saturation: set default value failed !!"
@@ -511,7 +511,7 @@
 
     goto :goto_2
 
-    .line 513
+    .line 541
     .end local v0           #e:Ljava/lang/Exception;
     :cond_1
     const-string v2, "contrast"
@@ -522,7 +522,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 515
+    .line 543
     :try_start_4
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -534,7 +534,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraController$SettingInfo;->setMin(I)V
 
-    .line 516
+    .line 544
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v3, "contrast-max"
@@ -547,11 +547,11 @@
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_5
 
-    .line 523
+    .line 551
     :goto_3
     invoke-virtual {v1, v6}, Lcom/android/camera/CameraController$SettingInfo;->setStep(F)V
 
-    .line 525
+    .line 553
     :try_start_5
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -565,7 +565,7 @@
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_6
 
-    .line 532
+    .line 560
     :goto_4
     :try_start_6
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
@@ -582,15 +582,15 @@
 
     goto/16 :goto_0
 
-    .line 533
+    .line 561
     :catch_4
     move-exception v0
 
-    .line 534
+    .line 562
     .restart local v0       #e:Ljava/lang/Exception;
     invoke-virtual {v1, v5}, Lcom/android/camera/CameraController$SettingInfo;->setCurrent(I)V
 
-    .line 535
+    .line 563
     const-string v2, "CameraController"
 
     const-string v3, "contrast: set current value failed !!"
@@ -599,19 +599,19 @@
 
     goto/16 :goto_0
 
-    .line 517
+    .line 545
     .end local v0           #e:Ljava/lang/Exception;
     :catch_5
     move-exception v0
 
-    .line 518
+    .line 546
     .restart local v0       #e:Ljava/lang/Exception;
     invoke-virtual {v1, v4}, Lcom/android/camera/CameraController$SettingInfo;->setMin(I)V
 
-    .line 519
+    .line 547
     invoke-virtual {v1, v7}, Lcom/android/camera/CameraController$SettingInfo;->setMax(I)V
 
-    .line 520
+    .line 548
     const-string v2, "CameraController"
 
     const-string v3, "contrast: set min, max value failed !!"
@@ -620,16 +620,16 @@
 
     goto :goto_3
 
-    .line 526
+    .line 554
     .end local v0           #e:Ljava/lang/Exception;
     :catch_6
     move-exception v0
 
-    .line 527
+    .line 555
     .restart local v0       #e:Ljava/lang/Exception;
     invoke-virtual {v1, v5}, Lcom/android/camera/CameraController$SettingInfo;->setDefault(I)V
 
-    .line 528
+    .line 556
     const-string v2, "CameraController"
 
     const-string v3, "contrast: set default value failed !!"
@@ -638,7 +638,7 @@
 
     goto :goto_4
 
-    .line 538
+    .line 566
     .end local v0           #e:Ljava/lang/Exception;
     :cond_2
     const-string v2, "sharpness"
@@ -649,7 +649,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 540
+    .line 568
     :try_start_7
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -661,7 +661,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraController$SettingInfo;->setMin(I)V
 
-    .line 541
+    .line 569
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v3, "sharpness-max"
@@ -674,11 +674,11 @@
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_8
 
-    .line 548
+    .line 576
     :goto_5
     invoke-virtual {v1, v6}, Lcom/android/camera/CameraController$SettingInfo;->setStep(F)V
 
-    .line 550
+    .line 578
     :try_start_8
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -692,7 +692,7 @@
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_9
 
-    .line 557
+    .line 585
     :goto_6
     :try_start_9
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
@@ -709,15 +709,15 @@
 
     goto/16 :goto_0
 
-    .line 558
+    .line 586
     :catch_7
     move-exception v0
 
-    .line 559
+    .line 587
     .restart local v0       #e:Ljava/lang/Exception;
     invoke-virtual {v1, v8}, Lcom/android/camera/CameraController$SettingInfo;->setCurrent(I)V
 
-    .line 560
+    .line 588
     const-string v2, "CameraController"
 
     const-string v3, "sharpness: set current value failed !!"
@@ -726,19 +726,19 @@
 
     goto/16 :goto_0
 
-    .line 542
+    .line 570
     .end local v0           #e:Ljava/lang/Exception;
     :catch_8
     move-exception v0
 
-    .line 543
+    .line 571
     .restart local v0       #e:Ljava/lang/Exception;
     invoke-virtual {v1, v4}, Lcom/android/camera/CameraController$SettingInfo;->setMin(I)V
 
-    .line 544
+    .line 572
     invoke-virtual {v1, v7}, Lcom/android/camera/CameraController$SettingInfo;->setMax(I)V
 
-    .line 545
+    .line 573
     const-string v2, "CameraController"
 
     const-string v3, "sharpness: set min, max value failed !!"
@@ -747,16 +747,16 @@
 
     goto :goto_5
 
-    .line 551
+    .line 579
     .end local v0           #e:Ljava/lang/Exception;
     :catch_9
     move-exception v0
 
-    .line 552
+    .line 580
     .restart local v0       #e:Ljava/lang/Exception;
     invoke-virtual {v1, v8}, Lcom/android/camera/CameraController$SettingInfo;->setDefault(I)V
 
-    .line 553
+    .line 581
     const-string v2, "CameraController"
 
     const-string v3, "sharpness: set default value failed !!"
@@ -765,7 +765,7 @@
 
     goto :goto_6
 
-    .line 563
+    .line 591
     .end local v0           #e:Ljava/lang/Exception;
     :cond_3
     const-string v2, "taking-picture-zoom"
@@ -776,7 +776,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 565
+    .line 593
     :try_start_a
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -788,7 +788,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraController$SettingInfo;->setMin(I)V
 
-    .line 566
+    .line 594
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v3, "taking-picture-zoom-max"
@@ -801,16 +801,16 @@
     :try_end_a
     .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_b
 
-    .line 572
+    .line 600
     :goto_7
     const/high16 v2, 0x3f80
 
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraController$SettingInfo;->setStep(F)V
 
-    .line 573
+    .line 601
     invoke-virtual {v1, v4}, Lcom/android/camera/CameraController$SettingInfo;->setDefault(I)V
 
-    .line 575
+    .line 603
     :try_start_b
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -826,33 +826,33 @@
 
     goto/16 :goto_0
 
-    .line 576
+    .line 604
     :catch_a
     move-exception v0
 
-    .line 577
+    .line 605
     .restart local v0       #e:Ljava/lang/Exception;
     invoke-virtual {v1, v4}, Lcom/android/camera/CameraController$SettingInfo;->setCurrent(I)V
 
     goto/16 :goto_0
 
-    .line 567
+    .line 595
     .end local v0           #e:Ljava/lang/Exception;
     :catch_b
     move-exception v0
 
-    .line 568
+    .line 596
     .restart local v0       #e:Ljava/lang/Exception;
     invoke-virtual {v1, v4}, Lcom/android/camera/CameraController$SettingInfo;->setMin(I)V
 
-    .line 569
+    .line 597
     const/16 v2, 0x1e
 
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraController$SettingInfo;->setMax(I)V
 
     goto :goto_7
 
-    .line 580
+    .line 608
     .end local v0           #e:Ljava/lang/Exception;
     :cond_4
     const/4 v1, 0x0
@@ -864,7 +864,7 @@
     .locals 3
 
     .prologue
-    .line 328
+    .line 356
     iget-object v1, p0, Lcom/android/camera/CameraController;->mCamera:Landroid/hardware/Camera;
 
     if-eqz v1, :cond_0
@@ -873,14 +873,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 330
+    .line 358
     const-string v1, "CameraController"
 
     const-string v2, "injectGEParam"
 
     invoke-static {v1, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 332
+    .line 360
     :try_start_0
     iget-object v1, p0, Lcom/android/camera/CameraController;->mCamera:Landroid/hardware/Camera;
 
@@ -890,19 +890,19 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 337
+    .line 365
     :goto_0
     const/4 v1, 0x1
 
-    .line 339
+    .line 367
     :goto_1
     return v1
 
-    .line 333
+    .line 361
     :catch_0
     move-exception v0
 
-    .line 334
+    .line 362
     .local v0, ex:Ljava/lang/Exception;
     const-string v1, "CameraController"
 
@@ -912,7 +912,7 @@
 
     goto :goto_0
 
-    .line 339
+    .line 367
     .end local v0           #ex:Ljava/lang/Exception;
     :cond_0
     const/4 v1, 0x0
@@ -927,55 +927,55 @@
     .parameter "level_num"
 
     .prologue
-    .line 387
+    .line 415
     invoke-virtual/range {p0 .. p1}, Lcom/android/camera/CameraController;->getSettingsInfo(Ljava/lang/String;)Lcom/android/camera/CameraController$SettingInfo;
 
     move-result-object v9
 
-    .line 389
+    .line 417
     .local v9, info:Lcom/android/camera/CameraController$SettingInfo;
     invoke-virtual {v9}, Lcom/android/camera/CameraController$SettingInfo;->getDefault()I
 
     move-result v8
 
-    .line 390
+    .line 418
     .local v8, def:I
     invoke-virtual {v9}, Lcom/android/camera/CameraController$SettingInfo;->getMin()I
 
     move-result v15
 
-    .line 391
+    .line 419
     .local v15, min:I
     invoke-virtual {v9}, Lcom/android/camera/CameraController$SettingInfo;->getMax()I
 
     move-result v14
 
-    .line 393
+    .line 421
     .local v14, max:I
     const/4 v13, 0x0
 
-    .line 394
+    .line 422
     .local v13, level_min:I
     add-int/lit8 v12, p3, -0x1
 
-    .line 395
+    .line 423
     .local v12, level_max:I
     add-int v0, v13, v12
 
     div-int/lit8 v11, v0, 0x2
 
-    .line 396
+    .line 424
     .local v11, level_def:I
     move/from16 v10, p2
 
-    .line 398
+    .line 426
     .local v10, level_current:I
     if-le v10, v12, :cond_1
 
-    .line 399
+    .line 427
     move v10, v12
 
-    .line 403
+    .line 431
     :cond_0
     :goto_0
     int-to-float v0, v13
@@ -996,7 +996,7 @@
 
     move-result v7
 
-    .line 404
+    .line 432
     .local v7, current:F
     invoke-static {v7}, Ljava/lang/Math;->round(F)I
 
@@ -1004,12 +1004,12 @@
 
     return v0
 
-    .line 400
+    .line 428
     .end local v7           #current:F
     :cond_1
     if-ge v10, v13, :cond_0
 
-    .line 401
+    .line 429
     move v10, v13
 
     goto :goto_0
@@ -1022,56 +1022,56 @@
     .parameter "level_num"
 
     .prologue
-    .line 365
+    .line 393
     invoke-virtual/range {p0 .. p1}, Lcom/android/camera/CameraController;->getSettingsInfo(Ljava/lang/String;)Lcom/android/camera/CameraController$SettingInfo;
 
     move-result-object v10
 
-    .line 367
+    .line 395
     .local v10, info:Lcom/android/camera/CameraController$SettingInfo;
     invoke-virtual {v10}, Lcom/android/camera/CameraController$SettingInfo;->getDefault()I
 
     move-result v9
 
-    .line 368
+    .line 396
     .local v9, def:I
     invoke-virtual {v10}, Lcom/android/camera/CameraController$SettingInfo;->getMin()I
 
     move-result v15
 
-    .line 369
+    .line 397
     .local v15, min:I
     invoke-virtual {v10}, Lcom/android/camera/CameraController$SettingInfo;->getMax()I
 
     move-result v14
 
-    .line 370
+    .line 398
     .local v14, max:I
     move/from16 v8, p2
 
-    .line 372
+    .line 400
     .local v8, current:I
     if-le v8, v14, :cond_1
 
-    .line 373
+    .line 401
     move v8, v14
 
-    .line 377
+    .line 405
     :cond_0
     :goto_0
     const/4 v13, 0x0
 
-    .line 378
+    .line 406
     .local v13, level_min:I
     add-int/lit8 v12, p3, -0x1
 
-    .line 379
+    .line 407
     .local v12, level_max:I
     add-int v0, v13, v12
 
     div-int/lit8 v11, v0, 0x2
 
-    .line 381
+    .line 409
     .local v11, level_def:I
     int-to-float v0, v15
 
@@ -1091,7 +1091,7 @@
 
     move-result v7
 
-    .line 382
+    .line 410
     .local v7, bar_current:F
     invoke-static {v7}, Ljava/lang/Math;->round(F)I
 
@@ -1099,7 +1099,7 @@
 
     return v0
 
-    .line 374
+    .line 402
     .end local v7           #bar_current:F
     .end local v11           #level_def:I
     .end local v12           #level_max:I
@@ -1107,7 +1107,7 @@
     :cond_1
     if-ge v8, v15, :cond_0
 
-    .line 375
+    .line 403
     move v8, v15
 
     goto :goto_0
@@ -1118,12 +1118,12 @@
     .parameter "key"
 
     .prologue
-    .line 343
+    .line 371
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     if-nez v0, :cond_0
 
-    .line 344
+    .line 372
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCamera:Landroid/hardware/Camera;
 
     invoke-virtual {v0}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
@@ -1132,16 +1132,16 @@
 
     iput-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
-    .line 346
+    .line 374
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 347
+    .line 375
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0, p1}, Landroid/hardware/Camera$Parameters;->remove(Ljava/lang/String;)V
 
-    .line 348
+    .line 376
     :cond_1
     return-void
 .end method
@@ -1151,71 +1151,12 @@
     .parameter "value"
 
     .prologue
-    .line 256
+    .line 284
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     if-nez v0, :cond_0
 
-    .line 257
-    iget-object v0, p0, Lcom/android/camera/CameraController;->mCamera:Landroid/hardware/Camera;
-
-    invoke-virtual {v0}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
-
-    .line 260
-    :cond_0
-    sget-object v0, Lcom/android/camera/CameraController$SupportedList;->Antibanding:Ljava/util/List;
-
-    if-nez v0, :cond_1
-
-    .line 261
-    const-string v0, "CameraController"
-
-    const-string v1, "not support Antibanding !!"
-
-    invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 263
-    :cond_1
-    if-eqz p1, :cond_2
-
-    sget-object v0, Lcom/android/camera/CameraController$SupportedList;->Antibanding:Ljava/util/List;
-
-    invoke-static {p1, v0}, Lcom/android/camera/CameraController;->isSupported(Ljava/lang/String;Ljava/util/List;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    .line 264
-    :cond_2
-    const-string p1, "auto"
-
-    .line 265
-    :cond_3
-    iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
-
-    invoke-virtual {v0, p1}, Landroid/hardware/Camera$Parameters;->setAntibanding(Ljava/lang/String;)V
-
-    .line 266
-    return-void
-.end method
-
-.method public setCameraParameter(Ljava/lang/String;I)V
-    .locals 1
-    .parameter "key"
-    .parameter "value"
-
-    .prologue
     .line 285
-    iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
-
-    if-nez v0, :cond_0
-
-    .line 286
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCamera:Landroid/hardware/Camera;
 
     invoke-virtual {v0}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
@@ -1226,14 +1167,193 @@
 
     .line 288
     :cond_0
-    if-eqz p1, :cond_1
+    sget-object v0, Lcom/android/camera/CameraController$SupportedList;->Antibanding:Ljava/util/List;
+
+    if-nez v0, :cond_1
 
     .line 289
+    const-string v0, "CameraController"
+
+    const-string v1, "not support Antibanding !!"
+
+    invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 291
+    :cond_1
+    if-eqz p1, :cond_2
+
+    sget-object v0, Lcom/android/camera/CameraController$SupportedList;->Antibanding:Ljava/util/List;
+
+    invoke-static {p1, v0}, Lcom/android/camera/CameraController;->isSupported(Ljava/lang/String;Ljava/util/List;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    .line 292
+    :cond_2
+    const-string p1, "auto"
+
+    .line 293
+    :cond_3
+    iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
+
+    invoke-virtual {v0, p1}, Landroid/hardware/Camera$Parameters;->setAntibanding(Ljava/lang/String;)V
+
+    .line 294
+    return-void
+.end method
+
+.method public final setAutoExposureLock(Z)Z
+    .locals 3
+    .parameter "isLocked"
+
+    .prologue
+    .line 242
+    const-string v0, "CameraController"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "setAutoExposureLock("
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ")"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 243
+    iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
+
+    if-nez v0, :cond_0
+
+    .line 244
+    iget-object v0, p0, Lcom/android/camera/CameraController;->mCamera:Landroid/hardware/Camera;
+
+    invoke-virtual {v0}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
+
+    .line 248
+    :cond_0
+    iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
+
+    invoke-virtual {v0, p1}, Landroid/hardware/Camera$Parameters;->setAutoExposureLock(Z)V
+
+    .line 249
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final setAutoWhiteBalanceLock(Z)Z
+    .locals 3
+    .parameter "isLocked"
+
+    .prologue
+    .line 256
+    const-string v0, "CameraController"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "setAutoWhiteBalanceLock("
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ")"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 257
+    iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
+
+    if-nez v0, :cond_0
+
+    .line 258
+    iget-object v0, p0, Lcom/android/camera/CameraController;->mCamera:Landroid/hardware/Camera;
+
+    invoke-virtual {v0}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
+
+    .line 262
+    :cond_0
+    iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
+
+    invoke-virtual {v0, p1}, Landroid/hardware/Camera$Parameters;->setAutoWhiteBalanceLock(Z)V
+
+    .line 263
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public setCameraParameter(Ljava/lang/String;I)V
+    .locals 1
+    .parameter "key"
+    .parameter "value"
+
+    .prologue
+    .line 313
+    iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
+
+    if-nez v0, :cond_0
+
+    .line 314
+    iget-object v0, p0, Lcom/android/camera/CameraController;->mCamera:Landroid/hardware/Camera;
+
+    invoke-virtual {v0}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
+
+    .line 316
+    :cond_0
+    if-eqz p1, :cond_1
+
+    .line 317
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0, p1, p2}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;I)V
 
-    .line 290
+    .line 318
     :cond_1
     return-void
 .end method
@@ -1244,12 +1364,12 @@
     .parameter "value"
 
     .prologue
-    .line 277
+    .line 305
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     if-nez v0, :cond_0
 
-    .line 278
+    .line 306
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCamera:Landroid/hardware/Camera;
 
     invoke-virtual {v0}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
@@ -1258,80 +1378,22 @@
 
     iput-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
-    .line 280
+    .line 308
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 281
+    .line 309
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0, p1, p2}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 282
+    .line 310
     :cond_1
     return-void
 .end method
 
 .method public setColorEffect(Ljava/lang/String;)V
     .locals 2
-    .parameter "value"
-
-    .prologue
-    .line 242
-    iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
-
-    if-nez v0, :cond_0
-
-    .line 243
-    iget-object v0, p0, Lcom/android/camera/CameraController;->mCamera:Landroid/hardware/Camera;
-
-    invoke-virtual {v0}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
-
-    .line 246
-    :cond_0
-    sget-object v0, Lcom/android/camera/CameraController$SupportedList;->Effects:Ljava/util/List;
-
-    if-nez v0, :cond_1
-
-    .line 247
-    const-string v0, "CameraController"
-
-    const-string v1, "not support Effects !!"
-
-    invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 249
-    :cond_1
-    if-eqz p1, :cond_2
-
-    sget-object v0, Lcom/android/camera/CameraController$SupportedList;->Effects:Ljava/util/List;
-
-    invoke-static {p1, v0}, Lcom/android/camera/CameraController;->isSupported(Ljava/lang/String;Ljava/util/List;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    .line 250
-    :cond_2
-    const-string p1, "none"
-
-    .line 251
-    :cond_3
-    iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
-
-    invoke-virtual {v0, p1}, Landroid/hardware/Camera$Parameters;->setColorEffect(Ljava/lang/String;)V
-
-    .line 252
-    return-void
-.end method
-
-.method public setExposureCompensation(I)V
-    .locals 1
     .parameter "value"
 
     .prologue
@@ -1349,13 +1411,71 @@
 
     iput-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
-    .line 273
+    .line 274
+    :cond_0
+    sget-object v0, Lcom/android/camera/CameraController$SupportedList;->Effects:Ljava/util/List;
+
+    if-nez v0, :cond_1
+
+    .line 275
+    const-string v0, "CameraController"
+
+    const-string v1, "not support Effects !!"
+
+    invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 277
+    :cond_1
+    if-eqz p1, :cond_2
+
+    sget-object v0, Lcom/android/camera/CameraController$SupportedList;->Effects:Ljava/util/List;
+
+    invoke-static {p1, v0}, Lcom/android/camera/CameraController;->isSupported(Ljava/lang/String;Ljava/util/List;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    .line 278
+    :cond_2
+    const-string p1, "none"
+
+    .line 279
+    :cond_3
+    iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
+
+    invoke-virtual {v0, p1}, Landroid/hardware/Camera$Parameters;->setColorEffect(Ljava/lang/String;)V
+
+    .line 280
+    return-void
+.end method
+
+.method public setExposureCompensation(I)V
+    .locals 1
+    .parameter "value"
+
+    .prologue
+    .line 298
+    iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
+
+    if-nez v0, :cond_0
+
+    .line 299
+    iget-object v0, p0, Lcom/android/camera/CameraController;->mCamera:Landroid/hardware/Camera;
+
+    invoke-virtual {v0}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
+
+    .line 301
     :cond_0
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0, p1}, Landroid/hardware/Camera$Parameters;->setExposureCompensation(I)V
 
-    .line 274
+    .line 302
     return-void
 .end method
 
@@ -1470,12 +1590,12 @@
 
     const/4 v1, 0x1
 
-    .line 300
+    .line 328
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     if-nez v2, :cond_0
 
-    .line 301
+    .line 329
     iget-object v2, p0, Lcom/android/camera/CameraController;->mCamera:Landroid/hardware/Camera;
 
     invoke-virtual {v2}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
@@ -1484,7 +1604,7 @@
 
     iput-object v2, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
-    .line 304
+    .line 332
     :cond_0
     const-string v2, "GE-param0"
 
@@ -1494,22 +1614,22 @@
 
     if-eq p1, v2, :cond_1
 
-    .line 324
+    .line 352
     :goto_0
     return v0
 
-    .line 307
+    .line 335
     :cond_1
     const-string v2, "GE-param0"
 
     if-ne p1, v2, :cond_4
 
-    .line 309
+    .line 337
     if-ne p6, v1, :cond_3
 
     iput v1, p0, Lcom/android/camera/CameraController;->mInjectParam0:I
 
-    .line 321
+    .line 349
     :cond_2
     :goto_1
     const-string v0, "CameraController"
@@ -1590,7 +1710,7 @@
 
     invoke-static {v0, v2}, Lcom/android/camera/LOG;->V(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 322
+    .line 350
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v2, "GE-param3"
@@ -1643,7 +1763,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 323
+    .line 351
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1692,29 +1812,29 @@
 
     move v0, v1
 
-    .line 324
+    .line 352
     goto/16 :goto_0
 
-    .line 310
+    .line 338
     :cond_3
     iput v0, p0, Lcom/android/camera/CameraController;->mInjectParam0:I
 
     goto/16 :goto_1
 
-    .line 312
+    .line 340
     :cond_4
     const-string v2, "GE-param1"
 
     if-ne p1, v2, :cond_2
 
-    .line 314
+    .line 342
     if-ne p6, v1, :cond_5
 
     iput v1, p0, Lcom/android/camera/CameraController;->mInjectParam1:I
 
     goto/16 :goto_1
 
-    .line 315
+    .line 343
     :cond_5
     iput v0, p0, Lcom/android/camera/CameraController;->mInjectParam1:I
 
@@ -1726,12 +1846,12 @@
     .parameter "effect"
 
     .prologue
-    .line 293
+    .line 321
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     if-nez v0, :cond_0
 
-    .line 294
+    .line 322
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCamera:Landroid/hardware/Camera;
 
     invoke-virtual {v0}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
@@ -1740,7 +1860,7 @@
 
     iput-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
-    .line 296
+    .line 324
     :cond_0
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -1748,7 +1868,7 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 297
+    .line 325
     return-void
 .end method
 
@@ -2282,19 +2402,19 @@
     .locals 2
 
     .prologue
-    .line 684
+    .line 712
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     if-nez v0, :cond_0
 
-    .line 685
+    .line 713
     const-string v0, "CameraController"
 
     const-string v1, "setSupportedList() - mCameraParameters = null"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 686
+    .line 714
     :cond_0
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -2304,19 +2424,19 @@
 
     sput-object v0, Lcom/android/camera/CameraController$SupportedList;->FlashMode:Ljava/util/List;
 
-    .line 687
+    .line 715
     sget-object v0, Lcom/android/camera/CameraController$SupportedList;->FlashMode:Ljava/util/List;
 
     if-nez v0, :cond_1
 
-    .line 688
+    .line 716
     const-string v0, "CameraController"
 
     const-string v1, "SupportedList.FlashMode == null"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 689
+    .line 717
     :cond_1
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -2326,19 +2446,19 @@
 
     sput-object v0, Lcom/android/camera/CameraController$SupportedList;->FocusModes:Ljava/util/List;
 
-    .line 690
+    .line 718
     sget-object v0, Lcom/android/camera/CameraController$SupportedList;->FocusModes:Ljava/util/List;
 
     if-nez v0, :cond_2
 
-    .line 691
+    .line 719
     const-string v0, "CameraController"
 
     const-string v1, "SupportedList.FocusModes == null"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 692
+    .line 720
     :cond_2
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -2348,19 +2468,19 @@
 
     sput-object v0, Lcom/android/camera/CameraController$SupportedList;->WhiteBalance:Ljava/util/List;
 
-    .line 693
+    .line 721
     sget-object v0, Lcom/android/camera/CameraController$SupportedList;->WhiteBalance:Ljava/util/List;
 
     if-nez v0, :cond_3
 
-    .line 694
+    .line 722
     const-string v0, "CameraController"
 
     const-string v1, "SupportedList.WhiteBalance == null"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 695
+    .line 723
     :cond_3
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -2370,19 +2490,19 @@
 
     sput-object v0, Lcom/android/camera/CameraController$SupportedList;->Effects:Ljava/util/List;
 
-    .line 696
+    .line 724
     sget-object v0, Lcom/android/camera/CameraController$SupportedList;->Effects:Ljava/util/List;
 
     if-nez v0, :cond_4
 
-    .line 697
+    .line 725
     const-string v0, "CameraController"
 
     const-string v1, "SupportedList.Effects == null"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 698
+    .line 726
     :cond_4
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -2392,19 +2512,19 @@
 
     sput-object v0, Lcom/android/camera/CameraController$SupportedList;->Antibanding:Ljava/util/List;
 
-    .line 699
+    .line 727
     sget-object v0, Lcom/android/camera/CameraController$SupportedList;->Antibanding:Ljava/util/List;
 
     if-nez v0, :cond_5
 
-    .line 700
+    .line 728
     const-string v0, "CameraController"
 
     const-string v1, "SupportedList.Antibanding == null"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 702
+    .line 730
     :cond_5
     iget-object v0, p0, Lcom/android/camera/CameraController;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
@@ -2414,19 +2534,19 @@
 
     sput-object v0, Lcom/android/camera/CameraController$SupportedList;->SceneMode:Ljava/util/List;
 
-    .line 703
+    .line 731
     sget-object v0, Lcom/android/camera/CameraController$SupportedList;->SceneMode:Ljava/util/List;
 
     if-nez v0, :cond_6
 
-    .line 704
+    .line 732
     const-string v0, "CameraController"
 
     const-string v1, "SupportedList.SceneMode == null"
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->E(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 705
+    .line 733
     :cond_6
     return-void
 .end method
@@ -2493,7 +2613,7 @@
     .locals 3
 
     .prologue
-    .line 359
+    .line 387
     const-string v0, "CameraController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2522,7 +2642,7 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/LOG;->W(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 360
+    .line 388
     return-void
 .end method
 
