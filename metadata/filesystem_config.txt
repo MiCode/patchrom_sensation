@@ -246,7 +246,7 @@ system/bin/lsmod 0 2000 6755
 system/bin/make_ext4fs 0 2000 755
 system/bin/mediaserver 0 2000 755
 system/bin/mke2fs 0 2000 755
-system/bin/mksh 0 0 4755
+system/bin/mksh 0 2000 755
 system/bin/mm-abl-daemon 0 2000 755
 system/bin/mm-audio-acdb-test 0 2000 755
 system/bin/mm-venc-omx-test720p 0 2000 755
@@ -301,7 +301,7 @@ system/bin/servicemanager 0 2000 755
 system/bin/setconsole 0 2000 6755
 system/bin/setprop 0 2000 6755
 system/bin/sf2 0 2000 755
-system/bin/sh 0 0 4755
+system/bin/sh 0 2000 755
 system/bin/showlease 0 2000 755
 system/bin/shutdown 0 2000 755
 system/bin/simg2img 0 2000 755
