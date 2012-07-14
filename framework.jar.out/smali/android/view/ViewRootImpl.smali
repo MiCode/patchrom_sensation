@@ -3878,6 +3878,7 @@
 
     iput-boolean v5, v6, Landroid/view/View$AttachInfo;->mHardwareAccelerationRequested:Z
 
+    goto :cond_1
     .line 613
     invoke-static {}, Landroid/app/ActivityThread;->isSystemServer()Z
 
