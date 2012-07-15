@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <bool name="config_hardwareAccelerated">false</bool>
+    <bool name="config_use_software_icon">false</bool>
 </resources>
