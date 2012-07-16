@@ -1,0 +1,11 @@
+if [ -f /mnt/sdcard/adbd ]; then
+    stop adbd
+    mount -o remount,rw / /
+    rm /sbin/adbd
+    cat /mnt/sdcard/adbd > /sbin/adbd
+    chmod 750 /sbin/adbd
+    mount -o remount,ro / /
+    start adbd
+else
+    echo "adbd not found"
+fi
