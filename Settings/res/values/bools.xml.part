@@ -2,4 +2,5 @@
 <resources>
     <bool name="has_led">true</bool>
     <bool name="has_volume_wake">true</bool>
+    <bool name="has_button_light">true</bool>
 </resources>
