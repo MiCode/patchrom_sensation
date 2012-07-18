@@ -2399,6 +2399,8 @@
 
     move-result-object v4
 
+    invoke-static {p1, v3, p3}, Lcom/android/camera/ImageManager;->notifyAddImage(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+
     .line 4903
     .local v4, uri:Landroid/net/Uri;
     return-object v4
@@ -3894,4 +3896,84 @@
     invoke-direct/range {v0 .. v8}, Lcom/android/camera/ImageManager$1AddImageCancelable;-><init>(Lcom/android/camera/ImageManager;Landroid/graphics/Bitmap;[BLandroid/net/Uri;Landroid/content/Context;Landroid/content/ContentResolver;Lcom/android/camera/ImageManager$StoreImageCallback;I)V
 
     return-object v0
+.end method
+
+.method public static notifyAddImage(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 5
+    .parameter "context"
+    .parameter "filePath"
+    .parameter "title"
+
+    .prologue
+    .line 106
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "/"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ".jpg"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 107
+    .local v1, path:Ljava/lang/String;
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v2, "com.miui.gallery.save_to_cloud_action"
+
+    invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 108
+    .local v0, intent:Landroid/content/Intent;
+    const-string v2, "extra_file_path"
+
+    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 109
+    invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+
+    .line 110
+    const-string v2, "MIUI-Image"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "notify miui add image to cloud, file path:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 111
+    return-void
 .end method
