@@ -61,6 +61,7 @@ local-zip-misc:
 	@echo add system config
 	cp other/system_etc/* $(ZIP_DIR)/system/etc/
 	cp other/system_xbin/* $(ZIP_DIR)/system/xbin/
+	cp other/system_lib/* $(ZIP_DIR)/system/lib/
 
 	@echo delete redundance files
 	rm -f $(ZIP_DIR)/system/customize/resource/*.png
