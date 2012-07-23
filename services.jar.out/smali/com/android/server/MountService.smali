@@ -4781,7 +4781,7 @@
     if-nez v4, :cond_4
 
     .line 1597
-    const-string v14, "@string/storage_sd_card"
+    #const-string v14, "@string/storage_sd_card"
 
     .line 1598
     const/16 v23, 0x1
@@ -5053,7 +5053,7 @@
     .restart local v23       #primary:Z
     :cond_4
     :try_start_3
-    const-string v14, "@string/storage_internal"
+    #const-string v14, "@string/storage_internal"
 
     .line 1605
     const/16 v23, 0x1
