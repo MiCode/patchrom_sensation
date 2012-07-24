@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/UiModeManagerService$SettingsObserver;
+        Lcom/android/server/UiModeManagerService$SettingsObserver;,
+        Lcom/android/server/UiModeManagerService$UIModeScaleChangedObserver;
     }
 .end annotation
 
@@ -140,6 +141,9 @@
 
 .field private mbIsKeepsScreenOn4DeskMode:Z
 
+.field mNormalType:I
+
+.field final mUIModeScaleChangedObserver:Lcom/android/server/UiModeManagerService$UIModeScaleChangedObserver;
 
 # direct methods
 .method static constructor <clinit>()V
@@ -296,6 +300,18 @@
 
     iput-object v1, p0, Lcom/android/server/UiModeManagerService;->mUpdateLocationReceiver:Landroid/content/BroadcastReceiver;
 
+    iput v10, p0, Lcom/android/server/UiModeManagerService;->mNormalType:I
+
+    new-instance v1, Lcom/android/server/UiModeManagerService$UIModeScaleChangedObserver;
+
+    new-instance v5, Landroid/os/Handler;
+
+    invoke-direct {v5}, Landroid/os/Handler;-><init>()V
+
+    invoke-direct {v1, p0, v5}, Lcom/android/server/UiModeManagerService$UIModeScaleChangedObserver;-><init>(Lcom/android/server/UiModeManagerService;Landroid/os/Handler;)V
+
+    iput-object v1, p0, Lcom/android/server/UiModeManagerService;->mUIModeScaleChangedObserver:Lcom/android/server/UiModeManagerService$UIModeScaleChangedObserver;
+
     .line 325
     new-instance v1, Lcom/android/server/UiModeManagerService$6;
 
@@ -410,6 +426,7 @@
 
     invoke-virtual {v1, v3, v6}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
+    invoke-direct {p0}, Lcom/android/server/UiModeManagerService;->registerUIModeScaleChangedObserver()V
     .line 420
     const-string v1, "power"
 
@@ -2575,34 +2592,27 @@
     .parameter "sendIt"
 
     .prologue
-    .line 819
-    const/4 v1, 0x1
+    iget v1, p0, Lcom/android/server/UiModeManagerService;->mNormalType:I
 
-    .line 820
     .local v1, uiMode:I
     iget-boolean v2, p0, Lcom/android/server/UiModeManagerService;->mCarModeEnabled:Z
 
     if-eqz v2, :cond_2
 
-    .line 821
     const/4 v1, 0x3
 
-    .line 827
     :cond_0
     :goto_0
     iget-boolean v2, p0, Lcom/android/server/UiModeManagerService;->mCarModeEnabled:Z
 
     if-eqz v2, :cond_5
 
-    .line 828
     iget v2, p0, Lcom/android/server/UiModeManagerService;->mNightMode:I
 
     if-nez v2, :cond_4
 
-    .line 829
     invoke-virtual {p0}, Lcom/android/server/UiModeManagerService;->updateTwilightLocked()V
 
-    .line 830
     iget-boolean v2, p0, Lcom/android/server/UiModeManagerService;->mComputedNightMode:Z
 
     if-eqz v2, :cond_3
@@ -3908,4 +3918,36 @@
     add-long/2addr v12, v4
 
     goto :goto_2
+.end method
+
+.method private registerUIModeScaleChangedObserver()V
+    .locals 4
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    const/4 v3, 0x0
+
+    iget-object v0, p0, Lcom/android/server/UiModeManagerService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "ui_mode_scale"
+
+    invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/server/UiModeManagerService;->mUIModeScaleChangedObserver:Lcom/android/server/UiModeManagerService$UIModeScaleChangedObserver;
+
+    invoke-virtual {v0, v1, v3, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
+
+    iget-object v0, p0, Lcom/android/server/UiModeManagerService;->mUIModeScaleChangedObserver:Lcom/android/server/UiModeManagerService$UIModeScaleChangedObserver;
+
+    invoke-virtual {v0, v3}, Lcom/android/server/UiModeManagerService$UIModeScaleChangedObserver;->onChange(Z)V
+
+    return-void
 .end method
