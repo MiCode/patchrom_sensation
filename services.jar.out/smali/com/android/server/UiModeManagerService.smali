@@ -75,7 +75,7 @@
 
 .field private mConfiguration:Landroid/content/res/Configuration;
 
-.field private final mContext:Landroid/content/Context;
+.field final mContext:Landroid/content/Context;
 
 .field private mCurUiMode:I
 
@@ -119,7 +119,7 @@
 
 .field private mStatusBarManager:Landroid/app/StatusBarManager;
 
-.field private mSystemReady:Z
+.field mSystemReady:Z
 
 .field private final mTwilightUpdateReceiver:Landroid/content/BroadcastReceiver;
 
