@@ -9,7 +9,7 @@ local-zip-file     := stockrom.zip
 # local-out-zip-file :=
 
 # All apps from original ZIP, but has smali files chanded
-local-modified-apps := HTCCamera HtcListen
+local-modified-apps := HTCCamera HtcListen HTCAlbum
 
 local-modified-jars := HTCExtension
 
@@ -22,7 +22,7 @@ local-phone-apps := ApplicationsProvider AppSharing BackupRestoreConfirmation Bl
 	CertInstaller CustomizationSettingsProvider DefaultContainerService DFPI DrmProvider FilePicker GoogleTTS \
 	HTC_IME HtcBeatsNotify HTCCamera HtcFMRadio HtcListen HTMLViewer KeyChain LiveWallpapers LMW MarketUpdater \
 	NoiseField OneTimeInitializer PhaseBeam PluginManager SDCardWizard SharedStorageBackup SmartNetwork Stk \
-	talkback TrimIt UploadProvider Usage UserDictionaryProvider WifiRouter FaceLock
+	talkback TrimIt UploadProvider Usage UserDictionaryProvider WifiRouter FaceLock HTCAlbum
 
 # To include the local targets before and after zip the final ZIP file, 
 # and the local-targets should:
