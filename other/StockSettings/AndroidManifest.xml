@@ -48,5 +48,23 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.DeviceSpecial" />
         </activity>
+
+        <receiver android:name="PSReceiver" android:permission="android.htc.connect_to_pc.permission.INTENT">
+            <intent-filter>
+                <action android:name="com.htc.android.start_IPT" />
+                <action android:name="com.htc.android.stop_IPT" />
+                <action android:name="android.hardware.usb.action.USB_CONNECT2PC" />
+                <action android:name="com.htc.android.startIS.Fail" />
+                <action android:name="com.htc.is.enabled" />
+                <action android:name="android.intent.action.QUICKBOOT_POWEROFF" />
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="PowerEventReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>

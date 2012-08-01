@@ -19,8 +19,8 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
         <CheckBoxPreference
-            android:key="htc_fastboot"
-            android:title="@string/htc_fastboot_title"
-            android:summary="@string/htc_fastboot_summary"
+            android:key="stock_settings_entry"
+            android:title="@string/stock_settings_entry_title"
+            android:summary="@string/stock_settings_entry_summary"
             android:persistent="false"/>
 </PreferenceScreen>

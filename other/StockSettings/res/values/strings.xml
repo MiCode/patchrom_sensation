@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="stock_settings">"Stock Settings"</string>
-    <string name="htc_fastboot_title">"Fast boot"</string>
-    <string name="htc_fastboot_summary">"Not recommended with some Market apps"</string>
+    <string name="stock_settings_entry_title">"Internet pass-through"</string>
+    <string name="stock_settings_entry_summary">"Connect to the Internet via PC. Please plug in USB cable."</string>
+    <string name="PSFail">Unable to connect to PC</string>
+    <string name="PSPass">Internet pass-through connected</string>
+    <string name="PSMsg">If you are unable to connect to the Internet via Internet pass-through, please ensure that your PC firewall settings allow this type of connection. Internet pass-through only supports TCP connections if your PC connects to the Internet via PPP (e.g. dial up, xDSL, or VPN).</string>
+    <string name="PSTitle">Internet pass-through Notice</string>
+    <string name="PSButton">OK</string>
+    <string name="do_not_show_psmsg">Don\'t show next time</string>
 </resources>
 
