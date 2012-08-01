@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="stock_settings">"原厂设置"</string>
-    <string name="htc_fastboot_title">"快速启动"</string>
-    <string name="htc_fastboot_summary">"不推荐使用在某些电子市场应用程序上"</string>
+    <string name="stock_settings_entry_title">"Internet 传输"</string>
+    <string name="stock_settings_entry_summary">"通过 PC 连接到 Internet。请插上 USB 线。"</string>
+    <string name="PSFail">无法连接到电脑</string>
+    <string name="PSPass">Internet 传输已连接</string>
+    <string name="PSMsg">"每次链接USB请重新打开开关。\r\n如果无法通过 Internet 传输连接到 Internet，请确认您的电脑防火墙设置允许此类连接。如果您的电脑通过 PPP（如拨号、xDSL 或 VPN） 连接到 Internet，则 Internet 传输仅支持 TCP 连接。"</string>
+    <string name="PSTitle">注意事项</string>
+    <string name="PSButton">确定</string>
+    <string name="do_not_show_psmsg">下次不再显示</string>
 </resources>
 

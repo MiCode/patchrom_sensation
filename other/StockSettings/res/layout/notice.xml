@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="fill_parent" 
+     android:layout_height="fill_parent"
+     android:orientation="vertical">
+     
+     <TextView
+         style="?android:attr/textAppearanceMedium"
+         android:paddingTop="10dip"
+         android:paddingBottom="10dip"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:gravity="left"
+         android:text="@string/PSMsg"
+       />
+     
+<!--      <CheckBox -->
+<!--         android:id="@+id/notice" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:text="@string/do_not_show_psmsg" -->
+<!--         android:checked="false" -->
+<!--         /> -->
+     
+ </LinearLayout>

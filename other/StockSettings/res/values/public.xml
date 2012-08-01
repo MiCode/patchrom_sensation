@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="drawable" name="stat_notify_internet_pass_through" id="0x7f020000" />
+    <public type="drawable" name="stat_notify_internet_pass_through_fail" id="0x7f020001" />
+    <public type="xml" name="stock_settings" id="0x7f030000" />
+    <public type="string" name="stock_settings" id="0x7f040000" />
+    <public type="string" name="stock_settings_entry_title" id="0x7f040001" />
+    <public type="string" name="stock_settings_entry_summary" id="0x7f040002" />
+    <public type="string" name="PSFail" id="0x7f040003" />
+    <public type="string" name="PSPass" id="0x7f040004" />
+</resources>
