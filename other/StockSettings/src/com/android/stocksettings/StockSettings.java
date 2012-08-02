@@ -16,21 +16,27 @@
 
 package com.android.stocksettings;
 
+import android.app.Activity;
 import android.app.ActivityManagerNative;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.DialogInterface.OnClickListener;
 import android.content.DialogInterface.OnDismissListener;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.ContentObserver;
+import android.hardware.usb.UsbManager;
+import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -51,12 +57,14 @@ import android.webkit.WebView;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import android.app.ActionBar;
+import android.bluetooth.BluetoothAdapter;
+
 
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class StockSettings extends PreferenceActivity{
+public class StockSettings extends PreferenceActivity {
     private static final String LOG_TAG = "StockSettings";
 
     private static final String STOCK_SET_ENTRY_DB_KEY = "ps_enabled";
@@ -65,6 +73,11 @@ public class StockSettings extends PreferenceActivity{
 
     private CheckBoxPreference mStockSetEntry;
     private CheckBox mShowNotice;
+
+    UsbStateReceiver mUsbStateReceiver;
+
+    private boolean mUsbConnected;
+    private boolean mMassStorageActive;
 
     public void onCreate(Bundle savedInstanceState) {
         ActionBar actionBar = getActionBar();
@@ -75,10 +88,8 @@ public class StockSettings extends PreferenceActivity{
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.stock_settings);
         mStockSetEntry = (CheckBoxPreference) findPreference(STOCK_SET_ENTRY_CB_KEY);
-        updateState();
-        getContentResolver().registerContentObserver(
-                Settings.System.getUriFor(STOCK_SET_ENTRY_DB_KEY), true, new PSChangeObserver());
     }
+
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mStockSetEntry) {
@@ -98,11 +109,27 @@ public class StockSettings extends PreferenceActivity{
             }
         }
         else {
-            //do nothing
+
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        mUsbStateReceiver = new UsbStateReceiver();
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(UsbManager.ACTION_USB_STATE);
+        registerReceiver(mUsbStateReceiver, filter);
+
+        filter = new IntentFilter();
+        filter.addAction(Intent.ACTION_MEDIA_SHARED);
+        filter.addAction(Intent.ACTION_MEDIA_UNSHARED);
+        filter.addDataScheme("file");
+        registerReceiver(mUsbStateReceiver, filter);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -144,6 +171,7 @@ public class StockSettings extends PreferenceActivity{
 
         return url;
     }
+
     private void showNotice() {
 //        if (Settings.System.getInt(getContentResolver(), SHOW_NOTICE_NEXT_TIME, 1) != 0) {
 //            View contentView = getLayoutInflater().inflate(R.layout.notice, null);
@@ -170,16 +198,34 @@ public class StockSettings extends PreferenceActivity{
     }
 
     void updateState() {
-        mStockSetEntry.setChecked(Settings.System.getInt(getContentResolver(), STOCK_SET_ENTRY_DB_KEY, 0) != 0);
+        ConnectivityManager cm =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        boolean usbAvailable = mUsbConnected && !mMassStorageActive;
+
+        if (usbAvailable) {
+            mStockSetEntry.setEnabled(true);
+            mStockSetEntry.setChecked(Settings.System.getInt(getContentResolver(),
+                    STOCK_SET_ENTRY_DB_KEY, 0) != 0);
+        } else {
+            mStockSetEntry.setEnabled(false);
+            mStockSetEntry.setChecked(false);
+            Settings.System.putInt(getContentResolver(), STOCK_SET_ENTRY_DB_KEY, 0);
+        }
     }
 
-    private class PSChangeObserver extends ContentObserver {
-        public PSChangeObserver() {
-            super(new Handler());
-        }
+    public class UsbStateReceiver extends BroadcastReceiver {
 
         @Override
-        public void onChange(boolean selfChange) {
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (action.equals(UsbManager.ACTION_USB_STATE)) {
+                mUsbConnected = intent.getBooleanExtra(UsbManager.USB_CONNECTED, false);
+            } else if (action.equals(Intent.ACTION_MEDIA_SHARED)) {
+                mMassStorageActive = true;
+            } else if (action.equals(Intent.ACTION_MEDIA_UNSHARED)) {
+                mMassStorageActive = false;
+            }
             updateState();
         }
     }

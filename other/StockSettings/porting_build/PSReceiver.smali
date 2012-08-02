@@ -2747,9 +2747,9 @@
 
     .line 559
     .local v2, intent:Landroid/content/Intent;
-    #const-class v7, Lcom/android/stocksettings/Settings;
+    const-class v7, Lcom/android/stocksettings/StockSettings;
 
-    #invoke-virtual {v2, p1, v7}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
+    invoke-virtual {v2, p1, v7}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
 
     .line 560
     const/high16 v7, 0x1000
@@ -2860,9 +2860,9 @@
 
     .line 535
     .local v2, intent:Landroid/content/Intent;
-    #const-class v7, Lcom/android/stocksettings/Settings;
+    const-class v7, Lcom/android/stocksettings/StockSettings;
 
-    #invoke-virtual {v2, p1, v7}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
+    invoke-virtual {v2, p1, v7}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
 
     .line 536
     const/high16 v7, 0x1000
