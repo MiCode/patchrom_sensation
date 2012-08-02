@@ -231,3 +231,6 @@ ro.setupwizard.enterprise_mode=1
 dalvik.vm.dexopt-flags=m=y
 net.bt.name=Android
 dalvik.vm.stack-trace-file=/data/anr/traces.txt
+
+persist.usb.android_config = 1
+persist.sys.usb.config=adb
