@@ -98,73 +98,140 @@
 
 # virtual methods
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 6
+    .locals 11
     .parameter "position"
     .parameter "convertView"
     .parameter "parent"
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v7, 0x0
 
-    const/4 v1, 0x0
+    .line 2301
+    if-eqz p2, :cond_1
 
-    .line 2306
+    move-object v6, p2
+
+    .line 2303
+    .local v6, view:Landroid/view/View;
+    :goto_0
     if-ltz p1, :cond_0
 
-    iget-object v4, p0, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;->mItemsList:Ljava/util/List;
+    iget-object v8, p0, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;->mItemsList:Ljava/util/List;
 
-    invoke-interface {v4}, Ljava/util/List;->size()I
+    invoke-interface {v8}, Ljava/util/List;->size()I
 
-    move-result v4
+    move-result v8
 
-    if-lt p1, v4, :cond_1
+    if-lt p1, v8, :cond_2
 
-    .line 2307
+    .line 2320
     :cond_0
-    iget-object v4, p0, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;->mContext:Landroid/content/Context;
+    :goto_1
+    return-object v6
 
-    invoke-static {p2, v4, v5, v5, v1}, Landroid/widget/InputMethodStateUtil;->getHtcListItemView(Landroid/view/View;Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Landroid/view/View;
-
-    move-result-object v4
-
-    .line 2314
-    :goto_0
-    return-object v4
-
-    .line 2309
+    .line 2301
+    .end local v6           #view:Landroid/view/View;
     :cond_1
-    iget-object v4, p0, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;->mItemsList:Ljava/util/List;
+    iget-object v8, p0, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    invoke-interface {v4, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    iget v9, p0, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;->mTextViewResourceId:I
+
+    const/4 v10, 0x0
+
+    invoke-virtual {v8, v9, v10}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v6
+
+    goto :goto_0
+
+    .line 2304
+    .restart local v6       #view:Landroid/view/View;
+    :cond_2
+    iget-object v8, p0, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;->mItemsList:Ljava/util/List;
+
+    invoke-interface {v8, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;
 
-    .line 2310
+    .line 2305
     .local v2, item:Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;
-    iget-object v0, v2, Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;->mImeName:Ljava/lang/CharSequence;
+    iget-object v1, v2, Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;->mImeName:Ljava/lang/CharSequence;
 
-    .line 2311
-    .local v0, imeName:Ljava/lang/CharSequence;
-    iget-object v3, v2, Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;->mSubtypeName:Ljava/lang/CharSequence;
+    .line 2306
+    .local v1, imeName:Ljava/lang/CharSequence;
+    iget-object v5, v2, Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;->mSubtypeName:Ljava/lang/CharSequence;
 
-    .line 2312
-    .local v3, subtypeName:Ljava/lang/CharSequence;
-    iget v4, p0, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;->mCheckedItem:I
+    .line 2307
+    .local v5, subtypeName:Ljava/lang/CharSequence;
+    const v8, 0x1020014
 
-    if-ne p1, v4, :cond_2
+    invoke-virtual {v6, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    const/4 v1, 0x1
+    move-result-object v0
 
-    .line 2314
-    .local v1, isChecked:Z
-    :cond_2
-    iget-object v4, p0, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;->mContext:Landroid/content/Context;
+    check-cast v0, Landroid/widget/TextView;
 
-    invoke-static {p2, v4, v0, v3, v1}, Landroid/widget/InputMethodStateUtil;->getHtcListItemView(Landroid/view/View;Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Landroid/view/View;
+    .line 2308
+    .local v0, firstTextView:Landroid/widget/TextView;
+    const v8, 0x1020015
+
+    invoke-virtual {v6, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v4
 
-    goto :goto_0
+    check-cast v4, Landroid/widget/TextView;
+
+    .line 2309
+    .local v4, secondTextView:Landroid/widget/TextView;
+    invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_4
+
+    .line 2310
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 2311
+    const/16 v8, 0x8
+
+    invoke-virtual {v4, v8}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 2317
+    :goto_2
+    const v8, 0x10202bd
+
+    invoke-virtual {v6, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/widget/RadioButton;
+
+    .line 2319
+    .local v3, radioButton:Landroid/widget/RadioButton;
+    iget v8, p0, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;->mCheckedItem:I
+
+    if-ne p1, v8, :cond_3
+
+    const/4 v7, 0x1
+
+    :cond_3
+    invoke-virtual {v3, v7}, Landroid/widget/RadioButton;->setChecked(Z)V
+
+    goto :goto_1
+
+    .line 2313
+    .end local v3           #radioButton:Landroid/widget/RadioButton;
+    :cond_4
+    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 2314
+    invoke-virtual {v4, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 2315
+    invoke-virtual {v4, v7}, Landroid/widget/TextView;->setVisibility(I)V
+
+    goto :goto_2
 .end method

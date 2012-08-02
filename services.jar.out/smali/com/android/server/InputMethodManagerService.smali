@@ -115,7 +115,7 @@
 
 .field private mCurrentSubtype:Landroid/view/inputmethod/InputMethodSubtype;
 
-.field private mDialogBuilder:Lcom/htc/widget/HtcAlertDialog$Builder;
+.field private mDialogBuilder:Landroid/app/AlertDialog$Builder;
 
 .field mEnabledSession:Lcom/android/server/InputMethodManagerService$SessionState;
 
@@ -216,7 +216,7 @@
 
 .field private mSubtypeIds:[I
 
-.field private mSwitchingDialog:Lcom/htc/widget/HtcAlertDialog;
+.field private mSwitchingDialog:Landroid/app/AlertDialog;
 
 .field mSystemReady:Z
 
@@ -3138,81 +3138,71 @@
 .end method
 
 .method private showInputMethodMenuInternal(Z)V
-    .locals 40
+    .locals 36
     .parameter "showSubtypes"
 
     .prologue
-    .line 2106
+    .line 2115
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mContext:Landroid/content/Context;
+    iget-object v8, v0, Lcom/android/server/InputMethodManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v35, v0
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v35
-
-    invoke-direct {v0, v1}, Lcom/android/server/InputMethodManagerService;->prepareContext(Landroid/content/Context;)Landroid/content/Context;
-
-    move-result-object v8
-
-    .line 2107
+    .line 2116
     .local v8, context:Landroid/content/Context;
     invoke-virtual {v8}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v25
+    move-result-object v23
 
-    .line 2108
-    .local v25, pm:Landroid/content/pm/PackageManager;
+    .line 2117
+    .local v23, pm:Landroid/content/pm/PackageManager;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mKeyguardManager:Landroid/app/KeyguardManager;
 
-    move-object/from16 v35, v0
+    move-object/from16 v31, v0
 
-    if-eqz v35, :cond_1
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mKeyguardManager:Landroid/app/KeyguardManager;
-
-    move-object/from16 v35, v0
-
-    invoke-virtual/range {v35 .. v35}, Landroid/app/KeyguardManager;->isKeyguardLocked()Z
-
-    move-result v35
-
-    if-eqz v35, :cond_1
+    if-eqz v31, :cond_1
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mKeyguardManager:Landroid/app/KeyguardManager;
 
-    move-object/from16 v35, v0
+    move-object/from16 v31, v0
 
-    invoke-virtual/range {v35 .. v35}, Landroid/app/KeyguardManager;->isKeyguardSecure()Z
+    invoke-virtual/range {v31 .. v31}, Landroid/app/KeyguardManager;->isKeyguardLocked()Z
 
-    move-result v35
+    move-result v31
 
-    if-eqz v35, :cond_1
+    if-eqz v31, :cond_1
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mKeyguardManager:Landroid/app/KeyguardManager;
+
+    move-object/from16 v31, v0
+
+    invoke-virtual/range {v31 .. v31}, Landroid/app/KeyguardManager;->isKeyguardSecure()Z
+
+    move-result v31
+
+    if-eqz v31, :cond_1
 
     const/16 v18, 0x1
 
-    .line 2111
+    .line 2120
     .local v18, isScreenLocked:Z
     :goto_0
     invoke-virtual {v8}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v35
+    move-result-object v31
 
-    const-string v36, "default_input_method"
+    const-string v32, "default_input_method"
 
-    invoke-static/range {v35 .. v36}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static/range {v31 .. v32}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v21
 
-    .line 2113
+    .line 2122
     .local v21, lastInputMethodId:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -3222,41 +3212,41 @@
 
     move-result v22
 
-    .line 2116
+    .line 2125
     .local v22, lastInputMethodSubtypeId:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mMethodMap:Ljava/util/HashMap;
 
-    move-object/from16 v36, v0
+    move-object/from16 v32, v0
 
-    monitor-enter v36
+    monitor-enter v32
 
-    .line 2117
+    .line 2126
     :try_start_0
     invoke-direct/range {p0 .. p0}, Lcom/android/server/InputMethodManagerService;->getExplicitlyOrImplicitlyEnabledInputMethodsAndSubtypeListLocked()Ljava/util/HashMap;
 
     move-result-object v17
 
-    .line 2119
+    .line 2128
     .local v17, immis:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/view/inputmethod/InputMethodInfo;Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;>;"
     if-eqz v17, :cond_0
 
     invoke-virtual/range {v17 .. v17}, Ljava/util/HashMap;->size()I
 
-    move-result v35
+    move-result v31
 
-    if-nez v35, :cond_2
+    if-nez v31, :cond_2
 
-    .line 2120
+    .line 2129
     :cond_0
-    monitor-exit v36
+    monitor-exit v32
 
-    .line 2271
+    .line 2269
     :goto_1
     return-void
 
-    .line 2108
+    .line 2117
     .end local v17           #immis:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/view/inputmethod/InputMethodInfo;Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;>;"
     .end local v18           #isScreenLocked:Z
     .end local v21           #lastInputMethodId:Ljava/lang/String;
@@ -3266,7 +3256,7 @@
 
     goto :goto_0
 
-    .line 2123
+    .line 2132
     .restart local v17       #immis:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/view/inputmethod/InputMethodInfo;Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;>;"
     .restart local v18       #isScreenLocked:Z
     .restart local v21       #lastInputMethodId:Ljava/lang/String;
@@ -3274,45 +3264,45 @@
     :cond_2
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/InputMethodManagerService;->hideInputMethodMenuLocked()V
 
-    .line 2125
-    new-instance v27, Ljava/util/TreeMap;
+    .line 2134
+    new-instance v24, Ljava/util/TreeMap;
 
-    new-instance v35, Lcom/android/server/InputMethodManagerService$3;
+    new-instance v31, Lcom/android/server/InputMethodManagerService$3;
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
     move-object/from16 v1, p0
 
-    move-object/from16 v2, v25
+    move-object/from16 v2, v23
 
     invoke-direct {v0, v1, v2}, Lcom/android/server/InputMethodManagerService$3;-><init>(Lcom/android/server/InputMethodManagerService;Landroid/content/pm/PackageManager;)V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v24
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v31
 
     invoke-direct {v0, v1}, Ljava/util/TreeMap;-><init>(Ljava/util/Comparator;)V
 
-    .line 2141
-    .local v27, sortedImmis:Ljava/util/TreeMap;,"Ljava/util/TreeMap<Landroid/view/inputmethod/InputMethodInfo;Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;>;"
-    move-object/from16 v0, v27
+    .line 2150
+    .local v24, sortedImmis:Ljava/util/TreeMap;,"Ljava/util/TreeMap<Landroid/view/inputmethod/InputMethodInfo;Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;>;"
+    move-object/from16 v0, v24
 
     move-object/from16 v1, v17
 
     invoke-virtual {v0, v1}, Ljava/util/TreeMap;->putAll(Ljava/util/Map;)V
 
-    .line 2143
+    .line 2152
     new-instance v14, Ljava/util/ArrayList;
 
     invoke-direct {v14}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2145
+    .line 2154
     .local v14, imList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;>;"
-    invoke-virtual/range {v27 .. v27}, Ljava/util/TreeMap;->keySet()Ljava/util/Set;
+    invoke-virtual/range {v24 .. v24}, Ljava/util/TreeMap;->keySet()Ljava/util/Set;
 
-    move-result-object v35
+    move-result-object v31
 
-    invoke-interface/range {v35 .. v35}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface/range {v31 .. v31}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v12
 
@@ -3320,9 +3310,9 @@
     :goto_2
     invoke-interface {v12}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v35
+    move-result v31
 
-    if-eqz v35, :cond_a
+    if-eqz v31, :cond_a
 
     invoke-interface {v12}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3330,11 +3320,11 @@
 
     check-cast v16, Landroid/view/inputmethod/InputMethodInfo;
 
-    .line 2146
+    .line 2155
     .local v16, imi:Landroid/view/inputmethod/InputMethodInfo;
     if-eqz v16, :cond_3
 
-    .line 2147
+    .line 2156
     move-object/from16 v0, v17
 
     move-object/from16 v1, v16
@@ -3345,13 +3335,13 @@
 
     check-cast v10, Ljava/util/List;
 
-    .line 2148
+    .line 2157
     .local v10, explicitlyOrImplicitlyEnabledSubtypeList:Ljava/util/List;,"Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;"
     new-instance v9, Ljava/util/HashSet;
 
     invoke-direct {v9}, Ljava/util/HashSet;-><init>()V
 
-    .line 2149
+    .line 2158
     .local v9, enabledSubtypeSet:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     invoke-interface {v10}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -3361,165 +3351,165 @@
     :goto_3
     invoke-interface {v13}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v35
+    move-result v31
 
-    if-eqz v35, :cond_4
+    if-eqz v31, :cond_4
 
     invoke-interface {v13}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v28
+    move-result-object v25
 
-    check-cast v28, Landroid/view/inputmethod/InputMethodSubtype;
+    check-cast v25, Landroid/view/inputmethod/InputMethodSubtype;
 
-    .line 2150
-    .local v28, subtype:Landroid/view/inputmethod/InputMethodSubtype;
-    invoke-virtual/range {v28 .. v28}, Landroid/view/inputmethod/InputMethodSubtype;->hashCode()I
+    .line 2159
+    .local v25, subtype:Landroid/view/inputmethod/InputMethodSubtype;
+    invoke-virtual/range {v25 .. v25}, Landroid/view/inputmethod/InputMethodSubtype;->hashCode()I
 
-    move-result v35
+    move-result v31
 
-    invoke-static/range {v35 .. v35}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-static/range {v31 .. v31}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v35
+    move-result-object v31
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
     invoke-virtual {v9, v0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
-    .line 2270
+    .line 2268
     .end local v9           #enabledSubtypeSet:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     .end local v10           #explicitlyOrImplicitlyEnabledSubtypeList:Ljava/util/List;,"Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;"
     .end local v13           #i$:Ljava/util/Iterator;
     .end local v14           #imList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;>;"
     .end local v16           #imi:Landroid/view/inputmethod/InputMethodInfo;
     .end local v17           #immis:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/view/inputmethod/InputMethodInfo;Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;>;"
-    .end local v27           #sortedImmis:Ljava/util/TreeMap;,"Ljava/util/TreeMap<Landroid/view/inputmethod/InputMethodInfo;Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;>;"
-    .end local v28           #subtype:Landroid/view/inputmethod/InputMethodSubtype;
+    .end local v24           #sortedImmis:Ljava/util/TreeMap;,"Ljava/util/TreeMap<Landroid/view/inputmethod/InputMethodInfo;Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;>;"
+    .end local v25           #subtype:Landroid/view/inputmethod/InputMethodSubtype;
     :catchall_0
-    move-exception v35
+    move-exception v31
 
-    monitor-exit v36
+    monitor-exit v32
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v35
+    throw v31
 
-    .line 2152
+    .line 2161
     .restart local v9       #enabledSubtypeSet:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     .restart local v10       #explicitlyOrImplicitlyEnabledSubtypeList:Ljava/util/List;,"Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;"
     .restart local v13       #i$:Ljava/util/Iterator;
     .restart local v14       #imList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;>;"
     .restart local v16       #imi:Landroid/view/inputmethod/InputMethodInfo;
     .restart local v17       #immis:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/view/inputmethod/InputMethodInfo;Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;>;"
-    .restart local v27       #sortedImmis:Ljava/util/TreeMap;,"Ljava/util/TreeMap<Landroid/view/inputmethod/InputMethodInfo;Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;>;"
+    .restart local v24       #sortedImmis:Ljava/util/TreeMap;,"Ljava/util/TreeMap<Landroid/view/inputmethod/InputMethodInfo;Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;>;"
     :cond_4
     :try_start_1
     invoke-static/range {v16 .. v16}, Lcom/android/server/InputMethodManagerService;->getSubtypes(Landroid/view/inputmethod/InputMethodInfo;)Ljava/util/ArrayList;
 
-    move-result-object v33
+    move-result-object v30
 
-    .line 2153
-    .local v33, subtypes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/inputmethod/InputMethodSubtype;>;"
+    .line 2162
+    .local v30, subtypes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/inputmethod/InputMethodSubtype;>;"
     move-object/from16 v0, v16
 
-    move-object/from16 v1, v25
+    move-object/from16 v1, v23
 
     invoke-virtual {v0, v1}, Landroid/view/inputmethod/InputMethodInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v15
 
-    .line 2154
+    .line 2163
     .local v15, imeLabel:Ljava/lang/CharSequence;
     if-eqz p1, :cond_9
 
     invoke-virtual {v9}, Ljava/util/HashSet;->size()I
 
-    move-result v35
+    move-result v31
 
-    if-lez v35, :cond_9
+    if-lez v31, :cond_9
 
-    .line 2155
+    .line 2164
     invoke-virtual/range {v16 .. v16}, Landroid/view/inputmethod/InputMethodInfo;->getSubtypeCount()I
 
-    move-result v29
+    move-result v26
 
-    .line 2159
-    .local v29, subtypeCount:I
+    .line 2168
+    .local v26, subtypeCount:I
     const/16 v20, 0x0
 
     .local v20, j:I
     :goto_4
     move/from16 v0, v20
 
-    move/from16 v1, v29
+    move/from16 v1, v26
 
     if-ge v0, v1, :cond_3
 
-    .line 2160
+    .line 2169
     move-object/from16 v0, v16
 
     move/from16 v1, v20
 
     invoke-virtual {v0, v1}, Landroid/view/inputmethod/InputMethodInfo;->getSubtypeAt(I)Landroid/view/inputmethod/InputMethodSubtype;
 
-    move-result-object v28
+    move-result-object v25
 
-    .line 2161
-    .restart local v28       #subtype:Landroid/view/inputmethod/InputMethodSubtype;
-    invoke-virtual/range {v28 .. v28}, Landroid/view/inputmethod/InputMethodSubtype;->hashCode()I
+    .line 2170
+    .restart local v25       #subtype:Landroid/view/inputmethod/InputMethodSubtype;
+    invoke-virtual/range {v25 .. v25}, Landroid/view/inputmethod/InputMethodSubtype;->hashCode()I
 
-    move-result v35
+    move-result v31
 
-    invoke-static/range {v35 .. v35}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-static/range {v31 .. v31}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v30
+    move-result-object v27
 
-    .line 2163
-    .local v30, subtypeHashCode:Ljava/lang/String;
-    move-object/from16 v0, v30
+    .line 2172
+    .local v27, subtypeHashCode:Ljava/lang/String;
+    move-object/from16 v0, v27
 
     invoke-virtual {v9, v0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
-    move-result v35
+    move-result v31
 
-    if-eqz v35, :cond_7
+    if-eqz v31, :cond_7
 
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/server/InputMethodManagerService;->mInputShown:Z
 
-    move/from16 v35, v0
+    move/from16 v31, v0
 
-    if-eqz v35, :cond_5
+    if-eqz v31, :cond_5
 
     if-eqz v18, :cond_6
 
     :cond_5
-    invoke-virtual/range {v28 .. v28}, Landroid/view/inputmethod/InputMethodSubtype;->isAuxiliary()Z
+    invoke-virtual/range {v25 .. v25}, Landroid/view/inputmethod/InputMethodSubtype;->isAuxiliary()Z
 
-    move-result v35
+    move-result v31
 
-    if-nez v35, :cond_7
+    if-nez v31, :cond_7
 
-    .line 2165
+    .line 2174
     :cond_6
-    invoke-virtual/range {v28 .. v28}, Landroid/view/inputmethod/InputMethodSubtype;->overridesImplicitlyEnabledSubtype()Z
+    invoke-virtual/range {v25 .. v25}, Landroid/view/inputmethod/InputMethodSubtype;->overridesImplicitlyEnabledSubtype()Z
 
-    move-result v35
+    move-result v31
 
-    if-eqz v35, :cond_8
+    if-eqz v31, :cond_8
 
-    const/16 v32, 0x0
+    const/16 v29, 0x0
 
-    .line 2169
-    .local v32, subtypeLabel:Ljava/lang/CharSequence;
+    .line 2178
+    .local v29, subtypeLabel:Ljava/lang/CharSequence;
     :goto_5
-    new-instance v35, Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;
+    new-instance v31, Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
-    move-object/from16 v1, v32
+    move-object/from16 v1, v29
 
     move-object/from16 v2, v16
 
@@ -3527,117 +3517,117 @@
 
     invoke-direct {v0, v15, v1, v2, v3}, Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/view/inputmethod/InputMethodInfo;I)V
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
     invoke-virtual {v14, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2174
-    move-object/from16 v0, v30
+    .line 2183
+    move-object/from16 v0, v27
 
     invoke-virtual {v9, v0}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 2159
-    .end local v32           #subtypeLabel:Ljava/lang/CharSequence;
+    .line 2168
+    .end local v29           #subtypeLabel:Ljava/lang/CharSequence;
     :cond_7
     add-int/lit8 v20, v20, 0x1
 
     goto :goto_4
 
-    .line 2165
+    .line 2174
     :cond_8
     invoke-virtual/range {v16 .. v16}, Landroid/view/inputmethod/InputMethodInfo;->getPackageName()Ljava/lang/String;
 
-    move-result-object v35
+    move-result-object v31
 
     invoke-virtual/range {v16 .. v16}, Landroid/view/inputmethod/InputMethodInfo;->getServiceInfo()Landroid/content/pm/ServiceInfo;
 
-    move-result-object v37
+    move-result-object v33
 
-    move-object/from16 v0, v37
+    move-object/from16 v0, v33
 
     iget-object v0, v0, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    move-object/from16 v37, v0
+    move-object/from16 v33, v0
 
-    move-object/from16 v0, v28
+    move-object/from16 v0, v25
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v31
 
-    move-object/from16 v2, v37
+    move-object/from16 v2, v33
 
     invoke-virtual {v0, v8, v1, v2}, Landroid/view/inputmethod/InputMethodSubtype;->getDisplayName(Landroid/content/Context;Ljava/lang/String;Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
 
-    move-result-object v32
+    move-result-object v29
 
     goto :goto_5
 
-    .line 2178
+    .line 2187
     .end local v20           #j:I
-    .end local v28           #subtype:Landroid/view/inputmethod/InputMethodSubtype;
-    .end local v29           #subtypeCount:I
-    .end local v30           #subtypeHashCode:Ljava/lang/String;
+    .end local v25           #subtype:Landroid/view/inputmethod/InputMethodSubtype;
+    .end local v26           #subtypeCount:I
+    .end local v27           #subtypeHashCode:Ljava/lang/String;
     :cond_9
-    new-instance v35, Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;
+    new-instance v31, Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;
 
-    const/16 v37, 0x0
+    const/16 v33, 0x0
 
-    const/16 v38, -0x1
+    const/16 v34, -0x1
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
-    move-object/from16 v1, v37
+    move-object/from16 v1, v33
 
     move-object/from16 v2, v16
 
-    move/from16 v3, v38
+    move/from16 v3, v34
 
     invoke-direct {v0, v15, v1, v2, v3}, Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/view/inputmethod/InputMethodInfo;I)V
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
     invoke-virtual {v14, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_2
 
-    .line 2182
+    .line 2191
     .end local v9           #enabledSubtypeSet:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     .end local v10           #explicitlyOrImplicitlyEnabledSubtypeList:Ljava/util/List;,"Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;"
     .end local v13           #i$:Ljava/util/Iterator;
     .end local v15           #imeLabel:Ljava/lang/CharSequence;
     .end local v16           #imi:Landroid/view/inputmethod/InputMethodInfo;
-    .end local v33           #subtypes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/inputmethod/InputMethodSubtype;>;"
+    .end local v30           #subtypes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/inputmethod/InputMethodSubtype;>;"
     :cond_a
     invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    .line 2183
+    .line 2192
     .local v4, N:I
     new-array v0, v4, [Landroid/view/inputmethod/InputMethodInfo;
 
-    move-object/from16 v35, v0
+    move-object/from16 v31, v0
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/android/server/InputMethodManagerService;->mIms:[Landroid/view/inputmethod/InputMethodInfo;
 
-    .line 2184
+    .line 2193
     new-array v0, v4, [I
 
-    move-object/from16 v35, v0
+    move-object/from16 v31, v0
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/android/server/InputMethodManagerService;->mSubtypeIds:[I
 
-    .line 2185
+    .line 2194
     const/4 v7, 0x0
 
-    .line 2186
+    .line 2195
     .local v7, checkedItem:I
     const/4 v11, 0x0
 
@@ -3645,431 +3635,359 @@
     :goto_6
     if-ge v11, v4, :cond_e
 
-    .line 2187
+    .line 2196
     invoke-virtual {v14, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v19
 
     check-cast v19, Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;
 
-    .line 2188
+    .line 2197
     .local v19, item:Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mIms:[Landroid/view/inputmethod/InputMethodInfo;
 
-    move-object/from16 v35, v0
+    move-object/from16 v31, v0
 
     move-object/from16 v0, v19
 
     iget-object v0, v0, Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;->mImi:Landroid/view/inputmethod/InputMethodInfo;
 
-    move-object/from16 v37, v0
+    move-object/from16 v33, v0
 
-    aput-object v37, v35, v11
+    aput-object v33, v31, v11
 
-    .line 2189
+    .line 2198
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mSubtypeIds:[I
 
-    move-object/from16 v35, v0
+    move-object/from16 v31, v0
 
     move-object/from16 v0, v19
 
     iget v0, v0, Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;->mSubtypeId:I
 
-    move/from16 v37, v0
+    move/from16 v33, v0
 
-    aput v37, v35, v11
+    aput v33, v31, v11
 
-    .line 2190
+    .line 2199
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mIms:[Landroid/view/inputmethod/InputMethodInfo;
 
-    move-object/from16 v35, v0
+    move-object/from16 v31, v0
 
-    aget-object v35, v35, v11
+    aget-object v31, v31, v11
 
-    invoke-virtual/range {v35 .. v35}, Landroid/view/inputmethod/InputMethodInfo;->getId()Ljava/lang/String;
+    invoke-virtual/range {v31 .. v31}, Landroid/view/inputmethod/InputMethodInfo;->getId()Ljava/lang/String;
 
-    move-result-object v35
+    move-result-object v31
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
     move-object/from16 v1, v21
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v35
+    move-result v31
 
-    if-eqz v35, :cond_d
+    if-eqz v31, :cond_d
 
-    .line 2191
+    .line 2200
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mSubtypeIds:[I
 
-    move-object/from16 v35, v0
+    move-object/from16 v31, v0
 
-    aget v31, v35, v11
+    aget v28, v31, v11
 
-    .line 2192
-    .local v31, subtypeId:I
-    const/16 v35, -0x1
+    .line 2201
+    .local v28, subtypeId:I
+    const/16 v31, -0x1
 
-    move/from16 v0, v31
+    move/from16 v0, v28
 
-    move/from16 v1, v35
+    move/from16 v1, v31
 
     if-eq v0, v1, :cond_c
 
-    const/16 v35, -0x1
+    const/16 v31, -0x1
 
     move/from16 v0, v22
 
-    move/from16 v1, v35
+    move/from16 v1, v31
 
     if-ne v0, v1, :cond_b
 
-    if-eqz v31, :cond_c
+    if-eqz v28, :cond_c
 
     :cond_b
-    move/from16 v0, v31
+    move/from16 v0, v28
 
     move/from16 v1, v22
 
     if-ne v0, v1, :cond_d
 
-    .line 2195
+    .line 2204
     :cond_c
     move v7, v11
 
-    .line 2186
-    .end local v31           #subtypeId:I
+    .line 2195
+    .end local v28           #subtypeId:I
     :cond_d
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_6
 
-    .line 2200
+    .line 2209
     .end local v19           #item:Lcom/android/server/InputMethodManagerService$ImeSubtypeListItem;
     :cond_e
+    const/16 v31, 0x0
+
+    sget-object v33, Lcom/android/internal/R$styleable;->DialogPreference:[I
+
+    const v34, 0x101005d
+
     const/16 v35, 0x0
 
-    sget-object v37, Lcom/android/internal/R$styleable;->DialogPreference:[I
+    move-object/from16 v0, v31
 
-    const v38, 0x101005d
+    move-object/from16 v1, v33
 
-    const/16 v39, 0x0
+    move/from16 v2, v34
 
-    move-object/from16 v0, v35
-
-    move-object/from16 v1, v37
-
-    move/from16 v2, v38
-
-    move/from16 v3, v39
+    move/from16 v3, v35
 
     invoke-virtual {v8, v0, v1, v2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v5
 
-    .line 2203
+    .line 2212
     .local v5, a:Landroid/content/res/TypedArray;
-    new-instance v35, Lcom/htc/widget/HtcAlertDialog$Builder;
+    new-instance v31, Landroid/app/AlertDialog$Builder;
 
-    move-object/from16 v0, v35
+    const/16 v33, 0x3
 
-    invoke-direct {v0, v8}, Lcom/htc/widget/HtcAlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    move-object/from16 v0, v31
 
-    const v37, 0x1040417
+    move/from16 v1, v33
 
-    move-object/from16 v0, v35
+    invoke-direct {v0, v8, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;I)V
 
-    move/from16 v1, v37
+    const v33, 0x1040417
 
-    invoke-virtual {v0, v1}, Lcom/htc/widget/HtcAlertDialog$Builder;->setTitle(I)Lcom/htc/widget/HtcAlertDialog$Builder;
+    move-object/from16 v0, v31
 
-    move-result-object v35
+    move/from16 v1, v33
 
-    new-instance v37, Lcom/android/server/InputMethodManagerService$4;
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    move-object/from16 v0, v37
+    move-result-object v31
+
+    new-instance v33, Lcom/android/server/InputMethodManagerService$4;
+
+    move-object/from16 v0, v33
 
     move-object/from16 v1, p0
 
     invoke-direct {v0, v1}, Lcom/android/server/InputMethodManagerService$4;-><init>(Lcom/android/server/InputMethodManagerService;)V
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
-    move-object/from16 v1, v37
+    move-object/from16 v1, v33
 
-    invoke-virtual {v0, v1}, Lcom/htc/widget/HtcAlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Lcom/htc/widget/HtcAlertDialog$Builder;
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v35
+    move-result-object v31
 
-    const/16 v37, 0x0
+    const/16 v33, 0x0
 
-    move/from16 v0, v37
+    move/from16 v0, v33
 
     invoke-virtual {v5, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v37
+    move-result-object v33
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
-    move-object/from16 v1, v37
+    move-object/from16 v1, v33
 
-    invoke-virtual {v0, v1}, Lcom/htc/widget/HtcAlertDialog$Builder;->setIcon(Landroid/graphics/drawable/Drawable;)Lcom/htc/widget/HtcAlertDialog$Builder;
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setIcon(Landroid/graphics/drawable/Drawable;)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v35
+    move-result-object v31
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/android/server/InputMethodManagerService;->mDialogBuilder:Lcom/htc/widget/HtcAlertDialog$Builder;
+    iput-object v0, v1, Lcom/android/server/InputMethodManagerService;->mDialogBuilder:Landroid/app/AlertDialog$Builder;
 
-    .line 2213
+    .line 2222
     invoke-virtual {v5}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 2215
+    .line 2224
     new-instance v6, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;
 
-    const v35, 0x1090096
+    move-object/from16 v0, p0
 
-    move/from16 v0, v35
+    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mDialogBuilder:Landroid/app/AlertDialog$Builder;
 
-    invoke-direct {v6, v8, v0, v14, v7}, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;-><init>(Landroid/content/Context;ILjava/util/List;I)V
+    move-object/from16 v31, v0
 
-    .line 2219
+    invoke-virtual/range {v31 .. v31}, Landroid/app/AlertDialog$Builder;->getContext()Landroid/content/Context;
+
+    move-result-object v31
+
+    const v33, 0x1090096
+
+    move-object/from16 v0, v31
+
+    move/from16 v1, v33
+
+    invoke-direct {v6, v0, v1, v14, v7}, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;-><init>(Landroid/content/Context;ILjava/util/List;I)V
+
+    .line 2228
     .local v6, adapter:Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mDialogBuilder:Lcom/htc/widget/HtcAlertDialog$Builder;
+    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mDialogBuilder:Landroid/app/AlertDialog$Builder;
 
-    move-object/from16 v35, v0
+    move-object/from16 v31, v0
 
-    new-instance v37, Lcom/android/server/InputMethodManagerService$5;
+    new-instance v33, Lcom/android/server/InputMethodManagerService$5;
 
-    move-object/from16 v0, v37
+    move-object/from16 v0, v33
 
     move-object/from16 v1, p0
 
     invoke-direct {v0, v1}, Lcom/android/server/InputMethodManagerService$5;-><init>(Lcom/android/server/InputMethodManagerService;)V
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
-    move-object/from16 v1, v37
+    move-object/from16 v1, v33
 
-    invoke-virtual {v0, v6, v7, v1}, Lcom/htc/widget/HtcAlertDialog$Builder;->setSingleChoiceItems(Landroid/widget/ListAdapter;ILandroid/content/DialogInterface$OnClickListener;)Lcom/htc/widget/HtcAlertDialog$Builder;
+    invoke-virtual {v0, v6, v7, v1}, Landroid/app/AlertDialog$Builder;->setSingleChoiceItems(Landroid/widget/ListAdapter;ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 2242
+    .line 2251
     if-eqz p1, :cond_f
 
     if-nez v18, :cond_f
 
-    .line 2243
+    .line 2252
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mDialogBuilder:Lcom/htc/widget/HtcAlertDialog$Builder;
+    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mDialogBuilder:Landroid/app/AlertDialog$Builder;
 
-    move-object/from16 v35, v0
+    move-object/from16 v31, v0
 
-    const v37, 0x1040418
+    const v33, 0x1040418
 
-    new-instance v38, Lcom/android/server/InputMethodManagerService$6;
+    new-instance v34, Lcom/android/server/InputMethodManagerService$6;
 
-    move-object/from16 v0, v38
+    move-object/from16 v0, v34
 
     move-object/from16 v1, p0
 
     invoke-direct {v0, v1}, Lcom/android/server/InputMethodManagerService$6;-><init>(Lcom/android/server/InputMethodManagerService;)V
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
-    move/from16 v1, v37
+    move/from16 v1, v33
 
-    move-object/from16 v2, v38
+    move-object/from16 v2, v34
 
-    invoke-virtual {v0, v1, v2}, Lcom/htc/widget/HtcAlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/htc/widget/HtcAlertDialog$Builder;
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 2252
+    .line 2261
     :cond_f
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mDialogBuilder:Lcom/htc/widget/HtcAlertDialog$Builder;
+    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mDialogBuilder:Landroid/app/AlertDialog$Builder;
 
-    move-object/from16 v35, v0
+    move-object/from16 v31, v0
 
-    invoke-virtual/range {v35 .. v35}, Lcom/htc/widget/HtcAlertDialog$Builder;->create()Lcom/htc/widget/HtcAlertDialog;
+    invoke-virtual/range {v31 .. v31}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
-    move-result-object v35
+    move-result-object v31
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Lcom/htc/widget/HtcAlertDialog;
+    iput-object v0, v1, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Landroid/app/AlertDialog;
 
-    .line 2253
+    .line 2262
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Lcom/htc/widget/HtcAlertDialog;
+    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Landroid/app/AlertDialog;
 
-    move-object/from16 v35, v0
+    move-object/from16 v31, v0
 
-    const/16 v37, 0x1
+    const/16 v33, 0x1
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
-    move/from16 v1, v37
+    move/from16 v1, v33
 
-    invoke-virtual {v0, v1}, Lcom/htc/widget/HtcAlertDialog;->setCanceledOnTouchOutside(Z)V
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 2256
+    .line 2265
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Lcom/htc/widget/HtcAlertDialog;
+    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Landroid/app/AlertDialog;
 
-    move-object/from16 v35, v0
+    move-object/from16 v31, v0
 
-    invoke-virtual/range {v35 .. v35}, Lcom/htc/widget/HtcAlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual/range {v31 .. v31}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
 
-    move-result-object v35
+    move-result-object v31
 
-    const/16 v37, 0x7d3
+    const/16 v33, 0x7d3
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
-    move/from16 v1, v37
+    move/from16 v1, v33
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setType(I)V
 
-    .line 2257
+    .line 2266
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Lcom/htc/widget/HtcAlertDialog;
+    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Landroid/app/AlertDialog;
 
-    move-object/from16 v35, v0
+    move-object/from16 v31, v0
 
-    invoke-virtual/range {v35 .. v35}, Lcom/htc/widget/HtcAlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual/range {v31 .. v31}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
 
-    move-result-object v35
+    move-result-object v31
 
-    invoke-virtual/range {v35 .. v35}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    invoke-virtual/range {v31 .. v31}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
-    move-result-object v35
+    move-result-object v31
 
-    const-string v37, "Select input method"
+    const-string v33, "Select input method"
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v31
 
-    move-object/from16 v1, v37
+    move-object/from16 v1, v33
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 2258
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Lcom/htc/widget/HtcAlertDialog;
-
-    move-object/from16 v35, v0
-
-    invoke-virtual/range {v35 .. v35}, Lcom/htc/widget/HtcAlertDialog;->show()V
-
-    .line 2261
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Lcom/htc/widget/HtcAlertDialog;
-
-    move-object/from16 v35, v0
-
-    const/16 v37, -0x1
-
-    move-object/from16 v0, v35
-
-    move/from16 v1, v37
-
-    invoke-virtual {v0, v1}, Lcom/htc/widget/HtcAlertDialog;->getButton(I)Landroid/widget/Button;
-
-    move-result-object v26
-
-    .line 2262
-    .local v26, positiveButton:Landroid/widget/Button;
-    if-eqz v26, :cond_10
-
-    .line 2263
-    new-instance v24, Landroid/graphics/Paint;
-
-    invoke-direct/range {v24 .. v24}, Landroid/graphics/Paint;-><init>()V
-
-    .line 2264
-    .local v24, paint:Landroid/graphics/Paint;
-    sget-object v35, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
-
-    move-object/from16 v0, v24
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
-
-    .line 2265
-    invoke-virtual/range {v26 .. v26}, Landroid/widget/Button;->getTextSize()F
-
-    move-result v35
-
-    move-object/from16 v0, v24
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTextSize(F)V
-
-    .line 2266
-    invoke-virtual/range {v26 .. v26}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v35
-
-    check-cast v35, Ljava/lang/String;
-
-    move-object/from16 v0, v24
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->measureText(Ljava/lang/String;)F
-
-    move-result v34
-
     .line 2267
-    .local v34, text_width:F
-    invoke-virtual/range {v26 .. v26}, Landroid/widget/Button;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    move-object/from16 v0, p0
 
-    move-result-object v23
+    iget-object v0, v0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Landroid/app/AlertDialog;
 
-    check-cast v23, Landroid/widget/LinearLayout$LayoutParams;
+    move-object/from16 v31, v0
+
+    invoke-virtual/range {v31 .. v31}, Landroid/app/AlertDialog;->show()V
 
     .line 2268
-    .local v23, lp:Landroid/widget/LinearLayout$LayoutParams;
-    move/from16 v0, v34
-
-    float-to-int v0, v0
-
-    move/from16 v35, v0
-
-    move/from16 v0, v35
-
-    move-object/from16 v1, v23
-
-    iput v0, v1, Landroid/widget/LinearLayout$LayoutParams;->width:I
-
-    .line 2270
-    .end local v23           #lp:Landroid/widget/LinearLayout$LayoutParams;
-    .end local v24           #paint:Landroid/graphics/Paint;
-    .end local v34           #text_width:F
-    :cond_10
-    monitor-exit v36
+    monitor-exit v32
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -6932,21 +6850,21 @@
     const/4 v1, 0x0
 
     .line 2349
-    iget-object v0, p0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Lcom/htc/widget/HtcAlertDialog;
+    iget-object v0, p0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Landroid/app/AlertDialog;
 
     if-eqz v0, :cond_0
 
     .line 2350
-    iget-object v0, p0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Lcom/htc/widget/HtcAlertDialog;
+    iget-object v0, p0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Landroid/app/AlertDialog;
 
-    invoke-virtual {v0}, Lcom/htc/widget/HtcAlertDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
     .line 2351
-    iput-object v1, p0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Lcom/htc/widget/HtcAlertDialog;
+    iput-object v1, p0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Landroid/app/AlertDialog;
 
     .line 2354
     :cond_0
-    iput-object v1, p0, Lcom/android/server/InputMethodManagerService;->mDialogBuilder:Lcom/htc/widget/HtcAlertDialog$Builder;
+    iput-object v1, p0, Lcom/android/server/InputMethodManagerService;->mDialogBuilder:Landroid/app/AlertDialog$Builder;
 
     .line 2355
     iput-object v1, p0, Lcom/android/server/InputMethodManagerService;->mIms:[Landroid/view/inputmethod/InputMethodInfo;
