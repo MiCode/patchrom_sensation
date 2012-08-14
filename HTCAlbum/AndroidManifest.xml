@@ -6,22 +6,10 @@
     <application android:theme="@style/Theme.base" android:label="@string/str_app_name3" android:icon="@drawable/albums" android:taskAffinity="" android:description="@com.htc:string/htc_about_company_name" android:hardwareAccelerated="false" allowSkinChange="true">
         <uses-library android:name="com.htc.sunny2" />
         <meta-data android:name="opensense" android:resource="@xml/supports" />
-        <activity android:theme="@style/Theme.fakescreen" android:name="com.htc.album.AlbumMain.ActivityMainDropList" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+
         <activity android:name="com.htc.album.AlbumMain.ActivityMainExtLauncher" android:excludeFromRecents="true" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
                 <action android:name="com.htc.album.action.MainEntry" android:mimeType="*/*" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
@@ -74,10 +62,6 @@
             </intent-filter>
         </activity>
         <activity android:name="com.htc.album.SocialNetwork.ActivityMainOnline" android:excludeFromRecents="true" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
             <intent-filter>
                 <action android:name="com.htc.album.actions.opensense.albums" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -171,34 +155,6 @@
                 <category android:name="android.intent.category.OPENABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.GET_CONTENT" />
-                <category android:name="android.intent.category.OPENABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="image/*" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.GET_CONTENT" />
-                <category android:name="android.intent.category.OPENABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="video/*" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.PICK" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="image/*" />
-                <data android:mimeType="video/*" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.PICK" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.dir/image" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.PICK" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.dir/video" />
-            </intent-filter>
         </activity>
         <activity android:name="com.htc.album.picker.PickerItemActivity" android:excludeFromRecents="true" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
@@ -247,19 +203,6 @@
                 <action android:name="com.htc.album.ACTION_PICK_DELETE" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="video/*" />
-            </intent-filter>
-        </activity>
-        <activity android:label="@string/str_app_name3" android:icon="@drawable/albums" android:name=".PickWallpaper" android:configChanges="keyboardHidden|orientation|screenSize">
-            <intent-filter>
-                <action android:name="android.intent.action.SET_WALLPAPER" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:label="@string/camera_setas_wallpaper" android:icon="@drawable/albums" android:name=".TabPluginDevice.Wallpaper" android:configChanges="keyboardHidden|orientation|screenSize">
-            <intent-filter>
-                <action android:name="android.intent.action.ATTACH_DATA" />
-                <data android:mimeType="image/*" />
-                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:label="@string/crop_label" android:name=".TabPluginDevice.WallpaperPreviewer" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize" />
@@ -338,10 +281,6 @@
             </intent-filter>
         </activity>
         <activity android:theme="@style/Theme.white" android:name="com.htc.album.TabPluginDLNA.ActivityMainMediaList" android:excludeFromRecents="true" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
             <intent-filter>
                 <action android:name="com.htc.album.action.DLNA_BROWSE_DMS" />
                 <category android:name="android.intent.category.DEFAULT" />
