@@ -11,7 +11,7 @@ local-zip-file     := stockrom.zip
 # All apps from original ZIP, but has smali files chanded
 local-modified-apps := HTCCamera HtcListen HTCAlbum
 
-local-modified-jars := HTCExtension
+local-modified-jars := HTCExtension com.htc.android.bluetooth
 
 local-miui-modified-apps := Phone ThemeManager Mms MiuiHome Settings MiuiGallery DeskClock MiuiSystemUI
 # All apks from MIUI
