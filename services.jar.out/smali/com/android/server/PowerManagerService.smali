@@ -6221,9 +6221,9 @@
 
     .line 2310
     :cond_0
-    iget-object v3, p0, Lcom/android/server/PowerManagerService;->mScreenBrightness:Lcom/android/server/PowerManagerService$BrightnessState;
+    #iget-object v3, p0, Lcom/android/server/PowerManagerService;->mScreenBrightness:Lcom/android/server/PowerManagerService$BrightnessState;
 
-    invoke-virtual {v3, v2}, Lcom/android/server/PowerManagerService$BrightnessState;->forceValueLocked(I)V
+    #invoke-virtual {v3, v2}, Lcom/android/server/PowerManagerService$BrightnessState;->forceValueLocked(I)V
 
     .line 2315
     :cond_1
