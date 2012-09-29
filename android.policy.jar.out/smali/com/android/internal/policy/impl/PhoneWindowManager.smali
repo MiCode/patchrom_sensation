@@ -10436,6 +10436,10 @@
 
     iput-boolean v0, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPendingPowerKeyUpCanceled:Z
 
+    move-object/from16 v0, p0
+
+    invoke-direct {v0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->notifyPowerKeyUp()V
+
     goto/16 :goto_e
 
     .line 3873
@@ -16027,4 +16031,29 @@
         0x7e5 -> :sswitch_15
         0x7e6 -> :sswitch_16
     .end sparse-switch
+.end method
+
+.method private notifyPowerKeyUp()V
+    .locals 3
+
+    .prologue
+    .line 2718
+    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    if-eqz v0, :cond_0
+
+    .line 2719
+    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v2, "android.intent.action.KEYCODE_POWER_UP"
+
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+
+    .line 2721
+    :cond_0
+    return-void
 .end method
