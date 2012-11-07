@@ -1291,6 +1291,8 @@
 
     invoke-virtual {v6}, Landroid/content/res/Resources;->startPreloading()V
 
+    goto :miui_cond_0
+
     .line 345
     const-string v6, "Zygote"
 
@@ -1429,6 +1431,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    :miui_cond_0
     .line 361
     sget-object v6, Lcom/android/internal/os/ZygoteInit;->mResources:Landroid/content/res/Resources;
 
