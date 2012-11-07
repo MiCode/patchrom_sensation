@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <bool name="config_protect_cps">true</bool>
+    <bool name="config_protect_csp">true</bool>
 </resources>
