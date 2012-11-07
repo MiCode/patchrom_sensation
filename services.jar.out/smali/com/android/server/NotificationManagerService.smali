@@ -1160,7 +1160,7 @@
     .line 1223
     iget-object v4, p0, Lcom/android/server/NotificationManagerService;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v4, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+    #invoke-virtual {v4, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     .line 1228
     const-string v4, "NotificationService"
