@@ -697,7 +697,7 @@
         <item name="textSize">18.0sp</item>
     </style>
     <style name="TextAppearance.Large" parent="@style/TextAppearance">
-        <item name="textSize">22.0sp</item>
+        <item name="textSize">18.0sp</item>
     </style>
     <style name="TextAppearance.Large.Inverse" parent="@style/TextAppearance.Large">
         <item name="textColor">?textColorPrimaryInverse</item>
@@ -706,7 +706,7 @@
         <item name="textColorLink">?textColorLinkInverse</item>
     </style>
     <style name="TextAppearance.Medium" parent="@style/TextAppearance">
-        <item name="textSize">18.0sp</item>
+        <item name="textSize">16.0sp</item>
     </style>
     <style name="TextAppearance.Medium.Inverse" parent="@style/TextAppearance.Medium">
         <item name="textColor">?textColorPrimaryInverse</item>
@@ -715,7 +715,7 @@
         <item name="textColorLink">?textColorLinkInverse</item>
     </style>
     <style name="TextAppearance.Small" parent="@style/TextAppearance">
-        <item name="textSize">14.0sp</item>
+        <item name="textSize">12.0sp</item>
         <item name="textColor">?textColorSecondary</item>
     </style>
     <style name="TextAppearance.Small.Inverse" parent="@style/TextAppearance.Small">
@@ -871,13 +871,13 @@
     </style>
     <style name="TextAppearance.StatusBar.Icon" parent="@style/TextAppearance.StatusBar" />
     <style name="TextAppearance.StatusBar.EventContent" parent="@style/TextAppearance.StatusBar">
-        <item name="textSize">12.0sp</item>
-        <item name="textColor">?textColorSecondary</item>
+        <item name="textSize">13.0sp</item>
+        <item name="textColor">#ff645750</item>
     </style>
     <style name="TextAppearance.StatusBar.EventContent.Title" parent="@style/TextAppearance.StatusBar.EventContent">
-        <item name="textSize">16.0sp</item>
+        <item name="textSize">17.0sp</item>
         <item name="textStyle">bold</item>
-        <item name="textColor">?textColorPrimary</item>
+        <item name="textColor">@color/primary_text_holo_light</item>
     </style>
     <style name="Theme.WithActionBar" parent="@style/Theme">
         <item name="windowActionBar">true</item>
@@ -1932,9 +1932,10 @@
         <item name="textAllCaps">true</item>
     </style>
     <style name="Widget.Holo.ActionBar.TabBar" parent="@style/Widget.ActionBar.TabBar">
-        <item name="divider">?actionBarDivider</item>
+        <item name="background">@drawable/ab_tab_bg</item>
+        <item name="divider">@drawable/ab_tab_divider</item>
         <item name="showDividers">middle</item>
-        <item name="dividerPadding">12.0dip</item>
+        <item name="dividerPadding">0.0dip</item>
     </style>
     <style name="Widget.Holo.Light.ActionBar.TabView" parent="@style/Widget.Holo.ActionBar.TabView" />
     <style name="Widget.Holo.Light.ActionBar.TabText" parent="@style/Widget.Holo.ActionBar.TabText" />
@@ -2037,7 +2038,7 @@
     </style>
     <style name="TextAppearance.Holo.DialogWindowTitle" parent="@style/TextAppearance.Holo">
         <item name="textSize">22.0sp</item>
-        <item name="textColor">@color/holo_blue_light</item>
+        <item name="textColor">@color/holo_orange_light</item>
     </style>
     <style name="TextAppearance.SuggestionHighlight" parent="@style/TextAppearance">
         <item name="textSize">18.0sp</item>
@@ -2156,7 +2157,6 @@
         <item name="windowTitleStyle">@style/WindowTitle.DeviceDefault</item>
         <item name="windowTitleBackgroundStyle">@style/WindowTitleBackground.DeviceDefault</item>
         <item name="alertDialogStyle">@style/AlertDialog.DeviceDefault</item>
-        <item name="panelBackground">@drawable/zhtc_menu_hardkey_panel_holo_dark</item>
         <item name="absListViewStyle">@style/Widget.DeviceDefault.AbsListView</item>
         <item name="autoCompleteTextViewStyle">@style/Widget.DeviceDefault.AutoCompleteTextView</item>
         <item name="checkboxStyle">@style/Widget.DeviceDefault.CompoundButton.CheckBox</item>
@@ -2196,14 +2196,11 @@
         <item name="dialogPreferenceStyle">@style/Preference.DeviceDefault.DialogPreference</item>
         <item name="editTextPreferenceStyle">@style/Preference.DeviceDefault.DialogPreference.EditTextPreference</item>
         <item name="ringtonePreferenceStyle">@style/Preference.DeviceDefault.RingtonePreference</item>
-        <item name="textColorHighlight">#ff7fb118</item>
         <item name="windowAnimationStyle">@style/Animation.DeviceDefault.Activity</item>
         <item name="textAppearanceButton">@style/TextAppearance.DeviceDefault.Widget.Button</item>
         <item name="listSeparatorTextViewStyle">@style/Widget.DeviceDefault.TextView.ListSeparator</item>
         <item name="progressBarStyleSmallTitle">@style/Widget.DeviceDefault.ProgressBar.Small.Title</item>
         <item name="ratingBarStyleIndicator">@style/Widget.DeviceDefault.RatingBar.Indicator</item>
-        <item name="listChoiceIndicatorSingle">@drawable/zhtc_btn_radio_holo_dark</item>
-        <item name="listChoiceIndicatorMultiple">@drawable/zhtc_btn_check_holo_dark</item>
         <item name="progressBarStyleInverse">@style/Widget.DeviceDefault.ProgressBar.Inverse</item>
         <item name="progressBarStyleSmallInverse">@style/Widget.DeviceDefault.ProgressBar.Small.Inverse</item>
         <item name="progressBarStyleLargeInverse">@style/Widget.DeviceDefault.ProgressBar.Large.Inverse</item>
@@ -2222,35 +2219,26 @@
         <item name="dropDownSpinnerStyle">@style/Widget.DeviceDefault.Spinner.DropDown</item>
         <item name="actionDropDownStyle">@style/Widget.DeviceDefault.Spinner.DropDown.ActionBar</item>
         <item name="actionButtonStyle">@style/Widget.DeviceDefault.ActionButton</item>
-        <item name="actionModeBackground">@drawable/zhtc_cab_background_top_holo_dark</item>
-        <item name="listChoiceBackgroundIndicator">@drawable/zhtc_list_selector_holo_dark</item>
         <item name="actionBarTabStyle">@style/Widget.DeviceDefault.ActionBar.TabView</item>
         <item name="actionBarTabBarStyle">@style/Widget.DeviceDefault.ActionBar.TabBar</item>
         <item name="actionBarTabTextStyle">@style/Widget.DeviceDefault.ActionBar.TabText</item>
         <item name="actionOverflowButtonStyle">@style/Widget.DeviceDefault.ActionButton.Overflow</item>
         <item name="actionModeCloseButtonStyle">@style/Widget.DeviceDefault.ActionButton.CloseMode</item>
-        <item name="activatedBackgroundIndicator">@drawable/zhtc_activated_background_holo_dark</item>
         <item name="listPopupWindowStyle">@style/Widget.DeviceDefault.ListPopupWindow</item>
         <item name="popupMenuStyle">@style/Widget.DeviceDefault.PopupMenu</item>
         <item name="textAppearanceLargePopupMenu">@style/TextAppearance.DeviceDefault.Widget.PopupMenu.Large</item>
         <item name="textAppearanceSmallPopupMenu">@style/TextAppearance.DeviceDefault.Widget.PopupMenu.Small</item>
         <item name="dialogTheme">@style/Theme.DeviceDefault.Dialog</item>
         <item name="alertDialogTheme">@style/Theme.DeviceDefault.Dialog.Alert</item>
-        <item name="selectableItemBackground">@drawable/zhtc_item_background_holo_dark</item>
         <item name="borderlessButtonStyle">@style/Widget.DeviceDefault.Button.Borderless</item>
         <item name="buttonBarStyle">@style/DeviceDefault.ButtonBar</item>
         <item name="segmentedButtonStyle">@style/DeviceDefault.SegmentedButton</item>
-        <item name="fastScrollThumbDrawable">@drawable/zhtc_fastscroll_thumb_holo</item>
-        <item name="textColorHighlightInverse">#ff7fb118</item>
-        <item name="editTextBackground">@drawable/zhtc_edit_text_holo_dark</item>
         <item name="horizontalScrollViewStyle">@style/Widget.DeviceDefault.HorizontalScrollView</item>
         <item name="datePickerStyle">@style/Widget.DeviceDefault.DatePicker</item>
         <item name="calendarViewStyle">@style/Widget.DeviceDefault.CalendarView</item>
         <item name="switchPreferenceStyle">@style/Preference.DeviceDefault.SwitchPreference</item>
         <item name="textSuggestionsWindowStyle">@style/Widget.DeviceDefault.TextSuggestionsPopupWindow</item>
         <item name="actionModeStyle">@style/Widget.DeviceDefault.ActionMode</item>
-        <item name="actionModeSplitBackground">@drawable/zhtc_cab_background_bottom_holo_dark</item>
-        <item name="panelMenuListTheme">@style/Theme.DeviceDefault.CompactMenu</item>
         <item name="gestureOverlayViewStyle">@style/Widget.DeviceDefault.GestureOverlayView</item>
         <item name="stackViewStyle">@style/Widget.DeviceDefault.StackView</item>
         <item name="numberPickerStyle">@style/Widget.DeviceDefault.NumberPicker</item>
@@ -2259,21 +2247,13 @@
         <item name="numberPickerInputTextStyle">@style/Widget.DeviceDefault.EditText.NumberPickerInputText</item>
         <item name="timePickerStyle">@style/Widget.DeviceDefault.TimePicker</item>
         <item name="actionModePopupWindowStyle">@style/Widget.DeviceDefault.PopupWindow.ActionMode</item>
-        <item name="searchViewTextField">@drawable/zhtc_textfield_searchview_holo_dark</item>
-        <item name="searchViewTextFieldRight">@drawable/zhtc_textfield_searchview_right_holo_dark</item>
         <item name="searchDialogTheme">@style/Theme.DeviceDefault.SearchBar</item>
         <item name="preferenceFrameLayoutStyle">@style/Widget.DeviceDefault.PreferenceFrameLayout</item>
         <item name="switchStyle">@style/Widget.DeviceDefault.CompoundButton.Switch</item>
         <item name="keyboardViewStyle">@style/Widget.DeviceDefault.KeyboardView</item>
     </style>
-    <style name="Theme.DeviceDefault.NoActionBar" parent="@style/Theme.DeviceDefault">
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-    </style>
-    <style name="Theme.DeviceDefault.NoActionBar.Fullscreen" parent="@style/Theme.DeviceDefault.NoActionBar">
-        <item name="windowContentOverlay">@null</item>
-        <item name="windowFullscreen">true</item>
-    </style>
+    <style name="Theme.DeviceDefault.NoActionBar" parent="@style/Theme.Holo.NoActionBar" />
+    <style name="Theme.DeviceDefault.NoActionBar.Fullscreen" parent="@style/Theme.Holo.NoActionBar.Fullscreen" />
     <style name="Theme.DeviceDefault.Light" parent="@style/Theme.Holo.Light">
         <item name="textAppearance">@style/TextAppearance.DeviceDefault.Light</item>
         <item name="textAppearanceInverse">@style/TextAppearance.DeviceDefault.Light.Inverse</item>
@@ -2290,7 +2270,6 @@
         <item name="windowTitleStyle">@style/WindowTitle.DeviceDefault</item>
         <item name="windowTitleBackgroundStyle">@style/WindowTitleBackground.DeviceDefault</item>
         <item name="alertDialogStyle">@style/AlertDialog.DeviceDefault.Light</item>
-        <item name="panelBackground">@drawable/zhtc_menu_hardkey_panel_holo_light</item>
         <item name="absListViewStyle">@style/Widget.DeviceDefault.Light.AbsListView</item>
         <item name="autoCompleteTextViewStyle">@style/Widget.DeviceDefault.Light.AutoCompleteTextView</item>
         <item name="checkboxStyle">@style/Widget.DeviceDefault.Light.CompoundButton.CheckBox</item>
@@ -2330,14 +2309,11 @@
         <item name="dialogPreferenceStyle">@style/Preference.DeviceDefault.DialogPreference</item>
         <item name="editTextPreferenceStyle">@style/Preference.DeviceDefault.DialogPreference.EditTextPreference</item>
         <item name="ringtonePreferenceStyle">@style/Preference.DeviceDefault.RingtonePreference</item>
-        <item name="textColorHighlight">#ff7fb118</item>
         <item name="windowAnimationStyle">@style/Animation.DeviceDefault.Activity</item>
         <item name="textAppearanceButton">@style/TextAppearance.DeviceDefault.Light.Widget.Button</item>
         <item name="listSeparatorTextViewStyle">@style/Widget.DeviceDefault.Light.TextView.ListSeparator</item>
         <item name="progressBarStyleSmallTitle">@style/Widget.DeviceDefault.Light.ProgressBar.Small.Title</item>
         <item name="ratingBarStyleIndicator">@style/Widget.DeviceDefault.Light.RatingBar.Indicator</item>
-        <item name="listChoiceIndicatorSingle">@drawable/zhtc_btn_radio_holo_light</item>
-        <item name="listChoiceIndicatorMultiple">@drawable/zhtc_btn_check_holo_light</item>
         <item name="progressBarStyleInverse">@style/Widget.DeviceDefault.Light.ProgressBar.Inverse</item>
         <item name="progressBarStyleSmallInverse">@style/Widget.DeviceDefault.Light.ProgressBar.Small.Inverse</item>
         <item name="progressBarStyleLargeInverse">@style/Widget.DeviceDefault.Light.ProgressBar.Large.Inverse</item>
@@ -2356,35 +2332,26 @@
         <item name="dropDownSpinnerStyle">@style/Widget.DeviceDefault.Light.Spinner.DropDown</item>
         <item name="actionDropDownStyle">@style/Widget.DeviceDefault.Light.Spinner.DropDown.ActionBar</item>
         <item name="actionButtonStyle">@style/Widget.DeviceDefault.Light.ActionButton</item>
-        <item name="actionModeBackground">@drawable/zhtc_cab_background_top_holo_light</item>
-        <item name="listChoiceBackgroundIndicator">@drawable/zhtc_list_selector_holo_light</item>
         <item name="actionBarTabStyle">@style/Widget.DeviceDefault.Light.ActionBar.TabView</item>
         <item name="actionBarTabBarStyle">@style/Widget.DeviceDefault.Light.ActionBar.TabBar</item>
         <item name="actionBarTabTextStyle">@style/Widget.DeviceDefault.Light.ActionBar.TabText</item>
         <item name="actionOverflowButtonStyle">@style/Widget.DeviceDefault.Light.ActionButton.Overflow</item>
         <item name="actionModeCloseButtonStyle">@style/Widget.DeviceDefault.Light.ActionButton.CloseMode</item>
-        <item name="activatedBackgroundIndicator">@drawable/zhtc_activated_background_holo_light</item>
         <item name="listPopupWindowStyle">@style/Widget.DeviceDefault.Light.ListPopupWindow</item>
         <item name="popupMenuStyle">@style/Widget.DeviceDefault.Light.PopupMenu</item>
         <item name="textAppearanceLargePopupMenu">@style/TextAppearance.DeviceDefault.Light.Widget.PopupMenu.Large</item>
         <item name="textAppearanceSmallPopupMenu">@style/TextAppearance.DeviceDefault.Light.Widget.PopupMenu.Small</item>
         <item name="dialogTheme">@style/Theme.DeviceDefault.Light.Dialog</item>
         <item name="alertDialogTheme">@style/Theme.DeviceDefault.Light.Dialog.Alert</item>
-        <item name="selectableItemBackground">@drawable/zhtc_item_background_holo_light</item>
         <item name="borderlessButtonStyle">@style/Widget.DeviceDefault.Light.Button.Borderless</item>
         <item name="buttonBarStyle">@style/DeviceDefault.Light.ButtonBar</item>
         <item name="segmentedButtonStyle">@style/DeviceDefault.Light.SegmentedButton</item>
-        <item name="fastScrollThumbDrawable">@drawable/zhtc_fastscroll_thumb_holo</item>
-        <item name="textColorHighlightInverse">#ff7fb118</item>
-        <item name="editTextBackground">@drawable/zhtc_edit_text_holo_light</item>
         <item name="horizontalScrollViewStyle">@style/Widget.DeviceDefault.Light.HorizontalScrollView</item>
         <item name="datePickerStyle">@style/Widget.DeviceDefault.Light.DatePicker</item>
         <item name="calendarViewStyle">@style/Widget.DeviceDefault.Light.CalendarView</item>
         <item name="switchPreferenceStyle">@style/Preference.DeviceDefault.SwitchPreference</item>
         <item name="textSuggestionsWindowStyle">@style/Widget.DeviceDefault.Light.TextSuggestionsPopupWindow</item>
         <item name="actionModeStyle">@style/Widget.DeviceDefault.Light.ActionMode</item>
-        <item name="actionModeSplitBackground">@drawable/zhtc_cab_background_bottom_holo_light</item>
-        <item name="panelMenuListTheme">@style/Theme.DeviceDefault.Light.CompactMenu</item>
         <item name="gestureOverlayViewStyle">@style/Widget.DeviceDefault.Light.GestureOverlayView</item>
         <item name="stackViewStyle">@style/Widget.DeviceDefault.StackView</item>
         <item name="numberPickerStyle">@style/Widget.DeviceDefault.Light.NumberPicker</item>
@@ -2393,396 +2360,161 @@
         <item name="numberPickerInputTextStyle">@style/Widget.DeviceDefault.Light.EditText.NumberPickerInputText</item>
         <item name="timePickerStyle">@style/Widget.DeviceDefault.Light.TimePicker</item>
         <item name="actionModePopupWindowStyle">@style/Widget.DeviceDefault.Light.PopupWindow.ActionMode</item>
-        <item name="searchViewTextField">@drawable/zhtc_textfield_searchview_holo_light</item>
-        <item name="searchViewTextFieldRight">@drawable/zhtc_textfield_searchview_right_holo_light</item>
         <item name="searchDialogTheme">@style/Theme.DeviceDefault.Light.SearchBar</item>
         <item name="keyboardViewStyle">@style/Widget.DeviceDefault.KeyboardView</item>
     </style>
-    <style name="Theme.DeviceDefault.Light.NoActionBar" parent="@style/Theme.DeviceDefault.Light">
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.NoActionBar.Fullscreen" parent="@style/Theme.DeviceDefault.Light.NoActionBar">
-        <item name="windowContentOverlay">@null</item>
-        <item name="windowFullscreen">true</item>
-    </style>
-    <style name="Theme.DeviceDefault.Dialog" parent="@style/Theme.DeviceDefault">
+    <style name="Theme.DeviceDefault.Light.NoActionBar" parent="@style/Theme.Holo.Light.NoActionBar" />
+    <style name="Theme.DeviceDefault.Light.NoActionBar.Fullscreen" parent="@style/Theme.Holo.Light.NoActionBar.Fullscreen" />
+    <style name="Theme.DeviceDefault.Dialog" parent="@style/Theme.Holo.Dialog">
         <item name="textAppearance">@style/TextAppearance.DeviceDefault</item>
         <item name="textAppearanceInverse">@style/TextAppearance.DeviceDefault.Inverse</item>
-        <item name="windowBackground">@drawable/dialog_full_holo_dark</item>
-        <item name="windowFrame">@null</item>
-        <item name="windowIsFloating">true</item>
-        <item name="windowContentOverlay">@null</item>
         <item name="windowTitleStyle">@style/DialogWindowTitle.DeviceDefault</item>
         <item name="windowAnimationStyle">@style/Animation.DeviceDefault.Dialog</item>
-        <item name="windowSoftInputMode">adjustPan</item>
-        <item name="colorBackgroundCacheHint">@null</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowActionModeOverlay">true</item>
         <item name="borderlessButtonStyle">@style/Widget.DeviceDefault.Button.Borderless.Small</item>
         <item name="buttonBarStyle">@style/DeviceDefault.ButtonBar.AlertDialog</item>
-        <item name="windowCloseOnTouchOutside">@bool/config_closeDialogWhenTouchOutside</item>
-        <item name="listPreferredItemPaddingLeft">16.0dip</item>
-        <item name="listPreferredItemPaddingRight">16.0dip</item>
     </style>
-    <style name="Theme.DeviceDefault.Dialog.MinWidth" parent="@style/Theme.DeviceDefault.Dialog">
-        <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
-        <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
-    </style>
-    <style name="Theme.DeviceDefault.Dialog.NoActionBar" parent="@style/Theme.DeviceDefault.Dialog">
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-    </style>
-    <style name="Theme.DeviceDefault.Dialog.NoActionBar.MinWidth" parent="@style/Theme.DeviceDefault.Dialog.NoActionBar">
-        <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
-        <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.Dialog" parent="@style/Theme.DeviceDefault.Light">
+    <style name="Theme.DeviceDefault.Dialog.MinWidth" parent="@style/Theme.Holo.Dialog.MinWidth" />
+    <style name="Theme.DeviceDefault.Dialog.NoActionBar" parent="@style/Theme.Holo.Dialog.NoActionBar" />
+    <style name="Theme.DeviceDefault.Dialog.NoActionBar.MinWidth" parent="@style/Theme.Holo.Dialog.NoActionBar.MinWidth" />
+    <style name="Theme.DeviceDefault.Light.Dialog" parent="@style/Theme.Holo.Light.Dialog">
         <item name="textAppearance">@style/TextAppearance.DeviceDefault.Light</item>
         <item name="textAppearanceInverse">@style/TextAppearance.DeviceDefault.Light.Inverse</item>
-        <item name="windowBackground">@drawable/dialog_full_holo_light</item>
-        <item name="windowFrame">@null</item>
-        <item name="windowIsFloating">true</item>
-        <item name="windowContentOverlay">@null</item>
         <item name="windowTitleStyle">@style/DialogWindowTitle.DeviceDefault.Light</item>
         <item name="windowAnimationStyle">@style/Animation.DeviceDefault.Dialog</item>
-        <item name="windowSoftInputMode">adjustPan</item>
-        <item name="colorBackgroundCacheHint">@null</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowActionModeOverlay">true</item>
         <item name="borderlessButtonStyle">@style/Widget.DeviceDefault.Light.Button.Borderless.Small</item>
         <item name="buttonBarStyle">@style/DeviceDefault.Light.ButtonBar.AlertDialog</item>
-        <item name="windowCloseOnTouchOutside">@bool/config_closeDialogWhenTouchOutside</item>
-        <item name="listPreferredItemPaddingLeft">16.0dip</item>
-        <item name="listPreferredItemPaddingRight">16.0dip</item>
     </style>
-    <style name="Theme.DeviceDefault.Light.Dialog.MinWidth" parent="@style/Theme.DeviceDefault.Light.Dialog">
-        <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
-        <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.Dialog.NoActionBar" parent="@style/Theme.DeviceDefault.Light.Dialog">
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.Dialog.NoActionBar.MinWidth" parent="@style/Theme.DeviceDefault.Light.Dialog.NoActionBar">
-        <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
-        <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
-    </style>
-    <style name="Theme.DeviceDefault.DialogWhenLarge" parent="@style/Theme.DeviceDefault" />
-    <style name="Theme.DeviceDefault.DialogWhenLarge.NoActionBar" parent="@style/Theme.DeviceDefault.NoActionBar" />
-    <style name="Theme.DeviceDefault.Light.DialogWhenLarge" parent="@style/Theme.DeviceDefault.Light" />
-    <style name="Theme.DeviceDefault.Light.DialogWhenLarge.NoActionBar" parent="@style/Theme.DeviceDefault.Light.NoActionBar" />
-    <style name="Theme.DeviceDefault.Panel" parent="@style/Theme.DeviceDefault">
-        <item name="windowBackground">@color/transparent</item>
-        <item name="windowFrame">@null</item>
-        <item name="windowNoTitle">true</item>
-        <item name="windowIsFloating">true</item>
-        <item name="windowIsTranslucent">true</item>
-        <item name="windowContentOverlay">@null</item>
-        <item name="windowAnimationStyle">@null</item>
-        <item name="backgroundDimEnabled">false</item>
-        <item name="colorBackgroundCacheHint">@null</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.Panel" parent="@style/Theme.DeviceDefault.Light">
-        <item name="windowBackground">@color/transparent</item>
-        <item name="windowFrame">@null</item>
-        <item name="windowNoTitle">true</item>
-        <item name="windowIsFloating">true</item>
-        <item name="windowIsTranslucent">true</item>
-        <item name="windowContentOverlay">@null</item>
-        <item name="windowAnimationStyle">@null</item>
-        <item name="backgroundDimEnabled">false</item>
-        <item name="colorBackgroundCacheHint">@null</item>
-    </style>
-    <style name="Theme.DeviceDefault.Wallpaper" parent="@style/Theme.DeviceDefault">
-        <item name="windowBackground">@color/transparent</item>
-        <item name="windowShowWallpaper">true</item>
-        <item name="colorBackgroundCacheHint">@null</item>
-    </style>
-    <style name="Theme.DeviceDefault.Wallpaper.NoTitleBar" parent="@style/Theme.DeviceDefault.Wallpaper">
-        <item name="windowNoTitle">true</item>
-    </style>
-    <style name="Theme.DeviceDefault.InputMethod" parent="@style/Theme.DeviceDefault.Light.Panel">
-        <item name="windowAnimationStyle">@style/Animation.InputMethod</item>
-        <item name="imeFullscreenBackground">@drawable/screen_background_selector_light</item>
-        <item name="imeExtractEnterAnimation">@anim/input_method_extract_enter</item>
-        <item name="imeExtractExitAnimation">@anim/input_method_extract_exit</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.DarkActionBar" parent="@style/Theme.DeviceDefault.Light">
-        <item name="windowContentOverlay">@drawable/ab_solid_shadow_holo</item>
+    <style name="Theme.DeviceDefault.Light.Dialog.MinWidth" parent="@style/Theme.Holo.Light.Dialog.MinWidth" />
+    <style name="Theme.DeviceDefault.Light.Dialog.NoActionBar" parent="@style/Theme.Holo.Light.Dialog.NoActionBar" />
+    <style name="Theme.DeviceDefault.Light.Dialog.NoActionBar.MinWidth" parent="@style/Theme.Holo.Light.Dialog.NoActionBar.MinWidth" />
+    <style name="Theme.DeviceDefault.DialogWhenLarge" parent="@style/Theme.Holo.DialogWhenLarge" />
+    <style name="Theme.DeviceDefault.DialogWhenLarge.NoActionBar" parent="@style/Theme.Holo.DialogWhenLarge.NoActionBar" />
+    <style name="Theme.DeviceDefault.Light.DialogWhenLarge" parent="@style/Theme.Holo.Light.DialogWhenLarge" />
+    <style name="Theme.DeviceDefault.Light.DialogWhenLarge.NoActionBar" parent="@style/Theme.Holo.Light.DialogWhenLarge.NoActionBar" />
+    <style name="Theme.DeviceDefault.Panel" parent="@style/Theme.Holo.Panel" />
+    <style name="Theme.DeviceDefault.Light.Panel" parent="@style/Theme.Holo.Light.Panel" />
+    <style name="Theme.DeviceDefault.Wallpaper" parent="@style/Theme.Holo.Wallpaper" />
+    <style name="Theme.DeviceDefault.Wallpaper.NoTitleBar" parent="@style/Theme.Holo.Wallpaper.NoTitleBar" />
+    <style name="Theme.DeviceDefault.InputMethod" parent="@style/Theme.Holo.InputMethod" />
+    <style name="Theme.DeviceDefault.Light.DarkActionBar" parent="@style/Theme.Holo.Light.DarkActionBar">
         <item name="actionBarStyle">@style/Widget.DeviceDefault.Light.ActionBar.Solid.Inverse</item>
         <item name="actionDropDownStyle">@style/Widget.DeviceDefault.Spinner.DropDown.ActionBar</item>
         <item name="actionButtonStyle">@style/Widget.DeviceDefault.ActionButton</item>
-        <item name="actionModeBackground">@drawable/zhtc_cab_background_top_holo_dark</item>
-        <item name="actionModeCloseDrawable">@drawable/ic_cab_done_holo_dark</item>
         <item name="actionBarTabStyle">@style/Widget.DeviceDefault.Light.ActionBar.TabView.Inverse</item>
         <item name="actionBarTabBarStyle">@style/Widget.DeviceDefault.Light.ActionBar.TabBar.Inverse</item>
         <item name="actionBarTabTextStyle">@style/Widget.DeviceDefault.Light.ActionBar.TabText.Inverse</item>
         <item name="actionOverflowButtonStyle">@style/Widget.DeviceDefault.ActionButton.Overflow</item>
         <item name="actionModeCloseButtonStyle">@style/Widget.DeviceDefault.ActionButton.CloseMode</item>
-        <item name="homeAsUpIndicator">@drawable/ic_ab_back_holo_dark</item>
-        <item name="actionModeCutDrawable">@drawable/ic_menu_cut_holo_dark</item>
-        <item name="actionModeCopyDrawable">@drawable/ic_menu_copy_holo_dark</item>
-        <item name="actionModePasteDrawable">@drawable/ic_menu_paste_holo_dark</item>
-        <item name="actionMenuTextColor">?textColorPrimaryInverse</item>
-        <item name="actionModeSelectAllDrawable">@drawable/ic_menu_selectall_holo_dark</item>
         <item name="actionModeStyle">@style/Widget.DeviceDefault.Light.ActionMode.Inverse</item>
-        <item name="actionBarWidgetTheme">@style/Theme.DeviceDefault</item>
-        <item name="actionBarDivider">@drawable/list_divider_holo_dark</item>
-        <item name="actionBarItemBackground">@drawable/zhtc_item_background_holo_dark</item>
-        <item name="actionModeSplitBackground">@drawable/zhtc_cab_background_bottom_holo_dark</item>
-        <item name="actionModeShareDrawable">@drawable/ic_menu_share_holo_dark</item>
-        <item name="actionModeFindDrawable">@drawable/ic_menu_find_holo_dark</item>
-        <item name="actionModeWebSearchDrawable">@drawable/ic_menu_search_holo_dark</item>
         <item name="actionModePopupWindowStyle">@style/Widget.DeviceDefault.PopupWindow.ActionMode</item>
     </style>
     <style name="Widget.DeviceDefault" parent="@style/Widget.Holo" />
-    <style name="Widget.DeviceDefault.Button" parent="@style/Widget.Holo.Button">
-        <item name="background">@drawable/zhtc_btn_default_holo_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.Button.Small" parent="@style/Widget.Holo.Button.Small">
-        <item name="background">@drawable/zhtc_btn_default_holo_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.Button.Inset" parent="@style/Widget.Holo.Button.Inset">
-        <item name="background">@drawable/zhtc_button_inset</item>
-    </style>
-    <style name="Widget.DeviceDefault.Button.Toggle" parent="@style/Widget.Holo.Button.Toggle">
-        <item name="background">@drawable/zhtc_btn_toggle_holo_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.Button" parent="@style/Widget.Holo.Button" />
+    <style name="Widget.DeviceDefault.Button.Small" parent="@style/Widget.Holo.Button.Small" />
+    <style name="Widget.DeviceDefault.Button.Inset" parent="@style/Widget.Holo.Button.Inset" />
+    <style name="Widget.DeviceDefault.Button.Toggle" parent="@style/Widget.Holo.Button.Toggle" />
     <style name="Widget.DeviceDefault.Button.Borderless.Small" parent="@style/Widget.Holo.Button.Borderless.Small" />
     <style name="Widget.DeviceDefault.TextView" parent="@style/Widget.Holo.TextView" />
-    <style name="Widget.DeviceDefault.AutoCompleteTextView" parent="@style/Widget.Holo.AutoCompleteTextView">
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_holo_dark</item>
-        <item name="popupBackground">@drawable/zhtc_menu_dropdown_panel_holo_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.AutoCompleteTextView" parent="@style/Widget.Holo.AutoCompleteTextView" />
     <style name="Widget.DeviceDefault.CompoundButton.CheckBox" parent="@style/Widget.Holo.CompoundButton.CheckBox" />
     <style name="Widget.DeviceDefault.ListView.DropDown" parent="@style/Widget.Holo.ListView.DropDown" />
     <style name="Widget.DeviceDefault.EditText" parent="@style/Widget.Holo.EditText" />
-    <style name="Widget.DeviceDefault.ExpandableListView" parent="@style/Widget.Holo.ExpandableListView">
-        <item name="groupIndicator">@drawable/zhtc_expander_group_holo_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.ExpandableListView" parent="@style/Widget.Holo.ExpandableListView" />
     <style name="Widget.DeviceDefault.GridView" parent="@style/Widget.Holo.GridView" />
-    <style name="Widget.DeviceDefault.ImageButton" parent="@style/Widget.Holo.ImageButton">
-        <item name="background">@drawable/zhtc_btn_default_holo_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.ImageButton" parent="@style/Widget.Holo.ImageButton" />
     <style name="Widget.DeviceDefault.ListView" parent="@style/Widget.Holo.ListView" />
-    <style name="Widget.DeviceDefault.PopupWindow" parent="@style/Widget.Holo.PopupWindow">
-        <item name="popupBackground">@drawable/zhtc_editbox_dropdown_background_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.PopupWindow" parent="@style/Widget.Holo.PopupWindow" />
     <style name="Widget.DeviceDefault.ProgressBar" parent="@style/Widget.Holo.ProgressBar" />
-    <style name="Widget.DeviceDefault.ProgressBar.Horizontal" parent="@style/Widget.Holo.ProgressBar.Horizontal">
-        <item name="indeterminateDrawable">@drawable/zhtc_progress_indeterminate_horizontal_holo</item>
-        <item name="progressDrawable">@drawable/zhtc_progress_horizontal_holo_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.ProgressBar.Horizontal" parent="@style/Widget.Holo.ProgressBar.Horizontal" />
     <style name="Widget.DeviceDefault.ProgressBar.Small" parent="@style/Widget.Holo.ProgressBar.Small" />
     <style name="Widget.DeviceDefault.ProgressBar.Small.Title" parent="@style/Widget.Holo.ProgressBar.Small.Title" />
     <style name="Widget.DeviceDefault.ProgressBar.Large" parent="@style/Widget.Holo.ProgressBar.Large" />
-    <style name="Widget.DeviceDefault.SeekBar" parent="@style/Widget.Holo.SeekBar">
-        <item name="indeterminateDrawable">@drawable/zhtc_scrubber_progress_horizontal_holo_dark</item>
-        <item name="progressDrawable">@drawable/zhtc_scrubber_progress_horizontal_holo_dark</item>
-        <item name="thumb">@drawable/zhtc_scrubber_control_selector_holo</item>
-    </style>
-    <style name="Widget.DeviceDefault.RatingBar" parent="@style/Widget.Holo.RatingBar">
-        <item name="indeterminateDrawable">@drawable/zhtc_ratingbar_full_holo_dark</item>
-        <item name="progressDrawable">@drawable/zhtc_ratingbar_full_holo_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.RatingBar.Indicator" parent="@style/Widget.Holo.RatingBar.Indicator">
-        <item name="indeterminateDrawable">@drawable/zhtc_ratingbar_holo_dark</item>
-        <item name="progressDrawable">@drawable/zhtc_ratingbar_holo_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.RatingBar.Small" parent="@style/Widget.Holo.RatingBar.Small">
-        <item name="indeterminateDrawable">@drawable/zhtc_ratingbar_small_holo_dark</item>
-        <item name="progressDrawable">@drawable/zhtc_ratingbar_small_holo_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.SeekBar" parent="@style/Widget.Holo.SeekBar" />
+    <style name="Widget.DeviceDefault.RatingBar" parent="@style/Widget.Holo.RatingBar" />
+    <style name="Widget.DeviceDefault.RatingBar.Indicator" parent="@style/Widget.Holo.RatingBar.Indicator" />
+    <style name="Widget.DeviceDefault.RatingBar.Small" parent="@style/Widget.Holo.RatingBar.Small" />
     <style name="Widget.DeviceDefault.CompoundButton.RadioButton" parent="@style/Widget.Holo.CompoundButton.RadioButton" />
     <style name="Widget.DeviceDefault.ScrollView" parent="@style/Widget.Holo.ScrollView" />
     <style name="Widget.DeviceDefault.HorizontalScrollView" parent="@style/Widget.Holo.HorizontalScrollView" />
-    <style name="Widget.DeviceDefault.Spinner" parent="@style/Widget.Holo.Spinner">
-        <item name="background">@drawable/zhtc_spinner_background_holo_dark</item>
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_holo_dark</item>
-        <item name="popupBackground">@drawable/zhtc_menu_dropdown_panel_holo_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.CompoundButton.Star" parent="@style/Widget.Holo.CompoundButton.Star">
-        <item name="button">@drawable/zhtc_btn_star_holo_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.Spinner" parent="@style/Widget.Holo.Spinner" />
+    <style name="Widget.DeviceDefault.CompoundButton.Star" parent="@style/Widget.Holo.CompoundButton.Star" />
     <style name="Widget.DeviceDefault.TabWidget" parent="@style/Widget.Holo.TabWidget" />
-    <style name="Widget.DeviceDefault.WebTextView" parent="@style/Widget.Holo.WebTextView">
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_background</item>
-        <item name="popupBackground">@drawable/zhtc_spinner_dropdown_background</item>
-    </style>
+    <style name="Widget.DeviceDefault.WebTextView" parent="@style/Widget.Holo.WebTextView" />
     <style name="Widget.DeviceDefault.WebView" parent="@style/Widget.Holo.WebView" />
     <style name="Widget.DeviceDefault.DropDownItem" parent="@style/Widget.Holo.DropDownItem" />
     <style name="Widget.DeviceDefault.DropDownItem.Spinner" parent="@style/Widget.Holo.DropDownItem.Spinner" />
     <style name="Widget.DeviceDefault.TextView.SpinnerItem" parent="@style/Widget.Holo.TextView.SpinnerItem" />
-    <style name="Widget.DeviceDefault.ListPopupWindow" parent="@style/Widget.Holo.ListPopupWindow">
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_holo_dark</item>
-        <item name="popupBackground">@drawable/zhtc_menu_dropdown_panel_holo_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.PopupMenu" parent="@style/Widget.Holo.PopupMenu">
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_holo_dark</item>
-        <item name="popupBackground">@drawable/zhtc_menu_dropdown_panel_holo_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.ListPopupWindow" parent="@style/Widget.Holo.ListPopupWindow" />
+    <style name="Widget.DeviceDefault.PopupMenu" parent="@style/Widget.Holo.PopupMenu" />
     <style name="Widget.DeviceDefault.ActionButton" parent="@style/Widget.Holo.ActionButton" />
     <style name="Widget.DeviceDefault.ActionButton.Overflow" parent="@style/Widget.Holo.ActionButton.Overflow" />
     <style name="Widget.DeviceDefault.ActionButton.TextButton" parent="@style/Widget.Holo.ActionButton.TextButton" />
     <style name="Widget.DeviceDefault.ActionMode" parent="@style/Widget.Holo.ActionMode" />
-    <style name="Widget.DeviceDefault.ActionButton.CloseMode" parent="@style/Widget.Holo.ActionButton.CloseMode">
-        <item name="background">@drawable/zhtc_btn_cab_done_holo_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.ActionBar" parent="@style/Widget.Holo.ActionBar">
-        <item name="progressBarStyle">@style/Widget.DeviceDefault.ProgressBar.Horizontal</item>
-        <item name="background">@drawable/zhtc_ab_transparent_dark_holo</item>
-        <item name="indeterminateProgressStyle">@style/Widget.DeviceDefault.ProgressBar</item>
-    </style>
+    <style name="Widget.DeviceDefault.ActionButton.CloseMode" parent="@style/Widget.Holo.ActionButton.CloseMode" />
+    <style name="Widget.DeviceDefault.ActionBar" parent="@style/Widget.Holo.ActionBar" />
     <style name="Widget.DeviceDefault.Button.Borderless" parent="@style/Widget.Holo.Button.Borderless" />
-    <style name="Widget.DeviceDefault.Tab" parent="@style/Widget.Holo.Tab">
-        <item name="background">@drawable/zhtc_tab_indicator_holo</item>
-    </style>
-    <style name="Widget.DeviceDefault.CalendarView" parent="@style/Widget.Holo.CalendarView">
-        <item name="selectedWeekBackgroundColor">#3300ff99</item>
-        <item name="focusedMonthDateColor">#ffffffff</item>
-        <item name="unfocusedMonthDateColor">#66ffffff</item>
-        <item name="weekNumberColor">#33ffffff</item>
-        <item name="weekSeparatorLineColor">#19ffffff</item>
-        <item name="selectedDateVerticalBar">@drawable/zhtc_day_picker_week_view_dayline_holo</item>
-    </style>
+    <style name="Widget.DeviceDefault.Tab" parent="@style/Widget.Holo.Tab" />
+    <style name="Widget.DeviceDefault.CalendarView" parent="@style/Widget.Holo.CalendarView" />
     <style name="Widget.DeviceDefault.DatePicker" parent="@style/Widget.Holo.DatePicker" />
-    <style name="Widget.DeviceDefault.ActionBar.TabView" parent="@style/Widget.Holo.ActionBar.TabView">
-        <item name="background">@drawable/zhtc_tab_indicator_ab_holo</item>
-    </style>
+    <style name="Widget.DeviceDefault.ActionBar.TabView" parent="@style/Widget.Holo.ActionBar.TabView" />
     <style name="Widget.DeviceDefault.ActionBar.TabText" parent="@style/Widget.Holo.ActionBar.TabText" />
     <style name="Widget.DeviceDefault.ActionBar.TabBar" parent="@style/Widget.Holo.ActionBar.TabBar" />
-    <style name="Widget.DeviceDefault.ActionBar.Solid" parent="@style/Widget.Holo.ActionBar.Solid">
-        <item name="progressBarStyle">@style/Widget.DeviceDefault.ProgressBar.Horizontal</item>
-        <item name="indeterminateProgressStyle">@style/Widget.DeviceDefault.ProgressBar</item>
-    </style>
+    <style name="Widget.DeviceDefault.ActionBar.Solid" parent="@style/Widget.Holo.ActionBar.Solid" />
     <style name="Widget.DeviceDefault.Light" parent="@style/Widget.Holo.Light" />
-    <style name="Widget.DeviceDefault.Light.Button" parent="@style/Widget.Holo.Light.Button">
-        <item name="background">@drawable/zhtc_btn_default_holo_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.Button.Small" parent="@style/Widget.Holo.Light.Button.Small">
-        <item name="background">@drawable/zhtc_btn_default_holo_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.Button.Inset" parent="@style/Widget.Holo.Light.Button.Inset">
-        <item name="background">@drawable/zhtc_btn_default_holo_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.Button.Toggle" parent="@style/Widget.Holo.Light.Button.Toggle">
-        <item name="background">@drawable/zhtc_btn_toggle_holo_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.Button" parent="@style/Widget.Holo.Light.Button" />
+    <style name="Widget.DeviceDefault.Light.Button.Small" parent="@style/Widget.Holo.Light.Button.Small" />
+    <style name="Widget.DeviceDefault.Light.Button.Inset" parent="@style/Widget.Holo.Light.Button.Inset" />
+    <style name="Widget.DeviceDefault.Light.Button.Toggle" parent="@style/Widget.Holo.Light.Button.Toggle" />
     <style name="Widget.DeviceDefault.Light.Button.Borderless.Small" parent="@style/Widget.Holo.Light.Button.Borderless.Small" />
     <style name="Widget.DeviceDefault.Light.TextView" parent="@style/Widget.Holo.Light.TextView" />
-    <style name="Widget.DeviceDefault.Light.AutoCompleteTextView" parent="@style/Widget.Holo.Light.AutoCompleteTextView">
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_holo_light</item>
-        <item name="popupBackground">@drawable/zhtc_menu_dropdown_panel_holo_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.AutoCompleteTextView" parent="@style/Widget.Holo.Light.AutoCompleteTextView" />
     <style name="Widget.DeviceDefault.Light.CompoundButton.CheckBox" parent="@style/Widget.Holo.Light.CompoundButton.CheckBox" />
     <style name="Widget.DeviceDefault.Light.ListView.DropDown" parent="@style/Widget.Holo.Light.ListView.DropDown" />
     <style name="Widget.DeviceDefault.Light.EditText" parent="@style/Widget.Holo.Light.EditText" />
-    <style name="Widget.DeviceDefault.Light.ExpandableListView" parent="@style/Widget.Holo.Light.ExpandableListView">
-        <item name="groupIndicator">@drawable/zhtc_expander_group_holo_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ExpandableListView" parent="@style/Widget.Holo.Light.ExpandableListView" />
     <style name="Widget.DeviceDefault.Light.GridView" parent="@style/Widget.Holo.Light.GridView" />
-    <style name="Widget.DeviceDefault.Light.ImageButton" parent="@style/Widget.Holo.Light.ImageButton">
-        <item name="background">@drawable/zhtc_btn_default_holo_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ImageButton" parent="@style/Widget.Holo.Light.ImageButton" />
     <style name="Widget.DeviceDefault.Light.ListView" parent="@style/Widget.Holo.Light.ListView" />
-    <style name="Widget.DeviceDefault.Light.PopupWindow" parent="@style/Widget.Holo.Light.PopupWindow">
-        <item name="popupBackground">@drawable/zhtc_editbox_dropdown_background_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.PopupWindow" parent="@style/Widget.Holo.Light.PopupWindow" />
     <style name="Widget.DeviceDefault.Light.ProgressBar" parent="@style/Widget.Holo.Light.ProgressBar" />
-    <style name="Widget.DeviceDefault.Light.ProgressBar.Horizontal" parent="@style/Widget.Holo.Light.ProgressBar.Horizontal">
-        <item name="indeterminateDrawable">@drawable/zhtc_progress_indeterminate_horizontal_holo</item>
-        <item name="progressDrawable">@drawable/zhtc_progress_horizontal_holo_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ProgressBar.Horizontal" parent="@style/Widget.Holo.Light.ProgressBar.Horizontal" />
     <style name="Widget.DeviceDefault.Light.ProgressBar.Small" parent="@style/Widget.Holo.Light.ProgressBar.Small" />
     <style name="Widget.DeviceDefault.Light.ProgressBar.Small.Title" parent="@style/Widget.Holo.Light.ProgressBar.Small.Title" />
     <style name="Widget.DeviceDefault.Light.ProgressBar.Large" parent="@style/Widget.Holo.Light.ProgressBar.Large" />
     <style name="Widget.DeviceDefault.Light.ProgressBar.Inverse" parent="@style/Widget.Holo.Light.ProgressBar.Inverse" />
     <style name="Widget.DeviceDefault.Light.ProgressBar.Small.Inverse" parent="@style/Widget.Holo.Light.ProgressBar.Small.Inverse" />
     <style name="Widget.DeviceDefault.Light.ProgressBar.Large.Inverse" parent="@style/Widget.Holo.Light.ProgressBar.Large.Inverse" />
-    <style name="Widget.DeviceDefault.Light.SeekBar" parent="@style/Widget.Holo.Light.SeekBar">
-        <item name="indeterminateDrawable">@drawable/zhtc_scrubber_progress_horizontal_holo_light</item>
-        <item name="progressDrawable">@drawable/zhtc_scrubber_progress_horizontal_holo_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.RatingBar" parent="@style/Widget.Holo.Light.RatingBar">
-        <item name="indeterminateDrawable">@drawable/zhtc_ratingbar_full_holo_light</item>
-        <item name="progressDrawable">@drawable/zhtc_ratingbar_full_holo_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.RatingBar.Indicator" parent="@style/Widget.Holo.Light.RatingBar.Indicator">
-        <item name="indeterminateDrawable">@drawable/zhtc_ratingbar_holo_light</item>
-        <item name="progressDrawable">@drawable/zhtc_ratingbar_holo_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.RatingBar.Small" parent="@style/Widget.Holo.Light.RatingBar.Small">
-        <item name="indeterminateDrawable">@drawable/zhtc_ratingbar_small_holo_light</item>
-        <item name="progressDrawable">@drawable/zhtc_ratingbar_small_holo_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.SeekBar" parent="@style/Widget.Holo.Light.SeekBar" />
+    <style name="Widget.DeviceDefault.Light.RatingBar" parent="@style/Widget.Holo.Light.RatingBar" />
+    <style name="Widget.DeviceDefault.Light.RatingBar.Indicator" parent="@style/Widget.Holo.Light.RatingBar.Indicator" />
+    <style name="Widget.DeviceDefault.Light.RatingBar.Small" parent="@style/Widget.Holo.Light.RatingBar.Small" />
     <style name="Widget.DeviceDefault.Light.CompoundButton.RadioButton" parent="@style/Widget.Holo.Light.CompoundButton.RadioButton" />
     <style name="Widget.DeviceDefault.Light.ScrollView" parent="@style/Widget.Holo.Light.ScrollView" />
     <style name="Widget.DeviceDefault.Light.HorizontalScrollView" parent="@style/Widget.Holo.Light.HorizontalScrollView" />
-    <style name="Widget.DeviceDefault.Light.Spinner" parent="@style/Widget.Holo.Light.Spinner">
-        <item name="background">@drawable/zhtc_spinner_background_holo_light</item>
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_holo_light</item>
-        <item name="popupBackground">@drawable/zhtc_menu_dropdown_panel_holo_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.CompoundButton.Star" parent="@style/Widget.Holo.Light.CompoundButton.Star">
-        <item name="button">@drawable/zhtc_btn_star_holo_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.Spinner" parent="@style/Widget.Holo.Light.Spinner" />
+    <style name="Widget.DeviceDefault.Light.CompoundButton.Star" parent="@style/Widget.Holo.Light.CompoundButton.Star" />
     <style name="Widget.DeviceDefault.Light.TabWidget" parent="@style/Widget.Holo.Light.TabWidget" />
-    <style name="Widget.DeviceDefault.Light.WebTextView" parent="@style/Widget.Holo.Light.WebTextView">
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_background</item>
-        <item name="popupBackground">@drawable/zhtc_spinner_dropdown_background</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.WebTextView" parent="@style/Widget.Holo.Light.WebTextView" />
     <style name="Widget.DeviceDefault.Light.WebView" parent="@style/Widget.Holo.Light.WebView" />
     <style name="Widget.DeviceDefault.Light.DropDownItem" parent="@style/Widget.Holo.Light.DropDownItem" />
     <style name="Widget.DeviceDefault.Light.DropDownItem.Spinner" parent="@style/Widget.Holo.Light.DropDownItem.Spinner" />
     <style name="Widget.DeviceDefault.Light.TextView.SpinnerItem" parent="@style/Widget.Holo.Light.TextView.SpinnerItem" />
-    <style name="Widget.DeviceDefault.Light.ListPopupWindow" parent="@style/Widget.Holo.Light.ListPopupWindow">
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_holo_light</item>
-        <item name="popupBackground">@drawable/zhtc_menu_dropdown_panel_holo_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.PopupMenu" parent="@style/Widget.Holo.Light.PopupMenu">
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_holo_light</item>
-        <item name="popupBackground">@drawable/zhtc_menu_dropdown_panel_holo_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.Tab" parent="@style/Widget.Holo.Light.Tab">
-        <item name="background">@drawable/zhtc_tab_indicator_holo</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.CalendarView" parent="@style/Widget.Holo.Light.CalendarView">
-        <item name="selectedWeekBackgroundColor">#330066ff</item>
-        <item name="focusedMonthDateColor">#ff000000</item>
-        <item name="unfocusedMonthDateColor">#7f08002b</item>
-        <item name="weekNumberColor">#7f080021</item>
-        <item name="weekSeparatorLineColor">#7f08002a</item>
-        <item name="selectedDateVerticalBar">@drawable/zhtc_day_picker_week_view_dayline_holo</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ListPopupWindow" parent="@style/Widget.Holo.Light.ListPopupWindow" />
+    <style name="Widget.DeviceDefault.Light.PopupMenu" parent="@style/Widget.Holo.Light.PopupMenu" />
+    <style name="Widget.DeviceDefault.Light.Tab" parent="@style/Widget.Holo.Light.Tab" />
+    <style name="Widget.DeviceDefault.Light.CalendarView" parent="@style/Widget.Holo.Light.CalendarView" />
     <style name="Widget.DeviceDefault.Light.ActionButton" parent="@style/Widget.Holo.Light.ActionButton" />
     <style name="Widget.DeviceDefault.Light.ActionButton.Overflow" parent="@style/Widget.Holo.Light.ActionButton.Overflow" />
     <style name="Widget.DeviceDefault.Light.ActionMode" parent="@style/Widget.Holo.Light.ActionMode" />
-    <style name="Widget.DeviceDefault.Light.ActionButton.CloseMode" parent="@style/Widget.Holo.Light.ActionButton.CloseMode">
-        <item name="background">@drawable/zhtc_btn_cab_done_holo_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ActionBar" parent="@style/Widget.Holo.Light.ActionBar">
-        <item name="progressBarStyle">@style/Widget.DeviceDefault.Light.ProgressBar.Horizontal</item>
-        <item name="background">@drawable/zhtc_ab_transparent_light_holo</item>
-        <item name="indeterminateProgressStyle">@style/Widget.DeviceDefault.Light.ProgressBar</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ActionBar.TabView" parent="@style/Widget.Holo.Light.ActionBar.TabView">
-        <item name="background">@drawable/zhtc_tab_indicator_holo</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ActionButton.CloseMode" parent="@style/Widget.Holo.Light.ActionButton.CloseMode" />
+    <style name="Widget.DeviceDefault.Light.ActionBar" parent="@style/Widget.Holo.Light.ActionBar" />
+    <style name="Widget.DeviceDefault.Light.ActionBar.TabView" parent="@style/Widget.Holo.Light.ActionBar.TabView" />
     <style name="Widget.DeviceDefault.Light.ActionBar.TabText" parent="@style/Widget.Holo.Light.ActionBar.TabText" />
     <style name="Widget.DeviceDefault.Light.ActionBar.TabBar" parent="@style/Widget.Holo.Light.ActionBar.TabBar" />
-    <style name="Widget.DeviceDefault.Light.ActionBar.Solid" parent="@style/Widget.Holo.Light.ActionBar.Solid">
-        <item name="progressBarStyle">@style/Widget.DeviceDefault.Light.ProgressBar.Horizontal</item>
-        <item name="indeterminateProgressStyle">@style/Widget.DeviceDefault.Light.ProgressBar</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ActionBar.Solid.Inverse" parent="@style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="progressBarStyle">@style/Widget.DeviceDefault.Light.ProgressBar.Horizontal</item>
-        <item name="indeterminateProgressStyle">@style/Widget.DeviceDefault.Light.ProgressBar</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ActionBar.Solid" parent="@style/Widget.Holo.Light.ActionBar.Solid" />
+    <style name="Widget.DeviceDefault.Light.ActionBar.Solid.Inverse" parent="@style/Widget.Holo.Light.ActionBar.Solid.Inverse" />
     <style name="Widget.DeviceDefault.Light.ActionBar.TabBar.Inverse" parent="@style/Widget.Holo.Light.ActionBar.TabBar.Inverse" />
-    <style name="Widget.DeviceDefault.Light.ActionBar.TabView.Inverse" parent="@style/Widget.Holo.Light.ActionBar.TabView.Inverse">
-        <item name="background">@drawable/zhtc_tab_indicator_ab_holo</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ActionBar.TabView.Inverse" parent="@style/Widget.Holo.Light.ActionBar.TabView.Inverse" />
     <style name="Widget.DeviceDefault.Light.ActionBar.TabText.Inverse" parent="@style/Widget.Holo.Light.ActionBar.TabText.Inverse" />
     <style name="Widget.DeviceDefault.Light.ActionMode.Inverse" parent="@style/Widget.Holo.Light.ActionMode.Inverse" />
     <style name="TextAppearance.DeviceDefault" parent="@style/TextAppearance.Holo" />
@@ -2923,7 +2655,9 @@
     <style name="TextAppearance.StatusBar.EventContent.Line2" parent="@style/TextAppearance.StatusBar.EventContent">
         <item name="textSize">13.0sp</item>
     </style>
-    <style name="TextAppearance.StatusBar.EventContent.Info" parent="@style/TextAppearance.StatusBar.EventContent" />
+    <style name="TextAppearance.StatusBar.EventContent.Info" parent="@style/TextAppearance.StatusBar.EventContent">
+        <item name="textSize">13.0sp</item>
+    </style>
     <style name="TextAppearance.StatusBar.EventContent.Time" parent="@style/TextAppearance.StatusBar.EventContent" />
     <style name="TextAppearance.Small.CalendarViewWeekDayView" parent="@style/TextAppearance.Small">
         <item name="textStyle">bold</item>
@@ -3042,7 +2776,8 @@
         <item name="background">@null</item>
         <item name="clickable">true</item>
         <item name="src">@drawable/ic_contact_picture</item>
-        <item name="scaleType">fitCenter</item>
+        <item name="scaleType">centerCrop</item>
+        <item name="cropToPadding">true</item>
     </style>
     <style name="Widget.QuickContactBadge" parent="@style/Widget.GenericQuickContactBadge">
         <item name="layout_width">64.0dip</item>
@@ -3306,14 +3041,14 @@
     </style>
     <style name="TextAppearance.Holo.Light.DialogWindowTitle" parent="@style/TextAppearance.Holo.Light">
         <item name="textSize">22.0sp</item>
-        <item name="textColor">@color/holo_blue_light</item>
+        <item name="textColor">@color/holo_orange_light</item>
     </style>
     <style name="TextAppearance.Holo.Light.CalendarViewWeekDayView" parent="@style/TextAppearance.Small.CalendarViewWeekDayView" />
     <style name="Holo" />
     <style name="Holo.Light" parent="@style/Holo" />
     <style name="Widget.Holo.StackView" parent="@style/Widget.Holo">
-        <item name="resOutColor">@color/holo_blue_light</item>
-        <item name="clickColor">@color/holo_blue_light</item>
+        <item name="resOutColor">@color/holo_orange_light</item>
+        <item name="clickColor">@color/holo_orange_light</item>
     </style>
     <style name="Widget.Holo.TextView.ListSeparator" parent="@style/Widget.TextView.ListSeparator">
         <item name="background">@drawable/list_section_divider_holo_dark</item>
@@ -3403,6 +3138,7 @@
         <item name="paddingRight">4.0dip</item>
     </style>
     <style name="Widget.Holo.Light.TextView.ListSeparator" parent="@style/Widget.TextView.ListSeparator">
+        <item name="textColor">@color/listseparator_text_holo_light</item>
         <item name="background">@drawable/list_section_divider_holo_light</item>
         <item name="textAllCaps">true</item>
     </style>
@@ -3464,7 +3200,7 @@
         <item name="topBright">@drawable/dialog_top_holo_dark</item>
         <item name="centerBright">@drawable/dialog_middle_holo_dark</item>
         <item name="bottomBright">@drawable/dialog_bottom_holo_dark</item>
-        <item name="bottomMedium">@drawable/dialog_bottom_holo_dark</item>
+        <item name="bottomMedium">@drawable/dialog_button_bottom_holo_dark</item>
         <item name="centerMedium">@drawable/dialog_middle_holo_dark</item>
         <item name="layout">@layout/alert_dialog_holo</item>
         <item name="listLayout">@layout/select_dialog_holo</item>
@@ -3483,7 +3219,7 @@
         <item name="topBright">@drawable/dialog_top_holo_light</item>
         <item name="centerBright">@drawable/dialog_middle_holo_light</item>
         <item name="bottomBright">@drawable/dialog_bottom_holo_light</item>
-        <item name="bottomMedium">@drawable/dialog_bottom_holo_light</item>
+        <item name="bottomMedium">@drawable/dialog_button_bottom_holo_light</item>
         <item name="centerMedium">@drawable/dialog_middle_holo_light</item>
     </style>
     <style name="WindowTitleBackground.Holo" parent="@style/WindowTitleBackground">
@@ -3518,36 +3254,19 @@
         <item name="pointerIconSpotAnchor">@drawable/pointer_spot_anchor_icon</item>
     </style>
     <style name="Widget.DeviceDefault.AbsListView" parent="@style/Widget.Holo.AbsListView" />
-    <style name="Widget.DeviceDefault.Spinner.DropDown.ActionBar" parent="@style/Widget.Holo.Spinner.DropDown.ActionBar">
-        <item name="background">@drawable/zhtc_spinner_ab_holo_dark</item>
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_holo_dark</item>
-        <item name="popupBackground">@drawable/zhtc_menu_dropdown_panel_holo_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.Spinner.DropDown.ActionBar" parent="@style/Widget.Holo.Spinner.DropDown.ActionBar" />
     <style name="Widget.DeviceDefault.PopupWindow.ActionMode" parent="@style/Widget.Holo.PopupWindow.ActionMode" />
-    <style name="Widget.DeviceDefault.CompoundButton.Switch" parent="@style/Widget.Holo.CompoundButton.Switch">
-        <item name="thumb">@drawable/zhtc_switch_inner_holo_dark</item>
-        <item name="track">@drawable/zhtc_switch_track_holo_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.CompoundButton.Switch" parent="@style/Widget.Holo.CompoundButton.Switch" />
     <style name="Widget.DeviceDefault.EditText.NumberPickerInputText" parent="@style/Widget.Holo.EditText.NumberPickerInputText" />
-    <style name="Widget.DeviceDefault.ExpandableListView.White" parent="@style/Widget.Holo.ExpandableListView.White">
-        <item name="groupIndicator">@drawable/zhtc_expander_group_holo_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.ExpandableListView.White" parent="@style/Widget.Holo.ExpandableListView.White" />
     <style name="Widget.DeviceDefault.Gallery" parent="@style/Widget.Holo.Gallery" />
     <style name="Widget.DeviceDefault.GestureOverlayView" parent="@style/Widget.Holo.GestureOverlayView" />
-    <style name="Widget.DeviceDefault.ImageButton.NumberPickerDownButton" parent="@style/Widget.Holo.ImageButton.NumberPickerDownButton">
-        <item name="src">@drawable/zhtc_numberpicker_down_btn_holo_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.ImageButton.NumberPickerUpButton" parent="@style/Widget.Holo.ImageButton.NumberPickerUpButton">
-        <item name="src">@drawable/zhtc_numberpicker_up_btn_holo_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.ImageWell" parent="@style/Widget.Holo.ImageWell">
-        <item name="background">@drawable/zhtc_panel_picture_frame_background</item>
-    </style>
+    <style name="Widget.DeviceDefault.ImageButton.NumberPickerDownButton" parent="@style/Widget.Holo.ImageButton.NumberPickerDownButton" />
+    <style name="Widget.DeviceDefault.ImageButton.NumberPickerUpButton" parent="@style/Widget.Holo.ImageButton.NumberPickerUpButton" />
+    <style name="Widget.DeviceDefault.ImageWell" parent="@style/Widget.Holo.ImageWell" />
     <style name="Widget.DeviceDefault.KeyboardView" parent="@style/Widget.Holo.KeyboardView" />
     <style name="Widget.DeviceDefault.ListView.White" parent="@style/Widget.Holo.ListView.White" />
-    <style name="Widget.DeviceDefault.NumberPicker" parent="@style/Widget.Holo.NumberPicker">
-        <item name="selectionDivider">@drawable/zhtc_numberpicker_selection_divider</item>
-    </style>
+    <style name="Widget.DeviceDefault.NumberPicker" parent="@style/Widget.Holo.NumberPicker" />
     <style name="Widget.DeviceDefault.PreferenceFrameLayout" parent="@style/Widget.Holo.PreferenceFrameLayout" />
     <style name="Widget.DeviceDefault.ProgressBar.Inverse" parent="@style/Widget.Holo.ProgressBar.Inverse" />
     <style name="Widget.DeviceDefault.ProgressBar.Large.Inverse" parent="@style/Widget.Holo.ProgressBar.Large.Inverse" />
@@ -3558,61 +3277,30 @@
     <style name="Widget.DeviceDefault.QuickContactBadgeSmall.WindowLarge" parent="@style/Widget.Holo.QuickContactBadgeSmall.WindowLarge" />
     <style name="Widget.DeviceDefault.QuickContactBadgeSmall.WindowMedium" parent="@style/Widget.Holo.QuickContactBadgeSmall.WindowMedium" />
     <style name="Widget.DeviceDefault.QuickContactBadgeSmall.WindowSmall" parent="@style/Widget.Holo.QuickContactBadgeSmall.WindowSmall" />
-    <style name="Widget.DeviceDefault.Spinner.DropDown" parent="@style/Widget.Holo.Spinner.DropDown">
-        <item name="background">@drawable/zhtc_spinner_background_holo_dark</item>
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_holo_dark</item>
-        <item name="popupBackground">@drawable/zhtc_menu_dropdown_panel_holo_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.StackView" parent="@style/Widget.Holo.StackView">
-        <item name="resOutColor">@color/holo_blue_light</item>
-        <item name="clickColor">@color/holo_blue_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Spinner.DropDown" parent="@style/Widget.Holo.Spinner.DropDown" />
+    <style name="Widget.DeviceDefault.StackView" parent="@style/Widget.Holo.StackView" />
     <style name="Widget.DeviceDefault.TextSelectHandle" parent="@style/Widget.Holo.TextSelectHandle" />
-    <style name="Widget.DeviceDefault.TextSuggestionsPopupWindow" parent="@style/Widget.Holo.TextSuggestionsPopupWindow">
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_background</item>
-        <item name="popupBackground">@drawable/zhtc_text_edit_suggestions_window</item>
-    </style>
+    <style name="Widget.DeviceDefault.TextSuggestionsPopupWindow" parent="@style/Widget.Holo.TextSuggestionsPopupWindow" />
     <style name="Widget.DeviceDefault.TextView.ListSeparator" parent="@style/Widget.Holo.TextView.ListSeparator" />
     <style name="Widget.DeviceDefault.TimePicker" parent="@style/Widget.Holo.TimePicker" />
     <style name="Widget.DeviceDefault.Light.AbsListView" parent="@style/Widget.Holo.Light.AbsListView" />
-    <style name="Widget.DeviceDefault.Light.Spinner.DropDown.ActionBar" parent="@style/Widget.Holo.Light.Spinner.DropDown.ActionBar">
-        <item name="background">@drawable/zhtc_spinner_ab_holo_light</item>
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_holo_light</item>
-        <item name="popupBackground">@drawable/zhtc_menu_dropdown_panel_holo_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.Spinner.DropDown.ActionBar" parent="@style/Widget.Holo.Light.Spinner.DropDown.ActionBar" />
     <style name="Widget.DeviceDefault.Light.PopupWindow.ActionMode" parent="@style/Widget.Holo.Light.PopupWindow.ActionMode" />
     <style name="Widget.DeviceDefault.Light.Button.Borderless" parent="@style/Widget.Holo.Light.Button.Borderless" />
     <style name="Widget.DeviceDefault.Light.DatePicker" parent="@style/Widget.Holo.Light.DatePicker" />
     <style name="Widget.DeviceDefault.Light.EditText.NumberPickerInputText" parent="@style/Widget.Holo.Light.EditText.NumberPickerInputText" />
-    <style name="Widget.DeviceDefault.Light.ExpandableListView.White" parent="@style/Widget.Holo.Light.ExpandableListView.White">
-        <item name="groupIndicator">@drawable/zhtc_expander_group_holo_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ExpandableListView.White" parent="@style/Widget.Holo.Light.ExpandableListView.White" />
     <style name="Widget.DeviceDefault.Light.Gallery" parent="@style/Widget.Holo.Light.Gallery" />
     <style name="Widget.DeviceDefault.Light.GestureOverlayView" parent="@style/Widget.Holo.Light.GestureOverlayView" />
-    <style name="Widget.DeviceDefault.Light.ImageButton.NumberPickerDownButton" parent="@style/Widget.Holo.Light.ImageButton.NumberPickerDownButton">
-        <item name="src">@drawable/zhtc_numberpicker_down_btn_holo_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ImageButton.NumberPickerUpButton" parent="@style/Widget.Holo.Light.ImageButton.NumberPickerUpButton">
-        <item name="src">@drawable/zhtc_numberpicker_up_btn_holo_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ImageWell" parent="@style/Widget.Holo.Light.ImageWell">
-        <item name="background">@drawable/zhtc_panel_picture_frame_background</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ImageButton.NumberPickerDownButton" parent="@style/Widget.Holo.Light.ImageButton.NumberPickerDownButton" />
+    <style name="Widget.DeviceDefault.Light.ImageButton.NumberPickerUpButton" parent="@style/Widget.Holo.Light.ImageButton.NumberPickerUpButton" />
+    <style name="Widget.DeviceDefault.Light.ImageWell" parent="@style/Widget.Holo.Light.ImageWell" />
     <style name="Widget.DeviceDefault.Light.ListView.White" parent="@style/Widget.Holo.Light.ListView.White" />
-    <style name="Widget.DeviceDefault.Light.NumberPicker" parent="@style/Widget.Holo.Light.NumberPicker">
-        <item name="selectionDivider">@drawable/zhtc_numberpicker_selection_divider</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.Spinner.DropDown" parent="@style/Widget.Holo.Light.Spinner.DropDown">
-        <item name="background">@drawable/zhtc_spinner_background_holo_light</item>
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_holo_light</item>
-        <item name="popupBackground">@drawable/zhtc_menu_dropdown_panel_holo_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.NumberPicker" parent="@style/Widget.Holo.Light.NumberPicker" />
+    <style name="Widget.DeviceDefault.Light.Spinner.DropDown" parent="@style/Widget.Holo.Light.Spinner.DropDown" />
     <style name="Widget.DeviceDefault.Light.TextView.ListSeparator" parent="@style/Widget.Holo.Light.TextView.ListSeparator" />
     <style name="Widget.DeviceDefault.Light.TimePicker" parent="@style/Widget.Holo.Light.TimePicker" />
-    <style name="Widget.DeviceDefault.Light.TextSuggestionsPopupWindow" parent="@style/Widget.Holo.Light.TextSuggestionsPopupWindow">
-        <item name="dropDownSelector">@drawable/zhtc_list_selector_background</item>
-        <item name="popupBackground">@drawable/zhtc_text_edit_suggestions_window</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.TextSuggestionsPopupWindow" parent="@style/Widget.Holo.Light.TextSuggestionsPopupWindow" />
     <style name="TextAppearance.DeviceDefault.Light" parent="@style/TextAppearance.Holo.Light" />
     <style name="TextAppearance.DeviceDefault.Light.Inverse" parent="@style/TextAppearance.Holo.Light.Inverse" />
     <style name="TextAppearance.DeviceDefault.Light.Large" parent="@style/TextAppearance.Holo.Light.Large" />
@@ -3636,32 +3324,8 @@
     <style name="Preference.DeviceDefault.PreferenceScreen" parent="@style/Preference.Holo.PreferenceScreen" />
     <style name="Preference.DeviceDefault.RingtonePreference" parent="@style/Preference.Holo.RingtonePreference" />
     <style name="Preference.DeviceDefault.SwitchPreference" parent="@style/Preference.Holo.SwitchPreference" />
-    <style name="AlertDialog.DeviceDefault" parent="@style/AlertDialog.Holo">
-        <item name="fullDark">@drawable/zhtc_dialog_full_holo_dark</item>
-        <item name="topDark">@drawable/zhtc_dialog_top_holo_dark</item>
-        <item name="centerDark">@drawable/zhtc_dialog_middle_holo_dark</item>
-        <item name="bottomDark">@drawable/zhtc_dialog_bottom_holo_dark</item>
-        <item name="fullBright">@drawable/zhtc_dialog_full_holo_dark</item>
-        <item name="topBright">@drawable/zhtc_dialog_top_holo_dark</item>
-        <item name="centerBright">@drawable/zhtc_dialog_middle_holo_dark</item>
-        <item name="bottomBright">@drawable/zhtc_dialog_bottom_holo_dark</item>
-        <item name="bottomMedium">@drawable/zhtc_dialog_bottom_holo_dark</item>
-        <item name="centerMedium">@drawable/zhtc_dialog_middle_holo_dark</item>
-        <item name="layout">@layout/zzhtc_alert_dialog_holo</item>
-    </style>
-    <style name="AlertDialog.DeviceDefault.Light" parent="@style/AlertDialog.Holo.Light">
-        <item name="fullDark">@drawable/zhtc_dialog_full_holo_light</item>
-        <item name="topDark">@drawable/zhtc_dialog_top_holo_light</item>
-        <item name="centerDark">@drawable/zhtc_dialog_middle_holo_light</item>
-        <item name="bottomDark">@drawable/zhtc_dialog_bottom_holo_light</item>
-        <item name="fullBright">@drawable/zhtc_dialog_full_holo_light</item>
-        <item name="topBright">@drawable/zhtc_dialog_top_holo_light</item>
-        <item name="centerBright">@drawable/zhtc_dialog_middle_holo_light</item>
-        <item name="bottomBright">@drawable/zhtc_dialog_bottom_holo_light</item>
-        <item name="bottomMedium">@drawable/zhtc_dialog_bottom_holo_light</item>
-        <item name="centerMedium">@drawable/zhtc_dialog_middle_holo_light</item>
-        <item name="layout">@layout/zzhtc_alert_dialog_holo</item>
-    </style>
+    <style name="AlertDialog.DeviceDefault" parent="@style/AlertDialog.Holo" />
+    <style name="AlertDialog.DeviceDefault.Light" parent="@style/AlertDialog.Holo.Light" />
     <style name="Animation.DeviceDefault.Activity" parent="@style/Animation.Holo.Activity" />
     <style name="Animation.DeviceDefault.Dialog" parent="@style/Animation.Holo.Dialog" />
     <style name="DialogWindowTitle.DeviceDefault" parent="@style/DialogWindowTitle.Holo" />
@@ -3717,7 +3381,7 @@
     </style>
     <style name="Theme.ExpandedMenu" parent="@style/Theme.Holo">
         <item name="listViewStyle">@style/Widget.ListView.Menu</item>
-        <item name="windowAnimationStyle">@style/Animation.OptionsPanel</item>
+        <item name="windowAnimationStyle">@style/Animation.DropDownUp</item>
         <item name="background">@null</item>
         <item name="itemTextAppearance">?textAppearanceLarge</item>
     </style>
@@ -3783,48 +3447,13 @@
         <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
         <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
     </style>
-    <style name="Theme.DeviceDefault.Dialog.Alert" parent="@style/Theme.DeviceDefault.Dialog">
-        <item name="windowBackground">@color/transparent</item>
-        <item name="windowContentOverlay">@null</item>
+    <style name="Theme.DeviceDefault.Dialog.Alert" parent="@style/Theme.Holo.Dialog.Alert">
         <item name="windowTitleStyle">@style/DialogWindowTitle.DeviceDefault</item>
-        <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
-        <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
     </style>
-    <style name="Theme.DeviceDefault.Light.Dialog.Alert" parent="@style/Theme.DeviceDefault.Light.Dialog">
-        <item name="windowBackground">@color/transparent</item>
-        <item name="windowContentOverlay">@null</item>
+    <style name="Theme.DeviceDefault.Light.Dialog.Alert" parent="@style/Theme.Holo.Light.Dialog.Alert">
         <item name="windowTitleStyle">@style/DialogWindowTitle.DeviceDefault.Light</item>
-        <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
-        <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
     </style>
-    <style name="Theme.DeviceDefault.SearchBar" parent="@style/Theme.DeviceDefault.Panel">
-        <item name="actionModeBackground">@drawable/zhtc_cab_background_top_holo_dark</item>
-        <item name="actionModeSplitBackground">@drawable/zhtc_cab_background_bottom_holo_light</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.SearchBar" parent="@style/Theme.DeviceDefault.Light.Panel">
-        <item name="actionModeBackground">@drawable/zhtc_cab_background_top_holo_light</item>
-        <item name="actionModeSplitBackground">@drawable/zhtc_cab_background_bottom_holo_light</item>
-    </style>
-    <style name="Theme.DeviceDefault.Dialog.NoFrame" parent="@style/Theme.DeviceDefault.Dialog">
-        <item name="windowBackground">@color/transparent</item>
-        <item name="windowFrame">@null</item>
-        <item name="windowNoTitle">true</item>
-        <item name="windowIsTranslucent">true</item>
-        <item name="windowContentOverlay">@null</item>
-        <item name="windowAnimationStyle">@null</item>
-        <item name="backgroundDimEnabled">false</item>
-        <item name="windowCloseOnTouchOutside">false</item>
-    </style>
-    <style name="Theme.DeviceDefault.CompactMenu" parent="@style/Theme.DeviceDefault">
-        <item name="listViewStyle">@style/Widget.DeviceDefault.ListView</item>
-        <item name="windowAnimationStyle">@style/Animation.DropDownUp</item>
-        <item name="background">@null</item>
-        <item name="itemTextAppearance">?textAppearanceMedium</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.CompactMenu" parent="@style/Theme.DeviceDefault.Light">
-        <item name="listViewStyle">@style/Widget.DeviceDefault.Light.ListView</item>
-        <item name="windowAnimationStyle">@style/Animation.DropDownUp</item>
-        <item name="background">@null</item>
-        <item name="itemTextAppearance">?textAppearanceMedium</item>
-    </style>
+    <style name="Theme.DeviceDefault.SearchBar" parent="@style/Theme.Holo.SearchBar" />
+    <style name="Theme.DeviceDefault.Light.SearchBar" parent="@style/Theme.Holo.Light.SearchBar" />
+    <style name="Theme.DeviceDefault.Dialog.NoFrame" parent="@style/Theme.Holo.Dialog.NoFrame" />
 </resources>

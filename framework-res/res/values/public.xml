@@ -2668,8 +2668,6 @@
     <public type="style" name="Theme.DeviceDefault.SearchBar" id="0x01030300" />
     <public type="style" name="Theme.DeviceDefault.Light.SearchBar" id="0x01030301" />
     <public type="style" name="Theme.DeviceDefault.Dialog.NoFrame" id="0x01030302" />
-    <public type="style" name="Theme.DeviceDefault.CompactMenu" id="0x01030303" />
-    <public type="style" name="Theme.DeviceDefault.Light.CompactMenu" id="0x01030304" />
     <public type="string" name="cancel" id="0x01040000" />
     <public type="string" name="copy" id="0x01040001" />
     <public type="string" name="copyUrl" id="0x01040002" />
