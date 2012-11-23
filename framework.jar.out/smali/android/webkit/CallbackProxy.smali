@@ -2337,13 +2337,13 @@
 
     .line 639
     :cond_d
-    new-instance v4, Lcom/htc/dialog/HtcAlertDialog$Builder;
+    new-instance v4, Landroid/app/AlertDialog$Builder;
 
     move-object/from16 v0, p0
 
     iget-object v9, v0, Landroid/webkit/CallbackProxy;->mContext:Landroid/content/Context;
 
-    invoke-direct {v4, v9}, Lcom/htc/dialog/HtcAlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {v4, v9}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     move-object/from16 v0, p0
 
@@ -2351,13 +2351,13 @@
 
     move-result-object v9
 
-    invoke-virtual {v4, v9}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v4, v9}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
     move-object/from16 v0, v29
 
-    invoke-virtual {v4, v0}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v4, v0}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
@@ -2371,7 +2371,7 @@
 
     invoke-direct {v10, v0, v1}, Landroid/webkit/CallbackProxy$5;-><init>(Landroid/webkit/CallbackProxy;Landroid/webkit/JsResult;)V
 
-    invoke-virtual {v4, v9, v10}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v4, v9, v10}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
@@ -2385,7 +2385,7 @@
 
     invoke-direct {v10, v0, v1}, Landroid/webkit/CallbackProxy$4;-><init>(Landroid/webkit/CallbackProxy;Landroid/webkit/JsResult;)V
 
-    invoke-virtual {v4, v9, v10}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v4, v9, v10}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
@@ -2397,11 +2397,11 @@
 
     invoke-direct {v9, v0, v1}, Landroid/webkit/CallbackProxy$3;-><init>(Landroid/webkit/CallbackProxy;Landroid/webkit/JsResult;)V
 
-    invoke-virtual {v4, v9}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v4, v9}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Lcom/htc/dialog/HtcAlertDialog$Builder;->show()Lcom/htc/dialog/HtcAlertDialog;
+    invoke-virtual {v4}, Landroid/app/AlertDialog$Builder;->show()Lcom/htc/dialog/HtcAlertDialog;
 
     .line 669
     :cond_e
@@ -2560,13 +2560,13 @@
     invoke-virtual {v4, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 696
-    new-instance v4, Lcom/htc/dialog/HtcAlertDialog$Builder;
+    new-instance v4, Landroid/app/AlertDialog$Builder;
 
     move-object/from16 v0, p0
 
     iget-object v9, v0, Landroid/webkit/CallbackProxy;->mContext:Landroid/content/Context;
 
-    invoke-direct {v4, v9}, Lcom/htc/dialog/HtcAlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {v4, v9}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     move-object/from16 v0, p0
 
@@ -2574,13 +2574,13 @@
 
     move-result-object v9
 
-    invoke-virtual {v4, v9}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v4, v9}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
     move-object/from16 v0, v70
 
-    invoke-virtual {v4, v0}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setView(Landroid/view/View;)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v4, v0}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
@@ -2596,7 +2596,7 @@
 
     invoke-direct {v10, v0, v1, v2}, Landroid/webkit/CallbackProxy$8;-><init>(Landroid/webkit/CallbackProxy;Landroid/webkit/JsPromptResult;Landroid/widget/EditText;)V
 
-    invoke-virtual {v4, v9, v10}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v4, v9, v10}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
@@ -2610,7 +2610,7 @@
 
     invoke-direct {v10, v0, v1}, Landroid/webkit/CallbackProxy$7;-><init>(Landroid/webkit/CallbackProxy;Landroid/webkit/JsPromptResult;)V
 
-    invoke-virtual {v4, v9, v10}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v4, v9, v10}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
@@ -2622,11 +2622,11 @@
 
     invoke-direct {v9, v0, v1}, Landroid/webkit/CallbackProxy$6;-><init>(Landroid/webkit/CallbackProxy;Landroid/webkit/JsPromptResult;)V
 
-    invoke-virtual {v4, v9}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v4, v9}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Lcom/htc/dialog/HtcAlertDialog$Builder;->show()Lcom/htc/dialog/HtcAlertDialog;
+    invoke-virtual {v4}, Landroid/app/AlertDialog$Builder;->show()Lcom/htc/dialog/HtcAlertDialog;
 
     .line 729
     .end local v40           #factory:Landroid/view/LayoutInflater;
@@ -2739,17 +2739,17 @@
 
     .line 748
     .local v48, m:Ljava/lang/String;
-    new-instance v4, Lcom/htc/dialog/HtcAlertDialog$Builder;
+    new-instance v4, Landroid/app/AlertDialog$Builder;
 
     move-object/from16 v0, p0
 
     iget-object v9, v0, Landroid/webkit/CallbackProxy;->mContext:Landroid/content/Context;
 
-    invoke-direct {v4, v9}, Lcom/htc/dialog/HtcAlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {v4, v9}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     move-object/from16 v0, v48
 
-    invoke-virtual {v4, v0}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v4, v0}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
@@ -2763,7 +2763,7 @@
 
     invoke-direct {v10, v0, v1}, Landroid/webkit/CallbackProxy$10;-><init>(Landroid/webkit/CallbackProxy;Landroid/webkit/JsResult;)V
 
-    invoke-virtual {v4, v9, v10}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v4, v9, v10}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
@@ -2777,11 +2777,11 @@
 
     invoke-direct {v10, v0, v1}, Landroid/webkit/CallbackProxy$9;-><init>(Landroid/webkit/CallbackProxy;Landroid/webkit/JsResult;)V
 
-    invoke-virtual {v4, v9, v10}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v4, v9, v10}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Lcom/htc/dialog/HtcAlertDialog$Builder;->show()Lcom/htc/dialog/HtcAlertDialog;
+    invoke-virtual {v4}, Landroid/app/AlertDialog$Builder;->show()Lcom/htc/dialog/HtcAlertDialog;
 
     .line 770
     .end local v48           #m:Ljava/lang/String;

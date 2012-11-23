@@ -338,24 +338,24 @@
 
     .line 10540
     :cond_1
-    new-instance v1, Lcom/htc/dialog/HtcAlertDialog$Builder;
+    new-instance v1, Landroid/app/AlertDialog$Builder;
 
-    invoke-direct {v1, v7}, Lcom/htc/dialog/HtcAlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v7}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v1, v4}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setView(Landroid/view/View;)Lcom/htc/dialog/HtcAlertDialog$Builder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setCancelable(Z)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v1, v4}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    invoke-virtual {v1, v2}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setInverseBackgroundForced(Z)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setInverseBackgroundForced(Z)Landroid/app/AlertDialog$Builder;
 
     move-result-object v6
 
     .line 10546
-    .local v6, b:Lcom/htc/dialog/HtcAlertDialog$Builder;
+    .local v6, b:Landroid/app/AlertDialog$Builder;
     iget-boolean v1, p0, Landroid/webkit/WebView$InvokeListBox;->mMultiple:Z
 
     if-eqz v1, :cond_2
@@ -367,7 +367,7 @@
 
     invoke-direct {v3, p0, v5, v4}, Landroid/webkit/WebView$InvokeListBox$1;-><init>(Landroid/webkit/WebView$InvokeListBox;Landroid/webkit/WebView$InvokeListBox$MyArrayListAdapter;Landroid/widget/ListView;)V
 
-    invoke-virtual {v6, v1, v3}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v6, v1, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     .line 10554
     const/high16 v1, 0x104
@@ -376,13 +376,13 @@
 
     invoke-direct {v3, p0}, Landroid/webkit/WebView$InvokeListBox$2;-><init>(Landroid/webkit/WebView$InvokeListBox;)V
 
-    invoke-virtual {v6, v1, v3}, Lcom/htc/dialog/HtcAlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/htc/dialog/HtcAlertDialog$Builder;
+    invoke-virtual {v6, v1, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     .line 10561
     :cond_2
     iget-object v1, p0, Landroid/webkit/WebView$InvokeListBox;->this$0:Landroid/webkit/WebView;
 
-    invoke-virtual {v6}, Lcom/htc/dialog/HtcAlertDialog$Builder;->create()Lcom/htc/dialog/HtcAlertDialog;
+    invoke-virtual {v6}, Landroid/app/AlertDialog$Builder;->create()Lcom/htc/dialog/HtcAlertDialog;
 
     move-result-object v3
 
