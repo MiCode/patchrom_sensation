@@ -2401,7 +2401,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v4}, Landroid/app/AlertDialog$Builder;->show()Lcom/htc/dialog/HtcAlertDialog;
+    invoke-virtual {v4}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     .line 669
     :cond_e
@@ -2626,7 +2626,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v4}, Landroid/app/AlertDialog$Builder;->show()Lcom/htc/dialog/HtcAlertDialog;
+    invoke-virtual {v4}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     .line 729
     .end local v40           #factory:Landroid/view/LayoutInflater;
@@ -2781,7 +2781,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v4}, Landroid/app/AlertDialog$Builder;->show()Lcom/htc/dialog/HtcAlertDialog;
+    invoke-virtual {v4}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     .line 770
     .end local v48           #m:Ljava/lang/String;

@@ -609,7 +609,7 @@
 
 .field mLastWidthSent:I
 
-.field private mListBoxDialog:Lcom/htc/dialog/HtcAlertDialog;
+.field private mListBoxDialog:Landroid/app/AlertDialog;
 
 .field private mListBoxMessage:Landroid/os/Message;
 
@@ -1378,7 +1378,7 @@
     iput-object v2, p0, Landroid/webkit/WebView;->mScrollChangedListener:Landroid/webkit/WebView$InnerScrollChangedListener;
 
     .line 389
-    iput-object v2, p0, Landroid/webkit/WebView;->mListBoxDialog:Lcom/htc/dialog/HtcAlertDialog;
+    iput-object v2, p0, Landroid/webkit/WebView;->mListBoxDialog:Landroid/app/AlertDialog;
 
     .line 397
     new-instance v0, Landroid/graphics/Rect;
@@ -2288,25 +2288,25 @@
     return-object v0
 .end method
 
-.method static synthetic access$11400(Landroid/webkit/WebView;)Lcom/htc/dialog/HtcAlertDialog;
+.method static synthetic access$11400(Landroid/webkit/WebView;)Landroid/app/AlertDialog;
     .locals 1
     .parameter "x0"
 
     .prologue
     .line 354
-    iget-object v0, p0, Landroid/webkit/WebView;->mListBoxDialog:Lcom/htc/dialog/HtcAlertDialog;
+    iget-object v0, p0, Landroid/webkit/WebView;->mListBoxDialog:Landroid/app/AlertDialog;
 
     return-object v0
 .end method
 
-.method static synthetic access$11402(Landroid/webkit/WebView;Lcom/htc/dialog/HtcAlertDialog;)Lcom/htc/dialog/HtcAlertDialog;
+.method static synthetic access$11402(Landroid/webkit/WebView;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
     .line 354
-    iput-object p1, p0, Landroid/webkit/WebView;->mListBoxDialog:Lcom/htc/dialog/HtcAlertDialog;
+    iput-object p1, p0, Landroid/webkit/WebView;->mListBoxDialog:Landroid/app/AlertDialog;
 
     return-object p1
 .end method
@@ -4684,19 +4684,19 @@
 
     .prologue
     .line 1817
-    iget-object v0, p0, Landroid/webkit/WebView;->mListBoxDialog:Lcom/htc/dialog/HtcAlertDialog;
+    iget-object v0, p0, Landroid/webkit/WebView;->mListBoxDialog:Landroid/app/AlertDialog;
 
     if-eqz v0, :cond_0
 
     .line 1818
-    iget-object v0, p0, Landroid/webkit/WebView;->mListBoxDialog:Lcom/htc/dialog/HtcAlertDialog;
+    iget-object v0, p0, Landroid/webkit/WebView;->mListBoxDialog:Landroid/app/AlertDialog;
 
-    invoke-virtual {v0}, Lcom/htc/dialog/HtcAlertDialog;->cancel()V
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->cancel()V
 
     .line 1819
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/webkit/WebView;->mListBoxDialog:Lcom/htc/dialog/HtcAlertDialog;
+    iput-object v0, p0, Landroid/webkit/WebView;->mListBoxDialog:Landroid/app/AlertDialog;
 
     .line 1821
     :cond_0
@@ -5407,17 +5407,17 @@
 
     .line 1841
     :cond_0
-    iget-object v1, p0, Landroid/webkit/WebView;->mListBoxDialog:Lcom/htc/dialog/HtcAlertDialog;
+    iget-object v1, p0, Landroid/webkit/WebView;->mListBoxDialog:Landroid/app/AlertDialog;
 
     if-eqz v1, :cond_1
 
     .line 1842
-    iget-object v1, p0, Landroid/webkit/WebView;->mListBoxDialog:Lcom/htc/dialog/HtcAlertDialog;
+    iget-object v1, p0, Landroid/webkit/WebView;->mListBoxDialog:Landroid/app/AlertDialog;
 
-    invoke-virtual {v1}, Lcom/htc/dialog/HtcAlertDialog;->dismiss()V
+    invoke-virtual {v1}, Landroid/app/AlertDialog;->dismiss()V
 
     .line 1843
-    iput-object v3, p0, Landroid/webkit/WebView;->mListBoxDialog:Lcom/htc/dialog/HtcAlertDialog;
+    iput-object v3, p0, Landroid/webkit/WebView;->mListBoxDialog:Landroid/app/AlertDialog;
 
     .line 1846
     :cond_1

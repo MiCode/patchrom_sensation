@@ -22,7 +22,7 @@
 
 
 # instance fields
-.field private mDialog:Lcom/htc/dialog/HtcAlertDialog;
+.field private mDialog:Landroid/app/AlertDialog;
 
 .field final synthetic this$0:Landroid/webkit/Plugin;
 
@@ -63,7 +63,7 @@
 
     .prologue
     .line 204
-    iget-object v0, p0, Landroid/webkit/Plugin$DefaultClickHandler;->mDialog:Lcom/htc/dialog/HtcAlertDialog;
+    iget-object v0, p0, Landroid/webkit/Plugin$DefaultClickHandler;->mDialog:Landroid/app/AlertDialog;
 
     if-nez v0, :cond_0
 
@@ -106,11 +106,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Lcom/htc/dialog/HtcAlertDialog;
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/webkit/Plugin$DefaultClickHandler;->mDialog:Lcom/htc/dialog/HtcAlertDialog;
+    iput-object v0, p0, Landroid/webkit/Plugin$DefaultClickHandler;->mDialog:Landroid/app/AlertDialog;
 
     .line 215
     :cond_0
@@ -126,14 +126,14 @@
 
     .prologue
     .line 223
-    iget-object v0, p0, Landroid/webkit/Plugin$DefaultClickHandler;->mDialog:Lcom/htc/dialog/HtcAlertDialog;
+    iget-object v0, p0, Landroid/webkit/Plugin$DefaultClickHandler;->mDialog:Landroid/app/AlertDialog;
 
-    invoke-virtual {v0}, Lcom/htc/dialog/HtcAlertDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
     .line 224
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/webkit/Plugin$DefaultClickHandler;->mDialog:Lcom/htc/dialog/HtcAlertDialog;
+    iput-object v0, p0, Landroid/webkit/Plugin$DefaultClickHandler;->mDialog:Landroid/app/AlertDialog;
 
     .line 225
     return-void

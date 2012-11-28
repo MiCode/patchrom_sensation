@@ -117,15 +117,15 @@
 
 .field private cancellistener_FontStyle:Landroid/content/DialogInterface$OnCancelListener;
 
-.field public dialog_font_style:Lcom/htc/dialog/HtcAlertDialog;
+.field public dialog_font_style:Landroid/app/AlertDialog;
 
-.field public dialog_font_style_alignment:Lcom/htc/dialog/HtcAlertDialog;
+.field public dialog_font_style_alignment:Landroid/app/AlertDialog;
 
-.field public dialog_font_style_fontcolor:Lcom/htc/dialog/HtcAlertDialog;
+.field public dialog_font_style_fontcolor:Landroid/app/AlertDialog;
 
-.field public dialog_font_style_fontsize:Lcom/htc/dialog/HtcAlertDialog;
+.field public dialog_font_style_fontsize:Landroid/app/AlertDialog;
 
-.field public dialog_font_style_settings:Lcom/htc/dialog/HtcAlertDialog;
+.field public dialog_font_style_settings:Landroid/app/AlertDialog;
 
 .field fWebViewTextScale:F
 
@@ -1293,7 +1293,7 @@
 
     .prologue
     .line 2213
-    iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_alignment:Lcom/htc/dialog/HtcAlertDialog;
+    iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_alignment:Landroid/app/AlertDialog;
 
     if-nez v0, :cond_0
 
@@ -1342,11 +1342,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Lcom/htc/dialog/HtcAlertDialog;
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_alignment:Lcom/htc/dialog/HtcAlertDialog;
+    iput-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_alignment:Landroid/app/AlertDialog;
 
     .line 2251
     :cond_0
@@ -1359,7 +1359,7 @@
 
     .prologue
     .line 1995
-    iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style:Lcom/htc/dialog/HtcAlertDialog;
+    iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style:Landroid/app/AlertDialog;
 
     if-nez v0, :cond_0
 
@@ -1402,11 +1402,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Lcom/htc/dialog/HtcAlertDialog;
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style:Lcom/htc/dialog/HtcAlertDialog;
+    iput-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style:Landroid/app/AlertDialog;
 
     .line 2048
     :cond_0
@@ -1419,7 +1419,7 @@
 
     .prologue
     .line 2103
-    iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_fontcolor:Lcom/htc/dialog/HtcAlertDialog;
+    iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_fontcolor:Landroid/app/AlertDialog;
 
     if-nez v0, :cond_0
 
@@ -1476,11 +1476,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Lcom/htc/dialog/HtcAlertDialog;
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_fontcolor:Lcom/htc/dialog/HtcAlertDialog;
+    iput-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_fontcolor:Landroid/app/AlertDialog;
 
     .line 2151
     :cond_0
@@ -1493,7 +1493,7 @@
 
     .prologue
     .line 2051
-    iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_fontsize:Lcom/htc/dialog/HtcAlertDialog;
+    iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_fontsize:Landroid/app/AlertDialog;
 
     if-nez v0, :cond_0
 
@@ -1550,11 +1550,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Lcom/htc/dialog/HtcAlertDialog;
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_fontsize:Lcom/htc/dialog/HtcAlertDialog;
+    iput-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_fontsize:Landroid/app/AlertDialog;
 
     .line 2100
     :cond_0
@@ -1571,7 +1571,7 @@
     const/4 v3, 0x1
 
     .line 2155
-    iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_settings:Lcom/htc/dialog/HtcAlertDialog;
+    iget-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_settings:Landroid/app/AlertDialog;
 
     if-nez v1, :cond_0
 
@@ -1678,11 +1678,11 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Lcom/htc/dialog/HtcAlertDialog;
+    invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v1
 
-    iput-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_settings:Lcom/htc/dialog/HtcAlertDialog;
+    iput-object v1, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_settings:Landroid/app/AlertDialog;
 
     .line 2210
     .end local v0           #tmpboolarray:[Z
@@ -2256,9 +2256,9 @@
     invoke-direct {p0, v3}, Landroid/webkit/EditableWebView$EditableQuickActions;->onCreateDialogFontStyle(Landroid/content/Context;)V
 
     .line 1908
-    iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style:Lcom/htc/dialog/HtcAlertDialog;
+    iget-object v3, p0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style:Landroid/app/AlertDialog;
 
-    invoke-virtual {v3}, Lcom/htc/dialog/HtcAlertDialog;->show()V
+    invoke-virtual {v3}, Landroid/app/AlertDialog;->show()V
 
     goto :goto_0
 

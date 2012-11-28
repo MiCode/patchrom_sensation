@@ -46,9 +46,9 @@
     .line 2221
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$12;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;
 
-    iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_alignment:Lcom/htc/dialog/HtcAlertDialog;
+    iget-object v0, v0, Landroid/webkit/EditableWebView$EditableQuickActions;->dialog_font_style_alignment:Landroid/app/AlertDialog;
 
-    invoke-virtual {v0}, Lcom/htc/dialog/HtcAlertDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
     .line 2222
     iget-object v0, p0, Landroid/webkit/EditableWebView$EditableQuickActions$12;->this$1:Landroid/webkit/EditableWebView$EditableQuickActions;

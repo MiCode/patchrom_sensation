@@ -67,8 +67,8 @@
 
     const/4 v1, 0x0
 
-    #setter for: Landroid/webkit/WebView;->mListBoxDialog:Lcom/htc/dialog/HtcAlertDialog;
-    invoke-static {v0, v1}, Landroid/webkit/WebView;->access$11402(Landroid/webkit/WebView;Lcom/htc/dialog/HtcAlertDialog;)Lcom/htc/dialog/HtcAlertDialog;
+    #setter for: Landroid/webkit/WebView;->mListBoxDialog:Landroid/app/AlertDialog;
+    invoke-static {v0, v1}, Landroid/webkit/WebView;->access$11402(Landroid/webkit/WebView;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
     .line 10603
     return-void
